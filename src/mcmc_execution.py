@@ -42,17 +42,17 @@ sampling_info.append(seed_samples)
 
 
 # MCMC execution
-posterior = pycpp.mcmc_execution(taxa_weights,tf_sample,prior, core_info, proposal_params, tf_info, sampling_info)
+posterior_cpp = pycpp.mcmc_execution(taxa_weights,tf_sample,prior, core_info, proposal_params, tf_info, sampling_info)
 
 # acceptance rate 
-accept_cumsum = np.cumsum(posterior[0])
+accept_cumsum = np.cumsum(posterior_cpp[0])
 acc_rate = np.empty(sample_length-1)
 for i in np.arange(1,sample_length):
     acc_rate[i-1] = accept_cumsum[i] / i
     
 
 # save the posterior output
-np.savez("data/out/posterior.npz",acceptance=posterior[0],post_tf_sample=posterior[1],post_taxa_weights=posterior[2],post_expl_variance=posterior[3],post_temp=posterior[4],post_pann=posterior[5],acc_rate=acc_rate)
+np.savez("data/out/posterior.npz",acceptance=posterior_cpp[0],post_tf_sample=posterior_cpp[1],post_taxa_weights=posterior_cpp[2],post_expl_variance=posterior_cpp[3],post_temp=posterior_cpp[4],post_pann=posterior_cpp[5],acc_rate=acc_rate)
 
 
 

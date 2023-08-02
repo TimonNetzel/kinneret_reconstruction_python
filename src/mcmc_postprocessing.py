@@ -4,7 +4,7 @@
 ## MCMC post processing 
 ##------------------------------------------------------------------------------------------------------  
 
-## load the posterior data
+# load the posterior data
 posterior = np.load("data/out/posterior.npz")
 
 
