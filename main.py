@@ -24,7 +24,7 @@ from scipy.stats import beta
 from scipy.stats import gaussian_kde
 
 
-# "random" settings
+# reproducibility settings
 reproducible = True
 seeds = 2023
 
