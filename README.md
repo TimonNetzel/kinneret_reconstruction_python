@@ -10,8 +10,9 @@ FUNCTIONALITY:
 TO RUN RECONSTRUCTION:
 
     Install the following packages if necessary: numpy, random, os, sys, pybind11, matplotlib, and scipy
-    
-    To execute the entire reconstruction, simply run "main.py" e.g. "python3.x main.py"
+
+    To execute the reconstruction, simply run "main.py", 
+    e.g. with the Linux command line "python3.x main.py"
 
     This script contains the following:
 
