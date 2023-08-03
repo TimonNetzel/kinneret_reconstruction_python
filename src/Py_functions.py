@@ -37,7 +37,7 @@ def post_processing(posterior,age,depth,burn_in,sample_length,thin_size,nnet_fit
     ##------------------------------------------------------------------------------
 
     # thinning
-    which_samples = np.linspace(burn_in,sample_length-1,(sample_length-burn_in)/thin_size).astype(int)
+    which_samples = np.linspace(burn_in,sample_length-1,(sample_length-burn_in)/thin_size, dtype=np.int32)
 
     ct1 = -1
     ct2 = -1
