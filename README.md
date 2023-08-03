@@ -3,7 +3,7 @@ FUNCTIONALITY:
     The scripts perform the MCMC simulation described in the publication for Python 3 and Linux.
     Each script is written very simply and clearly to ensure a quick insight into how it works.
     The Python-based scripts contain some MCMC functions written in C++. 
-    Only a rather rarely used Python package (pybind11) has to be installed at the beginning, which creates an 
+    Only one rather rarely used Python package (pybind11) has to be installed at the beginning, which creates an 
     interface between Python and C++.
 
 
