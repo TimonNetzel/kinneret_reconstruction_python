@@ -38,8 +38,7 @@ CHANGES OF BASIC SETTINGS:
     MCMC sampling only needs to be done once.
     That is why there is the possibility to switch it off.
     In addition, the calculation of the post-processing metrics takes some time.
-    For this reason, it is also possible to save it after a one-time calculation so that it does not have 
-    to be performed again.
+    For this reason, they are saved and the option is offered that this has already been done.
     The convergence test described in the publication is based on the predefined parameters of sample length, 
     burn-in and thin size.
     A corresponding change should therefore be treated with caution.
