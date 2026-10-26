@@ -1,0 +1,8 @@
+# Flexibler Prior der Taxa-Gewichte: Dir(alpha) mit mitgeschaetzter Konzentration,
+# log(alpha) ~ N(log 1, 1) (95 % der Prior-Masse zwischen alpha = 0,14 und 7,1)
+output_dir = "results/g_dir_hierarchisch"
+
+[sampler]
+taxa_prior = "hierarchical"
+alpha_prior_median = 1.0
+alpha_prior_log_sd = 1.0

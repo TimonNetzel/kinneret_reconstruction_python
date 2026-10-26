@@ -26,6 +26,7 @@ class Posterior:
     recent_temp: np.ndarray  # (C, n_keep)
     recent_pann: np.ndarray  # (C, n_keep)
     log_target: np.ndarray  # (C, n_keep); NaN fuer den Original-Sampler
+    alpha: np.ndarray  # (C, n_keep) Konzentration des Dirichlet-Priors der Taxa-Gewichte (konstant, falls fest)
     acceptance_rate: np.ndarray  # (C,) ueber alle Iterationen
     meta: dict = field(default_factory=dict)
 
@@ -46,13 +47,16 @@ class Posterior:
         np.savez_compressed(
             path, iterations=self.iterations, burn_in=self.burn_in, taxa_weights=self.taxa_weights,
             tf_sample=self.tf_sample, expl_variance=self.expl_variance, recent_temp=self.recent_temp,
-            recent_pann=self.recent_pann, log_target=self.log_target, acceptance_rate=self.acceptance_rate,
+            recent_pann=self.recent_pann, log_target=self.log_target, alpha=self.alpha,
+            acceptance_rate=self.acceptance_rate,
         )
 
     @classmethod
     def load(cls, path: str | Path) -> "Posterior":
         d = np.load(path)
-        return cls(**{k: d[k] for k in d.files if k != "burn_in"}, burn_in=int(d["burn_in"]))
+        kw = {k: d[k] for k in d.files if k != "burn_in"}
+        kw.setdefault("alpha", np.full(kw["log_target"].shape, 0.5))  # aeltere Dateien ohne alpha
+        return cls(**kw, burn_in=int(d["burn_in"]))
 
 
 def legacy_random_stream(seed: int, sample_length: int):
@@ -85,6 +89,7 @@ def run_legacy(setup: Setup, cfg: SamplerConfig) -> Posterior:
         taxa_weights=r["taxa_weights"][None], tf_sample=r["tf_sample"][None],
         expl_variance=r["expl_variance"][None], recent_temp=r["recent_temp"][None],
         recent_pann=r["recent_pann"][None], log_target=np.full((1, len(keep)), np.nan),
+        alpha=np.full((1, len(keep)), 0.5),
         acceptance_rate=np.array([acc[1:].mean()]),
         meta=dict(kernel="legacy", accepted=acc),
     )
@@ -121,6 +126,9 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
         log_gamma_rw=cfg.weights_proposal == "log_gamma",
         adapt_until=cfg.burn_in,
         target_accept=cfg.target_accept,
+        sample_alpha=cfg.taxa_prior == "hierarchical",
+        alpha_prior_mu=float(np.log(cfg.alpha_prior_median)),
+        alpha_prior_sd=cfg.alpha_prior_log_sd,
     )
     ss = np.random.SeedSequence(cfg.seed)
     init_rng = np.random.default_rng(ss.spawn(1)[0])
@@ -144,7 +152,7 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
         iterations=keep, burn_in=cfg.burn_in,
         taxa_weights=stack("taxa_weights"), tf_sample=stack("tf_sample"),
         expl_variance=stack("expl_variance"), recent_temp=stack("recent_temp"),
-        recent_pann=stack("recent_pann"), log_target=stack("log_target"),
+        recent_pann=stack("recent_pann"), log_target=stack("log_target"), alpha=stack("alpha"),
         acceptance_rate=n_acc[:, -1] / max(keep[-1], 1),
         meta=dict(kernel="corrected", options=options, chain_seeds=chain_seeds,
                   min_log_weight=[r["min_log_weight"] for r in res], n_accepted=n_acc,

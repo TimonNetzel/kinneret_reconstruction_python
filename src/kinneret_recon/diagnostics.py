@@ -94,6 +94,8 @@ def parameter_table(post: Posterior, taxa_names, biome_labels) -> dict[str, np.n
     B = len(biome_labels)
     out = {"log_target": post.log_target[:, m], "R2": post.expl_variance[:, m],
            "T0": post.recent_temp[:, m], "P0": post.recent_pann[:, m]}
+    if np.ptp(post.alpha) > 0:
+        out["alpha"] = post.alpha[:, m]
     for b, lab in enumerate(biome_labels):
         out[f"T_{lab}"] = post.tf_sample[:, m, b]
         out[f"P_{lab}"] = post.tf_sample[:, m, B + b]

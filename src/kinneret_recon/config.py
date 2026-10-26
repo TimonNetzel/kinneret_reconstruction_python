@@ -29,6 +29,14 @@ class SamplerConfig:
     # Schrittweiten werden im Burn-in angepasst). Nur fuer kernel = "corrected".
     weights_proposal: str = "log_gamma"
     target_accept: float = 0.234
+    # Prior der Taxa-Gewichte Dir(alpha, ..., alpha):
+    #   "fixed": alpha = taxa_prior_alpha (Paper: 0,5 = Jeffreys)
+    #   "hierarchical": alpha wird mitgeschaetzt, log(alpha) ~ N(log(alpha_prior_median), alpha_prior_log_sd^2)
+    #                   (nur mit weights_proposal = "log_gamma")
+    taxa_prior: str = "fixed"
+    taxa_prior_alpha: float = 0.5
+    alpha_prior_median: float = 1.0
+    alpha_prior_log_sd: float = 1.0
     # Modell- und Abstimmungsparameter
     # Streuungsparameter des Dirichlet-Vorschlags: kappa = dirichlet_spread_factor * num_taxa**2
     # (Paper: Faktor 1). Mit korrekter Hastings-Korrektur aendert er nur die Effizienz, nicht die
@@ -98,6 +106,14 @@ class Config:
             raise ValueError("sampler.weights_proposal muss 'dirichlet' oder 'log_gamma' sein")
         if s.weights_proposal == "log_gamma" and (s.kernel == "legacy" or not s.dirichlet_hastings_fix):
             raise ValueError("weights_proposal = 'log_gamma' nur mit kernel = 'corrected' und dirichlet_hastings_fix")
+        if s.taxa_prior not in ("fixed", "hierarchical"):
+            raise ValueError("sampler.taxa_prior muss 'fixed' oder 'hierarchical' sein")
+        if s.taxa_prior == "hierarchical" and s.weights_proposal != "log_gamma":
+            raise ValueError("taxa_prior = 'hierarchical' nur mit weights_proposal = 'log_gamma'")
+        if s.taxa_prior_alpha <= 0 or s.alpha_prior_median <= 0 or s.alpha_prior_log_sd <= 0:
+            raise ValueError("taxa_prior_alpha, alpha_prior_median und alpha_prior_log_sd muessen > 0 sein")
+        if s.kernel == "legacy" and s.taxa_prior_alpha != 0.5:
+            raise ValueError("der Original-Sampler hat den festen Prior Dir(0,5)")
         lo, hi = s.tf_bound_probs
         if not 0.0 <= lo < 0.5 < hi <= 1.0:
             raise ValueError("sampler.tf_bound_probs muss (unteres, oberes) Quantil mit 0 <= u < 0,5 < o <= 1 sein")

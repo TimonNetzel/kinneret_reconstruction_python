@@ -67,6 +67,9 @@ static kr::Options make_options(py::dict d) {
     if (d.contains("log_gamma_rw")) o.log_gamma_rw = d["log_gamma_rw"].cast<bool>();
     if (d.contains("adapt_until")) o.adapt_until = d["adapt_until"].cast<int64_t>();
     if (d.contains("target_accept")) o.target_accept = d["target_accept"].cast<double>();
+    if (d.contains("sample_alpha")) o.sample_alpha = d["sample_alpha"].cast<bool>();
+    if (d.contains("alpha_prior_mu")) o.alpha_prior_mu = d["alpha_prior_mu"].cast<double>();
+    if (d.contains("alpha_prior_sd")) o.alpha_prior_sd = d["alpha_prior_sd"].cast<double>();
     return o;
 }
 
@@ -95,6 +98,7 @@ static py::dict run_chain(py::dict model, py::dict options, darr init_w, darr in
     r["recent_temp"] = to_array(out.recent_temp, {n});
     r["recent_pann"] = to_array(out.recent_pann, {n});
     r["log_target"] = to_array(out.log_target, {n});
+    r["alpha"] = to_array(out.alpha, {n});
     r["n_accepted"] = to_array(out.n_accepted, {n});
     r["n_accepted_c"] = to_array(out.n_accepted_c, {n});
     r["min_log_weight"] = out.min_log_weight;

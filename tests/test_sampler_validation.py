@@ -60,3 +60,24 @@ def test_chains_reproducible(inputs):
     np.testing.assert_array_equal(a.tf_sample, b.tf_sample)
     np.testing.assert_array_equal(a.taxa_weights, b.taxa_weights)
     assert not np.array_equal(a.tf_sample[0], a.tf_sample[1])
+
+
+@pytest.mark.parametrize("alpha", [1.0, 2.0])
+def test_prior_only_fixed_alpha(inputs, alpha):
+    cfg = SamplerConfig(sample_length=200_000, burn_in=50_000, thin=10, n_chains=4, seed=3, taxa_prior_alpha=alpha,
+                        use_calibration=False, use_tf_likelihood=False)
+    w = sampler.run(build_setup(inputs, cfg), cfg).pooled("taxa_weights")
+    ref = stats.beta(alpha, alpha * (w.shape[1] - 1))
+    assert w.std() == pytest.approx(ref.std(), rel=0.05)
+    assert np.median(w) == pytest.approx(ref.median(), rel=0.05)
+
+
+@pytest.mark.slow
+def test_prior_only_hierarchical_alpha(inputs):
+    """Ohne Daten muss log(alpha) seinem Prior N(log 1, 1) folgen (ohne Daten mischt alpha langsam, ~2 min)."""
+    cfg = SamplerConfig(sample_length=3_000_000, burn_in=500_000, thin=20, n_chains=4, seed=4, taxa_prior="hierarchical",
+                        use_calibration=False, use_tf_likelihood=False)
+    post = sampler.run(build_setup(inputs, cfg), cfg)
+    la = np.log(post.pooled("alpha"))
+    assert la.mean() == pytest.approx(0.0, abs=0.15)
+    assert la.std() == pytest.approx(1.0, abs=0.12)

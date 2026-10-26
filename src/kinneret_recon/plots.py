@@ -213,6 +213,8 @@ def plot_traces(post: Posterior, outdir: Path, biome_labels=BIOME_LABELS):
     B = len(biome_labels)
     series = [("log target", post.log_target), (r"$R^2$", post.expl_variance), ("T0 [°C]", post.recent_temp),
               ("P0 [mm]", post.recent_pann)]
+    if np.ptp(post.alpha) > 0:
+        series.append((r"$\alpha$ (Dir-Prior)", post.alpha))
     series += [(f"T {lab} [°C]", post.tf_sample[:, :, b]) for b, lab in enumerate(biome_labels)]
     series += [(f"P {lab} [mm]", post.tf_sample[:, :, B + b]) for b, lab in enumerate(biome_labels)]
     series = [s for s in series if np.all(np.isfinite(s[1]))]

@@ -199,7 +199,7 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         pann_shape=pann_shape,
         pann_rate=pann_rate,
         dirichlet_spread=float(cfg.dirichlet_spread_factor * K**2),
-        jeffreys=np.repeat(0.5, K),
+        jeffreys=np.repeat(float(cfg.taxa_prior_alpha), K),
         tf_quantiles_temp=q_t,
         tf_quantiles_pann=q_p,
         tf_sd=np.concatenate([sd_t, sd_p]),

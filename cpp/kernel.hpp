@@ -334,17 +334,24 @@ struct Options {
     bool log_gamma_rw = false;
     int64_t adapt_until = 0;
     double target_accept = 0.234;
+    // Hierarchischer Prior der Taxa-Gewichte (nur mit log_gamma_rw): w ~ Dir(alpha, ..., alpha) mit
+    // log(alpha) ~ N(alpha_prior_mu, alpha_prior_sd^2); alpha wird mitgeschaetzt (eigener MH-Schritt).
+    // Sonst ist der Prior Dir(jeffreys) mit festen Parametern.
+    bool sample_alpha = false;
+    double alpha_prior_mu = 0.0;
+    double alpha_prior_sd = 1.0;
 };
 
 struct State {
     vector<double> log_w, w, c;
     vector<double> z;  // log y (nur fuer log_gamma_rw)
+    double log_alpha = 0.0;  // log der Dirichlet-Konzentration (nur fuer sample_alpha)
     double r2 = 0, t0 = 0, p0 = 0;
     double log_target = NEG_INF;
 };
 
 struct ChainOutput {
-    vector<double> taxa_weights, tf_sample, expl_variance, recent_temp, recent_pann, log_target;
+    vector<double> taxa_weights, tf_sample, expl_variance, recent_temp, recent_pann, log_target, alpha;
     vector<int64_t> n_accepted;    // kumulierte akzeptierte Vorschlaege (gemeinsam bzw. fuer w) bis zur Iteration
     vector<int64_t> n_accepted_c;  // dasselbe fuer den eigenen c-Schritt (nur log_gamma_rw)
     double min_log_weight = 0.0;   // kleinstes je erreichtes log(w_k) (Diagnose fuer Randnaehe)
@@ -368,8 +375,14 @@ public:
         if (o_.use_taxa_prior) {
             if (o_.log_gamma_rw) {
                 // log-Dichte von z = log y mit y ~ Gamma(a, 1): a z - exp(z) - lgamma(a)
-                for (size_t k = 0; k < s.z.size(); ++k)
-                    lt += m_.jeffreys[k] * s.z[k] - std::exp(s.z[k]) - std::lgamma(m_.jeffreys[k]);
+                if (o_.sample_alpha) {
+                    const double a = std::exp(s.log_alpha), lga = std::lgamma(a);
+                    for (size_t k = 0; k < s.z.size(); ++k) lt += a * s.z[k] - std::exp(s.z[k]) - lga;
+                    lt += log_norm_pdf(s.log_alpha, o_.alpha_prior_mu, o_.alpha_prior_sd);
+                } else {
+                    for (size_t k = 0; k < s.z.size(); ++k)
+                        lt += m_.jeffreys[k] * s.z[k] - std::exp(s.z[k]) - std::lgamma(m_.jeffreys[k]);
+                }
             } else {
                 lt += log_dirichlet(s.log_w, m_.jeffreys);
             }
@@ -399,6 +412,10 @@ public:
             // Skala so, dass sum(y) dem Erwartungswert sum(jeffreys) entspricht
             double a0 = 0.0;
             for (double a : m_.jeffreys) a0 += a;
+            if (o_.sample_alpha) {
+                s.log_alpha = o_.alpha_prior_mu;  // Start beim Prior-Median von alpha
+                a0 = w.size() * std::exp(s.log_alpha);
+            }
             s.z.resize(w.size());
             for (size_t k = 0; k < w.size(); ++k) s.z[k] = s.log_w[k] + std::log(a0);
         }
@@ -432,6 +449,7 @@ public:
                 out.recent_temp.push_back(cur.t0);
                 out.recent_pann.push_back(cur.p0);
                 out.log_target.push_back(cur.log_target);
+                out.alpha.push_back(o_.sample_alpha ? std::exp(cur.log_alpha) : m_.jeffreys[0]);
                 out.n_accepted.push_back(n_acc);
                 out.n_accepted_c.push_back(n_acc_c);
                 ++next_keep;
@@ -469,7 +487,7 @@ public:
             return lh;
         };
 
-        double log_step_z = std::log(2.38 / std::sqrt(static_cast<double>(K))), log_scale_c = 0.0;
+        double log_step_z = std::log(2.38 / std::sqrt(static_cast<double>(K))), log_scale_c = 0.0, log_step_a = 0.0;
         // Obergrenze der TF-Schrittweite: hoechstens die Breite des Trunkierungsbereichs (bei nahezu flacher
         // Zielverteilung wuerde die Anpassung sie sonst unbegrenzt vergroessern)
         double max_log_scale_c = NEG_INF;
@@ -508,6 +526,31 @@ public:
                 prop.w = cur.w;
                 const auto rc = mh_step(propose_c(std::exp(log_scale_c)));
                 n_acc_c += rc.first;
+                // (3) Blockschritt fuer (alpha, S) bei festen w und c, mit S = sum(y), z = log w + log S.
+                // Unter dem Prior gilt w ~ Dir(alpha) und S ~ Gamma(K alpha, 1) unabhaengig von w; die Daten
+                // haengen nur von w ab. Daher: alpha per MH aus p(alpha | w) (S integriert), danach S exakt aus
+                // Gamma(K alpha). Das entkoppelt die Skala von z und alpha.
+                if (o_.use_taxa_prior) {
+                    if (o_.sample_alpha) {
+                        double sum_log_w = 0.0;
+                        for (size_t k = 0; k < K; ++k) sum_log_w += cur.log_w[k];
+                        auto log_p_alpha = [&](double la) {
+                            const double a = std::exp(la);
+                            return std::lgamma(K * a) - K * std::lgamma(a) + (a - 1.0) * sum_log_w +
+                                   log_norm_pdf(la, o_.alpha_prior_mu, o_.alpha_prior_sd);
+                        };
+                        const double la_new = cur.log_alpha + std::exp(log_step_a) * rng.normal();
+                        const double log_r = log_p_alpha(la_new) - log_p_alpha(cur.log_alpha);
+                        if (std::log(rng.uniform()) < log_r) cur.log_alpha = la_new;
+                        if (adapting) log_step_a += gain * (std::exp(std::min(0.0, log_r)) - 0.44);  // 1D-Optimum
+                    }
+                    double a_sum = 0.0;  // S ~ Gamma(sum der Dirichlet-Parameter, 1)
+                    for (size_t k = 0; k < K; ++k) a_sum += o_.sample_alpha ? std::exp(cur.log_alpha) : m_.jeffreys[k];
+                    const double log_s = rng.log_gamma(a_sum);
+                    for (size_t k = 0; k < K; ++k) cur.z[k] = cur.log_w[k] + log_s;
+                    cur.log_target = log_target(cur);
+                }
+                prop.log_alpha = cur.log_alpha;
                 if (adapting) {
                     log_step_z += gain * (rw.second - o_.target_accept);
                     log_scale_c = std::min(max_log_scale_c, log_scale_c + gain * (rc.second - o_.target_accept));

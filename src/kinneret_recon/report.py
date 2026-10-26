@@ -61,6 +61,13 @@ def methods_text(run) -> str:
     else:
         proposal = (f"Die Taxa-Gewichte wurden gemeinsam mit den Klimawerten der Transferfunktionen über einen "
                     f"Dirichlet-Vorschlag mit Streuungsparameter κ = {setup.dirichlet_spread:g} aktualisiert. ")
+    if s.taxa_prior == "hierarchical":
+        a = post.pooled("alpha")
+        taxa_prior = (f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir(α, …, α) mit mitgeschätzter Konzentration, "
+                      f"log α ~ N(log {s.alpha_prior_median:g}, {s.alpha_prior_log_sd:g}²); Posterior-Median "
+                      f"α = {np.median(a):.2f} (95 %: {np.quantile(a, .025):.2f}–{np.quantile(a, .975):.2f}). ")
+    else:
+        taxa_prior = f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir({s.taxa_prior_alpha:g}). "
     fixes = []
     if s.kernel == "corrected" and s.weights_proposal == "dirichlet":
         fixes.append("Hastings-Korrektur des Dirichlet-Vorschlags " +
@@ -72,7 +79,7 @@ def methods_text(run) -> str:
         f"Die Posterior-Verteilung wurde mit {s.n_chains} Markov-Kette(n) {kern} mit je {_n(s.sample_length)} "
         f"Iterationen geschätzt. Die ersten {_n(s.burn_in)} Iterationen wurden als Burn-in verworfen, danach wurde "
         f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). " + proposal +
-        f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir(0,5). R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
+        taxa_prior + f"R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
         f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.inputs.recent_climate[0]:.2f}, "
         f"{setup.inputs.recent_climate[1]:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
         f"Rate {setup.pann_rate:.5f}). " + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
