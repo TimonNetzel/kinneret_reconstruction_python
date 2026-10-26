@@ -1,0 +1,9 @@
+vergleich,groesse,mittlere_diff,max_abs_diff
+"A: neuer Sampler, wie Original - Original (Paper)",temp Median [°C],-0.0414,0.0606
+"A: neuer Sampler, wie Original - Original (Paper)",pann Median [mm],1.7239,3.0003
+B: + Hastings-Korrektur - Original (Paper),temp Median [°C],0.0921,0.1819
+B: + Hastings-Korrektur - Original (Paper),pann Median [mm],-6.9952,12.0012
+Standard: alle Korrekturen - Original (Paper),temp Median [°C],0.076,0.1684
+Standard: alle Korrekturen - Original (Paper),pann Median [mm],-6.2701,12.1529
+E: TF-Grenzen 1/99 % - Original (Paper),temp Median [°C],0.0812,0.1193
+E: TF-Grenzen 1/99 % - Original (Paper),pann Median [mm],0.4433,7.5869

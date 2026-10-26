@@ -16,7 +16,9 @@ als installierbares Python-Paket mit C++-Kern um.
 | `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
 | `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v1.0-paper`) |
 | `reference/v1.0-paper/` | Referenzergebnisse des Originals |
-| `docs/` | Prüfbericht (Code gegen Paper, gefundene Fehler, Auswirkungen) |
+| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen) und Projektstand (Plan, Entscheidungen, offene Punkte) |
+| `reference/laeufe/`, `reference/vergleiche/` | Tabellen, Diagnostik und Einstellungen aller Vergleichs- und Sensitivitätsläufe |
+| `tools/` | Hilfsskripte für Auswertung und Abstimmung |
 | `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |
 
 ## Installation

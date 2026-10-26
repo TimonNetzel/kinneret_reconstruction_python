@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0.dev0",
+  "git": "40289b0-dirty",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "timings_s": {
+    "vorbereitung": 0.18,
+    "sampling": 131.85,
+    "auswertung": 40.21,
+    "diagnostik": 2.04,
+    "abbildungen": 13.47
+  },
+  "acceptance_rate": [
+    0.14336596829841491,
+    0.1382363118155908,
+    0.1360526026301315,
+    0.1383575178758938
+  ],
+  "n_samples_post": 64000,
+  "diagnostics_problems": [],
+  "min_log_weight": [
+    -18.75900784835384,
+    -19.79164957458402,
+    -20.962845728052166,
+    -19.33836165084623
+  ]
+}

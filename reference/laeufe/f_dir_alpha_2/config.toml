@@ -1,0 +1,34 @@
+data_dir = "data/in"
+output_dir = "results/f_dir_alpha_2"
+plots = true
+report = true
+
+[sampler]
+kernel = "corrected"
+sample_length = 2000000
+burn_in = 500000
+thin = 150
+n_chains = 4
+seed = 2023
+dirichlet_hastings_fix = true
+exact_gamma_moments = true
+dispersed_init = true
+weights_proposal = "log_gamma"
+target_accept = 0.234
+taxa_prior = "fixed"
+taxa_prior_alpha = 2.0
+alpha_prior_median = 1.0
+alpha_prior_log_sd = 1.0
+dirichlet_spread_factor = 4.0
+tf_bound_probs = [0.05, 0.95]
+beta_shape1 = 3.0
+beta_shape2 = 3.0
+use_calibration = true
+use_tf_likelihood = true
+use_taxa_prior = true
+
+[postprocess]
+quantile_method = "samples"
+prior_reference = "model"
+n_threads = 0
+seed = 2023
