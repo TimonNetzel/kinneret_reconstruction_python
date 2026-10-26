@@ -10,6 +10,7 @@ sample_length = 1000000
 burn_in = 250000
 thin = 75
 dirichlet_hastings_fix = false
+weights_proposal = "dirichlet"
 dirichlet_spread_factor = 1.0
 exact_gamma_moments = false
 

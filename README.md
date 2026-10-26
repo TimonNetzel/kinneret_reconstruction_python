@@ -1,45 +1,79 @@
-FUNCTIONALITY:
+# Kinneret-Rekonstruktion
 
-    The scripts perform the MCMC simulation described in the publication for Python 3 and Linux.
-    Each script is written very simply and clearly to ensure a quick insight into how it works.
-    The Python-based scripts contain some MCMC functions written in C++. 
-    Only one rather rarely used Python package (pybind11) has to be installed at the beginning, which creates an 
-    interface between Python and C++.
+Bayessche Rekonstruktion von Wintertemperatur (T_DJF) und Jahresniederschlag (P_ANN) aus
+Pollendaten des See Genezareth (Lake Kinneret). Das Paket setzt das hierarchische Modell aus
 
+> Netzel, T., Miebach, A., Litt, T., Hense, A. (2025): *New probabilistic methods for quantitative
+> climate reconstructions applied to palynological data from Lake Kinneret.* Clim. Past 21, 357–380.
+> https://doi.org/10.5194/cp-21-357-2025
 
-TO RUN RECONSTRUCTION:
+als installierbares Python-Paket mit C++-Kern um.
 
-    Install the following packages if necessary: numpy, random, os, sys, pybind11, matplotlib, and scipy
+| Ordner | Inhalt |
+|---|---|
+| `src/kinneret_recon/` | Python-Paket (Konfiguration, Daten, Modell, Sampler, Auswertung, Diagnostik, Abbildungen, Bericht, Kommandozeile) |
+| `cpp/` | C++-Kern: Original-Sampler (`legacy_kernel.hpp`), überarbeiteter Sampler (`kernel.hpp`), Kerndichteschätzer (`kde.hpp`) |
+| `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
+| `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v1.0-paper`) |
+| `reference/v1.0-paper/` | Referenzergebnisse des Originals |
+| `docs/` | Prüfbericht (Code gegen Paper, gefundene Fehler, Auswirkungen) |
+| `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |
 
-    To execute the reconstruction, simply run "main.py", 
-    e.g. with the Linux command line "python3.x main.py"
+## Installation
 
-    This script contains the following:
+Voraussetzungen: Python ≥ 3.11 und ein C++17-Compiler (z. B. g++).
 
-    - import of all required packages, 
+```bash
+pip install -e ".[test]"     # kompiliert den C++-Kern einmalig
+pytest                       # Tests (~30 s)
+```
 
-    - C++ functions are compiled and included into Python (for each individual Python version).
-      This only has to be done once, so that the C++ functions can then be imported with import pycpp,
+## Benutzung
 
-    - settings for reproducibility and MCMC,
-    
-    - load and prepare all data stored in npz files (data/in),
+```bash
+kinneret-recon run                         # Standardlauf (überarbeiteter Sampler, 4 Ketten)
+kinneret-recon run -c configs/standard.toml
+kinneret-recon run --legacy                # exakt wie das Originalskript (bitidentische Ergebnisse)
+kinneret-recon run --chains 8 --samples 4000000 -o results/lang
+kinneret-recon config meine_config.toml    # Vorlage mit allen Einstellungen schreiben
+kinneret-recon compare Original=results/legacy Neu=results/standard -o results/vergleich
+```
 
-    - run and save the MCMC simulation (takes about 40 seconds on a standard CPU and is saved in data/out),
+Ein Lauf schreibt in sein Ausgabeverzeichnis:
 
-    - run the postprocessing routine that calculates, stores and plots the most important posterior metrics 
-      (data/out, plots).
+| Datei | Inhalt |
+|---|---|
+| `bericht.html` | Bericht mit allen Abbildungen, Tabellen, Konvergenzdiagnostik und automatischer Methodenbeschreibung |
+| `rekonstruktion_alter.csv`, `rekonstruktion_tiefe.csv` | Quantile (2,5/25/50/75/97,5 %) und Mittel von T_DJF und P_ANN, Biomanteile |
+| `diagnostik.csv` | Mittel, Sd, Quantile, R̂, ESS (bulk/tail) für alle Parameter |
+| `plots/` | Abbildungen als PDF und PNG |
+| `posterior.npz`, `results.npz` | Ketten (ausgedünnt) und Auswertung für eigene Analysen |
+| `config.toml`, `meta.json` | verwendete Einstellungen, Git-Stand, Versionen, Laufzeiten, Seeds |
 
-CHANGES OF BASIC SETTINGS:
+Mit Seed und Konfiguration ist jeder Lauf bitgenau reproduzierbar. Der Zufallszahlengenerator ist
+portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
 
-    If reproducibly is set to "False", each MCMC simulation will give a slightly different result.
-    Since our MCMC simulation converges, the differences are minimal and the main features of the results are preserved.
-    
-    MCMC sampling only needs to be done once.
-    That is why there is the possibility to switch it off.
-    In addition, the calculation of the post-processing metrics takes some time.
-    For this reason, they are saved and the option is offered that this has already been done.
-    The convergence test described in the publication is based on the predefined parameters of sample length, 
-    burn-in and thin size.
-    A corresponding change should therefore be treated with caution.
+## Sampler
 
+* **`kernel = "legacy"`**: der Original-Sampler. Ketten, Quartile und Abbildungen sind bitidentisch
+  zu `legacy/main.py`, Laufzeit etwa 1 min statt etwa 11 min.
+* **`kernel = "corrected"`** (Standard): überarbeiteter Sampler. Jede Korrektur lässt sich in der
+  Konfiguration einzeln abschalten:
+  * `dirichlet_hastings_fix`: Die Hastings-Korrektur des Dirichlet-Vorschlags enthält den
+    Streuungsparameter κ. Im Original fehlt er, die Kette trifft dort nicht die beabsichtigte
+    Posterior (siehe `docs/pruefbericht.md`).
+  * `exact_gamma_moments`: Die Parameter des Gamma-Priors für den rezenten Niederschlag werden
+    analytisch bestimmt statt per Gittersuche.
+  * `weights_proposal = "log_gamma"`: Random Walk auf log y mit w = y / Σy. Die Zielverteilung
+    ist dieselbe, die Kette mischt aber etwa 50-mal effizienter als mit dem Dirichlet-Random-Walk.
+  * mehrere Ketten mit gestreuten Startwerten und Konvergenzdiagnostik nach Vehtari et al. (2021).
+* `postprocess.quantile_method = "samples"`: Quartile direkt aus den Stichproben. Das Original
+  berechnet sie über geglättete Kerndichten (`"kde"`).
+
+## Leistung (4 CPU-Kerne)
+
+| | Original | Paket, `--legacy` | Paket, Standard |
+|---|---|---|---|
+| Sampling | ~60 s, 1 Kette, ~3 GB RAM | 36 s, 1 Kette | ~90 s, 4 Ketten × 2 Mio. |
+| Prior-Referenzlauf | – | – | ~90 s |
+| Auswertung + Abbildungen | 576 s | ~20 s | ~45 s |

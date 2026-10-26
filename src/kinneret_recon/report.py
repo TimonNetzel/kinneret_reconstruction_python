@@ -53,18 +53,26 @@ def methods_text(run) -> str:
     n_post = post.pooled("expl_variance").shape[0]
     kern = ("des Original-Samplers (bitidentisch zu Netzel et al., 2025)" if s.kernel == "legacy"
             else "des überarbeiteten Samplers (kinneret_recon %s)" % __version__)
+    if s.kernel == "corrected" and s.weights_proposal == "log_gamma":
+        proposal = ("Die Taxa-Gewichte wurden als w = y/Σy mit y_k ~ Gamma(0,5) parametrisiert und mit einem "
+                    "Normal-Random-Walk auf log y aktualisiert, im Wechsel mit einem eigenen Schritt für die "
+                    "Klimawerte der Transferfunktionen; die Schrittweiten wurden während des Burn-in an eine "
+                    f"Akzeptanzrate von {s.target_accept:g} angepasst. ")
+    else:
+        proposal = (f"Die Taxa-Gewichte wurden gemeinsam mit den Klimawerten der Transferfunktionen über einen "
+                    f"Dirichlet-Vorschlag mit Streuungsparameter κ = {setup.dirichlet_spread:g} aktualisiert. ")
     fixes = []
-    if s.kernel == "corrected":
+    if s.kernel == "corrected" and s.weights_proposal == "dirichlet":
         fixes.append("Hastings-Korrektur des Dirichlet-Vorschlags " +
                      ("mit" if s.dirichlet_hastings_fix else "ohne") + " Streuungsparameter κ")
+    if s.kernel == "corrected":
         fixes.append("Gamma-Prior des rezenten Niederschlags " +
                      ("über exakte Momentenanpassung" if s.exact_gamma_moments else "über Gittersuche"))
     return (
         f"Die Posterior-Verteilung wurde mit {s.n_chains} Markov-Kette(n) {kern} mit je {_n(s.sample_length)} "
         f"Iterationen geschätzt. Die ersten {_n(s.burn_in)} Iterationen wurden als Burn-in verworfen, danach wurde "
-        f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). Der Dirichlet-Vorschlag der "
-        f"{setup.num_taxa} Taxa-Gewichte hat den Streuungsparameter κ = {setup.dirichlet_spread:g}, der Prior der "
-        f"Gewichte ist Dir(0,5). R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
+        f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). " + proposal +
+        f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir(0,5). R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
         f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.inputs.recent_climate[0]:.2f}, "
         f"{setup.inputs.recent_climate[1]:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
         f"Rate {setup.pann_rate:.5f}). " + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
@@ -135,6 +143,12 @@ def write_report(run, path: Path) -> None:
                           _fmt(np.median(res.tf_post_pann[:, b]), 0),
                           _fmt(res.post_pann_ci_size[b] / res.prior_pann_ci_size[b], 2)] for b in range(B)],
                         ["Biom", "T Median [°C]", "T: CI post/prior", "P Median [mm]", "P: CI post/prior"]))
+    ref = cfg.postprocess.prior_reference
+    parts.append('<p class="muted">CI: Breite des 95-%-Intervalls. Prior-Referenz: ' + (
+        "Lauf desselben Modells ohne Kalibrierungsterme (enthält die Trunkierung der TF-Werte; Verhältnisse < 1 "
+        "zeigen damit nur Information aus den Daten)." if ref == "model" else
+        "Randverteilungen auf dem Klimagitter wie im Original. Achtung: Die Trunkierung der TF-Werte allein ergibt "
+        "bereits Verhältnisse < 1.") + "</p>")
 
     for k, title in (("independent_proposal_dists", "Kalibrierung"), ("age_depth_transform", "Alters-Tiefen-Transformation")):
         if k in figs:

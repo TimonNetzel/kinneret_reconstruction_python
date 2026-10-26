@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import dataclasses
 import json
 import platform
 import subprocess
@@ -112,8 +113,18 @@ def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
     log(f"  fertig in {timings['sampling']:.1f} s, Akzeptanzrate {np.round(post.acceptance_rate, 3)}")
     post.save(outdir / "posterior.npz")
 
+    prior = None
+    if cfg.postprocess.prior_reference == "model":
+        # Prior-Referenz: dasselbe Modell ohne Kalibrierungsterme (also ohne Information aus den Daten)
+        t = time.perf_counter()
+        ps = dataclasses.replace(s, kernel="corrected", use_calibration=False, seed=s.seed + 1,
+                                 weights_proposal="log_gamma", dirichlet_hastings_fix=True)
+        prior = sampler.run(build_setup(inputs, ps), ps, cfg.postprocess.n_threads)
+        prior.save(outdir / "prior.npz")
+        timings["prior_lauf"] = time.perf_counter() - t
+
     t = time.perf_counter()
-    res = postprocess(setup, post, cfg.postprocess)
+    res = postprocess(setup, post, cfg.postprocess, prior)
     timings["auswertung"] = time.perf_counter() - t
     res.save(outdir / "results.npz")
     write_csv(reconstruction_table(res, "age"), outdir / "rekonstruktion_alter.csv")

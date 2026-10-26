@@ -49,6 +49,10 @@ class SamplerConfig:
 class PostprocessConfig:
     # "samples": Quartile direkt aus den Stichproben; "kde": ueber geglaettete Dichten wie im Original
     quantile_method: str = "samples"
+    # Referenz fuer "Prior"-Groessen (CI-Verhaeltnis der Transferfunktionen):
+    #   "model": eigener Lauf ohne Kalibrierungsterme, d. h. exakt der Prior des Samplers inkl. Trunkierung
+    #   "marginal": Randverteilungen auf dem Klimagitter wie im Original
+    prior_reference: str = "model"
     n_threads: int = 0  # 0: alle Kerne
     seed: int = 2023  # fuer die Stichproben der Prior-Transferfunktionen
 
@@ -97,6 +101,8 @@ class Config:
         lo, hi = s.tf_bound_probs
         if not 0.0 <= lo < 0.5 < hi <= 1.0:
             raise ValueError("sampler.tf_bound_probs muss (unteres, oberes) Quantil mit 0 <= u < 0,5 < o <= 1 sein")
+        if self.postprocess.prior_reference not in ("model", "marginal"):
+            raise ValueError("postprocess.prior_reference muss 'model' oder 'marginal' sein")
         if self.postprocess.quantile_method not in ("samples", "kde"):
             raise ValueError("postprocess.quantile_method muss 'samples' oder 'kde' sein")
 
@@ -116,7 +122,7 @@ def legacy_config(**overrides: Any) -> Config:
             burn_in=250_000,
             thin=75,
         ),
-        postprocess=PostprocessConfig(quantile_method="kde"),
+        postprocess=PostprocessConfig(quantile_method="kde", prior_reference="marginal"),
     )
     for k, v in overrides.items():
         setattr(cfg, k, v)

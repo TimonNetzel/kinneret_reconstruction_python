@@ -109,7 +109,9 @@ def _quartiles(samples, dens, grid, method):
     return kde_quartiles(dens, grid)
 
 
-def postprocess(setup: Setup, post: Posterior, cfg: PostprocessConfig) -> Results:
+def postprocess(setup: Setup, post: Posterior, cfg: PostprocessConfig, prior: Posterior | None = None) -> Results:
+    """prior: optionaler Lauf ohne Kalibrierungsterme (Modell-Prior der TF-Klimawerte). Ohne ihn werden die
+    Prior-Stichproben wie im Original aus den Randverteilungen auf dem (nichtlinearen) Klimagitter gezogen."""
     inp = setup.inputs
     B, dims = setup.num_biomes, len(inp.temp_range)
     nt = cfg.n_threads
@@ -138,12 +140,16 @@ def postprocess(setup: Setup, post: Posterior, cfg: PostprocessConfig) -> Result
 
     # Prior- und Posterior-Transferfunktionen
     S = w.shape[0]
-    rng = np.random.default_rng(cfg.seed)
-    prior_t = np.empty((S, B))
-    prior_p = np.empty((S, B))
-    for b in range(B):
-        prior_t[:, b] = rng.choice(inp.temp_range, size=S, p=setup.biome_tf_temp[b], replace=True)
-        prior_p[:, b] = rng.choice(inp.pann_range, size=S, p=setup.biome_tf_pann[b], replace=True)
+    if prior is not None:
+        ptf = prior.pooled("tf_sample")
+        prior_t, prior_p = ptf[:, :B], ptf[:, B:]
+    else:
+        rng = np.random.default_rng(cfg.seed)
+        prior_t = np.empty((S, B))
+        prior_p = np.empty((S, B))
+        for b in range(B):
+            prior_t[:, b] = rng.choice(inp.temp_range, size=S, p=setup.biome_tf_temp[b], replace=True)
+            prior_p[:, b] = rng.choice(inp.pann_range, size=S, p=setup.biome_tf_pann[b], replace=True)
     post_t, post_p = tf[:, :B], tf[:, B:]
     ci = lambda a: np.diff(np.quantile(a, [0.025, 0.975], axis=0), axis=0)[0]
 

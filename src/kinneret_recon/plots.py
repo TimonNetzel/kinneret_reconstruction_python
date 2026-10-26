@@ -256,16 +256,24 @@ def plot_comparison(runs: dict[str, Results], outdir: Path, name: str = "compari
     """Median und 50-%-Intervall der Rekonstruktion mehrerer Laeufe uebereinander."""
     fig, axs = plt.subplots(2, 1, figsize=(10, 8), sharex=True)
     cols = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+    # erster Lauf (Referenz): graue Flaeche (25-75 %) und schwarze Medianlinie; uebrige Laeufe: Median
+    # durchgezogen, Quartile gestrichelt
     for i, (lab, r) in enumerate(runs.items()):
         for ax, q in ((axs[0], r.temp_age_q), (axs[1], r.pann_age_q)):
-            ax.fill_between(r.age, q[0], q[2], color=cols[i % len(cols)], alpha=0.25, lw=0)
-            ax.plot(r.age, q[1], color=cols[i % len(cols)], lw=1.8, label=lab)
+            if i == 0:
+                ax.fill_between(r.age, q[0], q[2], color="0.85", lw=0, label=f"{lab} (25–75 %)")
+                ax.plot(r.age, q[1], color="black", lw=1.6, label=f"{lab} (Median)")
+            else:
+                col = cols[(i - 1) % len(cols)]
+                ax.plot(r.age, q[1], color=col, lw=1.3, label=lab)
+                ax.plot(r.age, q[0], color=col, lw=0.7, ls="--")
+                ax.plot(r.age, q[2], color=col, lw=0.7, ls="--")
     axs[0].set_ylabel(T_LABEL)
     axs[1].set_ylabel(P_LABEL)
     axs[1].set_xlabel("Age [cal a BP]")
     axs[0].set_title("(a) Temperature", loc="left", fontweight="bold")
     axs[1].set_title("(b) Precipitation", loc="left", fontweight="bold")
-    axs[0].legend(fontsize=8)
+    axs[0].legend(fontsize=7, ncol=2, loc="upper left")
     fig.tight_layout()
     return _save(fig, outdir, name)
 
@@ -281,7 +289,8 @@ def plot_weights_comparison(runs: dict[str, Results], taxa_names, outdir: Path, 
         lo, hi = np.quantile(w, [0.25, 0.75], axis=0)
         y = np.arange(K) + i * h
         ax.barh(y, med, height=h, label=lab, xerr=[med - lo, hi - med], error_kw=dict(lw=0.6))
-    ax.axvline(1 / K, color="k", lw=1)
+    ax.axvline(1 / K, color="k", lw=1, label="1/K")
+    ax.axvline(beta(0.5, 0.5 * (K - 1)).median(), color="k", lw=1, ls="--", label="Prior-Median Dir(0,5)")
     ax.set_yticks(np.arange(K) + 0.4 - h / 2)
     ax.set_yticklabels(taxa_names, fontsize=7)
     ax.invert_yaxis()
