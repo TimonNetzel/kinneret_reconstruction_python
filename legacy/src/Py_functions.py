@@ -37,7 +37,7 @@ def post_processing(posterior,age,depth,burn_in,sample_length,thin_size,nnet_fit
     ##------------------------------------------------------------------------------
 
     # thinning
-    which_samples = np.linspace(burn_in,sample_length-1,(sample_length-burn_in)/thin_size, dtype=np.int32)
+    which_samples = np.linspace(burn_in,sample_length-1,int((sample_length-burn_in)/thin_size), dtype=np.int32)
 
     ct1 = -1
     ct2 = -1
@@ -279,10 +279,10 @@ def post_processing(posterior,age,depth,burn_in,sample_length,thin_size,nnet_fit
     prior_pann_ci_size = np.empty(num_biomes)
     post_pann_ci_size = np.empty(num_biomes)
     for i in np.arange(0,num_biomes):
-        prior_temp_ci_size[i] = np.diff(np.quantile(tf_prior_temp_sample[:,i], q=[0.025, 0.975]))
-        post_temp_ci_size[i] = np.diff(np.quantile(tf_post_temp[:,i], q=[0.025, 0.975]))
-        prior_pann_ci_size[i] = np.diff(np.quantile(tf_prior_pann_sample[:,i], q=[0.025, 0.975]))
-        post_pann_ci_size[i] = np.diff(np.quantile(tf_post_pann[:,i], q=[0.025, 0.975]))
+        prior_temp_ci_size[i] = np.diff(np.quantile(tf_prior_temp_sample[:,i], q=[0.025, 0.975]))[0]
+        post_temp_ci_size[i] = np.diff(np.quantile(tf_post_temp[:,i], q=[0.025, 0.975]))[0]
+        prior_pann_ci_size[i] = np.diff(np.quantile(tf_prior_pann_sample[:,i], q=[0.025, 0.975]))[0]
+        post_pann_ci_size[i] = np.diff(np.quantile(tf_post_pann[:,i], q=[0.025, 0.975]))[0]
 
     
     # array with the posterior taxa weights

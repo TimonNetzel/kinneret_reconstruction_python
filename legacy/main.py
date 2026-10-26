@@ -5,7 +5,7 @@ import os
 import sys
 
 import pybind11 # this package is needed to bind the C++ function from src/Pycpp_functions.cpp to python.
-os.system("g++ -O3 -Wall -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` src/Pycpp_functions.cpp -o src/pycpp`python3-config --extension-suffix`")
+os.system("g++ -O3 -Wall -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` src/Pycpp_functions.cpp -o src/pycpp`python3 -c \"import sysconfig; print(sysconfig.get_config_var('EXT_SUFFIX'))\"`")
 
 # import cpp functions
 sys.path.append('src') 

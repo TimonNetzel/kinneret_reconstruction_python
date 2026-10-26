@@ -21,9 +21,10 @@ post_process = np.load("data/out/post_process.npz")
 
 
 # define the same colormap as the terrain colors in R
+from matplotlib.colors import ListedColormap
+from matplotlib.lines import Line2D
 terrain_colors_rgb = np.load("data/in/terrain_colors.npz")
-terrain_colors = cm.get_cmap(lut=500)
-terrain_colors.colors = terrain_colors_rgb["terrain_colors_rgb"].T
+terrain_colors = ListedColormap(terrain_colors_rgb["terrain_colors_rgb"].T)
 
 
 # define ylims of both climate variables
@@ -139,7 +140,7 @@ post_weights = post_process["post_weights"]
 plt.figure(figsize=(8, 8))
 plt.subplots_adjust(left=0.3, right=0.95, top=0.9, bottom=0.05)
 
-bplot = plt.boxplot(post_weights, vert=False, labels=taxa_names, notch=True, patch_artist=True, medianprops=dict(color="black"),whis=None)
+bplot = plt.boxplot(post_weights, vert=False, tick_labels=taxa_names, notch=True, patch_artist=True, medianprops=dict(color="black"),whis=None)
 plt.xlim([0, 0.25])
 plt.title("Posterior and prior taxa weights",loc = "left", fontweight="bold")
 # fill with colors
@@ -181,12 +182,11 @@ for i in np.arange(dims):
 
 
 # plot
+contour_legend = [Line2D([], [], color="k", linestyle="dashed", label="Prior"), Line2D([], [], color="k", label="Posterior")]
 fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(15, 5)) 
 
 cs1 = axs[0].contour(temp_range,x2, b1_give_c_interpol, levels=np.arange(0.5,1), colors='k',antialiased = True,linestyles = 'dashed')
 cs2 = axs[0].contour(temp_range,x2, post_tf_probs[0,:,:], levels=np.arange(0.5,1), colors='k',antialiased = True)
-cs1.collections[0].set_label("Prior")
-cs2.collections[0].set_label("Posterior")
 axs[0].clabel(cs1, inline=0, fontsize=11, fmt='%1.1f')
 axs[0].clabel(cs2, inline=0, fontsize=11, fmt='%1.1f')
 axs[0].set_xlim(-10, 30)
@@ -194,31 +194,27 @@ axs[0].set_ylim(0, 1500)
 axs[0].set_ylabel("$\mathregular{P_{ANN}}$ [mm]")
 axs[0].set_xlabel("$\mathregular{T_{DJF}}$ [°C]")
 axs[0].set_title("(a) "+ biome_names[0]+" probabilites",loc = "left", fontweight="bold")
-axs[0].legend()
+axs[0].legend(handles=contour_legend)
 
 cs1 = axs[1].contour(temp_range,x2, b2_give_c_interpol, levels=np.arange(0.5,1), colors='k',antialiased = True,linestyles = 'dashed')
 cs2 = axs[1].contour(temp_range,x2, post_tf_probs[1,:,:], levels=np.arange(0.5,1), colors='k',antialiased = True)
-cs1.collections[0].set_label("Prior")
-cs2.collections[0].set_label("Posterior")
 axs[1].clabel(cs1, inline=0, fontsize=11, fmt='%1.1f')
 axs[1].clabel(cs2, inline=0, fontsize=11, fmt='%1.1f')
 axs[1].set_xlim(-10, 30)
 axs[1].set_ylim(0, 1500)
 axs[1].set_xlabel("$\mathregular{T_{DJF}}$ [°C]")
 axs[1].set_title("(b) "+ biome_names[1]+" probabilites",loc = "left", fontweight="bold")
-axs[1].legend()
+axs[1].legend(handles=contour_legend)
 
 cs1 = axs[2].contour(temp_range,x2, b3_give_c_interpol, levels=np.arange(0.5,1), colors='k',antialiased = True,linestyles = 'dashed')
 cs2 = axs[2].contour(temp_range,x2, post_tf_probs[2,:,:], levels=np.arange(0.5,1), colors='k',antialiased = True)
-cs1.collections[0].set_label("Prior")
-cs2.collections[0].set_label("Posterior")
 axs[2].clabel(cs1, inline=0, fontsize=11, fmt='%1.1f')
 axs[2].clabel(cs2, inline=0, fontsize=11, fmt='%1.1f')
 axs[2].set_xlim(-10, 30)
 axs[2].set_ylim(0, 1500)
 axs[2].set_xlabel("$\mathregular{T_{DJF}}$ [°C]")
 axs[2].set_title("(c) "+ biome_names[2]+" probabilites",loc = "left", fontweight="bold")
-axs[2].legend()
+axs[2].legend(handles=contour_legend)
 
 plt.tight_layout()
 plt.savefig("plots/transfer_functions_2D_dists.pdf")
