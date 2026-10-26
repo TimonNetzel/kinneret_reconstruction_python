@@ -1,0 +1,17 @@
+# Standardeinstellungen des Pakets: alle Korrekturen, log-Gamma-Vorschlag, Quartile aus den Stichproben
+output_dir = "results/standard"
+
+[sampler]
+kernel = "corrected"
+n_chains = 4
+sample_length = 2000000
+burn_in = 500000
+thin = 150
+seed = 2023
+dirichlet_hastings_fix = true
+weights_proposal = "log_gamma"
+exact_gamma_moments = true
+tf_bound_probs = [0.05, 0.95]
+
+[postprocess]
+quantile_method = "samples"

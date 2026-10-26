@@ -44,6 +44,8 @@ def git_revision(path: Path) -> str:
 
 
 def _toml_value(v) -> str:
+    if isinstance(v, (list, tuple)):
+        return "[" + ", ".join(_toml_value(x) for x in v) + "]"
     if isinstance(v, bool):
         return "true" if v else "false"
     if isinstance(v, (int, float)):
@@ -142,8 +144,9 @@ def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
         acceptance_rate=post.acceptance_rate.tolist(), n_samples_post=int(post.pooled("expl_variance").shape[0]),
         diagnostics_problems=bad,
     )
-    if "min_log_weight" in post.meta:
-        meta["min_log_weight"] = post.meta["min_log_weight"]
+    for k in ("min_log_weight", "acceptance_rate_c", "final_step_z", "final_tf_scale"):
+        if k in post.meta:
+            meta[k] = post.meta[k]
     (outdir / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
     if cfg.report:

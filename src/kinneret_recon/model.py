@@ -30,7 +30,7 @@ class Setup:
     pann_rate: float
     dirichlet_spread: float
     jeffreys: np.ndarray
-    tf_quantiles_temp: np.ndarray  # (B, 3): 5 %, 50 %, 95 %
+    tf_quantiles_temp: np.ndarray  # (B, 3): untere Grenze, Median, obere Grenze
     tf_quantiles_pann: np.ndarray
     tf_sd: np.ndarray  # (2B,)
     tf_lower: np.ndarray  # (2B,)
@@ -179,8 +179,9 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
     sd_t = np.empty(B)
     sd_p = np.empty(B)
     for b in range(B):
-        q_t[b] = weighted_quantiles(t_range, biome_tf_temp[b], np.array([0.05, 0.5, 0.95]))
-        q_p[b] = weighted_quantiles(p_range, biome_tf_pann[b], np.array([0.05, 0.5, 0.95]))
+        probs = np.array([cfg.tf_bound_probs[0], 0.5, cfg.tf_bound_probs[1]])
+        q_t[b] = weighted_quantiles(t_range, biome_tf_temp[b], probs)
+        q_p[b] = weighted_quantiles(p_range, biome_tf_pann[b], probs)
         e_t = np.matmul(t_range, biome_tf_temp[b])
         e_p = np.matmul(p_range, biome_tf_pann[b])
         sd_t[b] = np.sqrt(np.matmul((t_range - e_t) ** 2, biome_tf_temp[b])) * scale
@@ -197,7 +198,7 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         ap_age=ap_age,
         pann_shape=pann_shape,
         pann_rate=pann_rate,
-        dirichlet_spread=float(cfg.dirichlet_spread if cfg.dirichlet_spread is not None else K**2),
+        dirichlet_spread=float(cfg.dirichlet_spread_factor * K**2),
         jeffreys=np.repeat(0.5, K),
         tf_quantiles_temp=q_t,
         tf_quantiles_pann=q_p,

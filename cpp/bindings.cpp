@@ -64,6 +64,9 @@ static kr::Options make_options(py::dict d) {
     if (d.contains("use_calibration")) o.use_calibration = d["use_calibration"].cast<bool>();
     if (d.contains("use_tf_likelihood")) o.use_tf_likelihood = d["use_tf_likelihood"].cast<bool>();
     if (d.contains("use_taxa_prior")) o.use_taxa_prior = d["use_taxa_prior"].cast<bool>();
+    if (d.contains("log_gamma_rw")) o.log_gamma_rw = d["log_gamma_rw"].cast<bool>();
+    if (d.contains("adapt_until")) o.adapt_until = d["adapt_until"].cast<int64_t>();
+    if (d.contains("target_accept")) o.target_accept = d["target_accept"].cast<double>();
     return o;
 }
 
@@ -93,7 +96,10 @@ static py::dict run_chain(py::dict model, py::dict options, darr init_w, darr in
     r["recent_pann"] = to_array(out.recent_pann, {n});
     r["log_target"] = to_array(out.log_target, {n});
     r["n_accepted"] = to_array(out.n_accepted, {n});
+    r["n_accepted_c"] = to_array(out.n_accepted_c, {n});
     r["min_log_weight"] = out.min_log_weight;
+    r["final_step_z"] = out.final_step_z;
+    r["final_tf_scale"] = out.final_tf_scale;
     return r;
 }
 

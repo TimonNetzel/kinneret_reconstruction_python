@@ -13,18 +13,30 @@ from typing import Any
 class SamplerConfig:
     # "corrected": ueberarbeiteter Sampler; "legacy": bitidentischer Original-Sampler (nur 1 Kette)
     kernel: str = "corrected"
-    sample_length: int = 1_000_000
-    burn_in: int = 250_000
-    thin: int = 75
+    # Voreinstellung fuer den ueberarbeiteten Sampler (log-Gamma-Vorschlag): 4 x 10 000 Stichproben,
+    # min. ESS > 10 000 fuer die Kinneret-Daten
+    sample_length: int = 2_000_000
+    burn_in: int = 500_000
+    thin: int = 150
     n_chains: int = 4
     seed: int = 2023
     # Korrekturen (nur fuer kernel = "corrected"); jede einzeln abschaltbar
     dirichlet_hastings_fix: bool = True  # kappa in der Hastings-Korrektur der Taxa-Gewichte
     exact_gamma_moments: bool = True  # Gamma-Parameter des P0-Priors analytisch statt per Gitter
     dispersed_init: bool = True  # zufaellige, gestreute Startwerte je Kette (fuer R-hat)
+    # Vorschlag fuer die Taxa-Gewichte: "dirichlet" (Random-Walk Dir(kappa w) wie im Original) oder
+    # "log_gamma" (Random-Walk auf log y mit w = y / sum(y), y ~ Gamma(0,5); gleiche Zielverteilung,
+    # Schrittweiten werden im Burn-in angepasst). Nur fuer kernel = "corrected".
+    weights_proposal: str = "log_gamma"
+    target_accept: float = 0.234
     # Modell- und Abstimmungsparameter
-    dirichlet_spread: float | None = None  # None: num_taxa**2 wie im Paper
+    # Streuungsparameter des Dirichlet-Vorschlags: kappa = dirichlet_spread_factor * num_taxa**2
+    # (Paper: Faktor 1). Mit korrekter Hastings-Korrektur aendert er nur die Effizienz, nicht die
+    # Zielverteilung; Faktor 4 ergibt hier ~14 % Akzeptanz und die beste Durchmischung.
+    dirichlet_spread_factor: float = 4.0
     tf_proposal_scale: float | None = None  # Faktor auf die TF-Standardabw.; None: 2.38**2/num_taxa wie im Original
+    # Trunkierung der TF-Stichproben: Quantile der Prior-Randverteilungen je Biom (Paper: 5 % und 95 %)
+    tf_bound_probs: tuple[float, float] = (0.05, 0.95)
     beta_shape1: float = 3.0
     beta_shape2: float = 3.0
     # Terme der Zielverteilung (nur fuer Validierungslaeufe abschalten)
@@ -56,7 +68,10 @@ class Config:
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "Config":
         d = dict(d)
-        sampler = SamplerConfig(**d.pop("sampler", {}))
+        sd = dict(d.pop("sampler", {}))
+        if "tf_bound_probs" in sd:
+            sd["tf_bound_probs"] = tuple(sd["tf_bound_probs"])
+        sampler = SamplerConfig(**sd)
         post = PostprocessConfig(**d.pop("postprocess", {}))
         cfg = cls(sampler=sampler, postprocess=post, **d)
         cfg.validate()
@@ -75,6 +90,13 @@ class Config:
             raise ValueError("der Original-Sampler laeuft nur mit einer Kette (n_chains = 1)")
         if not 0 <= s.burn_in < s.sample_length or s.thin < 1:
             raise ValueError("ungueltige Werte fuer sample_length, burn_in oder thin")
+        if s.weights_proposal not in ("dirichlet", "log_gamma"):
+            raise ValueError("sampler.weights_proposal muss 'dirichlet' oder 'log_gamma' sein")
+        if s.weights_proposal == "log_gamma" and (s.kernel == "legacy" or not s.dirichlet_hastings_fix):
+            raise ValueError("weights_proposal = 'log_gamma' nur mit kernel = 'corrected' und dirichlet_hastings_fix")
+        lo, hi = s.tf_bound_probs
+        if not 0.0 <= lo < 0.5 < hi <= 1.0:
+            raise ValueError("sampler.tf_bound_probs muss (unteres, oberes) Quantil mit 0 <= u < 0,5 < o <= 1 sein")
         if self.postprocess.quantile_method not in ("samples", "kde"):
             raise ValueError("postprocess.quantile_method muss 'samples' oder 'kde' sein")
 
@@ -88,6 +110,11 @@ def legacy_config(**overrides: Any) -> Config:
             dirichlet_hastings_fix=False,
             exact_gamma_moments=False,
             dispersed_init=False,
+            weights_proposal="dirichlet",
+            dirichlet_spread_factor=1.0,
+            sample_length=1_000_000,
+            burn_in=250_000,
+            thin=75,
         ),
         postprocess=PostprocessConfig(quantile_method="kde"),
     )

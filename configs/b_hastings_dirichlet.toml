@@ -1,0 +1,16 @@
+# Gegenprobe zu B: dieselbe Zielverteilung mit dem Dirichlet-Vorschlag des Originals
+# (korrekte Hastings-Korrektur, kappa = 4 K^2, 5 Mio. Iterationen). Muss mit B uebereinstimmen.
+output_dir = "results/b_hastings_dirichlet"
+
+[sampler]
+kernel = "corrected"
+sample_length = 5000000
+burn_in = 1000000
+thin = 250
+dirichlet_hastings_fix = true
+weights_proposal = "dirichlet"
+dirichlet_spread_factor = 4.0
+exact_gamma_moments = false
+
+[postprocess]
+quantile_method = "kde"

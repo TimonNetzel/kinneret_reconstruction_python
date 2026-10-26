@@ -325,18 +325,31 @@ struct Options {
     bool use_calibration = true;
     bool use_tf_likelihood = true;
     bool use_taxa_prior = true;
+    // Vorschlag fuer die Taxa-Gewichte:
+    //   false: Dirichlet-Random-Walk w' ~ Dir(kappa w), gemeinsam mit c (Schema des Originals)
+    //   true:  Gamma-Erweiterung w = y / sum(y), y_k ~ Gamma(jeffreys_k, 1) (ergibt exakt den Dirichlet-Prior);
+    //          Normal-Random-Walk auf z = log y, abwechselnd mit einem eigenen Schritt fuer c.
+    //          Schrittweiten werden waehrend der ersten adapt_until Iterationen an target_accept angepasst
+    //          und danach eingefroren.
+    bool log_gamma_rw = false;
+    int64_t adapt_until = 0;
+    double target_accept = 0.234;
 };
 
 struct State {
     vector<double> log_w, w, c;
+    vector<double> z;  // log y (nur fuer log_gamma_rw)
     double r2 = 0, t0 = 0, p0 = 0;
     double log_target = NEG_INF;
 };
 
 struct ChainOutput {
     vector<double> taxa_weights, tf_sample, expl_variance, recent_temp, recent_pann, log_target;
-    vector<int64_t> n_accepted;  // kumulierte Anzahl akzeptierter Vorschlaege bis zur gespeicherten Iteration
-    double min_log_weight = 0.0;  // kleinstes je erreichtes log(w_k) (Diagnose fuer Randnaehe)
+    vector<int64_t> n_accepted;    // kumulierte akzeptierte Vorschlaege (gemeinsam bzw. fuer w) bis zur Iteration
+    vector<int64_t> n_accepted_c;  // dasselbe fuer den eigenen c-Schritt (nur log_gamma_rw)
+    double min_log_weight = 0.0;   // kleinstes je erreichtes log(w_k) (Diagnose fuer Randnaehe)
+    double final_step_z = 0.0;     // Schrittweite des z-Random-Walks nach der Anpassung
+    double final_tf_scale = 1.0;   // Faktor auf die TF-Schrittweiten nach der Anpassung
 };
 
 class Sampler {
@@ -352,7 +365,15 @@ public:
             lt += log_norm_pdf(s.t0, m_.temp_mean, m_.temp_sd);
             lt += log_gamma_pdf(s.p0, m_.pann_shape, m_.pann_rate);
         }
-        if (o_.use_taxa_prior) lt += log_dirichlet(s.log_w, m_.jeffreys);
+        if (o_.use_taxa_prior) {
+            if (o_.log_gamma_rw) {
+                // log-Dichte von z = log y mit y ~ Gamma(a, 1): a z - exp(z) - lgamma(a)
+                for (size_t k = 0; k < s.z.size(); ++k)
+                    lt += m_.jeffreys[k] * s.z[k] - std::exp(s.z[k]) - std::lgamma(m_.jeffreys[k]);
+            } else {
+                lt += log_dirichlet(s.log_w, m_.jeffreys);
+            }
+        }
         if (o_.use_tf_likelihood) {
             const int B = m_.n_biomes;
             for (int b = 0; b < B; ++b)
@@ -374,6 +395,13 @@ public:
             s.log_w[k] = std::log(s.w[k]);
         }
         s.c = c;
+        if (o_.log_gamma_rw) {
+            // Skala so, dass sum(y) dem Erwartungswert sum(jeffreys) entspricht
+            double a0 = 0.0;
+            for (double a : m_.jeffreys) a0 += a;
+            s.z.resize(w.size());
+            for (size_t k = 0; k < w.size(); ++k) s.z[k] = s.log_w[k] + std::log(a0);
+        }
         s.log_target = log_target(s);
         return s;
     }
@@ -394,7 +422,7 @@ public:
         out.tf_sample.reserve(keep.size() * C);
         out.min_log_weight = *std::min_element(cur.log_w.begin(), cur.log_w.end());
 
-        int64_t n_acc = 0;
+        int64_t n_acc = 0, n_acc_c = 0;
         size_t next_keep = 0;
         auto store = [&](int64_t i) {
             while (next_keep < keep.size() && keep[next_keep] == i) {
@@ -405,6 +433,7 @@ public:
                 out.recent_pann.push_back(cur.p0);
                 out.log_target.push_back(cur.log_target);
                 out.n_accepted.push_back(n_acc);
+                out.n_accepted_c.push_back(n_acc_c);
                 ++next_keep;
             }
         };
@@ -414,36 +443,80 @@ public:
         prop.log_w.resize(K);
         prop.w.resize(K);
         prop.c.resize(C);
+        prop.z.resize(cur.z.size());
         vector<double> log_y(K);
 
-        for (int64_t i = 1; i < n_iter; ++i) {
-            // Taxa-Gewichte: w' ~ Dir(kappa * w), im Log-Raum gezogen
-            for (size_t k = 0; k < K; ++k) log_y[k] = rng.log_gamma(std::max(m_.dirichlet_spread * cur.w[k], 1e-300));
-            const double lse = logsumexp(log_y);
-            for (size_t k = 0; k < K; ++k) {
-                prop.log_w[k] = log_y[k] - lse;
-                prop.w[k] = std::exp(prop.log_w[k]);
-            }
-            // Klimawerte der Transferfunktionen: c' ~ TN(c, sd, [lower, upper])
-            double log_hastings_c = 0.0;
-            for (size_t j = 0; j < C; ++j) {
-                prop.c[j] = truncnorm_sample(cur.c[j], m_.tf_sd[j], m_.tf_lower[j], m_.tf_upper[j], rng);
-                log_hastings_c += log_truncnorm_pdf(cur.c[j], prop.c[j], m_.tf_sd[j], m_.tf_lower[j], m_.tf_upper[j]) -
-                                  log_truncnorm_pdf(prop.c[j], cur.c[j], m_.tf_sd[j], m_.tf_lower[j], m_.tf_upper[j]);
-            }
+        // MH-Entscheidung fuer den Vorschlag in prop; gibt (akzeptiert, Akzeptanzwahrscheinlichkeit) zurueck
+        auto mh_step = [&](double log_hastings) {
             prop.log_target = log_target(prop);
-
-            const double log_hastings_w = log_q_weights(cur, prop) - log_q_weights(prop, cur);
-            const double log_alpha = prop.log_target - cur.log_target + log_hastings_w + log_hastings_c;
-
-            if (std::log(rng.uniform()) < log_alpha) {
+            const double log_alpha = prop.log_target - cur.log_target + log_hastings;
+            const bool ok = std::log(rng.uniform()) < log_alpha;
+            if (ok) {
                 std::swap(cur, prop);
-                ++n_acc;
-                const double mlw = *std::min_element(cur.log_w.begin(), cur.log_w.end());
-                out.min_log_weight = std::min(out.min_log_weight, mlw);
+                out.min_log_weight = std::min(out.min_log_weight, *std::min_element(cur.log_w.begin(), cur.log_w.end()));
+            }
+            return std::make_pair(ok, std::isnan(log_alpha) ? 0.0 : std::exp(std::min(0.0, log_alpha)));
+        };
+        // c' ~ TN(c, scale * sd, [lower, upper]); gibt die Log-Hastings-Korrektur zurueck
+        auto propose_c = [&](double scale) {
+            double lh = 0.0;
+            for (size_t j = 0; j < C; ++j) {
+                const double sd = m_.tf_sd[j] * scale;
+                prop.c[j] = truncnorm_sample(cur.c[j], sd, m_.tf_lower[j], m_.tf_upper[j], rng);
+                lh += log_truncnorm_pdf(cur.c[j], prop.c[j], sd, m_.tf_lower[j], m_.tf_upper[j]) -
+                      log_truncnorm_pdf(prop.c[j], cur.c[j], sd, m_.tf_lower[j], m_.tf_upper[j]);
+            }
+            return lh;
+        };
+
+        double log_step_z = std::log(2.38 / std::sqrt(static_cast<double>(K))), log_scale_c = 0.0;
+        // Obergrenze der TF-Schrittweite: hoechstens die Breite des Trunkierungsbereichs (bei nahezu flacher
+        // Zielverteilung wuerde die Anpassung sie sonst unbegrenzt vergroessern)
+        double max_log_scale_c = NEG_INF;
+        for (size_t j = 0; j < C; ++j)
+            max_log_scale_c = std::max(max_log_scale_c, std::log((m_.tf_upper[j] - m_.tf_lower[j]) / m_.tf_sd[j]));
+
+        for (int64_t i = 1; i < n_iter; ++i) {
+            if (!o_.log_gamma_rw) {
+                // gemeinsamer Vorschlag wie im Original: w' ~ Dir(kappa * w) (im Log-Raum gezogen) und c'
+                for (size_t k = 0; k < K; ++k) log_y[k] = rng.log_gamma(std::max(m_.dirichlet_spread * cur.w[k], 1e-300));
+                const double lse = logsumexp(log_y);
+                for (size_t k = 0; k < K; ++k) {
+                    prop.log_w[k] = log_y[k] - lse;
+                    prop.w[k] = std::exp(prop.log_w[k]);
+                }
+                const double lh_c = propose_c(1.0);
+                const double lh_w = log_q_weights(cur, prop) - log_q_weights(prop, cur);
+                n_acc += mh_step(lh_w + lh_c).first;
+            } else {
+                const bool adapting = i < o_.adapt_until;
+                const double gain = adapting ? std::pow(1.0 + i / 100.0, -0.6) : 0.0;  // Robbins-Monro
+                // (1) Taxa-Gewichte: z' = z + s * N(0, 1), symmetrisch -> keine Hastings-Korrektur
+                const double sz = std::exp(log_step_z);
+                for (size_t k = 0; k < K; ++k) prop.z[k] = cur.z[k] + sz * rng.normal();
+                const double lse = logsumexp(prop.z);
+                for (size_t k = 0; k < K; ++k) {
+                    prop.log_w[k] = prop.z[k] - lse;
+                    prop.w[k] = std::exp(prop.log_w[k]);
+                }
+                prop.c = cur.c;
+                const auto rw = mh_step(0.0);
+                n_acc += rw.first;
+                // (2) Klimawerte der Transferfunktionen bei festen Gewichten
+                prop.z = cur.z;
+                prop.log_w = cur.log_w;
+                prop.w = cur.w;
+                const auto rc = mh_step(propose_c(std::exp(log_scale_c)));
+                n_acc_c += rc.first;
+                if (adapting) {
+                    log_step_z += gain * (rw.second - o_.target_accept);
+                    log_scale_c = std::min(max_log_scale_c, log_scale_c + gain * (rc.second - o_.target_accept));
+                }
             }
             store(i);
         }
+        out.final_step_z = std::exp(log_step_z);
+        out.final_tf_scale = std::exp(log_scale_c);
         return out;
     }
 

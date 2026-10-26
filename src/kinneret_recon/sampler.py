@@ -118,6 +118,9 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
         use_calibration=cfg.use_calibration,
         use_tf_likelihood=cfg.use_tf_likelihood,
         use_taxa_prior=cfg.use_taxa_prior,
+        log_gamma_rw=cfg.weights_proposal == "log_gamma",
+        adapt_until=cfg.burn_in,
+        target_accept=cfg.target_accept,
     )
     ss = np.random.SeedSequence(cfg.seed)
     init_rng = np.random.default_rng(ss.spawn(1)[0])
@@ -136,6 +139,7 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
 
     stack = lambda k: np.stack([r[k] for r in res])
     n_acc = stack("n_accepted")
+    n_acc_c = stack("n_accepted_c")
     return Posterior(
         iterations=keep, burn_in=cfg.burn_in,
         taxa_weights=stack("taxa_weights"), tf_sample=stack("tf_sample"),
@@ -143,7 +147,11 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
         recent_pann=stack("recent_pann"), log_target=stack("log_target"),
         acceptance_rate=n_acc[:, -1] / max(keep[-1], 1),
         meta=dict(kernel="corrected", options=options, chain_seeds=chain_seeds,
-                  min_log_weight=[r["min_log_weight"] for r in res], n_accepted=n_acc),
+                  min_log_weight=[r["min_log_weight"] for r in res], n_accepted=n_acc,
+                  **({"acceptance_rate_c": (n_acc_c[:, -1] / max(keep[-1], 1)).tolist(),
+                      "final_step_z": [r["final_step_z"] for r in res],
+                      "final_tf_scale": [r["final_tf_scale"] for r in res]}
+                     if cfg.weights_proposal == "log_gamma" else {})),
     )
 
 
