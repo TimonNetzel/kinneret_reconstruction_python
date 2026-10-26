@@ -1,6 +1,6 @@
 # Prüfbericht: Code zu Netzel et al. (2025), Clim. Past 21, 357–380
 
-Stand: 26.10.2026. Geprüft wurde der Code im Tag `v1.0-paper`.
+Stand: 26.10.2026. Geprüft wurde der Code der Publikation: Commit `782c6a0` (Stand von `main`, lokal getaggt als `v1.0-paper`).
 
 > **Einschränkung:** Der Volltext des Papers war in der Arbeitsumgebung nicht abrufbar (Netzwerkfreigabe
 > für `cp.copernicus.org` fehlt). Geprüft wurde daher der Code **in sich**: mathematische Korrektheit
@@ -22,6 +22,7 @@ Stand: 26.10.2026. Geprüft wurde der Code im Tag `v1.0-paper`.
 | 8 | Schrittweite nach Rosenthal falsch skaliert (Varianz- statt Sd-Faktor) | Effizienz | keine (nur Mischungsgeschwindigkeit) |
 | 9 | Kommentar „# wrong“ beim Klimagitter in `load_data.py` | Kommentar | keine. Die Orientierung ist korrekt (Test `test_grid_orientation`) |
 | 10 | Laufzeit, Speicher, Kompatibilität (NumPy 2, Matplotlib ≥ 3.9) | Technik | Original läuft mit aktuellen Bibliotheken nicht mehr |
+| 11 | Taxa-Gewichte hängen stark von der Prior-Konzentration α ab (Dir(α)) | Empfindlichkeit | Rekonstruktion robust (≤ 0,1 °C, ≤ 10 mm); Höhe und Rangfolge der Gewichte nicht |
 
 ## 2. Vorgehen
 
@@ -78,8 +79,9 @@ informativerer Prior als der angegebene.
   Prior-Median (≈ 0,014–0,015, siehe Abbildung unten). Klar von den Daten bestimmt sind nur
   *Amaranthaceae* (höher, Median 0,019), *Olea europaea* (niedriger, 0,007) und schwächer
   *Quercus ithaburensis type* (0,013). Die im Abstract genannte hohe Gewichtung von *Quercus
-  calliprinos type* (Original 0,029) **verschwindet** (0,015 ≈ Prior). Die Aussagen zu
-  *Amaranthaceae* und *Olea* bleiben qualitativ bestehen.
+  calliprinos type* (Original 0,029) **verschwindet** unter Dir(0,5) (0,015 ≈ Prior). Mit einem
+  weniger extremen Prior (α ≥ 1) kehrt sie zurück (siehe 3.6). Die Aussagen zu *Amaranthaceae* und
+  *Olea* sind unter allen geprüften Priors stabil.
 
 ![Taxa-Gewichte](abbildungen/vergleich_taxa_gewichte.png)
 
@@ -141,6 +143,38 @@ robust. Die Wahl sollte im Paper aber begründet werden.
 - Das Paket braucht im Legacy-Modus 37 s für das MCMC und 10 s für die Auswertung, mit
   bitidentischen Ergebnissen. Im Standardlauf mit 4 Ketten × 2 Mio. Iterationen sind es 93 s.
 
+### 3.6 Prior der Taxa-Gewichte (Befund 11)
+
+Weil die Daten die Gewichte nur schwach bestimmen, hängt deren Posterior stark von der Konzentration
+α des Priors Dir(α, …, α) ab. Geprüft wurden α = 0,5 (Paper), α = 1 (gleichverteilt auf dem
+Simplex), α = 2 und ein **hierarchischer Prior**, bei dem α mitgeschätzt wird
+(log α ~ N(log 1, 1), also 95 % der Prior-Masse zwischen 0,14 und 7,1).
+
+| Prior | T Median | P Median | IQR P | R² | Median w: *Olea* / *Q. calliprinos* / *Amaranthaceae* | P(w < 0,001) |
+|---|---|---|---|---|---|---|
+| Original (fehlerhaft) | 9,87 °C | 444,9 mm | 131,5 | 0,64 | 0,011 / 0,029 / 0,028 | 0,01–0,02 |
+| Dir(0,5) | 9,94 | 438,6 | 149,7 | 0,55 | 0,007 / 0,015 / 0,019 | 0,12–0,15 |
+| Dir(1) | 9,88 | 443,6 | 136,2 | 0,61 | 0,010 / 0,024 / 0,026 | 0,03–0,05 |
+| Dir(2) | 9,83 | 448,6 | 123,6 | 0,68 | 0,013 / 0,030 / 0,030 | < 0,01 |
+| Dir(α), α geschätzt | 9,90 | 443,0 | 139,0 | 0,60 | 0,010 / 0,022 / 0,024 | 0,09–0,12 |
+
+Der hierarchische Lauf schätzt **α = 0,82** (95 %: 0,15–4,6). Die Daten schließen große α also
+etwas aus, legen α aber nicht fest. Dafür waren 4 Ketten × 8 Mio. Iterationen nötig, weil α an
+die kleinen Gewichte gekoppelt ist und langsam mischt (R̂ 1,002, ESS(α) 2064).
+
+**Folgerungen:**
+- Die Klimarekonstruktion ist gegenüber dem Prior robust: Die Mediane liegen innerhalb von 0,11 °C
+  und 10 mm. Die Unsicherheit von P schwankt je nach Prior um etwa ±10 %.
+- Auch die Information über die Transferfunktionen hängt nicht vom Prior ab: Für das mediterrane
+  Biom liegt das CI-Verhältnis bei allen Priors bei 0,77 bis 0,82, für die anderen beiden bei etwa 1.
+- Die Rangfolge der Gewichte (*Amaranthaceae* und *Q. calliprinos* vorn, *Olea* hinten) ist ab
+  α ≥ 1 und im hierarchischen Modell stabil. Die **Beträge** hängen dagegen vom Prior ab und sollten
+  nur mit Angabe des Priors berichtet werden.
+- **Empfehlung:** der hierarchische Prior (`configs/g_dir_hierarchisch.toml`). Er legt α nicht
+  willkürlich fest und gibt die Unsicherheit über α ehrlich weiter.
+
+![Taxa-Gewichte unter verschiedenen Priors](abbildungen/vergleich_prior_gewichte.png)
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |
@@ -152,6 +186,9 @@ robust. Die Wahl sollte im Paper aber begründet werden.
 | C | + exakter Gamma-Prior | 9,94 | 438,6 | 2,49 | 150,9 | 12 523 | 1,000 |
 | **Standard** | + Quartile aus Stichproben | 9,94 | 438,6 | 2,47 | 149,7 | 12 523 | 1,000 |
 | E | Standard, TF-Grenzen 1/99 % | 9,95 | 445,3 | 2,65 | 156,7 | 12 743 | 1,000 |
+| F1 | Standard, Prior Dir(1) | 9,88 | 443,6 | 2,39 | 136,2 | 24 522 | 1,000 |
+| F2 | Standard, Prior Dir(2) | 9,83 | 448,6 | 2,28 | 123,6 | 27 115 | 1,000 |
+| G | Standard, Dir(α) hierarchisch, 8 Mio. It. | 9,90 | 443,0 | 2,42 | 139,0 | 1880 | 1,002 |
 
 Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c configs/<name>.toml`.
 
@@ -163,7 +200,8 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
   um höchstens 0,17 °C und 12 mm. Das liegt weit innerhalb der Unsicherheitsbänder. Die
   Unsicherheit von P ist aber um etwa 15 % unterschätzt.
 - **Die Aussagen zu den Taxa-Gewichten müssen überarbeitet werden.** Die Daten informieren nur
-  über wenige Taxa (*Amaranthaceae* ↑, *Olea* ↓). Die übrigen Gewichte folgen dem Prior.
+  schwach über die Gewichte. Robust sind *Amaranthaceae* ↑ und *Olea* ↓, ab α ≥ 1 auch *Q.
+  calliprinos* ↑. Die Beträge hängen vom Prior ab, der deshalb hierarchisch gewählt werden sollte.
 - **Die Aussagen zur Verengung der Transferfunktionen müssen überarbeitet werden.** Nur das
   mediterrane Biom wird durch die Daten eingeschränkt (~20 %).
 
@@ -171,9 +209,9 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
 
 1. Abgleich mit den Gleichungen des Papers (Volltext nötig), insbesondere: Ist das Fehlen von κ
    eventuell beabsichtigt und im Paper so formuliert? Ist die Wahl der Trunkierung dort begründet?
-2. Fachliche Bewertung der Taxa-Gewichte: Ist ein Dir(0,5)-Prior gewollt, der viele Gewichte nahe
-   null zulässt? Alternative: ein weniger extremer Prior,
-   z. B. Dir(1). In den Stichproben des Standardlaufs liegen 14 % aller Gewichte unter 0,001.
+2. ~~Prior der Taxa-Gewichte~~: geklärt, der Prior muss nicht starr sein. Der hierarchische Prior
+   ist umgesetzt und geprüft (Abschnitt 3.6). Offen ist nur noch, ob er die Standardeinstellung
+   werden soll.
 3. Erratum oder Corrigendum zum Paper erwägen (Taxa-Gewichte, CI-Verhältnisse).
 
 ## Literatur

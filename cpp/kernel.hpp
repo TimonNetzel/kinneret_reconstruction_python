@@ -372,21 +372,7 @@ public:
             lt += log_norm_pdf(s.t0, m_.temp_mean, m_.temp_sd);
             lt += log_gamma_pdf(s.p0, m_.pann_shape, m_.pann_rate);
         }
-        if (o_.use_taxa_prior) {
-            if (o_.log_gamma_rw) {
-                // log-Dichte von z = log y mit y ~ Gamma(a, 1): a z - exp(z) - lgamma(a)
-                if (o_.sample_alpha) {
-                    const double a = std::exp(s.log_alpha), lga = std::lgamma(a);
-                    for (size_t k = 0; k < s.z.size(); ++k) lt += a * s.z[k] - std::exp(s.z[k]) - lga;
-                    lt += log_norm_pdf(s.log_alpha, o_.alpha_prior_mu, o_.alpha_prior_sd);
-                } else {
-                    for (size_t k = 0; k < s.z.size(); ++k)
-                        lt += m_.jeffreys[k] * s.z[k] - std::exp(s.z[k]) - std::lgamma(m_.jeffreys[k]);
-                }
-            } else {
-                lt += log_dirichlet(s.log_w, m_.jeffreys);
-            }
-        }
+        lt += log_prior_weights(s);
         if (o_.use_tf_likelihood) {
             const int B = m_.n_biomes;
             for (int b = 0; b < B; ++b)
@@ -395,6 +381,23 @@ public:
         for (size_t j = 0; j < s.c.size(); ++j)
             if (s.c[j] < m_.tf_lower[j] || s.c[j] > m_.tf_upper[j]) lt = NEG_INF;
         return lt;
+    }
+
+    // Prior-Term der Taxa-Gewichte (haengt nicht von c ab)
+    double log_prior_weights(const State& s) const {
+        if (!o_.use_taxa_prior) return 0.0;
+        if (!o_.log_gamma_rw) return log_dirichlet(s.log_w, m_.jeffreys);
+        // log-Dichte von z = log y mit y ~ Gamma(a, 1): a z - exp(z) - lgamma(a)
+        double lp = 0.0;
+        if (o_.sample_alpha) {
+            const double a = std::exp(s.log_alpha), lga = std::lgamma(a);
+            for (size_t k = 0; k < s.z.size(); ++k) lp += a * s.z[k] - std::exp(s.z[k]) - lga;
+            lp += log_norm_pdf(s.log_alpha, o_.alpha_prior_mu, o_.alpha_prior_sd);
+        } else {
+            for (size_t k = 0; k < s.z.size(); ++k)
+                lp += m_.jeffreys[k] * s.z[k] - std::exp(s.z[k]) - std::lgamma(m_.jeffreys[k]);
+        }
+        return lp;
     }
 
     State make_state(const vector<double>& w, const vector<double>& c) const {
@@ -531,6 +534,7 @@ public:
                 // haengen nur von w ab. Daher: alpha per MH aus p(alpha | w) (S integriert), danach S exakt aus
                 // Gamma(K alpha). Das entkoppelt die Skala von z und alpha.
                 if (o_.use_taxa_prior) {
+                    const double old_prior = log_prior_weights(cur);
                     if (o_.sample_alpha) {
                         double sum_log_w = 0.0;
                         for (size_t k = 0; k < K; ++k) sum_log_w += cur.log_w[k];
@@ -548,7 +552,8 @@ public:
                     for (size_t k = 0; k < K; ++k) a_sum += o_.sample_alpha ? std::exp(cur.log_alpha) : m_.jeffreys[k];
                     const double log_s = rng.log_gamma(a_sum);
                     for (size_t k = 0; k < K; ++k) cur.z[k] = cur.log_w[k] + log_s;
-                    cur.log_target = log_target(cur);
+                    // nur der Prior-Term aendert sich (w und c unveraendert)
+                    cur.log_target += log_prior_weights(cur) - old_prior;
                 }
                 prop.log_alpha = cur.log_alpha;
                 if (adapting) {
