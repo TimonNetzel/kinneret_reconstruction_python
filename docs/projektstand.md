@@ -54,16 +54,26 @@ Rahmen (vom Autor festgelegt):
 | 26.10.2026 | Originalcode bleibt erhalten (`legacy/`, Commit `782c6a0`), Korrekturen kommen ins neue Paket |
 | 26.10.2026 | C++ bleibt für den Sampler; die Auswertung läuft in NumPy und C++ (Dichteschätzung) |
 | 26.10.2026 | Der Prior der Taxa-Gewichte muss nicht starr sein. Der Autor bevorzugt den **hierarchischen Prior** (sauberer) |
+| 27.10.2026 | Rekonstruktion: Mittelwert und Mischverteilung (Gl. 3) als Option. Empfehlung Mittelwert als Standard (Prüfbericht 3.8) |
+| 27.10.2026 | Gl. (14): N_t als Prior wählbar, Standard bleibt „nur Vorschlag“ (sonst doppelte Zählung der TF) |
+| 27.10.2026 | R²-Prior: Beta(3; 3) bleibt, Beta(2,62; 2,62) liefert dasselbe Ergebnis |
+| 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte (nächste Sitzung)
 
-1. **Fragen an den Autor** (aus dem Abgleich, `docs/abgleich_paper.md`):
-   - **Befund 12:** Sollen die Unsicherheitsbänder den Mittelwert der Biom-Klimawerte zeigen (wie
-     bisher) oder die Mischverteilung nach Gl. (3)? Ggf. als Option einbauen.
-   - **Befund 14:** Ist N_t aus Gl. (14) Teil des Modells (Prior von C) oder nur der Vorschlag?
-   - Woher stammen die CRU-Prior-Werte (10,74 ± 2,48 °C, 556 ± 135 mm)? Gebietsmittel?
-   - **Befund 15:** Soll der R²-Prior (3; 3) wie im Code oder (2,62; 2,62) wie in Tab. 2 sein?
-   - **Befund 13:** Stammen die R² = 0,25-Ergebnisse aus der R-Fassung?
+1. **Antworten des Autors zum Abgleich (27.10.2026) eingearbeitet**, siehe Prüfbericht 3.8:
+   - Befund 12: beide Varianten umgesetzt, Empfehlung Mittelwert.
+   - Befund 14: Autor weiß es nicht mehr. N_t als Prior getestet; Empfehlung: nur Vorschlag.
+   - Befund 15: getestet, kein Unterschied; Beta(3; 3) bleibt.
+   - CRU-Prior: Mittel mehrerer Levante-Gitterpunkte. Bewertet; bestimmt das absolute Niveau.
+   - Befund 13: Die Paper-Ergebnisse stammen aus der R-Fassung, Befund 13 betrifft nur Python.
+
+   **Noch zu entscheiden:**
+   - Standard für die Rekonstruktion (Empfehlung Mittelwert).
+   - Den CRU-Prior aus einem festgelegten Einzugsgebiet neu berechnen? Dafür werden die CRU-Daten
+     bzw. die verwendeten Gitterpunkte gebraucht.
+   - Die R-Fassung (Zenodo 8214297) ebenfalls prüfen? Mindestens bei Befund 13 unterscheidet sie
+     sich von der Python-Fassung.
 2. **Standard auf den hierarchischen Prior umstellen:** In `SamplerConfig` steht noch
    `taxa_prior = "fixed"`. Umzustellen sind `taxa_prior = "hierarchical"` und die
    Standardlänge (8 Mio. Iterationen, Burn-in 2 Mio., Ausdünnung 600), danach Tests und README.

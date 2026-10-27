@@ -81,3 +81,17 @@ def test_prior_only_hierarchical_alpha(inputs):
     la = np.log(post.pooled("alpha"))
     assert la.mean() == pytest.approx(0.0, abs=0.15)
     assert la.std() == pytest.approx(1.0, abs=0.12)
+
+
+def test_prior_only_tf_normal_prior(inputs):
+    """Gl. (14) als Prior: ohne Daten muessen die TF-Klimawerte N_t(mu, sigma, [a, b]) folgen."""
+    cfg = SamplerConfig(sample_length=300_000, burn_in=50_000, thin=10, n_chains=4, seed=6, tf_normal_prior=True,
+                        use_calibration=False, use_tf_likelihood=False)
+    setup = build_setup(inputs, cfg)
+    c = sampler.run(setup, cfg).pooled("tf_sample")
+    for j in range(c.shape[1]):
+        a = (setup.tf_lower[j] - setup.tf_mu[j]) / setup.tf_sigma[j]
+        b = (setup.tf_upper[j] - setup.tf_mu[j]) / setup.tf_sigma[j]
+        ref = stats.truncnorm(a, b, loc=setup.tf_mu[j], scale=setup.tf_sigma[j])
+        assert c[:, j].mean() == pytest.approx(ref.mean(), abs=0.05 * ref.std())
+        assert c[:, j].std() == pytest.approx(ref.std(), rel=0.05)

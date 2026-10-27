@@ -57,6 +57,7 @@ class Results:
     post_pann_ci_size: np.ndarray
     post_tf_probs: np.ndarray  # (B, dims_P, dims_T), auf Maximum 1 normiert
     quantile_method: str
+    reconstruction: str = "mean"  # "mean" oder "mixture"
 
     # Stichproben der Rekonstruktion werden nicht gespeichert (aus posterior.npz reproduzierbar)
     _not_saved = ("temp_age", "pann_age", "biomes_age", "temp_depth", "pann_depth", "biomes_depth")
@@ -67,8 +68,8 @@ class Results:
     @classmethod
     def load(cls, path: str | Path) -> "Results":
         d = np.load(path)
-        kw = {f.name: (str(d[f.name]) if f.name == "quantile_method" else d[f.name])
-              for f in fields(cls) if f.name not in cls._not_saved}
+        kw = {f.name: (str(d[f.name]) if f.name in ("quantile_method", "reconstruction") else d[f.name])
+              for f in fields(cls) if f.name not in cls._not_saved and f.name in d.files}
         return cls(**kw, **{k: None for k in cls._not_saved})
 
 
@@ -82,6 +83,16 @@ def reconstruct(ratios: np.ndarray, tf: np.ndarray, num_biomes: int):
     """Mittlere Rekonstruktion aus Biomanteilen (S, n, B) und TF-Stichproben (S, 2B)."""
     t = np.einsum("snb,sb->sn", ratios, tf[:, :num_biomes])
     p = np.einsum("snb,sb->sn", ratios, tf[:, num_biomes:])
+    return t, p
+
+
+def reconstruct_mixture(ratios: np.ndarray, tf: np.ndarray, num_biomes: int, rng: np.random.Generator):
+    """Stichproben der Mischverteilung nach Gl. (3): je Stichprobe s und Alter a ein Biom b mit
+    Wahrscheinlichkeit ratios[s, a, b]; Klima = TF-Klimawert dieses Bioms in Stichprobe s."""
+    u = rng.random(ratios.shape[:2])[..., None]
+    b = np.minimum((u > np.cumsum(ratios, axis=2)).sum(axis=2), num_biomes - 1)  # (S, n)
+    t = np.take_along_axis(tf[:, :num_biomes], b, axis=1)
+    p = np.take_along_axis(tf[:, num_biomes:], b, axis=1)
     return t, p
 
 
@@ -129,9 +140,13 @@ def postprocess(setup: Setup, post: Posterior, cfg: PostprocessConfig, prior: Po
     temp_axis_kde = inp.temp_range
 
     out = {}
+    mix_rng = np.random.default_rng(cfg.seed + 1)
     for name, spectrum in (("age", setup.taxa_spectrum_age), ("depth", setup.taxa_spectrum_depth)):
         ratios = biome_ratios(spectrum, w, inp.biomes_assign)
-        t, p = reconstruct(ratios, tf, B)
+        if cfg.reconstruction == "mixture":
+            t, p = reconstruct_mixture(ratios, tf, B, mix_rng)
+        else:
+            t, p = reconstruct(ratios, tf, B)
         td = densities(t, temp_grid, nt)
         pd = densities(p, pann_grid, nt)
         bd = np.stack([densities(ratios[:, :, b], biome_grid, nt) for b in range(B)])
@@ -170,5 +185,5 @@ def postprocess(setup: Setup, post: Posterior, cfg: PostprocessConfig, prior: Po
         post_weights=w, tf_post_temp=post_t, tf_post_pann=post_p, tf_prior_temp=prior_t, tf_prior_pann=prior_p,
         prior_temp_ci_size=ci(prior_t), post_temp_ci_size=ci(post_t),
         prior_pann_ci_size=ci(prior_p), post_pann_ci_size=ci(post_p),
-        post_tf_probs=probs, quantile_method=cfg.quantile_method, **out,
+        post_tf_probs=probs, quantile_method=cfg.quantile_method, reconstruction=cfg.reconstruction, **out,
     )

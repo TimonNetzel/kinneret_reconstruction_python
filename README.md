@@ -71,6 +71,14 @@ portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
   * mehrere Ketten mit gestreuten Startwerten und Konvergenzdiagnostik nach Vehtari et al. (2021).
 * `postprocess.quantile_method = "samples"`: Quartile direkt aus den Stichproben. Das Original
   berechnet sie über geglättete Kerndichten (`"kde"`).
+* `postprocess.reconstruction = "mean"` (Standard) oder `"mixture"`: Rekonstruktion als Mittelwert der
+  Biom-Klimawerte oder als Mischverteilung nach Gl. (3) des Papers.
+* Weitere Modelloptionen: `sampler.tf_normal_prior` (Gl. 14 als Prior),
+  `sampler.recent_temp_mean/_sd` und `sampler.recent_pann_mean/_sd` (Prior des heutigen Klimas),
+  `sampler.taxa_prior` (Dir(α) fest oder hierarchisch), `sampler.beta_shape1/2` (R²-Prior),
+  `sampler.tf_bound_probs` (Trunkierung).
+* `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
+  sampeln. Nützlich für andere Auswerteoptionen.
 
 ## Leistung (4 CPU-Kerne)
 

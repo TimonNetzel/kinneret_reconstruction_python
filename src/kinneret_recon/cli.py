@@ -23,6 +23,8 @@ def _apply_overrides(cfg: Config, a: argparse.Namespace) -> Config:
         s.dirichlet_hastings_fix = False
     if a.quantiles:
         cfg.postprocess.quantile_method = a.quantiles
+    if a.reconstruction:
+        cfg.postprocess.reconstruction = a.reconstruction
     if a.no_plots:
         cfg.plots = cfg.report = False
     if a.no_report:
@@ -40,7 +42,7 @@ def cmd_run(a: argparse.Namespace) -> int:
         cfg = Config.from_toml(a.config)
     else:
         cfg = Config()
-    execute(_apply_overrides(cfg, a), Path.cwd())
+    execute(_apply_overrides(cfg, a), Path.cwd(), reuse=a.from_run)
     return 0
 
 
@@ -107,6 +109,9 @@ def main(argv=None) -> int:
     r.add_argument("--quantiles", choices=["samples", "kde"])
     r.add_argument("--no-plots", action="store_true", help="keine Abbildungen und kein Bericht")
     r.add_argument("--no-report", action="store_true")
+    r.add_argument("--from-run", dest="from_run", help="Ketten eines frueheren Laufs neu auswerten (kein Sampling)")
+    r.add_argument("--reconstruction", choices=["mean", "mixture"],
+                   help="Rekonstruktion als Mittelwert der Biom-Klimawerte oder als Mischverteilung (Gl. 3)")
     r.set_defaults(func=cmd_run)
 
     c = sub.add_parser("compare", help="Rekonstruktionen mehrerer Laeufe vergleichen")

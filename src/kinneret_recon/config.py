@@ -47,6 +47,15 @@ class SamplerConfig:
     tf_bound_probs: tuple[float, float] = (0.05, 0.95)
     beta_shape1: float = 3.0
     beta_shape2: float = 3.0
+    # Gl. (14) des Papers als Prior der TF-Klimawerte: N_t(mu(psi), sigma(psi)) auf [a, b] (Standard: aus,
+    # d. h. N_t nur als Vorschlag und gleichverteilter Prior auf [a, b] wie im Originalcode)
+    tf_normal_prior: bool = False
+    # Prior des rezenten Klimas (juengste Altersstufe): N(T) und Gamma(P) mit Mittelwert und Sd.
+    # None: Werte aus den Eingangsdaten (CRU 1961-1990, Mittel mehrerer Levante-Gitterpunkte)
+    recent_temp_mean: float | None = None
+    recent_temp_sd: float | None = None
+    recent_pann_mean: float | None = None
+    recent_pann_sd: float | None = None
     # Terme der Zielverteilung (nur fuer Validierungslaeufe abschalten)
     use_calibration: bool = True
     use_tf_likelihood: bool = True
@@ -57,6 +66,11 @@ class SamplerConfig:
 class PostprocessConfig:
     # "samples": Quartile direkt aus den Stichproben; "kde": ueber geglaettete Dichten wie im Original
     quantile_method: str = "samples"
+    # Klimarekonstruktion je Stichprobe:
+    #   "mean": Mittelwert der Biom-Klimawerte, gewichtet mit den Biomanteilen (wie im Originalcode)
+    #   "mixture": Mischverteilung nach Gl. (3) des Papers: je Stichprobe und Alter ein Biom b mit
+    #              Wahrscheinlichkeit p_b, Klima = Klimawert dieses Bioms
+    reconstruction: str = "mean"
     # Referenz fuer "Prior"-Groessen (CI-Verhaeltnis der Transferfunktionen):
     #   "model": eigener Lauf ohne Kalibrierungsterme, d. h. exakt der Prior des Samplers inkl. Trunkierung
     #   "marginal": Randverteilungen auf dem Klimagitter wie im Original
@@ -119,6 +133,14 @@ class Config:
             raise ValueError("sampler.tf_bound_probs muss (unteres, oberes) Quantil mit 0 <= u < 0,5 < o <= 1 sein")
         if self.postprocess.prior_reference not in ("model", "marginal"):
             raise ValueError("postprocess.prior_reference muss 'model' oder 'marginal' sein")
+        for k in ("recent_temp_sd", "recent_pann_sd", "recent_pann_mean"):
+            v = getattr(s, k)
+            if v is not None and v <= 0:
+                raise ValueError(f"sampler.{k} muss > 0 sein")
+        if s.kernel == "legacy" and s.tf_normal_prior:
+            raise ValueError("tf_normal_prior gibt es nur fuer kernel = 'corrected'")
+        if self.postprocess.reconstruction not in ("mean", "mixture"):
+            raise ValueError("postprocess.reconstruction muss 'mean' oder 'mixture' sein")
         if self.postprocess.quantile_method not in ("samples", "kde"):
             raise ValueError("postprocess.quantile_method muss 'samples' oder 'kde' sein")
 

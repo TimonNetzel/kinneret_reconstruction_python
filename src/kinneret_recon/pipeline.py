@@ -94,7 +94,9 @@ def reconstruction_table(res: Results, kind: str = "age") -> list[dict]:
     return rows
 
 
-def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
+def execute(cfg: Config, root: Path | None = None, log=print, reuse: Path | None = None) -> Run:
+    """reuse: Verzeichnis eines frueheren Laufs; dessen Ketten (posterior.npz, prior.npz) werden neu ausgewertet,
+    statt neu zu sampeln. Die Sampler-Einstellungen muessen dann zu diesem Lauf passen."""
     root = Path(root or Path.cwd())
     outdir = (root / cfg.output_dir).resolve()
     outdir.mkdir(parents=True, exist_ok=True)
@@ -106,17 +108,29 @@ def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
     timings["vorbereitung"] = time.perf_counter() - t
 
     s = cfg.sampler
-    log(f"Sampling: {s.kernel}, {s.n_chains} Kette(n) x {s.sample_length:,} Iterationen ...")
-    t = time.perf_counter()
-    post = sampler.run(setup, s, cfg.postprocess.n_threads)
-    timings["sampling"] = time.perf_counter() - t
-    log(f"  fertig in {timings['sampling']:.1f} s, Akzeptanzrate {np.round(post.acceptance_rate, 3)}")
+    if reuse is not None:
+        reuse = Path(reuse).resolve()
+        log(f"Ketten aus {reuse} werden neu ausgewertet (kein Sampling)")
+        post = Posterior.load(reuse / "posterior.npz")
+        if post.taxa_weights.shape[0] != s.n_chains or post.burn_in != s.burn_in:
+            raise ValueError("Die Sampler-Einstellungen passen nicht zum wiederverwendeten Lauf")
+        timings["sampling"] = 0.0
+    else:
+        log(f"Sampling: {s.kernel}, {s.n_chains} Kette(n) x {s.sample_length:,} Iterationen ...")
+        t = time.perf_counter()
+        post = sampler.run(setup, s, cfg.postprocess.n_threads)
+        timings["sampling"] = time.perf_counter() - t
+    log(f"  Akzeptanzrate {np.round(post.acceptance_rate, 3)} ({timings['sampling']:.1f} s)")
     if np.any(post.acceptance_rate < 0.01):
         log("  WARNUNG: Akzeptanzrate < 1 % - die Kette ist vermutlich haengengeblieben (siehe Diagnostik)")
     post.save(outdir / "posterior.npz")
 
     prior = None
-    if cfg.postprocess.prior_reference == "model":
+    if cfg.postprocess.prior_reference == "model" and reuse is not None and (reuse / "prior.npz").exists():
+        prior = Posterior.load(reuse / "prior.npz")
+        if reuse != outdir:
+            prior.save(outdir / "prior.npz")
+    elif cfg.postprocess.prior_reference == "model":
         # Prior-Referenz: dasselbe Modell ohne Kalibrierungsterme (also ohne Information aus den Daten)
         t = time.perf_counter()
         ps = dataclasses.replace(s, kernel="corrected", use_calibration=False, seed=s.seed + 1,
@@ -156,6 +170,7 @@ def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
         numpy=np.__version__, platform=platform.platform(), timings_s={k: round(v, 2) for k, v in timings.items()},
         acceptance_rate=post.acceptance_rate.tolist(), n_samples_post=int(post.pooled("expl_variance").shape[0]),
         diagnostics_problems=bad,
+        posterior_aus=str(reuse) if reuse is not None else None,
     )
     for k in ("min_log_weight", "acceptance_rate_c", "final_step_z", "final_tf_scale"):
         if k in post.meta:

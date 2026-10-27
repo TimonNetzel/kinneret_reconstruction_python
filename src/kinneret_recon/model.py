@@ -26,6 +26,10 @@ class Setup:
     taxa_spectrum_age: np.ndarray  # (n_age, K)
     ap_age: np.ndarray  # (n_age,)
     # Vorschlags- und Priorparameter
+    temp_mean: float  # Prior der rezenten Temperatur N(temp_mean, temp_sd^2)
+    temp_sd: float
+    pann_mean: float  # Prior des rezenten Niederschlags Gamma mit diesem Mittel und dieser Sd
+    pann_sd: float
     pann_shape: float
     pann_rate: float
     dirichlet_spread: float
@@ -35,6 +39,8 @@ class Setup:
     tf_sd: np.ndarray  # (2B,)
     tf_lower: np.ndarray  # (2B,)
     tf_upper: np.ndarray  # (2B,)
+    tf_mu: np.ndarray  # (2B,) Erwartungswert der TF-Randverteilungen, mu(psi) in Gl. (14)
+    tf_sigma: np.ndarray  # (2B,) Standardabweichung der TF-Randverteilungen, sigma(psi) in Gl. (14)
     beta_shape1: float
     beta_shape2: float
 
@@ -65,8 +71,10 @@ class Setup:
             tf_upper=self.tf_upper,
             beta_shape1=self.beta_shape1,
             beta_shape2=self.beta_shape2,
-            temp_mean=float(inp.recent_climate[0]),
-            temp_sd=float(inp.recent_climate[1]),
+            temp_mean=float(self.temp_mean),
+            temp_sd=float(self.temp_sd),
+            tf_mu=self.tf_mu,
+            tf_sigma=self.tf_sigma,
             pann_shape=float(self.pann_shape),
             pann_rate=float(self.pann_rate),
         )
@@ -164,12 +172,15 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         spectrum_age[:, k] = np.matmul(dat, spectrum_depth[:, k])
     ap_age = np.matmul(dat, inp.ap_depth)
 
-    # Prior fuer den rezenten Niederschlag
+    # Prior des rezenten Klimas (Standard: Werte aus den Eingangsdaten)
     rc = inp.recent_climate
+    pick = lambda v, d: float(d if v is None else v)
+    temp_mean, temp_sd = pick(cfg.recent_temp_mean, rc[0]), pick(cfg.recent_temp_sd, rc[1])
+    pann_mean, pann_sd = pick(cfg.recent_pann_mean, rc[2]), pick(cfg.recent_pann_sd, rc[3])
     if cfg.exact_gamma_moments:
-        pann_shape, pann_rate = gamma_moments_exact(rc[2], rc[3])
+        pann_shape, pann_rate = gamma_moments_exact(pann_mean, pann_sd)
     else:
-        pann_shape, pann_rate = gamma_moments_grid(rc[2], rc[3])
+        pann_shape, pann_rate = gamma_moments_grid(pann_mean, pann_sd)
 
     # Vorschlaege fuer die Transferfunktions-Stichproben: trunkierte Normalverteilungen
     t_range, p_range = inp.temp_range, inp.pann_range
@@ -178,14 +189,19 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
     q_p = np.empty((B, 3))
     sd_t = np.empty(B)
     sd_p = np.empty(B)
+    mu = np.empty(2 * B)
+    sigma = np.empty(2 * B)
     for b in range(B):
         probs = np.array([cfg.tf_bound_probs[0], 0.5, cfg.tf_bound_probs[1]])
         q_t[b] = weighted_quantiles(t_range, biome_tf_temp[b], probs)
         q_p[b] = weighted_quantiles(p_range, biome_tf_pann[b], probs)
         e_t = np.matmul(t_range, biome_tf_temp[b])
         e_p = np.matmul(p_range, biome_tf_pann[b])
-        sd_t[b] = np.sqrt(np.matmul((t_range - e_t) ** 2, biome_tf_temp[b])) * scale
-        sd_p[b] = np.sqrt(np.matmul((p_range - e_p) ** 2, biome_tf_pann[b])) * scale
+        sigma[b] = np.sqrt(np.matmul((t_range - e_t) ** 2, biome_tf_temp[b]))
+        sigma[B + b] = np.sqrt(np.matmul((p_range - e_p) ** 2, biome_tf_pann[b]))
+        sd_t[b] = sigma[b] * scale
+        sd_p[b] = sigma[B + b] * scale
+        mu[b], mu[B + b] = e_t, e_p
 
     return Setup(
         inputs=inp,
@@ -196,6 +212,10 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         taxa_spectrum_depth=spectrum_depth,
         taxa_spectrum_age=spectrum_age,
         ap_age=ap_age,
+        temp_mean=temp_mean,
+        temp_sd=temp_sd,
+        pann_mean=pann_mean,
+        pann_sd=pann_sd,
         pann_shape=pann_shape,
         pann_rate=pann_rate,
         dirichlet_spread=float(cfg.dirichlet_spread_factor * K**2),
@@ -205,6 +225,8 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         tf_sd=np.concatenate([sd_t, sd_p]),
         tf_lower=np.concatenate([q_t[:, 0], q_p[:, 0]]),
         tf_upper=np.concatenate([q_t[:, 2], q_p[:, 2]]),
+        tf_mu=mu,
+        tf_sigma=sigma,
         beta_shape1=cfg.beta_shape1,
         beta_shape2=cfg.beta_shape2,
     )

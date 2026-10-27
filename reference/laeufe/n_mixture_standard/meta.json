@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0.dev0",
+  "git": "2e43e36-dirty",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "platform": "Linux-6.18.44-fc-v165-x86_64-with-glibc2.39",
+  "timings_s": {
+    "vorbereitung": 0.23,
+    "sampling": 0.0,
+    "auswertung": 55.24,
+    "diagnostik": 1.87,
+    "abbildungen": 20.62
+  },
+  "acceptance_rate": [
+    0.2059926498162454,
+    0.2473991849796245,
+    0.24006250156253905,
+    0.24056301407535188
+  ],
+  "n_samples_post": 40000,
+  "diagnostics_problems": [],
+  "posterior_aus": "/home/user/kinneret_reconstruction_python/results/standard"
+}

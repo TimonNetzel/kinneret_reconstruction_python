@@ -1,0 +1,8 @@
+# Prior des rezenten Klimas: CRU-Gitterpunkt am See (11,37 degC, 440 mm) mit Sd 1 degC bzw. 20 %
+output_dir = "results/m_cru_gitterpunkt_eng"
+
+[sampler]
+recent_temp_mean = 11.37
+recent_temp_sd = 1.0
+recent_pann_mean = 440.0
+recent_pann_sd = 88.0

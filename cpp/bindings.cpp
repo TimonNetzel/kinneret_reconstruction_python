@@ -48,6 +48,8 @@ static kr::Model make_model(py::dict d) {
     m.tf_sd = to_vec<double>(d["tf_sd"].cast<darr>());
     m.tf_lower = to_vec<double>(d["tf_lower"].cast<darr>());
     m.tf_upper = to_vec<double>(d["tf_upper"].cast<darr>());
+    if (d.contains("tf_mu")) m.tf_mu = to_vec<double>(d["tf_mu"].cast<darr>());
+    if (d.contains("tf_sigma")) m.tf_sigma = to_vec<double>(d["tf_sigma"].cast<darr>());
     m.beta_s1 = d["beta_shape1"].cast<double>();
     m.beta_s2 = d["beta_shape2"].cast<double>();
     m.temp_mean = d["temp_mean"].cast<double>();
@@ -64,6 +66,7 @@ static kr::Options make_options(py::dict d) {
     if (d.contains("use_calibration")) o.use_calibration = d["use_calibration"].cast<bool>();
     if (d.contains("use_tf_likelihood")) o.use_tf_likelihood = d["use_tf_likelihood"].cast<bool>();
     if (d.contains("use_taxa_prior")) o.use_taxa_prior = d["use_taxa_prior"].cast<bool>();
+    if (d.contains("tf_normal_prior")) o.tf_normal_prior = d["tf_normal_prior"].cast<bool>();
     if (d.contains("log_gamma_rw")) o.log_gamma_rw = d["log_gamma_rw"].cast<bool>();
     if (d.contains("adapt_until")) o.adapt_until = d["adapt_until"].cast<int64_t>();
     if (d.contains("target_accept")) o.target_accept = d["target_accept"].cast<double>();

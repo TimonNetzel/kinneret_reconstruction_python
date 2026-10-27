@@ -235,6 +235,91 @@ Wie a und b gewählt werden (5-%/95-%-Quantile, Befund 3), sagt das Paper nicht.
 **Beta(3; 3) gegen Tab. 2 (Befund 15)** und **Konvergenzdiagnostik (Befund 16):** siehe Tabelle in
 Abschnitt 1 und `docs/abgleich_paper.md`.
 
+### 3.8 Modellentscheidungen nach Rückmeldung des Autors
+
+Alle Läufe: korrigierter Sampler, 4 Ketten × 2 Mio. Iterationen, R̂ ≤ 1,001, min. ESS > 12 000.
+„Anomalien“ sind die Median-Kurven abzüglich ihres Mittels über alle Alter; *r* ist die Korrelation
+der Anomalien mit dem Standardlauf.
+
+| Lauf | Niveau T | Niveau P | IQR T | IQR P | *r* Anomalie T | *r* Anomalie P | Spanne Anomalie P |
+|---|---|---|---|---|---|---|---|
+| Standard (Mittelwert, Gebietsmittel CRU, Beta(3;3)) | 9,94 °C | 439 mm | 2,47 | 150 | 1 | 1 | 170 mm |
+| Mischverteilung nach Gl. (3) | 10,00 | 422 | 4,04 | 379 | 0,98 | 0,995 | 216 |
+| N_t als Prior (Gl. 14) | 9,71 | 425 | 2,19 | 143 | 0,91 | 1,000 | 172 |
+| Beta(2,62; 2,62) statt Beta(3; 3) | 9,94 | 438 | 2,49 | 150 | 0,995 | 1,000 | 169 |
+| CRU-Gitterpunkt am See (11,37 °C / 440 mm) | 10,34 | 377 | 2,49 | 142 | 0,99 | 0,998 | 144 |
+| Gebietsmittel, enge Sd (1 °C / 20 %) | 10,42 | 439 | 1,72 | 139 | 0,80 | 1,000 | 172 |
+| Gitterpunkt, enge Sd | 10,98 | 371 | 1,73 | 117 | 0,79 | 0,998 | 139 |
+
+Konfigurationen: `configs/k_*`, `configs/l_*`, `configs/m_*`. Die Mischverteilung ist eine
+Neuauswertung der Standard-Ketten:
+`kinneret-recon run -c configs/standard.toml --from-run results/standard --reconstruction mixture`.
+
+**Durchgehend robust ist der zeitliche Verlauf des Niederschlags** (*r* ≥ 0,995 in allen Läufen).
+Das absolute Niveau und die Unsicherheit hängen dagegen von den Modellentscheidungen ab. Die
+T-Anomalien sind klein (Spanne ~0,5 °C) und in ihrer Form weniger robust (*r* 0,79–0,99). Die
+Temperatur-Rekonstruktion enthält also kaum ein belastbares zeitliches Signal.
+
+**1. Mittelwert oder Mischverteilung (Befund 12).** Beides ist jetzt wählbar
+(`postprocess.reconstruction = "mean" | "mixture"`). Die Mischverteilung erzeugt beim Niederschlag
+**zwei Gipfel**: In Phasen mit höherem saharo-arabischem Anteil (2,3–3,3 ka und 7,2–9 ka) entsteht
+ein Nebengipfel bei 50–100 mm. Die Rekonstruktion sagt dann mit 10–15 % Wahrscheinlichkeit
+Wüstenklima am See voraus (Abbildung unten). **Empfehlung: Mittelwert als Standard.** Er
+entspricht dem über das Einzugsgebiet gemittelten Klima, wie es ein Pollenspektrum mit Anteilen
+mehrerer Biome abbildet. Er ist außerdem genau die Größe, die im Proxy-Pool-Modul mit der AP-Kurve
+verglichen wird. Die Mischverteilung bleibt als Option für die volle Unsicherheit im Sinne von
+Gl. (3). Im Paper sollte Gl. (3) als Erwartungswert über die Biome formuliert oder die Wahl
+begründet werden.
+
+![Mischverteilung](abbildungen/mischverteilung_rekonstruktion.png)
+
+**2. N_t als Prior (Befund 14).** Wählbar über `sampler.tf_normal_prior = true` und validiert
+(Prior-only-Test). Als Prior verschiebt N_t das T-Niveau um −0,23 °C (max. −0,37) und P um
+−14 mm. Die P-Anomalien bleiben unverändert. **Empfehlung: Standard bleibt „nur Vorschlag“**, wie im
+Originalcode und den publizierten Ergebnissen. μ(ψ) und σ(ψ) stammen aus derselben Transferfunktion,
+die über P(B\|C,ψ) schon in der Zielverteilung steht. Als zusätzlicher Prior würde ihre Information
+doppelt gezählt. Gl. (14) sollte im Paper als Vorschlagsverteilung gekennzeichnet werden.
+
+**3. Beta(3; 3) oder Beta(2,62; 2,62) (Befund 15).** Kein messbarer Unterschied: höchstens 0,03 °C und
+3 mm, gleiche R²-Posterior und Gewichte. **Empfehlung: Beta(3; 3) beibehalten**, wie Code, Abb. 4 und
+die publizierten Ergebnisse. Tab. 2 sollte für den Hauptlauf (3; 3) nennen. Alternativ bleibt sie
+bei Sd 0,2, dann sind die drei Varianten der Sensitivitätsrechnung untereinander konsistent; das
+ist praktisch gleichwertig.
+
+**4. Prior des rezenten Klimas aus gemittelten CRU-Gitterpunkten.** Dieser Prior legt das
+**absolute Niveau der gesamten Rekonstruktion** fest. Mit dem Gitterpunkt am See statt des
+Gebietsmittels sinkt P über alle Alter um 61 mm (−14 %), und T steigt um 0,4 °C. Mit einer engeren,
+als Unsicherheit verstandenen Sd steigt T um weitere 0,5–0,6 °C, und der IQR von T sinkt von 2,5
+auf 1,7 °C. Denn die Daten ziehen T0 nach unten (Posterior 10,0 gegen Prior 10,74 °C), und eine enge
+Sd hält dagegen.
+
+Bewertung des Vorgehens:
+
+- *Sinnvoll* ist ein Gebietsmittel, weil Pollen die Vegetation eines regionalen Einzugsgebiets
+  abbilden (10–100 km). Das Mittel glättet außerdem Fehler einzelner CRU-Zellen.
+- *Problematisch* ist zum einen die Lage: Der See liegt bei −212 m im Grabenbruch, umliegende Zellen
+  schließen Golan und Galiläa ein, die kühler und feuchter sind. Das Gebietsmittel ist deshalb kühler
+  und feuchter als der Gitterpunkt am See.
+- *Problematisch* ist zum anderen die Sd: Sie beschreibt die räumliche Streuung zwischen den Zellen,
+  nicht die Unsicherheit des Klimas im Einzugsgebiet. Damit ist auch die Schärfe der Rekonstruktion
+  eine Folge der Zellauswahl.
+- *Nicht berücksichtigt* ist, dass CRU 1961–1990 der Altersstufe 2000 CE zugeordnet wird. Die
+  Erwärmung seither beträgt in der Levante etwa 0,5–1 °C.
+
+**Empfehlung:**
+
+1. Das Einzugsgebiet explizit festlegen, z. B. einen Radius um den See mit Entfernungsgewichtung,
+   und den Prior daraus reproduzierbar per Skript berechnen. Dafür werden die CRU-Daten gebraucht.
+2. Als Sd eine echte Unsicherheit verwenden: Repräsentativität plus Datenfehler, z. B. ~1 °C und
+   15–20 %.
+3. Absolute Werte immer mit dieser Prior-Unsicherheit berichten, etwa ±0,5 °C und ±60 mm aus der
+   Wahl des Gebiets. Für Aussagen über Klimaänderungen die robusten Anomalien verwenden.
+
+Im Code sind die Werte jetzt einstellbar (`sampler.recent_temp_mean/_sd`,
+`sampler.recent_pann_mean/_sd`).
+
+![Prior des rezenten Klimas](abbildungen/vergleich_cru_prior.png)
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |

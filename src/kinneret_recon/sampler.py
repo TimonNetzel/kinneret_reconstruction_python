@@ -123,6 +123,7 @@ def run_corrected(setup: Setup, cfg: SamplerConfig, n_threads: int = 0) -> Poste
         use_calibration=cfg.use_calibration,
         use_tf_likelihood=cfg.use_tf_likelihood,
         use_taxa_prior=cfg.use_taxa_prior,
+        tf_normal_prior=cfg.tf_normal_prior,
         log_gamma_rw=cfg.weights_proposal == "log_gamma",
         adapt_until=cfg.burn_in,
         target_accept=cfg.target_accept,

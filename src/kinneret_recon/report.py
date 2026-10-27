@@ -68,6 +68,13 @@ def methods_text(run) -> str:
                       f"α = {np.median(a):.2f} (95 %: {np.quantile(a, .025):.2f}–{np.quantile(a, .975):.2f}). ")
     else:
         taxa_prior = f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir({s.taxa_prior_alpha:g}). "
+    pp = run.config.postprocess
+    recon = ("Die Klimarekonstruktion je Altersstufe ist die Mischverteilung nach Gl. (3): je Stichprobe ein Biom "
+             "mit Wahrscheinlichkeit seines Anteils und dessen Klimawert. " if pp.reconstruction == "mixture" else
+             "Die Klimarekonstruktion je Stichprobe ist der mit den Biomanteilen gewichtete Mittelwert der "
+             "Biom-Klimawerte. ")
+    if s.tf_normal_prior:
+        recon += "Die Klimawerte der Biome haben den Prior N_t(μ(ψ), σ(ψ)) auf dem Trunkierungsbereich (Gl. 14). "
     fixes = []
     if s.kernel == "corrected" and s.weights_proposal == "dirichlet":
         fixes.append("Hastings-Korrektur des Dirichlet-Vorschlags " +
@@ -80,9 +87,10 @@ def methods_text(run) -> str:
         f"Iterationen geschätzt. Die ersten {_n(s.burn_in)} Iterationen wurden als Burn-in verworfen, danach wurde "
         f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). " + proposal +
         taxa_prior + f"R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
-        f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.inputs.recent_climate[0]:.2f}, "
-        f"{setup.inputs.recent_climate[1]:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
+        f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.temp_mean:.2f}, "
+        f"{setup.temp_sd:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
         f"Rate {setup.pann_rate:.5f}). " + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
+        recon +
         f"Konvergenz wurde mit dem rangnormierten Split-R̂ und der effektiven Stichprobengröße nach Vehtari et al. "
         f"(2021) geprüft."
     )

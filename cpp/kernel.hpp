@@ -260,6 +260,8 @@ struct Model {
     vector<double> tf_sd, tf_lower, tf_upper;  // Laenge 2B: erst T je Biom, dann P je Biom
     // Kalibrierung
     double beta_s1 = 3, beta_s2 = 3, temp_mean = 0, temp_sd = 1, pann_shape = 1, pann_rate = 1;
+    // optionaler Prior der TF-Klimawerte nach Gl. (14) des Papers: N_t(c; mu, sigma, lower, upper)
+    vector<double> tf_mu, tf_sigma;  // Laenge 0 (nicht gesetzt) oder 2B
 
     void check() const {
         const size_t A = n_age, K = n_taxa, B = n_biomes;
@@ -325,6 +327,9 @@ struct Options {
     bool use_calibration = true;
     bool use_tf_likelihood = true;
     bool use_taxa_prior = true;
+    // Gl. (14) des Papers als Prior: N_t(c; mu(psi), sigma(psi), a, b) in der Zielverteilung
+    // (Standard: nur Vorschlag, d. h. gleichverteilter Prior auf [a, b])
+    bool tf_normal_prior = false;
     // Vorschlag fuer die Taxa-Gewichte:
     //   false: Dirichlet-Random-Walk w' ~ Dir(kappa w), gemeinsam mit c (Schema des Originals)
     //   true:  Gamma-Erweiterung w = y / sum(y), y_k ~ Gamma(jeffreys_k, 1) (ergibt exakt den Dirichlet-Prior);
@@ -361,7 +366,11 @@ struct ChainOutput {
 
 class Sampler {
 public:
-    Sampler(const Model& m, const Options& o) : m_(m), o_(o) { m_.check(); }
+    Sampler(const Model& m, const Options& o) : m_(m), o_(o) {
+        m_.check();
+        if (o_.tf_normal_prior && (m_.tf_mu.size() != m_.tf_sd.size() || m_.tf_sigma.size() != m_.tf_sd.size()))
+            throw std::invalid_argument("tf_normal_prior braucht tf_mu und tf_sigma (Laenge 2B)");
+    }
 
     // Log-Zielverteilung eines Zustands; berechnet die abgeleiteten Groessen mit
     double log_target(State& s) const {
@@ -378,6 +387,9 @@ public:
             for (int b = 0; b < B; ++b)
                 lt += m_.nnet.log_prob(m_.norm_temp(s.c[b]), m_.norm_pann(s.c[b + B]), b);
         }
+        if (o_.tf_normal_prior)
+            for (size_t j = 0; j < s.c.size(); ++j)
+                lt += log_truncnorm_pdf(s.c[j], m_.tf_mu[j], m_.tf_sigma[j], m_.tf_lower[j], m_.tf_upper[j]);
         for (size_t j = 0; j < s.c.size(); ++j)
             if (s.c[j] < m_.tf_lower[j] || s.c[j] > m_.tf_upper[j]) lt = NEG_INF;
         return lt;
