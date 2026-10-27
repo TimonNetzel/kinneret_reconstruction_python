@@ -16,7 +16,9 @@ Rahmen (vom Autor festgelegt):
   in einem späteren Schritt.
 - Korrekturen direkt einbauen, das Original bleibt erhalten.
 - Dokumentation auf Deutsch.
-- Entwicklung im Branch `claude/netzel-python-package-analysis-adcv39`.
+- Entwicklung bis 27.10.2026 im Branch `claude/netzel-python-package-analysis-adcv39`, mit Pull
+  Request #1 nach `main` gemergt (Merge-Commit, die Commit-Hashes in der Doku bleiben gültig).
+  Weitere Arbeit in neuen Branches ab `main`.
 
 ## Plan und Stand
 
@@ -62,6 +64,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | Rekonstruktion: Mittelwert und Mischverteilung (Gl. 3) als Option. **Mittelwert ist Standard** (vom Autor bestätigt) |
 | 27.10.2026 | Gl. (14): N_t als Prior wählbar, Standard bleibt „nur Vorschlag“ (sonst doppelte Zählung der TF) |
 | 27.10.2026 | R²-Prior: Beta(3; 3) bleibt, Beta(2,62; 2,62) liefert dasselbe Ergebnis |
+| 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte (nächste Sitzung)
@@ -88,7 +91,7 @@ Rahmen (vom Autor festgelegt):
    `LICENSE.md`) und entspricht der Zenodo-Version des Papers.
 4. **Laufzeit des hierarchischen Laufs:** etwa 13 min. Der Prior-Referenzlauf nimmt die Hälfte davon
    ein und ließe sich kürzen.
-5. **Später:** Training der Transferfunktion, weitere Standorte, Mergen des Branches in `main`.
+5. **Später:** Training der Transferfunktion, weitere Standorte.
 
 ## Reproduktion
 
@@ -154,8 +157,7 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
 
 - Befund 13: Wie entstanden die R² = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit
   Beta(0,92; 2,77). Der Autor weiß es nicht mehr sicher.
-- Pull Request #1 (Branch → `main`) ist offen, CI grün. Mergen, wenn der Autor zustimmt. Eine neue
-  Sitzung muss die PR-Beobachtung ggf. neu abonnieren.
+- Pull Request #1 (Branch → `main`) ist mit Zustimmung des Autors gemergt (27.10.2026).
 - Optional: hierarchischen Prior der Gewichte als Standard (der Autor bevorzugt ihn, Standard ist
   noch Dir(0,5) wie im Paper).
 
