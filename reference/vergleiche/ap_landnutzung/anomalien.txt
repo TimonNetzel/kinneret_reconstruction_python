@@ -1,0 +1,4 @@
+Lauf                        T     P  IQR_T  IQR_P    r_T    r_P Spanne_P  T(-50)  P(-50)
+standard                10.67   439   1.66     96  1.000  1.000      158   10.88     518
+p_ap_ohne_kultur        10.73   437   1.58     94  0.843  0.896      194   10.87     520
+p_kalibrierung_ab_4ka   10.68   447   1.63     98  0.987  0.978      153   10.88     517

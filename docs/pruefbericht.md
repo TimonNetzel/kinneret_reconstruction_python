@@ -494,6 +494,70 @@ wie im Lauf G. Laufzeit 11 min (Sampling 5,4 min, Prior-Referenzlauf 5,1 min, Au
 - Die Legende derselben Abbildung beschriftete Linie und Fläche der Posterior mit „Posterior“ und „Prior“
   (schon im Original). Jetzt: graue Fläche = Posterior, orange Linie = Prior.
 
+### 3.11 Klima oder Landnutzung? Tests zur Baumpollenkurve
+
+Das Proxy-Pool-Modul koppelt die P-Rekonstruktion über R² an die Baumpollenkurve (AP). Im Standard v3
+korreliert der P-Median mit AP zu *r* = 0,91. AP enthält aber Kulturbäume. Zwei Tests prüfen, ob der
+P-Verlauf ein Klimasignal ist oder die Landnutzung abbildet:
+
+1. **AP ohne Kulturbäume** (`sampler.ap_exclude_taxa`, `configs/p_ap_ohne_kultur.toml`): *Olea*,
+   *Vitis* und *Juglans* werden aus AP herausgerechnet, AP × (1 − Anteil an den Gehölz-Taxa). AP ist im
+   Datensatz die Summe der 16 Gehölz-Taxa, skaliert mit dem Anteil der 33 Taxa an der Pollensumme
+   (*r* = 0,994).
+2. **Kalibrierung nur 4–9 ka** (`sampler.calibration_age_range`, `configs/p_kalibrierung_ab_4ka.toml`):
+   Nur Altersstufen vor dem starken menschlichen Einfluss gehen in R² ein (100 von 181).
+
+**Die Baumpollenkurve ist vor allem eine *Olea*-Kurve.** Ohne Kulturbäume ist AP mit der vollen Kurve
+praktisch unkorreliert (*r* = −0,06). Die beiden AP-Gipfel bei 1–2 ka und 5–7 ka bestehen zu 67–71 %
+aus Kulturbaum-Pollen. Der zweite Gipfel liegt innerhalb des Fensters von Test 2. Test 2 trennt Klima
+und Landnutzung deshalb nur, wenn dieser mittelholozäne *Olea*-Gipfel natürlich ist; das ist in der
+Literatur umstritten (früher Olivenanbau im Chalkolithikum).
+
+![Baumpollenkurve mit und ohne Kulturbäume](abbildungen/ap_kulturbaeume.png)
+
+| Lauf | Niveau T | Niveau P | IQR P | *r* Anomalie T | *r* Anomalie P | max. Abw. P | R² (95 %) | Median w *Olea* / *Q. calliprinos* / *Q. ithaburensis* / *Amaranthaceae* |
+|---|---|---|---|---|---|---|---|---|
+| Standard v3 | 10,67 °C | 439 mm | 96 | 1 | 1 | – | 0,62 (0,20–0,92) | 0,010 / 0,022 / 0,018 / 0,024 |
+| AP ohne Kulturbäume | 10,73 | 437 | 94 | 0,84 | 0,90 | 65 mm | 0,32 (0,07–0,60) | 0,002 / 0,032 / 0,032 / 0,021 |
+| Kalibrierung 4–9 ka | 10,68 | 447 | 98 | 0,99 | 0,98 | 23 mm | 0,65 (0,26–0,94) | 0,005 / 0,019 / 0,025 / 0,022 |
+
+Mittlerer P-Median in ausgewählten Phasen (mm):
+
+| Phase | 0–1 ka | 1–2 ka | 2,0–2,6 ka | 3,0–3,4 ka | 3,8–4,3 ka | 5–6 ka | 7,5–9 ka |
+|---|---|---|---|---|---|---|---|
+| Standard v3 | 482 | 484 | 383 | 385 | 432 | 485 | 381 |
+| AP ohne Kulturbäume | 491 | 457 | 379 | 377 | 443 | 464 | 395 |
+| Kalibrierung 4–9 ka | 486 | 474 | 395 | 395 | 448 | 482 | 400 |
+
+Konvergenz: R̂ ≤ 1,0014, min. ESS 2113 bzw. 1853. Ergebnisse: `reference/laeufe/p_*`,
+`reference/vergleiche/ap_landnutzung/`.
+
+![Rekonstruktion: Tests zur Baumpollenkurve](abbildungen/vergleich_ap_landnutzung.png)
+
+**Ergebnisse.**
+
+1. **Das Muster des Niederschlags hält beiden Tests stand** (*r* = 0,90 bzw. 0,98): trocken um
+   2,0–3,4 ka und 7,5–9 ka, feuchter um 0–2 ka und 5–6 ka. Das Signal steckt also nicht nur in der
+   AP-Kopplung, sondern in der Zusammensetzung der übrigen Taxa. Der Anteil des mediterranen Bioms folgt
+   P auch ohne *Olea* (0,26 in den Trockenphasen gegen 0,44–0,52 in den feuchten).
+2. **Die feuchten Phasen sind zum Teil *Olea*.** Ohne Kulturbäume sind sie um 21–27 mm schwächer
+   (1–2 ka, 5–6 ka). Der Abfall um 2 ka setzt früher ein und ist tiefer (bis 65 mm Abweichung). Die
+   Trockenphasen bleiben, das frühholozäne Minimum wird etwas flacher (+14 mm).
+3. **Die Daten selbst schließen *Olea* aus.** Ohne Kulturbäume in AP sinkt sein Gewicht auf 0,002,
+   die beiden *Quercus*-Taxa steigen auf 0,032. R² halbiert sich (0,32): Die AP-Kurve ohne Kulturbäume
+   passt schlechter zur Rekonstruktion, bestimmt sie aber auch weniger.
+4. **Kalibrierung nur 4–9 ka ändert kaum etwas** (höchstens 23 mm, im Mittel +8 mm). Das ist
+   allerdings wenig aussagekräftig, weil der mittelholozäne *Olea*-Gipfel im Fenster liegt.
+5. Die Temperatur bleibt flach; ihre kleinen Schwankungen ändern die Form (*r* = 0,84), wie in 3.8.
+
+**Bewertung:** Mit der früheren Aussage, der P-Verlauf sei „im Wesentlichen die AP-Kurve“, lag ich zu
+weit. Die Korrelation von 0,91 ist hoch, aber das Muster trägt sich auch ohne Kulturbäume. Die
+Beträge der feuchten Phasen hängen zu etwa einem Viertel (20–27 mm von ~100 mm Kontrast) an *Olea*.
+
+**Empfehlung:** Für ein Klimasignal ist AP ohne Kulturbäume methodisch sauberer. Ob es Standard wird,
+entscheidet der Autor. Mindestens sollte die Rekonstruktion ohne Kulturbäume als Sensitivität berichtet
+werden.
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |

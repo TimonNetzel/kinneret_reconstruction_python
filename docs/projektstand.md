@@ -33,6 +33,7 @@ Rahmen (vom Autor festgelegt):
 | – | Flexibler Prior der Taxa-Gewichte | ✅ Dir(α) fest oder hierarchisch |
 | – | CRU-Prior aus festgelegtem Einzugsgebiet | ✅ `kinneret-recon cru-prior`, Prüfbericht 3.9 |
 | – | Neuer Standard v3 (hierarchischer Prior, CRU 50 km) | ✅ `reference/v3-standard/`, Prüfbericht 3.10 |
+| – | Tests Klima gegen Landnutzung (AP ohne Kulturbäume, Kalibrierung 4–9 ka) | ✅ Prüfbericht 3.11 |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -56,6 +57,9 @@ Rahmen (vom Autor festgelegt):
    P-Niveau bleibt (−2 mm), der P-Verlauf ist unverändert (*r* = 0,999).
 8. **Standard v3** (hierarchischer Prior der Gewichte, CRU-Prior 50 km): gegenüber v2 T +0,74 °C,
    P +2 mm, IQR von P −36 %, P-Verlauf unverändert (*r* = 0,998). Gewichte wie im hierarchischen Lauf.
+9. **Klima oder Landnutzung:** Die Baumpollenkurve ist vor allem eine *Olea*-Kurve (ohne Kulturbäume
+   *r* = −0,06 mit der vollen Kurve). Das P-Muster hält trotzdem (*r* = 0,90 ohne Kulturbäume); die
+   feuchten Phasen sind ohne *Olea* um 21–27 mm schwächer.
 
 ## Entscheidungen
 
@@ -155,6 +159,12 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
 - Referenzlauf `reference/v3-standard/`, Vergleich in `reference/vergleiche/v3/`, Mischverteilung
   nach Gl. (3) in `reference/laeufe/v3_mixture/` (drei Gipfel beim Niederschlag, Prüfbericht 3.10).
 - Abbildung `independent_proposal_dists` korrigiert (Prior-Kurve von T0, Legende).
+
+**Erledigt: Tests Klima gegen Landnutzung** (Prüfbericht 3.11)
+
+- Optionen `sampler.ap_exclude_taxa` und `sampler.calibration_age_range` (Maske im C++-Kern),
+  `data.ARBOREAL_TAXA`, `data.CULTIVATED_TAXA`; Läufe `configs/p_*.toml`.
+- Offen: Entscheidung des Autors, ob AP ohne Kulturbäume Standard wird.
 
 **Mögliche nächste Schritte:**
 

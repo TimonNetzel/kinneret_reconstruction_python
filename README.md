@@ -93,7 +93,8 @@ Paper.
 * Weitere Modelloptionen: `sampler.tf_normal_prior` (Gl. 14 als Prior),
   `sampler.recent_temp_mean/_sd` und `sampler.recent_pann_mean/_sd` (Prior des heutigen Klimas),
   `sampler.taxa_prior` (Dir(α) fest oder hierarchisch), `sampler.beta_shape1/2` (R²-Prior),
-  `sampler.tf_bound_probs` (Trunkierung).
+  `sampler.tf_bound_probs` (Trunkierung), `sampler.ap_exclude_taxa` (Baumpollenkurve ohne z. B.
+  Kulturbäume) und `sampler.calibration_age_range` (R² nur über einen Altersbereich).
 * `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
   sampeln. Nützlich für andere Auswerteoptionen.
 
