@@ -50,6 +50,7 @@ static kr::Model make_model(py::dict d) {
     m.tf_upper = to_vec<double>(d["tf_upper"].cast<darr>());
     if (d.contains("tf_mu")) m.tf_mu = to_vec<double>(d["tf_mu"].cast<darr>());
     if (d.contains("tf_sigma")) m.tf_sigma = to_vec<double>(d["tf_sigma"].cast<darr>());
+    if (d.contains("ap_mask")) m.ap_mask = to_vec<double>(d["ap_mask"].cast<darr>());
     m.beta_s1 = d["beta_shape1"].cast<double>();
     m.beta_s2 = d["beta_shape2"].cast<double>();
     m.temp_mean = d["temp_mean"].cast<double>();

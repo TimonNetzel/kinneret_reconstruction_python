@@ -8,6 +8,15 @@ from pathlib import Path
 import numpy as np
 
 
+# Gehoelz-Taxa (Baumpollen, AP) unter den 33 Taxa. ap_depth entspricht ihrer Summe, skaliert mit dem Anteil der
+# 33 Taxa an der Gesamtpollensumme (Korrelation 0,994; Test test_arboreal_taxa_match_ap).
+ARBOREAL_TAXA = ("Acacia", "Ceratonia", "Cupressaceae", "Ericaceae", "Juglans regia", "Myrtus", "Olea europaea",
+                 "Phillyrea", "Pinus", "Pistacia", "Quercus calliprinos type", "Quercus ithaburensis type", "Styrax",
+                 "Tamarix", "Vitis", "Ziziphus type")
+# Kulturbaeume unter den Gehoelz-Taxa (Anbau seit dem Chalkolithikum bzw. der Bronzezeit)
+CULTIVATED_TAXA = ("Olea europaea", "Vitis", "Juglans regia")
+
+
 @dataclass(frozen=True)
 class Inputs:
     # Altersmodell

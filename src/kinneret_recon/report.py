@@ -78,6 +78,11 @@ def methods_text(run) -> str:
                       "Levante wie in Netzel et al. (2025). ")
     else:
         recent_src = ""
+    if s.ap_exclude_taxa:
+        recent_src += f"Die Baumpollenkurve für R² ist ohne {', '.join(s.ap_exclude_taxa)} berechnet. "
+    if s.calibration_age_range is not None:
+        recent_src += (f"In R² gehen nur die Altersstufen {s.calibration_age_range[0]:g}–"
+                       f"{s.calibration_age_range[1]:g} cal BP ein. ")
     pp = run.config.postprocess
     recon = ("Die Klimarekonstruktion je Altersstufe ist die Mischverteilung nach Gl. (3): je Stichprobe ein Biom "
              "mit Wahrscheinlichkeit seines Anteils und dessen Klimawert. " if pp.reconstruction == "mixture" else
