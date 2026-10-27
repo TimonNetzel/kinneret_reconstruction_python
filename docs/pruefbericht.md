@@ -24,7 +24,8 @@ Umsetzung, Reproduzierbarkeit. Zum anderen der Abgleich Gleichung für Gleichung
 | 10 | Laufzeit, Speicher, Kompatibilität (NumPy 2, Matplotlib ≥ 3.9) | Technik | Original läuft mit aktuellen Bibliotheken nicht mehr |
 | 11 | Taxa-Gewichte hängen stark von der Prior-Konzentration α ab (Dir(α)) | Empfindlichkeit | Rekonstruktion robust (≤ 0,1 °C, ≤ 10 mm); Höhe und Rangfolge der Gewichte nicht |
 | 12 | Code bildet je Stichprobe den **Mittelwert** der Biom-Klimawerte, Gl. (3) beschreibt eine **Mischverteilung** | Paper ↔ Code | Mediane gleich; Unsicherheit bei Mischung 1,7× (T) bzw. 3× (P) |
-| 13 | R²-Prior mit α₁ < 1 (Paper-Sensitivität „R² = 0,25“): Kette bleibt im Zustand R² = 0 hängen | **Fehler** | Der Lauf des Papers mit R² = 0,25 ist mit dem Python-Code nicht reproduzierbar |
+| 13 | R²-Prior mit α₁ < 1 (Paper-Sensitivität „R² = 0,25“): Kette bleibt im Zustand R² = 0 hängen | **Fehler** | Der Lauf des Papers mit R² = 0,25 ist mit keiner der beiden veröffentlichten Fassungen (R, Python) reproduzierbar |
+| 17 | Python-Portierung startet die TF-Klimawerte an der oberen Grenze, die R-Fassung beim Median | Portierung | keine (Burn-in) |
 | 14 | Gl. (14): N_t(μ(ψ), σ(ψ)) als P(C\|ψ); im Code nur Random-Walk-Vorschlag, Prior von C gleichverteilt | Paper ↔ Code | klären (Modellgleichung oder nur Vorschlag?) |
 | 15 | Beta-Prior des R²: Tab. 2 nennt (2,62; 2,62), Abb. 4 und Code verwenden (3; 3) | Paper ↔ Code | gering (Sd 0,19 statt 0,20) |
 | 16 | Konvergenz laut Paper per multivariatem Gelman-Rubin (1,001); der Code hat 1 Kette und keine Diagnostik | Reproduzierbarkeit | Split-R̂ der Kette ≤ 1,002, für die (fehlerhafte) Zielverteilung also konvergiert |
@@ -184,7 +185,8 @@ die kleinen Gewichte gekoppelt ist und langsam mischt (R̂ 1,002, ESS(α) 2064).
 
 Der Original-Lauf reproduziert die Zahlen des Papers: R²-Median 0,66 (Paper 0,65), mediterranes
 Biom 10,0 °C / 710 mm (Paper 10 °C / 700 mm), CI-Verhältnisse wie Abb. 7d, Rekonstruktion wie Abb. 10.
-Damit ist sicher, dass der geprüfte Code der Code der Publikation ist. Das Paper beschreibt den
+Damit ist sicher, dass der geprüfte Code der Code der Publikation ist. Die R-Fassung, aus der die
+Ergebnisse des Papers stammen, hat denselben C++-Kern (`docs/abgleich_paper.md`, Abschnitt 5). Das Paper beschreibt den
 Vorschlag für die Taxa-Gewichte nicht, nur den Prior Dir(½) in Gl. (13). **Befund 1 ist also ein
 reiner Implementierungsfehler:** Die publizierten Gewichte stammen nicht aus der Posterior des im
 Paper beschriebenen Modells.
@@ -201,8 +203,9 @@ setzt der Code R² = 0. Für den Sensitivitätslauf „R² = 0,25“ (Tab. 2: Be
 Beta-Dichte bei 0 unendlich. Der erste Zustand mit R² = 0 wird deshalb sicher angenommen, danach ist
 jedes Akzeptanzverhältnis 0. Im Lauf `configs/h_legacy_r2_025.toml` liegt die Akzeptanzrate bei 0,1 %,
 und **alle** ausgewerteten Stichproben haben R² = 0. Die Ergebnisse des Papers für R² = 0,25
-(Abb. 6–10, türkis) lassen sich mit dem Python-Code daher nicht erzeugen. Vermutlich stammen sie aus
-der R-Fassung (doi:10.5281/zenodo.8214297), die hier nicht geprüft wurde. Der korrigierte Sampler
+(Abb. 6–10, türkis) lassen sich daher nicht erzeugen. Das gilt auch für die R-Fassung, aus der laut
+Autor alle Ergebnisse des Papers stammen: Ihr C++-Kern ist identisch, und die Kette hängt bei jedem
+getesteten Seed und Startwert nach höchstens 5000 Iterationen (`docs/abgleich_paper.md`, Abschnitt 5). Der korrigierte Sampler
 schließt Zustände mit R² = 0 aus (log-Dichte −∞). Das deckt sich für α₁ > 1 mit dem Original und ist
 für α₁ < 1 die einzige wohldefinierte Wahl.
 

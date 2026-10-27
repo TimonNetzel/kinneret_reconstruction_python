@@ -98,7 +98,30 @@ Burn-in (250 000) und Ausdünnung (75) nennt das Paper nicht.
 | Abb. 10: Rekonstruktion | Mediane innerhalb von 0,17 °C und 12 mm, Unsicherheit von P etwa 15 % größer |
 | Abb. 8–10: Sensitivität gegenüber R² = 0,25 / 0,5 / 0,75 | siehe Abschnitt 5 |
 
-## 5. Sensitivität gegenüber dem R²-Prior (Tab. 2)
+## 5. R-Fassung (Quelle der Ergebnisse im Paper)
+
+Geprüft wurde `TimonNetzel/kinneret_reconstruction_R` (öffentlich, Stand `064dca1`, entspricht der
+Zenodo-Version „Reconstruction tools in R“, doi:10.5281/zenodo.8214297). Laut Autor stammen alle
+Ergebnisse im Paper aus dieser Fassung.
+
+| Aspekt | R-Fassung | Python-Fassung | Bewertung |
+|---|---|---|---|
+| C++-Kern (Sampler, Dichten, Transferfunktion) | `Rcpp_functions.cpp` | `Pycpp_functions.cpp` | **Inhaltlich identisch**, Unterschiede nur in der Anbindung (Rcpp gegen pybind11). Befund 1 (fehlendes κ) betrifft damit **direkt die Ergebnisse des Papers**. |
+| Eingangsdaten | `*.rdata` | `*.npz` | identisch (geprüft; Python speichert die Pollenspektren bereits zeilenweise normiert) |
+| Startwerte der TF-Klimawerte | Median der Randverteilung | obere Grenze (95-%-Quantil) | ⚠️ Abweichung der Python-Portierung (Index 2 statt 1); nach dem Burn-in ohne Wirkung |
+| Zufallszahlen | `set.seed`, `rnorm`, `runif` (R) | `random` (Python) | Ketten nicht vergleichbar, Verteilung gleich |
+| Dichteschätzung in der Auswertung | `density()`: Silverman-Bandbreite | `gaussian_kde`: Scott-Bandbreite | ⚠️ etwas andere Glättung, kleine Unterschiede in den Quartilen |
+| Ausdünnung | `seq(burn_in+1, by = 75)` | `linspace(burn_in, n−1, 10 000)` | praktisch gleich |
+| R²-Prior | `shape1 = shape2 = 3` | ebenso | Die Sensitivitätsläufe gingen in beiden Fassungen nur über Codeänderung. |
+
+**Befund 13 gilt auch für die R-Fassung.** Mit Beta(0,92; 2,77) bleibt der (identische) C++-Kern bei
+jedem getesteten Seed und Startwert (Median wie in R, obere Grenze wie in Python) nach höchstens
+5000 Iterationen im Zustand R² = 0 hängen. Die Kurven des Papers für R² = 0,25 (Abb. 6–10, türkis;
+Abb. 8c zeigt eine Posterior mit Masse bei 0,1–0,5) lassen sich damit **mit keiner der beiden
+veröffentlichten Code-Fassungen** erzeugen. Vermutlich wurden für diesen Lauf andere Parameter oder
+ein anderer Code-Stand verwendet.
+
+## 6. Sensitivität gegenüber dem R²-Prior (Tab. 2)
 
 - **Mittel 0,25, Beta(0,92; 2,77):** Mit dem Python-Code **nicht reproduzierbar**. Die Kette bleibt
   im Zustand R² = 0 hängen, weil die Beta-Dichte dort unendlich ist (Prüfbericht, Befund 13).
