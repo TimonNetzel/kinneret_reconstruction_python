@@ -82,7 +82,7 @@ def test_evaluate_state_log_target(setup):
     corr = np.corrcoef(rp, setup.ap_age)[0, 1]
     r2 = corr**2 if corr > 0 else 0.0
     inp = setup.inputs
-    lt = (stats.beta.logpdf(r2, 3, 3) + stats.norm.logpdf(rt[0], *inp.recent_climate[:2])
+    lt = (stats.beta.logpdf(r2, 3, 3) + stats.norm.logpdf(rt[0], setup.temp_mean, setup.temp_sd)
           + stats.gamma.logpdf(rp[0], setup.pann_shape, scale=1 / setup.pann_rate)
           + stats.dirichlet.logpdf(w, setup.jeffreys))
     tn = normalize_temp(c[:B], inp.normal_params)

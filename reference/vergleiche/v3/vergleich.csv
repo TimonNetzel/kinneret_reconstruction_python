@@ -1,0 +1,5 @@
+vergleich,groesse,mittlere_diff,max_abs_diff
+v2 + CRU 50 km - Standard v2,temp Median [°C],0.7894,0.9199
+v2 + CRU 50 km - Standard v2,pann Median [mm],-1.6268,11.933
+Standard v3 - Standard v2,temp Median [°C],0.7428,0.934
+Standard v3 - Standard v2,pann Median [mm],2.2422,12.2677

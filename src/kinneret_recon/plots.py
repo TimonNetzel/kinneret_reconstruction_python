@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 from matplotlib.colors import ListedColormap  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
+from matplotlib.patches import Patch  # noqa: E402
 from scipy.interpolate import splev, splrep  # noqa: E402
 from scipy.stats import beta, gamma, gaussian_kde, norm  # noqa: E402
 
@@ -154,10 +155,10 @@ def plot_tf_ratio(setup: Setup, res: Results, outdir: Path):
 def plot_calibration(setup: Setup, post: Posterior, outdir: Path):
     """Posterior und Prior der Kalibrierungsgroessen (independent_proposal_dists im Original)."""
     inp = setup.inputs
-    dims, tr, pr, rc = len(inp.temp_range), inp.temp_range, inp.pann_range, inp.recent_climate
+    dims, tr, pr = len(inp.temp_range), inp.temp_range, inp.pann_range
     panels = [
         (post.pooled("recent_temp"), np.linspace(tr.min(), tr.max(), dims),
-         lambda x: norm.pdf(x, rc[0], rc[1]), np.linspace(tr.min(), tr.max(), 1000), (0, 20), T_LABEL,
+         lambda x: norm.pdf(x, setup.temp_mean, setup.temp_sd), np.linspace(tr.min(), tr.max(), 1000), (0, 20), T_LABEL,
          "(a) Temperature"),
         (post.pooled("recent_pann"), np.linspace(pr.min(), pr.max(), dims),
          lambda x: gamma.pdf(x, setup.pann_shape, scale=1 / setup.pann_rate), np.linspace(pr.min(), pr.max(), 1000),
@@ -186,7 +187,9 @@ def plot_calibration(setup: Setup, post: Posterior, outdir: Path):
         ax.set_yticks([])
         ax.set_title(title, loc="left", fontweight="bold")
     axs[0].set_ylabel("Normalized density")
-    axs[0].legend(("Posterior", "Prior"))
+    # Original: legend(("Posterior", "Prior")) beschriftete Linie und Flaeche der Posterior
+    axs[0].legend(handles=[Patch(facecolor="lightgrey", edgecolor="black", label="Posterior"),
+                           Line2D([], [], color="orange", label="Prior")])
     return _save(fig, outdir, "independent_proposal_dists")
 
 

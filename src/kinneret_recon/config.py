@@ -8,16 +8,21 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+# Prior des rezenten Klimas der Voreinstellung (seit v3): CRU TS 4.07, 1961-1990, Einzugsgebiet 50 km um den See,
+# Gauss-Gewichtung; Sd = Unsicherheit des Gebietsmittels (kinneret-recon cru-prior -r 50, Pruefbericht 3.9)
+CRU_PRIOR_50KM = {"recent_temp_mean": 11.09, "recent_temp_sd": 0.87,
+                  "recent_pann_mean": 521.8, "recent_pann_sd": 41.4}
+
 
 @dataclass
 class SamplerConfig:
     # "corrected": ueberarbeiteter Sampler; "legacy": bitidentischer Original-Sampler (nur 1 Kette)
     kernel: str = "corrected"
-    # Voreinstellung fuer den ueberarbeiteten Sampler (log-Gamma-Vorschlag): 4 x 10 000 Stichproben,
-    # min. ESS > 10 000 fuer die Kinneret-Daten
-    sample_length: int = 2_000_000
-    burn_in: int = 500_000
-    thin: int = 150
+    # Voreinstellung (hierarchischer Prior der Taxa-Gewichte): 4 x 10 000 Stichproben; alpha mischt langsam,
+    # daher 8 Mio. Iterationen je Kette (ESS(alpha) ~ 2000). Mit festem Dir(alpha) genuegen 2 Mio. / 500 000 / 150.
+    sample_length: int = 8_000_000
+    burn_in: int = 2_000_000
+    thin: int = 600
     n_chains: int = 4
     seed: int = 2023
     # Korrekturen (nur fuer kernel = "corrected"); jede einzeln abschaltbar
@@ -33,7 +38,7 @@ class SamplerConfig:
     #   "fixed": alpha = taxa_prior_alpha (Paper: 0,5 = Jeffreys)
     #   "hierarchical": alpha wird mitgeschaetzt, log(alpha) ~ N(log(alpha_prior_median), alpha_prior_log_sd^2)
     #                   (nur mit weights_proposal = "log_gamma")
-    taxa_prior: str = "fixed"
+    taxa_prior: str = "hierarchical"
     taxa_prior_alpha: float = 0.5
     alpha_prior_median: float = 1.0
     alpha_prior_log_sd: float = 1.0
@@ -51,11 +56,12 @@ class SamplerConfig:
     # d. h. N_t nur als Vorschlag und gleichverteilter Prior auf [a, b] wie im Originalcode)
     tf_normal_prior: bool = False
     # Prior des rezenten Klimas (juengste Altersstufe): N(T) und Gamma(P) mit Mittelwert und Sd.
-    # None: Werte aus den Eingangsdaten (CRU 1961-1990, Mittel mehrerer Levante-Gitterpunkte)
-    recent_temp_mean: float | None = None
-    recent_temp_sd: float | None = None
-    recent_pann_mean: float | None = None
-    recent_pann_sd: float | None = None
+    # Voreinstellung: CRU_PRIOR_50KM. None: Werte aus den Eingangsdaten wie im Paper (Mittel und raeumliche Sd
+    # mehrerer Levante-Gitterpunkte, 10,74 +- 2,48 degC und 556 +- 135 mm)
+    recent_temp_mean: float | None = CRU_PRIOR_50KM["recent_temp_mean"]
+    recent_temp_sd: float | None = CRU_PRIOR_50KM["recent_temp_sd"]
+    recent_pann_mean: float | None = CRU_PRIOR_50KM["recent_pann_mean"]
+    recent_pann_sd: float | None = CRU_PRIOR_50KM["recent_pann_sd"]
     # Terme der Zielverteilung (nur fuer Validierungslaeufe abschalten)
     use_calibration: bool = True
     use_tf_likelihood: bool = True
@@ -156,6 +162,11 @@ def legacy_config(**overrides: Any) -> Config:
             dispersed_init=False,
             weights_proposal="dirichlet",
             dirichlet_spread_factor=1.0,
+            taxa_prior="fixed",
+            recent_temp_mean=None,
+            recent_temp_sd=None,
+            recent_pann_mean=None,
+            recent_pann_sd=None,
             sample_length=1_000_000,
             burn_in=250_000,
             thin=75,

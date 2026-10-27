@@ -435,6 +435,54 @@ weicht er nur durch eine andere Zufallszahlenfolge ab (≤ 0,01 °C und 2 mm im 
 4. Ob der neue Prior Standard wird, entscheidet der Autor. Die Voreinstellung (Werte aus den
    Eingangsdaten) ist unverändert.
 
+### 3.10 Neuer Standard (v3)
+
+Vom Autor am 27.10.2026 festgelegt: **hierarchischer Prior der Taxa-Gewichte** (3.6) und **CRU-Prior für
+ein Einzugsgebiet von 50 km** (3.9) sind Standard. Da α langsam mischt, laufen die Ketten jetzt 8 Mio.
+Iterationen (Burn-in 2 Mio., Ausdünnung 600). Referenzlauf: `reference/v3-standard/`
+(`kinneret-recon run`, identisch mit `configs/standard.toml`).
+
+Die Konfigurationen der Vergleichsreihe schreiben die bisherigen Voreinstellungen ausdrücklich fest
+(`configs/standard_v2.toml` und `configs/a_*` bis `configs/o_*`). Sie liefern dieselben Läufe wie zuvor:
+Alle stimmen feldweise mit den gesicherten `config.toml` überein, und `standard_v2.toml` reproduziert
+`reference/laeufe/standard_aktuell` bitgleich.
+
+| Lauf | Prior w / rezentes Klima | Niveau T | Niveau P | IQR T | IQR P | *r* Anomalie T | *r* Anomalie P | R² | T0 / P0 | CI-Verh. T / P Med | Median w *Olea* / *Q. calliprinos* / *Q. ithaburensis* / *Amaranthaceae* |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Standard v2 | Dir(½) / Paper | 9,93 °C | 437 mm | 2,48 | 151 | 1 | 1 | 0,54 | 10,0 / 530 | 0,80 / 0,81 | 0,007 / 0,015 / 0,013 / 0,019 |
+| G | hierarchisch / Paper | 9,90 | 443 | 2,42 | 139 | 0,97 | 1,000 | 0,60 | – | – | 0,010 / 0,022 / – / 0,024 |
+| O50 | Dir(½) / CRU 50 km | 10,72 | 435 | 1,64 | 105 | 0,74 | 0,999 | 0,55 | 10,9 / 518 | 0,58 / 0,71 | 0,008 / 0,016 / 0,014 / 0,020 |
+| **Standard v3** | hierarchisch / CRU 50 km | **10,67** | **439** | **1,66** | **96** | 0,58 | 0,998 | 0,62 | 10,9 / 518 | 0,55 / 0,69 | 0,010 / 0,022 / 0,018 / 0,024 |
+
+Konvergenz v3: R̂ ≤ 1,004, min. ESS 1596 (log-Zielverteilung), ESS(α) 1676; α = 0,82 (95 %: 0,15–4,64),
+wie im Lauf G. Laufzeit 11 min (Sampling 5,4 min, Prior-Referenzlauf 5,1 min, Auswertung und Abbildungen
+0,7 min).
+
+![Rekonstruktion: Standard v2 und v3](abbildungen/vergleich_v3_rekonstruktion.png)
+
+![Taxa-Gewichte: Standard v2 und v3](abbildungen/vergleich_v3_gewichte.png)
+
+**Ergebnisse.**
+
+1. Die beiden Änderungen wirken nahezu unabhängig. Der CRU-Prior bestimmt Niveau und Unsicherheit der
+   Rekonstruktion, der hierarchische Prior die Taxa-Gewichte und R².
+2. **Niederschlag:** Niveau gleich (+2 mm im Mittel, höchstens 12 mm), Verlauf gleich (*r* = 0,998).
+   Der IQR sinkt um 36 % (151 → 96 mm).
+3. **Temperatur:** Das Niveau steigt um 0,74 °C (höchstens 0,93 °C), der IQR sinkt von 2,5 auf 1,7 °C.
+   Die Form der T-Anomalien weicht deutlich vom Standard v2 ab (*r* = 0,58). Die T-Rekonstruktion trägt
+   also weiterhin kein belastbares zeitliches Signal (vgl. 3.8).
+4. **Taxa-Gewichte:** wie im Lauf G. *Amaranthaceae* und *Q. calliprinos* liegen vorn, *Olea* hinten; die
+   übrigen Gewichte liegen bei ≈ 0,02, also beim Prior-Median für α ≈ 0,8.
+5. **Transferfunktion:** Nur das mediterrane Biom wird durch die Daten eingegrenzt, jetzt deutlicher
+   (CI-Verhältnis 0,55 bzw. 0,69), weil der engere Prior des rezenten Klimas mit eingeht (3.9, Punkt 4).
+
+**Korrekturen an Abbildungen** (ohne Einfluss auf Ketten und Tabellen):
+
+- `independent_proposal_dists`: Die Prior-Kurve von T0 verwendete immer die Werte der Eingangsdaten,
+  auch wenn `recent_temp_*` gesetzt war. Betroffen waren die Abbildungen der Läufe `m_*` und `o_*`.
+- Die Legende derselben Abbildung beschriftete Linie und Fläche der Posterior mit „Posterior“ und „Prior“
+  (schon im Original). Jetzt: graue Fläche = Posterior, orange Linie = Prior.
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |
@@ -480,11 +528,10 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
    Fragen an den Autor: Befunde 12 und 14 sowie die Herkunft der CRU-Prior-Werte
    (10,74 ± 2,48 °C, 556 ± 135 mm).
 2. ~~Prior der Taxa-Gewichte~~: geklärt, der Prior muss nicht starr sein. Der hierarchische Prior
-   ist umgesetzt und geprüft (Abschnitt 3.6). Offen ist nur noch, ob er die Standardeinstellung
-   werden soll.
+   ist umgesetzt und geprüft (Abschnitt 3.6) und seit v3 Standard (Abschnitt 3.10).
 3. Erratum oder Corrigendum zum Paper erwägen (Taxa-Gewichte, CI-Verhältnisse).
-4. ~~CRU-Prior aus einem festgelegten Einzugsgebiet~~: umgesetzt (Abschnitt 3.9). Offen ist nur, ob
-   der Prior für 50 km Standard wird.
+4. ~~CRU-Prior aus einem festgelegten Einzugsgebiet~~: umgesetzt (Abschnitt 3.9) und mit dem
+   hierarchischen Prior der Gewichte seit v3 Standard (Abschnitt 3.10).
 
 ## Literatur
 

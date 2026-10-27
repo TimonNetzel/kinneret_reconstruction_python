@@ -4,6 +4,12 @@
 output_dir = "results/a_wie_original"
 
 [sampler]
+# Voreinstellungen bis v2 festgeschrieben (seit v3: hierarchischer Prior, 8 Mio. It., CRU-Prior 50 km)
+taxa_prior = "fixed"
+recent_temp_mean = 10.735555696487427
+recent_temp_sd = 2.477961143339347
+recent_pann_mean = 556.2477878146701
+recent_pann_sd = 134.97964751751925
 kernel = "corrected"
 n_chains = 4
 sample_length = 1000000

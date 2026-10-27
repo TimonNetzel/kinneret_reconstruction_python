@@ -27,14 +27,15 @@ Voraussetzungen: Python ≥ 3.11 und ein C++17-Compiler (z. B. g++).
 
 ```bash
 pip install -e ".[test]"     # kompiliert den C++-Kern einmalig
-pytest                       # Tests (~30 s)
+pytest                       # Tests (~1 min; lange Tests: pytest -m slow)
 ```
 
 ## Benutzung
 
 ```bash
-kinneret-recon run                         # Standardlauf (überarbeiteter Sampler, 4 Ketten)
-kinneret-recon run -c configs/standard.toml
+kinneret-recon run                         # Standardlauf (Voreinstellungen, siehe unten), ~13 min
+kinneret-recon run -c configs/standard.toml # dasselbe mit ausgeschriebenen Einstellungen
+kinneret-recon run -c configs/standard_v2.toml  # bisheriger Standard (Dir(0,5), Prior wie im Paper), ~4 min
 kinneret-recon run --legacy                # exakt wie das Originalskript (bitidentische Ergebnisse)
 kinneret-recon run --chains 8 --samples 4000000 -o results/lang
 kinneret-recon config meine_config.toml    # Vorlage mit allen Einstellungen schreiben
@@ -52,8 +53,24 @@ Ein Lauf schreibt in sein Ausgabeverzeichnis:
 | `posterior.npz`, `results.npz` | Ketten (ausgedünnt) und Auswertung für eigene Analysen |
 | `config.toml`, `meta.json` | verwendete Einstellungen, Git-Stand, Versionen, Laufzeiten, Seeds |
 
-Mit Seed und Konfiguration ist jeder Lauf bitgenau reproduzierbar. Der Zufallszahlengenerator ist
-portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
+Mit Seed und Konfiguration ist jeder Lauf bitgenau reproduzierbar (mit demselben Code-Stand; `meta.json`
+enthält den Git-Stand). Der Zufallszahlengenerator ist portabel und liefert mit jedem standardkonformen
+Compiler dieselben Zahlen.
+
+## Voreinstellungen (Standard ab v3)
+
+Seit dem 27.10.2026 (vom Autor festgelegt) gilt als Standard:
+
+| Einstellung | Standard v3 | bis v2 |
+|---|---|---|
+| Prior der Taxa-Gewichte | hierarchisch: Dir(α), log α ~ N(log 1, 1) | Dir(0,5) wie im Paper |
+| Prior des rezenten Klimas | CRU TS 4.07, Einzugsgebiet 50 km: 11,09 ± 0,87 °C, 521,8 ± 41,4 mm | Mittel und räumliche Sd mehrerer Gitterpunkte: 10,74 ± 2,48 °C, 556 ± 135 mm |
+| Länge je Kette (4 Ketten) | 8 Mio., Burn-in 2 Mio., Ausdünnung 600 | 2 Mio., 500 000, 150 |
+
+Alle anderen Einstellungen sind unverändert. Die Konfigurationen der Vergleichsreihe (`configs/a_*` bis
+`configs/o_*`, `configs/standard_v2.toml`) schreiben die Werte bis v2 ausdrücklich fest und liefern dieselben
+Läufe wie zuvor. `sampler.recent_* = None` (nur im Python-Code) verwendet die Werte der Eingangsdaten wie im
+Paper.
 
 ## Sampler
 
@@ -83,7 +100,7 @@ portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
 ## Prior des rezenten Klimas aus CRU-Daten
 
 Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes
-Einzugsgebiet berechnen. Grundlage ist ein Ausschnitt der Levante aus CRU TS 4.07 (Monatswerte 1951–2020,
+Einzugsgebiet berechnen; die Voreinstellung ist das Ergebnis für 50 km. Grundlage ist ein Ausschnitt der Levante aus CRU TS 4.07 (Monatswerte 1951–2020,
 0,5°) und CRU CL 2.0 (10′, mit Höhenmodell) in `data/in/cru_levante.npz` (0,5 MB).
 
 ```bash
@@ -102,8 +119,8 @@ Abschnitt 3.9.
 
 ## Leistung (4 CPU-Kerne)
 
-| | Original | Paket, `--legacy` | Paket, Standard |
-|---|---|---|---|
-| Sampling | ~60 s, 1 Kette, ~3 GB RAM | 36 s, 1 Kette | ~90 s, 4 Ketten × 2 Mio. |
-| Prior-Referenzlauf | – | – | ~90 s |
-| Auswertung + Abbildungen | 576 s | ~20 s | ~45 s |
+| | Original | Paket, `--legacy` | Paket, Standard v2 | Paket, Standard v3 |
+|---|---|---|---|---|
+| Sampling | ~60 s, 1 Kette, ~3 GB RAM | 36 s, 1 Kette | ~90 s, 4 Ketten × 2 Mio. | ~5,4 min, 4 Ketten × 8 Mio. |
+| Prior-Referenzlauf | – | – | ~90 s | ~5,1 min |
+| Auswertung + Abbildungen | 576 s | ~20 s | ~45 s | ~40 s |

@@ -3,6 +3,11 @@
 output_dir = "results/o_cru_r100"
 
 [sampler]
+# Voreinstellungen bis v2 festgeschrieben (seit v3: hierarchischer Prior, 8 Mio. It., CRU-Prior 50 km)
+sample_length = 2000000
+burn_in = 500000
+thin = 150
+taxa_prior = "fixed"
 recent_temp_mean = 10.45
 recent_temp_sd = 0.99
 recent_pann_mean = 512.0
