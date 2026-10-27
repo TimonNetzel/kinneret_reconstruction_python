@@ -1,0 +1,6 @@
+# Gl. (14) des Papers als Prior: Klimawerte der Biome ~ N_t(mu(psi), sigma(psi)) auf [a, b]
+# (Standard: N_t nur als Vorschlag, gleichverteilter Prior auf [a, b] wie im Originalcode)
+output_dir = "results/k_tf_normal_prior"
+
+[sampler]
+tf_normal_prior = true

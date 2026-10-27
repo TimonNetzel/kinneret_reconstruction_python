@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0.dev0",
+  "git": "c8516eb-dirty",
+  "python": "3.13.17",
+  "numpy": "2.5.3",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39",
+  "timings_s": {
+    "vorbereitung": 0.13,
+    "sampling": 36.64,
+    "auswertung": 9.98,
+    "diagnostik": 0.42,
+    "abbildungen": 6.94
+  },
+  "acceptance_rate": [
+    0.2832142832142832
+  ],
+  "n_samples_post": 10000,
+  "diagnostics_problems": []
+}

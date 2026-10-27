@@ -1,0 +1,9 @@
+# Prior des rezenten Klimas: Gebietsmittel wie bisher, aber Sd als Unsicherheit des Klimas im
+# Einzugsgebiet (1 degC, 20 %) statt raeumlicher Streuung der Gitterpunkte (2,48 degC, 135 mm)
+output_dir = "results/m_cru_eng"
+
+[sampler]
+recent_temp_mean = 10.74
+recent_temp_sd = 1.0
+recent_pann_mean = 556.0
+recent_pann_sd = 111.0

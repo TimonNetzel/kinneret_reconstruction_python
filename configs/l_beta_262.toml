@@ -1,0 +1,6 @@
+# R2-Prior wie in Tab. 2 des Papers: Beta(2,62; 2,62) (Mittel 0,5, Sd 0,20) statt Beta(3; 3) (Sd 0,19)
+output_dir = "results/l_beta_262"
+
+[sampler]
+beta_shape1 = 2.62
+beta_shape2 = 2.62

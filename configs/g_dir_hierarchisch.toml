@@ -1,0 +1,12 @@
+# Flexibler Prior der Taxa-Gewichte: Dir(alpha) mit mitgeschaetzter Konzentration,
+# log(alpha) ~ N(log 1, 1) (95 % der Prior-Masse zwischen alpha = 0,14 und 7,1).
+# alpha mischt langsam (gekoppelt an die kleinen Gewichte), daher 8 Mio. Iterationen je Kette.
+output_dir = "results/g_dir_hierarchisch"
+
+[sampler]
+taxa_prior = "hierarchical"
+sample_length = 8000000
+burn_in = 2000000
+thin = 600
+alpha_prior_median = 1.0
+alpha_prior_log_sd = 1.0

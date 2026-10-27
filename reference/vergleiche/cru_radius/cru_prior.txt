@@ -1,0 +1,12 @@
+Einzugsgebiet: Radius 10 km um (32.82, 35.59), Gewichtung gauss, 1 Zellen mit Gewicht > 1 %; CRU TS 4.07 1961-1990
+  T_DJF: 11.39 +- 1.96 degC  (Komponenten: zeitmittel 0.17, gebiet 0.62, produkt 1.72, zeitraum 0.69; raeumliche Sd 0.00; CRU CL 2.0 13.11)
+  P_ANN: 440.1 +- 75.4 mm  (Komponenten: zeitmittel 16.2, gebiet 68.0, produkt 9.1, zeitraum 26.7; raeumliche Sd 0.0; CRU CL 2.0 431.0)
+Einzugsgebiet: Radius 25 km um (32.82, 35.59), Gewichtung gauss, 3 Zellen mit Gewicht > 1 %; CRU TS 4.07 1961-1990
+  T_DJF: 11.50 +- 1.23 degC  (Komponenten: zeitmittel 0.17, gebiet 0.70, produkt 0.72, zeitraum 0.69; raeumliche Sd 0.68; CRU CL 2.0 12.21)
+  P_ANN: 480.0 +- 44.9 mm  (Komponenten: zeitmittel 17.3, gebiet 31.3, produkt 1.0, zeitraum 27.1; raeumliche Sd 70.9; CRU CL 2.0 479.0)
+Einzugsgebiet: Radius 50 km um (32.82, 35.59), Gewichtung gauss, 7 Zellen mit Gewicht > 1 %; CRU TS 4.07 1961-1990
+  T_DJF: 11.09 +- 0.87 degC  (Komponenten: zeitmittel 0.17, gebiet 0.47, produkt 0.21, zeitraum 0.68; raeumliche Sd 1.44; CRU CL 2.0 11.30)
+  P_ANN: 521.8 +- 41.4 mm  (Komponenten: zeitmittel 18.1, gebiet 24.2, produkt 3.1, zeitraum 28.2; raeumliche Sd 105.9; CRU CL 2.0 518.7)
+Einzugsgebiet: Radius 100 km um (32.82, 35.59), Gewichtung gauss, 13 Zellen mit Gewicht > 1 %; CRU TS 4.07 1961-1990
+  T_DJF: 10.45 +- 0.99 degC  (Komponenten: zeitmittel 0.17, gebiet 0.69, produkt 0.14, zeitraum 0.68; raeumliche Sd 2.04; CRU CL 2.0 10.31)
+  P_ANN: 512.0 +- 39.1 mm  (Komponenten: zeitmittel 17.4, gebiet 19.1, produkt 7.3, zeitraum 28.3; raeumliche Sd 148.1; CRU CL 2.0 504.6)

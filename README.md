@@ -1,45 +1,109 @@
-FUNCTIONALITY:
+# Kinneret-Rekonstruktion
 
-    The scripts perform the MCMC simulation described in the publication for Python 3 and Linux.
-    Each script is written very simply and clearly to ensure a quick insight into how it works.
-    The Python-based scripts contain some MCMC functions written in C++. 
-    Only one rather rarely used Python package (pybind11) has to be installed at the beginning, which creates an 
-    interface between Python and C++.
+Bayessche Rekonstruktion von Wintertemperatur (T_DJF) und Jahresniederschlag (P_ANN) aus
+Pollendaten des See Genezareth (Lake Kinneret). Das Paket setzt das hierarchische Modell aus
 
+> Netzel, T., Miebach, A., Litt, T., Hense, A. (2025): *New probabilistic methods for quantitative
+> climate reconstructions applied to palynological data from Lake Kinneret.* Clim. Past 21, 357–380.
+> https://doi.org/10.5194/cp-21-357-2025
 
-TO RUN RECONSTRUCTION:
+als installierbares Python-Paket mit C++-Kern um.
 
-    Install the following packages if necessary: numpy, random, os, sys, pybind11, matplotlib, and scipy
+| Ordner | Inhalt |
+|---|---|
+| `src/kinneret_recon/` | Python-Paket (Konfiguration, Daten, Modell, Sampler, Auswertung, Diagnostik, Abbildungen, Bericht, Kommandozeile) |
+| `cpp/` | C++-Kern: Original-Sampler (`legacy_kernel.hpp`), überarbeiteter Sampler (`kernel.hpp`), Kerndichteschätzer (`kde.hpp`) |
+| `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
+| `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v0.1.0` = Zenodo-Version) |
+| `reference/v1.0-paper/` | Referenzergebnisse des Originals |
+| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), Paper (`docs/paper/`) |
+| `reference/laeufe/`, `reference/vergleiche/` | Tabellen, Diagnostik und Einstellungen aller Vergleichs- und Sensitivitätsläufe |
+| `tools/` | Hilfsskripte für Auswertung und Abstimmung |
+| `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |
 
-    To execute the reconstruction, simply run "main.py", 
-    e.g. with the Linux command line "python3.x main.py"
+## Installation
 
-    This script contains the following:
+Voraussetzungen: Python ≥ 3.11 und ein C++17-Compiler (z. B. g++).
 
-    - import of all required packages, 
+```bash
+pip install -e ".[test]"     # kompiliert den C++-Kern einmalig
+pytest                       # Tests (~30 s)
+```
 
-    - C++ functions are compiled and included into Python (for each individual Python version).
-      This only has to be done once, so that the C++ functions can then be imported with import pycpp,
+## Benutzung
 
-    - settings for reproducibility and MCMC,
-    
-    - load and prepare all data stored in npz files (data/in),
+```bash
+kinneret-recon run                         # Standardlauf (überarbeiteter Sampler, 4 Ketten)
+kinneret-recon run -c configs/standard.toml
+kinneret-recon run --legacy                # exakt wie das Originalskript (bitidentische Ergebnisse)
+kinneret-recon run --chains 8 --samples 4000000 -o results/lang
+kinneret-recon config meine_config.toml    # Vorlage mit allen Einstellungen schreiben
+kinneret-recon compare Original=results/legacy Neu=results/standard -o results/vergleich
+```
 
-    - run and save the MCMC simulation (takes about 40 seconds on a standard CPU and is saved in data/out),
+Ein Lauf schreibt in sein Ausgabeverzeichnis:
 
-    - run the postprocessing routine that calculates, stores and plots the most important posterior metrics 
-      (data/out, plots).
+| Datei | Inhalt |
+|---|---|
+| `bericht.html` | Bericht mit allen Abbildungen, Tabellen, Konvergenzdiagnostik und automatischer Methodenbeschreibung |
+| `rekonstruktion_alter.csv`, `rekonstruktion_tiefe.csv` | Quantile (2,5/25/50/75/97,5 %) und Mittel von T_DJF und P_ANN, Biomanteile |
+| `diagnostik.csv` | Mittel, Sd, Quantile, R̂, ESS (bulk/tail) für alle Parameter |
+| `plots/` | Abbildungen als PDF und PNG |
+| `posterior.npz`, `results.npz` | Ketten (ausgedünnt) und Auswertung für eigene Analysen |
+| `config.toml`, `meta.json` | verwendete Einstellungen, Git-Stand, Versionen, Laufzeiten, Seeds |
 
-CHANGES OF BASIC SETTINGS:
+Mit Seed und Konfiguration ist jeder Lauf bitgenau reproduzierbar. Der Zufallszahlengenerator ist
+portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
 
-    If reproducibly is set to "False", each MCMC simulation will give a slightly different result.
-    Since our MCMC simulation converges, the differences are minimal and the main features of the results are preserved.
-    
-    MCMC sampling only needs to be done once.
-    That is why there is the possibility to switch it off.
-    In addition, the calculation of the post-processing metrics takes some time.
-    For this reason, they are saved and the option is offered that this has already been done.
-    The convergence test described in the publication is based on the predefined parameters of sample length, 
-    burn-in and thin size.
-    A corresponding change should therefore be treated with caution.
+## Sampler
 
+* **`kernel = "legacy"`**: der Original-Sampler. Ketten, Quartile und Abbildungen sind bitidentisch
+  zu `legacy/main.py`, Laufzeit etwa 1 min statt etwa 11 min.
+* **`kernel = "corrected"`** (Standard): überarbeiteter Sampler. Jede Korrektur lässt sich in der
+  Konfiguration einzeln abschalten:
+  * `dirichlet_hastings_fix`: Die Hastings-Korrektur des Dirichlet-Vorschlags enthält den
+    Streuungsparameter κ. Im Original fehlt er, die Kette trifft dort nicht die beabsichtigte
+    Posterior (siehe `docs/pruefbericht.md`).
+  * `exact_gamma_moments`: Die Parameter des Gamma-Priors für den rezenten Niederschlag werden
+    analytisch bestimmt statt per Gittersuche.
+  * `weights_proposal = "log_gamma"`: Random Walk auf log y mit w = y / Σy. Die Zielverteilung
+    ist dieselbe, die Kette mischt aber etwa 50-mal effizienter als mit dem Dirichlet-Random-Walk.
+  * mehrere Ketten mit gestreuten Startwerten und Konvergenzdiagnostik nach Vehtari et al. (2021).
+* `postprocess.quantile_method = "samples"`: Quartile direkt aus den Stichproben. Das Original
+  berechnet sie über geglättete Kerndichten (`"kde"`).
+* `postprocess.reconstruction = "mean"` (Standard) oder `"mixture"`: Rekonstruktion als Mittelwert der
+  Biom-Klimawerte oder als Mischverteilung nach Gl. (3) des Papers.
+* Weitere Modelloptionen: `sampler.tf_normal_prior` (Gl. 14 als Prior),
+  `sampler.recent_temp_mean/_sd` und `sampler.recent_pann_mean/_sd` (Prior des heutigen Klimas),
+  `sampler.taxa_prior` (Dir(α) fest oder hierarchisch), `sampler.beta_shape1/2` (R²-Prior),
+  `sampler.tf_bound_probs` (Trunkierung).
+* `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
+  sampeln. Nützlich für andere Auswerteoptionen.
+
+## Prior des rezenten Klimas aus CRU-Daten
+
+Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes
+Einzugsgebiet berechnen. Grundlage ist ein Ausschnitt der Levante aus CRU TS 4.07 (Monatswerte 1951–2020,
+0,5°) und CRU CL 2.0 (10′, mit Höhenmodell) in `data/in/cru_levante.npz` (0,5 MB).
+
+```bash
+kinneret-recon cru-prior -r 25 50 100                  # Mittel und Unsicherheit für drei Radien
+kinneret-recon cru-prior -r 50 --toml prior.toml       # als [sampler]-Abschnitt für eine Konfiguration
+kinneret-recon cru-prior -r 50 --kernel uniform --period 1991 2020 --cells zellen.csv
+kinneret-recon cru-extract roh/ --download             # Ausschnitt neu erzeugen (lädt ~320 MB)
+```
+
+Das Einzugsgebiet ist ein Radius um den See mit Entfernungsgewichtung (`gauss` mit σ = R/2, `uniform`
+oder `linear`). Die Sd ist die Unsicherheit des Gebietsmittels, nicht die räumliche Streuung der Zellen:
+Stichprobenfehler des 30-Jahres-Mittels, Repräsentativität (andere Radien und Gewichtungen), Datenfehler
+(CRU TS gegen CRU CL 2.0) und der Abstand zum Zeitraum der jüngsten Altersstufe (1991–2020). Optional sind
+eine Höhenkorrektur von T (`--lapse-rate`) und ein Zusatzfehler. Details: `docs/pruefbericht.md`,
+Abschnitt 3.9.
+
+## Leistung (4 CPU-Kerne)
+
+| | Original | Paket, `--legacy` | Paket, Standard |
+|---|---|---|---|
+| Sampling | ~60 s, 1 Kette, ~3 GB RAM | 36 s, 1 Kette | ~90 s, 4 Ketten × 2 Mio. |
+| Prior-Referenzlauf | – | – | ~90 s |
+| Auswertung + Abbildungen | 576 s | ~20 s | ~45 s |

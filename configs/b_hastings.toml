@@ -1,0 +1,12 @@
+# Schritt 4, Variante B: A plus korrekte Hastings-Korrektur der Taxa-Gewichte.
+# Zur Konvergenz mit dem log-Gamma-Vorschlag gerechnet (gleiche Zielverteilung, s. b_hastings_dirichlet).
+output_dir = "results/b_hastings"
+
+[sampler]
+kernel = "corrected"
+dirichlet_hastings_fix = true
+weights_proposal = "log_gamma"
+exact_gamma_moments = false
+
+[postprocess]
+quantile_method = "kde"

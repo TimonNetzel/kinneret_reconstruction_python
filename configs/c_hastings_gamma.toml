@@ -1,0 +1,11 @@
+# Schritt 4, Variante C: B plus exakte Momentenanpassung des Gamma-Priors fuer P0
+output_dir = "results/c_hastings_gamma"
+
+[sampler]
+kernel = "corrected"
+dirichlet_hastings_fix = true
+weights_proposal = "log_gamma"
+exact_gamma_moments = true
+
+[postprocess]
+quantile_method = "kde"

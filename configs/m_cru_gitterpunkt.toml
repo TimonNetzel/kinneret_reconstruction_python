@@ -1,0 +1,9 @@
+# Prior des rezenten Klimas vom CRU-Gitterpunkt am See (Abb. 2c: T_DJF = (12,2 + 10,4 + 11,5)/3 = 11,37 degC,
+# P_ANN = 440 mm) statt Mittel mehrerer Levante-Gitterpunkte (10,74 degC, 556 mm); Sd wie bisher
+output_dir = "results/m_cru_gitterpunkt"
+
+[sampler]
+recent_temp_mean = 11.37
+recent_temp_sd = 2.48
+recent_pann_mean = 440.0
+recent_pann_sd = 135.0

@@ -1,0 +1,6 @@
+# Empfindlichkeit: fester Prior der Taxa-Gewichte Dir(2) statt Dir(0,5) (sonst wie standard)
+output_dir = "results/f_dir_alpha_2"
+
+[sampler]
+taxa_prior = "fixed"
+taxa_prior_alpha = 2.0

@@ -1,0 +1,18 @@
+# Schritt 4, Variante A: ueberarbeiteter Sampler mit allen inhaltlichen Korrekturen AUS
+# (Laenge, kappa, Gamma-Gitter, KDE-Quartile wie im Original). Muss statistisch mit dem
+# Original uebereinstimmen und validiert damit den neuen Sampler.
+output_dir = "results/a_wie_original"
+
+[sampler]
+kernel = "corrected"
+n_chains = 4
+sample_length = 1000000
+burn_in = 250000
+thin = 75
+dirichlet_hastings_fix = false
+weights_proposal = "dirichlet"
+dirichlet_spread_factor = 1.0
+exact_gamma_moments = false
+
+[postprocess]
+quantile_method = "kde"

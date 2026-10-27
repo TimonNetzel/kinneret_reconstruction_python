@@ -1,0 +1,10 @@
+# Empfindlichkeit: Trunkierung der TF-Stichproben bei 1 %/99 % statt 5 %/95 % (sonst wie standard)
+output_dir = "results/e_tf_grenzen_1_99"
+
+[sampler]
+kernel = "corrected"
+weights_proposal = "log_gamma"
+tf_bound_probs = [0.01, 0.99]
+
+[postprocess]
+quantile_method = "samples"

@@ -1,0 +1,29 @@
+data_dir = "data/in"
+output_dir = "results/b_hastings"
+plots = true
+report = true
+
+[sampler]
+kernel = "corrected"
+sample_length = 2000000
+burn_in = 500000
+thin = 150
+n_chains = 4
+seed = 2023
+dirichlet_hastings_fix = true
+exact_gamma_moments = false
+dispersed_init = true
+weights_proposal = "log_gamma"
+target_accept = 0.234
+dirichlet_spread_factor = 4.0
+tf_bound_probs = [0.05, 0.95]
+beta_shape1 = 3.0
+beta_shape2 = 3.0
+use_calibration = true
+use_tf_likelihood = true
+use_taxa_prior = true
+
+[postprocess]
+quantile_method = "kde"
+n_threads = 0
+seed = 2023

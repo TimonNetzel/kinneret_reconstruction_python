@@ -1,0 +1,25 @@
+data_dir = "data/in"
+output_dir = "results/legacy"
+plots = true
+report = true
+
+[sampler]
+kernel = "legacy"
+sample_length = 1000000
+burn_in = 250000
+thin = 75
+n_chains = 1
+seed = 2023
+dirichlet_hastings_fix = false
+exact_gamma_moments = false
+dispersed_init = false
+beta_shape1 = 3.0
+beta_shape2 = 3.0
+use_calibration = true
+use_tf_likelihood = true
+use_taxa_prior = true
+
+[postprocess]
+quantile_method = "kde"
+n_threads = 0
+seed = 2023

@@ -1,0 +1,7 @@
+vergleich,groesse,mittlere_diff,max_abs_diff
+25 km - Standard,temp Median [°C],0.9786,1.0817
+25 km - Standard,pann Median [mm],-32.8039,52.2132
+50 km - Standard,temp Median [°C],0.7894,0.9199
+50 km - Standard,pann Median [mm],-1.6268,11.933
+100 km - Standard,temp Median [°C],0.247,0.3303
+100 km - Standard,pann Median [mm],-7.5176,19.993
