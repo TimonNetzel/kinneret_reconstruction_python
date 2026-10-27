@@ -152,7 +152,8 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
   `CRU_PRIOR_50KM` (`src/kinneret_recon/config.py`); `configs/standard.toml` = Voreinstellung.
 - Alle Vergleichskonfigurationen schreiben die Werte bis v2 fest (bitgleich geprüft), der alte
   Standard heißt jetzt `configs/standard_v2.toml`.
-- Referenzlauf `reference/v3-standard/`, Vergleich in `reference/vergleiche/v3/`.
+- Referenzlauf `reference/v3-standard/`, Vergleich in `reference/vergleiche/v3/`, Mischverteilung
+  nach Gl. (3) in `reference/laeufe/v3_mixture/` (drei Gipfel beim Niederschlag, Prüfbericht 3.10).
 - Abbildung `independent_proposal_dists` korrigiert (Prior-Kurve von T0, Legende).
 
 **Mögliche nächste Schritte:**
