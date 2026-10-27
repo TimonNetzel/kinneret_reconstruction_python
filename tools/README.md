@@ -10,3 +10,5 @@ aufgerufen, nachdem das Paket installiert ist (`pip install -e .`).
 | `prior_only.py` | Prior-only-Validierung: Dirichlet-Vorschlag mit und ohne korrekte Hastings-Korrektur | `python tools/prior_only.py 400000` |
 | `legacy_post.py` | Originalskript ohne erneutes MCMC (nur Auswertung und Abbildungen) | `cd legacy && python ../tools/legacy_post.py` |
 | `runtimer.py` | Laufzeit und Spitzenspeicher eines Befehls messen | `python tools/runtimer.py python3 main.py` |
+| `anomalien.py` | Niveau, IQR und Korrelation der Anomalien mehrerer Läufe (Tabellen in Prüfbericht 3.8 und 3.9); liest `results/` oder `reference/laeufe/` | `python tools/anomalien.py standard o_cru_r25 o_cru_r50 o_cru_r100` |
+| `karte_cru.py` | Karte des CRU-Ausschnitts mit den Einzugsgebieten | `python tools/karte_cru.py` |

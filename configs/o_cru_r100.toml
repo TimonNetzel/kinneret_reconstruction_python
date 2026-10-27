@@ -1,0 +1,9 @@
+# Prior des rezenten Klimas aus einem festgelegten Einzugsgebiet (kinneret-recon cru-prior -r 100):
+# CRU TS 4.07 1961-1990, Gauss-Gewichtung (sigma = R/2), Sd = Unsicherheit (Zeitmittel, Gebiet, Produkt, Zeitraum)
+output_dir = "results/o_cru_r100"
+
+[sampler]
+recent_temp_mean = 10.45
+recent_temp_sd = 0.99
+recent_pann_mean = 512.0
+recent_pann_sd = 39.1

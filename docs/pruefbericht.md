@@ -323,6 +323,118 @@ Im Code sind die Werte jetzt einstellbar (`sampler.recent_temp_mean/_sd`,
 
 ![Prior des rezenten Klimas](abbildungen/vergleich_cru_prior.png)
 
+### 3.9 Prior des rezenten Klimas aus einem festgelegten Einzugsgebiet
+
+Umsetzung der Empfehlung aus 3.8, Punkt 4. Der Prior wird jetzt per Skript aus den CRU-Daten
+berechnet: `kinneret-recon cru-prior` (Modul `cru.py`).
+
+**Daten.** CRU TS 4.07 (Harris et al., 2020), Monatswerte `tmp` und `pre`, 0,5°, 1951–2020, dazu die
+10′-Klimatologie CRU CL 2.0 (New et al., 2002) mit Höhenmodell. Quelle ist `crudata.uea.ac.uk`, das aus
+der Arbeitsumgebung jetzt erreichbar ist. Im Repo liegt nur der Levante-Ausschnitt
+(`data/in/cru_levante.npz`, 0,5 MB, 29–36,5° N, 32,5–39,5° O; CRU TS steht unter der Open Government
+Licence v3, zu zitieren sind Harris et al., 2020, und New et al., 2002). `kinneret-recon cru-extract roh/
+--download` erzeugt ihn neu. Im Einzugsgebiet sind 1961–1990 alle Monatswerte stationsgestützt (CRU
+setzt sonst die Klimatologie ein, was die zwischenjährliche Variabilität unterschätzen würde).
+
+**Verfahren.**
+
+- *Einzugsgebiet:* Radius R um die Seemitte (32,82° N, 35,59° O). Die Gewichte sinken mit der
+  Entfernung (Standard: Gauß mit σ = R/2, abgeschnitten bei R; wahlweise gleichverteilt oder linear).
+  Jede 0,5°-Zelle wird dafür in 10 × 10 Teilpunkte zerlegt und flächengewichtet. So wirkt auch ein
+  Radius unter der Zellgröße stetig. Meereszellen haben keine Daten und fallen heraus.
+- *Größen:* T_DJF = Mittel aus Dezember des Vorjahrs, Januar und Februar; P_ANN = Jahressumme. Mittel
+  über 1961–1990 wie im Paper und wie bei der Transferfunktion.
+- *Unsicherheit (Sd):* nicht mehr die räumliche Streuung der Zellen, sondern die Unsicherheit des
+  Gebietsmittels. Vier Komponenten werden quadratisch addiert:
+  - *Zeitmittel:* Stichprobenfehler des 30-Jahres-Mittels aus der zwischenjährlichen Variabilität des
+    Gebietsmittels (effektiver Umfang mit AR(1)-Korrektur),
+  - *Gebiet* (Repräsentativität): mittlere quadratische Abweichung der Mittel anderer plausibler
+    Einzugsgebiete (25, 50, 100 km; alle drei Gewichtungen) vom gewählten,
+  - *Produkt* (Datenfehler): Differenz CRU TS 4.07 gegen CRU CL 2.0 für dasselbe Gebiet. Beide beruhen
+    weitgehend auf denselben Stationen, die Komponente ist also eine Untergrenze,
+  - *Zeitraum:* Die jüngste Altersstufe (−50 cal BP) entspricht 2000 CE. Der Abstand der Mittel
+    1991–2020 und 1961–1990 geht deshalb als Unsicherheit ein, statt den Prior zu verschieben.
+  Optional: ein Zusatzfehler (`--extra-temp-sd`, `--extra-pann-rel-sd`), z. B. für den Messfehler des
+  Niederschlags.
+- *Höhenkorrektur* (`--lapse-rate`): optional, Standard aus. Pollen bilden die Vegetation im
+  Einzugsgebiet auf deren eigener Höhe ab, nicht das Klima am Seespiegel (−212 m). Außerdem ist die
+  Transferfunktion auf 0,5°-Zellen kalibriert. Mit 5,5 °C/km auf Seespiegelniveau ergäbe sich
+  T_DJF = 14,1 °C (50 km); das ist das Klima am Ufer, nicht das der Vegetation.
+
+**Herkunft der bisherigen Werte (10,74 ± 2,48 °C, 556 ± 135 mm).** Die Zelle am See (32,75° N,
+35,75° O) hat 11,39 °C und 440 mm, wie in Abb. 2c des Papers. Die bisherigen Werte passen zu einem
+ungewichteten Mittel und der räumlichen Sd von etwa 3 bis 8 Zellen innerhalb von 50–100 km, 1961–1990.
+Die drei nächsten Zellen (≤ 50 km) ergeben 10,40 ± 2,50 °C und 556 ± 101 mm, acht Zellen bis ~105 km
+10,74 ± 2,51 °C und 554 ± 142 mm. Welche Zellen genau verwendet wurden, lässt sich nicht eindeutig
+bestimmen: Viele Teilmengen passen ähnlich gut.
+
+**Prior nach Radius** (Gauß-Gewichtung, 1961–1990; `reference/vergleiche/cru_radius/`):
+
+| Radius | Zellen > 1 % | T_DJF | Sd T: Zeitmittel / Gebiet / Produkt / Zeitraum | P_ANN | Sd P: Zeitmittel / Gebiet / Produkt / Zeitraum | räuml. Sd T / P |
+|---|---|---|---|---|---|---|
+| 10 km | 1 | 11,39 ± 1,96 °C | 0,17 / 0,62 / 1,72 / 0,69 | 440 ± 75 mm | 16 / 68 / 9 / 27 | 0 / 0 |
+| 25 km | 3 | 11,50 ± 1,23 | 0,17 / 0,70 / 0,72 / 0,69 | 480 ± 45 | 17 / 31 / 1 / 27 | 0,68 / 71 |
+| **50 km** | 7 | **11,09 ± 0,87** | 0,17 / 0,47 / 0,21 / 0,68 | **522 ± 41** | 18 / 24 / 3 / 28 | 1,44 / 106 |
+| 100 km | 13 | 10,45 ± 0,99 | 0,17 / 0,69 / 0,14 / 0,68 | 512 ± 39 | 17 / 19 / 7 / 28 | 2,04 / 148 |
+| bisher | – | 10,74 ± 2,48 | (räumliche Sd) | 556 ± 135 | (räumliche Sd) | – |
+
+- Mit wachsendem Radius wird das Gebietsmittel kühler (Golan, Hermon, Ostjordanland), P steigt bis
+  50 km (Galiläa) und sinkt dann wieder (Ostjordanland).
+- Die Unsicherheit ist 2- bis 3-mal kleiner als die bisherige Sd. Am größten sind Gebiet und Zeitraum.
+  1991–2020 ist das Gebiet um 0,7 °C wärmer und um 28 mm trockener.
+- Beim kleinsten Radius dominiert der Datenfehler: Die Seezelle liegt im Mittel auf 269 m Höhe, der
+  See auf −212 m. CRU CL 2.0 (10′) ergibt für die nähere Umgebung des Sees 13,1 °C statt 11,4 °C.
+  Kleine Radien sind also unzuverlässig.
+- Die Gewichtung ist zweitrangig: 50 km gleichverteilt ergibt 10,85 °C und 531 mm.
+
+![Einzugsgebiete](abbildungen/cru_einzugsgebiet.png)
+
+**Läufe** (korrigierter Sampler, Dir(½), 4 Ketten × 2 Mio., R̂ ≤ 1,001, min. ESS > 14 000;
+`configs/o_cru_r*.toml`). Vergleichsbasis ist der Standardlauf, neu gerechnet mit dem aktuellen Code
+(`reference/laeufe/standard_aktuell`). Gegenüber dem gesicherten Standardlauf (Commit `40289b0`)
+weicht er nur durch eine andere Zufallszahlenfolge ab (≤ 0,01 °C und 2 mm im Mittel).
+
+| Lauf | Prior T / P | Niveau T | Niveau P | IQR T | IQR P | *r* Anomalie T | *r* Anomalie P | T0 / P0 (Posterior) | CI-Verh. T / P Med |
+|---|---|---|---|---|---|---|---|---|---|
+| Standard (bisheriger Prior) | 10,74 ± 2,48 / 556 ± 135 | 9,93 °C | 437 mm | 2,48 | 151 | 1 | 1 | 10,0 / 530 | 0,80 / 0,81 |
+| 25 km | 11,50 ± 1,23 / 480 ± 45 | 10,91 | 404 | 1,92 | 100 | 0,81 | 0,999 | 11,1 / 478 | 0,63 / 0,75 |
+| **50 km** | 11,09 ± 0,87 / 522 ± 41 | 10,72 | 435 | 1,64 | 105 | 0,74 | 0,999 | 10,9 / 518 | 0,58 / 0,71 |
+| 100 km | 10,45 ± 0,99 / 512 ± 39 | 10,18 | 429 | 1,69 | 104 | 0,92 | 0,999 | 10,3 / 510 | 0,63 / 0,71 |
+
+![Rekonstruktion nach Radius des Einzugsgebiets](abbildungen/vergleich_cru_radius.png)
+
+**Ergebnisse.**
+
+1. **Der Niederschlagsverlauf ist robust** (*r* = 0,999 bei allen Radien). Das **P-Niveau** ändert sich
+   für 50 und 100 km kaum (−2 bzw. −8 mm im Mittel), für 25 km sinkt es um 33 mm.
+2. **Die Unsicherheit wird deutlich kleiner:** IQR von P −30 % (151 → 100–105 mm), von T −25 bis −35 %
+   (2,5 → 1,6–1,9 °C). Die bisherige Bandbreite der Rekonstruktion war also zu einem großen Teil die
+   räumliche Streuung der CRU-Zellen, die als Unsicherheit in den Prior einging.
+3. **Das T-Niveau folgt dem Prior** und steigt um 0,25–1,0 °C. Die Daten ziehen T0 nur noch wenig nach
+   unten (Posterior 10,9 gegen Prior 11,1 °C bei 50 km). Die Form der T-Anomalien bleibt wenig robust
+   (*r* 0,74–0,92), wie in 3.8.
+4. **Die Information über die Transferfunktion des mediterranen Bioms hängt vom Prior ab:** Das
+   CI-Verhältnis sinkt von 0,80 auf 0,58–0,63 (T) und von 0,81 auf 0,71–0,75 (P). Die IT- und
+   SA-Biome bleiben bei ~1. Der Prior des rezenten Klimas bestimmt also mit, wie stark die Daten die
+   Transferfunktion „verengen“ (vgl. Befund 2).
+5. Taxa-Gewichte und R² ändern sich nicht (R² 0,54–0,55; *Olea* / *Q. calliprinos* / *Amaranthaceae*
+   0,007–0,008 / 0,015–0,016 / 0,019–0,022).
+
+**Empfehlung:**
+
+1. **Einzugsgebiet 50 km, Gauß-Gewichtung** (σ = 25 km): 11,09 ± 0,87 °C und 522 ± 41 mm
+   (`configs/o_cru_r50.toml`). Für einen großen See (166 km²) stammt der Pollen überwiegend aus einem
+   regionalen Umkreis von einigen zehn Kilometern. 50 km liegt in der Mitte der geprüften Spanne, die
+   Unsicherheit über den Radius steckt in der Komponente „Gebiet“. Sehr kleine Radien sind wegen des
+   Datenfehlers am Grabenrand ungeeignet.
+2. Die Komponente „Produkt“ ist eine Untergrenze. Wer den Messfehler des Niederschlags (Unterschätzung
+   durch Wind, Repräsentativität der Stationen) berücksichtigen will, ergänzt z. B.
+   `--extra-pann-rel-sd 0.1` (P: 522 ± 67 mm).
+3. Absolute T-Werte nur mit dieser Prior-Wahl berichten. Für Aussagen über Klimaänderungen weiterhin
+   die P-Anomalien verwenden, die von der Wahl unabhängig sind.
+4. Ob der neue Prior Standard wird, entscheidet der Autor. Die Voreinstellung (Werte aus den
+   Eingangsdaten) ist unverändert.
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |
@@ -371,6 +483,8 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
    ist umgesetzt und geprüft (Abschnitt 3.6). Offen ist nur noch, ob er die Standardeinstellung
    werden soll.
 3. Erratum oder Corrigendum zum Paper erwägen (Taxa-Gewichte, CI-Verhältnisse).
+4. ~~CRU-Prior aus einem festgelegten Einzugsgebiet~~: umgesetzt (Abschnitt 3.9). Offen ist nur, ob
+   der Prior für 50 km Standard wird.
 
 ## Literatur
 
@@ -378,4 +492,8 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
 - Vehtari, A., Gelman, A., Simpson, D., Carpenter, B., Bürkner, P.-C. (2021): Rank-normalization,
   folding, and localization: An improved R̂ for assessing convergence of MCMC. Bayesian Analysis 16(2).
 - Marsaglia, G., Tsang, W. W. (2000): A simple method for generating gamma variables. ACM TOMS 26(3).
+- Harris, I., Osborn, T. J., Jones, P., Lister, D. (2020): Version 4 of the CRU TS monthly
+  high-resolution gridded multivariate climate dataset. Scientific Data 7, 109.
+- New, M., Lister, D., Hulme, M., Makin, I. (2002): A high-resolution data set of surface climate over
+  global land areas. Climate Research 21, 1–25.
 - Wichura, M. J. (1988): Algorithm AS 241: The percentage points of the normal distribution.

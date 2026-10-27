@@ -80,6 +80,26 @@ portabel und liefert mit jedem standardkonformen Compiler dieselben Zahlen.
 * `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
   sampeln. Nützlich für andere Auswerteoptionen.
 
+## Prior des rezenten Klimas aus CRU-Daten
+
+Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes
+Einzugsgebiet berechnen. Grundlage ist ein Ausschnitt der Levante aus CRU TS 4.07 (Monatswerte 1951–2020,
+0,5°) und CRU CL 2.0 (10′, mit Höhenmodell) in `data/in/cru_levante.npz` (0,5 MB).
+
+```bash
+kinneret-recon cru-prior -r 25 50 100                  # Mittel und Unsicherheit für drei Radien
+kinneret-recon cru-prior -r 50 --toml prior.toml       # als [sampler]-Abschnitt für eine Konfiguration
+kinneret-recon cru-prior -r 50 --kernel uniform --period 1991 2020 --cells zellen.csv
+kinneret-recon cru-extract roh/ --download             # Ausschnitt neu erzeugen (lädt ~320 MB)
+```
+
+Das Einzugsgebiet ist ein Radius um den See mit Entfernungsgewichtung (`gauss` mit σ = R/2, `uniform`
+oder `linear`). Die Sd ist die Unsicherheit des Gebietsmittels, nicht die räumliche Streuung der Zellen:
+Stichprobenfehler des 30-Jahres-Mittels, Repräsentativität (andere Radien und Gewichtungen), Datenfehler
+(CRU TS gegen CRU CL 2.0) und der Abstand zum Zeitraum der jüngsten Altersstufe (1991–2020). Optional sind
+eine Höhenkorrektur von T (`--lapse-rate`) und ein Zusatzfehler. Details: `docs/pruefbericht.md`,
+Abschnitt 3.9.
+
 ## Leistung (4 CPU-Kerne)
 
 | | Original | Paket, `--legacy` | Paket, Standard |

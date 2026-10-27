@@ -1,0 +1,230 @@
+[
+  {
+    "settings": {
+      "radius_km": 10.0,
+      "kernel": "gauss",
+      "period": [
+        1961,
+        1990
+      ],
+      "target_period": [
+        1991,
+        2020
+      ],
+      "lapse_rate": null,
+      "ref_elevation": -212.0,
+      "center": [
+        32.82,
+        35.59
+      ],
+      "alt_radii": [
+        25.0,
+        50.0,
+        100.0
+      ],
+      "alt_kernels": [
+        "gauss",
+        "uniform",
+        "linear"
+      ],
+      "extra_temp_sd": 0.0,
+      "extra_pann_rel_sd": 0.0
+    },
+    "temp_mean": 11.387778027852375,
+    "pann_mean": 440.07667948404946,
+    "temp_sd": 1.9642562807064572,
+    "pann_sd": 75.36930584381676,
+    "temp_components": {
+      "zeitmittel": 0.1704439900466478,
+      "gebiet": 0.6197556375591063,
+      "produkt": 1.7226491599874887,
+      "zeitraum": 0.691110992431641
+    },
+    "pann_components": {
+      "zeitmittel": 16.17242538685276,
+      "gebiet": 67.98160623332373,
+      "produkt": 9.100271519466958,
+      "zeitraum": 26.73333485921222
+    },
+    "temp_spatial_sd": 0.0,
+    "pann_spatial_sd": 0.0,
+    "temp_interannual_sd": 0.9066161572989405,
+    "pann_interannual_sd": 88.58002193948468,
+    "temp_cl2": 13.110427187839864,
+    "pann_cl2": 430.9764079645825,
+    "n_cells": 1,
+    "stn0_temp": 0.0,
+    "stn0_pann": 0.0
+  },
+  {
+    "settings": {
+      "radius_km": 25.0,
+      "kernel": "gauss",
+      "period": [
+        1961,
+        1990
+      ],
+      "target_period": [
+        1991,
+        2020
+      ],
+      "lapse_rate": null,
+      "ref_elevation": -212.0,
+      "center": [
+        32.82,
+        35.59
+      ],
+      "alt_radii": [
+        25.0,
+        50.0,
+        100.0
+      ],
+      "alt_kernels": [
+        "gauss",
+        "uniform",
+        "linear"
+      ],
+      "extra_temp_sd": 0.0,
+      "extra_pann_rel_sd": 0.0
+    },
+    "temp_mean": 11.496630862288855,
+    "pann_mean": 480.0073011487583,
+    "temp_sd": 1.2255687343000201,
+    "pann_sd": 44.90479824566208,
+    "temp_components": {
+      "zeitmittel": 0.1693226814038588,
+      "gebiet": 0.6976682655920067,
+      "produkt": 0.7159288583254746,
+      "zeitraum": 0.6885153687889503
+    },
+    "pann_components": {
+      "zeitmittel": 17.34324293012947,
+      "gebiet": 31.329508780727444,
+      "produkt": 1.015487979664556,
+      "zeitraum": 27.075514655710776
+    },
+    "temp_spatial_sd": 0.681236245252246,
+    "pann_spatial_sd": 70.90618062049111,
+    "temp_interannual_sd": 0.9065343256872677,
+    "pann_interannual_sd": 94.99285373123904,
+    "temp_cl2": 12.21255972061433,
+    "pann_cl2": 478.99181316909375,
+    "n_cells": 3,
+    "stn0_temp": 0.0,
+    "stn0_pann": 0.0
+  },
+  {
+    "settings": {
+      "radius_km": 50.0,
+      "kernel": "gauss",
+      "period": [
+        1961,
+        1990
+      ],
+      "target_period": [
+        1991,
+        2020
+      ],
+      "lapse_rate": null,
+      "ref_elevation": -212.0,
+      "center": [
+        32.82,
+        35.59
+      ],
+      "alt_radii": [
+        25.0,
+        50.0,
+        100.0
+      ],
+      "alt_kernels": [
+        "gauss",
+        "uniform",
+        "linear"
+      ],
+      "extra_temp_sd": 0.0,
+      "extra_pann_rel_sd": 0.0
+    },
+    "temp_mean": 11.094104023584249,
+    "pann_mean": 521.8020652919118,
+    "temp_sd": 0.874319643146489,
+    "pann_sd": 41.44910654857049,
+    "temp_components": {
+      "zeitmittel": 0.16786109763009402,
+      "gebiet": 0.4747479727026971,
+      "produkt": 0.20824684458538556,
+      "zeitraum": 0.6837434492769443
+    },
+    "pann_components": {
+      "zeitmittel": 18.060698473504225,
+      "gebiet": 24.235115235274687,
+      "produkt": 3.1187590631553803,
+      "zeitraum": 28.191703314323775
+    },
+    "temp_spatial_sd": 1.4426433050935599,
+    "pann_spatial_sd": 105.86695982753723,
+    "temp_interannual_sd": 0.9048207013217957,
+    "pann_interannual_sd": 98.92251958237384,
+    "temp_cl2": 11.302350868169635,
+    "pann_cl2": 518.6833062287565,
+    "n_cells": 7,
+    "stn0_temp": 0.0,
+    "stn0_pann": 0.0
+  },
+  {
+    "settings": {
+      "radius_km": 100.0,
+      "kernel": "gauss",
+      "period": [
+        1961,
+        1990
+      ],
+      "target_period": [
+        1991,
+        2020
+      ],
+      "lapse_rate": null,
+      "ref_elevation": -212.0,
+      "center": [
+        32.82,
+        35.59
+      ],
+      "alt_radii": [
+        25.0,
+        50.0,
+        100.0
+      ],
+      "alt_kernels": [
+        "gauss",
+        "uniform",
+        "linear"
+      ],
+      "extra_temp_sd": 0.0,
+      "extra_pann_rel_sd": 0.0
+    },
+    "temp_mean": 10.449272123043293,
+    "pann_mean": 511.9535322034523,
+    "temp_sd": 0.9944930646979768,
+    "pann_sd": 39.050450703691816,
+    "temp_components": {
+      "zeitmittel": 0.16699588509224308,
+      "gebiet": 0.694316289284236,
+      "produkt": 0.1376948035138117,
+      "zeitraum": 0.678302190483338
+    },
+    "pann_components": {
+      "zeitmittel": 17.395793237628,
+      "gebiet": 19.120828726960887,
+      "produkt": 7.341825736307499,
+      "zeitraum": 28.334000449055566
+    },
+    "temp_spatial_sd": 2.0386135341915073,
+    "pann_spatial_sd": 148.11754553276538,
+    "temp_interannual_sd": 0.906673301022117,
+    "pann_interannual_sd": 95.2806836194468,
+    "temp_cl2": 10.311577319529482,
+    "pann_cl2": 504.6117064671448,
+    "n_cells": 13,
+    "stn0_temp": 0.0,
+    "stn0_pann": 0.0
+  }
+]

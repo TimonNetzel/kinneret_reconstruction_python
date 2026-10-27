@@ -29,6 +29,7 @@ Rahmen (vom Autor festgelegt):
 | 5 | Performance | ✅ Auswertung 576 s → 10 s; MCMC 60 s → 37 s (Legacy) |
 | 6 | Vollständiger Lauf, Bericht | ✅ `reference/v2-standard/`, `reference/laeufe/g_dir_hierarchisch/` |
 | – | Flexibler Prior der Taxa-Gewichte | ✅ Dir(α) fest oder hierarchisch |
+| – | CRU-Prior aus festgelegtem Einzugsgebiet | ✅ `kinneret-recon cru-prior`, Prüfbericht 3.9 |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -46,6 +47,10 @@ Rahmen (vom Autor festgelegt):
    Gl. (3) (IQR bei P etwa ein Drittel).
 6. **Neuer Sampler (log-Gamma-Random-Walk):** gleiche Zielverteilung, etwa 50-mal effizienter als
    der Dirichlet-Random-Walk.
+7. **Prior des rezenten Klimas:** Die bisherige Sd (2,48 °C, 135 mm) war die räumliche Streuung der
+   CRU-Zellen. Als echte Unsicherheit eines 50-km-Einzugsgebiets ergeben sich 11,09 ± 0,87 °C und
+   522 ± 41 mm. Damit sinkt der IQR der Rekonstruktion um ~30 %, das T-Niveau steigt um 0,8 °C, das
+   P-Niveau bleibt (−2 mm), der P-Verlauf ist unverändert (*r* = 0,999).
 
 ## Entscheidungen
 
@@ -72,10 +77,9 @@ Rahmen (vom Autor festgelegt):
    Abschnitt 5): gleicher C++-Kern und gleiche Daten. Befund 1 betrifft damit die Ergebnisse des
    Papers direkt, und Befund 13 gilt auch für R.
 
-   **Noch offen:**
-   - CRU-Prior aus einem festgelegten Einzugsgebiet neu berechnen. Die CRU-Server sind aus der
-     Arbeitsumgebung nicht erreichbar; nötig sind entweder eine Netzwerkfreigabe für
-     `crudata.uea.ac.uk` oder die Daten vom Autor.
+   **CRU-Prior aus einem festgelegten Einzugsgebiet: erledigt** (27.10.2026, Prüfbericht 3.9).
+   **Noch offen:** Entscheidung des Autors, ob der Prior für 50 km (`configs/o_cru_r50.toml`)
+   Standard wird, und ob ein Zusatzfehler für den Niederschlag eingehen soll.
 2. **Standard auf den hierarchischen Prior umstellen:** In `SamplerConfig` steht noch
    `taxa_prior = "fixed"`. Umzustellen sind `taxa_prior = "hierarchical"` und die
    Standardlänge (8 Mio. Iterationen, Burn-in 2 Mio., Ausdünnung 600), danach Tests und README.
@@ -104,43 +108,47 @@ mit seiner `config.toml` (inkl. Seed) bitgenau wiederholbar.
 
 ## Arbeitsumgebung
 
-- Die Cloud-Umgebung „Default“ erlaubt nur Paketquellen (PyPI usw.) und GitHub-Git. Nicht
-  erreichbar sind `cp.copernicus.org`, `zenodo.org`, `crudata.uea.ac.uk` und `dap.ceda.ac.uk`.
-  Das Paper liegt deshalb in `docs/paper/`.
+- In der Sitzung vom 27.10.2026 (Nachmittag) waren `crudata.uea.ac.uk` und `dap.ceda.ac.uk`
+  erreichbar, `data.ceda.ac.uk` nicht (403). Ob `cp.copernicus.org` und `zenodo.org` erreichbar sind,
+  hängt von der Umgebung ab. Das Paper liegt in `docs/paper/`, der CRU-Ausschnitt in
+  `data/in/cru_levante.npz`; für die Arbeit sind keine weiteren Downloads nötig.
 - Gemessen auf 4 CPU-Kernen mit Python 3.13, NumPy 2.5, SciPy 1.18, Matplotlib 3.11 und g++ 13.
 
 ## Übergabe an eine neue Sitzung
 
-Stand 27.10.2026, letzter Commit dieser Sitzung siehe `git log`. Alles Nötige steht im Repo; aus der
+Stand 27.10.2026 (zweite Sitzung), letzter Commit siehe `git log`. Alles Nötige steht im Repo; aus der
 alten Sitzung muss nichts übernommen werden.
 
 **Einrichten (ca. 5 min):**
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-pytest                     # 19 Tests, ~1,5 min
+pytest                     # 26 Tests, ~1,5 min
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht
 (`--from-run`), rechnet sie neu: `kinneret-recon run -c configs/standard.toml` (~4 min),
 `kinneret-recon run --legacy` (~1 min).
 
-**Nächster Schritt: CRU-Prior aus einem festgelegten Einzugsgebiet** (Prüfbericht 3.8, Punkt 4)
+**Erledigt in dieser Sitzung: CRU-Prior aus einem festgelegten Einzugsgebiet** (Prüfbericht 3.9)
 
-1. Voraussetzung: eine Umgebung mit Netzwerkfreigabe für `crudata.uea.ac.uk` (und als Ausweichquelle
-   `dap.ceda.ac.uk`), „Allow package managers“ angehakt. Erreichbarkeit prüfen mit
-   `curl -sI https://crudata.uea.ac.uk/cru/data/hrg/`.
-2. Daten: CRU TS 4.07 (wie im Paper, Abb. 2), Monatswerte `tmp` und `pre`, 0,5°. Nur die Levante
-   ausschneiden (etwa 29–36° N, 33–39° O), Zeitraum 1961–1990. Die Rohdateien nicht ins Repo legen,
-   sie sind mehrere GB groß; nur den Ausschnitt bzw. die berechneten Prior-Werte.
-3. Neues Werkzeug, z. B. `kinneret-recon cru-prior`, das Mittel und Sd von T_DJF und P_ANN für ein
-   Einzugsgebiet berechnet: Radius um den See (32,82° N, 35,59° O), entfernungsgewichtet, optional
-   Höhenkorrektur. Als Sd die echte Unsicherheit verwenden, also zwischenjährliche Variabilität des
-   30-Jahres-Mittels plus Repräsentativität, nicht die räumliche Streuung.
-4. Damit die bisherigen Werte nachvollziehen (10,74 ± 2,48 °C, 556 ± 135 mm; Mittel mehrerer
-   Gitterpunkte, laut Autor) und Läufe mit Radien von z. B. 25, 50 und 100 km vergleichen
-   (`sampler.recent_*`). Erwartung nach den bisherigen Tests: Das Niveau verschiebt sich, der
-   P-Verlauf bleibt (Korrelation ≥ 0,995).
+- Modul `src/kinneret_recon/cru.py`, Befehle `kinneret-recon cru-extract` und `cru-prior`, Tests
+  `tests/test_cru.py`, Ausschnitt `data/in/cru_levante.npz` (CRU TS 4.07 1951–2020 und CRU CL 2.0).
+- Läufe `configs/o_cru_r25.toml`, `o_cru_r50.toml`, `o_cru_r100.toml`; Ergebnisse in
+  `reference/laeufe/o_cru_r*/`, Vergleich in `reference/vergleiche/cru_radius/`
+  (`python tools/anomalien.py standard_aktuell o_cru_r25 o_cru_r50 o_cru_r100`).
+- Die bisherigen Werte 10,74 ± 2,48 °C / 556 ± 135 mm sind Mittel und räumliche Sd von etwa 3–8
+  Zellen im Umkreis von 50–100 km; die genaue Auswahl ist nicht eindeutig bestimmbar.
+
+**Mögliche nächste Schritte:**
+
+1. Entscheidung des Autors zum CRU-Prior (Empfehlung: 50 km, Gauß; ggf. mit
+   `--extra-pann-rel-sd 0.1`). Wird er Standard, die Werte in `SamplerConfig` (oder in
+   `nnet_fit_params.npz`) eintragen, Tests und README anpassen.
+2. Standard auf den hierarchischen Prior der Gewichte umstellen (siehe „Offene Punkte“, Punkt 2);
+   sinnvoll zusammen mit Punkt 1 in einem neuen Referenzlauf `reference/v3-standard/`.
+3. Training der Transferfunktion; dabei dieselbe CRU-Version (TS 4.07, 1961–1990, 0,5°) verwenden
+   wie für den Prior.
 
 **Weitere offene Punkte:** siehe „Offene Punkte“ oben, außerdem:
 
