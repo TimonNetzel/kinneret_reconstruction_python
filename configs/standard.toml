@@ -1,17 +1,24 @@
-# Standardeinstellungen des Pakets: alle Korrekturen, log-Gamma-Vorschlag, Quartile aus den Stichproben
+# Standard ab v3 (entspricht den Voreinstellungen des Pakets): alle Korrekturen, log-Gamma-Vorschlag,
+# hierarchischer Prior der Taxa-Gewichte, Prior des rezenten Klimas aus CRU TS 4.07 fuer ein Einzugsgebiet
+# von 50 km (kinneret-recon cru-prior -r 50), Rekonstruktion als Mittelwert, Quartile aus den Stichproben
 output_dir = "results/standard"
 
 [sampler]
 kernel = "corrected"
 n_chains = 4
-sample_length = 2000000
-burn_in = 500000
-thin = 150
+sample_length = 8000000
+burn_in = 2000000
+thin = 600
 seed = 2023
-dirichlet_hastings_fix = true
 weights_proposal = "log_gamma"
-exact_gamma_moments = true
-tf_bound_probs = [0.05, 0.95]
+taxa_prior = "hierarchical"
+alpha_prior_median = 1.0
+alpha_prior_log_sd = 1.0
+recent_temp_mean = 11.09
+recent_temp_sd = 0.87
+recent_pann_mean = 521.8
+recent_pann_sd = 41.4
 
 [postprocess]
 quantile_method = "samples"
+reconstruction = "mean"

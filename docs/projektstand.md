@@ -32,6 +32,7 @@ Rahmen (vom Autor festgelegt):
 | 6 | Vollständiger Lauf, Bericht | ✅ `reference/v2-standard/`, `reference/laeufe/g_dir_hierarchisch/` |
 | – | Flexibler Prior der Taxa-Gewichte | ✅ Dir(α) fest oder hierarchisch |
 | – | CRU-Prior aus festgelegtem Einzugsgebiet | ✅ `kinneret-recon cru-prior`, Prüfbericht 3.9 |
+| – | Neuer Standard v3 (hierarchischer Prior, CRU 50 km) | ✅ `reference/v3-standard/`, Prüfbericht 3.10 |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -53,6 +54,8 @@ Rahmen (vom Autor festgelegt):
    CRU-Zellen. Als echte Unsicherheit eines 50-km-Einzugsgebiets ergeben sich 11,09 ± 0,87 °C und
    522 ± 41 mm. Damit sinkt der IQR der Rekonstruktion um ~30 %, das T-Niveau steigt um 0,8 °C, das
    P-Niveau bleibt (−2 mm), der P-Verlauf ist unverändert (*r* = 0,999).
+8. **Standard v3** (hierarchischer Prior der Gewichte, CRU-Prior 50 km): gegenüber v2 T +0,74 °C,
+   P +2 mm, IQR von P −36 %, P-Verlauf unverändert (*r* = 0,998). Gewichte wie im hierarchischen Lauf.
 
 ## Entscheidungen
 
@@ -65,6 +68,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | Gl. (14): N_t als Prior wählbar, Standard bleibt „nur Vorschlag“ (sonst doppelte Zählung der TF) |
 | 27.10.2026 | R²-Prior: Beta(3; 3) bleibt, Beta(2,62; 2,62) liefert dasselbe Ergebnis |
 | 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
+| 27.10.2026 | **Standard v3:** hierarchischer Prior der Taxa-Gewichte und CRU-Prior für 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm), 8 Mio. Iterationen je Kette (vom Autor festgelegt). Vergleichskonfigurationen schreiben die Werte bis v2 fest |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte (nächste Sitzung)
@@ -80,34 +84,33 @@ Rahmen (vom Autor festgelegt):
    Abschnitt 5): gleicher C++-Kern und gleiche Daten. Befund 1 betrifft damit die Ergebnisse des
    Papers direkt, und Befund 13 gilt auch für R.
 
-   **CRU-Prior aus einem festgelegten Einzugsgebiet: erledigt** (27.10.2026, Prüfbericht 3.9).
-   **Noch offen:** Entscheidung des Autors, ob der Prior für 50 km (`configs/o_cru_r50.toml`)
-   Standard wird, und ob ein Zusatzfehler für den Niederschlag eingehen soll.
-2. **Standard auf den hierarchischen Prior umstellen:** In `SamplerConfig` steht noch
-   `taxa_prior = "fixed"`. Umzustellen sind `taxa_prior = "hierarchical"` und die
-   Standardlänge (8 Mio. Iterationen, Burn-in 2 Mio., Ausdünnung 600), danach Tests und README.
-   Bis dahin den hierarchischen Prior über `configs/g_dir_hierarchisch.toml` verwenden.
+   **CRU-Prior aus einem festgelegten Einzugsgebiet: erledigt** (27.10.2026, Prüfbericht 3.9), seit
+   v3 Standard. **Noch offen:** ob ein Zusatzfehler für den Niederschlag eingehen soll
+   (`kinneret-recon cru-prior -r 50 --extra-pann-rel-sd 0.1`: 522 ± 67 mm).
+2. ~~Standard auf den hierarchischen Prior umstellen~~: erledigt (v3, Prüfbericht 3.10).
 3. **Tag `v1.0-paper`:** Er ist nicht mehr nötig. `v0.1.0` enthält denselben Code (Unterschied nur
    `LICENSE.md`) und entspricht der Zenodo-Version des Papers.
-4. **Laufzeit des hierarchischen Laufs:** etwa 13 min. Der Prior-Referenzlauf nimmt die Hälfte davon
-   ein und ließe sich kürzen.
+4. **Laufzeit des Standardlaufs (v3):** 11 min. Der Prior-Referenzlauf (nur für das CI-Verhältnis der
+   Transferfunktionen) nimmt die Hälfte davon ein und ließe sich kürzen, z. B. auf 2 Mio. Iterationen.
 5. **Später:** Training der Transferfunktion, weitere Standorte.
 
 ## Reproduktion
 
 ```bash
 pip install -e ".[test]"
-pytest                                    # schnelle Tests (~45 s)
+pytest                                    # schnelle Tests (~1 min)
 pytest -m slow                            # lange Tests (Bitgleichheit mit dem Original, hierarchischer Prior)
 kinneret-recon run --legacy               # Original, ~1 min
-kinneret-recon run -c configs/standard.toml
-kinneret-recon run -c configs/g_dir_hierarchisch.toml
+kinneret-recon run -c configs/standard.toml     # Standard v3, ~11 min
+kinneret-recon run -c configs/standard_v2.toml  # Standard bis v2, ~4 min
 ```
 
 Alle Läufe der Vergleichsreihe: `configs/*.toml`. Gesicherte Ergebnisse (Tabellen, Diagnostik,
 Einstellungen, Metadaten): `reference/laeufe/<lauf>/`, Vergleiche in `reference/vergleiche/`.
 Die großen Dateien (`posterior.npz`, `results.npz`, Abbildungen) sind nicht im Repo. Jeder Lauf ist
-mit seiner `config.toml` (inkl. Seed) bitgenau wiederholbar.
+mit seiner `config.toml` (inkl. Seed) und demselben Code-Stand (`meta.json`) bitgenau wiederholbar.
+Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-standard/`,
+`reference/v3-standard/`.
 
 ## Arbeitsumgebung
 
@@ -119,19 +122,19 @@ mit seiner `config.toml` (inkl. Seed) bitgenau wiederholbar.
 
 ## Übergabe an eine neue Sitzung
 
-Stand 27.10.2026 (zweite Sitzung), letzter Commit siehe `git log`. Alles Nötige steht im Repo; aus der
+Stand 27.10.2026 (zweite Sitzung, Standard v3), letzter Commit siehe `git log`. Alles Nötige steht im Repo; aus der
 alten Sitzung muss nichts übernommen werden.
 
 **Einrichten (ca. 5 min):**
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-pytest                     # 26 Tests, ~1,5 min
+pytest                     # 27 Tests, ~1 min
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht
-(`--from-run`), rechnet sie neu: `kinneret-recon run -c configs/standard.toml` (~4 min),
-`kinneret-recon run --legacy` (~1 min).
+(`--from-run`), rechnet sie neu: `kinneret-recon run` (Standard v3, ~11 min),
+`kinneret-recon run -c configs/standard_v2.toml` (~4 min), `kinneret-recon run --legacy` (~1 min).
 
 **Erledigt in dieser Sitzung: CRU-Prior aus einem festgelegten Einzugsgebiet** (Prüfbericht 3.9)
 
@@ -143,13 +146,19 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
 - Die bisherigen Werte 10,74 ± 2,48 °C / 556 ± 135 mm sind Mittel und räumliche Sd von etwa 3–8
   Zellen im Umkreis von 50–100 km; die genaue Auswahl ist nicht eindeutig bestimmbar.
 
+**Erledigt in dieser Sitzung: Standard v3** (Prüfbericht 3.10, vom Autor festgelegt)
+
+- `SamplerConfig`: `taxa_prior = "hierarchical"`, 8 Mio. / 2 Mio. / 600, Prior des rezenten Klimas
+  `CRU_PRIOR_50KM` (`src/kinneret_recon/config.py`); `configs/standard.toml` = Voreinstellung.
+- Alle Vergleichskonfigurationen schreiben die Werte bis v2 fest (bitgleich geprüft), der alte
+  Standard heißt jetzt `configs/standard_v2.toml`.
+- Referenzlauf `reference/v3-standard/`, Vergleich in `reference/vergleiche/v3/`.
+- Abbildung `independent_proposal_dists` korrigiert (Prior-Kurve von T0, Legende).
+
 **Mögliche nächste Schritte:**
 
-1. Entscheidung des Autors zum CRU-Prior (Empfehlung: 50 km, Gauß; ggf. mit
-   `--extra-pann-rel-sd 0.1`). Wird er Standard, die Werte in `SamplerConfig` (oder in
-   `nnet_fit_params.npz`) eintragen, Tests und README anpassen.
-2. Standard auf den hierarchischen Prior der Gewichte umstellen (siehe „Offene Punkte“, Punkt 2);
-   sinnvoll zusammen mit Punkt 1 in einem neuen Referenzlauf `reference/v3-standard/`.
+1. Prior-Referenzlauf kürzen (halbiert die Laufzeit des Standardlaufs, siehe „Offene Punkte“, Punkt 4).
+2. Zusatzfehler für den Niederschlag im CRU-Prior entscheiden (Punkt 1).
 3. Training der Transferfunktion; dabei dieselbe CRU-Version (TS 4.07, 1961–1990, 0,5°) verwenden
    wie für den Prior.
 
@@ -158,8 +167,6 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
 - Befund 13: Wie entstanden die R² = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit
   Beta(0,92; 2,77). Der Autor weiß es nicht mehr sicher.
 - Pull Request #1 (Branch → `main`) ist mit Zustimmung des Autors gemergt (27.10.2026).
-- Optional: hierarchischen Prior der Gewichte als Standard (der Autor bevorzugt ihn, Standard ist
-  noch Dir(0,5) wie im Paper).
 
 **Technische Hinweise für die Arbeit in der Cloud-Umgebung:**
 

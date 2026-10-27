@@ -10,6 +10,7 @@ from pathlib import Path
 import numpy as np
 
 from . import __version__
+from .config import CRU_PRIOR_50KM
 from .plots import BIOME_NAMES
 
 CSS = """
@@ -68,6 +69,15 @@ def methods_text(run) -> str:
                       f"α = {np.median(a):.2f} (95 %: {np.quantile(a, .025):.2f}–{np.quantile(a, .975):.2f}). ")
     else:
         taxa_prior = f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir({s.taxa_prior_alpha:g}). "
+    recent = {k: getattr(s, k) for k in CRU_PRIOR_50KM}
+    if recent == CRU_PRIOR_50KM:
+        recent_src = ("Der Prior des rezenten Klimas stammt aus CRU TS 4.07 (1961–1990) für ein Einzugsgebiet von 50 km "
+                      "um den See (Gauß-Gewichtung); seine Sd ist die Unsicherheit des Gebietsmittels. ")
+    elif all(v is None for v in recent.values()):
+        recent_src = ("Der Prior des rezenten Klimas ist Mittel und räumliche Sd mehrerer CRU-Gitterpunkte der "
+                      "Levante wie in Netzel et al. (2025). ")
+    else:
+        recent_src = ""
     pp = run.config.postprocess
     recon = ("Die Klimarekonstruktion je Altersstufe ist die Mischverteilung nach Gl. (3): je Stichprobe ein Biom "
              "mit Wahrscheinlichkeit seines Anteils und dessen Klimawert. " if pp.reconstruction == "mixture" else
@@ -89,7 +99,7 @@ def methods_text(run) -> str:
         taxa_prior + f"R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
         f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.temp_mean:.2f}, "
         f"{setup.temp_sd:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
-        f"Rate {setup.pann_rate:.5f}). " + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
+        f"Rate {setup.pann_rate:.5f}). " + recent_src + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
         recon +
         f"Konvergenz wurde mit dem rangnormierten Split-R̂ und der effektiven Stichprobengröße nach Vehtari et al. "
         f"(2021) geprüft."

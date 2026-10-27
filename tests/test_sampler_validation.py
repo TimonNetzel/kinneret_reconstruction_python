@@ -20,7 +20,7 @@ def inputs():
 
 
 def prior_only(inputs, fix, n=300_000, chains=4, factor=4.0, proposal="dirichlet"):
-    cfg = SamplerConfig(sample_length=n, burn_in=n // 4, thin=10, n_chains=chains, seed=11, weights_proposal=proposal,
+    cfg = SamplerConfig(sample_length=n, burn_in=n // 4, thin=10, n_chains=chains, taxa_prior="fixed", seed=11, weights_proposal=proposal,
                         dirichlet_hastings_fix=fix, dirichlet_spread_factor=factor,
                         use_calibration=False, use_tf_likelihood=False)
     setup = build_setup(inputs, cfg)
@@ -64,7 +64,7 @@ def test_chains_reproducible(inputs):
 
 @pytest.mark.parametrize("alpha", [1.0, 2.0])
 def test_prior_only_fixed_alpha(inputs, alpha):
-    cfg = SamplerConfig(sample_length=200_000, burn_in=50_000, thin=10, n_chains=4, seed=3, taxa_prior_alpha=alpha,
+    cfg = SamplerConfig(sample_length=200_000, burn_in=50_000, thin=10, n_chains=4, taxa_prior="fixed", seed=3, taxa_prior_alpha=alpha,
                         use_calibration=False, use_tf_likelihood=False)
     w = sampler.run(build_setup(inputs, cfg), cfg).pooled("taxa_weights")
     ref = stats.beta(alpha, alpha * (w.shape[1] - 1))

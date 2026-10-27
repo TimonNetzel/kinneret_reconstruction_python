@@ -9,7 +9,7 @@ from scipy.io import netcdf_file
 
 from kinneret_recon import cru
 from kinneret_recon.cli import main
-from kinneret_recon.config import Config
+from kinneret_recon.config import CRU_PRIOR_50KM, Config, SamplerConfig
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -133,3 +133,12 @@ def test_extract_synthetic(tmp_path):
     assert r.pann_mean == pytest.approx(120.0, abs=1e-4)
     assert r.temp_cl2 == pytest.approx(4.0, abs=1e-5) and r.pann_cl2 == pytest.approx(120.0, abs=1e-4)
     assert r.temp_sd == pytest.approx(0.0, abs=1e-5) and r.pann_sd == pytest.approx(0.0, abs=1e-3)
+
+
+def test_default_prior_is_cru_50km(data):
+    """Die Voreinstellung des Samplers ist der CRU-Prior fuer 50 km (gerundet wie in der TOML-Ausgabe)."""
+    r = cru.recent_prior(data, cru.PriorSettings(radius_km=50.0))
+    assert CRU_PRIOR_50KM == {"recent_temp_mean": round(r.temp_mean, 2), "recent_temp_sd": round(r.temp_sd, 2),
+                              "recent_pann_mean": round(r.pann_mean, 1), "recent_pann_sd": round(r.pann_sd, 1)}
+    s = SamplerConfig()
+    assert {k: getattr(s, k) for k in CRU_PRIOR_50KM} == CRU_PRIOR_50KM
