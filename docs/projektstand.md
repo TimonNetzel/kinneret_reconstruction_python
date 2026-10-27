@@ -104,6 +104,58 @@ mit seiner `config.toml` (inkl. Seed) bitgenau wiederholbar.
 
 ## Arbeitsumgebung
 
-- Das Netzwerk der Cloud-Umgebung erlaubt keinen Zugriff auf `cp.copernicus.org`. Deshalb muss das
-  Paper ins Repo hochgeladen werden.
+- Die Cloud-Umgebung „Default“ erlaubt nur Paketquellen (PyPI usw.) und GitHub-Git. Nicht
+  erreichbar sind `cp.copernicus.org`, `zenodo.org`, `crudata.uea.ac.uk` und `dap.ceda.ac.uk`.
+  Das Paper liegt deshalb in `docs/paper/`.
 - Gemessen auf 4 CPU-Kernen mit Python 3.13, NumPy 2.5, SciPy 1.18, Matplotlib 3.11 und g++ 13.
+
+## Übergabe an eine neue Sitzung
+
+Stand 27.10.2026, letzter Commit dieser Sitzung siehe `git log`. Alles Nötige steht im Repo; aus der
+alten Sitzung muss nichts übernommen werden.
+
+**Einrichten (ca. 5 min):**
+
+```bash
+pip install -e ".[test]"   # baut den C++-Kern
+pytest                     # 19 Tests, ~1,5 min
+```
+
+Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht
+(`--from-run`), rechnet sie neu: `kinneret-recon run -c configs/standard.toml` (~4 min),
+`kinneret-recon run --legacy` (~1 min).
+
+**Nächster Schritt: CRU-Prior aus einem festgelegten Einzugsgebiet** (Prüfbericht 3.8, Punkt 4)
+
+1. Voraussetzung: eine Umgebung mit Netzwerkfreigabe für `crudata.uea.ac.uk` (und als Ausweichquelle
+   `dap.ceda.ac.uk`), „Allow package managers“ angehakt. Erreichbarkeit prüfen mit
+   `curl -sI https://crudata.uea.ac.uk/cru/data/hrg/`.
+2. Daten: CRU TS 4.07 (wie im Paper, Abb. 2), Monatswerte `tmp` und `pre`, 0,5°. Nur die Levante
+   ausschneiden (etwa 29–36° N, 33–39° O), Zeitraum 1961–1990. Die Rohdateien nicht ins Repo legen,
+   sie sind mehrere GB groß; nur den Ausschnitt bzw. die berechneten Prior-Werte.
+3. Neues Werkzeug, z. B. `kinneret-recon cru-prior`, das Mittel und Sd von T_DJF und P_ANN für ein
+   Einzugsgebiet berechnet: Radius um den See (32,82° N, 35,59° O), entfernungsgewichtet, optional
+   Höhenkorrektur. Als Sd die echte Unsicherheit verwenden, also zwischenjährliche Variabilität des
+   30-Jahres-Mittels plus Repräsentativität, nicht die räumliche Streuung.
+4. Damit die bisherigen Werte nachvollziehen (10,74 ± 2,48 °C, 556 ± 135 mm; Mittel mehrerer
+   Gitterpunkte, laut Autor) und Läufe mit Radien von z. B. 25, 50 und 100 km vergleichen
+   (`sampler.recent_*`). Erwartung nach den bisherigen Tests: Das Niveau verschiebt sich, der
+   P-Verlauf bleibt (Korrelation ≥ 0,995).
+
+**Weitere offene Punkte:** siehe „Offene Punkte“ oben, außerdem:
+
+- Befund 13: Wie entstanden die R² = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit
+  Beta(0,92; 2,77). Der Autor weiß es nicht mehr sicher.
+- Pull Request #1 (Branch → `main`) ist offen, CI grün. Mergen, wenn der Autor zustimmt. Eine neue
+  Sitzung muss die PR-Beobachtung ggf. neu abonnieren.
+- Optional: hierarchischen Prior der Gewichte als Standard (der Autor bevorzugt ihn, Standard ist
+  noch Dir(0,5) wie im Paper).
+
+**Technische Hinweise für die Arbeit in der Cloud-Umgebung:**
+
+- `pgrep -f "<muster>"` findet auch die eigene Warteschleife, deren Befehlszeile das Muster
+  enthält. Deshalb Muster wie `"configs/[x]yz"` verwenden oder auf eine Datei warten.
+- Ausgaben von `kinneret-recon` in Dateien sind gepuffert und erscheinen erst am Ende.
+- Lange Läufe im Hintergrund starten; 4 Ketten × 2 Mio. dauern ~1,5 min Sampling plus ~1,5 min
+  Prior-Referenzlauf plus ~0,5 min Auswertung.
+- Ein Push von Tags ist über den Git-Proxy nicht möglich, Branches schon.
