@@ -124,7 +124,7 @@ class Config:
 
 
 def legacy_config(**overrides: Any) -> Config:
-    """Einstellungen, die exakt dem Originalskript (main.py, Tag v1.0-paper) entsprechen."""
+    """Einstellungen, die exakt dem Originalskript (main.py, Tag v0.1.0) entsprechen."""
     cfg = Config(
         sampler=SamplerConfig(
             kernel="legacy",

@@ -95,7 +95,7 @@ def main(argv=None) -> int:
 
     r = sub.add_parser("run", help="kompletten Lauf ausfuehren")
     r.add_argument("-c", "--config", help="TOML-Konfiguration")
-    r.add_argument("--legacy", action="store_true", help="exakt wie das Originalskript (Tag v1.0-paper)")
+    r.add_argument("--legacy", action="store_true", help="exakt wie das Originalskript (Tag v0.1.0)")
     r.add_argument("-o", "--output", help="Ausgabeverzeichnis")
     r.add_argument("--data", help="Verzeichnis der Eingangsdaten")
     r.add_argument("--chains", type=int)

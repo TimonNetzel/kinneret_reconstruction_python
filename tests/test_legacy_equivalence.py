@@ -1,4 +1,4 @@
-"""Der Legacy-Modus des Pakets muss das Original (Tag v1.0-paper) exakt reproduzieren.
+"""Der Legacy-Modus des Pakets muss das Original (Tag v0.1.0) exakt reproduzieren.
 
 Die Testdaten in tests/data/legacy_short_chain.npz wurden mit dem Originalcode (legacy/src) erzeugt.
 """

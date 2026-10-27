@@ -1,0 +1,21 @@
+# Sensitivitaet wie im Paper (Tabelle 2): R2-Prior Beta(2.77, 0.92), Mittel 0,75, Sd 0,2.
+# Original-Sampler (bitidentisch zum Paper-Code), um Abb. 8c/10 des Papers nachzurechnen.
+output_dir = "results/h_legacy_r2_075"
+
+[sampler]
+kernel = "legacy"
+n_chains = 1
+sample_length = 1000000
+burn_in = 250000
+thin = 75
+dirichlet_hastings_fix = false
+exact_gamma_moments = false
+dispersed_init = false
+weights_proposal = "dirichlet"
+dirichlet_spread_factor = 1.0
+beta_shape1 = 2.77
+beta_shape2 = 0.92
+
+[postprocess]
+quantile_method = "kde"
+prior_reference = "marginal"

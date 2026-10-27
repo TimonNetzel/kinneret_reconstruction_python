@@ -14,9 +14,9 @@ als installierbares Python-Paket mit C++-Kern um.
 | `src/kinneret_recon/` | Python-Paket (Konfiguration, Daten, Modell, Sampler, Auswertung, Diagnostik, Abbildungen, Bericht, Kommandozeile) |
 | `cpp/` | C++-Kern: Original-Sampler (`legacy_kernel.hpp`), überarbeiteter Sampler (`kernel.hpp`), Kerndichteschätzer (`kde.hpp`) |
 | `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
-| `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v1.0-paper`) |
+| `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v0.1.0` = Zenodo-Version) |
 | `reference/v1.0-paper/` | Referenzergebnisse des Originals |
-| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen) und Projektstand (Plan, Entscheidungen, offene Punkte) |
+| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), Paper (`docs/paper/`) |
 | `reference/laeufe/`, `reference/vergleiche/` | Tabellen, Diagnostik und Einstellungen aller Vergleichs- und Sensitivitätsläufe |
 | `tools/` | Hilfsskripte für Auswertung und Abstimmung |
 | `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |

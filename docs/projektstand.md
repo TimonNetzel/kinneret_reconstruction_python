@@ -1,6 +1,6 @@
 # Projektstand
 
-Stand: 26.10.2026. Dieses Dokument fasst Ziel, Plan, Ergebnisse, Entscheidungen und offene Punkte
+Stand: 27.10.2026. Dieses Dokument fasst Ziel, Plan, Ergebnisse, Entscheidungen und offene Punkte
 zusammen, damit die Arbeit jederzeit wieder aufgenommen werden kann.
 
 ## Ziel
@@ -23,7 +23,7 @@ Rahmen (vom Autor festgelegt):
 | Schritt | Inhalt | Stand |
 |---|---|---|
 | 1 | Original lauffähig machen, Referenzlauf sichern | ✅ `legacy/`, `reference/v1.0-paper/` |
-| 2 | Paper Gleichung für Gleichung gegen den Code prüfen | ⏳ **offen**: Volltext fehlt (siehe unten) |
+| 2 | Paper Gleichung für Gleichung gegen den Code prüfen | ✅ `docs/abgleich_paper.md`, Befunde 12–16 |
 | 3 | Umbau zum Paket ohne Verhaltensänderung | ✅ Legacy-Modus bitidentisch (Tests) |
 | 4 | Korrekturen einzeln, mit Vorher/Nachher-Vergleich | ✅ `docs/pruefbericht.md`, `reference/laeufe/` |
 | 5 | Performance | ✅ Auswertung 576 s → 10 s; MCMC 60 s → 37 s (Legacy) |
@@ -40,7 +40,11 @@ Rahmen (vom Autor festgelegt):
 4. **Taxa-Gewichte:** Die Daten bestimmen sie nur schwach. Die Rangfolge ist ab α ≥ 1 bzw. im
    hierarchischen Modell stabil (*Amaranthaceae*, *Q. calliprinos* ↑; *Olea* ↓), die Beträge hängen
    vom Prior ab.
-5. **Neuer Sampler (log-Gamma-Random-Walk):** gleiche Zielverteilung, etwa 50-mal effizienter als
+5. **Abgleich mit dem Paper:** Der Originalcode reproduziert die Zahlen des Papers. κ fehlt nur im
+   Code (das Paper beschreibt den Vorschlag nicht). Der Sensitivitätslauf mit R² = 0,25 bleibt im
+   Python-Code hängen. Die Unsicherheitsbänder zeigen den Mittelwert statt der Mischverteilung aus
+   Gl. (3) (IQR bei P etwa ein Drittel).
+6. **Neuer Sampler (log-Gamma-Random-Walk):** gleiche Zielverteilung, etwa 50-mal effizienter als
    der Dirichlet-Random-Walk.
 
 ## Entscheidungen
@@ -53,18 +57,19 @@ Rahmen (vom Autor festgelegt):
 
 ## Offene Punkte (nächste Sitzung)
 
-1. **Paper hochladen:** im Branch `claude/netzel-python-package-analysis-adcv39` unter
-   `docs/paper/cp-21-357-2025.pdf`, das Supplement in denselben Ordner. Danach Schritt 2
-   (Abgleich Paper ↔ Code) und den Prüfbericht ergänzen. Zu klären:
-   - Steht das fehlende κ so im Paper?
-   - Wie ist die 5-%/95-%-Trunkierung dort begründet?
+1. **Fragen an den Autor** (aus dem Abgleich, `docs/abgleich_paper.md`):
+   - **Befund 12:** Sollen die Unsicherheitsbänder den Mittelwert der Biom-Klimawerte zeigen (wie
+     bisher) oder die Mischverteilung nach Gl. (3)? Ggf. als Option einbauen.
+   - **Befund 14:** Ist N_t aus Gl. (14) Teil des Modells (Prior von C) oder nur der Vorschlag?
+   - Woher stammen die CRU-Prior-Werte (10,74 ± 2,48 °C, 556 ± 135 mm)? Gebietsmittel?
+   - **Befund 15:** Soll der R²-Prior (3; 3) wie im Code oder (2,62; 2,62) wie in Tab. 2 sein?
+   - **Befund 13:** Stammen die R² = 0,25-Ergebnisse aus der R-Fassung?
 2. **Standard auf den hierarchischen Prior umstellen:** In `SamplerConfig` steht noch
    `taxa_prior = "fixed"`. Umzustellen sind `taxa_prior = "hierarchical"` und die
    Standardlänge (8 Mio. Iterationen, Burn-in 2 Mio., Ausdünnung 600), danach Tests und README.
    Bis dahin den hierarchischen Prior über `configs/g_dir_hierarchisch.toml` verwenden.
-3. **Tag `v1.0-paper` auf GitHub anlegen:** Er zeigt auf Commit `782c6a0`. Der Push des Tags war
-   aus der Arbeitsumgebung nicht möglich. Es gibt außerdem einen Tag `v0.1.0` auf `1c7f9b2`, drei
-   Commits früher. Zu klären ist, ob das die eigentliche Paper-Version ist.
+3. **Tag `v1.0-paper`:** Er ist nicht mehr nötig. `v0.1.0` enthält denselben Code (Unterschied nur
+   `LICENSE.md`) und entspricht der Zenodo-Version des Papers.
 4. **Laufzeit des hierarchischen Laufs:** etwa 13 min. Der Prior-Referenzlauf nimmt die Hälfte davon
    ein und ließe sich kürzen.
 5. **Später:** Training der Transferfunktion, weitere Standorte, Mergen des Branches in `main`.

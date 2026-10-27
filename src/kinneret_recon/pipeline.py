@@ -111,6 +111,8 @@ def execute(cfg: Config, root: Path | None = None, log=print) -> Run:
     post = sampler.run(setup, s, cfg.postprocess.n_threads)
     timings["sampling"] = time.perf_counter() - t
     log(f"  fertig in {timings['sampling']:.1f} s, Akzeptanzrate {np.round(post.acceptance_rate, 3)}")
+    if np.any(post.acceptance_rate < 0.01):
+        log("  WARNUNG: Akzeptanzrate < 1 % - die Kette ist vermutlich haengengeblieben (siehe Diagnostik)")
     post.save(outdir / "posterior.npz")
 
     prior = None

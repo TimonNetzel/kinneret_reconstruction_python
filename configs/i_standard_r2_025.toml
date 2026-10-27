@@ -1,0 +1,7 @@
+# Sensitivitaet wie im Paper (Tabelle 2): R2-Prior Beta(0.92, 2.77), Mittel 0,25, Sd 0,2.
+# Korrigierter Sampler, sonst wie standard (Prior der Gewichte Dir(0,5) wie im Paper).
+output_dir = "results/i_standard_r2_025"
+
+[sampler]
+beta_shape1 = 0.92
+beta_shape2 = 2.77

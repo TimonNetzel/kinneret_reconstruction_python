@@ -169,12 +169,17 @@ def plot_calibration(setup: Setup, post: Posterior, outdir: Path):
     fig, axs = plt.subplots(1, 3, figsize=(12, 5))
     fig.subplots_adjust(left=0.05, right=0.98, top=0.9, bottom=0.10)
     for ax, (s, xs, prior, px, xlim, xlab, title) in zip(axs, panels):
-        d = gaussian_kde(s).evaluate(xs)
+        if np.ptp(s) > 0:
+            d = gaussian_kde(s).evaluate(xs)
+        else:  # entartete Stichprobe (haengengebliebene Kette)
+            d = np.zeros_like(xs)
+            d[np.abs(xs - s[0]).argmin()] = 1.0
         d /= d.max()
         pd = prior(px)
+        pd = np.where(np.isfinite(pd), pd, np.nan)  # Beta-Dichte mit alpha < 1 ist am Rand unendlich
         ax.plot(xs, d, color="black")
         ax.fill_between(np.hstack([xs.min(), xs]), np.hstack([0, d]), color="lightgrey")
-        ax.plot(px, pd / pd.max(), color="orange")
+        ax.plot(px, pd / np.nanmax(pd), color="orange")
         ax.set_xlabel(xlab)
         ax.set_xlim(*xlim)
         ax.set_ylim(0, 1)

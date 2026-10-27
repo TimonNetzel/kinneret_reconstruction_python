@@ -1,0 +1,34 @@
+data_dir = "data/in"
+output_dir = "results/h_legacy_r2_075"
+plots = true
+report = true
+
+[sampler]
+kernel = "legacy"
+sample_length = 1000000
+burn_in = 250000
+thin = 75
+n_chains = 1
+seed = 2023
+dirichlet_hastings_fix = false
+exact_gamma_moments = false
+dispersed_init = false
+weights_proposal = "dirichlet"
+target_accept = 0.234
+taxa_prior = "fixed"
+taxa_prior_alpha = 0.5
+alpha_prior_median = 1.0
+alpha_prior_log_sd = 1.0
+dirichlet_spread_factor = 1.0
+tf_bound_probs = [0.05, 0.95]
+beta_shape1 = 2.77
+beta_shape2 = 0.92
+use_calibration = true
+use_tf_likelihood = true
+use_taxa_prior = true
+
+[postprocess]
+quantile_method = "kde"
+prior_reference = "marginal"
+n_threads = 0
+seed = 2023

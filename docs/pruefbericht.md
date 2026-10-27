@@ -1,12 +1,12 @@
 # Prüfbericht: Code zu Netzel et al. (2025), Clim. Past 21, 357–380
 
-Stand: 26.10.2026. Geprüft wurde der Code der Publikation: Commit `782c6a0` (Stand von `main`, lokal getaggt als `v1.0-paper`).
+Stand: 27.10.2026. Geprüft wurde der Code der Publikation: Commit `782c6a0` (Stand von `main`).
+Er unterscheidet sich vom Tag `v0.1.0` nur durch `LICENSE.md` und entspricht damit der im Paper
+zitierten Zenodo-Version (doi:10.5281/zenodo.8214290).
 
-> **Einschränkung:** Der Volltext des Papers war in der Arbeitsumgebung nicht abrufbar (Netzwerkfreigabe
-> für `cp.copernicus.org` fehlt). Geprüft wurde daher der Code **in sich**: mathematische Korrektheit
-> des MCMC-Verfahrens, numerische Umsetzung, Reproduzierbarkeit. Ein Abgleich Gleichung für Gleichung
-> mit dem Paper (Schritt 2 des Plans) steht noch aus. Alle Aussagen über das, was das Paper
-> beabsichtigt, sind deshalb als Annahmen gekennzeichnet.
+Grundlage ist zum einen der Code selbst: mathematische Korrektheit des MCMC-Verfahrens, numerische
+Umsetzung, Reproduzierbarkeit. Zum anderen der Abgleich Gleichung für Gleichung mit dem Paper
+(`docs/paper/cp-21-357-2025.pdf`). Die vollständige Gegenüberstellung steht in `docs/abgleich_paper.md`.
 
 ## 1. Zusammenfassung
 
@@ -23,6 +23,11 @@ Stand: 26.10.2026. Geprüft wurde der Code der Publikation: Commit `782c6a0` (St
 | 9 | Kommentar „# wrong“ beim Klimagitter in `load_data.py` | Kommentar | keine. Die Orientierung ist korrekt (Test `test_grid_orientation`) |
 | 10 | Laufzeit, Speicher, Kompatibilität (NumPy 2, Matplotlib ≥ 3.9) | Technik | Original läuft mit aktuellen Bibliotheken nicht mehr |
 | 11 | Taxa-Gewichte hängen stark von der Prior-Konzentration α ab (Dir(α)) | Empfindlichkeit | Rekonstruktion robust (≤ 0,1 °C, ≤ 10 mm); Höhe und Rangfolge der Gewichte nicht |
+| 12 | Code bildet je Stichprobe den **Mittelwert** der Biom-Klimawerte, Gl. (3) beschreibt eine **Mischverteilung** | Paper ↔ Code | Mediane gleich; Unsicherheit bei Mischung 1,7× (T) bzw. 3× (P) |
+| 13 | R²-Prior mit α₁ < 1 (Paper-Sensitivität „R² = 0,25“): Kette bleibt im Zustand R² = 0 hängen | **Fehler** | Der Lauf des Papers mit R² = 0,25 ist mit dem Python-Code nicht reproduzierbar |
+| 14 | Gl. (14): N_t(μ(ψ), σ(ψ)) als P(C\|ψ); im Code nur Random-Walk-Vorschlag, Prior von C gleichverteilt | Paper ↔ Code | klären (Modellgleichung oder nur Vorschlag?) |
+| 15 | Beta-Prior des R²: Tab. 2 nennt (2,62; 2,62), Abb. 4 und Code verwenden (3; 3) | Paper ↔ Code | gering (Sd 0,19 statt 0,20) |
+| 16 | Konvergenz laut Paper per multivariatem Gelman-Rubin (1,001); der Code hat 1 Kette und keine Diagnostik | Reproduzierbarkeit | Split-R̂ der Kette ≤ 1,002, für die (fehlerhafte) Zielverteilung also konvergiert |
 
 ## 2. Vorgehen
 
@@ -175,6 +180,61 @@ die kleinen Gewichte gekoppelt ist und langsam mischt (R̂ 1,002, ESS(α) 2064).
 
 ![Taxa-Gewichte unter verschiedenen Priors](abbildungen/vergleich_prior_gewichte.png)
 
+### 3.7 Abgleich mit dem Paper (Befunde 12–16)
+
+Der Original-Lauf reproduziert die Zahlen des Papers: R²-Median 0,66 (Paper 0,65), mediterranes
+Biom 10,0 °C / 710 mm (Paper 10 °C / 700 mm), CI-Verhältnisse wie Abb. 7d, Rekonstruktion wie Abb. 10.
+Damit ist sicher, dass der geprüfte Code der Code der Publikation ist. Das Paper beschreibt den
+Vorschlag für die Taxa-Gewichte nicht, nur den Prior Dir(½) in Gl. (13). **Befund 1 ist also ein
+reiner Implementierungsfehler:** Die publizierten Gewichte stammen nicht aus der Posterior des im
+Paper beschriebenen Modells.
+
+**Mittelwert statt Mischverteilung (Befund 12).** Nach Gl. (3) und (A6) ist P(C\|P,A,Θ) eine
+Mischung der Klimaverteilungen der Biome. Der Code berechnet je Stichprobe Σ_b p_b·c_b. Mit einer
+Mischverteilung bleiben die Mediane praktisch gleich (≤ 0,06 °C, 14 mm im Mittel). Der IQR wächst aber
+bei T von 2,4 auf 4,1–4,2 °C und bei P von 130–150 auf ~380 mm. Ob die Bänder in Abb. 10 nur die
+Parameterunsicherheit zeigen sollen (Mittelwert) oder die volle Verteilung nach Gl. (3), muss der
+Autor entscheiden. Der Code ist dazu nicht geändert.
+
+**Absorbierender Zustand bei R²-Prior mit α₁ < 1 (Befund 13).** Bei nicht positiver Korrelation
+setzt der Code R² = 0. Für den Sensitivitätslauf „R² = 0,25“ (Tab. 2: Beta(0,92; 2,77)) ist die
+Beta-Dichte bei 0 unendlich. Der erste Zustand mit R² = 0 wird deshalb sicher angenommen, danach ist
+jedes Akzeptanzverhältnis 0. Im Lauf `configs/h_legacy_r2_025.toml` liegt die Akzeptanzrate bei 0,1 %,
+und **alle** ausgewerteten Stichproben haben R² = 0. Die Ergebnisse des Papers für R² = 0,25
+(Abb. 6–10, türkis) lassen sich mit dem Python-Code daher nicht erzeugen. Vermutlich stammen sie aus
+der R-Fassung (doi:10.5281/zenodo.8214297), die hier nicht geprüft wurde. Der korrigierte Sampler
+schließt Zustände mit R² = 0 aus (log-Dichte −∞). Das deckt sich für α₁ > 1 mit dem Original und ist
+für α₁ < 1 die einzige wohldefinierte Wahl.
+
+**Sensitivität gegenüber dem R²-Prior** (Tab. 2; korrigierter Sampler, Dir(½)):
+
+| R²-Prior | R²-Posterior Median (50 %) | T Median | P Median | IQR P | Median w *Olea* / *Q. calliprinos* / *Q. ithaburensis* / *Amaranthaceae* |
+|---|---|---|---|---|---|
+| Mittel 0,25 (0,92; 2,77) | 0,27 (0,17–0,44) | 9,87 °C | 444 mm | 155 | 0,002 / 0,018 / 0,024 / 0,016 |
+| Mittel 0,5 (3; 3), Standard | 0,55 (0,38–0,73) | 9,94 | 439 | 150 | 0,007 / 0,015 / 0,013 / 0,019 |
+| Mittel 0,75 (2,77; 0,92) | 0,85 (0,74–0,89) | 9,93 | 447 | 150 | 0,027 / 0,011 / 0,012 / 0,017 |
+| Original, Mittel 0,5 | 0,66 (0,51–0,80) | 9,87 | 445 | 131 | 0,011 / 0,029 / 0,024 / 0,028 |
+| Original, Mittel 0,75 | 0,90 (0,83–0,94) | 9,84 | 459 | 134 | 0,027 / 0,021 / 0,023 / 0,026 |
+
+- Das R² der Posterior folgt weitgehend seinem Prior. Die AP-Referenzkurve liefert über die
+  Stärke des Zusammenhangs also wenig Information. Die Aussage im Paper, nur bei Prior 0,5 könne
+  die Posterior auf 0,65 „wachsen“, hängt am Fehler aus Befund 1. Korrekt gesampelt wächst sie
+  nur auf 0,55.
+- Die Rekonstruktion ist gegenüber dem R²-Prior robust: Mediane innerhalb von 0,13 °C, P lokal bis
+  73 mm, im Mittel +5 bis +9 mm. Das passt zu „almost no differences between the medians“ im Paper.
+- Wie im Paper (Abb. 6) reagieren vor allem *Olea* und die beiden *Quercus*-Taxa auf den R²-Prior,
+  korrekt gesampelt sogar deutlich stärker (*Olea*: Faktor 13 zwischen 0,25 und 0,75).
+
+**Gl. (14) (Befund 14).** Das Paper schreibt P(C\|ψ) = N_t(C \| μ(ψ), σ(ψ), a(ψ), b(ψ)) als Teil des
+Modells und nennt N_t zugleich „proposal distributions“. Im Code ist N_t nur ein Random-Walk-Vorschlag
+(zentriert auf den aktuellen Wert, Sd = σ(ψ)·2,38²/K, korrekte Hastings-Korrektur). In der
+Zielverteilung steht N_t nicht, der Prior von C ist dort gleichverteilt auf [a, b]. Entweder ist
+Gl. (14) als Modellgleichung missverständlich, oder im Code fehlt der Faktor N_t(c; μ(ψ), σ(ψ)).
+Wie a und b gewählt werden (5-%/95-%-Quantile, Befund 3), sagt das Paper nicht.
+
+**Beta(3; 3) gegen Tab. 2 (Befund 15)** und **Konvergenzdiagnostik (Befund 16):** siehe Tabelle in
+Abschnitt 1 und `docs/abgleich_paper.md`.
+
 ## 4. Vergleichsreihe
 
 | Lauf | Einstellungen | T Median (Mittel über Alter) | P Median | IQR T | IQR P | min. ESS | max. R̂ |
@@ -189,6 +249,10 @@ die kleinen Gewichte gekoppelt ist und langsam mischt (R̂ 1,002, ESS(α) 2064).
 | F1 | Standard, Prior Dir(1) | 9,88 | 443,6 | 2,39 | 136,2 | 24 522 | 1,000 |
 | F2 | Standard, Prior Dir(2) | 9,83 | 448,6 | 2,28 | 123,6 | 27 115 | 1,000 |
 | G | Standard, Dir(α) hierarchisch, 8 Mio. It. | 9,90 | 443,0 | 2,42 | 139,0 | 1880 | 1,002 |
+| H25 | Original, R²-Prior Mittel 0,25 | 11,24 | 365 | 0,08 | 7 | – | – (Kette hängt, Befund 13) |
+| H75 | Original, R²-Prior Mittel 0,75 | 9,84 | 459 | 2,35 | 134 | 1493 | 1,002 |
+| I25 | Standard, R²-Prior Mittel 0,25 | 9,87 | 444 | 2,48 | 155 | 18 199 | 1,000 |
+| I75 | Standard, R²-Prior Mittel 0,75 | 9,93 | 447 | 2,48 | 150 | 17 761 | 1,000 |
 
 Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c configs/<name>.toml`.
 
@@ -204,11 +268,17 @@ Konfigurationen: `configs/*.toml`. Reproduzieren mit `kinneret-recon run -c conf
   calliprinos* ↑. Die Beträge hängen vom Prior ab, der deshalb hierarchisch gewählt werden sollte.
 - **Die Aussagen zur Verengung der Transferfunktionen müssen überarbeitet werden.** Nur das
   mediterrane Biom wird durch die Daten eingeschränkt (~20 %).
+- **Die Sensitivitätsrechnung mit R² = 0,25 ist mit dem Python-Code nicht reproduzierbar**
+  (Befund 13). Korrekt gerechnet ist die Rekonstruktion gegenüber dem R²-Prior robust.
+- **Zu klären ist die Bedeutung der Unsicherheitsbänder** (Befund 12): Mittelwert oder
+  Mischverteilung.
 
 ## 6. Offene Punkte
 
-1. Abgleich mit den Gleichungen des Papers (Volltext nötig), insbesondere: Ist das Fehlen von κ
-   eventuell beabsichtigt und im Paper so formuliert? Ist die Wahl der Trunkierung dort begründet?
+1. ~~Abgleich mit dem Paper~~: erledigt (`docs/abgleich_paper.md`). κ fehlt nur im Code, das Paper
+   beschreibt den Vorschlag nicht. Die Trunkierung (5 %/95 %) ist im Paper nicht festgelegt.
+   Fragen an den Autor: Befunde 12 und 14 sowie die Herkunft der CRU-Prior-Werte
+   (10,74 ± 2,48 °C, 556 ± 135 mm).
 2. ~~Prior der Taxa-Gewichte~~: geklärt, der Prior muss nicht starr sein. Der hierarchische Prior
    ist umgesetzt und geprüft (Abschnitt 3.6). Offen ist nur noch, ob er die Standardeinstellung
    werden soll.

@@ -6,7 +6,8 @@ Dieser Ordner enthält die Skripte zur Publikation
 > climate reconstructions applied to palynological data from Lake Kinneret.* Clim. Past 21, 357–380.
 > https://doi.org/10.5194/cp-21-357-2025
 
-Der unveränderte Stand ist im Git-Tag **`v1.0-paper`** gesichert. Die Dateien hier unterscheiden sich
+Der unveränderte Stand ist im Git-Tag **`v0.1.0`** gesichert (identisch mit `main` bis auf `LICENSE.md`; Zenodo:
+doi:10.5281/zenodo.8214290). Die Dateien hier unterscheiden sich
 davon nur durch minimale Kompatibilitäts-Patches. Ohne sie läuft der Code mit aktuellen Versionen
 von Python, NumPy und Matplotlib nicht mehr (getestet: Python 3.13, NumPy 2.5, Matplotlib 3.11).
 **Am Algorithmus und an den Ergebnissen ändert keiner dieser Patches etwas.**

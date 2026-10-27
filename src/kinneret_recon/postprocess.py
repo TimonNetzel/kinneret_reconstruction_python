@@ -88,6 +88,10 @@ def reconstruct(ratios: np.ndarray, tf: np.ndarray, num_biomes: int):
 def densities(samples: np.ndarray, grid: np.ndarray, n_threads: int) -> np.ndarray:
     """Normierte Kerndichte (Summe 1) je Spalte von samples (S, n) auf grid -> (n, dims)."""
     dens = _core.kde1d_rows(np.ascontiguousarray(samples.T), grid[0], grid[1] - grid[0], len(grid), n_threads)
+    # entartete Spalten (alle Stichproben gleich, z. B. haengengebliebene Kette): Punktmasse am naechsten Gitterpunkt
+    for i in np.flatnonzero(~np.isfinite(dens).all(axis=1) | (dens.sum(axis=1) <= 0)):
+        dens[i] = 0.0
+        dens[i, np.abs(grid - samples[0, i]).argmin()] = 1.0
     return dens / dens.sum(axis=1, keepdims=True)
 
 
