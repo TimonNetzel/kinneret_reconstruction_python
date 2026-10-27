@@ -453,6 +453,7 @@ Alle stimmen feldweise mit den gesicherten `config.toml` überein, und `standard
 | G | hierarchisch / Paper | 9,90 | 443 | 2,42 | 139 | 0,97 | 1,000 | 0,60 | – | – | 0,010 / 0,022 / – / 0,024 |
 | O50 | Dir(½) / CRU 50 km | 10,72 | 435 | 1,64 | 105 | 0,74 | 0,999 | 0,55 | 10,9 / 518 | 0,58 / 0,71 | 0,008 / 0,016 / 0,014 / 0,020 |
 | **Standard v3** | hierarchisch / CRU 50 km | **10,67** | **439** | **1,66** | **96** | 0,58 | 0,998 | 0,62 | 10,9 / 518 | 0,55 / 0,69 | 0,010 / 0,022 / 0,018 / 0,024 |
+| v3, Mischverteilung (Gl. 3) | wie v3 | 10,86 | 448 | 3,24 | 342 | 0,44 | 0,993 | wie v3 | wie v3 | wie v3 | wie v3 |
 
 Konvergenz v3: R̂ ≤ 1,004, min. ESS 1596 (log-Zielverteilung), ESS(α) 1676; α = 0,82 (95 %: 0,15–4,64),
 wie im Lauf G. Laufzeit 11 min (Sampling 5,4 min, Prior-Referenzlauf 5,1 min, Auswertung und Abbildungen
@@ -475,6 +476,16 @@ wie im Lauf G. Laufzeit 11 min (Sampling 5,4 min, Prior-Referenzlauf 5,1 min, Au
    übrigen Gewichte liegen bei ≈ 0,02, also beim Prior-Median für α ≈ 0,8.
 5. **Transferfunktion:** Nur das mediterrane Biom wird durch die Daten eingegrenzt, jetzt deutlicher
    (CI-Verhältnis 0,55 bzw. 0,69), weil der engere Prior des rezenten Klimas mit eingeht (3.9, Punkt 4).
+6. **Mischverteilung nach Gl. (3)** (Neuauswertung der v3-Ketten, `reference/laeufe/v3_mixture/`):
+   Median und Verlauf wie beim Mittelwert (*r* = 0,995 für P gegenüber v3), aber IQR von P 342 statt
+   96 mm. Mit dem engeren CRU-Prior hat die Verteilung von P jetzt bis zu **drei Gipfel**, je einen je
+   Biom: mediterran (~550 mm), irano-turanisch (~300 mm) und saharo-arabisch (~80 mm, um 2,5 ka und
+   7,2–8,5 ka). In trockenen Phasen liegt der Median zwischen den Gipfeln. Das bestätigt die Empfehlung
+   aus 3.8: Mittelwert als Standard; die Mischverteilung nur mit Dichte oder Gipfeln darstellen, nicht
+   mit Median und Quartilen. Erzeugt mit
+   `kinneret-recon run -c configs/standard.toml --from-run results/standard --reconstruction mixture -o results/v3_mixture`.
+
+![Mischverteilung, Standard v3](abbildungen/mischverteilung_v3.png)
 
 **Korrekturen an Abbildungen** (ohne Einfluss auf Ketten und Tabellen):
 
