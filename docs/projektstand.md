@@ -86,28 +86,24 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
-## Offene Punkte (nächste Sitzung)
+## Offene Punkte
 
-1. **Antworten des Autors zum Abgleich (27.10.2026) eingearbeitet**, siehe Prüfbericht 3.8:
-   - Befund 12: beide Varianten umgesetzt, Empfehlung Mittelwert.
-   - Befund 14: Autor weiß es nicht mehr. N_t als Prior getestet; Empfehlung: nur Vorschlag.
-   - Befund 15: getestet, kein Unterschied; Beta(3; 3) bleibt.
-   - CRU-Prior: Mittel mehrerer Levante-Gitterpunkte. Bewertet; bestimmt das absolute Niveau.
-   - Befund 13: Die Paper-Ergebnisse stammen aus der R-Fassung, Befund 13 betrifft nur Python.
+Erledigte Punkte (Antworten des Autors zu Befund 12, 14 und 15, CRU-Prior, hierarchischer Prior, R-Fassung) stehen in
+Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entscheidungen“.
 
-   **R-Fassung geprüft** (`TimonNetzel/kinneret_reconstruction_R`, `docs/abgleich_paper.md`
-   Abschnitt 5): gleicher C++-Kern und gleiche Daten. Befund 1 betrifft damit die Ergebnisse des
-   Papers direkt, und Befund 13 gilt auch für R.
-
-   **CRU-Prior aus einem festgelegten Einzugsgebiet: erledigt** (27.10.2026, Prüfbericht 3.9), seit
-   v3 Standard. **Noch offen:** ob ein Zusatzfehler für den Niederschlag eingehen soll
-   (`kinneret-recon cru-prior -r 50 --extra-pann-rel-sd 0.1`: 522 ± 67 mm).
-2. ~~Standard auf den hierarchischen Prior umstellen~~: erledigt (v3, Prüfbericht 3.10).
-3. **Tag `v1.0-paper`:** Er ist nicht mehr nötig. `v0.1.0` enthält denselben Code (Unterschied nur
-   `LICENSE.md`) und entspricht der Zenodo-Version des Papers.
-4. **Laufzeit des Standardlaufs (v3):** 11 min. Der Prior-Referenzlauf (nur für das CI-Verhältnis der
-   Transferfunktionen) nimmt die Hälfte davon ein und ließe sich kürzen, z. B. auf 2 Mio. Iterationen.
-5. **Später:** Training der Transferfunktion, weitere Standorte.
+1. **Zusatzfehler für den Niederschlag im CRU-Prior?** (`kinneret-recon cru-prior -r 50 --extra-pann-rel-sd 0.1`:
+   522 ± 67 mm statt 522 ± 41 mm; Entscheidung des Autors)
+2. **Prior-Referenzlauf kürzen:** Er dient nur dem CI-Verhältnis der Transferfunktionen und macht die Hälfte der
+   11 min des Standardlaufs aus; z. B. 2 Mio. Iterationen.
+3. **Biomfarben bei Farbsehschwäche** (App-Konzept Abschnitt 12, „Offen“; Entscheidung des Autors).
+4. **Export-Maße** mit den aktuellen Copernicus-Richtlinien abgleichen (Seiten aus der Cloud-Umgebung bisher nicht
+   erreichbar).
+5. **Befund 13:** Wie entstanden die $R^2$ = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit Beta(0,92; 2,77);
+   der Autor weiß es nicht mehr sicher.
+6. **Tag `v1.0-paper`** ist entbehrlich: `v0.1.0` enthält denselben Code (nur `LICENSE.md` anders) und entspricht
+   der Zenodo-Version des Papers.
+7. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
+   weitere Standorte (nach App Schritt 5).
 
 ## Reproduktion
 
@@ -150,8 +146,7 @@ Abschnitt 2 Punkt 4 und Abschnitt 7. Heute ist der Standort fest verdrahtet in `
 - Prüfen ohne Neurechnen: `kinneret-recon katalog` (Fingerabdrücke), `kinneret-recon app-daten` + `git diff`,
   `python3 -m pytest`. Kein `batch`, keine Läufe nötig.
 - Den Standort-Wähler der App nur vorbereiten (er erscheint erst ab zwei Standorten).
-- Offen beim Autor: Biomfarben bei Farbsehschwäche (App-Konzept Abschnitt 12, „Offen“); sie gehören ins
-  Standort-Register.
+- Biomfarben gehören ins Standort-Register; ob sie sich ändern, ist offen (Offene Punkte, Punkt 3).
 
 **Einrichten (ca. 5 min):** `pip install -e ".[test]"` (baut den C++-Kern), dann `python3 -m pytest`
 (49 Tests, ~4 min; Browser-Test nur mit Node und Playwright). App bauen und prüfen: `kinneret-recon app`,
@@ -169,10 +164,7 @@ Abschnitt 11). Eine neue App-Ansicht: App-Konzept Abschnitt 10; ein exportierbar
 Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12;
 Abgleich mit dem Paper und der R-Fassung in `docs/abgleich_paper.md`; Entscheidungen und offene Punkte oben.
 
-**Danach möglich:** Prior-Referenzlauf kürzen (Offene Punkte, Punkt 4); Zusatzfehler für den Niederschlag im
-CRU-Prior (Punkt 1); Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior).
-Ungeklärt: wie die $R^2$ = 0,25-Kurven im Paper entstanden (Befund 13; beide Code-Fassungen hängen mit
-Beta(0,92; 2,77)).
+**Danach:** siehe „Offene Punkte“.
 
 **Cloud-Umgebung:**
 
@@ -180,5 +172,5 @@ Beta(0,92; 2,77)).
 - Lange Befehle im Hintergrund; `kinneret-recon` puffert Ausgaben in Dateien bis zum Ende. `pgrep -f "<muster>"`
   findet die eigene Warteschleife mit, daher Muster wie `"configs/[x]yz"`.
 - Tags lassen sich über den Git-Proxy nicht pushen, Branches schon.
-- Copernicus-Seiten waren nicht erreichbar (für den Abgleich der Export-Maße Domains in den Netzwerkeinstellungen
+- Copernicus-Seiten waren nicht erreichbar (für Offene Punkte, Punkt 4, Domains in den Netzwerkeinstellungen
   freigeben); erreichbar waren `crudata.uea.ac.uk` und `dap.ceda.ac.uk`.
