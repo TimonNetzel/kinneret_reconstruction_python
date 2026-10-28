@@ -1,4 +1,4 @@
-"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten``."""
+"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app``."""
 
 from __future__ import annotations
 
@@ -257,6 +257,20 @@ def cmd_batch(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_app(a: argparse.Namespace) -> int:
+    from .app_bauen import baue_eine_datei, baue_ordner, serve
+
+    if a.eine_datei:
+        p = baue_eine_datei(Path(a.eine_datei))
+        print(f"App als eine Datei: {p} ({p.stat().st_size / 1e6:.1f} MB); aufs Handy kopieren und im Browser oeffnen")
+    if not a.eine_datei or a.serve:
+        index = baue_ordner(Path(a.output))
+        print(f"App gebaut: {index} (per Doppelklick oeffnen, laeuft offline)")
+        if a.serve:
+            serve(Path(a.output), a.port)
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="kinneret-recon", description="Bayessche Klimarekonstruktion See Genezareth")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -343,6 +357,14 @@ def main(argv=None) -> int:
     d.add_argument("--ueberschreiben", action="store_true",
                    help="Tabellen und Metadaten im Katalog-Ordner durch die neuen ersetzen (sonst nur fehlende)")
     d.set_defaults(func=cmd_app_daten)
+
+    w = sub.add_parser("app", help="App bauen (offline-faehig): Ordner mit index.html oder eine einzige HTML-Datei")
+    w.add_argument("-o", "--output", default="results/app", help="Zielordner")
+    w.add_argument("--eine-datei", dest="eine_datei", nargs="?", const="results/kinneret-app.html", metavar="DATEI",
+                   help="eine einzige HTML-Datei (fuers Handy), Standard results/kinneret-app.html")
+    w.add_argument("--serve", action="store_true", help="Ordner bauen und ueber einen lokalen Server bereitstellen")
+    w.add_argument("--port", type=int, default=8000)
+    w.set_defaults(func=cmd_app)
 
     a = p.parse_args(argv)
     return a.func(a)

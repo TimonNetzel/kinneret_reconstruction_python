@@ -342,7 +342,9 @@ def standort_daten(st: Standort, root: Path) -> dict[str, Any]:
                  "gehoelz": [n in ARBOREAL_TAXA for n in names], "kultur": [n in CULTIVATED_TAXA for n in names]},
         "alter": _r(inp.age, 1), "tiefe": _r(inp.depth, 1), "alter_mittel_tiefe": _r(inp.age_mean, 1),
         "spektrum_alter": _r(setup.taxa_spectrum_age, 5), "spektrum_tiefe": _r(setup.taxa_spectrum_depth, 5),
-        "ap": {"tiefe": _r(inp.ap_depth, 3), "tiefe_ohne_kultur": _r(ap_without(inp, CULTIVATED_TAXA), 3)},
+        "ap": {"tiefe": _r(inp.ap_depth, 3), "tiefe_ohne_kultur": _r(ap_without(inp, CULTIVATED_TAXA), 3),
+               "alter": _r(setup.ap_age, 3),
+               "alter_ohne_kultur": _r(build_setup(inp, SamplerConfig(ap_exclude_taxa=CULTIVATED_TAXA)).ap_age, 3)},
         "rezentes_klima_daten": _r(inp.recent_climate, 4),
         "raster": {"T": _r(t_grid, 3), "P": _r(p_grid, 3)},
         "tf_prior_dichte": prior2d,  # je Biom (P-Raster, T-Raster), Maximum 100
@@ -380,9 +382,18 @@ def katalog_index(katalog: dict[str, Lauf], pruefungen: dict[str, Pruefung], roo
             if lauf.basis in apps:
                 e["vergleich_basis"] = vergleich(apps[lid], apps[lauf.basis])
         laeufe.append(e)
+    # aktueller Standard: der Lauf mit den Voreinstellungen des Pakets
+    standard = None
+    for lid, lauf in katalog.items():
+        pr = pruefungen[lid]
+        if pr.einstellungen and pr.fingerabdruck == fingerabdruck(
+                flache_einstellungen(Config(data_dir=STANDORTE[lauf.standort].data_dir), pr.recent_climate),
+                daten_hash(root / STANDORTE[lauf.standort].data_dir)):
+            standard = lid
+            break
     return {
         "format": FORMAT, "version": __version__, "git": git_revision(root),
-        "gruppen": GRUPPEN, "rollen": ROLLEN,
+        "standard_lauf": standard, "gruppen": GRUPPEN, "rollen": ROLLEN,
         "faktoren": [{"key": f.key, "gruppe": f.gruppe, "label": f.label, "beschreibung": f.beschreibung,
                       "felder": list(f.felder),
                       "stufen": [{"key": s.key, "label": s.label,

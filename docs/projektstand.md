@@ -35,7 +35,8 @@ Rahmen (vom Autor festgelegt):
 | – | Neuer Standard v3 (hierarchischer Prior, CRU 50 km) | ✅ `reference/v3-standard/`, Prüfbericht 3.10 |
 | – | Tests Klima gegen Landnutzung (AP ohne Kulturbäume, Kalibrierung 4–9 ka) | ✅ Prüfbericht 3.11 |
 | App 1 | Lauf-Katalog, Faktor-Register, kompakte Zusammenfassungen, Batch-Befehl; alle Läufe neu gerechnet | ✅ `docs/app_konzept.md` Abschnitt 7 |
-| App 2 | App-Grundgerüst (statisch, responsiv, de/en) mit Rekonstruktion und Sensitivität | offen |
+| App 2 | App-Grundgerüst (statisch, offline, responsiv, de/en) mit Rekonstruktion und Sensitivität | ✅ `kinneret-recon app`, App-Konzept Abschnitt 9 |
+| App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | offen |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -76,6 +77,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
 | 27.10.2026 | **Standard v3:** hierarchischer Prior der Taxa-Gewichte und CRU-Prior für 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm), 8 Mio. Iterationen je Kette (vom Autor festgelegt). Vergleichskonfigurationen schreiben die Werte bis v2 fest |
 | 28.10.2026 | App im Browser (PC und Handy, de/en), vorerst nur fertige Läufe, erweiterbar für Läufe und Standorte (`docs/app_konzept.md`). „AP ohne Kulturbäume“ als Variante, Standard bleibt v3 |
+| 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
@@ -130,13 +132,20 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026 (dritte Sitzung, App Schritt 1), letzter Commit siehe `git log`. Alles Nötige steht im Repo;
+Stand 28.10.2026 (dritte Sitzung, App Schritte 1 und 2), letzter Commit siehe `git log`. Alles Nötige steht im Repo;
 aus der alten Sitzung muss nichts übernommen werden.
 
-**Nächster Schritt: App Schritt 2** (`docs/app_konzept.md`, Abschnitt 5): App-Grundgerüst mit Rekonstruktion
-und Sensitivität. Die Daten dafür liegen fertig im Repo: `reference/app/katalog.json` (Register und alle
-Läufe mit Kennzahlen), `reference/app/standort_kinneret.json` und `reference/laeufe/<lauf>/app.json`.
-Vorher die Technik entscheiden (Abschnitt 6).
+**Nächster Schritt: App Schritt 3** (`docs/app_konzept.md`, Abschnitt 5): Ansichten Taxa-Gewichte,
+Transferfunktionen, Diagnostik und Lauf-Steckbrief in `src/kinneret_recon/app/app.js`; die Daten liegen in
+`reference/laeufe/<lauf>/app.json` bereit. Danach `kinneret-recon app --eine-datei` und
+`node tools/app_pruefen.js …` (Browser-Test).
+
+**Erledigt in dieser Sitzung: App Schritt 2** (`docs/app_konzept.md`, Abschnitte 8 und 9)
+
+- Offline-fähige statische App (`src/kinneret_recon/app/`, Plotly.js im Paket), Befehl `kinneret-recon app`
+  (Ordner, `--eine-datei` fürs Android-Handy, `--serve`), Modul `app_bauen.py`, Browser-Test
+  `tools/app_pruefen.js`, Tests `tests/test_app.py`.
+- Ansichten Rekonstruktion (mit Detail je Alter) und Sensitivität, de/en, hell/dunkel, Handy und PC.
 
 **Erledigt in dieser Sitzung: App Schritt 1** (`docs/app_konzept.md`, Abschnitt 7)
 
@@ -158,7 +167,7 @@ Vorher die Technik entscheiden (Abschnitt 6).
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-python3 -m pytest          # 41 Tests, ~1 min
+python3 -m pytest          # 45 Tests, ~2 min (Browser-Test nur mit Node und Playwright)
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht

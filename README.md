@@ -120,6 +120,24 @@ kinneret-recon app-daten               # app.json, reference/app/katalog.json un
 gleichen Ketten (z. B. Mittelwert und Mischverteilung) nur einmal. Ein neuer Lauf ist eine Konfiguration in
 `configs/` plus ein Ordner mit `lauf.toml`; ein neuer Faktor ein Eintrag in `FAKTOREN`.
 
+## App (offline)
+
+Die App zeigt die gerechneten Läufe im Browser, auf PC und Handy, auf Deutsch und Englisch, hell oder dunkel.
+Sie braucht kein Netz.
+
+```bash
+kinneret-recon app                     # Ordner results/app/: index.html per Doppelklick öffnen
+kinneret-recon app --eine-datei        # results/kinneret-app.html (~5 MB): aufs Handy kopieren, in Chrome öffnen
+kinneret-recon app --serve             # Ordner bauen und im WLAN bereitstellen (http://<PC>:8000/)
+node tools/app_pruefen.js results/app/index.html results/kinneret-app.html   # Browser-Test (Playwright)
+```
+
+Ansichten: **Rekonstruktion** (T, P, Biomanteile, Baumpollenkurve über Alter oder Tiefe; Mittelwert oder
+Mischverteilung; Antippen eines Alters zeigt Verteilung, Biomanteile und Spektrum) und **Sensitivität**
+(Faktor und Basislauf wählen, Varianten überlagern, Differenzen, Tabelle mit Niveau, IQR und Korrelation der
+Anomalien). Die App liest `reference/app/` und `reference/laeufe/*/app.json`; nach neuen Läufen
+`kinneret-recon app` erneut aufrufen.
+
 ## Prior des rezenten Klimas aus CRU-Daten
 
 Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes

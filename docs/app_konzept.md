@@ -1,7 +1,7 @@
 # App-Konzept: Rekonstruktion und Sensitivitätsanalyse im Browser
 
 Stand: 28.10.2026. Grundlage für die Entwicklung der App. Die Antworten des Autors vom 28.10.2026 sind
-eingearbeitet (Abschnitt 1). Schritt 1 ist umgesetzt (Abschnitt 7). Vor dem Weiterarbeiten außerdem
+eingearbeitet (Abschnitt 1). Schritte 1 und 2 sind umgesetzt (Abschnitte 7 und 9). Vor dem Weiterarbeiten außerdem
 `docs/projektstand.md` lesen.
 
 ## 1. Rahmen (vom Autor festgelegt)
@@ -10,7 +10,8 @@ eingearbeitet (Abschnitt 1). Schritt 1 ist umgesetzt (Abschnitt 7). Vor dem Weit
 |---|---|
 | Nutzer | nur der Autor, lokal |
 | Rechnen | vorerst nur **fertige Läufe anzeigen**; Läufe werden per Kommandozeile gerechnet |
-| Plattform | Browser, optimiert für **PC und Handy** |
+| Plattform | Browser, optimiert für **PC und Handy** (Handy: **Android**) |
+| Offline | Die App läuft **ohne Netz** (28.10.2026): auf dem PC als Ordner per Doppelklick auf `index.html` (kein Server nötig), auf dem Handy als **eine einzige HTML-Datei** zum Kopieren. Keine Abhängigkeiten aus dem Netz (Bibliotheken im Repo). Dazu Manifest und Service Worker, damit sie über `localhost` oder HTTPS auch als installierbare Web-App (PWA) offline läuft |
 | Sprache | Oberfläche **Deutsch und Englisch** (umschaltbar) |
 | Inhalt | **alle bisherigen Läufe** und künftige; die App muss in weiteren Sitzungen **leicht erweiterbar** sein (Ansichten, Läufe, Faktoren) |
 | Standorte | **leicht für weitere Standorte erweiterbar** |
@@ -52,8 +53,8 @@ configs/*.toml ──kinneret-recon run──▶ results/<lauf>/ (Ketten, ~60 MB
 5. **Overlay-Schnittstelle** (nur vorsehen): CSV mit Alter, Wert, Unsicherheit, Einheit, Quelle; wird
    auf der Zeitachse über die Rekonstruktion gelegt.
 
-**Technik (Vorschlag, in der neuen Sitzung entscheiden):** Da vorerst nur angezeigt wird, genügt eine
-**statische Web-App**: `kinneret-recon app` erzeugt aus dem Katalog einen Ordner mit HTML, JS und den
+**Technik (entschieden 28.10.2026, Abschnitt 8):** statische, offline-fähige Web-App. Ursprünglicher
+Vorschlag: Da vorerst nur angezeigt wird, genügt eine **statische Web-App**: `kinneret-recon app` erzeugt aus dem Katalog einen Ordner mit HTML, JS und den
 Zusammenfassungen und startet einen kleinen lokalen Server. Das Handy greift über das heimische WLAN
 darauf zu (oder der Ordner wird aufs Handy kopiert). Diagramme mit Plotly.js oder ECharts (interaktiv,
 responsiv). Vorteile: volle Kontrolle über das responsive Layout, keine Serverlogik, später leicht um
@@ -120,10 +121,11 @@ bitgleich zu den bisherigen.
 
 ## 6. Offene Entscheidungen
 
-- Technik: statische Web-App (Vorschlag) oder Python-Framework (Schritt 2).
+- ~~Technik~~: statische, offline-fähige Web-App mit Plotly.js (Abschnitt 8).
 - ~~Format der Zusammenfassung und Rasterauflösung~~: entschieden in Schritt 1 (Abschnitt 7): JSON, Raster
   T −10…30 °C in 0,5 °C und P 0…1500 mm in 20 mm.
-- Zugriff vom Handy: über das heimische WLAN oder als kopierter Ordner.
+- ~~Zugriff vom Handy~~: Android, eine kopierte HTML-Datei (offline); über das WLAN optional
+  (`kinneret-recon app --serve`).
 
 ## 7. Umsetzung Schritt 1 (28.10.2026)
 
@@ -190,3 +192,55 @@ darunter Original, Standard v2 und v3. Fünf Läufe aus älteren Code-Ständen (
 Standardlaufs) weichen nur durch eine andere Zufallszahlenfolge ab: Mediane im Mittel ≤ 0,03 °C und 3 mm,
 höchstens 0,06 °C und 3,1 mm (Mischverteilung 7,6 mm). Die Vergleiche mit dem Basislauf in `katalog.json`
 reproduzieren die Tabellen in Prüfbericht 3.8–3.11.
+
+
+## 8. Offline-Fähigkeit (Festlegung vom 28.10.2026)
+
+Der Autor nutzt ein Android-Handy und möchte die App ohne Netz verwenden. Umsetzung:
+
+- **Keine Netz-Abhängigkeiten:** Plotly.js (Cartesian-Paket, MIT-Lizenz) liegt im Paket
+  (`src/kinneret_recon/app/vendor/`), Schriften vom System, keine externen Aufrufe.
+- **PC:** `kinneret-recon app` baut einen Ordner (Standard `results/app/`). `index.html` per Doppelklick
+  öffnen; die Daten liegen als JS-Dateien bei, weil Browser über `file://` kein JSON nachladen. Die Daten
+  eines Laufs werden erst geladen, wenn er angezeigt wird.
+- **Handy (Android):** `kinneret-recon app --eine-datei` schreibt eine einzige HTML-Datei mit allem Nötigen;
+  die Daten der Läufe sind gzip-komprimiert eingebettet und werden im Browser entpackt
+  (`DecompressionStream`). Datei aufs Handy kopieren und in Chrome oder Firefox öffnen.
+- **Installierbar (PWA):** Manifest und Service Worker sind dabei. Sie greifen nur über `localhost` oder
+  HTTPS (Vorgabe der Browser), nicht über `file://` oder einfaches `http://` im WLAN, und stören dort nicht.
+- **WLAN (optional):** `kinneret-recon app --serve` startet einen kleinen lokalen Server; das Handy öffnet die
+  angezeigte Adresse (dann online im heimischen Netz, ohne Offline-Speicher).
+
+## 9. Umsetzung Schritt 2 (28.10.2026)
+
+**Quellen** in `src/kinneret_recon/app/`: `index.html`, `style.css`, `i18n.js` (Texte de/en), `app.js`
+(Logik), `manifest.webmanifest`, `icon.svg`, `vendor/plotly-cartesian.min.js` (Plotly.js 2.35.2, MIT-Lizenz,
+`vendor/LICENSE-plotly.txt`). Kein Build-Werkzeug nötig, klassische Skripte (ES-Module laden über `file://`
+nicht). Gebaut wird mit `kinneret-recon app` (Modul `app_bauen.py`); das Ergebnis liegt in `results/` und
+ist nicht im Repo.
+
+**Ansichten:**
+
+- *Rekonstruktion:* Lauf (gruppiert nach Rolle, ★ = Standard), Achse Alter/Tiefe, Mittelwert oder
+  Mischverteilung (Voreinstellung: Standard des Laufs). Vier verknüpfte Diagramme: T und P (Median mit
+  50-/95-%-Bändern bzw. Dichte der Mischverteilung), Biomanteile, Baumpollenkurve wie in R² (gestrichelt die
+  volle Kurve, grau die Alter außerhalb der Kalibrierung). Antippen eines Alters: Verteilung von T und P
+  (Dichte der Mischverteilung, darüber Median, 50 % und 95 % des Mittelwerts), Biomanteile, häufigste Taxa.
+  Beschreibung, Faktor, Basislauf, Quelle und Kennzahlen aufklappbar, Hinweise (z. B. „Kette hängt“) immer
+  sichtbar.
+- *Sensitivität:* Faktor (gruppiert), Basislauf (Voreinstellung: Wurzel der Reihe mit den meisten
+  Varianten), Läufe der Reihe zum An- und Abwählen, weitere beliebige Läufe hinzufügbar, 50-%-Bänder
+  optional. Diagramme: Median von T und P, Differenz zum Basislauf; Tabelle mit Stufe, Niveau, ΔNiveau, IQR
+  (mit relativer Änderung), *r* der Anomalien und min. ESS. Die Werte rechnet die App aus den Laufdaten, für
+  jeden Basislauf; sie stimmen mit Prüfbericht 3.8–3.11 überein.
+
+**Gestaltung:** eine Farbe je Lauf über alle Ansichten (Paletten nach Tol und Okabe-Ito), der Basislauf in
+Schwarz bzw. Weiß; Hell/Dunkel/Automatisch; ab 1000 px Seitenleiste plus Diagramme, darunter eine Spalte;
+Einstellungen bleiben im Browser gespeichert (`localStorage`, ohne Speicher Voreinstellungen).
+
+**Geprüft** (`tools/app_pruefen.js`, Chromium ohne Netz, auch in `tests/test_app.py`): Ordner und eine Datei,
+Handy (390 px) und PC (1366 px), hell und dunkel, ohne Fehler in der Konsole und ohne Netzanfragen. Über
+`--serve` und `localhost` speichert der Service Worker alle Dateien; die App lädt danach auch offline neu.
+
+**Offen für Schritt 3:** Taxa-Gewichte, Transferfunktionen, Diagnostik, Lauf-Steckbrief (die Daten liegen
+in `app.json` bereit). Schritt 4: Export im Copernicus-Format (bisher nur PNG über die Plotly-Leiste).
