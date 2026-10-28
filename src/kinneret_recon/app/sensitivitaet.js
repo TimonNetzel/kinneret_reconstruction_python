@@ -3,7 +3,8 @@
   "use strict";
   const { $, D, K, Z, t, L, css, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
     dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, umschalter, laufOptionen, stufeLabel,
-    GRUPPEN_FOLGE } = KR;
+    GRUPPEN_FOLGE, F, FT } = KR;
+  const tx = (k) => F(t(k)); // uebersetzter Text als HTML (Formeln gesetzt)
 
 
   let sensToken = 0;
@@ -40,11 +41,11 @@
       const fs = K.faktoren.filter((f) => f.gruppe === g && serie(f.key).length > 1);
       if (!fs.length) continue;
       const grp = document.createElement("optgroup");
-      grp.label = L(K.gruppen[g]);
+      grp.label = FT(L(K.gruppen[g]));
       fs.forEach((f) => {
         const o = document.createElement("option");
         o.value = f.key;
-        o.textContent = L(f.label);
+        o.textContent = FT(L(f.label));
         o.selected = f.key === Z.faktor;
         grp.appendChild(o);
       });
@@ -67,14 +68,14 @@
     faktorOptionen();
     const s = sensAuswahl();
     const f = FAKTOREN.get(Z.faktor);
-    $("sens-faktor-text").textContent = L(f.beschreibung);
+    $("sens-faktor-text").innerHTML = F(L(f.beschreibung));
     // Basislauf: alle Laeufe der Reihe
     const bsel = $("sens-basis");
     bsel.innerHTML = "";
     s.forEach((l) => {
       const o = document.createElement("option");
       o.value = l.id;
-      o.textContent = L(l.titel) + " · " + stufeLabel(l, Z.faktor);
+      o.textContent = FT(L(l.titel)) + " · " + FT(stufeLabel(l, Z.faktor));
       o.selected = l.id === Z.basis;
       bsel.appendChild(o);
     });
@@ -98,8 +99,8 @@
       chip.className = "farbe";
       chip.style.background = cb.checked ? farbe(l.id) : "transparent";
       const txt = document.createElement("span");
-      txt.textContent = L(l.titel) + (l.hinweis ? " ⚠" : "");
-      if (l.hinweis) lab.title = L(l.hinweis);
+      txt.innerHTML = F(L(l.titel)) + (l.hinweis ? " ⚠" : "");
+      if (l.hinweis) lab.title = FT(L(l.hinweis));
       lab.append(cb, chip, txt);
       liste.appendChild(lab);
     });
@@ -107,7 +108,7 @@
     laufOptionen(wsel, null, (l) => !s.includes(l) && !Z.extra.includes(l.id));
     const leer = document.createElement("option");
     leer.value = "";
-    leer.textContent = t("weitere_lauf");
+    leer.textContent = FT(t("weitere_lauf"));
     leer.selected = true;
     wsel.prepend(leer);
     $("sens-baender").checked = !!Z.baender;
@@ -117,7 +118,7 @@
     try {
       daten = await Promise.all(gezeigt.map(ladeLauf));
     } catch (e) {
-      $("sens-tabelle").innerHTML = `<caption class="warn">${t("fehler_laden")}: ${esc(e.message)}</caption>`;
+      $("sens-tabelle").innerHTML = `<caption class="warn">${tx("fehler_laden")}: ${esc(e.message)}</caption>`;
       return;
     }
     if (token !== sensToken) return;
@@ -148,31 +149,31 @@
         if (Z.baender) traces.push(...band(x, q.q25, q.q75, c.startsWith("#") ? c : "#888888", basis ? 0.18 : 0.14, ya, name));
         traces.push({ x, y: q.q50, yaxis: ya, type: "scatter", mode: "lines", name,
           line: { color: c, width: basis ? 3 : 1.8 },
-          hovertemplate: `${esc(name)}: %{y:.${v === "T" ? 2 : 0}f}<extra></extra>` });
+          hovertemplate: `${F(name)}: %{y:.${v === "T" ? 2 : 0}f}<extra></extra>` });
         if (!basis) {
           const b = kurve(daten[0], v).q50;
           diff.push({ x, y: q.q50.map((y, i) => y - b[i]), yaxis: ya, type: "scatter", mode: "lines", name,
-            line: { color: c, width: 1.8 }, hovertemplate: `${esc(name)}: %{y:+.${v === "T" ? 2 : 0}f}<extra></extra>` });
+            line: { color: c, width: 1.8 }, hovertemplate: `${F(name)}: %{y:+.${v === "T" ? 2 : 0}f}<extra></extra>` });
         }
       });
     });
-    const xa = achse({ title: { text: t("alter_achse") }, anchor: "y2" });
+    const xa = achse({ title: { text: tx("alter_achse") }, anchor: "y2" });
     Plotly.react($("sens-plot"), traces, layout({
       hovermode: "x", xaxis: xa,
-      yaxis: achse({ domain: dom[0], title: { text: t("T") } }), yaxis2: achse({ domain: dom[1], title: { text: t("P") } }),
-      annotations: [titel("(a) " + t("T") + " · " + t("median"), "y domain"), titel("(b) " + t("P") + " · " + t("median"), "y2 domain")],
+      yaxis: achse({ domain: dom[0], title: { text: tx("T") } }), yaxis2: achse({ domain: dom[1], title: { text: tx("P") } }),
+      annotations: [titel("(a) " + tx("T") + " · " + tx("median"), "y domain"), titel("(b) " + tx("P") + " · " + tx("median"), "y2 domain")],
     }), PLOT_CONFIG);
     Plotly.react($("sens-diff"), diff, layout({
-      hovermode: "x", xaxis: achse({ title: { text: t("alter_achse") }, anchor: "y2" }),
-      yaxis: achse({ domain: dom[0], title: { text: t("dT") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
-      yaxis2: achse({ domain: dom[1], title: { text: t("dP") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
-      annotations: [titel("(c) " + t("dT"), "y domain"), titel("(d) " + t("dP"), "y2 domain")],
+      hovermode: "x", xaxis: achse({ title: { text: tx("alter_achse") }, anchor: "y2" }),
+      yaxis: achse({ domain: dom[0], title: { text: tx("dT") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
+      yaxis2: achse({ domain: dom[1], title: { text: tx("dP") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
+      annotations: [titel("(c) " + tx("dT"), "y domain"), titel("(d) " + tx("dP"), "y2 domain")],
     }), PLOT_CONFIG);
   }
 
   function sensTabelle(ids, daten) {
     const kopf = ["spalte_lauf", "spalte_stufe", "spalte_T", "spalte_P", "spalte_dT", "spalte_dP", "spalte_iqrT",
-      "spalte_iqrP", "spalte_rT", "spalte_rP", "spalte_ess"].map((k) => `<th>${esc(t(k))}</th>`).join("");
+      "spalte_iqrP", "spalte_rT", "spalte_rP", "spalte_ess"].map((k) => `<th>${tx(k)}</th>`).join("");
     const b = daten[0];
     const zeilenHtml = ids.map((id, k) => {
       const d = daten[k], l = LAEUFE.get(id);
@@ -181,8 +182,8 @@
       const rel = (a, c) => (k === 0 ? "" : ` (${fmtS((a / c - 1) * 100, 0)} %)`);
       const chip = `<span class="farbe" style="background:${k === 0 ? css("--base") : farbe(id)}"></span> `;
       return `<tr class="${k === 0 ? "basis" : ""}">` +
-        `<td>${chip}${esc(L(l.titel))}${l.hinweis ? ` <span class="warn-inline" title="${esc(L(l.hinweis))}">⚠</span>` : ""}</td>` +
-        `<td>${esc(stufeLabel(l, Z.faktor))}</td>` +
+        `<td>${chip}${F(L(l.titel))}${l.hinweis ? ` <span class="warn-inline" title="${esc(FT(L(l.hinweis)))}">⚠</span>` : ""}</td>` +
+        `<td>${F(stufeLabel(l, Z.faktor))}</td>` +
         `<td>${fmt(mittel(tq.q50), 2)}</td><td>${fmt(mittel(pq.q50), 0)}</td>` +
         `<td>${k ? fmtS(mittel(tq.q50) - mittel(tb.q50), 2) : "–"}</td>` +
         `<td>${k ? fmtS(mittel(pq.q50) - mittel(pb.q50), 0) : "–"}</td>` +

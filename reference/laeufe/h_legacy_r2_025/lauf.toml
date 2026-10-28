@@ -8,12 +8,12 @@ stufe = "r2_025"
 quelle = "Prüfbericht 3.7 (Befund 13)"
 
 [titel]
-de = "Original, R²-Prior Mittel 0,25"
-en = "Original, R² prior mean 0.25"
+de = "Original, $R^2$-Prior Mittel 0,25"
+en = "Original, $R^2$ prior mean 0.25"
 
 [beschreibung]
-de = "Original-Sampler mit R²-Prior Beta(0,92; 2,77) wie in der Sensitivitätsrechnung des Papers (Tab. 2, Abb. 8c, 10)."
-en = "Original sampler with the R² prior Beta(0.92, 2.77) as in the sensitivity analysis of the paper (Table 2, Figs. 8c, 10)."
+de = "Original-Sampler mit $R^2$-Prior Beta(0,92; 2,77) wie in der Sensitivitätsrechnung des Papers (Tab. 2, Abb. 8c, 10)."
+en = "Original sampler with the $R^2$ prior Beta(0.92, 2.77) as in the sensitivity analysis of the paper (Table 2, Figs. 8c, 10)."
 
 [hinweis]
 de = "Die Kette bleibt hängen (Befund 13); die Ergebnisse sind nicht verwertbar."

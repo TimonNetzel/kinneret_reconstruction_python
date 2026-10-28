@@ -12,8 +12,8 @@ de = "v3, AP ohne Kulturbäume"
 en = "v3, AP without cultivated trees"
 
 [beschreibung]
-de = "Standard v3 mit Baumpollenkurve für R² ohne Kulturbäume (Olea, Vitis, Juglans). Test, ob das P-Signal Klima oder Landnutzung zeigt."
-en = "Standard v3 with the arboreal pollen curve for R² without cultivated trees (Olea, Vitis, Juglans). Tests whether the P signal shows climate or land use."
+de = "Standard v3 mit Baumpollenkurve für $R^2$ ohne Kulturbäume (Olea, Vitis, Juglans). Test, ob das $P$-Signal Klima oder Landnutzung zeigt."
+en = "Standard v3 with the arboreal pollen curve for $R^2$ without cultivated trees (Olea, Vitis, Juglans). Tests whether the $P$ signal shows climate or land use."
 
 [hinweis]
 de = "Variante, kein Standard: Die Einordnung von Olea im Mittelholozän ist fachlich offen."

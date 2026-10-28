@@ -1,4 +1,5 @@
 // Texte der Oberflaeche (de/en). Inhalte der Laeufe und Faktoren kommen zweisprachig aus den Daten.
+// Formeln in LaTeX-Schreibweise zwischen $...$ (Backslash im JS-String doppelt), umgesetzt mit KR.formel.
 window.KR_TEXTE = {
   de: {
     app_titel: "Klimarekonstruktion",
@@ -21,7 +22,7 @@ window.KR_TEXTE = {
     hilfe_rekonstruktion: "Mittelwert: Klima je Stichprobe als mit den Biomanteilen gewichteter Mittelwert der " +
       "Klimawerte der Biome; Linie Median, Bänder 50 % und 95 %. Mischverteilung nach Gl. (3): je Stichprobe ein " +
       "Biom mit der Wahrscheinlichkeit seines Anteils; sie hat beim Niederschlag mehrere Gipfel und wird deshalb " +
-      "als Dichte gezeigt (dunkler = wahrscheinlicher). Die Baumpollenkurve ist die, die in R² eingeht.",
+      "als Dichte gezeigt (dunkler = wahrscheinlicher). Die Baumpollenkurve ist die, die in $R^2$ eingeht.",
     antippen: "Ein Alter antippen oder anklicken, um Verteilung, Biomanteile und Spektrum dort zu sehen.",
     schliessen: "schließen",
     faktor: "Faktor",
@@ -30,22 +31,22 @@ window.KR_TEXTE = {
     weitere_lauf: "+ weiteren Lauf hinzufügen",
     darstellung: "Darstellung",
     baender: "50-%-Bänder",
-    hilfe_sensitivitaet: "Oben: Median von T und P der gewählten Läufe, der Basislauf dick. Unten: Differenz zum " +
+    hilfe_sensitivitaet: "Oben: Median von $T_\\mathrm{DJF}$ und $P_\\mathrm{ANN}$ der gewählten Läufe, der Basislauf dick. Unten: Differenz zum " +
       "Basislauf. Tabelle: Niveau = Mittel des Medians über alle Alter; IQR = mittlere Breite des 50-%-Bands; " +
       "r = Korrelation der Anomalien (Median minus sein Mittel) mit dem Basislauf. Jeder Lauf mit seiner " +
       "Standard-Rekonstruktion.",
     laden: "Lade …",
     fehler_laden: "Daten konnten nicht geladen werden",
-    T: "T_DJF [°C]",
-    P: "P_ANN [mm]",
-    T_kurz: "T",
-    P_kurz: "P",
-    dT: "ΔT [°C]",
-    dP: "ΔP [mm]",
+    T: "$T_\\mathrm{DJF}$ [°C]",
+    P: "$P_\\mathrm{ANN}$ [mm]",
+    T_kurz: "$T$",
+    P_kurz: "$P$",
+    dT: "$\\Delta T_\\mathrm{DJF}$ [°C]",
+    dP: "$\\Delta P_\\mathrm{ANN}$ [mm]",
     biome: "Biomanteil",
     ap: "Baumpollen [%]",
     ap_voll: "alle Gehölz-Taxa",
-    ap_kalibrierung: "nicht in R²",
+    ap_kalibrierung: "nicht in $R^2$",
     alter_achse: "Alter [cal a BP]",
     tiefe_achse: "Tiefe [cm]",
     median: "Median",
@@ -59,14 +60,14 @@ window.KR_TEXTE = {
     detail_tiefe: "Tiefe {x} cm",
     spalte_lauf: "Lauf",
     spalte_stufe: "Stufe",
-    spalte_T: "Niveau T",
-    spalte_P: "Niveau P",
-    spalte_dT: "ΔT",
-    spalte_dP: "ΔP",
-    spalte_iqrT: "IQR T",
-    spalte_iqrP: "IQR P",
-    spalte_rT: "r T",
-    spalte_rP: "r P",
+    spalte_T: "Niveau $T$",
+    spalte_P: "Niveau $P$",
+    spalte_dT: "$\\Delta T$",
+    spalte_dP: "$\\Delta P$",
+    spalte_iqrT: "IQR $T$",
+    spalte_iqrP: "IQR $P$",
+    spalte_rT: "$r$ ($T$)",
+    spalte_rP: "$r$ ($P$)",
     spalte_ess: "min. ESS",
     basis: "Basis",
     rolle: "Rolle",
@@ -88,11 +89,11 @@ window.KR_TEXTE = {
     gewicht: "Gewicht",
     prior_median: "Prior-Median",
     prior_50: "Prior 50 %",
-    alpha_fest: "Dir(α) fest, α = {a}",
-    alpha_hier: "α hierarchisch: Median {m} (95 %: {lo}–{hi})",
+    alpha_fest: "Dir($\\alpha$) fest, $\\alpha$ = {a}",
+    alpha_hier: "$\\alpha$ hierarchisch: Median {m} (95 %: {lo}–{hi})",
     hilfe_gewichte: "Posterior der 33 Taxa-Gewichte: Punkt Median, dicker Balken 50 %, dünner Balken 95 %. Die " +
       "senkrechte Linie ist der Median eines Gewichts unter dem Prior, das graue Feld sein 50-%-Bereich (beim " +
-      "hierarchischen Prior über α gemittelt). 1/33 wäre ein gleichmäßiges Gewicht. Farbe am Namen: Biom des " +
+      "hierarchischen Prior über $\\alpha$ gemittelt). 1/33 wäre ein gleichmäßiges Gewicht. Farbe am Namen: Biom des " +
       "Taxons. Die Daten bestimmen die Gewichte nur schwach; robust ist die Rangfolge (Prüfbericht 3.6).",
     hilfe_tf: "Klimaräume der Biome: gestrichelt der Prior der Transferfunktion (Wahrscheinlichkeit 0,5), Fläche " +
       "die Posterior der Klimawerte des Laufs, Linien die der Vergleichsläufe (je bei der Hälfte des Maximums). " +
@@ -114,6 +115,9 @@ window.KR_TEXTE = {
     methodentext: "Methodentext",
     kopieren: "Kopieren",
     kopiert: "Kopiert",
+    kopieren_latex: "LaTeX",
+    kopieren_titel: "formatiert (mit Indizes) kopieren",
+    kopieren_latex_titel: "als LaTeX-Quelltext kopieren",
     kalibrierung: "Kalibrierung",
     einstellungen: "Einstellungen",
     diagnostik: "Konvergenzdiagnostik",
@@ -131,8 +135,8 @@ window.KR_TEXTE = {
     akzeptanz: "Akzeptanz je Kette",
     laufzeit: "Laufzeit",
     ketten_aus: "Ketten aus",
-    diag_ok: "Konvergenzkriterien erfüllt (R̂ ≤ 1,01 und ESS ≥ 400): max. R̂ = {r}, min. ESS = {e}.",
-    diag_schlecht: "{n} von {m} Größen verfehlen R̂ ≤ 1,01 oder ESS ≥ 400 (max. R̂ = {r}, min. ESS = {e}): {liste}",
+    diag_ok: "Konvergenzkriterien erfüllt ($\\hat{R}$ ≤ 1,01 und ESS ≥ 400): max. $\\hat{R}$ = {r}, min. ESS = {e}.",
+    diag_schlecht: "{n} von {m} Größen verfehlen $\\hat{R}$ ≤ 1,01 oder ESS ≥ 400 (max. $\\hat{R}$ = {r}, min. ESS = {e}): {liste}",
     kette: "Kette",
     iteration: "Iteration",
     burn_in_ende: "Ende des Burn-in",
@@ -166,7 +170,7 @@ window.KR_TEXTE = {
     hilfe_rekonstruktion: "Mean: climate per sample as the mean of the biome climate values weighted with the " +
       "biome ratios; line median, bands 50 % and 95 %. Mixture of Eq. (3): per sample one biome with the " +
       "probability of its ratio; it is multimodal for precipitation and therefore shown as a density (darker = " +
-      "more likely). The arboreal pollen curve is the one entering R².",
+      "more likely). The arboreal pollen curve is the one entering $R^2$.",
     antippen: "Tap or click an age to see the distribution, biome ratios and spectrum there.",
     schliessen: "close",
     faktor: "Factor",
@@ -175,22 +179,22 @@ window.KR_TEXTE = {
     weitere_lauf: "+ add another run",
     darstellung: "Display",
     baender: "50 % bands",
-    hilfe_sensitivitaet: "Top: median of T and P of the selected runs, the base run bold. Bottom: difference to " +
+    hilfe_sensitivitaet: "Top: median of $T_\\mathrm{DJF}$ and $P_\\mathrm{ANN}$ of the selected runs, the base run bold. Bottom: difference to " +
       "the base run. Table: level = mean of the median over all ages; IQR = mean width of the 50 % band; r = " +
       "correlation of the anomalies (median minus its mean) with the base run. Each run with its standard " +
       "reconstruction.",
     laden: "Loading …",
     fehler_laden: "Data could not be loaded",
-    T: "T_DJF [°C]",
-    P: "P_ANN [mm]",
-    T_kurz: "T",
-    P_kurz: "P",
-    dT: "ΔT [°C]",
-    dP: "ΔP [mm]",
+    T: "$T_\\mathrm{DJF}$ [°C]",
+    P: "$P_\\mathrm{ANN}$ [mm]",
+    T_kurz: "$T$",
+    P_kurz: "$P$",
+    dT: "$\\Delta T_\\mathrm{DJF}$ [°C]",
+    dP: "$\\Delta P_\\mathrm{ANN}$ [mm]",
     biome: "Biome ratio",
     ap: "Arboreal pollen [%]",
     ap_voll: "all woody taxa",
-    ap_kalibrierung: "not in R²",
+    ap_kalibrierung: "not in $R^2$",
     alter_achse: "Age [cal a BP]",
     tiefe_achse: "Depth [cm]",
     median: "Median",
@@ -204,14 +208,14 @@ window.KR_TEXTE = {
     detail_tiefe: "Depth {x} cm",
     spalte_lauf: "Run",
     spalte_stufe: "Setting",
-    spalte_T: "Level T",
-    spalte_P: "Level P",
-    spalte_dT: "ΔT",
-    spalte_dP: "ΔP",
-    spalte_iqrT: "IQR T",
-    spalte_iqrP: "IQR P",
-    spalte_rT: "r T",
-    spalte_rP: "r P",
+    spalte_T: "Level $T$",
+    spalte_P: "Level $P$",
+    spalte_dT: "$\\Delta T$",
+    spalte_dP: "$\\Delta P$",
+    spalte_iqrT: "IQR $T$",
+    spalte_iqrP: "IQR $P$",
+    spalte_rT: "$r$ ($T$)",
+    spalte_rP: "$r$ ($P$)",
     spalte_ess: "min. ESS",
     basis: "Base",
     rolle: "Role",
@@ -233,10 +237,10 @@ window.KR_TEXTE = {
     gewicht: "Weight",
     prior_median: "prior median",
     prior_50: "prior 50 %",
-    alpha_fest: "Dir(α) fixed, α = {a}",
-    alpha_hier: "hierarchical α: median {m} (95 %: {lo}–{hi})",
+    alpha_fest: "Dir($\\alpha$) fixed, $\\alpha$ = {a}",
+    alpha_hier: "hierarchical $\\alpha$: median {m} (95 %: {lo}–{hi})",
     hilfe_gewichte: "Posterior of the 33 taxa weights: dot median, thick bar 50 %, thin bar 95 %. The vertical " +
-      "line is the median of a weight under the prior, the grey area its 50 % range (averaged over α for the " +
+      "line is the median of a weight under the prior, the grey area its 50 % range (averaged over $\\alpha$ for the " +
       "hierarchical prior). 1/33 would be a uniform weight. Colour at the name: biome of the taxon. The data " +
       "constrain the weights only weakly; the ranking is robust (review report 3.6).",
     hilfe_tf: "Climate spaces of the biomes: dashed the prior of the transfer function (probability 0.5), area " +
@@ -259,6 +263,9 @@ window.KR_TEXTE = {
     methodentext: "Methods text",
     kopieren: "Copy",
     kopiert: "Copied",
+    kopieren_latex: "LaTeX",
+    kopieren_titel: "copy formatted (with subscripts)",
+    kopieren_latex_titel: "copy as LaTeX source",
     kalibrierung: "Calibration",
     einstellungen: "Settings",
     diagnostik: "Convergence diagnostics",
@@ -276,8 +283,8 @@ window.KR_TEXTE = {
     akzeptanz: "Acceptance per chain",
     laufzeit: "Run time",
     ketten_aus: "Chains from",
-    diag_ok: "Convergence criteria met (R̂ ≤ 1.01 and ESS ≥ 400): max. R̂ = {r}, min. ESS = {e}.",
-    diag_schlecht: "{n} of {m} quantities miss R̂ ≤ 1.01 or ESS ≥ 400 (max. R̂ = {r}, min. ESS = {e}): {liste}",
+    diag_ok: "Convergence criteria met ($\\hat{R}$ ≤ 1.01 and ESS ≥ 400): max. $\\hat{R}$ = {r}, min. ESS = {e}.",
+    diag_schlecht: "{n} of {m} quantities miss $\\hat{R}$ ≤ 1.01 or ESS ≥ 400 (max. $\\hat{R}$ = {r}, min. ESS = {e}): {liste}",
     kette: "Chain",
     iteration: "Iteration",
     burn_in_ende: "end of burn-in",

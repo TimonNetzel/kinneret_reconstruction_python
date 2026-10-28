@@ -12,5 +12,5 @@ de = "v3, Kalibrierung 4–9 ka"
 en = "v3, calibration 4–9 ka"
 
 [beschreibung]
-de = "Standard v3, R² mit der Baumpollenkurve nur über 4000–9000 cal BP, vor dem starken menschlichen Einfluss auf die Vegetation."
-en = "Standard v3, R² with the arboreal pollen curve only over 4000–9000 cal BP, before the strong human impact on the vegetation."
+de = "Standard v3, $R^2$ mit der Baumpollenkurve nur über 4000–9000 cal BP, vor dem starken menschlichen Einfluss auf die Vegetation."
+en = "Standard v3, $R^2$ with the arboreal pollen curve only over 4000–9000 cal BP, before the strong human impact on the vegetation."

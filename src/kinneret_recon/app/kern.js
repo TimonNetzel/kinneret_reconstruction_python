@@ -159,15 +159,15 @@
 
   function setzeTexte() {
     document.documentElement.lang = Z.sprache;
-    document.querySelectorAll("[data-t]").forEach((el) => { el.textContent = t(el.dataset.t); });
-    document.querySelectorAll("[data-t-title]").forEach((el) => { el.title = t(el.dataset.tTitle); });
+    document.querySelectorAll("[data-t]").forEach((el) => { el.innerHTML = F(t(el.dataset.t)); });
+    document.querySelectorAll("[data-t-title]").forEach((el) => { el.title = FT(t(el.dataset.tTitle)); });
     $("sprache").textContent = Z.sprache === "de" ? "EN" : "DE";
-    document.title = t("app_titel") + " · " + (D["standort/" + aktuellerStandort()] ? L(D["standort/" + aktuellerStandort()].name) : "");
+    document.title = FT(t("app_titel")) + " · " + (D["standort/" + aktuellerStandort()] ? FT(L(D["standort/" + aktuellerStandort()].name)) : "");
   }
   function setzeThema() {
     if (Z.thema === "auto") delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = Z.thema;
-    $("thema").textContent = t("thema_" + Z.thema);
+    $("thema").textContent = FT(t("thema_" + Z.thema));
   }
   function setzeAnsicht() {
     document.querySelectorAll(".reiter button").forEach((b) => b.setAttribute("aria-selected", b.dataset.ansicht === Z.ansicht));
@@ -191,13 +191,13 @@
       const ls = K.laeufe.filter((l) => l.rolle === rolle && l.app_json && (!filter || filter(l)));
       if (!ls.length) continue;
       const grp = document.createElement("optgroup");
-      grp.label = L(K.rollen[rolle]);
+      grp.label = FT(L(K.rollen[rolle]));
       ls.sort((a, b) => (GRUPPEN_FOLGE.indexOf(gruppeVon(a)) - GRUPPEN_FOLGE.indexOf(gruppeVon(b))) ||
-        L(a.titel).localeCompare(L(b.titel), locale()));
+        FT(L(a.titel)).localeCompare(FT(L(b.titel)), locale()));
       for (const l of ls) {
         const o = document.createElement("option");
         o.value = l.id;
-        o.textContent = (l.id === K.standard_lauf ? "★ " : "") + L(l.titel);
+        o.textContent = (l.id === K.standard_lauf ? "★ " : "") + FT(L(l.titel));
         o.selected = l.id === gewaehlt;
         grp.appendChild(o);
       }
@@ -210,6 +210,80 @@
     const s = f && l.stufen && f.stufen.find((x) => x.key === l.stufen[faktor]);
     return s ? L(s.label) : "–";
   };
+
+  // Formeln in Texten: LaTeX-Schreibweise zwischen $...$ (z. B. "$T_\mathrm{DJF}$ [°C]"), umgesetzt nach HTML
+  // (kursive Variablen, echte Indizes; versteht auch Plotly), reinem Text (Unicode) oder LaTeX. Gleiche Regeln wie
+  // kinneret_recon/formel.py.
+  const GRIECH = { alpha: "α", beta: "β", gamma: "γ", delta: "δ", kappa: "κ", mu: "μ", sigma: "σ", psi: "ψ", chi: "χ",
+    Sigma: "Σ", Delta: "Δ", Gamma: "Γ" };
+  const SYMBOL = { ldots: "…", dots: "…", cdot: "·", times: "×", pm: "±", ",": " ", ";": " ", "%": "%" };
+  const RELATION = { sim: "∼", le: "≤", ge: "≥", to: "→", approx: "≈" };
+  const FUNKTION = new Set(["log", "exp", "ln"]);
+  const MIT_ARGUMENT = new Set(["mathrm", "text", "hat"]);
+  const TIEF = Object.fromEntries([..."0123456789+-()aehijklmnoprstuvx"].map((c, k) => [c, [..."₀₁₂₃₄₅₆₇₈₉₊₋₍₎ₐₑₕᵢⱼₖₗₘₙₒₚᵣₛₜᵤᵥₓ"][k]]));
+  const HOCH = Object.fromEntries([..."0123456789+-()n"].map((c, k) => [c, [..."⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁽⁾ⁿ"][k]]));
+  const BEFEHL = /\\([A-Za-z]+|.)/y;
+  function mathe(s, html) {
+    let i = 0;
+    const out = [];
+    const e = html ? esc : (x) => x;
+    const befehl = () => { BEFEHL.lastIndex = i; const m = BEFEHL.exec(s); i = BEFEHL.lastIndex; return m; };
+    const gruppe = () => {
+      if (s[i] === "{") {
+        let tiefe = 1;
+        const j = ++i;
+        while (i < s.length && tiefe) { tiefe += s[i] === "{" ? 1 : s[i] === "}" ? -1 : 0; i++; }
+        return s.slice(j, i - 1);
+      }
+      if (s[i] === "\\") {
+        const m = befehl();
+        return MIT_ARGUMENT.has(m[1]) && i < s.length ? m[0] + "{" + gruppe() + "}" : m[0];
+      }
+      return s[i++];
+    };
+    while (i < s.length) {
+      const c = s[i];
+      if (c === "\\") {
+        const n = befehl()[1];
+        if (n === "mathrm" || n === "text") out.push(e(gruppe()));
+        else if (n === "hat") {
+          const inner = mathe(gruppe(), html);
+          out.push(inner.endsWith("</i>") ? inner.slice(0, -4) + "̂</i>" : inner + "̂");
+        } else if (GRIECH[n]) out.push(html && n[0] === n[0].toLowerCase() ? `<i>${GRIECH[n]}</i>` : GRIECH[n]);
+        else if (FUNKTION.has(n)) out.push(n + " ");
+        else if (RELATION[n]) out.push(` ${RELATION[n]} `);
+        else if (n in SYMBOL) out.push(SYMBOL[n]);
+        else out.push(e(n));
+      } else if (c === "_" || c === "^") {
+        i++;
+        const inner = mathe(gruppe(), html);
+        if (html) { const tag = c === "_" ? "sub" : "sup"; out.push(`<${tag}>${inner}</${tag}>`); } else {
+          const tab = c === "_" ? TIEF : HOCH;
+          out.push(inner && [...inner].every((x) => tab[x]) ? [...inner].map((x) => tab[x]).join("") : c + inner);
+        }
+      } else if (/[A-Za-z]/.test(c)) {
+        let j = i;
+        while (j < s.length && /[A-Za-z]/.test(s[j])) j++;
+        out.push(html ? `<i>${s.slice(i, j)}</i>` : s.slice(i, j));
+        i = j;
+      } else if (s.startsWith("{,}", i)) { out.push(","); i += 3; } else if ("{} ".includes(c)) i++;
+      else if ("=<>".includes(c)) { out.push(` ${e(c)} `); i++; } else if (c === ",") { out.push(", "); i++; } else { out.push(e(c)); i++; }
+    }
+    return out.join("").replace(/^ +| +$/g, "");
+  }
+  const LATEX_TEXT = { "\\": "\\textbackslash{}", "%": "\\%", "&": "\\&", "#": "\\#", _: "\\_", "{": "\\{", "}": "\\}",
+    "~": "\\textasciitilde{}", "^": "\\textasciicircum{}", " ": "\\," };
+  function formel(s, modus) {
+    modus = modus || "html";
+    return String(s ?? "").split("$").map((teil, k) => {
+      if (!teil) return "";
+      if (k % 2) return modus === "latex" ? `$${teil}$` : mathe(teil, modus === "html");
+      if (modus === "html") return esc(teil);
+      return modus === "latex" ? [...teil].map((x) => LATEX_TEXT[x] || x).join("") : teil;
+    }).join("");
+  }
+  const F = (s) => formel(s, "html"); // fuer innerHTML und Plotly-Beschriftungen
+  const FT = (s) => formel(s, "text"); // fuer Auswahllisten und title-Attribute
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -225,10 +299,10 @@
     Z.vergleich.forEach((id) => {
       const c = document.createElement("span");
       c.className = "chip";
-      c.innerHTML = `<span class="farbe" style="background:${farbe(id)}"></span>${esc(L(LAEUFE.get(id).titel))}`;
+      c.innerHTML = `<span class="farbe" style="background:${farbe(id)}"></span>${F(L(LAEUFE.get(id).titel))}`;
       const x = document.createElement("button");
       x.textContent = "✕";
-      x.title = t("entfernen");
+      x.title = FT(t("entfernen"));
       x.onclick = () => { Z.vergleich = Z.vergleich.filter((v) => v !== id); merke(); beiAenderung(); };
       c.appendChild(x);
       chips.appendChild(c);
@@ -239,7 +313,7 @@
       laufOptionen(sel, null, (l) => l.id !== Z.lauf && !Z.vergleich.includes(l.id));
       const leer = document.createElement("option");
       leer.value = "";
-      leer.textContent = t("vergleich_hinzu");
+      leer.textContent = FT(t("vergleich_hinzu"));
       leer.selected = true;
       sel.prepend(leer);
       sel.onchange = () => { if (sel.value) { Z.vergleich.push(sel.value); merke(); beiAenderung(); } };
@@ -255,6 +329,6 @@
     D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
     dunkel, dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
     aktuellerStandort, umschalter, laufOptionen, gruppeVon, stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten,
-    vergleichsAuswahl, schmal, ansicht: (a) => ansichten.push(a),
+    vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a),
   };
 })();

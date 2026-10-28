@@ -108,6 +108,7 @@ tr.basis td { font-weight: 600; }
 .chip button { border: 0; background: none; cursor: pointer; padding: 2px 6px; color: var(--muted); }
 .karte { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; }
 .karte h2 { font-size: 1rem; margin: 4px 0 8px; display: inline-block; }
+.knoepfe { display: flex; gap: 6px; }
 .karte-kopf { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 details.karte > summary { cursor: pointer; }
 .methoden { margin: 0; font-size: .92rem; }

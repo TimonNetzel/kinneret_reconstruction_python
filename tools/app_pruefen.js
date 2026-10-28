@@ -98,6 +98,19 @@ async function pruefe(browser, datei, groesse, thema, name) {
   const methEn = await page.textContent("#lauf-methoden");
   if (!methEn.startsWith("The posterior distribution")) fehler.push("Methodentext en: " + methEn.slice(0, 40));
   await page.click("#sprache");
+  // Formeln: nirgends rohe LaTeX-Schreibweise, aber gesetzte Indizes in Diagrammen und Text
+  for (const ansicht of ["rekonstruktion", "sensitivitaet", "gewichte", "transferfunktionen", "lauf"]) {
+    await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
+    await page.waitForTimeout(400);
+    const roh = await page.evaluate(() => {
+      const txt = document.body.innerText + [...document.querySelectorAll("svg text")].map((e) => e.textContent).join(" ");
+      return (txt.match(/\\(mathrm|hat|alpha|kappa|sim|Delta)|\$[A-Za-z\\]/g) || []).slice(0, 5);
+    });
+    if (roh.length) fehler.push(`rohe Formel in ${ansicht}: ${roh.join(" ")}`);
+  }
+  const indizes = await page.evaluate(() => [document.querySelectorAll("#lauf-methoden sub, #lauf-methoden sup").length,
+    document.querySelectorAll("#lauf-diagnostik sub").length]);
+  if (indizes[0] < 3 || indizes[1] < 5) fehler.push("Indizes fehlen: " + indizes);
   await ctx.close();
   return { fehler, zeilen };
 }

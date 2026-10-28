@@ -11,5 +11,5 @@ de = "Original (Paper)"
 en = "Original (paper)"
 
 [beschreibung]
-de = "Originalcode des Papers, bitidentisch nachgerechnet: 1 Kette × 1 Mio. Iterationen, Hastings-Korrektur ohne κ, Dir(0,5), Prior des rezenten Klimas wie im Paper, Quartile über Kerndichten."
-en = "Original code of the paper, recomputed bit for bit: 1 chain × 1 million iterations, Hastings correction without κ, Dir(0.5), prior of the recent climate as in the paper, quartiles from kernel densities."
+de = "Originalcode des Papers, bitidentisch nachgerechnet: 1 Kette × 1 Mio. Iterationen, Hastings-Korrektur ohne $\\kappa$, Dir(0,5), Prior des rezenten Klimas wie im Paper, Quartile über Kerndichten."
+en = "Original code of the paper, recomputed bit for bit: 1 chain × 1 million iterations, Hastings correction without $\\kappa$, Dir(0.5), prior of the recent climate as in the paper, quartiles from kernel densities."

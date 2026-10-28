@@ -29,7 +29,7 @@
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { if (Z.thema === "auto") zeige(); });
     ansichten.forEach((a) => a.init && a.init());
     ladeStandort(aktuellerStandort()).then((st) => {
-      $("standort-name").textContent = L(st.name);
+      $("standort-name").innerHTML = KR.F(L(st.name));
       setzeTexte();
     }).catch(() => {});
     zeige();

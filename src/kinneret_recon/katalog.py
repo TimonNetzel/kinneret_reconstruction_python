@@ -19,6 +19,9 @@ from typing import Any
 
 from .config import CRU_PRIOR_50KM, Config
 
+# Texte (Titel, Beschreibungen, Bezeichnungen) duerfen Formeln in LaTeX-Schreibweise enthalten, z. B.
+# "$T_\\mathrm{DJF}$"; die App setzt sie um (formel.py, app/kern.js).
+
 KATALOG_DIR = Path("reference/laeufe")
 SPRACHEN = ("de", "en")
 
@@ -69,7 +72,7 @@ GRUPPEN: dict[str, dict[str, str]] = {
     "korrekturen": _t("Sampler-Korrekturen", "Sampler corrections"),
     "gewichte": _t("Prior der Taxa-Gewichte", "Prior of the taxa weights"),
     "klima_prior": _t("Prior des rezenten Klimas", "Prior of the recent climate"),
-    "r2": _t("R²-Prior", "R² prior"),
+    "r2": _t("$R^2$-Prior", "$R^2$ prior"),
     "baumpollen": _t("Baumpollenkurve", "Arboreal pollen curve"),
     "modellform": _t("Modellform", "Model form"),
 }
@@ -137,10 +140,10 @@ FAKTOREN: dict[str, Faktor] = {f.key: f for f in (
            (Stufe("v2", _t("Standard v2", "Standard v2"), _V2), Stufe("v3", _t("Standard v3", "Standard v3"), _V3))),
     Faktor("korrekturen", "korrekturen", _t("Korrekturen des Samplers", "Sampler corrections"),
            _t("Schrittweise vom Original zum korrigierten Sampler: A neuer Sampler mit Korrekturen aus, B mit "
-              "korrekter Hastings-Korrektur (κ), C mit exakter Momentenanpassung des Gamma-Priors für P0, Standard "
+              "korrekter Hastings-Korrektur ($\\kappa$), C mit exakter Momentenanpassung des Gamma-Priors für $P_0$, Standard "
               "mit Quartilen aus den Stichproben (Prüfbericht 3.1, Abschnitt 4).",
               "Step by step from the original to the corrected sampler: A new sampler with corrections off, B with "
-              "the correct Hastings correction (κ), C with exact moment matching of the gamma prior for P0, "
+              "the correct Hastings correction ($\\kappa$), C with exact moment matching of the gamma prior for $P_0$, "
               "standard with quartiles from the samples (review report 3.1, section 4)."),
            tuple(_ORIGINAL),
            (Stufe("original", _t("Original", "Original"), _ORIGINAL),
@@ -152,22 +155,22 @@ FAKTOREN: dict[str, Faktor] = {f.key: f for f in (
             Stufe("standard", _t("Standard: + Quartile aus Stichproben", "Standard: + quartiles from samples"),
                   {**_C, "postprocess.quantile_method": "samples"}))),
     Faktor("gewichte_prior", "gewichte", _t("Prior der Taxa-Gewichte", "Prior of the taxa weights"),
-           _t("Dirichlet-Prior Dir(α, …, α) der 33 Taxa-Gewichte mit festem α oder mitgeschätztem α "
-              "(hierarchisch, log α ~ N(log 1, 1)). Die Daten bestimmen die Gewichte nur schwach (Prüfbericht 3.6).",
-              "Dirichlet prior Dir(α, …, α) of the 33 taxa weights with fixed α or with α estimated jointly "
-              "(hierarchical, log α ~ N(log 1, 1)). The data constrain the weights only weakly (review report 3.6)."),
+           _t("Dirichlet-Prior Dir($\\alpha, \\ldots, \\alpha$) der 33 Taxa-Gewichte mit festem $\\alpha$ oder mitgeschätztem "
+              "$\\alpha$ (hierarchisch, $\\log\\alpha \\sim N(\\log 1, 1)$). Die Daten bestimmen die Gewichte nur schwach (Prüfbericht 3.6).",
+              "Dirichlet prior Dir($\\alpha, \\ldots, \\alpha$) of the 33 taxa weights with fixed $\\alpha$ or with $\\alpha$ "
+              "estimated jointly (hierarchical, $\\log\\alpha \\sim N(\\log 1, 1)$). The data constrain the weights only weakly (review report 3.6)."),
            ("sampler.taxa_prior", "sampler.taxa_prior_alpha", "sampler.alpha_prior_median",
             "sampler.alpha_prior_log_sd"),
            (Stufe("dir_05", _t("Dir(0,5)", "Dir(0.5)"), {"sampler.taxa_prior": "fixed", "sampler.taxa_prior_alpha": 0.5}),
             Stufe("dir_1", _t("Dir(1)", "Dir(1)"), {"sampler.taxa_prior": "fixed", "sampler.taxa_prior_alpha": 1.0}),
             Stufe("dir_2", _t("Dir(2)", "Dir(2)"), {"sampler.taxa_prior": "fixed", "sampler.taxa_prior_alpha": 2.0}),
-            Stufe("hierarchisch", _t("Dir(α), α hierarchisch", "Dir(α), hierarchical α"),
+            Stufe("hierarchisch", _t("Dir($\\alpha$), $\\alpha$ hierarchisch", "Dir($\\alpha$), hierarchical $\\alpha$"),
                   {"sampler.taxa_prior": "hierarchical", "sampler.alpha_prior_median": 1.0,
                    "sampler.alpha_prior_log_sd": 1.0}))),
     Faktor("klima_prior", "klima_prior", _t("Prior des rezenten Klimas", "Prior of the recent climate"),
-           _t("Mittel und Sd von T_DJF und P_ANN der jüngsten Altersstufe. Der Prior legt das absolute Niveau der "
+           _t("Mittel und Sd von $T_\\mathrm{DJF}$ und $P_\\mathrm{ANN}$ der jüngsten Altersstufe. Der Prior legt das absolute Niveau der "
               "Rekonstruktion fest; der zeitliche Verlauf von P ist robust (Prüfbericht 3.8, 3.9).",
-              "Mean and sd of T_DJF and P_ANN of the youngest age step. The prior sets the absolute level of the "
+              "Mean and sd of $T_\\mathrm{DJF}$ and $P_\\mathrm{ANN}$ of the youngest age step. The prior sets the absolute level of the "
               "reconstruction; the temporal course of P is robust (review report 3.8, 3.9)."),
            RECENT_FELDER,
            (Stufe("paper", _t("Paper: Levante-Gitterpunkte (10,74 ± 2,48 °C, 556 ± 135 mm)",
@@ -180,10 +183,10 @@ FAKTOREN: dict[str, Faktor] = {f.key: f for f in (
             Stufe("cru_25", _t("CRU 25 km", "CRU 25 km"), _recent(11.50, 1.23, 480.0, 44.9)),
             Stufe("cru_50", _t("CRU 50 km", "CRU 50 km"), dict(zip(RECENT_FELDER, CRU_PRIOR_50KM.values()))),
             Stufe("cru_100", _t("CRU 100 km", "CRU 100 km"), _recent(10.45, 0.99, 512.0, 39.1)))),
-    Faktor("r2_prior", "r2", _t("R²-Prior", "R² prior"),
-           _t("Beta-Prior von R² der Niederschlagsrekonstruktion mit der Baumpollenkurve (Proxy-Pool-Modul); "
+    Faktor("r2_prior", "r2", _t("$R^2$-Prior", "$R^2$ prior"),
+           _t("Beta-Prior von $R^2$ der Niederschlagsrekonstruktion mit der Baumpollenkurve (Proxy-Pool-Modul); "
               "Mittel 0,25 / 0,5 / 0,75 wie in Tab. 2 des Papers (Prüfbericht 3.7, 3.8).",
-              "Beta prior of R² of the precipitation reconstruction with the arboreal pollen curve (proxy pool "
+              "Beta prior of $R^2$ of the precipitation reconstruction with the arboreal pollen curve (proxy pool "
               "module); mean 0.25 / 0.5 / 0.75 as in Table 2 of the paper (review report 3.7, 3.8)."),
            ("sampler.beta_shape1", "sampler.beta_shape2"),
            (Stufe("r2_025", _t("Beta(0,92; 2,77), Mittel 0,25", "Beta(0.92, 2.77), mean 0.25"),
@@ -195,18 +198,18 @@ FAKTOREN: dict[str, Faktor] = {f.key: f for f in (
             Stufe("r2_075", _t("Beta(2,77; 0,92), Mittel 0,75", "Beta(2.77, 0.92), mean 0.75"),
                   {"sampler.beta_shape1": 2.77, "sampler.beta_shape2": 0.92}))),
     Faktor("ap_taxa", "baumpollen", _t("Taxa der Baumpollenkurve", "Taxa of the arboreal pollen curve"),
-           _t("Baumpollenkurve für R² mit allen Gehölz-Taxa oder ohne Kulturbäume (Olea, Vitis, Juglans). "
+           _t("Baumpollenkurve für $R^2$ mit allen Gehölz-Taxa oder ohne Kulturbäume (Olea, Vitis, Juglans). "
               "Ohne Olea sind die feuchten Phasen schwächer, das P-Muster hält (Prüfbericht 3.11).",
-              "Arboreal pollen curve for R² with all woody taxa or without cultivated trees (Olea, Vitis, Juglans). "
+              "Arboreal pollen curve for $R^2$ with all woody taxa or without cultivated trees (Olea, Vitis, Juglans). "
               "Without Olea the wet phases are weaker, the P pattern holds (review report 3.11)."),
            ("sampler.ap_exclude_taxa",),
            (Stufe("alle", _t("alle Gehölz-Taxa", "all woody taxa"), {"sampler.ap_exclude_taxa": ()}),
             Stufe("ohne_kultur", _t("ohne Kulturbäume", "without cultivated trees"),
                   {"sampler.ap_exclude_taxa": ("Olea europaea", "Vitis", "Juglans regia")}))),
     Faktor("kalibrierung_alter", "baumpollen", _t("Altersbereich der Kalibrierung", "Age range of the calibration"),
-           _t("Altersstufen, die in R² eingehen: alle oder nur 4000–9000 cal BP, vor dem starken menschlichen "
+           _t("Altersstufen, die in $R^2$ eingehen: alle oder nur 4000–9000 cal BP, vor dem starken menschlichen "
               "Einfluss auf die Vegetation (Prüfbericht 3.11).",
-              "Age steps entering R²: all or only 4000–9000 cal BP, before the strong human impact on the vegetation "
+              "Age steps entering $R^2$: all or only 4000–9000 cal BP, before the strong human impact on the vegetation "
               "(review report 3.11)."),
            ("sampler.calibration_age_range",),
            (Stufe("alle", _t("alle Alter", "all ages"), {"sampler.calibration_age_range": None}),
@@ -223,12 +226,12 @@ FAKTOREN: dict[str, Faktor] = {f.key: f for f in (
             Stufe("mixture", _t("Mischverteilung (Gl. 3)", "Mixture (Eq. 3)"), {"postprocess.reconstruction": "mixture"}))),
     Faktor("tf_prior", "modellform", _t("Prior der Klimawerte der Biome", "Prior of the biome climate values"),
            _t("Gl. (14) des Papers nur als Vorschlag (Standard, gleichverteilter Prior auf dem Trunkierungsbereich) "
-              "oder zusätzlich als Prior N_t(μ, σ); als Prior zählt er die Transferfunktion doppelt (Prüfbericht 3.8).",
+              "oder zusätzlich als Prior $N_\\mathrm{t}(\\mu, \\sigma)$; als Prior zählt er die Transferfunktion doppelt (Prüfbericht 3.8).",
               "Eq. (14) of the paper as proposal only (standard, uniform prior on the truncation range) or also as "
-              "prior N_t(μ, σ); as a prior it counts the transfer function twice (review report 3.8)."),
+              "prior $N_\\mathrm{t}(\\mu, \\sigma)$; as a prior it counts the transfer function twice (review report 3.8)."),
            ("sampler.tf_normal_prior",),
            (Stufe("vorschlag", _t("nur Vorschlag", "proposal only"), {"sampler.tf_normal_prior": False}),
-            Stufe("prior", _t("N_t als Prior", "N_t as prior"), {"sampler.tf_normal_prior": True}))),
+            Stufe("prior", _t("$N_\\mathrm{t}$ als Prior", "$N_\\mathrm{t}$ as prior"), {"sampler.tf_normal_prior": True}))),
     Faktor("tf_grenzen", "modellform", _t("Trunkierung der Transferfunktionen", "Truncation of the transfer functions"),
            _t("Quantile der Prior-Randverteilungen je Biom, auf die die Klimawerte trunkiert werden "
               "(Paper: 5 % und 95 %; Prüfbericht 3.3).",

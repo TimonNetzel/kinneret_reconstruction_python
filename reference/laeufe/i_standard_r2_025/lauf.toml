@@ -8,9 +8,9 @@ stufe = "r2_025"
 quelle = "Prüfbericht 3.7"
 
 [titel]
-de = "R²-Prior Mittel 0,25"
-en = "R² prior mean 0.25"
+de = "$R^2$-Prior Mittel 0,25"
+en = "$R^2$ prior mean 0.25"
 
 [beschreibung]
-de = "Standard v2 mit R²-Prior Beta(0,92; 2,77) (Mittel 0,25, Sd 0,2) statt Beta(3; 3)."
-en = "Standard v2 with the R² prior Beta(0.92, 2.77) (mean 0.25, sd 0.2) instead of Beta(3, 3)."
+de = "Standard v2 mit $R^2$-Prior Beta(0,92; 2,77) (Mittel 0,25, Sd 0,2) statt Beta(3; 3)."
+en = "Standard v2 with the $R^2$ prior Beta(0.92, 2.77) (mean 0.25, sd 0.2) instead of Beta(3, 3)."

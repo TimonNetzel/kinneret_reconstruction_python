@@ -137,7 +137,8 @@ Mischverteilung; Antippen eines Alters zeigt Verteilung, Biomanteile und Spektru
 (Faktor und Basislauf wählen, Varianten überlagern, Differenzen, Tabelle mit Niveau, IQR und Korrelation der
 Anomalien), **Taxa-Gewichte** (Posterior gegen Prior, Vergleich mehrerer Läufe), **Transferfunktionen**
 (Klimaräume der Biome, CI-Verhältnis) und **Lauf** (Steckbrief, Methodentext de/en zum Kopieren, Kalibrierung,
-Einstellungen, Konvergenzdiagnostik). Die App liest `reference/app/` und `reference/laeufe/*/app.json`; nach neuen Läufen
+Einstellungen, Konvergenzdiagnostik). Formelzeichen stehen in den Texten in LaTeX-Schreibweise
+(`$T_\mathrm{DJF}$`) und werden mit echten Indizes gesetzt (`formel.py`). Die App liest `reference/app/` und `reference/laeufe/*/app.json`; nach neuen Läufen
 `kinneret-recon app` erneut aufrufen.
 
 ## Prior des rezenten Klimas aus CRU-Daten

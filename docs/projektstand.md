@@ -78,6 +78,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
 | 27.10.2026 | **Standard v3:** hierarchischer Prior der Taxa-Gewichte und CRU-Prior für 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm), 8 Mio. Iterationen je Kette (vom Autor festgelegt). Vergleichskonfigurationen schreiben die Werte bis v2 fest |
 | 28.10.2026 | App im Browser (PC und Handy, de/en), vorerst nur fertige Läufe, erweiterbar für Läufe und Standorte (`docs/app_konzept.md`). „AP ohne Kulturbäume“ als Variante, Standard bleibt v3 |
+| 28.10.2026 | Formelzeichen in LaTeX-Schreibweise mit echten Indizes in App, Methodentext und Bericht ($T_\mathrm{DJF}$ statt T_DJF; vom Autor gewünscht, App-Konzept Abschnitt 11); Methodentext auch als LaTeX kopierbar |
 | 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
@@ -146,6 +147,7 @@ der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/
 - Ansichten Taxa-Gewichte, Transferfunktionen und Lauf (Steckbrief, Methodentext de/en, Kalibrierung,
   Einstellungen, Konvergenzdiagnostik).
 - Englischer Methodentext (`report.methods_text(run, "en")`), App-Daten neu geschrieben.
+- Formelschreibweise im LaTeX-Stil überall (Modul `formel.py`, `formel()` in `kern.js`, App-Konzept Abschnitt 11).
 
 **Erledigt in dieser Sitzung: App Schritt 2** (`docs/app_konzept.md`, Abschnitte 8 und 9)
 
@@ -174,7 +176,7 @@ der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-python3 -m pytest          # 45 Tests, ~2 min (Browser-Test nur mit Node und Playwright)
+python3 -m pytest          # 47 Tests, ~2 min (Browser-Test nur mit Node und Playwright)
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht

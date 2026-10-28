@@ -12,5 +12,5 @@ de = "B′: Gegenprobe mit Dirichlet-Vorschlag"
 en = "B′: cross-check with Dirichlet proposal"
 
 [beschreibung]
-de = "Dieselbe Zielverteilung wie B mit dem Dirichlet-Vorschlag des Originals (korrekte Hastings-Korrektur, κ = 4 K², 5 Mio. Iterationen). Muss mit B übereinstimmen."
-en = "The same target distribution as B with the Dirichlet proposal of the original (correct Hastings correction, κ = 4 K², 5 million iterations). Must agree with B."
+de = "Dieselbe Zielverteilung wie B mit dem Dirichlet-Vorschlag des Originals (korrekte Hastings-Korrektur, $\\kappa = 4K^2$, 5 Mio. Iterationen). Muss mit B übereinstimmen."
+en = "The same target distribution as B with the Dirichlet proposal of the original (correct Hastings correction, $\\kappa = 4K^2$, 5 million iterations). Must agree with B."

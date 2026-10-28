@@ -2,14 +2,15 @@
 (function (KR) {
   "use strict";
   const { $, Z, t, L, css, fmt, esc, merke, LAEUFE, ladeLauf, ladeStandort, farbe, alpha, PLOT_CONFIG, achse, layout,
-    titel, umschalter, laufOptionen, vergleichsAuswahl } = KR;
+    titel, umschalter, laufOptionen, vergleichsAuswahl, F, FT } = KR;
+  const tx = (k) => F(t(k)); // uebersetzter Text als HTML (Formeln gesetzt)
 
   let token = 0;
 
   function alphaText(d) {
     const a = d.gewichte.alpha;
-    if (a.fest !== undefined) return t("alpha_fest").replace("{a}", fmt(a.fest, 2));
-    return t("alpha_hier").replace("{m}", fmt(a.q50, 2)).replace("{lo}", fmt(a.q2_5, 2)).replace("{hi}", fmt(a.q97_5, 2));
+    if (a.fest !== undefined) return tx("alpha_fest").replace("{a}", fmt(a.fest, 2));
+    return tx("alpha_hier").replace("{m}", fmt(a.q50, 2)).replace("{lo}", fmt(a.q2_5, 2)).replace("{hi}", fmt(a.q97_5, 2));
   }
 
   async function zeige() {
@@ -23,13 +24,13 @@
     try {
       [st, ...daten] = await Promise.all([ladeStandort(LAEUFE.get(Z.lauf).standort), ...ids.map(ladeLauf)]);
     } catch (e) {
-      $("gew-info").innerHTML = `<span class="warn">${t("fehler_laden")}: ${esc(e.message)}</span>`;
+      $("gew-info").innerHTML = `<span class="warn">${tx("fehler_laden")}: ${esc(e.message)}</span>`;
       return;
     }
     if (my !== token) return;
     $("gew-info").innerHTML = ids.map((id, k) =>
-      `<div><span class="farbe" style="background:${farbe(id)}"></span> ${esc(L(LAEUFE.get(id).titel))}: ` +
-      `${esc(alphaText(daten[k]))}</div>`).join("");
+      `<div><span class="farbe" style="background:${farbe(id)}"></span> ${F(L(LAEUFE.get(id).titel))}: ` +
+      `${alphaText(daten[k])}</div>`).join(""); // alphaText liefert HTML
     zeichne(ids, daten, st, sort);
   }
 
@@ -67,7 +68,7 @@
         x: [...Array(K).keys()].map((k) => xw(g.q50[k])), y: [...Array(K).keys()].map(y), type: "scatter", mode: "markers",
         marker: { color: c, size: 7, line: { color: css("--bg"), width: 1 } }, name,
         customdata: [...Array(K).keys()].map((k) => [namen[k], g.q25[k], g.q75[k], g.q2_5[k], g.q97_5[k]]),
-        hovertemplate: `${esc(name)}<br>%{customdata[0]}: %{x:.4f}<br>50 %: %{customdata[1]:.4f}–%{customdata[2]:.4f}` +
+        hovertemplate: `${F(name)}<br>%{customdata[0]}: %{x:.4f}<br>50 %: %{customdata[1]:.4f}–%{customdata[2]:.4f}` +
           `<br>95 %: %{customdata[3]:.4f}–%{customdata[4]:.4f}<extra></extra>`,
       });
       shapes.push({ type: "line", xref: "x", yref: "paper", x0: xw(g.prior.q50), x1: xw(g.prior.q50), y0: 0, y1: 1,
@@ -81,9 +82,9 @@
     div.style.height = Math.max(520, K * (16 + 6 * n) + 110) + "px";
     Plotly.react(div, traces, layout({
       hovermode: "closest", shapes, margin: { l: 10, r: 14, t: 30, b: 44 },
-      annotations: [titel(`${t("ansicht_gewichte")} · ${t("prior_median")} (- -) · 1/${K} (···)`, "paper")],
-      xaxis: achse(log ? { type: "log", title: { text: t("gewicht") }, range: [-4.3, 0] }
-        : { title: { text: t("gewicht") }, range: [0, Math.min(1, q99 * 1.05)] }),
+      annotations: [titel(`${tx("ansicht_gewichte")} · ${tx("prior_median")} (- -) · 1/${K} (···)`, "paper")],
+      xaxis: achse(log ? { type: "log", title: { text: tx("gewicht") }, range: [-4.3, 0] }
+        : { title: { text: tx("gewicht") }, range: [0, Math.min(1, q99 * 1.05)] }),
       yaxis: achse({ tickvals: order.map((_, i) => i), ticktext, autorange: "reversed", tickfont: { size: 11 },
         showgrid: false, range: [K - 0.5, -0.5] }),
     }), PLOT_CONFIG);

@@ -161,12 +161,13 @@ def _ergebnis_status(lauf, pruefung, outdir: Path) -> str:
 
 
 def cmd_katalog(a: argparse.Namespace) -> int:
+    from .formel import zu_text
     from .katalog import FAKTOREN
 
     kat, pr, ids = _katalog_pruefen(a.laeufe)
     if a.faktoren:
         for f in FAKTOREN.values():
-            print(f"{f.key:20s} [{f.gruppe}] {f.label['de']}: " + ", ".join(s.key for s in f.stufen))
+            print(f"{f.key:20s} [{f.gruppe}] {zu_text(f.label['de'])}: " + ", ".join(s.key for s in f.stufen))
         return 0
     res = Path(a.results)
     n_fehler = 0

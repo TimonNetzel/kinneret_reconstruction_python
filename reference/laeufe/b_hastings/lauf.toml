@@ -12,5 +12,5 @@ de = "B: + Hastings-Korrektur"
 en = "B: + Hastings correction"
 
 [beschreibung]
-de = "A plus korrekte Hastings-Korrektur der Taxa-Gewichte (κ fehlte im Original, Befund 1), log-Gamma-Vorschlag, 4 Ketten × 2 Mio. Iterationen."
-en = "A plus the correct Hastings correction of the taxa weights (κ was missing in the original, finding 1), log-gamma proposal, 4 chains × 2 million iterations."
+de = "A plus korrekte Hastings-Korrektur der Taxa-Gewichte ($\\kappa$ fehlte im Original, Befund 1), log-Gamma-Vorschlag, 4 Ketten × 2 Mio. Iterationen."
+en = "A plus the correct Hastings correction of the taxa weights ($\\kappa$ was missing in the original, finding 1), log-gamma proposal, 4 chains × 2 million iterations."

@@ -271,3 +271,25 @@ unverändert.
 
 **Offen für Schritt 4:** Export der Abbildungen im Copernicus-Format und CSV der angezeigten Daten (bisher nur
 PNG über die Plotly-Leiste).
+
+## 11. Formelschreibweise (28.10.2026, vom Autor gewünscht)
+
+Formelzeichen stehen in allen Texten in **LaTeX-Schreibweise** zwischen `$...$`, z. B. `$T_\mathrm{DJF}$`,
+`$P_\mathrm{ANN}$`, `$\Delta T_\mathrm{DJF}$`, `$T_0$`, `$R^2$`, `$\hat{R}$`, `$N_\mathrm{t}(\mu, \sigma)$`.
+Das gilt für die Oberflächentexte (`i18n.js`), Faktor-Register, Lauf-Beschreibungen (`lauf.toml`), den
+Methodentext und den HTML-Bericht.
+
+- **Umsetzung:** `formel.py` (Python) und `formel()` in `kern.js` (App) setzen eine kleine LaTeX-Teilmenge um,
+  nach HTML mit kursiven Variablen und echten Indizes (`<i>T</i><sub>DJF</sub>`), nach Unicode-Text
+  (`T_DJF`, `T₀`, `R²`; für Auswahllisten und Tooltips, die kein HTML können) oder nach LaTeX (Text außerhalb
+  der Formeln maskiert, z. B. `%` → `\%`). Plotly versteht dieselbe HTML-Auszeichnung; Diagramme und Text
+  sehen daher gleich aus, ohne MathJax (die App bleibt klein und offline). Beide Umsetzungen werden
+  gegeneinander getestet (`tests/test_formel.py`).
+- **Methodentext:** „Kopieren“ legt ihn formatiert (HTML, z. B. für Word) und als Unicode-Text in die
+  Zwischenablage, „LaTeX“ als LaTeX-Quelltext (für die Copernicus-Vorlage).
+- **Diagnostik:** Parameternamen werden gesetzt angezeigt (`T0` → $T_0$, `T_Med` → $T_\mathrm{Med}$,
+  `w[…]` → $w$[…]); in `diagnostik.csv` bleiben die Bezeichner.
+- **Matplotlib:** Neue Abbildungen (Spuren, R̂/ESS, Vergleiche) verwenden `$T_\mathrm{DJF}$` usw. Die
+  Abbildungen des Originals behalten `$\mathregular{T_{DJF}}$` (aufrecht, aber ebenfalls mit Index), damit sie
+  bitidentisch zum Originalskript bleiben.
+- **Nicht geändert:** Spaltennamen der Tabellen (`T_DJF_q50` …) und Bezeichner im Code.

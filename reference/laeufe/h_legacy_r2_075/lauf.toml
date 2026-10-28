@@ -8,9 +8,9 @@ stufe = "r2_075"
 quelle = "Prüfbericht 3.7"
 
 [titel]
-de = "Original, R²-Prior Mittel 0,75"
-en = "Original, R² prior mean 0.75"
+de = "Original, $R^2$-Prior Mittel 0,75"
+en = "Original, $R^2$ prior mean 0.75"
 
 [beschreibung]
-de = "Original-Sampler mit R²-Prior Beta(2,77; 0,92) wie in der Sensitivitätsrechnung des Papers (Tab. 2)."
-en = "Original sampler with the R² prior Beta(2.77, 0.92) as in the sensitivity analysis of the paper (Table 2)."
+de = "Original-Sampler mit $R^2$-Prior Beta(2,77; 0,92) wie in der Sensitivitätsrechnung des Papers (Tab. 2)."
+en = "Original sampler with the $R^2$ prior Beta(2.77, 0.92) as in the sensitivity analysis of the paper (Table 2)."
