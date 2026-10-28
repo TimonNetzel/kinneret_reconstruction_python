@@ -78,10 +78,22 @@
   }
 
   function kalibrierung(d) {
+    const lauf = Z.lauf, div = $("lauf-kalibrierung");
+    KR.plot(div, () => baueKalibrierung(d, div), {
+      name: `${lauf}_kalibrierung`, titel: "kalibrierung", laeufe: [lauf], hoehe: (b) => (b < 12 ? 13 : 5.5),
+      csv: () => [{ name: "kalibrierung", titel: "kalibrierung", spalten: ["groesse", "wert", "dichte_posterior", "dichte_prior"],
+        zeilen: ["R2", "T0", "P0"].flatMap((g) => d.kalibrierung[g].kurve.x.map((x, i) =>
+          [g, x, d.kalibrierung[g].kurve.posterior[i], d.kalibrierung[g].kurve.prior[i]])),
+        kopf: ["R2", "T0", "P0"].map((g) => `${g}: ` + JSON.stringify(Object.fromEntries(Object.entries(d.kalibrierung[g])
+          .filter(([key]) => key !== "kurve")))) }],
+    });
+  }
+
+  function baueKalibrierung(d, div) {
     const k = d.kalibrierung;
     const teile = [["R2", F("$R^2$"), 2], ["T0", F("$T_0$") + " [°C]", 2], ["P0", F("$P_0$") + " [mm]", 0]];
     const traces = [], lay = {}, ann = [];
-    const breit = $("lauf-kalibrierung").clientWidth >= 700;
+    const breit = !KR.schmal(div);
     teile.forEach(([key, label, nd], i) => {
       const g = k[key], kv = g.kurve, sx = i ? "x" + (i + 1) : "x", sy = i ? "y" + (i + 1) : "y";
       traces.push({ x: kv.x, y: kv.posterior, xaxis: sx, yaxis: sy, type: "scatter", mode: "lines", fill: "tozeroy",
@@ -99,8 +111,8 @@
     ann.push({ text: `<span style="color:#E69F00">━</span> ${tx("tf_prior")}   ▇ ${tx("tf_posterior")}`, xref: "paper",
       yref: "paper", x: 1, y: 1.0, xanchor: "right", yanchor: "bottom", showarrow: false,
       font: { size: 11, color: css("--muted") } });
-    Plotly.react($("lauf-kalibrierung"), traces, layout(Object.assign({ hovermode: "closest", annotations: ann,
-      margin: { l: 20, r: 14, t: 34, b: 44 } }, lay)), PLOT_CONFIG);
+    return [traces, layout(Object.assign({ hovermode: "closest", annotations: ann,
+      margin: { l: 20, r: 14, t: 34, b: 44 } }, lay))];
   }
 
   function wertText(v) {
@@ -129,23 +141,44 @@
     const namen = Object.keys(sp.werte);
     if (!namen.includes(Z.spur)) Z.spur = namen.includes("R2") ? "R2" : namen[0];
     sel.innerHTML = namen.map((n) => `<option value="${esc(n)}"${n === Z.spur ? " selected" : ""}>${esc(FT(parName(n)))}</option>`).join("");
-    const traces = sp.werte[Z.spur].map((kette, c) => ({ x: sp.iteration, y: kette, type: "scatter", mode: "lines",
+    const lauf = Z.lauf, spur = Z.spur;
+    KR.plot($("lauf-spuren"), () => baueSpuren(sp, spur), {
+      name: `${lauf}_spur_${spur}`, titel: "spur", laeufe: [lauf], hoehe: (b) => (b < 10 ? 5.5 : 6.5),
+      csv: () => [{ name: "spur_" + spur, titel: "spur", spalten: ["iteration", ...sp.werte[spur].map((_, c) => `kette_${c + 1}`)],
+        zeilen: sp.iteration.map((it, i) => [it, ...sp.werte[spur].map((k) => k[i])]),
+        kopf: [`groesse: ${spur}`, `burn_in: ${sp.burn_in}`] }],
+    });
+    // R-hat und ESS aller Groessen
+    const tab = dg.tabelle;
+    const div = $("lauf-rhat");
+    div.style.height = Math.max(300, tab.length * 15 + 90) + "px";
+    const spalten = ["parameter", "mean", "sd", "q2_5", "median", "q97_5", "rhat", "ess_bulk", "ess_tail"];
+    KR.plot(div, () => baueRhat(tab), {
+      name: `${lauf}_rhat_ess`, titel: "diagnostik", laeufe: [lauf], hoehe: () => Math.min(23, Math.round(tab.length * 0.3 + 2)),
+      csv: () => [{ name: "diagnostik", titel: "diagnostik", spalten, zeilen: tab.map((r) => spalten.map((c) => r[c] ?? "")) }],
+    });
+    tabelle(tab);
+  }
+
+  function baueSpuren(sp, spur) {
+    const traces = sp.werte[spur].map((kette, c) => ({ x: sp.iteration, y: kette, type: "scatter", mode: "lines",
       line: { color: KETTEN_FARBEN[c % KETTEN_FARBEN.length], width: 1 }, name: `${tx("kette")} ${c + 1}`,
       hovertemplate: `${tx("kette")} ${c + 1}: %{y}<extra></extra>` }));
-    Plotly.react($("lauf-spuren"), traces, layout({
-      hovermode: "closest", xaxis: achse({ title: { text: tx("iteration") } }), yaxis: achse({ title: { text: F(parName(Z.spur)) } }),
+    return [traces, layout({
+      hovermode: "closest", showlegend: !!KR.druck, xaxis: achse({ title: { text: tx("iteration") } }),
+      yaxis: achse({ title: { text: F(parName(spur)) } }),
       shapes: [{ type: "line", xref: "x", yref: "paper", x0: sp.burn_in, x1: sp.burn_in, y0: 0, y1: 1,
         line: { color: css("--muted"), dash: "dot", width: 1.5 } }],
       annotations: [{ text: tx("burn_in_ende"), x: sp.burn_in, xref: "x", y: 1, yref: "paper", xanchor: "left",
         yanchor: "bottom", showarrow: false, font: { size: 11, color: css("--muted") } }],
-    }), PLOT_CONFIG);
-    // R-hat und ESS aller Groessen
-    const tab = dg.tabelle, y = tab.map((r) => F(parName(r.parameter)));
+    })];
+  }
+
+  function baueRhat(tab) {
+    const y = tab.map((r) => F(parName(r.parameter)));
     const warn = css("--warn"), grau = css("--muted");
     const rh = tab.map((r) => r.rhat), es = tab.map((r) => r.ess_bulk);
-    const div = $("lauf-rhat");
-    div.style.height = Math.max(300, tab.length * 15 + 90) + "px";
-    Plotly.react(div, [
+    return [[
       { type: "bar", orientation: "h", y, x: rh.map((v) => v ?? 0), marker: { color: rh.map((v) => (v === null || v > 1.01 ? warn : grau)) },
         hovertemplate: `%{y}: ${RH} %{x:.4f}<extra></extra>` },
       { type: "bar", orientation: "h", y, x: es.map((v) => v ?? 0), xaxis: "x2", marker: { color: es.map((v) => (v === null || v < 400 ? warn : grau)) },
@@ -154,11 +187,14 @@
       hovermode: "closest", margin: { l: 10, r: 14, t: 24, b: 44 },
       xaxis: achse({ domain: [0, 0.48], title: { text: `${RH} (${fmt(1.01, 2)})` },
         range: [0.99, Math.max(1.05, ...rh.filter((v) => v !== null)) + 0.005] }),
-      xaxis2: achse({ domain: [0.52, 1], type: "log", title: { text: "ESS bulk (400)" } }),
+      xaxis2: achse(Object.assign({ domain: [0.52, 1], type: "log", title: { text: "ESS bulk (400)" } }, KR.druck ? { dtick: 1 } : {})),
       yaxis: achse({ autorange: "reversed", tickfont: { size: 10 }, showgrid: false }),
       shapes: [{ type: "line", xref: "x", yref: "paper", x0: 1.01, x1: 1.01, y0: 0, y1: 1, line: { color: css("--fg"), dash: "dash", width: 1 } },
         { type: "line", xref: "x2", yref: "paper", x0: 400, x1: 400, y0: 0, y1: 1, line: { color: css("--fg"), dash: "dash", width: 1 } }],
-    }), PLOT_CONFIG);
+    })];
+  }
+
+  function tabelle(tab) {
     const kopf = [tx("groesse"), tx("mittel"), tx("sd"), "2,5 %", tx("median"), "97,5 %", RH, tx("ess_bulk"), tx("ess_tail")];
     const kopfHtml = kopf.map((k) => `<th>${k}</th>`).join("");
     const f3 = (v) => (v === null ? "–" : Math.abs(v) >= 100 ? fmt(v, 1) : fmt(v, 4));

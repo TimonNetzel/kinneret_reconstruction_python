@@ -37,7 +37,8 @@ Rahmen (vom Autor festgelegt):
 | App 1 | Lauf-Katalog, Faktor-Register, kompakte Zusammenfassungen, Batch-Befehl; alle Läufe neu gerechnet | ✅ `docs/app_konzept.md` Abschnitt 7 |
 | App 2 | App-Grundgerüst (statisch, offline, responsiv, de/en) mit Rekonstruktion und Sensitivität | ✅ `kinneret-recon app`, App-Konzept Abschnitt 9 |
 | App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | ✅ App-Konzept Abschnitt 10 |
-| App 4 | Abbildungsexport im Copernicus-Format, CSV | offen |
+| App 4 | Abbildungsexport im Copernicus-Format (PDF, SVG, PNG), CSV | ✅ App-Konzept Abschnitt 12 |
+| App 5 | Standort-Register (Kinneret als erster Standort) | offen |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -82,6 +83,7 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | Formelzeichen in LaTeX-Schreibweise mit echten Indizes in App, Methodentext und Bericht ($T_\mathrm{DJF}$ statt T_DJF; vom Autor gewünscht, App-Konzept Abschnitt 11); Methodentext auch als LaTeX kopierbar |
 | 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
+| 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte (nächste Sitzung)
@@ -135,14 +137,26 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026 (dritte Sitzung: App Schritte 1 bis 3, Formelschreibweise), letzter Commit siehe `git log`. Die
-Arbeit der Sitzung ist per Pull Request nach `main` gemergt (vom Autor freigegeben). Alles Nötige steht im Repo;
-aus der alten Sitzung muss nichts übernommen werden.
+Stand 28.10.2026 (vierte Sitzung: App Schritt 4), letzter Commit siehe `git log`, Branch `ccr-4d37fe2c-mutkq8`
+(noch nicht nach `main` gemergt). Alles Nötige steht im Repo; aus der alten Sitzung muss nichts übernommen werden.
 
-**Nächster Schritt: App Schritt 4** (`docs/app_konzept.md`, Abschnitt 5): Abbildungsexport im Format von
-*Climate of the Past* (Spaltenbreiten und Schriftgrößen anhand der aktuellen Autorenrichtlinien prüfen) und CSV
-der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`. Schritt 4
-braucht nur die App-Daten im Repo, nicht die Ketten.
+**Nächster Schritt: App Schritt 5** (`docs/app_konzept.md`, Abschnitt 5): Standort-Register (Kinneret als erster
+Standort; heute fest in `cru.py`, `data/in/` und `standort_kinneret.json`). Vorher zwei kleine Entscheidungen des
+Autors: Biomfarben bei Farbsehschwäche (App-Konzept Abschnitt 12, „Offen“) und der Abgleich der Export-Maße mit den
+aktuellen Copernicus-Richtlinien (die Seiten waren aus der Cloud-Umgebung nicht erreichbar; Freigabe der Domains
+`publications.copernicus.org` und `www.climate-of-the-past.net` in den Netzwerkeinstellungen der Umgebung würde das
+ermöglichen).
+
+**Erledigt in dieser Sitzung: App Schritt 4** (`docs/app_konzept.md`, Abschnitt 12)
+
+- Neues Modul `src/kinneret_recon/app/export.js`: Dialog (Seitenleiste jeder Ansicht und Diskettensymbol im
+  Diagramm), PDF über den Druckdialog (Seite = Abbildung), SVG in cm, PNG mit 300/600 dpi (`pHYs`), CSV je
+  Diagramm mit Kopfzeilen (Lauf, Fingerabdruck, Code-Stand), international oder Excel deutsch.
+- `kern.js`: `KR.plot(div, baue, info)` meldet Diagramme an; Druckstil (`KR.mitDruck`, `KR.druck`) für `css()`,
+  `layout()`, `achse()`, `titel()`. Alle Ansichten bauen ihre Diagramme mit `baue()`-Funktionen und liefern CSV.
+- Kleine Verbesserungen am Bildschirm: Biomfarben im Titel der Rekonstruktion, CI-Diagramm mit (a)/(b) und
+  Achsentitel, Taxa-Gewichte ohne leere Zeile oben und unten.
+- Browser-Test um den Export erweitert (SVG, PNG, CSV, PDF-Seitengröße, jede Ansicht).
 
 **Ketten im Daten-Repo** (seit 28.10.2026, vom Autor angelegt): Die vollständigen Ketten aller 27 Läufe
 (`posterior.npz`, `prior.npz`; 24 Kettensätze, 719 MB) liegen im privaten Repo
@@ -225,7 +239,7 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
 
 **Mögliche nächste Schritte:**
 
-0. App nach `docs/app_konzept.md`, weiter mit Schritt 2.
+0. App nach `docs/app_konzept.md`, weiter mit Schritt 5.
 1. Prior-Referenzlauf kürzen (halbiert die Laufzeit des Standardlaufs, siehe „Offene Punkte“, Punkt 4).
 2. Zusatzfehler für den Niederschlag im CRU-Prior entscheiden (Punkt 1).
 3. Training der Transferfunktion; dabei dieselbe CRU-Version (TS 4.07, 1961–1990, 0,5°) verwenden

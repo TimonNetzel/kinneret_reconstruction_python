@@ -35,16 +35,46 @@
   }
 
   function zeichne(ids, daten, st, sort) {
-    const namen = st.taxa.namen, biom = st.taxa.biom, K = namen.length;
-    const g0 = daten[0].gewichte;
-    let order = [...Array(K).keys()];
+    const div = $("gew-plot"), K = st.taxa.namen.length, n = ids.length, log = !!Z.gewLog;
+    div.style.height = Math.max(520, K * (16 + 6 * n) + 110) + "px";
+    KR.plot(div, () => baue(ids, daten, st, sort, log), {
+      name: `${ids[0]}_gewichte`, titel: "ansicht_gewichte", laeufe: ids,
+      hoehe: (b) => Math.min(23, Math.round(K * (0.36 + 0.1 * (n - 1)) + 2.5 + (n > 1 ? 0.4 * Math.ceil(n / 2) : 0))),
+      csv: () => [csv(ids, daten, st, sort)],
+    });
+  }
+
+  function reihenfolge(g0, st, sort) {
+    const namen = st.taxa.namen, biom = st.taxa.biom;
+    const order = [...namen.keys()];
     if (sort === "median") order.sort((a, b) => g0.q50[b] - g0.q50[a]);
     else if (sort === "biom") order.sort((a, b) => (biom[a] - biom[b]) || (g0.q50[b] - g0.q50[a]));
     else order.sort((a, b) => namen[a].localeCompare(namen[b]));
+    return order;
+  }
+
+  // CSV: Quantile der Gewichte je Lauf und Taxon (Reihenfolge wie im Diagramm) mit den Prior-Quantilen des Laufs
+  function csv(ids, daten, st, sort) {
+    const order = reihenfolge(daten[0].gewichte, st, sort);
+    const qs = ["q2_5", "q25", "q50", "q75", "q97_5", "mittel"];
+    const zeilen = [];
+    ids.forEach((id, r) => {
+      const g = daten[r].gewichte;
+      order.forEach((k) => zeilen.push([id, st.taxa.namen[k], st.biome.labels[st.taxa.biom[k]], ...qs.map((q) => g[q][k]),
+        g.prior.q25, g.prior.q50, g.prior.q75]));
+    });
+    return { name: "gewichte", titel: "ansicht_gewichte", zeilen,
+      spalten: ["lauf", "taxon", "biom", ...qs, "prior_q25", "prior_q50", "prior_q75"],
+      kopf: ids.map((id, r) => `alpha ${id}: ` + JSON.stringify(daten[r].gewichte.alpha)) };
+  }
+
+  function baue(ids, daten, st, sort, log) {
+    const namen = st.taxa.namen, biom = st.taxa.biom, K = namen.length;
+    const g0 = daten[0].gewichte;
+    const order = reihenfolge(g0, st, sort);
     const pos = new Map(order.map((k, i) => [k, i]));
     const n = ids.length, breite = 0.75;
     const traces = [], shapes = [];
-    const log = !!Z.gewLog;
     const klein = 1e-5;
     const xw = (v) => (log ? Math.max(v, klein) : v);
     // Prior: 50-%-Bereich als Feld (erster Lauf), Median je Lauf als Linie
@@ -66,7 +96,7 @@
       traces.push({ x: s50.xs, y: s50.ys, type: "scatter", mode: "lines", line: { color: c, width: n > 3 ? 3 : 5 }, hoverinfo: "skip" });
       traces.push({
         x: [...Array(K).keys()].map((k) => xw(g.q50[k])), y: [...Array(K).keys()].map(y), type: "scatter", mode: "markers",
-        marker: { color: c, size: 7, line: { color: css("--bg"), width: 1 } }, name,
+        marker: { color: c, size: 7, line: { color: css("--bg"), width: 1 } }, name: F(name),
         customdata: [...Array(K).keys()].map((k) => [namen[k], g.q25[k], g.q75[k], g.q2_5[k], g.q97_5[k]]),
         hovertemplate: `${F(name)}<br>%{customdata[0]}: %{x:.4f}<br>50 %: %{customdata[1]:.4f}–%{customdata[2]:.4f}` +
           `<br>95 %: %{customdata[3]:.4f}–%{customdata[4]:.4f}<extra></extra>`,
@@ -78,16 +108,14 @@
       line: { color: css("--muted"), width: 1, dash: "dot" } });
     const ticktext = order.map((k) => `<span style="color:${st.biome.farben[biom[k]]}">■</span> ${esc(namen[k])}`);
     const q99 = Math.max(0.25, ...daten.map((d) => Math.max(...d.gewichte.q97_5)));
-    const div = $("gew-plot");
-    div.style.height = Math.max(520, K * (16 + 6 * n) + 110) + "px";
-    Plotly.react(div, traces, layout({
-      hovermode: "closest", shapes, margin: { l: 10, r: 14, t: 30, b: 44 },
-      annotations: [titel(`${tx("ansicht_gewichte")} · ${tx("prior_median")} (- -) · 1/${K} (···)`, "paper")],
+    return [traces, layout({
+      hovermode: "closest", shapes, showlegend: !!KR.druck && n > 1, margin: { l: 10, r: 14, t: 30, b: 44 },
+      annotations: [titel(`${KR.druck ? "" : tx("ansicht_gewichte") + " · "}${tx("prior_median")} (- -) · 1/${K} (···)`, "paper")],
       xaxis: achse(log ? { type: "log", title: { text: tx("gewicht") }, range: [-4.3, 0] }
         : { title: { text: tx("gewicht") }, range: [0, Math.min(1, q99 * 1.05)] }),
-      yaxis: achse({ tickvals: order.map((_, i) => i), ticktext, autorange: "reversed", tickfont: { size: 11 },
+      yaxis: achse({ tickvals: order.map((_, i) => i), ticktext, tickfont: { size: 11 },
         showgrid: false, range: [K - 0.5, -0.5] }),
-    }), PLOT_CONFIG);
+    })];
   }
 
   KR.ansicht({

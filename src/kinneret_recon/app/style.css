@@ -125,6 +125,29 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 .reiter { overflow-x: auto; scrollbar-width: none; }
 .reiter button { white-space: nowrap; }
 
+.export-knopf { width: 100%; }
+.export-dialog { width: min(760px, calc(100vw - 16px)); max-height: calc(100vh - 16px); padding: 0; border: 1px solid var(--line);
+  border-radius: 12px; background: var(--bg); color: var(--fg); }
+.export-dialog::backdrop { background: rgba(0, 0, 0, .45); }
+.export-form { display: flex; flex-direction: column; gap: 10px; padding: 12px 14px; }
+.export-form h2 { font-size: 1.05rem; margin: 0; }
+.export-zahlen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.export-zahlen input { width: 100%; min-height: 40px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); }
+.export-vorschau { overflow: auto; background: #ffffff; border: 1px solid var(--line); border-radius: 8px; padding: 8px;
+  max-height: 46vh; }
+.export-vorschau img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.export-form .knoepfe { flex-wrap: wrap; }
+.export-form select.dpi { width: auto; min-height: 36px; }
+#export-fehler:empty { display: none; }
+#druck { display: none; }
+@media print {
+  body.druckt > :not(#druck) { display: none !important; }
+  body.druckt #druck { display: block !important; }
+  html, body.druckt { background: #ffffff !important; margin: 0; padding: 0; }
+  body.druckt #druck svg { display: block; }
+}
+
 @media (min-width: 760px) {
   .reiter { order: 0; flex: 0 0 auto; }
   .reiter button { flex: 0 0 auto; padding: 6px 16px; }
