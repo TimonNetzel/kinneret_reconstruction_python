@@ -204,7 +204,7 @@ Abschnitt 11); neue Texte bitte genauso schreiben.
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-python3 -m pytest          # 48 Tests, ~3 min (Browser-Test nur mit Node und Playwright)
+python3 -m pytest          # 49 Tests, ~4 min (Browser-Test nur mit Node und Playwright)
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht
