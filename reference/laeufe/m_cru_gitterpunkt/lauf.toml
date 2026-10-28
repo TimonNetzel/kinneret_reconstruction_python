@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/m_cru_gitterpunkt.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "klima_prior"
+stufe = "gitterpunkt"
+quelle = "Prüfbericht 3.8"
+
+[titel]
+de = "CRU-Gitterpunkt am See"
+en = "CRU grid point at the lake"
+
+[beschreibung]
+de = "Standard v2 mit Prior des rezenten Klimas vom CRU-Gitterpunkt am See (11,37 °C, 440 mm) statt Mittel mehrerer Levante-Gitterpunkte; Sd wie bisher."
+en = "Standard v2 with the prior of the recent climate from the CRU grid point at the lake (11.37 °C, 440 mm) instead of the mean of several Levant grid points; sd as before."

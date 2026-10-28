@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/standard_v2.toml"
+standort = "kinneret"
+rolle = "referenz"
+basis = "c_hastings_gamma"
+faktor = "korrekturen"
+stufe = "standard"
+quelle = "Prüfbericht 3.9, 3.10"
+
+[titel]
+de = "Standard v2"
+en = "Standard v2"
+
+[beschreibung]
+de = "Standard bis 27.10.2026: alle Korrekturen, log-Gamma-Vorschlag, Quartile aus den Stichproben, Dir(0,5), Prior des rezenten Klimas wie im Paper; 4 Ketten × 2 Mio. Iterationen. Basis der meisten Sensitivitätsläufe."
+en = "Standard until 27 Oct 2026: all corrections, log-gamma proposal, quartiles from the samples, Dir(0.5), prior of the recent climate as in the paper; 4 chains × 2 million iterations. Base of most sensitivity runs."

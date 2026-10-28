@@ -1,0 +1,6 @@
+# Standard v3 mit Rekonstruktion als Mischverteilung nach Gl. (3) (Pruefbericht 3.10). Gleiche Ketten wie
+# standard.toml; kinneret-recon batch wertet deren Ketten neu aus, statt neu zu sampeln.
+output_dir = "results/v3_mixture"
+
+[postprocess]
+reconstruction = "mixture"

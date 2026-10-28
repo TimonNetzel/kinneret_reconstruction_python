@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/k_tf_normal_prior.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "tf_prior"
+stufe = "prior"
+quelle = "Prüfbericht 3.8 (Befund 14)"
+
+[titel]
+de = "N_t als Prior (Gl. 14)"
+en = "N_t as prior (Eq. 14)"
+
+[beschreibung]
+de = "Standard v2 mit Gl. (14) des Papers als Prior der Klimawerte der Biome, N_t(μ(ψ), σ(ψ)) auf dem Trunkierungsbereich, statt nur als Vorschlag."
+en = "Standard v2 with Eq. (14) of the paper as prior of the biome climate values, N_t(μ(ψ), σ(ψ)) on the truncation range, instead of as proposal only."

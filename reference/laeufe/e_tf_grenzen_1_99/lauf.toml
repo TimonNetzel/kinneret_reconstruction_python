@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/e_tf_grenzen_1_99.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "tf_grenzen"
+stufe = "1_99"
+quelle = "Prüfbericht 3.3"
+
+[titel]
+de = "TF-Trunkierung 1 % / 99 %"
+en = "TF truncation 1 % / 99 %"
+
+[beschreibung]
+de = "Standard v2 mit Trunkierung der Klimawerte der Biome bei den 1-%- und 99-%-Quantilen statt 5 % und 95 %."
+en = "Standard v2 with the biome climate values truncated at the 1 % and 99 % quantiles instead of 5 % and 95 %."

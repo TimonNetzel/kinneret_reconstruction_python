@@ -1,7 +1,8 @@
 # App-Konzept: Rekonstruktion und Sensitivitätsanalyse im Browser
 
-Stand: 28.10.2026. Grundlage für die Entwicklung der App in einer neuen Sitzung. Die Antworten des Autors
-vom 28.10.2026 sind eingearbeitet (Abschnitt 1). Vor dem Start außerdem `docs/projektstand.md` lesen.
+Stand: 28.10.2026. Grundlage für die Entwicklung der App. Die Antworten des Autors vom 28.10.2026 sind
+eingearbeitet (Abschnitt 1). Schritt 1 ist umgesetzt (Abschnitt 7). Vor dem Weiterarbeiten außerdem
+`docs/projektstand.md` lesen.
 
 ## 1. Rahmen (vom Autor festgelegt)
 
@@ -117,8 +118,67 @@ bitgleich zu den bisherigen.
 5. Standort-Register (Kinneret als erster Standort).
 6. Später: Läufe aus der App starten, Overlays.
 
-## 6. Offene Entscheidungen für die neue Sitzung
+## 6. Offene Entscheidungen
 
-- Technik: statische Web-App (Vorschlag) oder Python-Framework.
-- Format der Zusammenfassung (JSON oder npz) und Rasterauflösung der Dichten.
+- Technik: statische Web-App (Vorschlag) oder Python-Framework (Schritt 2).
+- ~~Format der Zusammenfassung und Rasterauflösung~~: entschieden in Schritt 1 (Abschnitt 7): JSON, Raster
+  T −10…30 °C in 0,5 °C und P 0…1500 mm in 20 mm.
 - Zugriff vom Handy: über das heimische WLAN oder als kopierter Ordner.
+
+## 7. Umsetzung Schritt 1 (28.10.2026)
+
+**Lauf-Katalog.** Jeder Lauf ist ein Ordner `reference/laeufe/<id>/` mit `lauf.toml`; die `id` ist der
+Ordnername. Felder:
+
+| Feld | Bedeutung |
+|---|---|
+| `config` | Konfiguration, z. B. `"configs/o_cru_r25.toml"` |
+| `standort` | Schlüssel im Standort-Register (`"kinneret"`) |
+| `rolle` | `referenz`, `variante`, `sensitivitaet`, `validierung` oder `experiment` |
+| `basis` | Basislauf (optional); die Konfiguration darf von ihm nur in den Feldern des Faktors und in Laufzeit-Feldern (Länge, Burn-in, Ausdünnung, Seed) abweichen |
+| `faktor`, `stufe` | Schlüssel im Faktor-Register; die Konfiguration muss die Werte der Stufe haben |
+| `quelle` | Abschnitt im Prüfbericht |
+| `[titel]`, `[beschreibung]` | je `de` und `en`; der Titel dient als Legende |
+| `[hinweis]` | optional, je `de` und `en` (z. B. „Kette hängt“) |
+
+`kinneret-recon katalog` prüft alle Regeln. Der Katalog umfasst 27 Läufe: die 24 bisherigen Konfigurationen,
+das Original (`configs/original.toml`, gleichwertig zu `--legacy`) und die beiden Mischverteilungen
+(`configs/n_mixture_v2.toml`, `configs/v3_mixture.toml`). Standard v3 hat den neuen Ordner
+`reference/laeufe/standard_v3/`. Nicht im Katalog ist `reference/laeufe/standard`: derselbe Lauf wie
+`standard_aktuell` (Standard v2) mit einem älteren Code-Stand.
+
+**Faktor-Register** (`FAKTOREN` in `src/kinneret_recon/katalog.py`): Schlüssel, Gruppe, Bezeichnung und
+Beschreibung (de/en), erlaubte Konfigurationsfelder und Stufen mit ihren Werten. Faktoren: `standardversion`,
+`korrekturen`, `gewichte_prior`, `klima_prior`, `r2_prior`, `ap_taxa`, `kalibrierung_alter`,
+`rekonstruktion`, `tf_prior`, `tf_grenzen` (Gruppen wie in Abschnitt 3). Die Stufe jedes Laufs für jeden
+Faktor wird aus seiner Konfiguration bestimmt; so steht z. B. Standard v2 automatisch als Stufe „Dir(0,5)“
+in der Reihe der Gewichte-Priors.
+
+**Fingerabdruck.** Prüfsumme der wirksamen Einstellungen (Prior des rezenten Klimas aus den Eingangsdaten
+aufgelöst) und der Eingangsdaten. Ein zweiter Fingerabdruck nur über die Sampler-Einstellungen erkennt Läufe
+mit gleichen Ketten (Mittelwert/Mischverteilung, `c_hastings_gamma`/`standard_aktuell`); `batch` sampelt sie
+nur einmal.
+
+**Befehle:** `kinneret-recon katalog`, `kinneret-recon batch` (fehlende oder veraltete Läufe rechnen, dann
+App-Daten), `kinneret-recon app-daten` (nur Zusammenfassungen schreiben).
+
+**Ausgaben:**
+
+- `reference/laeufe/<id>/app.json` je Lauf (Modul `app_daten.py`): Beschreibung, wirksame Einstellungen,
+  Fingerabdrücke, Metadaten, Methodentext (de); Rekonstruktion je Alter und Tiefe als Mittelwert *und*
+  Mischverteilung (Quantile 2,5/25/50/75/97,5 % und Mittel; Mischverteilung zusätzlich als Dichte auf dem
+  groben Raster), die Quartile, wie der Lauf sie berichtet; Biomanteile (Quantile); Baumpollenkurve, wie sie
+  in R² eingeht; R², T0, P0 mit Quantilen, Prior-Parametern und Kurven (Posterior/Prior); Taxa-Gewichte
+  (Quantile, Prior-Quantile, α); Transferfunktionen (Quantile Posterior und Prior-Referenz, Grenzen,
+  CI-Verhältnis, 2D-Dichte der Posterior); Diagnostik (Tabelle, Akzeptanz, Spuren mit 300 Punkten je Kette);
+  Kennzahlen. Dichten sind je Zeile auf 100 normiert und ganzzahlig.
+- `reference/app/standort_kinneret.json`: Taxa mit Biom, Gehölz- und Kulturbaum-Kennung, Spektren je Alter und
+  Tiefe, Baumpollenkurve mit und ohne Kulturbäume, Prior der Transferfunktion als 2D-Dichte.
+- `reference/app/katalog.json`: Register (Gruppen, Rollen, Faktoren mit Stufen, Standorte) und alle Läufe
+  mit Beschreibung, Stufen je Faktor, Kennzahlen und Vergleich mit dem Basislauf (Niveau, IQR, Korrelation
+  der Anomalien wie in Prüfbericht 3.8–3.11).
+
+Fehlende Tabellen und Metadaten eines Laufs (bisher nur bei `standard_v3`) kopiert `app-daten` in den
+Katalog-Ordner. Die gesicherten Tabellen der übrigen Läufe bleiben, wie sie im Prüfbericht ausgewertet
+wurden (`--ueberschreiben` ersetzt sie); `app.json` beschreibt den neu gerechneten Lauf mit seinem
+Code-Stand (`meta.git`).

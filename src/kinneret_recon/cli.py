@@ -1,4 +1,4 @@
-"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior``."""
+"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten``."""
 
 from __future__ import annotations
 
@@ -135,6 +135,128 @@ def cmd_cru_prior(a: argparse.Namespace) -> int:
     return 0
 
 
+def _katalog_pruefen(ids):
+    from .katalog import lade_katalog, pruefe_katalog, reihenfolge
+
+    kat = lade_katalog()
+    unbekannt = [i for i in ids or () if i not in kat]
+    if unbekannt:
+        raise SystemExit(f"nicht im Katalog: {', '.join(unbekannt)}")
+    pr = pruefe_katalog(kat)
+    return kat, pr, reihenfolge(kat, ids or None)
+
+
+def _ergebnis_status(lauf, pruefung, outdir: Path) -> str:
+    """'vorhanden', wenn results/<lauf>/ vollstaendig ist und zur Konfiguration des Katalogs passt."""
+    from .katalog import daten_hash, fingerabdruck, flache_einstellungen
+
+    if not all((outdir / f).exists() for f in ("config.toml", "posterior.npz", "results.npz", "meta.json")):
+        return "fehlt"
+    try:
+        cfg = Config.from_toml(outdir / "config.toml")
+    except (OSError, ValueError, TypeError):
+        return "veraltet"
+    fp = fingerabdruck(flache_einstellungen(cfg, pruefung.recent_climate), daten_hash(Path(cfg.data_dir)))
+    return "vorhanden" if fp == pruefung.fingerabdruck else "veraltet"
+
+
+def cmd_katalog(a: argparse.Namespace) -> int:
+    from .katalog import FAKTOREN
+
+    kat, pr, ids = _katalog_pruefen(a.laeufe)
+    if a.faktoren:
+        for f in FAKTOREN.values():
+            print(f"{f.key:20s} [{f.gruppe}] {f.label['de']}: " + ", ".join(s.key for s in f.stufen))
+        return 0
+    res = Path(a.results)
+    n_fehler = 0
+    print(f"{'Lauf':24s} {'Rolle':13s} {'Basis':18s} {'Faktor = Stufe':34s} {'Ergebnisse':10s} {'app.json':8s} Ketten")
+    for i in ids:
+        l, p = kat[i], pr[i]
+        st = _ergebnis_status(l, p, res / i) if not p.fehler else "–"
+        fs = f"{l.faktor} = {l.stufe}" if l.faktor else ""
+        app = "ja" if (l.ordner / "app.json").exists() else "nein"
+        print(f"{i:24s} {l.rolle:13s} {l.basis or '':18s} {fs:34s} {st:10s} {app:8s} {p.fingerabdruck_ketten}")
+        for e in p.fehler:
+            print(f"    FEHLER: {e}")
+        n_fehler += len(p.fehler)
+    print(f"{len(ids)} Laeufe, {n_fehler} Fehler")
+    return 1 if n_fehler else 0
+
+
+def _schreibe_app_daten(ids, kat, pr, res: Path, ueberschreiben: bool, log=print) -> None:
+    from .app_daten import (APP_DIR, LaufDaten, abgleich_referenz, katalog_index, kopiere_referenz, schreibe_json,
+                            standort_daten, zusammenfassung)
+    from .katalog import STANDORTE
+
+    root = Path.cwd()
+    for i in ids:
+        if _ergebnis_status(kat[i], pr[i], res / i) != "vorhanden":
+            log(f"{i}: keine passenden Ergebnisse in {res / i} (kinneret-recon batch {i})")
+            continue
+        ab = abgleich_referenz(res / i, kat[i].ordner)
+        kopiert = kopiere_referenz(res / i, kat[i].ordner, ueberschreiben)
+        n = schreibe_json(zusammenfassung(kat[i], LaufDaten.load(res / i, root), root, pr[i]), kat[i].ordner / "app.json")
+        info = "" if ab is None else (" (Tabellen bitgleich mit der Referenz)" if ab["bitgleich"] else
+                                      f" (Abweichung zur Referenz: T {ab['T_DJF_q50']}, P {ab['P_ANN_q50']})")
+        log(f"{i}: app.json {n / 1024:.0f} KB{info}" + (f"; kopiert: {', '.join(kopiert)}" if kopiert else ""))
+    for key in sorted({kat[i].standort for i in kat}):
+        n = schreibe_json(standort_daten(STANDORTE[key], root), APP_DIR / f"standort_{key}.json")
+        log(f"Standort {key}: {n / 1024:.0f} KB")
+    n = schreibe_json(katalog_index(kat, pr, root), APP_DIR / "katalog.json")
+    log(f"Katalog-Index {APP_DIR / 'katalog.json'}: {n / 1024:.0f} KB")
+
+
+def cmd_app_daten(a: argparse.Namespace) -> int:
+    kat, pr, ids = _katalog_pruefen(a.laeufe)
+    bad = [i for i in ids if pr[i].fehler]
+    if bad:
+        raise SystemExit(f"Katalog fehlerhaft ({', '.join(bad)}); siehe kinneret-recon katalog")
+    _schreibe_app_daten(ids, kat, pr, Path(a.results), a.ueberschreiben)
+    return 0
+
+
+def cmd_batch(a: argparse.Namespace) -> int:
+    """Rechnet alle (oder die genannten) Laeufe des Katalogs, deren Ergebnisse fehlen oder veraltet sind, und
+    schreibt danach die App-Daten. Laeufe mit gleichen Ketten (gleicher Fingerabdruck der Sampler-Einstellungen)
+    werden nur einmal gesampelt und sonst neu ausgewertet."""
+    from .pipeline import execute
+
+    kat, pr, ids = _katalog_pruefen(a.laeufe)
+    bad = [i for i in ids if pr[i].fehler]
+    if bad:
+        raise SystemExit(f"Katalog fehlerhaft ({', '.join(bad)}); siehe kinneret-recon katalog")
+    res = Path(a.results)
+    status = {i: ("neu" if a.neu else _ergebnis_status(kat[i], pr[i], res / i)) for i in ids}
+    plan = []
+    ketten: dict[str, str] = {}  # Fingerabdruck der Ketten -> Lauf mit vorhandenen oder geplanten Ketten
+    for i in kat:
+        if i not in ids and _ergebnis_status(kat[i], pr[i], res / i) == "vorhanden":
+            ketten.setdefault(pr[i].fingerabdruck_ketten, i)
+    for i in ids:
+        if status[i] == "vorhanden":
+            ketten.setdefault(pr[i].fingerabdruck_ketten, i)
+    for i in ids:
+        if status[i] == "vorhanden":
+            continue
+        spender = ketten.get(pr[i].fingerabdruck_ketten)
+        plan.append((i, spender))
+        ketten.setdefault(pr[i].fingerabdruck_ketten, i)
+    for i, spender in plan:
+        print(f"{i:24s} " + (f"Ketten von {spender} neu auswerten" if spender else "rechnen"))
+    print(f"{len(plan)} von {len(ids)} Laeufen zu rechnen")
+    if a.dry_run:
+        return 0
+    for i, spender in plan:
+        cfg = kat[i].lade_config(Path.cwd())
+        cfg.output_dir = str(res / i)
+        cfg.plots = cfg.report = a.plots
+        print(f"\n=== {i} ({kat[i].config})", flush=True)
+        execute(cfg, Path.cwd(), reuse=res / spender if spender else None)
+    _schreibe_app_daten(ids, kat, pr, res, a.ueberschreiben)
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="kinneret-recon", description="Bayessche Klimarekonstruktion See Genezareth")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -198,6 +320,29 @@ def main(argv=None) -> int:
     q.add_argument("--json", help="alle Kennzahlen als JSON")
     q.add_argument("--cells", help="beteiligte Gitterzellen mit Gewichten als CSV")
     q.set_defaults(func=cmd_cru_prior)
+
+    k = sub.add_parser("katalog", help="Lauf-Katalog anzeigen und pruefen (reference/laeufe/*/lauf.toml)")
+    k.add_argument("laeufe", nargs="*", help="nur diese Laeufe")
+    k.add_argument("--results", default="results", help="Verzeichnis der Ergebnisse")
+    k.add_argument("--faktoren", action="store_true", help="Faktor-Register anzeigen")
+    k.set_defaults(func=cmd_katalog)
+
+    b = sub.add_parser("batch", help="fehlende oder veraltete Laeufe des Katalogs rechnen, danach app-daten")
+    b.add_argument("laeufe", nargs="*", help="nur diese Laeufe (Standard: alle)")
+    b.add_argument("--results", default="results", help="Verzeichnis der Ergebnisse (je Lauf ein Unterordner)")
+    b.add_argument("-n", "--dry-run", action="store_true", help="nur anzeigen, was gerechnet wuerde")
+    b.add_argument("--neu", action="store_true", help="auch vorhandene Ergebnisse neu rechnen")
+    b.add_argument("--plots", action="store_true", help="Abbildungen und Bericht je Lauf erzeugen")
+    b.add_argument("--ueberschreiben", action="store_true",
+                   help="Tabellen und Metadaten im Katalog-Ordner durch die neuen ersetzen (sonst nur fehlende)")
+    b.set_defaults(func=cmd_batch)
+
+    d = sub.add_parser("app-daten", help="kompakte Zusammenfassungen (app.json) aus vorhandenen Ergebnissen schreiben")
+    d.add_argument("laeufe", nargs="*", help="nur diese Laeufe (Standard: alle)")
+    d.add_argument("--results", default="results", help="Verzeichnis der Ergebnisse (je Lauf ein Unterordner)")
+    d.add_argument("--ueberschreiben", action="store_true",
+                   help="Tabellen und Metadaten im Katalog-Ordner durch die neuen ersetzen (sonst nur fehlende)")
+    d.set_defaults(func=cmd_app_daten)
 
     a = p.parse_args(argv)
     return a.func(a)

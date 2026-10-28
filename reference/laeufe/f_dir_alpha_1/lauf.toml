@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/f_dir_alpha_1.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "gewichte_prior"
+stufe = "dir_1"
+quelle = "Prüfbericht 3.6"
+
+[titel]
+de = "Prior Dir(1)"
+en = "Prior Dir(1)"
+
+[beschreibung]
+de = "Standard v2 mit festem Prior Dir(1) der Taxa-Gewichte statt Dir(0,5)."
+en = "Standard v2 with the fixed prior Dir(1) of the taxa weights instead of Dir(0.5)."

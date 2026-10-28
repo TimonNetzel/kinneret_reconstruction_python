@@ -1,0 +1,20 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/p_ap_ohne_kultur.toml"
+standort = "kinneret"
+rolle = "variante"
+basis = "standard_v3"
+faktor = "ap_taxa"
+stufe = "ohne_kultur"
+quelle = "Prüfbericht 3.11"
+
+[titel]
+de = "v3, AP ohne Kulturbäume"
+en = "v3, AP without cultivated trees"
+
+[beschreibung]
+de = "Standard v3 mit Baumpollenkurve für R² ohne Kulturbäume (Olea, Vitis, Juglans). Test, ob das P-Signal Klima oder Landnutzung zeigt."
+en = "Standard v3 with the arboreal pollen curve for R² without cultivated trees (Olea, Vitis, Juglans). Tests whether the P signal shows climate or land use."
+
+[hinweis]
+de = "Variante, kein Standard: Die Einordnung von Olea im Mittelholozän ist fachlich offen."
+en = "Variant, not the standard: how to treat Olea in the mid-Holocene is an open question."

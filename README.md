@@ -17,7 +17,8 @@ als installierbares Python-Paket mit C++-Kern um.
 | `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v0.1.0` = Zenodo-Version) |
 | `reference/v1.0-paper/` | Referenzergebnisse des Originals |
 | `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), App-Konzept, Paper (`docs/paper/`) |
-| `reference/laeufe/`, `reference/vergleiche/` | Tabellen, Diagnostik und Einstellungen aller Vergleichs- und Sensitivitätsläufe |
+| `reference/laeufe/`, `reference/vergleiche/` | Lauf-Katalog: je Lauf Beschreibung (`lauf.toml`), Tabellen, Diagnostik, Einstellungen und kompakte Zusammenfassung für die App (`app.json`); Vergleiche |
+| `reference/app/` | Katalog-Index und Standortdaten für die App |
 | `tools/` | Hilfsskripte für Auswertung und Abstimmung |
 | `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |
 
@@ -69,8 +70,8 @@ Seit dem 27.10.2026 (vom Autor festgelegt) gilt als Standard:
 
 Alle anderen Einstellungen sind unverändert. Die Konfigurationen der Vergleichsreihe (`configs/a_*` bis
 `configs/o_*`, `configs/standard_v2.toml`) schreiben die Werte bis v2 ausdrücklich fest und liefern dieselben
-Läufe wie zuvor. `sampler.recent_* = None` (nur im Python-Code) verwendet die Werte der Eingangsdaten wie im
-Paper.
+Läufe wie zuvor. `sampler.recent_* = None` (in TOML-Dateien `"daten"`) verwendet die Werte der Eingangsdaten
+wie im Paper; ein fehlender Eintrag bedeutet den CRU-Prior der Voreinstellung.
 
 ## Sampler
 
@@ -97,6 +98,27 @@ Paper.
   Kulturbäume) und `sampler.calibration_age_range` (R² nur über einen Altersbereich).
 * `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
   sampeln. Nützlich für andere Auswerteoptionen.
+
+## Lauf-Katalog und App-Daten
+
+Alle Läufe der Vergleichsreihe bilden einen Katalog: je Lauf ein Ordner `reference/laeufe/<lauf>/` mit einer
+Beschreibung `lauf.toml` (Titel und Beschreibung de/en, Konfiguration, Rolle, Basislauf, Faktor und Stufe).
+Die Sensitivitätsfaktoren und ihre Stufen stehen im Faktor-Register (`src/kinneret_recon/katalog.py`).
+Aus den vollständigen Ergebnissen entsteht je Lauf eine kompakte Zusammenfassung `app.json` (< 1 MB) für die
+App (`docs/app_konzept.md`).
+
+```bash
+kinneret-recon katalog                 # Katalog anzeigen und prüfen (Stufen, Abweichung vom Basislauf)
+kinneret-recon katalog --faktoren      # Faktor-Register
+kinneret-recon batch -n                # zeigen, welche Läufe fehlen oder veraltet sind
+kinneret-recon batch                   # fehlende Läufe rechnen (results/<lauf>/), dann app-daten (~2 h für alle)
+kinneret-recon batch o_cru_r25 o_cru_r50   # nur diese Läufe
+kinneret-recon app-daten               # app.json, reference/app/katalog.json und Standortdaten neu schreiben
+```
+
+`batch` erkennt am Fingerabdruck der Einstellungen, ob vorhandene Ergebnisse passen, und sampelt Läufe mit
+gleichen Ketten (z. B. Mittelwert und Mischverteilung) nur einmal. Ein neuer Lauf ist eine Konfiguration in
+`configs/` plus ein Ordner mit `lauf.toml`; ein neuer Faktor ein Eintrag in `FAKTOREN`.
 
 ## Prior des rezenten Klimas aus CRU-Daten
 

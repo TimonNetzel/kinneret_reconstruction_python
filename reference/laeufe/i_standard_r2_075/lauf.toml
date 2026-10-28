@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/i_standard_r2_075.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "r2_prior"
+stufe = "r2_075"
+quelle = "Prüfbericht 3.7"
+
+[titel]
+de = "R²-Prior Mittel 0,75"
+en = "R² prior mean 0.75"
+
+[beschreibung]
+de = "Standard v2 mit R²-Prior Beta(2,77; 0,92) (Mittel 0,75, Sd 0,2) statt Beta(3; 3)."
+en = "Standard v2 with the R² prior Beta(2.77, 0.92) (mean 0.75, sd 0.2) instead of Beta(3, 3)."

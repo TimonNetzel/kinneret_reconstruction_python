@@ -14,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from . import __version__, diagnostics, sampler
-from .config import Config
+from .config import AUS_DATEN, CRU_PRIOR_50KM, Config
 from .data import load_inputs
 from .model import Setup, build_setup
 from .postprocess import Results, postprocess
@@ -55,13 +55,18 @@ def _toml_value(v) -> str:
 
 
 def write_toml(cfg: Config, path: Path) -> None:
-    """Schreibt die (flache, zweistufige) Konfiguration als TOML; None-Werte entfallen."""
+    """Schreibt die (flache, zweistufige) Konfiguration als TOML. None-Werte entfallen, ausser beim Prior des
+    rezenten Klimas (dort bedeutet None "aus den Eingangsdaten", ein fehlender Eintrag aber CRU_PRIOR_50KM)."""
     d = cfg.to_dict()
     lines = [f"{k} = {_toml_value(v)}" for k, v in d.items() if not isinstance(v, dict) and v is not None]
     for sec, vals in d.items():
         if isinstance(vals, dict):
             lines.append(f"\n[{sec}]")
-            lines += [f"{k} = {_toml_value(v)}" for k, v in vals.items() if v is not None]
+            for k, v in vals.items():
+                if v is None and sec == "sampler" and k in CRU_PRIOR_50KM:
+                    v = AUS_DATEN
+                if v is not None:
+                    lines.append(f"{k} = {_toml_value(v)}")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
