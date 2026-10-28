@@ -24,8 +24,10 @@ from .app_daten import APP_DIR
 from .katalog import KATALOG_DIR
 
 QUELLE = Path(__file__).parent / "app"
-STATISCH = ("index.html", "style.css", "i18n.js", "app.js", "manifest.webmanifest", "icon.svg",
-            "vendor/plotly-cartesian.min.js", "vendor/LICENSE-plotly.txt")
+# Skripte in der Reihenfolge von index.html; die Reihenfolge der Ansichten ist die der Reiter
+SKRIPTE = ("vendor/plotly-cartesian.min.js", "i18n.js", "kern.js", "rekonstruktion.js", "sensitivitaet.js",
+           "gewichte.js", "transferfunktionen.js", "lauf.js", "start.js")
+STATISCH = ("index.html", "style.css", "manifest.webmanifest", "icon.svg", "vendor/LICENSE-plotly.txt", *SKRIPTE)
 
 
 def _js(name: str, d) -> str:
@@ -99,7 +101,7 @@ def baue_eine_datei(path: Path, root: Path | None = None) -> Path:
             raise RuntimeError(f"index.html: {alt!r} fehlt")
         html = html.replace(alt, neu)
     skripte = []
-    for src in ("vendor/plotly-cartesian.min.js", "i18n.js", "app.js"):
+    for src in SKRIPTE:
         code = (QUELLE / src).read_text(encoding="utf-8").replace("</script", "<\\/script")
         skripte.append((f'<script src="{src}"></script>', f"<script>\n{code}\n</script>"))
     daten = _js("katalog", katalog) + "".join(_js(f"standort/{k}", d) for k, d in standorte.items())

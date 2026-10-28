@@ -15,10 +15,7 @@
     <h1 data-t="app_titel">Klimarekonstruktion</h1>
     <span class="standort" id="standort-name"></span>
   </div>
-  <nav class="reiter" role="tablist">
-    <button role="tab" data-ansicht="rekonstruktion" data-t="ansicht_rekonstruktion">Rekonstruktion</button>
-    <button role="tab" data-ansicht="sensitivitaet" data-t="ansicht_sensitivitaet">Sensitivität</button>
-  </nav>
+  <nav class="reiter" id="reiter" role="tablist"></nav>
   <div class="schalter">
     <button id="sprache" class="knopf" title="Sprache / language">EN</button>
     <button id="thema" class="knopf" data-t-title="thema_titel" title="Hell/Dunkel">Auto</button>
@@ -82,6 +79,72 @@
       <div class="tabelle-rahmen"><table id="sens-tabelle"></table></div>
     </div>
   </section>
+  <section id="ansicht-gewichte" class="ansicht" hidden>
+    <aside class="steuerung">
+      <label class="feld"><span data-t="lauf">Lauf</span>
+        <select id="gew-lauf"></select></label>
+      <div class="feld"><span data-t="vergleich">Vergleich</span>
+        <div id="gew-vergleich" class="vergleich"></div></div>
+      <div class="feld"><span data-t="sortierung">Sortierung</span>
+        <div class="umschalter" id="gew-sort">
+          <button data-wert="median" data-t="sort_median">Median</button>
+          <button data-wert="biom" data-t="sort_biom">Biom</button>
+          <button data-wert="name" data-t="sort_name">Name</button>
+        </div></div>
+      <div class="feld"><span data-t="darstellung">Darstellung</span>
+        <label class="haken"><input type="checkbox" id="gew-log"> <span data-t="log_achse">logarithmische Achse</span></label>
+      </div>
+      <div id="gew-info" class="info"></div>
+      <details class="hilfe"><summary data-t="hilfe">Erläuterung</summary><p data-t="hilfe_gewichte"></p></details>
+    </aside>
+    <div class="inhalt">
+      <div id="gew-plot" class="plot"></div>
+    </div>
+  </section>
+
+  <section id="ansicht-transferfunktionen" class="ansicht" hidden>
+    <aside class="steuerung">
+      <label class="feld"><span data-t="lauf">Lauf</span>
+        <select id="tf-lauf"></select></label>
+      <div class="feld"><span data-t="vergleich">Vergleich</span>
+        <div id="tf-vergleich" class="vergleich"></div></div>
+      <div id="tf-info" class="info"></div>
+      <details class="hilfe"><summary data-t="hilfe">Erläuterung</summary><p data-t="hilfe_tf"></p></details>
+    </aside>
+    <div class="inhalt">
+      <div id="tf-plot" class="plot plot-tf"></div>
+      <div id="tf-ci" class="plot plot-klein"></div>
+      <div class="tabelle-rahmen"><table id="tf-tabelle"></table></div>
+    </div>
+  </section>
+
+  <section id="ansicht-lauf" class="ansicht" hidden>
+    <aside class="steuerung">
+      <label class="feld"><span data-t="lauf">Lauf</span>
+        <select id="lauf-lauf"></select></label>
+      <div id="lauf-hinweis"></div>
+      <div id="lauf-status" class="info"></div>
+    </aside>
+    <div class="inhalt">
+      <div class="karte"><h2 data-t="ueberblick">Überblick</h2>
+        <div class="tabelle-rahmen"><table id="lauf-ueberblick" class="kv"></table></div></div>
+      <div class="karte"><div class="karte-kopf"><h2 data-t="methodentext">Methodentext</h2>
+          <button class="knopf" id="lauf-kopieren" data-t="kopieren">Kopieren</button></div>
+        <p id="lauf-methoden" class="methoden"></p></div>
+      <div class="karte"><h2 data-t="kalibrierung">Kalibrierung</h2>
+        <div id="lauf-kalibrierung" class="plot plot-kalibrierung"></div></div>
+      <div class="karte"><h2 data-t="einstellungen">Einstellungen</h2>
+        <div class="tabelle-rahmen"><table id="lauf-einstellungen"></table></div></div>
+      <details class="karte" id="lauf-diagnostik-box">
+        <summary><h2 data-t="diagnostik">Konvergenzdiagnostik</h2></summary>
+        <p id="lauf-diag-status"></p>
+        <label class="feld feld-schmal"><span data-t="spur">Spur</span><select id="lauf-spur"></select></label>
+        <div id="lauf-spuren" class="plot plot-klein"></div>
+        <div id="lauf-rhat" class="plot"></div>
+        <div class="tabelle-rahmen"><table id="lauf-diagnostik"></table></div>
+      </details>
+    </div>
+  </section>
 </main>
 
 <div id="laden" class="laden" hidden data-t="laden">Lade …</div>
@@ -90,6 +153,12 @@
 <script src="vendor/plotly-cartesian.min.js"></script>
 <script src="daten/katalog.js"></script>
 <script src="i18n.js"></script>
-<script src="app.js"></script>
+<script src="kern.js"></script>
+<script src="rekonstruktion.js"></script>
+<script src="sensitivitaet.js"></script>
+<script src="gewichte.js"></script>
+<script src="transferfunktionen.js"></script>
+<script src="lauf.js"></script>
+<script src="start.js"></script>
 </body>
 </html>

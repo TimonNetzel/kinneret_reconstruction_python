@@ -1,7 +1,7 @@
 # App-Konzept: Rekonstruktion und Sensitivitätsanalyse im Browser
 
 Stand: 28.10.2026. Grundlage für die Entwicklung der App. Die Antworten des Autors vom 28.10.2026 sind
-eingearbeitet (Abschnitt 1). Schritte 1 und 2 sind umgesetzt (Abschnitte 7 und 9). Vor dem Weiterarbeiten außerdem
+eingearbeitet (Abschnitt 1). Schritte 1 bis 3 sind umgesetzt (Abschnitte 7, 9 und 10). Vor dem Weiterarbeiten außerdem
 `docs/projektstand.md` lesen.
 
 ## 1. Rahmen (vom Autor festgelegt)
@@ -213,8 +213,8 @@ Der Autor nutzt ein Android-Handy und möchte die App ohne Netz verwenden. Umset
 
 ## 9. Umsetzung Schritt 2 (28.10.2026)
 
-**Quellen** in `src/kinneret_recon/app/`: `index.html`, `style.css`, `i18n.js` (Texte de/en), `app.js`
-(Logik), `manifest.webmanifest`, `icon.svg`, `vendor/plotly-cartesian.min.js` (Plotly.js 2.35.2, MIT-Lizenz,
+**Quellen** in `src/kinneret_recon/app/`: `index.html`, `style.css`, `i18n.js` (Texte de/en), die Logik
+(seit Schritt 3 aufgeteilt, Abschnitt 10), `manifest.webmanifest`, `icon.svg`, `vendor/plotly-cartesian.min.js` (Plotly.js 2.35.2, MIT-Lizenz,
 `vendor/LICENSE-plotly.txt`). Kein Build-Werkzeug nötig, klassische Skripte (ES-Module laden über `file://`
 nicht). Gebaut wird mit `kinneret-recon app` (Modul `app_bauen.py`); das Ergebnis liegt in `results/` und
 ist nicht im Repo.
@@ -242,5 +242,32 @@ Einstellungen bleiben im Browser gespeichert (`localStorage`, ohne Speicher Vore
 Handy (390 px) und PC (1366 px), hell und dunkel, ohne Fehler in der Konsole und ohne Netzanfragen. Über
 `--serve` und `localhost` speichert der Service Worker alle Dateien; die App lädt danach auch offline neu.
 
-**Offen für Schritt 3:** Taxa-Gewichte, Transferfunktionen, Diagnostik, Lauf-Steckbrief (die Daten liegen
-in `app.json` bereit). Schritt 4: Export im Copernicus-Format (bisher nur PNG über die Plotly-Leiste).
+## 10. Umsetzung Schritt 3 (28.10.2026)
+
+**Aufbau der Logik** (erweiterbar): `kern.js` (Zustand, Laden der Daten, Farben, Plotly-Helfer, Texte,
+Vergleichsauswahl) und je Ansicht eine Datei, die sich mit `KR.ansicht({key, init, zeige})` anmeldet:
+`rekonstruktion.js`, `sensitivitaet.js`, `gewichte.js`, `transferfunktionen.js`, `lauf.js`; `start.js`
+erzeugt daraus die Reiter. **Eine neue Ansicht** ist eine neue Datei plus ein `<section id="ansicht-<key>">` in
+`index.html`, ein Eintrag in `SKRIPTE` (`app_bauen.py`) und die Texte in `i18n.js` (`ansicht_<key>` usw.).
+
+**Neue Ansichten:**
+
+- *Taxa-Gewichte:* Posterior der 33 Gewichte (Median, 50 %, 95 %) eines Laufs und von bis zu sechs
+  Vergleichsläufen; Prior-Median je Lauf (gestrichelt) und 50-%-Bereich des Priors (grau), 1/33 gepunktet;
+  Biom als Farbe am Namen; Sortierung nach Median, Biom oder Name; lineare oder logarithmische Achse; α des
+  Priors (fest oder Posterior des hierarchischen α).
+- *Transferfunktionen:* je Biom der Klimaraum: Prior der TF (Pr = 0,5, gestrichelt), Posterior der
+  Klimawerte als Fläche, Vergleichsläufe als Linien, Median mit 95 %, Trunkierungsbereich; darunter das
+  CI-Verhältnis Posterior/Prior für T und P und eine Tabelle; Erklärung der Prior-Referenz.
+- *Lauf* (Steckbrief): Beschreibung, Rolle, Faktor und Stufe, Basislauf, Quelle, Konfiguration,
+  Fingerabdrücke, Code-Stand, Umgebung, Ketten und Laufzeit; **Methodentext auf Deutsch und Englisch** mit
+  Kopierknopf (für Manuskripte); Kalibrierung (R², T0, P0: Posterior gegen Prior); alle wirksamen
+  Einstellungen, Abweichungen vom Basislauf markiert; eingeklappt die **Konvergenzdiagnostik** (Status,
+  Akzeptanz, Spuren aller Ketten mit Ende des Burn-in, R̂ und ESS aller Größen, Tabelle).
+
+Der Vergleich ist für Gewichte und Transferfunktionen gemeinsam, der gewählte Lauf für alle Ansichten außer
+der Sensitivität. Der englische Methodentext entsteht in `report.methods_text(run, "en")`; der deutsche ist
+unverändert.
+
+**Offen für Schritt 4:** Export der Abbildungen im Copernicus-Format und CSV der angezeigten Daten (bisher nur
+PNG über die Plotly-Leiste).

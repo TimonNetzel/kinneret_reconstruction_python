@@ -202,7 +202,7 @@ def zusammenfassung(lauf: Lauf, daten: LaufDaten, root: Path, pruefung: Pruefung
         "fingerabdruck_ketten": fingerabdruck(einst, dh, nur_sampler=True),
         "daten_hash": dh,
         "meta": daten.meta,
-        "methoden": {"de": methods_text(SimpleNamespace(config=cfg, setup=setup, posterior=post))},
+        "methoden": {k: methods_text(SimpleNamespace(config=cfg, setup=setup, posterior=post), k) for k in ("de", "en")},
     }
     if pruefung is not None and pruefung.fingerabdruck and pruefung.fingerabdruck != d["fingerabdruck"]:
         raise ValueError(f"{lauf.id}: Ergebnisse passen nicht zur Konfiguration {lauf.config}")

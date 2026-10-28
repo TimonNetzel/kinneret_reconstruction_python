@@ -47,8 +47,10 @@ def test_ordner_vollstaendig(ordner):
 
 def test_keine_netzadressen(ordner, eine_datei):
     """Offline: HTML, Stile und Skripte der App laden nichts aus dem Netz."""
-    for f in ("index.html", "style.css", "app.js", "i18n.js", "manifest.webmanifest"):
-        text = (ordner / f).read_text(encoding="utf-8")
+    for f in STATISCH:
+        if f.startswith("vendor/"):
+            continue
+        text = (ordner / f).read_text(encoding="utf-8").replace('xmlns="http://www.w3.org/2000/svg"', "")
         assert "http://" not in text and "https://" not in text, f
     html = eine_datei.read_text(encoding="utf-8")
     assert not re.search(r"""<(script|link)[^>]+(src|href)=["']https?://""", html)

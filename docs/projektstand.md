@@ -36,7 +36,8 @@ Rahmen (vom Autor festgelegt):
 | – | Tests Klima gegen Landnutzung (AP ohne Kulturbäume, Kalibrierung 4–9 ka) | ✅ Prüfbericht 3.11 |
 | App 1 | Lauf-Katalog, Faktor-Register, kompakte Zusammenfassungen, Batch-Befehl; alle Läufe neu gerechnet | ✅ `docs/app_konzept.md` Abschnitt 7 |
 | App 2 | App-Grundgerüst (statisch, offline, responsiv, de/en) mit Rekonstruktion und Sensitivität | ✅ `kinneret-recon app`, App-Konzept Abschnitt 9 |
-| App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | offen |
+| App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | ✅ App-Konzept Abschnitt 10 |
+| App 4 | Abbildungsexport im Copernicus-Format, CSV | offen |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -132,13 +133,19 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026 (dritte Sitzung, App Schritte 1 und 2), letzter Commit siehe `git log`. Alles Nötige steht im Repo;
+Stand 28.10.2026 (dritte Sitzung, App Schritte 1 bis 3), letzter Commit siehe `git log`. Alles Nötige steht im Repo;
 aus der alten Sitzung muss nichts übernommen werden.
 
-**Nächster Schritt: App Schritt 3** (`docs/app_konzept.md`, Abschnitt 5): Ansichten Taxa-Gewichte,
-Transferfunktionen, Diagnostik und Lauf-Steckbrief in `src/kinneret_recon/app/app.js`; die Daten liegen in
-`reference/laeufe/<lauf>/app.json` bereit. Danach `kinneret-recon app --eine-datei` und
-`node tools/app_pruefen.js …` (Browser-Test).
+**Nächster Schritt: App Schritt 4** (`docs/app_konzept.md`, Abschnitt 5): Abbildungsexport im Format von
+*Climate of the Past* (Spaltenbreiten und Schriftgrößen anhand der aktuellen Autorenrichtlinien prüfen) und CSV
+der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`.
+
+**Erledigt in dieser Sitzung: App Schritt 3** (`docs/app_konzept.md`, Abschnitt 10)
+
+- Logik aufgeteilt in `kern.js` und eine Datei je Ansicht (Register `KR.ansicht`).
+- Ansichten Taxa-Gewichte, Transferfunktionen und Lauf (Steckbrief, Methodentext de/en, Kalibrierung,
+  Einstellungen, Konvergenzdiagnostik).
+- Englischer Methodentext (`report.methods_text(run, "en")`), App-Daten neu geschrieben.
 
 **Erledigt in dieser Sitzung: App Schritt 2** (`docs/app_konzept.md`, Abschnitte 8 und 9)
 

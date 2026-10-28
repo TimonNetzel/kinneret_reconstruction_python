@@ -49,12 +49,54 @@ async function pruefe(browser, datei, groesse, thema, name) {
     await page.selectOption("#sens-faktor", f);
     await page.waitForTimeout(400);
   }
+  // Taxa-Gewichte mit Vergleich, log. Achse
+  await page.click('.reiter button[data-ansicht="gewichte"]');
+  await warte("#gew-plot");
+  await page.selectOption("#gew-vergleich select", "standard_aktuell");
+  await page.waitForFunction(() => document.querySelectorAll("#gew-vergleich .chip").length === 1, null, { timeout: 10000 })
+    .catch(() => fehler.push("Vergleich: kein Chip"));
+  await page.waitForTimeout(400);
+  const nGew = await page.evaluate(() => document.querySelectorAll("#gew-plot .scatterlayer .trace").length);
+  if (nGew < 6) fehler.push("Gewichte: zu wenige Spuren " + nGew);
+  await page.check("#gew-log");
+  await page.waitForTimeout(300);
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_gewichte.png`, fullPage: true });
+  // Transferfunktionen (Vergleich bleibt erhalten)
+  await page.click('.reiter button[data-ansicht="transferfunktionen"]');
+  await warte("#tf-plot");
+  await page.waitForSelector("#tf-ci .main-svg", { timeout: 10000 });
+  const nTf = await page.evaluate(() => [document.querySelectorAll("#tf-plot .contourlayer .trace, #tf-plot g.contour").length,
+    document.querySelectorAll("#tf-tabelle tbody tr").length]);
+  if (nTf[0] < 3 || nTf[1] !== 3) fehler.push("Transferfunktionen: " + nTf);
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_transferfunktionen.png`, fullPage: true });
+  // Lauf: Steckbrief, Diagnostik aufklappen, Spur wechseln; Lauf mit haengender Kette
+  await page.click('.reiter button[data-ansicht="lauf"]');
+  await warte("#lauf-kalibrierung");
+  await page.click("#lauf-diagnostik-box summary");
+  await warte("#lauf-spuren");
+  await page.selectOption("#lauf-spur", "T0");
+  await page.waitForTimeout(300);
+  const nDiag = await page.evaluate(() => document.querySelectorAll("#lauf-diagnostik tbody tr").length);
+  if (nDiag < 40) fehler.push("Diagnostik: zu wenige Zeilen " + nDiag);
+  const meth = await page.textContent("#lauf-methoden");
+  if (!meth.startsWith("Die Posterior-Verteilung")) fehler.push("Methodentext: " + meth.slice(0, 40));
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_lauf.png`, fullPage: true });
+  await page.selectOption("#lauf-lauf", "h_legacy_r2_025");
+  await page.waitForFunction(() => document.querySelector("#lauf-hinweis").textContent.includes("⚠"), null, { timeout: 10000 })
+    .catch(() => fehler.push("Hinweis bei haengender Kette fehlt"));
+  await page.selectOption("#lauf-lauf", "standard_v3");
+  await page.click('.reiter button[data-ansicht="sensitivitaet"]');
+  await page.waitForTimeout(300);
   // Sprache
   await page.click("#sprache");
   await page.waitForTimeout(300);
   const reiter = await page.textContent('.reiter button[data-ansicht="sensitivitaet"]');
   if (reiter.trim() !== "Sensitivity") fehler.push("Sprache: " + reiter);
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_englisch.png` });
+  await page.click('.reiter button[data-ansicht="lauf"]');
+  await page.waitForTimeout(500);
+  const methEn = await page.textContent("#lauf-methoden");
+  if (!methEn.startsWith("The posterior distribution")) fehler.push("Methodentext en: " + methEn.slice(0, 40));
   await page.click("#sprache");
   await ctx.close();
   return { fehler, zeilen };

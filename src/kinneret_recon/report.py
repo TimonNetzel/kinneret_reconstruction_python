@@ -48,66 +48,111 @@ def _n(x: int) -> str:
     return f"{x:,}".replace(",", "\u202f")
 
 
-def methods_text(run) -> str:
-    """Automatisch erzeugte Methodenbeschreibung der Einstellungen (zur Uebernahme in Manuskripte)."""
+def methods_text(run, sprache: str = "de") -> str:
+    """Automatisch erzeugte Methodenbeschreibung der Einstellungen (zur Uebernahme in Manuskripte), Deutsch ("de")
+    oder Englisch ("en")."""
+    if sprache not in ("de", "en"):
+        raise ValueError("sprache muss 'de' oder 'en' sein")
+    w = (lambda de, en: de) if sprache == "de" else (lambda de, en: en)
     s, setup, post = run.config.sampler, run.setup, run.posterior
     n_post = post.pooled("expl_variance").shape[0]
-    kern = ("des Original-Samplers (bitidentisch zu Netzel et al., 2025)" if s.kernel == "legacy"
-            else "des überarbeiteten Samplers (kinneret_recon %s)" % __version__)
+    kern = (w("des Original-Samplers (bitidentisch zu Netzel et al., 2025)",
+              "of the original sampler (bit-identical to Netzel et al., 2025)") if s.kernel == "legacy"
+            else w("des überarbeiteten Samplers (kinneret_recon %s)", "of the revised sampler (kinneret_recon %s)")
+            % __version__)
     if s.kernel == "corrected" and s.weights_proposal == "log_gamma":
-        proposal = ("Die Taxa-Gewichte wurden als w = y/Σy mit y_k ~ Gamma(0,5) parametrisiert und mit einem "
-                    "Normal-Random-Walk auf log y aktualisiert, im Wechsel mit einem eigenen Schritt für die "
-                    "Klimawerte der Transferfunktionen; die Schrittweiten wurden während des Burn-in an eine "
-                    f"Akzeptanzrate von {s.target_accept:g} angepasst. ")
+        proposal = w("Die Taxa-Gewichte wurden als w = y/Σy mit y_k ~ Gamma(0,5) parametrisiert und mit einem "
+                     "Normal-Random-Walk auf log y aktualisiert, im Wechsel mit einem eigenen Schritt für die "
+                     "Klimawerte der Transferfunktionen; die Schrittweiten wurden während des Burn-in an eine "
+                     f"Akzeptanzrate von {s.target_accept:g} angepasst. ",
+                     "The taxa weights were parametrised as w = y/Σy with y_k ~ Gamma(0.5) and updated with a "
+                     "normal random walk on log y, alternating with a separate step for the climate values of the "
+                     "transfer functions; the step sizes were adapted during burn-in to an acceptance rate of "
+                     f"{s.target_accept:g}. ")
     else:
-        proposal = (f"Die Taxa-Gewichte wurden gemeinsam mit den Klimawerten der Transferfunktionen über einen "
-                    f"Dirichlet-Vorschlag mit Streuungsparameter κ = {setup.dirichlet_spread:g} aktualisiert. ")
+        proposal = w(f"Die Taxa-Gewichte wurden gemeinsam mit den Klimawerten der Transferfunktionen über einen "
+                     f"Dirichlet-Vorschlag mit Streuungsparameter κ = {setup.dirichlet_spread:g} aktualisiert. ",
+                     f"The taxa weights were updated jointly with the climate values of the transfer functions using "
+                     f"a Dirichlet proposal with spread parameter κ = {setup.dirichlet_spread:g}. ")
     if s.taxa_prior == "hierarchical":
         a = post.pooled("alpha")
-        taxa_prior = (f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir(α, …, α) mit mitgeschätzter Konzentration, "
-                      f"log α ~ N(log {s.alpha_prior_median:g}, {s.alpha_prior_log_sd:g}²); Posterior-Median "
-                      f"α = {np.median(a):.2f} (95 %: {np.quantile(a, .025):.2f}–{np.quantile(a, .975):.2f}). ")
+        q = f"{np.median(a):.2f} (95 %: {np.quantile(a, .025):.2f}–{np.quantile(a, .975):.2f})"
+        taxa_prior = w(f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir(α, …, α) mit mitgeschätzter "
+                       f"Konzentration, log α ~ N(log {s.alpha_prior_median:g}, {s.alpha_prior_log_sd:g}²); "
+                       f"Posterior-Median α = {q}. ",
+                       f"The prior of the {setup.num_taxa} taxa weights is Dir(α, …, α) with the concentration "
+                       f"estimated jointly, log α ~ N(log {s.alpha_prior_median:g}, {s.alpha_prior_log_sd:g}²); "
+                       f"posterior median α = {q}. ")
     else:
-        taxa_prior = f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir({s.taxa_prior_alpha:g}). "
+        taxa_prior = w(f"Der Prior der {setup.num_taxa} Taxa-Gewichte ist Dir({s.taxa_prior_alpha:g}). ",
+                       f"The prior of the {setup.num_taxa} taxa weights is Dir({s.taxa_prior_alpha:g}). ")
     recent = {k: getattr(s, k) for k in CRU_PRIOR_50KM}
     if recent == CRU_PRIOR_50KM:
-        recent_src = ("Der Prior des rezenten Klimas stammt aus CRU TS 4.07 (1961–1990) für ein Einzugsgebiet von 50 km "
-                      "um den See (Gauß-Gewichtung); seine Sd ist die Unsicherheit des Gebietsmittels. ")
+        recent_src = w("Der Prior des rezenten Klimas stammt aus CRU TS 4.07 (1961–1990) für ein Einzugsgebiet von "
+                       "50 km um den See (Gauß-Gewichtung); seine Sd ist die Unsicherheit des Gebietsmittels. ",
+                       "The prior of the recent climate is taken from CRU TS 4.07 (1961–1990) for a catchment of "
+                       "50 km around the lake (Gaussian weighting); its sd is the uncertainty of the area mean. ")
     elif all(v is None for v in recent.values()):
-        recent_src = ("Der Prior des rezenten Klimas ist Mittel und räumliche Sd mehrerer CRU-Gitterpunkte der "
-                      "Levante wie in Netzel et al. (2025). ")
+        recent_src = w("Der Prior des rezenten Klimas ist Mittel und räumliche Sd mehrerer CRU-Gitterpunkte der "
+                       "Levante wie in Netzel et al. (2025). ",
+                       "The prior of the recent climate is the mean and spatial sd of several CRU grid points of the "
+                       "Levant as in Netzel et al. (2025). ")
     else:
         recent_src = ""
     if s.ap_exclude_taxa:
-        recent_src += f"Die Baumpollenkurve für R² ist ohne {', '.join(s.ap_exclude_taxa)} berechnet. "
+        recent_src += w(f"Die Baumpollenkurve für R² ist ohne {', '.join(s.ap_exclude_taxa)} berechnet. ",
+                        f"The arboreal pollen curve for R² excludes {', '.join(s.ap_exclude_taxa)}. ")
     if s.calibration_age_range is not None:
-        recent_src += (f"In R² gehen nur die Altersstufen {s.calibration_age_range[0]:g}–"
-                       f"{s.calibration_age_range[1]:g} cal BP ein. ")
+        lo, hi = s.calibration_age_range
+        recent_src += w(f"In R² gehen nur die Altersstufen {lo:g}–{hi:g} cal BP ein. ",
+                        f"Only the age steps {lo:g}–{hi:g} cal BP enter R². ")
     pp = run.config.postprocess
-    recon = ("Die Klimarekonstruktion je Altersstufe ist die Mischverteilung nach Gl. (3): je Stichprobe ein Biom "
-             "mit Wahrscheinlichkeit seines Anteils und dessen Klimawert. " if pp.reconstruction == "mixture" else
-             "Die Klimarekonstruktion je Stichprobe ist der mit den Biomanteilen gewichtete Mittelwert der "
-             "Biom-Klimawerte. ")
+    if pp.reconstruction == "mixture":
+        recon = w("Die Klimarekonstruktion je Altersstufe ist die Mischverteilung nach Gl. (3): je Stichprobe ein Biom "
+                  "mit Wahrscheinlichkeit seines Anteils und dessen Klimawert. ",
+                  "The climate reconstruction per age step is the mixture of Eq. (3): per sample one biome with the "
+                  "probability of its ratio and its climate value. ")
+    else:
+        recon = w("Die Klimarekonstruktion je Stichprobe ist der mit den Biomanteilen gewichtete Mittelwert der "
+                  "Biom-Klimawerte. ",
+                  "The climate reconstruction per sample is the mean of the biome climate values weighted with the "
+                  "biome ratios. ")
     if s.tf_normal_prior:
-        recon += "Die Klimawerte der Biome haben den Prior N_t(μ(ψ), σ(ψ)) auf dem Trunkierungsbereich (Gl. 14). "
+        recon += w("Die Klimawerte der Biome haben den Prior N_t(μ(ψ), σ(ψ)) auf dem Trunkierungsbereich (Gl. 14). ",
+                   "The biome climate values have the prior N_t(μ(ψ), σ(ψ)) on the truncation range (Eq. 14). ")
     fixes = []
     if s.kernel == "corrected" and s.weights_proposal == "dirichlet":
-        fixes.append("Hastings-Korrektur des Dirichlet-Vorschlags " +
-                     ("mit" if s.dirichlet_hastings_fix else "ohne") + " Streuungsparameter κ")
+        fixes.append(w("Hastings-Korrektur des Dirichlet-Vorschlags " + ("mit" if s.dirichlet_hastings_fix else "ohne")
+                       + " Streuungsparameter κ",
+                       "Hastings correction of the Dirichlet proposal " +
+                       ("with" if s.dirichlet_hastings_fix else "without") + " spread parameter κ"))
     if s.kernel == "corrected":
-        fixes.append("Gamma-Prior des rezenten Niederschlags " +
-                     ("über exakte Momentenanpassung" if s.exact_gamma_moments else "über Gittersuche"))
-    return (
+        fixes.append(w("Gamma-Prior des rezenten Niederschlags " +
+                       ("über exakte Momentenanpassung" if s.exact_gamma_moments else "über Gittersuche"),
+                       "gamma prior of the recent precipitation " +
+                       ("from exact moment matching" if s.exact_gamma_moments else "from a grid search")))
+    einst = (w("Einstellungen: ", "Settings: ") + "; ".join(fixes) + ". ") if fixes else ""
+    return w(
         f"Die Posterior-Verteilung wurde mit {s.n_chains} Markov-Kette(n) {kern} mit je {_n(s.sample_length)} "
         f"Iterationen geschätzt. Die ersten {_n(s.burn_in)} Iterationen wurden als Burn-in verworfen, danach wurde "
-        f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). " + proposal +
-        taxa_prior + f"R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
+        f"jede {s.thin}. Iteration verwendet ({_n(n_post)} Stichproben insgesamt). ",
+        f"The posterior distribution was estimated with {s.n_chains} Markov chain(s) {kern} with "
+        f"{_n(s.sample_length)} iterations each. The first {_n(s.burn_in)} iterations were discarded as burn-in, "
+        f"after which every {s.thin}th iteration was kept ({_n(n_post)} samples in total). ",
+    ) + proposal + taxa_prior + w(
+        f"R² der Niederschlagsrekonstruktion mit dem Baumpollenanteil hat den Prior "
         f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), die rezente Temperatur N({setup.temp_mean:.2f}, "
         f"{setup.temp_sd:.2f}²) und der rezente Niederschlag Gamma(Form {setup.pann_shape:.3f}, "
-        f"Rate {setup.pann_rate:.5f}). " + recent_src + ("Einstellungen: " + "; ".join(fixes) + ". " if fixes else "") +
-        recon +
-        f"Konvergenz wurde mit dem rangnormierten Split-R̂ und der effektiven Stichprobengröße nach Vehtari et al. "
-        f"(2021) geprüft."
+        f"Rate {setup.pann_rate:.5f}). ",
+        f"R² of the precipitation reconstruction with the arboreal pollen proportion has the prior "
+        f"Beta({setup.beta_shape1:g}, {setup.beta_shape2:g}), the recent temperature N({setup.temp_mean:.2f}, "
+        f"{setup.temp_sd:.2f}²) and the recent precipitation Gamma(shape {setup.pann_shape:.3f}, "
+        f"rate {setup.pann_rate:.5f}). ",
+    ) + recent_src + einst + recon + w(
+        "Konvergenz wurde mit dem rangnormierten Split-R̂ und der effektiven Stichprobengröße nach Vehtari et al. "
+        "(2021) geprüft.",
+        "Convergence was assessed with the rank-normalised split-R̂ and the effective sample size following "
+        "Vehtari et al. (2021).",
     )
 
 

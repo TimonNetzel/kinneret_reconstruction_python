@@ -130,6 +130,9 @@ def test_zusammenfassung_kurzer_lauf(tmp_path, reconstruction):
     assert set(d["diagnostik"]["spuren"]["werte"]) >= {"R2", "T0", "P0", "alpha"}
     # Prior der Gewichte: Median der Randverteilung liegt unter 1/K (schiefe Beta-Verteilung)
     assert 0 < d["gewichte"]["prior"]["q50"] < 1 / 33
+    assert d["methoden"]["de"].startswith("Die Posterior-Verteilung wurde mit 2 Markov-Kette(n)")
+    assert d["methoden"]["en"].startswith("The posterior distribution was estimated with 2 Markov chain(s)")
+    assert ("mixture of Eq. (3)" in d["methoden"]["en"]) == (reconstruction == "mixture")
     assert d["kennzahlen"] == kennzahlen(d)
     v = vergleich(d, d)
     assert v["T"]["niveau_diff"] == 0 and v["P"]["r_anomalie"] == pytest.approx(1.0)
