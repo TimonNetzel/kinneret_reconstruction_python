@@ -182,3 +182,11 @@ Fehlende Tabellen und Metadaten eines Laufs (bisher nur bei `standard_v3`) kopie
 Katalog-Ordner. Die gesicherten Tabellen der übrigen Läufe bleiben, wie sie im Prüfbericht ausgewertet
 wurden (`--ueberschreiben` ersetzt sie); `app.json` beschreibt den neu gerechneten Lauf mit seinem
 Code-Stand (`meta.git`).
+
+**Ergebnis (28.10.2026):** Alle 27 Läufe neu gerechnet (~2 h auf 4 Kernen), `app.json` je 284–381 KB,
+`katalog.json` 53 KB, `standort_kinneret.json` 115 KB. 22 Läufe sind bitgleich mit den gesicherten Tabellen,
+darunter Original, Standard v2 und v3. Fünf Läufe aus älteren Code-Ständen (`b_hastings`, `c_hastings_gamma`,
+`e_tf_grenzen_1_99`, `f_dir_alpha_1`, `f_dir_alpha_2`) und die Mischverteilung v2 (Ketten des alten
+Standardlaufs) weichen nur durch eine andere Zufallszahlenfolge ab: Mediane im Mittel ≤ 0,03 °C und 3 mm,
+höchstens 0,05 °C und 3 mm (Mischverteilung 7,6 mm). Die Vergleiche mit dem Basislauf in `katalog.json`
+reproduzieren die Tabellen in Prüfbericht 3.8–3.11.
