@@ -180,6 +180,11 @@ App-Daten), `kinneret-recon app-daten` (nur Zusammenfassungen schreiben).
   mit Beschreibung, Stufen je Faktor, Kennzahlen und Vergleich mit dem Basislauf (Niveau, IQR, Korrelation
   der Anomalien wie in Prüfbericht 3.8–3.11).
 
+**Fehler behoben:** `write_toml` ließ `recent_* = None` (Prior aus den Eingangsdaten) weg; seit v3 las
+`Config.from_toml` das als CRU-Prior (betroffen: geschriebene `config.toml` von Läufen mit dem Original-Prior, z. B.
+bei `--from-run` mit `results/legacy`). Jetzt steht dort `"daten"`. Gesicherte `reference/laeufe/*/config.toml` aus
+der Zeit vor v3 ohne `recent_*` bedeuten den Prior aus den Eingangsdaten.
+
 Fehlende Tabellen und Metadaten eines Laufs (bisher nur bei `standard_v3`) kopiert `app-daten` in den
 Katalog-Ordner. Die gesicherten Tabellen der übrigen Läufe bleiben, wie sie im Prüfbericht ausgewertet
 wurden (`--ueberschreiben` ersetzt sie); `app.json` beschreibt den neu gerechneten Lauf mit seinem
