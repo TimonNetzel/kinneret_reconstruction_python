@@ -116,6 +116,16 @@ kinneret-recon batch o_cru_r25 o_cru_r50   # nur diese Läufe
 kinneret-recon app-daten               # app.json, reference/app/katalog.json und Standortdaten neu schreiben
 ```
 
+**Ketten sichern und wiederverwenden:** Die Ketten (`posterior.npz`, `prior.npz`, ~720 MB für alle Läufe) liegen
+nicht in diesem Repo, sondern im privaten Daten-Repo `kinneret_reconstruction_laeufe`, abgelegt nach ihrem
+Fingerabdruck (`ketten/<fingerabdruck>/`).
+
+```bash
+git clone https://github.com/TimonNetzel/kinneret_reconstruction_laeufe ../kinneret_reconstruction_laeufe
+kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe     # Ketten neu auswerten statt sampeln (~15 min statt ~2 h)
+kinneret-recon ketten sichern ../kinneret_reconstruction_laeufe     # neue Ketten aus results/ ablegen, dann dort committen
+```
+
 `batch` erkennt am Fingerabdruck der Einstellungen, ob vorhandene Ergebnisse passen, und sampelt Läufe mit
 gleichen Ketten (z. B. Mittelwert und Mischverteilung) nur einmal. Ein neuer Lauf ist eine Konfiguration in
 `configs/` plus ein Ordner mit `lauf.toml`; ein neuer Faktor ein Eintrag in `FAKTOREN`.
