@@ -134,12 +134,23 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026 (dritte Sitzung, App Schritte 1 bis 3), letzter Commit siehe `git log`. Alles Nötige steht im Repo;
+Stand 28.10.2026 (dritte Sitzung: App Schritte 1 bis 3, Formelschreibweise), letzter Commit siehe `git log`. Die
+Arbeit der Sitzung ist per Pull Request nach `main` gemergt (vom Autor freigegeben). Alles Nötige steht im Repo;
 aus der alten Sitzung muss nichts übernommen werden.
 
 **Nächster Schritt: App Schritt 4** (`docs/app_konzept.md`, Abschnitt 5): Abbildungsexport im Format von
 *Climate of the Past* (Spaltenbreiten und Schriftgrößen anhand der aktuellen Autorenrichtlinien prüfen) und CSV
-der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`.
+der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`. Schritt 4
+braucht nur die App-Daten im Repo, nicht die Ketten.
+
+**Offen: Wo die Ketten liegen sollen** (Entscheidung des Autors). Die vollständigen Ergebnisse
+(`results/<lauf>/posterior.npz` und `prior.npz`, zusammen ~820 MB für 27 Läufe; `results.npz` lässt sich daraus
+in ~30 s je Lauf erzeugen) sind nicht im Repo. Ohne sie rechnet `kinneret-recon batch` alle Läufe in ~2 h
+bitgleich neu (gleicher Code-Stand, Fingerabdruck in `app.json`). Optionen: eigenes Daten-Repo, Git LFS,
+Release-Anhänge oder Zenodo (siehe Gespräch vom 28.10.2026).
+
+**Formelschreibweise:** Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
+Abschnitt 11); neue Texte bitte genauso schreiben.
 
 **Erledigt in dieser Sitzung: App Schritt 3** (`docs/app_konzept.md`, Abschnitt 10)
 
