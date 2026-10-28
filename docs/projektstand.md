@@ -145,9 +145,9 @@ Vorher die Technik entscheiden (Abschnitt 6).
   `tests/test_katalog.py`.
 - 27 Lauf-Beschreibungen `reference/laeufe/*/lauf.toml`, neue Konfigurationen `configs/original.toml`,
   `configs/n_mixture_v2.toml`, `configs/v3_mixture.toml`, neuer Ordner `reference/laeufe/standard_v3/`.
-- Alle Läufe neu gerechnet (`kinneret-recon batch`), Zusammenfassungen im Repo. 22 von 27 Läufen sind bitgleich
+- Alle Läufe neu gerechnet (`kinneret-recon batch`), Zusammenfassungen im Repo. 21 von 27 Läufen sind bitgleich
   mit den gesicherten Tabellen; die übrigen stammen aus älteren Code-Ständen und weichen nur durch die
-  Zufallszahlenfolge ab (≤ 0,05 °C, ≤ 3 mm; Mischverteilung v2 ≤ 7,6 mm), `docs/app_konzept.md` Abschnitt 7.
+  Zufallszahlenfolge ab (≤ 0,06 °C, ≤ 3,1 mm; Mischverteilung v2 ≤ 7,6 mm), `docs/app_konzept.md` Abschnitt 7.
 - Fehler behoben: `write_toml` ließ `recent_* = None` (Prior aus den Eingangsdaten) weg. Seit v3 las
   `Config.from_toml` das als CRU-Prior; betroffen waren geschriebene `config.toml` von Läufen mit dem
   Original-Prior, z. B. bei `--from-run` mit `results/legacy`. Jetzt steht dort `"daten"`. Die gesicherten
