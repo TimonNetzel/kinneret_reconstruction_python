@@ -78,6 +78,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
 | 27.10.2026 | **Standard v3:** hierarchischer Prior der Taxa-Gewichte und CRU-Prior für 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm), 8 Mio. Iterationen je Kette (vom Autor festgelegt). Vergleichskonfigurationen schreiben die Werte bis v2 fest |
 | 28.10.2026 | App im Browser (PC und Handy, de/en), vorerst nur fertige Läufe, erweiterbar für Läufe und Standorte (`docs/app_konzept.md`). „AP ohne Kulturbäume“ als Variante, Standard bleibt v3 |
+| 28.10.2026 | Ketten aller Läufe im privaten Daten-Repo `kinneret_reconstruction_laeufe` (nach Fingerabdruck; `kinneret-recon ketten sichern`, `batch --ketten`), nicht im Haupt-Repo (Größe) |
 | 28.10.2026 | Formelzeichen in LaTeX-Schreibweise mit echten Indizes in App, Methodentext und Bericht ($T_\mathrm{DJF}$ statt T_DJF; vom Autor gewünscht, App-Konzept Abschnitt 11); Methodentext auch als LaTeX kopierbar |
 | 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
@@ -143,11 +144,13 @@ aus der alten Sitzung muss nichts übernommen werden.
 der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`. Schritt 4
 braucht nur die App-Daten im Repo, nicht die Ketten.
 
-**Offen: Wo die Ketten liegen sollen** (Entscheidung des Autors). Die vollständigen Ergebnisse
-(`results/<lauf>/posterior.npz` und `prior.npz`, zusammen ~820 MB für 27 Läufe; `results.npz` lässt sich daraus
-in ~30 s je Lauf erzeugen) sind nicht im Repo. Ohne sie rechnet `kinneret-recon batch` alle Läufe in ~2 h
-bitgleich neu (gleicher Code-Stand, Fingerabdruck in `app.json`). Optionen: eigenes Daten-Repo, Git LFS,
-Release-Anhänge oder Zenodo (siehe Gespräch vom 28.10.2026).
+**Ketten im Daten-Repo** (seit 28.10.2026, vom Autor angelegt): Die vollständigen Ketten aller 27 Läufe
+(`posterior.npz`, `prior.npz`; 24 Kettensätze, 719 MB) liegen im privaten Repo
+`TimonNetzel/kinneret_reconstruction_laeufe`, abgelegt nach Fingerabdruck (`ketten/<fingerabdruck>/`, Zuordnung in
+`index.json`). Für Neuauswertungen in einer neuen Sitzung: Repo anhängen und klonen, dann
+`kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (~15 min statt ~2 h Sampling). Neue Ketten mit
+`kinneret-recon ketten sichern ../kinneret_reconstruction_laeufe` ablegen und dort committen (ein Commit je
+Kettensatz, damit jeder Push klein bleibt). Schritt 4 braucht die Ketten nicht.
 
 **Formelschreibweise:** Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
 Abschnitt 11); neue Texte bitte genauso schreiben.
@@ -187,7 +190,7 @@ Abschnitt 11); neue Texte bitte genauso schreiben.
 
 ```bash
 pip install -e ".[test]"   # baut den C++-Kern
-python3 -m pytest          # 47 Tests, ~2 min (Browser-Test nur mit Node und Playwright)
+python3 -m pytest          # 48 Tests, ~3 min (Browser-Test nur mit Node und Playwright)
 ```
 
 Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht

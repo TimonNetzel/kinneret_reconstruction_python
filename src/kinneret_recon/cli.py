@@ -1,4 +1,4 @@
-"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app``."""
+"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app|ketten``."""
 
 from __future__ import annotations
 
@@ -220,7 +220,9 @@ def cmd_app_daten(a: argparse.Namespace) -> int:
 def cmd_batch(a: argparse.Namespace) -> int:
     """Rechnet alle (oder die genannten) Laeufe des Katalogs, deren Ergebnisse fehlen oder veraltet sind, und
     schreibt danach die App-Daten. Laeufe mit gleichen Ketten (gleicher Fingerabdruck der Sampler-Einstellungen)
-    werden nur einmal gesampelt und sonst neu ausgewertet."""
+    werden nur einmal gesampelt und sonst neu ausgewertet. Mit --ketten werden abgelegte Ketten (Daten-Repo)
+    neu ausgewertet, statt zu sampeln."""
+    from .ketten import vorhanden
     from .pipeline import execute
 
     kat, pr, ids = _katalog_pruefen(a.laeufe)
@@ -237,14 +239,16 @@ def cmd_batch(a: argparse.Namespace) -> int:
     for i in ids:
         if status[i] == "vorhanden":
             ketten.setdefault(pr[i].fingerabdruck_ketten, i)
+    ablage = Path(a.ketten) if a.ketten else None
     for i in ids:
         if status[i] == "vorhanden":
             continue
-        spender = ketten.get(pr[i].fingerabdruck_ketten)
+        fp = pr[i].fingerabdruck_ketten
+        spender = res / ketten[fp] if fp in ketten else vorhanden(ablage, fp)
         plan.append((i, spender))
-        ketten.setdefault(pr[i].fingerabdruck_ketten, i)
+        ketten.setdefault(fp, i)
     for i, spender in plan:
-        print(f"{i:24s} " + (f"Ketten von {spender} neu auswerten" if spender else "rechnen"))
+        print(f"{i:24s} " + (f"Ketten aus {spender} neu auswerten" if spender else "rechnen"))
     print(f"{len(plan)} von {len(ids)} Laeufen zu rechnen")
     if a.dry_run:
         return 0
@@ -253,8 +257,22 @@ def cmd_batch(a: argparse.Namespace) -> int:
         cfg.output_dir = str(res / i)
         cfg.plots = cfg.report = a.plots
         print(f"\n=== {i} ({kat[i].config})", flush=True)
-        execute(cfg, Path.cwd(), reuse=res / spender if spender else None)
+        execute(cfg, Path.cwd(), reuse=spender)
     _schreibe_app_daten(ids, kat, pr, res, a.ueberschreiben)
+    return 0
+
+
+def cmd_ketten(a: argparse.Namespace) -> int:
+    from .ketten import sichern
+
+    kat, pr, ids = _katalog_pruefen(a.laeufe)
+    res = Path(a.results)
+    auswahl = [i for i in ids if _ergebnis_status(kat[i], pr[i], res / i) == "vorhanden"]
+    fehlt = sorted(set(ids) - set(auswahl))
+    if fehlt:
+        print(f"ohne passende Ergebnisse in {res} (nicht gesichert): {', '.join(fehlt)}")
+    neu = sichern({i: kat[i] for i in auswahl}, pr, res, Path(a.ablage))
+    print(f"{len(neu)} Kettensaetze neu abgelegt, {len(auswahl)} Laeufe im Index von {a.ablage}")
     return 0
 
 
@@ -348,6 +366,8 @@ def main(argv=None) -> int:
     b.add_argument("-n", "--dry-run", action="store_true", help="nur anzeigen, was gerechnet wuerde")
     b.add_argument("--neu", action="store_true", help="auch vorhandene Ergebnisse neu rechnen")
     b.add_argument("--plots", action="store_true", help="Abbildungen und Bericht je Lauf erzeugen")
+    b.add_argument("--ketten", metavar="ABLAGE",
+                   help="Ablage der Ketten (Daten-Repo); passende Ketten werden neu ausgewertet statt gesampelt")
     b.add_argument("--ueberschreiben", action="store_true",
                    help="Tabellen und Metadaten im Katalog-Ordner durch die neuen ersetzen (sonst nur fehlende)")
     b.set_defaults(func=cmd_batch)
@@ -358,6 +378,14 @@ def main(argv=None) -> int:
     d.add_argument("--ueberschreiben", action="store_true",
                    help="Tabellen und Metadaten im Katalog-Ordner durch die neuen ersetzen (sonst nur fehlende)")
     d.set_defaults(func=cmd_app_daten)
+
+    kt = sub.add_parser("ketten", help="Ketten der Laeufe in einer Ablage (Daten-Repo) sichern")
+    kt_sub = kt.add_subparsers(dest="aktion", required=True)
+    ks = kt_sub.add_parser("sichern", help="Ketten aus results/<lauf>/ nach <ablage>/ketten/<fingerabdruck>/ kopieren")
+    ks.add_argument("ablage", help="Ordner der Ablage, z. B. ../kinneret_reconstruction_laeufe")
+    ks.add_argument("laeufe", nargs="*", help="nur diese Laeufe (Standard: alle mit Ergebnissen)")
+    ks.add_argument("--results", default="results")
+    ks.set_defaults(func=cmd_ketten)
 
     w = sub.add_parser("app", help="App bauen (offline-faehig): Ordner mit index.html oder eine einzige HTML-Datei")
     w.add_argument("-o", "--output", default="results/app", help="Zielordner")
