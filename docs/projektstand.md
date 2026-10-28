@@ -133,8 +133,8 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026, Branch `ccr-4d37fe2c-mutkq8` (App Schritt 4, noch nicht nach `main` gemergt). Alles Nötige steht im
-Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt nach Bedarf (Verweise unten).
+Stand 28.10.2026, App Schritt 4 abgeschlossen und per Pull Request #7 nach `main` gemergt. Weiterarbeit in einem
+neuen Branch ab `main`. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt nach Bedarf (Verweise unten).
 
 **Nächster Schritt: App Schritt 5, Standort-Register** (Kinneret als einziger Standort). Lesen: App-Konzept
 Abschnitt 2 Punkt 4 und Abschnitt 7. Heute ist der Standort fest verdrahtet in `cru.py`, `katalog.py`
