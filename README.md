@@ -16,7 +16,7 @@ als installierbares Python-Paket mit C++-Kern um.
 | `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
 | `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v0.1.0` = Zenodo-Version) |
 | `reference/v1.0-paper/` | Referenzergebnisse des Originals |
-| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), Paper (`docs/paper/`) |
+| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), App-Konzept, Paper (`docs/paper/`) |
 | `reference/laeufe/`, `reference/vergleiche/` | Tabellen, Diagnostik und Einstellungen aller Vergleichs- und Sensitivitätsläufe |
 | `tools/` | Hilfsskripte für Auswertung und Abstimmung |
 | `tests/` | Tests (`pytest`; lange Läufe mit `pytest -m slow`) |
@@ -93,7 +93,8 @@ Paper.
 * Weitere Modelloptionen: `sampler.tf_normal_prior` (Gl. 14 als Prior),
   `sampler.recent_temp_mean/_sd` und `sampler.recent_pann_mean/_sd` (Prior des heutigen Klimas),
   `sampler.taxa_prior` (Dir(α) fest oder hierarchisch), `sampler.beta_shape1/2` (R²-Prior),
-  `sampler.tf_bound_probs` (Trunkierung).
+  `sampler.tf_bound_probs` (Trunkierung), `sampler.ap_exclude_taxa` (Baumpollenkurve ohne z. B.
+  Kulturbäume) und `sampler.calibration_age_range` (R² nur über einen Altersbereich).
 * `kinneret-recon run ... --from-run results/<lauf>`: vorhandene Ketten neu auswerten, ohne neu zu
   sampeln. Nützlich für andere Auswerteoptionen.
 

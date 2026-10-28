@@ -262,11 +262,14 @@ struct Model {
     double beta_s1 = 3, beta_s2 = 3, temp_mean = 0, temp_sd = 1, pann_shape = 1, pann_rate = 1;
     // optionaler Prior der TF-Klimawerte nach Gl. (14) des Papers: N_t(c; mu, sigma, lower, upper)
     vector<double> tf_mu, tf_sigma;  // Laenge 0 (nicht gesetzt) oder 2B
+    // optionale Auswahl der Altersstufen fuer R2: Laenge 0 (alle) oder A, 1 = Alter geht in die Korrelation ein
+    vector<double> ap_mask;
 
     void check() const {
         const size_t A = n_age, K = n_taxa, B = n_biomes;
         if (spectrum.size() != A * K || assign.size() != K * B || ap.size() != A || jeffreys.size() != K ||
-            tf_sd.size() != 2 * B || tf_lower.size() != 2 * B || tf_upper.size() != 2 * B || normal_params.size() != 4)
+            tf_sd.size() != 2 * B || tf_lower.size() != 2 * B || tf_upper.size() != 2 * B || normal_params.size() != 4 ||
+            (!ap_mask.empty() && ap_mask.size() != A))
             throw std::invalid_argument("inkonsistente Modelldimensionen");
         if (nnet.n_hidden() > 64 || nnet.n_out() > 64 || nnet.n_out() < B ||
             nnet.in_hidden.size() != 2 * nnet.n_hidden() || nnet.hidden_out.size() != nnet.n_hidden() * nnet.n_out())
@@ -298,7 +301,7 @@ struct Model {
     void derived(const vector<double>& w, const vector<double>& c, vector<double>& ratios, double& r2, double& t0,
                  double& p0) const {
         biome_ratios(w, ratios);
-        double sx = 0, sy = 0, sxx = 0, syy = 0, sxy = 0;
+        double sx = 0, sy = 0, sxx = 0, syy = 0, sxy = 0, n = 0;
         t0 = p0 = 0.0;
         for (int a = 0; a < n_age; ++a) {
             double rt = 0.0, rp = 0.0;
@@ -310,10 +313,11 @@ struct Model {
                 t0 = rt;
                 p0 = rp;
             }
+            if (!ap_mask.empty() && ap_mask[a] == 0.0) continue;
             const double y = ap[a];
             sx += rp; sy += y; sxx += rp * rp; syy += y * y; sxy += rp * y;
+            n += 1.0;
         }
-        const double n = n_age;
         const double num = n * sxy - sx * sy;
         const double den = std::sqrt((n * sxx - sx * sx) * (n * syy - sy * sy));
         const double corr = num / den;

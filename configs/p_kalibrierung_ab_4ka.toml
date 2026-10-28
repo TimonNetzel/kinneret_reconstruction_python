@@ -1,0 +1,6 @@
+# Test Klima gegen Landnutzung (2): Standard v3, R2 mit der Baumpollenkurve nur ueber 4000-9000 cal BP
+# (vor dem starken menschlichen Einfluss auf die Vegetation)
+output_dir = "results/p_kalibrierung_ab_4ka"
+
+[sampler]
+calibration_age_range = [4000.0, 9000.0]

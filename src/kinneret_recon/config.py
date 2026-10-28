@@ -62,6 +62,11 @@ class SamplerConfig:
     recent_temp_sd: float | None = CRU_PRIOR_50KM["recent_temp_sd"]
     recent_pann_mean: float | None = CRU_PRIOR_50KM["recent_pann_mean"]
     recent_pann_sd: float | None = CRU_PRIOR_50KM["recent_pann_sd"]
+    # Proxy-Pool-Modul (R2 der P-Rekonstruktion mit der Baumpollenkurve AP):
+    #   ap_exclude_taxa: Gehoelz-Taxa, die aus AP herausgerechnet werden (z. B. Kulturbaeume, data.CULTIVATED_TAXA)
+    #   calibration_age_range: nur Altersstufen in [von, bis] cal BP gehen in R2 ein (None: alle)
+    ap_exclude_taxa: tuple[str, ...] = ()
+    calibration_age_range: tuple[float, float] | None = None
     # Terme der Zielverteilung (nur fuer Validierungslaeufe abschalten)
     use_calibration: bool = True
     use_tf_likelihood: bool = True
@@ -101,8 +106,9 @@ class Config:
     def from_dict(cls, d: dict[str, Any]) -> "Config":
         d = dict(d)
         sd = dict(d.pop("sampler", {}))
-        if "tf_bound_probs" in sd:
-            sd["tf_bound_probs"] = tuple(sd["tf_bound_probs"])
+        for k in ("tf_bound_probs", "ap_exclude_taxa", "calibration_age_range"):
+            if sd.get(k) is not None:
+                sd[k] = tuple(sd[k])
         sampler = SamplerConfig(**sd)
         post = PostprocessConfig(**d.pop("postprocess", {}))
         cfg = cls(sampler=sampler, postprocess=post, **d)
@@ -143,6 +149,11 @@ class Config:
             v = getattr(s, k)
             if v is not None and v <= 0:
                 raise ValueError(f"sampler.{k} muss > 0 sein")
+        if s.kernel == "legacy" and (s.ap_exclude_taxa or s.calibration_age_range is not None):
+            raise ValueError("ap_exclude_taxa und calibration_age_range gibt es nur fuer kernel = 'corrected'")
+        if s.calibration_age_range is not None and (len(s.calibration_age_range) != 2
+                                                     or s.calibration_age_range[0] >= s.calibration_age_range[1]):
+            raise ValueError("sampler.calibration_age_range muss [von, bis] mit von < bis sein")
         if s.kernel == "legacy" and s.tf_normal_prior:
             raise ValueError("tf_normal_prior gibt es nur fuer kernel = 'corrected'")
         if self.postprocess.reconstruction not in ("mean", "mixture"):

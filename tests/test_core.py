@@ -110,3 +110,63 @@ def test_kde_matches_scipy():
     gx, gy = np.meshgrid(ga, gb, indexing="ij")
     d = gaussian_kde(np.vstack([u, v]))(np.vstack([gx.ravel(), gy.ravel()])).reshape(len(ga), len(gb))
     np.testing.assert_allclose(c, d, rtol=0, atol=1e-12 * d.max())
+
+
+def test_arboreal_taxa_match_ap(inputs):
+    """ap_depth ist die Summe der Gehoelz-Taxa, skaliert mit dem Anteil der 33 Taxa an der Pollensumme."""
+    from kinneret_recon.data import ARBOREAL_TAXA
+
+    names = list(inputs.taxa_names)
+    sp = inputs.taxa_counts_depth / inputs.taxa_counts_depth.sum(1, keepdims=True)
+    arb = sp[:, [names.index(t) for t in ARBOREAL_TAXA]].sum(1)
+    assert np.corrcoef(arb, inputs.ap_depth)[0, 1] > 0.99
+    assert np.all(inputs.ap_depth <= 100 * arb + 1e-9)
+
+
+def test_ap_without_cultivated(inputs):
+    from kinneret_recon.data import CULTIVATED_TAXA
+    from kinneret_recon.model import ap_without
+
+    np.testing.assert_allclose(ap_without(inputs, ()), inputs.ap_depth)
+    ap = ap_without(inputs, CULTIVATED_TAXA)
+    assert np.all(ap <= inputs.ap_depth + 1e-12) and np.all(ap >= 0)
+    assert ap.mean() < 0.8 * inputs.ap_depth.mean()  # Olea macht einen grossen Teil von AP aus
+    with pytest.raises(ValueError):
+        ap_without(inputs, ("Poaceae",))
+
+
+def test_calibration_age_mask(inputs):
+    """R2 nur ueber ausgewaehlte Altersstufen: gleich der Korrelation auf der Teilmenge."""
+    import dataclasses
+
+    cfg = SamplerConfig(calibration_age_range=(4000.0, 9000.0))
+    s = build_setup(inputs, cfg)
+    assert s.ap_mask is not None and 0 < s.ap_mask.sum() < len(s.ap_mask)
+    rng = np.random.default_rng(4)
+    w = rng.dirichlet(np.full(s.num_taxa, 5.0))
+    c = rng.uniform(s.tf_lower, s.tf_upper)
+    B = s.num_biomes
+    ratios = (s.taxa_spectrum_age * w) @ inputs.biomes_assign
+    rp = (ratios / ratios.sum(1, keepdims=True)) @ c[B:]
+    m = s.ap_mask == 1
+    corr = np.corrcoef(rp[m], s.ap_age[m])[0, 1]
+    r = _core.evaluate_state(s.core_model(), {}, w, c)
+    assert r["expl_variance"] == pytest.approx(max(corr, 0) ** 2, rel=1e-10)
+    # Maske mit allen Altersstufen = keine Maske
+    full = dataclasses.replace(s, ap_mask=np.ones_like(s.ap_mask))
+    none = dataclasses.replace(s, ap_mask=None)
+    assert (_core.evaluate_state(full.core_model(), {}, w, c)["expl_variance"]
+            == _core.evaluate_state(none.core_model(), {}, w, c)["expl_variance"])
+
+
+def test_calibration_options_toml_roundtrip(tmp_path):
+    from kinneret_recon.config import Config
+    from kinneret_recon.pipeline import write_toml
+
+    cfg = Config()
+    cfg.sampler.ap_exclude_taxa = ("Olea europaea", "Vitis")
+    cfg.sampler.calibration_age_range = (4000.0, 9000.0)
+    write_toml(cfg, tmp_path / "c.toml")
+    assert Config.from_toml(tmp_path / "c.toml").sampler == cfg.sampler
+    write_toml(Config(), tmp_path / "d.toml")
+    assert Config.from_toml(tmp_path / "d.toml").sampler == Config().sampler

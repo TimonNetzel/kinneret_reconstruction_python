@@ -10,7 +10,7 @@ from scipy.stats import gamma, norm
 
 from . import _core
 from .config import SamplerConfig
-from .data import Inputs
+from .data import ARBOREAL_TAXA, Inputs
 
 
 @dataclass
@@ -43,6 +43,7 @@ class Setup:
     tf_sigma: np.ndarray  # (2B,) Standardabweichung der TF-Randverteilungen, sigma(psi) in Gl. (14)
     beta_shape1: float
     beta_shape2: float
+    ap_mask: np.ndarray | None = None  # (n_age,) 1 = Alter geht in R2 ein; None: alle
 
     @property
     def num_taxa(self) -> int:
@@ -77,7 +78,20 @@ class Setup:
             tf_sigma=self.tf_sigma,
             pann_shape=float(self.pann_shape),
             pann_rate=float(self.pann_rate),
+            **({} if self.ap_mask is None else {"ap_mask": self.ap_mask}),
         )
+
+
+def ap_without(inp: Inputs, exclude) -> np.ndarray:
+    """Baumpollenanteil je Tiefe ohne die Taxa in exclude: AP * (1 - Anteil von exclude an den Gehoelz-Taxa)."""
+    names = list(inp.taxa_names)
+    unknown = [t for t in exclude if t not in ARBOREAL_TAXA]
+    if unknown:
+        raise ValueError(f"ap_exclude_taxa: keine Gehoelz-Taxa: {unknown}")
+    sp = inp.taxa_counts_depth / np.sum(inp.taxa_counts_depth, axis=1, keepdims=True)
+    arb = sp[:, [names.index(t) for t in ARBOREAL_TAXA]].sum(axis=1)
+    exc = sp[:, [names.index(t) for t in exclude]].sum(axis=1)
+    return inp.ap_depth * (1.0 - exc / arb)
 
 
 def weighted_quantiles(x: np.ndarray, weights: np.ndarray, probs) -> np.ndarray:
@@ -170,7 +184,13 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
     spectrum_age = np.empty((len(inp.age), K))
     for k in range(K):
         spectrum_age[:, k] = np.matmul(dat, spectrum_depth[:, k])
-    ap_age = np.matmul(dat, inp.ap_depth)
+    ap_age = np.matmul(dat, ap_without(inp, cfg.ap_exclude_taxa) if cfg.ap_exclude_taxa else inp.ap_depth)
+    ap_mask = None
+    if cfg.calibration_age_range is not None:
+        lo, hi = cfg.calibration_age_range
+        ap_mask = ((inp.age >= lo) & (inp.age <= hi)).astype(float)
+        if ap_mask.sum() < 3:
+            raise ValueError("calibration_age_range enthaelt weniger als 3 Altersstufen")
 
     # Prior des rezenten Klimas (Standard: Werte aus den Eingangsdaten)
     rc = inp.recent_climate
@@ -229,4 +249,5 @@ def build_setup(inp: Inputs, cfg: SamplerConfig) -> Setup:
         tf_sigma=sigma,
         beta_shape1=cfg.beta_shape1,
         beta_shape2=cfg.beta_shape2,
+        ap_mask=ap_mask,
     )

@@ -33,6 +33,7 @@ Rahmen (vom Autor festgelegt):
 | – | Flexibler Prior der Taxa-Gewichte | ✅ Dir(α) fest oder hierarchisch |
 | – | CRU-Prior aus festgelegtem Einzugsgebiet | ✅ `kinneret-recon cru-prior`, Prüfbericht 3.9 |
 | – | Neuer Standard v3 (hierarchischer Prior, CRU 50 km) | ✅ `reference/v3-standard/`, Prüfbericht 3.10 |
+| – | Tests Klima gegen Landnutzung (AP ohne Kulturbäume, Kalibrierung 4–9 ka) | ✅ Prüfbericht 3.11 |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -56,6 +57,9 @@ Rahmen (vom Autor festgelegt):
    P-Niveau bleibt (−2 mm), der P-Verlauf ist unverändert (*r* = 0,999).
 8. **Standard v3** (hierarchischer Prior der Gewichte, CRU-Prior 50 km): gegenüber v2 T +0,74 °C,
    P +2 mm, IQR von P −36 %, P-Verlauf unverändert (*r* = 0,998). Gewichte wie im hierarchischen Lauf.
+9. **Klima oder Landnutzung:** Die Baumpollenkurve ist vor allem eine *Olea*-Kurve (ohne Kulturbäume
+   *r* = −0,06 mit der vollen Kurve). Das P-Muster hält trotzdem (*r* = 0,90 ohne Kulturbäume); die
+   feuchten Phasen sind ohne *Olea* um 21–27 mm schwächer.
 
 ## Entscheidungen
 
@@ -69,6 +73,7 @@ Rahmen (vom Autor festgelegt):
 | 27.10.2026 | R²-Prior: Beta(3; 3) bleibt, Beta(2,62; 2,62) liefert dasselbe Ergebnis |
 | 27.10.2026 | Branch mit PR #1 nach `main` gemergt (vom Autor freigegeben) |
 | 27.10.2026 | **Standard v3:** hierarchischer Prior der Taxa-Gewichte und CRU-Prior für 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm), 8 Mio. Iterationen je Kette (vom Autor festgelegt). Vergleichskonfigurationen schreiben die Werte bis v2 fest |
+| 28.10.2026 | App im Browser (PC und Handy, de/en), vorerst nur fertige Läufe, erweiterbar für Läufe und Standorte (`docs/app_konzept.md`). „AP ohne Kulturbäume“ als Variante, Standard bleibt v3 |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte (nächste Sitzung)
@@ -122,8 +127,12 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 27.10.2026 (zweite Sitzung, Standard v3), letzter Commit siehe `git log`. Alles Nötige steht im Repo; aus der
+Stand 28.10.2026 (zweite Sitzung, Standard v3), letzter Commit siehe `git log`. Alles Nötige steht im Repo; aus der
 alten Sitzung muss nichts übernommen werden.
+
+**Nächster Schritt: App für Rekonstruktion und Sensitivitätsanalyse** (in einer neuen Sitzung).
+Konzept, Festlegungen des Autors und Reihenfolge: `docs/app_konzept.md`. Zuerst die Läufe neu rechnen
+(die vollständigen Ergebnisse sind nicht im Repo, ~2 h) und daraus kompakte Zusammenfassungen erzeugen.
 
 **Einrichten (ca. 5 min):**
 
@@ -156,8 +165,15 @@ Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertunge
   nach Gl. (3) in `reference/laeufe/v3_mixture/` (drei Gipfel beim Niederschlag, Prüfbericht 3.10).
 - Abbildung `independent_proposal_dists` korrigiert (Prior-Kurve von T0, Legende).
 
+**Erledigt: Tests Klima gegen Landnutzung** (Prüfbericht 3.11)
+
+- Optionen `sampler.ap_exclude_taxa` und `sampler.calibration_age_range` (Maske im C++-Kern),
+  `data.ARBOREAL_TAXA`, `data.CULTIVATED_TAXA`; Läufe `configs/p_*.toml`.
+- Offen: Entscheidung des Autors, ob AP ohne Kulturbäume Standard wird.
+
 **Mögliche nächste Schritte:**
 
+0. App nach `docs/app_konzept.md` (vom Autor beauftragt, eigene Sitzung).
 1. Prior-Referenzlauf kürzen (halbiert die Laufzeit des Standardlaufs, siehe „Offene Punkte“, Punkt 4).
 2. Zusatzfehler für den Niederschlag im CRU-Prior entscheiden (Punkt 1).
 3. Training der Transferfunktion; dabei dieselbe CRU-Version (TS 4.07, 1961–1990, 0,5°) verwenden

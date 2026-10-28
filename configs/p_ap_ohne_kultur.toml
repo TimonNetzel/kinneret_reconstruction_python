@@ -1,0 +1,6 @@
+# Test Klima gegen Landnutzung (1): Standard v3, Baumpollenkurve fuer R2 ohne Kulturbaeume
+# (Olea, Vitis, Juglans; data.CULTIVATED_TAXA)
+output_dir = "results/p_ap_ohne_kultur"
+
+[sampler]
+ap_exclude_taxa = ["Olea europaea", "Vitis", "Juglans regia"]
