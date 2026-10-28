@@ -2,6 +2,8 @@
 // Thema, Handy- und PC-Groesse; meldet Fehler der Konsole. Optional Bildschirmfotos.
 //
 // Aufruf: node tools/app_pruefen.js results/app/index.html [results/kinneret-app.html] [--fotos ORDNER]
+//         node tools/app_pruefen.js --zwei-standorte ORDNER/index.html  (Standort-Waehler; Ordner mit einem zweiten
+//         Standort "zweit", wie ihn tests/test_app.py anlegt)
 const path = require("path");
 const fs = require("fs");
 const { chromium } = require("playwright");
@@ -10,6 +12,54 @@ const args = process.argv.slice(2);
 const fi = args.indexOf("--fotos");
 const fotos = fi >= 0 ? args.splice(fi, 2)[1] : null;
 if (fotos) fs.mkdirSync(fotos, { recursive: true });
+const zi = args.indexOf("--zwei-standorte");
+const zweiStandorte = zi >= 0 ? args.splice(zi, 1).length > 0 : false;
+
+async function neueSeite(browser, datei, groesse) {
+  const ctx = await browser.newContext({ viewport: groesse, offline: true, deviceScaleFactor: 1, locale: "de-DE" });
+  const page = await ctx.newPage();
+  const fehler = [];
+  page.on("console", (m) => { if (m.type() === "error") fehler.push(m.text()); });
+  page.on("pageerror", (e) => fehler.push(String(e)));
+  await page.goto("file://" + path.resolve(datei));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  return [page, fehler];
+}
+
+// Standort-Waehler mit zwei Standorten: Wechsel, Lauflisten nur des Standorts, Sensitivitaet ohne Reihe
+async function pruefeStandorte(browser, datei) {
+  const [page, fehler] = await neueSeite(browser, datei, { width: 1366, height: 900 });
+  // Lauf-Liste der sichtbaren Ansicht (die anderen fuellen sich erst beim Anzeigen)
+  const zustand = (liste = "#rek-lauf") => page.evaluate((liste) => {
+    const st = (id) => KR.LAEUFE.get(id).standort;
+    return { lauf: KR.Z.lauf, sichtbar: !document.querySelector("#standort-wahl").hidden,
+      optionen: [...document.querySelectorAll("#standort-wahl option")].map((o) => o.value),
+      fremd: [...document.querySelectorAll(liste + " option")].filter((o) => st(o.value) !== st(KR.Z.lauf)).length,
+      n: document.querySelectorAll(liste + " option").length, name: document.querySelector("#standort-name").hidden };
+  }, liste);
+  let z = await zustand();
+  if (!z.sichtbar || z.optionen.join() !== "kinneret,zweit" || !z.name) fehler.push("Waehler: " + JSON.stringify(z));
+  if (z.fremd || z.n < 20) fehler.push("Lauf-Liste Kinneret: " + JSON.stringify(z));
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(500);
+  z = await zustand();
+  if (z.lauf !== "zweit_lauf" || z.fremd || z.n !== 1) fehler.push("nach Wechsel: " + JSON.stringify(z));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 10000 });
+  await page.click('.reiter button[data-ansicht="sensitivitaet"]');
+  await page.waitForTimeout(500);
+  const text = await page.textContent("#sens-tabelle");
+  if (!text.includes("keine Sensitivitätsläufe")) fehler.push("Sensitivitaet ohne Reihe: " + text);
+  await page.click('.reiter button[data-ansicht="gewichte"]');
+  await page.waitForSelector("#gew-plot .main-svg", { timeout: 10000 }).catch(() => fehler.push("Gewichte am 2. Standort"));
+  await page.selectOption("#standort-wahl", "kinneret");
+  await page.waitForTimeout(500);
+  z = await zustand("#gew-lauf");
+  if (z.lauf !== "standard_v3" || z.fremd || z.n < 20) fehler.push("zurueck: " + JSON.stringify(z));
+  await page.click('.reiter button[data-ansicht="sensitivitaet"]');
+  await page.waitForFunction(() => document.querySelectorAll("#sens-tabelle tbody tr").length >= 2, null, { timeout: 15000 })
+    .catch(() => fehler.push("Sensitivitaet nach Rueckwechsel"));
+  return fehler;
+}
 
 async function pruefe(browser, datei, groesse, thema, name) {
   const ctx = await browser.newContext({ viewport: groesse, colorScheme: thema, offline: true, deviceScaleFactor: 1, locale: "de-DE" });
@@ -21,6 +71,10 @@ async function pruefe(browser, datei, groesse, thema, name) {
   await page.goto("file://" + path.resolve(datei));
   const warte = (sel) => page.waitForSelector(sel + " .main-svg", { timeout: 20000 });
   await warte("#rek-plot");
+  // ein Standort: kein Waehler, nur der Name
+  const kopf = await page.evaluate(() => [document.querySelector("#standort-wahl").hidden,
+    document.querySelector("#standort-name").textContent]);
+  if (!kopf[0] || kopf[1] !== "See Genezareth") fehler.push("Kopf Standort: " + kopf);
   const n = await page.evaluate(() => document.querySelectorAll("#rek-plot .scatterlayer .trace").length);
   if (n < 5) fehler.push("Rekonstruktion: zu wenige Kurven " + n);
   // Alter antippen -> Detail
@@ -178,6 +232,16 @@ async function pruefeExport(page, fehler, foto, pdf) {
 (async () => {
   const browser = await chromium.launch();
   let fehlerGesamt = 0;
+  if (zweiStandorte) {
+    for (const datei of args) {
+      const f = await pruefeStandorte(browser, datei);
+      console.log(`${path.basename(path.dirname(datei))} zwei Standorte: ${f.length ? "FEHLER" : "ok"}`);
+      f.forEach((x) => console.log("   " + x));
+      fehlerGesamt += f.length;
+    }
+    await browser.close();
+    process.exit(fehlerGesamt ? 1 : 0);
+  }
   for (const datei of args) {
     for (const [name, groesse] of [["handy", { width: 390, height: 844 }], ["pc", { width: 1366, height: 900 }]]) {
       for (const thema of ["light", "dark"]) {

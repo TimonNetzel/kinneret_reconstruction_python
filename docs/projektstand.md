@@ -38,7 +38,7 @@ Rahmen (vom Autor festgelegt):
 | App 2 | App-Grundgerüst (statisch, offline, responsiv, de/en) mit Rekonstruktion und Sensitivität | ✅ `kinneret-recon app`, App-Konzept Abschnitt 9 |
 | App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | ✅ App-Konzept Abschnitt 10 |
 | App 4 | Abbildungsexport im Copernicus-Format (PDF, SVG, PNG), CSV | ✅ App-Konzept Abschnitt 12 |
-| App 5 | Standort-Register (Kinneret als erster Standort) | offen |
+| App 5 | Standort-Register (Kinneret als erster Standort), Standort-Wähler vorbereitet | ✅ `data/in/standort.toml`, App-Konzept Abschnitt 13 |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -84,6 +84,7 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
 | 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
+| 28.10.2026 | Standort-Register: je Standort ein Ordner `data/<ordner>/` mit `standort.toml` (Lage, Höhe, Biome mit Farben, CRU-Einstellungen); Kinneret bleibt in `data/in/`, damit Fingerabdrücke und App-Daten gleich bleiben (App-Konzept Abschnitt 13). Biomfarben vorerst unverändert (Paper) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte
@@ -95,7 +96,8 @@ Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entsc
    522 ± 67 mm statt 522 ± 41 mm; Entscheidung des Autors)
 2. **Prior-Referenzlauf kürzen:** Er dient nur dem CI-Verhältnis der Transferfunktionen und macht die Hälfte der
    11 min des Standardlaufs aus; z. B. 2 Mio. Iterationen.
-3. **Biomfarben bei Farbsehschwäche** (App-Konzept Abschnitt 12, „Offen“; Entscheidung des Autors).
+3. **Biomfarben bei Farbsehschwäche** (App-Konzept Abschnitt 12, „Offen“; Entscheidung des Autors). Seit App
+   Schritt 5 ist ein Wechsel ein Eintrag je Biom in `data/in/standort.toml` plus `kinneret-recon app-daten`.
 4. **Export-Maße** mit den aktuellen Copernicus-Richtlinien abgleichen (Seiten aus der Cloud-Umgebung bisher nicht
    erreichbar).
 5. **Befund 13:** Wie entstanden die $R^2$ = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit Beta(0,92; 2,77);
@@ -103,7 +105,8 @@ Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entsc
 6. **Tag `v1.0-paper`** ist entbehrlich: `v0.1.0` enthält denselben Code (nur `LICENSE.md` anders) und entspricht
    der Zenodo-Version des Papers.
 7. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
-   weitere Standorte (nach App Schritt 5).
+   weitere Standorte (Register steht; vorher Biome in Abbildungen und Bericht umstellen, App-Konzept Abschnitt 13,
+   „Noch fest“), App Schritt 6 (Läufe aus der App starten, Overlays).
 
 ## Reproduktion
 
@@ -133,23 +136,29 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026, App Schritt 4 abgeschlossen und per Pull Request #7 nach `main` gemergt. Weiterarbeit in einem
-neuen Branch ab `main`. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt nach Bedarf (Verweise unten).
+Stand 28.10.2026, App Schritt 5 (Standort-Register) umgesetzt im Branch `ccr-03594f78-ure5tb`, noch nicht nach
+`main` gemergt. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt
+nach Bedarf (Verweise unten).
 
-**Nächster Schritt: App Schritt 5, Standort-Register** (Kinneret als einziger Standort). Lesen: App-Konzept
-Abschnitt 2 Punkt 4 und Abschnitt 7. Heute ist der Standort fest verdrahtet in `cru.py`, `katalog.py`
-(Standort-Register), `app_daten.py` und `data/in/`; die App-Daten des Standorts stehen in
-`reference/app/standort_kinneret.json`.
+**Stand App Schritt 5:** Ein Standort ist ein Ordner `data/<ordner>/` mit den Eingangsdaten und `standort.toml`
+(Kinneret: `data/in/standort.toml`; Lage, Höhe, Raster, Biome mit Farben, CRU-Ausschnitt und Einzugsgebiet).
+`lade_standorte()`/`standort()` in `katalog.py`; `cru-prior` und `cru-extract` lesen daraus (`--standort`). Die
+App zeigt ab zwei Standorten einen Wähler im Kopf. Details: App-Konzept Abschnitt 13.
+
+**Nächster Schritt:** Entscheidung zu den Biomfarben (Offene Punkte, Punkt 3), sonst die übrigen offenen Punkte;
+App Schritt 6 (Läufe aus der App starten, Overlays) ist „später“.
 
 - **Fingerabdrücke müssen unverändert bleiben**, sonst findet `batch --ketten` die gesicherten Ketten nicht mehr
-  (~2 h Neurechnen). Ebenso sollen `reference/**/app.json` und `standort_kinneret.json` bitgleich bleiben.
-- Prüfen ohne Neurechnen: `kinneret-recon katalog` (Fingerabdrücke), `kinneret-recon app-daten` + `git diff`,
-  `python3 -m pytest`. Kein `batch`, keine Läufe nötig.
-- Den Standort-Wähler der App nur vorbereiten (er erscheint erst ab zwei Standorten).
-- Biomfarben gehören ins Standort-Register; ob sie sich ändern, ist offen (Offene Punkte, Punkt 3).
+  (~2 h Neurechnen). Daher bleibt Kinneret in `data/in/` (`data_dir` gehört zu den Einstellungen in `app.json`).
+- Prüfen ohne Neurechnen: `kinneret-recon katalog` (Fingerabdrücke), `kinneret-recon app-daten` + `git diff`
+  (schreibt ohne `results/` nur `standort_kinneret.json` und `katalog.json`; erwartet ist nur ein neuer Git-Stand in
+  `katalog.json`), `python3 -m pytest`. Kein `batch`
+  nötig. `tests/test_katalog.py::test_standort_daten_bitgleich` prüft `standort_kinneret.json`.
+- Ein zweiter Standort: Ordner mit denselben npz-Dateien und `standort.toml`, Läufe mit `standort = "<key>"` und
+  `data_dir` in der Konfiguration; vorher Biome in `plots.py`/`report.py` umstellen (App-Konzept Abschnitt 13).
 
 **Einrichten (ca. 5 min):** `pip install -e ".[test]"` (baut den C++-Kern), dann `python3 -m pytest`
-(49 Tests, ~4 min; Browser-Test nur mit Node und Playwright). App bauen und prüfen: `kinneret-recon app`,
+(54 Tests, ~4 min; Browser-Tests nur mit Node und Playwright). App bauen und prüfen: `kinneret-recon app`,
 `kinneret-recon app --eine-datei`, `node tools/app_pruefen.js results/app/index.html results/kinneret-app.html`.
 
 **Ketten im Daten-Repo:** Die Ketten aller 27 Läufe liegen im privaten Repo `TimonNetzel/kinneret_reconstruction_laeufe`
@@ -161,7 +170,8 @@ klonen, dann `kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (
 Abschnitt 11). Eine neue App-Ansicht: App-Konzept Abschnitt 10; ein exportierbares Diagramm: `KR.plot`, Abschnitt 12.
 
 **Wo steht was:** Ergebnisse und Befunde im Prüfbericht (`docs/pruefbericht.md`); App: Schritt 1 Abschnitt 7,
-Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12;
+Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12,
+Schritt 5 Abschnitt 13;
 Abgleich mit dem Paper und der R-Fassung in `docs/abgleich_paper.md`; Entscheidungen und offene Punkte oben.
 
 **Danach:** siehe „Offene Punkte“.

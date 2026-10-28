@@ -48,8 +48,8 @@ configs/*.toml ──kinneret-recon run──▶ results/<lauf>/ (Ketten, ~60 MB
    Konfigurationsfeld, Stufen, Gruppe). Ein neuer Faktor ist ein neuer Eintrag plus Läufe, keine neue
    Ansicht.
 4. **Standort-Register.** Ein Standort ist ein Ordner mit Kerndaten, Altersmodell, Transferfunktion,
-   Koordinaten, Seehöhe und den Einstellungen für den CRU-Prior (heute fest: See Genezareth in
-   `cru.py` und `data/in/`). Die App zeigt einen Standort-Wähler, sobald es mehr als einen gibt.
+   Koordinaten, Seehöhe und den Einstellungen für den CRU-Prior (umgesetzt in Schritt 5, Abschnitt 13:
+   `data/in/standort.toml`). Die App zeigt einen Standort-Wähler, sobald es mehr als einen gibt.
 5. **Overlay-Schnittstelle** (nur vorsehen): CSV mit Alter, Wert, Unsicherheit, Einheit, Quelle; wird
    auf der Zeitachse über die Rekonstruktion gelegt.
 
@@ -363,5 +363,46 @@ von 17,5 × 17 cm). Alle exportierbaren Diagramme in 8,3 und 17,5 cm wurden ange
 `standort_kinneret.json`) sind bei Deuteranopie nur schwach unterscheidbar (simuliert nach Machado et al. 2009:
 ΔE *Med*–*IT* ≈ 12, sonst ≥ 19). Copernicus verlangt Lesbarkeit bei Farbsehschwäche. Möglich: Palette für
 Biome im Standort-Register ändern (z. B. Okabe-Ito: Blaugrün #009E73, Zinnoberrot #D55E00, Gelb #F0E442) oder die
-Biome zusätzlich durch Strichart unterscheiden.
+Biome zusätzlich durch Strichart unterscheiden. Seit Schritt 5 stehen die Farben in `data/in/standort.toml` (Abschnitt
+13); eine neue Palette ist dort ein Eintrag je Biom plus `kinneret-recon app-daten`.
+
+## 13. Umsetzung Schritt 5: Standort-Register (28.10.2026)
+
+**Register.** Ein Standort ist ein Ordner `data/<ordner>/` mit den Eingangsdaten (Altersmodell
+`age_depth_relationship.npz`, Kerndaten `core_data.npz`, Transferfunktion `nnet_fit_params.npz`, CRU-Ausschnitt)
+und einer Beschreibung `standort.toml`. `lade_standorte()` in `katalog.py` liest alle `data/*/standort.toml`; ein
+neuer Standort braucht keine Code-Änderung. Kinneret liegt weiter in `data/in/` (Voreinstellung `Config.data_dir`,
+Original und Tests), damit bleiben `data_dir` in den Einstellungen und alle Fingerabdrücke gleich. Felder:
+
+| Feld | Bedeutung |
+|---|---|
+| `key`, `[name]` | Schlüssel (in `lauf.toml` unter `standort`), Name je `de` und `en` |
+| `lat`, `lon`, `hoehe_m` | Lage (Kinneret: Seemitte) und Seehöhe; Mittelpunkt des Einzugsgebiets und Bezugshöhe der Höhenkorrektur im CRU-Prior |
+| `raster_T`, `raster_P` | Raster der Dichten in den App-Daten (von, bis, Schritt; optional) |
+| `[[biome]]` | je Biom in der Reihenfolge der Kerndaten `label`, `name` und `farbe` (#RRGGBB) |
+| `[cru]` | `datei` (im Ordner), `ausschnitt` (Zellmitten lat/lon), `radius_km`, `kernel`, `alt_radii` (optional) |
+
+**Prüfungen:** Name in beiden Sprachen, Farben als #RRGGBB, eindeutige Biom-Kurznamen und Schlüssel; die Zahl der
+Biome muss zu den Kerndaten passen (`kinneret-recon katalog` meldet sonst einen Fehler je Lauf).
+
+**Verwendung.** `standort_kinneret.json` (Biome mit Farben, Lage, Raster) und die Biom-Kurznamen in `app.json`
+kommen aus dem Register. `cru-prior` und `cru-extract` lesen Lage, Höhe, Ausschnitt, Datei und Einzugsgebiet daraus
+(`--standort`, Standard: der einzige Standort; die übrigen Optionen überschreiben einzelne Werte);
+`cru.PriorSettings.fuer_standort()` tut dasselbe in Python. `cru.py` enthält keine Standortwerte mehr. Die Werte
+des CRU-Priors im Standardlauf bleiben fest in `config.py` (`CRU_PRIOR_50KM`, Teil des Fingerabdrucks); ein Test
+prüft, dass das Register sie reproduziert. `katalog.json` nennt je Standort seinen Standardlauf.
+
+**Noch fest:** Die Abbildungen und der Bericht eines Laufs (`plots.py`, `report.py`, Diagnostik in `pipeline.py`)
+verwenden weiter die Biomnamen und -farben des Papers, damit die Abbildungen des Originals bitgleich bleiben. Für
+einen Standort mit anderen Biomen ist das vor dem ersten Lauf umzustellen.
+
+**App.** Der Standort ergibt sich aus dem gewählten Lauf. Ab zwei Standorten im Katalog erscheint im Kopf ein
+Standort-Wähler statt des Namens; ein Wechsel wählt den Standardlauf des Standorts und leert Vergleiche. Alle
+Lauflisten (Auswahl, Vergleich, Sensitivität, weitere Läufe) zeigen nur Läufe des gewählten Standorts; ohne
+Sensitivitätsreihe zeigt die Ansicht einen Hinweis.
+
+**Geprüft:** Fingerabdrücke aller 27 Läufe unverändert (`kinneret-recon katalog`), `standort_kinneret.json` bitgleich
+(auch als Test), `katalog.json` nur um `standard_lauf` je Standort und den Git-Stand geändert, `app.json` nicht
+berührt. `tools/app_pruefen.js` prüft den Kopf mit einem Standort und mit `--zwei-standorte` den Wähler an einer
+Kopie der App mit einem künstlichen zweiten Standort (in `tests/test_app.py`).
 

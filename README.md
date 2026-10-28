@@ -105,7 +105,9 @@ Alle Läufe der Vergleichsreihe bilden einen Katalog: je Lauf ein Ordner `refere
 Beschreibung `lauf.toml` (Titel und Beschreibung de/en, Konfiguration, Rolle, Basislauf, Faktor und Stufe).
 Die Sensitivitätsfaktoren und ihre Stufen stehen im Faktor-Register (`src/kinneret_recon/katalog.py`).
 Aus den vollständigen Ergebnissen entsteht je Lauf eine kompakte Zusammenfassung `app.json` (< 1 MB) für die
-App (`docs/app_konzept.md`).
+App (`docs/app_konzept.md`). Jeder Lauf gehört zu einem Standort des Standort-Registers: ein Ordner unter `data/`
+mit den Eingangsdaten und einer Beschreibung `standort.toml` (Lage, Seehöhe, Biome mit Farben, CRU-Ausschnitt und
+Einzugsgebiet; Kinneret: `data/in/standort.toml`).
 
 ```bash
 kinneret-recon katalog                 # Katalog anzeigen und prüfen (Stufen, Abweichung vom Basislauf)
@@ -155,7 +157,9 @@ Einstellungen, Konvergenzdiagnostik). Formelzeichen stehen in den Texten in LaTe
 
 Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes
 Einzugsgebiet berechnen; die Voreinstellung ist das Ergebnis für 50 km. Grundlage ist ein Ausschnitt der Levante aus CRU TS 4.07 (Monatswerte 1951–2020,
-0,5°) und CRU CL 2.0 (10′, mit Höhenmodell) in `data/in/cru_levante.npz` (0,5 MB).
+0,5°) und CRU CL 2.0 (10′, mit Höhenmodell) in `data/in/cru_levante.npz` (0,5 MB). Lage, Höhe, Ausschnitt und
+Einzugsgebiet kommen aus dem Standort-Register (`[cru]` in `standort.toml`, Auswahl mit `--standort`); die Optionen
+überschreiben sie.
 
 ```bash
 kinneret-recon cru-prior -r 25 50 100                  # Mittel und Unsicherheit für drei Radien

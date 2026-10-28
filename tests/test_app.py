@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-from kinneret_recon.app_bauen import STATISCH, baue_eine_datei, baue_ordner
+from kinneret_recon.app_bauen import STATISCH, _js, baue_eine_datei, baue_ordner
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -66,6 +66,47 @@ def test_eine_datei_enthaelt_alle_laeufe(eine_datei):
     d = json.loads(gzip.decompress(base64.b64decode(blobs["standard_v3"])))
     assert d == json.loads((ROOT / "reference/laeufe/standard_v3/app.json").read_text(encoding="utf-8"))
     assert eine_datei.stat().st_size < 15e6
+
+
+def _zweiter_standort(ordner: Path, ziel: Path) -> Path:
+    """Kopie der gebauten App mit einem zweiten Standort "zweit" (ein Lauf, Daten wie Kinneret)."""
+    shutil.copytree(ordner, ziel)
+    _, k = _js_daten(ziel / "daten/katalog.js")
+    _, st = _js_daten(ziel / "daten/standort_kinneret.js")
+    _, d = _js_daten(ziel / "daten/laeufe/standard_v3.js")
+    name = {"de": "Zweiter Standort", "en": "Second site"}
+    l = {**next(x for x in k["laeufe"] if x["id"] == "standard_v3"), "id": "zweit_lauf", "standort": "zweit",
+         "rolle": "referenz", "basis": None, "faktor": None, "stufe": None}
+    k["laeufe"].append(l)
+    k["standorte"].append({"key": "zweit", "name": name, "daten": "standort_zweit.json", "standard_lauf": "zweit_lauf"})
+    d.update(id="zweit_lauf", lauf={**d["lauf"], "id": "zweit_lauf", "standort": "zweit"})
+    for name_js, schluessel, inhalt in (("katalog.js", "katalog", k), ("standort_zweit.js", "standort/zweit",
+                                        {**st, "key": "zweit", "name": name}),
+                                        ("laeufe/zweit_lauf.js", "lauf/zweit_lauf", d)):
+        (ziel / "daten" / name_js).write_text(_js(schluessel, inhalt), encoding="utf-8")
+    return ziel / "index.html"
+
+
+def test_katalog_standorte():
+    k = json.loads((ROOT / "reference/app/katalog.json").read_text(encoding="utf-8"))
+    assert [(s["key"], s["standard_lauf"]) for s in k["standorte"]] == [("kinneret", "standard_v3")]
+    assert {l["standort"] for l in k["laeufe"]} == {"kinneret"}
+
+
+def _node_mit_playwright():
+    if shutil.which("node") is None:
+        pytest.skip("node fehlt")
+    if subprocess.run(["node", "-e", "require('playwright')"], capture_output=True).returncode:
+        pytest.skip("Playwright fehlt")
+
+
+def test_standort_waehler_im_browser(ordner, tmp_path):
+    """Ab zwei Standorten erscheint der Waehler; Lauflisten zeigen nur Laeufe des gewaehlten Standorts."""
+    _node_mit_playwright()
+    index = _zweiter_standort(ordner, tmp_path / "app2")
+    r = subprocess.run(["node", str(ROOT / "tools/app_pruefen.js"), "--zwei-standorte", str(index)],
+                       capture_output=True, text=True, timeout=300)
+    assert r.returncode == 0, r.stdout + r.stderr
 
 
 @pytest.mark.skipif(shutil.which("node") is None, reason="node fehlt")

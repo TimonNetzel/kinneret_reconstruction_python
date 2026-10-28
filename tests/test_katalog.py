@@ -10,8 +10,8 @@ import pytest
 
 from kinneret_recon.app_daten import LaufDaten, kennzahlen, schreibe_json, standort_daten, vergleich, zusammenfassung
 from kinneret_recon.config import Config, legacy_config
-from kinneret_recon.katalog import (FAKTOREN, STANDORTE, Lauf, flache_einstellungen, lade_katalog, pruefe_katalog,
-                                    reihenfolge, stufe_von)
+from kinneret_recon.katalog import (FAKTOREN, Lauf, flache_einstellungen, lade_katalog, lade_standorte, pruefe_katalog,
+                                    reihenfolge, standort, stufe_von)
 from kinneret_recon.pipeline import execute, write_toml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,7 +139,7 @@ def test_zusammenfassung_kurzer_lauf(tmp_path, reconstruction):
 
 
 def test_standort_daten():
-    d = standort_daten(STANDORTE["kinneret"], ROOT)
+    d = standort_daten(standort("kinneret", ROOT), ROOT)
     assert len(d["taxa"]["namen"]) == 33 and sum(d["taxa"]["kultur"]) == 3
     assert np.array(d["spektrum_alter"]).shape == (len(d["alter"]), 33)
     np.testing.assert_allclose(np.array(d["spektrum_tiefe"]).sum(axis=1), 1, atol=1e-3)
@@ -152,3 +152,52 @@ def test_flache_einstellungen_loest_prior_auf():
     e = flache_einstellungen(legacy_config(), [1.0, 2.0, 3.0, 4.0])
     assert [e[f"sampler.recent_{k}"] for k in ("temp_mean", "temp_sd", "pann_mean", "pann_sd")] == [1, 2, 3, 4]
     assert "output_dir" not in e and "postprocess.n_threads" not in e
+
+
+def test_standort_register():
+    st = lade_standorte(ROOT)
+    assert list(st) == ["kinneret"]
+    k = st["kinneret"]
+    assert k.data_dir == Config().data_dir == "data/in"
+    assert k.labels == ["Med", "IT", "SA"] and [b.farbe for b in k.biome] == ["#A2CD5A", "#EE8262", "#FFB90F"]
+    assert (k.lat, k.lon, k.elevation_m) == (32.82, 35.59, -212.0)
+    assert k.cru_pfad(ROOT).exists() and k.cru.radius_km == 50.0
+    assert standort(None, ROOT) is not None
+
+
+def test_standort_daten_bitgleich(tmp_path):
+    """Die gesicherten Standortdaten der App entstehen unveraendert aus dem Register."""
+    schreibe_json(standort_daten(standort("kinneret", ROOT), ROOT), tmp_path / "s.json")
+    assert (tmp_path / "s.json").read_bytes() == (ROOT / "reference/app/standort_kinneret.json").read_bytes()
+
+
+def _standort_kopie(tmp_path: Path, ersetze=lambda s: s, ordner: str = "in") -> Path:
+    d = tmp_path / "data" / ordner
+    d.mkdir(parents=True)
+    for f in (ROOT / "data/in").glob("*.npz"):
+        (d / f.name).symlink_to(f)
+    (d / "standort.toml").write_text(ersetze((ROOT / "data/in/standort.toml").read_text(encoding="utf-8")))
+    return tmp_path
+
+
+def test_standort_register_fehler(tmp_path):
+    root = _standort_kopie(tmp_path / "a", lambda s: s.replace('"#EE8262"', '"rot"'))
+    with pytest.raises(ValueError, match="RRGGBB"):
+        lade_standorte(root)
+    root = _standort_kopie(tmp_path / "b")
+    _standort_kopie(root, ordner="zwei")
+    with pytest.raises(ValueError, match="doppelt"):
+        lade_standorte(root)
+    with pytest.raises(ValueError, match="unbekannter Standort"):
+        standort("xyz", ROOT)
+    # Zahl der Biome passt nicht zu den Kerndaten
+    root = _standort_kopie(tmp_path / "c", lambda s: s.split("[[biome]]\nlabel = \"SA\"")[0] +
+                           "[cru]" + s.split("[cru]")[1])
+    (root / "configs").mkdir()
+    (root / "configs/basis.toml").write_text("")
+    d = root / "reference/laeufe/basis"
+    d.mkdir(parents=True)
+    (d / "lauf.toml").write_text('config = "configs/basis.toml"\n[titel]\nde = "x"\nen = "x"\n\n'
+                                 '[beschreibung]\nde = "x"\nen = "x"\n')
+    pr = pruefe_katalog(lade_katalog(root), root)
+    assert any("2 Biome" in e for e in pr["basis"].fehler)

@@ -3,7 +3,7 @@
   "use strict";
   const { $, D, K, Z, t, L, css, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
     dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, umschalter, laufOptionen, stufeLabel,
-    GRUPPEN_FOLGE, F, FT } = KR;
+    GRUPPEN_FOLGE, amStandort, standardLauf, aktuellerStandort, F, FT } = KR;
   const tx = (k) => F(t(k)); // uebersetzter Text als HTML (Formeln gesetzt)
 
 
@@ -12,12 +12,12 @@
   function serie(faktor) {
     const ids = new Set();
     K.laeufe.forEach((l) => {
-      if (l.faktor === faktor) {
+      if (l.faktor === faktor && amStandort(l)) {
         ids.add(l.id);
         if (l.basis) ids.add(l.basis);
       }
     });
-    return K.laeufe.filter((l) => ids.has(l.id) && l.app_json);
+    return K.laeufe.filter((l) => ids.has(l.id) && l.app_json && amStandort(l));
   }
   function stammtVon(id, basis) {
     for (let l = LAEUFE.get(id), n = 0; l && n < 50; l = LAEUFE.get(l.basis), n++) {
@@ -29,8 +29,9 @@
     const ids = new Set(s.map((l) => l.id));
     const wurzeln = s.filter((l) => !l.basis || !ids.has(l.basis));
     const n = (b) => s.filter((l) => stammtVon(l.id, b.id)).length;
-    wurzeln.sort((a, b) => (n(b) - n(a)) || ((b.id === K.standard_lauf) - (a.id === K.standard_lauf)) ||
-      (stammtVon(K.standard_lauf, b.id) - stammtVon(K.standard_lauf, a.id)));
+    const std = standardLauf(aktuellerStandort());
+    wurzeln.sort((a, b) => (n(b) - n(a)) || ((b.id === std) - (a.id === std)) ||
+      (stammtVon(std, b.id) - stammtVon(std, a.id)));
     return wurzeln.length ? wurzeln[0].id : s[0].id;
   }
 
@@ -55,6 +56,7 @@
 
   function sensAuswahl() {
     const s = serie(Z.faktor);
+    Z.extra = Z.extra.filter((id) => LAEUFE.has(id) && amStandort(LAEUFE.get(id)));
     if (!Z.basis || !s.some((l) => l.id === Z.basis)) Z.basis = standardBasis(s);
     if (!Z.auswahl || Z.auswahl.faktor !== Z.faktor || Z.auswahl.basis !== Z.basis) {
       Z.auswahl = { faktor: Z.faktor, basis: Z.basis, laeufe: s.filter((l) => stammtVon(l.id, Z.basis)).map((l) => l.id) };
@@ -66,6 +68,17 @@
   async function zeigeSensitivitaet() {
     const token = ++sensToken;
     faktorOptionen();
+    if (serie(Z.faktor).length < 2) { // Faktor ohne Reihe am Standort: erster vorhandener
+      const o = $("sens-faktor").querySelector("option");
+      if (!o) {
+        ["sens-plot", "sens-diff"].forEach((id) => Plotly.purge($(id)));
+        ["sens-basis", "sens-laeufe", "sens-weitere", "sens-faktor-text"].forEach((id) => { $(id).innerHTML = ""; });
+        $("sens-tabelle").innerHTML = `<caption>${tx("keine_sensitivitaet")}</caption>`;
+        return;
+      }
+      Object.assign(Z, { faktor: o.value, basis: null, auswahl: null });
+      o.selected = true;
+    }
     const s = sensAuswahl();
     const f = FAKTOREN.get(Z.faktor);
     $("sens-faktor-text").innerHTML = F(L(f.beschreibung));

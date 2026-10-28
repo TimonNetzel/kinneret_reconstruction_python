@@ -20,6 +20,14 @@
   };
   const LAEUFE = new Map(K.laeufe.map((l) => [l.id, l]));
   const FAKTOREN = new Map(K.faktoren.map((f) => [f.key, f]));
+  // Standort-Register: Standort eines Laufs und sein Standardlauf (katalog.json, "standorte")
+  const STANDORTE = new Map(K.standorte.map((s) => [s.key, s]));
+  const standardLauf = (key) => {
+    const s = STANDORTE.get(key);
+    if (s && s.standard_lauf && LAEUFE.has(s.standard_lauf)) return s.standard_lauf;
+    const l = K.laeufe.find((x) => x.standort === key && x.app_json);
+    return l ? l.id : K.standard_lauf;
+  };
   const Z = Object.assign({
     sprache: (navigator.language || "de").toLowerCase().startsWith("de") ? "de" : "en",
     thema: "auto", ansicht: "rekonstruktion", lauf: K.standard_lauf, achse: "alter", art: null,
@@ -203,6 +211,13 @@
     ansichten.forEach((a) => { $("ansicht-" + a.key).hidden = a.key !== Z.ansicht; });
   }
   const aktuellerStandort = () => (LAEUFE.get(Z.lauf) || K.laeufe[0]).standort;
+  // Laeufe des gewaehlten Standorts (Auswahllisten, Vergleiche, Sensitivitaet)
+  const amStandort = (l) => l.standort === aktuellerStandort();
+  function waehleStandort(key) {
+    if (key === aktuellerStandort() || !STANDORTE.has(key)) return;
+    Object.assign(Z, { lauf: standardLauf(key), vergleich: [], extra: [], basis: null, auswahl: null });
+    merke();
+  }
 
   function umschalter(id, wert, beiWahl) {
     const el = $(id);
@@ -217,7 +232,7 @@
   function laufOptionen(select, gewaehlt, filter) {
     select.innerHTML = "";
     for (const rolle of ROLLEN_FOLGE) {
-      const ls = K.laeufe.filter((l) => l.rolle === rolle && l.app_json && (!filter || filter(l)));
+      const ls = K.laeufe.filter((l) => l.rolle === rolle && l.app_json && amStandort(l) && (!filter || filter(l)));
       if (!ls.length) continue;
       const grp = document.createElement("optgroup");
       grp.label = FT(L(K.rollen[rolle]));
@@ -226,7 +241,7 @@
       for (const l of ls) {
         const o = document.createElement("option");
         o.value = l.id;
-        o.textContent = (l.id === K.standard_lauf ? "★ " : "") + FT(L(l.titel));
+        o.textContent = (l.id === standardLauf(l.standort) ? "★ " : "") + FT(L(l.titel));
         o.selected = l.id === gewaehlt;
         grp.appendChild(o);
       }
@@ -321,7 +336,8 @@
   // Vergleichslaeufe (gemeinsam fuer mehrere Ansichten): Chips zum Entfernen, Auswahl zum Hinzufuegen
   const MAX_VERGLEICH = 6;
   function vergleichsAuswahl(container, beiAenderung) {
-    Z.vergleich = Z.vergleich.filter((id) => id !== Z.lauf && LAEUFE.has(id) && LAEUFE.get(id).app_json);
+    Z.vergleich = Z.vergleich.filter((id) => id !== Z.lauf && LAEUFE.has(id) && LAEUFE.get(id).app_json &&
+      amStandort(LAEUFE.get(id)));
     container.innerHTML = "";
     const chips = document.createElement("div");
     chips.className = "chips";
@@ -366,8 +382,8 @@
   window.KR = {
     D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
     dunkel, dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
-    aktuellerStandort, umschalter, laufOptionen, gruppeVon, stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten,
-    vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
+    STANDORTE, standardLauf, amStandort, waehleStandort, aktuellerStandort, umschalter, laufOptionen, gruppeVon,
+    stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten, vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
     get druck() { return druck; },
   };
 })();

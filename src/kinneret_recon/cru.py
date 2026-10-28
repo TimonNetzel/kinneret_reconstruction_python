@@ -2,9 +2,10 @@
 
 Grundlage sind die Monatswerte von CRU TS 4.07 (Harris et al., 2020; 0,5 Grad, ``tmp`` und ``pre``) und die
 10-Minuten-Klimatologie CRU CL 2.0 (New et al., 2002) mit ihrem Hoehenmodell. ``extract`` schneidet die
-Levante aus den Rohdateien aus und speichert den Ausschnitt (``data/in/cru_levante.npz``, < 1 MB);
-``recent_prior`` berechnet daraus Mittel und Unsicherheit von T_DJF und P_ANN fuer ein Einzugsgebiet
-(Radius um den See, entfernungsgewichtet).
+Ausschnitt eines Standorts aus den Rohdateien aus und speichert ihn (Kinneret: ``data/in/cru_levante.npz``,
+< 1 MB); ``recent_prior`` berechnet daraus Mittel und Unsicherheit von T_DJF und P_ANN fuer ein Einzugsgebiet
+(Radius um den Standort, entfernungsgewichtet). Lage, Hoehe, Ausschnitt und Einzugsgebiet stehen im
+Standort-Register (``data/<ordner>/standort.toml``, katalog.py); ``PriorSettings.fuer_standort`` uebernimmt sie.
 
 Die Sd des Priors ist als Unsicherheit des Klimas im Einzugsgebiet gemeint, nicht als raeumliche Streuung
 der Gitterzellen. Sie setzt sich aus unabhaengigen Komponenten zusammen (quadratisch addiert):
@@ -30,13 +31,6 @@ from pathlib import Path
 
 import numpy as np
 
-# See Genezareth: Seemitte und mittlerer Seespiegel
-LAKE_LAT = 32.82
-LAKE_LON = 35.59
-LAKE_ELEVATION_M = -212.0
-
-# Ausschnitt (Mittelpunkte der 0,5-Grad-Zellen): deckt Radien bis ~250 km um den See ab
-BOX = (29.0, 36.5, 32.5, 39.5)  # lat_min, lat_max, lon_min, lon_max
 YEARS = (1951, 2020)  # 1951-1960 nur fuer den Dezember 1960 (DJF 1961)
 
 CRU_TS_URL = "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.07/cruts.2304141047.v4.07"
@@ -73,7 +67,7 @@ def download(raw_dir: str | Path) -> None:
         tmp.rename(target)
 
 
-def _read_ts(raw: Path, var: str, box=BOX):
+def _read_ts(raw: Path, var: str, box):
     from scipy.io import netcdf_file
 
     fields, stns, lat, lon = [], [], None, None
@@ -108,15 +102,16 @@ def _read_cl(path: Path, n_values: int, box) -> tuple[np.ndarray, np.ndarray]:
     return a[:, :2], a[:, 2:]
 
 
-def extract(raw_dir: str | Path, out_path: str | Path) -> Path:
-    """Levante-Ausschnitt aus den Rohdateien in ``raw_dir`` als npz speichern."""
+def extract(raw_dir: str | Path, out_path: str | Path, box: tuple[float, float, float, float]) -> Path:
+    """Ausschnitt box (Zellmitten: lat_min, lat_max, lon_min, lon_max) aus den Rohdateien in ``raw_dir`` als npz
+    speichern."""
     raw = Path(raw_dir)
-    lat, lon, tmp, stn_tmp = _read_ts(raw, "tmp")
-    lat_p, lon_p, pre, stn_pre = _read_ts(raw, "pre")
+    lat, lon, tmp, stn_tmp = _read_ts(raw, "tmp", box)
+    lat_p, lon_p, pre, stn_pre = _read_ts(raw, "pre", box)
     if not (np.array_equal(lat, lat_p) and np.array_equal(lon, lon_p)):
         raise ValueError("tmp- und pre-Raster passen nicht zusammen")
     # CRU CL 2.0 auf ein regelmaessiges 10'-Raster bringen (nur Landzellen sind in den Dateien)
-    box10 = (BOX[0] - 0.25, BOX[1] + 0.25, BOX[2] - 0.25, BOX[3] + 0.25)
+    box10 = (box[0] - 0.25, box[1] + 0.25, box[2] - 0.25, box[3] + 0.25)
     ll_e, elv = _read_cl(raw / "grid_10min_elv.dat.gz", 1, box10)
     ll_t, t10 = _read_cl(raw / "grid_10min_tmp.dat.gz", 12, box10)
     ll_p, p10 = _read_cl(raw / "grid_10min_pre.dat.gz", 24, box10)  # 12 Mittel, 12 Variationskoeffizienten
@@ -199,10 +194,9 @@ def kernel_weight(d: np.ndarray, radius_km: float, kernel: str) -> np.ndarray:
     return np.where(inside, w, 0.0)
 
 
-def catchment_weights(lat: np.ndarray, lon: np.ndarray, valid: np.ndarray, radius_km: float,
-                      kernel: str = "gauss", center: tuple[float, float] = (LAKE_LAT, LAKE_LON),
-                      n_sub: int = 10) -> np.ndarray:
-    """Gewichte der Gitterzellen fuer das Einzugsgebiet (Summe 1).
+def catchment_weights(lat: np.ndarray, lon: np.ndarray, valid: np.ndarray, radius_km: float, kernel: str,
+                      center: tuple[float, float], n_sub: int = 10) -> np.ndarray:
+    """Gewichte der Gitterzellen fuer das Einzugsgebiet um center (lat, lon) (Summe 1).
 
     Jede Zelle wird in n_sub x n_sub Teilpunkte zerlegt; das Zellgewicht ist die Summe der Kernelgewichte
     der Teilpunkte mal ihrer Flaeche (cos lat). So hat auch ein Radius unter der Zellgroesse einen
@@ -251,8 +245,10 @@ def _lapse(t: np.ndarray, elev: np.ndarray, lapse_rate: float | None, ref_elevat
     return t + lapse_rate / 1000.0 * (elev - ref_elevation)
 
 
-@dataclass
+@dataclass(kw_only=True)
 class PriorSettings:
+    center: tuple[float, float]  # (lat, lon) des Standorts
+    ref_elevation: float  # Bezugshoehe der Hoehenkorrektur [m], Hoehe des Standorts
     radius_km: float = 50.0
     kernel: str = "gauss"
     period: tuple[int, int] = (1961, 1990)
@@ -260,14 +256,21 @@ class PriorSettings:
     target_period: tuple[int, int] | None = (1991, 2020)
     # Hoehenkorrektur von T auf ref_elevation [Grad C/km]; None: keine (Klima am Standort der Vegetation)
     lapse_rate: float | None = None
-    ref_elevation: float = LAKE_ELEVATION_M
-    center: tuple[float, float] = (LAKE_LAT, LAKE_LON)
     # alternative Einzugsgebiete fuer die Repraesentativitaet
     alt_radii: tuple[float, ...] = (25.0, 50.0, 100.0)
     alt_kernels: tuple[str, ...] = KERNELS
     # zusaetzliche Fehlerkomponente: T absolut [Grad C], P relativ zum Mittel
     extra_temp_sd: float = 0.0
     extra_pann_rel_sd: float = 0.0
+
+    @classmethod
+    def fuer_standort(cls, st, **kw) -> "PriorSettings":
+        """Einstellungen eines Standorts (katalog.Standort): Lage, Hoehe und Einzugsgebiet aus dem Register;
+        kw ueberschreibt einzelne Felder."""
+        d = dict(center=(st.lat, st.lon), ref_elevation=st.elevation_m)
+        if st.cru is not None:
+            d.update(radius_km=st.cru.radius_km, kernel=st.cru.kernel, alt_radii=st.cru.alt_radii)
+        return cls(**{**d, **kw})
 
 
 @dataclass
@@ -334,8 +337,7 @@ def _cl2_means(data: CruData, s: PriorSettings) -> tuple[float, float]:
     return float(_area_mean(np.where(valid, t, 0), w)), float(_area_mean(np.where(valid, p, 0), w))
 
 
-def recent_prior(data: CruData, s: PriorSettings | None = None) -> PriorResult:
-    s = s or PriorSettings()
+def recent_prior(data: CruData, s: PriorSettings) -> PriorResult:
     elev = data.elevation()
     t_y, p_y, stn_t, stn_p = seasonal_series(data, *s.period)
     t_y = _lapse(t_y, elev, s.lapse_rate, s.ref_elevation)

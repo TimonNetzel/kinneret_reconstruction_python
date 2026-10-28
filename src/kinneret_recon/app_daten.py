@@ -25,8 +25,8 @@ from scipy.stats import beta, gamma, gaussian_kde, norm
 from . import __version__
 from .config import Config
 from .data import ARBOREAL_TAXA, CULTIVATED_TAXA, Inputs, load_inputs
-from .katalog import (FAKTOREN, GRUPPEN, ROLLEN, STANDORTE, Lauf, Pruefung, Standort, daten_hash,
-                      flache_einstellungen, fingerabdruck, stufe_von)
+from .katalog import (FAKTOREN, GRUPPEN, ROLLEN, Lauf, Pruefung, Standort, daten_hash, flache_einstellungen,
+                      fingerabdruck, lade_standorte, standort, stufe_von)
 from .model import Setup, ap_without, build_setup
 from .postprocess import Results, biome_ratios, densities, reconstruct, reconstruct_mixture
 from .sampler import Posterior
@@ -184,13 +184,12 @@ def _rekonstruktion(setup: Setup, post: Posterior, cfg: Config, st: Standort) ->
 
 def zusammenfassung(lauf: Lauf, daten: LaufDaten, root: Path, pruefung: Pruefung | None = None) -> dict[str, Any]:
     """Kompakte Zusammenfassung eines gerechneten Laufs (Inhalt von app.json)."""
-    from .plots import BIOME_LABELS
     from .report import methods_text
 
     cfg, setup, post, res, inp = daten.config, daten.setup, daten.posterior, daten.results, daten.inputs
-    st = STANDORTE[lauf.standort]
+    st = standort(lauf.standort, root)
     B, K = setup.num_biomes, setup.num_taxa
-    labels = BIOME_LABELS[:B]
+    labels = _biom_labels(st, B)
     dh = daten_hash(root / cfg.data_dir)
     einst = flache_einstellungen(cfg, inp.recent_climate)
     d: dict[str, Any] = {
@@ -314,10 +313,15 @@ def vergleich(d: dict[str, Any], basis: dict[str, Any]) -> dict[str, Any]:
     return out
 
 
+def _biom_labels(st: Standort, num_biomes: int) -> list[str]:
+    if len(st.biome) != num_biomes:
+        raise ValueError(f"Standort {st.key}: {len(st.biome)} Biome in standort.toml, {num_biomes} in den Daten")
+    return st.labels
+
+
 def standort_daten(st: Standort, root: Path) -> dict[str, Any]:
     """Daten des Standorts, die fuer alle Laeufe gleich sind (Taxa, Spektren, Baumpollenkurve, Prior der TF)."""
     from .config import SamplerConfig
-    from .plots import BIOME_COLS, BIOME_LABELS, BIOME_NAMES
 
     inp = load_inputs(root / st.data_dir)
     setup = build_setup(inp, SamplerConfig())
@@ -337,7 +341,8 @@ def standort_daten(st: Standort, root: Path) -> dict[str, Any]:
     return {
         "format": FORMAT, "key": st.key, "name": st.name, "lat": st.lat, "lon": st.lon, "hoehe_m": st.elevation_m,
         "daten_hash": daten_hash(root / st.data_dir),
-        "biome": {"labels": BIOME_LABELS[:B], "namen": BIOME_NAMES[:B], "farben": BIOME_COLS[:B]},
+        "biome": {"labels": _biom_labels(st, B), "namen": [b.name for b in st.biome],
+                  "farben": [b.farbe for b in st.biome]},
         "taxa": {"namen": names, "biom": np.argmax(inp.biomes_assign, axis=1).astype(int).tolist(),
                  "gehoelz": [n in ARBOREAL_TAXA for n in names], "kultur": [n in CULTIVATED_TAXA for n in names]},
         "alter": _r(inp.age, 1), "tiefe": _r(inp.depth, 1), "alter_mittel_tiefe": _r(inp.age_mean, 1),
@@ -382,25 +387,25 @@ def katalog_index(katalog: dict[str, Lauf], pruefungen: dict[str, Pruefung], roo
             if lauf.basis in apps:
                 e["vergleich_basis"] = vergleich(apps[lid], apps[lauf.basis])
         laeufe.append(e)
-    # aktueller Standard: der Lauf mit den Voreinstellungen des Pakets
-    standard = None
+    # Standard je Standort: der Lauf mit den Voreinstellungen des Pakets fuer die Daten des Standorts
+    standorte = {k: s for k, s in lade_standorte(root).items() if any(l.standort == k for l in katalog.values())}
+    standards: dict[str, str] = {}
     for lid, lauf in katalog.items():
-        pr = pruefungen[lid]
-        if pr.einstellungen and pr.fingerabdruck == fingerabdruck(
-                flache_einstellungen(Config(data_dir=STANDORTE[lauf.standort].data_dir), pr.recent_climate),
-                daten_hash(root / STANDORTE[lauf.standort].data_dir)):
-            standard = lid
-            break
+        pr, st = pruefungen[lid], standorte[lauf.standort]
+        if lauf.standort not in standards and pr.einstellungen and pr.fingerabdruck == fingerabdruck(
+                flache_einstellungen(Config(data_dir=st.data_dir), pr.recent_climate), daten_hash(root / st.data_dir)):
+            standards[lauf.standort] = lid
     return {
         "format": FORMAT, "version": __version__, "git": git_revision(root),
-        "standard_lauf": standard, "gruppen": GRUPPEN, "rollen": ROLLEN,
+        "standard_lauf": next((standards[k] for k in standorte if k in standards), None),
+        "gruppen": GRUPPEN, "rollen": ROLLEN,
         "faktoren": [{"key": f.key, "gruppe": f.gruppe, "label": f.label, "beschreibung": f.beschreibung,
                       "felder": list(f.felder),
                       "stufen": [{"key": s.key, "label": s.label,
                                   "werte": {k: list(v) if isinstance(v, tuple) else v for k, v in s.werte.items()}}
                                  for s in f.stufen]} for f in FAKTOREN.values()],
-        "standorte": [{"key": s.key, "name": s.name, "daten": f"standort_{s.key}.json"}
-                      for s in STANDORTE.values() if any(l.standort == s.key for l in katalog.values())],
+        "standorte": [{"key": s.key, "name": s.name, "daten": f"standort_{s.key}.json",
+                       "standard_lauf": standards.get(s.key)} for s in standorte.values()],
         "laeufe": laeufe,
     }
 

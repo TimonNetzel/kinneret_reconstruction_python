@@ -10,13 +10,16 @@ from scipy.io import netcdf_file
 from kinneret_recon import cru
 from kinneret_recon.cli import main
 from kinneret_recon.config import CRU_PRIOR_50KM, Config, SamplerConfig
+from kinneret_recon.katalog import standort
 
 ROOT = Path(__file__).resolve().parents[1]
+ST = standort("kinneret", ROOT)
+SEE = (ST.lat, ST.lon)
 
 
 @pytest.fixture(scope="module")
 def data():
-    return cru.CruData.load(ROOT / "data/in/cru_levante.npz")
+    return cru.CruData.load(ST.cru_pfad(ROOT))
 
 
 def test_weights_sum_and_mask():
@@ -24,16 +27,16 @@ def test_weights_sum_and_mask():
     valid = np.ones((len(lat), len(lon)), bool)
     valid[0, :] = False
     for kernel in cru.KERNELS:
-        w = cru.catchment_weights(lat, lon, valid, 80.0, kernel)
+        w = cru.catchment_weights(lat, lon, valid, 80.0, kernel, SEE)
         assert w.sum() == pytest.approx(1.0)
         assert np.all(w[0] == 0)
         # kleiner Radius: die Zelle mit dem See traegt am meisten
-        w = cru.catchment_weights(lat, lon, valid, 20.0, kernel)
+        w = cru.catchment_weights(lat, lon, valid, 20.0, kernel, SEE)
         i, j = np.unravel_index(np.argmax(w), w.shape)
         assert (lat[i], lon[j]) == (32.75, 35.75)
     # weiter entfernte Zellen erhalten bei groesserem Radius mehr Gewicht
-    w1 = cru.catchment_weights(lat, lon, valid, 50.0)
-    w2 = cru.catchment_weights(lat, lon, valid, 150.0)
+    w1 = cru.catchment_weights(lat, lon, valid, 50.0, "gauss", SEE)
+    w2 = cru.catchment_weights(lat, lon, valid, 150.0, "gauss", SEE)
     assert w2.max() < w1.max()
 
 
@@ -55,7 +58,7 @@ def test_sd_of_mean():
 
 def test_lake_cell_matches_paper(data):
     # kleiner Radius: nur die Zelle am See, Abb. 2c des Papers: T_DJF ~ 11,4 degC, P_ANN ~ 440 mm
-    r = cru.recent_prior(data, cru.PriorSettings(radius_km=10.0))
+    r = cru.recent_prior(data, cru.PriorSettings.fuer_standort(ST, radius_km=10.0))
     assert r.n_cells == 1
     assert r.temp_mean == pytest.approx(11.39, abs=0.01)
     assert r.pann_mean == pytest.approx(440.1, abs=0.5)
@@ -63,7 +66,7 @@ def test_lake_cell_matches_paper(data):
 
 
 def test_prior_components(data):
-    r = cru.recent_prior(data, cru.PriorSettings(radius_km=50.0, extra_pann_rel_sd=0.1))
+    r = cru.recent_prior(data, cru.PriorSettings.fuer_standort(ST, radius_km=50.0, extra_pann_rel_sd=0.1))
     assert set(r.temp_components) == {"zeitmittel", "gebiet", "produkt", "zeitraum", "zusatz"}
     assert r.temp_sd == pytest.approx(np.sqrt(sum(v ** 2 for v in r.temp_components.values())))
     assert r.pann_components["zusatz"] == pytest.approx(0.1 * r.pann_mean)
@@ -72,7 +75,7 @@ def test_prior_components(data):
     # die Unsicherheit ist kleiner als die raeumliche Streuung der bisherigen Methode
     assert r.temp_sd < r.temp_spatial_sd and r.pann_sd < r.pann_spatial_sd
     # Hoehenkorrektur auf den Seespiegel erwaermt
-    rh = cru.recent_prior(data, cru.PriorSettings(radius_km=50.0, lapse_rate=5.5))
+    rh = cru.recent_prior(data, cru.PriorSettings.fuer_standort(ST, radius_km=50.0, lapse_rate=5.5))
     assert rh.temp_mean > r.temp_mean + 2
     assert rh.pann_mean == pytest.approx(r.pann_mean)
 
@@ -80,7 +83,7 @@ def test_prior_components(data):
 def test_cli_writes_config(tmp_path):
     out = tmp_path / "prior.toml"
     cells = tmp_path / "zellen.csv"
-    assert main(["cru-prior", "--cru", str(ROOT / "data/in/cru_levante.npz"), "-r", "50",
+    assert main(["cru-prior", "--cru", str(ST.cru_pfad(ROOT)), "-r", "50",
                  "--toml", str(out), "--cells", str(cells)]) == 0
     cfg = Config.from_toml(out)
     assert cfg.sampler.recent_temp_mean == pytest.approx(11.09, abs=0.05)
@@ -123,11 +126,11 @@ def test_extract_synthetic(tmp_path):
     with gzip.open(raw / "grid_10min_pre.dat.gz", "wt") as f:
         f.writelines(f"{a:9.3f}{b:9.3f}" + "".join(f"{10.0:7.1f}" for _ in range(12))
                      + "".join(f"{50.0:7.1f}" for _ in range(12)) + "\n" for a, b in ll)
-    out = cru.extract(raw, tmp_path / "ausschnitt.npz")
+    out = cru.extract(raw, tmp_path / "ausschnitt.npz", ST.cru.ausschnitt)
     d = cru.CruData.load(out)
     assert d.tmp.shape == (70, 12, len(lat), len(lon))
     np.testing.assert_allclose(d.elv10[np.isfinite(d.elv10)], 100.0)
-    r = cru.recent_prior(d, cru.PriorSettings(radius_km=50.0))
+    r = cru.recent_prior(d, cru.PriorSettings.fuer_standort(ST, radius_km=50.0))
     # T_DJF = (11 + 0 + 1) / 3 = 4, P_ANN = 120 mm; konstante Felder: alle Komponenten 0
     assert r.temp_mean == pytest.approx(4.0, abs=1e-5)
     assert r.pann_mean == pytest.approx(120.0, abs=1e-4)
@@ -136,8 +139,10 @@ def test_extract_synthetic(tmp_path):
 
 
 def test_default_prior_is_cru_50km(data):
-    """Die Voreinstellung des Samplers ist der CRU-Prior fuer 50 km (gerundet wie in der TOML-Ausgabe)."""
-    r = cru.recent_prior(data, cru.PriorSettings(radius_km=50.0))
+    """Die Voreinstellung des Samplers ist der CRU-Prior fuer 50 km (gerundet wie in der TOML-Ausgabe), berechnet mit
+    den Einstellungen des Standort-Registers."""
+    assert ST.cru.radius_km == 50.0
+    r = cru.recent_prior(data, cru.PriorSettings.fuer_standort(ST))
     assert CRU_PRIOR_50KM == {"recent_temp_mean": round(r.temp_mean, 2), "recent_temp_sd": round(r.temp_sd, 2),
                               "recent_pann_mean": round(r.pann_mean, 1), "recent_pann_sd": round(r.pann_sd, 1)}
     s = SamplerConfig()
