@@ -31,7 +31,17 @@
 
   const t = (k) => (TX[Z.sprache] && TX[Z.sprache][k]) || TX.de[k] || k;
   const L = (o) => (o ? o[Z.sprache] || o.de || "" : "");
-  const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  // Druckstil fuer den Abbildungsexport (export.js): solange gesetzt, liefern css(), layout(), achse() usw. die Werte
+  // fuer eine Abbildung im Format der Zeitschrift (hell, Masse in pt, Schriftgroesse druck.schrift)
+  let druck = null;
+  const DRUCK_FARBEN = { "--bg": "#ffffff", "--bg2": "#ffffff", "--fg": "#000000", "--muted": "#555555",
+    "--line": "#999999", "--accent": "#1f5f8b", "--warn": "#a4410e", "--plot-grid": "#e3e3e3", "--base": "#000000" };
+  function mitDruck(stil, fn) {
+    const alt = druck;
+    druck = stil;
+    try { return fn(); } finally { druck = alt; }
+  }
+  const css = (v) => (druck ? DRUCK_FARBEN[v] : getComputedStyle(document.documentElement).getPropertyValue(v).trim());
   const locale = () => (Z.sprache === "de" ? "de-DE" : "en-GB");
   const fmt = (x, nd) => (x === null || x === undefined || !isFinite(x) ? "–" :
     Number(x).toLocaleString(locale(), { minimumFractionDigits: nd, maximumFractionDigits: nd }));
@@ -100,6 +110,7 @@
     return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
   }
   function dunkel() {
+    if (druck) return false;
     return Z.thema === "dark" || (Z.thema === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
   }
   function dichteSkala() {
@@ -115,13 +126,30 @@
     responsive: true, displaylogo: false, scrollZoom: false,
     modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "toggleSpikelines", "hoverClosestCartesian",
       "hoverCompareCartesian"],
+    modeBarButtonsToAdd: [{ name: "kr-export", title: "Export", icon: Plotly.Icons.disk,
+      click: (gd) => KR.oeffneExport && KR.oeffneExport(gd) }],
     toImageButtonOptions: { format: "png", scale: 2 },
   };
+  const DRUCK_SCHRIFT = "Helvetica, Arial, 'Liberation Sans', 'Nimbus Sans', sans-serif";
   function achse(extra) {
-    return Object.assign({ gridcolor: css("--plot-grid"), zerolinecolor: css("--line"), linecolor: css("--line"),
+    const a = Object.assign({ gridcolor: css("--plot-grid"), zerolinecolor: css("--line"), linecolor: css("--line"),
       tickcolor: css("--line"), automargin: true }, extra);
+    if (druck) {
+      Object.assign(a, { linecolor: "#000000", tickcolor: "#000000", linewidth: 0.6, showline: true, ticks: "outside",
+        ticklen: 2.5, tickwidth: 0.6, gridwidth: 0.5, zerolinewidth: 0.6, zeroline: !!(extra && extra.zerolinecolor),
+        title: Object.assign({}, a.title, { standoff: 3, font: { size: druck.schrift } }),
+        tickfont: Object.assign({}, a.tickfont, { size: druck.schrift - 1 }) });
+    }
+    return a;
   }
   function layout(extra) {
+    if (druck) {
+      return Object.assign({ paper_bgcolor: "#ffffff", plot_bgcolor: "#ffffff", showlegend: false,
+        separators: Z.sprache === "de" ? ",." : ".,", dragmode: false }, extra, {
+        autosize: false, font: { color: "#000000", family: DRUCK_SCHRIFT, size: druck.schrift },
+        margin: { l: 2, r: 4, t: Math.round(druck.schrift * 1.8), b: 2, pad: 0 },
+      }); // eine Legende (showlegend) setzt export.js als Text ueber das Diagramm
+    }
     return Object.assign({
       autosize: true, paper_bgcolor: css("--bg"), plot_bgcolor: css("--bg"), showlegend: false,
       font: { color: css("--fg"), family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif", size: 12 },
@@ -145,7 +173,7 @@
   // Titel oben links ueber einem Feld; ref/xref z. B. "y2 domain"/"x2 domain" fuer Felder nebeneinander
   function titel(text, ref, xref) {
     return { text, xref: xref || "paper", yref: ref, x: 0, y: 1, xanchor: "left", yanchor: "bottom", showarrow: false,
-      font: { size: 12, color: css("--muted") } };
+      font: { size: 12, color: druck ? "#000000" : css("--muted") } };
   }
   function band(x, lo, hi, color, a, yaxis, name) {
     return [
@@ -162,6 +190,7 @@
     document.querySelectorAll("[data-t]").forEach((el) => { el.innerHTML = F(t(el.dataset.t)); });
     document.querySelectorAll("[data-t-title]").forEach((el) => { el.title = FT(t(el.dataset.tTitle)); });
     $("sprache").textContent = Z.sprache === "de" ? "EN" : "DE";
+    PLOT_CONFIG.modeBarButtonsToAdd[0].title = FT(t("export_titel"));
     document.title = FT(t("app_titel")) + " · " + (D["standort/" + aktuellerStandort()] ? FT(L(D["standort/" + aktuellerStandort()].name)) : "");
   }
   function setzeThema() {
@@ -321,7 +350,16 @@
     }
     return [Z.lauf, ...Z.vergleich];
   }
-  const schmal = (el) => el.clientWidth < 700;
+  const schmal = (el) => (druck ? druck.breite < 12 : el.clientWidth < 700);
+
+  // Diagramm zeichnen und fuer den Export anmelden. baue() liefert [traces, layout] und wird beim Export im Druckstil
+  // erneut aufgerufen (mitDruck); info: name (Dateiname), titel (Text-Schluessel), hoehe(breite_cm) in cm,
+  // laeufe (Lauf-IDs fuer die Kopfzeilen der CSV), csv() -> [{name, titel, spalten, zeilen}]
+  function plot(div, baue, info) {
+    div._krFigur = Object.assign({ baue }, info);
+    const [traces, lay] = baue();
+    return Plotly.react(div, traces, lay, PLOT_CONFIG);
+  }
 
   // Register der Ansichten
   const ansichten = [];
@@ -329,6 +367,7 @@
     D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
     dunkel, dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
     aktuellerStandort, umschalter, laufOptionen, gruppeVon, stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten,
-    vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a),
+    vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
+    get druck() { return druck; },
   };
 })();

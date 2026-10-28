@@ -148,6 +148,50 @@
   </section>
 </main>
 
+<dialog id="export" class="export-dialog" aria-labelledby="export-titel">
+  <form method="dialog" class="export-form">
+    <div class="karte-kopf"><h2 id="export-titel" data-t="export_titel">Abbildung exportieren</h2>
+      <button class="knopf" value="zu" data-t-title="schliessen" title="schließen">✕</button></div>
+    <label class="feld"><span data-t="export_abbildung">Abbildung</span>
+      <select id="export-figur"></select></label>
+    <div class="feld"><span data-t="export_breite">Breite</span>
+      <div class="umschalter" id="export-breite">
+        <button type="button" data-wert="8.3" data-t="breite_1">1 Spalte</button>
+        <button type="button" data-wert="12" data-t="breite_15">12 cm</button>
+        <button type="button" data-wert="17.5" data-t="breite_2">2 Spalten</button>
+      </div></div>
+    <div class="export-zahlen">
+      <label class="feld"><span data-t="export_breite_cm">Breite [cm]</span>
+        <input type="number" id="export-b" min="4" max="17.5" step="0.1" inputmode="decimal"></label>
+      <label class="feld"><span data-t="export_hoehe_cm">Höhe [cm]</span>
+        <input type="number" id="export-h" min="3" max="23" step="0.1" inputmode="decimal"></label>
+      <label class="feld"><span data-t="export_schrift">Schrift [pt]</span>
+        <input type="number" id="export-s" min="6" max="12" step="0.5" inputmode="decimal"></label>
+    </div>
+    <div class="export-vorschau"><img id="export-bild" alt=""></div>
+    <p class="hinweis-klein" id="export-masse"></p>
+    <p class="warn" id="export-fehler" aria-live="polite"></p>
+    <div class="feld"><span data-t="export_als">Abbildung speichern als</span>
+      <div class="knoepfe">
+        <button type="button" class="knopf" id="export-pdf" data-t-title="export_pdf_titel">PDF</button>
+        <button type="button" class="knopf" id="export-svg" data-t-title="export_svg_titel">SVG</button>
+        <button type="button" class="knopf" id="export-png" data-t-title="export_png_titel">PNG</button>
+        <select id="export-dpi" class="dpi"><option value="300">300 dpi</option><option value="600">600 dpi</option></select>
+      </div></div>
+    <div class="feld"><span data-t="export_daten">Daten der Abbildung (CSV)</span>
+      <div class="knoepfe" id="export-csv"></div>
+      <select id="export-csv-format">
+        <option value="int" data-t="csv_int">Komma, Dezimalpunkt</option>
+        <option value="de" data-t="csv_de">Semikolon, Dezimalkomma (Excel)</option>
+      </select>
+      <label class="haken"><input type="checkbox" id="export-kopf"> <span data-t="csv_kopf">Kopfzeilen mit #</span></label>
+    </div>
+    <details class="hilfe"><summary data-t="hilfe">Erläuterung</summary><p data-t="hilfe_export"></p></details>
+  </form>
+</dialog>
+<div id="druck"></div>
+<style id="druck-seite"></style>
+
 <div id="laden" class="laden" hidden data-t="laden">Lade …</div>
 <noscript>Diese App braucht JavaScript. / This app needs JavaScript.</noscript>
 
@@ -160,6 +204,7 @@
 <script src="gewichte.js"></script>
 <script src="transferfunktionen.js"></script>
 <script src="lauf.js"></script>
+<script src="export.js"></script>
 <script src="start.js"></script>
 </body>
 </html>

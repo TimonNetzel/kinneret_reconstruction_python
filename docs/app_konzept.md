@@ -1,7 +1,7 @@
 # App-Konzept: Rekonstruktion und Sensitivitätsanalyse im Browser
 
 Stand: 28.10.2026. Grundlage für die Entwicklung der App. Die Antworten des Autors vom 28.10.2026 sind
-eingearbeitet (Abschnitt 1). Schritte 1 bis 3 sind umgesetzt (Abschnitte 7, 9 und 10). Vor dem Weiterarbeiten außerdem
+eingearbeitet (Abschnitt 1). Schritte 1 bis 4 sind umgesetzt (Abschnitte 7, 9, 10 und 12). Vor dem Weiterarbeiten außerdem
 `docs/projektstand.md` lesen.
 
 ## 1. Rahmen (vom Autor festgelegt)
@@ -79,8 +79,8 @@ ein Backend (Läufe starten) erweiterbar. Alternative: Python-Frameworks wie Pan
 4. **Transferfunktionen:** Klimaräume der Biome, CI-Verhältnis Posterior/Prior.
 5. **Diagnostik** (eingeklappt): R̂, ESS, Akzeptanz, Spuren.
 6. **Lauf-Steckbrief:** Einstellungen, Methodentext (aus `report.py`), Code-Stand, Laufzeit.
-7. **Export:** Abbildungen als PDF/PNG im Copernicus-Format (Spaltenbreiten und Schriftgrößen in der
-   neuen Sitzung anhand der aktuellen Autorenrichtlinien prüfen), CSV der angezeigten Daten.
+7. **Export:** Abbildungen als PDF, SVG und PNG im Copernicus-Format, CSV der angezeigten Daten (umgesetzt in
+   Schritt 4, Abschnitt 12).
 
 **Gestaltung:** eine Farbe je Lauf über alle Ansichten, farbsehschwächen-tauglich; Hell- und
 Dunkelmodus; auf dem Handy eine Spalte mit Reitern, auf dem PC Seitenleiste plus Diagramme;
@@ -180,6 +180,11 @@ App-Daten), `kinneret-recon app-daten` (nur Zusammenfassungen schreiben).
   mit Beschreibung, Stufen je Faktor, Kennzahlen und Vergleich mit dem Basislauf (Niveau, IQR, Korrelation
   der Anomalien wie in Prüfbericht 3.8–3.11).
 
+**Fehler behoben:** `write_toml` ließ `recent_* = None` (Prior aus den Eingangsdaten) weg; seit v3 las
+`Config.from_toml` das als CRU-Prior (betroffen: geschriebene `config.toml` von Läufen mit dem Original-Prior, z. B.
+bei `--from-run` mit `results/legacy`). Jetzt steht dort `"daten"`. Gesicherte `reference/laeufe/*/config.toml` aus
+der Zeit vor v3 ohne `recent_*` bedeuten den Prior aus den Eingangsdaten.
+
 Fehlende Tabellen und Metadaten eines Laufs (bisher nur bei `standard_v3`) kopiert `app-daten` in den
 Katalog-Ordner. Die gesicherten Tabellen der übrigen Läufe bleiben, wie sie im Prüfbericht ausgewertet
 wurden (`--ueberschreiben` ersetzt sie); `app.json` beschreibt den neu gerechneten Lauf mit seinem
@@ -269,8 +274,7 @@ Der Vergleich ist für Gewichte und Transferfunktionen gemeinsam, der gewählte 
 der Sensitivität. Der englische Methodentext entsteht in `report.methods_text(run, "en")`; der deutsche ist
 unverändert.
 
-**Offen für Schritt 4:** Export der Abbildungen im Copernicus-Format und CSV der angezeigten Daten (bisher nur
-PNG über die Plotly-Leiste).
+Der Export der Abbildungen und Daten folgte in Schritt 4 (Abschnitt 12).
 
 ## 11. Formelschreibweise (28.10.2026, vom Autor gewünscht)
 
@@ -293,3 +297,71 @@ Methodentext und den HTML-Bericht.
   Abbildungen des Originals behalten `$\mathregular{T_{DJF}}$` (aufrecht, aber ebenfalls mit Index), damit sie
   bitidentisch zum Originalskript bleiben.
 - **Nicht geändert:** Spaltennamen der Tabellen (`T_DJF_q50` …) und Bezeichner im Code.
+
+## 12. Umsetzung Schritt 4: Abbildungs- und Datenexport (28.10.2026)
+
+**Format von *Climate of the Past*.** Die Seiten von Copernicus (`publications.copernicus.org`,
+`www.climate-of-the-past.net`) waren aus der Cloud-Sitzung nicht erreichbar. Die Werte stammen daher aus dem
+veröffentlichten Paper (`docs/paper/cp-21-357-2025.pdf`, nachgemessen) und aus Suchergebnissen zu den
+Copernicus-Richtlinien:
+
+| Vorgabe | Wert | Quelle |
+|---|---|---|
+| Satzspiegel | zwei Spalten, je 8,5 cm, gesamt 17,7 cm (Seite 21,0 × 27,7 cm) | Paper, Textpositionen |
+| Abbildungsbreite | eine Spalte 8,3 cm; volle Breite 17,5 cm; im Paper 12, 14, 15, 16 und 17,5 cm | Paper (Bildgröße/Auflösung), Copernicus-LaTeX-Vorlage (8,3 und 12 cm) |
+| Mindestbreite, Auflösung | nicht unter 8 cm; 300 dpi | Copernicus, Manuscript preparation (laut Suche) |
+| Dateiformate | PDF, PS, EPS, JPG, PNG, TIF | ebenda |
+| Farben | auch bei Farbsehschwäche richtig lesbar (Prüfung z. B. mit Coblis) | ebenda, Hinweise an Autoren |
+| Mehrteilige Abbildungen | eine Datei je Abbildung, Teile mit (a), (b), … | Copernicus-LaTeX-Vorlage |
+| Schrift | keine feste Vorgabe gefunden; Fließtext im Paper 10 pt, Bildunterschriften etwa 8,5 pt | Paper |
+
+**Gewählt:** Breiten 8,3 / 12 / 17,5 cm zum Antippen, frei 4–17,5 cm; Höhe je Abbildung voreingestellt, frei
+3–23 cm; Schrift serifenlos (Helvetica/Arial), 8 pt, Achsenzahlen und Legende 7 pt (6–12 pt einstellbar); weißer
+Hintergrund, schwarze Achsen mit Teilstrichen nach außen, Linien und Punkte um 40 % bzw. 35 % schmaler als am
+Bildschirm. Bitte vor der Einreichung mit den aktuellen Richtlinien abgleichen.
+
+**Bedienung.** In jeder Ansicht unten in der Seitenleiste „Abbildung oder Daten exportieren“, außerdem das
+Diskettensymbol in der Plotly-Leiste jedes Diagramms. Der Dialog zeigt die sichtbaren Diagramme der Ansicht, Breite,
+Höhe, Schrift und eine Vorschau in Originalgröße (die Einstellungen bleiben gespeichert).
+
+- **PDF:** öffnet den Druckdialog des Browsers; Ziel „Als PDF speichern“. Die Seite hat genau die Größe der
+  Abbildung (`@page`), die Grafik bleibt Vektor, Text bleibt Text, Schriften sind eingebettet; Chrome und Edge
+  schlagen den Dateinamen vor. Auf Android: Chrome → Drucken → „Als PDF speichern“. Kein PDF-Paket nötig
+  (jsPDF und svg2pdf hätten die App vergrößert und können Griechisch und Indizes nur mit eingebetteter Schrift).
+- **SVG:** Vektorgrafik mit physischer Größe (`width="17.5cm"`, `viewBox` in pt), z. B. für Inkscape oder
+  Illustrator und zur Umwandlung in EPS.
+- **PNG:** 300 oder 600 dpi; die Breite in Pixeln ist genau Breite × Auflösung (17,5 cm bei 300 dpi: 2067 px wie
+  im Paper), die Auflösung steht im `pHYs`-Block, damit Word und LaTeX die richtige Größe annehmen.
+- **CSV:** die Daten des Diagramms, je Tabelle ein Knopf; „Komma, Dezimalpunkt“ oder „Semikolon, Dezimalkomma“ (mit
+  BOM für Excel). Kopfzeilen mit `#` nennen Abbildung, Datum und je Lauf Titel, Konfiguration, Fingerabdruck und
+  Code-Stand (abschaltbar; einlesen mit `pandas.read_csv(datei, comment="#")`). Spaltennamen ohne Formelsatz
+  (`T_DJF_q50`, `alter_cal_a_bp`).
+
+| Ansicht | Diagramm | CSV |
+|---|---|---|
+| Rekonstruktion | T, P, Biome, Baumpollen; Detail: Verteilung, Biome, Spektrum | Quantile von T und P (gezeigte Rekonstruktion), Biomanteile, AP; bei der Mischverteilung auch die Dichte (lang); Detail: Dichten und Quantile, Biome, ganzes Spektrum |
+| Sensitivität | Median, Differenz zur Basis (mit Legende) | Kurven je Lauf (Spalten mit Lauf-ID) und die Kennzahlentabelle |
+| Taxa-Gewichte | Gewichte (Legende bei Vergleich) | Quantile je Lauf und Taxon mit Prior-Quantilen |
+| Transferfunktionen | Klimaräume, CI-Verhältnis | Posterior und Prior von T und P, Trunkierung, CI je Lauf und Biom |
+| Lauf | Kalibrierung, Spur, R̂/ESS (nur bei offener Diagnostik) | Kurven Posterior/Prior, Spuren je Kette, Diagnostik-Tabelle |
+
+**Umsetzung.** Jede Ansicht zeichnet ihre Diagramme mit `KR.plot(div, baue, info)`: `baue()` liefert Spuren und
+Layout, `info` Dateiname, Titel, Voreinstellung der Höhe, Läufe und `csv()`. Für den Export ruft `export.js`
+`baue()` erneut im **Druckstil** auf (`KR.mitDruck`): `css()` liefert dann helle Druckfarben, `layout()`, `achse()`
+und `titel()` setzen Maße in pt (1 Einheit = 1 pt), Schriftgrößen, Achsen und Ränder; schmale Abbildungen ordnen
+die Transferfunktionen wie am Handy untereinander an. Die Legende setzt `export.js` als Textzeilen über das
+Diagramm (Plotlys Legende ist für 8,3 cm zu sperrig). **Ein neues Diagramm** ist exportierbar, sobald es mit
+`KR.plot` gezeichnet wird; im Druckstil abweichende Teile fragen `KR.druck` ab (z. B. Legende an, Markierung des
+gewählten Alters aus).
+
+**Geprüft** (`tools/app_pruefen.js`, in `tests/test_app.py`): in allen acht Kombinationen (Ordner/eine Datei, Handy/PC,
+hell/dunkel) Dialog und Vorschau in jeder Ansicht, SVG 17,5 cm mit weißem Hintergrund auch im Dunkelmodus, PNG mit
+2067 px und 300 dpi, CSV mit 181 Zeilen und Kopfzeilen, ohne Netzanfragen; am PC zusätzlich der PDF-Weg (eine Seite
+von 17,5 × 17 cm). Alle exportierbaren Diagramme in 8,3 und 17,5 cm wurden angesehen.
+
+**Offen (Entscheidung des Autors):** Die Biomfarben aus dem Paper (*Med* #A2CD5A, *IT* #EE8262, *SA* #FFB90F,
+`standort_kinneret.json`) sind bei Deuteranopie nur schwach unterscheidbar (simuliert nach Machado et al. 2009:
+ΔE *Med*–*IT* ≈ 12, sonst ≥ 19). Copernicus verlangt Lesbarkeit bei Farbsehschwäche. Möglich: Palette für
+Biome im Standort-Register ändern (z. B. Okabe-Ito: Blaugrün #009E73, Zinnoberrot #D55E00, Gelb #F0E442) oder die
+Biome zusätzlich durch Strichart unterscheiden.
+

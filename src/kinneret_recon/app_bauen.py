@@ -26,7 +26,7 @@ from .katalog import KATALOG_DIR
 QUELLE = Path(__file__).parent / "app"
 # Skripte in der Reihenfolge von index.html; die Reihenfolge der Ansichten ist die der Reiter
 SKRIPTE = ("vendor/plotly-cartesian.min.js", "i18n.js", "kern.js", "rekonstruktion.js", "sensitivitaet.js",
-           "gewichte.js", "transferfunktionen.js", "lauf.js", "start.js")
+           "gewichte.js", "transferfunktionen.js", "lauf.js", "export.js", "start.js")
 STATISCH = ("index.html", "style.css", "manifest.webmanifest", "icon.svg", "vendor/LICENSE-plotly.txt", *SKRIPTE)
 
 

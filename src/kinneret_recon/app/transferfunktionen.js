@@ -27,8 +27,33 @@
     tabelle(daten[0], st);
   }
 
+  // CSV (fuer beide Diagramme): je Lauf und Biom Posterior und Prior von T und P, Trunkierung, CI-Verhaeltnis
+  function csv(ids, daten, st) {
+    const qs = ["q2_5", "q25", "q50", "q75", "q97_5"];
+    const zeilen = [];
+    ids.forEach((id, r) => {
+      const tf = daten[r].transferfunktionen;
+      st.biome.labels.forEach((b, k) => zeilen.push([id, b, ...["T", "P"].flatMap((v) => [
+        ...qs.map((q) => tf[v].posterior[q][k]), ...qs.map((q) => tf[v].prior[q][k]), tf[v].grenzen[k][0],
+        tf[v].grenzen[k][1], tf[v].ci_posterior[k], tf[v].ci_prior[k], tf[v].ci_verhaeltnis[k]])]));
+    });
+    const spalten = ["lauf", "biom", ...["T_DJF", "P_ANN"].flatMap((v) => [...qs.map((q) => `${v}_posterior_${q}`),
+      ...qs.map((q) => `${v}_prior_${q}`), `${v}_trunkierung_unten`, `${v}_trunkierung_oben`, `${v}_ci95_posterior`,
+      `${v}_ci95_prior`, `${v}_ci_verhaeltnis`])];
+    return [{ name: "transferfunktionen", titel: "ansicht_transferfunktionen", spalten, zeilen,
+      kopf: ids.map((id, r) => `prior-referenz ${id}: ${daten[r].transferfunktionen.prior_referenz}`) }];
+  }
+
   function zeichneRaeume(ids, daten, st) {
     const div = $("tf-plot");
+    div.style.height = schmal(div) ? "1050px" : "";
+    KR.plot(div, () => baueRaeume(ids, daten, st, div), {
+      name: `${ids[0]}_transferfunktionen`, titel: "ansicht_transferfunktionen", laeufe: ids,
+      hoehe: (b) => (b < 12 ? 19 : b < 15 ? 6.5 : 7.5), csv: () => csv(ids, daten, st),
+    });
+  }
+
+  function baueRaeume(ids, daten, st, div) {
     const B = st.biome.labels.length, eng = schmal(div);
     const gT = daten[0].rekonstruktion.raster.T, gP = daten[0].rekonstruktion.raster.P;
     const traces = [], shapes = [], ann = [];
@@ -38,7 +63,8 @@
       const dom = (b0) => [b0 / B + (b0 ? 0.03 : 0), (b0 + 1) / B - (b0 < B - 1 ? 0.03 : 0)];
       lay["xaxis" + (b ? b + 1 : "")] = achse({ domain: eng ? [0, 1] : dom(b), anchor: sy, range: T_BEREICH,
         title: { text: eng && b < B - 1 ? "" : tx("T") } });
-      lay["yaxis" + (b ? b + 1 : "")] = achse({ domain: eng ? zeilen(Array(B).fill(1), 0.09)[b] : [0, 0.9], anchor: sx, range: P_BEREICH,
+      lay["yaxis" + (b ? b + 1 : "")] = achse({ domain: eng ? zeilen(Array(B).fill(1), 0.09)[b] : [0, KR.druck ? 1 : 0.9],
+        anchor: sx, range: P_BEREICH,
         title: { text: !eng && b ? "" : tx("P") } });
       ann.push(titel(`(${"abc"[b]}) ${st.biome.namen[b]}`, sy + " domain", sx + " domain"));
       // Posterior des Hauptlaufs als Flaeche
@@ -47,7 +73,7 @@
       // Prior der TF: Pr(Biom | Klima) = 0,5
       traces.push({ type: "contour", x: gT, y: gP, z: st.tf_prior_dichte[b], xaxis: sx, yaxis: sy, showscale: false,
         contours: { start: 50, end: 50, size: 1, coloring: "none" }, line: { color: css("--fg"), width: 1.5, dash: "dash" },
-        hoverinfo: "skip", name: tx("tf_prior") });
+        hoverinfo: "skip", name: tx("tf_prior"), showlegend: b === 0 });
       ids.forEach((id, r) => {
         const tf = daten[r].transferfunktionen, c = farbe(id);
         if (r > 0) {
@@ -59,7 +85,7 @@
           marker: { color: c, size: 8, line: { color: css("--bg"), width: 1 } },
           error_x: { type: "data", symmetric: false, array: [tq.q97_5[b] - tq.q50[b]], arrayminus: [tq.q50[b] - tq.q2_5[b]], color: c, thickness: 1 },
           error_y: { type: "data", symmetric: false, array: [pq.q97_5[b] - pq.q50[b]], arrayminus: [pq.q50[b] - pq.q2_5[b]], color: c, thickness: 1 },
-          name: L(LAEUFE.get(id).titel),
+          name: F(L(LAEUFE.get(id).titel)), showlegend: b === 0,
           hovertemplate: `${F(L(LAEUFE.get(id).titel))}<br>${tx("T_kurz")} %{x:.1f} °C<br>${tx("P_kurz")} %{y:.0f} mm<extra></extra>` });
         if (r === 0) {
           const [t0, t1] = tf.T.grenzen[b], [p0, p1] = tf.P.grenzen[b];
@@ -68,32 +94,37 @@
         }
       });
     }
-    div.style.height = eng ? "1050px" : "";
-    Plotly.react(div, traces, layout(Object.assign({ hovermode: "closest", shapes, annotations: ann,
-      margin: { l: 60, r: 14, t: 30, b: 44 } }, lay)), PLOT_CONFIG);
+    return [traces, layout(Object.assign({ hovermode: "closest", shapes, annotations: ann,
+      showlegend: !!KR.druck && ids.length > 1, margin: { l: 60, r: 14, t: 30, b: 44 } }, lay))];
   }
 
   function zeichneCi(ids, daten, st) {
+    KR.plot($("tf-ci"), () => baueCi(ids, daten, st), {
+      name: `${ids[0]}_ci_verhaeltnis`, titel: "ci_verhaeltnis", laeufe: ids, hoehe: (b) => (b < 10 ? 5.5 : 6),
+      csv: () => csv(ids, daten, st),
+    });
+  }
+
+  function baueCi(ids, daten, st) {
     const traces = [];
     ids.forEach((id, r) => {
       const tf = daten[r].transferfunktionen, name = L(LAEUFE.get(id).titel);
       ["T", "P"].forEach((v, k) => traces.push({
         type: "bar", x: st.biome.labels, y: tf[v].ci_verhaeltnis, xaxis: k ? "x2" : "x", yaxis: k ? "y2" : "y",
-        marker: { color: farbe(id) }, name, offsetgroup: String(r),
+        marker: { color: farbe(id) }, name: F(name), offsetgroup: String(r), showlegend: k === 0,
         hovertemplate: `${F(name)}<br>${tx(v + "_kurz")} %{x}: %{y:.2f}<extra></extra>`,
       }));
     });
     const ymax = Math.max(1.1, ...traces.map((tr) => Math.max(...tr.y))) * 1.05;
     const eins = (ref) => ({ type: "line", xref: ref + " domain", yref: ref === "x" ? "y" : "y2", x0: 0, x1: 1, y0: 1, y1: 1,
       line: { color: css("--muted"), width: 1, dash: "dash" } });
-    Plotly.react($("tf-ci"), traces, layout({
-      barmode: "group", hovermode: "closest", shapes: [eins("x"), eins("x2")],
-      annotations: [titel(tx("ci_verhaeltnis") + " · " + tx("T_kurz"), "y domain", "x domain"),
-        titel(tx("ci_verhaeltnis") + " · " + tx("P_kurz"), "y2 domain", "x2 domain")],
+    return [traces, layout({
+      barmode: "group", hovermode: "closest", showlegend: !!KR.druck && ids.length > 1, shapes: [eins("x"), eins("x2")],
+      annotations: [titel("(a) " + tx("T_kurz"), "y domain", "x domain"), titel("(b) " + tx("P_kurz"), "y2 domain", "x2 domain")],
       xaxis: achse({ domain: [0, 0.47] }), xaxis2: achse({ domain: [0.53, 1], anchor: "y2" }),
-      yaxis: achse({ range: [0, ymax], domain: [0, 0.88] }),
-      yaxis2: achse({ range: [0, ymax], anchor: "x2", domain: [0, 0.88] }),
-    }), PLOT_CONFIG);
+      yaxis: achse({ range: [0, ymax], domain: [0, KR.druck ? 1 : 0.88], title: { text: tx("ci_verhaeltnis") } }),
+      yaxis2: achse({ range: [0, ymax], anchor: "x2", domain: [0, KR.druck ? 1 : 0.88] }),
+    })];
   }
 
   function tabelle(d, st) {

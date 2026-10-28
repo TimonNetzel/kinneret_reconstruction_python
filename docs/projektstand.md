@@ -37,7 +37,8 @@ Rahmen (vom Autor festgelegt):
 | App 1 | Lauf-Katalog, Faktor-Register, kompakte Zusammenfassungen, Batch-Befehl; alle Läufe neu gerechnet | ✅ `docs/app_konzept.md` Abschnitt 7 |
 | App 2 | App-Grundgerüst (statisch, offline, responsiv, de/en) mit Rekonstruktion und Sensitivität | ✅ `kinneret-recon app`, App-Konzept Abschnitt 9 |
 | App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | ✅ App-Konzept Abschnitt 10 |
-| App 4 | Abbildungsexport im Copernicus-Format, CSV | offen |
+| App 4 | Abbildungsexport im Copernicus-Format (PDF, SVG, PNG), CSV | ✅ App-Konzept Abschnitt 12 |
+| App 5 | Standort-Register (Kinneret als erster Standort) | offen |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -82,30 +83,27 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | Formelzeichen in LaTeX-Schreibweise mit echten Indizes in App, Methodentext und Bericht ($T_\mathrm{DJF}$ statt T_DJF; vom Autor gewünscht, App-Konzept Abschnitt 11); Methodentext auch als LaTeX kopierbar |
 | 28.10.2026 | App offline-fähig: Ordner per Doppelklick (PC), eine HTML-Datei fürs Android-Handy, PWA über localhost/HTTPS; Technik statische Web-App mit Plotly.js (vom Autor festgelegt, App-Konzept Abschnitt 8) |
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
+| 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
-## Offene Punkte (nächste Sitzung)
+## Offene Punkte
 
-1. **Antworten des Autors zum Abgleich (27.10.2026) eingearbeitet**, siehe Prüfbericht 3.8:
-   - Befund 12: beide Varianten umgesetzt, Empfehlung Mittelwert.
-   - Befund 14: Autor weiß es nicht mehr. N_t als Prior getestet; Empfehlung: nur Vorschlag.
-   - Befund 15: getestet, kein Unterschied; Beta(3; 3) bleibt.
-   - CRU-Prior: Mittel mehrerer Levante-Gitterpunkte. Bewertet; bestimmt das absolute Niveau.
-   - Befund 13: Die Paper-Ergebnisse stammen aus der R-Fassung, Befund 13 betrifft nur Python.
+Erledigte Punkte (Antworten des Autors zu Befund 12, 14 und 15, CRU-Prior, hierarchischer Prior, R-Fassung) stehen in
+Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entscheidungen“.
 
-   **R-Fassung geprüft** (`TimonNetzel/kinneret_reconstruction_R`, `docs/abgleich_paper.md`
-   Abschnitt 5): gleicher C++-Kern und gleiche Daten. Befund 1 betrifft damit die Ergebnisse des
-   Papers direkt, und Befund 13 gilt auch für R.
-
-   **CRU-Prior aus einem festgelegten Einzugsgebiet: erledigt** (27.10.2026, Prüfbericht 3.9), seit
-   v3 Standard. **Noch offen:** ob ein Zusatzfehler für den Niederschlag eingehen soll
-   (`kinneret-recon cru-prior -r 50 --extra-pann-rel-sd 0.1`: 522 ± 67 mm).
-2. ~~Standard auf den hierarchischen Prior umstellen~~: erledigt (v3, Prüfbericht 3.10).
-3. **Tag `v1.0-paper`:** Er ist nicht mehr nötig. `v0.1.0` enthält denselben Code (Unterschied nur
-   `LICENSE.md`) und entspricht der Zenodo-Version des Papers.
-4. **Laufzeit des Standardlaufs (v3):** 11 min. Der Prior-Referenzlauf (nur für das CI-Verhältnis der
-   Transferfunktionen) nimmt die Hälfte davon ein und ließe sich kürzen, z. B. auf 2 Mio. Iterationen.
-5. **Später:** Training der Transferfunktion, weitere Standorte.
+1. **Zusatzfehler für den Niederschlag im CRU-Prior?** (`kinneret-recon cru-prior -r 50 --extra-pann-rel-sd 0.1`:
+   522 ± 67 mm statt 522 ± 41 mm; Entscheidung des Autors)
+2. **Prior-Referenzlauf kürzen:** Er dient nur dem CI-Verhältnis der Transferfunktionen und macht die Hälfte der
+   11 min des Standardlaufs aus; z. B. 2 Mio. Iterationen.
+3. **Biomfarben bei Farbsehschwäche** (App-Konzept Abschnitt 12, „Offen“; Entscheidung des Autors).
+4. **Export-Maße** mit den aktuellen Copernicus-Richtlinien abgleichen (Seiten aus der Cloud-Umgebung bisher nicht
+   erreichbar).
+5. **Befund 13:** Wie entstanden die $R^2$ = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit Beta(0,92; 2,77);
+   der Autor weiß es nicht mehr sicher.
+6. **Tag `v1.0-paper`** ist entbehrlich: `v0.1.0` enthält denselben Code (nur `LICENSE.md` anders) und entspricht
+   der Zenodo-Version des Papers.
+7. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
+   weitere Standorte (nach App Schritt 5).
 
 ## Reproduktion
 
@@ -135,117 +133,44 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026 (dritte Sitzung: App Schritte 1 bis 3, Formelschreibweise), letzter Commit siehe `git log`. Die
-Arbeit der Sitzung ist per Pull Request nach `main` gemergt (vom Autor freigegeben). Alles Nötige steht im Repo;
-aus der alten Sitzung muss nichts übernommen werden.
+Stand 28.10.2026, App Schritt 4 abgeschlossen und per Pull Request #7 nach `main` gemergt. Weiterarbeit in einem
+neuen Branch ab `main`. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt nach Bedarf (Verweise unten).
 
-**Nächster Schritt: App Schritt 4** (`docs/app_konzept.md`, Abschnitt 5): Abbildungsexport im Format von
-*Climate of the Past* (Spaltenbreiten und Schriftgrößen anhand der aktuellen Autorenrichtlinien prüfen) und CSV
-der angezeigten Daten. Danach `kinneret-recon app --eine-datei` und `node tools/app_pruefen.js …`. Schritt 4
-braucht nur die App-Daten im Repo, nicht die Ketten.
+**Nächster Schritt: App Schritt 5, Standort-Register** (Kinneret als einziger Standort). Lesen: App-Konzept
+Abschnitt 2 Punkt 4 und Abschnitt 7. Heute ist der Standort fest verdrahtet in `cru.py`, `katalog.py`
+(Standort-Register), `app_daten.py` und `data/in/`; die App-Daten des Standorts stehen in
+`reference/app/standort_kinneret.json`.
 
-**Ketten im Daten-Repo** (seit 28.10.2026, vom Autor angelegt): Die vollständigen Ketten aller 27 Läufe
-(`posterior.npz`, `prior.npz`; 24 Kettensätze, 719 MB) liegen im privaten Repo
-`TimonNetzel/kinneret_reconstruction_laeufe`, abgelegt nach Fingerabdruck (`ketten/<fingerabdruck>/`, Zuordnung in
-`index.json`). Für Neuauswertungen in einer neuen Sitzung: Repo anhängen und klonen, dann
-`kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (~15 min statt ~2 h Sampling). Neue Ketten mit
-`kinneret-recon ketten sichern ../kinneret_reconstruction_laeufe` ablegen und dort committen (ein Commit je
-Kettensatz, damit jeder Push klein bleibt). Schritt 4 braucht die Ketten nicht.
+- **Fingerabdrücke müssen unverändert bleiben**, sonst findet `batch --ketten` die gesicherten Ketten nicht mehr
+  (~2 h Neurechnen). Ebenso sollen `reference/**/app.json` und `standort_kinneret.json` bitgleich bleiben.
+- Prüfen ohne Neurechnen: `kinneret-recon katalog` (Fingerabdrücke), `kinneret-recon app-daten` + `git diff`,
+  `python3 -m pytest`. Kein `batch`, keine Läufe nötig.
+- Den Standort-Wähler der App nur vorbereiten (er erscheint erst ab zwei Standorten).
+- Biomfarben gehören ins Standort-Register; ob sie sich ändern, ist offen (Offene Punkte, Punkt 3).
 
-**Formelschreibweise:** Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
-Abschnitt 11); neue Texte bitte genauso schreiben.
+**Einrichten (ca. 5 min):** `pip install -e ".[test]"` (baut den C++-Kern), dann `python3 -m pytest`
+(49 Tests, ~4 min; Browser-Test nur mit Node und Playwright). App bauen und prüfen: `kinneret-recon app`,
+`kinneret-recon app --eine-datei`, `node tools/app_pruefen.js results/app/index.html results/kinneret-app.html`.
 
-**Erledigt in dieser Sitzung: App Schritt 3** (`docs/app_konzept.md`, Abschnitt 10)
+**Ketten im Daten-Repo:** Die Ketten aller 27 Läufe liegen im privaten Repo `TimonNetzel/kinneret_reconstruction_laeufe`
+(`ketten/<fingerabdruck>/`, Zuordnung in `index.json`, 719 MB). Nur für Neuauswertungen nötig: Repo anhängen und
+klonen, dann `kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (~15 min statt ~2 h). Neue Ketten mit
+`kinneret-recon ketten sichern ../kinneret_reconstruction_laeufe` ablegen, ein Commit je Kettensatz.
 
-- Logik aufgeteilt in `kern.js` und eine Datei je Ansicht (Register `KR.ansicht`).
-- Ansichten Taxa-Gewichte, Transferfunktionen und Lauf (Steckbrief, Methodentext de/en, Kalibrierung,
-  Einstellungen, Konvergenzdiagnostik).
-- Englischer Methodentext (`report.methods_text(run, "en")`), App-Daten neu geschrieben.
-- Formelschreibweise im LaTeX-Stil überall (Modul `formel.py`, `formel()` in `kern.js`, App-Konzept Abschnitt 11).
+**Konventionen:** Doku auf Deutsch. Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
+Abschnitt 11). Eine neue App-Ansicht: App-Konzept Abschnitt 10; ein exportierbares Diagramm: `KR.plot`, Abschnitt 12.
 
-**Erledigt in dieser Sitzung: App Schritt 2** (`docs/app_konzept.md`, Abschnitte 8 und 9)
+**Wo steht was:** Ergebnisse und Befunde im Prüfbericht (`docs/pruefbericht.md`); App: Schritt 1 Abschnitt 7,
+Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12;
+Abgleich mit dem Paper und der R-Fassung in `docs/abgleich_paper.md`; Entscheidungen und offene Punkte oben.
 
-- Offline-fähige statische App (`src/kinneret_recon/app/`, Plotly.js im Paket), Befehl `kinneret-recon app`
-  (Ordner, `--eine-datei` fürs Android-Handy, `--serve`), Modul `app_bauen.py`, Browser-Test
-  `tools/app_pruefen.js`, Tests `tests/test_app.py`.
-- Ansichten Rekonstruktion (mit Detail je Alter) und Sensitivität, de/en, hell/dunkel, Handy und PC.
+**Danach:** siehe „Offene Punkte“.
 
-**Erledigt in dieser Sitzung: App Schritt 1** (`docs/app_konzept.md`, Abschnitt 7)
+**Cloud-Umgebung:**
 
-- Module `katalog.py` (Lauf-Katalog, Faktor- und Standort-Register, Prüfung, Fingerabdruck) und
-  `app_daten.py` (Zusammenfassungen); Befehle `kinneret-recon katalog`, `batch`, `app-daten`; Tests
-  `tests/test_katalog.py`.
-- 27 Lauf-Beschreibungen `reference/laeufe/*/lauf.toml`, neue Konfigurationen `configs/original.toml`,
-  `configs/n_mixture_v2.toml`, `configs/v3_mixture.toml`, neuer Ordner `reference/laeufe/standard_v3/`.
-- Alle Läufe neu gerechnet (`kinneret-recon batch`), Zusammenfassungen im Repo. 21 von 27 Läufen sind bitgleich
-  mit den gesicherten Tabellen; die übrigen stammen aus älteren Code-Ständen und weichen nur durch die
-  Zufallszahlenfolge ab (≤ 0,06 °C, ≤ 3,1 mm; Mischverteilung v2 ≤ 7,6 mm), `docs/app_konzept.md` Abschnitt 7.
-- Fehler behoben: `write_toml` ließ `recent_* = None` (Prior aus den Eingangsdaten) weg. Seit v3 las
-  `Config.from_toml` das als CRU-Prior; betroffen waren geschriebene `config.toml` von Läufen mit dem
-  Original-Prior, z. B. bei `--from-run` mit `results/legacy`. Jetzt steht dort `"daten"`. Die gesicherten
-  `reference/laeufe/*/config.toml` aus der Zeit vor v3 ohne `recent_*` bedeuten den Prior aus den
-  Eingangsdaten.
-
-**Einrichten (ca. 5 min):**
-
-```bash
-pip install -e ".[test]"   # baut den C++-Kern
-python3 -m pytest          # 48 Tests, ~3 min (Browser-Test nur mit Node und Playwright)
-```
-
-Die Ergebnisordner `results/` sind nicht im Repo. Wer Ketten für Neuauswertungen braucht
-(`--from-run`), rechnet sie neu: `kinneret-recon run` (Standard v3, ~11 min),
-`kinneret-recon run -c configs/standard_v2.toml` (~4 min), `kinneret-recon run --legacy` (~1 min).
-
-**Erledigt (zweite Sitzung): CRU-Prior aus einem festgelegten Einzugsgebiet** (Prüfbericht 3.9)
-
-- Modul `src/kinneret_recon/cru.py`, Befehle `kinneret-recon cru-extract` und `cru-prior`, Tests
-  `tests/test_cru.py`, Ausschnitt `data/in/cru_levante.npz` (CRU TS 4.07 1951–2020 und CRU CL 2.0).
-- Läufe `configs/o_cru_r25.toml`, `o_cru_r50.toml`, `o_cru_r100.toml`; Ergebnisse in
-  `reference/laeufe/o_cru_r*/`, Vergleich in `reference/vergleiche/cru_radius/`
-  (`python tools/anomalien.py standard_aktuell o_cru_r25 o_cru_r50 o_cru_r100`).
-- Die bisherigen Werte 10,74 ± 2,48 °C / 556 ± 135 mm sind Mittel und räumliche Sd von etwa 3–8
-  Zellen im Umkreis von 50–100 km; die genaue Auswahl ist nicht eindeutig bestimmbar.
-
-**Erledigt (zweite Sitzung): Standard v3** (Prüfbericht 3.10, vom Autor festgelegt)
-
-- `SamplerConfig`: `taxa_prior = "hierarchical"`, 8 Mio. / 2 Mio. / 600, Prior des rezenten Klimas
-  `CRU_PRIOR_50KM` (`src/kinneret_recon/config.py`); `configs/standard.toml` = Voreinstellung.
-- Alle Vergleichskonfigurationen schreiben die Werte bis v2 fest (bitgleich geprüft), der alte
-  Standard heißt jetzt `configs/standard_v2.toml`.
-- Referenzlauf `reference/v3-standard/`, Vergleich in `reference/vergleiche/v3/`, Mischverteilung
-  nach Gl. (3) in `reference/laeufe/v3_mixture/` (drei Gipfel beim Niederschlag, Prüfbericht 3.10).
-- Abbildung `independent_proposal_dists` korrigiert (Prior-Kurve von T0, Legende).
-
-**Erledigt (zweite Sitzung): Tests Klima gegen Landnutzung** (Prüfbericht 3.11)
-
-- Optionen `sampler.ap_exclude_taxa` und `sampler.calibration_age_range` (Maske im C++-Kern),
-  `data.ARBOREAL_TAXA`, `data.CULTIVATED_TAXA`; Läufe `configs/p_*.toml`.
-- Offen: Entscheidung des Autors, ob AP ohne Kulturbäume Standard wird.
-
-**Mögliche nächste Schritte:**
-
-0. App nach `docs/app_konzept.md`, weiter mit Schritt 2.
-1. Prior-Referenzlauf kürzen (halbiert die Laufzeit des Standardlaufs, siehe „Offene Punkte“, Punkt 4).
-2. Zusatzfehler für den Niederschlag im CRU-Prior entscheiden (Punkt 1).
-3. Training der Transferfunktion; dabei dieselbe CRU-Version (TS 4.07, 1961–1990, 0,5°) verwenden
-   wie für den Prior.
-
-**Weitere offene Punkte:** siehe „Offene Punkte“ oben, außerdem:
-
-- Befund 13: Wie entstanden die R² = 0,25-Kurven im Paper? Beide Code-Fassungen hängen mit
-  Beta(0,92; 2,77). Der Autor weiß es nicht mehr sicher.
-- Pull Request #1 (Branch → `main`) ist mit Zustimmung des Autors gemergt (27.10.2026).
-
-**Technische Hinweise für die Arbeit in der Cloud-Umgebung:**
-
-- `pgrep -f "<muster>"` findet auch die eigene Warteschleife, deren Befehlszeile das Muster
-  enthält. Deshalb Muster wie `"configs/[x]yz"` verwenden oder auf eine Datei warten.
-- Ausgaben von `kinneret-recon` in Dateien sind gepuffert und erscheinen erst am Ende.
-- Lange Läufe im Hintergrund starten; 4 Ketten × 2 Mio. dauern ~1,5 min Sampling plus ~1,5 min
-  Prior-Referenzlauf plus ~0,5 min Auswertung.
-- Ein Push von Tags ist über den Git-Proxy nicht möglich, Branches schon.
-- In der Cloud-Umgebung zeigt `pytest` auf eine andere Python-Installation ohne NumPy; `python3 -m pytest`
-  verwenden.
-- `kinneret-recon batch` (alle Läufe) dauert ~2 h und sollte im Hintergrund laufen; abgebrochene Läufe
-  rechnet ein erneuter Aufruf nach, fertige erkennt er am Fingerabdruck.
+- `python3 -m pytest` statt `pytest` (anderes Python ohne NumPy).
+- Lange Befehle im Hintergrund; `kinneret-recon` puffert Ausgaben in Dateien bis zum Ende. `pgrep -f "<muster>"`
+  findet die eigene Warteschleife mit, daher Muster wie `"configs/[x]yz"`.
+- Tags lassen sich über den Git-Proxy nicht pushen, Branches schon.
+- Copernicus-Seiten waren nicht erreichbar (für Offene Punkte, Punkt 4, Domains in den Netzwerkeinstellungen
+  freigeben); erreichbar waren `crudata.uea.ac.uk` und `dap.ceda.ac.uk`.

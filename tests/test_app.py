@@ -76,3 +76,13 @@ def test_im_browser(ordner, eine_datei):
     r = subprocess.run(["node", str(ROOT / "tools/app_pruefen.js"), str(ordner / "index.html"), str(eine_datei)],
                        capture_output=True, text=True, timeout=900)
     assert r.returncode == 0, r.stdout + r.stderr
+
+
+def test_export_eingebunden(ordner, eine_datei):
+    """Export (export.js, Dialog, Druckbereich) im Ordner und in der einen Datei, vor start.js geladen."""
+    html = (ordner / "index.html").read_text(encoding="utf-8")
+    assert html.index('src="export.js"') < html.index('src="start.js"')
+    eine = eine_datei.read_text(encoding="utf-8")
+    for teil in ('<dialog id="export"', 'id="druck"', 'id="druck-seite"', "KR.oeffneExport = oeffne"):
+        assert teil in html or teil in (ordner / "export.js").read_text(encoding="utf-8"), teil
+        assert teil in eine, teil

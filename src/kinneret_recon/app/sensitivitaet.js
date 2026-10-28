@@ -137,6 +137,18 @@
   const iqr = (q) => mittel(q.q75.map((x, i) => x - q.q25[i]));
 
   function zeichneSensitivitaet(ids, daten) {
+    const faktor = Z.faktor, baender = !!Z.baender, name = `sensitivitaet_${faktor}_${Z.basis}`;
+    const info = {
+      laeufe: ids, hoehe: (b) => (b < 10 ? 9 : 10),
+      csv: () => [csvKurven(ids, daten, baender), csvTabelle(ids, daten, faktor)],
+    };
+    // beide Diagramme aus einem Aufbau; im Druckstil (Export) neu gebaut
+    const baue = () => baueKurven(ids, daten, baender), bild = baue();
+    KR.plot($("sens-plot"), () => (KR.druck ? baue() : bild)[0], Object.assign({ name, titel: "ansicht_sensitivitaet" }, info));
+    KR.plot($("sens-diff"), () => (KR.druck ? baue() : bild)[1], Object.assign({ name: name + "_differenz", titel: "differenz" }, info));
+  }
+
+  function baueKurven(ids, daten, baender) {
     const x = daten[0].rekonstruktion.alter.x;
     const dom = zeilen([1, 1], 0.08);
     const traces = [], diff = [];
@@ -146,29 +158,59 @@
       const name = L(LAEUFE.get(id).titel);
       ["T", "P"].forEach((v, r) => {
         const q = kurve(d, v), ya = r ? "y2" : "y";
-        if (Z.baender) traces.push(...band(x, q.q25, q.q75, c.startsWith("#") ? c : "#888888", basis ? 0.18 : 0.14, ya, name));
-        traces.push({ x, y: q.q50, yaxis: ya, type: "scatter", mode: "lines", name,
+        if (baender) traces.push(...band(x, q.q25, q.q75, c.startsWith("#") ? c : "#888888", basis ? 0.18 : 0.14, ya, name));
+        traces.push({ x, y: q.q50, yaxis: ya, type: "scatter", mode: "lines", name: F(name), showlegend: r === 0,
           line: { color: c, width: basis ? 3 : 1.8 },
           hovertemplate: `${F(name)}: %{y:.${v === "T" ? 2 : 0}f}<extra></extra>` });
         if (!basis) {
           const b = kurve(daten[0], v).q50;
-          diff.push({ x, y: q.q50.map((y, i) => y - b[i]), yaxis: ya, type: "scatter", mode: "lines", name,
+          diff.push({ x, y: q.q50.map((y, i) => y - b[i]), yaxis: ya, type: "scatter", mode: "lines", name: F(name),
+            showlegend: r === 0,
             line: { color: c, width: 1.8 }, hovertemplate: `${F(name)}: %{y:+.${v === "T" ? 2 : 0}f}<extra></extra>` });
         }
       });
     });
+    const legende = !!KR.druck;
     const xa = achse({ title: { text: tx("alter_achse") }, anchor: "y2" });
-    Plotly.react($("sens-plot"), traces, layout({
-      hovermode: "x", xaxis: xa,
+    return [[traces, layout({
+      hovermode: "x", xaxis: xa, showlegend: legende,
       yaxis: achse({ domain: dom[0], title: { text: tx("T") } }), yaxis2: achse({ domain: dom[1], title: { text: tx("P") } }),
       annotations: [titel("(a) " + tx("T") + " · " + tx("median"), "y domain"), titel("(b) " + tx("P") + " · " + tx("median"), "y2 domain")],
-    }), PLOT_CONFIG);
-    Plotly.react($("sens-diff"), diff, layout({
-      hovermode: "x", xaxis: achse({ title: { text: tx("alter_achse") }, anchor: "y2" }),
+    })], [diff, layout({
+      hovermode: "x", showlegend: legende, xaxis: achse({ title: { text: tx("alter_achse") }, anchor: "y2" }),
       yaxis: achse({ domain: dom[0], title: { text: tx("dT") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
       yaxis2: achse({ domain: dom[1], title: { text: tx("dP") }, zerolinecolor: css("--muted"), zerolinewidth: 1.5 }),
       annotations: [titel("(c) " + tx("dT"), "y domain"), titel("(d) " + tx("dP"), "y2 domain")],
-    }), PLOT_CONFIG);
+    })]];
+  }
+
+  // CSV: Median (und 50 %) von T und P je Lauf und die Differenz zum Basislauf; Spalten mit der Lauf-ID
+  function csvKurven(ids, daten, baender) {
+    const x = daten[0].rekonstruktion.alter.x;
+    const spalten = ["alter_cal_a_bp"], spaltenWerte = [];
+    ids.forEach((id, k) => ["T", "P"].forEach((v) => {
+      const q = kurve(daten[k], v), b = kurve(daten[0], v).q50, gr = v === "T" ? "T_DJF" : "P_ANN";
+      const qs = baender ? ["q25", "q50", "q75"] : ["q50"];
+      qs.forEach((qq) => { spalten.push(`${gr}_${qq}_${id}`); spaltenWerte.push(q[qq]); });
+      if (k) { spalten.push(`delta_${gr}_q50_${id}`); spaltenWerte.push(q.q50.map((y, i) => y - b[i])); }
+    }));
+    return { name: "kurven", titel: "csv_kurven", spalten, zeilen: x.map((a, i) => [a, ...spaltenWerte.map((w) => +w[i].toFixed(4))]),
+      kopf: [`basislauf: ${ids[0]}`, "jeder Lauf mit seiner Standard-Rekonstruktion"] };
+  }
+  function csvTabelle(ids, daten, faktor) {
+    const b = daten[0];
+    const zeilen = ids.map((id, k) => {
+      const d = daten[k], l = LAEUFE.get(id);
+      const tq = kurve(d, "T"), pq = kurve(d, "P"), tb = kurve(b, "T"), pb = kurve(b, "P");
+      const r4 = (v) => (isFinite(v) ? +v.toFixed(4) : "");
+      return [id, KR.FT(L(l.titel)), KR.FT(stufeLabel(l, faktor)), r4(mittel(tq.q50)), r4(mittel(pq.q50)),
+        k ? r4(mittel(tq.q50) - mittel(tb.q50)) : "", k ? r4(mittel(pq.q50) - mittel(pb.q50)) : "",
+        r4(iqr(tq)), r4(iqr(pq)), k ? r4(iqr(tq) / iqr(tb) - 1) : "", k ? r4(iqr(pq) / iqr(pb) - 1) : "",
+        k ? r4(korrelation(tq.q50, tb.q50)) : 1, k ? r4(korrelation(pq.q50, pb.q50)) : 1, d.kennzahlen.ess_min];
+    });
+    return { name: "kennzahlen", titel: "csv_kennzahlen", zeilen, kopf: [`faktor: ${faktor}`, `basislauf: ${ids[0]}`],
+      spalten: ["lauf", "titel", "stufe", "T_niveau", "P_niveau", "delta_T", "delta_P", "T_iqr", "P_iqr",
+        "T_iqr_rel_aenderung", "P_iqr_rel_aenderung", "r_T", "r_P", "ess_min"] };
   }
 
   function sensTabelle(ids, daten) {

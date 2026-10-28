@@ -55,9 +55,33 @@
   }
 
   function zeichneRekonstruktion(d, st, art) {
-    const rk = d.rekonstruktion[Z.achse];
+    const lauf = Z.lauf, ax = Z.achse, detail = rekDetail;
+    const div = $("rek-plot");
+    KR.plot(div, () => baueRekonstruktion(d, st, art, lauf, ax, detail), {
+      name: `${lauf}_rekonstruktion_${ax}`, titel: "ansicht_rekonstruktion", laeufe: [lauf],
+      hoehe: (b) => (b < 10 ? 14 : b < 15 ? 15 : 17),
+      csv: () => csvRekonstruktion(d, st, art, ax),
+    }).then(() => {
+      if (!div._krKlick) {
+        div._krKlick = true;
+        div.on("plotly_click", (ev) => {
+          if (!ev.points || !ev.points.length) return;
+          const xs = D["lauf/" + Z.lauf].rekonstruktion[Z.achse].x;
+          const xv = ev.points[0].x;
+          let best = 0;
+          xs.forEach((v, i) => { if (Math.abs(v - xv) < Math.abs(xs[best] - xv)) best = i; });
+          rekDetail = best;
+          zeigeRekonstruktion();
+        });
+      }
+    });
+  }
+
+  function baueRekonstruktion(d, st, art, lauf, ax, detail) {
+    const rk = d.rekonstruktion[ax];
     const x = rk.x;
-    const farbeLauf = farbe(Z.lauf);
+    const farbeLauf = farbe(lauf);
+    const achsenBereich = {};
     const dom = zeilen([3, 3, 2, 2], 0.05);
     const traces = [];
     const ann = [];
@@ -82,15 +106,15 @@
         achsenBereich[ys[r]] = undefined;
       }
     });
-    const bio = d.biome[Z.achse];
+    const bio = d.biome[ax];
     st.biome.farben.forEach((c, b) => {
       traces.push(...band(x, bio.q25[b], bio.q75[b], c, 0.3, "y3", st.biome.labels[b]));
       traces.push({ x, y: bio.q50[b], yaxis: "y3", type: "scatter", mode: "lines", line: { color: c, width: 2 },
         name: st.biome.labels[b], hovertemplate: `${st.biome.labels[b]} %{y:.2f}<extra></extra>` });
     });
-    const ap = Z.achse === "alter" ? d.ap.alter : d.ap.tiefe;
+    const ap = ax === "alter" ? d.ap.alter : d.ap.tiefe;
     if (d.ap.ausgeschlossen.length) {
-      traces.push({ x, y: Z.achse === "alter" ? st.ap.alter : st.ap.tiefe, yaxis: "y4", type: "scatter", mode: "lines",
+      traces.push({ x, y: ax === "alter" ? st.ap.alter : st.ap.tiefe, yaxis: "y4", type: "scatter", mode: "lines",
         line: { color: css("--muted"), width: 1, dash: "dot" }, name: tx("ap_voll"),
         hovertemplate: `${tx("ap_voll")} %{y:.1f}<extra></extra>` });
     }
@@ -98,7 +122,7 @@
       name: tx("ap"), hovertemplate: `AP %{y:.1f}<extra></extra>` });
 
     const shapes = [];
-    if (Z.achse === "alter" && d.ap.kalibrierung_alter) {
+    if (ax === "alter" && d.ap.kalibrierung_alter) {
       const m = d.ap.kalibrierung_alter;
       let start = null;
       for (let i = 0; i <= m.length; i++) {
@@ -112,49 +136,70 @@
       ann.push({ text: tx("ap_kalibrierung"), xref: "paper", yref: "paper", x: 1, y: dom[3][1], xanchor: "right",
         yanchor: "bottom", showarrow: false, font: { size: 11, color: css("--muted") } });
     }
-    if (rekDetail !== null && rekDetail < x.length) {
-      shapes.push({ type: "line", xref: "x", yref: "paper", x0: x[rekDetail], x1: x[rekDetail], y0: 0, y1: 1,
+    if (detail !== null && detail < x.length && !KR.druck) {
+      shapes.push({ type: "line", xref: "x", yref: "paper", x0: x[detail], x1: x[detail], y0: 0, y1: 1,
         line: { color: css("--accent"), width: 1.5, dash: "dot" } });
     }
     const titelText = (v) => `${v === "T" ? "(a)" : "(b)"} ${tx(v)} · ${tx(art === "mean" ? "mittelwert" : "mischverteilung")}`;
     ann.push(titel(titelText("T"), "y domain"), titel(titelText("P"), "y2 domain"),
-      titel("(c) " + tx("biome") + " · " + st.biome.labels.join(" / "), "y3 domain"), titel("(d) " + tx("ap"), "y4 domain"));
+      titel("(c) " + tx("biome") + " · " + st.biome.labels.map((b, k) => `<span style="color:${st.biome.farben[k]}">■</span> ${esc(b)}`)
+        .join("  "), "y3 domain"), titel("(d) " + tx("ap"), "y4 domain"));
     const lay = layout({
       hovermode: "x", shapes, annotations: ann,
-      xaxis: achse({ title: { text: tx(Z.achse === "alter" ? "alter_achse" : "tiefe_achse") }, anchor: "y4" }),
+      xaxis: achse({ title: { text: tx(ax === "alter" ? "alter_achse" : "tiefe_achse") }, anchor: "y4" }),
       yaxis: achse({ domain: dom[0], title: { text: "°C" }, range: achsenBereich.y }),
       yaxis2: achse({ domain: dom[1], title: { text: "mm" }, range: achsenBereich.y2, rangemode: "tozero" }),
       yaxis3: achse({ domain: dom[2], range: [0, 1], title: { text: tx("anteil") } }),
       yaxis4: achse({ domain: dom[3], title: { text: "%" } }),
     });
     ["yaxis", "yaxis2", "yaxis3", "yaxis4"].forEach((a) => { if (!lay[a].range) delete lay[a].range; });
-    const div = $("rek-plot");
-    Plotly.react(div, traces, lay, PLOT_CONFIG).then(() => {
-      if (!div._krKlick) {
-        div._krKlick = true;
-        div.on("plotly_click", (ev) => {
-          if (!ev.points || !ev.points.length) return;
-          const xs = D["lauf/" + Z.lauf].rekonstruktion[Z.achse].x;
-          const xv = ev.points[0].x;
-          let best = 0;
-          xs.forEach((v, i) => { if (Math.abs(v - xv) < Math.abs(xs[best] - xv)) best = i; });
-          rekDetail = best;
-          zeigeRekonstruktion();
-        });
-      }
-    });
+    return [traces, lay];
   }
-  const achsenBereich = {};
+
+  // CSV: Quantile von T und P (gezeigte Rekonstruktion), Biomanteile und Baumpollenkurve je Alter bzw. Tiefe;
+  // bei der Mischverteilung zusaetzlich ihre Dichte (lang: Alter, Groesse, Wert, Dichte)
+  const QS = ["q2_5", "q25", "q50", "q75", "q97_5"];
+  function csvRekonstruktion(d, st, art, ax) {
+    const rk = d.rekonstruktion[ax], bio = d.biome[ax];
+    const xName = ax === "alter" ? "alter_cal_a_bp" : "tiefe_cm";
+    const spalten = [xName, ...["T_DJF", "P_ANN"].flatMap((v) => [...QS, "mittel"].map((q) => `${v}_${q}`)),
+      ...st.biome.labels.flatMap((b) => QS.map((q) => `biom_${b}_${q}`)), "ap_prozent"];
+    const voll = d.ap.ausgeschlossen.length > 0, kal = ax === "alter" && d.ap.kalibrierung_alter;
+    if (voll) spalten.push("ap_alle_gehoelze_prozent");
+    if (kal) spalten.push("in_kalibrierung");
+    const ap = ax === "alter" ? d.ap.alter : d.ap.tiefe, apVoll = ax === "alter" ? st.ap.alter : st.ap.tiefe;
+    const zeilen = rk.x.map((x, i) => {
+      const z = [x];
+      ["T", "P"].forEach((v) => [...QS, "mittel"].forEach((q) => z.push(rk[art][v][q][i])));
+      st.biome.labels.forEach((_, b) => QS.forEach((q) => z.push(bio[q][b][i])));
+      z.push(ap[i]);
+      if (voll) z.push(apVoll[i]);
+      if (kal) z.push(d.ap.kalibrierung_alter[i]);
+      return z;
+    });
+    const out = [{ name: "quantile", titel: "csv_quantile", zeilen, spalten,
+      kopf: [`rekonstruktion: ${art === "mean" ? "mittelwert" : "mischverteilung"}`] }];
+    if (art === "mixture") {
+      const lang = [];
+      ["T", "P"].forEach((v) => rk.x.forEach((x, i) => d.rekonstruktion.raster[v].forEach((w, j) => {
+        const z = rk.mixture.dichte[v][i][j];
+        if (z > 0) lang.push([x, v === "T" ? "T_DJF" : "P_ANN", w, z]);
+      })));
+      out.push({ name: "dichte", titel: "csv_dichte", spalten: [xName, "groesse", "wert", "dichte"], zeilen: lang,
+        kopf: ["dichte je Zeile auf das Maximum 100 normiert, Werte 0 weggelassen"] });
+    }
+    return out;
+  }
 
   function zeigeDetail(d, st, art, i) {
-    const rk = d.rekonstruktion[Z.achse];
+    const lauf = Z.lauf, ax = Z.achse;
+    const rk = d.rekonstruktion[ax], xs = rk.x[i];
     $("rek-detail").hidden = false;
     $("rek-detail-titel").innerHTML = tx(Z.achse === "alter" ? "detail_alter" : "detail_tiefe").replace("{x}", fmt(rk.x[i], 0));
     $("rek-detail-zu").onclick = () => { rekDetail = null; zeigeRekonstruktion(); };
     const c = farbe(Z.lauf);
     // Verteilung von T und P: Dichte der Mischverteilung, darueber Median, 50 % und 95 % des Mittelwerts
-    const traces = [];
-    ["T", "P"].forEach((v, k) => {
+    const verteilung = () => { const traces = []; ["T", "P"].forEach((v, k) => {
       const xa = k ? "x2" : "x", ya = k ? "y2" : "y";
       const g = d.rekonstruktion.raster[v];
       traces.push({ x: g, y: rk.mixture.dichte[v][i].map((z) => z / 100), xaxis: xa, yaxis: ya, type: "scatter",
@@ -168,7 +213,7 @@
         hovertemplate: `${tx("mittelwert")}: %{x:.${v === "T" ? 2 : 0}f}<extra></extra>` });
       traces.push({ x: [q.q25[i], q.q75[i]], y: [1.12, 1.12], xaxis: xa, yaxis: ya, type: "scatter", mode: "lines",
         line: { color: c, width: 6 }, hoverinfo: "skip" });
-    });
+    }); return traces; };
     const sichtbar = (v) => {
       const g = d.rekonstruktion.raster[v], z = rk.mixture.dichte[v][i], q = rk.mean[v];
       let lo = q.q2_5[i], hi = q.q97_5[i];
@@ -176,17 +221,25 @@
       const pad = (hi - lo) * 0.08 || 1;
       return [lo - pad, hi + pad];
     };
-    Plotly.react($("rek-detail-verteilung"), traces, layout({
+    const name = `${lauf}_${ax}_${fmt(xs, 0).replace(/\D/g, "")}`;
+    const kopf = [`${ax === "alter" ? "alter_cal_a_bp" : "tiefe_cm"}: ${xs}`];
+    KR.plot($("rek-detail-verteilung"), () => [verteilung(), layout({
       margin: { l: 34, r: 10, t: 26, b: 40 },
       xaxis: achse({ domain: [0, 0.46], title: { text: tx("T") }, range: sichtbar("T") }),
       xaxis2: achse({ domain: [0.54, 1], title: { text: tx("P") }, range: sichtbar("P") }),
       yaxis: achse({ range: [0, 1.25], showticklabels: false, title: { text: tx("dichte") } }),
       yaxis2: achse({ range: [0, 1.25], showticklabels: false, anchor: "x2" }),
       annotations: [titel(tx("verteilung"), "paper")],
-    }), PLOT_CONFIG);
+    })], { name: name + "_verteilung", titel: "verteilung", laeufe: [lauf], hoehe: (b) => (b < 10 ? 5 : 6),
+      csv: () => [{ name: "verteilung", titel: "verteilung", kopf,
+        spalten: ["groesse", "wert", "dichte_mischverteilung"],
+        zeilen: ["T", "P"].flatMap((v) => d.rekonstruktion.raster[v].map((w, j) =>
+          [v === "T" ? "T_DJF" : "P_ANN", w, rk.mixture.dichte[v][i][j]])) },
+      { name: "mittelwert", titel: "csv_quantile", kopf, spalten: ["groesse", ...QS],
+        zeilen: ["T", "P"].map((v) => [v === "T" ? "T_DJF" : "P_ANN", ...QS.map((q) => rk.mean[v][q][i])]) }] });
     // Biomanteile: Median mit 95-%-Intervall
-    const bio = d.biome[Z.achse];
-    Plotly.react($("rek-detail-biome"), [{
+    const bio = d.biome[ax];
+    KR.plot($("rek-detail-biome"), () => [[{
       type: "bar", x: st.biome.labels, y: st.biome.labels.map((_, b) => bio.q50[b][i]),
       marker: { color: st.biome.farben },
       error_y: { type: "data", symmetric: false, color: css("--fg"),
@@ -194,17 +247,23 @@
         arrayminus: st.biome.labels.map((_, b) => bio.q50[b][i] - bio.q2_5[b][i]) },
       hovertemplate: "%{x}: %{y:.2f}<extra></extra>",
     }], layout({ margin: { l: 44, r: 10, t: 26, b: 30 }, yaxis: achse({ range: [0, 1], title: { text: tx("anteil") } }),
-      xaxis: achse({}), annotations: [titel(tx("biome"), "paper")] }), PLOT_CONFIG);
+      xaxis: achse({}), annotations: [titel(tx("biome"), "paper")] })], {
+      name: name + "_biome", titel: "biome", laeufe: [lauf], hoehe: () => 6,
+      csv: () => [{ name: "biome", titel: "biome", kopf, spalten: ["biom", ...QS],
+        zeilen: st.biome.labels.map((b, k) => [b, ...QS.map((q) => bio[q][k][i])]) }] });
     // Spektrum: haeufigste Taxa, Farbe nach Biom
-    const sp = (Z.achse === "alter" ? st.spektrum_alter : st.spektrum_tiefe)[i];
+    const sp = (ax === "alter" ? st.spektrum_alter : st.spektrum_tiefe)[i];
     const idx = sp.map((v, k) => k).sort((a, b) => sp[b] - sp[a]).slice(0, 12);
-    Plotly.react($("rek-detail-spektrum"), [{
+    KR.plot($("rek-detail-spektrum"), () => [[{
       type: "bar", orientation: "h", y: idx.map((k) => st.taxa.namen[k]), x: idx.map((k) => sp[k]),
       marker: { color: idx.map((k) => st.biome.farben[st.taxa.biom[k]]) },
       hovertemplate: "%{y}: %{x:.3f}<extra></extra>",
     }], layout({ margin: { l: 10, r: 10, t: 26, b: 34 }, xaxis: achse({ title: { text: tx("anteil") } }),
-      yaxis: achse({ autorange: "reversed", tickfont: { size: 11 } }), annotations: [titel(tx("spektrum"), "paper")] }),
-    PLOT_CONFIG);
+      yaxis: achse({ autorange: "reversed", tickfont: { size: 11 } }), annotations: [titel(tx("spektrum"), "paper")] })], {
+      name: name + "_spektrum", titel: "spektrum", laeufe: [lauf], hoehe: (b) => (b < 10 ? 8 : 7),
+      csv: () => [{ name: "spektrum", titel: "spektrum", kopf, spalten: ["taxon", "biom", "anteil"],
+        zeilen: sp.map((v, k) => k).sort((a, b) => sp[b] - sp[a])
+          .map((k) => [st.taxa.namen[k], st.biome.labels[st.taxa.biom[k]], sp[k]]) }] });
   }
 
   KR.ansicht({

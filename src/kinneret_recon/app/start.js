@@ -19,6 +19,15 @@
       b.onclick = () => { Z.ansicht = a.key; merke(); zeige(); };
       reiter.appendChild(b);
     });
+    // Export in jeder Ansicht (export.js)
+    document.querySelectorAll(".ansicht > .steuerung").forEach((st) => {
+      const b = document.createElement("button");
+      b.className = "knopf export-knopf";
+      b.dataset.t = "export_knopf";
+      b.onclick = () => KR.oeffneExport(null);
+      st.appendChild(b);
+    });
+    KR.exportInit();
     setzeThema();
     setzeTexte();
     $("sprache").onclick = () => { Z.sprache = Z.sprache === "de" ? "en" : "de"; merke(); setzeTexte(); setzeThema(); zeige(); };

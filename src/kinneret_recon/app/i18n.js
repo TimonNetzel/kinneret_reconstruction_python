@@ -148,6 +148,39 @@ window.KR_TEXTE = {
     aus_daten: "aus den Eingangsdaten",
     abweichend_basis: "Zeilen mit Abweichung vom Basislauf sind markiert.",
     sekunden: "s",
+    export_knopf: "Abbildung oder Daten exportieren",
+    export_titel: "Abbildung exportieren",
+    export_abbildung: "Abbildung",
+    export_breite: "Breite (Climate of the Past)",
+    breite_1: "1 Spalte · 8,3 cm",
+    breite_15: "12 cm",
+    breite_2: "2 Spalten · 17,5 cm",
+    export_breite_cm: "Breite [cm]",
+    export_hoehe_cm: "Höhe [cm]",
+    export_schrift: "Schrift [pt]",
+    export_masse: "{b} × {h} cm, Schrift {s} pt; PNG {px} Pixel bei {dpi} dpi",
+    export_als: "Abbildung speichern als",
+    export_pdf_titel: "öffnet den Druckdialog: Ziel „Als PDF speichern“ wählen (Vektorgrafik, Seite = Abbildung)",
+    export_svg_titel: "Vektorgrafik, z. B. für Inkscape oder Illustrator",
+    export_png_titel: "Rastergrafik mit der gewählten Auflösung",
+    export_daten: "Daten der Abbildung (CSV)",
+    export_fehler: "Export fehlgeschlagen",
+    csv_int: "Komma, Dezimalpunkt (international)",
+    csv_de: "Semikolon, Dezimalkomma (Excel deutsch)",
+    csv_kopf: "Kopfzeilen mit # (Lauf, Fingerabdruck, Code-Stand)",
+    csv_quantile: "Quantile",
+    csv_dichte: "Dichte",
+    csv_kurven: "Kurven",
+    csv_kennzahlen: "Kennzahlen (Tabelle)",
+    differenz: "Differenz zum Basislauf",
+    hilfe_export: "Format der Zeitschrift Climate of the Past (Copernicus): Breite 8,3 cm (eine Spalte) bis 17,5 cm " +
+      "(Satzspiegel), Höhe höchstens 23 cm; Rastergrafik mindestens 300 dpi; Farben auch bei Farbsehschwäche " +
+      "unterscheidbar (die Paletten der App sind dafür gewählt). Schrift serifenlos (Helvetica/Arial), Voreinstellung " +
+      "8 pt, Achsenzahlen 1 pt kleiner; Linien und Punkte werden passend verkleinert, der Hintergrund ist immer weiß. " +
+      "PDF: Der Druckdialog öffnet sich; als Ziel „Als PDF speichern“ wählen. Die Seite hat die Größe der Abbildung, " +
+      "Text bleibt Text. SVG: Vektorgrafik zum Nachbearbeiten. PNG: mit eingetragener Auflösung. " +
+      "CSV: die Daten der Abbildung; Zeilen mit # beschreiben Lauf, Fingerabdruck und Code-Stand " +
+      "(in Python: pandas.read_csv(datei, comment=\"#\")).",
   },
   en: {
     app_titel: "Climate reconstruction",
@@ -296,5 +329,38 @@ window.KR_TEXTE = {
     aus_daten: "from the input data",
     abweichend_basis: "Rows differing from the base run are highlighted.",
     sekunden: "s",
+    export_knopf: "Export figure or data",
+    export_titel: "Export figure",
+    export_abbildung: "Figure",
+    export_breite: "Width (Climate of the Past)",
+    breite_1: "1 column · 8.3 cm",
+    breite_15: "12 cm",
+    breite_2: "2 columns · 17.5 cm",
+    export_breite_cm: "Width [cm]",
+    export_hoehe_cm: "Height [cm]",
+    export_schrift: "Font [pt]",
+    export_masse: "{b} × {h} cm, font {s} pt; PNG {px} pixels at {dpi} dpi",
+    export_als: "Save figure as",
+    export_pdf_titel: "opens the print dialog: choose “Save as PDF” (vector graphics, page = figure)",
+    export_svg_titel: "vector graphics, e.g. for Inkscape or Illustrator",
+    export_png_titel: "raster graphics at the chosen resolution",
+    export_daten: "Data of the figure (CSV)",
+    export_fehler: "Export failed",
+    csv_int: "comma, decimal point (international)",
+    csv_de: "semicolon, decimal comma (German Excel)",
+    csv_kopf: "header lines with # (run, fingerprint, code version)",
+    csv_quantile: "Quantiles",
+    csv_dichte: "Density",
+    csv_kurven: "Curves",
+    csv_kennzahlen: "Summary (table)",
+    differenz: "Difference to base run",
+    hilfe_export: "Format of the journal Climate of the Past (Copernicus): width 8.3 cm (one column) to 17.5 cm " +
+      "(text width), height at most 23 cm; raster graphics at least 300 dpi; colours distinguishable with colour vision " +
+      "deficiency (the app's palettes are chosen for this). Sans-serif font (Helvetica/Arial), default 8 pt, tick " +
+      "labels 1 pt smaller; lines and markers are scaled down accordingly, the background is always white. " +
+      "PDF: the print dialog opens; choose “Save as PDF” as destination. The page has the size of the figure, text " +
+      "stays text. SVG: vector graphics for editing. PNG: with the resolution stored in the file. " +
+      "CSV: the data of the figure; lines starting with # describe run, fingerprint and code version " +
+      "(in Python: pandas.read_csv(file, comment=\"#\")).",
   },
 };
