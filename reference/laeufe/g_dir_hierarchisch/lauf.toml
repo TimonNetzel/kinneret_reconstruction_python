@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/g_dir_hierarchisch.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "gewichte_prior"
+stufe = "hierarchisch"
+quelle = "Prüfbericht 3.6"
+
+[titel]
+de = "Prior Dir(α), α hierarchisch"
+en = "Prior Dir(α), hierarchical α"
+
+[beschreibung]
+de = "Standard v2 mit mitgeschätzter Konzentration α der Taxa-Gewichte, log α ~ N(log 1, 1); α mischt langsam, daher 8 Mio. Iterationen je Kette."
+en = "Standard v2 with the concentration α of the taxa weights estimated jointly, log α ~ N(log 1, 1); α mixes slowly, hence 8 million iterations per chain."

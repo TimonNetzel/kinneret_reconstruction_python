@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/c_hastings_gamma.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "b_hastings"
+faktor = "korrekturen"
+stufe = "c"
+quelle = "Prüfbericht 3.4"
+
+[titel]
+de = "C: + exakter Gamma-Prior"
+en = "C: + exact gamma prior"
+
+[beschreibung]
+de = "B plus exakte Momentenanpassung des Gamma-Priors für den rezenten Niederschlag $P_0$ statt Gittersuche."
+en = "B plus exact moment matching of the gamma prior for the recent precipitation $P_0$ instead of a grid search."

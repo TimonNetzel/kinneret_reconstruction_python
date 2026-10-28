@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/h_legacy_r2_075.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "legacy"
+faktor = "r2_prior"
+stufe = "r2_075"
+quelle = "Prüfbericht 3.7"
+
+[titel]
+de = "Original, $R^2$-Prior Mittel 0,75"
+en = "Original, $R^2$ prior mean 0.75"
+
+[beschreibung]
+de = "Original-Sampler mit $R^2$-Prior Beta(2,77; 0,92) wie in der Sensitivitätsrechnung des Papers (Tab. 2)."
+en = "Original sampler with the $R^2$ prior Beta(2.77, 0.92) as in the sensitivity analysis of the paper (Table 2)."

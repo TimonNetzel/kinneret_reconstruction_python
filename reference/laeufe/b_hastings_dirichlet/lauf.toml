@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/b_hastings_dirichlet.toml"
+standort = "kinneret"
+rolle = "validierung"
+basis = "b_hastings"
+faktor = "korrekturen"
+stufe = "b_dirichlet"
+quelle = "Prüfbericht 3.1"
+
+[titel]
+de = "B′: Gegenprobe mit Dirichlet-Vorschlag"
+en = "B′: cross-check with Dirichlet proposal"
+
+[beschreibung]
+de = "Dieselbe Zielverteilung wie B mit dem Dirichlet-Vorschlag des Originals (korrekte Hastings-Korrektur, $\\kappa = 4K^2$, 5 Mio. Iterationen). Muss mit B übereinstimmen."
+en = "The same target distribution as B with the Dirichlet proposal of the original (correct Hastings correction, $\\kappa = 4K^2$, 5 million iterations). Must agree with B."

@@ -25,6 +25,9 @@ kinneret-recon = "kinneret_recon.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+kinneret_recon = ["app/*", "app/vendor/*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-m 'not slow'"

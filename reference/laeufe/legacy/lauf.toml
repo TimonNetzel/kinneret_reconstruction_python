@@ -1,0 +1,15 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/original.toml"
+standort = "kinneret"
+rolle = "referenz"
+faktor = "korrekturen"
+stufe = "original"
+quelle = "Prüfbericht 3.1, Abschnitt 4"
+
+[titel]
+de = "Original (Paper)"
+en = "Original (paper)"
+
+[beschreibung]
+de = "Originalcode des Papers, bitidentisch nachgerechnet: 1 Kette × 1 Mio. Iterationen, Hastings-Korrektur ohne $\\kappa$, Dir(0,5), Prior des rezenten Klimas wie im Paper, Quartile über Kerndichten."
+en = "Original code of the paper, recomputed bit for bit: 1 chain × 1 million iterations, Hastings correction without $\\kappa$, Dir(0.5), prior of the recent climate as in the paper, quartiles from kernel densities."

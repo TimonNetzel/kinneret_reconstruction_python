@@ -12,6 +12,9 @@ from typing import Any
 # Gauss-Gewichtung; Sd = Unsicherheit des Gebietsmittels (kinneret-recon cru-prior -r 50, Pruefbericht 3.9)
 CRU_PRIOR_50KM = {"recent_temp_mean": 11.09, "recent_temp_sd": 0.87,
                   "recent_pann_mean": 521.8, "recent_pann_sd": 41.4}
+# Wert in TOML-Dateien fuer None beim Prior des rezenten Klimas ("aus den Eingangsdaten"); TOML kennt kein None, und
+# ein weggelassener Eintrag bedeutet seit v3 CRU_PRIOR_50KM
+AUS_DATEN = "daten"
 
 
 @dataclass
@@ -109,6 +112,9 @@ class Config:
         for k in ("tf_bound_probs", "ap_exclude_taxa", "calibration_age_range"):
             if sd.get(k) is not None:
                 sd[k] = tuple(sd[k])
+        for k in CRU_PRIOR_50KM:
+            if sd.get(k) == AUS_DATEN:
+                sd[k] = None
         sampler = SamplerConfig(**sd)
         post = PostprocessConfig(**d.pop("postprocess", {}))
         cfg = cls(sampler=sampler, postprocess=post, **d)

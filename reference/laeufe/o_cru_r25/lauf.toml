@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/o_cru_r25.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "klima_prior"
+stufe = "cru_25"
+quelle = "Prüfbericht 3.9"
+
+[titel]
+de = "CRU-Prior 25 km"
+en = "CRU prior 25 km"
+
+[beschreibung]
+de = "Standard v2 mit Prior des rezenten Klimas aus CRU TS 4.07 (1961–1990) für ein Einzugsgebiet von 25 km (11,50 ± 1,23 °C, 480 ± 45 mm; kinneret-recon cru-prior -r 25)."
+en = "Standard v2 with the prior of the recent climate from CRU TS 4.07 (1961–1990) for a 25 km catchment (11.50 ± 1.23 °C, 480 ± 45 mm; kinneret-recon cru-prior -r 25)."

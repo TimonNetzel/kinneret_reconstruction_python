@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/m_cru_eng.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "klima_prior"
+stufe = "eng"
+quelle = "Prüfbericht 3.8"
+
+[titel]
+de = "Gebietsmittel, enge Sd"
+en = "Area mean, narrow sd"
+
+[beschreibung]
+de = "Standard v2 mit Gebietsmittel wie bisher, aber Sd als Unsicherheit des Klimas im Einzugsgebiet (1 °C, 20 %) statt räumlicher Streuung der Gitterpunkte."
+en = "Standard v2 with the area mean as before, but the sd as uncertainty of the climate in the catchment (1 °C, 20 %) instead of the spatial spread of the grid points."

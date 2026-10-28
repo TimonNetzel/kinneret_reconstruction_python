@@ -22,8 +22,12 @@ from .sampler import Posterior  # noqa: E402
 BIOME_NAMES = ["Mediterranean biome", "Irano-Turanian biome", "Saharo-Arabian biome"]
 BIOME_LABELS = ["Med", "IT", "SA"]
 BIOME_COLS = ["#A2CD5A", "#EE8262", "#FFB90F"]
+# Beschriftungen der Original-Abbildungen wie im Paper (aufrecht, mit Index; bitidentisch zum Originalskript)
 T_LABEL = r"$\mathregular{T_{DJF}}$ [°C]"
 P_LABEL = r"$\mathregular{P_{ANN}}$ [mm]"
+# Beschriftungen der neuen Abbildungen (Diagnostik, Vergleiche) in LaTeX-Schreibweise wie in der App
+T_TEX = r"$T_\mathrm{DJF}$ [°C]"
+P_TEX = r"$P_\mathrm{ANN}$ [mm]"
 
 
 def _save(fig, outdir: Path, name: str, formats=("pdf", "png")) -> list[Path]:
@@ -219,12 +223,12 @@ def plot_age_depth(setup: Setup, outdir: Path):
 def plot_traces(post: Posterior, outdir: Path, biome_labels=BIOME_LABELS):
     """Spuren aller Ketten (inkl. Burn-in) fuer die wichtigsten Groessen."""
     B = len(biome_labels)
-    series = [("log target", post.log_target), (r"$R^2$", post.expl_variance), ("T0 [°C]", post.recent_temp),
-              ("P0 [mm]", post.recent_pann)]
+    series = [("log target", post.log_target), (r"$R^2$", post.expl_variance), (r"$T_0$ [°C]", post.recent_temp),
+              (r"$P_0$ [mm]", post.recent_pann)]
     if np.ptp(post.alpha) > 0:
         series.append((r"$\alpha$ (Dir-Prior)", post.alpha))
-    series += [(f"T {lab} [°C]", post.tf_sample[:, :, b]) for b, lab in enumerate(biome_labels)]
-    series += [(f"P {lab} [mm]", post.tf_sample[:, :, B + b]) for b, lab in enumerate(biome_labels)]
+    series += [(rf"$T_\mathrm{{{lab}}}$ [°C]", post.tf_sample[:, :, b]) for b, lab in enumerate(biome_labels)]
+    series += [(rf"$P_\mathrm{{{lab}}}$ [mm]", post.tf_sample[:, :, B + b]) for b, lab in enumerate(biome_labels)]
     series = [s for s in series if np.all(np.isfinite(s[1]))]
     n = len(series)
     fig, axs = plt.subplots(n, 1, figsize=(11, 1.6 * n), sharex=True)
@@ -250,7 +254,7 @@ def plot_rhat(summary: list[dict], outdir: Path):
     axs[0].barh(y, rh, color=np.where(rh > 1.01, "#d62728", "#7f7f7f"))
     axs[0].axvline(1.01, color="k", ls="--", lw=1)
     axs[0].set_xlim(min(0.99, np.nanmin(rh) - 0.005), max(1.05, np.nanmax(rh) + 0.01))
-    axs[0].set_xlabel("R-hat (Grenze 1,01)")
+    axs[0].set_xlabel(r"$\hat{R}$ (Grenze 1,01)")
     axs[1].barh(y, es, color=np.where(es < 400, "#d62728", "#7f7f7f"))
     axs[1].axvline(400, color="k", ls="--", lw=1)
     axs[1].set_xscale("log")
@@ -278,8 +282,8 @@ def plot_comparison(runs: dict[str, Results], outdir: Path, name: str = "compari
                 ax.plot(r.age, q[1], color=col, lw=1.3, label=lab)
                 ax.plot(r.age, q[0], color=col, lw=0.7, ls="--")
                 ax.plot(r.age, q[2], color=col, lw=0.7, ls="--")
-    axs[0].set_ylabel(T_LABEL)
-    axs[1].set_ylabel(P_LABEL)
+    axs[0].set_ylabel(T_TEX)
+    axs[1].set_ylabel(P_TEX)
     axs[1].set_xlabel("Age [cal a BP]")
     axs[0].set_title("(a) Temperature", loc="left", fontweight="bold")
     axs[1].set_title("(b) Precipitation", loc="left", fontweight="bold")

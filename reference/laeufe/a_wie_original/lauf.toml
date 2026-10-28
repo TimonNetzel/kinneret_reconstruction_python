@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/a_wie_original.toml"
+standort = "kinneret"
+rolle = "validierung"
+basis = "legacy"
+faktor = "korrekturen"
+stufe = "a"
+quelle = "Prüfbericht Abschnitt 4"
+
+[titel]
+de = "A: neuer Sampler, Korrekturen aus"
+en = "A: new sampler, corrections off"
+
+[beschreibung]
+de = "Überarbeiteter Sampler mit 4 Ketten, alle inhaltlichen Korrekturen aus. Muss statistisch mit dem Original übereinstimmen und validiert damit den neuen Sampler."
+en = "Revised sampler with 4 chains, all substantive corrections off. Must agree statistically with the original and thus validates the new sampler."

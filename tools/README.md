@@ -13,3 +13,4 @@ aufgerufen, nachdem das Paket installiert ist (`pip install -e .`).
 | `anomalien.py` | Niveau, IQR und Korrelation der Anomalien mehrerer Läufe (Tabellen in Prüfbericht 3.8 und 3.9); liest `results/` oder `reference/laeufe/` | `python tools/anomalien.py standard o_cru_r25 o_cru_r50 o_cru_r100` |
 | `karte_cru.py` | Karte des CRU-Ausschnitts mit den Einzugsgebieten | `python tools/karte_cru.py` |
 | `ap_kurven.py` | Baumpollenkurve mit und ohne Kulturbäume | `python tools/ap_kurven.py` |
+| `app_pruefen.js` | Browser-Test der gebauten App (Playwright, ohne Netz, Handy/PC, hell/dunkel), optional Bildschirmfotos | `node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --fotos fotos/` |

@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/standard.toml"
+standort = "kinneret"
+rolle = "referenz"
+basis = "standard_aktuell"
+faktor = "standardversion"
+stufe = "v3"
+quelle = "Prüfbericht 3.10"
+
+[titel]
+de = "Standard v3"
+en = "Standard v3"
+
+[beschreibung]
+de = "Aktueller Standard (seit 27.10.2026): wie v2, aber hierarchischer Prior der Taxa-Gewichte und Prior des rezenten Klimas aus CRU TS 4.07 für ein Einzugsgebiet von 50 km (11,09 ± 0,87 °C, 521,8 ± 41,4 mm); 4 Ketten × 8 Mio. Iterationen."
+en = "Current standard (since 27 Oct 2026): as v2, but hierarchical prior of the taxa weights and prior of the recent climate from CRU TS 4.07 for a 50 km catchment (11.09 ± 0.87 °C, 521.8 ± 41.4 mm); 4 chains × 8 million iterations."

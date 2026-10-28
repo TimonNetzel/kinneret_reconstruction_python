@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/v3_mixture.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_v3"
+faktor = "rekonstruktion"
+stufe = "mixture"
+quelle = "Prüfbericht 3.10"
+
+[titel]
+de = "Standard v3, Mischverteilung"
+en = "Standard v3, mixture"
+
+[beschreibung]
+de = "Ketten von Standard v3, Rekonstruktion als Mischverteilung nach Gl. (3) statt als Mittelwert."
+en = "Chains of standard v3, reconstruction as the mixture of Eq. (3) instead of the mean."

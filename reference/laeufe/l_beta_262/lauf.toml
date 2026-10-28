@@ -1,0 +1,16 @@
+# Beschreibung des Laufs fuer Katalog und App (docs/app_konzept.md, kinneret-recon katalog)
+config = "configs/l_beta_262.toml"
+standort = "kinneret"
+rolle = "sensitivitaet"
+basis = "standard_aktuell"
+faktor = "r2_prior"
+stufe = "r2_05_262"
+quelle = "Prüfbericht 3.8 (Befund 15)"
+
+[titel]
+de = "$R^2$-Prior Beta(2,62; 2,62)"
+en = "$R^2$ prior Beta(2.62, 2.62)"
+
+[beschreibung]
+de = "Standard v2 mit $R^2$-Prior Beta(2,62; 2,62) wie in Tab. 2 des Papers (Mittel 0,5, Sd 0,20) statt Beta(3; 3)."
+en = "Standard v2 with the $R^2$ prior Beta(2.62, 2.62) as in Table 2 of the paper (mean 0.5, sd 0.20) instead of Beta(3, 3)."
