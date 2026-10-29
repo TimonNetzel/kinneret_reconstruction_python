@@ -41,7 +41,8 @@ def _zeilen(pfad):
 def test_vertragstests_des_importers():
     suite = unittest.defaultTestLoader.discover(str(TOOL_DIR), pattern="test_*.py", top_level_dir=str(TOOL_DIR))
     ergebnis = unittest.TextTestRunner(stream=sys.stderr, verbosity=0).run(suite)
-    assert ergebnis.testsRun == 11
+    # Weitere Werkzeugtests duerfen hinzukommen; die 11 Import-Vertragstests bleiben Mindestumfang.
+    assert ergebnis.testsRun >= 11
     assert ergebnis.wasSuccessful()
 
 
