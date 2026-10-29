@@ -85,6 +85,7 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | App-Daten als JSON (`app.json` je Lauf, < 1 MB), Dichten auf dem Raster T −10…30 °C (0,5 °C) und P 0…1500 mm (20 mm); Lauf-Beschreibungen in `reference/laeufe/<lauf>/lauf.toml` |
 | 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
 | 28.10.2026 | Standort-Register: je Standort ein Ordner `data/<ordner>/` mit `standort.toml` (Lage, Höhe, Biome mit Farben, CRU-Einstellungen); Kinneret bleibt in `data/in/`, damit Fingerabdrücke und App-Daten gleich bleiben (App-Konzept Abschnitt 13). Biomfarben vorerst unverändert (Paper) |
+| 29.10.2026 | Gesten: auf Touch-Geräten scrollt Wischen über Diagramme die Seite (kein Zoom-Rahmen), Tippen wählt; mit der Maus zieht man weiter einen Zoom-Rahmen (App-Konzept Abschnitt 13) |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte

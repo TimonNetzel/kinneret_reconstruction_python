@@ -406,3 +406,10 @@ Sensitivitätsreihe zeigt die Ansicht einen Hinweis.
 berührt. `tools/app_pruefen.js` prüft den Kopf mit einem Standort und mit `--zwei-standorte` den Wähler an einer
 Kopie der App mit einem künstlichen zweiten Standort (in `tests/test_app.py`).
 
+**Gesten (29.10.2026).** Bisher zog ein Finger auf einem Diagramm einen Zoom-Rahmen auf (`dragmode: "zoom"`
+für alle Geräte); auf dem Handy ließ sich über den Diagrammen nicht scrollen. Jetzt auf Touch-Geräten
+(`pointer: coarse`) `dragmode: false`: Wischen scrollt die Seite, Tippen zeigt die Werte und wählt in der
+Rekonstruktion das Alter, gezoomt wird über die Leiste des Diagramms (Doppeltippen setzt zurück). Mit der Maus
+zieht man weiter einen Zoom-Rahmen. Geprüft in `tools/app_pruefen.js` (Touch-Emulation: Wischen scrollt ohne
+Zoom, Antippen öffnet das Detail; Maus: Ziehen zoomt).
+

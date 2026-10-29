@@ -26,6 +26,59 @@ async function neueSeite(browser, datei, groesse) {
   return [page, fehler];
 }
 
+// Gesten: auf dem Handy (Touch) scrollt Wischen ueber ein Diagramm die Seite und Antippen waehlt ein Alter; mit der
+// Maus zieht man einen Zoom-Rahmen auf
+async function wische(ctx, page, sel, dx, dy) {
+  const box = await page.locator(sel + " .nsewdrag").first().boundingBox();
+  const x = box.x + box.width / 2, y = box.y + box.height * 0.8;
+  const cdp = await ctx.newCDPSession(page);
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x, y }] });
+  for (let k = 1; k <= 10; k++) {
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: x + dx * k / 10, y: y + dy * k / 10 }] });
+  }
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+  await page.waitForTimeout(600);
+}
+const bereich = (page, sel) => page.evaluate((sel) => JSON.stringify(document.querySelector(sel)._fullLayout.xaxis.range), sel);
+
+async function pruefeGesten(browser, datei) {
+  const fehler = [];
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true,
+    offline: true, locale: "de-DE" });
+  const page = await ctx.newPage();
+  page.on("pageerror", (e) => fehler.push(String(e)));
+  await page.goto("file://" + path.resolve(datei));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  await page.locator("#rek-plot").scrollIntoViewIfNeeded();
+  const vorher = [await page.evaluate(() => scrollY), await bereich(page, "#rek-plot")];
+  await wische(ctx, page, "#rek-plot", 60, -100);
+  const nachher = [await page.evaluate(() => scrollY), await bereich(page, "#rek-plot")];
+  if (nachher[0] < vorher[0] + 50 || nachher[1] !== vorher[1]) fehler.push(`Touch: Wischen ${vorher} -> ${nachher}`);
+  // Diagramm unter den fixierten Kopf schieben, dann antippen
+  await page.evaluate(() => scrollBy(0, document.querySelector("#rek-plot").getBoundingClientRect().top -
+    document.querySelector(".kopf").getBoundingClientRect().bottom - 10));
+  const box = await page.locator("#rek-plot .nsewdrag").first().boundingBox();
+  await page.touchscreen.tap(box.x + box.width * 0.4, box.y + box.height * 0.5);
+  await page.waitForSelector("#rek-detail:not([hidden]) #rek-detail-spektrum .main-svg", { timeout: 10000 })
+    .catch(() => fehler.push("Touch: Antippen zeigt kein Detail"));
+  await ctx.close();
+  // Maus: Ziehen zoomt
+  const ctx2 = await browser.newContext({ viewport: { width: 1366, height: 900 }, offline: true, locale: "de-DE" });
+  const p2 = await ctx2.newPage();
+  await p2.goto("file://" + path.resolve(datei));
+  await p2.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  const b2 = await p2.locator("#rek-plot .nsewdrag").first().boundingBox();
+  const r0 = await bereich(p2, "#rek-plot");
+  await p2.mouse.move(b2.x + b2.width * 0.3, b2.y + b2.height * 0.5);
+  await p2.mouse.down();
+  await p2.mouse.move(b2.x + b2.width * 0.6, b2.y + b2.height * 0.5, { steps: 10 });
+  await p2.mouse.up();
+  await p2.waitForTimeout(600);
+  if (await bereich(p2, "#rek-plot") === r0) fehler.push("Maus: Ziehen zoomt nicht");
+  await ctx2.close();
+  return fehler;
+}
+
 // Standort-Waehler mit zwei Standorten: Wechsel, Lauflisten nur des Standorts, Sensitivitaet ohne Reihe
 async function pruefeStandorte(browser, datei) {
   const [page, fehler] = await neueSeite(browser, datei, { width: 1366, height: 900 });
@@ -253,6 +306,10 @@ async function pruefeExport(page, fehler, foto, pdf) {
         fehlerGesamt += r.fehler.length;
       }
     }
+    const g = await pruefeGesten(browser, datei);
+    console.log(`${path.basename(datei, ".html")} Gesten: ${g.length ? "FEHLER" : "ok"}`);
+    g.forEach((f) => console.log("   " + f));
+    fehlerGesamt += g.length;
   }
   await browser.close();
   process.exit(fehlerGesamt ? 1 : 0);

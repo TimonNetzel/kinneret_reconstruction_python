@@ -128,8 +128,11 @@
   }
 
   // ---------------------------------------------------------------------------------------------------------------
-  // Plotly-Grundeinstellungen
+  // Plotly-Grundeinstellungen. Auf Touch-Geraeten (Handy, Tablet) zieht ein Finger in den Diagrammen nichts auf, damit
+  // Wischen die Seite scrollt; Tippen zeigt Werte (und waehlt in der Rekonstruktion das Alter), gezoomt wird ueber die
+  // Leiste des Diagramms. Mit der Maus zieht man wie gewohnt einen Zoom-Rahmen.
 
+  const TOUCH = window.matchMedia("(pointer: coarse)").matches;
   const PLOT_CONFIG = {
     responsive: true, displaylogo: false, scrollZoom: false,
     modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "toggleSpikelines", "hoverClosestCartesian",
@@ -163,7 +166,7 @@
       font: { color: css("--fg"), family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif", size: 12 },
       margin: { l: 60, r: 14, t: 26, b: 44 }, separators: Z.sprache === "de" ? ",." : ".,",
       hoverlabel: { bgcolor: css("--bg2"), bordercolor: css("--line"), font: { color: css("--fg") } },
-      dragmode: "zoom",
+      dragmode: TOUCH ? false : "zoom",
     }, extra);
   }
   // Zeilen eines Diagramms untereinander: Bereiche der y-Achsen (von oben), Anteile in hoehen
@@ -381,7 +384,7 @@
   const ansichten = [];
   window.KR = {
     D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
-    dunkel, dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
+    dunkel, dichteSkala, TOUCH, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
     STANDORTE, standardLauf, amStandort, waehleStandort, aktuellerStandort, umschalter, laufOptionen, gruppeVon,
     stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten, vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
     get druck() { return druck; },
