@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "files": [
+    {
+      "source_id": "neotoma_27166",
+      "file": "neotoma_27166.json",
+      "download_url": "https://api.neotomadb.org/v2.0/data/downloads/27166",
+      "landing_url": "https://data.neotomadb.org/27166",
+      "doi": "10.21233/ZEWE-M072",
+      "byte_count": 104577,
+      "sha256": "970456da7dbf9f0699f6da5a58508806695939ed2c820b84ea3cf06d567445a7",
+      "license": null,
+      "license_note": "Not independently established for this API snapshot; no raw file redistributed.",
+      "retrieval_status": "parsed",
+      "datasetname": "TM-16b tephra pollen",
+      "datasetid": 27166,
+      "samples": 12,
+      "age_range": [
+        {
+          "units": "Calendar years BP",
+          "ageold": 31173,
+          "ageyoung": 31110
+        }
+      ],
+      "core_context": {
+        "core": "LGM-90D",
+        "drive": "D8-u",
+        "tephra": "TM-16b",
+        "evidence_field": "collectionunit.notes"
+      }
+    }
+  ],
+  "literature": [
+    {
+      "source_id": "allen_huntley2018",
+      "doi": "10.1111/1365-2745.12998",
+      "url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1111/1365-2745.12998",
+      "section": "2 Materials and methods",
+      "status": "publisher text inspected via web; local HTML/PDF download returned HTTP 403",
+      "finding": "Known-concentration Corymbia ficifolia, formerly Eucalyptus ficifolia, was added before chemical treatment for pollen accumulation-rate calculations.",
+      "scope": "2018 event-window samples; not proof of sample identity with PANGAEA.739452"
+    },
+    {
+      "source_id": "empd2_methods",
+      "doi": "10.5194/essd-12-2423-2020",
+      "url": "https://essd.copernicus.org/articles/12/2423/2020/",
+      "finding": "Original names retained; accepted names may be coarser than submitted taxa and depend on morphology and geographical context.",
+      "scope": "Accepted-name assignments do not establish identical counting conventions."
+    }
+  ]
+}
