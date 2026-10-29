@@ -1,0 +1,87 @@
+{
+  "config": {
+    "schema_version": 1,
+    "variant": "published2025_shared37_v0",
+    "experiment": "modern_spatial_analog_baseline_v0",
+    "source_commit": "e002f2b2d696a3ad5f8fbdf58b817890c53ceeb3",
+    "expected_input_rows": 7634,
+    "expected_selected_rows": 7078,
+    "expected_features": 37,
+    "selection": "count_threshold_pass == 1; no additional geographic or context filter",
+    "block_degrees": [
+      5,
+      10
+    ],
+    "block_origin_lat_lon": [
+      -90,
+      -180
+    ],
+    "folds": 5,
+    "seed": 20261029,
+    "random_generator": "NumPy PCG64",
+    "buffer_km": 100,
+    "earth_radius_km": 6371.0088,
+    "primary_neighbors": 5,
+    "sensitivity_neighbors": [
+      1,
+      15
+    ],
+    "distance": "Euclidean distance of square-root relative counts divided by sqrt(2)",
+    "prediction": "unweighted mean of k nearest pollen analogues; stable sample-ID tie order",
+    "reference": "mean of the same buffered training fold",
+    "targets": [
+      "tann_c",
+      "pann_mm_per_year"
+    ],
+    "target_units": [
+      "degC",
+      "mm/year"
+    ],
+    "metrics": [
+      "RMSE",
+      "MAE",
+      "bias_prediction_minus_observation",
+      "MSE_skill_relative_to_fold_training_mean"
+    ],
+    "metric_weighting": [
+      "sample",
+      "equal_coordinate_group"
+    ],
+    "hyperparameter_tuning": false,
+    "fossil_predictions": false,
+    "notes": [
+      "Choices fixed before inspecting experiment outputs; block sizes and buffer are design choices, not estimated optimal spatial scales.",
+      "Repeated rounded coordinate groups remain together; canonical longitude wraps +180 to -180.",
+      "Training samples within 100 km of any held-out sample are removed, including across the date line.",
+      "No location predictor enters the analogue distance; geography is used only for validation.",
+      "Modern validation does not establish palaeoclimate accuracy or age uncertainty."
+    ]
+  },
+  "config_sha256": "8c0258404a5ffe449b62b9b6d833c087b43e7b67c017fb37cf28775768360e01",
+  "feature_policy_sha256": "a2a85217c2918a503dd063d025730d496ec436be0a012c7f1bef802e666f5def",
+  "source_counts_sha256": "c4c0c2b11afe5cfde854e80130b2892edab37baca038aa6e877d59c88ff5bc64",
+  "input_manifest_sha256": "b5f4dd27d2eda5d5057e5a05c63d2d7d44dc2f90bc835736b3c51a7ffb1064cb",
+  "evaluation_script_sha256": "d26dc5bc5a22db197b4079dbd1a4ee91a5e0215ff8e56bba3cc4e8d0f81cd773",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "outputs": {
+    "fold_assignments.csv": {
+      "byte_count": 896376,
+      "sha256": "ff3394aeff9e7b110d8dcc0855bad2e90b41bf5f527088f3c0ffd6a5bc77a976"
+    },
+    "metrics.json": {
+      "byte_count": 55839,
+      "sha256": "6dfe96920616f8952efbfaa235854012c08694644ea2ce69ebf26ab925345d6a"
+    },
+    "oof_predictions.csv": {
+      "byte_count": 7527379,
+      "sha256": "c5bbad1a24bc3dbd0207add0d794d38316ddb7c12ba1d5c89b40077b1ef60dd7"
+    },
+    "training_roles.csv": {
+      "byte_count": 1693286,
+      "sha256": "5da26560588cb01d8062a49e146625fba9c469d45a2b6f2587a507849a69a0f0"
+    }
+  },
+  "note": "Modern holdout errors only; no palaeoclimate reconstruction, confidence interval, or model winner selection."
+}

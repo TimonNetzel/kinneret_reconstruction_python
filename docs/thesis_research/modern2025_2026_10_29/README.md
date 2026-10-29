@@ -1,5 +1,7 @@
 # Gemeinsame 37-Gruppen-Vergleichsdaten
 
+**Fortgeschrieben:** Die hier vorbereitete moderne Baseline wurde inzwischen [ausgeführt und geprüft](../baseline2025_2026_10_29/README.md). Der aktuelle [Claude-Auftrag](../baseline2025_2026_10_29/CLAUDE_TASK.md) beschränkt sich auf die Integration.
+
 Stand 29.10.2026. Folgearbeit zu PR #16, Commit `3a214f7ca2ca5ce869b4b8ed7db84344ec6961dd`.
 Die Variante `published2025_shared37_v0` verbindet die publizierte moderne
 90-Gruppen-Matrix mit den 69 chronologisch zugeordneten Monticchio-Proben.
@@ -148,7 +150,7 @@ umgerechnet; Metadatenfelder mit `count` behalten ihre ausdrücklich benannte
 Zähleinheit. Die fossilen Ausgaben unterliegen weiterhin CC-BY-NC-3.0,
 die modernen CC-BY-4.0; diese Quelldaten werden nicht unter die Code-Lizenz gestellt.
 
-## Nächster Implementierungsschritt für Claude
+## Ursprünglich nächster Schritt (inzwischen ausgeführt)
 
 Diese Variante separat laden; Schwellenfilter und geographischen Umfang sichtbar
 festlegen und die Zahl verbleibender Proben ausgeben. Gleiche Koordinatengruppen
