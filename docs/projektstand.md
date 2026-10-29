@@ -40,6 +40,7 @@ Rahmen (vom Autor festgelegt):
 | App 4 | Abbildungsexport im Copernicus-Format (PDF, SVG, PNG), CSV | ✅ App-Konzept Abschnitt 12 |
 | App 5 | Standort-Register (Kinneret als erster Standort), Standort-Wähler vorbereitet | ✅ `data/in/standort.toml`, App-Konzept Abschnitt 13 |
 | S 1–5 | Weitere Standorte: Birkat Ram und Totes Meer (Code umstellen, Umwandlung der Rohdaten, je Standort Standardlauf, Vergleich) | geplant, `docs/plan_standorte.md`; Daten vom Autor ausstehend |
+| M 0–6 | Modell auf Taxa-Basis mit mehreren Proxys (Paper + Dissertation, ohne Biome): Transferfunktionen der Taxa, Referenzen AP/Soreq/Medstack, Proxy-Modell statt Beta auf $R^2$ | geplant, `docs/plan_multiproxy.md`; Daten vom Autor ausstehend |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -88,6 +89,7 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | Standort-Register: je Standort ein Ordner `data/<ordner>/` mit `standort.toml` (Lage, Höhe, Biome mit Farben, CRU-Einstellungen); Kinneret bleibt in `data/in/`, damit Fingerabdrücke und App-Daten gleich bleiben (App-Konzept Abschnitt 13). Biomfarben vorerst unverändert (Paper) |
 | 29.10.2026 | Gesten (vom Autor gewünscht): Tippen oder Klicken in ein Diagramm zeigt nur die Werte, sonst nichts. Auf Touch-Geräten scrollt Wischen die Seite, kein Doppeltippen; mit der Maus Zoom-Rahmen und Doppelklick zum Zurücksetzen. Detail der Rekonstruktion über die Auswahl „Detail“ (App-Konzept Abschnitt 13) |
 | 29.10.2026 | Nächstes Vorhaben: Rekonstruktionen für Birkat Ram und das Tote Meer mit derselben Biom-Transferfunktion und eigenen Taxa-Gewichten; Alters-Tiefen-Unsicherheiten aus Netzel (2022); Plan in `docs/plan_standorte.md` |
+| 29.10.2026 | Ziel (vom Autor): Paper- und Dissertationsmodell verbinden, mathematisch sauber, ohne Biominformationen, mit mehreren Proxys. Dissertation 2.3–2.5, 3.2, 3.3 ausgewertet (`docs/abgleich_thesis.md`): Transferfunktionen der Taxa und mehrere Referenzen übernehmen, Pareto-Auswahl, Faltung und Gibbs-Auswahl nicht. Plan in `docs/plan_multiproxy.md` |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte
@@ -109,7 +111,10 @@ Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entsc
    der Zenodo-Version des Papers.
 7. **Weitere Standorte** (Birkat Ram, Totes Meer): Plan in `docs/plan_standorte.md`; es fehlen die Daten des Autors
    (Altersmodelle aus Netzel 2022, Pollendaten, Lage; dort Abschnitt 2).
-8. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
+8. **Modell auf Taxa-Basis mit mehreren Proxys:** Plan in `docs/plan_multiproxy.md`; es fehlen die Daten des Autors
+   (Transferfunktionen der Taxa, Zuordnung Pollentyp ↔ Taxon, Altersmodelle von Kernen und Höhlen, Isotopendaten; dort
+   Abschnitt 3) und die Entscheidungen dort in Abschnitt 6.
+9. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
    App Schritt 6 (Läufe aus der App starten, Overlays).
 
 ## Reproduktion
@@ -156,6 +161,11 @@ möglich ist Schritt 1 (Code auf mehrere Standorte umstellen, Kinneret bitgleich
 der Rohdaten); die Daten liefert der Autor nach (Plan, Abschnitt 2). Außerdem offen: Biomfarben (Offene Punkte,
 Punkt 3).
 
+**Hauptvorhaben danach: Modell auf Taxa-Basis mit mehreren Proxys** (`docs/plan_multiproxy.md` lesen; die
+Dissertation ist in `docs/abgleich_thesis.md` zusammengefasst, die PDFs müssen nicht noch einmal gelesen werden).
+Vorgeschlagene Reihenfolge: Schritte 1–2 aus `plan_standorte.md` (gemeinsame Grundlage), dann M0–M2 an Kinneret.
+Die Reihenfolge bestätigt der Autor (Plan, Abschnitt 6, Punkt 5).
+
 - **Fingerabdrücke müssen unverändert bleiben**, sonst findet `batch --ketten` die gesicherten Ketten nicht mehr
   (~2 h Neurechnen). Daher bleibt Kinneret in `data/in/` (`data_dir` gehört zu den Einstellungen in `app.json`).
 - Prüfen ohne Neurechnen: `kinneret-recon katalog` (Fingerabdrücke), `kinneret-recon app-daten` + `git diff`
@@ -178,7 +188,8 @@ klonen, dann `kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (
 **Konventionen:** Doku auf Deutsch. Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
 Abschnitt 11). Eine neue App-Ansicht: App-Konzept Abschnitt 10; ein exportierbares Diagramm: `KR.plot`, Abschnitt 12.
 
-**Wo steht was:** Plan für weitere Standorte in `docs/plan_standorte.md`; Ergebnisse und Befunde im Prüfbericht
+**Wo steht was:** Plan für weitere Standorte in `docs/plan_standorte.md`; Plan für das Modell auf Taxa-Basis in
+`docs/plan_multiproxy.md`; Dissertation (Abschnitte 2.3–2.5, 3.2, 3.3) in `docs/abgleich_thesis.md`; Ergebnisse und Befunde im Prüfbericht
 (`docs/pruefbericht.md`); App: Schritt 1 Abschnitt 7,
 Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12,
 Schritt 5 Abschnitt 13;

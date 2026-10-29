@@ -16,7 +16,7 @@ als installierbares Python-Paket mit C++-Kern um.
 | `configs/` | Konfigurationen der Standard-, Vergleichs- und Sensitivitätsläufe |
 | `legacy/` | Originalskripte der Publikation (lauffähig gemacht; unverändert im Tag `v0.1.0` = Zenodo-Version) |
 | `reference/v1.0-paper/` | Referenzergebnisse des Originals |
-| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Projektstand (Plan, Entscheidungen, offene Punkte), App-Konzept, Paper (`docs/paper/`) |
+| `docs/` | Prüfbericht (gefundene Fehler, Auswirkungen), Abgleich Paper ↔ Code, Abgleich Dissertation (`abgleich_thesis.md`), Pläne (`plan_standorte.md`, `plan_multiproxy.md`), Projektstand (Plan, Entscheidungen, offene Punkte), App-Konzept, Paper (`docs/paper/`) |
 | `reference/laeufe/`, `reference/vergleiche/` | Lauf-Katalog: je Lauf Beschreibung (`lauf.toml`), Tabellen, Diagnostik, Einstellungen und kompakte Zusammenfassung für die App (`app.json`); Vergleiche |
 | `reference/app/` | Katalog-Index und Standortdaten für die App |
 | `tools/` | Hilfsskripte für Auswertung und Abstimmung |
