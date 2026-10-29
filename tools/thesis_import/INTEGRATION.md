@@ -2,9 +2,13 @@
 
 ## Merge-Stand
 
-PR #11 (`codex/thesis-data-handoff` → `main`), #12 (`codex/netzel-source-audit` → #11) und #13
-(`codex/netzel-import-package` → #12) sind gestapelt und offen; nichts davon ist in `main`. Die Integration
-baut auf dem Kopf von #13 (`d5bc098`) auf und zielt als eigener PR auf `codex/netzel-import-package`.
+PR #11–#14 sind inzwischen in `main` gemergt. Geprüfter Stand dieser Aktualisierung:
+`853bb0916f8f46ff819321733020d56d3c574be6` (29.10.2026). Der ursprüngliche Integrations-PR #14
+baute auf dem Importpaket aus #13 auf; der Projektzugang ist jetzt in `main` verfügbar.
+
+Der nächste fachliche Meilenstein steht in
+[`BASELINE_READINESS`](../../docs/thesis_research/baseline_readiness_2026_10_29/README.md):
+Kalibrierungsqualität und gemeinsame Taxonkonzepte prüfen, bevor eine Baseline trainiert wird.
 
 ## Übernahme
 

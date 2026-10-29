@@ -1,0 +1,136 @@
+original_column,original_name,archive_comment,name_match_status,candidate_ids,candidate_names,candidate_groups,retained_nonzero_samples,retained_value_sum,other_columns_sharing_targets,scientific_status
+Abi [#],Abies,Abies,one_name_candidate,321,Abies,TRSH,17,146,,unreviewed_name_matches
+Ace [#],Acer,Acer campestre-type,one_name_candidate,2,Acer campestre-type,TRSH,20,39,,unreviewed_name_matches
+All-T [#],Allium-type,Allium-type,one_name_candidate,4,Allium-type,HERB,2,2,,unreviewed_name_matches
+Aln [#],Alnus,Alnus,one_name_candidate,5,Alnus,TRSH,51,1539,,unreviewed_name_matches
+Ant-T [#],Anthemis-type,Anthemis-type,one_name_candidate,3,Matricaria-type,HERB,29,86,,unreviewed_name_matches
+Arm.m.TB [#],Armeria maritima (type B),Armeria-type,one_name_candidate,992,Armeria-type,HERB,1,1,,unreviewed_name_matches
+Art [#],Artemisia,Artemisia,one_name_candidate,7,Artemisia,HERB,61,1980,,unreviewed_name_matches
+Adl-T [#],Asphodelus-type,Asphodelus/Asphodeline,no_name_candidate,,,,0,0,,unreviewed_name_matches
+Bet [#],Betula,Betula,one_name_candidate,12,Betula,TRSH,59,975,,unreviewed_name_matches
+Borae [#],Boraginaceae,Boraginaceae,one_name_candidate,162,Boraginaceae,HERB,12,13,,unreviewed_name_matches
+Bot [#],Botrychium,Botrychium,one_name_candidate,962,Botrychium,VACR,0,0,,unreviewed_name_matches
+Bry.s.ud [#],Bryophyte spore undifferentiated,Bryophyte spores,one_name_candidate,147,Bryophyte spores,BRYO,5,258,,unreviewed_name_matches
+Bux [#],Buxus,Buxus,one_name_candidate,188,Buxus,TRSH,4,6,,unreviewed_name_matches
+Camae [#],Campanulaceae,Campanulaceae,one_name_candidate,136,Campanulaceae,HERB,2,2,,unreviewed_name_matches
+Can [#],Cannabaceae,Humulus/Cannabis,multiple_name_candidates,205|335|3709|763,Humulus/Cannabis|Cannabaceae/Urticaceae|Humulus/Cannabis|Cannabaceae,HERB|HERB|INUN|TRSH,11,25,Urt-T [#],unreviewed_name_matches
+Car.b [#],Carpinus betulus,Carpinus betulus,one_name_candidate,16,Carpinus betulus,TRSH,28,644,,unreviewed_name_matches
+Cphae [#],Caryophyllaceae,Caryophyllaceae,one_name_candidate,18,Caryophyllaceae (periporate excl. Paronychioideae),HERB,41,94,,unreviewed_name_matches
+Cas [#],Castanea,Castanea,one_name_candidate,19,Castanea sativa,TRSH,15,42,,unreviewed_name_matches
+Cen.cfc-T [#],Centaurea cf. cyanus-type,Asteroideae,one_name_candidate,160,Asteraceae subf. Asteroideae,HERB,6,6,Cen.cfn-T [#]|Cen.cfs-T [#],unreviewed_name_matches
+Cen.cfn-T [#],Centaurea cf. nigra-type,Asteroideae,one_name_candidate,160,Asteraceae subf. Asteroideae,HERB,14,15,Cen.cfc-T [#]|Cen.cfs-T [#],unreviewed_name_matches
+Cen.cfs-T [#],Centaurea cf. scabiosa-type,Asteroideae,one_name_candidate,160,Asteraceae subf. Asteroideae,HERB,10,13,Cen.cfc-T [#]|Cen.cfn-T [#],unreviewed_name_matches
+Crl-T [#],Cerealia-type,Cerealia-type,one_name_candidate,22,Cerealia-type,HERB,20,64,,unreviewed_name_matches
+Cheae [#],Chenopodiaceae,Chenopodiaceae/Amaranthaceae,one_name_candidate,24,Chenopodiaceae/Amaranthaceae,HERB,63,549,,unreviewed_name_matches
+Cir-T [#],Cirsium-type,Cirsium/Carduus,multiple_name_candidates,336|603,Asteraceae subf. Carduoideae|Cirsium,HERB|HERB,15,21,,unreviewed_name_matches
+Cla.m [#],Cladium mariscus,Cladium mariscus,one_name_candidate,2000,Cladium mariscus,AQUA,6,9,,unreviewed_name_matches
+Cicoid [#],Cichorioideae,Compositae subfam. Cichorioideae,one_name_candidate,25,Asteraceae subf. Cichorioideae,HERB,45,73,,unreviewed_name_matches
+conc.spk [#],Concentration spikes,Concentration spikes,technical_or_indeterminate,,,,51,3103998,,unreviewed_name_matches
+Cornacae [#],Cornaceae,Cornus,one_name_candidate,755,Cornus,TRSH,11,19,Crn [#],unreviewed_name_matches
+Crn [#],Cornus,Cornus,one_name_candidate,755,Cornus,TRSH,1,2,Cornacae [#],unreviewed_name_matches
+Cor [#],Corylus,Corylus,one_name_candidate,31,Corylus,TRSH,41,436,,unreviewed_name_matches
+Cru [#],Cruciferae,Cruciferae,one_name_candidate,13,Brassicaceae,HERB,34,71,,unreviewed_name_matches
+Cypae [#],Cyperaceae,Cyperaceae,multiple_name_candidates,33|3868,Cyperaceae|Cyperaceae,HERB|AQUA,58,258,,unreviewed_name_matches
+Ech-T [#],Echium-type,Echium/Onosma,one_name_candidate,2434,Echium/Onosma,HERB,3,3,,unreviewed_name_matches
+Eph.d [#],Ephedra distachya,Ephedra distachya-type,one_name_candidate,37,Ephedra distachya-type,TRSH,22,39,,unreviewed_name_matches
+Eph.f-T [#],Ephedra fragilis-type,Ephedra fragilis-type,one_name_candidate,36,Ephedra fragilis-type,TRSH,11,15,,unreviewed_name_matches
+Equ [#],Equisetum,Equisetum,one_name_candidate,145,Equisetum,VACR,1,2,,unreviewed_name_matches
+Erl [#],Ericales,Ericaceae-type,one_name_candidate,130,Ericales (tetrad),DWAR,23,33,,unreviewed_name_matches
+Euc [#],Eucalyptus,Eucalyptus,multiple_name_candidates,2741|39,Eucalyptus spike (counted)|Eucalyptus,NOPO|TRSH,62,5821,,unreviewed_name_matches
+Euo.e [#],Euonymus europaeus,Euonymus,one_name_candidate,2421,Euonymus,TRSH,0,0,,unreviewed_name_matches
+Fag [#],Fagus,Fagus,one_name_candidate,42,Fagus,TRSH,60,883,,unreviewed_name_matches
+Flp [#],Filipendula,Filipendula,one_name_candidate,45,Filipendula,HERB,9,16,,unreviewed_name_matches
+Fra.e-T [#],Fraxinus excelsior-type,Fraxinus excelsior-type,one_name_candidate,47,Fraxinus excelsior-type,TRSH,45,243,,unreviewed_name_matches
+Fra.o [#],Fraxinus ornus,Fraxinus ornus,one_name_candidate,44,Fraxinus ornus,TRSH,12,34,,unreviewed_name_matches
+Gal-T [#],Galium-type,Rubiaceae,one_name_candidate,93,Rubiaceae,HERB,44,174,,unreviewed_name_matches
+Ger [#],Geranium,Geranium,one_name_candidate,498,Geranium,HERB,1,1,,unreviewed_name_matches
+Graae [#],Gramineae,Gramineae,one_name_candidate,80,Poaceae,HERB,69,5466,,unreviewed_name_matches
+Hed [#],Hedera,Hedera,multiple_name_candidates,4031|51,Hedera|Hedera,LIAN|TRSH,19,42,,unreviewed_name_matches
+Hel-T [#],Helianthemum-type,Helianthemum-type,one_name_candidate,52,Helianthemum,HERB,22,85,,unreviewed_name_matches
+Hpp [#],Hippophae,Hippophae rhamnoides,one_name_candidate,479,Hippophae rhamnoides,TRSH,13,19,,unreviewed_name_matches
+Ile [#],Ilex,Ilex,one_name_candidate,55,Ilex,TRSH,5,6,,unreviewed_name_matches
+Ind.brok [#],Indeterminable: broken,Indeterminable: broken,technical_or_indeterminate,998,Indeterminable: broken,INUN,22,51,,unreviewed_name_matches
+Ind.conc [#],Indeterminable: concealed,Indeterminable: concealed,technical_or_indeterminate,999,Indeterminable: concealed,INUN,0,0,,unreviewed_name_matches
+Ind.crum [#],Indeterminable: crumpled,Indeterminable: crumpled,technical_or_indeterminate,1925,Indeterminable: crumpled,INUN,35,100,,unreviewed_name_matches
+Ind.degr [#],Indeterminable: degraded,Indeterminable: degraded,technical_or_indeterminate,718,Indeterminable: degraded,INUN,5,6,,unreviewed_name_matches
+Ind.unkn [#],Indeterminable: unknown,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,23,47,cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+Jug [#],Juglans,Juglans,one_name_candidate,57,Juglans,TRSH,10,19,,unreviewed_name_matches
+Jun-T [#],Juniperus-type,Juniperus-type,one_name_candidate,203,Juniperus-type,TRSH,57,795,,unreviewed_name_matches
+Lar [#],Larix,Larix/Pseudotsuga,multiple_name_candidates,123|2515,Larix/Pseudotsuga|Larix/Pseudo,TRSH|TRSH,0,0,,unreviewed_name_matches
+Leg [#],Leguminosae,Leguminosae,multiple_name_candidates,41|744,Fabaceae|Leguminosae,HERB|HERB,26,34,Vic-T [#],unreviewed_name_matches
+Lil-T [#],Liliaceae-type,Liliaceae-type,one_name_candidate,62,Liliaceae-type,HERB,4,7,,unreviewed_name_matches
+Malvae [#],Malvaceae,Malvaceae,one_name_candidate,372,Malvaceae,HERB,1,1,,unreviewed_name_matches
+Men-T [#],Mentha-type,Mentha-type,multiple_name_candidates,4666|65,Mentha-type|Mentha-type,DWAR|HERB,6,6,,unreviewed_name_matches
+Mey.t [#],Menyanthes trifoliata,Menyanthes trifoliata-type,one_name_candidate,175,Menyanthes trifoliata,AQUA,1,1,,unreviewed_name_matches
+Mon.s [#],Monolete spore(s),Monolete spore(s),one_name_candidate,146,Monolete fern spores,VACR,18,46,,unreviewed_name_matches
+Myo.a [#],Myriophyllum alterniflorum,Myriophyllum alterniflorum,one_name_candidate,1841,Myriophyllum alterniflorum,AQUA,0,0,,unreviewed_name_matches
+Myo.s [#],Myriophyllum spicatum,Myriophyllum spicatum,one_name_candidate,376,Myriophyllum spicatum,AQUA,8,11,,unreviewed_name_matches
+Myo.v [#],Myriophyllum verticillatum,Myriophyllum verticillatum,one_name_candidate,1262,Myriophyllum verticillatum,AQUA,0,0,,unreviewed_name_matches
+Nup [#],Nuphar,Nuphar,one_name_candidate,1495,Nuphar,AQUA,3,5,,unreviewed_name_matches
+Nym [#],Nymphaea,Nymphaea,one_name_candidate,627,Nymphaea,AQUA,20,45,,unreviewed_name_matches
+Orn-T [#],Ornithogalum-type,Fritillaria-type,no_name_candidate,,,,3,3,,unreviewed_name_matches
+Ost-T [#],Ostrya-type,Ostrya/Carpinus orientalis,one_name_candidate,70,Ostrya/Carpinus orientalis,TRSH,42,956,,unreviewed_name_matches
+Oxy-T [#],Oxyria-type,Rumex acetosa-type,one_name_candidate,95,Rumex acetosa-type,HERB,3,9,,unreviewed_name_matches
+Papae [#],Papaveraceae,Papaveraceae,one_name_candidate,381,Papaveraceae,HERB,0,0,,unreviewed_name_matches
+Phi [#],Phillyrea,Phillyrea,one_name_candidate,74,Phillyrea,TRSH,18,70,,unreviewed_name_matches
+Pic [#],Picea,Picea,one_name_candidate,126,Picea,TRSH,5,7,,unreviewed_name_matches
+Pin [#],Pinus,Pinus,one_name_candidate,75,Pinus,TRSH,59,1647,,unreviewed_name_matches
+Pst [#],Pistacia,Pistacia,one_name_candidate,77,Pistacia,TRSH,12,28,,unreviewed_name_matches
+Pla [#],Plantago,Plantago,one_name_candidate,270,Plantago,HERB,29,55,,unreviewed_name_matches
+Pla.c-T [#],Plantago coronopus-type,Plantago coronopus-type,one_name_candidate,30,Plantago coronopus-type,HERB,3,4,,unreviewed_name_matches
+Pla.l-T [#],Plantago lanceolata-type,Plantago lanceolata-type,one_name_candidate,60,Plantago lanceolata-type,HERB,30,67,,unreviewed_name_matches
+Pla.m/m [#],Plantago major/media,Plantago major/P. media,one_name_candidate,458,Plantago major/P. media-type,HERB,12,18,,unreviewed_name_matches
+Plt [#],Platanus,Platanus,one_name_candidate,78,Platanus,TRSH,2,3,,unreviewed_name_matches
+Polae [#],Polygonaceae,Polygonaceae,one_name_candidate,138,Polygonaceae,HERB,3,3,,unreviewed_name_matches
+Ppd [#],Polypodium,Polypodium,one_name_candidate,214,Polypodium,VACR,0,0,,unreviewed_name_matches
+Pop [#],Populus,Populus,one_name_candidate,81,Populus,TRSH,13,28,,unreviewed_name_matches
+Pot [#],Potamogeton,Potamogeton-type,one_name_candidate,108,Potamogeton-type,AQUA,13,22,,unreviewed_name_matches
+Pti [#],Potentilla,Potentilla-type,multiple_name_candidates,1309|512,Potentilla palustris|Potentilla-type,HERB|HERB,9,10,,unreviewed_name_matches
+Priae [#],Primulaceae,Primulaceae,one_name_candidate,799,Primulaceae,HERB,1,1,,unreviewed_name_matches
+Ptd [#],Pteridium,Pteridium aquilinum,multiple_name_candidates,1269|180,Pteridium|Pteridium aquilinum,VACR|VACR,12,35,,unreviewed_name_matches
+Que [#],Quercus,Quercus,one_name_candidate,189,Quercus,TRSH,66,7495,,unreviewed_name_matches
+Que.i [#],Quercus ilex,Quercus ilex-type,one_name_candidate,85,Quercus ilex-type,TRSH,16,185,,unreviewed_name_matches
+Que.r-T [#],Quercus robur-type,Quercus robur-type,one_name_candidate,86,Quercus robur-type,TRSH,20,2237,,unreviewed_name_matches
+Ran-T [#],Ranunculus-type,Ranunculaceae,multiple_name_candidates,135|274,Ranunculaceae|Ranunculus-type,HERB|HERB,25,39,,unreviewed_name_matches
+Redae [#],Resedaceae,Resedaceae,one_name_candidate,726,Resedaceae,HERB,3,3,,unreviewed_name_matches
+Rhaae [#],Rhamnaceae,Rhamnaceae,one_name_candidate,90,Rhamnaceae,TRSH,2,2,,unreviewed_name_matches
+Rosae [#],Rosaceae,Rosaceae,one_name_candidate,92,Rosaceae,TRSH,19,28,,unreviewed_name_matches
+Rum [#],Rumex,Rumex/Oxyria,one_name_candidate,94,Rumex/Oxyria,HERB,50,173,,unreviewed_name_matches
+Sal [#],Salix,Salix,multiple_name_candidates,4527|99,Salix|Salix,DWAR|TRSH,43,130,,unreviewed_name_matches
+Sam [#],Sambucus,Sambucus,one_name_candidate,407,Sambucus,TRSH,24,79,,unreviewed_name_matches
+San.m [#],Sanguisorba minor,Sanguisorba minor-type,one_name_candidate,101,Sanguisorba minor-type,HERB,7,7,,unreviewed_name_matches
+Saxae [#],Saxifragaceae,Saxifragaceae,one_name_candidate,639,Saxifragaceae,HERB,5,7,,unreviewed_name_matches
+Scoae [#],Scrophulariaceae,Scrophulariaceae,multiple_name_candidates,173|2804,Scrophulariaceae (colporate-reticulate)|Scrophulariaceae,HERB|HERB,9,18,,unreviewed_name_matches
+Ser-T [#],Serratula-type,Serratula-type,no_name_candidate,,,,7,17,,unreviewed_name_matches
+Sld-T [#],Solidago-type,Aster-type,multiple_name_candidates,11|133,Aster-type|Senecio-type,HERB|HERB,40,83,,unreviewed_name_matches
+Tax [#],Taxus,Taxus baccata,one_name_candidate,111,Taxus baccata,TRSH,10,73,,unreviewed_name_matches
+Tha [#],Thalictrum,Thalictrum,one_name_candidate,112,Thalictrum,HERB,38,88,,unreviewed_name_matches
+Til [#],Tilia,Tilia,one_name_candidate,187,Tilia,TRSH,23,130,,unreviewed_name_matches
+trilete spores [#],"Spores, trilete",Trilete spore(s),one_name_candidate,279,Trilete spore(s),VACR,15,29,,unreviewed_name_matches
+Typ.a-T [#],Typha angustifolia-type,Sparganium-type,one_name_candidate,176,Sparganium-type,AQUA,20,33,,unreviewed_name_matches
+Typ.l [#],Typha latifolia,Typha latifolia-type,multiple_name_candidates,417|914,Typha latifolia|Typha latifolia-type,AQUA|AQUA,1,1,,unreviewed_name_matches
+Ulm [#],Ulmus,Ulmus,one_name_candidate,154,Ulmus/Zelkova,TRSH,48,245,,unreviewed_name_matches
+Umb [#],Umbelliferae,Umbelliferae,one_name_candidate,6,Apiaceae,HERB,58,275,,unreviewed_name_matches
+Urt-T [#],Urtica-type,Urticaceae,multiple_name_candidates,335|809,Cannabaceae/Urticaceae|Urticaceae,HERB|HERB,8,11,Can [#],unreviewed_name_matches
+Valae [#],Valerianaceae,Valerianaceae,one_name_candidate,174,Valerianaceae,HERB,0,0,,unreviewed_name_matches
+Vib [#],Viburnum,Viburnum,one_name_candidate,120,Viburnum,TRSH,2,3,,unreviewed_name_matches
+Vic-T [#],Vicia-type,Vicia/Lathyrus,multiple_name_candidates,121|1290|41,Vicia-type|Lathyrus/Vicia-type|Fabaceae,HERB|HERB|HERB,1,1,Leg [#],unreviewed_name_matches
+Vts [#],Vitis,Vitis,multiple_name_candidates,122|4756,Vitis|Vitis,TRSH|LIAN,17,37,,unreviewed_name_matches
+vol.sp.a [cm**3],Volume of spike added,Volume spike added,technical_or_indeterminate,,,,48,97,,unreviewed_name_matches
+cf.Aco [#],cf. Acorus,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,1,Ind.unkn [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Alc [#],cf. Alchemilla,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,2,Ind.unkn [#]|cf.Aco [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Arm-A [#],cf. Armeria (type A),Plumbaginaceae,one_name_candidate,166,Plumbaginaceae,HERB,1,1,,unreviewed_name_matches
+cf.Bal [#],cf. Baldellia,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,2,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Ced [#],cf. Cedrus,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,0,0,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Cet [#],cf. Centaurium,Gentianaceae,one_name_candidate,525,Gentianaceae,HERB,1,1,,unreviewed_name_matches
+cf.Dap [#],cf. Daphne,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,0,0,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Epi [#],cf. Epilobium,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,0,0,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Eup [#],cf. Euphorbia,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,11,15,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Hyp [#],cf. Hypericum,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,1,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Lon [#],cf. Lonicera,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,1,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Myt [#],cf. Myrtus,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,1,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Ole [#],cf. Olea,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,25,81,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Pog [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Pog [#],cf. Polygonum,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,0,0,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pol.a [#]|cf.Viu [#],unreviewed_name_matches
+cf.Pol.a [#],cf. Polygonum amphibium,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,0,0,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Viu [#],unreviewed_name_matches
+cf.Suc [#],cf. Succisa,Dipsacaceae,one_name_candidate,164,Dipsacaceae,HERB,0,0,,unreviewed_name_matches
+cf.Viu [#],cf. Viscum,Indeterminable: unknown,technical_or_indeterminate,1289|177|3661|4636,Indeterminable: Unknown|Indeterminable: unknown|Indeterminable: unknown|Indeterminable: unknown,INUN|INUN|NOPO|VACR,1,1,Ind.unkn [#]|cf.Aco [#]|cf.Alc [#]|cf.Bal [#]|cf.Ced [#]|cf.Dap [#]|cf.Epi [#]|cf.Eup [#]|cf.Hyp [#]|cf.Lon [#]|cf.Myt [#]|cf.Ole [#]|cf.Pog [#]|cf.Pol.a [#],unreviewed_name_matches
