@@ -39,6 +39,7 @@ Rahmen (vom Autor festgelegt):
 | App 3 | Taxa-Gewichte, Transferfunktionen, Diagnostik, Steckbrief | ✅ App-Konzept Abschnitt 10 |
 | App 4 | Abbildungsexport im Copernicus-Format (PDF, SVG, PNG), CSV | ✅ App-Konzept Abschnitt 12 |
 | App 5 | Standort-Register (Kinneret als erster Standort), Standort-Wähler vorbereitet | ✅ `data/in/standort.toml`, App-Konzept Abschnitt 13 |
+| S 1–5 | Weitere Standorte: Birkat Ram und Totes Meer (Code umstellen, Umwandlung der Rohdaten, je Standort Standardlauf, Vergleich) | geplant, `docs/plan_standorte.md`; Daten vom Autor ausstehend |
 
 ## Wichtigste Ergebnisse (Details: `docs/pruefbericht.md`)
 
@@ -86,6 +87,7 @@ Rahmen (vom Autor festgelegt):
 | 28.10.2026 | Abbildungsexport: Breiten 8,3 / 12 / 17,5 cm, Schrift 8 pt serifenlos, PNG 300/600 dpi, PDF über den Druckdialog des Browsers (Vektor, ohne Zusatzbibliothek), SVG; CSV je Diagramm. Werte aus dem Paper nachgemessen, da die Copernicus-Seiten aus der Sitzung nicht erreichbar waren (App-Konzept Abschnitt 12) |
 | 28.10.2026 | Standort-Register: je Standort ein Ordner `data/<ordner>/` mit `standort.toml` (Lage, Höhe, Biome mit Farben, CRU-Einstellungen); Kinneret bleibt in `data/in/`, damit Fingerabdrücke und App-Daten gleich bleiben (App-Konzept Abschnitt 13). Biomfarben vorerst unverändert (Paper) |
 | 29.10.2026 | Gesten (vom Autor gewünscht): Tippen oder Klicken in ein Diagramm zeigt nur die Werte, sonst nichts. Auf Touch-Geräten scrollt Wischen die Seite, kein Doppeltippen; mit der Maus Zoom-Rahmen und Doppelklick zum Zurücksetzen. Detail der Rekonstruktion über die Auswahl „Detail“ (App-Konzept Abschnitt 13) |
+| 29.10.2026 | Nächstes Vorhaben: Rekonstruktionen für Birkat Ram und das Tote Meer mit derselben Biom-Transferfunktion und eigenen Taxa-Gewichten; Alters-Tiefen-Unsicherheiten aus Netzel (2022); Plan in `docs/plan_standorte.md` |
 | 27.10.2026 | Prior des rezenten Klimas einstellbar. Er bestimmt das absolute Niveau (bis 1,1 °C / 89 mm), der P-Verlauf ist robust |
 
 ## Offene Punkte
@@ -105,9 +107,10 @@ Prüfbericht 3.8–3.10, `docs/abgleich_paper.md` Abschnitt 5 und unter „Entsc
    der Autor weiß es nicht mehr sicher.
 6. **Tag `v1.0-paper`** ist entbehrlich: `v0.1.0` enthält denselben Code (nur `LICENSE.md` anders) und entspricht
    der Zenodo-Version des Papers.
-7. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
-   weitere Standorte (Register steht; vorher Biome in Abbildungen und Bericht umstellen, App-Konzept Abschnitt 13,
-   „Noch fest“), App Schritt 6 (Läufe aus der App starten, Overlays).
+7. **Weitere Standorte** (Birkat Ram, Totes Meer): Plan in `docs/plan_standorte.md`; es fehlen die Daten des Autors
+   (Altersmodelle aus Netzel 2022, Pollendaten, Lage; dort Abschnitt 2).
+8. **Später:** Training der Transferfunktion (dieselbe CRU-Version TS 4.07, 1961–1990, 0,5° wie für den Prior),
+   App Schritt 6 (Läufe aus der App starten, Overlays).
 
 ## Reproduktion
 
@@ -148,8 +151,10 @@ App zeigt ab zwei Standorten einen Wähler im Kopf. Gesten: Tippen oder Klicken 
 scrollt Wischen die Seite; das Detail der Rekonstruktion kommt über die Auswahl „Detail“. Details: App-Konzept
 Abschnitt 13.
 
-**Nächster Schritt:** Entscheidung zu den Biomfarben (Offene Punkte, Punkt 3), sonst die übrigen offenen Punkte;
-App Schritt 6 (Läufe aus der App starten, Overlays) ist „später“.
+**Nächster Schritt: weitere Standorte, Birkat Ram und Totes Meer** (`docs/plan_standorte.md` lesen). Ohne neue Daten
+möglich ist Schritt 1 (Code auf mehrere Standorte umstellen, Kinneret bitgleich) und Schritt 2 (Werkzeug zur Umwandlung
+der Rohdaten); die Daten liefert der Autor nach (Plan, Abschnitt 2). Außerdem offen: Biomfarben (Offene Punkte,
+Punkt 3).
 
 - **Fingerabdrücke müssen unverändert bleiben**, sonst findet `batch --ketten` die gesicherten Ketten nicht mehr
   (~2 h Neurechnen). Daher bleibt Kinneret in `data/in/` (`data_dir` gehört zu den Einstellungen in `app.json`).
@@ -158,7 +163,8 @@ App Schritt 6 (Läufe aus der App starten, Overlays) ist „später“.
   `katalog.json`), `python3 -m pytest`. Kein `batch`
   nötig. `tests/test_katalog.py::test_standort_daten_bitgleich` prüft `standort_kinneret.json`.
 - Ein zweiter Standort: Ordner mit denselben npz-Dateien und `standort.toml`, Läufe mit `standort = "<key>"` und
-  `data_dir` in der Konfiguration; vorher Biome in `plots.py`/`report.py` umstellen (App-Konzept Abschnitt 13).
+  `data_dir` in der Konfiguration; was dafür noch auf Kinneret festgelegt ist, steht im Plan, Abschnitt 1 (Biome in
+  `plots.py`/`report.py` nur bei anderen Biomen umstellen; Birkat Ram und Totes Meer haben dieselben).
 
 **Einrichten (ca. 5 min):** `pip install -e ".[test]"` (baut den C++-Kern), dann `python3 -m pytest`
 (54 Tests, ~4 min; Browser-Tests nur mit Node und Playwright). App bauen und prüfen: `kinneret-recon app`,
@@ -172,7 +178,8 @@ klonen, dann `kinneret-recon batch --ketten ../kinneret_reconstruction_laeufe` (
 **Konventionen:** Doku auf Deutsch. Formelzeichen in Texten in LaTeX-Schreibweise zwischen `$...$` (App-Konzept
 Abschnitt 11). Eine neue App-Ansicht: App-Konzept Abschnitt 10; ein exportierbares Diagramm: `KR.plot`, Abschnitt 12.
 
-**Wo steht was:** Ergebnisse und Befunde im Prüfbericht (`docs/pruefbericht.md`); App: Schritt 1 Abschnitt 7,
+**Wo steht was:** Plan für weitere Standorte in `docs/plan_standorte.md`; Ergebnisse und Befunde im Prüfbericht
+(`docs/pruefbericht.md`); App: Schritt 1 Abschnitt 7,
 Offline Abschnitt 8, Schritt 2 Abschnitt 9, Schritt 3 Abschnitt 10, Formeln Abschnitt 11, Schritt 4 Abschnitt 12,
 Schritt 5 Abschnitt 13;
 Abgleich mit dem Paper und der R-Fassung in `docs/abgleich_paper.md`; Entscheidungen und offene Punkte oben.
