@@ -175,6 +175,24 @@ Stichprobenfehler des 30-Jahres-Mittels, Repräsentativität (andere Radien und 
 eine Höhenkorrektur von T (`--lapse-rate`) und ein Zusatzfehler. Details: `docs/pruefbericht.md`,
 Abschnitt 3.9.
 
+## Import der Kalibrierungsdaten (Dissertation, Europa)
+
+EMPD2 und der Monticchio-Kern LGM90D werden aus gesperrten Quellen (Größe und SHA256 im Register
+`docs/thesis_research/source_audit_2026_10_29/sources.json`) in CSV-Dateien überführt. Der Importer liegt
+unverändert in `tools/thesis_import/`; Datenvertrag und Sonderfälle stehen in dessen `README.md`. Der Kinneret-Rechenkern
+wird dabei weder verwendet noch verändert.
+
+```bash
+kinneret-recon thesis-import --raw-dir roh/netzel --output-dir results/thesis_import --download
+kinneret-recon thesis-import --raw-dir roh/netzel --output-dir results/thesis_import_2 --ohne-referenz
+```
+
+Das Zielverzeichnis muss neu sein. `--download` lädt nur fehlende Quellen von PANGAEA (~25 MB). Standardmäßig muss
+das Ergebnis exakt mit `tools/thesis_import/reference_run.json` übereinstimmen, sonst bricht der Import ab, bevor
+etwas geschrieben wird; Abweichungen untersuchen, die Referenz nicht automatisch ersetzen. Das Ergebnis ist kein
+Trainingssatz: Qualitätsflags, Text-`NULL`, gebrochene Zählungen und Chronologie-Ausschlüsse bleiben erhalten,
+es gibt keine Taxonharmonisierung und keine Modellfreigabe (`scientific_status=not_assessed`).
+
 ## Leistung (4 CPU-Kerne)
 
 | | Original | Paket, `--legacy` | Paket, Standard v2 | Paket, Standard v3 |

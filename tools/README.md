@@ -14,3 +14,4 @@ aufgerufen, nachdem das Paket installiert ist (`pip install -e .`).
 | `karte_cru.py` | Karte des CRU-Ausschnitts mit den Einzugsgebieten | `python tools/karte_cru.py` |
 | `ap_kurven.py` | Baumpollenkurve mit und ohne Kulturbäume | `python tools/ap_kurven.py` |
 | `app_pruefen.js` | Browser-Test der gebauten App (Playwright, ohne Netz, Handy/PC, hell/dunkel), optional Bildschirmfotos | `node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --fotos fotos/` |
+| `thesis_import/` | Import von EMPD2 und Monticchio aus gesperrten Quellen (Dissertation); siehe `thesis_import/README.md` | `kinneret-recon thesis-import --raw-dir roh/netzel --output-dir results/thesis_import --download` |
