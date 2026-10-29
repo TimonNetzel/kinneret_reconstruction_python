@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "source_sha256": {
+    "empd2": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "monticchio_739452": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+    "epd_entity_804591": "d6d7e269c75dd0c06bf44776cefdac7f0805f2a826991494d76e1a62127af2fd",
+    "epd_ages_cut_804596": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0"
+  },
+  "cohort_scenarios": {
+    "all_metadata": 8746,
+    "numeric_climate_coords_nonpercent": 8217,
+    "complete_quality_ABC": 4140,
+    "complete_quality_ABC_integer_only": 3956,
+    "strict_in_25_75N_15W_45E_box": 2664
+  },
+  "quality_codes_in_complete_cohort": [
+    {
+      "code": "A",
+      "n": 2257
+    },
+    {
+      "code": "B",
+      "n": 695
+    },
+    {
+      "code": "C",
+      "n": 1188
+    },
+    {
+      "code": "D",
+      "n": 43
+    },
+    {
+      "code": "NULL",
+      "n": 4034
+    }
+  ],
+  "monticchio_retained_samples": 69,
+  "monticchio_fields": 135,
+  "name_match_status_counts": {
+    "one_name_candidate": 93,
+    "no_name_candidate": 3,
+    "multiple_name_candidates": 18,
+    "technical_or_indeterminate": 21
+  },
+  "fields_with_shared_target_candidates": 24,
+  "quercus_identity_check": {
+    "source_rows": 245,
+    "genus_equals_robur_plus_ilex_rows": 27,
+    "interpretation": "Equality alone does not prove the counting or aggregation convention."
+  },
+  "archive_group_definitions": [
+    {
+      "groupid": "ACRI",
+      "groupname": "Acritarchs",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "ALGA",
+      "groupname": "Algae",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "AQBR",
+      "groupname": "Aquatic Bryophytes",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "AQPT",
+      "groupname": "Aquatic Pteridophyta",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "AQUA",
+      "groupname": "Aquatics",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "AQVP",
+      "groupname": "Aquatic Vascular Plants",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "BRYO",
+      "groupname": "Bryophytes",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "CHAR",
+      "groupname": "Charcoal",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "CHLO",
+      "groupname": "Chlorophytes",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "CYAN",
+      "groupname": "Cyanobacteria",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "DINO",
+      "groupname": "Dinoflagellates",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "DWAR",
+      "groupname": "Dwarf shrubs",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "FUNG",
+      "groupname": "Fungi",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "HELO",
+      "groupname": "Helophytes",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "HEMI",
+      "groupname": "Hemi-parasitic",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "HERB",
+      "groupname": "Herbs",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "INUN",
+      "groupname": "Indeterminables and unknowns",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "INVE",
+      "groupname": "Invertebrates",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "LIAN",
+      "groupname": "Liana",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "MACR",
+      "groupname": "Macrofossils",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "MANG",
+      "groupname": "Mangroves",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "MICR",
+      "groupname": "Microcrustaceans",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "MOSS",
+      "groupname": "Moss",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "NEMA",
+      "groupname": "Nematoda (roundworms)",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "NOPO",
+      "groupname": "Nonpollen",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "PALM",
+      "groupname": "Palms",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "PLAT",
+      "groupname": "Platyhelminthes (flatworms)",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "PREQ",
+      "groupname": "Pre-Quaternary type",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "RHIZ",
+      "groupname": "Rhizopods",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "ROTI",
+      "groupname": "Rotifera (Rotifers)",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "SEED",
+      "groupname": "Spermatophyte rank or clade above order",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "SPOR",
+      "groupname": "Taxonomically undifferentiated spores",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "SUCC",
+      "groupname": "Succulents",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "TEAM",
+      "groupname": "Testate amoebae",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "TRSH",
+      "groupname": "Trees & Shrubs",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "UNPP",
+      "groupname": "Undifferentiated NPP",
+      "used_in_sum": 0
+    },
+    {
+      "groupid": "UPBR",
+      "groupname": "Upland Bryophytes",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "UPHE",
+      "groupname": "Upland herbs",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "VACR",
+      "groupname": "Vascular cryptogams (Pteridophytes)",
+      "used_in_sum": 1
+    },
+    {
+      "groupid": "VEMI",
+      "groupname": "Vegetative microfossils",
+      "used_in_sum": 0
+    }
+  ],
+  "scientific_status": "not_approved",
+  "notes": [
+    "Cohorts are nested audit scenarios, not selected training sets.",
+    "Name matches do not establish equivalent taxon concepts.",
+    "Positive-sample counts are per original code, not additive across synonyms.",
+    "used_in_sum includes spore groups; it is not a terrestrial-pollen selector.",
+    "No values were pooled; no missing records were filled with zero."
+  ]
+}
