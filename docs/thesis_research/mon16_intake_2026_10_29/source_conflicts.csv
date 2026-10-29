@@ -1,0 +1,18 @@
+kind,tephra,field,a1_cell,a1_value,other_location,other_value
+cross_table_value_difference,TM-5b,core_section,B21,"B2, 65.8-66.2 cm",A-2!B10,"C2, 104.9-105.2 cm"
+cross_table_value_difference,TM-6b,mon16_top_cm,D29,504.7,A-2!H11,512.5
+cross_table_value_difference,TM-6-5a-c,mon12_base_cm,K39,-,A-2!L13,776.8
+cross_table_value_difference,TM-8-1b,mon12_base_cm,K49,878.5,A-2!L16,875.5
+thickness_arithmetic,TM-1,thickness_mm,E7,26,10*(A-1!C7-D7),28
+labelled_age_difference_gt_1p1yr,TM-6b,median,F29,8943,A-3!row5019-5054,8869.1200000000008
+labelled_age_difference_gt_1p1yr,TM-6b,minimum,G29,8758,A-3!row5019-5054,8659.2000000000007
+labelled_age_difference_gt_1p1yr,TM-6b,maximum,H29,9117,A-3!row5019-5054,9047.76
+labelled_age_difference_gt_1p1yr,TM-6-1a,median,F30,9528,A-3!row5335-5335,9526.3799999999992
+labelled_age_difference_gt_1p1yr,TM-6-1a,maximum,H30,9727,A-3!row5335-5335,9723.44
+labelled_age_difference_gt_1p1yr,TM-6-1b,median,F31,9560,A-3!row5347-5347,9558.2800000000007
+labelled_age_difference_gt_1p1yr,TM-6-1b,minimum,G31,9317,A-3!row5347-5347,9315.08
+labelled_age_difference_gt_1p1yr,TM-6-1b,maximum,H31,9788,A-3!row5347-5347,9783.52
+labelled_age_difference_gt_1p1yr,TM-10b,minimum,G53,15173,A-3!row7645-7653,15174.2
+labelled_age_difference_gt_1p1yr,TM-15,median,F68,29037,A-3!row12789-12803,29035
+labelled_age_difference_gt_1p1yr,TM-15,minimum,G68,28509,A-3!row12789-12803,28507.3
+labelled_age_difference_gt_1p1yr,TM-15,maximum,H68,29494,A-3!row12789-12803,29491.599999999999

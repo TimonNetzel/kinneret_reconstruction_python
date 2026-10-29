@@ -61,3 +61,18 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
 [Dissertation und Datenverzeichnis](./Netzel_Analyse_Datenverzeichnis.md),
 [Quellenregister](./source_audit_2026_10_29/sources.json).
 Die ursprüngliche lange Übergabe ist in der Git-Historie erhalten.
+
+## Bestätigter Pilotplan und neuer Chronologieeingang
+
+Der Nutzer hat den Ablauf **Chronologie → geprüfter Pilot → Claude-Integration
+→ Erweiterung** bestätigt ([Plan in PR #22](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/22)).
+Die dort angefragten Original-Supplemente zu Wulf et al. (2026) wurden danach
+hochgeladen. Der [Eingangs- und Chronologieaudit](./mon16_intake_2026_10_29/README.md)
+prüft A-1/A-2/A-3 und C-2: Downloadblocker behoben, 13.024 Alters-Tiefen-Zeilen
+geprüft, zwei inkonsistente Altersintervalle und weitere Quellenunterschiede
+dokumentiert. Ein belegter LGM90D→MON16-Tiefen-Crosswalk fehlt weiterhin.
+Alle 69 Proben bleiben für neue MON16-Alter gesperrt. Nächster konkreter Eingang:
+numerische Kern-/Kompositzuordnung und Quellenklärung, gegebenenfalls originales
+Bacon-Projekt; keine erneute Beschaffung desselben vollständigen Supplements.
+PR #20/#21 liefern die ergänzende Analogdiagnose und historischen Zuordnungen.
+Claude-PR #19 ist weiterhin auf dem bereits geprüften Head `c8977a5`.
