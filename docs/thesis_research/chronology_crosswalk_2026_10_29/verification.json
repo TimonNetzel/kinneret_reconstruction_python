@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "all_nine_source_size_and_sha256_locks_checked": true,
+  "two_complete_runs_byte_identical": true,
+  "tests_passed": 5,
+  "independent_verifier": "verify_chronology_crosswalk.py; exact Fraction arithmetic; no production audit imports",
+  "all_69_candidate_searches_recomputed": true,
+  "all_1120_age_pairs_multiset_checked": true,
+  "source_row_multiplicities_preserved": true,
+  "all_output_hashes_checked": true,
+  "source_image_visual_check": "huntley1996.pdf page 5, printed p.609",
+  "new_2026_supplement_retrieved": false,
+  "age_ensembles_retrieved": false,
+  "ages_changed": false,
+  "baseline_or_integration_files_changed": false,
+  "independent_verifier_sha256": "2dd297219002d1611b3a97fe5660bef9655d95620d6cb75bce5cc181a3be89f5"
+}

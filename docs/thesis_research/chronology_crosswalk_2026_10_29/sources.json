@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "files": [
+    {
+      "file": "readme_allen1999.txt",
+      "download_url": "https://www.ncei.noaa.gov/pub/data/paleo/paleolimnology/europe/italy/readme_allen1999.txt",
+      "sha256": "788e612da2f01d62526a334dec27325a0ddafc840f0e102f0704989dbd0512d3",
+      "byte_count": 2875,
+      "license": null,
+      "citation": "NOAA/WDS 2002-013; cite contributors; no explicit CC license established",
+      "role": "numeric_or_metadata_source",
+      "status": "downloaded_and_checked"
+    },
+    {
+      "file": "age.txt",
+      "download_url": "https://www.ncei.noaa.gov/pub/data/paleo/paleolimnology/europe/italy/age.txt",
+      "sha256": "5d3632c2196fdeb6fb082d68c14780277dbcdfa3922cf17296b15475e9845473",
+      "byte_count": 16584,
+      "license": null,
+      "citation": "NOAA/WDS 2002-013; cite contributors; no explicit CC license established",
+      "role": "numeric_or_metadata_source",
+      "status": "downloaded_and_checked"
+    },
+    {
+      "file": "pollen.txt",
+      "download_url": "https://www.ncei.noaa.gov/pub/data/paleo/paleolimnology/europe/italy/pollen.txt",
+      "sha256": "45146ca5056d148a6ad150a03af2887620938665541aae3af6281acbb4fbf597",
+      "byte_count": 56060,
+      "license": null,
+      "citation": "NOAA/WDS 2002-013; cite contributors; no explicit CC license established",
+      "role": "numeric_or_metadata_source",
+      "status": "downloaded_and_checked"
+    },
+    {
+      "file": "pollen_707075.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.707075?format=textfile",
+      "sha256": "c1e3bb47c12359ec29d2fe1edb43a62db14374750b45f660c6e1467476e678d0",
+      "byte_count": 58289,
+      "license": "CC-BY-3.0",
+      "citation": "Allen et al. (1999), Figure 2",
+      "role": "numeric_or_metadata_source",
+      "status": "downloaded_and_checked"
+    },
+    {
+      "file": "huntley1996.pdf",
+      "download_url": "https://amq.aiqua.it/index.php/amq/article/download/1059/938/3746",
+      "sha256": "b1d83bf624df18bca1eaf0548a07e5fe36bd32f9e21f691f53851cfd15aeeced",
+      "byte_count": 2217034,
+      "license": "CC-BY-NC-ND-4.0",
+      "citation": "Huntley, Allen & Watts (1996), Il Quaternario 9(2), 605-616; portal migration date is not original publication year",
+      "role": "literature",
+      "status": "downloaded_and_checked"
+    },
+    {
+      "file": "monticchio_739452.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+      "byte_count": 86174,
+      "license": "CC-BY-NC-3.0",
+      "citation": "See prior source registers and PANGAEA DOI",
+      "role": "numeric_source",
+      "status": "existing_file_hash_checked"
+    },
+    {
+      "file": "epd_ages_cut_804596.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.804596?format=textfile",
+      "sha256": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0",
+      "byte_count": 3613957,
+      "license": "CC-BY-3.0",
+      "citation": "See prior source registers and PANGAEA DOI",
+      "role": "numeric_source",
+      "status": "existing_file_hash_checked"
+    },
+    {
+      "file": "monticchio_707050.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.707050?format=textfile",
+      "sha256": "80cde942aea6d0bc0c550cbd4cc4d20ee3a84366a9711d980dcb46275fb176f2",
+      "byte_count": 16752,
+      "license": "CC-BY-3.0",
+      "citation": "See prior source registers and PANGAEA DOI",
+      "role": "numeric_source",
+      "status": "existing_file_hash_checked"
+    },
+    {
+      "file": "monticchio_740512.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.740512?format=textfile",
+      "sha256": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a",
+      "byte_count": 2313,
+      "license": "CC-BY-NC-3.0",
+      "citation": "See prior source registers and PANGAEA DOI",
+      "role": "numeric_source",
+      "status": "existing_file_hash_checked"
+    }
+  ],
+  "literature_web": [
+    {
+      "doi": "10.1016/j.quascirev.2026.110116",
+      "url": "https://www.researchgate.net/publication/407540920_Lago_Grande_di_Monticchio_revisited_Revised_age_model_of_the_last_30_kyrs_based_on_refined_tephrostratigraphic_constraints_of_Campanian_volcanoes",
+      "provenance": "Full article uploaded by coauthor Roberto Isaia on 2026-06-23; public full-text read via web retrieval",
+      "license": "CC-BY-4.0",
+      "full_pdf_downloaded": false,
+      "supplement_downloaded": false,
+      "verified_sections": [
+        "3.1.2",
+        "5.2",
+        "Table 1 caption"
+      ],
+      "publisher_url": "https://doi.org/10.1016/j.quascirev.2026.110116"
+    }
+  ],
+  "failed_acquisition": [
+    {
+      "url": "https://researchportal.port.ac.uk/files/123697643/Lago_Grande_di_Monticchio_revisited.pdf",
+      "status": "HTTP 403"
+    },
+    {
+      "url": "https://www.sciencedirect.com/science/article/pii/S0277379126003252",
+      "status": "No usable full text from direct request; public publisher abstract available via search"
+    }
+  ]
+}

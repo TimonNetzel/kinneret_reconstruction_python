@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "source_file": "huntley1996.pdf",
+  "source_page_printed": 609,
+  "source_pdf_page_1based": 5,
+  "verified_by": "OCR followed by original page image inspection",
+  "section": "2.2 The Fen Core (1993)",
+  "links": [
+    {
+      "lab_no": "CAMS 12610",
+      "uncalibrated_14c_age_bp": 10460,
+      "reported_error_years": 60,
+      "source_context": "Fen core (1993), per original article",
+      "archive_file": "monticchio_740512.tab",
+      "archive_depth_m": "7.250",
+      "archive_comment": "Depth determined by pollen correlation.",
+      "direct_LGM90D_material_date": false
+    },
+    {
+      "lab_no": "CAMS 9855",
+      "uncalibrated_14c_age_bp": 12540,
+      "reported_error_years": 130,
+      "source_context": "Fen core (1993), per original article",
+      "archive_file": "monticchio_740512.tab",
+      "archive_depth_m": "9.000",
+      "archive_comment": "Depth determined by pollen correlation.",
+      "direct_LGM90D_material_date": false
+    }
+  ],
+  "unresolved": [
+    "Original fen sample depths and correlation uncertainty",
+    "ETH-12464 original material/core provenance",
+    "LGM90D to MON16 physical-depth and tephra-free depth crosswalk"
+  ],
+  "new_radiocarbon_calibration": false
+}

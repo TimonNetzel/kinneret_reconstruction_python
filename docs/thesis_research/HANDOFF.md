@@ -61,3 +61,13 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
 [Dissertation und Datenverzeichnis](./Netzel_Analyse_Datenverzeichnis.md),
 [Quellenregister](./source_audit_2026_10_29/sources.json).
 Die ursprüngliche lange Übergabe ist in der Git-Historie erhalten.
+
+## Fortsetzung der Monticchio-Quellenprüfung
+
+[Quellenzuordnung und Datierungsanker](./chronology_crosswalk_2026_10_29/README.md)
+ergänzen die Analogdiagnose aus PR #20: 66 numerische Probenkandidaten,
+drei offene Fälle und nachgewiesene Präzisionsunterschiede zwischen Archiven.
+Zwei AMS-Anker sind aus dem Fen-Kern von 1993 übertragen. Eine neue
+MON16-Tephrochronologie von 2026 wurde identifiziert; deren Supplemente und
+der belegte Tiefen-Crosswalk zu LGM90D fehlen noch. Keine Alterswerte ändern
+oder zusätzliche Proben freigeben, bevor diese Zuordnungen geprüft sind.

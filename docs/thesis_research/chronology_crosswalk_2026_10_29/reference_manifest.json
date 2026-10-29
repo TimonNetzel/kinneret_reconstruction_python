@@ -1,0 +1,38 @@
+{
+  "script_sha256": "a91442f832aa71c7591915c62a7a14968d75299e7e58408765674f1089f731bd",
+  "parser_sha256": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+  "catalog_sha256": "c35174d3cea9de4eca600c286020d718c2330f005c96f7f1b3ba199f47b9d55f",
+  "sources": {
+    "readme_allen1999.txt": "788e612da2f01d62526a334dec27325a0ddafc840f0e102f0704989dbd0512d3",
+    "age.txt": "5d3632c2196fdeb6fb082d68c14780277dbcdfa3922cf17296b15475e9845473",
+    "pollen.txt": "45146ca5056d148a6ad150a03af2887620938665541aae3af6281acbb4fbf597",
+    "pollen_707075.tab": "c1e3bb47c12359ec29d2fe1edb43a62db14374750b45f660c6e1467476e678d0",
+    "huntley1996.pdf": "b1d83bf624df18bca1eaf0548a07e5fe36bd32f9e21f691f53851cfd15aeeced",
+    "monticchio_739452.tab": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+    "epd_ages_cut_804596.tab": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0",
+    "monticchio_707050.tab": "80cde942aea6d0bc0c550cbd4cc4d20ee3a84366a9711d980dcb46275fb176f2",
+    "monticchio_740512.tab": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a"
+  },
+  "outputs": {
+    "age_archive_alignment.csv": {
+      "sha256": "bc3c6c6d529cd755421a223aae5e5d35013827ab31813f82279271623565f533",
+      "byte_count": 35461
+    },
+    "denominator_changes.csv": {
+      "sha256": "eee23a2ecdd5ba4a94bc03bf1e8dfff47f72d1c43241f4b03062b8350e496c90",
+      "byte_count": 510
+    },
+    "sample_correspondence.csv": {
+      "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83",
+      "byte_count": 9369
+    },
+    "summary.json": {
+      "sha256": "a80e34660aa7b636cc4fa158c223d51c355fd1a466c879cfa45d57db80bfbae5",
+      "byte_count": 1927
+    },
+    "unresolved_cells.csv": {
+      "sha256": "9bcd37e23e48dcf0c4a2986ae171d3957cd8225183945b4eb08a063171ca2d53",
+      "byte_count": 1631
+    }
+  }
+}
