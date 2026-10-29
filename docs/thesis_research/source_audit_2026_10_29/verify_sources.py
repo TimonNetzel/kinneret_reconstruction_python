@@ -52,7 +52,10 @@ def audit(raw):
             "negative_counts": scalar("SELECT count(*) FROM p_counts WHERE count < 0"),
             "fractional_count_cells": scalar("SELECT count(*) FROM p_counts WHERE count != cast(count AS integer)"),
             "samples_with_fractional_counts": scalar("SELECT count(DISTINCT samplename) FROM p_counts WHERE count != cast(count AS integer)"),
-            "null_tann_or_pann": scalar("SELECT count(*) FROM climate WHERE t_ann IS NULL OR p_ann IS NULL"),
+            "sql_null_tann_or_pann": scalar("SELECT count(*) FROM climate WHERE t_ann IS NULL OR p_ann IS NULL"),
+            "text_null_tann_or_pann": scalar("SELECT count(*) FROM climate WHERE t_ann = 'NULL' OR p_ann = 'NULL'"),
+            "numeric_tann_and_pann": scalar("SELECT count(*) FROM climate WHERE typeof(t_ann) IN ('real','integer') AND typeof(p_ann) IN ('real','integer')"),
+            "text_null_coordinates": scalar("SELECT count(*) FROM metadata WHERE latitude = 'NULL' OR longitude = 'NULL'"),
             "ispercent_isdigitised_groups": con.execute("SELECT ispercent,isdigitised,count(*) FROM metadata GROUP BY 1,2").fetchall(),
             "regional_box_samples": scalar("SELECT count(*) FROM metadata WHERE latitude BETWEEN 25 AND 75 AND longitude BETWEEN -15 AND 45"),
         }

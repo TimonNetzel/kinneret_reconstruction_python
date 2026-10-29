@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "basis_commit": "8eaab44bc7aa58821da3d4eca54bb40c6ed8059e",
+  "validation": {
+    "synthetic_tests": 11,
+    "original_measurement_pairs_and_values_equal": true,
+    "monticchio_matches_independent_audit": true
+  },
+  "report": {
+    "schema_version": 1,
+    "empd": {
+      "samples": 8746,
+      "measurements": 262390,
+      "taxon_codes": 5230,
+      "groups": 40,
+      "samples_with_fractional_counts": 244,
+      "flags": {
+        "fractional_count_cells": 1059,
+        "fractional_counts": 244,
+        "invalid_latitude": 284,
+        "invalid_longitude": 284,
+        "location_X": 284,
+        "location_quality_unknown": 4136,
+        "missing_climate": 529
+      },
+      "sparse_missing_values": "unresolved; not filled with zero",
+      "scientific_status": "not_assessed"
+    },
+    "monticchio": {
+      "source_samples": 245,
+      "retained_samples": 69,
+      "excluded_samples": 176,
+      "value_rows": 9315,
+      "exact_depth_matches": 61,
+      "rounded_depth_matches": 8,
+      "max_abs_depth_offset_m": "0.005",
+      "age_min_bp": "85.75000",
+      "age_max_bp": "20222.57000",
+      "median_gap_years": "176.27000",
+      "max_gap_years": "2258.95000",
+      "age_bounds_are_joint_ensemble": false,
+      "scientific_status": "candidate_depth_link"
+    }
+  },
+  "manifest": {
+    "schema_version": 1,
+    "importer_sha256": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+    "sources": [
+      {
+        "source_id": "empd2",
+        "file": "empd2.sqlite3",
+        "doi": "10.1594/PANGAEA.909130",
+        "license": "CC-BY-4.0",
+        "sha256": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+        "byte_count": 21327872,
+        "download_url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3"
+      },
+      {
+        "source_id": "monticchio_739452",
+        "file": "monticchio_739452.tab",
+        "doi": "10.1594/PANGAEA.739452",
+        "license": "CC-BY-NC-3.0",
+        "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+        "byte_count": 86174,
+        "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile"
+      },
+      {
+        "source_id": "epd_entity_804591",
+        "file": "epd_entity_804591.tab",
+        "doi": "10.1594/PANGAEA.804591",
+        "license": "CC-BY-3.0",
+        "sha256": "d6d7e269c75dd0c06bf44776cefdac7f0805f2a826991494d76e1a62127af2fd",
+        "byte_count": 308354,
+        "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.804591?format=textfile"
+      },
+      {
+        "source_id": "epd_ages_cut_804596",
+        "file": "epd_ages_cut_804596.tab",
+        "doi": "10.1594/PANGAEA.804596",
+        "license": "CC-BY-3.0",
+        "sha256": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0",
+        "byte_count": 3613957,
+        "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.804596?format=textfile"
+      }
+    ],
+    "outputs": [
+      {
+        "file": "empd_groups.csv",
+        "byte_count": 1266,
+        "sha256": "7afd830166939dff5c47103313f3e6c765c188cb4fc15098c4c84bc53853c121",
+        "rows": 40
+      },
+      {
+        "file": "empd_measurements.csv",
+        "byte_count": 5610349,
+        "sha256": "d71e44de4d351ae6dce5825ab2b8ec887f5669a0e59a8648092cdc9b17ce0a44",
+        "rows": 262390
+      },
+      {
+        "file": "empd_samples.csv",
+        "byte_count": 1753354,
+        "sha256": "5022bb7ca47482945268c501fdb35c378f20a95e3c5d23601071ea027887576e",
+        "rows": 8746
+      },
+      {
+        "file": "empd_taxa.csv",
+        "byte_count": 245466,
+        "sha256": "db14bd2e5e5de3b1e15c43a929d6a670f303a9c236681b1e43cac242cab15c1d",
+        "rows": 5230
+      },
+      {
+        "file": "monticchio_excluded.csv",
+        "byte_count": 8106,
+        "sha256": "94dc5176100e2a8acf7453f9fbbbe105f44e250c06ed7c9f6faeb3058e039afe",
+        "rows": 176
+      },
+      {
+        "file": "monticchio_samples.csv",
+        "byte_count": 7813,
+        "sha256": "0e2f950d608a67edf8826ac268e09a3ca41280fee29f02e7bb4e37bc7a5b70d8",
+        "rows": 69
+      },
+      {
+        "file": "monticchio_values.csv",
+        "byte_count": 298966,
+        "sha256": "afd83d2fd30c778088f106a9747fc42c43274e8629b89362eef8037df52ef1f6",
+        "rows": 9315
+      },
+      {
+        "file": "report.json",
+        "byte_count": 992,
+        "sha256": "62bbc5b77060943c1e048113bb7e2f7b4c7e639953763a02f392fd266055e7bf",
+        "rows": null
+      }
+    ],
+    "missing_csv_value": "empty field",
+    "scientific_status": "not_assessed",
+    "age_origin": "1950 CE; BP years",
+    "note": "Source data licenses apply. No taxon pooling or training eligibility is inferred."
+  }
+}
