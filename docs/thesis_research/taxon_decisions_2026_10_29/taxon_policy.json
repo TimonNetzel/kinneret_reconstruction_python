@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "scope": "fossil field selection and candidate modern concept links, not a training matrix",
+  "exclude": [
+    "Euc [#]",
+    "conc.spk [#]",
+    "vol.sp.a [cm**3]",
+    "Que.r-T [#]",
+    "Que.i [#]",
+    "Cypae [#]"
+  ],
+  "manual_unresolved": [
+    "Pla [#]",
+    "Pla.c-T [#]",
+    "Pla.l-T [#]",
+    "Pla.m/m [#]",
+    "Polae [#]",
+    "Rosae [#]",
+    "Rum [#]",
+    "Oxy-T [#]",
+    "Leg [#]",
+    "Vic-T [#]",
+    "Cen.cfc-T [#]",
+    "Cen.cfn-T [#]",
+    "Cen.cfs-T [#]",
+    "Crl-T [#]",
+    "Cornacae [#]",
+    "Crn [#]"
+  ],
+  "modern_id_selection": {
+    "Can [#]": [
+      "205"
+    ],
+    "Urt-T [#]": [
+      "809"
+    ],
+    "Lar [#]": [
+      "123"
+    ],
+    "Pti [#]": [
+      "512"
+    ],
+    "Ran-T [#]": [
+      "135"
+    ]
+  },
+  "modern_pool_candidates": {
+    "Hed [#]": [
+      "51",
+      "4031"
+    ],
+    "Vts [#]": [
+      "122",
+      "4756"
+    ]
+  },
+  "accepted_database_aliases": {
+    "Graae [#]": "80",
+    "Cru [#]": "13",
+    "Umb [#]": "6",
+    "Cicoid [#]": "25"
+  },
+  "nonpollen_groups": [
+    "AQUA",
+    "AQVP",
+    "AQPT",
+    "VACR",
+    "BRYO",
+    "SPOR",
+    "NOPO",
+    "INUN",
+    "LABO"
+  ],
+  "notes": [
+    "include means retained in a catalog of common concepts, not scientifically eligible.",
+    "pool applies to candidate modern accepted-ID namespaces only; fossil counts are never pooled by this audit.",
+    "unresolved fields are retained in originals and withheld from any training input."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "script_sha256": "dafd7b6dc9f7f06ed77a26a7fdaaa5843995a066c256108177894b72439dd546",
+  "policy_sha256": "7c283e66ea5cf237826d609b168d056d9c20b39398fa18bd722a72ea58f3a34c",
+  "evidence_registry_sha256": "c5455c7ffa0bd658086e8442b46e857c42b47576a149a30f37809ac890d3f5da",
+  "source_catalog_sha256": "75474154d72899054860fc55f1ac8dd934c001c4dbe32a41bd0602e82f1124af",
+  "helper_sha256": {
+    "import_data.py": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+    "audit_readiness.py": "0a64c2143d96c75a20ead0d5668405ea3ba572d2649142d80041a0dca084b7b7"
+  },
+  "outputs": {
+    "decision_summary.json": "91f9fa63f308491beb59e21673b589a1dbe3bd253e588ffdcaea2454520c1a58",
+    "fossil_decisions.csv": "dde5dddd0e90dae24efb6104b200902ebde3e6b2edd0bda678377bf959146a91",
+    "sample_selection_audit.csv": "ae0894dfaf1414b5c6c9b633ad7d62a84c653e54db101f5879d44d22024a8e28"
+  }
+}
