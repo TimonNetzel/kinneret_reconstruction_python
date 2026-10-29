@@ -1,0 +1,12 @@
+source_id,original_label,concept_level,proposed_group,decision,reason
+monticchio_739452,Abi [#],genus,Abies,retain_genus,Archive parameter Abies; do not replace by Abies alba
+monticchio_739452,Ace [#],pollen_type,Acer campestre-type,retain_type,Archive accepted-name comment gives campestre-type; not all Acer
+monticchio_739452,Graae [#],family,Poaceae,candidate_synonym,Archive Gramineae; verify EMPD family concept before pooling
+monticchio_739452,Cheae [#],compound_family,Chenopodiaceae/Amaranthaceae,retain_compound,Do not split a combined pollen concept into plant species
+monticchio_739452,Can [#],compound_type,Humulus/Cannabis,retain_compound,Archive accepted-name comment combines two genera
+monticchio_739452,Ost-T [#],compound_type,Ostrya/Carpinus orientalis,retain_compound,Archive accepted-name comment; no species disaggregation
+ohrid_892362,Ulmus/Zelkova [%],compound_type,Ulmus/Zelkova,retain_compound,Two genera unresolved in the archive
+ohrid_892362,Que.r-T [%] (Includes deciduous oaks),pollen_group,deciduous Quercus,retain_group,Type is not a species-level Quercus robur observation
+ohrid_892362,Juglandaceae [%],family,Juglandaceae,retain_family,Do not map the family to cultivated Juglans regia
+ohrid_892362,Pinus [%] (Included in the pollen sum),genus,Pinus,retain_denominator,Pinus denominator differs from AP/NAP basis in corrigendum
+flora_1,Abies alba,species,Abies alba,retain_species,Presence geometry of one species does not represent all Abies pollen
