@@ -61,3 +61,14 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
 [Dissertation und Datenverzeichnis](./Netzel_Analyse_Datenverzeichnis.md),
 [Quellenregister](./source_audit_2026_10_29/sources.json).
 Die ursprüngliche lange Übergabe ist in der Git-Historie erhalten.
+
+## Bestätigter nächster Ablauf
+
+Der Nutzer hat den [Monticchio-Pilotplan](./PILOT_PLAN.md) bestätigt:
+Chronologie klären, Pilot berechnen und unabhängig prüfen, danach durch
+Claude integrieren, erst anschließend erweitern. P1 wartet aktuell auf die
+MON16-Original-Supplemente und eine belegte Tiefenzuordnung. Das benötigte
+[Datenpaket](./CHRONOLOGY_DATA_REQUEST.md) ist konkret beschrieben; die
+moderne Baseline bleibt unverändert. Ergebnisse aus PR #20/#21 weiterhin
+berücksichtigen, aber numerische Kandidaten nicht als Originalprobenbeleg
+oder neue Chronologie ausgeben.
