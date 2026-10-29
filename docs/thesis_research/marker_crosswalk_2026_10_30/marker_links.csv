@@ -1,0 +1,7 @@
+legacy_layer,tm_label,legacy_listed_depth_cm,legacy_thickness_mm,appendix_pdf_page,appendix_row,appendix_aliases,historical_core_section,historical_composite_base_cm,mon12_base_cm,listed_to_historical_base_difference_cm,mon16_top_cm,mon16_base_cm,identity_status,sample_depth_transform_status,mon16_conflict
+L4,TM-6b,662,110,138,32,MT-2 / PL-9 / L4,"D3-o, 80.4-91",668.49,668.49,6.49,504.7,515.4,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,mercato_top_and_labelled_age_conflict
+L5,TM-7b,787,50,138,47,MT-3 / PL-11 / L5,"B4-u, 63.3-68",789.04,789,2.04,650.6,654.4,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,
+L6,TM-8,862,30,139,57,PL-12 / L6,"D4-o, 89.5-90.2",864.53,864.5,2.53,720.9,723.3,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,
+L7,TM-9,882,30,139,60,PL-13 / L7,"D4-u, 6.8-8.4",883.38,883.4,1.38,739.2,741,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,
+L8,TM-12,1016,70,139,70,MT-4 / PL-17 / L8,"D5-o, 37-42.5",1015.5,1015.5,-0.5,857.7,869.9,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,
+L9,TM-13,1120,170,139,75,MT-5 / PL-19 / L9,"D5-u, 28-46",1117.1,1117.0999999999999,-2.9,938.7,956.2,published_marker_identity_chain,unresolved_depth_conventions_and_intermarker_mapping,

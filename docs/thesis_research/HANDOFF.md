@@ -61,3 +61,17 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
 [Dissertation und Datenverzeichnis](./Netzel_Analyse_Datenverzeichnis.md),
 [Quellenregister](./source_audit_2026_10_29/sources.json).
 Die ursprüngliche lange Übergabe ist in der Git-Historie erhalten.
+
+## Chronologie-Fortsetzung vom 30.10.2026
+
+Der bestätigte Pilotplan aus [PR #22](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/22)
+bleibt gültig. Die danach hochgeladenen Original-Supplemente sind in
+[PR #23](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/23) geprüft.
+Der [neue Marker-/Quellenabgleich](./marker_crosswalk_2026_10_30/README.md)
+belegt sechs L4–L9→TM-Verbindungen über historische Kernabschnitte und
+Komposittiefen, identifiziert ETH-12464 als Probe LGM7.1 und stützt die
+MON12-Tiefe aus A-1 bei TM-8-1b. Die vollständige Pollenproben-Zuordnung
+und MON16-Mercato bleiben offen: keine neuen Alter für die 69 Proben und
+keine automatische P2-Freigabe. Nächster Eingang ist die originale
+Proben-/Kernabschnittsliste mit Tiefenkonventionen und Korrelationsunsicherheit.
+Baseline und Claude-Integration unverändert; PR #19 weiterhin `c8977a5`.

@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "wulf_appendix_rows": [
+    {
+      "pdf_page": 138,
+      "row": 32,
+      "varve_age_bp": "9678",
+      "thickness_mm": "106.00",
+      "composite_base_cm": "668.49",
+      "core_section": "D3-o, 80.4-91",
+      "aliases": "MT-2 / PL-9 / L4"
+    },
+    {
+      "pdf_page": 138,
+      "row": 47,
+      "varve_age_bp": "12181",
+      "thickness_mm": "47.00",
+      "composite_base_cm": "789.04",
+      "core_section": "B4-u, 63.3-68",
+      "aliases": "MT-3 / PL-11 / L5"
+    },
+    {
+      "pdf_page": 139,
+      "row": 55,
+      "varve_age_bp": "14106",
+      "thickness_mm": "4.00",
+      "composite_base_cm": "862.70",
+      "core_section": "D4-o, 88-88.4",
+      "aliases": ""
+    },
+    {
+      "pdf_page": 139,
+      "row": 56,
+      "varve_age_bp": "14113",
+      "thickness_mm": "11.00",
+      "composite_base_cm": "863.80",
+      "core_section": "D4-o, 88.4-89.5",
+      "aliases": ""
+    },
+    {
+      "pdf_page": 139,
+      "row": 57,
+      "varve_age_bp": "14115",
+      "thickness_mm": "7.00",
+      "composite_base_cm": "864.53",
+      "core_section": "D4-o, 89.5-90.2",
+      "aliases": "PL-12 / L6"
+    },
+    {
+      "pdf_page": 139,
+      "row": 58,
+      "varve_age_bp": "14458",
+      "thickness_mm": "2.00",
+      "composite_base_cm": "878.47",
+      "core_section": "D4-u, 3.5",
+      "aliases": ""
+    },
+    {
+      "pdf_page": 139,
+      "row": 60,
+      "varve_age_bp": "14557",
+      "thickness_mm": "18.00",
+      "composite_base_cm": "883.38",
+      "core_section": "D4-u, 6.8-8.4",
+      "aliases": "PL-13 / L7"
+    },
+    {
+      "pdf_page": 139,
+      "row": 70,
+      "varve_age_bp": "17560",
+      "thickness_mm": "55.00",
+      "composite_base_cm": "1015.50",
+      "core_section": "D5-o, 37-42.5",
+      "aliases": "MT-4 / PL-17 / L8"
+    },
+    {
+      "pdf_page": 139,
+      "row": 75,
+      "varve_age_bp": "19282",
+      "thickness_mm": "182.00",
+      "composite_base_cm": "1117.10",
+      "core_section": "D5-u, 28-46",
+      "aliases": "MT-5 / PL-19 / L9"
+    }
+  ],
+  "marker_identities": [
+    {
+      "legacy_label": "L4",
+      "modern_label": "TM-6b",
+      "appendix_row": 32,
+      "a1_row": 29
+    },
+    {
+      "legacy_label": "L5",
+      "modern_label": "TM-7b",
+      "appendix_row": 47,
+      "a1_row": 41
+    },
+    {
+      "legacy_label": "L6",
+      "modern_label": "TM-8",
+      "appendix_row": 57,
+      "a1_row": 47
+    },
+    {
+      "legacy_label": "L7",
+      "modern_label": "TM-9",
+      "appendix_row": 60,
+      "a1_row": 50
+    },
+    {
+      "legacy_label": "L8",
+      "modern_label": "TM-12",
+      "appendix_row": 70,
+      "a1_row": 59
+    },
+    {
+      "legacy_label": "L9",
+      "modern_label": "TM-13",
+      "appendix_row": 75,
+      "a1_row": 63
+    }
+  ],
+  "identity_bridge": "Explicit old L aliases on Wulf 2001 Appendix A rows, corroborated by Wulf 2004 Table 2 as transcribed in VARDA; A-1 uses matching TM labels and old composite bases. No age-based matching.",
+  "hajdas_ETH12464": {
+    "pdf_page": 3,
+    "printed_page": 805,
+    "table": 1,
+    "sample": "LGM7.1",
+    "composite_depth_cm": "1382.5",
+    "varve_age_bp": "23280",
+    "radiocarbon_age_bp": "23140",
+    "radiocarbon_error_years": "360",
+    "study_material_context": "Terrestrial macrofossils; methods describe combining subsamples from correlated LGM-B/C/D cores. Single original core/section for this aliquot not identified.",
+    "visual_table_checked": true
+  },
+  "file_locks": {
+    "wulf2001.pdf": {
+      "bytes": 10546963,
+      "sha256": "f669d375375db1863938b4716ebd139f934aa77a17cdfd74a93e1dc401303643"
+    },
+    "hajdas1998.pdf": {
+      "bytes": 596827,
+      "sha256": "62080e51e0df0b8dbad58cdeed3fe06f26b249ba5b2393a2519f8933bb3f4aec"
+    },
+    "monticchio_741058.tab": {
+      "bytes": 2166,
+      "sha256": "f5bdb0dd008c9e714b87c60238b1cae452414567abd091a2c3616370125d2635"
+    },
+    "monticchio_740512.tab": {
+      "bytes": 2313,
+      "sha256": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a"
+    },
+    "1-s2.0-S0277379126003252-mmc1.xlsx": {
+      "bytes": 447272,
+      "sha256": "464da840bafe2b508da20e8d78062e6928f62d41cf7b7025b43670c954feedd9"
+    },
+    "pr21_sample_correspondence.csv": {
+      "bytes": 9369,
+      "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83"
+    }
+  }
+}
