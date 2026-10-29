@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "script_sha256": "9373b0d2783137509c0a97d6f4f9106ae23e811c39034464dde91039785eff2b",
+  "helper_sha256": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+  "feature_policy_sha256": "a2a85217c2918a503dd063d025730d496ec436be0a012c7f1bef802e666f5def",
+  "old_source_catalog_sha256": "75474154d72899054860fc55f1ac8dd934c001c4dbe32a41bd0602e82f1124af",
+  "new_source_catalog_sha256": "142805c858db35d4f1a541a8352b5780c67a3038803fd17f0ab384d4c583fcf2",
+  "outputs": {
+    "feature_evidence.csv": {
+      "sha256": "cf6ce1ccdcb91e06c2e4834f4049427e664a1b52d98017506824996ca32a6029",
+      "byte_count": 5848
+    },
+    "fossil_shared_counts.csv": {
+      "sha256": "3451c8f496f70995080a7d9ec8cc78631e3e17046c3307ed76aa87383d2628a7",
+      "byte_count": 16977
+    },
+    "fossil_shared_percent.csv": {
+      "sha256": "f08bb901f86e5d2518446ac82c655a14c9378858b38691529804e3db22ba7460",
+      "byte_count": 48586
+    },
+    "modern_shared_counts.csv": {
+      "sha256": "c4c0c2b11afe5cfde854e80130b2892edab37baca038aa6e877d59c88ff5bc64",
+      "byte_count": 1748579
+    },
+    "modern_shared_percent.csv": {
+      "sha256": "b41cad7545bcc77e416adf27c1fef3f88781c1319413926b6a820f9fe0ad8c91",
+      "byte_count": 4413735
+    },
+    "summary.json": {
+      "sha256": "9f8a95a2d26e8c88e8d82cc7f86cc2003bc1659a0e7ee037a966088040f75f66",
+      "byte_count": 4632
+    }
+  },
+  "source_licenses": {
+    "modern": "CC-BY-4.0",
+    "fossil_counts": "CC-BY-NC-3.0",
+    "fossil_chronologies": "CC-BY-3.0"
+  },
+  "note": "Only the data inputs and the explicit shared subcomposition are prepared; no model or validation score."
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "files": [
+    {
+      "source_id": "empd2_ready2025",
+      "file": "EMPD2_90taxa_7634sites.xlsx",
+      "doi": "10.1594/PANGAEA.973997",
+      "download_url": "https://download.pangaea.de/reference/130942/attachments/EMPD2_90taxa_7634sites.xlsx",
+      "landing_url": "https://doi.pangaea.de/10.1594/PANGAEA.973997",
+      "retrieved_at": "2026-10-29",
+      "sha256": "dc0022303be38ada3aaeed87aaae9fe6fe57df9d718fe8dff57b9874fd9f730b",
+      "mime": null,
+      "license": "CC-BY-4.0",
+      "byte_count": 38526116,
+      "retrieval_status": "downloaded"
+    },
+    {
+      "source_id": "mmc1",
+      "file": "mmc1.docx",
+      "doi": "10.1016/j.dib.2025.111657",
+      "download_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12163141/supplementaryFiles",
+      "byte_count": 102298,
+      "sha256": "71972d07734fe6f33166b7d2c290bb628639d1bc9735c7e62df17852ccc44188",
+      "license": "CC-BY-NC-ND-4.0",
+      "retrieval_status": "downloaded",
+      "note": "For supplementaryFiles URL extract mmc1.docx from returned ZIP; raw supplement is not redistributed.",
+      "container_byte_count": 172477,
+      "container_sha256": "8485fa01ae8e773650d2c98f321fa801771915ae0b0c7163bf8718ebe9f72d77"
+    },
+    {
+      "source_id": "zumaque2025",
+      "file": "zumaque2025.xml",
+      "doi": "10.1016/j.dib.2025.111657",
+      "download_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12163141/fullTextXML",
+      "byte_count": 68764,
+      "sha256": "005ab301f2463430cfaab814174d7131aa3dc739abaa7c583496a6c055ec94d6",
+      "license": "CC-BY-NC-ND-4.0",
+      "retrieval_status": "downloaded",
+      "note": "Public full-text XML; not redistributed."
+    }
+  ]
+}
