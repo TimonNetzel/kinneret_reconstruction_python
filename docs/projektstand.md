@@ -1,6 +1,6 @@
 # Projektstand
 
-Stand: 28.10.2026. Dieses Dokument fasst Ziel, Plan, Ergebnisse, Entscheidungen und offene Punkte
+Stand: 29.10.2026. Dieses Dokument fasst Ziel, Plan, Ergebnisse, Entscheidungen und offene Punkte
 zusammen, damit die Arbeit jederzeit wieder aufgenommen werden kann.
 
 ## Ziel
@@ -137,14 +137,16 @@ Referenzläufe der Standards: `reference/v1.0-paper/` (Original), `reference/v2-
 
 ## Übergabe an eine neue Sitzung
 
-Stand 28.10.2026, App Schritt 5 (Standort-Register) umgesetzt im Branch `ccr-03594f78-ure5tb`, noch nicht nach
-`main` gemergt. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt
+Stand 29.10.2026, App Schritt 5 (Standort-Register) und die Überarbeitung der Gesten auf dem Handy abgeschlossen und
+per Pull Request #8 nach `main` gemergt. Weiterarbeit in einem neuen Branch ab `main`. Alles Nötige steht im Repo. **Zum Einstieg nur diesen Abschnitt lesen**, weitere Dokumente gezielt
 nach Bedarf (Verweise unten).
 
 **Stand App Schritt 5:** Ein Standort ist ein Ordner `data/<ordner>/` mit den Eingangsdaten und `standort.toml`
 (Kinneret: `data/in/standort.toml`; Lage, Höhe, Raster, Biome mit Farben, CRU-Ausschnitt und Einzugsgebiet).
 `lade_standorte()`/`standort()` in `katalog.py`; `cru-prior` und `cru-extract` lesen daraus (`--standort`). Die
-App zeigt ab zwei Standorten einen Wähler im Kopf. Details: App-Konzept Abschnitt 13.
+App zeigt ab zwei Standorten einen Wähler im Kopf. Gesten: Tippen oder Klicken zeigt nur Werte, auf dem Handy
+scrollt Wischen die Seite; das Detail der Rekonstruktion kommt über die Auswahl „Detail“. Details: App-Konzept
+Abschnitt 13.
 
 **Nächster Schritt:** Entscheidung zu den Biomfarben (Offene Punkte, Punkt 3), sonst die übrigen offenen Punkte;
 App Schritt 6 (Läufe aus der App starten, Overlays) ist „später“.
