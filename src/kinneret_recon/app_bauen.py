@@ -6,6 +6,7 @@
 - Eine Datei (``--eine-datei``): alles eingebettet, die Laufdaten gzip-komprimiert (Entpacken im Browser mit
   ``DecompressionStream``). Fuer das Handy.
 - Manifest und Service Worker fuer den Offline-Betrieb ueber ``localhost`` oder HTTPS (PWA).
+- Ansicht "Moderne Validierung": gespeicherte Metriken der Shared37-Baseline (``baseline.py``), ``daten/validierung.js``.
 """
 
 from __future__ import annotations
@@ -20,13 +21,14 @@ import socket
 from functools import partial
 from pathlib import Path
 
+from . import baseline
 from .app_daten import APP_DIR
 from .katalog import KATALOG_DIR
 
 QUELLE = Path(__file__).parent / "app"
 # Skripte in der Reihenfolge von index.html; die Reihenfolge der Ansichten ist die der Reiter
 SKRIPTE = ("vendor/plotly-cartesian.min.js", "i18n.js", "kern.js", "rekonstruktion.js", "sensitivitaet.js",
-           "gewichte.js", "transferfunktionen.js", "lauf.js", "export.js", "start.js")
+           "gewichte.js", "transferfunktionen.js", "lauf.js", "validierung.js", "export.js", "start.js")
 STATISCH = ("index.html", "style.css", "manifest.webmanifest", "icon.svg", "vendor/LICENSE-plotly.txt", *SKRIPTE)
 
 
@@ -75,6 +77,8 @@ def baue_ordner(out: Path, root: Path | None = None) -> Path:
         (out / f"daten/standort_{key}.js").write_text(_js(f"standort/{key}", d), encoding="utf-8")
     for lid, d in laeufe.items():
         (out / f"daten/laeufe/{lid}.js").write_text(_js(f"lauf/{lid}", d), encoding="utf-8")
+    if (v := baseline.app_daten(root)) is not None:
+        (out / "daten/validierung.js").write_text(_js("validierung", v), encoding="utf-8")
     dateien = sorted(p.relative_to(out).as_posix() for p in out.rglob("*") if p.is_file())
     h = hashlib.sha256()
     for f in dateien:
@@ -105,6 +109,8 @@ def baue_eine_datei(path: Path, root: Path | None = None) -> Path:
         code = (QUELLE / src).read_text(encoding="utf-8").replace("</script", "<\\/script")
         skripte.append((f'<script src="{src}"></script>', f"<script>\n{code}\n</script>"))
     daten = _js("katalog", katalog) + "".join(_js(f"standort/{k}", d) for k, d in standorte.items())
+    if (v := baseline.app_daten(root)) is not None:
+        daten += _js("validierung", v)
     daten = daten.replace("</", "<\\/")
     eingebettet = "".join(
         f'<script type="application/gzip-base64" id="kr-lauf-{lid}">' +

@@ -99,6 +99,8 @@
   }
   const ladeLauf = (id) => lade("lauf/" + id, "kr-lauf-" + id, "daten/laeufe/" + id + ".js");
   const ladeStandort = (key) => lade("standort/" + key, null, "daten/standort_" + key + ".js");
+  // Moderne raeumliche Validierung (Shared37-Baseline, unabhaengig von Lauf und Standort)
+  const ladeValidierung = () => lade("validierung", null, "daten/validierung.js");
 
   // ---------------------------------------------------------------------------------------------------------------
   // Farben: eine Farbe je Lauf ueber alle Ansichten (farbsehschwaechen-taugliche Palette nach Tol und Okabe-Ito)
@@ -398,7 +400,8 @@
   // Register der Ansichten
   const ansichten = [];
   window.KR = {
-    D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
+    D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort,
+    ladeValidierung, farbe, alpha,
     dunkel, dichteSkala, TOUCH, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
     STANDORTE, standardLauf, amStandort, waehleStandort, aktuellerStandort, umschalter, laufOptionen, gruppeVon,
     stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten, vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,

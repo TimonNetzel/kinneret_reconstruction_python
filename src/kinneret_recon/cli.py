@@ -1,8 +1,9 @@
-"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app|ketten|thesis-import``."""
+"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app|ketten|thesis-import|thesis-baseline``."""
 
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -348,6 +349,43 @@ def cmd_thesis_import(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_thesis_baseline(a: argparse.Namespace) -> int:
+    from . import baseline as bl
+
+    root = Path.cwd()
+    ev = bl.lade_evaluator(root)
+    out = Path(a.output_dir)
+    try:
+        metriken = ev.evaluate(Path(a.input_dir), Path(a.policy or root / bl.BASELINE_POLICY),
+                               Path(a.config or root / bl.BASELINE_CONFIG), out)
+    except (ValueError, OSError, KeyError, json.JSONDecodeError) as e:
+        raise SystemExit(f"Baseline fehlgeschlagen: {e}") from None
+    manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
+    print(f"Baseline geschrieben: {out}")
+    print(f"manifest.json SHA256: {bl.sha256(out / 'manifest.json')}")
+    print(f"{metriken['selected_samples']} Proben ({metriken['threshold_excluded']} unter der Zaehlschwelle), "
+          f"{len(metriken['features'])} Merkmale, Puffer {manifest['config']['buffer_km']} km; "
+          f"Hauptmodell {metriken['primary_model']}, Vergleich Trainingsmittel; RMSE probengewichtet")
+    for z in bl.kompakte_metriken(metriken):
+        rolle = ("Hauptmodell" if z["modell"] == metriken["primary_model"] else
+                 "Referenz" if z["modell"] == bl.REFERENZMODELL else "Sensitivitaet")
+        print(f"  {z['block_grad']:>2} Grad {z['modell']:<13} {rolle:<13} Tann {z['tann_c_rmse']:.3f} degC "
+              f"(Skill {z['tann_c_mse_skill']:.3f})  Pann {z['pann_mm_per_year_rmse']:.1f} mm/Jahr "
+              f"(Skill {z['pann_mm_per_year_mse_skill']:.3f})")
+    if a.ohne_referenz:
+        print("Referenz: nicht geprueft")
+        return 0
+    ref_pfad = Path(a.reference or root / bl.BASELINE_REFERENZ)
+    referenz = json.loads(ref_pfad.read_text(encoding="utf-8"))
+    abw = bl.referenz_abweichungen(manifest, referenz)
+    if abw:
+        umgebung = ", ".join(f"{k} {manifest.get(k)} (Referenz {referenz.get(k)})" for k in ("python", "numpy", "scipy"))
+        raise SystemExit(f"Referenz abweichend ({ref_pfad}): {', '.join(abw)}; Umgebung: {umgebung}. "
+                         f"Ausgabe bleibt zur Pruefung in {out}")
+    print(f"Referenz: uebereinstimmend ({ref_pfad})")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="kinneret-recon", description="Bayessche Klimarekonstruktion See Genezareth")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -464,6 +502,18 @@ def main(argv=None) -> int:
     t.add_argument("--reference", help=f"gespeicherter Referenzlauf (Standard: {THESIS_REFERENZ})")
     t.add_argument("--ohne-referenz", action="store_true", help="keinen Abgleich mit einem Referenzlauf")
     t.set_defaults(func=cmd_thesis_import)
+
+    from .baseline import BASELINE_CONFIG, BASELINE_POLICY, BASELINE_REFERENZ
+
+    v = sub.add_parser("thesis-baseline", help="moderne raeumliche Shared37-Validierung nachrechnen "
+                       "(tools/thesis_import/evaluate_shared2025.py, keine fossilen Klimakurven)")
+    v.add_argument("--input-dir", required=True, help="Ausgabe von prepare_shared2025.py (Shared37-Tabellen)")
+    v.add_argument("--output-dir", required=True, help="neues Zielverzeichnis (darf noch nicht bestehen)")
+    v.add_argument("--policy", help=f"Merkmalsrichtlinie (Standard: {BASELINE_POLICY})")
+    v.add_argument("--config", help=f"feste Versuchskonfiguration (Standard: {BASELINE_CONFIG})")
+    v.add_argument("--reference", help=f"gespeichertes Referenzmanifest (Standard: {BASELINE_REFERENZ})")
+    v.add_argument("--ohne-referenz", action="store_true", help="keinen Abgleich mit dem Referenzmanifest")
+    v.set_defaults(func=cmd_thesis_baseline)
 
     a = p.parse_args(argv)
     return a.func(a)
