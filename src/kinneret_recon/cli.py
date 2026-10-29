@@ -1,4 +1,4 @@
-"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app|ketten``."""
+"""Kommandozeile: ``kinneret-recon run|compare|config|cru-extract|cru-prior|katalog|batch|app-daten|app|ketten|thesis-import``."""
 
 from __future__ import annotations
 
@@ -309,6 +309,45 @@ def cmd_app(a: argparse.Namespace) -> int:
     return 0
 
 
+THESIS_IMPORTER = Path("tools/thesis_import/import_data.py")
+THESIS_REFERENZ = Path("tools/thesis_import/reference_run.json")
+THESIS_QUELLEN = Path("docs/thesis_research/source_audit_2026_10_29/sources.json")
+
+
+def lade_thesis_importer(root: Path):
+    """Laedt den Importer unveraendert aus tools/ (seine Pruefsumme steht im Manifest jedes Imports)."""
+    import importlib.util
+
+    pfad = root / THESIS_IMPORTER
+    if not pfad.is_file():
+        raise SystemExit(f"Importer nicht gefunden: {pfad} (aus dem Hauptverzeichnis des Repositorys aufrufen)")
+    spec = importlib.util.spec_from_file_location("thesis_import_data", pfad)
+    modul = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(modul)
+    return modul
+
+
+def cmd_thesis_import(a: argparse.Namespace) -> int:
+    import sqlite3
+
+    root = Path.cwd()
+    imp = lade_thesis_importer(root)
+    referenz = None if a.ohne_referenz else Path(a.reference or root / THESIS_REFERENZ)
+    try:
+        report = imp.run(Path(a.raw_dir), Path(a.output_dir), Path(a.catalog or root / THESIS_QUELLEN),
+                         a.download, referenz)
+    except (imp.ImportFailure, OSError, sqlite3.Error, KeyError) as e:
+        raise SystemExit(f"Import fehlgeschlagen: {e}") from None
+    e, m = report["empd"], report["monticchio"]
+    print(f"EMPD2: {e['samples']} Proben, {e['measurements']} Messungen, {e['taxon_codes']} Taxoncodes, "
+          f"{e['samples_with_fractional_counts']} Proben mit gebrochenen Zaehlungen")
+    print(f"Monticchio LGM90D: {m['retained_samples']} von {m['source_samples']} Proben zugeordnet "
+          f"({m['exact_depth_matches']} exakt, {m['rounded_depth_matches']} gerundet), {m['excluded_samples']} ausgeschlossen")
+    print("Referenz: " + ("nicht geprueft" if referenz is None else f"uebereinstimmend ({referenz})"))
+    print(f"Import geschrieben: {a.output_dir}")
+    return 0
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="kinneret-recon", description="Bayessche Klimarekonstruktion See Genezareth")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -415,6 +454,16 @@ def main(argv=None) -> int:
     w.add_argument("--serve", action="store_true", help="Ordner bauen und ueber einen lokalen Server bereitstellen")
     w.add_argument("--port", type=int, default=8000)
     w.set_defaults(func=cmd_app)
+
+    t = sub.add_parser("thesis-import", help="EMPD2 und Monticchio aus gesperrten Quellen importieren "
+                       "(tools/thesis_import/, ohne Harmonisierung und Modellfreigabe)")
+    t.add_argument("--raw-dir", required=True, help="Verzeichnis der Quelldateien")
+    t.add_argument("--output-dir", required=True, help="neues Zielverzeichnis (darf noch nicht bestehen)")
+    t.add_argument("--catalog", help=f"Quellenregister (Standard: {THESIS_QUELLEN})")
+    t.add_argument("--download", action="store_true", help="nur fehlende gesperrte Quelldateien laden (PANGAEA)")
+    t.add_argument("--reference", help=f"gespeicherter Referenzlauf (Standard: {THESIS_REFERENZ})")
+    t.add_argument("--ohne-referenz", action="store_true", help="keinen Abgleich mit einem Referenzlauf")
+    t.set_defaults(func=cmd_thesis_import)
 
     a = p.parse_args(argv)
     return a.func(a)
