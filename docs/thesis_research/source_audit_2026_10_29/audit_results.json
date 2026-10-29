@@ -32,7 +32,10 @@
       "negative_counts": 0,
       "fractional_count_cells": 1059,
       "samples_with_fractional_counts": 244,
-      "null_tann_or_pann": 0,
+      "sql_null_tann_or_pann": 0,
+      "text_null_tann_or_pann": 529,
+      "numeric_tann_and_pann": 8217,
+      "text_null_coordinates": 284,
       "ispercent_isdigitised_groups": [
         [
           0,

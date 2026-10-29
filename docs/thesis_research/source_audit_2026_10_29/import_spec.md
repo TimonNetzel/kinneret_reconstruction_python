@@ -37,7 +37,7 @@ JOIN metadata AS m USING (samplename)
 JOIN climate AS k USING (samplename);
 ```
 
-Originalcodes immer erhalten. Erst nach Konzeptprüfung über `acc_var_` gruppieren; ähnliche Namen sind kein eindeutiger Schlüssel. Summendefinitionen mit `groupid` prüfen. Nicht jeden Datenbankcode als unabhängiges Pflanzentaxon verwenden. Abwesende Sparse-Zeilen erst nach Klärung des Datenprotokolls zu Nullen machen.
+Originalcodes immer erhalten. Erst nach Konzeptprüfung über `acc_var_` gruppieren; ähnliche Namen sind kein eindeutiger Schlüssel. Summendefinitionen mit `groupid` prüfen. Nicht jeden Datenbankcode als unabhängiges Pflanzentaxon verwenden. Abwesende Sparse-Zeilen erst nach Klärung des Datenprotokolls zu Nullen machen. Der Textwert `"NULL"` ist kein numerischer Wert: 529 Proben haben fehlende Klimazuordnungen, 284 fehlende Koordinaten und 4.136 eine unbekannte Standortqualität mit diesem Token. SQL `IS NULL` allein reicht nicht. Numerische Exportfelder leer lassen, Roh-Tokens separat erhalten und die Proben kennzeichnen.
 
 Abnahme des ersten Imports: 8.746 eindeutige Proben und 262.390 Messzeilen vor Filtern; keine verlorenen Messzeilen im Join. 1.059 gebrochene Zählfelder aus 244 Proben ausdrücklich markieren. Eine diskrete Count-Likelihood darf diese Werte ohne begründete Behandlung nicht verwenden. `agebp` bedeutet Jahre relativ zu 1950; negative Werte erhalten. Standortqualität `X` ausschließen; andere Qualitätsklassen, Meeresproben, Höhenfehler und räumliche Doppelungen vor Training getrennt auswerten. Die bisherige Boxauswahl liefert nur Kandidaten.
 
