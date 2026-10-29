@@ -27,18 +27,21 @@ baut auf dem Kopf von #13 (`d5bc098`) auf und zielt als eigener PR auf `codex/ne
 | `python -m unittest discover -s tools/thesis_import -p 'test_*.py' -v` | 11 Tests OK |
 | `pytest tests/test_thesis_import.py` | 6 Tests OK |
 | `pytest` (gesamte schnelle Suite) | 60 OK, 2 als `slow` abgewählt |
-| Vollständiger Import mit `--download --reference tools/thesis_import/reference_run.json` | **nicht ausgeführt**: Die Netzwerkrichtlinie der Cloud-Umgebung verweigert `doi.pangaea.de` und `store.pangaea.de` (HTTP 403 am Proxy); lokale Kopien der Quellen gibt es dort nicht. |
+| Vollständiger Import mit `--download --reference tools/thesis_import/reference_run.json` (2026-10-29, vorige Umgebung) | **nicht ausgeführt**: Die Netzwerkrichtlinie verweigerte `doi.pangaea.de` und `store.pangaea.de` (HTTP 403 am Proxy). |
+| Wiederholung in neuer Cloud-Umgebung (2026-10-29, Python 3.13, Kopf `5f68221`): Unittest-Vertragstests | 11 Tests OK |
+| dto.: `python -m pytest tests/test_thesis_import.py` / `python -m pytest` | 6 Tests OK / 60 OK, 2 als `slow` abgewählt |
+| dto.: `kinneret-recon thesis-import --raw-dir <neu>/netzel_raw --output-dir <neu>/thesis_import --download` (Referenzabgleich voreingestellt) | **Referenz: uebereinstimmend**. Vier Quellen aus PANGAEA geladen, Größe und SHA256 laut Register korrekt. EMPD2: 8.746 Proben, 262.390 Messungen, 5.230 Taxoncodes, 244 Proben mit gebrochenen Zählungen; Monticchio LGM90D: 69 von 245 zugeordnet (61 exakt, 8 gerundet), 176 ausgeschlossen. |
+| Unabhängiger Gegencheck der Prüfsummen (SHA256 der Dateien gegen `reference_run.json`) | 4/4 Quellen, 8/8 Ausgaben und `importer_sha256` identisch |
 
-Der Referenzabgleich mit den Originaldaten steht damit noch aus. Er ist nachzuholen, sobald PANGAEA erreichbar
-ist oder die vier Quelldateien vorliegen:
+Der Referenzabgleich mit den Originaldaten ist damit abgeschlossen; ein Lauf mit `--ohne-referenz` war nicht nötig.
+Rohdaten und CSV-Exporte liegen nur im Scratch-Verzeichnis der Umgebung und sind nicht eingecheckt. Reproduktion:
 
 ```bash
 kinneret-recon thesis-import --raw-dir roh/netzel --output-dir results/thesis_import --download
 ```
 
-Bei Erfolg meldet der Befehl `Referenz: uebereinstimmend`, bei Abweichung bricht er mit
-`Reference mismatch` ab, ohne das Zielverzeichnis anzulegen. Dann `report`/`manifest` eines Laufs mit
-`--ohne-referenz` gegen `reference_run.json` vergleichen; die Referenz nicht automatisch ersetzen.
+Hinweis zur Umgebung: Liegt ein separat installiertes `pytest` (z. B. als uv-Tool) vorn im `PATH`, findet es
+`kinneret_recon` nicht (`ModuleNotFoundError`). `python -m pytest` mit dem Interpreter der Installation verwenden.
 
 ## Beobachtung ohne Änderung
 
