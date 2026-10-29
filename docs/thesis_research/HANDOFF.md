@@ -55,6 +55,18 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
   berücksichtigen. Ein feines Rechengitter schafft keine feinere Datenauflösung.
 - Kurz im Chat berichten; ausführliche Ergebnisse und Quellen in GitHub halten.
 
+## Neue Forschung: Monticchio-Diagnose
+
+[Analogabdeckung und Chronologie](./monticchio_2026_10_29/README.md) sind auf
+der unveränderten Baseline untersucht. Die moderne Quelle enthält auch den
+Kernkopf `EPDcoretop_E932`; für die fossile Diagnose sind gleiche Koordinaten
+ausgeschlossen. Die Abdeckung ist uneinheitlich, die Altersintervalle sind im
+Median 418 Jahre breit. Keine fossile Klimakurve oder Altersensembles freigegeben.
+Nächster Schritt ist der belegte Proben-/Komposit-Crosswalk mit Prüfung von
+14C-Skalen, Tephraidentitäten und korrelierten Chronologiefehlern.
+Claudes Integrations-PR #19 wird im dortigen Reviewnachweis separat bewertet;
+die CLI-/App-Integration bleibt bei Claude.
+
 ## Hintergrund bei Bedarf
 
 [Ursprünglicher Europa-Plan](./Claude_Plan_Europa_0_150ka.md),
