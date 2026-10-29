@@ -23,7 +23,9 @@ window.KR_TEXTE = {
       "Klimawerte der Biome; Linie Median, Bänder 50 % und 95 %. Mischverteilung nach Gl. (3): je Stichprobe ein " +
       "Biom mit der Wahrscheinlichkeit seines Anteils; sie hat beim Niederschlag mehrere Gipfel und wird deshalb " +
       "als Dichte gezeigt (dunkler = wahrscheinlicher). Die Baumpollenkurve ist die, die in $R^2$ eingeht.",
-    antippen: "Ein Alter antippen oder anklicken, um Verteilung, Biomanteile und Spektrum dort zu sehen.",
+    antippen: "Antippen oder Anklicken zeigt die Werte. Verteilung, Biomanteile und Spektrum zu einem Alter: Auswahl „Detail“.",
+    detail_wahl: "Detail",
+    kein_detail: "– kein Detail –",
     schliessen: "schließen",
     faktor: "Faktor",
     basislauf: "Basislauf",
@@ -74,6 +76,8 @@ window.KR_TEXTE = {
     quelle: "Quelle",
     einstellung_rek: "Rekonstruktion",
     keine_daten: "Für diesen Lauf gibt es keine App-Daten (kinneret-recon batch).",
+    keine_sensitivitaet: "Für diesen Standort gibt es noch keine Sensitivitätsläufe.",
+    standort: "Standort",
     gruppen_rolle: "Läufe nach Rolle",
     ansicht_gewichte: "Taxa-Gewichte",
     ansicht_transferfunktionen: "Transferfunktionen",
@@ -204,7 +208,9 @@ window.KR_TEXTE = {
       "biome ratios; line median, bands 50 % and 95 %. Mixture of Eq. (3): per sample one biome with the " +
       "probability of its ratio; it is multimodal for precipitation and therefore shown as a density (darker = " +
       "more likely). The arboreal pollen curve is the one entering $R^2$.",
-    antippen: "Tap or click an age to see the distribution, biome ratios and spectrum there.",
+    antippen: "Tap or click to see the values. Distribution, biome ratios and spectrum at one age: choose under “Detail”.",
+    detail_wahl: "Detail",
+    kein_detail: "– no detail –",
     schliessen: "close",
     faktor: "Factor",
     basislauf: "Base run",
@@ -255,6 +261,8 @@ window.KR_TEXTE = {
     quelle: "Source",
     einstellung_rek: "Reconstruction",
     keine_daten: "There are no app data for this run (kinneret-recon batch).",
+    keine_sensitivitaet: "There are no sensitivity runs for this site yet.",
+    standort: "Site",
     gruppen_rolle: "Runs by role",
     ansicht_gewichte: "Taxa weights",
     ansicht_transferfunktionen: "Transfer functions",

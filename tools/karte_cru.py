@@ -3,6 +3,7 @@
 Aufruf: python tools/karte_cru.py [docs/abbildungen/cru_einzugsgebiet.png]
 """
 import sys
+from pathlib import Path
 
 import matplotlib
 
@@ -11,12 +12,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from kinneret_recon import cru
+from kinneret_recon.katalog import standort
 
 out = sys.argv[1] if len(sys.argv) > 1 else "docs/abbildungen/cru_einzugsgebiet.png"
-d = cru.CruData.load("data/in/cru_levante.npz")
+st = standort("kinneret")
+d = cru.CruData.load(st.cru_pfad(Path.cwd()))
 t, p, _, _ = cru.seasonal_series(d, 1961, 1990)
 fields = [(t.mean(0), "T_DJF 1961–1990 [°C]", "Oranges"), (p.mean(0), "P_ANN 1961–1990 [mm]", "Blues")]
-lat0, lon0 = cru.LAKE_LAT, cru.LAKE_LON
+lat0, lon0 = st.lat, st.lon
 fig, axes = plt.subplots(1, 2, figsize=(11, 5.2), constrained_layout=True)
 for ax, (f, title, cmap) in zip(axes, fields):
     m = ax.pcolormesh(d.lon, d.lat, f, cmap=cmap, shading="nearest")

@@ -20,6 +20,14 @@
   };
   const LAEUFE = new Map(K.laeufe.map((l) => [l.id, l]));
   const FAKTOREN = new Map(K.faktoren.map((f) => [f.key, f]));
+  // Standort-Register: Standort eines Laufs und sein Standardlauf (katalog.json, "standorte")
+  const STANDORTE = new Map(K.standorte.map((s) => [s.key, s]));
+  const standardLauf = (key) => {
+    const s = STANDORTE.get(key);
+    if (s && s.standard_lauf && LAEUFE.has(s.standard_lauf)) return s.standard_lauf;
+    const l = K.laeufe.find((x) => x.standort === key && x.app_json);
+    return l ? l.id : K.standard_lauf;
+  };
   const Z = Object.assign({
     sprache: (navigator.language || "de").toLowerCase().startsWith("de") ? "de" : "en",
     thema: "auto", ansicht: "rekonstruktion", lauf: K.standard_lauf, achse: "alter", art: null,
@@ -120,10 +128,14 @@
   }
 
   // ---------------------------------------------------------------------------------------------------------------
-  // Plotly-Grundeinstellungen
+  // Plotly-Grundeinstellungen. Tippen oder Klicken in ein Diagramm zeigt nur die Werte. Auf Touch-Geraeten (Handy,
+  // Tablet) zieht ein Finger nichts auf, damit Wischen die Seite scrollt, und es gibt keinen Doppelklick (ein Tipp
+  // loest sonst zwei Klicks aus, und der zweite setzte die Achsen zurueck); gezoomt und zurueckgesetzt wird ueber die
+  // Leiste des Diagramms. Mit der Maus zieht man einen Zoom-Rahmen, ein Doppelklick setzt ihn zurueck.
 
+  const TOUCH = window.matchMedia("(pointer: coarse)").matches;
   const PLOT_CONFIG = {
-    responsive: true, displaylogo: false, scrollZoom: false,
+    responsive: true, displaylogo: false, scrollZoom: false, doubleClick: TOUCH ? false : "reset+autosize",
     modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "toggleSpikelines", "hoverClosestCartesian",
       "hoverCompareCartesian"],
     modeBarButtonsToAdd: [{ name: "kr-export", title: "Export", icon: Plotly.Icons.disk,
@@ -155,7 +167,7 @@
       font: { color: css("--fg"), family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif", size: 12 },
       margin: { l: 60, r: 14, t: 26, b: 44 }, separators: Z.sprache === "de" ? ",." : ".,",
       hoverlabel: { bgcolor: css("--bg2"), bordercolor: css("--line"), font: { color: css("--fg") } },
-      dragmode: "zoom",
+      dragmode: TOUCH ? false : "zoom",
     }, extra);
   }
   // Zeilen eines Diagramms untereinander: Bereiche der y-Achsen (von oben), Anteile in hoehen
@@ -203,6 +215,13 @@
     ansichten.forEach((a) => { $("ansicht-" + a.key).hidden = a.key !== Z.ansicht; });
   }
   const aktuellerStandort = () => (LAEUFE.get(Z.lauf) || K.laeufe[0]).standort;
+  // Laeufe des gewaehlten Standorts (Auswahllisten, Vergleiche, Sensitivitaet)
+  const amStandort = (l) => l.standort === aktuellerStandort();
+  function waehleStandort(key) {
+    if (key === aktuellerStandort() || !STANDORTE.has(key)) return;
+    Object.assign(Z, { lauf: standardLauf(key), vergleich: [], extra: [], basis: null, auswahl: null });
+    merke();
+  }
 
   function umschalter(id, wert, beiWahl) {
     const el = $(id);
@@ -217,7 +236,7 @@
   function laufOptionen(select, gewaehlt, filter) {
     select.innerHTML = "";
     for (const rolle of ROLLEN_FOLGE) {
-      const ls = K.laeufe.filter((l) => l.rolle === rolle && l.app_json && (!filter || filter(l)));
+      const ls = K.laeufe.filter((l) => l.rolle === rolle && l.app_json && amStandort(l) && (!filter || filter(l)));
       if (!ls.length) continue;
       const grp = document.createElement("optgroup");
       grp.label = FT(L(K.rollen[rolle]));
@@ -226,7 +245,7 @@
       for (const l of ls) {
         const o = document.createElement("option");
         o.value = l.id;
-        o.textContent = (l.id === K.standard_lauf ? "★ " : "") + FT(L(l.titel));
+        o.textContent = (l.id === standardLauf(l.standort) ? "★ " : "") + FT(L(l.titel));
         o.selected = l.id === gewaehlt;
         grp.appendChild(o);
       }
@@ -321,7 +340,8 @@
   // Vergleichslaeufe (gemeinsam fuer mehrere Ansichten): Chips zum Entfernen, Auswahl zum Hinzufuegen
   const MAX_VERGLEICH = 6;
   function vergleichsAuswahl(container, beiAenderung) {
-    Z.vergleich = Z.vergleich.filter((id) => id !== Z.lauf && LAEUFE.has(id) && LAEUFE.get(id).app_json);
+    Z.vergleich = Z.vergleich.filter((id) => id !== Z.lauf && LAEUFE.has(id) && LAEUFE.get(id).app_json &&
+      amStandort(LAEUFE.get(id)));
     container.innerHTML = "";
     const chips = document.createElement("div");
     chips.className = "chips";
@@ -357,17 +377,31 @@
   // laeufe (Lauf-IDs fuer die Kopfzeilen der CSV), csv() -> [{name, titel, spalten, zeilen}]
   function plot(div, baue, info) {
     div._krFigur = Object.assign({ baue }, info);
+    if (TOUCH && !div._krTipp) {
+      div._krTipp = true;
+      div.addEventListener("touchend", tippe, true);
+    }
     const [traces, lay] = baue();
     return Plotly.react(div, traces, lay, PLOT_CONFIG);
+  }
+  // Tipp in ein Diagramm: Werte an der Stelle zeigen. Die Maus-Ereignisse, die der Browser einem Tipp nachschickt,
+  // werden unterdrueckt; sonst zaehlt Plotly zwei Klicks und blendet die Werte beim folgenden mouseout wieder aus.
+  function tippe(e) {
+    const p = e.changedTouches[0];
+    const ziel = p && document.elementFromPoint(p.clientX, p.clientY);
+    if (!ziel || !ziel.classList.contains("nsewdrag") || !this.contains(ziel)) return;
+    e.preventDefault();
+    const subplot = ziel.parentNode.getAttribute("class");
+    Plotly.Fx.hover(this, { clientX: p.clientX, clientY: p.clientY, target: ziel }, subplot);
   }
 
   // Register der Ansichten
   const ansichten = [];
   window.KR = {
     D, K, Z, TX, $, t, L, css, locale, fmt, fmtS, esc, merke, LAEUFE, FAKTOREN, ladeLauf, ladeStandort, farbe, alpha,
-    dunkel, dichteSkala, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
-    aktuellerStandort, umschalter, laufOptionen, gruppeVon, stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten,
-    vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
+    dunkel, dichteSkala, TOUCH, PLOT_CONFIG, achse, layout, zeilen, titel, band, setzeTexte, setzeThema, setzeAnsicht,
+    STANDORTE, standardLauf, amStandort, waehleStandort, aktuellerStandort, umschalter, laufOptionen, gruppeVon,
+    stufeLabel, ROLLEN_FOLGE, GRUPPEN_FOLGE, ansichten, vergleichsAuswahl, schmal, formel, F, FT, ansicht: (a) => ansichten.push(a), plot, mitDruck,
     get druck() { return druck; },
   };
 })();

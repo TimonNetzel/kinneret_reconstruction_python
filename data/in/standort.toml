@@ -1,0 +1,42 @@
+# Standort-Register (docs/app_konzept.md, Abschnitt 13): Beschreibung des Standorts, dessen Eingangsdaten in diesem
+# Ordner liegen (Altersmodell age_depth_relationship.npz, Kerndaten core_data.npz, Transferfunktion
+# nnet_fit_params.npz, CRU-Ausschnitt). Ein neuer Standort ist ein neuer Ordner unter data/ mit denselben Dateien
+# und einer standort.toml.
+
+key = "kinneret"
+name = { de = "See Genezareth", en = "Lake Kinneret" }
+
+# Seemitte und mittlerer Seespiegel
+lat = 32.82
+lon = 35.59
+hoehe_m = -212.0
+
+# Raster fuer die Dichten in den App-Daten: [von, bis, Schritt]
+raster_T = [-10.0, 30.0, 0.5]
+raster_P = [0.0, 1500.0, 20.0]
+
+# Biome in der Reihenfolge der Kerndaten (biomes_assign) und der Transferfunktion; Farben wie im Paper
+[[biome]]
+label = "Med"
+name = "Mediterranean biome"
+farbe = "#A2CD5A"
+
+[[biome]]
+label = "IT"
+name = "Irano-Turanian biome"
+farbe = "#EE8262"
+
+[[biome]]
+label = "SA"
+name = "Saharo-Arabian biome"
+farbe = "#FFB90F"
+
+# Prior des rezenten Klimas (kinneret-recon cru-prior, Pruefbericht 3.9): Ausschnitt der CRU-Daten und Einzugsgebiet.
+# Die Werte des Standardlaufs stehen fest in config.py (CRU_PRIOR_50KM) und werden mit diesen Einstellungen berechnet.
+[cru]
+datei = "cru_levante.npz"
+# Mittelpunkte der 0,5-Grad-Zellen [lat_min, lat_max, lon_min, lon_max]; deckt Radien bis ~250 km um den See ab
+ausschnitt = [29.0, 36.5, 32.5, 39.5]
+radius_km = 50.0
+kernel = "gauss"
+alt_radii = [25.0, 50.0, 100.0]

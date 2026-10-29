@@ -2,6 +2,8 @@
 // Thema, Handy- und PC-Groesse; meldet Fehler der Konsole. Optional Bildschirmfotos.
 //
 // Aufruf: node tools/app_pruefen.js results/app/index.html [results/kinneret-app.html] [--fotos ORDNER]
+//         node tools/app_pruefen.js --zwei-standorte ORDNER/index.html  (Standort-Waehler; Ordner mit einem zweiten
+//         Standort "zweit", wie ihn tests/test_app.py anlegt)
 const path = require("path");
 const fs = require("fs");
 const { chromium } = require("playwright");
@@ -10,6 +12,129 @@ const args = process.argv.slice(2);
 const fi = args.indexOf("--fotos");
 const fotos = fi >= 0 ? args.splice(fi, 2)[1] : null;
 if (fotos) fs.mkdirSync(fotos, { recursive: true });
+const zi = args.indexOf("--zwei-standorte");
+const zweiStandorte = zi >= 0 ? args.splice(zi, 1).length > 0 : false;
+
+async function neueSeite(browser, datei, groesse) {
+  const ctx = await browser.newContext({ viewport: groesse, offline: true, deviceScaleFactor: 1, locale: "de-DE" });
+  const page = await ctx.newPage();
+  const fehler = [];
+  page.on("console", (m) => { if (m.type() === "error") fehler.push(m.text()); });
+  page.on("pageerror", (e) => fehler.push(String(e)));
+  await page.goto("file://" + path.resolve(datei));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  return [page, fehler];
+}
+
+// Gesten: auf dem Handy (Touch) scrollt Wischen ueber ein Diagramm die Seite, Antippen zeigt nur Werte (Achsen und
+// Kurven bleiben, in jeder Ansicht); mit der Maus zieht man einen Zoom-Rahmen auf
+async function wische(ctx, page, sel, dx, dy) {
+  const box = await page.locator(sel + " .nsewdrag").first().boundingBox();
+  const x = box.x + box.width / 2, y = box.y + box.height * 0.8;
+  const cdp = await ctx.newCDPSession(page);
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchStart", touchPoints: [{ x, y }] });
+  for (let k = 1; k <= 10; k++) {
+    await cdp.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: x + dx * k / 10, y: y + dy * k / 10 }] });
+  }
+  await cdp.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
+  await page.waitForTimeout(600);
+}
+const bereich = (page, sel) => page.evaluate((sel) => JSON.stringify(document.querySelector(sel)._fullLayout.xaxis.range), sel);
+// alle Achsenbereiche und die Zahl gezeichneter Linien eines Diagramms
+const bild = (page, sel) => page.evaluate((sel) => {
+  const fl = document.querySelector(sel)._fullLayout;
+  return JSON.stringify([Object.keys(fl).filter((k) => /^[xy]axis\d*$/.test(k)).sort().map((k) => fl[k].range),
+    document.querySelectorAll(sel + " .scatterlayer path.js-line").length]);
+}, sel);
+
+async function pruefeGesten(browser, datei) {
+  const fehler = [];
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true,
+    offline: true, locale: "de-DE" });
+  const page = await ctx.newPage();
+  page.on("pageerror", (e) => fehler.push(String(e)));
+  await page.goto("file://" + path.resolve(datei));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  await page.locator("#rek-plot").scrollIntoViewIfNeeded();
+  const vorher = [await page.evaluate(() => scrollY), await bereich(page, "#rek-plot")];
+  await wische(ctx, page, "#rek-plot", 60, -100);
+  const nachher = [await page.evaluate(() => scrollY), await bereich(page, "#rek-plot")];
+  if (nachher[0] < vorher[0] + 50 || nachher[1] !== vorher[1]) fehler.push(`Touch: Wischen ${vorher} -> ${nachher}`);
+  // Antippen in jeder Ansicht (Diagramm unter den fixierten Kopf geschoben): nur Werte, Achsen und Kurven bleiben
+  for (const [ansicht, sel] of [["rekonstruktion", "#rek-plot"], ["sensitivitaet", "#sens-plot"], ["gewichte", "#gew-plot"],
+    ["transferfunktionen", "#tf-plot"], ["lauf", "#lauf-kalibrierung"]]) {
+    await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
+    await page.waitForSelector(sel + " .main-svg", { timeout: 15000 });
+    await page.waitForTimeout(400);
+    await page.evaluate((sel) => scrollBy(0, document.querySelector(sel).getBoundingClientRect().top -
+      document.querySelector(".kopf").getBoundingClientRect().bottom - 10), sel);
+    const vor = await bild(page, sel);
+    const box = await page.locator(sel + " .nsewdrag").first().boundingBox();
+    await page.touchscreen.tap(box.x + box.width * 0.45, box.y + box.height * 0.5);
+    await page.waitForTimeout(800);
+    const nach = await bild(page, sel);
+    if (vor !== nach) fehler.push(`Touch: Antippen veraendert ${ansicht}: ${vor} -> ${nach}`);
+    // Werte bleiben stehen (Diagramme mit Werten je Alter; die uebrigen zeigen sie nur nahe an einem Punkt)
+    if (["rekonstruktion", "sensitivitaet"].includes(ansicht) &&
+      !(await page.evaluate((sel) => document.querySelectorAll(sel + " .hoverlayer .hovertext").length, sel))) {
+      fehler.push(`Touch: Antippen zeigt keine Werte (${ansicht})`);
+    }
+    if (ansicht === "rekonstruktion" && !(await page.evaluate(() => document.querySelector("#rek-detail").hidden))) {
+      fehler.push("Touch: Antippen oeffnet Detail");
+    }
+  }
+  await ctx.close();
+  // Maus: Ziehen zoomt
+  const ctx2 = await browser.newContext({ viewport: { width: 1366, height: 900 }, offline: true, locale: "de-DE" });
+  const p2 = await ctx2.newPage();
+  await p2.goto("file://" + path.resolve(datei));
+  await p2.waitForSelector("#rek-plot .main-svg", { timeout: 20000 });
+  const b2 = await p2.locator("#rek-plot .nsewdrag").first().boundingBox();
+  const r0 = await bereich(p2, "#rek-plot");
+  await p2.mouse.move(b2.x + b2.width * 0.3, b2.y + b2.height * 0.5);
+  await p2.mouse.down();
+  await p2.mouse.move(b2.x + b2.width * 0.6, b2.y + b2.height * 0.5, { steps: 10 });
+  await p2.mouse.up();
+  await p2.waitForTimeout(600);
+  if (await bereich(p2, "#rek-plot") === r0) fehler.push("Maus: Ziehen zoomt nicht");
+  await ctx2.close();
+  return fehler;
+}
+
+// Standort-Waehler mit zwei Standorten: Wechsel, Lauflisten nur des Standorts, Sensitivitaet ohne Reihe
+async function pruefeStandorte(browser, datei) {
+  const [page, fehler] = await neueSeite(browser, datei, { width: 1366, height: 900 });
+  // Lauf-Liste der sichtbaren Ansicht (die anderen fuellen sich erst beim Anzeigen)
+  const zustand = (liste = "#rek-lauf") => page.evaluate((liste) => {
+    const st = (id) => KR.LAEUFE.get(id).standort;
+    return { lauf: KR.Z.lauf, sichtbar: !document.querySelector("#standort-wahl").hidden,
+      optionen: [...document.querySelectorAll("#standort-wahl option")].map((o) => o.value),
+      fremd: [...document.querySelectorAll(liste + " option")].filter((o) => st(o.value) !== st(KR.Z.lauf)).length,
+      n: document.querySelectorAll(liste + " option").length, name: document.querySelector("#standort-name").hidden };
+  }, liste);
+  let z = await zustand();
+  if (!z.sichtbar || z.optionen.join() !== "kinneret,zweit" || !z.name) fehler.push("Waehler: " + JSON.stringify(z));
+  if (z.fremd || z.n < 20) fehler.push("Lauf-Liste Kinneret: " + JSON.stringify(z));
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(500);
+  z = await zustand();
+  if (z.lauf !== "zweit_lauf" || z.fremd || z.n !== 1) fehler.push("nach Wechsel: " + JSON.stringify(z));
+  await page.waitForSelector("#rek-plot .main-svg", { timeout: 10000 });
+  await page.click('.reiter button[data-ansicht="sensitivitaet"]');
+  await page.waitForTimeout(500);
+  const text = await page.textContent("#sens-tabelle");
+  if (!text.includes("keine Sensitivitätsläufe")) fehler.push("Sensitivitaet ohne Reihe: " + text);
+  await page.click('.reiter button[data-ansicht="gewichte"]');
+  await page.waitForSelector("#gew-plot .main-svg", { timeout: 10000 }).catch(() => fehler.push("Gewichte am 2. Standort"));
+  await page.selectOption("#standort-wahl", "kinneret");
+  await page.waitForTimeout(500);
+  z = await zustand("#gew-lauf");
+  if (z.lauf !== "standard_v3" || z.fremd || z.n < 20) fehler.push("zurueck: " + JSON.stringify(z));
+  await page.click('.reiter button[data-ansicht="sensitivitaet"]');
+  await page.waitForFunction(() => document.querySelectorAll("#sens-tabelle tbody tr").length >= 2, null, { timeout: 15000 })
+    .catch(() => fehler.push("Sensitivitaet nach Rueckwechsel"));
+  return fehler;
+}
 
 async function pruefe(browser, datei, groesse, thema, name) {
   const ctx = await browser.newContext({ viewport: groesse, colorScheme: thema, offline: true, deviceScaleFactor: 1, locale: "de-DE" });
@@ -21,11 +146,18 @@ async function pruefe(browser, datei, groesse, thema, name) {
   await page.goto("file://" + path.resolve(datei));
   const warte = (sel) => page.waitForSelector(sel + " .main-svg", { timeout: 20000 });
   await warte("#rek-plot");
+  // ein Standort: kein Waehler, nur der Name
+  const kopf = await page.evaluate(() => [document.querySelector("#standort-wahl").hidden,
+    document.querySelector("#standort-name").textContent]);
+  if (!kopf[0] || kopf[1] !== "See Genezareth") fehler.push("Kopf Standort: " + kopf);
   const n = await page.evaluate(() => document.querySelectorAll("#rek-plot .scatterlayer .trace").length);
   if (n < 5) fehler.push("Rekonstruktion: zu wenige Kurven " + n);
-  // Alter antippen -> Detail
+  // Klick in das Diagramm zeigt nur Werte; das Detail kommt ueber die Auswahl
   const box = await page.locator("#rek-plot .nsewdrag").first().boundingBox();
   await page.mouse.click(box.x + box.width * 0.4, box.y + box.height * 0.5);
+  await page.waitForTimeout(300);
+  if (!(await page.evaluate(() => document.querySelector("#rek-detail").hidden))) fehler.push("Klick oeffnet Detail");
+  await page.selectOption("#rek-detail-wahl", "40");
   await page.waitForSelector("#rek-detail:not([hidden]) #rek-detail-spektrum .main-svg", { timeout: 10000 })
     .catch(() => fehler.push("Detail erscheint nicht"));
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_rekonstruktion.png`, fullPage: true });
@@ -178,6 +310,16 @@ async function pruefeExport(page, fehler, foto, pdf) {
 (async () => {
   const browser = await chromium.launch();
   let fehlerGesamt = 0;
+  if (zweiStandorte) {
+    for (const datei of args) {
+      const f = await pruefeStandorte(browser, datei);
+      console.log(`${path.basename(path.dirname(datei))} zwei Standorte: ${f.length ? "FEHLER" : "ok"}`);
+      f.forEach((x) => console.log("   " + x));
+      fehlerGesamt += f.length;
+    }
+    await browser.close();
+    process.exit(fehlerGesamt ? 1 : 0);
+  }
   for (const datei of args) {
     for (const [name, groesse] of [["handy", { width: 390, height: 844 }], ["pc", { width: 1366, height: 900 }]]) {
       for (const thema of ["light", "dark"]) {
@@ -189,6 +331,10 @@ async function pruefeExport(page, fehler, foto, pdf) {
         fehlerGesamt += r.fehler.length;
       }
     }
+    const g = await pruefeGesten(browser, datei);
+    console.log(`${path.basename(datei, ".html")} Gesten: ${g.length ? "FEHLER" : "ok"}`);
+    g.forEach((f) => console.log("   " + f));
+    fehlerGesamt += g.length;
   }
   await browser.close();
   process.exit(fehlerGesamt ? 1 : 0);

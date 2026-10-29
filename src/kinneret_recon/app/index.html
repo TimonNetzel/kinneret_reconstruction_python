@@ -14,6 +14,7 @@
   <div class="titel">
     <h1 data-t="app_titel">Klimarekonstruktion</h1>
     <span class="standort" id="standort-name"></span>
+    <select class="standort-wahl" id="standort-wahl" data-t-title="standort" hidden></select>
   </div>
   <nav class="reiter" id="reiter" role="tablist"></nav>
   <div class="schalter">
@@ -37,6 +38,8 @@
           <button data-wert="mean" data-t="mittelwert">Mittelwert</button>
           <button data-wert="mixture" data-t="mischverteilung">Mischverteilung</button>
         </div></div>
+      <label class="feld"><span data-t="detail_wahl">Detail</span>
+        <select id="rek-detail-wahl"></select></label>
       <div id="rek-hinweis"></div>
       <details class="hilfe" id="rek-info-box"><summary data-t="ueber_lauf">Über diesen Lauf</summary>
         <div id="rek-info" class="info"></div></details>

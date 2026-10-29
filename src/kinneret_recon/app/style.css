@@ -33,6 +33,7 @@ button, select, input { font: inherit; color: inherit; }
 .titel { display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; }
 .titel h1 { font-size: 1.1rem; margin: 0; white-space: nowrap; }
 .standort { color: var(--muted); font-size: .9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.standort-wahl { width: auto; max-width: 60vw; min-height: 32px; padding: 2px 6px; font-size: .9rem; }
 .reiter { display: flex; gap: 4px; order: 3; flex: 1 0 100%; }
 .reiter button {
   flex: 1; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg);

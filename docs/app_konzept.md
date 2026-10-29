@@ -48,8 +48,8 @@ configs/*.toml ──kinneret-recon run──▶ results/<lauf>/ (Ketten, ~60 MB
    Konfigurationsfeld, Stufen, Gruppe). Ein neuer Faktor ist ein neuer Eintrag plus Läufe, keine neue
    Ansicht.
 4. **Standort-Register.** Ein Standort ist ein Ordner mit Kerndaten, Altersmodell, Transferfunktion,
-   Koordinaten, Seehöhe und den Einstellungen für den CRU-Prior (heute fest: See Genezareth in
-   `cru.py` und `data/in/`). Die App zeigt einen Standort-Wähler, sobald es mehr als einen gibt.
+   Koordinaten, Seehöhe und den Einstellungen für den CRU-Prior (umgesetzt in Schritt 5, Abschnitt 13:
+   `data/in/standort.toml`). Die App zeigt einen Standort-Wähler, sobald es mehr als einen gibt.
 5. **Overlay-Schnittstelle** (nur vorsehen): CSV mit Alter, Wert, Unsicherheit, Einheit, Quelle; wird
    auf der Zeitachse über die Rekonstruktion gelegt.
 
@@ -65,7 +65,8 @@ ein Backend (Läufe starten) erweiterbar. Alternative: Python-Frameworks wie Pan
 
 1. **Rekonstruktion:** T und P über Alter oder Tiefe, Median mit 50- und 95-%-Bändern; Mischverteilung
    als Dichte statt Quantilen (sonst irreführend, Prüfbericht 3.10). Darunter AP-Kurve und Biomanteile.
-   Verknüpft: Antippen eines Alters zeigt Biomanteile, Spektrum und Verteilung von T und P dort.
+   Verknüpft: Detail zu einem Alter mit Biomanteilen, Spektrum und Verteilung von T und P dort (seit 29.10.2026
+   über eine Auswahl, Antippen zeigt nur die Werte; Abschnitt 13, „Gesten“).
 2. **Sensitivität (Kern der App):** Basislauf wählen, Varianten überlagern; Differenz zur Basis über
    das Alter; Übersicht je Faktor mit Niveau-Verschiebung, Änderung des IQR und Korrelation der
    Anomalien (wie die Tabellen in Prüfbericht 3.8–3.11). Faktoren gruppiert, z. B.:
@@ -229,7 +230,7 @@ ist nicht im Repo.
 - *Rekonstruktion:* Lauf (gruppiert nach Rolle, ★ = Standard), Achse Alter/Tiefe, Mittelwert oder
   Mischverteilung (Voreinstellung: Standard des Laufs). Vier verknüpfte Diagramme: T und P (Median mit
   50-/95-%-Bändern bzw. Dichte der Mischverteilung), Biomanteile, Baumpollenkurve wie in R² (gestrichelt die
-  volle Kurve, grau die Alter außerhalb der Kalibrierung). Antippen eines Alters: Verteilung von T und P
+  volle Kurve, grau die Alter außerhalb der Kalibrierung). Detail zu einem Alter (seit 29.10.2026 Auswahl „Detail“ statt Antippen): Verteilung von T und P
   (Dichte der Mischverteilung, darüber Median, 50 % und 95 % des Mittelwerts), Biomanteile, häufigste Taxa.
   Beschreibung, Faktor, Basislauf, Quelle und Kennzahlen aufklappbar, Hinweise (z. B. „Kette hängt“) immer
   sichtbar.
@@ -363,5 +364,64 @@ von 17,5 × 17 cm). Alle exportierbaren Diagramme in 8,3 und 17,5 cm wurden ange
 `standort_kinneret.json`) sind bei Deuteranopie nur schwach unterscheidbar (simuliert nach Machado et al. 2009:
 ΔE *Med*–*IT* ≈ 12, sonst ≥ 19). Copernicus verlangt Lesbarkeit bei Farbsehschwäche. Möglich: Palette für
 Biome im Standort-Register ändern (z. B. Okabe-Ito: Blaugrün #009E73, Zinnoberrot #D55E00, Gelb #F0E442) oder die
-Biome zusätzlich durch Strichart unterscheiden.
+Biome zusätzlich durch Strichart unterscheiden. Seit Schritt 5 stehen die Farben in `data/in/standort.toml` (Abschnitt
+13); eine neue Palette ist dort ein Eintrag je Biom plus `kinneret-recon app-daten`.
+
+## 13. Umsetzung Schritt 5: Standort-Register (28.10.2026)
+
+**Register.** Ein Standort ist ein Ordner `data/<ordner>/` mit den Eingangsdaten (Altersmodell
+`age_depth_relationship.npz`, Kerndaten `core_data.npz`, Transferfunktion `nnet_fit_params.npz`, CRU-Ausschnitt)
+und einer Beschreibung `standort.toml`. `lade_standorte()` in `katalog.py` liest alle `data/*/standort.toml`; ein
+neuer Standort braucht keine Code-Änderung. Kinneret liegt weiter in `data/in/` (Voreinstellung `Config.data_dir`,
+Original und Tests), damit bleiben `data_dir` in den Einstellungen und alle Fingerabdrücke gleich. Felder:
+
+| Feld | Bedeutung |
+|---|---|
+| `key`, `[name]` | Schlüssel (in `lauf.toml` unter `standort`), Name je `de` und `en` |
+| `lat`, `lon`, `hoehe_m` | Lage (Kinneret: Seemitte) und Seehöhe; Mittelpunkt des Einzugsgebiets und Bezugshöhe der Höhenkorrektur im CRU-Prior |
+| `raster_T`, `raster_P` | Raster der Dichten in den App-Daten (von, bis, Schritt; optional) |
+| `[[biome]]` | je Biom in der Reihenfolge der Kerndaten `label`, `name` und `farbe` (#RRGGBB) |
+| `[cru]` | `datei` (im Ordner), `ausschnitt` (Zellmitten lat/lon), `radius_km`, `kernel`, `alt_radii` (optional) |
+
+**Prüfungen:** Name in beiden Sprachen, Farben als #RRGGBB, eindeutige Biom-Kurznamen und Schlüssel; die Zahl der
+Biome muss zu den Kerndaten passen (`kinneret-recon katalog` meldet sonst einen Fehler je Lauf).
+
+**Verwendung.** `standort_kinneret.json` (Biome mit Farben, Lage, Raster) und die Biom-Kurznamen in `app.json`
+kommen aus dem Register. `cru-prior` und `cru-extract` lesen Lage, Höhe, Ausschnitt, Datei und Einzugsgebiet daraus
+(`--standort`, Standard: der einzige Standort; die übrigen Optionen überschreiben einzelne Werte);
+`cru.PriorSettings.fuer_standort()` tut dasselbe in Python. `cru.py` enthält keine Standortwerte mehr. Die Werte
+des CRU-Priors im Standardlauf bleiben fest in `config.py` (`CRU_PRIOR_50KM`, Teil des Fingerabdrucks); ein Test
+prüft, dass das Register sie reproduziert. `katalog.json` nennt je Standort seinen Standardlauf.
+
+**Noch fest:** Die Abbildungen und der Bericht eines Laufs (`plots.py`, `report.py`, Diagnostik in `pipeline.py`)
+verwenden weiter die Biomnamen und -farben des Papers, damit die Abbildungen des Originals bitgleich bleiben. Für
+einen Standort mit anderen Biomen ist das vor dem ersten Lauf umzustellen.
+
+**App.** Der Standort ergibt sich aus dem gewählten Lauf. Ab zwei Standorten im Katalog erscheint im Kopf ein
+Standort-Wähler statt des Namens; ein Wechsel wählt den Standardlauf des Standorts und leert Vergleiche. Alle
+Lauflisten (Auswahl, Vergleich, Sensitivität, weitere Läufe) zeigen nur Läufe des gewählten Standorts; ohne
+Sensitivitätsreihe zeigt die Ansicht einen Hinweis.
+
+**Geprüft:** Fingerabdrücke aller 27 Läufe unverändert (`kinneret-recon katalog`), `standort_kinneret.json` bitgleich
+(auch als Test), `katalog.json` nur um `standard_lauf` je Standort und den Git-Stand geändert, `app.json` nicht
+berührt. `tools/app_pruefen.js` prüft den Kopf mit einem Standort und mit `--zwei-standorte` den Wähler an einer
+Kopie der App mit einem künstlichen zweiten Standort (in `tests/test_app.py`).
+
+**Gesten (29.10.2026).** Grundsatz: Tippen oder Klicken in ein Diagramm zeigt nur die Werte, sonst ändert sich
+nichts. Gefundene Fehler: (1) Ein Finger zog einen Zoom-Rahmen auf (`dragmode: "zoom"` für alle Geräte), über den
+Diagrammen ließ sich auf dem Handy nicht scrollen. (2) Der Browser schickt einem Tipp Maus-Ereignisse nach; Plotly
+zählte zwei Klicks, wertete das als Doppelklick und setzte die Achsen zurück (Taxa-Gewichte, Transferfunktionen,
+Lauf). In der Rekonstruktion zeichnete der erste Klick das Diagramm mit dem Detail neu, der Doppelklick fiel
+dazwischen, und $P_\mathrm{ANN}$ und die Baumpollenkurve verschwanden. (3) Das folgende `mouseout` blendete die
+Werte sofort wieder aus; auf dem Handy erschienen nie Werte.
+
+Umsetzung (`kern.js`): Auf Touch-Geräten (`pointer: coarse`) `dragmode: false` und `doubleClick: false`; ein Tipp
+auf die Zeichenfläche unterdrückt die nachgeschickten Maus-Ereignisse (`preventDefault` bei `touchend`) und zeigt
+die Werte an der Stelle (`Plotly.Fx.hover`), sie bleiben bis zum nächsten Tipp stehen. Wischen scrollt die Seite;
+Zoomen und Zurücksetzen über die Leiste des Diagramms. Mit der Maus: Ziehen zieht einen Zoom-Rahmen, Doppelklick
+setzt ihn zurück (bewusste Gesten), ein Klick zeigt nur die Werte. Das Detail der Rekonstruktion öffnet nicht mehr
+ein Klick, sondern die Auswahl „Detail“ in der Seitenleiste (je Alter bzw. Tiefe). Geprüft in
+`tools/app_pruefen.js`: Touch-Emulation in allen Ansichten (Wischen scrollt ohne Zoom; Antippen ändert weder
+Achsen noch Kurven, zeigt Werte und öffnet kein Detail), Maus (Ziehen zoomt, Klick öffnet kein Detail), Detail über
+die Auswahl.
 

@@ -39,29 +39,98 @@ def _t(de: str, en: str) -> dict[str, str]:
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-# Standort-Register (vorerst nur Kinneret; Ausbau in Schritt 5 des App-Konzepts)
+# Standort-Register: je Standort ein Ordner data/<ordner>/ mit den Eingangsdaten und einer Beschreibung standort.toml
+# (Kinneret: data/in/standort.toml). Ein neuer Standort ist ein neuer Ordner, keine Code-Aenderung.
+
+STANDORT_GLOB = "data/*/standort.toml"
+
+
+@dataclass(frozen=True)
+class Biom:
+    label: str  # Kurzname, z. B. "Med"; Schluessel in Spuren und Tabellen
+    name: str
+    farbe: str  # "#RRGGBB"
+
+
+@dataclass(frozen=True)
+class CruEinstellungen:
+    """Ausschnitt der CRU-Daten und Einzugsgebiet fuer den Prior des rezenten Klimas (kinneret-recon cru-prior)."""
+    datei: str  # relativ zum Ordner des Standorts
+    ausschnitt: tuple[float, float, float, float]  # Zellmitten: lat_min, lat_max, lon_min, lon_max
+    radius_km: float = 50.0
+    kernel: str = "gauss"
+    alt_radii: tuple[float, ...] = (25.0, 50.0, 100.0)
+
 
 @dataclass(frozen=True)
 class Standort:
     key: str
     name: dict[str, str]
-    data_dir: str
+    data_dir: str  # Ordner der Eingangsdaten relativ zum Hauptverzeichnis (wie Config.data_dir)
     lat: float
     lon: float
     elevation_m: float
+    biome: tuple[Biom, ...]
+    cru: CruEinstellungen | None = None
     # Raster fuer Dichten in den App-Daten: (von, bis, Schritt)
     temp_raster: tuple[float, float, float] = (-10.0, 30.0, 0.5)
     pann_raster: tuple[float, float, float] = (0.0, 1500.0, 20.0)
 
+    @classmethod
+    def load(cls, path: Path, root: Path) -> "Standort":
+        with open(path, "rb") as f:
+            d = tomllib.load(f)
+        try:
+            cru = d.get("cru")
+            st = cls(key=d["key"], name=d["name"], data_dir=path.parent.relative_to(root).as_posix(),
+                     lat=float(d["lat"]), lon=float(d["lon"]), elevation_m=float(d["hoehe_m"]),
+                     biome=tuple(Biom(**b) for b in d["biome"]),
+                     cru=None if cru is None else CruEinstellungen(
+                         **{**cru, "ausschnitt": tuple(cru["ausschnitt"]),
+                            **({"alt_radii": tuple(cru["alt_radii"])} if "alt_radii" in cru else {})}),
+                     **{k: tuple(float(v) for v in d[f"raster_{n}"])
+                        for k, n in (("temp_raster", "T"), ("pann_raster", "P")) if f"raster_{n}" in d})
+        except (KeyError, TypeError) as e:
+            raise ValueError(f"{path}: unvollstaendige Standort-Beschreibung ({e})") from None
+        fehler = [f"Name ({k}) fehlt" for k in SPRACHEN if not st.name.get(k)]
+        fehler += [f"Farbe {b.farbe!r} von {b.label} ist kein #RRGGBB" for b in st.biome
+                   if not (len(b.farbe) == 7 and b.farbe[0] == "#" and all(c in "0123456789abcdefABCDEF" for c in b.farbe[1:]))]
+        if len({b.label for b in st.biome}) != len(st.biome):
+            fehler.append("Biom-Kurznamen nicht eindeutig")
+        if fehler:
+            raise ValueError(f"{path}: " + "; ".join(fehler))
+        return st
 
-def _kinneret() -> Standort:
-    from .cru import LAKE_ELEVATION_M, LAKE_LAT, LAKE_LON
+    @property
+    def labels(self) -> list[str]:
+        return [b.label for b in self.biome]
 
-    return Standort("kinneret", _t("See Genezareth", "Lake Kinneret"), "data/in", LAKE_LAT, LAKE_LON,
-                    LAKE_ELEVATION_M)
+    def cru_pfad(self, root: Path) -> Path | None:
+        return None if self.cru is None else root / self.data_dir / self.cru.datei
 
 
-STANDORTE: dict[str, Standort] = {"kinneret": _kinneret()}
+def lade_standorte(root: Path | None = None) -> dict[str, Standort]:
+    """Alle Standorte (data/*/standort.toml) nach Schluessel."""
+    root = Path(root or Path.cwd()).resolve()
+    out: dict[str, Standort] = {}
+    for p in sorted(root.glob(STANDORT_GLOB)):
+        st = Standort.load(p, root)
+        if st.key in out:
+            raise ValueError(f"Standort {st.key!r} doppelt: {out[st.key].data_dir}, {st.data_dir}")
+        out[st.key] = st
+    return out
+
+
+def standort(key: str | None = None, root: Path | None = None) -> Standort:
+    """Standort nach Schluessel; ohne Schluessel der einzige Standort (Voreinstellung der Befehle)."""
+    alle = lade_standorte(root)
+    if key is None:
+        if len(alle) != 1:
+            raise ValueError(f"Standort angeben, vorhanden: {', '.join(alle) or 'keiner'}")
+        return next(iter(alle.values()))
+    if key not in alle:
+        raise ValueError(f"unbekannter Standort {key!r}, vorhanden: {', '.join(alle) or 'keiner'}")
+    return alle[key]
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -388,6 +457,7 @@ def pruefe_katalog(katalog: dict[str, Lauf], root: Path | None = None) -> dict[s
     from .data import load_inputs
 
     root = Path(root or Path.cwd())
+    standorte = lade_standorte(root)
     inputs, hashes = {}, {}
     out: dict[str, Pruefung] = {}
     for lid, lauf in katalog.items():
@@ -397,7 +467,7 @@ def pruefe_katalog(katalog: dict[str, Lauf], root: Path | None = None) -> dict[s
                 p.fehler.append(f"Titel oder Beschreibung fehlt ({k})")
         if lauf.rolle not in ROLLEN:
             p.fehler.append(f"unbekannte Rolle {lauf.rolle!r}")
-        st = STANDORTE.get(lauf.standort)
+        st = standorte.get(lauf.standort)
         if st is None:
             p.fehler.append(f"unbekannter Standort {lauf.standort!r}")
             continue
@@ -409,17 +479,20 @@ def pruefe_katalog(katalog: dict[str, Lauf], root: Path | None = None) -> dict[s
         if Path(cfg.data_dir) != Path(st.data_dir):
             p.fehler.append(f"data_dir {cfg.data_dir!r} passt nicht zum Standort ({st.data_dir!r})")
         if st.key not in inputs:
-            inputs[st.key] = load_inputs(root / st.data_dir).recent_climate
+            inputs[st.key] = load_inputs(root / st.data_dir)
             hashes[st.key] = daten_hash(root / st.data_dir)
-        p.recent_climate = [float(v) for v in inputs[st.key]]
-        p.einstellungen = flache_einstellungen(cfg, inputs[st.key])
+        if inputs[st.key].num_biomes != len(st.biome):
+            p.fehler.append(f"Standort {st.key}: {len(st.biome)} Biome in standort.toml, "
+                            f"{inputs[st.key].num_biomes} in den Kerndaten")
+        p.recent_climate = [float(v) for v in inputs[st.key].recent_climate]
+        p.einstellungen = flache_einstellungen(cfg, inputs[st.key].recent_climate)
         p.fingerabdruck = fingerabdruck(p.einstellungen, hashes[st.key])
         p.fingerabdruck_ketten = fingerabdruck(p.einstellungen, hashes[st.key], nur_sampler=True)
     for lid, lauf in katalog.items():
         p = out[lid]
         if not p.einstellungen:
             continue
-        rc = inputs[lauf.standort]
+        rc = inputs[lauf.standort].recent_climate
         if (lauf.faktor is None) != (lauf.stufe is None):
             p.fehler.append("faktor und stufe nur gemeinsam angeben")
         f = FAKTOREN.get(lauf.faktor) if lauf.faktor else None

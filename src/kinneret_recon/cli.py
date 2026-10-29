@@ -91,12 +91,25 @@ def cmd_config(a: argparse.Namespace) -> int:
     return 0
 
 
+def _standort_mit_cru(key):
+    from .katalog import standort
+
+    try:
+        st = standort(key)
+    except ValueError as e:
+        raise SystemExit(str(e)) from None
+    if st.cru is None:
+        raise SystemExit(f"Standort {st.key}: keine CRU-Einstellungen ([cru] in {st.data_dir}/standort.toml)")
+    return st
+
+
 def cmd_cru_extract(a: argparse.Namespace) -> int:
     from . import cru
 
+    st = _standort_mit_cru(a.standort)
     if a.download:
         cru.download(a.raw)
-    out = cru.extract(a.raw, a.output)
+    out = cru.extract(a.raw, a.output or st.cru_pfad(Path.cwd()), st.cru.ausschnitt)
     print(f"Ausschnitt geschrieben: {out}")
     return 0
 
@@ -107,16 +120,22 @@ def cmd_cru_prior(a: argparse.Namespace) -> int:
 
     from . import cru
 
-    data = cru.CruData.load(a.cru)
-    if a.toml and len(a.radius) > 1:
+    st = _standort_mit_cru(a.standort)
+    data = cru.CruData.load(a.cru or st.cru_pfad(Path.cwd()))
+    radien = a.radius or [st.cru.radius_km]
+    if a.toml and len(radien) > 1:
         raise SystemExit("--toml nur mit einem Radius")
+    # nur angegebene Werte ueberschreiben die Einstellungen des Standorts
+    kw = {k: v for k, v in dict(kernel=a.kernel, ref_elevation=a.ref_elevation,
+                                alt_radii=a.alt_radii and tuple(a.alt_radii)).items() if v is not None}
+    if a.lat is not None or a.lon is not None:
+        kw["center"] = (st.lat if a.lat is None else a.lat, st.lon if a.lon is None else a.lon)
     rows = []
-    for radius in a.radius:
-        s = cru.PriorSettings(radius_km=radius, kernel=a.kernel, period=tuple(a.period),
-                              target_period=None if a.no_target_period else tuple(a.target_period),
-                              lapse_rate=a.lapse_rate, ref_elevation=a.ref_elevation,
-                              center=(a.lat, a.lon), alt_radii=tuple(a.alt_radii),
-                              extra_temp_sd=a.extra_temp_sd, extra_pann_rel_sd=a.extra_pann_rel_sd)
+    for radius in radien:
+        s = cru.PriorSettings.fuer_standort(
+            st, **kw, radius_km=radius, period=tuple(a.period),
+            target_period=None if a.no_target_period else tuple(a.target_period), lapse_rate=a.lapse_rate,
+            extra_temp_sd=a.extra_temp_sd, extra_pann_rel_sd=a.extra_pann_rel_sd)
         res = cru.recent_prior(data, s)
         print(res.table())
         rows.append(res)
@@ -188,7 +207,7 @@ def cmd_katalog(a: argparse.Namespace) -> int:
 def _schreibe_app_daten(ids, kat, pr, res: Path, ueberschreiben: bool, log=print) -> None:
     from .app_daten import (APP_DIR, LaufDaten, abgleich_referenz, katalog_index, kopiere_referenz, schreibe_json,
                             standort_daten, zusammenfassung)
-    from .katalog import STANDORTE
+    from .katalog import standort
 
     root = Path.cwd()
     for i in ids:
@@ -202,7 +221,7 @@ def _schreibe_app_daten(ids, kat, pr, res: Path, ueberschreiben: bool, log=print
                                       f" (Abweichung zur Referenz: T {ab['T_DJF_q50']}, P {ab['P_ANN_q50']})")
         log(f"{i}: app.json {n / 1024:.0f} KB{info}" + (f"; kopiert: {', '.join(kopiert)}" if kopiert else ""))
     for key in sorted({kat[i].standort for i in kat}):
-        n = schreibe_json(standort_daten(STANDORTE[key], root), APP_DIR / f"standort_{key}.json")
+        n = schreibe_json(standort_daten(standort(key, root), root), APP_DIR / f"standort_{key}.json")
         log(f"Standort {key}: {n / 1024:.0f} KB")
     n = schreibe_json(katalog_index(kat, pr, root), APP_DIR / "katalog.json")
     log(f"Katalog-Index {APP_DIR / 'katalog.json'}: {n / 1024:.0f} KB")
@@ -326,27 +345,29 @@ def main(argv=None) -> int:
 
     from . import cru
 
-    x = sub.add_parser("cru-extract", help="Levante-Ausschnitt aus den CRU-Rohdateien erzeugen")
+    x = sub.add_parser("cru-extract", help="CRU-Ausschnitt eines Standorts aus den Rohdateien erzeugen")
     x.add_argument("raw", help="Verzeichnis der Rohdateien (CRU TS 4.07 *.dat.nc.gz, CRU CL 2.0 grid_10min_*.dat.gz)")
-    x.add_argument("-o", "--output", default="data/in/cru_levante.npz")
+    x.add_argument("--standort", help="Schluessel im Standort-Register (Standard: der einzige Standort)")
+    x.add_argument("-o", "--output", help="Zieldatei (Standard: [cru] datei des Standorts, z. B. data/in/cru_levante.npz)")
     x.add_argument("--download", action="store_true", help="fehlende Rohdateien von crudata.uea.ac.uk laden (~320 MB)")
     x.set_defaults(func=cmd_cru_extract)
 
     q = sub.add_parser("cru-prior", help="Prior des rezenten Klimas fuer ein Einzugsgebiet aus CRU-Daten berechnen")
-    q.add_argument("--cru", default="data/in/cru_levante.npz", help="Ausschnitt (kinneret-recon cru-extract)")
-    q.add_argument("-r", "--radius", type=float, nargs="+", default=[50.0], help="Radius(e) des Einzugsgebiets [km]")
-    q.add_argument("--kernel", choices=cru.KERNELS, default="gauss",
+    q.add_argument("--standort", help="Schluessel im Standort-Register (Standard: der einzige Standort); liefert "
+                   "Lage, Hoehe, Ausschnitt und Einzugsgebiet, die folgenden Optionen ueberschreiben sie")
+    q.add_argument("--cru", help="Ausschnitt (kinneret-recon cru-extract; Standard: der des Standorts)")
+    q.add_argument("-r", "--radius", type=float, nargs="+", help="Radius(e) des Einzugsgebiets [km]")
+    q.add_argument("--kernel", choices=cru.KERNELS,
                    help="Entfernungsgewichtung: gauss (sigma = R/2), uniform, linear (1 - d/R)")
     q.add_argument("--period", type=int, nargs=2, default=[1961, 1990], metavar=("VON", "BIS"))
     q.add_argument("--target-period", type=int, nargs=2, default=[1991, 2020], metavar=("VON", "BIS"),
                    help="Zeitraum der juengsten Altersstufe; Abstand geht als Unsicherheit ein")
     q.add_argument("--no-target-period", action="store_true", help="ohne Zeitraum-Komponente")
     q.add_argument("--lapse-rate", type=float, help="Hoehenkorrektur von T [degC/km] auf --ref-elevation")
-    q.add_argument("--ref-elevation", type=float, default=cru.LAKE_ELEVATION_M, help="Bezugshoehe [m]")
-    q.add_argument("--lat", type=float, default=cru.LAKE_LAT)
-    q.add_argument("--lon", type=float, default=cru.LAKE_LON)
-    q.add_argument("--alt-radii", type=float, nargs="+", default=[25.0, 50.0, 100.0],
-                   help="alternative Radien fuer die Repraesentativitaet [km]")
+    q.add_argument("--ref-elevation", type=float, help="Bezugshoehe [m] (Standard: Hoehe des Standorts)")
+    q.add_argument("--lat", type=float, help="Mittelpunkt des Einzugsgebiets (Standard: Lage des Standorts)")
+    q.add_argument("--lon", type=float)
+    q.add_argument("--alt-radii", type=float, nargs="+", help="alternative Radien fuer die Repraesentativitaet [km]")
     q.add_argument("--extra-temp-sd", type=float, default=0.0, help="zusaetzlicher Fehler fuer T [degC]")
     q.add_argument("--extra-pann-rel-sd", type=float, default=0.0, help="zusaetzlicher relativer Fehler fuer P")
     q.add_argument("--toml", help="Prior als [sampler]-Abschnitt in diese Datei schreiben")
