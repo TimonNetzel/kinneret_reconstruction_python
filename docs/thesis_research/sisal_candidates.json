@@ -1,0 +1,5135 @@
+{
+  "source": "SISALv3, NOAA distribution, CSV tables dated 2024-03-04",
+  "region": {
+    "lat_min": 25,
+    "lat_max": 75,
+    "lon_min": -15,
+    "lon_max": 45
+  },
+  "filters": "entity_status=current, >=20 actual d18O values, original age span>2000 yr; no continuity/uncertainty validation",
+  "records": [
+    {
+      "site_id": 31,
+      "site_name": "Abaliget cave",
+      "latitude": 46.1333,
+      "longitude": 18.1167,
+      "entity_id": 105,
+      "entity_name": "ABA_1",
+      "persist_id": "31-ABA1",
+      "age_min_yrBP": 123303.219699,
+      "age_max_yrBP": 143456.225981,
+      "d18O_n": 339,
+      "d18O_dated_n": 339,
+      "median_spacing_yr": 54.12110699999903,
+      "proxy_counts": {
+        "d18O": 339,
+        "d13C": 339
+      },
+      "dating_n": 21,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.2968"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 31,
+      "site_name": "Abaliget cave",
+      "latitude": 46.1333,
+      "longitude": 18.1167,
+      "entity_id": 106,
+      "entity_name": "ABA_2",
+      "persist_id": "31-ABA2",
+      "age_min_yrBP": 140274.180822,
+      "age_max_yrBP": 160598.049709,
+      "d18O_n": 440,
+      "d18O_dated_n": 440,
+      "median_spacing_yr": 48.70871099998476,
+      "proxy_counts": {
+        "d18O": 440,
+        "d13C": 440
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.2968"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 665,
+      "entity_name": "CC-1_2018",
+      "persist_id": "145-CC1",
+      "age_min_yrBP": 128484.0,
+      "age_max_yrBP": 139964.0,
+      "d18O_n": 184,
+      "d18O_dated_n": 184,
+      "median_spacing_yr": 8.0,
+      "proxy_counts": {
+        "d18O": 184,
+        "d13C": 184
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-018-06683-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 666,
+      "entity_name": "CC-5_2018",
+      "persist_id": "145-CC5",
+      "age_min_yrBP": 108096.5,
+      "age_max_yrBP": 139979.6,
+      "d18O_n": 1334,
+      "d18O_dated_n": 1334,
+      "median_spacing_yr": 10.60000000000582,
+      "proxy_counts": {
+        "d18O": 1334,
+        "d13C": 1334
+      },
+      "dating_n": 53,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-018-06683-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 667,
+      "entity_name": "CC-7_2018",
+      "persist_id": "145-CC7",
+      "age_min_yrBP": 121307.95,
+      "age_max_yrBP": 128592.0,
+      "d18O_n": 310,
+      "d18O_dated_n": 310,
+      "median_spacing_yr": 22.0,
+      "proxy_counts": {
+        "d18O": 310,
+        "d13C": 310
+      },
+      "dating_n": 10,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-018-06683-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 668,
+      "entity_name": "CC-28_2018",
+      "persist_id": "145-CC28",
+      "age_min_yrBP": 108000.0,
+      "age_max_yrBP": 118425.0,
+      "d18O_n": 604,
+      "d18O_dated_n": 604,
+      "median_spacing_yr": 12.0,
+      "proxy_counts": {
+        "d18O": 604,
+        "d13C": 604
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-018-06683-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 669,
+      "entity_name": "CC_stack",
+      "persist_id": "145-CCSTACK-COMP",
+      "age_min_yrBP": 108001.8,
+      "age_max_yrBP": 139999.5,
+      "d18O_n": 1538,
+      "d18O_dated_n": 1538,
+      "median_spacing_yr": 10.69999999999709,
+      "proxy_counts": {
+        "d18O": 1538,
+        "d13C": 1538
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-018-06683-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 145,
+      "site_name": "Antro del Corchia",
+      "latitude": 43.9833,
+      "longitude": 10.2167,
+      "entity_id": 670,
+      "entity_name": "CC27",
+      "persist_id": "145-CC27",
+      "age_min_yrBP": 2442.15169636,
+      "age_max_yrBP": 5992.91860222,
+      "d18O_n": 247,
+      "d18O_dated_n": 247,
+      "median_spacing_yr": 13.592026264999731,
+      "proxy_counts": {
+        "d18O": 247,
+        "d13C": 247
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-15-135-2019"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 72,
+      "site_name": "Ascunsa cave",
+      "latitude": 45.0,
+      "longitude": 22.6,
+      "entity_id": 161,
+      "entity_name": "POM2",
+      "persist_id": "72-POM2",
+      "age_min_yrBP": -32.0,
+      "age_max_yrBP": 8169.0,
+      "d18O_n": 150,
+      "d18O_dated_n": 150,
+      "median_spacing_yr": 60.0,
+      "proxy_counts": {
+        "d18O": 150,
+        "d13C": 150
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-10-1363-2014"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 72,
+      "site_name": "Ascunsa cave",
+      "latitude": 45.0,
+      "longitude": 22.6,
+      "entity_id": 582,
+      "entity_name": "POM1",
+      "persist_id": "72-POM1",
+      "age_min_yrBP": 30728.0,
+      "age_max_yrBP": 47177.0,
+      "d18O_n": 740,
+      "d18O_dated_n": 740,
+      "median_spacing_yr": 17.0,
+      "proxy_counts": {
+        "d18O": 740,
+        "d13C": 740
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "10.1594/PANGAEA.892728",
+      "reference_dois": [
+        "10.1073/pnas.1808647115"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 258,
+      "site_name": "B7 cave",
+      "latitude": 49.0,
+      "longitude": 7.0,
+      "entity_id": 560,
+      "entity_name": "STAL-B7-7",
+      "persist_id": "258-STALB77",
+      "age_min_yrBP": -47.0,
+      "age_max_yrBP": 17550.65,
+      "d18O_n": 227,
+      "d18O_dated_n": 227,
+      "median_spacing_yr": 27.800000000000182,
+      "proxy_counts": {
+        "d18O": 227,
+        "d13C": 227
+      },
+      "dating_n": 12,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/S0277-3791(02)00143-9"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 71,
+      "site_name": "Baradla cave",
+      "latitude": 48.4667,
+      "longitude": 20.5,
+      "entity_id": 159,
+      "entity_name": "BAR-II#L",
+      "persist_id": "71-BARII#L",
+      "age_min_yrBP": 109193.854,
+      "age_max_yrBP": 129003.127882,
+      "d18O_n": 58,
+      "d18O_dated_n": 58,
+      "median_spacing_yr": 358.39790500000527,
+      "proxy_counts": {
+        "d18O": 58,
+        "d13C": 58
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2017.02.012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 71,
+      "site_name": "Baradla cave",
+      "latitude": 48.4667,
+      "longitude": 20.5,
+      "entity_id": 160,
+      "entity_name": "BAR-II#B",
+      "persist_id": "71-BARII#B",
+      "age_min_yrBP": 108757.749577,
+      "age_max_yrBP": 128124.708024,
+      "d18O_n": 501,
+      "d18O_dated_n": 501,
+      "median_spacing_yr": 23.15775549999671,
+      "proxy_counts": {
+        "d18O": 501,
+        "d13C": 501
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2017.02.012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 15,
+      "site_name": "Baschg cave",
+      "latitude": 47.2501,
+      "longitude": 9.6667,
+      "entity_id": 70,
+      "entity_name": "BA-1b",
+      "persist_id": "15-BA1B",
+      "age_min_yrBP": 75492.4394,
+      "age_max_yrBP": 80896.9441,
+      "d18O_n": 778,
+      "d18O_dated_n": 778,
+      "median_spacing_yr": 4.6723000000056345,
+      "proxy_counts": {
+        "d18O": 778
+      },
+      "dating_n": 20,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12279",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 15,
+      "site_name": "Baschg cave",
+      "latitude": 47.2501,
+      "longitude": 9.6667,
+      "entity_id": 71,
+      "entity_name": "BA-1",
+      "persist_id": "15-BA1",
+      "age_min_yrBP": 80982.0596,
+      "age_max_yrBP": 89489.0,
+      "d18O_n": 1261,
+      "d18O_dated_n": 1261,
+      "median_spacing_yr": 2.787049999998999,
+      "proxy_counts": {
+        "d18O": 1261
+      },
+      "dating_n": 25,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12279",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 15,
+      "site_name": "Baschg cave",
+      "latitude": 47.2501,
+      "longitude": 9.6667,
+      "entity_id": 643,
+      "entity_name": "BA-5",
+      "persist_id": "15-BA5",
+      "age_min_yrBP": 84956.1,
+      "age_max_yrBP": 90299.6,
+      "d18O_n": 279,
+      "d18O_dated_n": 279,
+      "median_spacing_yr": 21.79999999998836,
+      "proxy_counts": {
+        "d18O": 279,
+        "d13C": 279
+      },
+      "dating_n": 7,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 15,
+      "site_name": "Baschg cave",
+      "latitude": 47.2501,
+      "longitude": 9.6667,
+      "entity_id": 644,
+      "entity_name": "BA-7",
+      "persist_id": "15-BA7",
+      "age_min_yrBP": 80901.9,
+      "age_max_yrBP": 86917.7,
+      "d18O_n": 387,
+      "d18O_dated_n": 387,
+      "median_spacing_yr": 14.900000000008731,
+      "proxy_counts": {
+        "d18O": 387,
+        "d13C": 387
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 185,
+      "site_name": "Beatus cave",
+      "latitude": 46.6847,
+      "longitude": 7.7819,
+      "entity_id": 397,
+      "entity_name": "EXC3",
+      "persist_id": "185-EXC3",
+      "age_min_yrBP": 100839.4383,
+      "age_max_yrBP": 110038.4317,
+      "d18O_n": 1974,
+      "d18O_dated_n": 1974,
+      "median_spacing_yr": 3.34780000000319,
+      "proxy_counts": {
+        "d18O": 1974
+      },
+      "dating_n": 33,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12279",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 185,
+      "site_name": "Beatus cave",
+      "latitude": 46.6847,
+      "longitude": 7.7819,
+      "entity_id": 398,
+      "entity_name": "EXC4",
+      "persist_id": "185-EXC4",
+      "age_min_yrBP": 77469.5286,
+      "age_max_yrBP": 107246.8094,
+      "d18O_n": 1063,
+      "d18O_dated_n": 1063,
+      "median_spacing_yr": 18.152949999988778,
+      "proxy_counts": {
+        "d18O": 1063
+      },
+      "dating_n": 20,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12280",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 360,
+      "site_name": "Bigonda cave",
+      "latitude": 46.018,
+      "longitude": 11.581,
+      "entity_id": 883,
+      "entity_name": "BG2",
+      "persist_id": "360-BG2",
+      "age_min_yrBP": 110195.019100747,
+      "age_max_yrBP": 130509.887844978,
+      "d18O_n": 289,
+      "d18O_dated_n": 289,
+      "median_spacing_yr": 91.94237401850114,
+      "proxy_counts": {
+        "d18O": 289,
+        "d13C": 289,
+        "Mg_Ca": 289,
+        "Sr_Ca": 289,
+        "Ba_Ca": 289,
+        "U_Ca": 289,
+        "P_Ca": 289
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2021.107243"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 360,
+      "site_name": "Bigonda cave",
+      "latitude": 46.018,
+      "longitude": 11.581,
+      "entity_id": 884,
+      "entity_name": "BG4",
+      "persist_id": "360-BG4",
+      "age_min_yrBP": 104471.965110388,
+      "age_max_yrBP": 132474.232679816,
+      "d18O_n": 469,
+      "d18O_dated_n": 469,
+      "median_spacing_yr": 19.898328881005,
+      "proxy_counts": {
+        "d18O": 469,
+        "d13C": 469,
+        "Mg_Ca": 451,
+        "Sr_Ca": 451,
+        "Ba_Ca": 451,
+        "U_Ca": 451,
+        "P_Ca": 451
+      },
+      "dating_n": 15,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2021.107243"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 262,
+      "site_name": "Bleßberg cave",
+      "latitude": 50.4244,
+      "longitude": 11.0203,
+      "entity_id": 564,
+      "entity_name": "BB-1",
+      "persist_id": "262-BB1",
+      "age_min_yrBP": 150.1042,
+      "age_max_yrBP": 5615.2555,
+      "d18O_n": 1451,
+      "d18O_dated_n": 1451,
+      "median_spacing_yr": 3.7642500000001746,
+      "proxy_counts": {
+        "d18O": 1451,
+        "d13C": 1451
+      },
+      "dating_n": 18,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.gloplacha.2019.03.007"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 262,
+      "site_name": "Bleßberg cave",
+      "latitude": 50.4244,
+      "longitude": 11.0203,
+      "entity_id": 565,
+      "entity_name": "BB-3",
+      "persist_id": "262-BB3",
+      "age_min_yrBP": 5248.8835,
+      "age_max_yrBP": 11990.726,
+      "d18O_n": 506,
+      "d18O_dated_n": 506,
+      "median_spacing_yr": 9.261199999999917,
+      "proxy_counts": {
+        "d18O": 506,
+        "d13C": 506
+      },
+      "dating_n": 24,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.gloplacha.2019.03.007"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 73,
+      "site_name": "Bourgeois–Delaunay cave",
+      "latitude": 45.6678,
+      "longitude": 0.5133,
+      "entity_id": 162,
+      "entity_name": "BDinf",
+      "persist_id": "73-BDINF",
+      "age_min_yrBP": 121339.0,
+      "age_max_yrBP": 128151.0,
+      "d18O_n": 358,
+      "d18O_dated_n": 358,
+      "median_spacing_yr": 25.0,
+      "proxy_counts": {
+        "d18O": 358,
+        "d13C": 358
+      },
+      "dating_n": 21,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2009.08.014"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 133,
+      "site_name": "Buca della Renella",
+      "latitude": 44.08,
+      "longitude": 10.21,
+      "entity_id": 381,
+      "entity_name": "RL4_2018",
+      "persist_id": "133-RL4",
+      "age_min_yrBP": 1024.11,
+      "age_max_yrBP": 7277.24,
+      "d18O_n": 758,
+      "d18O_dated_n": 758,
+      "median_spacing_yr": 7.5,
+      "proxy_counts": {
+        "d18O": 758,
+        "d13C": 759
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "unpublished"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 97,
+      "site_name": "Bue Marino cave",
+      "latitude": 40.2467,
+      "longitude": 9.6228,
+      "entity_id": 195,
+      "entity_name": "BMS1",
+      "persist_id": "97-BMS1",
+      "age_min_yrBP": 110207.0,
+      "age_max_yrBP": 112881.0,
+      "d18O_n": 295,
+      "d18O_dated_n": 295,
+      "median_spacing_yr": 7.0,
+      "proxy_counts": {
+        "d18O": 295,
+        "d13C": 295
+      },
+      "dating_n": 24,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2017.05.007"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 263,
+      "site_name": "Bulgarian Orlova Chuka cave",
+      "latitude": 43.5937,
+      "longitude": 25.9597,
+      "entity_id": 566,
+      "entity_name": "ocz-6",
+      "persist_id": "263-OCZ6",
+      "age_min_yrBP": 112354.844404,
+      "age_max_yrBP": 129017.928736,
+      "d18O_n": 763,
+      "d18O_dated_n": 763,
+      "median_spacing_yr": 24.824430000000575,
+      "proxy_counts": {
+        "d18O": 763,
+        "d13C": 763
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1515/geochr-2015-0107"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 117,
+      "site_name": "Bunker cave",
+      "latitude": 51.3675,
+      "longitude": 7.6647,
+      "entity_id": 244,
+      "entity_name": "BuStack",
+      "persist_id": "117-BUSTACK-COMP",
+      "age_min_yrBP": -57.4,
+      "age_max_yrBP": 10723.5,
+      "d18O_n": 2677,
+      "d18O_dated_n": 2677,
+      "median_spacing_yr": 2.9000000000005457,
+      "proxy_counts": {
+        "d18O": 2677
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-8-1751-2012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 275,
+      "site_name": "Buraca Gloriosa",
+      "latitude": 39.5333,
+      "longitude": -8.7833,
+      "entity_id": 583,
+      "entity_name": "BG41",
+      "persist_id": "275-BG41",
+      "age_min_yrBP": 73229.7684,
+      "age_max_yrBP": 82606.0403,
+      "d18O_n": 37,
+      "d18O_dated_n": 37,
+      "median_spacing_yr": 168.35104999999749,
+      "proxy_counts": {
+        "d18O": 37,
+        "d13C": 37
+      },
+      "dating_n": 5,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 275,
+      "site_name": "Buraca Gloriosa",
+      "latitude": 39.5333,
+      "longitude": -8.7833,
+      "entity_id": 584,
+      "entity_name": "BG66",
+      "persist_id": "275-BG66",
+      "age_min_yrBP": 185269.3211,
+      "age_max_yrBP": 222448.0333,
+      "d18O_n": 279,
+      "d18O_dated_n": 279,
+      "median_spacing_yr": 94.41644999998971,
+      "proxy_counts": {
+        "d18O": 279,
+        "d13C": 279
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 275,
+      "site_name": "Buraca Gloriosa",
+      "latitude": 39.5333,
+      "longitude": -8.7833,
+      "entity_id": 585,
+      "entity_name": "BG67",
+      "persist_id": "275-BG67",
+      "age_min_yrBP": 104320.3533,
+      "age_max_yrBP": 146537.0018,
+      "d18O_n": 43,
+      "d18O_dated_n": 43,
+      "median_spacing_yr": 1051.6265000000058,
+      "proxy_counts": {
+        "d18O": 43,
+        "d13C": 43
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 275,
+      "site_name": "Buraca Gloriosa",
+      "latitude": 39.5333,
+      "longitude": -8.7833,
+      "entity_id": 586,
+      "entity_name": "BG611",
+      "persist_id": "275-BG611",
+      "age_min_yrBP": 53142.971,
+      "age_max_yrBP": 109787.5403,
+      "d18O_n": 80,
+      "d18O_dated_n": 80,
+      "median_spacing_yr": 237.77969999999914,
+      "proxy_counts": {
+        "d18O": 80,
+        "d13C": 80
+      },
+      "dating_n": 7,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 275,
+      "site_name": "Buraca Gloriosa",
+      "latitude": 39.5333,
+      "longitude": -8.7833,
+      "entity_id": 587,
+      "entity_name": "BG6LR",
+      "persist_id": "275-BG6LR",
+      "age_min_yrBP": 1319.1533,
+      "age_max_yrBP": 87439.7511,
+      "d18O_n": 961,
+      "d18O_dated_n": 961,
+      "median_spacing_yr": 37.51369999999952,
+      "proxy_counts": {
+        "d18O": 961,
+        "d13C": 961
+      },
+      "dating_n": 46,
+      "hiatus_n": 7,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 276,
+      "site_name": "Béke cave",
+      "latitude": 48.4833,
+      "longitude": 20.5167,
+      "entity_id": 595,
+      "entity_name": "BNT-2",
+      "persist_id": "276-BNT2",
+      "age_min_yrBP": 453.685569949,
+      "age_max_yrBP": 4348.0,
+      "d18O_n": 261,
+      "d18O_dated_n": 261,
+      "median_spacing_yr": 11.0,
+      "proxy_counts": {
+        "d18O": 261,
+        "d13C": 261
+      },
+      "dating_n": 23,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quaint.2019.02.014",
+        "10.5038/1827-806X.47.1.2110"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 76,
+      "site_name": "Ceremosnja cave",
+      "latitude": 44.4,
+      "longitude": 21.65,
+      "entity_id": 165,
+      "entity_name": "CC-1",
+      "persist_id": "76-CC1",
+      "age_min_yrBP": -48.0,
+      "age_max_yrBP": 2425.6,
+      "d18O_n": 100,
+      "d18O_dated_n": 100,
+      "median_spacing_yr": 19.800000000000068,
+      "proxy_counts": {
+        "d18O": 100,
+        "d13C": 100
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/s0033822200041308"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 187,
+      "site_name": "Cesare Battisti cave",
+      "latitude": 46.13,
+      "longitude": 11.03,
+      "entity_id": 400,
+      "entity_name": "CB25",
+      "persist_id": "187-CB25",
+      "age_min_yrBP": 121281.841614,
+      "age_max_yrBP": 125124.223936,
+      "d18O_n": 72,
+      "d18O_dated_n": 72,
+      "median_spacing_yr": 55.199050000010175,
+      "proxy_counts": {
+        "d18O": 72,
+        "d13C": 72
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41598-018-21027-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 187,
+      "site_name": "Cesare Battisti cave",
+      "latitude": 46.13,
+      "longitude": 11.03,
+      "entity_id": 401,
+      "entity_name": "CB39",
+      "persist_id": "187-CB39",
+      "age_min_yrBP": 120287.123942,
+      "age_max_yrBP": 127716.904242,
+      "d18O_n": 199,
+      "d18O_dated_n": 199,
+      "median_spacing_yr": 41.67774049999571,
+      "proxy_counts": {
+        "d18O": 199,
+        "d13C": 199
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41598-018-21027-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 187,
+      "site_name": "Cesare Battisti cave",
+      "latitude": 46.13,
+      "longitude": 11.03,
+      "entity_id": 402,
+      "entity_name": "CB47",
+      "persist_id": "187-CB47",
+      "age_min_yrBP": 123555.691728,
+      "age_max_yrBP": 126412.132163,
+      "d18O_n": 164,
+      "d18O_dated_n": 164,
+      "median_spacing_yr": 16.98332400000072,
+      "proxy_counts": {
+        "d18O": 164,
+        "d13C": 164
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41598-018-21027-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 215,
+      "site_name": "Chaara cave",
+      "latitude": 33.9558,
+      "longitude": -4.2461,
+      "entity_id": 588,
+      "entity_name": "Cha2_2019",
+      "persist_id": "215-CHA2",
+      "age_min_yrBP": -58.2033778675,
+      "age_max_yrBP": 9662.21940764,
+      "d18O_n": 657,
+      "d18O_dated_n": 657,
+      "median_spacing_yr": 10.785779050000201,
+      "proxy_counts": {
+        "d18O": 657
+      },
+      "dating_n": 46,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1029/2019GL082405"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 215,
+      "site_name": "Chaara cave",
+      "latitude": 33.9558,
+      "longitude": -4.2461,
+      "entity_id": 589,
+      "entity_name": "Cha1",
+      "persist_id": "215-CHA1",
+      "age_min_yrBP": -50.9359078941,
+      "age_max_yrBP": 11621.8302138,
+      "d18O_n": 1573,
+      "d18O_dated_n": 1573,
+      "median_spacing_yr": 6.338263849249909,
+      "proxy_counts": {
+        "d18O": 1573
+      },
+      "dating_n": 44,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1029/2019GL082405"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 77,
+      "site_name": "Chauvet cave",
+      "latitude": 44.23,
+      "longitude": 4.26,
+      "entity_id": 166,
+      "entity_name": "Chau-stm6",
+      "persist_id": "77-CHAUSTM6",
+      "age_min_yrBP": 11415.0,
+      "age_max_yrBP": 34183.0,
+      "d18O_n": 210,
+      "d18O_dated_n": 210,
+      "median_spacing_yr": 27.0,
+      "proxy_counts": {
+        "d18O": 210,
+        "d13C": 210
+      },
+      "dating_n": 11,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2006.01.030"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 108,
+      "site_name": "Clamouse cave",
+      "latitude": 43.71,
+      "longitude": 3.55,
+      "entity_id": 211,
+      "entity_name": "Cla4",
+      "persist_id": "108-CLA4",
+      "age_min_yrBP": 74460.0,
+      "age_max_yrBP": 187405.0,
+      "d18O_n": 77,
+      "d18O_dated_n": 77,
+      "median_spacing_yr": 100.0,
+      "proxy_counts": {
+        "d18O": 77,
+        "d13C": 77
+      },
+      "dating_n": 21,
+      "hiatus_n": 6,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/s0012-821x(02)00674-x"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 108,
+      "site_name": "Clamouse cave",
+      "latitude": 43.71,
+      "longitude": 3.55,
+      "entity_id": 212,
+      "entity_name": "CL26",
+      "persist_id": "108-CL26",
+      "age_min_yrBP": 142.333333333,
+      "age_max_yrBP": 11178.7878788,
+      "d18O_n": 232,
+      "d18O_dated_n": 232,
+      "median_spacing_yr": 32.6944444400001,
+      "proxy_counts": {
+        "d18O": 232,
+        "d13C": 232
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/s0277-3791(98)00107-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 179,
+      "site_name": "Closani cave",
+      "latitude": 45.1,
+      "longitude": 22.8,
+      "entity_id": 390,
+      "entity_name": "C09-2",
+      "persist_id": "179-C092",
+      "age_min_yrBP": -36.1957600000001,
+      "age_max_yrBP": 3792.933,
+      "d18O_n": 1832,
+      "d18O_dated_n": 1832,
+      "median_spacing_yr": 1.9490000000000691,
+      "proxy_counts": {
+        "d18O": 1832,
+        "d13C": 1832,
+        "Mg_Ca": 1702,
+        "Sr_Ca": 1704,
+        "Ba_Ca": 1704,
+        "U_Ca": 1704
+      },
+      "dating_n": 15,
+      "hiatus_n": 0,
+      "data_DOI_URL": "10.1594/PANGAEA.909984",
+      "reference_dois": [
+        "10.1016/j.epsl.2018.07.027"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 259,
+      "site_name": "Cobre cave",
+      "latitude": 42.98,
+      "longitude": -4.37,
+      "entity_id": 561,
+      "entity_name": "PA-8",
+      "persist_id": "259-PA8",
+      "age_min_yrBP": 100605.613697,
+      "age_max_yrBP": 116341.8,
+      "d18O_n": 252,
+      "d18O_dated_n": 252,
+      "median_spacing_yr": 15.0,
+      "proxy_counts": {
+        "d18O": 252,
+        "d13C": 252,
+        "Mg_Ca": 250,
+        "Sr_Ca": 250,
+        "Ba_Ca": 250,
+        "U_Ca": 250,
+        "P_Ca": 250
+      },
+      "dating_n": 13,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2014.08.007",
+        "10.1016/j.epsl.2012.07.041"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 143,
+      "site_name": "Cova da Arcoia",
+      "latitude": 42.61,
+      "longitude": -7.09,
+      "entity_id": 310,
+      "entity_name": "ESP03",
+      "persist_id": "143-ESP03",
+      "age_min_yrBP": 340.0,
+      "age_max_yrBP": 9440.0,
+      "d18O_n": 100,
+      "d18O_dated_n": 100,
+      "median_spacing_yr": 57.180232549999346,
+      "proxy_counts": {
+        "d18O": 100,
+        "d13C": 100
+      },
+      "dating_n": 28,
+      "hiatus_n": 9,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.palaeo.2011.02.030"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 265,
+      "site_name": "Coves de Campanet",
+      "latitude": 39.7937,
+      "longitude": 2.9683,
+      "entity_id": 569,
+      "entity_name": "CAM-1",
+      "persist_id": "265-CAM1",
+      "age_min_yrBP": 151.778,
+      "age_max_yrBP": 121015.3263,
+      "d18O_n": 448,
+      "d18O_dated_n": 448,
+      "median_spacing_yr": 83.06809999999678,
+      "proxy_counts": {
+        "d18O": 448,
+        "d13C": 448
+      },
+      "dating_n": 26,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/24950 ",
+      "reference_dois": [
+        "10.1016/j.palaeo.2018.06.028"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 98,
+      "site_name": "Crag cave",
+      "latitude": 52.25,
+      "longitude": -9.43,
+      "entity_id": 196,
+      "entity_name": "CC3",
+      "persist_id": "98-CC3",
+      "age_min_yrBP": -47.0000000001,
+      "age_max_yrBP": 10132.0,
+      "d18O_n": 145,
+      "d18O_dated_n": 145,
+      "median_spacing_yr": 48.5,
+      "proxy_counts": {
+        "d18O": 145,
+        "d13C": 145
+      },
+      "dating_n": 15,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/s0277-3791(98)00107-3",
+        "10.1126/science.1063678"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 260,
+      "site_name": "Crovassa Azzurra",
+      "latitude": 39.28,
+      "longitude": 8.48,
+      "entity_id": 562,
+      "entity_name": "CA",
+      "persist_id": "260-CA",
+      "age_min_yrBP": 72640.03125,
+      "age_max_yrBP": 238167.777621,
+      "d18O_n": 737,
+      "d18O_dated_n": 737,
+      "median_spacing_yr": 81.59850550000556,
+      "proxy_counts": {
+        "d18O": 737,
+        "d13C": 737
+      },
+      "dating_n": 33,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2019.07.023"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 119,
+      "site_name": "Cueva de Asiul",
+      "latitude": 43.32,
+      "longitude": -3.59,
+      "entity_id": 248,
+      "entity_name": "ASR",
+      "persist_id": "119-ASR",
+      "age_min_yrBP": 488.606312883,
+      "age_max_yrBP": 12160.9645325,
+      "d18O_n": 1191,
+      "d18O_dated_n": 1191,
+      "median_spacing_yr": 2.8712506500005475,
+      "proxy_counts": {
+        "d18O": 1191
+      },
+      "dating_n": 11,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/20082",
+      "reference_dois": [
+        "10.1038/srep24745"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 119,
+      "site_name": "Cueva de Asiul",
+      "latitude": 43.32,
+      "longitude": -3.59,
+      "entity_id": 249,
+      "entity_name": "ASM",
+      "persist_id": "119-ASM",
+      "age_min_yrBP": -62.0,
+      "age_max_yrBP": 7776.63559,
+      "d18O_n": 828,
+      "d18O_dated_n": 828,
+      "median_spacing_yr": 6.102810000000318,
+      "proxy_counts": {
+        "d18O": 828
+      },
+      "dating_n": 13,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/20082",
+      "reference_dois": [
+        "10.1038/srep24745"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 305,
+      "site_name": "Cueva Rosa",
+      "latitude": 43.4436,
+      "longitude": -5.1403,
+      "entity_id": 750,
+      "entity_name": "Artemisa_R",
+      "persist_id": "305-ARTEMISAR",
+      "age_min_yrBP": 100638.014576847,
+      "age_max_yrBP": 122996.820717489,
+      "d18O_n": 48,
+      "d18O_dated_n": 48,
+      "median_spacing_yr": 344.40218494100554,
+      "proxy_counts": {
+        "d18O": 48,
+        "d13C": 48,
+        "Mg_Ca": 35,
+        "Sr_Ca": 35
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.08.025"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 305,
+      "site_name": "Cueva Rosa",
+      "latitude": 43.4436,
+      "longitude": -5.1403,
+      "entity_id": 751,
+      "entity_name": "Angelines",
+      "persist_id": "305-ANGELINES",
+      "age_min_yrBP": 65048.6954299992,
+      "age_max_yrBP": 117734.615107361,
+      "d18O_n": 189,
+      "d18O_dated_n": 189,
+      "median_spacing_yr": 179.88292901049863,
+      "proxy_counts": {
+        "d18O": 189,
+        "d13C": 189,
+        "Mg_Ca": 188,
+        "Sr_Ca": 188
+      },
+      "dating_n": 23,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.08.025"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 266,
+      "site_name": "Cueva Victoria",
+      "latitude": 37.6322,
+      "longitude": -0.8215,
+      "entity_id": 570,
+      "entity_name": "Vic-III-4",
+      "persist_id": "266-VICIII4",
+      "age_min_yrBP": 6987.75177844,
+      "age_max_yrBP": 14925.8704274,
+      "d18O_n": 196,
+      "d18O_dated_n": 196,
+      "median_spacing_yr": 22.326736479999454,
+      "proxy_counts": {
+        "d18O": 196,
+        "d13C": 196
+      },
+      "dating_n": 22,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/0959683619838021"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 266,
+      "site_name": "Cueva Victoria",
+      "latitude": 37.6322,
+      "longitude": -0.8215,
+      "entity_id": 697,
+      "entity_name": "Vic-III-1",
+      "persist_id": "266-VICIII1",
+      "age_min_yrBP": 45383.164596533,
+      "age_max_yrBP": 95161.948745866,
+      "d18O_n": 440,
+      "d18O_dated_n": 440,
+      "median_spacing_yr": 77.50620987629372,
+      "proxy_counts": {
+        "d18O": 440,
+        "d13C": 440
+      },
+      "dating_n": 31,
+      "hiatus_n": 1,
+      "data_DOI_URL": "10.25921/cr2s-ax84",
+      "reference_dois": [
+        "10.1029/2019GL084009",
+        "https://dialnet.unirioja.es/revista/11316/A/2012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 266,
+      "site_name": "Cueva Victoria",
+      "latitude": 37.6322,
+      "longitude": -0.8215,
+      "entity_id": 698,
+      "entity_name": "Vic-III-3",
+      "persist_id": "266-VICIII3",
+      "age_min_yrBP": 48696.2507793439,
+      "age_max_yrBP": 93254.942124256,
+      "d18O_n": 274,
+      "d18O_dated_n": 274,
+      "median_spacing_yr": 100.0,
+      "proxy_counts": {
+        "d18O": 274,
+        "d13C": 274
+      },
+      "dating_n": 17,
+      "hiatus_n": 2,
+      "data_DOI_URL": "10.25921/cr2s-ax84",
+      "reference_dois": [
+        "10.1029/2019GL084009",
+        "https://dialnet.unirioja.es/revista/11316/A/2012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 266,
+      "site_name": "Cueva Victoria",
+      "latitude": 37.6322,
+      "longitude": -0.8215,
+      "entity_id": 699,
+      "entity_name": "SR01t",
+      "persist_id": "266-SR01T",
+      "age_min_yrBP": 49137.5115179182,
+      "age_max_yrBP": 86521.7672509753,
+      "d18O_n": 120,
+      "d18O_dated_n": 120,
+      "median_spacing_yr": 112.14528237509512,
+      "proxy_counts": {
+        "d18O": 120,
+        "d13C": 120
+      },
+      "dating_n": 19,
+      "hiatus_n": 2,
+      "data_DOI_URL": "10.25921/cr2s-ax84",
+      "reference_dois": [
+        "10.1029/2019GL084009",
+        "https://dialnet.unirioja.es/revista/11316/A/2012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 79,
+      "site_name": "Dim cave",
+      "latitude": 36.534,
+      "longitude": 32.1056,
+      "entity_id": 168,
+      "entity_name": "Dim-E2",
+      "persist_id": "79-DIME2",
+      "age_min_yrBP": 9738.09282072,
+      "age_max_yrBP": 13094.2150069,
+      "d18O_n": 88,
+      "d18O_dated_n": 88,
+      "median_spacing_yr": 24.808184299999994,
+      "proxy_counts": {
+        "d18O": 88,
+        "d13C": 88,
+        "Mg_Ca": 88,
+        "Sr_Ca": 88,
+        "Ba_Ca": 88,
+        "U_Ca": 88,
+        "Sr_isotopes": 6
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/srep13560",
+        "10.1016/j.palaeo.2016.04.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 79,
+      "site_name": "Dim cave",
+      "latitude": 36.534,
+      "longitude": 32.1056,
+      "entity_id": 169,
+      "entity_name": "Dim-E3",
+      "persist_id": "79-DIME3",
+      "age_min_yrBP": 12575.458028,
+      "age_max_yrBP": 89714.2165033,
+      "d18O_n": 442,
+      "d18O_dated_n": 442,
+      "median_spacing_yr": 110.63261760000023,
+      "proxy_counts": {
+        "d18O": 442,
+        "d13C": 442,
+        "Mg_Ca": 437,
+        "Sr_Ca": 437,
+        "Ba_Ca": 437,
+        "U_Ca": 437,
+        "Sr_isotopes": 5
+      },
+      "dating_n": 28,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/srep13560",
+        "10.1016/j.palaeo.2016.04.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 79,
+      "site_name": "Dim cave",
+      "latitude": 36.534,
+      "longitude": 32.1056,
+      "entity_id": 693,
+      "entity_name": "Dim-E4_2023",
+      "persist_id": "79-DIME4",
+      "age_min_yrBP": 12020.0,
+      "age_max_yrBP": 14555.3,
+      "d18O_n": 49,
+      "d18O_dated_n": 49,
+      "median_spacing_yr": 44.5,
+      "proxy_counts": {
+        "d18O": 49,
+        "d13C": 49,
+        "Mg_Ca": 49,
+        "Sr_Ca": 49,
+        "Ba_Ca": 49,
+        "U_Ca": 49,
+        "Sr_isotopes": 2
+      },
+      "dating_n": 10,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.palaeo.2016.04.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 79,
+      "site_name": "Dim cave",
+      "latitude": 36.534,
+      "longitude": 32.1056,
+      "entity_id": 754,
+      "entity_name": "Dim1",
+      "persist_id": "79-DIM1",
+      "age_min_yrBP": 128298.708359629,
+      "age_max_yrBP": 132151.063721911,
+      "d18O_n": 421,
+      "d18O_dated_n": 421,
+      "median_spacing_yr": 1.4357175159966573,
+      "proxy_counts": {
+        "d18O": 421,
+        "d13C": 421,
+        "Sr_isotopes": 20
+      },
+      "dating_n": 26,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.palaeo.2019.109422"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 120,
+      "site_name": "Ejulve cave",
+      "latitude": 40.76,
+      "longitude": -0.59,
+      "entity_id": 250,
+      "entity_name": "HOR",
+      "persist_id": "120-HOR",
+      "age_min_yrBP": 2708.44250848,
+      "age_max_yrBP": 6071.81999502,
+      "d18O_n": 266,
+      "d18O_dated_n": 266,
+      "median_spacing_yr": 11.392584870000064,
+      "proxy_counts": {
+        "d18O": 266,
+        "d13C": 266
+      },
+      "dating_n": 23,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2017.39",
+        "10.1016/j.quascirev.2019.105946"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 120,
+      "site_name": "Ejulve cave",
+      "latitude": 40.76,
+      "longitude": -0.59,
+      "entity_id": 251,
+      "entity_name": "ARTEMISA",
+      "persist_id": "120-ARTEMISA",
+      "age_min_yrBP": 218975.672761,
+      "age_max_yrBP": 257426.488125,
+      "d18O_n": 236,
+      "d18O_dated_n": 236,
+      "median_spacing_yr": 161.1236879999924,
+      "proxy_counts": {
+        "d18O": 236,
+        "d13C": 236,
+        "Mg_Ca": 168
+      },
+      "dating_n": 24,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/24490",
+      "reference_dois": [
+        "10.1073/pnas.1619615114"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 120,
+      "site_name": "Ejulve cave",
+      "latitude": 40.76,
+      "longitude": -0.59,
+      "entity_id": 702,
+      "entity_name": "Andromeda",
+      "persist_id": "120-ANDROMEDA",
+      "age_min_yrBP": 37117.0,
+      "age_max_yrBP": 119346.0,
+      "d18O_n": 735,
+      "d18O_dated_n": 735,
+      "median_spacing_yr": 85.18999999998778,
+      "proxy_counts": {
+        "d18O": 735,
+        "d13C": 735,
+        "Mg_Ca": 296
+      },
+      "dating_n": 26,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2019.105946"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 261,
+      "site_name": "El Soplao cave",
+      "latitude": 43.2962,
+      "longitude": -4.3937,
+      "entity_id": 563,
+      "entity_name": "SIR-1",
+      "persist_id": "261-SIR1",
+      "age_min_yrBP": 7965.25,
+      "age_max_yrBP": 14669.7208955,
+      "d18O_n": 329,
+      "d18O_dated_n": 329,
+      "median_spacing_yr": 13.183333330000096,
+      "proxy_counts": {
+        "d18O": 329,
+        "d13C": 329
+      },
+      "dating_n": 21,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.05.025"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 121,
+      "site_name": "Entrische Kirche cave",
+      "latitude": 47.16,
+      "longitude": 13.15,
+      "entity_id": 252,
+      "entity_name": "TKS",
+      "persist_id": "121-TKS",
+      "age_min_yrBP": 113389.499821,
+      "age_max_yrBP": 126889.040786,
+      "d18O_n": 1340,
+      "d18O_dated_n": 1340,
+      "median_spacing_yr": 6.21693100000266,
+      "proxy_counts": {
+        "d18O": 1340,
+        "d13C": 1340
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2007.11.005"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 193,
+      "site_name": "Frasassi cave system - Grotta Grande del Vento",
+      "latitude": 43.4008,
+      "longitude": 12.9619,
+      "entity_id": 411,
+      "entity_name": "FR16",
+      "persist_id": "193-FR16",
+      "age_min_yrBP": 96724.0,
+      "age_max_yrBP": 112958.0,
+      "d18O_n": 544,
+      "d18O_dated_n": 544,
+      "median_spacing_yr": 16.0,
+      "proxy_counts": {
+        "d18O": 544,
+        "d13C": 546
+      },
+      "dating_n": 27,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.10.023"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 289,
+      "site_name": "Gassel Tropfsteinhöhle",
+      "latitude": 47.8228,
+      "longitude": 13.8428,
+      "entity_id": 656,
+      "entity_name": "GAS-12",
+      "persist_id": "289-GAS12",
+      "age_min_yrBP": 77015.2,
+      "age_max_yrBP": 81898.7,
+      "d18O_n": 743,
+      "d18O_dated_n": 743,
+      "median_spacing_yr": 5.900000000008731,
+      "proxy_counts": {
+        "d18O": 743,
+        "d13C": 743
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 289,
+      "site_name": "Gassel Tropfsteinhöhle",
+      "latitude": 47.8228,
+      "longitude": 13.8428,
+      "entity_id": 657,
+      "entity_name": "GAS-13",
+      "persist_id": "289-GAS13",
+      "age_min_yrBP": 76914.4,
+      "age_max_yrBP": 80323.9,
+      "d18O_n": 679,
+      "d18O_dated_n": 679,
+      "median_spacing_yr": 4.30000000000291,
+      "proxy_counts": {
+        "d18O": 679,
+        "d13C": 679
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 289,
+      "site_name": "Gassel Tropfsteinhöhle",
+      "latitude": 47.8228,
+      "longitude": 13.8428,
+      "entity_id": 658,
+      "entity_name": "GAS-22",
+      "persist_id": "289-GAS22",
+      "age_min_yrBP": 105246.5,
+      "age_max_yrBP": 107970.5,
+      "d18O_n": 525,
+      "d18O_dated_n": 525,
+      "median_spacing_yr": 4.599999999998545,
+      "proxy_counts": {
+        "d18O": 525,
+        "d13C": 525
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 289,
+      "site_name": "Gassel Tropfsteinhöhle",
+      "latitude": 47.8228,
+      "longitude": 13.8428,
+      "entity_id": 659,
+      "entity_name": "GAS-25",
+      "persist_id": "289-GAS25",
+      "age_min_yrBP": 83937.7,
+      "age_max_yrBP": 91349.3,
+      "d18O_n": 625,
+      "d18O_dated_n": 625,
+      "median_spacing_yr": 6.399999999994179,
+      "proxy_counts": {
+        "d18O": 625,
+        "d13C": 625
+      },
+      "dating_n": 18,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 290,
+      "site_name": "Grete-Ruth Shaft",
+      "latitude": 47.5429,
+      "longitude": 12.0272,
+      "entity_id": 662,
+      "entity_name": "HUN-14",
+      "persist_id": "290-HUN14",
+      "age_min_yrBP": 102917.5,
+      "age_max_yrBP": 111314.5,
+      "d18O_n": 705,
+      "d18O_dated_n": 705,
+      "median_spacing_yr": 5.600000000005821,
+      "proxy_counts": {
+        "d18O": 705,
+        "d13C": 705
+      },
+      "dating_n": 36,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 129,
+      "site_name": "Grotta di Carburangeli",
+      "latitude": 38.1665,
+      "longitude": 13.1603,
+      "entity_id": 277,
+      "entity_name": "CR1",
+      "persist_id": "129-CR1",
+      "age_min_yrBP": 947.73,
+      "age_max_yrBP": 8373.72,
+      "d18O_n": 1232,
+      "d18O_dated_n": 1232,
+      "median_spacing_yr": 2.050000000000182,
+      "proxy_counts": {
+        "d18O": 1232,
+        "d13C": 1232
+      },
+      "dating_n": 16,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.yqres.2006.05.003",
+        "http://www2.muse.it/pubblicazioni/6/actaG80/Vol_ACTA_80_2003_153-167.pdf"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 131,
+      "site_name": "Grotta di Ernesto",
+      "latitude": 45.9667,
+      "longitude": 11.65,
+      "entity_id": 279,
+      "entity_name": "ER76",
+      "persist_id": "131-ER76",
+      "age_min_yrBP": 2511.48,
+      "age_max_yrBP": 7969.05,
+      "d18O_n": 1220,
+      "d18O_dated_n": 1220,
+      "median_spacing_yr": 3.8700000000003456,
+      "proxy_counts": {
+        "d18O": 1220,
+        "d13C": 1220
+      },
+      "dating_n": 10,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-8-1367-2012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 135,
+      "site_name": "Grotte de Piste",
+      "latitude": 33.95,
+      "longitude": -4.246,
+      "entity_id": 591,
+      "entity_name": "GP2",
+      "persist_id": "135-GP2",
+      "age_min_yrBP": 2537.16299091,
+      "age_max_yrBP": 11415.9420739,
+      "d18O_n": 588,
+      "d18O_dated_n": 588,
+      "median_spacing_yr": 13.452053989999513,
+      "proxy_counts": {
+        "d18O": 588
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/20266",
+      "reference_dois": [
+        "10.1029/2019GL082405",
+        "10.1038/ngeo2767"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 267,
+      "site_name": "Gruta do Casal da Lebre",
+      "latitude": 39.3,
+      "longitude": -9.2667,
+      "entity_id": 571,
+      "entity_name": "GCL6",
+      "persist_id": "267-GCL6",
+      "age_min_yrBP": 161416.7013,
+      "age_max_yrBP": 186961.8792,
+      "d18O_n": 55,
+      "d18O_dated_n": 55,
+      "median_spacing_yr": 496.9543999999878,
+      "proxy_counts": {
+        "d18O": 55,
+        "d13C": 55
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-2017-146"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 81,
+      "site_name": "Gueldaman cave",
+      "latitude": 36.4333,
+      "longitude": 4.5667,
+      "entity_id": 173,
+      "entity_name": "stm2",
+      "persist_id": "81-STM2",
+      "age_min_yrBP": 4039.1182872,
+      "age_max_yrBP": 6190.74519541,
+      "d18O_n": 224,
+      "d18O_dated_n": 224,
+      "median_spacing_yr": 9.14753931999985,
+      "proxy_counts": {
+        "d18O": 224,
+        "d13C": 224
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-12-1-2016"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 81,
+      "site_name": "Gueldaman cave",
+      "latitude": 36.4333,
+      "longitude": 4.5667,
+      "entity_id": 174,
+      "entity_name": "stm4",
+      "persist_id": "81-STM4",
+      "age_min_yrBP": 3193.28288259,
+      "age_max_yrBP": 5793.39749703,
+      "d18O_n": 201,
+      "d18O_dated_n": 201,
+      "median_spacing_yr": 5.700360524999724,
+      "proxy_counts": {
+        "d18O": 201,
+        "d13C": 201
+      },
+      "dating_n": 8,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-12-1-2016"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 16,
+      "site_name": "Han-sur-Lesse cave",
+      "latitude": 50.1164,
+      "longitude": 5.1884,
+      "entity_id": 73,
+      "entity_name": "Han-stm1",
+      "persist_id": "16-HANSTM1",
+      "age_min_yrBP": 4778.0,
+      "age_max_yrBP": 10949.0,
+      "d18O_n": 135,
+      "d18O_dated_n": 135,
+      "median_spacing_yr": 51.0,
+      "proxy_counts": {
+        "d18O": 135,
+        "d13C": 135
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/s003382220005712x"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 16,
+      "site_name": "Han-sur-Lesse cave",
+      "latitude": 50.1164,
+      "longitude": 5.1884,
+      "entity_id": 75,
+      "entity_name": "Han-9",
+      "persist_id": "16-HAN9",
+      "age_min_yrBP": 106499.651552,
+      "age_max_yrBP": 125343.051484,
+      "d18O_n": 834,
+      "d18O_dated_n": 834,
+      "median_spacing_yr": 12.84115799999563,
+      "proxy_counts": {
+        "d18O": 834,
+        "d13C": 834
+      },
+      "dating_n": 24,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/20345",
+      "reference_dois": [
+        "10.5194/cp-12-1445-2016"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 313,
+      "site_name": "Herbstlabyrinth cave",
+      "latitude": 50.6875,
+      "longitude": 8.2058,
+      "entity_id": 775,
+      "entity_name": "TV1_2021",
+      "persist_id": "313-TV1",
+      "age_min_yrBP": 113.847864168955,
+      "age_max_yrBP": 2453.04946974787,
+      "d18O_n": 431,
+      "d18O_dated_n": 431,
+      "median_spacing_yr": 5.427844501265099,
+      "proxy_counts": {
+        "d18O": 431,
+        "d13C": 431,
+        "Mg_Ca": 431,
+        "P_Ca": 431
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3390/geosciences11040166"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 115,
+      "site_name": "Hölloch im Mahdtal",
+      "latitude": 47.3781,
+      "longitude": 10.1506,
+      "entity_id": 230,
+      "entity_name": "HOL-7",
+      "persist_id": "115-HOL7",
+      "age_min_yrBP": 40105.0,
+      "age_max_yrBP": 48664.0,
+      "d18O_n": 530,
+      "d18O_dated_n": 530,
+      "median_spacing_yr": 6.0,
+      "proxy_counts": {
+        "d18O": 530,
+        "d13C": 530
+      },
+      "dating_n": 18,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/18155",
+      "reference_dois": [
+        "10.1130/g36063.1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 115,
+      "site_name": "Hölloch im Mahdtal",
+      "latitude": 47.3781,
+      "longitude": 10.1506,
+      "entity_id": 235,
+      "entity_name": "HOL-comp",
+      "persist_id": "115-HOL-COMP",
+      "age_min_yrBP": 49063.0,
+      "age_max_yrBP": 64498.0,
+      "d18O_n": 4150,
+      "d18O_dated_n": 4150,
+      "median_spacing_yr": 3.0,
+      "proxy_counts": {
+        "d18O": 4150
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/18155",
+      "reference_dois": [
+        "10.1130/g36063.1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 115,
+      "site_name": "Hölloch im Mahdtal",
+      "latitude": 47.3781,
+      "longitude": 10.1506,
+      "entity_id": 236,
+      "entity_name": "HOL-10",
+      "persist_id": "115-HOL10",
+      "age_min_yrBP": 110844.0,
+      "age_max_yrBP": 131765.0,
+      "d18O_n": 418,
+      "d18O_dated_n": 418,
+      "median_spacing_yr": 48.0,
+      "proxy_counts": {
+        "d18O": 418,
+        "d13C": 418
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/19219",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.07.012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 115,
+      "site_name": "Hölloch im Mahdtal",
+      "latitude": 47.3781,
+      "longitude": 10.1506,
+      "entity_id": 704,
+      "entity_name": "HOL1",
+      "persist_id": "115-HOL1",
+      "age_min_yrBP": 11440.9,
+      "age_max_yrBP": 14939.6,
+      "d18O_n": 199,
+      "d18O_dated_n": 199,
+      "median_spacing_yr": 17.5,
+      "proxy_counts": {
+        "d18O": 199,
+        "d13C": 199
+      },
+      "dating_n": 4,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.3255"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 115,
+      "site_name": "Hölloch im Mahdtal",
+      "latitude": 47.3781,
+      "longitude": 10.1506,
+      "entity_id": 705,
+      "entity_name": "HOL22",
+      "persist_id": "115-HOL22",
+      "age_min_yrBP": 10217.7,
+      "age_max_yrBP": 15211.5,
+      "d18O_n": 629,
+      "d18O_dated_n": 629,
+      "median_spacing_yr": 7.700000000000728,
+      "proxy_counts": {
+        "d18O": 629,
+        "d13C": 629
+      },
+      "dating_n": 27,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.3255"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 316,
+      "site_name": "Hüttenbläserschachthöhle",
+      "latitude": 51.3689,
+      "longitude": 7.6547,
+      "entity_id": 783,
+      "entity_name": "HBSH-1",
+      "persist_id": "316-HBSH1",
+      "age_min_yrBP": 554.44,
+      "age_max_yrBP": 6091.14,
+      "d18O_n": 300,
+      "d18O_dated_n": 300,
+      "median_spacing_yr": 18.070000000000164,
+      "proxy_counts": {
+        "d18O": 300,
+        "d13C": 300,
+        "Mg_Ca": 295,
+        "Sr_Ca": 295,
+        "Ba_Ca": 295,
+        "P_Ca": 295
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3389/feart.2021.642651"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 316,
+      "site_name": "Hüttenbläserschachthöhle",
+      "latitude": 51.3689,
+      "longitude": 7.6547,
+      "entity_id": 784,
+      "entity_name": "HBSH-3",
+      "persist_id": "316-HBSH3",
+      "age_min_yrBP": 1285.77,
+      "age_max_yrBP": 10502.55,
+      "d18O_n": 354,
+      "d18O_dated_n": 354,
+      "median_spacing_yr": 3.6200000000008004,
+      "proxy_counts": {
+        "d18O": 354,
+        "d13C": 356,
+        "Mg_Ca": 356,
+        "Sr_Ca": 356,
+        "Ba_Ca": 356,
+        "P_Ca": 356,
+        "Sr_isotopes": 9
+      },
+      "dating_n": 21,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3389/feart.2021.642651"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 316,
+      "site_name": "Hüttenbläserschachthöhle",
+      "latitude": 51.3689,
+      "longitude": 7.6547,
+      "entity_id": 785,
+      "entity_name": "HBSH-4",
+      "persist_id": "316-HBSH4",
+      "age_min_yrBP": 1223.13,
+      "age_max_yrBP": 11379.04,
+      "d18O_n": 572,
+      "d18O_dated_n": 572,
+      "median_spacing_yr": 5.440000000000509,
+      "proxy_counts": {
+        "d18O": 572,
+        "d13C": 572,
+        "Sr_isotopes": 9
+      },
+      "dating_n": 30,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3389/feart.2021.642651"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 316,
+      "site_name": "Hüttenbläserschachthöhle",
+      "latitude": 51.3689,
+      "longitude": 7.6547,
+      "entity_id": 786,
+      "entity_name": "HBSH-5",
+      "persist_id": "316-HBSH5",
+      "age_min_yrBP": 8199.98,
+      "age_max_yrBP": 10931.61,
+      "d18O_n": 120,
+      "d18O_dated_n": 120,
+      "median_spacing_yr": 21.5,
+      "proxy_counts": {
+        "d18O": 120,
+        "d13C": 120,
+        "Mg_Ca": 60,
+        "Sr_Ca": 60,
+        "Ba_Ca": 60,
+        "P_Ca": 60,
+        "Sr_isotopes": 3
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3389/feart.2021.642651"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 11,
+      "site_name": "Jeita cave",
+      "latitude": 33.95,
+      "longitude": 35.65,
+      "entity_id": 58,
+      "entity_name": "Jeita-1",
+      "persist_id": "11-JEITA1",
+      "age_min_yrBP": 1137.0,
+      "age_max_yrBP": 12288.0,
+      "d18O_n": 1600,
+      "d18O_dated_n": 1600,
+      "median_spacing_yr": 5.0,
+      "proxy_counts": {
+        "d18O": 1600,
+        "d13C": 1600
+      },
+      "dating_n": 63,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/2015gl065397",
+        "10.1016/j.yqres.2008.05.004"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 11,
+      "site_name": "Jeita cave",
+      "latitude": 33.95,
+      "longitude": 35.65,
+      "entity_id": 59,
+      "entity_name": "Jeita-2",
+      "persist_id": "11-JEITA2",
+      "age_min_yrBP": 13330.0,
+      "age_max_yrBP": 20367.0,
+      "d18O_n": 120,
+      "d18O_dated_n": 120,
+      "median_spacing_yr": 54.0,
+      "proxy_counts": {
+        "d18O": 120,
+        "d13C": 120
+      },
+      "dating_n": 7,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/2015gl065397"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 68,
+      "site_name": "Jerusalem west cave",
+      "latitude": 31.7833,
+      "longitude": 35.15,
+      "entity_id": 152,
+      "entity_name": "AF12",
+      "persist_id": "68-AF12",
+      "age_min_yrBP": -16.0,
+      "age_max_yrBP": 168714.0,
+      "d18O_n": 308,
+      "d18O_dated_n": 308,
+      "median_spacing_yr": 451.0,
+      "proxy_counts": {
+        "d18O": 308,
+        "Sr_isotopes": 18
+      },
+      "dating_n": 23,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1029/1999gb001245",
+        "10.1006/qres.1998.2031",
+        "10.1016/S0012-821X(03)00589-2"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 19,
+      "site_name": "Kanaan cave",
+      "latitude": 33.9069,
+      "longitude": 35.6069,
+      "entity_id": 81,
+      "entity_name": "Kanaan_MIS5",
+      "persist_id": "19-KANAANMIS5",
+      "age_min_yrBP": 83125.0,
+      "age_max_yrBP": 128847.0,
+      "d18O_n": 204,
+      "d18O_dated_n": 204,
+      "median_spacing_yr": 188.0,
+      "proxy_counts": {
+        "d18O": 204,
+        "d13C": 204
+      },
+      "dating_n": 19,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-11-1785-2015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 19,
+      "site_name": "Kanaan cave",
+      "latitude": 33.9069,
+      "longitude": 35.6069,
+      "entity_id": 82,
+      "entity_name": "Kanaan_MIS6",
+      "persist_id": "19-KANAANMIS6",
+      "age_min_yrBP": 154454.9403,
+      "age_max_yrBP": 193497.9827,
+      "d18O_n": 808,
+      "d18O_dated_n": 808,
+      "median_spacing_yr": 6.6885999999940395,
+      "proxy_counts": {
+        "d18O": 808,
+        "d13C": 808
+      },
+      "dating_n": 22,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2018.18"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 196,
+      "site_name": "Karaca cave",
+      "latitude": 40.5443,
+      "longitude": 39.4029,
+      "entity_id": 416,
+      "entity_name": "K1",
+      "persist_id": "196-K1",
+      "age_min_yrBP": 5904.38,
+      "age_max_yrBP": 77267.49,
+      "d18O_n": 309,
+      "d18O_dated_n": 309,
+      "median_spacing_yr": 178.29999999999927,
+      "proxy_counts": {
+        "d18O": 309,
+        "d13C": 309
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2012.04.013"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 100,
+      "site_name": "Katerloch cave",
+      "latitude": 47.0833,
+      "longitude": 15.55,
+      "entity_id": 199,
+      "entity_name": "K1",
+      "persist_id": "100-K1",
+      "age_min_yrBP": 7079.5,
+      "age_max_yrBP": 10324.0,
+      "d18O_n": 690,
+      "d18O_dated_n": 690,
+      "median_spacing_yr": 4.5,
+      "proxy_counts": {
+        "d18O": 690,
+        "d13C": 690
+      },
+      "dating_n": 10,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/8642",
+      "reference_dois": [
+        "10.1016/j.quascirev.2009.05.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 100,
+      "site_name": "Katerloch cave",
+      "latitude": 47.0833,
+      "longitude": 15.55,
+      "entity_id": 200,
+      "entity_name": "K3",
+      "persist_id": "100-K3",
+      "age_min_yrBP": 7786.62,
+      "age_max_yrBP": 10027.08,
+      "d18O_n": 1323,
+      "d18O_dated_n": 1323,
+      "median_spacing_yr": 1.6199999999998909,
+      "proxy_counts": {
+        "d18O": 1323,
+        "d13C": 1323
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/8642",
+      "reference_dois": [
+        "10.1016/j.quascirev.2009.05.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 100,
+      "site_name": "Katerloch cave",
+      "latitude": 47.0833,
+      "longitude": 15.55,
+      "entity_id": 794,
+      "entity_name": "K2",
+      "persist_id": "100-K2",
+      "age_min_yrBP": 124957.5,
+      "age_max_yrBP": 128509.3,
+      "d18O_n": 275,
+      "d18O_dated_n": 275,
+      "median_spacing_yr": 10.60000000000582,
+      "proxy_counts": {
+        "d18O": 275,
+        "d13C": 275
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.3398"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 100,
+      "site_name": "Katerloch cave",
+      "latitude": 47.0833,
+      "longitude": 15.55,
+      "entity_id": 795,
+      "entity_name": "K4",
+      "persist_id": "100-K4",
+      "age_min_yrBP": 126792.5,
+      "age_max_yrBP": 129599.5,
+      "d18O_n": 246,
+      "d18O_dated_n": 246,
+      "median_spacing_yr": 10.89999999999418,
+      "proxy_counts": {
+        "d18O": 246,
+        "d13C": 246
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.3398"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 101,
+      "site_name": "Klapferloch cave",
+      "latitude": 46.95,
+      "longitude": 10.55,
+      "entity_id": 201,
+      "entity_name": "PFU6",
+      "persist_id": "101-PFU6",
+      "age_min_yrBP": -47.0,
+      "age_max_yrBP": 2943.040288,
+      "d18O_n": 2814,
+      "d18O_dated_n": 2814,
+      "median_spacing_yr": 0.7705379999997604,
+      "proxy_counts": {
+        "d18O": 2814,
+        "d13C": 2814
+      },
+      "dating_n": 17,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12841",
+      "reference_dois": [
+        "10.1002/jqs.1490"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 197,
+      "site_name": "Klaus Cramer cave",
+      "latitude": 47.26,
+      "longitude": 9.52,
+      "entity_id": 417,
+      "entity_name": "KC1",
+      "persist_id": "197-KC1",
+      "age_min_yrBP": 63718.692,
+      "age_max_yrBP": 72013.7863,
+      "d18O_n": 850,
+      "d18O_dated_n": 850,
+      "median_spacing_yr": 10.53639999999723,
+      "proxy_counts": {
+        "d18O": 850
+      },
+      "dating_n": 21,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12279",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 132,
+      "site_name": "Kleegruben cave",
+      "latitude": 47.08,
+      "longitude": 11.67,
+      "entity_id": 280,
+      "entity_name": "SPA_126",
+      "persist_id": "132-SPA126",
+      "age_min_yrBP": 47396.0,
+      "age_max_yrBP": 55966.0,
+      "d18O_n": 1633,
+      "d18O_dated_n": 1633,
+      "median_spacing_yr": 10.0,
+      "proxy_counts": {
+        "d18O": 1633,
+        "d13C": 1633
+      },
+      "dating_n": 17,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/5436",
+      "reference_dois": [
+        "10.1016/j.quascirev.2005.10.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 132,
+      "site_name": "Kleegruben cave",
+      "latitude": 47.08,
+      "longitude": 11.67,
+      "entity_id": 281,
+      "entity_name": "SPA_49",
+      "persist_id": "132-SPA49",
+      "age_min_yrBP": 47816.0,
+      "age_max_yrBP": 58266.0,
+      "d18O_n": 1591,
+      "d18O_dated_n": 1591,
+      "median_spacing_yr": 10.0,
+      "proxy_counts": {
+        "d18O": 1591,
+        "d13C": 1591
+      },
+      "dating_n": 17,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/5436",
+      "reference_dois": [
+        "10.1016/j.quascirev.2005.10.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 361,
+      "site_name": "Kocain cave",
+      "latitude": 37.2325,
+      "longitude": 30.7117,
+      "entity_id": 887,
+      "entity_name": "Ko-1",
+      "persist_id": "361-KO1",
+      "age_min_yrBP": -50.22,
+      "age_max_yrBP": 3316.04,
+      "d18O_n": 369,
+      "d18O_dated_n": 369,
+      "median_spacing_yr": 9.574999999999989,
+      "proxy_counts": {
+        "d18O": 369,
+        "d13C": 369,
+        "Mg_Ca": 333,
+        "Sr_Ca": 333,
+        "P_Ca": 333
+      },
+      "dating_n": 17,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1029/2021GL094733"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 102,
+      "site_name": "Korallgrottan cave",
+      "latitude": 64.89,
+      "longitude": 14.16,
+      "entity_id": 202,
+      "entity_name": "K11",
+      "persist_id": "102-K11",
+      "age_min_yrBP": -55.0,
+      "age_max_yrBP": 3791.88,
+      "d18O_n": 413,
+      "d18O_dated_n": 413,
+      "median_spacing_yr": 4.7400000000002365,
+      "proxy_counts": {
+        "d18O": 413,
+        "d13C": 413
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/9745",
+      "reference_dois": [
+        "10.1111/j.1502-3885.2009.00099.x"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 102,
+      "site_name": "Korallgrottan cave",
+      "latitude": 64.89,
+      "longitude": 14.16,
+      "entity_id": 450,
+      "entity_name": "K1",
+      "persist_id": "102-K1",
+      "age_min_yrBP": 5922.204,
+      "age_max_yrBP": 8896.092,
+      "d18O_n": 73,
+      "d18O_dated_n": 73,
+      "median_spacing_yr": 41.30400000000009,
+      "proxy_counts": {
+        "d18O": 73,
+        "d13C": 73
+      },
+      "dating_n": 4,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/0959683607073292"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 286,
+      "site_name": "La Garma cave",
+      "latitude": 43.4306,
+      "longitude": -3.6658,
+      "entity_id": 650,
+      "entity_name": "GAR-01_drill",
+      "persist_id": "286-GAR01",
+      "age_min_yrBP": -26.4,
+      "age_max_yrBP": 13344.5,
+      "d18O_n": 354,
+      "d18O_dated_n": 354,
+      "median_spacing_yr": 25.700000000000045,
+      "proxy_counts": {
+        "d18O": 354,
+        "d13C": 83
+      },
+      "dating_n": 25,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.epsl.2015.03.015",
+        "10.1016/j.quascirev.2019.105998"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 286,
+      "site_name": "La Garma cave",
+      "latitude": 43.4306,
+      "longitude": -3.6658,
+      "entity_id": 651,
+      "entity_name": "GAR-01_laser_d18O",
+      "persist_id": "286-GAR01",
+      "age_min_yrBP": 10000.6,
+      "age_max_yrBP": 13864.4,
+      "d18O_n": 411,
+      "d18O_dated_n": 411,
+      "median_spacing_yr": 7.699999999998909,
+      "proxy_counts": {
+        "d18O": 411
+      },
+      "dating_n": 25,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.epsl.2015.03.015"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 83,
+      "site_name": "La Mine cave",
+      "latitude": 36.03,
+      "longitude": 9.68,
+      "entity_id": 176,
+      "entity_name": "Min-stm1",
+      "persist_id": "83-MINSTM1",
+      "age_min_yrBP": 5316.16,
+      "age_max_yrBP": 23168.0,
+      "d18O_n": 78,
+      "d18O_dated_n": 78,
+      "median_spacing_yr": 203.42499999999927,
+      "proxy_counts": {
+        "d18O": 78,
+        "d13C": 78
+      },
+      "dating_n": 7,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2006.01.030"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 324,
+      "site_name": "La Vallina",
+      "latitude": 43.41,
+      "longitude": -4.8067,
+      "entity_id": 803,
+      "entity_name": "Gael_2022",
+      "persist_id": "324-GAEL",
+      "age_min_yrBP": 121849.0,
+      "age_max_yrBP": 140013.333333333,
+      "d18O_n": 217,
+      "d18O_dated_n": 217,
+      "median_spacing_yr": 42.67857142900175,
+      "proxy_counts": {
+        "d18O": 217,
+        "d13C": 217
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 324,
+      "site_name": "La Vallina",
+      "latitude": 43.41,
+      "longitude": -4.8067,
+      "entity_id": 805,
+      "entity_name": "Gloria",
+      "persist_id": "324-GLORIA",
+      "age_min_yrBP": 78772.3125755887,
+      "age_max_yrBP": 194086.190582809,
+      "d18O_n": 70,
+      "d18O_dated_n": 70,
+      "median_spacing_yr": 721.5794002360053,
+      "proxy_counts": {
+        "d18O": 70,
+        "d13C": 70,
+        "Mg_Ca": 57,
+        "Ba_Ca": 57
+      },
+      "dating_n": 15,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.08.025"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 324,
+      "site_name": "La Vallina",
+      "latitude": 43.41,
+      "longitude": -4.8067,
+      "entity_id": 806,
+      "entity_name": "Garth",
+      "persist_id": "324-GARTH",
+      "age_min_yrBP": 111282.208,
+      "age_max_yrBP": 140009.043,
+      "d18O_n": 478,
+      "d18O_dated_n": 478,
+      "median_spacing_yr": 41.998911500995746,
+      "proxy_counts": {
+        "d18O": 478,
+        "d13C": 478
+      },
+      "dating_n": 18,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 324,
+      "site_name": "La Vallina",
+      "latitude": 43.41,
+      "longitude": -4.8067,
+      "entity_id": 808,
+      "entity_name": "Luna",
+      "persist_id": "324-LUNA",
+      "age_min_yrBP": 10163.0,
+      "age_max_yrBP": 12850.0,
+      "d18O_n": 54,
+      "d18O_dated_n": 54,
+      "median_spacing_yr": 47.0,
+      "proxy_counts": {
+        "d18O": 54,
+        "d13C": 54
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 46,
+      "site_name": "Labyrintgrottan cave",
+      "latitude": 66.06,
+      "longitude": 14.68,
+      "entity_id": 122,
+      "entity_name": "L4",
+      "persist_id": "46-L4",
+      "age_min_yrBP": 7347.5,
+      "age_max_yrBP": 9565.1,
+      "d18O_n": 46,
+      "d18O_dated_n": 46,
+      "median_spacing_yr": 46.19999999999982,
+      "proxy_counts": {
+        "d18O": 46,
+        "d13C": 46
+      },
+      "dating_n": 4,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/0959683607073292"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 8,
+      "site_name": "Lancaster Hole",
+      "latitude": 54.2209,
+      "longitude": -2.5168,
+      "entity_id": 50,
+      "entity_name": "LH-70s-1",
+      "persist_id": "8-LH70S1",
+      "age_min_yrBP": 3456.22326584,
+      "age_max_yrBP": 12717.5637791,
+      "d18O_n": 370,
+      "d18O_dated_n": 370,
+      "median_spacing_yr": 14.881601545000649,
+      "proxy_counts": {
+        "d18O": 370,
+        "d13C": 370
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/gj.2524"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 8,
+      "site_name": "Lancaster Hole",
+      "latitude": 54.2209,
+      "longitude": -2.5168,
+      "entity_id": 51,
+      "entity_name": "LH-70s-2",
+      "persist_id": "8-LH70S2",
+      "age_min_yrBP": 261.863326946,
+      "age_max_yrBP": 9735.66730563,
+      "d18O_n": 469,
+      "d18O_dated_n": 469,
+      "median_spacing_yr": 8.447949910000034,
+      "proxy_counts": {
+        "d18O": 469,
+        "d13C": 469
+      },
+      "dating_n": 11,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "unpublished"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 8,
+      "site_name": "Lancaster Hole",
+      "latitude": 54.2209,
+      "longitude": -2.5168,
+      "entity_id": 52,
+      "entity_name": "LH-70s-3",
+      "persist_id": "8-LH70S3",
+      "age_min_yrBP": 945.789576915,
+      "age_max_yrBP": 8462.87913629,
+      "d18O_n": 367,
+      "d18O_dated_n": 367,
+      "median_spacing_yr": 21.62682714500022,
+      "proxy_counts": {
+        "d18O": 367,
+        "d13C": 367
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "unpublished"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 47,
+      "site_name": "Larshullet cave",
+      "latitude": 66.4381,
+      "longitude": 14.1822,
+      "entity_id": 123,
+      "entity_name": "L03",
+      "persist_id": "47-L03",
+      "age_min_yrBP": 130.0,
+      "age_max_yrBP": 3920.52,
+      "d18O_n": 273,
+      "d18O_dated_n": 273,
+      "median_spacing_yr": 12.16500000000002,
+      "proxy_counts": {
+        "d18O": 273,
+        "d13C": 273
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quageo.2009.01.009"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 84,
+      "site_name": "Leány cave",
+      "latitude": 47.7,
+      "longitude": 18.84,
+      "entity_id": 177,
+      "entity_name": "Leany",
+      "persist_id": "84-LEANY",
+      "age_min_yrBP": 4738.81504658,
+      "age_max_yrBP": 10543.2066109,
+      "d18O_n": 189,
+      "d18O_dated_n": 189,
+      "median_spacing_yr": 31.23247571999991,
+      "proxy_counts": {
+        "d18O": 189,
+        "d13C": 189
+      },
+      "dating_n": 10,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quaint.2012.05.035"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 292,
+      "site_name": "Limnon cave",
+      "latitude": 37.9605,
+      "longitude": 22.1403,
+      "entity_id": 671,
+      "entity_name": "KTR-2",
+      "persist_id": "292-KTR2",
+      "age_min_yrBP": 6687.66251036,
+      "age_max_yrBP": 12413.0732309,
+      "d18O_n": 177,
+      "d18O_dated_n": 177,
+      "median_spacing_yr": 13.719205729999885,
+      "proxy_counts": {
+        "d18O": 177,
+        "d13C": 177
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.palaeo.2019.109252"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 256,
+      "site_name": "Lithophagus cave",
+      "latitude": 46.828,
+      "longitude": 22.6,
+      "entity_id": 558,
+      "entity_name": "LFG-2",
+      "persist_id": "256-LFG2",
+      "age_min_yrBP": 54935.0,
+      "age_max_yrBP": 131935.0,
+      "d18O_n": 42,
+      "d18O_dated_n": 42,
+      "median_spacing_yr": 1400.0,
+      "proxy_counts": {
+        "d18O": 42,
+        "d13C": 42
+      },
+      "dating_n": 12,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "https://ww.caves.org/pub/journal/PDF/V61/v61n1-Lauritzen.pdf"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 110,
+      "site_name": "Ma'ale Efrayim cave",
+      "latitude": 32.066,
+      "longitude": 35.3952,
+      "entity_id": 218,
+      "entity_name": "ME-12",
+      "persist_id": "110-ME12",
+      "age_min_yrBP": 16548.0,
+      "age_max_yrBP": 66948.0,
+      "d18O_n": 394,
+      "d18O_dated_n": 394,
+      "median_spacing_yr": 60.0,
+      "proxy_counts": {
+        "d18O": 394,
+        "d13C": 392
+      },
+      "dating_n": 22,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/5422",
+      "reference_dois": [
+        "10.1016/s0033-5894(03)00013-9"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 327,
+      "site_name": "Manita peć cave",
+      "latitude": 45.3142,
+      "longitude": 15.4754,
+      "entity_id": 815,
+      "entity_name": "MP-2",
+      "persist_id": "327-MP2",
+      "age_min_yrBP": 5326.18,
+      "age_max_yrBP": 93308.3,
+      "d18O_n": 177,
+      "d18O_dated_n": 177,
+      "median_spacing_yr": 152.09999999999945,
+      "proxy_counts": {
+        "d18O": 177,
+        "d13C": 177
+      },
+      "dating_n": 17,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3390/geosciences11080347"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 327,
+      "site_name": "Manita peć cave",
+      "latitude": 45.3142,
+      "longitude": 15.4754,
+      "entity_id": 816,
+      "entity_name": "MP-3",
+      "persist_id": "327-MP3",
+      "age_min_yrBP": 63676.1,
+      "age_max_yrBP": 105923.0,
+      "d18O_n": 228,
+      "d18O_dated_n": 228,
+      "median_spacing_yr": 93.70000000001164,
+      "proxy_counts": {
+        "d18O": 228,
+        "d13C": 228
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.3390/geosciences11080347"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 156,
+      "site_name": "Mavri Trypa cave",
+      "latitude": 36.736,
+      "longitude": 21.7596,
+      "entity_id": 347,
+      "entity_name": "S1",
+      "persist_id": "156-S1",
+      "age_min_yrBP": 1296.48822464,
+      "age_max_yrBP": 4687.39995359,
+      "d18O_n": 354,
+      "d18O_dated_n": 354,
+      "median_spacing_yr": 4.788257709999925,
+      "proxy_counts": {
+        "d18O": 354,
+        "d13C": 354
+      },
+      "dating_n": 26,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1371/journal.pone.0189447"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 330,
+      "site_name": "Meravelles cave",
+      "latitude": 40.9488,
+      "longitude": 0.5127,
+      "entity_id": 821,
+      "entity_name": "Maat",
+      "persist_id": "330-MAAT",
+      "age_min_yrBP": 14671.9764,
+      "age_max_yrBP": 18610.8796,
+      "d18O_n": 250,
+      "d18O_dated_n": 250,
+      "median_spacing_yr": 14.983400000000984,
+      "proxy_counts": {
+        "d18O": 250,
+        "d13C": 250,
+        "Mg_Ca": 26,
+        "Sr_Ca": 26
+      },
+      "dating_n": 14,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2020.112"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 123,
+      "site_name": "Milchbach cave",
+      "latitude": 46.6167,
+      "longitude": 8.083,
+      "entity_id": 255,
+      "entity_name": "MB-2",
+      "persist_id": "123-MB2",
+      "age_min_yrBP": 3248.65335898,
+      "age_max_yrBP": 6829.99699816,
+      "d18O_n": 614,
+      "d18O_dated_n": 614,
+      "median_spacing_yr": 4.994110650000039,
+      "proxy_counts": {
+        "d18O": 614,
+        "d13C": 614
+      },
+      "dating_n": 10,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/13868",
+      "reference_dois": [
+        "10.1016/j.epsl.2010.11.042"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 123,
+      "site_name": "Milchbach cave",
+      "latitude": 46.6167,
+      "longitude": 8.083,
+      "entity_id": 256,
+      "entity_name": "MB-3",
+      "persist_id": "123-MB3",
+      "age_min_yrBP": 1986.95111266,
+      "age_max_yrBP": 9025.84132136,
+      "d18O_n": 1084,
+      "d18O_dated_n": 1084,
+      "median_spacing_yr": 4.627200539999649,
+      "proxy_counts": {
+        "d18O": 1084,
+        "d13C": 1084
+      },
+      "dating_n": 14,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/13868",
+      "reference_dois": [
+        "10.1016/j.epsl.2010.11.042"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 123,
+      "site_name": "Milchbach cave",
+      "latitude": 46.6167,
+      "longitude": 8.083,
+      "entity_id": 257,
+      "entity_name": "MB-5",
+      "persist_id": "123-MB5",
+      "age_min_yrBP": 3889.7112,
+      "age_max_yrBP": 7245.909573,
+      "d18O_n": 1140,
+      "d18O_dated_n": 1140,
+      "median_spacing_yr": 2.7987190000003466,
+      "proxy_counts": {
+        "d18O": 1140,
+        "d13C": 1140
+      },
+      "dating_n": 11,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/13868",
+      "reference_dois": [
+        "10.1016/j.epsl.2010.11.042"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 331,
+      "site_name": "Mizpe Shelagim",
+      "latitude": 33.32,
+      "longitude": 35.81,
+      "entity_id": 822,
+      "entity_name": "MS-composite",
+      "persist_id": "331-MS-COMP",
+      "age_min_yrBP": 4424.0,
+      "age_max_yrBP": 86400.0,
+      "d18O_n": 279,
+      "d18O_dated_n": 279,
+      "median_spacing_yr": 84.0,
+      "proxy_counts": {
+        "d18O": 279,
+        "d13C": 282,
+        "Sr_isotopes": 17
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "http://dx.10.1016/j.quascirev.2012.10.047"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 109,
+      "site_name": "Molinos cave",
+      "latitude": 40.7925,
+      "longitude": -0.4492,
+      "entity_id": 216,
+      "entity_name": "MO-1",
+      "persist_id": "109-MO1",
+      "age_min_yrBP": 4727.0,
+      "age_max_yrBP": 11334.7591649,
+      "d18O_n": 168,
+      "d18O_dated_n": 168,
+      "median_spacing_yr": 28.0,
+      "proxy_counts": {
+        "d18O": 168,
+        "d13C": 168,
+        "Mg_Ca": 168
+      },
+      "dating_n": 13,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2017.39"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 109,
+      "site_name": "Molinos cave",
+      "latitude": 40.7925,
+      "longitude": -0.4492,
+      "entity_id": 217,
+      "entity_name": "MO-7",
+      "persist_id": "109-MO7",
+      "age_min_yrBP": 3253.0,
+      "age_max_yrBP": 6812.0,
+      "d18O_n": 141,
+      "d18O_dated_n": 141,
+      "median_spacing_yr": 12.0,
+      "proxy_counts": {
+        "d18O": 141,
+        "d13C": 141,
+        "Mg_Ca": 15
+      },
+      "dating_n": 8,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2017.39",
+        "10.1111/ter.12160"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 332,
+      "site_name": "Murada",
+      "latitude": 39.956,
+      "longitude": 3.965,
+      "entity_id": 826,
+      "entity_name": "Indiana",
+      "persist_id": "332-INDIANA",
+      "age_min_yrBP": 113685.0,
+      "age_max_yrBP": 125496.0,
+      "d18O_n": 93,
+      "d18O_dated_n": 93,
+      "median_spacing_yr": 124.25,
+      "proxy_counts": {
+        "d18O": 93,
+        "d13C": 93,
+        "Mg_Ca": 92
+      },
+      "dating_n": 8,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2019.106037"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 333,
+      "site_name": "Neotektonik cave",
+      "latitude": 46.7833,
+      "longitude": 8.2667,
+      "entity_id": 827,
+      "entity_name": "M37-1-16A",
+      "persist_id": "333-M37116A",
+      "age_min_yrBP": 115217.5,
+      "age_max_yrBP": 131226.5,
+      "d18O_n": 1810,
+      "d18O_dated_n": 1810,
+      "median_spacing_yr": 7.0,
+      "proxy_counts": {
+        "d18O": 1810,
+        "d13C": 1810
+      },
+      "dating_n": 24,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s43247-020-00063-w"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 333,
+      "site_name": "Neotektonik cave",
+      "latitude": 46.7833,
+      "longitude": 8.2667,
+      "entity_id": 828,
+      "entity_name": "M37-1-16C",
+      "persist_id": "333-M37116C",
+      "age_min_yrBP": 124381.5,
+      "age_max_yrBP": 127163.5,
+      "d18O_n": 430,
+      "d18O_dated_n": 430,
+      "median_spacing_yr": 4.19999999999709,
+      "proxy_counts": {
+        "d18O": 430,
+        "d13C": 430
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s43247-020-00063-w"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 333,
+      "site_name": "Neotektonik cave",
+      "latitude": 46.7833,
+      "longitude": 8.2667,
+      "entity_id": 829,
+      "entity_name": "M37-1-23A",
+      "persist_id": "333-M37123A",
+      "age_min_yrBP": 129348.5,
+      "age_max_yrBP": 132167.5,
+      "d18O_n": 45,
+      "d18O_dated_n": 45,
+      "median_spacing_yr": 64.20000000001164,
+      "proxy_counts": {
+        "d18O": 45,
+        "d13C": 45
+      },
+      "dating_n": 4,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s43247-020-00063-w"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 334,
+      "site_name": "Nova Grgosova cave",
+      "latitude": 45.8188,
+      "longitude": 15.6783,
+      "entity_id": 830,
+      "entity_name": "NG-7",
+      "persist_id": "334-NG7",
+      "age_min_yrBP": 5635.87,
+      "age_max_yrBP": 7827.88,
+      "d18O_n": 358,
+      "d18O_dated_n": 358,
+      "median_spacing_yr": 5.519999999999527,
+      "proxy_counts": {
+        "d18O": 358,
+        "d13C": 358
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/09596836211019120"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 334,
+      "site_name": "Nova Grgosova cave",
+      "latitude": 45.8188,
+      "longitude": 15.6783,
+      "entity_id": 831,
+      "entity_name": "NG-3",
+      "persist_id": "334-NG3",
+      "age_min_yrBP": -52.1174,
+      "age_max_yrBP": 10022.5,
+      "d18O_n": 481,
+      "d18O_dated_n": 481,
+      "median_spacing_yr": 15.699999999999818,
+      "proxy_counts": {
+        "d18O": 481,
+        "d13C": 481
+      },
+      "dating_n": 17,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/09596836211019120"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 26,
+      "site_name": "Okshola cave",
+      "latitude": 67.0,
+      "longitude": 15.0,
+      "entity_id": 95,
+      "entity_name": "FM3",
+      "persist_id": "26-FM3",
+      "age_min_yrBP": -47.0,
+      "age_max_yrBP": 7515.2,
+      "d18O_n": 289,
+      "d18O_dated_n": 289,
+      "median_spacing_yr": 25.600000000000364,
+      "proxy_counts": {
+        "d18O": 289,
+        "d13C": 289
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-5-667-2009"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 26,
+      "site_name": "Okshola cave",
+      "latitude": 67.0,
+      "longitude": 15.0,
+      "entity_id": 96,
+      "entity_name": "Oks82",
+      "persist_id": "26-OKS82",
+      "age_min_yrBP": 5006.0,
+      "age_max_yrBP": 10327.64,
+      "d18O_n": 149,
+      "d18O_dated_n": 149,
+      "median_spacing_yr": 19.720000000001164,
+      "proxy_counts": {
+        "d18O": 149,
+        "d13C": 149
+      },
+      "dating_n": 6,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-5-667-2009"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 335,
+      "site_name": "Ostolo cave",
+      "latitude": 43.1878,
+      "longitude": -0.2678,
+      "entity_id": 832,
+      "entity_name": "OST2",
+      "persist_id": "335-OST2",
+      "age_min_yrBP": 10812.5313972568,
+      "age_max_yrBP": 18713.0173617625,
+      "d18O_n": 903,
+      "d18O_dated_n": 903,
+      "median_spacing_yr": 8.164013890451315,
+      "proxy_counts": {
+        "d18O": 903,
+        "d13C": 903
+      },
+      "dating_n": 47,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1130/G48660.1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 335,
+      "site_name": "Ostolo cave",
+      "latitude": 43.1878,
+      "longitude": -0.2678,
+      "entity_id": 833,
+      "entity_name": "OST1",
+      "persist_id": "335-OST1",
+      "age_min_yrBP": 8526.00259531621,
+      "age_max_yrBP": 18681.5197849938,
+      "d18O_n": 73,
+      "d18O_dated_n": 73,
+      "median_spacing_yr": 106.90425333119947,
+      "proxy_counts": {
+        "d18O": 73,
+        "d13C": 73
+      },
+      "dating_n": 19,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1130/G48660.1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 335,
+      "site_name": "Ostolo cave",
+      "latitude": 43.1878,
+      "longitude": -0.2678,
+      "entity_id": 834,
+      "entity_name": "OST3",
+      "persist_id": "335-OST3",
+      "age_min_yrBP": 10503.0827059534,
+      "age_max_yrBP": 17948.0952134992,
+      "d18O_n": 331,
+      "d18O_dated_n": 331,
+      "median_spacing_yr": 10.25203721320031,
+      "proxy_counts": {
+        "d18O": 331,
+        "d13C": 331
+      },
+      "dating_n": 32,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1130/G48660.1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 336,
+      "site_name": "Pentadactylos",
+      "latitude": 35.27,
+      "longitude": 33.47,
+      "entity_id": 835,
+      "entity_name": "Pentadactylos-1",
+      "persist_id": "336-PENTADACTYLOS1",
+      "age_min_yrBP": 110892.0682,
+      "age_max_yrBP": 174598.7716,
+      "d18O_n": 685,
+      "d18O_dated_n": 685,
+      "median_spacing_yr": 31.64790000001085,
+      "proxy_counts": {
+        "d18O": 685,
+        "d13C": 684
+      },
+      "dating_n": 26,
+      "hiatus_n": 2,
+      "data_DOI_URL": "10.25921/k17x-f642",
+      "reference_dois": [
+        "10.1016/j.quascirev.2020.106663"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 212,
+      "site_name": "Peqiin cave",
+      "latitude": 32.58,
+      "longitude": 35.19,
+      "entity_id": 452,
+      "entity_name": "PEK_composite",
+      "persist_id": "212-PEK-COMP",
+      "age_min_yrBP": 14000.0,
+      "age_max_yrBP": 248200.0,
+      "d18O_n": 566,
+      "d18O_dated_n": 566,
+      "median_spacing_yr": 300.0,
+      "proxy_counts": {
+        "d18O": 566,
+        "d13C": 569
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/5423",
+      "reference_dois": [
+        "10.1016/S0016-7037(02)01031-1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 268,
+      "site_name": "Pere Noel cave",
+      "latitude": 50.0,
+      "longitude": 5.2,
+      "entity_id": 714,
+      "entity_name": "PN-95-5_2018",
+      "persist_id": "268-PN955",
+      "age_min_yrBP": 1788.625,
+      "age_max_yrBP": 12876.9130434783,
+      "d18O_n": 130,
+      "d18O_dated_n": 130,
+      "median_spacing_yr": 65.76470588234952,
+      "proxy_counts": {
+        "d18O": 130,
+        "d13C": 130,
+        "Mg_Ca": 130,
+        "Sr_Ca": 130,
+        "Ba_Ca": 130
+      },
+      "dating_n": 22,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.05.039",
+        "10.1002/jqs.3064"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 202,
+      "site_name": "Piani Eterni karst system",
+      "latitude": 46.16,
+      "longitude": 11.99,
+      "entity_id": 425,
+      "entity_name": "MN1",
+      "persist_id": "202-MN1",
+      "age_min_yrBP": 84033.2360177,
+      "age_max_yrBP": 105479.826509,
+      "d18O_n": 563,
+      "d18O_dated_n": 563,
+      "median_spacing_yr": 38.50719759999629,
+      "proxy_counts": {
+        "d18O": 563,
+        "d13C": 563
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.08.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 202,
+      "site_name": "Piani Eterni karst system",
+      "latitude": 46.16,
+      "longitude": 11.99,
+      "entity_id": 426,
+      "entity_name": "GG1",
+      "persist_id": "202-GG1",
+      "age_min_yrBP": 106118.0,
+      "age_max_yrBP": 289234.0,
+      "d18O_n": 252,
+      "d18O_dated_n": 252,
+      "median_spacing_yr": 377.0,
+      "proxy_counts": {
+        "d18O": 252,
+        "d13C": 252
+      },
+      "dating_n": 18,
+      "hiatus_n": 4,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.08.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 202,
+      "site_name": "Piani Eterni karst system",
+      "latitude": 46.16,
+      "longitude": 11.99,
+      "entity_id": 427,
+      "entity_name": "IS1",
+      "persist_id": "202-IS1",
+      "age_min_yrBP": 352739.892962,
+      "age_max_yrBP": 374429.344699,
+      "d18O_n": 149,
+      "d18O_dated_n": 149,
+      "median_spacing_yr": 164.61466999998083,
+      "proxy_counts": {
+        "d18O": 149,
+        "d13C": 149
+      },
+      "dating_n": 10,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2018.08.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 87,
+      "site_name": "Pindal cave",
+      "latitude": 43.4,
+      "longitude": -4.53,
+      "entity_id": 715,
+      "entity_name": "Candela_2023",
+      "persist_id": "87-CANDELA",
+      "age_min_yrBP": 11640.3232523,
+      "age_max_yrBP": 29339.9801513,
+      "d18O_n": 422,
+      "d18O_dated_n": 422,
+      "median_spacing_yr": 22.73340459999963,
+      "proxy_counts": {
+        "d18O": 422,
+        "d13C": 413
+      },
+      "dating_n": 16,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.gloplacha.2009.10.002"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 87,
+      "site_name": "Pindal cave",
+      "latitude": 43.4,
+      "longitude": -4.53,
+      "entity_id": 716,
+      "entity_name": "Candela_Base",
+      "persist_id": "87-CANDELA",
+      "age_min_yrBP": 21915.0,
+      "age_max_yrBP": 25087.0,
+      "d18O_n": 85,
+      "d18O_dated_n": 85,
+      "median_spacing_yr": 42.0,
+      "proxy_counts": {
+        "d18O": 85,
+        "d13C": 85
+      },
+      "dating_n": 4,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 87,
+      "site_name": "Pindal cave",
+      "latitude": 43.4,
+      "longitude": -4.53,
+      "entity_id": 717,
+      "entity_name": "Candela_Main",
+      "persist_id": "87-CANDELA",
+      "age_min_yrBP": 13456.8839592012,
+      "age_max_yrBP": 20409.0,
+      "d18O_n": 166,
+      "d18O_dated_n": 166,
+      "median_spacing_yr": 18.0,
+      "proxy_counts": {
+        "d18O": 166,
+        "d13C": 166
+      },
+      "dating_n": 27,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 87,
+      "site_name": "Pindal cave",
+      "latitude": 43.4,
+      "longitude": -4.53,
+      "entity_id": 719,
+      "entity_name": "Laura",
+      "persist_id": "87-LAURA",
+      "age_min_yrBP": 14258.6666666667,
+      "age_max_yrBP": 16404.7209876543,
+      "d18O_n": 122,
+      "d18O_dated_n": 122,
+      "median_spacing_yr": 15.0,
+      "proxy_counts": {
+        "d18O": 122,
+        "d13C": 122
+      },
+      "dating_n": 16,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41467-022-31619-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 53,
+      "site_name": "Pippikin Pot cave",
+      "latitude": 54.2143,
+      "longitude": -2.5123,
+      "entity_id": 129,
+      "entity_name": "YD01",
+      "persist_id": "53-YD01",
+      "age_min_yrBP": 4205.576,
+      "age_max_yrBP": 9478.94,
+      "d18O_n": 483,
+      "d18O_dated_n": 483,
+      "median_spacing_yr": 1.6755000000002838,
+      "proxy_counts": {
+        "d18O": 483,
+        "d13C": 483
+      },
+      "dating_n": 26,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.bodc.ac.uk/projects/data_management/uk/rapid/data_inventories/palaeo_sampling/isomap-uk/",
+      "reference_dois": [
+        "10.1016/j.gloplacha.2011.03.006",
+        "10.1002/gj.2524"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 203,
+      "site_name": "Poleva cave",
+      "latitude": 44.7144,
+      "longitude": 21.7469,
+      "entity_id": 428,
+      "entity_name": "PP10",
+      "persist_id": "203-PP10",
+      "age_min_yrBP": 2360.0,
+      "age_max_yrBP": 74080.0,
+      "d18O_n": 154,
+      "d18O_dated_n": 154,
+      "median_spacing_yr": 60.0,
+      "proxy_counts": {
+        "d18O": 154,
+        "d13C": 154
+      },
+      "dating_n": 10,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/5540",
+      "reference_dois": [
+        "10.1016/j.palaeo.2006.08.001"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 365,
+      "site_name": "Pot au Feu",
+      "latitude": 42.52,
+      "longitude": 0.24,
+      "entity_id": 893,
+      "entity_name": "JUD",
+      "persist_id": "365-JUD",
+      "age_min_yrBP": 68544.0,
+      "age_max_yrBP": 115100.1903,
+      "d18O_n": 229,
+      "d18O_dated_n": 229,
+      "median_spacing_yr": 104.82709999999497,
+      "proxy_counts": {
+        "d18O": 229,
+        "d13C": 229,
+        "Mg_Ca": 224
+      },
+      "dating_n": 17,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2019.106037"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 339,
+      "site_name": "Pozzo Cucù cave",
+      "latitude": 40.9,
+      "longitude": 17.16,
+      "entity_id": 838,
+      "entity_name": "PC",
+      "persist_id": "339-PC",
+      "age_min_yrBP": 26605.7,
+      "age_max_yrBP": 106020.0,
+      "d18O_n": 2658,
+      "d18O_dated_n": 2658,
+      "median_spacing_yr": 23.60000000000582,
+      "proxy_counts": {
+        "d18O": 2658,
+        "d13C": 2658
+      },
+      "dating_n": 27,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s41559-020-1243-1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 295,
+      "site_name": "Qadisha cave",
+      "latitude": 34.2439,
+      "longitude": 36.0364,
+      "entity_id": 720,
+      "entity_name": "Qad_1",
+      "persist_id": "295-QAD1",
+      "age_min_yrBP": 3248.4,
+      "age_max_yrBP": 6814.5,
+      "d18O_n": 67,
+      "d18O_dated_n": 67,
+      "median_spacing_yr": 4.8400000000001455,
+      "proxy_counts": {
+        "d18O": 67,
+        "d13C": 67
+      },
+      "dating_n": 12,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2023.24"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 295,
+      "site_name": "Qadisha cave",
+      "latitude": 34.2439,
+      "longitude": 36.0364,
+      "entity_id": 721,
+      "entity_name": "Qad_2",
+      "persist_id": "295-QAD2",
+      "age_min_yrBP": -36.5,
+      "age_max_yrBP": 9132.95,
+      "d18O_n": 161,
+      "d18O_dated_n": 161,
+      "median_spacing_yr": 10.155000000000655,
+      "proxy_counts": {
+        "d18O": 161,
+        "d13C": 161
+      },
+      "dating_n": 12,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1017/qua.2023.24"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 342,
+      "site_name": "Sa balma des quartó cave",
+      "latitude": 39.5145,
+      "longitude": 3.3059,
+      "entity_id": 843,
+      "entity_name": "Multieix",
+      "persist_id": "342-MULTIEIX",
+      "age_min_yrBP": 106.0,
+      "age_max_yrBP": 2250.0,
+      "d18O_n": 303,
+      "d18O_dated_n": 303,
+      "median_spacing_yr": 3.0,
+      "proxy_counts": {
+        "d18O": 303,
+        "d13C": 303,
+        "Mg_Ca": 305,
+        "Sr_Ca": 305,
+        "Ba_Ca": 282
+      },
+      "dating_n": 14,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2021.107137"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 343,
+      "site_name": "Sant'Angelo cave",
+      "latitude": 40.7,
+      "longitude": 17.5,
+      "entity_id": 847,
+      "entity_name": "SA1",
+      "persist_id": "343-SA1",
+      "age_min_yrBP": 6769.3,
+      "age_max_yrBP": 47820.1,
+      "d18O_n": 1002,
+      "d18O_dated_n": 1002,
+      "median_spacing_yr": 12.0,
+      "proxy_counts": {
+        "d18O": 1002
+      },
+      "dating_n": 36,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s43247-022-00509-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 344,
+      "site_name": "Sarma cave",
+      "latitude": 43.39,
+      "longitude": 40.37,
+      "entity_id": 848,
+      "entity_name": "SAR-12-1",
+      "persist_id": "344-SAR121",
+      "age_min_yrBP": 2983.5801,
+      "age_max_yrBP": 22407.8801,
+      "d18O_n": 288,
+      "d18O_dated_n": 288,
+      "median_spacing_yr": 16.933499999999185,
+      "proxy_counts": {
+        "d18O": 288,
+        "d13C": 288,
+        "Sr_Ca": 288
+      },
+      "dating_n": 13,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/products/paleoclimatology/speleothem",
+      "reference_dois": [
+        "10.1038/s43247-023-01151-3"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 366,
+      "site_name": "Savi cave",
+      "latitude": 45.6167,
+      "longitude": 13.8833,
+      "entity_id": 894,
+      "entity_name": "SV1",
+      "persist_id": "366-SV1",
+      "age_min_yrBP": 9260.6,
+      "age_max_yrBP": 15287.6,
+      "d18O_n": 333,
+      "d18O_dated_n": 333,
+      "median_spacing_yr": 15.18582208099997,
+      "proxy_counts": {
+        "d18O": 333,
+        "d13C": 333,
+        "Mg_Ca": 308,
+        "Sr_Ca": 308,
+        "Ba_Ca": 308,
+        "U_Ca": 308,
+        "P_Ca": 308
+      },
+      "dating_n": 26,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2013.04.014",
+        "10.1016/j.gca.2016.10.024"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 366,
+      "site_name": "Savi cave",
+      "latitude": 45.6167,
+      "longitude": 13.8833,
+      "entity_id": 895,
+      "entity_name": "SV7",
+      "persist_id": "366-SV7",
+      "age_min_yrBP": 10465.7,
+      "age_max_yrBP": 13172.1,
+      "d18O_n": 276,
+      "d18O_dated_n": 276,
+      "median_spacing_yr": 6.399999999999636,
+      "proxy_counts": {
+        "d18O": 276,
+        "d13C": 276,
+        "Mg_Ca": 276,
+        "Sr_Ca": 276,
+        "Ba_Ca": 276,
+        "U_Ca": 276,
+        "P_Ca": 276
+      },
+      "dating_n": 8,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2013.04.014",
+        "10.1016/j.gca.2016.10.024"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 125,
+      "site_name": "Schafsloch cave ",
+      "latitude": 47.2333,
+      "longitude": 9.3833,
+      "entity_id": 260,
+      "entity_name": "MF-3",
+      "persist_id": "125-MF3",
+      "age_min_yrBP": 130050.0,
+      "age_max_yrBP": 137390.0,
+      "d18O_n": 318,
+      "d18O_dated_n": 318,
+      "median_spacing_yr": 20.0,
+      "proxy_counts": {
+        "d18O": 318,
+        "d13C": 318
+      },
+      "dating_n": 15,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/19744",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.08.026"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 105,
+      "site_name": "Schneckenloch cave",
+      "latitude": 47.4333,
+      "longitude": 9.8667,
+      "entity_id": 206,
+      "entity_name": "SCH-5",
+      "persist_id": "105-SCH5",
+      "age_min_yrBP": 115340.0,
+      "age_max_yrBP": 134085.0,
+      "d18O_n": 2150,
+      "d18O_dated_n": 2150,
+      "median_spacing_yr": 5.0,
+      "proxy_counts": {
+        "d18O": 2150,
+        "d13C": 2150
+      },
+      "dating_n": 23,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/19219",
+      "reference_dois": [
+        "10.1016/j.quascirev.2015.07.012"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 105,
+      "site_name": "Schneckenloch cave",
+      "latitude": 47.4333,
+      "longitude": 9.8667,
+      "entity_id": 207,
+      "entity_name": "SCH-7",
+      "persist_id": "105-SCH7",
+      "age_min_yrBP": 111588.7277,
+      "age_max_yrBP": 118314.5652,
+      "d18O_n": 754,
+      "d18O_dated_n": 754,
+      "median_spacing_yr": 8.447899999999208,
+      "proxy_counts": {
+        "d18O": 754
+      },
+      "dating_n": 20,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/12279",
+      "reference_dois": [
+        "10.5194/cp-7-1247-2011"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 105,
+      "site_name": "Schneckenloch cave",
+      "latitude": 47.4333,
+      "longitude": 9.8667,
+      "entity_id": 663,
+      "entity_name": "SCH-6",
+      "persist_id": "105-SCH6",
+      "age_min_yrBP": 75004.5,
+      "age_max_yrBP": 78121.2,
+      "d18O_n": 331,
+      "d18O_dated_n": 331,
+      "median_spacing_yr": 7.0,
+      "proxy_counts": {
+        "d18O": 331,
+        "d13C": 331
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.5194/cp-16-29-2020"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 345,
+      "site_name": "Schratten cave",
+      "latitude": 46.7833,
+      "longitude": 8.2667,
+      "entity_id": 849,
+      "entity_name": "M6-73-3",
+      "persist_id": "345-M6733",
+      "age_min_yrBP": 112431.4,
+      "age_max_yrBP": 121119.5,
+      "d18O_n": 584,
+      "d18O_dated_n": 584,
+      "median_spacing_yr": 14.19999999999709,
+      "proxy_counts": {
+        "d18O": 584,
+        "d13C": 584
+      },
+      "dating_n": 5,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/s43247-020-00063-w"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 55,
+      "site_name": "Sieben Hengste cave",
+      "latitude": 46.75,
+      "longitude": 7.81,
+      "entity_id": 133,
+      "entity_name": "7H",
+      "persist_id": "55-7H-COMP",
+      "age_min_yrBP": 14620.0,
+      "age_max_yrBP": 29873.0,
+      "d18O_n": 15254,
+      "d18O_dated_n": 15254,
+      "median_spacing_yr": 1.0,
+      "proxy_counts": {
+        "d18O": 15254
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/18115",
+      "reference_dois": [
+        "10.1038/ncomms7344"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 55,
+      "site_name": "Sieben Hengste cave",
+      "latitude": 46.75,
+      "longitude": 7.81,
+      "entity_id": 134,
+      "entity_name": "7H-2",
+      "persist_id": "55-7H2",
+      "age_min_yrBP": 17137.1658075,
+      "age_max_yrBP": 29940.3203968,
+      "d18O_n": 2804,
+      "d18O_dated_n": 2804,
+      "median_spacing_yr": 3.199970800000301,
+      "proxy_counts": {
+        "d18O": 2804
+      },
+      "dating_n": 29,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/18115",
+      "reference_dois": [
+        "10.1038/ncomms7344"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 55,
+      "site_name": "Sieben Hengste cave",
+      "latitude": 46.75,
+      "longitude": 7.81,
+      "entity_id": 135,
+      "entity_name": "7H-3",
+      "persist_id": "55-7H3",
+      "age_min_yrBP": 14639.4543943,
+      "age_max_yrBP": 23536.8858231,
+      "d18O_n": 1477,
+      "d18O_dated_n": 1477,
+      "median_spacing_yr": 5.518135350000193,
+      "proxy_counts": {
+        "d18O": 1477
+      },
+      "dating_n": 21,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/18115",
+      "reference_dois": [
+        "10.1038/ncomms7344"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 55,
+      "site_name": "Sieben Hengste cave",
+      "latitude": 46.75,
+      "longitude": 7.81,
+      "entity_id": 728,
+      "entity_name": "7H-12",
+      "persist_id": "55-7H12",
+      "age_min_yrBP": 117455.6,
+      "age_max_yrBP": 133621.3,
+      "d18O_n": 1439,
+      "d18O_dated_n": 1439,
+      "median_spacing_yr": 4.099999999976717,
+      "proxy_counts": {
+        "d18O": 1439,
+        "d13C": 1439
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "10.1594/PANGAEA.935901",
+      "reference_dois": [
+        "10.1016/j.quascirev.2021.106974"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 56,
+      "site_name": "Skala Marion cave",
+      "latitude": 40.6387,
+      "longitude": 24.5144,
+      "entity_id": 136,
+      "entity_name": "MAR_L",
+      "persist_id": "56-MARL",
+      "age_min_yrBP": 1481.4,
+      "age_max_yrBP": 5533.9,
+      "d18O_n": 209,
+      "d18O_dated_n": 209,
+      "median_spacing_yr": 15.200000000000273,
+      "proxy_counts": {
+        "d18O": 209,
+        "d13C": 209
+      },
+      "dating_n": 14,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.palaeo.2017.10.021"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 305,
+      "entity_name": "SO-1",
+      "persist_id": "141-SO1",
+      "age_min_yrBP": -56.0,
+      "age_max_yrBP": 50274.5,
+      "d18O_n": 3976,
+      "d18O_dated_n": 3976,
+      "median_spacing_yr": 7.069999999999709,
+      "proxy_counts": {
+        "d18O": 3976,
+        "d13C": 3976
+      },
+      "dating_n": 100,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.ncdc.noaa.gov/paleo/study/8637",
+      "reference_dois": [
+        "10.1029/2009gl040050",
+        "http://occrdata.unibe.ch/students/theses/phd/68.pdf",
+        "10.1016/j.quascirev.2011.05.007",
+        "10.1038/NGEO1106",
+        "10.1016/j.epsl.2014.01.041"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 429,
+      "entity_name": "SO-17A",
+      "persist_id": "141-SO17A",
+      "age_min_yrBP": 86190.0,
+      "age_max_yrBP": 122930.0,
+      "d18O_n": 1306,
+      "d18O_dated_n": 1306,
+      "median_spacing_yr": 20.0,
+      "proxy_counts": {
+        "d18O": 1306
+      },
+      "dating_n": 13,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/NGEO1106"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 456,
+      "entity_name": "SO-2",
+      "persist_id": "141-SO2",
+      "age_min_yrBP": -60.0,
+      "age_max_yrBP": 59510.0,
+      "d18O_n": 1111,
+      "d18O_dated_n": 1111,
+      "median_spacing_yr": 30.0,
+      "proxy_counts": {
+        "d18O": 1111
+      },
+      "dating_n": 42,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1029/2009gl040050",
+        "10.1016/j.quascirev.2011.05.007",
+        "10.1038/NGEO1106"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 687,
+      "entity_name": "SO-4",
+      "persist_id": "141-SO4",
+      "age_min_yrBP": 1080.0,
+      "age_max_yrBP": 307030.0,
+      "d18O_n": 2022,
+      "d18O_dated_n": 2022,
+      "median_spacing_yr": 60.0,
+      "proxy_counts": {
+        "d18O": 2022
+      },
+      "dating_n": 52,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.nature.com/articles/ngeo1106#supplementary-information",
+      "reference_dois": [
+        "10.1038/NGEO1106"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 688,
+      "entity_name": "SO-6",
+      "persist_id": "141-SO6",
+      "age_min_yrBP": 93320.0,
+      "age_max_yrBP": 133200.0,
+      "d18O_n": 645,
+      "d18O_dated_n": 645,
+      "median_spacing_yr": 34.78260899998713,
+      "proxy_counts": {
+        "d18O": 645
+      },
+      "dating_n": 21,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.nature.com/articles/ngeo1106#supplementary-information",
+      "reference_dois": [
+        "10.1038/NGEO1106"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 141,
+      "site_name": "Sofular cave",
+      "latitude": 41.4167,
+      "longitude": 31.9333,
+      "entity_id": 689,
+      "entity_name": "SO-14B",
+      "persist_id": "141-SO14B",
+      "age_min_yrBP": 475910.0,
+      "age_max_yrBP": 670000.0,
+      "d18O_n": 298,
+      "d18O_dated_n": 298,
+      "median_spacing_yr": 340.0,
+      "proxy_counts": {
+        "d18O": 298
+      },
+      "dating_n": 6,
+      "hiatus_n": 1,
+      "data_DOI_URL": "https://www.nature.com/articles/ngeo1106#supplementary-information",
+      "reference_dois": [
+        "10.1038/NGEO1106"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 160,
+      "site_name": "Soreq cave",
+      "latitude": 31.7558,
+      "longitude": 35.0226,
+      "entity_id": 353,
+      "entity_name": "2N-HR",
+      "persist_id": "160-2NHR",
+      "age_min_yrBP": 4384.0,
+      "age_max_yrBP": 33748.0,
+      "d18O_n": 1223,
+      "d18O_dated_n": 1223,
+      "median_spacing_yr": 8.0,
+      "proxy_counts": {
+        "d18O": 1223
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.gca.2012.04.035"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 160,
+      "site_name": "Soreq cave",
+      "latitude": 31.7558,
+      "longitude": 35.0226,
+      "entity_id": 690,
+      "entity_name": "Soreq-composite185",
+      "persist_id": "160-SOREQ185-COMP",
+      "age_min_yrBP": -50.0,
+      "age_max_yrBP": 183950.0,
+      "d18O_n": 1387,
+      "d18O_dated_n": 1387,
+      "median_spacing_yr": 60.0,
+      "proxy_counts": {
+        "d18O": 1387,
+        "d13C": 1387
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/S0016-7037(02)01031-1"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 57,
+      "site_name": "Soylegrotta cave",
+      "latitude": 66.0,
+      "longitude": 14.0,
+      "entity_id": 137,
+      "entity_name": "SG95",
+      "persist_id": "57-SG95",
+      "age_min_yrBP": -43.0,
+      "age_max_yrBP": 4141.22,
+      "d18O_n": 169,
+      "d18O_dated_n": 145,
+      "median_spacing_yr": 30.5,
+      "proxy_counts": {
+        "d18O": 169,
+        "d13C": 169
+      },
+      "dating_n": 9,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/s0031-0182(00)00225-x"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 57,
+      "site_name": "Soylegrotta cave",
+      "latitude": 66.0,
+      "longitude": 14.0,
+      "entity_id": 435,
+      "entity_name": "SG93",
+      "persist_id": "57-SG93",
+      "age_min_yrBP": 130.55,
+      "age_max_yrBP": 10420.63,
+      "d18O_n": 308,
+      "d18O_dated_n": 308,
+      "median_spacing_yr": 26.820000000000164,
+      "proxy_counts": {
+        "d18O": 308,
+        "d13C": 308
+      },
+      "dating_n": 12,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1191/095968399667823929"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 58,
+      "site_name": "Spannagel cave",
+      "latitude": 47.08,
+      "longitude": 11.67,
+      "entity_id": 142,
+      "entity_name": "COMNISPA II",
+      "persist_id": "58-COMNISPAII-COMP",
+      "age_min_yrBP": -13.0,
+      "age_max_yrBP": 9930.6,
+      "d18O_n": 4343,
+      "d18O_dated_n": 4343,
+      "median_spacing_yr": 1.800000000000182,
+      "proxy_counts": {
+        "d18O": 4343
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1177/0959683612465446"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 58,
+      "site_name": "Spannagel cave",
+      "latitude": 47.08,
+      "longitude": 11.67,
+      "entity_id": 730,
+      "entity_name": "SPA146",
+      "persist_id": "58-SPA146",
+      "age_min_yrBP": 182336.0,
+      "age_max_yrBP": 191571.0,
+      "d18O_n": 493,
+      "d18O_dated_n": 493,
+      "median_spacing_yr": 21.0,
+      "proxy_counts": {
+        "d18O": 493
+      },
+      "dating_n": 7,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/33653",
+      "reference_dois": [
+        "10.5194/cp-17-1443-2021"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 264,
+      "site_name": "Strašna peć cave",
+      "latitude": 44.0049,
+      "longitude": 15.0388,
+      "entity_id": 568,
+      "entity_name": "SPD-2",
+      "persist_id": "264-SPD2",
+      "age_min_yrBP": 1376.0,
+      "age_max_yrBP": 3808.0,
+      "d18O_n": 77,
+      "d18O_dated_n": 77,
+      "median_spacing_yr": 32.0,
+      "proxy_counts": {
+        "d18O": 77,
+        "d13C": 77
+      },
+      "dating_n": 3,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quaint.2018.11.006"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 213,
+      "site_name": "Tausoare cave",
+      "latitude": 47.4333,
+      "longitude": 24.5167,
+      "entity_id": 457,
+      "entity_name": "1152",
+      "persist_id": "213-1152",
+      "age_min_yrBP": 20010.9060895,
+      "age_max_yrBP": 68312.5248077,
+      "d18O_n": 740,
+      "d18O_dated_n": 740,
+      "median_spacing_yr": 57.412748299997475,
+      "proxy_counts": {
+        "d18O": 740,
+        "d13C": 740
+      },
+      "dating_n": 17,
+      "hiatus_n": 1,
+      "data_DOI_URL": "10.1594/PANGAEA.892728",
+      "reference_dois": [
+        "10.1073/pnas.1808647115"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 91,
+      "site_name": "Ursilor cave",
+      "latitude": 46.5537,
+      "longitude": 22.5695,
+      "entity_id": 184,
+      "entity_name": "PU-2",
+      "persist_id": "91-PU2",
+      "age_min_yrBP": -50.0,
+      "age_max_yrBP": 7068.375,
+      "d18O_n": 39,
+      "d18O_dated_n": 39,
+      "median_spacing_yr": 142.125,
+      "proxy_counts": {
+        "d18O": 39,
+        "d13C": 39
+      },
+      "dating_n": 6,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1002/jqs.685"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 27,
+      "entity_name": "Vil-stm6",
+      "persist_id": "4-VILSTM6",
+      "age_min_yrBP": -43.0,
+      "age_max_yrBP": 8657.0,
+      "d18O_n": 101,
+      "d18O_dated_n": 101,
+      "median_spacing_yr": 77.29399999999987,
+      "proxy_counts": {
+        "d18O": 101,
+        "d13C": 101
+      },
+      "dating_n": 11,
+      "hiatus_n": 1,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "unpublished",
+        "unpublished"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 28,
+      "entity_name": "Vil-stm9",
+      "persist_id": "4-VILSTM9",
+      "age_min_yrBP": 31437.914,
+      "age_max_yrBP": 82854.5,
+      "d18O_n": 296,
+      "d18O_dated_n": 296,
+      "median_spacing_yr": 100.62999999999738,
+      "proxy_counts": {
+        "d18O": 296,
+        "d13C": 296
+      },
+      "dating_n": 29,
+      "hiatus_n": 3,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/nature01391",
+        "10.1016/j.quascirev.2010.06.035"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 29,
+      "entity_name": "Vil-stm11",
+      "persist_id": "4-VILSTM11",
+      "age_min_yrBP": 5361.0,
+      "age_max_yrBP": 15875.0,
+      "d18O_n": 83,
+      "d18O_dated_n": 83,
+      "median_spacing_yr": 109.5,
+      "proxy_counts": {
+        "d18O": 83,
+        "d13C": 83
+      },
+      "dating_n": 14,
+      "hiatus_n": 2,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2006.01.030"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 30,
+      "entity_name": "Vil-stm14",
+      "persist_id": "4-VILSTM14",
+      "age_min_yrBP": 28892.68,
+      "age_max_yrBP": 52156.42,
+      "d18O_n": 143,
+      "d18O_dated_n": 143,
+      "median_spacing_yr": 79.7068500000023,
+      "proxy_counts": {
+        "d18O": 143,
+        "d13C": 143
+      },
+      "dating_n": 15,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2010.06.035",
+        "10.1016/j.palaeo.2008.10.009"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 31,
+      "entity_name": "Vil-stm27",
+      "persist_id": "4-VILSTM27",
+      "age_min_yrBP": 31340.897,
+      "age_max_yrBP": 49663.236,
+      "d18O_n": 191,
+      "d18O_dated_n": 191,
+      "median_spacing_yr": 23.443749999998545,
+      "proxy_counts": {
+        "d18O": 191,
+        "d13C": 191
+      },
+      "dating_n": 28,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1038/nature01391"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 32,
+      "entity_name": "Vil-car1",
+      "persist_id": "4-VILCAR1",
+      "age_min_yrBP": 1055.0,
+      "age_max_yrBP": 178002.0,
+      "d18O_n": 605,
+      "d18O_dated_n": 605,
+      "median_spacing_yr": 53.0,
+      "proxy_counts": {
+        "d18O": 605,
+        "d13C": 605,
+        "Mg_Ca": 167,
+        "Sr_Ca": 167,
+        "Ba_Ca": 167
+      },
+      "dating_n": 16,
+      "hiatus_n": 6,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2010.07.004"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 4,
+      "site_name": "Villars cave",
+      "latitude": 45.43,
+      "longitude": 0.78,
+      "entity_id": 33,
+      "entity_name": "Vil-stm1",
+      "persist_id": "4-VILSTM1",
+      "age_min_yrBP": -37.727,
+      "age_max_yrBP": 2332.94,
+      "d18O_n": 336,
+      "d18O_dated_n": 336,
+      "median_spacing_yr": 4.158000000000001,
+      "proxy_counts": {
+        "d18O": 336,
+        "d13C": 336
+      },
+      "dating_n": 21,
+      "hiatus_n": 0,
+      "data_DOI_URL": "NA",
+      "reference_dois": [
+        "10.1016/j.quascirev.2014.12.021"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 66,
+      "site_name": "White Scar cave",
+      "latitude": 54.1656,
+      "longitude": -2.4419,
+      "entity_id": 150,
+      "entity_name": "WSC-97-10-5",
+      "persist_id": "66-WSC97105",
+      "age_min_yrBP": 7347.867,
+      "age_max_yrBP": 11190.74,
+      "d18O_n": 160,
+      "d18O_dated_n": 160,
+      "median_spacing_yr": 4.67200000000048,
+      "proxy_counts": {
+        "d18O": 160,
+        "d13C": 160
+      },
+      "dating_n": 11,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.bodc.ac.uk/projects/data_management/uk/rapid/data_inventories/palaeo_sampling/isomap-uk/",
+      "reference_dois": [
+        "10.1016/j.gloplacha.2011.03.006",
+        "10.1002/gj.2524"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 353,
+      "site_name": "Wintimdouine",
+      "latitude": 30.77,
+      "longitude": -9.49,
+      "entity_id": 868,
+      "entity_name": "WIN2",
+      "persist_id": "353-WIN2",
+      "age_min_yrBP": -37.0,
+      "age_max_yrBP": 4490.0,
+      "d18O_n": 201,
+      "d18O_dated_n": 201,
+      "median_spacing_yr": 18.0,
+      "proxy_counts": {
+        "d18O": 201
+      },
+      "dating_n": 29,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/28333",
+      "reference_dois": [
+        "10.1029/2019GL084879",
+        "10.1029/2021GL094232"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 353,
+      "site_name": "Wintimdouine",
+      "latitude": 30.77,
+      "longitude": -9.49,
+      "entity_id": 869,
+      "entity_name": "WIN3",
+      "persist_id": "353-WIN3",
+      "age_min_yrBP": 47.0,
+      "age_max_yrBP": 11574.0,
+      "d18O_n": 1566,
+      "d18O_dated_n": 1566,
+      "median_spacing_yr": 4.0,
+      "proxy_counts": {
+        "d18O": 1566
+      },
+      "dating_n": 36,
+      "hiatus_n": 2,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/28333",
+      "reference_dois": [
+        "10.1029/2019GL084879",
+        "10.1029/2021GL094232"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    },
+    {
+      "site_id": 353,
+      "site_name": "Wintimdouine",
+      "latitude": 30.77,
+      "longitude": -9.49,
+      "entity_id": 870,
+      "entity_name": "WIN_composite",
+      "persist_id": "353-WIN-COMP",
+      "age_min_yrBP": -3.0,
+      "age_max_yrBP": 11562.0,
+      "d18O_n": 1708,
+      "d18O_dated_n": 1708,
+      "median_spacing_yr": 3.0,
+      "proxy_counts": {
+        "d18O": 1708
+      },
+      "dating_n": 0,
+      "hiatus_n": 0,
+      "data_DOI_URL": "https://www.ncei.noaa.gov/access/paleo-search/study/28334",
+      "reference_dois": [
+        "10.1029/2019GL084879"
+      ],
+      "sisal_source_url": "https://doi.org/10.5287/ora-2nanwp4rk"
+    }
+  ],
+  "source_url": "https://doi.org/10.5287/ora-2nanwp4rk",
+  "download_url": "https://www.ncei.noaa.gov/pub/data/paleo/speleothem/SISAL-v3/sisalv3_database_mysql_csv.zip",
+  "source_csv_archive_sha256": "812c9e416cbc81fba290469241421771b9f6d5c73551593d773e41bf5906ae0e",
+  "use_status": "Erweiterungskandidaten. Keine Behauptung, dass diese Profile in Netzels Dissertation verwendet wurden. Kein Abgleich mit individuellen Pollenstandorten.",
+  "age_note": "Min/Max beziehen sich auf originale Chronologien der Proben mit d18O. Spannweite ist kein Nachweis kontinuierlicher Abdeckung. Jahre BP beziehen sich auf 1950. Medianabstand ist nur deskriptiv, keine effektive Zeitauflösung."
+}

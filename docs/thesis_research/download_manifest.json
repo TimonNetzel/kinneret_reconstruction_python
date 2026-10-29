@@ -1,0 +1,150 @@
+{
+  "files": [
+    {
+      "file": "original/medstack_790006.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.790006?format=textfile",
+      "role": "MEDSTACK archive candidate; exact input file of thesis not published",
+      "bytes": 189725,
+      "sha256": "5553ad8df7b2c0c4c1ab7863f54c4315fed76075dbf5609bfb689389e26abc70",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/soreq_2003-noaa.txt",
+      "url": "https://www.ncei.noaa.gov/pub/data/paleo/speleothem/israel/soreq_2003-noaa.txt",
+      "role": "Soreq Holocene source family",
+      "bytes": 38352,
+      "sha256": "b951f8dc5f417ff61276378cb0d6153084b2313f201fd7c4f303b0106d99a0c6",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/soreq_grant2012.txt",
+      "url": "https://www.ncei.noaa.gov/pub/data/paleo/contributions_by_author/grant2012/grant2012soreq.txt",
+      "role": "Soreq long record; figure 3.24",
+      "bytes": 150635,
+      "sha256": "f1f9fa0338b6ee3c3b4a9944b0ad45d217f24b1323b0c51ddd47b7967cadc5a8",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/ngrip_50yr.txt",
+      "url": "https://www.ncei.noaa.gov/pub/data/paleo/icecore/greenland/summit/ngrip/isotopes/ngrip-d18o-50yr-noaa.txt",
+      "role": "NGRIP original source family",
+      "bytes": 71243,
+      "sha256": "5b5cec37714168fff5e68c2603ad52627fd24cae0819647d5a96a48ca1420105",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/kinneret_pollen_884740.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.884740?format=textfile",
+      "role": "Kinneret base record; thesis adds unpublished samples",
+      "bytes": 26116,
+      "sha256": "c8ce67ce84c948471637ef7d216c1130eac7a3d1d7e486119eaa2d7b0f226a3d",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/iznik_pollen_858056.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.858056?format=textfile",
+      "role": "Iznik pollen",
+      "bytes": 50449,
+      "sha256": "430fbe7bbf38ada7289ceaa26b40422b356cf74bc8733a92a0c8716b1234babf",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/deadsea_pollen_900564.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.900564?format=textfile",
+      "role": "Dead Sea 88-14 ka; does not cover older Chen/Litt interval",
+      "bytes": 97127,
+      "sha256": "98c4e616afcdb67e1c23bcede422862751947534f0fad3b9effc56345192112f",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/van_pollen_874345.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.874345?format=textfile",
+      "role": "VAN04-2; alternative EPD version not additionally included",
+      "bytes": 59412,
+      "sha256": "c4f36fdc41bdcce4c1e16fda54fa1527e1785a7d6ab7da7d2c6e83c1030fe0ac",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/van_glacial_pollen_853776.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.853776?format=textfile",
+      "role": "Van 10-110 ka pollen",
+      "bytes": 83405,
+      "sha256": "dd3ad467b8a03b7b0a569431c102ecf9a013f5f0c5a3340911d4d2e881ace78a",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/van_interglacial_pollen_853729.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.853729?format=textfile",
+      "role": "Van 110-135 ka pollen",
+      "bytes": 45914,
+      "sha256": "b82ef15b700bfd5a664c1c469e3f9c9cb28b55c34837c2414c36301c0a3e10e7",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/ohrid_multiproxy_896847.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.896847?format=textfile",
+      "role": "Ohrid chronology and aggregated pollen, not complete Panagiotopoulos 2020 spectrum",
+      "bytes": 145925,
+      "sha256": "0adee2961c978c80c68df8212ef5b62f0d51812aca4435d9cb988940c0200bb2",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/epd_chronology_control_804606.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.804606?format=textfile",
+      "role": "EPD age control; 823-site archive not identical to thesis selection",
+      "bytes": 799730,
+      "sha256": "c96971bd5a9ff106663f8160f48e18cea34c5257258084ce3421190c5dc2bb05",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/epd_entity_804591.tab",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.804591?format=textfile",
+      "role": "EPD entity metadata for chronological archive",
+      "bytes": 308354,
+      "sha256": "d6d7e269c75dd0c06bf44776cefdac7f0805f2a826991494d76e1a62127af2fd",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/lr04_stack.txt",
+      "url": "https://www.lorraine-lisiecki.com/LR04stack.txt",
+      "role": "LR04 stack from original author",
+      "bytes": 37431,
+      "sha256": "7d1a6ca7ffc033e45e20fb76a7f39c8d99df87baa1094260f9dbdc09f0bb8945",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/giesecke2017_interpolated.zip",
+      "url": "https://store.pangaea.de/Publications/Giesecke-etal_2016/quant_files.zip",
+      "role": "Giesecke2017 reference grids; PANGAEA.865120",
+      "bytes": 313250,
+      "sha256": "aabb5ac1fafa432e298bbead99a15fecca88e5c327bf3cd96b91a3e0a083390b",
+      "status": "downloaded",
+      "access_date": "2026-10-29"
+    },
+    {
+      "file": "original/DECVeg_Simonis2012_shl_12.RData",
+      "url": "https://api.bitbucket.org/2.0/repositories/nils_weitzel/spatial_reconstr_repo/src/ebec70dc88a6e8b923ea53e457d72180c432e9f2/Data/shl_12.RData",
+      "role": "Simonis2012 proxy synthesis used in Weitzel2019. Main.R identifies this file as the proxy input. Exact identity with Netzel thesis processing unverified.",
+      "bytes": 1361,
+      "sha256": "3e8c07e4aef3e0d8975245096953c0d87ca1306788bfeb2b9baf9e94ed923782",
+      "status": "downloaded",
+      "access_date": "2026-10-29",
+      "source_publication": "https://doi.org/10.5194/cp-15-1275-2019",
+      "source_repository_commit": "ebec70dc88a6e8b923ea53e457d72180c432e9f2"
+    }
+  ]
+}
