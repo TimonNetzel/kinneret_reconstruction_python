@@ -1,0 +1,19 @@
+{
+  "independent_export_checks": {
+    "modern": {
+      "rows": 7634,
+      "feature_cells_checked": 282458,
+      "max_percentage_sum_error": "1E-25"
+    },
+    "fossil": {
+      "rows": 69,
+      "feature_cells_checked": 2553,
+      "max_percentage_sum_error": "4E-26"
+    }
+  },
+  "all_output_checksums_verified": true,
+  "two_full_runs_modern_and_summary_identical": true,
+  "unchanged_importer_sha256": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+  "parser_unit_tests_passed": 3,
+  "old_project_tests_rerun": false
+}

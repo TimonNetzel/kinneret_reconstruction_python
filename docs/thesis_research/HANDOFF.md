@@ -1,5 +1,17 @@
 # Übergabe: Dissertation, Datenrecherche und Europa-App
 
+## Fortschreibung: gemeinsame Vergleichsdaten, 29.10.2026
+
+Dieser Abschnitt ist der aktuelle Einstieg; die ursprüngliche Übergabe darunter bleibt als Ausgangsstand erhalten.
+
+- Importer integriert (PR #14); danach Eignungsaudit (#15) und fossile Taxonentscheidungen (#16). Die noch offenen Folge-PRs bauen aufeinander auf und sind nicht als bereits gemergt vorauszusetzen.
+- Neu: [37 gemeinsame Pollengruppen und publizierte moderne Daten von 2025](./modern2025_2026_10_29/README.md) auf Branch `codex/netzel-shared-modern2025`. Dort stehen Quellen, reproduzierbarer Präparer, Taxonregeln, Prüfbericht und der nächste Claude-Auftrag.
+- Tatsächlich vorbereitet: 7.634 moderne Proben und 69 chronologisch zugeordnete Monticchio-Proben; 7.078 moderne und alle 69 fossilen Proben erreichen die zusätzliche Schwelle von 100 gemeinsamen Zählungen ohne Pinus. Keine stillschweigende Filterung.
+- Der Nenner ist die Summe der 37 gemeinsamen Gruppen einschließlich Pinus. Das ist eine eigene Teilzusammensetzung, keine vollständige biologische Pollensumme und keine Wiederherstellung der verlorenen 279 Transferfunktionen. Die neue publizierte Kohorte wird nicht mit der alten SQLite-Kohorte vermischt.
+- Claude kann nun diese separate Vergleichsvariante einlesen und eine moderne Tann-/Pann-Baseline räumlich validieren; Auswahl, Filter und Validierung sind zu dokumentieren. Gleiche Koordinatengruppen zusammenhalten. Erst anhand der Validierung über eine fossile Anwendung entscheiden. Es liegen noch keine Modellgüte oder Klimaergebnisse vor.
+- Der 69-Proben-Pilot reicht nur bis rund 20,2 ka; das Europa-Ziel 0–150 ka ist weiterhin nicht durch diesen Piloten abgedeckt. Altersgrenzen und die Art der Tiefenzuordnung bleiben erhalten, vollständige Altersensembles fehlen.
+
+
 Stand: 29. Oktober 2026. Einstiegspunkt für Claude und einen neuen OpenAI-Chat.
 
 ## Ziel und Vereinbarungen

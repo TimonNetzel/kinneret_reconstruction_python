@@ -1,0 +1,360 @@
+{
+  "schema_version": 1,
+  "variant": "published2025_shared37_v0",
+  "features": [
+    {
+      "feature_id": "abies",
+      "fossil_columns": [
+        "Abi [#]"
+      ],
+      "modern_codes": [
+        "PABIE"
+      ]
+    },
+    {
+      "feature_id": "alnus",
+      "fossil_columns": [
+        "Aln [#]"
+      ],
+      "modern_codes": [
+        "BALBU"
+      ]
+    },
+    {
+      "feature_id": "amaranthaceae",
+      "fossil_columns": [
+        "Cheae [#]"
+      ],
+      "modern_codes": [
+        "AMARA"
+      ]
+    },
+    {
+      "feature_id": "apiaceae",
+      "fossil_columns": [
+        "Umb [#]"
+      ],
+      "modern_codes": [
+        "APIACE"
+      ]
+    },
+    {
+      "feature_id": "artemisia",
+      "fossil_columns": [
+        "Art [#]"
+      ],
+      "modern_codes": [
+        "AARTE"
+      ]
+    },
+    {
+      "feature_id": "betula",
+      "fossil_columns": [
+        "Bet [#]"
+      ],
+      "modern_codes": [
+        "BBETU"
+      ]
+    },
+    {
+      "feature_id": "brassicaceae",
+      "fossil_columns": [
+        "Cru [#]"
+      ],
+      "modern_codes": [
+        "BRASS"
+      ]
+    },
+    {
+      "feature_id": "buxus",
+      "fossil_columns": [
+        "Bux [#]"
+      ],
+      "modern_codes": [
+        "BBUXU"
+      ]
+    },
+    {
+      "feature_id": "campanulaceae",
+      "fossil_columns": [
+        "Camae [#]"
+      ],
+      "modern_codes": [
+        "CAMPA"
+      ]
+    },
+    {
+      "feature_id": "carpinus_ostrya",
+      "fossil_columns": [
+        "Car.b [#]",
+        "Ost-T [#]"
+      ],
+      "modern_codes": [
+        "BCARP"
+      ]
+    },
+    {
+      "feature_id": "castanea",
+      "fossil_columns": [
+        "Cas [#]"
+      ],
+      "modern_codes": [
+        "FCAST"
+      ]
+    },
+    {
+      "feature_id": "cichorioideae",
+      "fossil_columns": [
+        "Cicoid [#]"
+      ],
+      "modern_codes": [
+        "ACICH"
+      ]
+    },
+    {
+      "feature_id": "corylus",
+      "fossil_columns": [
+        "Cor [#]"
+      ],
+      "modern_codes": [
+        "BCORY"
+      ]
+    },
+    {
+      "feature_id": "cupressaceae",
+      "fossil_columns": [
+        "Jun-T [#]"
+      ],
+      "modern_codes": [
+        "CUPRE"
+      ]
+    },
+    {
+      "feature_id": "ephedra",
+      "fossil_columns": [
+        "Eph.d [#]",
+        "Eph.f-T [#]"
+      ],
+      "modern_codes": [
+        "EEPHE"
+      ]
+    },
+    {
+      "feature_id": "fagus",
+      "fossil_columns": [
+        "Fag [#]"
+      ],
+      "modern_codes": [
+        "FFAGU"
+      ]
+    },
+    {
+      "feature_id": "fraxinus",
+      "fossil_columns": [
+        "Fra.e-T [#]",
+        "Fra.o [#]"
+      ],
+      "modern_codes": [
+        "OFRAX"
+      ]
+    },
+    {
+      "feature_id": "hedera",
+      "fossil_columns": [
+        "Hed [#]"
+      ],
+      "modern_codes": [
+        "AHEDE"
+      ]
+    },
+    {
+      "feature_id": "hippophae",
+      "fossil_columns": [
+        "Hpp [#]"
+      ],
+      "modern_codes": [
+        "EHIPP"
+      ]
+    },
+    {
+      "feature_id": "ilex",
+      "fossil_columns": [
+        "Ile [#]"
+      ],
+      "modern_codes": [
+        "AILEX"
+      ]
+    },
+    {
+      "feature_id": "juglans",
+      "fossil_columns": [
+        "Jug [#]"
+      ],
+      "modern_codes": [
+        "JJUGL"
+      ]
+    },
+    {
+      "feature_id": "phillyrea",
+      "fossil_columns": [
+        "Phi [#]"
+      ],
+      "modern_codes": [
+        "OPHIL"
+      ]
+    },
+    {
+      "feature_id": "picea",
+      "fossil_columns": [
+        "Pic [#]"
+      ],
+      "modern_codes": [
+        "PPICE"
+      ]
+    },
+    {
+      "feature_id": "pinus",
+      "fossil_columns": [
+        "Pin [#]"
+      ],
+      "modern_codes": [
+        "PPINU"
+      ]
+    },
+    {
+      "feature_id": "pistacia",
+      "fossil_columns": [
+        "Pst [#]"
+      ],
+      "modern_codes": [
+        "APISTA"
+      ]
+    },
+    {
+      "feature_id": "platanus",
+      "fossil_columns": [
+        "Plt [#]"
+      ],
+      "modern_codes": [
+        "PPLAT"
+      ]
+    },
+    {
+      "feature_id": "poaceae_wild",
+      "fossil_columns": [
+        "Graae [#]"
+      ],
+      "modern_codes": [
+        "POACE"
+      ]
+    },
+    {
+      "feature_id": "populus",
+      "fossil_columns": [
+        "Pop [#]"
+      ],
+      "modern_codes": [
+        "SPOPU"
+      ]
+    },
+    {
+      "feature_id": "quercus",
+      "fossil_columns": [
+        "Que [#]"
+      ],
+      "modern_codes": [
+        "FQDEC",
+        "FQEVE"
+      ]
+    },
+    {
+      "feature_id": "rhamnaceae",
+      "fossil_columns": [
+        "Rhaae [#]"
+      ],
+      "modern_codes": [
+        "RHAMN"
+      ]
+    },
+    {
+      "feature_id": "salix",
+      "fossil_columns": [
+        "Sal [#]"
+      ],
+      "modern_codes": [
+        "SSALI"
+      ]
+    },
+    {
+      "feature_id": "taxus",
+      "fossil_columns": [
+        "Tax [#]"
+      ],
+      "modern_codes": [
+        "TTAXU"
+      ]
+    },
+    {
+      "feature_id": "thalictrum",
+      "fossil_columns": [
+        "Tha [#]"
+      ],
+      "modern_codes": [
+        "RTHAL"
+      ]
+    },
+    {
+      "feature_id": "tilia",
+      "fossil_columns": [
+        "Til [#]"
+      ],
+      "modern_codes": [
+        "TTILI"
+      ]
+    },
+    {
+      "feature_id": "valerianaceae",
+      "fossil_columns": [
+        "Valae [#]"
+      ],
+      "modern_codes": [
+        "VALER"
+      ]
+    },
+    {
+      "feature_id": "vitis",
+      "fossil_columns": [
+        "Vts [#]"
+      ],
+      "modern_codes": [
+        "VVITI"
+      ]
+    },
+    {
+      "feature_id": "cannabaceae_urticaceae",
+      "fossil_columns": [
+        "Can [#]",
+        "Urt-T [#]"
+      ],
+      "modern_codes": [
+        "CANURT"
+      ]
+    }
+  ],
+  "minimum_shared_count_without_pinus": 100,
+  "percentage_denominator": "sum_of_the_37_selected_features_including_Pinus",
+  "exclusions": [
+    "Euc [#]",
+    "conc.spk [#]",
+    "vol.sp.a [cm**3]",
+    "Que.r-T [#]",
+    "Que.i [#]"
+  ],
+  "notes": [
+    "Distinct calibration variant; does not update the 2019 SQLite importer or reference.",
+    "Shared percentages describe a closed subcomposition, not the complete biological pollen spectrum.",
+    "Modern zeros must be explicitly present in published numeric cells; no blank-to-zero conversion.",
+    "Fossil counts keep the locked PANGAEA values; no independent age perturbations.",
+    "No model is fitted by this preparer."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "variant": "published2025_shared37_v0",
+  "modern_samples": 7634,
+  "fossil_samples": 69,
+  "features": 37,
+  "modern_count_threshold_pass": 7078,
+  "fossil_count_threshold_pass": 69,
+  "minimum_shared_count_without_pinus": "100",
+  "explicit_zero_cells_in_source90": 514377,
+  "fractional_cells_in_source90": 0,
+  "source_count_formula_cells": 0,
+  "published_percentage_rows_checked": 7634,
+  "max_published_percentage_error": "0.00000000000001257142857143",
+  "separate_climate_rows_checked": 7634,
+  "published_percent_denominator": "all_90_taxa_including_Pinus",
+  "output_percent_denominator": "sum_of_the_37_selected_features_including_Pinus",
+  "coordinate_groups_1e6deg": 6192,
+  "samples_in_repeated_coordinate_groups": 1968,
+  "separate_coordinate_table_headers_swap_degree_directions": true,
+  "combined_sheet_accent_only_name_variants": [
+    {
+      "sample_id": "Jiménez-Moreno_a1",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a1",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a10",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a10",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a11",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a11",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a12",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a12",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a13",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a13",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a14",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a14",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a15",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a15",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a16",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a16",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a17",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a17",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a2",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a2",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a3",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a3",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a4",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a4",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a5",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a5",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a6",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a6",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a8",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a8",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Jiménez-Moreno_a9",
+      "column": "CR",
+      "source_label": "Jimenez-Moreno_a9",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Pędziszewska_a1",
+      "column": "CR",
+      "source_label": "Pedziszewska_a1",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Pędziszewska_a2",
+      "column": "CR",
+      "source_label": "Pedziszewska_a2",
+      "rule": "Unicode NFD accent-only equivalence"
+    },
+    {
+      "sample_id": "Pędziszewska_a3",
+      "column": "CR",
+      "source_label": "Pedziszewska_a3",
+      "rule": "Unicode NFD accent-only equivalence"
+    }
+  ],
+  "intermediate_table_rows_with_original_labels": 847,
+  "intermediate_tail_labels": [
+    "Indeterminable: unknown",
+    "Callitriche",
+    "Hydrocotyle",
+    "Haloragaceae",
+    "Pediastrum boryanum var. boryanum",
+    "Cynomorium",
+    "Karnataka"
+  ],
+  "intermediate_declared_taxa_in_publication": 840,
+  "intermediate_table_used_to_rebuild_counts": false,
+  "old_sqlite_used_for_modern_values": false,
+  "model_fitted": false,
+  "scientific_status": "comparison_data_not_model_validated"
+}

@@ -1,0 +1,38 @@
+feature_id,fossil_columns,modern_codes,published_labels,published_member_count,member_examples,scope
+abies,Abi [#],PABIE,Abies (Pinaceae),4,Abies|Abies marocana|Abies pinsapo|Abies sibirica,explicit_shared_subcomposition_not_complete_spectrum
+alnus,Aln [#],BALBU,Alnus (Betulaceae),3,Alnus|Alnus glutinosa- type|Alnus viridis,explicit_shared_subcomposition_not_complete_spectrum
+amaranthaceae,Cheae [#],AMARA,Amaranthaceae,4,Aellenia- type|Beta|Chenopodiaceae/Amaranthaceae|Salsola kali,explicit_shared_subcomposition_not_complete_spectrum
+apiaceae,Umb [#],APIACE,Apiaceae (Umbelliferae),42,Aegopodium podagraria|Aegopodium- type|Aethusa cynapium|Anethum|Anethum graveolens|Anisosciadium|Anthriscus sylvestris- type|Apiaceae,explicit_shared_subcomposition_not_complete_spectrum
+artemisia,Art [#],AARTE,Artemisia (Asteraceae),1,Artemisia,explicit_shared_subcomposition_not_complete_spectrum
+betula,Bet [#],BBETU,Betula (Betulaceae),5,Betula|Betula  sect . Costatae|Betula glandulosa|Betula nana- type|Betula pubescens- type,explicit_shared_subcomposition_not_complete_spectrum
+brassicaceae,Cru [#],BRASS,Brassicaceae,5,Brassicaceae|Cardamine- type|Hornungia- type|Matthiola|Sinapis- type,explicit_shared_subcomposition_not_complete_spectrum
+buxus,Bux [#],BBUXU,Buxus (Buxaceae),1,Buxus,explicit_shared_subcomposition_not_complete_spectrum
+campanulaceae,Camae [#],CAMPA,Campanulaceae,7,Campanula giesekiana|Campanula medium|Campanula trachelium- type|Campanulaceae|Jasione montana- type|Legousia- type|Phyteuma- type,explicit_shared_subcomposition_not_complete_spectrum
+carpinus_ostrya,Car.b [#]|Ost-T [#],BCARP,Carpinus/Ostrya (Betulaceae),2,Carpinus betulus|Ostrya/Carpinus orientalis,explicit_shared_subcomposition_not_complete_spectrum
+castanea,Cas [#],FCAST,Castanea (Fagaceae),1,Castanea sativa,explicit_shared_subcomposition_not_complete_spectrum
+cichorioideae,Cicoid [#],ACICH,Cichorioideae (Asteraceae),7,Asteraceae subf . Cichorioideae|Crepis- type|Lactuca- type|Scorzonera humilis- type|Scorzonera laciniata|Sonchus- type|Tragopogon,explicit_shared_subcomposition_not_complete_spectrum
+corylus,Cor [#],BCORY,Corylus (Betulaceae),1,Corylus,explicit_shared_subcomposition_not_complete_spectrum
+cupressaceae,Jun-T [#],CUPRE,Cupressaceae,5,Cupressaceae undiff.|Juniperus communis- type|Juniperus oxycedrus- type|Juniperus sabina|Juniperus- type,explicit_shared_subcomposition_not_complete_spectrum
+ephedra,Eph.d [#]|Eph.f-T [#],EEPHE,Ephedra (Ephedraceae),4,Ephedra|Ephedra alata- type|Ephedra distachya- type|Ephedra fragilis- type,explicit_shared_subcomposition_not_complete_spectrum
+fagus,Fag [#],FFAGU,Fagus (Fagaceae),1,Fagus,explicit_shared_subcomposition_not_complete_spectrum
+fraxinus,Fra.e-T [#]|Fra.o [#],OFRAX,Fraxinus (Oleaceae),5,Fraxinus|Fraxinus angustifolia|Fraxinus excelsior- type|Fraxinus ornus|Fraxinus sogdiana,explicit_shared_subcomposition_not_complete_spectrum
+hedera,Hed [#],AHEDE,Hedera (Araliaceae),1,Hedera,explicit_shared_subcomposition_not_complete_spectrum
+hippophae,Hpp [#],EHIPP,Hippophae (Elaeagnaceae),1,Hippophae rhamnoides,explicit_shared_subcomposition_not_complete_spectrum
+ilex,Ile [#],AILEX,Ilex (Aquifoliaceae),1,Ilex,explicit_shared_subcomposition_not_complete_spectrum
+juglans,Jug [#],JJUGL,Juglans (Juglandaceae),3,Juglans|Juglans nigra|Juglans regia,explicit_shared_subcomposition_not_complete_spectrum
+phillyrea,Phi [#],OPHIL,Phillyrea (Oleaceae),1,Phillyrea,explicit_shared_subcomposition_not_complete_spectrum
+picea,Pic [#],PPICE,Picea (Pinaceae),4,Picea|Picea abies-type|Picea omorika-type|Picea schrenkiana,explicit_shared_subcomposition_not_complete_spectrum
+pinus,Pin [#],PPINU,Pinus (Pinaceae),6,Pinus|Pinus cembra- type|Pinus halepensis- type|Pinus pinaster|Pinus pumila|Pinus sylvestris- type,explicit_shared_subcomposition_not_complete_spectrum
+pistacia,Pst [#],APISTA,Pistacia (Anacardiaceae),1,Pistacia,explicit_shared_subcomposition_not_complete_spectrum
+platanus,Plt [#],PPLAT,Platanus (Platanaceae),1,Platanus,explicit_shared_subcomposition_not_complete_spectrum
+poaceae_wild,Graae [#],POACE,Poaceae,4,Hystrix|Lygeum spartum|Phragmites australis- type|Poaceae,explicit_shared_subcomposition_not_complete_spectrum
+populus,Pop [#],SPOPU,Populus (Salicaceae),2,Populus|Populus tremula- type,explicit_shared_subcomposition_not_complete_spectrum
+quercus,Que [#],FQDEC|FQEVE,Quercus deciduous (Fagaceae)|Quercus evergreen (Fagaceae),6,Quercus|Quercus (deciduous)|Quercus cerris- type|Quercus ilex- type|Quercus ithaburensis- type|Quercus robur- type,explicit_shared_subcomposition_not_complete_spectrum
+rhamnaceae,Rhaae [#],RHAMN,Rhamnaceae,4,Frangula alnus|Rhamnaceae|Rhamnus- type|Zizyphus,explicit_shared_subcomposition_not_complete_spectrum
+salix,Sal [#],SSALI,Salix (Salicaceae),1,Salix,explicit_shared_subcomposition_not_complete_spectrum
+taxus,Tax [#],TTAXU,Taxus (Taxaceae),1,Taxus baccata,explicit_shared_subcomposition_not_complete_spectrum
+thalictrum,Tha [#],RTHAL,Thalictrum (Ranunculaceae),4,Thalictrum|Thalictrum alpinum- type|Thalictrum aquilegiifolium|Thalictrum flavum- type,explicit_shared_subcomposition_not_complete_spectrum
+tilia,Til [#],TTILI,Tilia (Tiliaceae),3,Tilia|Tilia cordata- type|Tilia platyphyllos- type,explicit_shared_subcomposition_not_complete_spectrum
+valerianaceae,Valae [#],VALER,Valerianaceae,9,Centranthus|Valeriana|Valeriana capitata|Valeriana dioica|Valeriana montana- type|Valeriana officinalis- type|Valeriana saxatilis- type|Valerianaceae,explicit_shared_subcomposition_not_complete_spectrum
+vitis,Vts [#],VVITI,Vitis (Vitaceae),1,Vitis,explicit_shared_subcomposition_not_complete_spectrum
+cannabaceae_urticaceae,Can [#]|Urt-T [#],CANURT,Cannabaceae/Urticace,16,Cannabaceae|Cannabaceae/Urticaceae|Cannabis sativa|Humulus lupulus|Humulus/Cannabis|Humulus/Cannabis sativa|Parietaria|Urtica,explicit_shared_subcomposition_not_complete_spectrum
