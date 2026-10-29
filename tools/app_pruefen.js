@@ -26,8 +26,8 @@ async function neueSeite(browser, datei, groesse) {
   return [page, fehler];
 }
 
-// Gesten: auf dem Handy (Touch) scrollt Wischen ueber ein Diagramm die Seite und Antippen waehlt ein Alter; mit der
-// Maus zieht man einen Zoom-Rahmen auf
+// Gesten: auf dem Handy (Touch) scrollt Wischen ueber ein Diagramm die Seite, Antippen zeigt nur Werte (Achsen und
+// Kurven bleiben, in jeder Ansicht); mit der Maus zieht man einen Zoom-Rahmen auf
 async function wische(ctx, page, sel, dx, dy) {
   const box = await page.locator(sel + " .nsewdrag").first().boundingBox();
   const x = box.x + box.width / 2, y = box.y + box.height * 0.8;
@@ -40,6 +40,12 @@ async function wische(ctx, page, sel, dx, dy) {
   await page.waitForTimeout(600);
 }
 const bereich = (page, sel) => page.evaluate((sel) => JSON.stringify(document.querySelector(sel)._fullLayout.xaxis.range), sel);
+// alle Achsenbereiche und die Zahl gezeichneter Linien eines Diagramms
+const bild = (page, sel) => page.evaluate((sel) => {
+  const fl = document.querySelector(sel)._fullLayout;
+  return JSON.stringify([Object.keys(fl).filter((k) => /^[xy]axis\d*$/.test(k)).sort().map((k) => fl[k].range),
+    document.querySelectorAll(sel + " .scatterlayer path.js-line").length]);
+}, sel);
 
 async function pruefeGesten(browser, datei) {
   const fehler = [];
@@ -54,13 +60,29 @@ async function pruefeGesten(browser, datei) {
   await wische(ctx, page, "#rek-plot", 60, -100);
   const nachher = [await page.evaluate(() => scrollY), await bereich(page, "#rek-plot")];
   if (nachher[0] < vorher[0] + 50 || nachher[1] !== vorher[1]) fehler.push(`Touch: Wischen ${vorher} -> ${nachher}`);
-  // Diagramm unter den fixierten Kopf schieben, dann antippen
-  await page.evaluate(() => scrollBy(0, document.querySelector("#rek-plot").getBoundingClientRect().top -
-    document.querySelector(".kopf").getBoundingClientRect().bottom - 10));
-  const box = await page.locator("#rek-plot .nsewdrag").first().boundingBox();
-  await page.touchscreen.tap(box.x + box.width * 0.4, box.y + box.height * 0.5);
-  await page.waitForSelector("#rek-detail:not([hidden]) #rek-detail-spektrum .main-svg", { timeout: 10000 })
-    .catch(() => fehler.push("Touch: Antippen zeigt kein Detail"));
+  // Antippen in jeder Ansicht (Diagramm unter den fixierten Kopf geschoben): nur Werte, Achsen und Kurven bleiben
+  for (const [ansicht, sel] of [["rekonstruktion", "#rek-plot"], ["sensitivitaet", "#sens-plot"], ["gewichte", "#gew-plot"],
+    ["transferfunktionen", "#tf-plot"], ["lauf", "#lauf-kalibrierung"]]) {
+    await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
+    await page.waitForSelector(sel + " .main-svg", { timeout: 15000 });
+    await page.waitForTimeout(400);
+    await page.evaluate((sel) => scrollBy(0, document.querySelector(sel).getBoundingClientRect().top -
+      document.querySelector(".kopf").getBoundingClientRect().bottom - 10), sel);
+    const vor = await bild(page, sel);
+    const box = await page.locator(sel + " .nsewdrag").first().boundingBox();
+    await page.touchscreen.tap(box.x + box.width * 0.45, box.y + box.height * 0.5);
+    await page.waitForTimeout(800);
+    const nach = await bild(page, sel);
+    if (vor !== nach) fehler.push(`Touch: Antippen veraendert ${ansicht}: ${vor} -> ${nach}`);
+    // Werte bleiben stehen (Diagramme mit Werten je Alter; die uebrigen zeigen sie nur nahe an einem Punkt)
+    if (["rekonstruktion", "sensitivitaet"].includes(ansicht) &&
+      !(await page.evaluate((sel) => document.querySelectorAll(sel + " .hoverlayer .hovertext").length, sel))) {
+      fehler.push(`Touch: Antippen zeigt keine Werte (${ansicht})`);
+    }
+    if (ansicht === "rekonstruktion" && !(await page.evaluate(() => document.querySelector("#rek-detail").hidden))) {
+      fehler.push("Touch: Antippen oeffnet Detail");
+    }
+  }
   await ctx.close();
   // Maus: Ziehen zoomt
   const ctx2 = await browser.newContext({ viewport: { width: 1366, height: 900 }, offline: true, locale: "de-DE" });
@@ -130,9 +152,12 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (!kopf[0] || kopf[1] !== "See Genezareth") fehler.push("Kopf Standort: " + kopf);
   const n = await page.evaluate(() => document.querySelectorAll("#rek-plot .scatterlayer .trace").length);
   if (n < 5) fehler.push("Rekonstruktion: zu wenige Kurven " + n);
-  // Alter antippen -> Detail
+  // Klick in das Diagramm zeigt nur Werte; das Detail kommt ueber die Auswahl
   const box = await page.locator("#rek-plot .nsewdrag").first().boundingBox();
   await page.mouse.click(box.x + box.width * 0.4, box.y + box.height * 0.5);
+  await page.waitForTimeout(300);
+  if (!(await page.evaluate(() => document.querySelector("#rek-detail").hidden))) fehler.push("Klick oeffnet Detail");
+  await page.selectOption("#rek-detail-wahl", "40");
   await page.waitForSelector("#rek-detail:not([hidden]) #rek-detail-spektrum .main-svg", { timeout: 10000 })
     .catch(() => fehler.push("Detail erscheint nicht"));
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_rekonstruktion.png`, fullPage: true });

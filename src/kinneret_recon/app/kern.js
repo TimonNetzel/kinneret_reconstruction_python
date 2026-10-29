@@ -128,13 +128,14 @@
   }
 
   // ---------------------------------------------------------------------------------------------------------------
-  // Plotly-Grundeinstellungen. Auf Touch-Geraeten (Handy, Tablet) zieht ein Finger in den Diagrammen nichts auf, damit
-  // Wischen die Seite scrollt; Tippen zeigt Werte (und waehlt in der Rekonstruktion das Alter), gezoomt wird ueber die
-  // Leiste des Diagramms. Mit der Maus zieht man wie gewohnt einen Zoom-Rahmen.
+  // Plotly-Grundeinstellungen. Tippen oder Klicken in ein Diagramm zeigt nur die Werte. Auf Touch-Geraeten (Handy,
+  // Tablet) zieht ein Finger nichts auf, damit Wischen die Seite scrollt, und es gibt keinen Doppelklick (ein Tipp
+  // loest sonst zwei Klicks aus, und der zweite setzte die Achsen zurueck); gezoomt und zurueckgesetzt wird ueber die
+  // Leiste des Diagramms. Mit der Maus zieht man einen Zoom-Rahmen, ein Doppelklick setzt ihn zurueck.
 
   const TOUCH = window.matchMedia("(pointer: coarse)").matches;
   const PLOT_CONFIG = {
-    responsive: true, displaylogo: false, scrollZoom: false,
+    responsive: true, displaylogo: false, scrollZoom: false, doubleClick: TOUCH ? false : "reset+autosize",
     modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "toggleSpikelines", "hoverClosestCartesian",
       "hoverCompareCartesian"],
     modeBarButtonsToAdd: [{ name: "kr-export", title: "Export", icon: Plotly.Icons.disk,
@@ -376,8 +377,22 @@
   // laeufe (Lauf-IDs fuer die Kopfzeilen der CSV), csv() -> [{name, titel, spalten, zeilen}]
   function plot(div, baue, info) {
     div._krFigur = Object.assign({ baue }, info);
+    if (TOUCH && !div._krTipp) {
+      div._krTipp = true;
+      div.addEventListener("touchend", tippe, true);
+    }
     const [traces, lay] = baue();
     return Plotly.react(div, traces, lay, PLOT_CONFIG);
+  }
+  // Tipp in ein Diagramm: Werte an der Stelle zeigen. Die Maus-Ereignisse, die der Browser einem Tipp nachschickt,
+  // werden unterdrueckt; sonst zaehlt Plotly zwei Klicks und blendet die Werte beim folgenden mouseout wieder aus.
+  function tippe(e) {
+    const p = e.changedTouches[0];
+    const ziel = p && document.elementFromPoint(p.clientX, p.clientY);
+    if (!ziel || !ziel.classList.contains("nsewdrag") || !this.contains(ziel)) return;
+    e.preventDefault();
+    const subplot = ziel.parentNode.getAttribute("class");
+    Plotly.Fx.hover(this, { clientX: p.clientX, clientY: p.clientY, target: ziel }, subplot);
   }
 
   // Register der Ansichten

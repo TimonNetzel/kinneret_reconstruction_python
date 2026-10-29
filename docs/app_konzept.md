@@ -65,7 +65,8 @@ ein Backend (Läufe starten) erweiterbar. Alternative: Python-Frameworks wie Pan
 
 1. **Rekonstruktion:** T und P über Alter oder Tiefe, Median mit 50- und 95-%-Bändern; Mischverteilung
    als Dichte statt Quantilen (sonst irreführend, Prüfbericht 3.10). Darunter AP-Kurve und Biomanteile.
-   Verknüpft: Antippen eines Alters zeigt Biomanteile, Spektrum und Verteilung von T und P dort.
+   Verknüpft: Detail zu einem Alter mit Biomanteilen, Spektrum und Verteilung von T und P dort (seit 29.10.2026
+   über eine Auswahl, Antippen zeigt nur die Werte; Abschnitt 13, „Gesten“).
 2. **Sensitivität (Kern der App):** Basislauf wählen, Varianten überlagern; Differenz zur Basis über
    das Alter; Übersicht je Faktor mit Niveau-Verschiebung, Änderung des IQR und Korrelation der
    Anomalien (wie die Tabellen in Prüfbericht 3.8–3.11). Faktoren gruppiert, z. B.:
@@ -229,7 +230,7 @@ ist nicht im Repo.
 - *Rekonstruktion:* Lauf (gruppiert nach Rolle, ★ = Standard), Achse Alter/Tiefe, Mittelwert oder
   Mischverteilung (Voreinstellung: Standard des Laufs). Vier verknüpfte Diagramme: T und P (Median mit
   50-/95-%-Bändern bzw. Dichte der Mischverteilung), Biomanteile, Baumpollenkurve wie in R² (gestrichelt die
-  volle Kurve, grau die Alter außerhalb der Kalibrierung). Antippen eines Alters: Verteilung von T und P
+  volle Kurve, grau die Alter außerhalb der Kalibrierung). Detail zu einem Alter (seit 29.10.2026 Auswahl „Detail“ statt Antippen): Verteilung von T und P
   (Dichte der Mischverteilung, darüber Median, 50 % und 95 % des Mittelwerts), Biomanteile, häufigste Taxa.
   Beschreibung, Faktor, Basislauf, Quelle und Kennzahlen aufklappbar, Hinweise (z. B. „Kette hängt“) immer
   sichtbar.
@@ -406,10 +407,21 @@ Sensitivitätsreihe zeigt die Ansicht einen Hinweis.
 berührt. `tools/app_pruefen.js` prüft den Kopf mit einem Standort und mit `--zwei-standorte` den Wähler an einer
 Kopie der App mit einem künstlichen zweiten Standort (in `tests/test_app.py`).
 
-**Gesten (29.10.2026).** Bisher zog ein Finger auf einem Diagramm einen Zoom-Rahmen auf (`dragmode: "zoom"`
-für alle Geräte); auf dem Handy ließ sich über den Diagrammen nicht scrollen. Jetzt auf Touch-Geräten
-(`pointer: coarse`) `dragmode: false`: Wischen scrollt die Seite, Tippen zeigt die Werte und wählt in der
-Rekonstruktion das Alter, gezoomt wird über die Leiste des Diagramms (Doppeltippen setzt zurück). Mit der Maus
-zieht man weiter einen Zoom-Rahmen. Geprüft in `tools/app_pruefen.js` (Touch-Emulation: Wischen scrollt ohne
-Zoom, Antippen öffnet das Detail; Maus: Ziehen zoomt).
+**Gesten (29.10.2026).** Grundsatz: Tippen oder Klicken in ein Diagramm zeigt nur die Werte, sonst ändert sich
+nichts. Gefundene Fehler: (1) Ein Finger zog einen Zoom-Rahmen auf (`dragmode: "zoom"` für alle Geräte), über den
+Diagrammen ließ sich auf dem Handy nicht scrollen. (2) Der Browser schickt einem Tipp Maus-Ereignisse nach; Plotly
+zählte zwei Klicks, wertete das als Doppelklick und setzte die Achsen zurück (Taxa-Gewichte, Transferfunktionen,
+Lauf). In der Rekonstruktion zeichnete der erste Klick das Diagramm mit dem Detail neu, der Doppelklick fiel
+dazwischen, und $P_\mathrm{ANN}$ und die Baumpollenkurve verschwanden. (3) Das folgende `mouseout` blendete die
+Werte sofort wieder aus; auf dem Handy erschienen nie Werte.
+
+Umsetzung (`kern.js`): Auf Touch-Geräten (`pointer: coarse`) `dragmode: false` und `doubleClick: false`; ein Tipp
+auf die Zeichenfläche unterdrückt die nachgeschickten Maus-Ereignisse (`preventDefault` bei `touchend`) und zeigt
+die Werte an der Stelle (`Plotly.Fx.hover`), sie bleiben bis zum nächsten Tipp stehen. Wischen scrollt die Seite;
+Zoomen und Zurücksetzen über die Leiste des Diagramms. Mit der Maus: Ziehen zieht einen Zoom-Rahmen, Doppelklick
+setzt ihn zurück (bewusste Gesten), ein Klick zeigt nur die Werte. Das Detail der Rekonstruktion öffnet nicht mehr
+ein Klick, sondern die Auswahl „Detail“ in der Seitenleiste (je Alter bzw. Tiefe). Geprüft in
+`tools/app_pruefen.js`: Touch-Emulation in allen Ansichten (Wischen scrollt ohne Zoom; Antippen ändert weder
+Achsen noch Kurven, zeigt Werte und öffnet kein Detail), Maus (Ziehen zoomt, Klick öffnet kein Detail), Detail über
+die Auswahl.
 

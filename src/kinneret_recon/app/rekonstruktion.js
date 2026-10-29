@@ -49,6 +49,7 @@
         (b.dataset.wert === d.rekonstruktion.standard ? `<span class="klein">${tx("standard_des_laufs")}</span>` : "");
     });
     rekInfo(l, d);
+    detailOptionen(d);
     zeichneRekonstruktion(d, st, art);
     if (rekDetail !== null) zeigeDetail(d, st, art, rekDetail);
     else $("rek-detail").hidden = true;
@@ -61,20 +62,27 @@
       name: `${lauf}_rekonstruktion_${ax}`, titel: "ansicht_rekonstruktion", laeufe: [lauf],
       hoehe: (b) => (b < 10 ? 14 : b < 15 ? 15 : 17),
       csv: () => csvRekonstruktion(d, st, art, ax),
-    }).then(() => {
-      if (!div._krKlick) {
-        div._krKlick = true;
-        div.on("plotly_click", (ev) => {
-          if (!ev.points || !ev.points.length) return;
-          const xs = D["lauf/" + Z.lauf].rekonstruktion[Z.achse].x;
-          const xv = ev.points[0].x;
-          let best = 0;
-          xs.forEach((v, i) => { if (Math.abs(v - xv) < Math.abs(xs[best] - xv)) best = i; });
-          rekDetail = best;
-          zeigeRekonstruktion();
-        });
-      }
     });
+  }
+
+  // Detail zu einem Alter bzw. einer Tiefe: eigene Auswahl (ein Tipp in das Diagramm zeigt nur die Werte)
+  function detailOptionen(d) {
+    const sel = $("rek-detail-wahl");
+    const xs = d.rekonstruktion[Z.achse].x;
+    if (rekDetail !== null && rekDetail >= xs.length) rekDetail = null;
+    sel.innerHTML = "";
+    const leer = document.createElement("option");
+    leer.value = "";
+    leer.textContent = FT(t("kein_detail"));
+    sel.appendChild(leer);
+    xs.forEach((x, i) => {
+      const o = document.createElement("option");
+      o.value = i;
+      o.textContent = FT(t(Z.achse === "alter" ? "detail_alter" : "detail_tiefe").replace("{x}", fmt(x, 0)));
+      sel.appendChild(o);
+    });
+    sel.value = rekDetail === null ? "" : String(rekDetail);
+    sel.onchange = () => { rekDetail = sel.value === "" ? null : Number(sel.value); zeigeRekonstruktion(); };
   }
 
   function baueRekonstruktion(d, st, art, lauf, ax, detail) {

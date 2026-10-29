@@ -145,7 +145,7 @@ node tools/app_pruefen.js results/app/index.html results/kinneret-app.html   # B
 ```
 
 Ansichten: **Rekonstruktion** (T, P, Biomanteile, Baumpollenkurve über Alter oder Tiefe; Mittelwert oder
-Mischverteilung; Antippen eines Alters zeigt Verteilung, Biomanteile und Spektrum) und **Sensitivität**
+Mischverteilung; Auswahl „Detail“ zeigt Verteilung, Biomanteile und Spektrum zu einem Alter) und **Sensitivität**
 (Faktor und Basislauf wählen, Varianten überlagern, Differenzen, Tabelle mit Niveau, IQR und Korrelation der
 Anomalien), **Taxa-Gewichte** (Posterior gegen Prior, Vergleich mehrerer Läufe), **Transferfunktionen**
 (Klimaräume der Biome, CI-Verhältnis) und **Lauf** (Steckbrief, Methodentext de/en zum Kopieren, Kalibrierung,
