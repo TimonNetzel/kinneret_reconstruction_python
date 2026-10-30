@@ -19,3 +19,6 @@ OpenAI/Codex bei der Fortsetzung des Netzel-Projekts.
 
 Ausführliche Übergabe und getrennte Forschungsstände:
 [CHAT_RESTART.md aus PR #25](https://github.com/TimonNetzel/kinneret_reconstruction_python/blob/00c9f037642470c7d1a9a44e488f062109292c2d/docs/thesis_research/CHAT_RESTART.md).
+
+Aktuelle Ergänzung nach PR #26:
+[CHAT_RESTART_PR26.md](docs/thesis_research/CHAT_RESTART_PR26.md).
