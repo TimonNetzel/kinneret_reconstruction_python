@@ -1,0 +1,112 @@
+{
+  "variant": "meusel7_spatial_sigmoid_ensemble_v1",
+  "base_commit": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+  "inner_folds": 3,
+  "inner_buffer_km": 100,
+  "minimum_training_class": 30,
+  "calibration": {
+    "family": "monotone_logistic_on_direct_logit",
+    "ridge_slope": 0.0001,
+    "minimum_class": 5,
+    "initial": [
+      1.0,
+      0.0
+    ],
+    "maxiter": 2000,
+    "projected_gradient_tolerance": 1e-07,
+    "fallback": "identity_only_if_insufficient_class"
+  },
+  "methods": [
+    "original_raw",
+    "original_calibrated",
+    "smote_raw",
+    "smote_calibrated"
+  ],
+  "network_recipe": {
+    "variant": "meusel7_nnet_smote_v0",
+    "previous_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+    "comparison_models": [
+      "pr28_quadratic",
+      "nnet_original",
+      "nnet_smote",
+      "nnet_smote_prior_adjusted"
+    ],
+    "data_and_outer_splits": "Exactly the seven species, source locks, grid, masks, area weights, 5/10-degree five-fold splits and 100-km buffer from PR28; no test-set resampling",
+    "normalization": {
+      "temperature": "original training area-weighted mean and SD",
+      "precipitation": "sqrt(PANN), gamma shape/rate fitted by area-weighted maximum likelihood on positive original training values; gamma CDF then inverse standard-normal CDF",
+      "cdf_clip": 1e-07,
+      "fit_before_smote": true,
+      "zero_precipitation": "CDF lower tail, clipped; not imputed"
+    },
+    "network": {
+      "inputs": 2,
+      "hidden_units": 6,
+      "hidden_activation": "logistic",
+      "outputs": 1,
+      "output_activation": "logistic",
+      "skip_connections": false,
+      "loss": "sum of case-weighted binary cross entropy plus decay * sum(all squared weights and biases)",
+      "weight_decay": 0.1,
+      "initial_range": 0.7,
+      "initializations": 3,
+      "optimizer": "BFGS",
+      "maxiter": 2000,
+      "raw_gradient_tolerance": 0.001,
+      "accepted_gradient_per_effective_case": 1e-06,
+      "start_selection": "lowest penalized training objective among stationary starts; never test scores",
+      "python_architecture_reimplementation": true,
+      "r_training_bitwise_reproduction": false
+    },
+    "smote": {
+      "k_neighbors": 5,
+      "sampling_ratio_minority_to_majority": 1.0,
+      "undersample_majority": false,
+      "neighbour_metric": "Euclidean in training-normalized two-dimensional climate space",
+      "lambda": "Uniform[0,1)",
+      "synthetic_case_weight": "same convex interpolation of original parent area weights; not a fabricated spatial location",
+      "keep_all_original_rows": true,
+      "trace": "both original training parent cell IDs and interpolation fraction for every synthetic row"
+    },
+    "randomness": {
+      "master_seed": 20261030,
+      "generator": "NumPy PCG64",
+      "derivation": "first 8 hexadecimal SHA256 digits of master_seed|case_id|component; paired initialization seeds across resampling variants"
+    },
+    "metrics": {
+      "classification_primary": "unweighted balanced accuracy at probability >= 0.5, matching the historical classification target",
+      "also_report": [
+        "sensitivity",
+        "specificity",
+        "area-weighted balanced accuracy",
+        "area-weighted Brier and Brier skill against identical original-training prevalence",
+        "area-weighted log loss",
+        "mean predicted probability and original-test prevalence",
+        "10-bin reliability"
+      ],
+      "empty_test_class": "undefined classification metric retained as empty, not 0 or 1",
+      "probability_clipping_for_log_loss": 1e-12,
+      "test_selection_or_threshold_tuning": false
+    },
+    "prior_adjustment": {
+      "formula": "logit(p) = logit(q) + logit(original_training_area_weighted_prevalence) - logit(resampled_training_case_weighted_prevalence)",
+      "status": "diagnostic prior-odds adjustment only; not guaranteed calibration after SMOTE, which changes conditional feature density",
+      "test_values_used": false
+    },
+    "scope": {
+      "source_and_split_changes": false,
+      "automatic_winner_promotion": false,
+      "fossil_application_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "locked_inputs_sha256": {
+    "config.json": "0d540b4dc551367819acbde6ce155d7dcd5a942c8ec96c935750851130c028ad",
+    "sources.json": "9f013072b925134ee9fe20a1f4d9bae2ab77fd49360109f98168d9ff6fcb343d",
+    "audit_sources.json": "209707ad492600c8e8e18428cb4d43af3ec952e76a59eb6dc33f226d1294ed05"
+  },
+  "outer_test_tuning": false,
+  "regions_previously_examined": true,
+  "fossil_application_approved": false
+}
