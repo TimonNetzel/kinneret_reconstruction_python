@@ -1,5 +1,13 @@
 # Netzel-Projekt: aktueller Einstieg
 
+**Fortschreibung 30.10.2026:** Auf ausdrücklichen Nutzerauftrag sind jetzt die
+[ersten sieben botanischen Artenfunktionen](./taxon_transfer_2026_10_30/README.md)
+trainiert und separat geprüft. [Kurzer Status](./PROJECT_STATUS.md),
+[aktuelle Übergabe](./CHAT_RESTART_TAXON.md). Moderne Kalibrierung läuft parallel
+zur weiterhin offenen Monticchio-P1-Prüfung. Keine Umdeutung von Gattungspollen
+zu Arten und keine fossile Anwendung. Baseline-Angaben unten bleiben gültig;
+für die getrennten Quellenstände #25–#27 der aktuellen Übergabe folgen.
+
 Stand 29.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
 Ziel bleibt eine wissenschaftlich überprüfbare Europa-App für etwa 0–150 ka.
 Die bisher geprüften Pilotdaten decken dieses Zielintervall noch nicht ab.

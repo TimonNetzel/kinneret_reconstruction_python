@@ -1,0 +1,905 @@
+{
+  "abies_alba": {
+    "mean": [
+      7.9401355303105365,
+      474.2431750425262
+    ],
+    "scale": [
+      12.140158748232997,
+      456.0357674627683
+    ],
+    "coefficients": [
+      -4.2124953835877506,
+      0.25803651442999875,
+      1.3311106193159357,
+      -0.4123757593348273,
+      -1.5113620168446773,
+      -0.4419856197469163
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.006619866081744656,
+    "training_cells": 28563,
+    "training_positive_cells": 181,
+    "ridge_lambda": 0.001,
+    "objective": 0.033124482790230066,
+    "gradient_max": 3.228507002516444e-08,
+    "optimizer_iterations": 14,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "abies_alba",
+      "name": "Abies alba",
+      "source_name": "Abies alba",
+      "taxon_id": 1,
+      "name_use_id_orig": 1
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "betula_pendula": {
+    "mean": [
+      8.012674639104837,
+      477.7143575289604
+    ],
+    "scale": [
+      12.153236636504603,
+      459.7557841921001
+    ],
+    "coefficients": [
+      -0.3851654142161332,
+      -2.3567173470652976,
+      1.5685681984919269,
+      -0.12774043365340737,
+      -2.44105331414802,
+      -0.6049585140128163
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.22130879143587745,
+    "training_cells": 28169,
+    "training_positive_cells": 7278,
+    "ridge_lambda": 0.001,
+    "objective": 0.3425452945441656,
+    "gradient_max": 3.271352297844392e-08,
+    "optimizer_iterations": 20,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "betula_pendula",
+      "name": "Betula pendula",
+      "source_name": "Betula pendula",
+      "taxon_id": 829,
+      "name_use_id_orig": 829
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "corylus_avellana": {
+    "mean": [
+      7.924604859658775,
+      476.7745574005951
+    ],
+    "scale": [
+      12.158294010532131,
+      459.57848326671586
+    ],
+    "coefficients": [
+      -0.6203906797306268,
+      0.6676960027336915,
+      2.3871253024767785,
+      -1.3673471969233073,
+      -5.034810994167094,
+      -0.7327915708256588
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.10833565524120188,
+    "training_cells": 28387,
+    "training_positive_cells": 3148,
+    "ridge_lambda": 0.001,
+    "objective": 0.177935346792391,
+    "gradient_max": 6.546770811122031e-09,
+    "optimizer_iterations": 22,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "corylus_avellana",
+      "name": "Corylus avellana",
+      "source_name": "Corylus avellana",
+      "taxon_id": 1676,
+      "name_use_id_orig": 1676
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "fagus_sylvatica": {
+    "mean": [
+      7.904469023952053,
+      472.87927657151727
+    ],
+    "scale": [
+      12.185077616423515,
+      457.79397649443837
+    ],
+    "coefficients": [
+      -2.644274775710437,
+      0.924988578554441,
+      2.381463669589298,
+      -0.6644222713312213,
+      -2.9726572681034544,
+      -0.9737225367409411
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.02557216101007608,
+    "training_cells": 28341,
+    "training_positive_cells": 715,
+    "ridge_lambda": 0.001,
+    "objective": 0.07999623389438675,
+    "gradient_max": 6.525815418644346e-08,
+    "optimizer_iterations": 18,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "fagus_sylvatica",
+      "name": "Fagus sylvatica",
+      "source_name": "Fagus silvatica",
+      "taxon_id": 2357,
+      "name_use_id_orig": 2357
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "picea_abies": {
+    "mean": [
+      7.981397363504213,
+      475.3032304717404
+    ],
+    "scale": [
+      12.146466952124552,
+      457.6334573025629
+    ],
+    "coefficients": [
+      -1.8617764844200633,
+      -2.0213691906265963,
+      2.2245180206746142,
+      -1.246475292666751,
+      -3.345932841401502,
+      -1.2793416358553527
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.0611199819934318,
+    "training_cells": 28424,
+    "training_positive_cells": 2233,
+    "ridge_lambda": 0.001,
+    "objective": 0.14910535728430857,
+    "gradient_max": 5.923798850693574e-09,
+    "optimizer_iterations": 19,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "picea_abies",
+      "name": "Picea abies",
+      "source_name": "Picea abies",
+      "taxon_id": 10719,
+      "name_use_id_orig": 10718
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "taxus_baccata": {
+    "mean": [
+      7.886276035143269,
+      476.47003384404707
+    ],
+    "scale": [
+      12.1609507877517,
+      458.79975589879075
+    ],
+    "coefficients": [
+      -1.8457885869740824,
+      1.4455972155212884,
+      2.120106082383286,
+      -1.3920702296250482,
+      -3.3140911675198255,
+      -0.5317644022341189
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.05832390305016437,
+    "training_cells": 28405,
+    "training_positive_cells": 1619,
+    "ridge_lambda": 0.001,
+    "objective": 0.1400073279690219,
+    "gradient_max": 6.339266733399428e-09,
+    "optimizer_iterations": 23,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "taxus_baccata",
+      "name": "Taxus baccata",
+      "source_name": "Taxus baccata",
+      "taxon_id": 5871,
+      "name_use_id_orig": 5871
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  },
+  "tilia_cordata": {
+    "mean": [
+      7.977038513523966,
+      476.06877089064324
+    ],
+    "scale": [
+      12.15119953461995,
+      457.80453433009166
+    ],
+    "coefficients": [
+      -0.5945031597625615,
+      -0.6415107885418484,
+      2.2620573828332473,
+      -0.8123383867776571,
+      -4.632102047791024,
+      -1.1240035474319545
+    ],
+    "climate_hull": [
+      [
+        20.462249755859375,
+        6143.0
+      ],
+      [
+        -19.147802352905273,
+        194.0
+      ],
+      [
+        -16.41532325744629,
+        133.0
+      ],
+      [
+        -13.215041160583496,
+        82.0
+      ],
+      [
+        -10.007573127746582,
+        59.0
+      ],
+      [
+        -7.011875152587891,
+        42.0
+      ],
+      [
+        -3.9331352710723877,
+        33.0
+      ],
+      [
+        2.549708366394043,
+        23.0
+      ],
+      [
+        10.849499702453613,
+        13.0
+      ],
+      [
+        11.715656280517578,
+        12.0
+      ],
+      [
+        22.23314666748047,
+        0.0
+      ],
+      [
+        26.205312728881836,
+        0.0
+      ],
+      [
+        26.5731143951416,
+        1.0
+      ],
+      [
+        29.207521438598633,
+        10.0
+      ],
+      [
+        29.38992691040039,
+        12.0
+      ],
+      [
+        30.595195770263672,
+        122.0
+      ],
+      [
+        26.070478439331055,
+        4387.0
+      ],
+      [
+        26.021770477294922,
+        4403.0
+      ],
+      [
+        24.982364654541016,
+        4742.0
+      ]
+    ],
+    "training_prevalence": 0.1041322981734193,
+    "training_cells": 28391,
+    "training_positive_cells": 3169,
+    "ridge_lambda": 0.001,
+    "objective": 0.19159148716242208,
+    "gradient_max": 3.9398535937583484e-08,
+    "optimizer_iterations": 24,
+    "target": "confirmed_native_mapped_range_indicator",
+    "probability_is_pollen_detection": false,
+    "fossil_mapping_approved": false,
+    "taxon": {
+      "id": "tilia_cordata",
+      "name": "Tilia cordata",
+      "source_name": "Tilia cordata",
+      "taxon_id": 5968,
+      "name_use_id_orig": 5968
+    },
+    "variant": "meusel_worldclim7_quadratic_v0",
+    "climate": {
+      "source": "WorldClim 2.1",
+      "period": "1970-2000",
+      "tann": "BIO1, degrees Celsius",
+      "pann": "BIO12, mm/year",
+      "native_resolution_arcminutes": 10,
+      "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"
+    },
+    "inference": {
+      "outside_training_climate_convex_hull": "reject",
+      "probability_meaning": "mapped native range under selected spatial domain and map rules",
+      "fossil_mapping_approved": false,
+      "p1_released": false,
+      "original_279_reproduced": false
+    }
+  }
+}

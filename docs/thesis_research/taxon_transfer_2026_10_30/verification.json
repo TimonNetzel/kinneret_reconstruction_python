@@ -1,0 +1,27 @@
+{
+  "result": "passed",
+  "species_models": 7,
+  "fold_models": 70,
+  "source_label_cells_checked": 198680,
+  "prediction_rows_checked": 397360,
+  "score_rows_checked": 84,
+  "reliability_rows_checked": 140,
+  "maximum_recomputed_gradient": 1.537419496013703e-07,
+  "minimum_haversine_train_test_km": 100.09341210834958,
+  "producer_imported": false,
+  "shared_dependencies": [
+    "rasterio/GDAL TIFF decoding",
+    "shapely/GEOS geometry",
+    "NumPy/SciPy numerics"
+  ],
+  "independent_paths": [
+    "vector predicates instead of rasterize",
+    "direct TIFF row/column indexing",
+    "Haversine BallTree instead of chord cKDTree",
+    "recomputed logistic probabilities, gradients, Hessians and scores"
+  ],
+  "source_hashes_checked": true,
+  "output_hashes_checked": true,
+  "fossil_mapping_approved": false,
+  "p1_released": false
+}
