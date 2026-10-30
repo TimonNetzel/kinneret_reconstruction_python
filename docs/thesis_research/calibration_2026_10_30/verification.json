@@ -1,0 +1,43 @@
+{
+  "result": "passed",
+  "label_cells": 198680,
+  "prediction_rows": 397360,
+  "synthetic_rows": 2279093,
+  "network_starts": 1512,
+  "calibrators_fitted": 502,
+  "calibrators_identity": 2,
+  "network_fits": 504,
+  "individual_outer_probabilities": 1589440,
+  "minimum_outer_haversine_km": 100.09341210834958,
+  "minimum_inner_haversine_km": 100.09341210834958,
+  "maximum_calibration_projected_gradient": 4.070047151762861e-09,
+  "score_rows": 336,
+  "reliability_rows": 560,
+  "paired_deltas": 168,
+  "producer_or_new_calibrator_imported": false,
+  "audit_code_sha256": "0bbdabcb980584536f822f970ef5bae52d7ee093c1d3d7865410b477150adfc9",
+  "old_audit_arithmetic_sha256": "30473367db13694862d1d857a2a8edbcca386d78a79c307486f9982b7fdea160",
+  "old_raw_checker_sha256": "bd397c144d9e982edf22b86b4921dd9fc0a253d9528dd6915cf78fa192bca045",
+  "shared_dependencies": [
+    "hash-locked PR28 independent vector reader",
+    "hash-locked PR29 audit arithmetic",
+    "NumPy/SciPy",
+    "rasterio/GDAL",
+    "shapely/GEOS",
+    "scikit-learn BallTree"
+  ],
+  "independent_paths": [
+    "vector predicates rather than producer rasterization",
+    "direct TIFF indices",
+    "Haversine/Euclidean BallTree rather than cKDTree",
+    "scipy.stats CDF/PPF rather than special functions",
+    "tanh forward/backpropagation",
+    "convex calibration objective/KKT",
+    "all scores/deltas/reliability"
+  ],
+  "code_source_output_hashes_checked": true,
+  "regions_previously_examined": true,
+  "scientific_map_truth_established": false,
+  "fossil_application_approved": false,
+  "p1_released": false
+}

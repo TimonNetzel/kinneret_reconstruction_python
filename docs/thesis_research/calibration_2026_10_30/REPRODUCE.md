@@ -32,6 +32,20 @@ allein zur Beschleunigung der Ausführung abgebrochen, ohne Parameteränderung.
 67 gemeinsame Parameterdatensätze wurden zwischen serieller und paralleler
 Ausführung zusätzlich byteinhaltlich gleich bestätigt. Die maßgeblichen
 Reproduktionsnachweise beziehen sich auf die zwei vollständigen Endläufe.
+Ein weiterer vollständiger Fitlauf wurde wegen einer abgeschnittenen Gzip-
+Elternspur vom Audit verworfen: neun andere Ausgaben waren bereits bytegleich,
+aber die Spur war unvollständig. Die Ursache ist nicht belegt. Deshalb wurde
+ein zusätzlicher kompletter Lauf unverändert gerechnet; keine Modell-, Score-
+oder Designanpassung zur Herstellung besserer Ergebnisse. Im Ersatzlauf
+blieb die Checkpointdatei bei 503 Einträgen stehen, während das vollständige
+Vollgebietsmodell desselben Laufs und sein Manifest bereits alle 504 enthielten.
+Der letzte Eintrag wurde ausschließlich aus dieser gleichlaufenden Modellkopie
+wiederhergestellt; die Kandidatendatei entsprach bereits **vor dem Schreiben**
+dem vorhandenen Manifest-Hash. Keine Gewichte neu berechnet oder angepasst.
+[checkpoint_recovery.json](./checkpoint_recovery.json) dokumentiert die Wiederherstellung.
+Danach sind alle elf Enddateien der zwei vollständigen Trainingsausführungen
+bytegleich ([repeat.json](./repeat.json)); dies ist keine Behauptung zweier
+völlig störungsfreier I/O-Läufe.
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python tools/taxon_calibration/run.py \

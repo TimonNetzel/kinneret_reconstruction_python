@@ -1,0 +1,39 @@
+{
+  "variant": "meusel7_spatial_sigmoid_ensemble_v1",
+  "config_sha256": "157391eb4123a67fbae2121009fc179052d265369f9cb73b9b6056cbd5188a91",
+  "design_sha256": "14bb45962b33e581b3e04e6f9e905f2aea4184b8badb7eb8e2f8ab6658186711",
+  "design_commit": "afa0c8a8845a5f40daee4289cc429fdf4a6ecf6a",
+  "locked_inputs_sha256": {
+    "config.json": "0d540b4dc551367819acbde6ce155d7dcd5a942c8ec96c935750851130c028ad",
+    "sources.json": "9f013072b925134ee9fe20a1f4d9bae2ab77fd49360109f98168d9ff6fcb343d",
+    "audit_sources.json": "209707ad492600c8e8e18428cb4d43af3ec952e76a59eb6dc33f226d1294ed05"
+  },
+  "synthetic_rows": 2279093,
+  "network_fits": 504,
+  "code_sha256": {
+    "tools/taxon_calibration/run.py": "ef19ee8e0cd2a88fe86b10eb6f8bd2834f28b8e03cccea0b615ca3aef7f5d823",
+    "tools/taxon_calibration/model.py": "a9ceed9817accf0abceadca6f90b588ca22b467221c86302c9447db4c48a8e3e",
+    "tools/taxon_smote/network.py": "860aca03fb3aadba3b64481cdba73f6d2965a8e1b1f8400b673901e5bbe67800",
+    "tools/taxon_smote/compare.py": "1e25fb7b36a9c0f13ea5bd69f71f875b7d421ee9fee9b4424fb14b7c819c4232"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.17.0"
+  },
+  "outputs_sha256": {
+    "fit_models.json": "1cb75f2d0b41389572fbef56708b4f88abbf12c092e2bb5b3e7108b6f832b493",
+    "metrics_summary.csv": "f62f0171dfcf2108f6b416d915995eddbd0ccf31bbe78845afc8ca4f90979e04",
+    "models.json": "c3015debae688748253f49bc4d4eb99cdc633d24c5b16bbad7e1486fe007fb87",
+    "paired_deltas.csv": "9575f25e39dd47765c86086d9b5bfe13568be46cd77836a2c44cc05cda66478d",
+    "predictions.csv": "73cd156b1775216e81d2aaf016f2ddaa5c8a75a8d7ace88ed2c0fbe5657b14ca",
+    "reliability.csv": "744a04c354041bfb6954eb3c729101f2ea3011f27060bb399b0c31510d3b8a5a",
+    "sample_inventory.csv": "749b8b9bbefeca37e14f7755d9fc29fca210a31ad0de817bf9412d9ff9d9074b",
+    "scores.csv": "df88366099d9d266a41849d1bd1dd4d81a3d00a840331e980685863cc3f07f33",
+    "smote_trace.csv.gz": "e28abaf9fde7d8ab581a880bcc1fd840f31f7373e04f534fb292ff0d0a33e1c3",
+    "split_inventory.csv": "40133254e1d297efbc829fc9d0ba40b7d16b610a33771519f2b9d9410a3a3d24"
+  },
+  "regions_previously_examined": true,
+  "outer_test_tuning": false,
+  "fossil_application_approved": false
+}
