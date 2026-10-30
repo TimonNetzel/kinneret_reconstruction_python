@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-30",
+  "meusel_repository": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps",
+  "meusel_commit": "5ab8e638278c86035bf3c9c3224c90de4880327e",
+  "map_files": [
+    {
+      "path": "Data_in/Areale/Mapping_areale.csv",
+      "bytes": 134355,
+      "sha256": "a47881ebefeed9634892593102fa810ffe6c64ac289dc6325978f81e5666cc1f",
+      "git_blob": "6233da4ae2fedfcd9fb092a3ed69ae67a0c40b9d",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/Mapping_areale.csv"
+    },
+    {
+      "path": "Data_in/Areale/README.md",
+      "bytes": 1742,
+      "sha256": "f6916b6cb735a3e7ed26972d58cee6aaeec5d937da60892f30662f9fbb48114e",
+      "git_blob": "5c6fdaabaadc7a69156b8164103bbb083f3d8f8f",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/README.md"
+    },
+    {
+      "path": "Data_in/Areale/geojson/README.md",
+      "bytes": 1640,
+      "sha256": "58f206468f72b6401286a16fe148226162d5a200da371291509350ebe6fa26c1",
+      "git_blob": "99976e7f923a3edf18b56e9fd23898fea1fa71d0",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/README.md"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_1.geojson",
+      "bytes": 569230,
+      "sha256": "83707e12e7dc690bc9fa3ffebb55ea72a42ae0e33c7b77eb244c8f944a44e67a",
+      "git_blob": "20043dd6d9b2a3e98ed9c3fde43a0b4d218fdbff",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_1.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_829.geojson",
+      "bytes": 493297,
+      "sha256": "03730869925661ca2fd7552bae6df7e29233ce076c4ea700d47e923709970a90",
+      "git_blob": "d4171f415d6ca0fe74c0a56b55a5c3babd8d31f4",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_829.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_1676.geojson",
+      "bytes": 555336,
+      "sha256": "32f9c0f7564e066606ff6adb63849299585449d9fbbdba1ec61109345a1e0fc5",
+      "git_blob": "0d42b81eaa983d78c0d20f7ed800be47813836a1",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_1676.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_2357.geojson",
+      "bytes": 839415,
+      "sha256": "3390595cc70f02f385e1b070b3528efadadc53f26065f93c73ea609e9817ffa5",
+      "git_blob": "8b2e693337c686416f504b68e9e6e2979303ff14",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_2357.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_10719.geojson",
+      "bytes": 473985,
+      "sha256": "243376008e84648d5a4682c2c4ee3adf1fb1403b2a58f43281c9f3ccca5993bc",
+      "git_blob": "04afe9afd78721749b56793163fea2f0c3fdc9d2",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_10719.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_5871.geojson",
+      "bytes": 524871,
+      "sha256": "8add3e7204336ae5df4dd0759e00b3cd419ab797b32a49177b1aecba0e8abf2b",
+      "git_blob": "be082262006ba1b131ed6afdff1af444f2cc982a",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_5871.geojson"
+    },
+    {
+      "path": "Data_in/Areale/geojson/taxon_id_5968.geojson",
+      "bytes": 480766,
+      "sha256": "cc2f197d8afced22f5f1e8c9d3e3e2ecb4e983ac0240dc3b0ecac71bce2e334e",
+      "git_blob": "1b18cfdf4a09a0118512e377281e0523db3c87f1",
+      "url": "https://gitlab.opencode.de/bfn/open-access/floraweb/floraweb-data-maps/-/raw/5ab8e638278c86035bf3c9c3224c90de4880327e/Data_in/Areale/geojson/taxon_id_5968.geojson"
+    }
+  ],
+  "climate_file": {
+    "file": "wc2.1_10m_bio.zip",
+    "url": "https://geodata.ucdavis.edu/climate/worldclim/2_1/base/wc2.1_10m_bio.zip",
+    "bytes": 49869449,
+    "sha256": "00513224583665ec0f2f955a4ec252730c4deb2004cce9e793492a3f26df4dcf"
+  },
+  "attribution": "Hermann Meusel & Eckehart J. Jäger (Hrsg.). Vergleichende Chorologie der zentraleuropäischen Flora. Band I, II & III. Jena/Stuttgart/New York: Gustav Fischer, 1965, 1978 & 1992. Digitalisiert bereitgestellt von Gunnar Seidler, Erik Welk & Helge Bruelheide, Lehrstuhl Geobotanik, Institut für Biologie/Bereich Geobotanik und Botanischer Garten, Martin-Luther-Universität Halle-Wittenberg.",
+  "rights": {
+    "maps": "CC-BY 4.0",
+    "worldclim": "Academic/non-commercial use; raw data not redistributed; https://www.worldclim.org/about.html",
+    "model_outputs": "New research-derived parameters and summaries; no raw climate table distributed"
+  },
+  "primary_documentation": [
+    "https://www.floraweb.de/inhalt/datenquellen.html",
+    "https://www.floraweb.de/php/register_areale.php?subset=all",
+    "https://www.worldclim.org/data/worldclim21.html",
+    "https://www.worldclim.org/data/bioclim.html",
+    "https://www.worldclim.org/about.html"
+  ],
+  "worldclim_members": {
+    "wc2.1_10m_bio_1.tif": {
+      "sha256": "f61633ffac9d44ed220442b3f7171a06f931726668bfbe9d07d53700b257d8cf",
+      "bytes": 3790814
+    },
+    "wc2.1_10m_bio_12.tif": {
+      "sha256": "1e823e951ace0186c6eadd7368b4d0385c8f51cc952282c0f2d640bf7790fea5",
+      "bytes": 1963655
+    }
+  },
+  "author_messages_sent": false,
+  "original_279_reproduced": false,
+  "science_direct_original_needed": false
+}
