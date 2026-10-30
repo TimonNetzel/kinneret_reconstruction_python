@@ -4,6 +4,9 @@ Stand 30.10.2026. Fortsetzung von [PR #26](https://github.com/TimonNetzel/kinner
 auf eigener Basis des weiterhin offenen #18. **Nachgelagerte Quellen- und
 Zahlendiagnose, keine neue Probenzuordnung oder Quellenkorrektur.**
 
+Veröffentlicht in [PR #27](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/27),
+numerischer Ergebniscommit `49534dbc9e72c5c2ad2ca22e92a57d1a7519a985`.
+
 ## Ergebnis und Reichweite
 
 | Befund an den bereits in #26 festgelegten Paaren | Ergebnis |

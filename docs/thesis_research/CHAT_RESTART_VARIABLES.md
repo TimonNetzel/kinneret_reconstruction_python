@@ -5,6 +5,10 @@ Stand 30.10.2026. Eigener Branch `codex/netzel-variable-source-audit`, Basis
 erneut prüfen; #18–#26 waren beim Beginn dieser Arbeit offen und ungemergt.
 Claude-#19 unverändert auf `c8977a57fecabcef8f54abd7eafd6545f53487f9`.
 
+Ergebnis: [PR #27](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/27)
+auf Ergebniscommit `49534dbc9e72c5c2ad2ca22e92a57d1a7519a985`.
+Spätere reine Status-/Übergabecommits verändern die numerischen Ergebnisse nicht.
+
 Zuerst [PROJECT_STATUS.md](./PROJECT_STATUS.md) und
 [neuen Quellenbericht](./variable_provenance_2026_10_30/README.md) lesen.
 Die Branches sind weiterhin getrennt. Frühere vollständige Übergaben:

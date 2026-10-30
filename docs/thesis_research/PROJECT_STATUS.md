@@ -18,8 +18,9 @@ Fundstellen mit belegten Daten und Unsicherheiten.
 **Fertig bei Codex:** [Variablenbericht](./variable_provenance_2026_10_30/README.md),
 alle 69 festen Paare und 47 erhaltenen Differenzen, Quellen-/Hashnachweise,
 zwei bytegleiche Produzentenläufe, separate Prüfung und vier neue Tests.
-Eigener Branch `codex/netzel-variable-source-audit`; PR-Verweis folgt beim
-Veröffentlichen im selben Arbeitspaket.
+Eigener Branch `codex/netzel-variable-source-audit`,
+[PR #27](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/27),
+Ergebniscommit `49534dbc9e72c5c2ad2ca22e92a57d1a7519a985`.
 
 **Aktuell offen:** Zwei Abies- und eine Sambucus-Zelle bleiben numerisch
 unerklärt. Die Entstehung **aller 47** Differenzen ist ohne ursprüngliche
