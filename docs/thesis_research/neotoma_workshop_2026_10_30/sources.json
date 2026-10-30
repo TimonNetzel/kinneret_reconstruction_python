@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "retrieved_date": "2026-10-30",
+  "inputs": [
+    {
+      "file": "itDownload.RDS",
+      "download_url": "https://github.com/NeotomaDB/Workshops/raw/5caa58c9da2b23fd174ec3d785f3dd931298a3d6/2023_INQUA_pollen_vertebrates/data/itDownload.RDS",
+      "bytes": 2495691,
+      "sha256": "03536b6f1d3974de77ff997f6d86674a78882b2ebe305bb4e135e38289a2a829",
+      "rights": "Neotoma/EPD source conditions; workshop software MIT is not asserted to license all underlying data",
+      "git_blob_sha": "eaa1e04645575ecd13ba5b2432e877ae57848db1",
+      "repository_commit": "5caa58c9da2b23fd174ec3d785f3dd931298a3d6"
+    },
+    {
+      "file": "monticchio_739452.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "bytes": 86174,
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+      "rights": "CC BY-NC 3.0"
+    },
+    {
+      "file": "pr25_sample_identity.csv",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/00c9f037642470c7d1a9a44e488f062109292c2d/docs/thesis_research/epd_sample_identity_2026_10_30/sample_identity.csv",
+      "bytes": 8912,
+      "sha256": "4ab39ab51bb54b76257f2ffd0460044fe15d17e962dbb49fce94d38c2ba35f03",
+      "rights": "Derived PR25 audit; retain original source attribution"
+    }
+  ],
+  "snapshot_query_date_known": false,
+  "identity_with_live_neotoma_verified": false,
+  "dataset_citations": [
+    {
+      "datasetid": 26608,
+      "name_in_snapshot": "LGM90D",
+      "doi": "10.21233/dbv5-q164"
+    },
+    {
+      "datasetid": 47525,
+      "name_in_snapshot": "MONTICCHIO",
+      "doi": "10.21233/KVNC-0856",
+      "contributors": "Watts, Allen, Huntley"
+    },
+    {
+      "doi": "10.1594/PANGAEA.739452",
+      "citation": "Watts, William A (2010): Pollen profile LGM90D, Lago Grande di Monticchio, Italy. EPD, PANGAEA."
+    }
+  ],
+  "workshop_context": {
+    "repository": "NeotomaDB/Workshops",
+    "commit": "5caa58c9da2b23fd174ec3d785f3dd931298a3d6",
+    "files": [
+      "2023_INQUA_pollen_vertebrates/simple_workflow.Rmd",
+      "2023_INQUA_pollen_vertebrates/simple_workflow.md",
+      "2023_INQUA_pollen_vertebrates/complex_workflow.Rmd",
+      "2023_INQUA_pollen_vertebrates/complex_workflow.html",
+      "2023_INQUA_pollen_vertebrates/LICENSE"
+    ],
+    "interpretation": "Rmd explicitly reads itDownload.RDS; complex workflow modifies example controls for MONT82 dataset 4275, not adopted"
+  },
+  "acquisition": {
+    "github_contents_reader": "Returned empty content for large RDS; not accepted as data",
+    "github_blob_reader": "UTF-8 decoding error; not accepted as data",
+    "browser_download": "Succeeded but did not synchronize into compute workspace; not used as compute input",
+    "github_raw_download": "Succeeded; bytes and Git blob checked"
+  },
+  "raw_binaries_redistributed": false,
+  "R_or_workshop_code_executed": false,
+  "science_direct_original_rechecked": false,
+  "author_messages_sent": false,
+  "merges_performed": false
+}

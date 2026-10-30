@@ -16,6 +16,11 @@
     "metadata_extract.sql": "cd61a9824fea7945c9453ea54c32f61449cceee2ee83540fc724f5c5ef7d9cb8",
     "test_metadata_extract.py": "961dcaf7d0b850e5e9c04563ddee24cf0ae8d0d7dfad3e7128d31cd7c2e616af",
     "sources.json": "cdeee1dd21d0788ae1255c93170deae51490f8d86c1b0fbfbce7c99aa7c481bc",
-    "README.md": "f631420625bf3cd69cd1ed73200028b314366cdf158410c3795ce575c3b4a113"
+    "README.md": "7505e35b03911415a0e6e763e337ff099743583f277f3a5cdb3209b820f25116"
+  },
+  "documentation_followup": {
+    "date": "2026-10-30",
+    "change": "Added an explicit pointer to the newly acquired RDS audit; prior code/schema findings unchanged",
+    "previous_readme_sha256": "f631420625bf3cd69cd1ed73200028b314366cdf158410c3795ce575c3b4a113"
   }
 }

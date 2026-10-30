@@ -14,23 +14,23 @@ Die moderne Analogmethode dient als Vergleich für die Hauptmethode.
 | Taxonbasiertes Multiproxy-Verfahren | Weiteres Entwicklungsziel; noch kein abgeschlossener Gesamtdurchlauf. |
 | CLI/App | Claude betreut die Integration; OpenAI/Codex bearbeitet diese Dateien nicht gleichzeitig. |
 
-**Aktuell bei OpenAI/Codex:** Quellenbelege für die physische Zuordnung
-LGM90D→MON16 prüfen. Für Neotoma-Pollendatensatz **47525** wurde der benötigte
-Metadatenauszug anhand offizieller Tabellen-/Exportdefinitionen präzisiert.
-Eine nur lesende Abfrage erhält Proben-/Analyseeinheitsnamen und Notizen;
-drei Tests an künstlichen Daten bestanden. Die gelesenen Codeversionen sind
-kein nachgewiesener gemeinsamer Serverstand. Es wurden weiterhin keine
-echten Probenmetadaten aus 47525 bezogen. Neuer
-[Metadatenbericht und Abfrage](./neotoma_metadata_path_2026_10_30/README.md),
-vorheriger [Quellenbericht](./neotoma47525_source_lead_2026_10_30/README.md),
+**Aktuell bei OpenAI/Codex:** Ein echter gespeicherter Neotoma-Datenbestand
+wurde gefunden und eingelesen. Datensatz **47525** enthält 924
+Analyseeinheitsnamen. Für **28 der 69 Pilotproben** sind eindeutige numerische
+Kandidaten mit Abschnittsbezeichnungen unabhängig geprüft; 41 bleiben ohne
+vollständigen Treffer auf den 76 gemeinsam vergleichbaren Variablenschlüsseln.
+Ihre 47 Zellabweichungen sind erhalten, einschließlich halbzähliger Werte.
+Das ist noch kein bestätigter physischer LGM90D→MON16-Crosswalk.
+[Neuer Archivbericht und Prüfung](./neotoma_workshop_2026_10_30/README.md),
 [PR #26](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/26).
 
-**Nächster konkreter Forschungsschritt:** Den gezielt spezifizierten
-Metadatenauszug für 47525 zusammen mit den Zählungen als echten Eingang
-beschaffen. JSON-Namensfelder allein sind kein vollständiger Notizenauszug.
-Die neue Frozen-Route war ebenfalls nicht lesbar; kein unveränderter weiterer
-API-/EPD-Suchlauf. Bis zu einem neuen Eingang bleibt P1 blockiert. Falls der
-Beleg nicht beschaffbar ist, die vorgesehene Pilotentscheidung vorbereiten.
+**Nächster konkreter Forschungsschritt:** Die 47 benannten Zellabweichungen
+an ursprünglichen Variablen-/Aggregationsdefinitionen und Einreichungsdaten
+klären. Daneben die nun greifbaren Abschnittsbezeichnungen mit den historischen
+Kompositierungstabellen und danach mit MON16 samt Korrelationsunsicherheit
+verbinden. Keine nachträgliche Toleranzlockerung, Quellenreparatur oder
+unveränderte Wiederholung der gescheiterten API-/EPD-Abrufe. Notizen fehlen
+weiter als Exportfelder; daraus keine leeren Datenbanktabellen ableiten.
 P2 beginnt erst nach fachlicher P1-Abnahme bzw. ausdrücklich geänderter
 Zieldefinition. Transferfunktionen bilden ein eigenes, noch nicht begonnenes
 Arbeitspaket und können grundsätzlich parallel vorbereitet werden.

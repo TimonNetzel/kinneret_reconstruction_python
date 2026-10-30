@@ -1,0 +1,70 @@
+pilot_sample_id,epd_sample_number,archive_midpoint_cm,legacy_datasetid,legacy_sampleid,legacy_analysisunitid,shared_numeric_keys,candidate_count,candidate_sampleids,candidate_datasetid,candidate_sampleid,candidate_analysisunitid,candidate_composite_depth_cm,candidate_analysisunitname,candidate_minus_legacy_cm,status,mon16_depth_cm,mon16_age_cal_bp,new_age_transfer_allowed
+LGM90D:000004,4,5.00,26608,269983,223697,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000005,5,25.00,26608,269984,223698,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000006,6,45.00,26608,269985,223699,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000007,7,60.00,26608,269986,223700,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000008,8,65.00,26608,269987,223701,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000009,9,90.00,26608,269988,223702,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000010,10,104.00,26608,269989,223703,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000011,11,124.00,26608,269990,223704,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000012,12,134.00,26608,269991,223705,76,1,[434224],47525,434224,322526,134,"E1-u, 35.5",0.00,unique_shared_variable_candidate,,,false
+LGM90D:000013,13,154.00,26608,269992,223706,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000014,14,178.00,26608,269993,223707,76,1,[434229],47525,434229,322531,180.5,"D1-o, 10",2.50,unique_shared_variable_candidate,,,false
+LGM90D:000015,15,184.00,26608,269994,223708,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000016,16,194.00,26608,269995,223709,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000017,17,218.00,26608,269996,223710,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000018,18,223.00,26608,269997,223711,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000019,19,243.00,26608,269998,223712,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000020,20,263.00,26608,269999,223713,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000021,21,273.00,26608,270000,223714,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000022,22,313.00,26608,270001,223715,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000023,23,318.00,26608,270002,223716,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000024,24,418.00,26608,270003,223717,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000025,25,513.50,26608,270004,223718,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000026,26,622.00,26608,270005,223719,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000027,27,724.50,26608,270006,223720,76,1,[434323],47525,434323,322625,719,"D3-u, 50",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000028,28,741.00,26608,270007,223721,76,1,[434329],47525,434329,322631,736.5,"D3-u, 67.5",-4.50,unique_shared_variable_candidate,,,false
+LGM90D:000029,29,746.50,26608,270008,223722,76,1,[434332],47525,434332,322634,741,"D3-u, 72",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000030,30,752.50,26608,270009,223723,76,1,[434334],47525,434334,322636,747,"D3-u, 78",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000031,31,757.00,26608,270010,223724,76,1,[434336],47525,434336,322638,752,"D3-u, 83.5",-5.00,unique_shared_variable_candidate,,,false
+LGM90D:000032,32,762.00,26608,270011,223725,76,1,[434337],47525,434337,322639,757,"B4-u, 45",-5.00,unique_shared_variable_candidate,,,false
+LGM90D:000033,33,766.00,26608,270012,223726,76,1,[434339],47525,434339,322641,761,"B4-u, 49",-5.00,unique_shared_variable_candidate,,,false
+LGM90D:000034,34,770.00,26608,270013,223727,76,1,[434341],47525,434341,322643,765,"B4-u, 53",-5.00,unique_shared_variable_candidate,,,false
+LGM90D:000035,35,774.00,26608,270014,223728,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000036,36,778.00,26608,270015,223729,76,1,[434343],47525,434343,322645,773,"B4-u, 61",-5.00,unique_shared_variable_candidate,,,false
+LGM90D:000037,37,781.00,26608,270016,223730,76,1,[434345],47525,434345,322647,774,"B4-u, 64",-7.00,unique_shared_variable_candidate,,,false
+LGM90D:000038,38,782.00,26608,270017,223731,76,1,[434346],47525,434346,322648,776,"D4-o, 10",-6.00,unique_shared_variable_candidate,,,false
+LGM90D:000039,39,786.00,26608,270018,223732,76,1,[434347],47525,434347,322649,779.5,"D4-o, 14",-6.50,unique_shared_variable_candidate,,,false
+LGM90D:000040,40,790.00,26608,270019,223733,76,1,[434348],47525,434348,322650,784.5,"D4-o, 18",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000041,41,794.00,26608,270020,223734,76,1,[434350],47525,434350,322652,788.5,"D4-o, 22",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000042,42,798.00,26608,270021,223735,76,1,[434352],47525,434352,322654,792.5,"D4-o, 26",-5.50,unique_shared_variable_candidate,,,false
+LGM90D:000043,43,802.00,26608,270022,223736,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000044,44,806.00,26608,270023,223737,76,1,[434358],47525,434358,322660,802.5,"D4-o, 34",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000045,45,810.00,26608,270024,223738,76,1,[434361],47525,434361,322663,806.5,"D4-o, 38",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000046,46,814.00,26608,270025,223739,76,1,[434363],47525,434363,322665,810.5,"D4-o, 42",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000047,47,818.00,26608,270026,223740,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000048,48,822.00,26608,270027,223741,76,1,[434369],47525,434369,322671,818.5,"D4-o, 50",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000049,49,832.00,26608,270028,223742,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000050,50,842.00,26608,270029,223743,76,1,[434382],47525,434382,322684,838.5,"D4-o, 70",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000051,51,852.00,26608,270030,223744,76,1,[434389],47525,434389,322691,848.5,"D4-o, 80",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000052,52,862.00,26608,270031,223745,76,1,[434395],47525,434395,322697,858.5,"D4-o, 90",-3.50,unique_shared_variable_candidate,,,false
+LGM90D:000053,53,883.00,26608,270032,223746,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000054,54,893.00,26608,270033,223747,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000055,55,903.00,26608,270034,223748,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000056,56,913.00,26608,270035,223749,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000057,57,923.00,26608,270036,223750,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000058,58,943.00,26608,270037,223751,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000059,59,982.00,26608,270038,223752,76,1,[434432],47525,434432,322734,969.5,"D5-o, 10",-12.50,unique_shared_variable_candidate,,,false
+LGM90D:000060,60,1002.00,26608,270039,223753,76,1,[434434],47525,434434,322736,989.5,"D5-o, 30",-12.50,unique_shared_variable_candidate,,,false
+LGM90D:000061,61,1022.00,26608,270040,223754,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000062,62,1032.00,26608,270041,223755,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000063,63,1042.00,26608,270042,223756,76,1,[434437],47525,434437,322739,1029.5,"D5-o, 70",-12.50,unique_shared_variable_candidate,,,false
+LGM90D:000064,64,1062.00,26608,270043,223757,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000065,65,1072.00,26608,270044,223758,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000066,66,1083.50,26608,270045,223759,76,1,[434440],47525,434440,322742,1071,"D5-u, 10",-12.50,unique_shared_variable_candidate,,,false
+LGM90D:000067,67,1123.50,26608,270046,223760,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000068,68,1133.50,26608,270047,223761,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000069,69,1143.50,26608,270048,223762,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000070,70,1162.00,26608,270049,223763,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000071,71,1172.00,26608,270050,223764,76,0,[],,,,,,,no_shared_variable_match,,,false
+LGM90D:000072,72,1182.00,26608,270051,223765,76,0,[],,,,,,,no_shared_variable_match,,,false

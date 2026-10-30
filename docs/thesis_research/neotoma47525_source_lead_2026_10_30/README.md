@@ -1,5 +1,9 @@
 # P1: neuer Quellenpfad über Neotoma 47525
 
+**Nachtrag 30.10.2026:** Ein gespeicherter Workshop-RDS-Bestand ist inzwischen
+bezogen und geprüft: [neuer Archivbericht](../neotoma_workshop_2026_10_30/README.md).
+Die folgenden Abrufgrenzen beschreiben den vorausgehenden Arbeitsschritt.
+
 Stand 30.10.2026. Fortsetzung nach Lesen von `CHAT_RESTART.md` und `HANDOFF.md`
 auf PR #25, Commit `00c9f037642470c7d1a9a44e488f062109292c2d`, sowie der
 Berichte und Quellenregister aus #23–#25. Die bisherigen Ergebnisse werden

@@ -1,0 +1,13 @@
+datasetid,field,samples,slot_present,nonmissing,interpretation
+26608,samplename,245,245,0,exported_value_status_only
+26608,analysisunitname,245,245,0,exported_value_status_only
+26608,igsn,245,245,0,exported_value_status_only
+26608,thickness,245,245,0,exported_value_status_only
+26608,notes,245,0,0,not_exported_in_snapshot
+26608,labnumber,245,0,0,not_exported_in_snapshot
+47525,samplename,924,924,0,exported_value_status_only
+47525,analysisunitname,924,924,924,exported_value_status_only
+47525,igsn,924,924,0,exported_value_status_only
+47525,thickness,924,924,0,exported_value_status_only
+47525,notes,924,0,0,not_exported_in_snapshot
+47525,labnumber,924,0,0,not_exported_in_snapshot

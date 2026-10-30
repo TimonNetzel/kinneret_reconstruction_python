@@ -1,5 +1,9 @@
 # P1: gezielter Neotoma-Metadatenbeleg statt unveränderter Abrufe
 
+**Nachtrag 30.10.2026:** Die Archiveingabe und ihre Analyseeinheitsnamen sind
+inzwischen tatsächlich geprüft: [neuer Archivbericht](../neotoma_workshop_2026_10_30/README.md).
+Dieser Bericht erhält den vorherigen Code-/Schemabefund mit dessen Grenzen.
+
 Stand 30.10.2026. Fortsetzung des Quellenpfads 47525 aus
 [PR #26](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/26).
 P1 bleibt offen; keine Datenbankproben auf MON16 übertragen.
