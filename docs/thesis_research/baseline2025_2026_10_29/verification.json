@@ -1,0 +1,274 @@
+{
+  "audit_implementation": "Independent NumPy haversine / direct squared-distance / CSV arithmetic",
+  "source_samples": 7078,
+  "folds_checked": 10,
+  "analogue_prediction_spotchecks": 90,
+  "minimum_train_test_km": 100.03815282782557,
+  "coordinate_group_split": false,
+  "all_output_hashes_verified": true,
+  "all_prediction_metrics_verified": true,
+  "posthoc_geographic_diagnostic": {
+    "note": "Descriptive subset of the same OOF predictions, not an independent validation or a new fitted model; defined after the primary results.",
+    "latitude_bounds": [
+      25,
+      75
+    ],
+    "longitude_bounds": [
+      -15,
+      45
+    ],
+    "samples": 5223,
+    "metrics": {
+      "5": {
+        "training_mean": {
+          "tann_c": {
+            "sample": {
+              "rmse": 5.821572384414313,
+              "mae": 4.737212670138533,
+              "bias": -2.59963976941846,
+              "mse_skill": 0.0
+            },
+            "equal_coordinate_group": {
+              "rmse": 5.975361119344379,
+              "mae": 4.8372290569653895,
+              "bias": -3.227930857325921,
+              "mse_skill": 0.0
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 438.8238235146506,
+              "mae": 316.01377483463943,
+              "bias": -86.40934413356857,
+              "mse_skill": 0.0
+            },
+            "equal_coordinate_group": {
+              "rmse": 433.66902720116855,
+              "mae": 313.22178101390557,
+              "bias": -52.155189689725056,
+              "mse_skill": 0.0
+            }
+          }
+        },
+        "analog_k1": {
+          "tann_c": {
+            "sample": {
+              "rmse": 4.111805309882223,
+              "mae": 2.8240589699406473,
+              "bias": -0.19904269576871528,
+              "mse_skill": 0.5011333375060051
+            },
+            "equal_coordinate_group": {
+              "rmse": 4.184122481531627,
+              "mae": 2.8708802088892322,
+              "bias": -0.3019443027016881,
+              "mse_skill": 0.5096790334313611
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 458.9724156698072,
+              "mae": 326.3794753972813,
+              "bias": -53.65460463335247,
+              "mse_skill": -0.09393816958022505
+            },
+            "equal_coordinate_group": {
+              "rmse": 438.76769775239626,
+              "mae": 307.65552714709924,
+              "bias": -28.448999895013834,
+              "mse_skill": -0.023652338093233194
+            }
+          }
+        },
+        "analog_k5": {
+          "tann_c": {
+            "sample": {
+              "rmse": 3.3347026010557577,
+              "mae": 2.387451273214628,
+              "bias": -0.4155684472525368,
+              "mse_skill": 0.6718793123767455
+            },
+            "equal_coordinate_group": {
+              "rmse": 3.3924805481209486,
+              "mae": 2.427692072551944,
+              "bias": -0.5023667169696645,
+              "mse_skill": 0.6776657766098093
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 398.45574762384143,
+              "mae": 287.7906567107027,
+              "bias": -51.927589507945626,
+              "mse_skill": 0.17552062240280963
+            },
+            "equal_coordinate_group": {
+              "rmse": 371.170608565116,
+              "mae": 266.037849709831,
+              "bias": -26.751924473388744,
+              "mse_skill": 0.2674616829765649
+            }
+          }
+        },
+        "analog_k15": {
+          "tann_c": {
+            "sample": {
+              "rmse": 3.2186867969060153,
+              "mae": 2.3334548471504237,
+              "bias": -0.5503725828068161,
+              "mse_skill": 0.694313095926122
+            },
+            "equal_coordinate_group": {
+              "rmse": 3.297699109907552,
+              "mae": 2.393294049481604,
+              "bias": -0.6615585386918893,
+              "mse_skill": 0.6954253594825837
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 392.000966474492,
+              "mae": 284.86484140659894,
+              "bias": -50.86935988257068,
+              "mse_skill": 0.20201655561390486
+            },
+            "equal_coordinate_group": {
+              "rmse": 365.30185566416395,
+              "mae": 263.35554323504556,
+              "bias": -26.17760814460867,
+              "mse_skill": 0.29044356159141094
+            }
+          }
+        }
+      },
+      "10": {
+        "training_mean": {
+          "tann_c": {
+            "sample": {
+              "rmse": 5.9628104275463745,
+              "mae": 4.8781798691606735,
+              "bias": -2.864389756134809,
+              "mse_skill": 0.0
+            },
+            "equal_coordinate_group": {
+              "rmse": 6.187532329270568,
+              "mae": 5.033903310302854,
+              "bias": -3.475777265327792,
+              "mse_skill": 0.0
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 431.8676876415355,
+              "mae": 309.0918793575216,
+              "bias": -86.23819158078317,
+              "mse_skill": 0.0
+            },
+            "equal_coordinate_group": {
+              "rmse": 430.7303445540052,
+              "mae": 310.05133343937695,
+              "bias": -54.641053724839914,
+              "mse_skill": 0.0
+            }
+          }
+        },
+        "analog_k1": {
+          "tann_c": {
+            "sample": {
+              "rmse": 4.41958357903344,
+              "mae": 3.003182079264789,
+              "bias": -0.3453111238751676,
+              "mse_skill": 0.450635365669114
+            },
+            "equal_coordinate_group": {
+              "rmse": 4.527846671028301,
+              "mae": 3.0844676639540833,
+              "bias": -0.3920191744883396,
+              "mse_skill": 0.4645135804767344
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 476.39010914414416,
+              "mae": 341.33007849894693,
+              "bias": -50.17863296955772,
+              "mse_skill": -0.2168135841835237
+            },
+            "equal_coordinate_group": {
+              "rmse": 456.83795716836,
+              "mae": 323.2680689815255,
+              "bias": -26.42400896035158,
+              "mse_skill": -0.12489872546985548
+            }
+          }
+        },
+        "analog_k5": {
+          "tann_c": {
+            "sample": {
+              "rmse": 3.5616329913936777,
+              "mae": 2.5092226689641963,
+              "bias": -0.5369890867317634,
+              "mse_skill": 0.6432234295037467
+            },
+            "equal_coordinate_group": {
+              "rmse": 3.662411355147141,
+              "mae": 2.59077226976578,
+              "bias": -0.6155267127070124,
+              "mse_skill": 0.6496522913189903
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 408.43071841872705,
+              "mae": 296.2817154891825,
+              "bias": -53.2426191843768,
+              "mse_skill": 0.10559262022297178
+            },
+            "equal_coordinate_group": {
+              "rmse": 381.7373908556698,
+              "mae": 275.4928230420993,
+              "bias": -28.69863504267881,
+              "mse_skill": 0.21455014356800295
+            }
+          }
+        },
+        "analog_k15": {
+          "tann_c": {
+            "sample": {
+              "rmse": 3.453900036405869,
+              "mae": 2.4500194013657537,
+              "bias": -0.6792669602399642,
+              "mse_skill": 0.6644806873851548
+            },
+            "equal_coordinate_group": {
+              "rmse": 3.5670560925845307,
+              "mae": 2.5414688857824554,
+              "bias": -0.7864343218070903,
+              "mse_skill": 0.6676582401107625
+            }
+          },
+          "pann_mm_per_year": {
+            "sample": {
+              "rmse": 401.06139393948365,
+              "mae": 293.6741846958964,
+              "bias": -50.100784989469645,
+              "mse_skill": 0.13757706956382076
+            },
+            "equal_coordinate_group": {
+              "rmse": 374.92351327582355,
+              "mae": 273.4568832286382,
+              "bias": -24.70551457458195,
+              "mse_skill": 0.24233989643794906
+            }
+          }
+        }
+      }
+    }
+  },
+  "prediction_rows_checked": 56624,
+  "two_full_runs_byte_identical": true,
+  "design_commit": "e594aa9dc98bda13f452fbe55a48aa468c560b67",
+  "unit_tests_passed": 6,
+  "evaluator_sha256": "d26dc5bc5a22db197b4079dbd1a4ee91a5e0215ff8e56bba3cc4e8d0f81cd773",
+  "auditor_sha256": "8a3aab42e23079ee908c98a9dbe4e0263537afe44c105719559957fa639ad99e"
+}
