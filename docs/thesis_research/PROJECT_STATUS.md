@@ -15,18 +15,22 @@ Die moderne Analogmethode dient als Vergleich für die Hauptmethode.
 | CLI/App | Claude betreut die Integration; OpenAI/Codex bearbeitet diese Dateien nicht gleichzeitig. |
 
 **Aktuell bei OpenAI/Codex:** Quellenbelege für die physische Zuordnung
-LGM90D→MON16 prüfen. Zuletzt wurde Neotoma-Pollendatensatz **47525** als
-konkreter Quellenpfad eingegrenzt. Sein vollständiger Rohdatenabruf gelang
-nicht; Probenetiketten und Metadaten dieses Eingangs sind noch ungeprüft.
-Fundstellen und Abrufgrenzen stehen im
-[Quellenbericht](./neotoma47525_source_lead_2026_10_30/README.md),
+LGM90D→MON16 prüfen. Für Neotoma-Pollendatensatz **47525** wurde der benötigte
+Metadatenauszug anhand offizieller Tabellen-/Exportdefinitionen präzisiert.
+Eine nur lesende Abfrage erhält Proben-/Analyseeinheitsnamen und Notizen;
+drei Tests an künstlichen Daten bestanden. Die gelesenen Codeversionen sind
+kein nachgewiesener gemeinsamer Serverstand. Es wurden weiterhin keine
+echten Probenmetadaten aus 47525 bezogen. Neuer
+[Metadatenbericht und Abfrage](./neotoma_metadata_path_2026_10_30/README.md),
+vorheriger [Quellenbericht](./neotoma47525_source_lead_2026_10_30/README.md),
 [PR #26](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/26).
 
-**Nächster konkreter Forschungsschritt:** Vollständigen Datensatz 47525 mit
-Proben-/Abschnittsmetadaten beschaffen und prüfen, ob er den fehlenden
-physischen Anschluss belegt. Bleibt dieser Eingang unzugänglich oder
-unergiebig, den fehlenden Originalbeleg klar benennen und die Pilotentscheidung
-vorbereiten; bereits ausgeschöpfte Prüfungen nicht unverändert wiederholen.
+**Nächster konkreter Forschungsschritt:** Den gezielt spezifizierten
+Metadatenauszug für 47525 zusammen mit den Zählungen als echten Eingang
+beschaffen. JSON-Namensfelder allein sind kein vollständiger Notizenauszug.
+Die neue Frozen-Route war ebenfalls nicht lesbar; kein unveränderter weiterer
+API-/EPD-Suchlauf. Bis zu einem neuen Eingang bleibt P1 blockiert. Falls der
+Beleg nicht beschaffbar ist, die vorgesehene Pilotentscheidung vorbereiten.
 P2 beginnt erst nach fachlicher P1-Abnahme bzw. ausdrücklich geänderter
 Zieldefinition. Transferfunktionen bilden ein eigenes, noch nicht begonnenes
 Arbeitspaket und können grundsätzlich parallel vorbereitet werden.

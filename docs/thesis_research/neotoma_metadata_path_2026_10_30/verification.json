@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "source_git_blob_hashes_matched": 15,
+  "sql_qualified_column_references_checked": 25,
+  "source_export_fields_checked": true,
+  "code_snapshot_runtime_structure_disagreement_noted": true,
+  "synthetic_sqlite_tests": 3,
+  "synthetic_tests_passed": true,
+  "python": "3.12.14",
+  "sqlite": "3.53.1",
+  "postgresql_integration_test_performed": false,
+  "real_neotoma_data_checked": false,
+  "mon16_age_transfer_allowed": false,
+  "source_code_executed": false,
+  "output_sha256": {
+    "metadata_extract.sql": "cd61a9824fea7945c9453ea54c32f61449cceee2ee83540fc724f5c5ef7d9cb8",
+    "test_metadata_extract.py": "961dcaf7d0b850e5e9c04563ddee24cf0ae8d0d7dfad3e7128d31cd7c2e616af",
+    "sources.json": "cdeee1dd21d0788ae1255c93170deae51490f8d86c1b0fbfbce7c99aa7c481bc",
+    "README.md": "f631420625bf3cd69cd1ed73200028b314366cdf158410c3795ce575c3b4a113"
+  }
+}
