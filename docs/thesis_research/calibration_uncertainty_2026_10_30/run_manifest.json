@@ -1,0 +1,38 @@
+{
+  "variant": "meusel7_conditional_spatial_calibration_bootstrap_v1",
+  "base_commit": "9458011198c69368764b8698c966c0ac23cc381c",
+  "replicates": 200,
+  "design_commit": "5a4a96f1d7c01b64a230fb8ad6a7fbaf84857697",
+  "config_sha256": "720b35b0eccb6afbd239d05ff9e4c7a08776cfcb6dc3e5250025616852d564f0",
+  "design_sha256": "fa9613dbfa573b3e19c9f384c60fab2fd3f725bb55512c56b5a246fb9a33f6af",
+  "source_model_sha256": {
+    "docs/thesis_research/calibration_2026_10_30/fit_models.json": "1cb75f2d0b41389572fbef56708b4f88abbf12c092e2bb5b3e7108b6f832b493",
+    "docs/thesis_research/calibration_2026_10_30/models.json": "c3015debae688748253f49bc4d4eb99cdc633d24c5b16bbad7e1486fe007fb87",
+    "docs/thesis_research/calibration_2026_10_30/config.json": "157391eb4123a67fbae2121009fc179052d265369f9cb73b9b6056cbd5188a91",
+    "tools/taxon_calibration/model.py": "a9ceed9817accf0abceadca6f90b588ca22b467221c86302c9447db4c48a8e3e",
+    "tools/taxon_calibration/verify.py": "0bbdabcb980584536f822f970ef5bae52d7ee093c1d3d7865410b477150adfc9",
+    "tools/taxon_smote/verify.py": "30473367db13694862d1d857a2a8edbcca386d78a79c307486f9982b7fdea160",
+    "tools/taxon_smote/compare.py": "1e25fb7b36a9c0f13ea5bd69f71f875b7d421ee9fee9b4424fb14b7c819c4232",
+    "tools/taxon_smote/network.py": "860aca03fb3aadba3b64481cdba73f6d2965a8e1b1f8400b673901e5bbe67800"
+  },
+  "code_sha256": {
+    "tools/taxon_uncertainty/run.py": "095cf4b60d07582748befdef3c253ceb443bd3d9111c6a5948862910dccf991b",
+    "tools/taxon_uncertainty/bootstrap.py": "4fa1b1ab4f6a1a4944e7a8db7e3f33c9a8121143bc4f12c2eee561c115354334"
+  },
+  "outputs_sha256": {
+    "block_draws.csv.gz": "1b8117c5052408613c953a4e63d80537a34410bcaa6663a4f71aaae5b374885b",
+    "full_parameters.json": "e41d19904e31b2c8b7b678371d08c95c18ae161fbccd950ff860f93470c7ed03",
+    "intervals.csv.gz": "645ee0d98b27f97b42ef98eb4a87234a8317ee39ad1cf331942e02fd6c54ca8b",
+    "inventory.json": "c7efb57f97708c1781ed58f2de837cea3a1e67ef1bcc7f91448725e3cd7dd8d6",
+    "parameters.csv.gz": "b9b869fe530a785bb971a573e1d5c52ba6b6f35ffefd09a36001d499155131c4",
+    "summary.csv": "f7dcbeb47eed21f84a1a50ca4f546813ff40335c131c0c44fffedf685d1a86f2"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.17.0"
+  },
+  "outer_labels_used_for_bands": false,
+  "nominal_coverage_validated": false,
+  "fossil_application_approved": false
+}

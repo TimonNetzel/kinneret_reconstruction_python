@@ -1,0 +1,43 @@
+{
+  "result": "all output bytes identical",
+  "complete_runs": 2,
+  "files_checked": [
+    {
+      "file": "block_draws.csv.gz",
+      "bytes": 6209076,
+      "sha256": "1b8117c5052408613c953a4e63d80537a34410bcaa6663a4f71aaae5b374885b"
+    },
+    {
+      "file": "full_parameters.json",
+      "bytes": 1841931,
+      "sha256": "e41d19904e31b2c8b7b678371d08c95c18ae161fbccd950ff860f93470c7ed03"
+    },
+    {
+      "file": "intervals.csv.gz",
+      "bytes": 56825733,
+      "sha256": "645ee0d98b27f97b42ef98eb4a87234a8317ee39ad1cf331942e02fd6c54ca8b"
+    },
+    {
+      "file": "inventory.json",
+      "bytes": 46787,
+      "sha256": "c7efb57f97708c1781ed58f2de837cea3a1e67ef1bcc7f91448725e3cd7dd8d6"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 2378,
+      "sha256": "116d3038ce5f60234156d3759561d646da41ec48dbf29fac564e9a6a0517ccee"
+    },
+    {
+      "file": "parameters.csv.gz",
+      "bytes": 4502990,
+      "sha256": "b9b869fe530a785bb971a573e1d5c52ba6b6f35ffefd09a36001d499155131c4"
+    },
+    {
+      "file": "summary.csv",
+      "bytes": 24753,
+      "sha256": "f7dcbeb47eed21f84a1a50ca4f546813ff40335c131c0c44fffedf685d1a86f2"
+    }
+  ],
+  "code_sha256": "769b2867587ef375a073a530fde69b597d7d6e0496e5b61988cadeb8124832f2",
+  "scope": "Recorded Python/library environment; no cross-platform bitwise guarantee"
+}

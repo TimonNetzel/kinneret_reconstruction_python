@@ -1,0 +1,2186 @@
+[
+  {
+    "case": "abies_alba:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18720,
+    "seed": 1374504765,
+    "members": [
+      {
+        "calibration_cells": 6372,
+        "positive": 21,
+        "positive_blocks": 4,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6326,
+        "positive": 78,
+        "positive_blocks": 4,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6022,
+        "positive": 49,
+        "positive_blocks": 5,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b5:o1",
+    "blocks": 303,
+    "pool_cells": 18157,
+    "seed": 2037998587,
+    "members": [
+      {
+        "calibration_cells": 5964,
+        "positive": 21,
+        "positive_blocks": 4,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6119,
+        "positive": 34,
+        "positive_blocks": 2,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6074,
+        "positive": 33,
+        "positive_blocks": 4,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18633,
+    "seed": 1128077618,
+    "members": [
+      {
+        "calibration_cells": 6336,
+        "positive": 23,
+        "positive_blocks": 3,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6247,
+        "positive": 90,
+        "positive_blocks": 3,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6050,
+        "positive": 40,
+        "positive_blocks": 4,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18410,
+    "seed": 2965526657,
+    "members": [
+      {
+        "calibration_cells": 6225,
+        "positive": 9,
+        "positive_blocks": 3,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6304,
+        "positive": 51,
+        "positive_blocks": 3,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5881,
+        "positive": 34,
+        "positive_blocks": 4,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18257,
+    "seed": 2880999439,
+    "members": [
+      {
+        "calibration_cells": 6264,
+        "positive": 30,
+        "positive_blocks": 4,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5967,
+        "positive": 74,
+        "positive_blocks": 3,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 6026,
+        "positive": 24,
+        "positive_blocks": 3,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28563,
+    "seed": 2590150598,
+    "members": [
+      {
+        "calibration_cells": 9670,
+        "positive": 33,
+        "positive_blocks": 5,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9589,
+        "positive": 94,
+        "positive_blocks": 4,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9304,
+        "positive": 54,
+        "positive_blocks": 5,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20458,
+    "seed": 2595529446,
+    "members": [
+      {
+        "calibration_cells": 6816,
+        "positive": 76,
+        "positive_blocks": 2,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6751,
+        "positive": 61,
+        "positive_blocks": 2,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6891,
+        "positive": 43,
+        "positive_blocks": 2,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20850,
+    "seed": 3270888192,
+    "members": [
+      {
+        "calibration_cells": 6757,
+        "positive": 17,
+        "positive_blocks": 1,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7174,
+        "positive": 45,
+        "positive_blocks": 2,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6919,
+        "positive": 35,
+        "positive_blocks": 3,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20806,
+    "seed": 2855796427,
+    "members": [
+      {
+        "calibration_cells": 6870,
+        "positive": 57,
+        "positive_blocks": 2,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7309,
+        "positive": 15,
+        "positive_blocks": 1,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6627,
+        "positive": 40,
+        "positive_blocks": 1,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20579,
+    "seed": 737448029,
+    "members": [
+      {
+        "calibration_cells": 6830,
+        "positive": 65,
+        "positive_blocks": 2,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7287,
+        "positive": 59,
+        "positive_blocks": 2,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6462,
+        "positive": 2,
+        "positive_blocks": 2,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21237,
+    "seed": 3237845204,
+    "members": [
+      {
+        "calibration_cells": 6907,
+        "positive": 54,
+        "positive_blocks": 1,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7314,
+        "positive": 38,
+        "positive_blocks": 1,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 7016,
+        "positive": 37,
+        "positive_blocks": 2,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "abies_alba:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28563,
+    "seed": 12721192,
+    "members": [
+      {
+        "calibration_cells": 9382,
+        "positive": 76,
+        "positive_blocks": 2,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9825,
+        "positive": 61,
+        "positive_blocks": 2,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9356,
+        "positive": 44,
+        "positive_blocks": 3,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18486,
+    "seed": 3153696883,
+    "members": [
+      {
+        "calibration_cells": 6242,
+        "positive": 1572,
+        "positive_blocks": 34,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6260,
+        "positive": 1624,
+        "positive_blocks": 33,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5984,
+        "positive": 1615,
+        "positive_blocks": 32,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:o1",
+    "blocks": 303,
+    "pool_cells": 17966,
+    "seed": 748062771,
+    "members": [
+      {
+        "calibration_cells": 5893,
+        "positive": 1506,
+        "positive_blocks": 30,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6046,
+        "positive": 1445,
+        "positive_blocks": 31,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6027,
+        "positive": 1548,
+        "positive_blocks": 29,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18389,
+    "seed": 1559957062,
+    "members": [
+      {
+        "calibration_cells": 6236,
+        "positive": 1601,
+        "positive_blocks": 34,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6178,
+        "positive": 1557,
+        "positive_blocks": 32,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 5975,
+        "positive": 1575,
+        "positive_blocks": 31,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18210,
+    "seed": 1970049421,
+    "members": [
+      {
+        "calibration_cells": 6117,
+        "positive": 1580,
+        "positive_blocks": 33,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6230,
+        "positive": 1560,
+        "positive_blocks": 33,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5863,
+        "positive": 1526,
+        "positive_blocks": 25,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18063,
+    "seed": 3014881620,
+    "members": [
+      {
+        "calibration_cells": 6173,
+        "positive": 1458,
+        "positive_blocks": 32,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5915,
+        "positive": 1482,
+        "positive_blocks": 31,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 5975,
+        "positive": 1510,
+        "positive_blocks": 29,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28169,
+    "seed": 1526498742,
+    "members": [
+      {
+        "calibration_cells": 9507,
+        "positive": 2428,
+        "positive_blocks": 42,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9456,
+        "positive": 2409,
+        "positive_blocks": 41,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9206,
+        "positive": 2441,
+        "positive_blocks": 37,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20289,
+    "seed": 1750403295,
+    "members": [
+      {
+        "calibration_cells": 6776,
+        "positive": 2014,
+        "positive_blocks": 11,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6736,
+        "positive": 1696,
+        "positive_blocks": 11,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6777,
+        "positive": 1816,
+        "positive_blocks": 10,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20553,
+    "seed": 1415415673,
+    "members": [
+      {
+        "calibration_cells": 6636,
+        "positive": 1637,
+        "positive_blocks": 9,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7113,
+        "positive": 1778,
+        "positive_blocks": 11,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6804,
+        "positive": 1761,
+        "positive_blocks": 11,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20557,
+    "seed": 1281953157,
+    "members": [
+      {
+        "calibration_cells": 6858,
+        "positive": 2081,
+        "positive_blocks": 10,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7225,
+        "positive": 1434,
+        "positive_blocks": 10,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6474,
+        "positive": 1830,
+        "positive_blocks": 12,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20382,
+    "seed": 3116622419,
+    "members": [
+      {
+        "calibration_cells": 6800,
+        "positive": 1829,
+        "positive_blocks": 9,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7252,
+        "positive": 1745,
+        "positive_blocks": 11,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6330,
+        "positive": 1666,
+        "positive_blocks": 11,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:o4",
+    "blocks": 86,
+    "pool_cells": 20835,
+    "seed": 2745973556,
+    "members": [
+      {
+        "calibration_cells": 6810,
+        "positive": 1706,
+        "positive_blocks": 9,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7152,
+        "positive": 1420,
+        "positive_blocks": 12,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6873,
+        "positive": 1898,
+        "positive_blocks": 12,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "betula_pendula:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28169,
+    "seed": 1268218879,
+    "members": [
+      {
+        "calibration_cells": 9289,
+        "positive": 2545,
+        "positive_blocks": 12,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9716,
+        "positive": 2239,
+        "positive_blocks": 14,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9164,
+        "positive": 2494,
+        "positive_blocks": 14,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18660,
+    "seed": 565039406,
+    "members": [
+      {
+        "calibration_cells": 6309,
+        "positive": 805,
+        "positive_blocks": 19,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6351,
+        "positive": 702,
+        "positive_blocks": 18,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6000,
+        "positive": 738,
+        "positive_blocks": 18,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:o1",
+    "blocks": 303,
+    "pool_cells": 18042,
+    "seed": 1328826737,
+    "members": [
+      {
+        "calibration_cells": 5928,
+        "positive": 757,
+        "positive_blocks": 18,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6094,
+        "positive": 620,
+        "positive_blocks": 18,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6020,
+        "positive": 664,
+        "positive_blocks": 17,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18544,
+    "seed": 577523042,
+    "members": [
+      {
+        "calibration_cells": 6276,
+        "positive": 774,
+        "positive_blocks": 18,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6262,
+        "positive": 687,
+        "positive_blocks": 18,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6006,
+        "positive": 725,
+        "positive_blocks": 16,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18277,
+    "seed": 342023108,
+    "members": [
+      {
+        "calibration_cells": 6145,
+        "positive": 772,
+        "positive_blocks": 18,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6277,
+        "positive": 660,
+        "positive_blocks": 18,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5855,
+        "positive": 581,
+        "positive_blocks": 16,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18183,
+    "seed": 4013513119,
+    "members": [
+      {
+        "calibration_cells": 6217,
+        "positive": 699,
+        "positive_blocks": 16,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5983,
+        "positive": 626,
+        "positive_blocks": 18,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 5983,
+        "positive": 667,
+        "positive_blocks": 17,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28387,
+    "seed": 98854756,
+    "members": [
+      {
+        "calibration_cells": 9579,
+        "positive": 1141,
+        "positive_blocks": 23,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9574,
+        "positive": 992,
+        "positive_blocks": 23,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9234,
+        "positive": 1015,
+        "positive_blocks": 21,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20476,
+    "seed": 3248214979,
+    "members": [
+      {
+        "calibration_cells": 6843,
+        "positive": 920,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6762,
+        "positive": 752,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6871,
+        "positive": 890,
+        "positive_blocks": 5,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20689,
+    "seed": 2666447721,
+    "members": [
+      {
+        "calibration_cells": 6651,
+        "positive": 701,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7103,
+        "positive": 856,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6935,
+        "positive": 632,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20755,
+    "seed": 1322906790,
+    "members": [
+      {
+        "calibration_cells": 6869,
+        "positive": 938,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7249,
+        "positive": 585,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6637,
+        "positive": 905,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20448,
+    "seed": 3032059263,
+    "members": [
+      {
+        "calibration_cells": 6785,
+        "positive": 795,
+        "positive_blocks": 7,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7282,
+        "positive": 687,
+        "positive_blocks": 5,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6381,
+        "positive": 655,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21026,
+    "seed": 2556111588,
+    "members": [
+      {
+        "calibration_cells": 6856,
+        "positive": 677,
+        "positive_blocks": 6,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7198,
+        "positive": 665,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6972,
+        "positive": 977,
+        "positive_blocks": 7,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "corylus_avellana:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28387,
+    "seed": 1936749172,
+    "members": [
+      {
+        "calibration_cells": 9324,
+        "positive": 1076,
+        "positive_blocks": 8,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9754,
+        "positive": 970,
+        "positive_blocks": 7,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9309,
+        "positive": 1102,
+        "positive_blocks": 7,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18601,
+    "seed": 2262163000,
+    "members": [
+      {
+        "calibration_cells": 6292,
+        "positive": 150,
+        "positive_blocks": 6,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6270,
+        "positive": 175,
+        "positive_blocks": 7,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6039,
+        "positive": 220,
+        "positive_blocks": 6,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:o1",
+    "blocks": 303,
+    "pool_cells": 18015,
+    "seed": 765746275,
+    "members": [
+      {
+        "calibration_cells": 5876,
+        "positive": 203,
+        "positive_blocks": 8,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6076,
+        "positive": 135,
+        "positive_blocks": 8,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6063,
+        "positive": 153,
+        "positive_blocks": 6,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18459,
+    "seed": 1242467486,
+    "members": [
+      {
+        "calibration_cells": 6244,
+        "positive": 144,
+        "positive_blocks": 7,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6173,
+        "positive": 163,
+        "positive_blocks": 9,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6042,
+        "positive": 151,
+        "positive_blocks": 5,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18267,
+    "seed": 3245287118,
+    "members": [
+      {
+        "calibration_cells": 6131,
+        "positive": 182,
+        "positive_blocks": 7,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6237,
+        "positive": 136,
+        "positive_blocks": 7,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5899,
+        "positive": 196,
+        "positive_blocks": 5,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18123,
+    "seed": 3734242205,
+    "members": [
+      {
+        "calibration_cells": 6188,
+        "positive": 157,
+        "positive_blocks": 8,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5921,
+        "positive": 142,
+        "positive_blocks": 8,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 6014,
+        "positive": 107,
+        "positive_blocks": 5,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28341,
+    "seed": 1543365076,
+    "members": [
+      {
+        "calibration_cells": 9546,
+        "positive": 250,
+        "positive_blocks": 9,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9499,
+        "positive": 221,
+        "positive_blocks": 10,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9296,
+        "positive": 244,
+        "positive_blocks": 7,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20293,
+    "seed": 2917978293,
+    "members": [
+      {
+        "calibration_cells": 6801,
+        "positive": 155,
+        "positive_blocks": 3,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6704,
+        "positive": 287,
+        "positive_blocks": 3,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6788,
+        "positive": 146,
+        "positive_blocks": 2,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20652,
+    "seed": 759217562,
+    "members": [
+      {
+        "calibration_cells": 6735,
+        "positive": 28,
+        "positive_blocks": 2,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7117,
+        "positive": 305,
+        "positive_blocks": 3,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6800,
+        "positive": 216,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20684,
+    "seed": 2785059376,
+    "members": [
+      {
+        "calibration_cells": 6843,
+        "positive": 127,
+        "positive_blocks": 3,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7292,
+        "positive": 122,
+        "positive_blocks": 1,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6549,
+        "positive": 150,
+        "positive_blocks": 3,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20459,
+    "seed": 3128016258,
+    "members": [
+      {
+        "calibration_cells": 6831,
+        "positive": 134,
+        "positive_blocks": 2,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7240,
+        "positive": 332,
+        "positive_blocks": 3,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6388,
+        "positive": 127,
+        "positive_blocks": 3,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21049,
+    "seed": 1562931725,
+    "members": [
+      {
+        "calibration_cells": 6881,
+        "positive": 121,
+        "positive_blocks": 2,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7285,
+        "positive": 177,
+        "positive_blocks": 2,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6883,
+        "positive": 184,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "fagus_sylvatica:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28341,
+    "seed": 1937202021,
+    "members": [
+      {
+        "calibration_cells": 9357,
+        "positive": 157,
+        "positive_blocks": 3,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9770,
+        "positive": 334,
+        "positive_blocks": 3,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9214,
+        "positive": 224,
+        "positive_blocks": 4,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18640,
+    "seed": 3441756266,
+    "members": [
+      {
+        "calibration_cells": 6344,
+        "positive": 439,
+        "positive_blocks": 11,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6283,
+        "positive": 472,
+        "positive_blocks": 13,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6013,
+        "positive": 477,
+        "positive_blocks": 13,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:o1",
+    "blocks": 303,
+    "pool_cells": 18087,
+    "seed": 1588566231,
+    "members": [
+      {
+        "calibration_cells": 5934,
+        "positive": 424,
+        "positive_blocks": 11,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6088,
+        "positive": 477,
+        "positive_blocks": 11,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6065,
+        "positive": 485,
+        "positive_blocks": 13,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18567,
+    "seed": 2688201506,
+    "members": [
+      {
+        "calibration_cells": 6298,
+        "positive": 435,
+        "positive_blocks": 11,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6222,
+        "positive": 527,
+        "positive_blocks": 15,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6047,
+        "positive": 475,
+        "positive_blocks": 11,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18343,
+    "seed": 1871318771,
+    "members": [
+      {
+        "calibration_cells": 6207,
+        "positive": 422,
+        "positive_blocks": 11,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6273,
+        "positive": 458,
+        "positive_blocks": 13,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5863,
+        "positive": 449,
+        "positive_blocks": 13,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18243,
+    "seed": 4285221973,
+    "members": [
+      {
+        "calibration_cells": 6228,
+        "positive": 453,
+        "positive_blocks": 13,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5983,
+        "positive": 525,
+        "positive_blocks": 12,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 6032,
+        "positive": 478,
+        "positive_blocks": 10,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28424,
+    "seed": 3598521828,
+    "members": [
+      {
+        "calibration_cells": 9613,
+        "positive": 700,
+        "positive_blocks": 15,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9539,
+        "positive": 782,
+        "positive_blocks": 17,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9272,
+        "positive": 751,
+        "positive_blocks": 15,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20412,
+    "seed": 3375955968,
+    "members": [
+      {
+        "calibration_cells": 6813,
+        "positive": 595,
+        "positive_blocks": 4,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6748,
+        "positive": 381,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6851,
+        "positive": 697,
+        "positive_blocks": 4,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20758,
+    "seed": 1528685377,
+    "members": [
+      {
+        "calibration_cells": 6702,
+        "positive": 563,
+        "positive_blocks": 3,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7160,
+        "positive": 606,
+        "positive_blocks": 4,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6896,
+        "positive": 446,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20721,
+    "seed": 2684686817,
+    "members": [
+      {
+        "calibration_cells": 6867,
+        "positive": 390,
+        "positive_blocks": 4,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7290,
+        "positive": 547,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6564,
+        "positive": 658,
+        "positive_blocks": 5,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20515,
+    "seed": 2388528638,
+    "members": [
+      {
+        "calibration_cells": 6818,
+        "positive": 683,
+        "positive_blocks": 5,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7276,
+        "positive": 498,
+        "positive_blocks": 4,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6421,
+        "positive": 434,
+        "positive_blocks": 3,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21092,
+    "seed": 1982987987,
+    "members": [
+      {
+        "calibration_cells": 6899,
+        "positive": 410,
+        "positive_blocks": 4,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7227,
+        "positive": 661,
+        "positive_blocks": 4,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6966,
+        "positive": 480,
+        "positive_blocks": 4,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "picea_abies:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28424,
+    "seed": 2420875265,
+    "members": [
+      {
+        "calibration_cells": 9354,
+        "positive": 733,
+        "positive_blocks": 5,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9779,
+        "positive": 748,
+        "positive_blocks": 5,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9291,
+        "positive": 752,
+        "positive_blocks": 5,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18666,
+    "seed": 2461505903,
+    "members": [
+      {
+        "calibration_cells": 6273,
+        "positive": 331,
+        "positive_blocks": 15,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6344,
+        "positive": 385,
+        "positive_blocks": 16,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6049,
+        "positive": 458,
+        "positive_blocks": 13,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:o1",
+    "blocks": 303,
+    "pool_cells": 18043,
+    "seed": 1193009427,
+    "members": [
+      {
+        "calibration_cells": 5892,
+        "positive": 339,
+        "positive_blocks": 14,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6097,
+        "positive": 264,
+        "positive_blocks": 15,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6054,
+        "positive": 430,
+        "positive_blocks": 13,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18556,
+    "seed": 1186481615,
+    "members": [
+      {
+        "calibration_cells": 6238,
+        "positive": 353,
+        "positive_blocks": 14,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6281,
+        "positive": 416,
+        "positive_blocks": 14,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6037,
+        "positive": 370,
+        "positive_blocks": 11,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18297,
+    "seed": 587160263,
+    "members": [
+      {
+        "calibration_cells": 6122,
+        "positive": 415,
+        "positive_blocks": 14,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6285,
+        "positive": 323,
+        "positive_blocks": 15,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5890,
+        "positive": 406,
+        "positive_blocks": 12,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18158,
+    "seed": 916675439,
+    "members": [
+      {
+        "calibration_cells": 6167,
+        "positive": 350,
+        "positive_blocks": 15,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6006,
+        "positive": 308,
+        "positive_blocks": 13,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 5985,
+        "positive": 343,
+        "positive_blocks": 13,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28405,
+    "seed": 2213427885,
+    "members": [
+      {
+        "calibration_cells": 9532,
+        "positive": 527,
+        "positive_blocks": 19,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9593,
+        "positive": 504,
+        "positive_blocks": 19,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9280,
+        "positive": 588,
+        "positive_blocks": 16,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20383,
+    "seed": 2663048845,
+    "members": [
+      {
+        "calibration_cells": 6827,
+        "positive": 724,
+        "positive_blocks": 7,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6708,
+        "positive": 426,
+        "positive_blocks": 6,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6848,
+        "positive": 276,
+        "positive_blocks": 5,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20670,
+    "seed": 3044049777,
+    "members": [
+      {
+        "calibration_cells": 6656,
+        "positive": 393,
+        "positive_blocks": 5,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7142,
+        "positive": 423,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6872,
+        "positive": 263,
+        "positive_blocks": 6,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20774,
+    "seed": 1407211078,
+    "members": [
+      {
+        "calibration_cells": 6910,
+        "positive": 626,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7260,
+        "positive": 209,
+        "positive_blocks": 6,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6604,
+        "positive": 267,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20464,
+    "seed": 3260409847,
+    "members": [
+      {
+        "calibration_cells": 6861,
+        "positive": 533,
+        "positive_blocks": 5,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7236,
+        "positive": 476,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6367,
+        "positive": 117,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21058,
+    "seed": 970397807,
+    "members": [
+      {
+        "calibration_cells": 6934,
+        "positive": 590,
+        "positive_blocks": 5,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7183,
+        "positive": 357,
+        "positive_blocks": 7,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6941,
+        "positive": 326,
+        "positive_blocks": 6,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "taxus_baccata:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28405,
+    "seed": 1827551655,
+    "members": [
+      {
+        "calibration_cells": 9386,
+        "positive": 757,
+        "positive_blocks": 7,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9744,
+        "positive": 513,
+        "positive_blocks": 8,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9275,
+        "positive": 349,
+        "positive_blocks": 7,
+        "calibration_blocks": 37
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:o0",
+    "blocks": 308,
+    "pool_cells": 18676,
+    "seed": 3382568287,
+    "members": [
+      {
+        "calibration_cells": 6303,
+        "positive": 697,
+        "positive_blocks": 16,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 6352,
+        "positive": 725,
+        "positive_blocks": 16,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6021,
+        "positive": 703,
+        "positive_blocks": 17,
+        "calibration_blocks": 99
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:o1",
+    "blocks": 303,
+    "pool_cells": 17988,
+    "seed": 2402169273,
+    "members": [
+      {
+        "calibration_cells": 5887,
+        "positive": 705,
+        "positive_blocks": 17,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6069,
+        "positive": 614,
+        "positive_blocks": 18,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 6032,
+        "positive": 672,
+        "positive_blocks": 16,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:o2",
+    "blocks": 304,
+    "pool_cells": 18576,
+    "seed": 4268603509,
+    "members": [
+      {
+        "calibration_cells": 6281,
+        "positive": 741,
+        "positive_blocks": 16,
+        "calibration_blocks": 104
+      },
+      {
+        "calibration_cells": 6267,
+        "positive": 706,
+        "positive_blocks": 17,
+        "calibration_blocks": 102
+      },
+      {
+        "calibration_cells": 6028,
+        "positive": 713,
+        "positive_blocks": 17,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:o3",
+    "blocks": 311,
+    "pool_cells": 18277,
+    "seed": 802751738,
+    "members": [
+      {
+        "calibration_cells": 6121,
+        "positive": 641,
+        "positive_blocks": 16,
+        "calibration_blocks": 107
+      },
+      {
+        "calibration_cells": 6289,
+        "positive": 655,
+        "positive_blocks": 14,
+        "calibration_blocks": 106
+      },
+      {
+        "calibration_cells": 5867,
+        "positive": 710,
+        "positive_blocks": 15,
+        "calibration_blocks": 98
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:o4",
+    "blocks": 300,
+    "pool_cells": 18187,
+    "seed": 3018334619,
+    "members": [
+      {
+        "calibration_cells": 6233,
+        "positive": 636,
+        "positive_blocks": 14,
+        "calibration_blocks": 103
+      },
+      {
+        "calibration_cells": 5958,
+        "positive": 701,
+        "positive_blocks": 18,
+        "calibration_blocks": 101
+      },
+      {
+        "calibration_cells": 5996,
+        "positive": 691,
+        "positive_blocks": 16,
+        "calibration_blocks": 96
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b5:ofull",
+    "blocks": 386,
+    "pool_cells": 28391,
+    "seed": 3480178573,
+    "members": [
+      {
+        "calibration_cells": 9566,
+        "positive": 1055,
+        "positive_blocks": 20,
+        "calibration_blocks": 132
+      },
+      {
+        "calibration_cells": 9562,
+        "positive": 1038,
+        "positive_blocks": 22,
+        "calibration_blocks": 130
+      },
+      {
+        "calibration_cells": 9263,
+        "positive": 1076,
+        "positive_blocks": 21,
+        "calibration_blocks": 124
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:o0",
+    "blocks": 88,
+    "pool_cells": 20483,
+    "seed": 2528143753,
+    "members": [
+      {
+        "calibration_cells": 6814,
+        "positive": 737,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6797,
+        "positive": 847,
+        "positive_blocks": 5,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6872,
+        "positive": 912,
+        "positive_blocks": 7,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:o1",
+    "blocks": 86,
+    "pool_cells": 20652,
+    "seed": 4050657614,
+    "members": [
+      {
+        "calibration_cells": 6644,
+        "positive": 713,
+        "positive_blocks": 5,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7150,
+        "positive": 957,
+        "positive_blocks": 6,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 6858,
+        "positive": 551,
+        "positive_blocks": 7,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:o2",
+    "blocks": 87,
+    "pool_cells": 20828,
+    "seed": 1803381878,
+    "members": [
+      {
+        "calibration_cells": 6890,
+        "positive": 866,
+        "positive_blocks": 5,
+        "calibration_blocks": 28
+      },
+      {
+        "calibration_cells": 7297,
+        "positive": 743,
+        "positive_blocks": 6,
+        "calibration_blocks": 30
+      },
+      {
+        "calibration_cells": 6641,
+        "positive": 778,
+        "positive_blocks": 7,
+        "calibration_blocks": 29
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:o3",
+    "blocks": 86,
+    "pool_cells": 20428,
+    "seed": 761015093,
+    "members": [
+      {
+        "calibration_cells": 6799,
+        "positive": 952,
+        "positive_blocks": 6,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7282,
+        "positive": 686,
+        "positive_blocks": 6,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6347,
+        "positive": 578,
+        "positive_blocks": 7,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:o4",
+    "blocks": 86,
+    "pool_cells": 21037,
+    "seed": 127794866,
+    "members": [
+      {
+        "calibration_cells": 6815,
+        "positive": 685,
+        "positive_blocks": 6,
+        "calibration_blocks": 27
+      },
+      {
+        "calibration_cells": 7243,
+        "positive": 737,
+        "positive_blocks": 5,
+        "calibration_blocks": 29
+      },
+      {
+        "calibration_cells": 6979,
+        "positive": 826,
+        "positive_blocks": 8,
+        "calibration_blocks": 30
+      }
+    ]
+  },
+  {
+    "case": "tilia_cordata:b10:ofull",
+    "blocks": 109,
+    "pool_cells": 28391,
+    "seed": 2440756412,
+    "members": [
+      {
+        "calibration_cells": 9320,
+        "positive": 1077,
+        "positive_blocks": 7,
+        "calibration_blocks": 35
+      },
+      {
+        "calibration_cells": 9797,
+        "positive": 1086,
+        "positive_blocks": 7,
+        "calibration_blocks": 37
+      },
+      {
+        "calibration_cells": 9274,
+        "positive": 1006,
+        "positive_blocks": 9,
+        "calibration_blocks": 37
+      }
+    ]
+  }
+]

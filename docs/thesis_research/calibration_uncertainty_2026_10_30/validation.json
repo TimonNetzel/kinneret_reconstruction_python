@@ -1,0 +1,22 @@
+{
+  "repository_tests": {
+    "passed": 85,
+    "deselected": 4,
+    "command": "python -m pytest -q -k 'not test_standort_waehler_im_browser and not test_im_browser'",
+    "details": "Two slow reference tests excluded by ordinary pytest configuration; two unchanged browser tests explicitly not run."
+  },
+  "new_targeted_tests": {
+    "passed": 6,
+    "scope": [
+      "whole spatial blocks and paired weights",
+      "unique class support instead of artificial duplication",
+      "weighted/literal duplicate equivalence",
+      "missing base calibration never zero width",
+      "ensemble quantiles/gates/extrapolation",
+      "exact vertices in recorded anisotropic hull"
+    ]
+  },
+  "production_code_matches_audited_manifest": true,
+  "unchanged_PR31_models_and_sources": true,
+  "design_and_config_unchanged_after_publication": true
+}

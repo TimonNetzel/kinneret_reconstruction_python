@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "repository": "TimonNetzel/kinneret_reconstruction_python",
+  "source_commit": "6d35bbfe06cf54572dba2cb439495a8556eddb4d",
+  "source_tree": "9e1f4c3055bb2d7c929f461d7777b733fd34f03c",
+  "main_commit": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+  "scope": "Union of the changed paths of PRs 31 and 32, as stored at source_commit. This inventory excludes itself and the later documentation-only saving commit.",
+  "pull_requests": [
+    {
+      "number": 31,
+      "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/31",
+      "state": "open",
+      "merged": false,
+      "branch": "codex/netzel-spatial-probability-calibration",
+      "head": "9458011198c69368764b8698c966c0ac23cc381c",
+      "base": "main",
+      "base_sha": "7f1826cffddc8893ba6354cd3cca3fa43954b9be"
+    },
+    {
+      "number": 32,
+      "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/32",
+      "state": "open",
+      "merged": false,
+      "branch": "codex/netzel-calibration-block-uncertainty",
+      "head": "6d35bbfe06cf54572dba2cb439495a8556eddb4d",
+      "base": "codex/netzel-spatial-probability-calibration",
+      "base_sha": "9458011198c69368764b8698c966c0ac23cc381c"
+    }
+  ],
+  "checks": {
+    "all_44_changed_paths_present": true,
+    "pr31_scientific_files_unchanged_in_pr32": true,
+    "tree_truncated": false,
+    "scientific_runs_repeated_in_this_saving_step": false,
+    "git_blob_ids_read_from_github_tree": true,
+    "output_sha256_values_source": "previously published run_manifest.json; no fresh download/hash audit of all output bytes in this saving step"
+  },
+  "files": [
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_CALIBRATION.md",
+      "git_blob_sha": "e3b652601fe2efb30838d1487d046a151e2b2df5",
+      "bytes": 4095
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_UNCERTAINTY.md",
+      "git_blob_sha": "3c0c105f4462ae55778cec44821fb9462c898858",
+      "bytes": 4308
+    },
+    {
+      "path": "docs/thesis_research/HANDOFF.md",
+      "git_blob_sha": "ca29a2abddaa816c5c3ad7dae8b451d1e1d9ac77",
+      "bytes": 7007
+    },
+    {
+      "path": "docs/thesis_research/PROJECT_STATUS.md",
+      "git_blob_sha": "d72cd73a86be439e147d6239bb07ece07ce8b0a1",
+      "bytes": 8771
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/DESIGN.md",
+      "git_blob_sha": "736c6387865ae60eeac38426ed6a426db381e8a0",
+      "bytes": 7216
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/README.md",
+      "git_blob_sha": "9c8504abeaf5f91efd21b835c102d12450578acd",
+      "bytes": 9752
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/REPRODUCE.md",
+      "git_blob_sha": "dc8045d2afc8ebb220ad130d11493640c4b75cf7",
+      "bytes": 6153
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/checkpoint_recovery.json",
+      "git_blob_sha": "1809ff5e169b9f03896e63c9a74617d4102ee6c8",
+      "bytes": 675
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/config.json",
+      "git_blob_sha": "a090f8a99af0e30d9a9994fe50aaa65caf5db165",
+      "bytes": 4614
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/execution_notes.json",
+      "git_blob_sha": "73dda0a67e7a965f474b736502229f9329c85905",
+      "bytes": 1918
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/fit_models.json",
+      "git_blob_sha": "2fb13aaf12c0ad777d30cdb706f2bfb29057e435",
+      "bytes": 3214079
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/metrics_summary.csv",
+      "git_blob_sha": "ff9c63d8f850b4e288691580fc9782946f810752",
+      "bytes": 13739
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/models.json",
+      "git_blob_sha": "af34f8651214a1a5ce5b1ff6f5320deea087fd39",
+      "bytes": 666568
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/paired_deltas.csv",
+      "git_blob_sha": "42e5f838d11de40fc66fd99ef9c45ba0cd46d1e6",
+      "bytes": 15233
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/reliability.csv",
+      "git_blob_sha": "31bed1211f8b0f65e00501e0c27e75f334189a87",
+      "bytes": 49137
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/repeat.json",
+      "git_blob_sha": "a20e6fb8e40baf435b99a926a3e4a81fec214cdc",
+      "bytes": 1939
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/run_manifest.json",
+      "git_blob_sha": "16dd2fc789a9954d3157275e96e4e9f3c3c7cb96",
+      "bytes": 2237
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/sample_inventory.csv",
+      "git_blob_sha": "bc9c946bd61123ffa1f1b4e8718fa4266ab7e0ce",
+      "bytes": 2432
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/scores.csv",
+      "git_blob_sha": "67c4171dcc96e2975d5bd2f85a02deab2554a3ba",
+      "bytes": 79299
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/split_inventory.csv",
+      "git_blob_sha": "539bfb37e87041fa7d5285b75c49a1b4c75bf60e",
+      "bytes": 25400
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/validation.json",
+      "git_blob_sha": "a125c0a3d153b051c0d73cd08a4203a5c050baef",
+      "bytes": 874
+    },
+    {
+      "path": "docs/thesis_research/calibration_2026_10_30/verification.json",
+      "git_blob_sha": "3577cb9849f8f5912e7d6d2f57ab189a919f477b",
+      "bytes": 1585
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/DESIGN.md",
+      "git_blob_sha": "62208a5734a022b83009dc8ddb4148ce44b8f375",
+      "bytes": 6957
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/README.md",
+      "git_blob_sha": "1502963b7757751a931e2c992f4663a0e319dd8e",
+      "bytes": 10812
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/REPRODUCE.md",
+      "git_blob_sha": "35e99432af157660ab5cdc298add1bd50131431e",
+      "bytes": 5412
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/SOURCES.md",
+      "git_blob_sha": "44ae4dc9d72f4a0448545bbfe55e7f2f12c87ae0",
+      "bytes": 1837
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/config.json",
+      "git_blob_sha": "88ae6b52ac7e7925fdcaed21f7d2a7db47f62ace",
+      "bytes": 1628
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/execution_notes.json",
+      "git_blob_sha": "146ff66414e672d7c0509be3b70dfb971333c2e3",
+      "bytes": 2691
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/full_parameters.json",
+      "git_blob_sha": "b0eb997ec83ef617a25ae25f007a784e4ac7c8a4",
+      "bytes": 1841931
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/inventory.json",
+      "git_blob_sha": "72a2d3925157ee357ed5ee085d9aba090149b12b",
+      "bytes": 46787
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/parameters.csv.gz",
+      "git_blob_sha": "2dc09b8974412c681b06757f2055adad2ab884f9",
+      "bytes": 4502990
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/repeat.json",
+      "git_blob_sha": "f94ba6d3f12aa5f973964172047d61ffabb4c6ef",
+      "bytes": 1333
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/run_manifest.json",
+      "git_blob_sha": "3f9f36cc883a8160d65dd1bc088ac2a4f43033fd",
+      "bytes": 2378
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/summary.csv",
+      "git_blob_sha": "5c0ba98dbb2193830d9842edcb5fc8e42300c15b",
+      "bytes": 24753
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/validation.json",
+      "git_blob_sha": "f6cda1a2093454c86a8ff9104bf0a512beb9d1fc",
+      "bytes": 843
+    },
+    {
+      "path": "docs/thesis_research/calibration_uncertainty_2026_10_30/verification.json",
+      "git_blob_sha": "adb772f9177c65dbf6652524134e6d3c3c0e3a36",
+      "bytes": 1359
+    },
+    {
+      "path": "tests/test_calibration_uncertainty.py",
+      "git_blob_sha": "328ec101fa1dd3e9f35978c91a4697f42fc838b4",
+      "bytes": 4482
+    },
+    {
+      "path": "tests/test_spatial_calibration.py",
+      "git_blob_sha": "a912602dc6a5464caa7d98b6da92a8415fabd78a",
+      "bytes": 5059
+    },
+    {
+      "path": "tools/taxon_calibration/model.py",
+      "git_blob_sha": "b935f88196bbb1956885d48060873602f317937b",
+      "bytes": 3181
+    },
+    {
+      "path": "tools/taxon_calibration/run.py",
+      "git_blob_sha": "4ae3143eae17c0795255d767354a6f44c957ab97",
+      "bytes": 11999
+    },
+    {
+      "path": "tools/taxon_calibration/verify.py",
+      "git_blob_sha": "8e8608ae564d7356d52d2d50a937dd360910d477",
+      "bytes": 20241
+    },
+    {
+      "path": "tools/taxon_uncertainty/bootstrap.py",
+      "git_blob_sha": "cf79044372f5f93bdfcb20ad08cbd49e93c419d9",
+      "bytes": 4537
+    },
+    {
+      "path": "tools/taxon_uncertainty/run.py",
+      "git_blob_sha": "fb3162111fa4db9a45c64f9a47675886895db880",
+      "bytes": 10677
+    },
+    {
+      "path": "tools/taxon_uncertainty/verify.py",
+      "git_blob_sha": "27943069dd2a9d51b1a56833a54f61924e6be3a7",
+      "bytes": 17533
+    }
+  ],
+  "outputs": [
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "fit_models.json",
+      "sha256": "1cb75f2d0b41389572fbef56708b4f88abbf12c092e2bb5b3e7108b6f832b493",
+      "storage": "git_blob",
+      "git_blob_sha": "2fb13aaf12c0ad777d30cdb706f2bfb29057e435",
+      "bytes": 3214079
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "metrics_summary.csv",
+      "sha256": "f62f0171dfcf2108f6b416d915995eddbd0ccf31bbe78845afc8ca4f90979e04",
+      "storage": "git_blob",
+      "git_blob_sha": "ff9c63d8f850b4e288691580fc9782946f810752",
+      "bytes": 13739
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "models.json",
+      "sha256": "c3015debae688748253f49bc4d4eb99cdc633d24c5b16bbad7e1486fe007fb87",
+      "storage": "git_blob",
+      "git_blob_sha": "af34f8651214a1a5ce5b1ff6f5320deea087fd39",
+      "bytes": 666568
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "paired_deltas.csv",
+      "sha256": "9575f25e39dd47765c86086d9b5bfe13568be46cd77836a2c44cc05cda66478d",
+      "storage": "git_blob",
+      "git_blob_sha": "42e5f838d11de40fc66fd99ef9c45ba0cd46d1e6",
+      "bytes": 15233
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "predictions.csv",
+      "sha256": "73cd156b1775216e81d2aaf016f2ddaa5c8a75a8d7ace88ed2c0fbe5657b14ca",
+      "storage": "hash_and_reproduction_only"
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "reliability.csv",
+      "sha256": "744a04c354041bfb6954eb3c729101f2ea3011f27060bb399b0c31510d3b8a5a",
+      "storage": "git_blob",
+      "git_blob_sha": "31bed1211f8b0f65e00501e0c27e75f334189a87",
+      "bytes": 49137
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "sample_inventory.csv",
+      "sha256": "749b8b9bbefeca37e14f7755d9fc29fca210a31ad0de817bf9412d9ff9d9074b",
+      "storage": "git_blob",
+      "git_blob_sha": "bc9c946bd61123ffa1f1b4e8718fa4266ab7e0ce",
+      "bytes": 2432
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "scores.csv",
+      "sha256": "df88366099d9d266a41849d1bd1dd4d81a3d00a840331e980685863cc3f07f33",
+      "storage": "git_blob",
+      "git_blob_sha": "67c4171dcc96e2975d5bd2f85a02deab2554a3ba",
+      "bytes": 79299
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "smote_trace.csv.gz",
+      "sha256": "e28abaf9fde7d8ab581a880bcc1fd840f31f7373e04f534fb292ff0d0a33e1c3",
+      "storage": "hash_and_reproduction_only"
+    },
+    {
+      "stage": "calibration_2026_10_30",
+      "file": "split_inventory.csv",
+      "sha256": "40133254e1d297efbc829fc9d0ba40b7d16b610a33771519f2b9d9410a3a3d24",
+      "storage": "git_blob",
+      "git_blob_sha": "539bfb37e87041fa7d5285b75c49a1b4c75bf60e",
+      "bytes": 25400
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "block_draws.csv.gz",
+      "sha256": "1b8117c5052408613c953a4e63d80537a34410bcaa6663a4f71aaae5b374885b",
+      "storage": "hash_and_reproduction_only"
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "full_parameters.json",
+      "sha256": "e41d19904e31b2c8b7b678371d08c95c18ae161fbccd950ff860f93470c7ed03",
+      "storage": "git_blob",
+      "git_blob_sha": "b0eb997ec83ef617a25ae25f007a784e4ac7c8a4",
+      "bytes": 1841931
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "intervals.csv.gz",
+      "sha256": "645ee0d98b27f97b42ef98eb4a87234a8317ee39ad1cf331942e02fd6c54ca8b",
+      "storage": "hash_and_reproduction_only"
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "inventory.json",
+      "sha256": "c7efb57f97708c1781ed58f2de837cea3a1e67ef1bcc7f91448725e3cd7dd8d6",
+      "storage": "git_blob",
+      "git_blob_sha": "72a2d3925157ee357ed5ee085d9aba090149b12b",
+      "bytes": 46787
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "parameters.csv.gz",
+      "sha256": "b9b869fe530a785bb971a573e1d5c52ba6b6f35ffefd09a36001d499155131c4",
+      "storage": "git_blob",
+      "git_blob_sha": "2dc09b8974412c681b06757f2055adad2ab884f9",
+      "bytes": 4502990
+    },
+    {
+      "stage": "calibration_uncertainty_2026_10_30",
+      "file": "summary.csv",
+      "sha256": "f7dcbeb47eed21f84a1a50ca4f546813ff40335c131c0c44fffedf685d1a86f2",
+      "storage": "git_blob",
+      "git_blob_sha": "5c0ba98dbb2193830d9842edcb5fc8e42300c15b",
+      "bytes": 24753
+    }
+  ],
+  "ci": [
+    {
+      "pr": 31,
+      "commit": "9458011198c69368764b8698c966c0ac23cc381c",
+      "jobs": [
+        {
+          "name": "test (3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41121776466/job/124289350300"
+        },
+        {
+          "name": "test (3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41121776466/job/124289349738"
+        },
+        {
+          "name": "test (3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41114830954/job/124266209194"
+        },
+        {
+          "name": "test (3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41114830954/job/124266208718"
+        },
+        {
+          "name": "test (3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41114821102/job/124266177094"
+        },
+        {
+          "name": "test (3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41114821102/job/124266176666"
+        }
+      ]
+    },
+    {
+      "pr": 32,
+      "commit": "6d35bbfe06cf54572dba2cb439495a8556eddb4d",
+      "jobs": [
+        {
+          "name": "test (3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41131639917/job/124323748939"
+        },
+        {
+          "name": "test (3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41131639917/job/124323748634"
+        },
+        {
+          "name": "test (3.11)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41131633858/job/124323729700"
+        },
+        {
+          "name": "test (3.13)",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41131633858/job/124323729299"
+        }
+      ]
+    }
+  ],
+  "retention_limit": "Four large derived output files are not present as Git blobs and are not available in the current workspace. Their published SHA-256 hashes and complete reproduction instructions are retained. This is not a byte-for-byte archive of all temporary or generated run files."
+}
