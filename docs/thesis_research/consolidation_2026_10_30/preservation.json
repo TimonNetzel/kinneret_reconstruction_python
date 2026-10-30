@@ -1,0 +1,1533 @@
+{
+  "original_pr_heads": [
+    {
+      "number": 18,
+      "title": "Netzel: moderne Pollen-Baseline räumlich prüfen und Claude auf Integration begrenzen",
+      "sha": "f9acc16c58a47a51b1063690a69a2db01381c76a"
+    },
+    {
+      "number": 19,
+      "title": "Netzel: moderne Shared37-Baseline in CLI und App einbinden",
+      "sha": "c8977a57fecabcef8f54abd7eafd6545f53487f9"
+    },
+    {
+      "number": 20,
+      "title": "Netzel: Monticchio-Analogabdeckung und Chronologie unabhängig prüfen",
+      "sha": "d7f151a761eeb46d377f9323d559b40fd9ee083e"
+    },
+    {
+      "number": 21,
+      "title": "Netzel: Monticchio-Quellenzuordnung und übertragene AMS-Anker prüfen",
+      "sha": "170d77f2bdbbe60217dc8342f34beb252ccb67de"
+    },
+    {
+      "number": 22,
+      "title": "Netzel: bestätigten Pilotplan und Chronologie-Abnahme festhalten",
+      "sha": "a710e86dded84514d06d75d2769fe25dcdd5ec9e"
+    },
+    {
+      "number": 23,
+      "title": "Netzel: hochgeladene MON16-Chronologie prüfen und Quellenkonflikte belegen",
+      "sha": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7"
+    },
+    {
+      "number": 24,
+      "title": "Netzel: sechs Tephra-Markerketten und ETH-12464-Herkunft belegen",
+      "sha": "8f484ef0da80e329b4ff29ab128e1aa760d827d3"
+    },
+    {
+      "number": 25,
+      "title": "Netzel: EPD-Probenkennungen und exakte Monticchio-Tiefen unabhängig prüfen",
+      "sha": "00c9f037642470c7d1a9a44e488f062109292c2d"
+    },
+    {
+      "number": 26,
+      "title": "Netzel: 28 Monticchio-Probenkandidaten mit archivierten Abschnittsnamen prüfen",
+      "sha": "4c9f1150e766a7f855dc9e28fd121638a710ff9a"
+    },
+    {
+      "number": 27,
+      "title": "Netzel: ursprüngliche Variablen prüfen und 47 Monticchio-Differenzen eingrenzen",
+      "sha": "5fd3bad46d5108e8986c054171fba66a05c26589"
+    },
+    {
+      "number": 28,
+      "title": "Netzel: sieben botanische Arten-Transferfunktionen trainieren und räumlich prüfen",
+      "sha": "8f02794434f561f5b30228360247935f3c025cc8"
+    },
+    {
+      "number": 29,
+      "title": "SMOTE + einfaches Netz: bessere Klassifikation, schlechtere rohe Wahrscheinlichkeiten",
+      "sha": "833e566df062a1ee9f215b2e0db90f5ef08d1a48"
+    }
+  ],
+  "distinct_original_paths": 183,
+  "unchanged_from_latest_source": 174,
+  "explicit_entrypoint_updates": 9,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "3835f0a77a97e204bbdddc85eadbeb19c5ebca07",
+      "integrated_blob": "7494153af5c1f84092021dce298e75dc6b702870",
+      "documentation_update": true
+    },
+    {
+      "path": "README.md",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "a02da0a399deb468ac4fe9ad5c947839177cdc76",
+      "integrated_blob": "a02da0a399deb468ac4fe9ad5c947839177cdc76",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/app_konzept.md",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "58067ba93d2563c4838700914d54045faf954c49",
+      "integrated_blob": "58067ba93d2563c4838700914d54045faf954c49",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART.md",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "62da43cec63073c03af91de00311ca1babb86fb9",
+      "integrated_blob": "fe35d2dc13836c249d51e1aadd251cdba3a767c4",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_PR26.md",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "0058105ec547eff64eda107f34deefaab301b51c",
+      "integrated_blob": "b699a110abcf769b21644fe823ecf9de8a9da924",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_SMOTE.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "63a8d55de448695e80132603653d7d5dc8ea95ee",
+      "integrated_blob": "8e9480cc8eb8814e29f88c49b3f27ee0df388096",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_TAXON.md",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "615a02e258c19e67cff7c8c103f50ea586b42613",
+      "integrated_blob": "9daa9ed9afb33967d0632dd4396e67ef44db6201",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/CHAT_RESTART_VARIABLES.md",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "67b26cd156e089420652c2eb27eb2248873f426c",
+      "integrated_blob": "a93174701518d67a72426f203666c7ecce0b2cef",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/CHRONOLOGY_DATA_REQUEST.md",
+      "latest_original_pr": 22,
+      "original_commit": "a710e86dded84514d06d75d2769fe25dcdd5ec9e",
+      "original_blob": "3deb64351e25ded0ad075f5ad808303aad5fbb34",
+      "integrated_blob": "3deb64351e25ded0ad075f5ad808303aad5fbb34",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/HANDOFF.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "1968cb3cdb07438f772a92c946f806850dc38c55",
+      "integrated_blob": "e52b0d9d67f5e587f9784ce5c3d30df9e5db1679",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/NEW_CHAT_PROMPT.md",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "c72f953e1c06ad05ce24bece04cf8437a16e1be4",
+      "integrated_blob": "47b796b185ad3df70806adb30dc7d98e8f52c63a",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/PILOT_PLAN.md",
+      "latest_original_pr": 22,
+      "original_commit": "a710e86dded84514d06d75d2769fe25dcdd5ec9e",
+      "original_blob": "a0d42ea25385c242e1625619badea23314ebf222",
+      "integrated_blob": "a0d42ea25385c242e1625619badea23314ebf222",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/PROJECT_STATUS.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "065c52bb67d05a92ddfdf7ec7ba10a4bdbd48c46",
+      "integrated_blob": "d92f86fc450519f67d0172e15f92ef916eb314b3",
+      "documentation_update": true
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/CLAUDE_TASK.md",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "2d1b264a7ed607530651e4b4ed709efff049ecd5",
+      "integrated_blob": "2d1b264a7ed607530651e4b4ed709efff049ecd5",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/README.md",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "abc3a13816e390deed7e055d2f27bc5e07a35950",
+      "integrated_blob": "abc3a13816e390deed7e055d2f27bc5e07a35950",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/baseline_config.json",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "e24fca4819634e69e9456432650844633352ee61",
+      "integrated_blob": "e24fca4819634e69e9456432650844633352ee61",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/metrics.json",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "bc65487c102d3c7f7878db6728827d3328b979eb",
+      "integrated_blob": "bc65487c102d3c7f7878db6728827d3328b979eb",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/metrics_summary.csv",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "afc9e81b07c8c13cb98e3ae131458bfd8fdea20d",
+      "integrated_blob": "afc9e81b07c8c13cb98e3ae131458bfd8fdea20d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/reference_manifest.json",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "00851e4cb51e2dcf4a9ba305930f0c5a385af375",
+      "integrated_blob": "00851e4cb51e2dcf4a9ba305930f0c5a385af375",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/baseline2025_2026_10_29/verification.json",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "689225955d3274147e4a4a781cf8b9b53b2b15a3",
+      "integrated_blob": "689225955d3274147e4a4a781cf8b9b53b2b15a3",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/README.md",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "19f77d1c1458753a2631faa40f7922b4da4f8a46",
+      "integrated_blob": "19f77d1c1458753a2631faa40f7922b4da4f8a46",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/anchor_evidence.json",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "51f224c115e8daf1c7052f7a8407e6be8fd3ca59",
+      "integrated_blob": "51f224c115e8daf1c7052f7a8407e6be8fd3ca59",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/denominator_changes.csv",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "0310fdba956749c379264bcd4bbac16de57e75d4",
+      "integrated_blob": "0310fdba956749c379264bcd4bbac16de57e75d4",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/reference_manifest.json",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "9b00c9e85377d9239ede225d13576407181a9dd8",
+      "integrated_blob": "9b00c9e85377d9239ede225d13576407181a9dd8",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/sample_correspondence.csv",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "7af3346bba428d49856aab7fd16a06fb7dfaa209",
+      "integrated_blob": "7af3346bba428d49856aab7fd16a06fb7dfaa209",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/sources.json",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "847ba874deceac655b2df27c46b8c11e13e8d9f6",
+      "integrated_blob": "847ba874deceac655b2df27c46b8c11e13e8d9f6",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/summary.json",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "da4e8f236905126ef264d91dac1ee65cb14c7de5",
+      "integrated_blob": "da4e8f236905126ef264d91dac1ee65cb14c7de5",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/unresolved_cells.csv",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "5fea6c6face06f1c0d6dbfc64c91537f9c542ae1",
+      "integrated_blob": "5fea6c6face06f1c0d6dbfc64c91537f9c542ae1",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/verification.json",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "ee34e7b44de6c6a632cf70d609ed67d8dd1c1555",
+      "integrated_blob": "ee34e7b44de6c6a632cf70d609ed67d8dd1c1555",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/MISSING_SOURCE_REQUEST.md",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "92867ab8f4adf63d345350c5829d5f3c6f13a45d",
+      "integrated_blob": "92867ab8f4adf63d345350c5829d5f3c6f13a45d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/README.md",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "161d3b7fba0c491a05e0aca34dd57a5fec726e19",
+      "integrated_blob": "161d3b7fba0c491a05e0aca34dd57a5fec726e19",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/archive_table_status.csv",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "eab6cd9dcabeee73dde1b697e1a1c75e73809827",
+      "integrated_blob": "eab6cd9dcabeee73dde1b697e1a1c75e73809827",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/depth_rounding.csv",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "28942190b0a5714d6cb2657ea38e6bd98ed86871",
+      "integrated_blob": "28942190b0a5714d6cb2657ea38e6bd98ed86871",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/legacy_age_comparison.csv",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "5f0604532d171788993e9ea88685634becefe42d",
+      "integrated_blob": "5f0604532d171788993e9ea88685634becefe42d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/numeric_fingerprints.json",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "16b75d7ed6da8580bc2c3ff7141db6f4964d2301",
+      "integrated_blob": "16b75d7ed6da8580bc2c3ff7141db6f4964d2301",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/reference_manifest.json",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "0b2029429c4faf1a2f334ec2c2008fa549f7e1ee",
+      "integrated_blob": "0b2029429c4faf1a2f334ec2c2008fa549f7e1ee",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/sample_identity.csv",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "f057ceea0fe88c76ae8b71963ba420f1a52646ce",
+      "integrated_blob": "f057ceea0fe88c76ae8b71963ba420f1a52646ce",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/sources.json",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "f758aa0c1e2e268718a52566e09ba405eba739a8",
+      "integrated_blob": "f758aa0c1e2e268718a52566e09ba405eba739a8",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/summary.json",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "acba4748373a0be4aeb058c89c8c03a1be1bc6fc",
+      "integrated_blob": "acba4748373a0be4aeb058c89c8c03a1be1bc6fc",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/variable_export_map.csv",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "764ff194d6b5b16fe28c2bdf4d80546f3673f970",
+      "integrated_blob": "764ff194d6b5b16fe28c2bdf4d80546f3673f970",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/epd_sample_identity_2026_10_30/verification.json",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "8c0e67e9d11b5d4577bf45b398997b7769e2835f",
+      "integrated_blob": "8c0e67e9d11b5d4577bf45b398997b7769e2835f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/README.md",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "bc7a024951d89134083df5d4b3111c4dd869bfd8",
+      "integrated_blob": "bc7a024951d89134083df5d4b3111c4dd869bfd8",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/evidence.json",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "65f174b9a10c6fb00edf0717d57452b1d0818158",
+      "integrated_blob": "65f174b9a10c6fb00edf0717d57452b1d0818158",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/marker_links.csv",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "1c7e22c8cde6e1904ca827906edf31401c6b29e6",
+      "integrated_blob": "1c7e22c8cde6e1904ca827906edf31401c6b29e6",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/reference_manifest.json",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "d04fbd6c2cc804939035da82fa61c2c0c88aa90f",
+      "integrated_blob": "d04fbd6c2cc804939035da82fa61c2c0c88aa90f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/sample_marker_context.csv",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "1c487772233f6f80e5690e316a9460137f3ce452",
+      "integrated_blob": "1c487772233f6f80e5690e316a9460137f3ce452",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/sources.json",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "9a10ca81f38ce4f0716e107e36cba74a688b8dae",
+      "integrated_blob": "9a10ca81f38ce4f0716e107e36cba74a688b8dae",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/summary.json",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "fe171a182e0fc64ef865f187ad5f4c32fc9ad710",
+      "integrated_blob": "fe171a182e0fc64ef865f187ad5f4c32fc9ad710",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/marker_crosswalk_2026_10_30/verification.json",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "7eadce8cea0583b87be2e5f8149187b5232ba2a8",
+      "integrated_blob": "7eadce8cea0583b87be2e5f8149187b5232ba2a8",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/modern2025_2026_10_29/CLAUDE_TASK.md",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "b1aa6767054670d412bc3ad4767913713aa6e9f4",
+      "integrated_blob": "b1aa6767054670d412bc3ad4767913713aa6e9f4",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/modern2025_2026_10_29/README.md",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "fe4d4cf5ed6d04ab95e3bc4d7ff237b5bce90de4",
+      "integrated_blob": "fe4d4cf5ed6d04ab95e3bc4d7ff237b5bce90de4",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/README.md",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "696eae352c4e8e8ae0aede5556c5c1478318eb7b",
+      "integrated_blob": "696eae352c4e8e8ae0aede5556c5c1478318eb7b",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/anchors.csv",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "3acf6f00f5662551c0c7f80c028b384840f12d07",
+      "integrated_blob": "3acf6f00f5662551c0c7f80c028b384840f12d07",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/depth_steps.csv",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "01f3435a57142f166a7c45529017ca13dbfd98c4",
+      "integrated_blob": "01f3435a57142f166a7c45529017ca13dbfd98c4",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/labelled_age_groups.csv",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "575fc5b32803f7c6196ef748e3c1327582643356",
+      "integrated_blob": "575fc5b32803f7c6196ef748e3c1327582643356",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/reference_manifest.json",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "b1a735d90a389ddb1b151113b82ca8339e296741",
+      "integrated_blob": "b1a735d90a389ddb1b151113b82ca8339e296741",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/sample_gate.csv",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "b783838f6ba079dd114e96356a5918e27ccf6114",
+      "integrated_blob": "b783838f6ba079dd114e96356a5918e27ccf6114",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/source_conflicts.csv",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "f1749cfb174d47ead66c211920891602e9b26712",
+      "integrated_blob": "f1749cfb174d47ead66c211920891602e9b26712",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/sources.json",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "766ea29817148e36d5be55b099c3de5d269e41cb",
+      "integrated_blob": "766ea29817148e36d5be55b099c3de5d269e41cb",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/summary.json",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "3a970c5e52e37334fee77d5ab2f010c6dec0218e",
+      "integrated_blob": "3a970c5e52e37334fee77d5ab2f010c6dec0218e",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/mon16_intake_2026_10_29/verification.json",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "50c3866af979c2258ec47e2bc8de5cd521c6f835",
+      "integrated_blob": "50c3866af979c2258ec47e2bc8de5cd521c6f835",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/DESIGN.md",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "85d665d541117cd0b19183e34cc63d213ed4ead0",
+      "integrated_blob": "85d665d541117cd0b19183e34cc63d213ed4ead0",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/INTEGRATION_REVIEW.md",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "d32df339e7403166a07d3104c9453d9b351e5a2d",
+      "integrated_blob": "d32df339e7403166a07d3104c9453d9b351e5a2d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/README.md",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "a487d5fc5d5eb9739513cc43425ca885fd1947c2",
+      "integrated_blob": "a487d5fc5d5eb9739513cc43425ca885fd1947c2",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/chronology_samples.csv",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "def55957831ca2bdb7e9d78459defc5d3aa91ccf",
+      "integrated_blob": "def55957831ca2bdb7e9d78459defc5d3aa91ccf",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/fossil_analogues.csv",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "0d26996946aa4bd047cbdc4731e045ab4c340e66",
+      "integrated_blob": "0d26996946aa4bd047cbdc4731e045ab4c340e66",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/fossil_support.csv",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "c2e1b41ea54d237b3f42bfaa6952d8bed3b12678",
+      "integrated_blob": "c2e1b41ea54d237b3f42bfaa6952d8bed3b12678",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/reference_manifest.json",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "2dfe80490a668edc5ad78385b1f16eb8f648604b",
+      "integrated_blob": "2dfe80490a668edc5ad78385b1f16eb8f648604b",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/sources.json",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "303610ea9bebe424008c13f9466cd263b1adf150",
+      "integrated_blob": "303610ea9bebe424008c13f9466cd263b1adf150",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/summary.json",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "77b85c45253c005598fdf2720fee29502774b23d",
+      "integrated_blob": "77b85c45253c005598fdf2720fee29502774b23d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/monticchio_2026_10_29/verification.json",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "405efaf359e8408b8aaf1a8a96c719b2bf11de7e",
+      "integrated_blob": "405efaf359e8408b8aaf1a8a96c719b2bf11de7e",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma47525_source_lead_2026_10_30/README.md",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "23b856302bdd7bb79b79b02b7d42e186e24334f1",
+      "integrated_blob": "23b856302bdd7bb79b79b02b7d42e186e24334f1",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma47525_source_lead_2026_10_30/sources.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "8dd8f06c00e723cfbeff32399a828124d9a3fdd1",
+      "integrated_blob": "8dd8f06c00e723cfbeff32399a828124d9a3fdd1",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_metadata_path_2026_10_30/README.md",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "854656b88d7b500ef9904b213285360a0a328e9a",
+      "integrated_blob": "854656b88d7b500ef9904b213285360a0a328e9a",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_metadata_path_2026_10_30/metadata_extract.sql",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "e40c7c9bc483a87495ef4fdb89cc137f79a08984",
+      "integrated_blob": "e40c7c9bc483a87495ef4fdb89cc137f79a08984",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_metadata_path_2026_10_30/sources.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "def40d71e06f00aa2bf7ca07904252570d232761",
+      "integrated_blob": "def40d71e06f00aa2bf7ca07904252570d232761",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_metadata_path_2026_10_30/test_metadata_extract.py",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "84a88a960935bee043056da8a9ed28c8df8af06d",
+      "integrated_blob": "84a88a960935bee043056da8a9ed28c8df8af06d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_metadata_path_2026_10_30/verification.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "93e0d2a7f54a4ad8285535dfcd65aa8ea977e32d",
+      "integrated_blob": "93e0d2a7f54a4ad8285535dfcd65aa8ea977e32d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/README.md",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "76401847631ae7339633bba53e657a2736834195",
+      "integrated_blob": "76401847631ae7339633bba53e657a2736834195",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/dataset_inventory.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "b36ba61a8586c657a5014ce30c42727d0d4a9b0f",
+      "integrated_blob": "b36ba61a8586c657a5014ce30c42727d0d4a9b0f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/field_availability.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "f68f47376a1434b3a0b778cf4a4ee61a37fdbbeb",
+      "integrated_blob": "f68f47376a1434b3a0b778cf4a4ee61a37fdbbeb",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/legacy_quercus_differences.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "f1a75fe2662d6b8971a56f23b697a7aecc8576d5",
+      "integrated_blob": "f1a75fe2662d6b8971a56f23b697a7aecc8576d5",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/legacy_source_alignment.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "367fc6d056b41e1db4ff5acdeeafca52b2bb82e1",
+      "integrated_blob": "367fc6d056b41e1db4ff5acdeeafca52b2bb82e1",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/manifest.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "534c0e8f71056714afeb0f7b5cf1208da92f759f",
+      "integrated_blob": "534c0e8f71056714afeb0f7b5cf1208da92f759f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/native_variable_policy.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "3df1b4daf77af198fcc85a207fb3c5b82c53e1f7",
+      "integrated_blob": "3df1b4daf77af198fcc85a207fb3c5b82c53e1f7",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/sample_correspondence.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "e9efb5efe3418b5723fa0c07d1110df532cbc045",
+      "integrated_blob": "e9efb5efe3418b5723fa0c07d1110df532cbc045",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/sources.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "a850bc1b02feb590791204f22e4eb7a2be3ef461",
+      "integrated_blob": "a850bc1b02feb590791204f22e4eb7a2be3ef461",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/summary.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "24cf52da47963553ac130413cc95f60c09afcf89",
+      "integrated_blob": "24cf52da47963553ac130413cc95f60c09afcf89",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/unmatched_diagnostics.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "28834604d13925d4a7cc1ec9ea9aae11ec95ebea",
+      "integrated_blob": "28834604d13925d4a7cc1ec9ea9aae11ec95ebea",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/unmatched_variable_differences.csv",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "49bc48b345c2703682700606e6420c7b043e56c0",
+      "integrated_blob": "49bc48b345c2703682700606e6420c7b043e56c0",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/neotoma_workshop_2026_10_30/verification.json",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "aeea5fb3ae892d99b75086b2f99d425af05edac3",
+      "integrated_blob": "aeea5fb3ae892d99b75086b2f99d425af05edac3",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/pilot_chronology_gate.json",
+      "latest_original_pr": 22,
+      "original_commit": "a710e86dded84514d06d75d2769fe25dcdd5ec9e",
+      "original_blob": "fee92ea9ff50f9360eab63a642ca7168b5366826",
+      "integrated_blob": "fee92ea9ff50f9360eab63a642ca7168b5366826",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/DESIGN.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "a71b611d70443397838dc14eb96cffe2bbeeabc6",
+      "integrated_blob": "a71b611d70443397838dc14eb96cffe2bbeeabc6",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/README.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "6cd54f459b9ff53944170082e9bbb007e0a1c700",
+      "integrated_blob": "6cd54f459b9ff53944170082e9bbb007e0a1c700",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/REPRODUCE.md",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "5463b4ff12466580e1d0e72658524f5f5852ddab",
+      "integrated_blob": "5463b4ff12466580e1d0e72658524f5f5852ddab",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/audit_sources.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "4e4af62211c67c2f895e3794ed5ea94d253554ef",
+      "integrated_blob": "4e4af62211c67c2f895e3794ed5ea94d253554ef",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/comparison.png",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "6660e90d71839b46f887f055c62d7dba6ad5baea",
+      "integrated_blob": "6660e90d71839b46f887f055c62d7dba6ad5baea",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/config.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "0c1c4edad4595ec3217c654b4a6b01548c46fe7d",
+      "integrated_blob": "0c1c4edad4595ec3217c654b4a6b01548c46fe7d",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/fit_models.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "9ff8a0699ace27e59d781beee3049b95608f7484",
+      "integrated_blob": "9ff8a0699ace27e59d781beee3049b95608f7484",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/metrics_summary.csv",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "ff1ed07e32e9053d757a412790570aa530031f3f",
+      "integrated_blob": "ff1ed07e32e9053d757a412790570aa530031f3f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/models.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "608c3ec0ec2efe5da8d0fad73cbbd7005e9573ef",
+      "integrated_blob": "608c3ec0ec2efe5da8d0fad73cbbd7005e9573ef",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/reliability.csv",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "9af79dd3872a9785a19e4bd0b381e66a983d44b0",
+      "integrated_blob": "9af79dd3872a9785a19e4bd0b381e66a983d44b0",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/repeat.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "735c7418561ef04485305dc66a87d501d736b604",
+      "integrated_blob": "735c7418561ef04485305dc66a87d501d736b604",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/requirements-research.txt",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "043842a3954c80cec7665c99a4c7461e226fce92",
+      "integrated_blob": "043842a3954c80cec7665c99a4c7461e226fce92",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/run_manifest.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "62cb4a010bfae65df12f18d085280b04aa428836",
+      "integrated_blob": "62cb4a010bfae65df12f18d085280b04aa428836",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/sample_inventory.csv",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "6e4ae2accb1376b07a24a8936284e3954813ac3f",
+      "integrated_blob": "6e4ae2accb1376b07a24a8936284e3954813ac3f",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/scores.csv",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "98b1ba29ea0beba2eef5e0b9c3f91b786de6deb9",
+      "integrated_blob": "98b1ba29ea0beba2eef5e0b9c3f91b786de6deb9",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/sources.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "f42df99b6222b8654079c8f712977fbe6dcb9115",
+      "integrated_blob": "f42df99b6222b8654079c8f712977fbe6dcb9115",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/split_inventory.csv",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "8f250728a8c296020b3d43fedf904751a2511c47",
+      "integrated_blob": "8f250728a8c296020b3d43fedf904751a2511c47",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/smote_nnet_2026_10_30/verification.json",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "9870563c74ce71fc6dc54bcb7666b6e18c268999",
+      "integrated_blob": "9870563c74ce71fc6dc54bcb7666b6e18c268999",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/DESIGN.md",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "b1e66aef6cbef8a20aec2eef086122645206fa94",
+      "integrated_blob": "b1e66aef6cbef8a20aec2eef086122645206fa94",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/README.md",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "582eae5353669f634fc456a92f4ed9830becb5b2",
+      "integrated_blob": "582eae5353669f634fc456a92f4ed9830becb5b2",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "8037d4d9d6a3da0a51f09b55d8240bd314971cc9",
+      "integrated_blob": "8037d4d9d6a3da0a51f09b55d8240bd314971cc9",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/fold_models.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "0dc2d10e3e744886d4ef1e8519de88d492aa0496",
+      "integrated_blob": "0dc2d10e3e744886d4ef1e8519de88d492aa0496",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/metrics_summary.csv",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "9f8f6287effa9768d470420aca1363234d2b2bfc",
+      "integrated_blob": "9f8f6287effa9768d470420aca1363234d2b2bfc",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/models.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "e8eb6c100f9c581b0df9f74582dda14c2f98aee5",
+      "integrated_blob": "e8eb6c100f9c581b0df9f74582dda14c2f98aee5",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/reference_manifest.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "964143042806fef426104e979752f1edbbb0a56b",
+      "integrated_blob": "964143042806fef426104e979752f1edbbb0a56b",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/reliability.csv",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "fffc1071166f4600e4ae0536c87d982d12f6e99c",
+      "integrated_blob": "fffc1071166f4600e4ae0536c87d982d12f6e99c",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/responses.png",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "187e87400a2e81c9d9526e72f888f36a0d0fbcfd",
+      "integrated_blob": "187e87400a2e81c9d9526e72f888f36a0d0fbcfd",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/sample_inventory.csv",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "c93c8179d72c1aad2160174455ef6b4ee0dc5400",
+      "integrated_blob": "c93c8179d72c1aad2160174455ef6b4ee0dc5400",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/scores.csv",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "a0eca90a78cd97d8b4f6810a6cf2d95def6bce1c",
+      "integrated_blob": "a0eca90a78cd97d8b4f6810a6cf2d95def6bce1c",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/sources.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "3fa8428685b6fb6ea46489a25c2f9436578a748a",
+      "integrated_blob": "3fa8428685b6fb6ea46489a25c2f9436578a748a",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/split_inventory.csv",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "e4edb00750e3056288deadb3cae2ad6e81f48db9",
+      "integrated_blob": "e4edb00750e3056288deadb3cae2ad6e81f48db9",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/verification.json",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "2ae2979bca8ab0fca7cb0f4dca6efb182d0c228b",
+      "integrated_blob": "2ae2979bca8ab0fca7cb0f4dca6efb182d0c228b",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/README.md",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "ac77f76b90e3ef68aad5e212705b5d3ec6d6235a",
+      "integrated_blob": "ac77f76b90e3ef68aad5e212705b5d3ec6d6235a",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/SOURCE_GAP.md",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "c4477cfc6ea4c5eb5c546369abbaaba97f9cda9b",
+      "integrated_blob": "c4477cfc6ea4c5eb5c546369abbaaba97f9cda9b",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/affected_native_inventory.csv",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "da6f24b12b02210e7cc26eca98a8526065a1b3d4",
+      "integrated_blob": "da6f24b12b02210e7cc26eca98a8526065a1b3d4",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/difference_evidence.csv",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "fe590771ce4e1a104a7639be3ba7e0b30ede5f32",
+      "integrated_blob": "fe590771ce4e1a104a7639be3ba7e0b30ede5f32",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/fixed_pair_diagnostics.csv",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "3ffe03eed1c1d3dab32f3e4b51727e1d8f911e26",
+      "integrated_blob": "3ffe03eed1c1d3dab32f3e4b51727e1d8f911e26",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/manifest.json",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "5ac7ff1b68a13f2eb604ba5882234811c12146d5",
+      "integrated_blob": "5ac7ff1b68a13f2eb604ba5882234811c12146d5",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/original_variable_definitions.csv",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "563d08b74de1d5939674eacdaefc3ddd18d59ca9",
+      "integrated_blob": "563d08b74de1d5939674eacdaefc3ddd18d59ca9",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/sources.json",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "0c2510c1aa5ad8ceec790e2b99d0453b3b825eb7",
+      "integrated_blob": "0c2510c1aa5ad8ceec790e2b99d0453b3b825eb7",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/summary.json",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "c0604de8613535205fc55ddcf94fec65ab32afb1",
+      "integrated_blob": "c0604de8613535205fc55ddcf94fec65ab32afb1",
+      "documentation_update": false
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/verification.json",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "20c1bb1b287eab8a462b4085199ba192cdce22d2",
+      "integrated_blob": "20c1bb1b287eab8a462b4085199ba192cdce22d2",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/app/i18n.js",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "d81a9198bb2c44bbfc66b086a9cb8e703bfd3ffc",
+      "integrated_blob": "d81a9198bb2c44bbfc66b086a9cb8e703bfd3ffc",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/app/index.html",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "a14bd7942056994aae68804a2eb1de923b40072c",
+      "integrated_blob": "a14bd7942056994aae68804a2eb1de923b40072c",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/app/kern.js",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "9da3568fc367d4ae25b4a52b11e7d0ce0ce0285a",
+      "integrated_blob": "9da3568fc367d4ae25b4a52b11e7d0ce0ce0285a",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/app/validierung.js",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "a19b020c59078f6423029ea2760c7d9b2005e280",
+      "integrated_blob": "a19b020c59078f6423029ea2760c7d9b2005e280",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/app_bauen.py",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "0741f7edb1d578e955fd363cacba80dfaf67b9d2",
+      "integrated_blob": "0741f7edb1d578e955fd363cacba80dfaf67b9d2",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/baseline.py",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "406f9fffb6a8d852108a245a15a13f43677ad30a",
+      "integrated_blob": "406f9fffb6a8d852108a245a15a13f43677ad30a",
+      "documentation_update": false
+    },
+    {
+      "path": "src/kinneret_recon/cli.py",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "e346c359b9feb17006c4191f4aaa13ac1f2de1f8",
+      "integrated_blob": "e346c359b9feb17006c4191f4aaa13ac1f2de1f8",
+      "documentation_update": false
+    },
+    {
+      "path": "tests/test_app.py",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "cabe9d4e4f1065b555b9fc88c59f58493dddc826",
+      "integrated_blob": "cabe9d4e4f1065b555b9fc88c59f58493dddc826",
+      "documentation_update": false
+    },
+    {
+      "path": "tests/test_smote_network.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "7724aad0539775523a27ae86dd36b5506d62fe4b",
+      "integrated_blob": "7724aad0539775523a27ae86dd36b5506d62fe4b",
+      "documentation_update": false
+    },
+    {
+      "path": "tests/test_taxon_response.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "8274ffedf6e640ca2af46b59fc1b8ecf643f48a1",
+      "integrated_blob": "8274ffedf6e640ca2af46b59fc1b8ecf643f48a1",
+      "documentation_update": false
+    },
+    {
+      "path": "tests/test_thesis_baseline.py",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "9eec82d167c0f079c4188ffdeac3b8168478e18b",
+      "integrated_blob": "9eec82d167c0f079c4188ffdeac3b8168478e18b",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/README.md",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "d75717ed1475253921d873ee246303990f8997dd",
+      "integrated_blob": "d75717ed1475253921d873ee246303990f8997dd",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/app_pruefen.js",
+      "latest_original_pr": 19,
+      "original_commit": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "original_blob": "451cbb1e37d57319eaa8a075ac2bd5df10aa321b",
+      "integrated_blob": "451cbb1e37d57319eaa8a075ac2bd5df10aa321b",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/compare.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "4712302ee8760a2256ee832b1c239388f0b93be6",
+      "integrated_blob": "4712302ee8760a2256ee832b1c239388f0b93be6",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/network.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "1f2c87e8d60b116106da8e7af5767ff74bc82b15",
+      "integrated_blob": "1f2c87e8d60b116106da8e7af5767ff74bc82b15",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/plot.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "789ee33a6a125fa6178ddf195a981f3f0465d759",
+      "integrated_blob": "789ee33a6a125fa6178ddf195a981f3f0465d759",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/prepare.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "3f2de3724652cc5a6a138c1756b36f6582c94814",
+      "integrated_blob": "3f2de3724652cc5a6a138c1756b36f6582c94814",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/repeat.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "034e6edd8a8ddc11396ebf087266815cd515f6e6",
+      "integrated_blob": "034e6edd8a8ddc11396ebf087266815cd515f6e6",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_smote/verify.py",
+      "latest_original_pr": 29,
+      "original_commit": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "original_blob": "4322a845d393beede5410f344c11239cd27f3a24",
+      "integrated_blob": "4322a845d393beede5410f344c11239cd27f3a24",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/__init__.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "29d1cd8e547a87c0449b714c62ed2e04ad69aa59",
+      "integrated_blob": "29d1cd8e547a87c0449b714c62ed2e04ad69aa59",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/calibrate.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "e92643f7eff8d2242ecd0620ce950e53460a34dc",
+      "integrated_blob": "e92643f7eff8d2242ecd0620ce950e53460a34dc",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/model.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "a95295d8de193dbfffe37779ce52f842f89072c8",
+      "integrated_blob": "a95295d8de193dbfffe37779ce52f842f89072c8",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/plot_responses.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "bcffe23dbb7408f2d6908bf1763a3f60164c52e6",
+      "integrated_blob": "bcffe23dbb7408f2d6908bf1763a3f60164c52e6",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/requirements.txt",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "95bc052dbd5e3ca1d7713dbcdba42b157dad7ae8",
+      "integrated_blob": "95bc052dbd5e3ca1d7713dbcdba42b157dad7ae8",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/test_transfer.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "e3db054d7b68881bc35d94a31107f7e819810e90",
+      "integrated_blob": "e3db054d7b68881bc35d94a31107f7e819810e90",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/taxon_transfer/verify.py",
+      "latest_original_pr": 28,
+      "original_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+      "original_blob": "e21e73b49c14ba64f55830a277805dbb86ec5c0d",
+      "integrated_blob": "e21e73b49c14ba64f55830a277805dbb86ec5c0d",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_baseline_shared2025.py",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "417c98d42e8ff76076ec9a03af53142e443c8f7c",
+      "integrated_blob": "417c98d42e8ff76076ec9a03af53142e443c8f7c",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_chronology_crosswalk.py",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "eb632c32ec206046f39fd5d9fba28bcbfa30554d",
+      "integrated_blob": "eb632c32ec206046f39fd5d9fba28bcbfa30554d",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_epd_sample_identity.py",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "78ece297b798b40e4c22d469076330342d9a921f",
+      "integrated_blob": "78ece297b798b40e4c22d469076330342d9a921f",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_marker_crosswalk.py",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "4274355d4fd073c9a05ed619e4439b18e1b564e0",
+      "integrated_blob": "4274355d4fd073c9a05ed619e4439b18e1b564e0",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_mon16_supplements.py",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "5dcd9c0c2c988c1dd30a1b5d5211c8e4a6fff828",
+      "integrated_blob": "5dcd9c0c2c988c1dd30a1b5d5211c8e4a6fff828",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_monticchio.py",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "72aa7adbe70c390add2b31ac5ccf6c84c1cbe85a",
+      "integrated_blob": "72aa7adbe70c390add2b31ac5ccf6c84c1cbe85a",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_monticchio_variables.py",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "4311d77ab96f27b25c37d9696a7202e3669470f8",
+      "integrated_blob": "4311d77ab96f27b25c37d9696a7202e3669470f8",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/audit_neotoma_workshop.py",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "3cb085907102f6a53831e800a633379e8cea9348",
+      "integrated_blob": "3cb085907102f6a53831e800a633379e8cea9348",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/diagnose_monticchio.py",
+      "latest_original_pr": 20,
+      "original_commit": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "original_blob": "0e15dc8c55fb9db700751a8e285cd59a314de5e8",
+      "integrated_blob": "0e15dc8c55fb9db700751a8e285cd59a314de5e8",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/evaluate_shared2025.py",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "7dc5495eb68c9f18e3794a73c4c247baaa02be67",
+      "integrated_blob": "7dc5495eb68c9f18e3794a73c4c247baaa02be67",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_baseline_shared2025.py",
+      "latest_original_pr": 18,
+      "original_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "original_blob": "a4c4d07e357b2470994b692be14eddb99dd28d0a",
+      "integrated_blob": "a4c4d07e357b2470994b692be14eddb99dd28d0a",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_chronology_crosswalk.py",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "36e6512d4225e4a119c71220f1dc96159f36ef03",
+      "integrated_blob": "36e6512d4225e4a119c71220f1dc96159f36ef03",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_epd_sample_identity.py",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "1356daa29b1fee5f87e0a64063b54699fe6455b7",
+      "integrated_blob": "1356daa29b1fee5f87e0a64063b54699fe6455b7",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_marker_crosswalk.py",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "0629e5459d01eae996875d5b6a8bcf27173b1deb",
+      "integrated_blob": "0629e5459d01eae996875d5b6a8bcf27173b1deb",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_mon16_supplements.py",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "f59b083bcdddacb3177d5f7c9314eaf73287e639",
+      "integrated_blob": "f59b083bcdddacb3177d5f7c9314eaf73287e639",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_monticchio_variables.py",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "63511ca75a2062f8db964100048e64bcb9fef582",
+      "integrated_blob": "63511ca75a2062f8db964100048e64bcb9fef582",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/test_neotoma_workshop.py",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "9b0833ad68cc82e41c883396a169df4381a2389e",
+      "integrated_blob": "9b0833ad68cc82e41c883396a169df4381a2389e",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_chronology_crosswalk.py",
+      "latest_original_pr": 21,
+      "original_commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "original_blob": "68a1351f828643de70922840e9ee98e9b65f0297",
+      "integrated_blob": "68a1351f828643de70922840e9ee98e9b65f0297",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_epd_sample_identity.py",
+      "latest_original_pr": 25,
+      "original_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "original_blob": "fd30b2ca6b8a9b6c9f78cbfcb05e365382976ddc",
+      "integrated_blob": "fd30b2ca6b8a9b6c9f78cbfcb05e365382976ddc",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_marker_crosswalk.py",
+      "latest_original_pr": 24,
+      "original_commit": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "original_blob": "3825c07426635c94e830b920f7ac884db531f3e1",
+      "integrated_blob": "3825c07426635c94e830b920f7ac884db531f3e1",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_mon16_supplements.py",
+      "latest_original_pr": 23,
+      "original_commit": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "original_blob": "14c480e925bb83811413183fc78cb784fad32493",
+      "integrated_blob": "14c480e925bb83811413183fc78cb784fad32493",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_monticchio_variables.py",
+      "latest_original_pr": 27,
+      "original_commit": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "original_blob": "4be4025cc8053d76b5139fcac9c1ecfd93f9d7c4",
+      "integrated_blob": "4be4025cc8053d76b5139fcac9c1ecfd93f9d7c4",
+      "documentation_update": false
+    },
+    {
+      "path": "tools/thesis_import/verify_neotoma_workshop.py",
+      "latest_original_pr": 26,
+      "original_commit": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "original_blob": "827159571e41fe140601817c56a5e23bd02a6717",
+      "integrated_blob": "827159571e41fe140601817c56a5e23bd02a6717",
+      "documentation_update": false
+    }
+  ]
+}

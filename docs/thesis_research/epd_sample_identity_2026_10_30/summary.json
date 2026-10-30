@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "entity": 932,
+  "audit_code_sha256": "245d5d525e477f96b96110b85f0395a27b4c1fa2b0eadaa334c56dd635f866c0",
+  "source_locks": {
+    "epd-postgres-distribution-20171031.zip": {
+      "bytes": 29210271,
+      "sha256": "6ce720d51e0cf92f3f207ed4527d6cda00dd565cecbb8d3793112a723dbfc072"
+    },
+    "pollen-database-manual-20071011.pdf": {
+      "bytes": 615953,
+      "sha256": "98ef7675888d46060e2be52c9a7fcc3ee9df6aade8474ab6fcafc5076bd1fb3f"
+    },
+    "monticchio_739452.tab": {
+      "bytes": 86174,
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de"
+    },
+    "epd_ages_cut_804596.tab": {
+      "bytes": 3613957,
+      "sha256": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0"
+    },
+    "pr21_sample_correspondence.csv": {
+      "bytes": 9369,
+      "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83"
+    }
+  },
+  "numeric_export_identity": {
+    "samples": 245,
+    "variables": 135,
+    "cells": 33075,
+    "archive_value_rows": 8333,
+    "explicit_zero_rows": 48,
+    "cell_differences": 0,
+    "source_variable_map": {
+      "exact_variable_code": 127,
+      "explicit_export_archive_alias": 8
+    }
+  },
+  "depth_precision": {
+    "binary64_2decimal_format_diagnostic_matches_all_245": true,
+    "historical_export_algorithm_proven": false,
+    "exact_decimal_half_even_mismatches": 13,
+    "full_export_depth_differences": 19,
+    "pilot_depth_differences": 8,
+    "pilot_exact_depth_matches_cut": 69
+  },
+  "missing_metadata": {
+    "section_rows": 0,
+    "coredriv_rows": 0,
+    "sample_notes_nonnull": 0,
+    "sample_thickness_nonnull": 0,
+    "c14depthadj": null
+  },
+  "legacy_chronologies": [
+    {
+      "number": 1,
+      "name": "EPD calibrated",
+      "default": "N",
+      "prepared_date": "2007-06-02",
+      "model": "Linear interpolation",
+      "source_notes_sha256": "5825cda7410316275c303ff10c9f4b64aa211edf3d3b15efef964dcd3a91f2dd",
+      "declared_age_basis": "lamination_calendar_years"
+    },
+    {
+      "number": 2,
+      "name": "EPD uncalibrated",
+      "default": "Y",
+      "prepared_date": "2007-06-02",
+      "model": "Linear interpolation",
+      "source_notes_sha256": "b0844fff6117613cb2a78d416746d077fc2a3c307de75a664995d5dfff80d768",
+      "declared_age_basis": "reverse_calibrated_14c_with_documented_calendar_reversion"
+    }
+  ],
+  "chron1_minus_cut_abs_years": {
+    "median": "332.55",
+    "max": "674.16"
+  },
+  "gate": {
+    "database_sample_ids_confirmed": 69,
+    "original_core_sections_identified": 0,
+    "new_mon16_ages": 0,
+    "automatic_go_to_fossil_climate_run": false,
+    "status": "sample_ids_and_midpoints_confirmed_physical_core_crosswalk_missing"
+  }
+}

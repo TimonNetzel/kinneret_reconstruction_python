@@ -1,0 +1,8 @@
+neotoma_taxonid,epd_variable_id,epd_code,epd_original_name,epd_accepted_variable_id,epd_accepted_name,epd_notes,source
+1,1,Abi,Abies,1,Abies,B2004,p_vars.dump
+480,576,Pla,Plantago,576,Plantago,EPD,p_vars.dump
+699,580,Pla.l-T,Plantago lanceolata-type,580,Plantago lanceolata-type,B2004,p_vars.dump
+2905,583,Pla.m/m,Plantago major/P. media,3087,Plantago major/P. media-type,B2004,p_vars.dump
+3590,1478,Pla.c-T,Plantago coronopus-type,1478,Plantago coronopus-type,B2004,p_vars.dump
+284,763,Scoae,Scrophulariaceae,918,Scrophulariaceae (colporate-reticulate),,p_vars.dump
+275,715,Sam,Sambucus,715,Sambucus,NEPF,p_vars.dump

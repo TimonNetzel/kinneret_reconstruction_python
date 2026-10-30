@@ -1,0 +1,11 @@
+{
+  "dataset_inventory.csv": "0a6cd64de6ed18dda4952bb81b51ff35fc3ff214c120a32dc63f3ab7c0b8f818",
+  "field_availability.csv": "657e01790723fc707a5d6e8ea2e0aeb184f8f6ff8aaa68ef4299d959f8c999be",
+  "legacy_quercus_differences.csv": "7bcd23103d191888e4d9e45c701cf370dbafaabd728cfff4a803f0cd860c6d92",
+  "legacy_source_alignment.csv": "67f227d003a93556778519a812e0c509fbdac699d05d1c7152a2c0e6c4d4fde5",
+  "native_variable_policy.csv": "4bfadb9e00323c121be8acb68ca2c57f869c9a348b6156cd04e594d8bfc40b8d",
+  "sample_correspondence.csv": "08b90b71e5aa22b4f923a7f82579a2d18e6cc9d9425f551e6065a0709b71c9bf",
+  "summary.json": "23a4375000db61d5e724394ca1cf94f3489f8d0a4da8f2c9e25ecccf214c8db3",
+  "unmatched_diagnostics.csv": "3368c3296e4166199ce26a1c9d54ac6a38ed7976fa2f83bec0bd1c9bee266373",
+  "unmatched_variable_differences.csv": "9161157b577aeaf79876d658ab9587910395b45c3475c3dcaf0cbdceff76c345"
+}

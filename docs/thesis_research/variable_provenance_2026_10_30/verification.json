@@ -1,0 +1,28 @@
+{
+  "result": "passed",
+  "fixed_pairs_checked": 69,
+  "original_cells_checked_in_three_sources": 483,
+  "difference_rows_preserved": 47,
+  "evidence_counts": {
+    "four_old_Plantago_fields_balance_only": 35,
+    "Digitalis_type_value_equal_only": 9,
+    "unexplained_source_difference": 3
+  },
+  "pr26_status_counts_retained": {
+    "no_shared_variable_match": 41,
+    "unique_shared_variable_candidate": 28
+  },
+  "independent_of_producer": true,
+  "reader": "raw S4 slots and Fraction; full SQL COPY stream",
+  "shared_binary_parser": "rdata 1.1.0",
+  "raw_reader_sha256": "45994cddec4b1e70509d84a0b7b79dd3911f3722de2e6d4fde829336e0f021fe",
+  "output_sha256": {
+    "affected_native_inventory.csv": "64089d1ddcfeb75c6ab7c6687880ae5ac7f4f9209b9d228cdb3fc599735677aa",
+    "difference_evidence.csv": "cf25b4131ea912fd007599154233d38a478ec5e33b7e330d495c1b1a705b5f4c",
+    "fixed_pair_diagnostics.csv": "c6b6e75e7dd0ebf15f7d30afb6b3d2911ba2a13b1027d36325da9deb02abe059",
+    "original_variable_definitions.csv": "5fe4015bfa9ebf54b0d137e9c9209c5f57df169ffc5dbbe48d950425dd7cd1bd",
+    "summary.json": "38c0469581f6fa313331ba92dbbcbd646819c1da55e76a51b803aa8ffb3d83f5"
+  },
+  "physical_identity_or_recoding_proven": false,
+  "p1_status": "open"
+}

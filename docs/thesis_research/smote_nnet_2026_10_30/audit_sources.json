@@ -1,0 +1,11 @@
+{
+  "previous_raw_checker": {
+    "file": "verify.py",
+    "path": "tools/taxon_transfer/verify.py",
+    "commit": "8f02794434f561f5b30228360247935f3c025cc8",
+    "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/tools/taxon_transfer/verify.py",
+    "bytes": 13538,
+    "sha256": "bd397c144d9e982edf22b86b4921dd9fc0a253d9528dd6915cf78fa192bca045"
+  },
+  "note": "Audit-only independent raw reader from PR28; not used to fit the new models"
+}

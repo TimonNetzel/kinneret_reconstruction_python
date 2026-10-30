@@ -1,0 +1,21 @@
+{
+  "method": "Independent openpyxl reader and float arithmetic; no producer imports",
+  "openpyxl_version": "3.1.5",
+  "a3_rows_checked": 13024,
+  "a3_numeric_cells_checked": 52096,
+  "interval_violations_confirmed": 2,
+  "depth_gaps_confirmed": 37,
+  "labelled_rows_checked": 873,
+  "anchors_checked": 16,
+  "reported_source_conflicts_checked": 17,
+  "legacy_sample_gates_checked": 69,
+  "output_hashes_checked": 6,
+  "passed": true,
+  "two_complete_producer_runs_byte_identical": true,
+  "new_tests_passed": 6,
+  "tool_tests_passed": 26,
+  "docx_pages_visually_reviewed": 2,
+  "baseline_changed": false,
+  "integration_files_changed": false,
+  "pytest_tool_tests_passed": 26
+}

@@ -149,6 +149,30 @@
       </details>
     </div>
   </section>
+
+  <section id="ansicht-validierung" class="ansicht" hidden>
+    <aside class="steuerung">
+      <div class="feld"><span data-t="val_block">Blockgröße</span>
+        <div class="umschalter" id="val-block"></div></div>
+      <div class="feld"><span data-t="val_gewichtung">Gewichtung</span>
+        <div class="umschalter" id="val-gewichtung">
+          <button data-wert="sample" data-t="val_w_sample">Proben</button>
+          <button data-wert="equal_coordinate_group" data-t="val_w_gruppe">Orte gleich</button>
+        </div></div>
+      <div id="val-info" class="info"></div>
+      <details class="hilfe"><summary data-t="hilfe">Erläuterung</summary><p data-t="hilfe_validierung"></p></details>
+    </aside>
+    <div class="inhalt">
+      <div id="val-plot" class="plot plot-mittel"></div>
+      <div class="karte"><h2 data-t="val_fehler">Fehler der zurückgehaltenen Proben</h2>
+        <div class="tabelle-rahmen"><table id="val-tabelle"></table></div></div>
+      <div class="karte"><h2 data-t="val_folds">Folds</h2>
+        <div class="tabelle-rahmen"><table id="val-folds"></table></div></div>
+      <div class="karte"><h2 data-t="val_regional">Teilansicht Europa</h2>
+        <p class="hinweis-klein" id="val-regional-hinweis"></p>
+        <div class="tabelle-rahmen"><table id="val-regional"></table></div></div>
+    </div>
+  </section>
 </main>
 
 <dialog id="export" class="export-dialog" aria-labelledby="export-titel">
@@ -207,6 +231,7 @@
 <script src="gewichte.js"></script>
 <script src="transferfunktionen.js"></script>
 <script src="lauf.js"></script>
+<script src="validierung.js"></script>
 <script src="export.js"></script>
 <script src="start.js"></script>
 </body>

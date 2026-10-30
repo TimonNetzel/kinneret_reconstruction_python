@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "independent_method": "Physical PDF column extraction, openpyxl cells, Fraction/bisect; no producer import",
+  "pdf_appendix_rows_checked": 9,
+  "pdf_fields_checked": 45,
+  "marker_chains_numerically_checked": 6,
+  "native_sample_contexts_checked": 69,
+  "original_age_values_machine_extracted_from_hajdas_table": false,
+  "hajdas_table_age_and_material_visually_checked": true,
+  "source_hashes_checked": 6,
+  "output_hashes_checked": 3,
+  "two_complete_runs_byte_identical": true,
+  "new_tests_passed": 4,
+  "tool_tests_passed": 24,
+  "unittest_and_pytest_passed": true,
+  "visual_pdf_pages_checked": [
+    "Wulf:138",
+    "Wulf:139",
+    "Hajdas:3"
+  ],
+  "baseline_changed": false,
+  "integration_changed": false
+}

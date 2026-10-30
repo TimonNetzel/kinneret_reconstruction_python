@@ -141,6 +141,15 @@ python tools/thesis_import/audit_baseline_shared2025.py \
   --report /path/to/new_baseline_verification.json
 ```
 
+Projektzugang mit denselben Voreinstellungen und anschließendem Abgleich mit
+`reference_manifest.json` (gibt Ausgabepfad, Manifest-Hash und kompakte Metriken aus):
+
+```bash
+kinneret-recon thesis-baseline --input-dir /path/to/shared37_output --output-dir /path/to/new_baseline_run
+```
+
+Die App zeigt die gespeicherten Metriken in der Ansicht „Moderne Validierung“.
+
 Der Evaluator benötigt die bereits vorhandenen Projektabhängigkeiten NumPy
 und SciPy. Er prüft Quelltabellen und Merkmalsrichtlinie gegen das Manifest des
 Präparers; ein vorhandenes Zielverzeichnis wird nicht überschrieben.

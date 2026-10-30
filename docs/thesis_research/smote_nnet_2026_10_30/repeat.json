@@ -1,0 +1,58 @@
+{
+  "result": "all output bytes identical",
+  "complete_runs": 2,
+  "files_checked": [
+    {
+      "file": "fit_models.json",
+      "bytes": 986643,
+      "sha256": "ecbd3534d77e4dd6d0668b0fe0d5a23f0eecf0ed6f3bf5e102316f38d2dc6237"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 1514,
+      "sha256": "e8c8c36186e64d1cf88228deb4f7f062d8b51e62381e0be85dd826462c15d70e"
+    },
+    {
+      "file": "metrics_summary.csv",
+      "bytes": 13478,
+      "sha256": "93ff7c368c17f39e87e7843a423f0f36bd259cd37a4c9bca7803586f54aa320b"
+    },
+    {
+      "file": "models.json",
+      "bytes": 96869,
+      "sha256": "8e1567778bed79f33b90c3d92b045477ebdd4c34848fc3845bfdec39bb6e7d1d"
+    },
+    {
+      "file": "predictions.csv",
+      "bytes": 54451689,
+      "sha256": "99bd834d98334cd3716cf624932505788029c444d36e8a59b681ffdd3b69209a"
+    },
+    {
+      "file": "reliability.csv",
+      "bytes": 50242,
+      "sha256": "775dbf32978e7cbce14529b61df588bc8a318f34a66c8284707da439a8dcc280"
+    },
+    {
+      "file": "sample_inventory.csv",
+      "bytes": 2446,
+      "sha256": "fffcea391757debff36889d3c5bf7f7b3078fe3d6333653840f108c51e7065b6"
+    },
+    {
+      "file": "scores.csv",
+      "bytes": 77710,
+      "sha256": "69dc8e6e4da6f057f643889edb9334f94bac4f4f5751ae59a5e7134aa7f8c538"
+    },
+    {
+      "file": "smote_trace.csv.gz",
+      "bytes": 18432298,
+      "sha256": "b41bc72b11035ea3dc800ce1d4a97962c3f6f95dc6c89550ab09405f5085c0bd"
+    },
+    {
+      "file": "split_inventory.csv",
+      "bytes": 7162,
+      "sha256": "49cd1c09ae7e5d20e847a230d663043b7c22f4450437b3b6564b8a7e639d5928"
+    }
+  ],
+  "code_sha256": "769b2867587ef375a073a530fde69b597d7d6e0496e5b61988cadeb8124832f2",
+  "scope": "Recorded Python/library environment; no cross-platform bitwise guarantee"
+}

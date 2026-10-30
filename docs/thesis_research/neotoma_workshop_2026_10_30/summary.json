@@ -1,0 +1,78 @@
+{
+  "rds_sha256": "03536b6f1d3974de77ff997f6d86674a78882b2ebe305bb4e135e38289a2a829",
+  "rds_git_blob": "eaa1e04645575ecd13ba5b2432e877ae57848db1",
+  "reader": {
+    "raw_site_count": 59,
+    "raw_root_name_count": 59,
+    "raw_root_unique_names": [
+      "site"
+    ],
+    "selected_subtree_duplicate_names": false,
+    "rdata_version": "1.1.0",
+    "conversion_warning_classes": [
+      "Missing constructor for R class \"Date\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"POLYGON\". The constructor for class \"sfg\" will be used instead.",
+      "Missing constructor for R class \"XY\". The constructor for class \"POLYGON\" will be used instead.",
+      "Missing constructor for R class \"bbox\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"chronologies\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"chronology\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"collunit\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"collunits\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"crs\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"dataset\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"datasets\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"sample\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"samples\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"sf\". The constructor for class \"data.frame\" will be used instead.",
+      "Missing constructor for R class \"sfc\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"sfc_GEOMETRY\". The constructor for class \"sfc\" will be used instead.",
+      "Missing constructor for R class \"sfc_POLYGON\". The constructor for class \"sfc\" will be used instead.",
+      "Missing constructor for R class \"sfg\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"site\". The underlying R object is returned instead.",
+      "Missing constructor for R class \"specimens\". The underlying R object is returned instead."
+    ]
+  },
+  "siteid": 3295,
+  "collectionunits": 13,
+  "legacy_datasetid": 26608,
+  "legacy_samples": 245,
+  "composite_datasetid": 47525,
+  "composite_samples": 924,
+  "composite_collectionunit_note": "Composite of cores P90, B, D, E (1990), MF (1993), J, K, L, (1994), M and O (2000).",
+  "legacy_five_genus_cells_checked": 1225,
+  "legacy_five_genus_differences": 0,
+  "legacy_source_positions_changed": 4,
+  "legacy_quercus_differing_rows": 16,
+  "old_native_variable_keys": 131,
+  "new_native_variable_keys": 182,
+  "shared_unambiguous_keys": 76,
+  "ambiguous_keys_excluded": 1,
+  "pilot_samples": 69,
+  "candidate_status_counts": {
+    "no_shared_variable_match": 41,
+    "unique_shared_variable_candidate": 28
+  },
+  "unmatched_diagnostic_rows": 41,
+  "unmatched_variable_differences": 47,
+  "unmatched_diagnostic_field_counts": {
+    "1": 35,
+    "2": 6
+  },
+  "unmatched_diagnostic_taxonids": {
+    "480": 35,
+    "284": 9,
+    "275": 1,
+    "1": 2
+  },
+  "age_used_for_matching": false,
+  "depth_used_for_26608_to_47525_candidate_search": false,
+  "same_physical_sample_proven": false,
+  "mon16_mapping_proven": false,
+  "p1_status": "open",
+  "raw_snapshot_is_live_neotoma_state": false,
+  "input_sha256": {
+    "itDownload.RDS": "03536b6f1d3974de77ff997f6d86674a78882b2ebe305bb4e135e38289a2a829",
+    "monticchio_739452.tab": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+    "pr25_sample_identity.csv": "4ab39ab51bb54b76257f2ffd0460044fe15d17e962dbb49fce94d38c2ba35f03"
+  }
+}

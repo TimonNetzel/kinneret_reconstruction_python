@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "independent_reader": "Full SQL.gz COPY stream instead of per-table ZIP; Fraction arithmetic; no SQL execution or producer import",
+  "source_files_checked": 5,
+  "archive_tables_independently_checked": 13,
+  "numeric_cells_checked": 33075,
+  "sample_fingerprints_checked": 245,
+  "exact_pilot_depth_and_age_joins_checked": 69,
+  "legacy_age_comparisons_checked": 69,
+  "depth_rounding_rows_checked": 19,
+  "explicit_zeros_preserved": 48,
+  "output_hashes_checked": 7,
+  "date": "2026-10-30",
+  "byte_identical_producer_runs": 2,
+  "byte_identical_output_files": 8,
+  "tool_tests_passed": 24,
+  "new_parser_precision_tests": 4,
+  "code_sha256": {
+    "audit_epd_sample_identity.py": "245d5d525e477f96b96110b85f0395a27b4c1fa2b0eadaa334c56dd635f866c0",
+    "verify_epd_sample_identity.py": "1be9c640344bcd77dd5aa63df3ebb502cf7a2e4aea201b346e83ff9f110d09c4",
+    "test_epd_sample_identity.py": "33631ac4892c81bbbf8719b86e96e00eb72c2bc7a9cd38133066aff3b482f239"
+  }
+}

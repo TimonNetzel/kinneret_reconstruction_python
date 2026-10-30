@@ -87,6 +87,16 @@ def _zweiter_standort(ordner: Path, ziel: Path) -> Path:
     return ziel / "index.html"
 
 
+def test_validierung_in_ordner_und_einer_datei(ordner, eine_datei):
+    """Moderne Validierung: gespeicherte Baseline-Metriken als eigene Daten, im Ordner und in der einen Datei."""
+    from kinneret_recon.baseline import app_daten
+
+    name, v = _js_daten(ordner / "daten/validierung.js")
+    assert name == "validierung" and v == json.loads(json.dumps(app_daten(ROOT)))
+    assert "daten/validierung.js" in (ordner / "sw.js").read_text()
+    assert '(window.KR_DATEN=window.KR_DATEN||{})["validierung"]=' in eine_datei.read_text(encoding="utf-8")
+
+
 def test_katalog_standorte():
     k = json.loads((ROOT / "reference/app/katalog.json").read_text(encoding="utf-8"))
     assert [(s["key"], s["standard_lauf"]) for s in k["standorte"]] == [("kinneret", "standard_v3")]

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "official_archive_index": "https://epdweblog.org/browse-get-data/",
+  "inputs": [
+    {
+      "file": "epd-postgres-distribution-20171031.zip",
+      "download_url": "https://epdweblog.org/wp-content/uploads/2025/02/epd-postgres-distribution-20171031.zip",
+      "bytes": 29210271,
+      "sha256": "6ce720d51e0cf92f3f207ed4527d6cda00dd565cecbb8d3793112a723dbfc072"
+    },
+    {
+      "file": "pollen-database-manual-20071011.pdf",
+      "download_url": "https://epdweblog.org/wp-content/uploads/2025/02/pollen-database-manual-20071011.pdf",
+      "bytes": 615953,
+      "sha256": "98ef7675888d46060e2be52c9a7fcc3ee9df6aade8474ab6fcafc5076bd1fb3f"
+    },
+    {
+      "file": "monticchio_739452.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "bytes": 86174,
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de"
+    },
+    {
+      "file": "epd_ages_cut_804596.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.804596?format=textfile",
+      "bytes": 3613957,
+      "sha256": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0"
+    },
+    {
+      "file": "pr21_sample_correspondence.csv",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/170d77f2bdbbe60217dc8342f34beb252ccb67de/docs/thesis_research/chronology_crosswalk_2026_10_29/sample_correspondence.csv",
+      "bytes": 9369,
+      "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83"
+    }
+  ],
+  "manual_visual_checks": {
+    "P_SAMPLE_depth_midpoint_cm": {
+      "pdf_pages": [
+        30,
+        31
+      ],
+      "table_starts_printed_page": 27
+    },
+    "COREDRIV_and_SECTION": {
+      "pdf_page": 21,
+      "printed_page": 18
+    }
+  },
+  "rights": {
+    "monticchio_739452.tab": "PANGAEA source label CC BY-NC 3.0",
+    "epd_ages_cut_804596.tab": "PANGAEA source label CC BY 3.0",
+    "archive_and_manual": "No broader redistribution permission inferred; raw binaries not included"
+  },
+  "supplementary_attempts": [
+    {
+      "url": "https://api.neotomadb.org/v2.0/data/downloads/27166",
+      "result": "same previously checked isolated TM16b event, outside pilot",
+      "bytes": 104577,
+      "sha256": "970456da7dbf9f0699f6da5a58508806695939ed2c820b84ea3cf06d567445a7",
+      "used_by_numeric_audit": false
+    },
+    {
+      "url": "https://api.neotomadb.org/v2.0/data/sites?sitename=%25Monticchio%25",
+      "result": "20-second timeout; no absence inference",
+      "used_by_numeric_audit": false
+    }
+  ]
+}

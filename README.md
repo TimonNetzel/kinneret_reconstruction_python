@@ -193,6 +193,23 @@ etwas geschrieben wird; Abweichungen untersuchen, die Referenz nicht automatisch
 Trainingssatz: Qualitätsflags, Text-`NULL`, gebrochene Zählungen und Chronologie-Ausschlüsse bleiben erhalten,
 es gibt keine Taxonharmonisierung und keine Modellfreigabe (`scientific_status=not_assessed`).
 
+### Moderne räumliche Validierung (Shared37-Baseline)
+
+Die bereits berechnete und unabhängig geprüfte Baseline (`docs/thesis_research/baseline2025_2026_10_29/`) zeigt die
+App in der Ansicht „Moderne Validierung“ (gespeicherte Metriken, keine Neuberechnung). Nachrechnen mit dem
+unveränderten Evaluator `tools/thesis_import/evaluate_shared2025.py`, ausgehend von den Shared37-Tabellen aus
+`prepare_shared2025.py` (Datenvertrag `docs/thesis_research/modern2025_2026_10_29/README.md`):
+
+```bash
+kinneret-recon thesis-baseline --input-dir results/shared37 --output-dir results/baseline2025
+```
+
+Konfiguration und Merkmalsrichtlinie sind voreingestellt. Ausgegeben werden Zielverzeichnis, SHA256 von
+`manifest.json` und kompakte RMSE/MSE-Skill-Werte (Hauptmodell `analog_k5`, Vergleich Trainingsmittel, k = 1/15 als
+Sensitivität). Danach wird das Manifest mit `reference_manifest.json` verglichen; Abweichungen (Eingaben, Evaluator,
+Ausgabedateien) werden mit den Bibliotheksständen gemeldet, die Ausgabe bleibt zur Prüfung erhalten
+(`--ohne-referenz` überspringt den Abgleich). Moderne Testfehler sind keine fossilen Fehlerbänder.
+
 ## Leistung (4 CPU-Kerne)
 
 | | Original | Paket, `--legacy` | Paket, Standard v2 | Paket, Standard v3 |

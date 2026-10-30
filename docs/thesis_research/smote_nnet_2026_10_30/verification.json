@@ -1,0 +1,35 @@
+{
+  "result": "passed",
+  "source_label_cells_checked": 198680,
+  "prediction_rows_checked": 397360,
+  "individual_probabilities_checked": 1589440,
+  "network_models_checked": 154,
+  "optimizer_starts_checked": 462,
+  "synthetic_rows_with_both_original_training_parents_checked": 1274548,
+  "score_rows_checked": 336,
+  "reliability_rows_checked": 560,
+  "maximum_accepted_gradient_per_case": 5.476526274158232e-08,
+  "minimum_haversine_train_test_km": 100.09341210834958,
+  "producer_imported": false,
+  "independent_paths": [
+    "locked vector predicates instead of producer rasterization",
+    "direct TIFF indexing",
+    "Haversine and Euclidean BallTree instead of producer cKDTree",
+    "scipy.stats Gamma-CDF/normal-PPF",
+    "tanh network forward/backpropagation; every start objective and selection",
+    "classification/probability scores"
+  ],
+  "shared_dependencies": [
+    "PR28 independent vector-label reader (hash locked)",
+    "rasterio/GDAL",
+    "shapely/GEOS",
+    "NumPy/SciPy"
+  ],
+  "source_hashes_checked": true,
+  "code_and_output_hashes_checked": true,
+  "audit_code_sha256": "30473367db13694862d1d857a2a8edbcca386d78a79c307486f9982b7fdea160",
+  "audit_sources_sha256": "209707ad492600c8e8e18428cb4d43af3ec952e76a59eb6dc33f226d1294ed05",
+  "scientific_map_truth_established": false,
+  "fossil_application_approved": false,
+  "p1_released": false
+}
