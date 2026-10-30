@@ -1,0 +1,37 @@
+{
+  "result": "passed",
+  "source_label_cells": 198680,
+  "nonzero_block_multiplicities": 2174335,
+  "member_replicates_insufficient_unique_class": 3724,
+  "member_replicates_fitted": 95876,
+  "interval_rows": 1589440,
+  "ensemble_cases": 168,
+  "ensemble_cases_insufficient_estimable_replicates": 40,
+  "member_replicates_base_member_uncalibrated": 1200,
+  "ensemble_cases_base_member_uncalibrated": 2,
+  "ensemble_cases_available_conditional_band": 126,
+  "minimum_outer_haversine_km": 100.09341210834958,
+  "minimum_inner_haversine_km": 100.09341210834958,
+  "maximum_fitted_projected_gradient": 2.994570444844985e-08,
+  "producer_or_bootstrap_fitter_imported": false,
+  "audit_code_sha256": "b952b9b892b596880337040fc0743aa3f7929cad2ed4d2ee2b4061d6968b018b",
+  "independent_paths": [
+    "vector labels and direct TIFF indexing",
+    "Haversine BallTree splits",
+    "Counter block tabulation from PCG64 draws",
+    "tanh neural forward",
+    "convex KKT and objective",
+    "sorted linear order-statistic quantiles",
+    "all cell bands, missingness and summaries"
+  ],
+  "shared_dependencies": [
+    "hash-locked PR28/29/31 audit helpers",
+    "NumPy/SciPy",
+    "rasterio/GDAL",
+    "shapely/GEOS",
+    "scikit-learn BallTree"
+  ],
+  "outer_labels_used_for_bands": false,
+  "nominal_coverage_validated": false,
+  "fossil_application_approved": false
+}

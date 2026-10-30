@@ -66,5 +66,13 @@
       }
     }
   },
-  "execution_policy": "Final complete executions and audit run sequentially under one awaited command; no concurrent reads of files with open writers. Atomic closed output publication. Rejected outputs never used as successful repeat/audit evidence."
+  "execution_policy": "Final complete executions and audit run sequentially under one awaited command; no concurrent reads of files with open writers. Atomic closed output publication. Rejected outputs never used as successful repeat/audit evidence.",
+  "final_execution": {
+    "two_complete_runs_byte_identical": true,
+    "files": 7,
+    "gzip_integrity_checked": true,
+    "output_recovery_required": false,
+    "audit": "passed",
+    "parameter_records_unchanged_by_support_fix": true
+  }
 }

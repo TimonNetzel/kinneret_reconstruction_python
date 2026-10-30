@@ -98,5 +98,5 @@ Klimahülleneckpunkts durch Qhull/Delaunay. Der neue Evaluator schließt solche
 exakt gleichen Eckpunkte definitionsgemäß ein; kein größerer Extrapolationspuffer,
 keine geänderten Hüllen, Gewichte oder Kalibrierung. Regressionstest vorhanden.
 [execution_notes.json](./execution_notes.json) dokumentiert beide Befunde.
-Die maßgeblichen Endläufe werden mit korrigierter technischer Randfallbehandlung
-und unverändertem Vorabdesign frisch gerechnet.
+Die maßgeblichen Endläufe wurden mit korrigierter technischer Randfallbehandlung
+und unverändertem Vorabdesign frisch gerechnet und vollständig geprüft.

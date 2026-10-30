@@ -7,6 +7,9 @@ hat #19–#29 mit vollständiger Historie zusammengeführt. Vor Fortsetzung den
 aktuellen PR-/Merge-Stand prüfen. Die Kalibrierung #31 basiert auf diesem main;
 solange #31 offen ist, liegen ihre neuen Ergebnisse auf dem Forschungsbranch
 `codex/netzel-spatial-probability-calibration`, noch nicht auf main.
+Neueste Folgearbeit: #32 auf `codex/netzel-calibration-block-uncertainty`,
+abhängig von offenem #31. Solange beide offen sind, diesen Forschungsbranch
+als vollständigen Ergebnisstand verwenden; keine neuen Merges ohne Auftrag.
 [Integrationsnachweis und PR-Index](./consolidation_2026_10_30/README.md).
 
 ## Fertig
@@ -18,6 +21,8 @@ solange #31 offen ist, liegen ihre neuen Ergebnisse auf dem Forschungsbranch
   einfache Netze ohne und mit SMOTE #29, mit Parametern und räumlicher Prüfung.
 - Räumlich verschachtelte Wahrscheinlichkeitskalibrierung #31 vorab entworfen,
   berechnet und separat numerisch geprüft; [neuer Bericht](./calibration_2026_10_30/README.md).
+- Bedingte räumliche Kalibrierungssensitivität #32 berechnet und separat geprüft;
+  [Bericht](./calibration_uncertainty_2026_10_30/README.md), [aktuelle Fortsetzung](./CHAT_RESTART_UNCERTAINTY.md).
 - Reproduktion der modernen Kalibrierung ohne alte Chat-Zwischendateien;
   [SMOTE-Anleitung](./smote_nnet_2026_10_30/REPRODUCE.md).
 
@@ -54,6 +59,22 @@ Modellkopie desselben Laufs gegen den vorhandenen Manifest-Hash; ein anderer
 Lauf mit unvollständiger Gzip-Spur verworfen. Keine Modellanpassungen deshalb.
 Details und Grenzen: [Kalibrierungsübergabe](./CHAT_RESTART_CALIBRATION.md).
 
+**Neuer Stand #32:** 200 gepaarte Block-Replikate bei unveränderten Netzen,
+Normierungen und SMOTE; ausschließlich innere Kalibrierungszellen neu gewichtet.
+Band nur ab 190/200 schätzbaren Replikaten: 22/28 Vollgebiets-Ensembles und
+104/140 äußere Ensemble-Folds. Abies in beiden Designs und Fagus 10° ohne
+Vollgebiets-Band. Fehlende Bänder werden nicht als Nullunsicherheit ausgegeben.
+Es sind bedingte Bootstrap-Sensitivitätsbänder, keine nominell validierten
+95%-Konfidenzintervalle oder vollständige Rekonstruktionsunsicherheit.
+
+95.876 Kalibrierungen / 100.800 Mitglied×Replikat-Fälle, 1.589.440 Zellzeilen
+und alle Blockmultiplizitäten/Quantile separat geprüft. Zwei frische Endläufe
+mit sieben bytegleichen Dateien, keine Wiederherstellung erforderlich. Vorige
+I/O-Fehler verworfen und dokumentiert. Exakte gespeicherte Hülleneckpunkte
+werden im neuen Evaluator trotz konservativem Qhull-Randfehler eingeschlossen;
+kein größerer Extrapolationspuffer, #31-Quellen und Parameter unverändert.
+85 Repositorytests und sechs gezielte Tests bestanden. Details im neuen Bericht.
+
 Monticchio-P1 bleibt blockiert: physischer LGM90D→MON16-Anschluss einschließlich
 Korrelationsunsicherheit fehlt. Unverändert 28 numerische Kandidaten,
 41 native Nichttreffer und 47 offene Provenienzfragen. Die 35 Plantago-Bilanzen
@@ -72,10 +93,11 @@ Umcodierungsnachweis. Keine stille Quellenkorrektur oder zusätzliche Freigabe.
 Claude betreut CLI/App; Codex Kalibrierung, Quellen und unabhängige Prüfung.
 Keine automatische Pilotfreigabe oder Autorennachricht. Die technische Zusammenführung #18–#29 über #30 war
 ausdrücklich beauftragt, keine wissenschaftliche Abnahme der Fossilrekonstruktion.
-Neue PRs einschließlich #31 nur nach erneutem ausdrücklichem Auftrag mergen. Die Analog-Baseline wird nicht neu entwickelt.
+Neue PRs einschließlich #31/#32 nur nach erneutem ausdrücklichem Auftrag mergen. Die Analog-Baseline wird nicht neu entwickelt.
 
 Historische Übergaben bleiben im Repository und an ihren ursprünglichen
-Commit-Refs erhalten. Aktueller Einstieg: [CHAT_RESTART_CALIBRATION.md](./CHAT_RESTART_CALIBRATION.md).
+Commit-Refs erhalten. Aktueller Einstieg: [CHAT_RESTART_UNCERTAINTY.md](./CHAT_RESTART_UNCERTAINTY.md).
+Vorige Kalibrierungsübergabe: [CHAT_RESTART_CALIBRATION.md](./CHAT_RESTART_CALIBRATION.md).
 Historischer Einstieg in den SMOTE-Vergleich:
 [CHAT_RESTART_SMOTE.md](./CHAT_RESTART_SMOTE.md),
 [Ergebnisbericht](./smote_nnet_2026_10_30/README.md),

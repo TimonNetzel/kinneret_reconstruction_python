@@ -11,12 +11,39 @@ europäischer Fundstellen, mit belegter Kalibrierung und Unsicherheiten.
 | SMOTE + einfaches Netz #29 | **Berechnet und unabhängig geprüft:** sieben Arten, identische äußere räumliche Tests; deutlich bessere Balanced Accuracy, zugleich schlechtere rohe SMOTE-Wahrscheinlichkeiten im Brier. |
 | Historische 279 Funktionen | Nicht wiederhergestellt; keine bitgleiche historische R-/caret-Reproduktion. |
 | Räumliche Wahrscheinlichkeitskalibrierung #31 | **Berechnet und separat numerisch geprüft:** innere räumliche Kalibrierungsfolds, unabhängige äußere Bewertung je Fit; SMOTE-Brier verbessert, gegenüber rohem Netzensemble ohne SMOTE in 13/14 Fällen weiter schlechter. |
+| Bedingte Kalibrierungssensitivität #32 | **Berechnet und separat geprüft:** 200 räumliche Block-Replikate bei festen Netzen; Band für 22/28 Vollgebiets-Ensembles, 104/140 äußere Ensemble-Folds. Keine nominell validierte Deckung. |
 | Taxonverfahren insgesamt | Weitere Taxa, belegte Fossiltyp-Zuordnung, externe Bestätigung und Kalibrierungs-/Quellenunsicherheit offen. |
 | Monticchio-P1 | Weiter offen: physischer LGM90D→MON16-Crosswalk samt Korrelationsunsicherheit fehlt. |
 | Proben und Quellen aus #26/#27 | Unverändert: 28 numerische Kandidaten, 41 native Nichttreffer, 47 offene Herkunftsfragen. |
 | Fossilrekonstruktion / Multiproxy-App | Kein fertiger Gesamtdurchlauf, keine neue fossile Klimakurve und keine P2-Freigabe. Claude betreut CLI/App; Integration #19 in den gemeinsamen Stand übernommen. |
 
-**Aktueller Abschluss #31:** [Kalibrierungsbericht](./calibration_2026_10_30/README.md),
+**Aktueller Abschluss #32:** [Bedingte Kalibrierungssensitivität](./calibration_uncertainty_2026_10_30/README.md),
+[PR #32](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/32),
+Branch `codex/netzel-calibration-block-uncertainty`, abhängig von offenem #31 am
+festen Head `9458011`; PR-Ziel ist dessen Forschungsbranch. Kein Mergeauftrag.
+Vorabdesign `5a4a96f`, unverändert. 200 gepaarte geographische Block-Replikate,
+nur innere Original-Kalibrierungszellen neu gewichtet, Netze/Normierung/SMOTE fest.
+Äußere Labels nicht für Bänder oder Verfügbarkeitsauswahl verwendet.
+
+22/28 Vollgebiets-Ensembles und 104/140 äußere Ensemble-Folds mit bedingtem
+Sensitivitätsband; Abies in beiden Designs und Fagus 10° ohne Vollgebiets-Band.
+Gate 190/200 schätzbare Replikate unverändert; fehlende Bänder sind keine Nullbreite.
+95.876 Kalibrierungen / insgesamt 100.800 Mitglied×Replikat-Fälle, 1.589.440
+Zellzeilen, 2.174.335 Blockmultiplizitäten und alle 168 Tabellenzeilen separat
+geprüft. Zwei frische Endläufe: sieben bytegleiche Dateien, ohne Wiederherstellung.
+Vorige I/O-Befunde und exakte Hülleneckpunkt-Korrektur ausdrücklich dokumentiert.
+85 Repositorytests und sechs gezielte Tests bestanden; Browser-/Langtests ausgenommen.
+
+**Als Nächstes:** belegte Pollentyp-Zuordnung und weitere Arten/Areale.
+Vollständige Kalibrierungs-/Quellen-/Netzunsicherheit und Kreuztaxon-Kovarianz
+bleiben offen. Keine nominell validierten 95%-Konfidenzintervalle, unabhängige
+neue Region oder Fossilfreigabe. Monticchio-P1 und 28/41/47 unverändert.
+Aktuelle Fortsetzung: [CHAT_RESTART_UNCERTAINTY.md](./CHAT_RESTART_UNCERTAINTY.md).
+#31/#32 bleiben offen; Merges nur nach erneutem ausdrücklichem Auftrag.
+
+## Historischer Abschluss #31 vor der Sensitivitätsanalyse
+
+**Abschluss #31:** [Kalibrierungsbericht](./calibration_2026_10_30/README.md),
 [PR #31](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/31),
 Branch `codex/netzel-spatial-probability-calibration`, Basis aktuelles main nach
 #30 (`7f1826c`). Design vor jedem Fit veröffentlicht in `afa0c8a` und unverändert.
