@@ -10,10 +10,44 @@ europäischer Fundstellen, mit belegter Kalibrierung und Unsicherheiten.
 | Erste sieben Artenfunktionen #28 | Fertiger experimenteller Trainingsstand aus Meusel/BfN + WorldClim 2.1; feste Referenz. |
 | SMOTE + einfaches Netz #29 | **Berechnet und unabhängig geprüft:** sieben Arten, identische äußere räumliche Tests; deutlich bessere Balanced Accuracy, zugleich schlechtere rohe SMOTE-Wahrscheinlichkeiten im Brier. |
 | Historische 279 Funktionen | Nicht wiederhergestellt; keine bitgleiche historische R-/caret-Reproduktion. |
-| Taxonverfahren insgesamt | Weitere Taxa, Fossiltyp-Zuordnung, unabhängige Wahrscheinlichkeitskalibrierung und Unsicherheiten offen. |
+| Räumliche Wahrscheinlichkeitskalibrierung #31 | **Berechnet und separat numerisch geprüft:** innere räumliche Kalibrierungsfolds, unabhängige äußere Bewertung je Fit; SMOTE-Brier verbessert, gegenüber rohem Netzensemble ohne SMOTE in 13/14 Fällen weiter schlechter. |
+| Taxonverfahren insgesamt | Weitere Taxa, belegte Fossiltyp-Zuordnung, externe Bestätigung und Kalibrierungs-/Quellenunsicherheit offen. |
 | Monticchio-P1 | Weiter offen: physischer LGM90D→MON16-Crosswalk samt Korrelationsunsicherheit fehlt. |
 | Proben und Quellen aus #26/#27 | Unverändert: 28 numerische Kandidaten, 41 native Nichttreffer, 47 offene Herkunftsfragen. |
 | Fossilrekonstruktion / Multiproxy-App | Kein fertiger Gesamtdurchlauf, keine neue fossile Klimakurve und keine P2-Freigabe. Claude betreut CLI/App; Integration #19 in den gemeinsamen Stand übernommen. |
+
+**Aktueller Abschluss #31:** [Kalibrierungsbericht](./calibration_2026_10_30/README.md),
+[PR #31](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/31),
+Branch `codex/netzel-spatial-probability-calibration`, Basis aktuelles main nach
+#30 (`7f1826c`). Design vor jedem Fit veröffentlicht in `afa0c8a` und unverändert.
+504 Netzfits / 1.512 Starts; 502 geschätzte und zwei vorab deklarierte Identitäts-
+Kalibratoren. 198.680 Labels, 397.360 Testzeilen und 2.279.093 synthetische
+Elternpaare separat geprüft. Kleinster innerer/äußerer Abstand 100,093 km.
+
+Artenmittel Brier 5°/10°: SMOTE roh 0,07129/0,07699 → kalibriert
+0,03995/0,04408; Verbesserung in allen 14 Fällen. Rohes Ensemble ohne SMOTE
+0,03939/0,04321, besser als kalibriertes SMOTE in 13/14 Fällen. Ohne SMOTE
+verbessert Kalibrierung nur 3/14 Fälle und verschlechtert die Mittelwerte leicht.
+Vier Varianten vollständig berichtet; keine automatische Variantenübernahme.
+Verglichen werden dieselben drei Mitglieder je roh/kalibriert, keine direkten
+Einzelfit-Ergebnisse aus #29. Bereits untersuchte Regionen sind keine vollständig
+ungesehene Bestätigung; äußere #29/#31-Werte nicht zur Optimierung verwenden.
+
+Elf Enddateien zweier vollständiger Trainingsausführungen bytegleich nach
+explizit dokumentierter Wiederherstellung des letzten Checkpoint-Eintrags aus
+der vollständigen Modellkopie desselben Laufs gegen den vorher gespeicherten
+Manifest-Hash. Ein Lauf mit unvollständiger Gzip-Spur wurde verworfen;
+[Ausführungshinweise](./calibration_2026_10_30/execution_notes.json).
+79 Repositorytests und fünf neue Forschungstests bestanden; zwei Browser-/zwei
+Langtests nicht ausgeführt. Reproduktion ohne alte Zwischendateien.
+
+**Als Nächstes:** belegte Pollentyp-Zuordnung, weitere Taxa und Kalibrierungs-/
+Quellenunsicherheit bearbeiten. Kein fossiler Gesamtdurchlauf oder Pilotfreigabe.
+Claude behält CLI/App. Monticchio-P1 und 28/41/47 bleiben unverändert offen.
+#31 bleibt offen und wird nur auf erneuten ausdrücklichen Auftrag gemergt.
+Aktuelle Fortsetzung: [CHAT_RESTART_CALIBRATION.md](./CHAT_RESTART_CALIBRATION.md).
+
+## Historischer Stand nach #29, vor Kalibrierung
 
 **Fertig:** [SMOTE-/Netzvergleich](./smote_nnet_2026_10_30/README.md),
 [PR #29](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/29),

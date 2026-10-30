@@ -1,0 +1,11 @@
+{
+  "reason": "Final fit checkpoint contained 503 entries although final same-run models.json and pre-existing manifest recorded all 504. Cause not established.",
+  "original_checkpoint_bytes": 3207565,
+  "original_checkpoint_sha256": "4b9d5cedb4262026c57fb63cdb4ffe278733a27928bfba8d5e3864ab695f46b9",
+  "recovery_source": "Same run models.json / tilia_cordata / 10 / smote / member 2",
+  "recovered_case": "tilia_cordata:b10:ofull:i2",
+  "recovered_method": "smote",
+  "recovered_checkpoint_sha256": "1cb75f2d0b41389572fbef56708b4f88abbf12c092e2bb5b3e7108b6f832b493",
+  "candidate_matched_preexisting_manifest_before_write": true,
+  "scientific_parameter_changes": false
+}

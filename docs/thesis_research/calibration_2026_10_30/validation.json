@@ -1,0 +1,23 @@
+{
+  "repository_tests": {
+    "passed": 79,
+    "deselected": 4,
+    "command": "python -m pytest -q -k 'not test_standort_waehler_im_browser and not test_im_browser'",
+    "details": "Two slow reference tests excluded by ordinary pytest configuration; two unchanged browser tests explicitly not run."
+  },
+  "new_research_tests": {
+    "passed": 5,
+    "command": "python -m unittest discover -s tests -p test_spatial_calibration.py -v"
+  },
+  "minimal_dependency_check": {
+    "passed": 4,
+    "skipped_optional_GIS": 1
+  },
+  "preflight": {
+    "cases": 252,
+    "minimum_training_class": 32,
+    "identity_calibration_members": 2
+  },
+  "local_build": "Unchanged C++ extension built using gcc/g++; inherited clang++ compiler unavailable. Research pipeline does not use C++ core.",
+  "scope": "No app, CLI, analogue baseline, previous models or source values changed."
+}

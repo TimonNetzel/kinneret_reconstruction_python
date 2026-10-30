@@ -1,0 +1,30 @@
+{
+  "design_commit": "afa0c8a8845a5f40daee4289cc429fdf4a6ecf6a",
+  "design_published_before_first_fit": true,
+  "methodological_changes_after_design": false,
+  "execution_changes": [
+    "Independent network fits scheduled in six processes; deterministic case/method output order. Two initial serial partial runs stopped for scheduling only. 67 common parameter records identical."
+  ],
+  "rejected_output_attempt": {
+    "reason": "Independent audit raised gzip EOFError: truncated compressed SMOTE parent trace. Cause not established.",
+    "trace_bytes": 3683570,
+    "trace_rows_read_before_EOF": 301141,
+    "expected_trace_rows": 2279093,
+    "last_complete_case_prefix": "abies_alba:b10:o3:i2",
+    "other_output_files_byte_identical_to_complete_attempt": 9,
+    "scientific_parameter_changes": false,
+    "replacement": "Additional unchanged complete fit run; only complete audited/repeated attempts used in final manifest/repeat report."
+  },
+  "replacement_checkpoint_recovery": {
+    "reason": "Final fit checkpoint contained 503 entries although final same-run models.json and pre-existing manifest recorded all 504. Cause not established.",
+    "original_checkpoint_bytes": 3207565,
+    "original_checkpoint_sha256": "4b9d5cedb4262026c57fb63cdb4ffe278733a27928bfba8d5e3864ab695f46b9",
+    "recovery_source": "Same run models.json / tilia_cordata / 10 / smote / member 2",
+    "recovered_case": "tilia_cordata:b10:ofull:i2",
+    "recovered_method": "smote",
+    "recovered_checkpoint_sha256": "1cb75f2d0b41389572fbef56708b4f88abbf12c092e2bb5b3e7108b6f832b493",
+    "candidate_matched_preexisting_manifest_before_write": true,
+    "scientific_parameter_changes": false
+  },
+  "complete_final_outputs": "Two complete training executions; all eleven final output files byte-identical after explicitly documented recovery of the final checkpoint from the same-run duplicate model. No manifest hash changed."
+}
