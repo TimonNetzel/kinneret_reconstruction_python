@@ -5,6 +5,9 @@ Stand 30.10.2026. Neuer, ausdrücklich beauftragter Arbeitsstrang auf
 **Erster ausführbarer Trainingsstand: sieben Artenfunktionen, noch kein
 vollständiges taxonbasiertes Multiproxy-Verfahren.**
 
+Veröffentlicht als [PR #28](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/28),
+geprüfter Ergebniscommit `78ab48aab1a5a81614def6683fb2a0fa78eb4845`.
+
 ## Was jetzt tatsächlich vorliegt
 
 Sieben neue quadratische logistische Funktionen für

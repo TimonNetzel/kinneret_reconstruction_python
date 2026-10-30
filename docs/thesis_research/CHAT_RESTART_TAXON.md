@@ -5,6 +5,10 @@ Taxon-Transferfunktionen beauftragt, parallel zur offenen Monticchio-Chronologie
 Arbeitsbasis war der offene #18 auf f9acc16; eigener Branch
 `codex/netzel-taxon-response-functions`. Vor Weiterarbeit PR-/Merge-Stand prüfen.
 
+Ergebnis: [PR #28](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/28),
+Ergebniscommit `78ab48aab1a5a81614def6683fb2a0fa78eb4845`.
+Ein späterer reiner PR-/Übergabenachtrag ändert die numerischen Ergebnisse nicht.
+
 Zuerst [PROJECT_STATUS.md](./PROJECT_STATUS.md) und
 [Trainingsbericht](./taxon_transfer_2026_10_30/README.md) lesen. Design, Quellen
 und Konfiguration wurden vor dem ersten Fit in `64120202f605406124326d0c06d42c29ac4aeb0b`

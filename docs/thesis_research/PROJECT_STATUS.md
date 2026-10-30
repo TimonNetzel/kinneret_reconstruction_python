@@ -19,7 +19,9 @@ mit Koeffizienten, Vorwärtsevaluator, 5°-/10°-Prüfung und Trainingsprävalen
 Vergleich. Vorabdesign im veröffentlichten Commit `64120202f605406124326d0c06d42c29ac4aeb0b`.
 Zwei vollständige Läufe bytegleich, 397.360 Testvorhersagen und 198.680
 Art-Zell-Labels separat bestätigt. Fünf neue Tests bestanden.
-Eigenständiger Branch: `codex/netzel-taxon-response-functions`.
+Eigenständiger Branch: `codex/netzel-taxon-response-functions`,
+[PR #28](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/28).
+Geprüfter Ergebniscommit: `78ab48aab1a5a81614def6683fb2a0fa78eb4845`.
 
 **Aktuell:** Experimentelle Kartenfunktionen für sieben **Arten**, noch keine
 automatische Brücke zu Gattungs-Pollentypen. Abies alba bringt gegenüber
