@@ -62,6 +62,8 @@ class CalibrationTests(unittest.TestCase):
         _, support = model.predict(members, [[10., 500.]], reject_extrapolation=False)
         self.assertEqual(support[0], 2)
 
+    @unittest.skipUnless(importlib.util.find_spec('rasterio') and importlib.util.find_spec('shapely'),
+                         'Optional research GIS dependencies absent')
     def test_nested_spatial_roles_exclude_outer_test_and_both_buffers(self):
         spec = importlib.util.spec_from_file_location('old_transfer_calibrate', ROOT/'tools/taxon_transfer/calibrate.py')
         import sys
