@@ -4,6 +4,10 @@ Stand 30.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
 Ziel bleibt eine wissenschaftlich überprüfbare Europa-App für etwa 0–150 ka.
 Die bisher geprüften Pilotdaten decken dieses Zielintervall noch nicht ab.
 
+**Neuer Chat:** Zuerst [Übergabeindex mit allen PR-Fundstellen](./CHAT_RESTART.md)
+lesen. [Kopierfertiger Startprompt](./NEW_CHAT_PROMPT.md). Die Forschungs-PRs
+liegen auf getrennten Branches; das originale Nutzer-ZIP ist nicht eingecheckt.
+
 ## Zuerst lesen
 
 1. [Kompakter Claude-Auftrag](./baseline2025_2026_10_29/CLAUDE_TASK.md).
