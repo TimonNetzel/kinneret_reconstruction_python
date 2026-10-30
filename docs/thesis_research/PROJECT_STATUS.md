@@ -1,5 +1,11 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+**Speicherprüfung 30.10.2026:** [Sicherungsnachweis der Chat-Arbeit](./CHAT_WORK_ARCHIVE_2026_10_30.md)
+mit Dateiinventar und festen Ergebniscommits für #31/#32. Code, Modelle,
+Parameter und Berichte liegen im Repository; vier große Laufausgaben sind bisher
+nur durch Hashes und Reproduktionsbefehle gesichert. Das vollständige Bytearchiv
+dieser vier Dateien bleibt offen. PRs weiterhin ungemergt.
+
 Stand 30.10.2026. Vor Fortsetzung aktuellen PR-/Merge-Stand prüfen.
 Ziel: überprüfbare App für taxonbasierte Multiproxy-Klimarekonstruktionen
 europäischer Fundstellen, mit belegter Kalibrierung und Unsicherheiten.

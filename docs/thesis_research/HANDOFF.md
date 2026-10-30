@@ -1,5 +1,11 @@
 # Netzel-Projekt: gemeinsamer Einstieg
 
+**Speicherprüfung 30.10.2026:** [Sicherungsnachweis der Chat-Arbeit](./CHAT_WORK_ARCHIVE_2026_10_30.md)
+mit Dateiinventar und festen Ergebniscommits für #31/#32. Code, Modelle,
+Parameter und Berichte liegen im Repository; vier große Laufausgaben sind bisher
+nur durch Hashes und Reproduktionsbefehle gesichert. Das vollständige Bytearchiv
+dieser vier Dateien bleibt offen. PRs weiterhin ungemergt.
+
 Stand 30.10.2026. Nutzerauftrag: alle bisherigen Arbeiten hochladen und mergen,
 damit die Ergebnisse aus dem Chat erhalten bleiben. PR #18 ist gemergt;
 [Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)

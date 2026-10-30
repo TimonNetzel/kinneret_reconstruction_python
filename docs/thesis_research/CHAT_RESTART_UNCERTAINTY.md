@@ -1,5 +1,11 @@
 # Fortsetzung nach der bedingten räumlichen Kalibrierungssensitivität
 
+**Speicherprüfung 30.10.2026:** [Sicherungsnachweis der Chat-Arbeit](./CHAT_WORK_ARCHIVE_2026_10_30.md)
+mit Dateiinventar und festen Ergebniscommits für #31/#32. Code, Modelle,
+Parameter und Berichte liegen im Repository; vier große Laufausgaben sind bisher
+nur durch Hashes und Reproduktionsbefehle gesichert. Das vollständige Bytearchiv
+dieser vier Dateien bleibt offen. PRs weiterhin ungemergt.
+
 30.10.2026. [PR #32](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/32),
 Branch `codex/netzel-calibration-block-uncertainty`, abhängig von offenem #31,
 gesperrte Basis `9458011198c69368764b8698c966c0ac23cc381c`. PR-Ziel ist dessen
