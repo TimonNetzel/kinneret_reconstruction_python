@@ -1,0 +1,23 @@
+datasetid,taxonid,stored_names,samples_with_stored_rows,variableid_exported,synonymy_exported
+26608,1,"[""Abies""]",161,False,False
+26608,480,"[""Plantago""]",101,False,False
+26608,699,"[""Plantago lanceolata-type""]",93,False,False
+26608,2905,"[""Plantago major/P. media""]",65,False,False
+26608,3590,"[""Plantago coronopus-type""]",27,False,False
+26608,284,"[""Scrophulariaceae""]",33,False,False
+26608,275,"[""Sambucus""]",28,False,False
+26608,4114,[],0,False,False
+26608,3430,[],0,False,False
+26608,476,[],0,False,False
+26608,902,[],0,False,False
+47525,1,"[""Abies""]",644,False,False
+47525,480,"[""Plantago""]",601,False,False
+47525,699,[],0,False,False
+47525,2905,[],0,False,False
+47525,3590,[],0,False,False
+47525,284,"[""Scrophulariaceae""]",60,False,False
+47525,275,"[""Sambucus""]",156,False,False
+47525,4114,"[""Digitalis-type""]",44,False,False
+47525,3430,"[""Veronica-type""]",25,False,False
+47525,476,"[""Pedicularis""]",2,False,False
+47525,902,"[""cf. Sambucus""]",3,False,False

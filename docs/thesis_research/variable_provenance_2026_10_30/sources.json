@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-30",
+  "inputs": [
+    {
+      "file": "itDownload.RDS",
+      "download_url": "https://raw.githubusercontent.com/NeotomaDB/Workshops/5caa58c9da2b23fd174ec3d785f3dd931298a3d6/2023_INQUA_pollen_vertebrates/data/itDownload.RDS",
+      "bytes": 2495691,
+      "sha256": "03536b6f1d3974de77ff997f6d86674a78882b2ebe305bb4e135e38289a2a829"
+    },
+    {
+      "file": "epd-postgres-distribution-20171031.zip",
+      "download_url": "https://epdweblog.org/wp-content/uploads/2025/02/epd-postgres-distribution-20171031.zip",
+      "bytes": 29210271,
+      "sha256": "6ce720d51e0cf92f3f207ed4527d6cda00dd565cecbb8d3793112a723dbfc072"
+    },
+    {
+      "file": "monticchio_739452.tab",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "bytes": 86174,
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de"
+    },
+    {
+      "file": "pr26_correspondence.csv",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/4c9f1150e766a7f855dc9e28fd121638a710ff9a/docs/thesis_research/neotoma_workshop_2026_10_30/sample_correspondence.csv",
+      "bytes": 8068,
+      "sha256": "08b90b71e5aa22b4f923a7f82579a2d18e6cc9d9425f551e6065a0709b71c9bf"
+    },
+    {
+      "file": "pr26_diagnostics.csv",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/4c9f1150e766a7f855dc9e28fd121638a710ff9a/docs/thesis_research/neotoma_workshop_2026_10_30/unmatched_diagnostics.csv",
+      "bytes": 2925,
+      "sha256": "3368c3296e4166199ce26a1c9d54ac6a38ed7976fa2f83bec0bd1c9bee266373"
+    },
+    {
+      "file": "pr26_differences.csv",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/4c9f1150e766a7f855dc9e28fd121638a710ff9a/docs/thesis_research/neotoma_workshop_2026_10_30/unmatched_variable_differences.csv",
+      "bytes": 3841,
+      "sha256": "9161157b577aeaf79876d658ab9587910395b45c3475c3dcaf0cbdceff76c345"
+    },
+    {
+      "file": "read_workshop.py",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/4c9f1150e766a7f855dc9e28fd121638a710ff9a/tools/thesis_import/audit_neotoma_workshop.py",
+      "bytes": 18445,
+      "sha256": "bce9dc26e452fbc269e9c0c739bbc4f50deca7a2c102f85c121be01d898d6c54"
+    },
+    {
+      "file": "verify_workshop.py",
+      "download_url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/4c9f1150e766a7f855dc9e28fd121638a710ff9a/tools/thesis_import/verify_neotoma_workshop.py",
+      "bytes": 13663,
+      "sha256": "45994cddec4b1e70509d84a0b7b79dd3911f3722de2e6d4fde829336e0f021fe"
+    }
+  ],
+  "source_code_records": [
+    {
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/datataxonnotes.sql",
+      "git_blob_sha": "671abbcb6fb9b1cff2e842e7989b972272f45569",
+      "bytes": 2124,
+      "sha256": "7dd5c0737f828f87aee74086bac67b74deb7f8fa12f65a610df0c8564f5cc535",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/datataxonnotes.sql"
+    },
+    {
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/datasetsubmissions.sql",
+      "git_blob_sha": "251716fa353277311dce4e768935dffa62020da5",
+      "bytes": 4080,
+      "sha256": "49801b8f4d6f196456be4c61a29d06f5984a74547b613ea06a48c4189cc8be21",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/datasetsubmissions.sql"
+    },
+    {
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/functions/ti/getdatasetvariablesynonyms.sql",
+      "git_blob_sha": "3272f3ff7554c537c5f63734b129d0f66f837d38",
+      "bytes": 998,
+      "sha256": "7e7e640a6bb5d26488747e93f26e93c3e40a607977a9129e12392093b98af36a",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/functions/ti/getdatasetvariablesynonyms.sql"
+    },
+    {
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/synonymy.sql",
+      "git_blob_sha": "21664af9f7494eab20dabe9f1c6fa35804598e0d",
+      "bytes": 3000,
+      "sha256": "250d58d1e1a564129261885405d4aa0ad6590cfbc516f90a41d8cd731a854abe",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/synonymy.sql"
+    }
+  ],
+  "source_code_is_not_database_content": true,
+  "submission_records_acquired": false,
+  "pr_heads_checked": {
+    "18": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+    "19": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+    "25": "00c9f037642470c7d1a9a44e488f062109292c2d",
+    "26": "4c9f1150e766a7f855dc9e28fd121638a710ff9a"
+  },
+  "manual_context": {
+    "url": "https://open.neotomadb.org/manual/taxonomy-related-tables-1.html",
+    "sections": [
+      "14.6 undifferentiated taxa",
+      "14.8 variables"
+    ],
+    "access": "web-rendered official documentation; no original byte hash",
+    "use": "General naming conventions; does not prove this dataset recoding"
+  },
+  "rights": {
+    "pangaea": "Watts (2010), EPD, PANGAEA.739452, CC BY-NC 3.0",
+    "neotoma": "Watts, Allen, Huntley; Neotoma 26608 and 47525 source conditions retained",
+    "redistribution": "No raw archives, RDS or original matrices redistributed"
+  },
+  "new_api_download_attempts": 0,
+  "author_messages_sent": false,
+  "merges_performed": false,
+  "science_direct_original_rechecked": false
+}

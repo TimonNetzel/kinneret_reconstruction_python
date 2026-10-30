@@ -1,5 +1,16 @@
 # Netzel-Projekt: aktueller Einstieg
 
+**Fortschreibung 30.10.2026:** Aktuell ist die
+[Variablen- und Einreichungsprüfung](./variable_provenance_2026_10_30/README.md)
+abgeschlossen. [Kurzer Status](./PROJECT_STATUS.md),
+[neue Übergabe mit getrennten #25/#26-Ständen](./CHAT_RESTART_VARIABLES.md).
+483 Originalzellen bestätigt; 35 Plantago-Bilanzen und neun Digitalis-
+Zahlengleichheiten sind nachgelagerte Diagnosen, keine bestätigte Umcodierung.
+28 Kandidaten und 41 native Nichttreffer aus #26 bleiben erhalten. P1 offen;
+physischer MON16-Anschluss und Korrelationsunsicherheit fehlen weiterhin.
+Die folgenden Baseline-Angaben bleiben gültig; die Forschungsergebnisse aus
+den getrennten Folgebranches sind über die neue Übergabe zu lesen.
+
 Stand 29.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
 Ziel bleibt eine wissenschaftlich überprüfbare Europa-App für etwa 0–150 ka.
 Die bisher geprüften Pilotdaten decken dieses Zielintervall noch nicht ab.
