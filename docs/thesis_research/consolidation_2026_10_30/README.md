@@ -1,6 +1,7 @@
 # Sicherung und Zusammenführung #18–#29
 
-Stand 30.10.2026. Ausdrücklicher Nutzerauftrag: „Bitte lade alles hoch und
+Stand 30.10.2026. [Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30).
+Ausdrücklicher Nutzerauftrag: „Bitte lade alles hoch und
 merge es so dass die sachen aus dem chat nicht verloren gehen.“ Damit ist der
 technische Merge dieser Arbeiten beauftragt; fachliche P1-/Pilotfreigaben
 werden dadurch nicht erteilt. Aktueller Einstieg: [HANDOFF](../HANDOFF.md).
@@ -70,9 +71,13 @@ Archivierung ursprünglich nicht veröffentlichter Rohdateien behauptet.
 
 Der Dateierhalt und die Abstammung aller zwölf Original-Heads sind geprüft.
 Gemeinsame Prüfung unter Python 3.12: 74 Repositorytests erfolgreich, zwei
-Browserprüfungen zunächst durch ein nicht verfügbares `/tmp` blockiert; Wiederholung
-mit beschreibbarem TMPDIR. Zusätzlich 52 Werkzeug-/GIS-/Metadatenprüfungen
-erfolgreich. GitHub-CI und abschließende Browserergebnisse werden vor dem
-Merge im Integrations-PR festgehalten. Die früheren
+Browserprüfungen durch die Umgebung blockiert (zuerst `/tmp`, nach Wiederholung
+mit beschreibbarem TMPDIR fehlende Chromium-Headless-Shell). Der Installationsversuch
+lieferte unbrauchbare Downloadarchive; keine Änderung des App-Codes deshalb.
+Zusätzlich 52 Werkzeug-/GIS-/Metadatenprüfungen erfolgreich.
+Die GitHub-CI für den gemeinsamen Stand wird vor Merge geprüft und im
+Integrations-PR festgehalten. Die zwei lokal blockierten Browserprüfungen werden
+nicht als bestanden ausgegeben; der unveränderte #19-Stand hat einen früheren
+Browser-Prüfnachweis. Details: [validation.json](./validation.json). Die früheren
 vollständigen Trainings-/Quellenaudits werden hier nicht neu gerechnet;
 ihre unveränderten Prüfnachweise bleiben gespeichert.

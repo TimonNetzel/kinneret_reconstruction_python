@@ -1,0 +1,20 @@
+{
+  "python": "3.12.14",
+  "repository_tests": {
+    "passed": 74,
+    "deselected": 2,
+    "environment_blocked_browser_tests": [
+      "tests/test_app.py::test_standort_waehler_im_browser",
+      "tests/test_app.py::test_im_browser"
+    ],
+    "browser_retry": "TMPDIR fixed; Chromium headless executable absent; browser download archive unusable"
+  },
+  "additional_tests": {
+    "passed": 52,
+    "command": "PYTHONPATH=tools/taxon_transfer:tools/thesis_import python -m pytest -q tools/thesis_import tools/taxon_transfer/test_transfer.py docs/thesis_research/neotoma_metadata_path_2026_10_30/test_metadata_extract.py"
+  },
+  "original_heads_retained": 12,
+  "scientific_files_changed": false,
+  "full_training_repeated": false,
+  "github_ci": "Tracked on integration PR #30 before merge"
+}

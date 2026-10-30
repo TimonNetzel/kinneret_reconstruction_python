@@ -19,7 +19,7 @@ europäischer Fundstellen, mit belegter Kalibrierung und Unsicherheiten.
 [PR #29](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/29),
 ursprünglicher Ergebnisbranch `codex/netzel-smote-nnet-comparison`.
 Die Ergebnisse aus #18–#29 werden auf ausdrücklichen Nutzerauftrag gemeinsam
-auf `main` gesichert; [gemeinsame Übergabe](./HANDOFF.md) und
+auf `main` gesichert ([Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)); [gemeinsame Übergabe](./HANDOFF.md) und
 [Integrationsnachweis](./consolidation_2026_10_30/README.md). Vorabdesign veröffentlicht
 in `d47129c6b8be8bd5e73701f6137ffb196dab9d91`, bevor neuronale Fits begannen.
 

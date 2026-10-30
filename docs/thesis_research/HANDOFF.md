@@ -2,8 +2,8 @@
 
 Stand 30.10.2026. Nutzerauftrag: alle bisherigen Arbeiten hochladen und mergen,
 damit die Ergebnisse aus dem Chat erhalten bleiben. PR #18 ist gemergt;
-der gemeinsame Integrationsstand führt #19–#29 mit vollständiger Historie
-zusammen. Vor Fortsetzung den aktuellen PR-/Merge-Stand prüfen und `main`
+[Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)
+führt #19–#29 mit vollständiger Historie zusammen. Vor Fortsetzung den aktuellen PR-/Merge-Stand prüfen und `main`
 verwenden. [Integrationsnachweis und PR-Index](./consolidation_2026_10_30/README.md).
 
 ## Fertig
