@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-30",
+  "previous_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+  "previous_files": [
+    {
+      "file": "model.py",
+      "path": "tools/taxon_transfer/model.py",
+      "sha256": "684c603d9649885198b5789650fd2e1967a7cbc64f32758e046693cda7731bf4",
+      "bytes": 3402,
+      "git_blob": "a95295d8de193dbfffe37779ce52f842f89072c8",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/tools/taxon_transfer/model.py"
+    },
+    {
+      "file": "calibrate.py",
+      "path": "tools/taxon_transfer/calibrate.py",
+      "sha256": "2a13ce0b1bae482085f943ef176e0f73845088b31e5216d1add8212eb7e4c2e3",
+      "bytes": 13124,
+      "git_blob": "e92643f7eff8d2242ecd0620ce950e53460a34dc",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/tools/taxon_transfer/calibrate.py"
+    },
+    {
+      "file": "config.json",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "sha256": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071",
+      "bytes": 3153,
+      "git_blob": "8037d4d9d6a3da0a51f09b55d8240bd314971cc9",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/docs/thesis_research/taxon_transfer_2026_10_30/config.json"
+    },
+    {
+      "file": "sources.json",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/sources.json",
+      "sha256": "db63d65a9871e441889d1bc87833dde34921935f740c6677b4a0651034ea20f6",
+      "bytes": 5987,
+      "git_blob": "3fa8428685b6fb6ea46489a25c2f9436578a748a",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/docs/thesis_research/taxon_transfer_2026_10_30/sources.json"
+    },
+    {
+      "file": "models.json",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/models.json",
+      "sha256": "357b8322b31e48e76531a858efb550d284048a3d3874161fe3ee73ffc9ac76a9",
+      "bytes": 18735,
+      "git_blob": "e8eb6c100f9c581b0df9f74582dda14c2f98aee5",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/docs/thesis_research/taxon_transfer_2026_10_30/models.json"
+    },
+    {
+      "file": "fold_models.json",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/fold_models.json",
+      "sha256": "2a8080916f488f8fd90feee01409aeaf93a538d2c0d59a5ce469d8e4e60d5e69",
+      "bytes": 137328,
+      "git_blob": "0dc2d10e3e744886d4ef1e8519de88d492aa0496",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/docs/thesis_research/taxon_transfer_2026_10_30/fold_models.json"
+    },
+    {
+      "file": "scores.csv",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/scores.csv",
+      "sha256": "097ab1661cbac444690384b6f060c28215fce7188791585361c7236f31c3a444",
+      "bytes": 14207,
+      "git_blob": "a0eca90a78cd97d8b4f6810a6cf2d95def6bce1c",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_python/8f02794434f561f5b30228360247935f3c025cc8/docs/thesis_research/taxon_transfer_2026_10_30/scores.csv"
+    }
+  ],
+  "data_sources": "All raw source locks and attribution in the immutable previous sources.json; data and masks unchanged",
+  "method_sources": [
+    {
+      "repository": "cran/nnet",
+      "commit": "4600c58673b3e4ba829286bf61b2b6f5ecf5da56",
+      "path": "src/nnet.c",
+      "bytes": 17252,
+      "sha256": "e8e12cd5742e8e003fb16bf0410e08b7cf509ea855116bba449dfa732c6e274b",
+      "git_blob": "ccfe9293730d0a95d3b943835ae532c2b18add02",
+      "url": "https://raw.githubusercontent.com/cran/nnet/4600c58673b3e4ba829286bf61b2b6f5ecf5da56/src/nnet.c"
+    },
+    {
+      "repository": "TimonNetzel/kinneret_reconstruction_R",
+      "commit": "064dca10b2869966f519cabe4887f7993368d242",
+      "path": "src/load_data.R",
+      "bytes": 4600,
+      "sha256": "e8836cd806c4a447efddab3a5761ac6a9cf7f54ff5af11c4d2b0129866a4a108",
+      "git_blob": "5de80392fed45088c40161d5cdcdb2f1e7ec5c4c",
+      "url": "https://raw.githubusercontent.com/TimonNetzel/kinneret_reconstruction_R/064dca10b2869966f519cabe4887f7993368d242/src/load_data.R"
+    }
+  ],
+  "thesis": {
+    "path": "docs/paper/Phd_thesis_netzel_ch2.5.PDF",
+    "repository_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+    "bytes": 2935184,
+    "sha256": "93cd08173bb7d9cc57dc78a45054e00e1587ddf42ccb5f095006a51f34935b56",
+    "printed_pages_read": [
+      40,
+      41,
+      42,
+      43
+    ]
+  },
+  "documentation": [
+    "https://search.r-project.org/CRAN/refmans/nnet/html/nnet.html",
+    "https://arxiv.org/abs/1106.1813",
+    "https://cp.copernicus.org/articles/21/357/2025/"
+  ],
+  "raw_source_redistributed": false,
+  "original_279_reproduced": false,
+  "author_messages_sent": false,
+  "merges_performed": false
+}
