@@ -1,6 +1,6 @@
 # Netzel-Projekt: aktueller Einstieg
 
-Stand 29.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
+Stand 30.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
 Ziel bleibt eine wissenschaftlich überprüfbare Europa-App für etwa 0–150 ka.
 Die bisher geprüften Pilotdaten decken dieses Zielintervall noch nicht ab.
 
@@ -54,6 +54,22 @@ Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder
 - Für spätere Multiproxy-Arbeit gemeinsame Chronologien und abhängige Reihen
   berücksichtigen. Ein feines Rechengitter schafft keine feinere Datenauflösung.
 - Kurz im Chat berichten; ausführliche Ergebnisse und Quellen in GitHub halten.
+
+## Aktueller Forschungsanschluss
+
+Die Folgearbeiten sind auf eigenen Branches dokumentiert: PR #20 prüft die
+Analogabdeckung, #21 die ältere Chronologie/Probenkorrespondenz, #22 den
+Pilotplan, #23 die eingegangenen MON16-Supplemente und #24 die historischen
+Marker. Der Claude-Integrations-PR #19 wurde unabhängig geprüft; keine
+Integrationsdateien gleichzeitig bearbeiten. Vor Änderungen PR-Köpfe prüfen.
+
+Der [neue EPD-Archivaudit](./epd_sample_identity_2026_10_30/README.md) bestätigt
+alle 69 Datenbank-Probenkennungen und ihre exakten Mittelpunkttiefen. Acht
+Pilotabweichungen um 5 mm sind Exportpräzision. Physische Kernabschnitte fehlen
+im Archiv; die dort als Standard markierte ältere 14C-Chronologie darf die
+beibehaltenen Cut-Alter nicht ersetzen. P1 bleibt offen, keine neuen MON16-Alter
+oder fossilen Klimaintervalle. Der [konkret fehlende Quellenbeleg](./epd_sample_identity_2026_10_30/MISSING_SOURCE_REQUEST.md)
+ist beschrieben. Die moderne Baseline bleibt unverändert.
 
 ## Hintergrund bei Bedarf
 
