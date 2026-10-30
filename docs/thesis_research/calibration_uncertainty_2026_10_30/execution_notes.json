@@ -1,0 +1,70 @@
+{
+  "methodological_changes_after_design": false,
+  "numerical_support_correction": {
+    "reason": "Independent halfspace audit found Qhull/Delaunay can reject an exact supplied hull vertex in an anisotropic climate hull.",
+    "case": "Abies alba, full, 10 degrees, original member 0; climate [26.021770477294922,4403.0]",
+    "fix": "Exact equality with a stored hull vertex guarantees inclusion; no extrapolation tolerance relaxation, no hull/weight/calibration change. New regression test checks every vertex of this recorded hull.",
+    "affected": "Support flags and outside-hull counts in new sensitivity outputs; probability values, bootstrap weights, calibration parameters and gates unchanged. PR31 sources unchanged."
+  },
+  "rejected_execution": {
+    "uncertainty_run1": {
+      "block_draws.csv.gz": {
+        "bytes": 23834,
+        "hash_matches": true,
+        "gzip": "Compressed file ended before the end-of-stream marker was reached"
+      },
+      "full_parameters.json": {
+        "bytes": 1841931,
+        "hash_matches": true
+      },
+      "intervals.csv.gz": {
+        "bytes": 49228706,
+        "hash_matches": true,
+        "gzip": "Compressed file ended before the end-of-stream marker was reached"
+      },
+      "inventory.json": {
+        "bytes": 46787,
+        "hash_matches": true
+      },
+      "parameters.csv.gz": {
+        "bytes": 4502990,
+        "hash_matches": true,
+        "gzip": "valid"
+      },
+      "summary.csv": {
+        "bytes": 24753,
+        "hash_matches": true
+      }
+    },
+    "uncertainty_run2": {
+      "block_draws.csv.gz": {
+        "bytes": 6209076,
+        "hash_matches": true,
+        "gzip": "valid"
+      },
+      "full_parameters.json": {
+        "bytes": 1841931,
+        "hash_matches": true
+      },
+      "intervals.csv.gz": {
+        "bytes": 56825746,
+        "hash_matches": true,
+        "gzip": "valid"
+      },
+      "inventory.json": {
+        "bytes": 46787,
+        "hash_matches": true
+      },
+      "parameters.csv.gz": {
+        "bytes": 4502990,
+        "hash_matches": true,
+        "gzip": "valid"
+      },
+      "summary.csv": {
+        "bytes": 24753,
+        "hash_matches": true
+      }
+    }
+  },
+  "execution_policy": "Final complete executions and audit run sequentially under one awaited command; no concurrent reads of files with open writers. Atomic closed output publication. Rejected outputs never used as successful repeat/audit evidence."
+}

@@ -88,3 +88,15 @@ point, quantiles, support = predict_interval(members, record, [[8., 800.]])
 schätzbare Replikate**. Keine nominal validierte Deckung und kein fossiles
 Fehlerband. Extrapolation außerhalb irgendeiner Mitgliedshülle wird standardmäßig
 verweigert. Keine Pollentyp-Zuordnung, CLI/App-Integration oder Pilotfreigabe.
+
+## Technischer Prüfhinweis
+
+Ein früher Lauf hatte unvollständige Gzip-Protokolle und wird nicht als
+erfolgreicher Reproduktionsnachweis verwendet. Der unabhängige Audit fand
+zusätzlich eine konservative Fehlklassifikation eines exakten gespeicherten
+Klimahülleneckpunkts durch Qhull/Delaunay. Der neue Evaluator schließt solche
+exakt gleichen Eckpunkte definitionsgemäß ein; kein größerer Extrapolationspuffer,
+keine geänderten Hüllen, Gewichte oder Kalibrierung. Regressionstest vorhanden.
+[execution_notes.json](./execution_notes.json) dokumentiert beide Befunde.
+Die maßgeblichen Endläufe werden mit korrigierter technischer Randfallbehandlung
+und unverändertem Vorabdesign frisch gerechnet.

@@ -66,6 +66,14 @@ class UncertaintyTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'hull'):
             boot.predict_interval(members, record, [[50., 500.]])
 
+    def test_exact_stored_hull_vertices_are_supported_in_anisotropic_real_hull(self):
+        models = json.loads((ROOT/'docs/thesis_research/calibration_2026_10_30/models.json').read_text())
+        member = models['abies_alba']['10']['original'][0]
+        record = {'coefficients': [[[1., 0.]]*3]*4, 'valid': [True]*4, 'minimum_valid': 4}
+        for vertex in member['climate_hull']:
+            _, _, support = boot.predict_interval([member]*3, record, [vertex])
+            self.assertEqual(support[0], 3)
+
 
 if __name__ == '__main__':
     unittest.main()

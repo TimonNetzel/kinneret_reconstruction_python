@@ -52,7 +52,16 @@ def fit_replicates(eta, y, area, multiplicities, base_available, settings):
 
 
 def propagate(members, coefficients, valid, x, minimum, reject_extrapolation=True):
-    support = sum(Delaunay(np.asarray(m['climate_hull'])).find_simplex(x) >= 0 for m in members)
+    support = np.zeros(len(x), int)
+    for member in members:
+        hull = np.asarray(member['climate_hull'])
+        inside = Delaunay(hull).find_simplex(x) >= 0
+        # Qhull can miss a supplied vertex in an anisotropic climate hull.
+        # Exact stored vertices belong to their hull by definition; no relaxed
+        # extrapolation tolerance and no alteration of the stored geometry.
+        for vertex in hull:
+            inside |= np.all(x == vertex, axis=1)
+        support += inside
     if reject_extrapolation and (support < 3).any():
         raise ValueError('Climate outside a member training hull')
     point = np.mean([expit(m['calibrator']['slope']*calibration.logits(m, x)+m['calibrator']['intercept']) for m in members], axis=0)
