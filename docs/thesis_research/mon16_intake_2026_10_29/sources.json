@@ -1,0 +1,44 @@
+{
+  "article": {
+    "doi": "10.1016/j.quascirev.2026.110116",
+    "url": "https://doi.org/10.1016/j.quascirev.2026.110116",
+    "author_posted_full_text": "https://www.researchgate.net/publication/407540920_Lago_Grande_di_Monticchio_revisited_Revised_age_model_of_the_last_30_kyrs_based_on_refined_tephrostratigraphic_constraints_of_Campanian_volcanoes",
+    "sections_read": [
+      "3.1.2",
+      "5.2",
+      "5.3.2"
+    ],
+    "purpose": "Method, uncertainty convention and distinction of same-named tephras; not raw-source download verification"
+  },
+  "uploaded_archive": {
+    "name": "ScienceDirect_files_29Oct2026_22-15-14.667.zip",
+    "provenance": "User attachment in this conversation, 2026-10-29",
+    "sha256": "2329fab3f4fc196174c70960cb9f1fddcbe9f9158ab099a3351193986f7ebdf8",
+    "server_byte_identity_verified": false,
+    "members": "summary.json",
+    "rights": "No explicit standalone license found in inspected workbook/DOCX captions. Originals not redistributed in repository."
+  },
+  "legacy_correspondence": {
+    "commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+    "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/sample_correspondence.csv",
+    "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83"
+  },
+  "older_composite_context": {
+    "doi": "10.1016/j.quascirev.2012.10.020",
+    "manuscript": "https://pure.royalholloway.ac.uk/files/59106481/Submission_to_QSR_S.Wulf_.pdf",
+    "section": "3, Material and Chronology; manuscript printed pages 4-5, PDF pages 8-9",
+    "limited_finding": "Describes older multi-core composite construction; inspected passage supplies no numerical mapping for the 69 pollen samples. Not proof of universal source absence."
+  },
+  "bounded_followup_search": {
+    "date": "2026-10-29",
+    "queries": [
+      "Monticchio MON12 LGM90",
+      "Monticchio MON12 1990 composite",
+      "LGM90D composite tephra Wulf",
+      "Monticchio LGM90D tephra",
+      "Monticchio composite Wulf 1990"
+    ],
+    "result": "No usable numerical pollen-to-MON16 depth crosswalk acquired; no repeated supplement download attempts."
+  },
+  "outbound_author_messages_sent": false
+}

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "modern_samples": 7078,
+  "fossil_samples": 69,
+  "features": [
+    "abies",
+    "alnus",
+    "amaranthaceae",
+    "apiaceae",
+    "artemisia",
+    "betula",
+    "brassicaceae",
+    "buxus",
+    "campanulaceae",
+    "carpinus_ostrya",
+    "castanea",
+    "cichorioideae",
+    "corylus",
+    "cupressaceae",
+    "ephedra",
+    "fagus",
+    "fraxinus",
+    "hedera",
+    "hippophae",
+    "ilex",
+    "juglans",
+    "phillyrea",
+    "picea",
+    "pinus",
+    "pistacia",
+    "platanus",
+    "poaceae_wild",
+    "populus",
+    "quercus",
+    "rhamnaceae",
+    "salix",
+    "taxus",
+    "thalictrum",
+    "tilia",
+    "valerianaceae",
+    "vitis",
+    "cannabaceae_urticaceae"
+  ],
+  "modern_coordinate_groups": 5744,
+  "distance": "Hellinger [0,1]",
+  "fossil_location_source": "EPD Entity 932; 40.94444 N, 15.60000 E; altitude unused",
+  "reference_quantiles": {
+    "other_coordinate": {
+      "d1": {
+        "min": 0.0,
+        "median": 0.14151278965469863,
+        "p95": 0.2745260304267657,
+        "p99": 0.3512713771785898,
+        "max": 0.6681353927900165
+      },
+      "d5": {
+        "min": 0.050169494038516366,
+        "median": 0.18840230657259083,
+        "p95": 0.3364067780932635,
+        "p99": 0.42654365675188494,
+        "max": 0.7565337375301403
+      }
+    },
+    "buffer100km": {
+      "d1": {
+        "min": 0.0,
+        "median": 0.17603877164050818,
+        "p95": 0.3159586196305749,
+        "p99": 0.39705202188616656,
+        "max": 0.6681353927900165
+      },
+      "d5": {
+        "min": 0.059602089694680296,
+        "median": 0.21364319026008802,
+        "p95": 0.3672512616830543,
+        "p99": 0.4576234424909398,
+        "max": 0.8608214386882339
+      }
+    }
+  },
+  "scenarios": {
+    "other_coordinate": {
+      "d1": {
+        "min": 0.18139937028420278,
+        "median": 0.27216603196556455,
+        "p95": 0.33563426442762395,
+        "p99": 0.3952451878710353,
+        "max": 0.4184466218864992
+      },
+      "d5": {
+        "min": 0.22996371257054404,
+        "median": 0.314881904312565,
+        "p95": 0.4180425810375552,
+        "p99": 0.44631767774484143,
+        "max": 0.44661561043044207
+      },
+      "flags": {
+        "d1_above_p95": 30,
+        "d1_above_p99": 3,
+        "d5_above_p95": 19,
+        "d5_above_p99": 3
+      },
+      "k5_coordinate_group_counts": {
+        "5": 58,
+        "4": 8,
+        "3": 2,
+        "2": 1
+      },
+      "fossil_eligible_reference_samples": 7076,
+      "top5_geographic_distance_km": {
+        "min": 1.509733543582775,
+        "median": 1689.4144520960263,
+        "p95": 8615.922897536258,
+        "p99": 8628.60778953101,
+        "max": 8828.9922393619
+      }
+    },
+    "buffer100km": {
+      "d1": {
+        "min": 0.18139937028420278,
+        "median": 0.27216603196556455,
+        "p95": 0.33563426442762395,
+        "p99": 0.3952451878710353,
+        "max": 0.4184466218864992
+      },
+      "d5": {
+        "min": 0.22996371257054404,
+        "median": 0.314881904312565,
+        "p95": 0.4180425810375552,
+        "p99": 0.4465735368789076,
+        "max": 0.4474151702243988
+      },
+      "flags": {
+        "d1_above_p95": 7,
+        "d1_above_p99": 1,
+        "d5_above_p95": 7,
+        "d5_above_p99": 0
+      },
+      "k5_coordinate_group_counts": {
+        "5": 57,
+        "4": 9,
+        "3": 2,
+        "2": 1
+      },
+      "fossil_eligible_reference_samples": 7045,
+      "top5_geographic_distance_km": {
+        "min": 111.25110662819951,
+        "median": 1689.9041614675543,
+        "p95": 8615.922897536258,
+        "p99": 8628.60778953101,
+        "max": 8828.9922393619
+      }
+    }
+  },
+  "chronology": {
+    "source_samples": 245,
+    "cut_samples": 69,
+    "excluded_samples": 176,
+    "central_age_bp": [
+      85.75,
+      20222.57
+    ],
+    "age_bounds_envelope_bp": [
+      84.35,
+      20617.9
+    ],
+    "depth_interval_m": [
+      0,
+      12
+    ],
+    "age_model_type": "1=linear",
+    "uncertainty_classes": {
+      "3": 17,
+      "4": 52
+    },
+    "interval_width_years": {
+      "min": 3.0,
+      "median": 418.0,
+      "p95": 653.8,
+      "p99": 719.2399999999994,
+      "max": 775.0
+    },
+    "central_gap_years": {
+      "min": 12.850000000000364,
+      "median": 176.26999999999947,
+      "p95": 1105.966,
+      "p99": 2032.6307000000002,
+      "max": 2258.949999999999
+    },
+    "adjacent_interval_overlaps": 46,
+    "rounded_depth_matches": 8,
+    "maximum_abs_offset_times_local_slope_years": 13.45391304347818,
+    "all_excluded_central_age_bp": {
+      "min": -40.050000000000004,
+      "median": 37746.44,
+      "p95": 72594.95250000001,
+      "p99": 74706.97,
+      "max": 76210.12000000001
+    },
+    "controls": 1393,
+    "control_codes": {
+      "TOP_A": 1,
+      "ANL": 1392
+    },
+    "controls_in_cut_depth_range": 328,
+    "control_codes_in_cut": {
+      "ANL": 328
+    },
+    "anl_errors_match_rounded_one_percent_with_one_year_floor": true,
+    "all_control_calendar_ages_present": true,
+    "control_radiocarbon_age_fields_nonempty": 0,
+    "repeated_control_depths": 29,
+    "repeated_depths_with_different_ages": 18,
+    "exact_duplicate_control_rows": 11,
+    "control_age_plateaus": 17,
+    "joint_ensemble_available": false,
+    "retained_all_rows_equal_cut": true,
+    "independent_fossil_aggregations_checked": 2553
+  },
+  "extra_chronology_sources": {
+    "allen1999_rows": 1120,
+    "allen1999_unique_pairs": 1118,
+    "allen1999_pairs_exactly_shared_with_epd_controls": 622,
+    "allen1999_pairs_within_cut_depth_range": 228,
+    "radiocarbon_dates": 3,
+    "radiocarbon_dates_inside_cut": 2,
+    "radiocarbon_dates_depth_by_pollen_correlation": 2,
+    "tephra_layers": 11,
+    "tephra_layers_inside_cut": 6,
+    "source_14c_values_recalibrated": false,
+    "allen_composite_depths_adopted": false
+  },
+  "modern_same_coordinates_excluded": [
+    {
+      "sample_id": "EPDcoretop_E453",
+      "source_site_code": "EPDE453",
+      "sample_context": "wetland"
+    },
+    {
+      "sample_id": "EPDcoretop_E932",
+      "source_site_code": "EPDE932",
+      "sample_context": "lake"
+    }
+  ],
+  "verification": {
+    "all_fossil_distance_cells_direct_checked": 488382,
+    "all_fossil_top5_ranks_direct_checked": 138,
+    "modern_direct_spotchecks": 3,
+    "scipy_evaluator_imported": false
+  },
+  "climate_predictions": false,
+  "distance_flags_are_validated_no_analogue_cutoffs": false
+}

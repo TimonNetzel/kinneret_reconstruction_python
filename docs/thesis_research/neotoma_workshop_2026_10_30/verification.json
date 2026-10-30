@@ -1,0 +1,54 @@
+{
+  "raw_R_sites_checked": 59,
+  "named_list_collision_avoided": true,
+  "collectionunits_checked": 13,
+  "source_cells_checked": 1225,
+  "source_Quercus_differences_preserved": 16,
+  "source_alignment_positions_changed": 4,
+  "quercus_difference_equals_native_ilex_rows": 16,
+  "native_variable_keys_checked": [
+    131,
+    182
+  ],
+  "ambiguous_native_keys_excluded": 1,
+  "shared_keys_checked": 76,
+  "pilot_rows_checked": 69,
+  "unique_candidates_checked": 28,
+  "unmatched_rows_preserved": 41,
+  "candidate_names_verified_against_raw_slots": true,
+  "unmatched_diagnostic_cells_checked": 47,
+  "independent_number_system": "Fraction of stored numeric values; no tolerance",
+  "shared_dependency": "rdata serialization parser only; no producer import or S4/dataframe converter",
+  "R_or_workshop_code_executed": false,
+  "mon16_mapping_proven": false,
+  "p1_status": "open",
+  "output_hashes_checked": {
+    "dataset_inventory.csv": "0a6cd64de6ed18dda4952bb81b51ff35fc3ff214c120a32dc63f3ab7c0b8f818",
+    "field_availability.csv": "657e01790723fc707a5d6e8ea2e0aeb184f8f6ff8aaa68ef4299d959f8c999be",
+    "legacy_quercus_differences.csv": "7bcd23103d191888e4d9e45c701cf370dbafaabd728cfff4a803f0cd860c6d92",
+    "legacy_source_alignment.csv": "67f227d003a93556778519a812e0c509fbdac699d05d1c7152a2c0e6c4d4fde5",
+    "native_variable_policy.csv": "4bfadb9e00323c121be8acb68ca2c57f869c9a348b6156cd04e594d8bfc40b8d",
+    "sample_correspondence.csv": "08b90b71e5aa22b4f923a7f82579a2d18e6cc9d9425f551e6065a0709b71c9bf",
+    "summary.json": "23a4375000db61d5e724394ca1cf94f3489f8d0a4da8f2c9e25ecccf214c8db3",
+    "unmatched_diagnostics.csv": "3368c3296e4166199ce26a1c9d54ac6a38ed7976fa2f83bec0bd1c9bee266373",
+    "unmatched_variable_differences.csv": "9161157b577aeaf79876d658ab9587910395b45c3475c3dcaf0cbdceff76c345"
+  },
+  "two_producer_runs_byte_identical": true,
+  "producer_files_compared": 10,
+  "new_negative_tests_passed": 4,
+  "environment": {
+    "python": "3.12.14",
+    "rdata": "1.1.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0"
+  },
+  "code_sha256": {
+    "audit_neotoma_workshop.py": "bce9dc26e452fbc269e9c0c739bbc4f50deca7a2c102f85c121be01d898d6c54",
+    "verify_neotoma_workshop.py": "45994cddec4b1e70509d84a0b7b79dd3911f3722de2e6d4fde829336e0f021fe",
+    "test_neotoma_workshop.py": "9a0b6863f2798bf6cd70ef724c599cad6e318592a0f2b54b4fe0dd8bcd1ad1da"
+  },
+  "documentation_sha256": {
+    "README.md": "f9fb04599c83e986aa251f9d25c7f3115788c4347ca02636495f3e54226d36a1",
+    "sources.json": "391637d64fa042b20dff1f28a32cfc06bab300b80910638bac923f3fa58772a4"
+  }
+}

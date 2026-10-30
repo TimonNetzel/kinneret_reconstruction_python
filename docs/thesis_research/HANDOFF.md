@@ -1,63 +1,65 @@
-# Netzel-Projekt: aktueller Einstieg
+# Netzel-Projekt: gemeinsamer Einstieg
 
-Stand 29.10.2026. Repository: `TimonNetzel/kinneret_reconstruction_python`.
-Ziel bleibt eine wissenschaftlich überprüfbare Europa-App für etwa 0–150 ka.
-Die bisher geprüften Pilotdaten decken dieses Zielintervall noch nicht ab.
+Stand 30.10.2026. Nutzerauftrag: alle bisherigen Arbeiten hochladen und mergen,
+damit die Ergebnisse aus dem Chat erhalten bleiben. PR #18 ist gemergt;
+[Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)
+führt #19–#29 mit vollständiger Historie zusammen. Vor Fortsetzung den aktuellen PR-/Merge-Stand prüfen und `main`
+verwenden. [Integrationsnachweis und PR-Index](./consolidation_2026_10_30/README.md).
 
-## Zuerst lesen
+## Fertig
 
-1. [Kompakter Claude-Auftrag](./baseline2025_2026_10_29/CLAUDE_TASK.md).
-2. [Kleine Ergebnistabelle](./baseline2025_2026_10_29/metrics_summary.csv).
-3. Nur bei Detailfragen: [Baseline-Bericht und Reproduktion](./baseline2025_2026_10_29/README.md).
+- Moderne Analog-Baseline #18 und Claudes CLI-/App-Integration #19.
+- Quellen-/Chronologieprüfungen #20–#27 mit Berichten, gesperrten Quellen,
+  Ergebnisdateien, Prüfwerkzeugen und unabhängigen Auditnachweisen.
+- Sieben experimentelle quadratische Artenfunktionen #28 sowie je sieben
+  einfache Netze ohne und mit SMOTE #29, mit Parametern und räumlicher Prüfung.
+- Reproduktion der modernen Kalibrierung ohne alte Chat-Zwischendateien;
+  [SMOTE-Anleitung](./smote_nnet_2026_10_30/REPRODUCE.md).
 
-Die moderne Baseline ist bereits berechnet und unabhängig geprüft. Claude
-übernimmt nun den dünnen CLI-/App-Zugang und die Darstellung dieser Ergebnisse.
-Quellenrecherche und Modellvergleich müssen für diesen Auftrag nicht neu
-entwickelt werden. OpenAI betreut Datenprüfung, Baseline und Ergebnisprüfung.
+## Fachliche Bewertung und Grenzen
 
-## Repository- und Datenstand
+Mit dem nachvollziehbaren Vergleich sind wir als Forschungszwischenstand
+zufrieden: Bei allen sieben Arten und beiden Blockgrößen verbessert SMOTE
+gegenüber demselben Netz ohne SMOTE die Balanced Accuracy bei Schwelle 0,5.
+Artenmittel: 71,64/69,20 % ohne und 90,41/89,74 % mit SMOTE (5°/10°).
+Gleichzeitig verschlechtert sich überall der Brier-Score: 0,03975/0,04438 ohne
+gegenüber 0,07747/0,08245 mit SMOTE. Das Netz ohne SMOTE schlägt die feste
+quadratische Regression im Brier in 13 von 14 Art×Block-Fällen.
 
-- PR #14 integrierte den Importer; PR #15, #16 und #17 sind nach `main` gemergt.
-- Die neue Baseline liegt auf `codex/netzel-modern-baseline`, ausgehend von
-  `main`-Commit `e002f2b`. Vor Weiterarbeit den aktuellen PR-/Merge-Stand prüfen.
-- Publizierte 2025-Kohorte: 7.634 moderne Proben; davon 7.078 mit mindestens
-  100 gemeinsamen Zählungen ohne Pinus; 37 ausdrücklich gemeinsame Gruppen.
-  Nenner der Teilzusammensetzung einschließlich Pinus. Die alte SQLite-Kohorte
-  wird nicht hinzugefügt. [Datenvertrag](./modern2025_2026_10_29/README.md).
-- Monticchio: 69 chronologisch zugeordnete Proben bis rund 20,2 ka BP.
-  Altersgrenzen und Tiefenoffsets bleiben erhalten; vollständige Altersensembles
-  und eine lange, durchgehend geprüfte 150-ka-Abdeckung fehlen.
+Die Verbesserung betrifft diese Klassifikationsprüfung mit fester Schwelle;
+sie weist keine universelle Überlegenheit von SMOTE und keine fossil gültigen
+Wahrscheinlichkeiten nach. Keine bitgleiche Wiederherstellung der historischen
+279 Taxonfunktionen. Weitere Arten, belegte Pollentyp–Art-/Gattungs-Zuordnung,
+Wahrscheinlichkeitskalibrierung und Kalibrierungsunsicherheit bleiben offen.
 
-## Berechnetes Ergebnis
+Monticchio-P1 bleibt blockiert: physischer LGM90D→MON16-Anschluss einschließlich
+Korrelationsunsicherheit fehlt. Unverändert 28 numerische Kandidaten,
+41 native Nichttreffer und 47 offene Provenienzfragen. Die 35 Plantago-Bilanzen
+und neun Scrophulariaceae-/Digitalis-Zahlengleichheiten sind kein belegter
+Umcodierungsnachweis. Keine stille Quellenkorrektur oder zusätzliche Freigabe.
 
-Vorab festgelegtes 5-Nachbarn-Pollenmodell, fünf räumliche Folds je 5°-/10°-Gitter,
-100-km-Puffer; Design und Code vor dem ersten Lauf in Commit `e594aa9` festgehalten.
-Globaler moderner Tann-RMSE: 3,765/3,926 °C; Pann-RMSE: 365,2/373,1 mm/Jahr
-(5°/10°). Gegenüber dem jeweiligen Trainingsmittel ist der Temperaturgewinn
-deutlich, der Niederschlagsgewinn kleiner. Die eurasische Gesamtgüte ist keine
-ausschließlich europäische Güte. Die regionale Diagnose ist eine nachgelagerte
-Teilansicht derselben Vorhersagen, kein weiterer unabhängiger Test.
+## Als Nächstes
 
-Zehn Fold-Aufteilungen, 56.624 Vorhersagezeilen und alle aggregierten Fehler sind
-geprüft; 90 Analogvorhersagen zusätzlich unabhängig nachgerechnet. Zwei volle
-Läufe waren bytegleich. Noch keine fossilen Klimavorhersagen oder Fehlerbänder.
+1. Kalibrierungsdesign vorab festlegen: innere räumliche Teilungen, sämtliche
+   Transformationen/SMOTE/Kalibrierung ausschließlich trainingsintern;
+   unabhängige äußere Bewertung. Äußere #29-Testergebnisse nicht zur weiteren
+   Optimierung verwenden. Die wiederverwendeten Gebiete sind bereits untersucht;
+   eine neue Auswertung nicht als vollständig ungesehene Bestätigung ausgeben.
+2. Weitere Areale/Arten und belegte Fossiltyp-Zuordnung, anschließend Unsicherheit.
+3. Parallel Originaleinreichung/Umcodierungsbelege und physischen MON16-Anschluss
+   beschaffen: [präziser Quellenbedarf](./variable_provenance_2026_10_30/SOURCE_GAP.md).
 
-## Regeln für die Fortsetzung
+Claude betreut CLI/App; Codex Kalibrierung, Quellen und unabhängige Prüfung.
+Keine automatische Pilotfreigabe oder Autorennachricht. Technischer Merge ist
+vom Nutzer ausdrücklich beauftragt, keine wissenschaftliche Abnahme der
+Fossilrekonstruktion. Die Analog-Baseline wird nicht neu entwickelt.
 
-- Bestehenden Importer, seine Referenz und die ursprüngliche Kinneret-Kalibrierung
-  nicht durch die Vergleichsvariante ersetzen. Eigene Branches/PRs verwenden.
-- Jahresmitteltemperatur Tann und Kinneret-Wintertemperatur TDJF unterscheiden.
-- Die verlorenen 279 Transferfunktionen sind nicht wiederhergestellt.
-  Moderne Testfehler sind keine Unsicherheitsintervalle fossiler Rekonstruktionen.
-- Keine Zählungen aus Prozenten erfinden; Labormarker und überlappende Untertypen
-  nicht als unabhängige Pflanzensignale zählen. Quellen-/Policy-Hashes erhalten.
-- Für spätere Multiproxy-Arbeit gemeinsame Chronologien und abhängige Reihen
-  berücksichtigen. Ein feines Rechengitter schafft keine feinere Datenauflösung.
-- Kurz im Chat berichten; ausführliche Ergebnisse und Quellen in GitHub halten.
-
-## Hintergrund bei Bedarf
-
-[Ursprünglicher Europa-Plan](./Claude_Plan_Europa_0_150ka.md),
-[Dissertation und Datenverzeichnis](./Netzel_Analyse_Datenverzeichnis.md),
-[Quellenregister](./source_audit_2026_10_29/sources.json).
-Die ursprüngliche lange Übergabe ist in der Git-Historie erhalten.
+Historische Übergaben bleiben im Repository und an ihren ursprünglichen
+Commit-Refs erhalten. Einstieg in das letzte Forschungspaket:
+[CHAT_RESTART_SMOTE.md](./CHAT_RESTART_SMOTE.md),
+[Ergebnisbericht](./smote_nnet_2026_10_30/README.md),
+[PROJECT_STATUS.md](./PROJECT_STATUS.md).
+Roharchive/Originalpublikationen werden durch die Zusammenführung nicht neu
+weiterverteilt. Das ursprüngliche ScienceDirect-ZIP muss nur bei erneuter
+Original-Rohdatenprüfung wieder angehängt werden; Quellenprüfsummen und
+Reproduktionswege sind gespeichert.

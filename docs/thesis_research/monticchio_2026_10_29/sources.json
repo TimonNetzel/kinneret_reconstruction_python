@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "file": "epd_control_804606.tab",
+      "title": "Giesecke et al. (2013), Control_P",
+      "doi": "10.1594/PANGAEA.804606",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.804606?format=textfile",
+      "retrieved_at": "2026-10-29",
+      "byte_count": 799730,
+      "sha256": "c96971bd5a9ff106663f8160f48e18cea34c5257258084ce3421190c5dc2bb05",
+      "license": "CC-BY-3.0",
+      "status": "downloaded_and_parsed",
+      "adopted_as_new_age_model": false
+    },
+    {
+      "file": "monticchio_740512.tab",
+      "title": "Watts (2010), LGM90D AMS dates",
+      "doi": "10.1594/PANGAEA.740512",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.740512?format=textfile",
+      "retrieved_at": "2026-10-29",
+      "byte_count": 2313,
+      "sha256": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a",
+      "license": "CC-BY-NC-3.0",
+      "status": "downloaded_and_parsed",
+      "adopted_as_new_age_model": false
+    },
+    {
+      "file": "monticchio_741058.tab",
+      "title": "Watts (2010), LGM90D tephra layers",
+      "doi": "10.1594/PANGAEA.741058",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.741058?format=textfile",
+      "retrieved_at": "2026-10-29",
+      "byte_count": 2166,
+      "sha256": "f5bdb0dd008c9e714b87c60238b1cae452414567abd091a2c3616370125d2635",
+      "license": "CC-BY-NC-3.0",
+      "status": "downloaded_and_parsed",
+      "adopted_as_new_age_model": false
+    },
+    {
+      "file": "monticchio_707050.tab",
+      "title": "Allen et al. (1999), Monticchio composite chronology",
+      "doi": "10.1594/PANGAEA.707050",
+      "download_url": "https://doi.pangaea.de/10.1594/PANGAEA.707050?format=textfile",
+      "retrieved_at": "2026-10-29",
+      "byte_count": 16752,
+      "sha256": "80cde942aea6d0bc0c550cbd4cc4d20ee3a84366a9711d980dcb46275fb176f2",
+      "license": "CC-BY-3.0",
+      "status": "downloaded_and_parsed",
+      "adopted_as_new_age_model": false
+    }
+  ],
+  "existing_locks": "../source_audit_2026_10_29/sources.json",
+  "published_modern_locks": "../modern2025_2026_10_29/sources_2025.json",
+  "literature": [
+    {
+      "doi": "10.1007/s00334-012-0390-y",
+      "role": "meaning_of_95_percent_bounds_classes_ANL_and_one_percent_assumption"
+    },
+    {
+      "url": "https://varve.gfz-potsdam.de/database/details/94dd95c2-dacf-46fc-aa8f-f8be21c09a8e",
+      "role": "separate_core_and_composite_candidates"
+    },
+    {
+      "doi": "10.5194/cp-10-2099-2014",
+      "role": "MON2014_76_112ka_not_pilot_replacement"
+    },
+    {
+      "doi": "10.1016/j.quascirev.2019.05.019",
+      "role": "last_interglacial_transition_not_pilot_replacement"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "base_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+  "shared37_manifest_matches_prior_reference": true,
+  "two_complete_diagnostic_runs_byte_identical": true,
+  "all_output_hashes_checked": true,
+  "independent_quantiles": "statistics.quantiles(n=100, method=inclusive)",
+  "all_threshold_flags_recomputed": true,
+  "all_69_fossil_source_depth_links_and_2553_count_cells_recomputed": true,
+  "all_488382_fossil_distances_direct_python_checked": true,
+  "all_138_fossil_top5_rank_lists_checked": true,
+  "modern_direct_checks": 3,
+  "independent_full_modern_pairwise_rank_audit": false,
+  "climate_predictions": false,
+  "chronology_ensemble_created": false,
+  "baseline_evaluator_changed": false,
+  "claude_integration_files_changed": false,
+  "independent_auditor_sha256": "c6fba7f272607ebff923ebb16eace969d83a66b376b9c02e512addcdb0ba3aec",
+  "all_138_top5_csv_groups_and_69_age_intervals_audited": true,
+  "design_commit_local_pre_run": "442e750c3ab93e26128e32d23f411f7811791d5d",
+  "design_commit_remote_post_run": "146aa19113e49ffdd92ade8112d9146f9f1cc07b"
+}

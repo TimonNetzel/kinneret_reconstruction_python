@@ -1,0 +1,50 @@
+{
+  "script_sha256": "73acd3c49e905cb6ea7e0a96156a0051b143bf6b7381b791b6b749c9cf39b582",
+  "parser_sha256": "f15b5d86b54191bb091dbc589ce631fa2afe3ff1d632b56e4d3379120f0b422a",
+  "shared_manifest_sha256": "b5f4dd27d2eda5d5057e5a05c63d2d7d44dc2f90bc835736b3c51a7ffb1064cb",
+  "source_sha256": {
+    "monticchio_739452.tab": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+    "epd_entity_804591.tab": "d6d7e269c75dd0c06bf44776cefdac7f0805f2a826991494d76e1a62127af2fd",
+    "epd_ages_804595.tab": "70438be5b605f683b35a8512137d7b161078a2e5b61769d588cf997ee15967c2",
+    "epd_ages_cut_804596.tab": "d332d5c7921b914e84da689c918607befdb162f5c68bbcce9cd3534d1f5e58e0",
+    "epd_control_804606.tab": "c96971bd5a9ff106663f8160f48e18cea34c5257258084ce3421190c5dc2bb05",
+    "monticchio_740512.tab": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a",
+    "monticchio_741058.tab": "f5bdb0dd008c9e714b87c60238b1cae452414567abd091a2c3616370125d2635",
+    "monticchio_707050.tab": "80cde942aea6d0bc0c550cbd4cc4d20ee3a84366a9711d980dcb46275fb176f2"
+  },
+  "policy_sha256": "a2a85217c2918a503dd063d025730d496ec436be0a012c7f1bef802e666f5def",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "outputs": {
+    "chronology_controls.csv": {
+      "sha256": "faa14c1e574bece72a28d08b5c6dd2e53af92b376226e7c61afa797a7ae6ab6a",
+      "byte_count": 91659
+    },
+    "chronology_samples.csv": {
+      "sha256": "b26e863503e9d03f86a994af933bd0300bb32aaa4c7a2f93d48717f3a1fb3193",
+      "byte_count": 8408
+    },
+    "fossil_analogues.csv": {
+      "sha256": "1ac918f37f184558b78b2c12f6a0f6a3d1daa31e2ab742987a09fb9c1871f35c",
+      "byte_count": 94260
+    },
+    "fossil_support.csv": {
+      "sha256": "6a361924a4b13013e58add25a335c4d9a10a6b0b6580e5f3e61eb8f77a2cab42",
+      "byte_count": 12688
+    },
+    "modern_distance_reference.csv": {
+      "sha256": "b95c8d726f3f415f716e16415cec8e9996487210ffc1ef68462aa2e099dc3e46",
+      "byte_count": 646105
+    },
+    "summary.json": {
+      "sha256": "857e32678be971487b239649276b9a97c55149ad922740e75e859de669c90da4",
+      "byte_count": 6390
+    }
+  },
+  "source_licenses": {
+    "modern": "CC-BY-4.0",
+    "fossil_counts": "CC-BY-NC-3.0",
+    "chronology": "CC-BY-3.0"
+  }
+}

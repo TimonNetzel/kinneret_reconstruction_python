@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-30",
+  "source_kind": "published source code and schema, not dataset 47525 observations",
+  "inputs": [
+    {
+      "id": "api_routes",
+      "repository": "NeotomaDB/api_nodetest",
+      "commit": "c57b83f235c0383360be274aa12262f38971faf4",
+      "path": "v2.0/routes/data.js",
+      "git_blob_sha": "504440088a3f3bedf3c5ac983f279f5ec6da75e0",
+      "bytes": 4280,
+      "sha256": "e1c7baf2ac0491c28487959401990fc67c028eda6494425ad96deb0c67170962",
+      "url": "https://github.com/NeotomaDB/api_nodetest/blob/c57b83f235c0383360be274aa12262f38971faf4/v2.0/routes/data.js"
+    },
+    {
+      "id": "api_frozen",
+      "repository": "NeotomaDB/api_nodetest",
+      "commit": "c57b83f235c0383360be274aa12262f38971faf4",
+      "path": "v2.0/helpers/frozendata/frozen.js",
+      "git_blob_sha": "5502183d9488348034beda7df97b8049782a72a6",
+      "bytes": 784,
+      "sha256": "8fa7885d90a6896266d2261cce5aedebf0c99e68a2fe654f57c4b11ac63ea2d6",
+      "url": "https://github.com/NeotomaDB/api_nodetest/blob/c57b83f235c0383360be274aa12262f38971faf4/v2.0/helpers/frozendata/frozen.js"
+    },
+    {
+      "id": "api_download_sql",
+      "repository": "NeotomaDB/api_nodetest",
+      "commit": "c57b83f235c0383360be274aa12262f38971faf4",
+      "path": "v2.0/helpers/download/downloadbydsid.sql",
+      "git_blob_sha": "d44b19b0d8e557dc0023ce057ba91e2ef642d75f",
+      "bytes": 214,
+      "sha256": "ad684b1e6edb07d7d9767c2d889e28aaf042dee6b1c54c224719193b49d0a2b8",
+      "url": "https://github.com/NeotomaDB/api_nodetest/blob/c57b83f235c0383360be274aa12262f38971faf4/v2.0/helpers/download/downloadbydsid.sql"
+    },
+    {
+      "id": "landing_export",
+      "repository": "NeotomaDB/landingpagev3",
+      "commit": "cb8cd13edf9811dbb16105d7ee8ea19a07a82302",
+      "path": "src/views/pages/datasetelements/DatasetDetails.vue",
+      "git_blob_sha": "c5cd4b917819d78c389a5d98c0c1efc668443026",
+      "bytes": 5419,
+      "sha256": "727f7a355281519ccc12d3b38f830c5a71239ef843d685dde23cce206aef887e",
+      "url": "https://github.com/NeotomaDB/landingpagev3/blob/cb8cd13edf9811dbb16105d7ee8ea19a07a82302/src/views/pages/datasetelements/DatasetDetails.vue"
+    },
+    {
+      "id": "landing_api",
+      "repository": "NeotomaDB/landingpagev3",
+      "commit": "cb8cd13edf9811dbb16105d7ee8ea19a07a82302",
+      "path": "src/functions/apicalls.js",
+      "git_blob_sha": "741c03358c0f55d2dc1f2c66b6db499215e6e784",
+      "bytes": 1359,
+      "sha256": "a72bbb845b0f8acdde0eda6ba2b1bac01201678e98325836a2a5124b05d5bfc8",
+      "url": "https://github.com/NeotomaDB/landingpagev3/blob/cb8cd13edf9811dbb16105d7ee8ea19a07a82302/src/functions/apicalls.js"
+    },
+    {
+      "id": "ndbdata",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/functions/doi/ndbdata.sql",
+      "git_blob_sha": "b877a826df188e3e24c339bc65afa86f62baf04b",
+      "bytes": 3387,
+      "sha256": "d080167a092f5e28b22dbeea43dc37a594079eb4c730fd70edf34a5560422060",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/functions/doi/ndbdata.sql"
+    },
+    {
+      "id": "doiapi",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/functions/doi/doiapi.sql",
+      "git_blob_sha": "7db845a13d5379fc407a11c7e3bd7848c4452d8e",
+      "bytes": 690,
+      "sha256": "8bcfe57e68907052390564f10ba5e23e4cb88a70c961d88b5311ebb8a245c70c",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/functions/doi/doiapi.sql"
+    },
+    {
+      "id": "doifreeze",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/functions/doi/doifreeze.sql",
+      "git_blob_sha": "66f06dc5f2c39f4be02a5fb98951eff86a533caa",
+      "bytes": 720,
+      "sha256": "9843764fb27d0d6c9a2293f018f7656879367fbae7e832a6a26ce9bf2bc892c6",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/functions/doi/doifreeze.sql"
+    },
+    {
+      "id": "datasetinfo",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/functions/doi/datasetinfo.sql",
+      "git_blob_sha": "798555e7b8ecfc08220fd880fd6c02be3a5ccca8",
+      "bytes": 3567,
+      "sha256": "1d565ae581afa85576f05959ce2a4fb6addadff15f581857bf8439e63fb1d70f",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/functions/doi/datasetinfo.sql"
+    },
+    {
+      "id": "samples",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/samples.sql",
+      "git_blob_sha": "b9311014cc93c69ba72881b19f5220aa5cdfea1b",
+      "bytes": 3885,
+      "sha256": "c1a6ef795f76938574f3ac31f52d0e8426a3f80995446ad72f5e5e2d40f056de",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/samples.sql"
+    },
+    {
+      "id": "analysisunits",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/analysisunits.sql",
+      "git_blob_sha": "2e13ede299a9153fb13e7d936e196bdb5fa33538",
+      "bytes": 5553,
+      "sha256": "2bb80cc58cdd7cde8084fb8373b210207e84ff5a9cc3dd485b0cd5e8192c0500",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/analysisunits.sql"
+    },
+    {
+      "id": "collectionunits",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/collectionunits.sql",
+      "git_blob_sha": "edbd619f8eb690320c499e12c9f18fb79a9ef535",
+      "bytes": 6465,
+      "sha256": "4a043ff09d120d994d12b5f3d6bcb3ad01f07c1dfdffeebcf9e1748dc82f8bfc",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/collectionunits.sql"
+    },
+    {
+      "id": "datasets",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/datasets.sql",
+      "git_blob_sha": "0f262937767cc29a5ab5f8b61d6e7eb7f6fdd127",
+      "bytes": 3423,
+      "sha256": "18dfa49de47fc94d3135f69ff463989564caaf5ce05f941bce03a05155cf1192",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/datasets.sql"
+    },
+    {
+      "id": "sites",
+      "repository": "NeotomaDB/neotoma_database_functions",
+      "commit": "359c92c3f0d762f64ea0106c6df597594ba0f541",
+      "path": "database/neotoma/tables/ndb/sites.sql",
+      "git_blob_sha": "8eb8ec506908ae69306248b6265b3daaabe57064",
+      "bytes": 4821,
+      "sha256": "69c8f1f5ac2370df32c9efa6b0bc762413d801b57100a9f6dcfbe3c0404f85ad",
+      "url": "https://github.com/NeotomaDB/neotoma_database_functions/blob/359c92c3f0d762f64ea0106c6df597594ba0f541/database/neotoma/tables/ndb/sites.sql"
+    },
+    {
+      "id": "api_download_handler",
+      "repository": "NeotomaDB/api_nodetest",
+      "commit": "c57b83f235c0383360be274aa12262f38971faf4",
+      "path": "v2.0/helpers/download/download.js",
+      "git_blob_sha": "de3104130971d6ee8ea126ee39a07980dc277afc",
+      "bytes": 5289,
+      "sha256": "c1a6884881500d2597a3788b98a8f34024282b93a9d3b430c10f7eaf8821b98e",
+      "url": "https://github.com/NeotomaDB/api_nodetest/blob/c57b83f235c0383360be274aa12262f38971faf4/v2.0/helpers/download/download.js"
+    }
+  ],
+  "new_access_attempts": [
+    {
+      "url": "https://api.neotomadb.org/v2.0/data/frozen/47525",
+      "outcome": "web reader not accessible; no absence inference"
+    },
+    {
+      "url": "https://www.neotomadb.org/data/db-snapshots",
+      "outcome": "HTTP 403"
+    },
+    {
+      "url": "https://www.neotomadb.org/snapshots",
+      "outcome": "HTTP 403"
+    }
+  ],
+  "live_deployment_verified": false,
+  "dataset_47525_payload_acquired": false,
+  "physical_sample_labels_verified": false,
+  "source_code_definitions_are_not_database_records": true
+}

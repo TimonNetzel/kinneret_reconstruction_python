@@ -1,0 +1,14 @@
+table,archive_rows,selected_rows,selection
+entity,2570,1,entity_932
+p_entity,2570,1,entity_932
+p_sample,133192,245,entity_932
+p_counts,3461527,8333,entity_932
+p_vars,5634,5634,all_variable_definitions
+section,13,0,entity_932
+coredriv,484,0,entity_932
+chron,2608,2,entity_932
+p_agedpt,168521,490,entity_932
+geochron,9151,3,entity_932
+c14,8808,3,entity_932
+p_anldpt,260,0,entity_932
+alsegs,2,0,entity_932

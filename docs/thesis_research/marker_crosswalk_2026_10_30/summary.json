@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "audit_code_sha256": "ee8add8af338542c64af667f425c5bfd8422c6944757fbe0d303ebbf9f94af6f",
+  "evidence_sha256": "5e07b769438aaa51730f7a5e498e7d93662c37136e24516dfed0002857cc89c0",
+  "source_locks": {
+    "wulf2001.pdf": {
+      "bytes": 10546963,
+      "sha256": "f669d375375db1863938b4716ebd139f934aa77a17cdfd74a93e1dc401303643"
+    },
+    "hajdas1998.pdf": {
+      "bytes": 596827,
+      "sha256": "62080e51e0df0b8dbad58cdeed3fe06f26b249ba5b2393a2519f8933bb3f4aec"
+    },
+    "monticchio_741058.tab": {
+      "bytes": 2166,
+      "sha256": "f5bdb0dd008c9e714b87c60238b1cae452414567abd091a2c3616370125d2635"
+    },
+    "monticchio_740512.tab": {
+      "bytes": 2313,
+      "sha256": "b578952bddb100e4b4527c1fcbc89f5f97d3deb6c62ab3e3120c1be49c4a232a"
+    },
+    "1-s2.0-S0277379126003252-mmc1.xlsx": {
+      "bytes": 447272,
+      "sha256": "464da840bafe2b508da20e8d78062e6928f62d41cf7b7025b43670c954feedd9"
+    },
+    "pr21_sample_correspondence.csv": {
+      "bytes": 9369,
+      "sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83"
+    }
+  },
+  "marker_identity_chains": 6,
+  "native_sample_context": {
+    "shallower_than_marker_span": 23,
+    "between_listed_marker_depths": 39,
+    "coincident_listed_depth": 1,
+    "deeper_than_marker_span": 6
+  },
+  "eth12464": {
+    "lab_code": "ETH-12464",
+    "sample_identified": "LGM7.1",
+    "source_composite_depth_cm": "1382.5",
+    "epd_listed_depth_cm": "1385",
+    "epd_minus_source_depth_cm": "2.5",
+    "radiocarbon_age_bp": "23140",
+    "error_years": "360",
+    "status": "source_study_and_sample_identified_depth_transfer_unresolved",
+    "single_original_core_identified": false,
+    "recalibrated": false
+  },
+  "tm8_1b_historical_comparison": {
+    "tephra": "TM-8-1b",
+    "historical_row": 58,
+    "historical_base_cm": "878.47",
+    "a1_K49_cm": "878.5",
+    "a2_L16_cm": "875.5",
+    "a1_minus_historical_cm": "0.03",
+    "a2_minus_historical_cm": "-2.97",
+    "interpretation": "historical_numeric_support_for_A1_only_no_source_correction"
+  },
+  "gate": {
+    "phase": "P1",
+    "complete_sample_depth_crosswalk": false,
+    "marker_identity_links_available": 6,
+    "samples_with_new_mon16_age": 0,
+    "automatic_go_to_fossil_climate_run": false,
+    "remaining": [
+      "Original pollen core/section-to-composite mapping and depth conventions",
+      "Intermarker correlation uncertainty",
+      "MON16 Mercato source conflict and A-3 interval inconsistencies"
+    ]
+  }
+}

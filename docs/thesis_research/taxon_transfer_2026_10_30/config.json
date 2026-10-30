@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "variant": "meusel_worldclim7_quadratic_v0",
+  "target": "confirmed_native_mapped_range_indicator",
+  "geographic_domain": {"west": -20, "east": 180, "south": 20, "north": 80},
+  "grid_degrees": 0.5,
+  "climate": {"source": "WorldClim 2.1", "period": "1970-2000", "tann": "BIO1, degrees Celsius", "pann": "BIO12, mm/year", "native_resolution_arcminutes": 10, "sampling": "native pixel at each 0.5-degree cell centre; no interpolation"},
+  "labels": {"positive_status": "Vorkommen", "positive_origin": "nativ", "polygon_rule": "cell centre", "point_rule": "containing cell", "polygon_boundary_exclusion_degrees": 0.25, "point_neighbourhood_exclusion_degrees": 0.5, "other_status_or_origin_exclusion_degrees": 0.5, "outside_range_label": "mapped outside, not surveyed absence", "invalid_geometry": "abort; no repair"},
+  "model": {"family": "quadratic_logistic", "basis": ["intercept", "z_T", "z_P", "z_T*z_P", "z_T^2", "z_P^2"], "scaling": "training-only area-weighted mean and standard deviation", "area_weights": "cos(latitude), normalized within each evaluation or fit", "ridge_lambda": 0.001, "penalize_intercept": false, "loss": "area-weighted mean Bernoulli negative log likelihood plus lambda/2 times squared slopes", "optimizer": "L-BFGS-B", "maxiter": 2000, "gradient_tolerance": 1e-7, "accepted_gradient_max": 1e-6, "smote": false, "class_reweighting": false, "minimum_training_cells_per_class": 30},
+  "validation": {"block_sizes_degrees": [5, 10], "folds": 5, "fold_rule": "(latitude_block_index + 2*longitude_block_index) modulo 5, global -90/-180 origins", "buffer_km": 100, "sphere_radius_km": 6371.0088, "comparator": "area-weighted prevalence in identical training set", "primary_score": "area-weighted Brier score", "secondary_scores": ["log loss", "10-bin reliability"], "test_support": "report climate convex-hull extrapolation; retain all test cells for primary score", "selection": "none; report every taxon and both block designs"},
+  "taxa": [
+    {"id": "abies_alba", "name": "Abies alba", "source_name": "Abies alba", "taxon_id": 1, "name_use_id_orig": 1},
+    {"id": "betula_pendula", "name": "Betula pendula", "source_name": "Betula pendula", "taxon_id": 829, "name_use_id_orig": 829},
+    {"id": "corylus_avellana", "name": "Corylus avellana", "source_name": "Corylus avellana", "taxon_id": 1676, "name_use_id_orig": 1676},
+    {"id": "fagus_sylvatica", "name": "Fagus sylvatica", "source_name": "Fagus silvatica", "taxon_id": 2357, "name_use_id_orig": 2357},
+    {"id": "picea_abies", "name": "Picea abies", "source_name": "Picea abies", "taxon_id": 10719, "name_use_id_orig": 10718},
+    {"id": "taxus_baccata", "name": "Taxus baccata", "source_name": "Taxus baccata", "taxon_id": 5871, "name_use_id_orig": 5871},
+    {"id": "tilia_cordata", "name": "Tilia cordata", "source_name": "Tilia cordata", "taxon_id": 5968, "name_use_id_orig": 5968}
+  ],
+  "inference": {"outside_training_climate_convex_hull": "reject", "probability_meaning": "mapped native range under selected spatial domain and map rules", "fossil_mapping_approved": false, "p1_released": false, "original_279_reproduced": false}
+}

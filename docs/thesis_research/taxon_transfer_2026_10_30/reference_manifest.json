@@ -1,0 +1,27 @@
+{
+  "variant": "meusel_worldclim7_quadratic_v0",
+  "config_sha256": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071",
+  "sources_sha256": "db63d65a9871e441889d1bc87833dde34921935f740c6677b4a0651034ea20f6",
+  "code_sha256": {
+    "calibrate.py": "2a13ce0b1bae482085f943ef176e0f73845088b31e5216d1add8212eb7e4c2e3",
+    "model.py": "684c603d9649885198b5789650fd2e1967a7cbc64f32758e046693cda7731bf4"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.17.0",
+    "shapely": "2.2.0",
+    "rasterio": "1.5.2"
+  },
+  "output_sha256": {
+    "fold_models.json": "2a8080916f488f8fd90feee01409aeaf93a538d2c0d59a5ce469d8e4e60d5e69",
+    "models.json": "357b8322b31e48e76531a858efb550d284048a3d3874161fe3ee73ffc9ac76a9",
+    "predictions.csv": "e050cfbc1e463f84c3a6acf3ab580a513f7c35cda9068cbd4b7086f2060bd0d2",
+    "reliability.csv": "42fde3e8bbf148f7b32703e952e2f2acee5a47f9130049bb881108604bb35263",
+    "sample_inventory.csv": "e8d6d4c736595a8f753a570d18207555d359a5f5f2db49352edd9aa4b0d17d31",
+    "scores.csv": "097ab1661cbac444690384b6f060c28215fce7188791585361c7236f31c3a444",
+    "split_inventory.csv": "2b92318a25104af8fc000c703e2c75efea1f7ab91894c2ddfbada225638de89e"
+  },
+  "fossil_predictions_created": false,
+  "p1_released": false
+}

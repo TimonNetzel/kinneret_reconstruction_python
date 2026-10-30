@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "baseline_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+  "nature": "exploratory_source_correspondence_not_independent_chronology_validation",
+  "pollen_fingerprint": {
+    "features": [
+      "Pin [#]",
+      "Bet [#]",
+      "Que [#]",
+      "Aln [#]",
+      "Abi [#]",
+      "Fag [#]",
+      "Art [#]",
+      "Cheae [#]"
+    ],
+    "pangaea_tolerance_percentage_points": ".005",
+    "noaa_tolerance_percentage_points": ".05",
+    "age_used_for_matching": false,
+    "counts_reconstructed_from_percentages": false,
+    "published_denominator_used_only_for_forward_percent_check": true,
+    "retained_samples": 69,
+    "unique_candidates": 66,
+    "unresolved_sample_ids": [
+      "LGM90D:000055",
+      "LGM90D:000057",
+      "LGM90D:000067"
+    ],
+    "ambiguous_candidates": 0,
+    "same_candidates_in_both_summary_sources": true,
+    "median_abs_source_minus_epd_years": "1.00500",
+    "max_abs_source_minus_epd_years": "7.15000",
+    "direct_original_sample_identifiers_available": false,
+    "depth_crosswalk_to_MON16_established": false
+  },
+  "summary_archives": {
+    "rows": 496,
+    "all_ages_correspond": true,
+    "exact_denominator_matches": 490,
+    "fractional_noaa_denominators_rounded_in_pangaea": 6,
+    "all_denominators_match_after_half_even_rounding": true,
+    "all_eight_percent_columns_rounding_consistent": true
+  },
+  "age_archives": {
+    "rows": 1120,
+    "all_pairs_correspond_after_half_even_depth_rounding": true,
+    "rounding_depth_step_m": ".001",
+    "source_row_positions_changed": 46,
+    "noaa_depth_reversals": 16,
+    "noaa_duplicate_depth_groups": 4,
+    "pangaea_duplicate_depth_groups": 6,
+    "noaa_header_age_unit_ambiguous": true,
+    "numeric_age_scale_confirmed_by_pangaea_ka": true,
+    "age_scale_or_depth_order_changed_in_original_files": false
+  },
+  "ages_changed": false,
+  "new_age_model": false,
+  "excluded_samples_released": false
+}

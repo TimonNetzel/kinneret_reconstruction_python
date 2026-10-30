@@ -256,6 +256,13 @@ Vergleichsauswahl) und je Ansicht eine Datei, die sich mit `KR.ansicht({key, ini
 erzeugt daraus die Reiter. **Eine neue Ansicht** ist eine neue Datei plus ein `<section id="ansicht-<key>">` in
 `index.html`, ein Eintrag in `SKRIPTE` (`app_bauen.py`) und die Texte in `i18n.js` (`ansicht_<key>` usw.).
 
+*Moderne Validierung* (`validierung.js`, 29.10.2026): gespeicherte Fehler der räumlich blockierten
+Shared37-Baseline aus `docs/thesis_research/baseline2025_2026_10_29/` (`baseline.py` → `daten/validierung.js`),
+unabhängig von Lauf und Standort. Blockgröße 5°/10°, Gewichtung Proben/Orte gleich; beschriftet mit Probenzahl,
+Gitter, 100-km-Puffer, Einheiten (Tann °C, Pann mm/Jahr) und Trainingsmittel als Vergleich. `analog_k5` ist das
+vorab festgelegte Hauptmodell, k = 1/15 Sensitivitäten; RMSE-Balken mit Punkten je Fold, Tabellen der Fehler und
+Folds, die regionale Teilansicht ausdrücklich als nachgelagert. Keine fossilen Klimakurven.
+
 **Neue Ansichten:**
 
 - *Taxa-Gewichte:* Posterior der 33 Gewichte (Median, 50 %, 95 %) eines Laufs und von bis zu sechs
@@ -345,6 +352,7 @@ Höhe, Schrift und eine Vorschau in Originalgröße (die Einstellungen bleiben g
 | Taxa-Gewichte | Gewichte (Legende bei Vergleich) | Quantile je Lauf und Taxon mit Prior-Quantilen |
 | Transferfunktionen | Klimaräume, CI-Verhältnis | Posterior und Prior von T und P, Trunkierung, CI je Lauf und Biom |
 | Lauf | Kalibrierung, Spur, R̂/ESS (nur bei offener Diagnostik) | Kurven Posterior/Prior, Spuren je Kette, Diagnostik-Tabelle |
+| Moderne Validierung | RMSE von Tann und Pann je Modell, Punkte je Fold | Fehler (RMSE, MAE, Bias, MSE-Skill) je Gitter, Gewichtung, Modell und Ziel; dieselben je Fold |
 
 **Umsetzung.** Jede Ansicht zeichnet ihre Diagramme mit `KR.plot(div, baue, info)`: `baue()` liefert Spuren und
 Layout, `info` Dateiname, Titel, Voreinstellung der Höhe, Läufe und `csv()`. Für den Export ruft `export.js`

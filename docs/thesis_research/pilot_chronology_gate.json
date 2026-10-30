@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-29",
+  "phase": "P1",
+  "status": "blocked_missing_source_files_and_depth_crosswalk",
+  "automatic_go_to_fossil_climate_run": false,
+  "base_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+  "approved_plan": "PILOT_PLAN.md",
+  "data_request": "CHRONOLOGY_DATA_REQUEST.md",
+  "verified_prior_pr_heads": {
+    "18": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+    "19": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+    "20": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+    "21": "170d77f2bdbbe60217dc8342f34beb252ccb67de"
+  },
+  "acquisition_attempts": [
+    {
+      "file": "mmc1.xlsx",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0277379126003252-mmc1.xlsx",
+      "error": "HTTP Error 403: Forbidden",
+      "url_provenance": "candidate constructed from publisher PII and common supplement URL layout; exact URL not verified",
+      "existence_verified": false,
+      "content_obtained": false
+    },
+    {
+      "file": "mmc1.docx",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0277379126003252-mmc1.docx",
+      "error": "HTTP Error 403: Forbidden",
+      "url_provenance": "candidate constructed from publisher PII and common supplement URL layout; exact URL not verified",
+      "existence_verified": false,
+      "content_obtained": false
+    },
+    {
+      "file": "mmc1.zip",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0277379126003252-mmc1.zip",
+      "error": "HTTP Error 403: Forbidden",
+      "url_provenance": "candidate constructed from publisher PII and common supplement URL layout; exact URL not verified",
+      "existence_verified": false,
+      "content_obtained": false
+    },
+    {
+      "file": "mmc1.pdf",
+      "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0277379126003252-mmc1.pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "url_provenance": "candidate constructed from publisher PII and common supplement URL layout; exact URL not verified",
+      "existence_verified": false,
+      "content_obtained": false
+    }
+  ],
+  "alternative_supplement_file_actually_obtained": false,
+  "publication_doi": "10.1016/j.quascirev.2026.110116",
+  "source_portal": "https://researchportal.port.ac.uk/en/publications/lago-grande-di-monticchio-revisited-revised-age-model-of-the-last/",
+  "missing": [
+    "Original Supplement A-1/A-2/A-3",
+    "Documented LGM90D to MON16 physical/composite/tephra-free depth correspondence"
+  ],
+  "posterior_age_draws_available": false,
+  "source_absence_proven": false,
+  "next_input": "Original supplement file upload or working public file link",
+  "original_ages_changed": false,
+  "baseline_changed": false,
+  "claude_integration_files_changed": false,
+  "outbound_messages_sent": false
+}

@@ -1,0 +1,136 @@
+export_column,epd_variable_id,epd_variable_code,epd_variable_name,mapping
+Abi [#],1,Abi,Abies,exact_variable_code
+Ace [#],4,Ace,Acer,exact_variable_code
+All-T [#],31,All-T,Allium-type,exact_variable_code
+Aln [#],32,Aln,Alnus,exact_variable_code
+Ant-T [#],48,Ant-T,Anthemis-type,exact_variable_code
+Arm.m.TB [#],1018,Arm.m.TB,Armeria maritima (type B),exact_variable_code
+Art [#],66,Art,Artemisia,exact_variable_code
+Adl-T [#],1640,Adl-T,Asphodelus-type,exact_variable_code
+Bet [#],95,Bet,Betula,exact_variable_code
+Borae [#],108,Borae,Boraginaceae,exact_variable_code
+Bot [#],905,Bot,Botrychium,exact_variable_code
+Bry.s.ud [#],1071,Bry.s.ud,Bryophyte spores undiff.,exact_variable_code
+Bux [#],119,Bux,Buxus,exact_variable_code
+Camae [#],131,Camae,Campanulaceae,exact_variable_code
+Can [#],1163,Canae,Cannabaceae,explicit_export_archive_alias
+Car.b [#],137,Car.b,Carpinus betulus,exact_variable_code
+Cphae [#],141,Cphae,Caryophyllaceae,exact_variable_code
+Cas [#],145,Cas,Castanea,exact_variable_code
+Cen.cfc-T [#],2708,Cen.cfcT,Centaurea cf. C. cyanus-type,explicit_export_archive_alias
+Cen.cfn-T [#],2709,Cen.cfnT,Centaurea cf. C. nigra-type,explicit_export_archive_alias
+Cen.cfs-T [#],2710,Cen.cfsT,Centaurea cf. C. scabiosa-type,explicit_export_archive_alias
+Crl-T [#],165,Crl-T,Cerealia-type,exact_variable_code
+Cheae [#],185,Cheae,Chenopodiaceae,exact_variable_code
+Cir-T [#],192,Cir-T,Cirsium-type,exact_variable_code
+Cla.m [#],199,Cla.m,Cladium mariscus,exact_variable_code
+Cicoid [#],203,Cm.Sf.C,Compositae subf. Cichorioideae,explicit_export_archive_alias
+conc.spk [#],2603,conc.spk,Concentration spikes,exact_variable_code
+Cornacae [#],2503,Cornacae,Cornaceae,exact_variable_code
+Crn [#],210,Crn,Cornus,exact_variable_code
+Cor [#],217,Cor,Corylus,exact_variable_code
+Cru [#],228,Cru,Cruciferae,exact_variable_code
+Cypae [#],233,Cypae,Cyperaceae,exact_variable_code
+Ech-T [#],263,Ech-T,Echium-type,exact_variable_code
+Eph.d [#],273,Eph.d,Ephedra distachya,exact_variable_code
+Eph.f-T [#],276,Eph.f-T,Ephedra fragilis-type,exact_variable_code
+Equ [#],929,Equ,Equisetum,exact_variable_code
+Erl [#],286,Erl,Ericales,exact_variable_code
+Euc [#],2602,Euc(ct),Eucalyptus spike (counted),explicit_export_archive_alias
+Euo.e [#],297,Euo.e,Euonymus europaeus,exact_variable_code
+Fag [#],304,Fag,Fagus,exact_variable_code
+Flp [#],309,Flp,Filipendula,exact_variable_code
+Fra.e-T [#],317,Fra.e-T,Fraxinus excelsior-type,exact_variable_code
+Fra.o [#],318,Fra.o,Fraxinus ornus,exact_variable_code
+Gal-T [#],325,Gal-T,Galium-type,exact_variable_code
+Ger [#],340,Ger,Geranium,exact_variable_code
+Graae [#],349,Graae,Gramineae,exact_variable_code
+Hed [#],352,Hed,Hedera,exact_variable_code
+Hel-T [#],1328,Hel-T,Helianthemum-type,exact_variable_code
+Hpp [#],365,Hpp,Hippophae,exact_variable_code
+Ile [#],385,Ile,Ilex,exact_variable_code
+Ind.brok [#],976,Ind.brok,Indeterminable: broken,exact_variable_code
+Ind.conc [#],977,Ind.conc,Indeterminable: concealed,exact_variable_code
+Ind.crum [#],1001,Ind.crum,Indeterminable: crumpled,exact_variable_code
+Ind.degr [#],979,Ind.degr,Indeterminable: degraded,exact_variable_code
+Ind.unkn [#],982,Ind.unkn,Indeterminable: unknown,exact_variable_code
+Jug [#],392,Jug,Juglans,exact_variable_code
+Jun-T [#],396,Jun-T,Juniperus-type,exact_variable_code
+Lar [#],404,Lar,Larix,exact_variable_code
+Leg [#],411,Leg,Leguminosae,exact_variable_code
+Lil-T [#],1456,Lilae-T,Liliaceae-type,explicit_export_archive_alias
+Malvae [#],472,Malvae,Malvaceae,exact_variable_code
+Men-T [#],482,Men-T,Mentha-type,exact_variable_code
+Mey.t [#],484,Mey.t,Menyanthes trifoliata,exact_variable_code
+Mon.s [#],1400,Mon.s,Monolete spore(s),exact_variable_code
+Myo.a [#],504,Myo.a,Myriophyllum alterniflorum,exact_variable_code
+Myo.s [#],505,Myo.s,Myriophyllum spicatum,exact_variable_code
+Myo.v [#],509,Myo.v,Myriophyllum verticillatum,exact_variable_code
+Nup [#],521,Nup,Nuphar,exact_variable_code
+Nym [#],523,Nym,Nymphaea,exact_variable_code
+Orn-T [#],540,Orn-T,Ornithogalum-type,exact_variable_code
+Ost-T [#],542,Ost-T,Ostrya-type,exact_variable_code
+Oxy-T [#],548,Oxy-T,Oxyria-type,exact_variable_code
+Papae [#],1279,Papae,Papaveraceae,exact_variable_code
+Phi [#],562,Phi,Phillyrea,exact_variable_code
+Pic [#],564,Pic,Picea,exact_variable_code
+Pin [#],567,Pin,Pinus,exact_variable_code
+Pst [#],572,Pst,Pistacia,exact_variable_code
+Pla [#],576,Pla,Plantago,exact_variable_code
+Pla.c-T [#],1478,Pla.c-T,Plantago coronopus-type,exact_variable_code
+Pla.l-T [#],580,Pla.l-T,Plantago lanceolata-type,exact_variable_code
+Pla.m/m [#],583,Pla.m/m,Plantago major/P. media,exact_variable_code
+Plt [#],591,Plt,Platanus,exact_variable_code
+Polae [#],603,Polae,Polygonaceae,exact_variable_code
+Ppd [#],956,Ppd,Polypodium,exact_variable_code
+Pop [#],620,Pop,Populus,exact_variable_code
+Pot [#],624,Pot,Potamogeton,exact_variable_code
+Pti [#],629,Pti,Potentilla,exact_variable_code
+Priae [#],639,Priae,Primulaceae,exact_variable_code
+Ptd [#],960,Ptd,Pteridium,exact_variable_code
+Que [#],654,Que,Quercus,exact_variable_code
+Que.i [#],1487,Que.i,Quercus ilex,exact_variable_code
+Que.r-T [#],659,Que.r-T,Quercus robur-type,exact_variable_code
+Ran-T [#],672,Ran-T,Ranunculus-type,exact_variable_code
+Redae [#],1780,Redae,Resedaceae,exact_variable_code
+Rhaae [#],674,Rhaae,Rhamnaceae,exact_variable_code
+Rosae [#],687,Rosae,Rosaceae,exact_variable_code
+Rum [#],694,Rum,Rumex,exact_variable_code
+Sal [#],712,Sal,Salix,exact_variable_code
+Sam [#],715,Sam,Sambucus,exact_variable_code
+San.m [#],722,San.m,Sanguisorba minor,exact_variable_code
+Saxae [#],748,Saxae,Saxifragaceae,exact_variable_code
+Scoae [#],763,Scoae,Scrophulariaceae,exact_variable_code
+Ser-T [#],771,Ser-T,Serratula-type,exact_variable_code
+Sld-T [#],787,Sld-T,Solidago-type,exact_variable_code
+Tax [#],811,Tax,Taxus,exact_variable_code
+Tha [#],816,Tha,Thalictrum,exact_variable_code
+Til [#],821,Til,Tilia,exact_variable_code
+trilete spores [#],1396,Trl.s,Trilete spore(s),explicit_export_archive_alias
+Typ.a-T [#],845,Typ.a-T,Typha angustifolia-type,exact_variable_code
+Typ.l [#],847,Typ.l,Typha latifolia,exact_variable_code
+Ulm [#],853,Ulm,Ulmus,exact_variable_code
+Umb [#],854,Umb,Umbelliferae,exact_variable_code
+Urt-T [#],865,Urt-T,Urtica-type,exact_variable_code
+Valae [#],873,Valae,Valerianaceae,exact_variable_code
+Vib [#],879,Vib,Viburnum,exact_variable_code
+Vic-T [#],886,Vic-T,Vicia-type,exact_variable_code
+Vts [#],897,Vts,Vitis,exact_variable_code
+vol.sp.a [cm**3],2604,vol.sp.a,Volume of spike added,exact_variable_code
+cf.Aco [#],2711,cf.Aco,cf. Acorus,exact_variable_code
+cf.Alc [#],2712,cf.Alc,cf. Alchemilla,exact_variable_code
+cf.Arm-A [#],2713,cf.Arm-A,cf. Armeria (type A),exact_variable_code
+cf.Bal [#],2714,cf.Bal,cf. Baldellia,exact_variable_code
+cf.Ced [#],2715,cf.Ced,cf. Cedrus,exact_variable_code
+cf.Cet [#],2716,cf.Cet,cf. Centaurium,exact_variable_code
+cf.Dap [#],2592,cf.Dap,cf. Daphne,exact_variable_code
+cf.Epi [#],1248,cf.Epi,cf. Epilobium,exact_variable_code
+cf.Eup [#],2448,cf.Eup,cf. Euphorbia,exact_variable_code
+cf.Hyp [#],1924,cf.Hyp,cf. Hypericum,exact_variable_code
+cf.Lon [#],2583,cf.Lon,cf. Lonicera,exact_variable_code
+cf.Myt [#],2717,cf.Myt,cf. Myrtus,exact_variable_code
+cf.Ole [#],2591,cf.Ole,cf. Olea,exact_variable_code
+cf.Pog [#],2718,cf.Pog,cf. Polygonum,exact_variable_code
+cf.Pol.a [#],2719,cf.Pol.a,cf. Polygonum amphibium,exact_variable_code
+cf.Suc [#],2585,cf.Suc,cf. Succisa,exact_variable_code
+cf.Viu [#],2597,cf.Viu,cf. Viscum,exact_variable_code

@@ -1,0 +1,29 @@
+{
+  "variant": "meusel7_nnet_smote_v0",
+  "config_sha256": "0d540b4dc551367819acbde6ce155d7dcd5a942c8ec96c935750851130c028ad",
+  "sources_sha256": "9f013072b925134ee9fe20a1f4d9bae2ab77fd49360109f98168d9ff6fcb343d",
+  "previous_commit": "8f02794434f561f5b30228360247935f3c025cc8",
+  "synthetic_rows": 1274548,
+  "code_sha256": {
+    "compare.py": "1e25fb7b36a9c0f13ea5bd69f71f875b7d421ee9fee9b4424fb14b7c819c4232",
+    "network.py": "860aca03fb3aadba3b64481cdba73f6d2965a8e1b1f8400b673901e5bbe67800"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.17.0"
+  },
+  "outputs_sha256": {
+    "fit_models.json": "ecbd3534d77e4dd6d0668b0fe0d5a23f0eecf0ed6f3bf5e102316f38d2dc6237",
+    "metrics_summary.csv": "93ff7c368c17f39e87e7843a423f0f36bd259cd37a4c9bca7803586f54aa320b",
+    "models.json": "8e1567778bed79f33b90c3d92b045477ebdd4c34848fc3845bfdec39bb6e7d1d",
+    "predictions.csv": "99bd834d98334cd3716cf624932505788029c444d36e8a59b681ffdd3b69209a",
+    "reliability.csv": "775dbf32978e7cbce14529b61df588bc8a318f34a66c8284707da439a8dcc280",
+    "sample_inventory.csv": "fffcea391757debff36889d3c5bf7f7b3078fe3d6333653840f108c51e7065b6",
+    "scores.csv": "69dc8e6e4da6f057f643889edb9334f94bac4f4f5751ae59a5e7134aa7f8c538",
+    "smote_trace.csv.gz": "b41bc72b11035ea3dc800ce1d4a97962c3f6f95dc6c89550ab09405f5085c0bd",
+    "split_inventory.csv": "49cd1c09ae7e5d20e847a230d663043b7c22f4450437b3b6564b8a7e639d5928"
+  },
+  "fossil_application_approved": false,
+  "p1_released": false
+}

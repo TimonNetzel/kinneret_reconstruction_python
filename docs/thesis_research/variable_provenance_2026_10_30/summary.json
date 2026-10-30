@@ -1,0 +1,31 @@
+{
+  "input_sha256": {
+    "itDownload.RDS": "03536b6f1d3974de77ff997f6d86674a78882b2ebe305bb4e135e38289a2a829",
+    "epd-postgres-distribution-20171031.zip": "6ce720d51e0cf92f3f207ed4527d6cda00dd565cecbb8d3793112a723dbfc072",
+    "monticchio_739452.tab": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+    "pr26_correspondence.csv": "08b90b71e5aa22b4f923a7f82579a2d18e6cc9d9425f551e6065a0709b71c9bf",
+    "pr26_diagnostics.csv": "3368c3296e4166199ce26a1c9d54ac6a38ed7976fa2f83bec0bd1c9bee266373",
+    "pr26_differences.csv": "9161157b577aeaf79876d658ab9587910395b45c3475c3dcaf0cbdceff76c345"
+  },
+  "pr26_reader_sha256": "bce9dc26e452fbc269e9c0c739bbc4f50deca7a2c102f85c121be01d898d6c54",
+  "rdata_version": "1.1.0",
+  "fixed_pairs": 69,
+  "new_pair_search_performed": false,
+  "three_source_original_cells_checked": 483,
+  "plantago_balances_equal": 69,
+  "scroph_digitalis_values_equal": 69,
+  "difference_evidence_counts": {
+    "four_old_Plantago_fields_balance_only": 35,
+    "Digitalis_type_value_equal_only": 9,
+    "unexplained_source_difference": 3
+  },
+  "pr26_status_counts_retained": {
+    "no_shared_variable_match": 41,
+    "unique_shared_variable_candidate": 28
+  },
+  "all_47_provenance_cases_resolved": false,
+  "submission_records_acquired": false,
+  "source_values_corrected": false,
+  "p1_status": "open",
+  "mon16_mapping_proven": false
+}

@@ -15,3 +15,4 @@ aufgerufen, nachdem das Paket installiert ist (`pip install -e .`).
 | `ap_kurven.py` | Baumpollenkurve mit und ohne Kulturbäume | `python tools/ap_kurven.py` |
 | `app_pruefen.js` | Browser-Test der gebauten App (Playwright, ohne Netz, Handy/PC, hell/dunkel), optional Bildschirmfotos | `node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --fotos fotos/` |
 | `thesis_import/` | Import von EMPD2 und Monticchio aus gesperrten Quellen (Dissertation); siehe `thesis_import/README.md` | `kinneret-recon thesis-import --raw-dir roh/netzel --output-dir results/thesis_import --download` |
+| `thesis_import/evaluate_shared2025.py` | Moderne räumliche Shared37-Baseline (Bericht: `docs/thesis_research/baseline2025_2026_10_29/`) | `kinneret-recon thesis-baseline --input-dir results/shared37 --output-dir results/baseline2025` |

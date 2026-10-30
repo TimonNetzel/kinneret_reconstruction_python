@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-30",
+  "scope": "bounded source reading; no original-byte or Neotoma sample audit",
+  "new_source_approach": "Follow the explicitly cited pollen dataset 47525 from the 2026 Holocene paper, distinct from previously inspected event dataset 27166.",
+  "article": {
+    "doi": "10.1016/j.quascirev.2026.109873",
+    "publisher": "https://www.sciencedirect.com/science/article/pii/S027737912600082X",
+    "readable_author_copy": "https://www.researchgate.net/publication/401705206_North-south_Holocene_seasonal_contrast_on_the_Italian_peninsula_Clarification_of_the_latitudinal_transition_zone_based_on_the_multi-proxy_study_of_Lago_Grande_di_Monticchio",
+    "read_locations": ["2.2, printed page 4", "2.5.1, printed page 5", "2.8, printed page 6", "3.2, printed page 7", "Table B.2", "Data availability and Allen et al. 2021 reference"],
+    "access_mode": "web-rendered author-uploaded article text; not a downloaded PDF",
+    "original_bytes_acquired": false,
+    "original_sha256": null
+  },
+  "derived_catalog": {
+    "doi": "10.1594/PANGAEA.989985",
+    "catalog_url": "https://doi.pangaea.de/10.1594/PANGAEA.989985",
+    "table_url": "https://doi.pangaea.de/10.1594/PANGAEA.989985?format=html",
+    "read_scope": "catalog metadata, all parameter definitions, selected HTML rows; no full numerical validation",
+    "access_mode": "web-rendered catalog and HTML table",
+    "raw_tsv_acquired": false,
+    "original_sha256": null
+  },
+  "next_input": {
+    "doi": "10.21233/KVNC-0856",
+    "dataset_id": 47525,
+    "site_id": 3295,
+    "landing_page": "https://data.neotomadb.org/47525",
+    "target_download": "https://api.neotomadb.org/v2.0/data/downloads/47525",
+    "full_payload_acquired": false,
+    "physical_labels_checked": false,
+    "identity_with_epd_entity_932_established": false,
+    "mon16_transform_established": false,
+    "original_sha256": null
+  },
+  "access_attempts": [
+    {"url": "https://doi.org/10.21233/KVNC-0856", "route": "web reader", "outcome": "not accessible through reader"},
+    {"url": "https://data.neotomadb.org/47525", "route": "web reader", "outcome": "landing page returned no readable lines"},
+    {"url": "https://api.neotomadb.org/v2.0/data/downloads/47525", "route": "web reader", "outcome": "not accessible through reader"},
+    {"url": "https://api.neotomadb.org/v2.0/data/downloads/47525", "route": "curl with inherited network settings", "outcome": "exit 28; 30001 ms timeout; no usable payload"},
+    {"url": "https://api.neotomadb.org/v2.0/data/downloads?datasetid=47525", "route": "web reader", "outcome": "not accessible through reader"},
+    {"url": "https://api.neotomadb.org/v2.0/data/datasets/47525", "route": "web reader", "outcome": "not accessible through reader"},
+    {"url": "https://api.datacite.org/dois/10.21233/KVNC-0856", "route": "web reader", "outcome": "not accessible through reader"},
+    {"url": "https://doi.pangaea.de/10.1594/PANGAEA.989985?format=textfile", "route": "web reader", "outcome": "unsupported TSV content type; HTML view used instead"},
+    {"url": "https://www.sciencedirect.com/science/article/pii/S027737912600082X", "route": "web open", "outcome": "403; publisher metadata visible in search, author text read separately"},
+    {"url": "https://hal.science/hal-05544032/document", "route": "web reader", "outcome": "not accessible through reader"},
+    {"route": "ResearchGate full-text PDF link from article page", "outcome": "404; rendered article text read instead"}
+  ],
+  "negative_access_is_not_data_absence": true,
+  "restart_commit": "00c9f037642470c7d1a9a44e488f062109292c2d",
+  "baseline_commit": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+  "prior_pr_heads": {
+    "18": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+    "19": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+    "20": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+    "21": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+    "22": "a710e86dded84514d06d75d2769fe25dcdd5ec9e",
+    "23": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+    "24": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+    "25": "00c9f037642470c7d1a9a44e488f062109292c2d"
+  },
+  "p1_status": "open",
+  "new_age_transfer_allowed": false,
+  "fossil_pilot_released": false,
+  "author_messages_sent": false,
+  "merges_performed": false
+}

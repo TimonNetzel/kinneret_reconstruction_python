@@ -62,7 +62,7 @@ async function pruefeGesten(browser, datei) {
   if (nachher[0] < vorher[0] + 50 || nachher[1] !== vorher[1]) fehler.push(`Touch: Wischen ${vorher} -> ${nachher}`);
   // Antippen in jeder Ansicht (Diagramm unter den fixierten Kopf geschoben): nur Werte, Achsen und Kurven bleiben
   for (const [ansicht, sel] of [["rekonstruktion", "#rek-plot"], ["sensitivitaet", "#sens-plot"], ["gewichte", "#gew-plot"],
-    ["transferfunktionen", "#tf-plot"], ["lauf", "#lauf-kalibrierung"]]) {
+    ["transferfunktionen", "#tf-plot"], ["lauf", "#lauf-kalibrierung"], ["validierung", "#val-plot"]]) {
     await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
     await page.waitForSelector(sel + " .main-svg", { timeout: 15000 });
     await page.waitForTimeout(400);
@@ -218,6 +218,24 @@ async function pruefe(browser, datei, groesse, thema, name) {
   await page.waitForFunction(() => document.querySelector("#lauf-hinweis").textContent.includes("⚠"), null, { timeout: 10000 })
     .catch(() => fehler.push("Hinweis bei haengender Kette fehlt"));
   await page.selectOption("#lauf-lauf", "standard_v3");
+  // Moderne Validierung: Beschriftung (Gitter, Puffer, Proben, Vergleich), Hauptmodell k = 5, Wechsel auf 10 Grad
+  await page.click('.reiter button[data-ansicht="validierung"]');
+  await warte("#val-plot");
+  const val = () => page.evaluate(() => [document.querySelector("#val-info").innerText,
+    document.querySelector("#val-tabelle tr.basis").innerText.replace(/\s+/g, " "),
+    document.querySelectorAll("#val-folds tbody tr").length, document.querySelector("#val-regional-hinweis").textContent]);
+  let v = await val();
+  if (!["7.078 moderne Proben", "5°-Gitter", "100 km", "Trainingsfolds", "°C", "mm/Jahr", "keine fossilen"]
+    .every((x) => v[0].includes(x))) fehler.push("Validierung Info: " + v[0].slice(0, 120));
+  if (!v[1].startsWith("k = 5 Analoge Hauptmodell 3,765") || v[2] !== 5 || !v[3].includes("kein zusätzlicher unabhängiger Test")) {
+    fehler.push(`Validierung: ${v.slice(1)}`);
+  }
+  await page.click('#val-block button[data-wert="10"]');
+  await page.waitForTimeout(300);
+  v = await val();
+  if (!v[1].includes("3,926") || !v[0].includes("10°-Gitter")) fehler.push("Validierung 10 Grad: " + v[1]);
+  await page.click('#val-block button[data-wert="5"]');
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_validierung.png`, fullPage: true });
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Sprache
@@ -232,7 +250,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (!methEn.startsWith("The posterior distribution")) fehler.push("Methodentext en: " + methEn.slice(0, 40));
   await page.click("#sprache");
   // Export in jeder Ansicht: Dialog, Vorschau, CSV-Knoepfe
-  for (const ansicht of ["rekonstruktion", "sensitivitaet", "gewichte", "transferfunktionen", "lauf"]) {
+  for (const ansicht of ["rekonstruktion", "sensitivitaet", "gewichte", "transferfunktionen", "lauf", "validierung"]) {
     await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
     await page.waitForTimeout(400);
     await page.click(`#ansicht-${ansicht} .export-knopf`);
@@ -243,7 +261,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
     await page.click('#export button[value="zu"]');
   }
   // Formeln: nirgends rohe LaTeX-Schreibweise, aber gesetzte Indizes in Diagrammen und Text
-  for (const ansicht of ["rekonstruktion", "sensitivitaet", "gewichte", "transferfunktionen", "lauf"]) {
+  for (const ansicht of ["rekonstruktion", "sensitivitaet", "gewichte", "transferfunktionen", "lauf", "validierung"]) {
     await page.click(`.reiter button[data-ansicht="${ansicht}"]`);
     await page.waitForTimeout(400);
     const roh = await page.evaluate(() => {

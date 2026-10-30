@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "source_members": [
+    {
+      "file": "1-s2.0-S0277379126003252-mmc1.xlsx",
+      "bytes": 447272,
+      "sha256": "464da840bafe2b508da20e8d78062e6928f62d41cf7b7025b43670c954feedd9"
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "bytes": 776950,
+      "sha256": "57bf8feac10d7b537f519bdc140fddf4f4f1319a9298c3d2cedd543a6d155d3d"
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc3.docx",
+      "bytes": 1759486,
+      "sha256": "a4840acda246b1b5136b739bf086ae703f600e0020972306526d1b08138de436"
+    }
+  ],
+  "audit_code_sha256": "faeb3996dc1afb72ee8f1756f7d37ce16dcb20570a788c89c7b9ba0f3a6dfd29",
+  "archive": {
+    "bytes": 2928099,
+    "sha256": "2329fab3f4fc196174c70960cb9f1fddcbe9f9158ab099a3351193986f7ebdf8"
+  },
+  "pr21_correspondence_sha256": "b3b9247594539bd0afd858d92fde2172bc3ff8b199c63bd106b506f82a122f83",
+  "sheets": [
+    {
+      "file": "1-s2.0-S0277379126003252-mmc1.xlsx",
+      "sheet": "Supplement Table A-1",
+      "nonempty_rows": 67,
+      "nonempty_cells": 1247,
+      "cached_formulas": 23
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc1.xlsx",
+      "sheet": "Supplement Table A-2",
+      "nonempty_rows": 20,
+      "nonempty_cells": 241,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc1.xlsx",
+      "sheet": "Supplement Table A-3",
+      "nonempty_rows": 13027,
+      "nonempty_cells": 52976,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-1 Overview",
+      "nonempty_rows": 58,
+      "nonempty_cells": 543,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-2 EPMA glass standards",
+      "nonempty_rows": 15,
+      "nonempty_cells": 132,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-3 EPMA MON16",
+      "nonempty_rows": 643,
+      "nonempty_cells": 15394,
+      "cached_formulas": 636
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-4 LA ICP-MS standards",
+      "nonempty_rows": 84,
+      "nonempty_cells": 1988,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-5 LA-ICP-MS MON16 & MON12",
+      "nonempty_rows": 220,
+      "nonempty_cells": 5437,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-6 sample list near-vent CF",
+      "nonempty_rows": 72,
+      "nonempty_cells": 422,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-7 LA-ICP-MS near-vent CF",
+      "nonempty_rows": 712,
+      "nonempty_cells": 19146,
+      "cached_formulas": 0
+    },
+    {
+      "file": "1-s2.0-S0277379126003252-mmc2.xlsx",
+      "sheet": "B-8 MON12 EPMA data",
+      "nonempty_rows": 697,
+      "nonempty_cells": 17341,
+      "cached_formulas": 575
+    }
+  ],
+  "a3": {
+    "rows": 13024,
+    "first_depth_mm": "3.5",
+    "last_depth_mm": "13137.9",
+    "first_median_cal_bp": "1351.2",
+    "last_median_cal_bp": "29074.6",
+    "minimum_bound_cal_bp": "1100.4000000000001",
+    "maximum_bound_cal_bp": "29525.8",
+    "interval_width_years": {
+      "min": "1",
+      "median": "852.8",
+      "max": "1525.7"
+    },
+    "invalid_interval_rows": [
+      {
+        "row": 137,
+        "depth_mm": "135.5",
+        "median": "1437.6",
+        "minimum": "1435.2",
+        "maximum": "1437.2",
+        "median_minus_maximum": "0.4"
+      },
+      {
+        "row": 138,
+        "depth_mm": "136.5",
+        "median": "1438.4",
+        "minimum": "1437.3",
+        "maximum": "1438.3",
+        "median_minus_maximum": "0.1"
+      }
+    ],
+    "non_1mm_steps": 37,
+    "decreases": {
+      "depth": [],
+      "median": [],
+      "minimum": [],
+      "maximum": []
+    },
+    "labelled_groups": 31,
+    "labelled_unique_strings": 30
+  },
+  "a2": {
+    "anchors": 16,
+    "date_types": {
+      "historical": 1,
+      "terrestrial 14C": 7,
+      "Bayesian modelled": 7,
+      "marine 14C": 1
+    }
+  },
+  "cross_table_flags": 17,
+  "supplement_c_embedded_data_files": [],
+  "gate": {
+    "phase": "P1",
+    "status": "supplements_received_depth_crosswalk_and_source_conflicts_unresolved",
+    "original_supplements_received": true,
+    "lgm90d_samples": 69,
+    "mon16_age_assignments": 0,
+    "joint_posterior_draws_present": false,
+    "bacon_input_settings_present": false,
+    "automatic_go_to_fossil_climate_run": false
+  }
+}

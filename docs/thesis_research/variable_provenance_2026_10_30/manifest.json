@@ -1,0 +1,7 @@
+{
+  "affected_native_inventory.csv": "64089d1ddcfeb75c6ab7c6687880ae5ac7f4f9209b9d228cdb3fc599735677aa",
+  "difference_evidence.csv": "cf25b4131ea912fd007599154233d38a478ec5e33b7e330d495c1b1a705b5f4c",
+  "fixed_pair_diagnostics.csv": "c6b6e75e7dd0ebf15f7d30afb6b3d2911ba2a13b1027d36325da9deb02abe059",
+  "original_variable_definitions.csv": "5fe4015bfa9ebf54b0d137e9c9209c5f57df169ffc5dbbe48d950425dd7cd1bd",
+  "summary.json": "38c0469581f6fa313331ba92dbbcbd646819c1da55e76a51b803aa8ffb3d83f5"
+}

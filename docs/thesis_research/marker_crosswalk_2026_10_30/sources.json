@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-30",
+  "wulf2001": {
+    "title": "Das tephrochronologische Referenzprofil des Lago Grande di Monticchio",
+    "author": "Sabine Wulf",
+    "thesis_date": "2000",
+    "report": "Scientific Technical Report 01/03, 2001",
+    "pdf": "https://webdoc.sub.gwdg.de/ebook/serien/tm-v/STR/0103.pdf",
+    "file": "wulf2001.pdf",
+    "locations": [
+      "section 3.1, printed 34 / PDF45",
+      "Appendix A, PDF138/139, pages labelled Seite 1/2"
+    ],
+    "pdf_pages": 185,
+    "read_scope": "Sections 3.1, 3.2 and 6.1; selected Appendix A rows. The complete dissertation was not scientifically re-audited."
+  },
+  "hajdas": {
+    "doi": "10.1017/S0033822200018750",
+    "publisher": "https://www.cambridge.org/core/journals/radiocarbon/article/14c-ages-of-terrestrial-macrofossils-from-lago-grande-di-monticchio-italy/4037B39918EFB60C1740B92E405E65F5",
+    "pdf": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/4037B39918EFB60C1740B92E405E65F5/S0033822200018750a.pdf/div-class-title-span-class-sup-14-span-c-ages-of-terrestrial-macrofossils-from-lago-grande-di-monticchio-italy-div.pdf",
+    "file": "hajdas1998.pdf",
+    "locations": [
+      "Methods, printed804 / PDF2",
+      "Table1 and Figure1, printed805 / PDF3"
+    ],
+    "date_note": "Printed page803 says 1998; publisher volume metadata says 1997; online posting 2016. DOI identifies the same study."
+  },
+  "tm_label_bridge": {
+    "original_article_doi": "10.1016/j.quaint.2004.01.028",
+    "table": "2, archived transcription rows 13/15/16/17/23/24",
+    "archive": "https://varve.gfz-potsdam.de/database/details/94dd95c2-dacf-46fc-aa8f-f8be21c09a8e?datasetId=7f7eeb65-a58b-4cf5-84f8-a34442200254",
+    "pairs": {
+      "L4": "TM-6b",
+      "L5": "TM-7b",
+      "L6": "TM-8",
+      "L7": "TM-9",
+      "L8": "TM-12",
+      "L9": "TM-13"
+    },
+    "original_pdf_obtained_in_this_run": false,
+    "role": "Published-name bridge read from scientific database transcription; older aliases and bases independently checked on original Wulf2001 PDF."
+  },
+  "pangaea": {
+    "tephra": "https://doi.pangaea.de/10.1594/PANGAEA.741058?format=textfile",
+    "ams": "https://doi.pangaea.de/10.1594/PANGAEA.740512?format=textfile",
+    "provenance": "Existing workspace bytes checked against locked original SHA256 before reuse."
+  },
+  "supplement": {
+    "doi": "10.1016/j.quascirev.2026.110116",
+    "file": "1-s2.0-S0277379126003252-mmc1.xlsx",
+    "source": "User attachment, original ZIP SHA2329fab3f4fc196174c70960cb9f1fddcbe9f9158ab099a3351193986f7ebdf8",
+    "role": "A-1 native MON12/MON16 cells; A-2 conflicting cell. Previously audited in PR23."
+  },
+  "prior_correspondence": {
+    "commit": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+    "path": "docs/thesis_research/chronology_crosswalk_2026_10_29/sample_correspondence.csv"
+  },
+  "bounded_search": {
+    "topics": [
+      "Original 1996 chronology and pollen methods",
+      "Original 1999 three-core comparison",
+      "Original Wulf dissertation Appendix A",
+      "Hajdas ETH-12464 provenance",
+      "2026 Mercato source correction and Bacon inputs"
+    ],
+    "new_usable_downloads": [
+      "Wulf2001 original PDF",
+      "Hajdas original publisher PDF"
+    ],
+    "not_acquired": [
+      "Original pollen sample-section mapping",
+      "MON16 corrected author supplement",
+      "Bacon project or joint posterior draws"
+    ],
+    "negative_findings_are_not_proof_of_source_absence": true,
+    "access_failures": [
+      "GFZ original PDF endpoints HTTP403",
+      "Geo-LEO download HTTP403",
+      "Portsmouth publisher-PDF portal HTTP403",
+      "ResearchGate Hajdas download link HTTP404; alternative publisher PDF succeeded"
+    ]
+  },
+  "outbound_author_messages_sent": false,
+  "original_pdfs_redistributed": false
+}
