@@ -1,0 +1,7 @@
+method	case	expected_correct	defective_actual	difference	status
+global_normalization	S02-witness	2/3	6/7	4/21	absichtlich defekt; erkannt
+independent_psi	S03	1/72	0	-1/72	absichtlich defekt; erkannt
+independent_theta	S10	1/256	0	-1/256	absichtlich defekt; erkannt
+independent_categories	S05	0	673/1024	673/1024	absichtlich defekt; erkannt
+independent_C_marginals	S04	3/4	9/16	-3/16	absichtlich defekt; erkannt
+D_only_chronology	S08d	3/4	3	9/4	absichtlich defekt; erkannt

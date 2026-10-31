@@ -17,6 +17,51 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+
+## Aktueller Abschluss: endliche synthetische A3-Prüfung bestanden, 31.10.2026
+
+Nutzerauftrag nach PR #54 umgesetzt: **A3 im gesperrten endlichen synthetischen
+Umfang abgeschlossen und bestanden.** [Audit](./A3_SYNTHETIC_AUDIT.md) und
+[vollständige Tabellenbytes](./A3_SYNTHETIC_AUDIT/manifest.json) gesichert:
+22 Posteriorfälle, drei prädiktive Verteilungen, 33 erwartete Fehlerablehnungen,
+345 exakte Nachweise, sechs gezielte Tests bestanden. Alle Zustandsmassen,
+Normierer und Marginalen beider getrennten Rechenwege exakt gleich. Vier
+absichtlich defekte Verfahren und zwei zusätzliche Kontrollen erkannt;
+keine fehlgeschlagenen/blockierten/nicht schätzbaren/nicht ausgeführten
+Pflichtfälle. S11 bleibt erwartungsgemäß nicht identifizierbar. Keine reale
+Gültigkeit, Deckung oder Neuheit behauptet.
+
+Basis `8583d31843e0e6919bb0b1c03fbb7ebc9dfd7c9b`,
+[PR #54](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/54)
+offen/ungemergt und mergebar; automatische CI 41235319258 erfolgreich.
+Design-Sperrcommit `a4c03c6752708dead6ecd98f016758538ddb71b2`, Blob
+`21879814c77f0341457f9f4790dd40e24b555d55` unverändert. Eigener Worktree/Branch
+`/workspace/netzel-a3-synthetic-execution` / `codex/netzel-a3-synthetic-execution`;
+eigener gestapelter [PR #55](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/55)
+gegen #54, offen/ungemergt und mergebar, kein Merge. Inhaltscommit
+`780a15cec675f1e0ec0ecec5852b45cb3bf2d46a` remote gesichert;
+automatische CI 41236240061 bei Abfrage queued, kein abschließender Erfolg
+behauptet. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen.
+Fünf vorgefundene Worktrees sauber, keine Stashes;
+main unverändert `7f1826c`. 729 geschützte Blobs/Dateimodi einschließlich Symlink
+unverändert, 30 lokale Links/Anker und Diffumfang geprüft; alte Statushistorie erhalten.
+
+Nur neue isolierte Standardbibliothek-Skripte, neues Prüfmodul, Audit/Tabellen
+und kurze Übergabepflege. Ausschließlich neue endliche Prüfung manuell gestartet;
+automatische Repository-CI separat berichten. Keine realen Eingänge, Auswahl,
+Beschaffung, Bereinigung, Matrix/Kohorte, Recherche, Dissertationprüfung,
+Fits, Scores, Optimierung, Zufallssimulationen oder Kernläufe. Bestehende
+Designs einschließlich MODEL_CONTRACT, Modelle, Resultate, Register, Verträge,
+Importer, Flags, Counts/Gruppen, Baseline und CLI/App unverändert.
+A1/A2 dokumentarisch abgeschlossen; A4–A6 nicht ausgeführt. Parnell-Zugang,
+Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben Grenzen;
+kein eigener Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK:
+A4-Auftragsgrenze ausschließlich dokumentarisch abgrenzen, keine A4-Ausführung,
+reale Auswahl oder Gatefreigabe. Kopierfertiger Startprompt in HANDOFF.
+
+
 ## Aktueller Abschluss: A3-Design dokumentiert, 31.10.2026
 
 Kopierfertiger Startprompt in HANDOFF gesichert; beauftragt die endliche
