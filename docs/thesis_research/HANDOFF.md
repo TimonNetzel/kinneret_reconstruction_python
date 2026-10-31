@@ -1,102 +1,101 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesichertes Ergebnis: Entscheidungsvorlage zum realen EMPD2-Counts-Einstieg
+## Gesicherter Abschluss: Prüfung der Prozent-Indikatoridee
 
-Nach Nutzer-OK am 31.10.2026 ausschließlich schriftlich erstellt. Basis
-`308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus
-[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44).
-Worktree `/workspace/netzel-empd2-decision`, Branch
-`codex/netzel-empd2-counts-decision`;
-[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45)
-gegen den #44-Branch, offen/ungemergt. Inhaltscommit
-`053f75e2e8231904ece9e0f58a16f84040721a7d`; danach nur Sicherungs-/Übergabeverweise.
-Automatische PR-CI bei Erstellung noch nicht abschließend geprüft;
-kein grüner Gesamtstand oder fachliche Freigabe daraus behauptet.
-[COUNTS_DECISION_BRIEF](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
+Am 31.10.2026 vom Nutzer beauftragt: die neue Idee mit Dissertation und
+Projektstand abgleichen, bewerten und verbessern. Basis
+`e6a1dbe3611b636edfe3f29d9e8ee5b785eb8527` aus
+[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45).
+Worktree `/workspace/netzel-percentage-review`, Branch
+`codex/netzel-percentage-indicator-review`; eigener PR nach Inhaltscommit.
+[CONCEPT_REVIEW](./percentage_indicator_review_2026_10_31/CONCEPT_REVIEW.md).
 
-**Vorlage abgeschlossen; fachliche Wahl weiterhin offen.**
-A: reales Counts-T1 bis zu archivgenauen Belegen zurückstellen.
-B: ein separates, ausdrücklich annahmenabhängiges Forschungsziel zunächst
-schriftlich entwerfen lassen. Für beide Wege sind notwendige Entscheidung,
-minimale Evidenz, zulässige/nicht zulässige Schlussfolgerungen und Stopbedingungen
-gegenübergestellt. N_original, S_flag und n_ausgewählt getrennt.
-B ersetzt weder historische Provenienz noch reale Eingangsprüfung.
-Keine Option, konkrete Zielvariable, Taxon-/Nennerauswahl oder Modellfamilie gewählt.
+**Konzeptprüfung abgeschlossen; keine neue Hauptmethode oder reale Freigabe.**
+Die Architektur knüpft an Dissertation §2.3/2.4 und den frühen Multiproxy-Plan
+an. Prozentwerte können relative Indikator-Auswahlgewichte sein; sie sind
+nicht die Wahrscheinlichkeiten kartierten Artenvorkommens der vorhandenen
+Transferfunktionen. Nur Taxa mit Funktion zu verwenden verlangt belegte
+Pollentyp–Taxon-Brücken und Erhaltung der ursprünglichen Spektralabdeckung.
+Prozent-only hebt den fehlenden Zählumfang nicht auf und braucht eine eigene
+Evidenzstärke-/Unsicherheitsdefinition.
 
-Die begrenzte Archivsuche bleibt beendet; keine neue Recherche oder
-Originaldatenabfrage. Reale Counts-Bereitschaft, W96, T0, reales T1/T3/T4 und
-Monticchio-P1 bleiben offen. Kein Fit, Score, Test, keine Simulation,
-Codeausführung, Bereinigung, Matrix/Kohorte oder Kernlauf.
-Bestehende Designs/Modelle/Resultate/Verträge/Register/Importer/Flags/Counts/
-Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten,
-Autorennachrichten oder Merges.
+Empfohlener nächster Entwurf: gemeinsamer Klimazustand mit explizitem
+prozentgewichtetem Indikatorscore; als verallgemeinerte Bayes-Auswertung
+kennzeichnen, keine abgeleitete Pollen-Likelihood behaupten. Taxonmischung und
+gewichtetes Klimamittel haben andere Aussageziele. Ganze Chronologiekurven
+weiterreichen; geglättete Altersstufen sind keine neuen unabhängigen Proben.
+Zusätzliche Proxys über eigene Beobachtungsmodelle mit erklärtem Varianzanteil,
+Autokorrelation/Chronologie und eindeutigen Datenrollen anbinden. Keine
+Nachkorrektur auf gewünschtes R², priornahe Stichprobenauswahl oder künstliche
+Bandverengung durch Mittelung von Posterior-Kopien.
 
-Einstieg: #44 offen/ungemergt/mergefähig, Head entspricht Basis, PR-CI
-Run 41197759461 erfolgreich; main `7f1826c`. Sechs vorherige Worktrees sauber.
-Vorhandene SQLite nur gehasht, nicht geöffnet; Sperrhash unverändert.
+Die neue Nutzerfrage konkretisiert einen möglichen Weg B aus der
+[Entscheidungsvorlage](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
+Sie beauftragt hier nur Prüfung/Verbesserung der Idee, keine Implementierung
+oder Verwendung echter Daten. Die vorherige bloße A/B-Protokollierung ist
+als nächster Einstieg durch den folgenden konkreten Designvorschlag ersetzt;
+keine A/B-Wahl rückwirkend als erteilt behandeln.
 
-## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzerentscheidung und OK
+## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzer-OK
 
-**Die ausdrücklich gewählte Option in einer neuen COUNTS_DECISION_RECORD.md
-festhalten und ihren weiteren Arbeitsumfang begrenzen.**
+**Ein schriftliches Vorabdesign für den prozentgewichteten Indikatorscore
+mit gemeinsamem Klimazustand erstellen.**
 
-- **Erforderlicher Eingang:** ausdrückliche Wahl **A** (Zurückstellung) oder
-  **B** (separaten schriftlichen Ziel-/Annahmenentwurf beauftragen).
-  Ein allgemeines OK für die Vorlage war keine Wahl; ohne zuordenbare Wahl
-  keine fachliche Entscheidung ausführen. Sperren bleiben bestehen.
-- **Umfang:** genau dieses neue Protokoll plus Status/Übergabe. Bei A
-  Zurückstellung und Wiederöffnungskriterium sichern. Bei B nur den späteren
-  begrenzten Designauftrag konkretisieren, noch kein Design entscheiden oder
-  ausführen. Keine neue Recherche, Datenquelle, Originaldatenabfrage,
-  Daten-/Taxon-/Nennerauswahl, Matrix/Kohorte, Bereinigung, Implementierung
-  oder wissenschaftliche Ausführung.
-- **Leseplan:** AGENTS, diese Übergabe, PROJECT_STATUS und COUNTS_DECISION_BRIEF;
-  INPUT_CONTRACT/Archivbelege ausschließlich bei konkreter Zuordnungsfrage.
-- **Abschluss:** Wahl und ausdrückliche Entscheidungsgrundlage, erlaubter Umfang,
-  nötige Evidenz und Stopbedingung nachvollziehbar sichern; keine Counts-,
-  Trainings-, Fossil- oder Pilotfreigabe aus Protokollierung ableiten.
-- **Sicherung:** eigener Worktree/Branch/PR, Link-/JSON-/Hash-/Diffprüfung.
-  Alte Designs/Verträge/Modelle/Resultate/Register/Importer/Flags/Counts/Gruppen,
-  Baseline und CLI/App unverändert; keine Unteragenten/Autorennachrichten/Merges.
+- **Ausgabe:** neue `PERCENTAGE_INDICATOR_DESIGN.md` plus Status/Übergabe.
+  Abstrakte Formulierung, keine reale Proben-/Taxon-/Kern-/Modellauswahl.
+- **Inhalt:** Aussageziel, Score/Prior/Normierung, Rolle der Evidenzstärke,
+  Abdeckung, Fehlwerte/Nullen, taxonübergreifende Abhängigkeiten, gemeinsamer
+  Support, Chronologieintegration und späterer Proxy-Anschluss. Unterschiede
+  zu Mischung/Klimamittel und echten Counts-/Kompositionsmodellen festhalten.
+- **Prüfplan nur vorbereiten:** Widerspruch, gleiche Prozente bei verschiedenem
+  N, geringe/fehlende Abdeckung, Prior-only, mehrdeutiges Klima und gemeinsame
+  Altersverschiebungen. Keine Simulationen oder Implementierung ausführen.
+- **Leseplan:** AGENTS, diese Übergabe, PROJECT_STATUS und CONCEPT_REVIEW;
+  `taxon_transfer_2026_10_30/DESIGN.md` und
+  `counts_observation_design_2026_10_31/DESIGN_COUNTS.md` nur zur Abgrenzung.
+  Dissertation nur bei einer konkreten ungeklärten Formelstelle nachladen.
+- **Abschluss:** alle mathematischen Rollen, Annahmen, freien Entscheidungen,
+  Nichtidentifizierbarkeit und Stopbedingungen prüfbar sichern. Keine empirische
+  Kalibrierung oder nominal gültigen Unsicherheitsbänder behaupten.
+- **Schutz:** alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/
+  Counts/Gruppen, Baseline und CLI/App unverändert. Keine Quellen-/Datenbeschaffung,
+  Datenauswahl, Bereinigung, Code-/Test-/Fit-/Score-/Simulations-/Kernläufe,
+  Autorennachrichten, Merges oder Unteragenten. Eigener Worktree/Branch/PR,
+  Dokument-/Link-/Hash-/Diffprüfung; genau einen Folgeauftrag sichern.
 
-Eine ausdrückliche Wahl A oder B im passenden Kontext autorisiert genau dieses
-Protokoll. Sie löst keine Datenverarbeitung oder Läufe aus. Kein neues OK für
-die bereits abgeschlossene Vorlage erforderlich.
+Ein OK beauftragt genau diesen schriftlichen Entwurf und Prüfplan, keine
+wissenschaftliche Ausführung oder reale Freigabe. Die Konzeptprüfung ist erledigt.
 
 ## Zuerst Stand prüfen
 
-1. Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-   unversionierte Änderungen prüfen; vorhandene Arbeit erhalten.
-2. Den aktuellen ungemergten Quellenstand verwenden, Basiscommit nennen;
-   eigener Worktree und Branch. main enthält die Kette nicht automatisch.
-3. Nur den gezielten Leseplan; keine alten Läufe wiederholen.
+Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
+unversionierte Änderungen prüfen; Arbeit erhalten. Aktuellen ungemergten
+Quellenstand verwenden, Basis nennen, eigenen Worktree/Branch anlegen.
+main enthält die offene Kette nicht automatisch. Nur gezielter Leseplan.
 
-## Separat blockiert oder später, kein zusätzlicher Folgeauftrag
+## Separat offen, kein zusätzlicher Auftrag
 
-Die [Archivprüfung](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md) endet
-mit offener Erzeugungskette nach zwei gezielten Quellen. Drei bekannte Zeugen
-und voriger Prozentnennerbefund sind kein universeller N_original-/Nullnachweis.
-[Alter INPUT_CONTRACT](./empd2_counts_readiness_2026_10_31/INPUT_CONTRACT.json)
-bleibt unverändert. Klimanormalperiode und zeitliche Eignung offen.
+EMPD2-Counts-Pfad und genaue Archiv-Erzeugungskette bleiben blockiert; die
+[begrenzte Archivsuche](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md)
+endet nach zwei gezielten Quellen. Kein neuer Nenner-/Nullbeleg aus Prozenten.
+W96-Bestimmungs-/Artbrücken und Monticchio-P1 einschließlich physischem
+LGM90D→MON16-Anschluss/Unsicherheit bleiben offen. Klimaperioden/Variablen
+harmonisieren; moderne Kartenvalidierung ist kein fossiler Eignungsnachweis.
+Reale T0/T1/T3/T4 und allgemeine Multiproxy-App weiterhin nicht abgeschlossen.
 
-W96-Bestimmungs-/Artbrücke und tatsächlich angewandte Schlüssel weiterhin
-[blockiert](./pollen_methods_2026_10_31/SOURCE_GAP.md); keine Rückprojektion
-späterer Referenzen oder botanische Synonymie aus Datenbanknamen.
-Physischer LGM90D→MON16-Anschluss einschließlich Unsicherheit offen.
-Synthetisches T1/T2 ersetzt keine reale Evidenz. Keine Modell-/Kernwahl erfolgt.
+## Startprompt für eine spätere Fortsetzung
 
-## Startprompt für eine spätere Fortsetzung nach ausdrücklicher Wahl
-
-> Setze das Netzel-Projekt auf codex/netzel-empd2-counts-decision fort.
-> Nutze den gesicherten Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-
-> Stand, Branches, Worktrees und lokale Änderungen, erhalte ungesicherte Arbeit.
-> Meine Wahl ist [A oder B ausdrücklich einsetzen]. Erstelle nur das in HANDOFF
-> vorbereitete COUNTS_DECISION_RECORD samt genauer Begrenzung des weiteren
-> Auftrags. Keine neue Recherche/Datenquelle/Originaldatenabfrage, Datenwahl,
+> Setze das Netzel-Projekt auf codex/netzel-percentage-indicator-review fort;
+> nutze den gesicherten Head/PR aus PROJECT_STATUS. Prüfe zuerst Git-/PR-/Merge-/
+> CI-Stand, Branches, Worktrees und lokale Änderungen; erhalte ungesicherte Arbeit.
+> Erstelle ausschließlich das in HANDOFF vorbereitete abstrakte Vorabdesign
+> PERCENTAGE_INDICATOR_DESIGN.md samt kleinem späteren synthetischen Prüfplan.
+> Keine neue Recherche/Datenquelle, reale Proben-/Taxon-/Kern-/Modellwahl,
 > Matrix/Kohorte/Bereinigung/Codeausführung/Fits/Scores/Simulationen/Kernläufe.
-> Bestehende Designs/Modelle/Resultate/Verträge/Register/Importer/Flags/Counts/
-> Gruppen, Baseline und CLI/App unverändert; W96 und reale Gates bleiben offen.
-> Eigener Worktree/Branch/PR, keine Unteragenten/Autorennachrichten/Merges;
-> kurze deutsche Updates, Ergebnis und genau einen begrenzten Folgeauftrag sichern.
+> Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+> Baseline und CLI/App unverändert. W96 und reale Gates offen. Eigener
+> Worktree/Branch/PR, keine Unteragenten/Kontakte/Merges; kurze deutsche Updates,
+> Ergebnis und genau einen nächsten begrenzten Folgeauftrag sichern.
 
-Der Platzhalter ist keine Wahl. Kein Chatwechsel erforderlich.
+Ein OK im passenden Kontext oder Absenden dieses Prompts beauftragt genau
+dieses Designpaket. Kein Chatwechsel erforderlich.
