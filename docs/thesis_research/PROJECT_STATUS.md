@@ -16,7 +16,7 @@ der nächste Auftrag und Leseplan in [HANDOFF.md](./HANDOFF.md).
 | Lokaler Ausgangspunkt | Checkout `work` bei `7f1826c`, sauber; keine ungesicherten Änderungen gefunden. Remote-Branches abgerufen; separater Worktree/Branch `codex/netzel-workflow-handoff` ab `9ee2f84` |
 
 Abfrage über GitHub-PR-Seiten (eingebetteter Zustand OPEN) und `git ls-remote`
-für Branches/PR-Heads. REST und GraphQL sind über den Proxy mit HTTP 403 gesperrt;
+für Branches/PR-Heads. REST und GraphQL waren bei der ersten Prüfung über den Proxy mit HTTP 403 gesperrt;
 das ist kein Beleg fehlender PRs. `main` enthält #31/#32 nach lokaler
 Abstammungsprüfung nicht. Kein Merge ausgeführt oder beauftragt.
 
@@ -63,7 +63,9 @@ Keine großen Läufe in diesem Paket.
 Aktuelles Arbeitspaket: Einstiegsdokumentation vereinfacht, vollständige frühere
 Texte im [Einstiegsarchiv](./ENTRYPOINT_ARCHIVE_2026_10_31.md) erhalten;
 Links, Referenzen, Artefaktnachweise und reiner Dokumentationsumfang geprüft.
-PR-Sicherung: Branch `codex/netzel-workflow-handoff` gegen #32-Branch;
-PR-Erstellung benötigt den derzeit gesperrten GitHub-API-Zugriff.
+PR-Sicherung: [PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33),
+Branch `codex/netzel-workflow-handoff` gegen #32-Branch. Nach Veröffentlichung
+der Netzwerkeinstellung funktioniert die GitHub-API; #33 wurde am 31.10.2026
+erstellt, ohne Merge.
 Nächste Forschung ist noch nicht begonnen: begrenztes Quellenpaket zur
 Pollentyp–Taxon-Zuordnung gemäß [HANDOFF](./HANDOFF.md).

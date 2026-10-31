@@ -6,8 +6,8 @@
    lesen. Git-Status, Branches, Worktrees und GitHub-PRs erneut prüfen; keine Merges.
 2. Vollständiger gesicherter Forschungsstand: `codex/netzel-calibration-block-uncertainty`
    bei `9ee2f84e41a04fafe5af203e809deeaaf329dba3` einschließlich #31/#32.
-   Am 31.10.2026 sind beide PRs offen, `main` enthält sie nicht. Der Dokumentations-PR
-   `codex/netzel-workflow-handoff` baut darauf auf; Ergebnisse daraus nicht nochmals
+   Am 31.10.2026 sind beide PRs offen, `main` enthält sie nicht. Der [Dokumentations-PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33)
+   (`codex/netzel-workflow-handoff`) baut darauf auf; Ergebnisse daraus nicht nochmals
    nach main übertragen oder als schon gemergt behandeln.
 3. Für den folgenden Quellenauftrag nur die fachlichen Grenzen in
    [Fortsetzung nach #32](./CHAT_RESTART_UNCERTAINTY.md), Abschnitt
