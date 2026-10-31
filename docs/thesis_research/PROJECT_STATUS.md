@@ -17,7 +17,41 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: EMPD2-Archivherkunft, 31.10.2026
+## Aktueller Paketabschluss: EMPD2-Counts-Entscheidungsvorlage, 31.10.2026
+
+Nach Nutzer-OK **ausschließlich schriftlich abgeschlossen**:
+[COUNTS_DECISION_BRIEF](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
+Zwei mögliche Handlungswege mit Entscheidung, minimaler Evidenz,
+Aussagegrenzen und Stopbedingungen abgegrenzt: A reales Counts-T1 bis zu
+archivgenauen Belegen zurückstellen; B ein separates annahmenabhängiges Ziel
+zunächst schriftlich entwerfen lassen. **Keine Wahl getroffen**, kein Design,
+keine Null-/Nennerregel, Daten-/Taxonauswahl oder Modellfamilie beschlossen.
+N_original, S_flag und n_ausgewählt getrennt; B würde historische Provenienz
+und reale Eingangsprüfung nicht ersetzen. Bestehender INPUT_CONTRACT unverändert.
+
+Basis `308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus PR #44; Worktree
+`/workspace/netzel-empd2-decision`, Branch `codex/netzel-empd2-counts-decision`.
+[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45)
+gegen den #44-Branch, offen/ungemergt. Inhaltscommit
+`053f75e2e8231904ece9e0f58a16f84040721a7d`; danach nur Sicherungs-/Übergabeverweise.
+Automatische PR-CI bei Erstellung noch nicht abschließend geprüft;
+kein grüner Gesamtstand oder fachliche Freigabe daraus behauptet.
+720 geschützte bestehende Git-Blobs bytegleich zur Basis; JSON-Eingänge,
+Verweise, Aussagen und Drei-Dateien-Diff geprüft, Sperrhash vor/nach unverändert.
+Beim Einstieg #44 offen/ungemergt/mergefähig, PR-CI Run 41197759461 erfolgreich;
+main `7f1826c`, sechs vorherige Worktrees sauber. Nur eine neue Vorlage plus
+Status/Übergabe. Keine neue Recherche, Originaldatenabfrage, Matrix/Kohorte,
+Bereinigung, Projekt-/Quellcodeausführung, Fits, Scores, Tests, Simulationen
+oder Kernläufe. SQLite nur gehasht, nicht geöffnet. Bestehende Designs/Modelle/
+Resultate/Verträge/Register/Importer/Flags/Counts/Gruppen, Baseline und CLI/App
+unverändert. Keine Unteragenten/Autorennachrichten/Merges; W96 und reale Gates offen.
+
+**Genau ein Folgeauftrag vorbereitet, benötigt ausdrückliche Wahl A/B:**
+die gewählte Option in COUNTS_DECISION_RECORD dokumentieren und ihren weiteren
+Arbeitsumfang begrenzen; keine Umsetzung oder reale Freigabe.
+[Erforderlicher Eingang, Leseplan und Abschluss](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: EMPD2-Archivherkunft, 31.10.2026
 
 Nach Nutzerauftrag **begrenzt abgeschlossen; exakte Erzeugungskette offen**:
 [ARCHIVE_LINEAGE](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md),
@@ -48,7 +82,7 @@ Scores, Simulationen, Tests oder Kernläufe; Designs/Modelle/Resultate/Register/
 Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert. Keine
 Unteragenten, Autorennachrichten oder Merges. W96 und reale Gates weiter offen.
 
-**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** dokumentarische
+**Damals vorbereitet, jetzt nach Nutzer-OK schriftlich abgeschlossen:** dokumentarische
 Entscheidungsvorlage zum blockierten realen EMPD2-Counts-Einstieg anhand
 vorhandener Evidenz; keine neue Suche, Zieländerung, Implementierung oder
 Freigabe. [Umfang und Leseplan](./HANDOFF.md).
