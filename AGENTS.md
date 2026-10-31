@@ -47,6 +47,35 @@
    Große Artefakte nur mit nachgewiesenem dauerhaften Speicherort als archiviert
    bezeichnen; Hash und Reproduktionsbefehl allein sichern keine Dateibytes.
 
+## Abschluss, Folgeauftrag und Nutzer-OK
+
+Auf Nutzerwunsch vom 31.10.2026 wird jedes begrenzte Arbeitspaket so übergeben,
+dass zur Fortsetzung ein kurzes „OK“ genügt:
+
+- **Ergebnis im Repository sichern:** PROJECT_STATUS nennt erledigte Teile,
+  Prüfungen, offene/blockierte Teile sowie Commit/PR. Ein gesichertes Teilergebnis
+  darf nicht als fachlich abgeschlossene Gesamtaufgabe erscheinen.
+- **Einen konkreten Folgeauftrag vorbereiten:** HANDOFF führt genau ein nächstes
+  empfohlenes Paket mit Status „vorbereitet – wartet auf Nutzer-OK“, Ziel,
+  erlaubtem Umfang, gesperrten Bereichen, nötigen Eingängen/Leseplan und
+  Abschlusskriterien. Weitere offene Aufgaben separat als blockiert oder später
+  ausweisen. Den Folgeauftrag vor dem OK bereits konkret und prüfbar beschreiben.
+- **OK eindeutig anwenden:** Ein „OK“, „weiter“ oder sinngleiches Signal im
+  passenden Gesprächskontext autorisiert dieses vorbereitete Paket. Nach kurzer
+  Standprüfung ausführen, ohne denselben Auftrag erneut bestätigen zu lassen.
+  Bereits autorisierte Arbeit vollständig erledigen; für das nächste neue Paket
+  wieder einen klaren Folgeauftrag vorbereiten. Ein OK erteilt keine pauschale
+  Merge-, Autorenkontakt- oder wissenschaftliche Freigabe.
+- **Chatwechsel gezielt empfehlen:** Einen kopierfertigen Übergabeprompt ausgeben,
+  wenn ein gesicherter Paketabschluss, ein deutlicher Themenwechsel oder viel
+  angesammelter Kontext einen neuen Chat sinnvoll macht. Prompt auch in HANDOFF
+  sichern: Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe,
+  Leseplan, Schutzregeln und bekannte Blocker. Bei noch ausstehendem OK den
+  vorgeschlagenen Startauftrag ausdrücklich als solchen kennzeichnen.
+- **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; bei
+  sinnvollem Chatwechsel den Prompt direkt mitliefern. Keinen neuen Chat selbst
+  anlegen und keine Erinnerungs-/Hintergrundautomatisierung daraus ableiten.
+
 Kurz auf Deutsch zu Beginn und nach Arbeitspaketen berichten: **fertig / aktuell /
 als Nächstes**. Gezielte Ausschnitte/Suchen, kompakte Werkzeugausgaben und keine
 vollständigen Datentabellen im Chat. Keine unnötigen Wiederholungstests oder

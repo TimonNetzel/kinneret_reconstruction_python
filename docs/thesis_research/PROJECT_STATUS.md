@@ -190,3 +190,23 @@ daraus tatsächlich angewandte Schlüssel samt Kategorienkette nachliefern;
 Die Referenzevidenz ist gesichert, der Datensatzbezug bleibt offen. T1 und
 synthetisches T2 können als getrenntes vorab gesichertes Designpaket folgen;
 T3/T4, Monticchio-P1, 28/41/47 und große Bytearchivlücken unverändert.
+
+## Ablaufvereinbarung und vorbereiteter Folgeauftrag, 31.10.2026
+
+Auf Nutzerwunsch in AGENTS.md festgehalten: Nach jedem begrenzten Paket Ergebnis,
+Prüfungen und Restlücken im Repository sichern, genau einen ausführbaren
+Folgeauftrag in HANDOFF vorbereiten und nach kurzem Nutzer-OK fortsetzen.
+Bei sinnvollem Chatwechsel einen kopierfertigen Prompt im Chat ausgeben und in
+HANDOFF erhalten. Keine automatische Chat-Erstellung oder Hintergrundaufgabe.
+
+**Erledigt:** diese Ablaufdokumentation und konkrete Übergabe vorbereitet.
+**Vorbereitet, wartet auf OK:** T1-Design samt begrenztem synthetischem
+T2-Forschungsprototyp; Umfang, Leseplan, Schutzregeln und Abschlusskriterien stehen
+in [HANDOFF](./HANDOFF.md). Noch kein Methodenentwurf, Prototyp oder neuer Lauf
+in diesem Dokumentationspaket. W96-Methodenkette bleibt separat blockiert,
+T0 und reale Eingangsfreigaben bleiben offen. Bestehende Forschungsdateien und
+das Literaturpaket #37 unverändert. Eigener Branch
+`codex/netzel-next-task-workflow` ab `fc52ce7` (#37); kein Merge.
+
+Prüfung dieses Ablaufpakets: lokale Links und reiner Drei-Dateien-Diffumfang
+geprüft; keine Code-/Modelltests nötig oder ausgeführt.
