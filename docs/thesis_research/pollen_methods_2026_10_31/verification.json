@@ -1,0 +1,56 @@
+{
+  "checked_on": "2026-10-31",
+  "base_commit": "f7e5290081dedb775a5cae7e210db88b71d9b1cb",
+  "status": "passed_for_documentation_and_metadata_checks_not_species_approval",
+  "evidence_rows": 7,
+  "registered_sources": 15,
+  "read_reference_sources_or_pages": 14,
+  "W96_methods_read": false,
+  "confirmed_W96_identification_references": 0,
+  "original_identification_scope_proven": 0,
+  "approved_species_mappings": 0,
+  "inherited_fields_match_7_rows": true,
+  "source_ids_resolve": true,
+  "protected_inputs": {
+    "docs/thesis_research/taxon_transfer_2026_10_30/config.json": {
+      "sha256": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071",
+      "matches_base": true
+    },
+    "docs/thesis_research/original_pollen_names_2026_10_31/data/manifest.json": {
+      "sha256": "8d566c39fab3ec3f870965271c04d9fd870cc2f4bc533c5f45ffaec4b09f6bc7",
+      "matches_base": true
+    },
+    "docs/thesis_research/original_pollen_names_2026_10_31/data/species_name_links.csv": {
+      "sha256": "da3531bad8faac699db9c747634f7f54033569312045a755d66454e90b20d112",
+      "matches_base": true
+    },
+    "docs/thesis_research/original_pollen_names_2026_10_31/data/empd_name_chains.csv": {
+      "sha256": "17a474b3fa114ce2b64711c46cbcb2b0e9b4d56a7a6ca14ab7cc5dab513dc325",
+      "matches_base": true
+    },
+    "docs/thesis_research/original_pollen_names_2026_10_31/data/monticchio_definitions.csv": {
+      "sha256": "a58b0bc6a7106943f40cad3356d404cff4cf0a323050b1399103356b6c0fbda1",
+      "matches_base": true
+    }
+  },
+  "changed_paths_within_documentation_allowlist": true,
+  "all_other_tracked_paths_unchanged_from_base": true,
+  "artifact_sha256": {
+    "README.md": "b5dbd8dd8991568915df0ba6c0bde8cb6b3c5772bf0e0c835edd0f98745c7c73",
+    "REPRODUCE.md": "c3cb527250da8ff35ac5947cc2e480c0ddbb9ca49d42773c66b44f4e373a23d2",
+    "SOURCES.md": "99a4b390c5d4f0801a9468b48d35aeed0e09704b9a0eeb42b9c35fb274bcdf74",
+    "SOURCE_GAP.md": "3e4f3d9ca1c94056c2a1cab78f7ee360cf762236932a79259c4c8bd80db83680",
+    "evidence.csv": "c1cbff2da27ebd537e671f457739979f4e83a7e3b92f762c7bdced7b2ba582a6",
+    "git_snapshot.json": "19a36efa8c304469a946e9ee2dcec145110937d7e7f0215c29e27aa1fb3f8d14",
+    "sources.json": "c5733826ceec32369a95950db022ed858066dd35d9edb0831d080d29e0b3b9bb"
+  },
+  "manual_check": "Citations compared against read text sections; primary vs indirect evidence and dataset limitations retained. No independent human/palynological review.",
+  "not_performed": [
+    "original_data_redownload_or_fresh_source_byte_hashing",
+    "microscope_or_image_diagnosis",
+    "W96_methods_or_original_keys_review",
+    "model_or_repository_tests",
+    "fits_or_fossil_count_analysis"
+  ],
+  "local_links_checked": 50
+}
