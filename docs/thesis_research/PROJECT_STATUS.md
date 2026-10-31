@@ -17,6 +17,54 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+## Aktueller Abschluss: A2-Modellvertrag, 31.10.2026
+
+Übergabeprompt auf Nutzerwunsch in HANDOFF gesichert. Verlässlich gesicherter
+A2-Stand `7deff9f002bd8f865f63ef5812c843d6c0a6ec9b`, Remote-Head über PR #52
+bestätigt; danach nur diese Übergabepflege. MODEL_CONTRACT unverändert;
+A3-Auftragsabgrenzung vorbereitet, hier nicht ausgeführt.
+
+**A2 als autorisiertes Dokumentationspaket abgeschlossen.**
+[MODEL_CONTRACT](./MODEL_CONTRACT.md) bündelt Aussageziel,
+E/P/Y/D/psi/C/tau/theta, Beobachtungsstatus/Nullen, Kalibrier-Cut mit
+Normierung des gesamten zweiten Blocks je psi, zeitliche Kopplung,
+Chronologie-Rückkanal, Proxy-Abhängigkeiten, Support, Identifizierbarkeit
+und Stopbedingungen. Festlegungen aus Plan §1 ausdrücklich von OFFEN-Feldern
+getrennt. Keine Klimavariable, Einheit, Periode, Verteilung, Parameterwerte
+oder reale Eingänge gewählt; Chronologie-Rückkopplung nicht freigegeben.
+A1 bleibt abgeschlossen, Parnell-Originalzugang blockiert und
+Menezes-(2)/(5)-Formelklärpunkt offen; kein Neuheitsbeitrag abgegrenzt.
+Keine erneute Originalprüfung der Dissertation oder neue Recherche.
+
+Basis PR #51 bei `665daede79048df7efb6fe60db85c765b45718bb`,
+offen/ungemergt und mergebar; CI 41211699800 erfolgreich.
+Main `7f1826c`, #50-Head `64a6529`; fünf vorhandene Worktrees sauber,
+keine Stashes, kein Reset/Stash/Merge. Eigener Worktree
+`/workspace/netzel-a2-model-contract`, Branch `codex/netzel-a2-model-contract`;
+[PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52)
+gegen `codex/netzel-a1-novelty-matrix`, offen/ungemergt und mergebar.
+Inhaltscommit `1aee3fd71fa50da256f372979dcc6927081fb38e`; danach nur
+Sicherungsverweise. Automatische CI 41216380268 zum Inhaltscommit bei Abfrage
+queued; kein abschließender CI-Erfolg für den Übergabe-Head behauptet.
+Letzter Remote-Head über PR #52 prüfbar.
+
+Prüfung bestanden: Quellenzuordnung zu Plan §1/A2/§4 und A1,
+Normierungsidentität, 86 lokale Linkziele/Anker und enger Drei-Dateien-Diff.
+727 geschützte bestehende Git-Blobs einschließlich eines Symlinks bytegleich.
+Nur MODEL_CONTRACT neu sowie HANDOFF und dieser Status gepflegt;
+bisherige Statusabschnitte erhalten. Keine Projekt-/Modelltests manuell gestartet; keine
+Daten-/Modellwahl, Beschaffung, Bereinigung, Datenmatrix/Kohorte,
+Implementierung, Fits, Scores, Simulationen oder Kernläufe.
+Bestehende Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/
+Counts/Gruppen, Baseline und CLI/App unverändert. W96, EMPD2-Archiv-/Messstatus
+und reale T0/T1/T3/T4/Monticchio-P1 offen. Keine Unteragenten,
+Autorennachrichten oder Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK:
+A3 ausschließlich als späteres Paket anhand der Planzeile abgrenzen und
+Voraussetzungen/Stopbedingungen sichern, noch nicht ausführen. A3–A6
+nicht begonnen; kein erneutes OK für A2 nötig.
+
 ## Aktueller Abschluss: A1-Methodenmatrix, 31.10.2026
 
 **A1 als begrenztes Dokumentationspaket abgeschlossen, mit Zugangslücke.**

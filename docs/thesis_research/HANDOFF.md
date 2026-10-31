@@ -1,73 +1,87 @@
-# Netzel: kompakte Übergabe nach A1
+# Netzel: kompakte Übergabe nach A2
 
 ## Gesichertes Ergebnis
 
-[NOVELTY_MATRIX](./NOVELTY_MATRIX.md): sechs Prüffelder zu genau Parnell 2015,
-Bowen 2020 und Menezes 2026 v1 gegen Plan §1. A1 als begrenztes
-Dokumentationspaket abgeschlossen; Parnell-Originalzugang blockiert,
-Originalgleichungen dort nicht verifiziert. Keine Ersatzsuche.
-Menezes (2)/(5) als offener Formelklärpunkt belegt; SIR-Beschreibung getrennt
-beurteilt. Verbindung zur Dissertation als Projektanschluss gekennzeichnet,
-keine erneute Originalprüfung. Kein eigener Beitragskandidat abgegrenzt und
-keine Neuheit behauptet. Nach diesen drei Arbeiten gestoppt.
+[MODEL_CONTRACT](./MODEL_CONTRACT.md) ist der zusammenhängende dokumentarische
+A2-Entwurf auf ausdrücklichen Nutzerauftrag. Festlegungen aus
+[Plan §1](./MODULAR_RECONSTRUCTION_PLAN.md#1-ziel-und-festgehaltene-arbeitsrichtung)
+sind von OFFEN-Feldern getrennt: Rollen E/P/Y/D/psi/C/tau/theta,
+Beobachtungsstatus/Nullen, Kalibrier-Cut mit gemeinsamer bedingter Normierung,
+Zeitprozess, begründungspflichtiger Chronologie-Rückkanal, Proxy-Abhängigkeiten,
+Support, Identifizierbarkeit und Stopbedingungen. Keine reale Daten-/Modellwahl
+oder ausgefüllte Datenmatrix. A2 dokumentarisch abgeschlossen; Modell- und
+Datenfreigabe weiterhin offen.
 
-Basis PR #50 bei `64a652982b0f271c02bfc0c89331537d6ec08eaa`, offen/ungemergt,
-mergebar; CI 41207312666 erfolgreich. Main `7f1826c`, #49-Head `df01632`.
-Fünf vorgefundene Worktrees sauber, keine Stashes; bestehende Arbeit erhalten.
-Eigener Worktree `/workspace/netzel-a1-novelty-matrix`, Branch
-`codex/netzel-a1-novelty-matrix`; [PR #51](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/51)
-gegen den #50-Branch, offen/ungemergt und mergebar. Inhaltscommit
-`ccd16161646f74aae799f343de176181ac7ebbb9`; danach nur Sicherungsverweise.
-Automatische CI 41208517276 zum Inhaltscommit bei Abfrage noch queued,
-kein Erfolg behauptet. Letzter Remote-Head über PR/Branch prüfbar.
+A1 bleibt abgeschlossen. [NOVELTY_MATRIX](./NOVELTY_MATRIX.md) unverändert:
+Parnell-Originalzugang blockiert, Menezes-(2)/(5)-Formelklärpunkt offen;
+kein eigener Neuheitsbeitrag abgegrenzt. Keine neue Literatur-/Archivsuche
+oder Originalprüfung der Dissertation. W96, EMPD2-Archiv-/Messstatus und
+reale T0/T1/T3/T4/Monticchio-P1 offen.
 
-## Genau ein Folgeauftrag: A2 – vorbereitet, wartet auf Nutzer-OK
+Basis PR #51, offen/ungemergt und mergebar, Head
+`665daede79048df7efb6fe60db85c765b45718bb`; automatische CI 41211699800
+bei Standprüfung erfolgreich. Main unverändert `7f1826c`, #50-Head `64a6529`.
+Fünf vorgefundene Worktrees sauber, keine Stashes; kein Reset oder Merge.
+Eigener Worktree `/workspace/netzel-a2-model-contract`, Branch
+`codex/netzel-a2-model-contract`; [PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52)
+gegen den #51-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`1aee3fd71fa50da256f372979dcc6927081fb38e`; danach nur Sicherungsverweise.
+Quellen-/Link-/Diffprüfung bestanden, 727 geschützte Blobs bytegleich.
+Automatische CI 41216380268 zum Inhaltscommit bei Abfrage queued;
+kein abschließender CI-Erfolg behauptet. Aktueller Remote-Head über PR #52
+prüfbar; Details im [neuesten Status](./PROJECT_STATUS.md).
+Ältere Übergaben bleiben in Git erhalten.
 
-**Ziel:** ausschließlich einen zusammenhängenden MODEL_CONTRACT.md als
-prüfbaren dokumentarischen Entwurf erstellen, gemäß A2 im Plan. A2 ist noch
-nicht begonnen; ein OK autorisiert nur dieses begrenzte Dokumentationspaket.
+## Genau ein Folgeauftrag: A3-Auftragsabgrenzung – vorbereitet, wartet auf Nutzer-OK
 
-**Erlaubter Umfang:** Aussageziel und Rollen E/P/Y/D/psi/C/tau/theta;
-Beobachtungsstatus und Nullen; Cut-Randverteilung und gemeinsame Normierung;
-Zeit-/Chronologie-Rückkanäle; Proxy-Abhängigkeiten; Support,
-Identifizierbarkeit und Stopbedingungen beschreiben. Nicht belegte
-Klimavariablen/Einheiten/Perioden, Verteilungen, Parameter und Eingänge
-explizit OFFEN lassen. Keine reale Daten- oder Modellwahl treffen.
+**Ziel:** ausschließlich den nächsten A3-Auftrag anhand seiner Planzeile und
+der OFFEN-Felder des A2-Vertrags konkret abgrenzen, ohne A3 auszuführen.
+Das OK hierfür autorisiert nur diese dokumentarische Auftragsklärung;
+A3–A6 sind noch nicht begonnen. Für A2 ist kein weiteres OK erforderlich.
 
-**Eingänge/Leseplan:** zuerst kompakte Git-/PR-/CI-/Worktree-Prüfung,
-AGENTS, diese HANDOFF, nur neuester PROJECT_STATUS-Abschnitt,
-NOVELTY_MATRIX und Plan §1/§2-A2/§4. Quellen nur an konkreter offener
-Vertragsfrage gezielt nachladen; Parnell-Zugangslücke und M-(5)-Klärpunkt als
-solche erhalten. Keine neue Literatur-/Archivsuche oder Originalprüfung der
-Dissertation als stillen Zusatzauftrag beginnen.
+**Erlaubter Umfang und Ergebnis:** nur HANDOFF und kurzen Status pflegen;
+Ziel, benötigte Eingänge, erlaubte Änderungen, Schutzgrenzen und prüfbares Ende
+des späteren A3-Pakets festhalten. Fehlende Voraussetzungen explizit als
+Blocker übernehmen. Kein neues Konzeptpapier, keine Wahl realer Daten,
+Klimavariablen, Verteilungen, Parameter oder Modelle aus OFFEN-Feldern ableiten.
 
-**Abschluss:** genau ein MODEL_CONTRACT.md mit unterscheidbaren
-Festlegungen aus Plan §1, offenen Feldern und Stopbedingungen; keine
-vorgeblich ausgefüllte Datenmatrix. Quellen-/Link-/Diffprüfung und
-Blobabgleich; eigener Branch/PR ohne Merge; kurze Status-/Übergabe mit genau
-einem weiteren vorbereiteten Auftrag.
+**Eingänge/Leseplan:** kompakte Git-/PR-/Merge-/CI-/Worktree-Prüfung, AGENTS,
+diese HANDOFF, nur neuester Status, MODEL_CONTRACT; Plan ausschließlich
+§1/§2-Zeile A3/§4. NOVELTY_MATRIX nur bei konkreter Beleggrenze nachladen.
+Keine Originalquellen oder Archive erneut öffnen.
 
-**Gesperrt:** Datenbeschaffung/-auswahl, Bereinigung, Datenmatrix/Kohorte,
-Implementierung, Tests, Fits, Scores, Simulationen und Kernläufe; bestehende
-Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-Baseline und CLI/App. W96, EMPD2-Archiv-/Messstatus sowie reale
-T0/T1/T3/T4/Monticchio-P1 offen. A3–A6 später, nicht aktiv.
+**Abschluss:** genau ein konkret ausführbarer A3-Auftrag mit expliziten offenen
+Voraussetzungen und Stopbedingungen in HANDOFF; Dokumentations-/Link-/Diff-
+und Blobprüfung, eigener Branch/PR ohne Merge. Noch keine Ausführung von A3
+oder Vorgriff auf A4–A6.
+
+**Gesperrt:** neue Recherche, Datenwahl/-beschaffung, Bereinigung,
+Datenmatrix/Kohorte, Implementierung, Tests, Fits, Scores, Simulationen,
+Kernläufe sowie Änderungen bestehender Designs/Modelle/Resultate/Register/
+Verträge/Importer/Flags/Counts/Gruppen, Baseline und CLI/App.
 Keine Unteragenten, Autorennachrichten oder Merges.
 
-## Kopierfertiger Startprompt für einen optionalen Chatwechsel
+## Kopierfertiger Übergabeprompt
 
-> Setze Netzel auf codex/netzel-a1-novelty-matrix fort; verlässlich gesicherter
-> Commit/PR im neuesten PROJECT_STATUS-Abschnitt. Prüfe Git/PR/Merge/CI,
-> Branches/Worktrees/lokale Änderungen kompakt und erhalte vorhandene Arbeit.
-> Lies AGENTS, HANDOFF, nur neuesten Status, NOVELTY_MATRIX und Plan
-> §1/§2-A2/§4. A1 ist abgeschlossen mit dokumentierter Parnell-Zugangslücke;
-> kein Neuheitsnachweis. Genau ein vorgeschlagenes Folgepaket A2 wartet auf
-> Nutzer-OK: ausschließlich MODEL_CONTRACT.md als dokumentarischen Entwurf
-> mit offenen Feldern und Stopbedingungen erstellen. Erst bei vorliegendem
-> OK ausführen, dann kein erneutes OK für dasselbe Paket verlangen. Keine
-> reale Daten-/Modellwahl oder Beschaffung/Bereinigung/Matrix/Kohorte,
-> Implementierung/Tests/Fits/Scores/Simulationen/Kernläufe. Bestehende
-> Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-> Baseline und CLI/App unverändert; W96/reale Gates offen. Keine Recherche-
-> ausweitung, Unteragenten, Autorennachrichten oder Merges. Eigener
-> Worktree/Branch/PR, Ergebnis und genau einen Folgeauftrag sichern.
+Die folgende Anweisung ist für den nächsten Chat vorbereitet; erst ihr
+Absenden bzw. ein entsprechendes OK beauftragt die A3-Auftragsabgrenzung.
+In diesem Paket wurde nur der Prompt gesichert.
+
+> Setze das Netzel-Projekt nach PR #52 fort.
+>
+> Branch: codex/netzel-a2-model-contract
+> Gesicherter A2-Stand: 7deff9f002bd8f865f63ef5812c843d6c0a6ec9b
+> PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52
+> Danach gegebenenfalls nur Übergabepflege; aktuellen Remote-Head prüfen.
+>
+> Prüfe zuerst Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale Änderungen; erhalte ungesicherte Arbeit. Eigener Worktree, Branch und PR, kein Merge.
+>
+> Tokensparend lesen: AGENTS.md, HANDOFF.md, MODEL_CONTRACT.md, ausschließlich den neuesten Abschnitt von PROJECT_STATUS.md und MODULAR_RECONSTRUCTION_PLAN.md nur §1, §2-Zeile A3 und §4. NOVELTY_MATRIX.md nur bei konkreter Belegfrage nachladen.
+>
+> A1 und A2 sind als Dokumentationspakete abgeschlossen. MODEL_CONTRACT trennt Planfestlegungen von OFFEN-Feldern; keine reale Modell-/Datenfreigabe. Parnell-Originalzugang und Menezes-Formelklärpunkt (2)/(5) bleiben Grenzen; kein eigener Neuheitsbeitrag ist abgegrenzt. W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben offen.
+>
+> Führe als nächsten begrenzten Auftrag ausschließlich die dokumentarische A3-Auftragsabgrenzung aus: aus Planzeile und Modellvertrag Ziel, benötigte Eingänge, erlaubte Änderungen, Schutzgrenzen, Stopbedingungen und prüfbares Ende für das spätere A3-Paket festhalten. Nur HANDOFF und kurzen Status pflegen; kein neues Konzeptpapier. A3 selbst und A4–A6 nicht ausführen. Für diese Auftragsabgrenzung kein erneutes OK verlangen.
+>
+> Keine neue Literatur-/Archivsuche oder erneute Originalprüfung der Dissertation. Keine reale Daten-/Modellwahl, Datenbeschaffung, Bereinigung, Datenmatrix/Kohorte, Implementierung, Tests, Fits, Scores, Simulationen oder Kernläufe. Bestehende Designs, Modelle, Resultate, Register, Verträge einschließlich MODEL_CONTRACT, Importer, Flags, Counts/Gruppen, Baseline und CLI/App unverändert.
+>
+> Keine Unteragenten, Autorennachrichten oder Merges. Kurze deutsche Updates, kompakte Werkzeugausgaben. Dokumentation durch Quellen-/Link-/Diffprüfung und Blobabgleich prüfen. Ergebnis und genau einen begrenzten Folgeauftrag sichern.
