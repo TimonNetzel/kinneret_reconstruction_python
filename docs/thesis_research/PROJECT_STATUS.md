@@ -20,6 +20,51 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+
+## Aktueller Abschluss: Klima-/Zeit-Nachweiskette präzisiert, 31.10.2026
+
+Nutzer-OK nach PR #57 umgesetzt: [A4_E_CLIMATE_TIME_GAPS](./A4_E_CLIMATE_TIME_GAPS.md)
+präzisiert E12/E13/E15 ausschließlich anhand der festgelegten vorhandenen
+Dokumente. **Dokumentarische Präzisierung abgeschlossen; reale Klima-/Zeit-
+verbindung weiter offen.** Publiziertes WorldClim2/30″/nächster Gitterpunkt,
+Importrollen/Einheiten und technische Verfügbarkeit sind begrenzte Belege.
+Konkrete angewandte Klimaversion, Normalperiode, Probenzeit/Integration und
+begründete gemeinsame Geltung bleiben offen. Wiederholte Quellenangaben sind
+keine unabhängige Bestätigung. Keine unvereinbaren begrenzten Klima-/Zeit-
+Dokumentaussagen festgestellt; kein Klimaeingang gewählt oder Periodenlabel
+ergänzt. Reale Counts-Bereitschaft bleibt blockiert.
+
+Basis `e504d89c159ec02459643ff37b8be657af453f37`,
+[PR #57](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/57)
+offen/ungemergt und mergebar; automatische CI 41238724576 bei Einstieg laufend,
+inzwischen erfolgreich.
+Acht vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
+main unverändert `7f1826c`. Eigener Worktree
+`/workspace/netzel-a4-e-climate-time-gaps`, Branch `codex/netzel-a4-e-climate-time-gaps`,
+eigener gestapelter PR gegen #57. Inhaltscommit/PR und CI nach Erstellung
+ergänzen. Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege;
+alte Statushistorie erhalten. Quellen-/JSON-Feldbezüge, 16 lokale Links/Anker
+und Drei-Dateien-Umfang geprüft; 751 geschützte Blobs/Dateimodi einschließlich
+Symlink unverändert.
+
+Keine neue Quelle, reale Eingangsdatei/Datenbank oder Dissertation geöffnet, keine
+Datenprüfung, Klima-Joins, manuelle Tests, Rechnungen, Fits, Scores, Optimierung,
+Simulationen oder Kernläufe; keine reale Auswahl/Beschaffung/Bereinigung,
+Matrix/Kohorte, Typbrücke oder Implementierung. Ein zu breiter Leseausschnitt
+enthielt andere Altberichtsteile; keine fachliche Prüfung daraus, nur EMPD2-
+Klimaangaben verwendet. Bestehende Fachdateien unverändert. A1/A2 dokumentarisch
+abgeschlossen, A3 nur endlich-synthetisch bestanden; A4-Umsetzung/reale
+Kalibrierung und A5/A6 nicht begonnen. Parnell, Menezes-(2)/(5), W96,
+EMPD2-Archiv-/Messstatus und reale Gates bleiben Grenzen; kein eigener
+Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK:
+konkrete Wiederöffnungskriterien zur fehlenden archivgenauen Klima-/Zeit-
+verbindung dokumentieren, keine neue Belegbeschaffung, reale Entscheidung
+oder Freigabe. Startprompt in HANDOFF; der festgelegte bisherige Dokumentumfang
+wird nicht erneut als neue Evidenz geprüft.
+
+
 ## Aktueller Abschluss: moderne E-Belege dokumentarisch zugeordnet, 31.10.2026
 
 Nutzer-OK nach PR #56 umgesetzt: [A4_E_EVIDENCE_GAPS](./A4_E_EVIDENCE_GAPS.md)
