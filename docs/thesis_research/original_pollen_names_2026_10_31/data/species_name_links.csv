@@ -1,0 +1,8 @@
+model_id,model_species,original_var_,original_varname,acc_var_,acc_varname,accepted_record_original_varname,fossil_column,catalogue_candidate_acc_var_,same_id_as_catalogue_candidate,morphological_equivalence_established,approved_species_mapping
+abies_alba,Abies alba,759,Abies alba,321,Abies,ABIES,Abi [#],321,true,false,false
+betula_pendula,Betula pendula,1731,Betula pendula,128,Betula pubescens-type,Betula sect. Albae,Bet [#],12,false,false,false
+corylus_avellana,Corylus avellana,31,Corylus avellana,31,Corylus,Corylus avellana,Cor [#],31,true,false,false
+fagus_sylvatica,Fagus sylvatica,42,Fagus sylvatica,42,Fagus,Fagus sylvatica,Fag [#],42,true,false,false
+picea_abies,Picea abies,783,Picea abies,783,Picea abies-type,Picea abies,Pic [#],126,false,false,false
+taxus_baccata,Taxus baccata,111,Taxus baccata,111,Taxus baccata,Taxus baccata,Tax [#],111,true,false,false
+tilia_cordata,Tilia cordata,1406,Tilia cordata,153,Tilia cordata-type,Tilia cordata-type,Til [#],187,false,false,false

@@ -1,0 +1,126 @@
+{
+  "checked_on": "2026-10-31",
+  "base_commit": "98ef1bf980aaa71903fa8fe40ef7797bd9d16b87",
+  "scope": "original_metadata_and_name_chains_not_taxonomic_approval",
+  "source_files": [
+    {
+      "source_id": "empd2",
+      "file": "EMPD2.sqlite3",
+      "sha256": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+      "bytes": 21327872,
+      "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+      "doi": "10.1594/PANGAEA.909130",
+      "license": "CC-BY-4.0",
+      "byte_verification": "matched_historical_lock_2026-10-31"
+    },
+    {
+      "source_id": "monticchio_739452",
+      "file": "monticchio_739452.tab",
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+      "bytes": 86174,
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "doi": "10.1594/PANGAEA.739452",
+      "license": "CC-BY-NC-3.0",
+      "byte_verification": "matched_historical_lock_2026-10-31"
+    }
+  ],
+  "repository_inputs": {
+    "docs/thesis_research/pollen_taxon_evidence_2026_10_31/sources.json": "e5e38eb5531742296e40c70fd7d65d837d9d3975712a9510f40df7dd315433d7",
+    "docs/thesis_research/pollen_taxon_evidence_2026_10_31/inventory.csv": "d3a0941d88079b9f4039c1fbdc695f4754f075e7b6fbd82f9306e917b706a76e",
+    "docs/thesis_research/taxon_transfer_2026_10_30/config.json": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071"
+  },
+  "p_vars_schema": [
+    {
+      "cid": 0,
+      "name": "var_",
+      "type": "INTEGER",
+      "notnull": 1,
+      "dflt_value": null,
+      "pk": 1
+    },
+    {
+      "cid": 1,
+      "name": "acc_var_",
+      "type": "INTEGER",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 2,
+      "name": "original_varname",
+      "type": "VARCHAR(100)",
+      "notnull": 1,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 3,
+      "name": "acc_varname",
+      "type": "VARCHAR(100)",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    },
+    {
+      "cid": 4,
+      "name": "groupid",
+      "type": "VARCHAR(4)",
+      "notnull": 0,
+      "dflt_value": null,
+      "pk": 0
+    }
+  ],
+  "p_vars_total_rows": 5230,
+  "p_vars_taxon_notes_column_present": false,
+  "monticchio_archive_context": {
+    "line": 9,
+    "text": "The EPD (http://www.europeanpollendatabase.net) accepted species name is given in the parameter comment. This dataset was archived on 2010-05-11 from the EPD database."
+  },
+  "selection": "case-insensitive whole-word genus search in both name fields over all p_vars, then recursive acc_var_ targets; lexical hits are not genus membership or approved aggregation pools",
+  "query_counts": [
+    {
+      "model_id": "abies_alba",
+      "lexical_name_hits": 23,
+      "rows_with_referenced_targets": 24
+    },
+    {
+      "model_id": "betula_pendula",
+      "lexical_name_hits": 48,
+      "rows_with_referenced_targets": 48
+    },
+    {
+      "model_id": "corylus_avellana",
+      "lexical_name_hits": 15,
+      "rows_with_referenced_targets": 17
+    },
+    {
+      "model_id": "fagus_sylvatica",
+      "lexical_name_hits": 10,
+      "rows_with_referenced_targets": 11
+    },
+    {
+      "model_id": "picea_abies",
+      "lexical_name_hits": 20,
+      "rows_with_referenced_targets": 21
+    },
+    {
+      "model_id": "taxus_baccata",
+      "lexical_name_hits": 3,
+      "rows_with_referenced_targets": 3
+    },
+    {
+      "model_id": "tilia_cordata",
+      "lexical_name_hits": 9,
+      "rows_with_referenced_targets": 11
+    }
+  ],
+  "extracted_chain_rows": 135,
+  "unique_dictionary_rows": 120,
+  "count_values_parsed_or_used": false,
+  "outputs_sha256": {
+    "empd_name_chains.csv": "17a474b3fa114ce2b64711c46cbcb2b0e9b4d56a7a6ca14ab7cc5dab513dc325",
+    "monticchio_definitions.csv": "a58b0bc6a7106943f40cad3356d404cff4cf0a323050b1399103356b6c0fbda1",
+    "species_name_links.csv": "da3531bad8faac699db9c747634f7f54033569312045a755d66454e90b20d112"
+  }
+}

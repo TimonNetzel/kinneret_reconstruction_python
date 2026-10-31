@@ -9,36 +9,40 @@
    Am 31.10.2026 sind beide PRs offen, `main` enthält sie nicht. Der [Dokumentations-PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33)
    (`codex/netzel-workflow-handoff`) baut darauf auf; Ergebnisse daraus nicht nochmals
    nach main übertragen oder als schon gemergt behandeln.
-3. Aktuell ist die [Sieben-Arten-Inventur](./pollen_taxon_evidence_2026_10_31/README.md)
-   abgeschlossen; die Originalprüfung und Artbrücke sind offen. Dafür nur
-   [SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md) und die
-   betroffenen Zeilen von inventory.csv / sources.json desselben Ordners lesen.
-   [Inventur-PR #34](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/34):
-   `codex/netzel-pollen-taxon-evidence` ab `6f35df1` (#33),
-   zusätzlich zum vollständigen Forschungsstand. Kein Merge beauftragt.
+3. Die [Original-Namensprüfung](./original_pollen_names_2026_10_31/README.md)
+   ist abgeschlossen; die morphologische/fossile Artbrücke bleibt offen.
+   Für den nächsten Auftrag nur deren
+   [SOURCE_GAP.md](./original_pollen_names_2026_10_31/SOURCE_GAP.md) und bei
+   konkreten Namensfragen die sieben Zeilen von data/species_name_links.csv lesen.
+   Neuer Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34);
+   #34 bleibt die vorangegangene Inventur. Kein Merge beauftragt.
 
-## Nächster Forschungsauftrag: Original-Namensketten prüfen
+## Nächster Forschungsauftrag: Bestimmungsmethoden und Typdefinitionen
 
-Frisch bezogene Monticchio-Parameterdefinitionen (PANGAEA.739452) und die
-EMPD2-p_vars-Namensketten (PANGAEA.909130) anhand der bestehenden Hashes prüfen:
-für alle sieben Modellarten Originalnamen/-codes, akzeptierte Namen/-IDs,
-Untertypen und Bestimmungsnotizen mit exakter Fundstelle sichern. Die sieben
-Katalogkandidaten sind keine vollständigen Gattungspools. Taxus besonders als
-Namens-vs.-Bestimmungsfrage prüfen, ohne eine Artzuordnung vorwegzunehmen.
+Gezielt die Methoden der im Originalarchiv genannten Publikation Watts,
+Allen & Huntley (1996), DOI 10.1016/0277-3791(95)00093-3, sowie deren tatsächlich
+zitierte Bestimmungsreferenzen prüfen. Je Modellart festhalten, ob ursprünglicher
+Bestimmungsumfang, nur allgemeine Methodik oder kein datensatzbezogener Beleg
+vorliegt. Danach artspezifische palynologische Belege mit exakter Fundstelle
+für Grenzen und Überschneidungen der Typen nachladen.
 
-Der aktuelle Zugriff auf doi.pangaea.de und store.pangaea.de wird vom Proxy
-mit CONNECT HTTP 403 abgewiesen. Keine alten temporären Rohdateien voraussetzen.
-Nach verfügbarem Zugriff die betroffenen Operationen neu prüfen, keine
-Referenzhashes ersetzen. Anschließend gezielte palynologische Originalbelege
-zu Art-/Typgrenzen recherchieren; vollständige Anforderungen im SOURCE_GAP.
+Besonders beachten: Monticchio-Kommentare sind akzeptierte EPD-Namen. EMPD2
+ordnet Betula pendula dem pubescens-type zu; bei Taxus gibt es zwei verschieden
+akzeptierte Einträge mit demselben Originalnamen. Diese Datenbankbefunde nicht
+als botanische Synonymie oder als Freigabe einer Artfunktion interpretieren.
 
-Abschlusskriterium: prüfbare Original-Namensketten und verbleibende Beleglücken
-je Art, eigener PR, keine automatische Verbindung einer Artfunktion mit
-Gattungspollen. Keine neuen Fits, Modellwahl anhand äußerer Scores,
-Fossilrekonstruktion, Pilotfreigabe oder CLI/App-Integration. Claude behält
-CLI/App; Analog-Baseline bleibt unverändert. Weitere Taxa/Areale erst als
-separates Paket abgrenzen. Die historische Fortsetzung nach #32 nur bei Fragen
-zu den Kalibrierungs-/Unsicherheitsgrenzen nachladen.
+Abschlusskriterium: belegte Methodenkette und kompakte Evidenztabelle für alle
+sieben Arten; unterstützende, widersprechende und fehlende Belege vollständig
+mit Seiten/Abschnitten/Objektkennungen sichern, Zugangslücken konkret benennen,
+eigener PR. Nur gelesene Quellen als geprüft ausweisen. Keine automatische
+Artzuordnung, Modelle/Fossilcounts/Gruppierungen unverändert; keine Auswahl
+anhand äußerer Scores. Claude behält CLI/App; Analog-Baseline unverändert.
+
+Der frühere Netzwerkblock für die beiden Originaldateien ist behoben.
+Neue Originalprüfung benötigt keine alten Chat-Dateien; Bezugsbefehle und
+Hashprüfungen in original_pollen_names_2026_10_31/REPRODUCE.md.
+Die 2025-Originale bei konkretem Bedarf gesondert prüfen, keine Änderung der
+Shared37-Referenz. Monticchio-P1 und weitere Arten bleiben getrennte Pakete.
 
 ## Nur bei konkretem Bedarf weiterlesen
 
