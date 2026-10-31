@@ -37,8 +37,12 @@ offen/ungemergt und mergebar; automatische CI 41235319258 erfolgreich.
 Design-Sperrcommit `a4c03c6752708dead6ecd98f016758538ddb71b2`, Blob
 `21879814c77f0341457f9f4790dd40e24b555d55` unverändert. Eigener Worktree/Branch
 `/workspace/netzel-a3-synthetic-execution` / `codex/netzel-a3-synthetic-execution`;
-eigener gestapelter PR gegen #54, kein Merge. Inhaltscommit/PR und CI nach
-Erstellung ergänzen. Fünf vorgefundene Worktrees sauber, keine Stashes;
+eigener gestapelter [PR #55](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/55)
+gegen #54, offen/ungemergt und mergebar, kein Merge. Inhaltscommit
+`780a15cec675f1e0ec0ecec5852b45cb3bf2d46a` remote gesichert;
+automatische CI 41236240061 bei Abfrage queued, kein abschließender Erfolg
+behauptet. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen.
+Fünf vorgefundene Worktrees sauber, keine Stashes;
 main unverändert `7f1826c`. 729 geschützte Blobs/Dateimodi einschließlich Symlink
 unverändert, 30 lokale Links/Anker und Diffumfang geprüft; alte Statushistorie erhalten.
 

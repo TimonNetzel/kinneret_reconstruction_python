@@ -18,7 +18,13 @@ Design-Sperrcommit `a4c03c6752708dead6ecd98f016758538ddb71b2`, Design-Blob
 Main `7f1826c`; fünf vorgefundene Worktrees sauber, keine Stashes, kein Reset.
 Eigener Worktree `/workspace/netzel-a3-synthetic-execution`, Branch
 `codex/netzel-a3-synthetic-execution`, eigener gestapelter PR gegen #54,
-kein Merge. Inhaltscommit/PR und dessen CI werden nach Erstellung ergänzt.
+kein Merge. Inhaltscommit
+`780a15cec675f1e0ec0ecec5852b45cb3bf2d46a` über
+[PR #55](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/55)
+gesichert, offen/ungemergt und mergebar. Automatische
+[CI 41236240061](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41236240061)
+an diesem Inhaltscommit bei Abfrage queued; kein abschließender CI-Erfolg
+behauptet. Danach nur diese Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
 Zwei getrennte rationale Rechenwege, nur Standardbibliothek; kein Import
 bestehender Projektmodelle/Importer. Alle vier absichtlich defekten Verfahren
@@ -74,13 +80,17 @@ Neuheitsbeitrag abgegrenzt. Synthetischer Erfolg löst keine dieser Grenzen.
 ## Kopierfertiger Startprompt für den nächsten Chat
 
 Vorbereiteter Folgeauftrag; das Absenden dieses Prompts autorisiert ausschließlich
-seine dokumentarische Abgrenzung. Verlässlichen Sicherungscommit/PR aus dem
-aktuellen obersten Statusabschnitt übernehmen; danach gegebenenfalls nur
+seine dokumentarische Abgrenzung. Verlässlich gesicherter Inhaltscommit
+`780a15cec675f1e0ec0ecec5852b45cb3bf2d46a`, PR #55; danach nur
 Übergabepflege. Aktuellen Remote-Head immer prüfen.
 
 ```text
-Setze Netzel auf codex/netzel-a3-synthetic-execution fort; Sicherungscommit/PR
-stehen im neuesten PROJECT_STATUS-Abschnitt und in HANDOFF. Aktuellen Head,
+Setze Netzel nach PR #55 fort.
+Branch: codex/netzel-a3-synthetic-execution
+Inhaltscommit: 780a15cec675f1e0ec0ecec5852b45cb3bf2d46a
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/55
+Danach nur Sicherungsverweise; aktuellen Head prüfen.
+Aktuellen Head,
 Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand zuerst prüfen, ungesicherte
 Arbeit erhalten. Eigener Worktree, Branch und PR; kein Merge.
 
