@@ -1,0 +1,376 @@
+{
+  "observed_at_utc": "2026-10-31T09:19:27.994932+00:00",
+  "base_commit": "d003fb97a21c967a44161230eed807e745ed5b0b",
+  "main": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+  "branches": "+ codex/netzel-first-taxon-pilot-roadmap                      f7e5290 (/workspace/netzel-pilot-roadmap) Record roadmap PR 36 and current chat restart branch\n+ codex/netzel-original-pollen-names                          b9c7932 (/workspace/netzel-original-names) Record original source PR 35 and next methods handoff\n+ codex/netzel-pollen-taxon-evidence                          98ef1bf (/workspace/netzel-pollen) Record pollen evidence PR 34 and pending source network access\n* codex/netzel-t1-synthetic-t2                                d003fb9 Record workflow PR 38 and restart reference\n+ codex/netzel-workflow-handoff                               6f35df1 (/workspace/netzel-workflow) Record documentation PR 33 and restored GitHub API access\n+ work                                                        7f1826c (/workspace/kinneret_reconstruction_python) Merge PR #30: preserve Netzel research PRs #18\u2013#29\n  remotes/origin/HEAD                                         -> origin/main\n  remotes/origin/ccr-03594f78-ure5tb                          25e31b0 Plan fuer weitere Standorte (Birkat Ram, Totes Meer)\n  remotes/origin/ccr-3c714a78-r7eo0c                          855382f Plan fuer ein Modell auf Taxa-Basis mit mehreren Proxys; Dissertation zusammengefasst\n  remotes/origin/ccr-4d37fe2c-mutkq8                          4ecbde1 Projektstand: Uebergabe auf Stand nach dem Merge\n  remotes/origin/ccr-524a9d4f-is0zt7                          5a06fe0 Projektstand: Ketten im Daten-Repo kinneret_reconstruction_laeufe\n  remotes/origin/ccr-cb67adfd-78svbi                          c2c748f Referenzabgleich des Thesis-Importers mit Originaldaten eingetragen\n  remotes/origin/ccr-e7203cda-hbtvw9                          c8977a5 Integrate modern Shared37 baseline into CLI and app\n  remotes/origin/claude/netzel-python-package-analysis-adcv39 a52bb4f App-Konzept und Uebergabe an eine neue Sitzung\n  remotes/origin/codex/netzel-baseline-readiness              e51a5c6 docs: audit calibration cohorts and unresolved pollen taxon concepts\n  remotes/origin/codex/netzel-calibration-block-uncertainty   9ee2f84 Document saved chat work, exact artifact inventory and remaining archive gaps\n  remotes/origin/codex/netzel-chronology-crosswalk            170d77f Trace Monticchio archive precision, pollen correspondences and transferred age anchors\n  remotes/origin/codex/netzel-consolidated-handoff            323cc6a Record PR #30 and shared validation, including local browser limitation\n  remotes/origin/codex/netzel-epd-sample-identity             00c9f03 Document complete cross-PR chat handoff and reusable restart prompt\n  remotes/origin/codex/netzel-import-package                  d5bc098 feat: prepare locked EMPD2 and Monticchio imports with reference checks\n  remotes/origin/codex/netzel-marker-crosswalk                8f484ef Document six historical marker links and resolve ETH-12464 source provenance\n  remotes/origin/codex/netzel-modern-baseline                 f9acc16 Report spatial baseline results with independent audit and shorten Claude handoff\n  remotes/origin/codex/netzel-mon16-intake                    6b22422 Audit uploaded MON16 supplements and preserve blocked sample age gates\n  remotes/origin/codex/netzel-monticchio-coverage             d7f151a Diagnose Monticchio analogue coverage and chronology; independently review PR #19\n  remotes/origin/codex/netzel-neotoma47525-source-lead        4c9f115 docs: persist PR26 research handoff for next chat\n  remotes/origin/codex/netzel-next-task-workflow              d003fb9 Record workflow PR 38 and restart reference\n  remotes/origin/codex/netzel-pilot-plan                      a710e86 Fix Monticchio pilot milestones and chronology intake requirements\n  remotes/origin/codex/netzel-pollen-methods                  fc52ce7 Record PR 37 and precise remaining identification handoff\n  remotes/origin/codex/netzel-shared-modern2025               f466eb3 Fix expandable importer test discovery and add concise Claude baseline task\n  remotes/origin/codex/netzel-smote-nnet-comparison           833e566 Compare train-only SMOTE and small networks for seven taxa with full independent audit\n  remotes/origin/codex/netzel-source-audit                    8eaab44 docs: verify Netzel calibration sources and pollen pilot chronologies\n  remotes/origin/codex/netzel-spatial-probability-calibration 9458011 Document audited spatial calibration results, all models, repeats and explicit I/O recovery\n  remotes/origin/codex/netzel-taxon-decisions                 3a214f7 docs: resolve marker risks and record conservative fossil taxon decisions\n  remotes/origin/codex/netzel-taxon-response-functions        8f02794 Link PR28 results in project status and taxon restart handoff\n  remotes/origin/codex/netzel-variable-source-audit           5fd3bad Link PR27 result in project status and restart handoff\n  remotes/origin/codex/thesis-data-handoff                    b021472 docs: add thesis data research and Europe reconstruction handoff\n  remotes/origin/main                                         7f1826c Merge PR #30: preserve Netzel research PRs #18\u2013#29",
+  "remote_heads": "25e31b04ee4e93f9e613c64650267933efbe5709\trefs/heads/ccr-03594f78-ure5tb\n855382fb57c858e403f82e71ec3e3c8f2e66c380\trefs/heads/ccr-3c714a78-r7eo0c\n4ecbde10196920cea252f28c5fb616af6be65117\trefs/heads/ccr-4d37fe2c-mutkq8\n5a06fe05622bb680ecf294606e4afeab81510f77\trefs/heads/ccr-524a9d4f-is0zt7\nc2c748f179e972e4073d768586aabd73106b624b\trefs/heads/ccr-cb67adfd-78svbi\nc8977a57fecabcef8f54abd7eafd6545f53487f9\trefs/heads/ccr-e7203cda-hbtvw9\na52bb4fa8931fa02abb1bd326f6a258aa0dd6747\trefs/heads/claude/netzel-python-package-analysis-adcv39\ne51a5c6dd80970d66430ca43c75eb9b731db6711\trefs/heads/codex/netzel-baseline-readiness\n9ee2f84e41a04fafe5af203e809deeaaf329dba3\trefs/heads/codex/netzel-calibration-block-uncertainty\n170d77f2bdbbe60217dc8342f34beb252ccb67de\trefs/heads/codex/netzel-chronology-crosswalk\n323cc6a0fa3c765113985d54e42092f31904adc4\trefs/heads/codex/netzel-consolidated-handoff\n00c9f037642470c7d1a9a44e488f062109292c2d\trefs/heads/codex/netzel-epd-sample-identity\nf7e5290081dedb775a5cae7e210db88b71d9b1cb\trefs/heads/codex/netzel-first-taxon-pilot-roadmap\nd5bc0987f35193cb0200b350df47e93d59b8f5f1\trefs/heads/codex/netzel-import-package\n8f484ef0da80e329b4ff29ab128e1aa760d827d3\trefs/heads/codex/netzel-marker-crosswalk\nf9acc16c58a47a51b1063690a69a2db01381c76a\trefs/heads/codex/netzel-modern-baseline\n6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7\trefs/heads/codex/netzel-mon16-intake\nd7f151a761eeb46d377f9323d559b40fd9ee083e\trefs/heads/codex/netzel-monticchio-coverage\n4c9f1150e766a7f855dc9e28fd121638a710ff9a\trefs/heads/codex/netzel-neotoma47525-source-lead\nd003fb97a21c967a44161230eed807e745ed5b0b\trefs/heads/codex/netzel-next-task-workflow\nb9c7932fa6c6b4e041618d10f400f38575312c00\trefs/heads/codex/netzel-original-pollen-names\na710e86dded84514d06d75d2769fe25dcdd5ec9e\trefs/heads/codex/netzel-pilot-plan\nfc52ce7ea2733ad11c39a59e629a01d14361fb8e\trefs/heads/codex/netzel-pollen-methods\n98ef1bf980aaa71903fa8fe40ef7797bd9d16b87\trefs/heads/codex/netzel-pollen-taxon-evidence\nf466eb3dd326713f632742f10e4e659717ef9095\trefs/heads/codex/netzel-shared-modern2025\n833e566df062a1ee9f215b2e0db90f5ef08d1a48\trefs/heads/codex/netzel-smote-nnet-comparison\n8eaab44bc7aa58821da3d4eca54bb40c6ed8059e\trefs/heads/codex/netzel-source-audit\n9458011198c69368764b8698c966c0ac23cc381c\trefs/heads/codex/netzel-spatial-probability-calibration\n3a214f7ca2ca5ce869b4b8ed7db84344ec6961dd\trefs/heads/codex/netzel-taxon-decisions\n8f02794434f561f5b30228360247935f3c025cc8\trefs/heads/codex/netzel-taxon-response-functions\n5fd3bad46d5108e8986c054171fba66a05c26589\trefs/heads/codex/netzel-variable-source-audit\n6f35df1cb751a2e516e75b94c1cb3bcb05050a9f\trefs/heads/codex/netzel-workflow-handoff\nb02147261e3b4bb300ce1d4b109b98116ad1cb30\trefs/heads/codex/thesis-data-handoff\n7f1826cffddc8893ba6354cd3cca3fa43954b9be\trefs/heads/main",
+  "worktrees": "worktree /workspace/kinneret_reconstruction_python\nHEAD 7f1826cffddc8893ba6354cd3cca3fa43954b9be\nbranch refs/heads/work\n\nworktree /workspace/netzel-original-names\nHEAD b9c7932fa6c6b4e041618d10f400f38575312c00\nbranch refs/heads/codex/netzel-original-pollen-names\n\nworktree /workspace/netzel-pilot-roadmap\nHEAD f7e5290081dedb775a5cae7e210db88b71d9b1cb\nbranch refs/heads/codex/netzel-first-taxon-pilot-roadmap\n\nworktree /workspace/netzel-pollen\nHEAD 98ef1bf980aaa71903fa8fe40ef7797bd9d16b87\nbranch refs/heads/codex/netzel-pollen-taxon-evidence\n\nworktree /workspace/netzel-t1-synthetic-t2\nHEAD d003fb97a21c967a44161230eed807e745ed5b0b\nbranch refs/heads/codex/netzel-t1-synthetic-t2\n\nworktree /workspace/netzel-workflow\nHEAD 6f35df1cb751a2e516e75b94c1cb3bcb05050a9f\nbranch refs/heads/codex/netzel-workflow-handoff",
+  "local_status": {
+    "/workspace/kinneret_reconstruction_python": "",
+    "/workspace/netzel-original-names": "",
+    "/workspace/netzel-pilot-roadmap": "",
+    "/workspace/netzel-pollen": "",
+    "/workspace/netzel-workflow": "",
+    "/workspace/netzel-t1-synthetic-t2": ""
+  },
+  "prs": [
+    {
+      "baseRefName": "codex/netzel-pollen-methods",
+      "headRefName": "codex/netzel-next-task-workflow",
+      "headRefOid": "d003fb97a21c967a44161230eed807e745ed5b0b",
+      "mergedAt": null,
+      "number": 38,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-first-taxon-pilot-roadmap",
+      "headRefName": "codex/netzel-pollen-methods",
+      "headRefOid": "fc52ce7ea2733ad11c39a59e629a01d14361fb8e",
+      "mergedAt": null,
+      "number": 37,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-original-pollen-names",
+      "headRefName": "codex/netzel-first-taxon-pilot-roadmap",
+      "headRefOid": "f7e5290081dedb775a5cae7e210db88b71d9b1cb",
+      "mergedAt": null,
+      "number": 36,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-pollen-taxon-evidence",
+      "headRefName": "codex/netzel-original-pollen-names",
+      "headRefOid": "b9c7932fa6c6b4e041618d10f400f38575312c00",
+      "mergedAt": null,
+      "number": 35,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-workflow-handoff",
+      "headRefName": "codex/netzel-pollen-taxon-evidence",
+      "headRefOid": "98ef1bf980aaa71903fa8fe40ef7797bd9d16b87",
+      "mergedAt": null,
+      "number": 34,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-calibration-block-uncertainty",
+      "headRefName": "codex/netzel-workflow-handoff",
+      "headRefOid": "6f35df1cb751a2e516e75b94c1cb3bcb05050a9f",
+      "mergedAt": null,
+      "number": 33,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "codex/netzel-spatial-probability-calibration",
+      "headRefName": "codex/netzel-calibration-block-uncertainty",
+      "headRefOid": "9ee2f84e41a04fafe5af203e809deeaaf329dba3",
+      "mergedAt": null,
+      "number": 32,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-spatial-probability-calibration",
+      "headRefOid": "9458011198c69368764b8698c966c0ac23cc381c",
+      "mergedAt": null,
+      "number": 31,
+      "state": "OPEN"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-consolidated-handoff",
+      "headRefOid": "323cc6a0fa3c765113985d54e42092f31904adc4",
+      "mergedAt": "2026-10-30T18:25:02Z",
+      "number": 30,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-smote-nnet-comparison",
+      "headRefOid": "833e566df062a1ee9f215b2e0db90f5ef08d1a48",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 29,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-taxon-response-functions",
+      "headRefOid": "8f02794434f561f5b30228360247935f3c025cc8",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 28,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-variable-source-audit",
+      "headRefOid": "5fd3bad46d5108e8986c054171fba66a05c26589",
+      "mergedAt": "2026-10-30T18:25:04Z",
+      "number": 27,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-neotoma47525-source-lead",
+      "headRefOid": "4c9f1150e766a7f855dc9e28fd121638a710ff9a",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 26,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-epd-sample-identity",
+      "headRefOid": "00c9f037642470c7d1a9a44e488f062109292c2d",
+      "mergedAt": "2026-10-30T18:25:04Z",
+      "number": 25,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-marker-crosswalk",
+      "headRefOid": "8f484ef0da80e329b4ff29ab128e1aa760d827d3",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 24,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-mon16-intake",
+      "headRefOid": "6b22422f95856a7cf7cdc6d2aa2de3ed05fadbd7",
+      "mergedAt": "2026-10-30T18:25:06Z",
+      "number": 23,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-pilot-plan",
+      "headRefOid": "a710e86dded84514d06d75d2769fe25dcdd5ec9e",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 22,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-chronology-crosswalk",
+      "headRefOid": "170d77f2bdbbe60217dc8342f34beb252ccb67de",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 21,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-monticchio-coverage",
+      "headRefOid": "d7f151a761eeb46d377f9323d559b40fd9ee083e",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 20,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-e7203cda-hbtvw9",
+      "headRefOid": "c8977a57fecabcef8f54abd7eafd6545f53487f9",
+      "mergedAt": "2026-10-30T18:25:05Z",
+      "number": 19,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-modern-baseline",
+      "headRefOid": "f9acc16c58a47a51b1063690a69a2db01381c76a",
+      "mergedAt": "2026-10-30T18:13:53Z",
+      "number": 18,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-shared-modern2025",
+      "headRefOid": "f466eb3dd326713f632742f10e4e659717ef9095",
+      "mergedAt": "2026-10-29T20:05:30Z",
+      "number": 17,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-taxon-decisions",
+      "headRefOid": "3a214f7ca2ca5ce869b4b8ed7db84344ec6961dd",
+      "mergedAt": "2026-10-29T20:05:09Z",
+      "number": 16,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-baseline-readiness",
+      "headRefOid": "e51a5c6dd80970d66430ca43c75eb9b731db6711",
+      "mergedAt": "2026-10-29T20:04:26Z",
+      "number": 15,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-cb67adfd-78svbi",
+      "headRefOid": "c2c748f179e972e4073d768586aabd73106b624b",
+      "mergedAt": "2026-10-29T18:22:35Z",
+      "number": 14,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-import-package",
+      "headRefOid": "d5bc0987f35193cb0200b350df47e93d59b8f5f1",
+      "mergedAt": "2026-10-29T18:22:07Z",
+      "number": 13,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/netzel-source-audit",
+      "headRefOid": "8eaab44bc7aa58821da3d4eca54bb40c6ed8059e",
+      "mergedAt": "2026-10-29T18:21:50Z",
+      "number": 12,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "codex/thesis-data-handoff",
+      "headRefOid": "b02147261e3b4bb300ce1d4b109b98116ad1cb30",
+      "mergedAt": "2026-10-29T18:21:30Z",
+      "number": 11,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-3c714a78-r7eo0c",
+      "headRefOid": "855382fb57c858e403f82e71ec3e3c8f2e66c380",
+      "mergedAt": "2026-10-29T10:59:04Z",
+      "number": 10,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-03594f78-ure5tb",
+      "headRefOid": "25e31b04ee4e93f9e613c64650267933efbe5709",
+      "mergedAt": "2026-10-29T09:30:10Z",
+      "number": 9,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-03594f78-ure5tb",
+      "headRefOid": "237a0d02c37ccc752ab6aaab79c92834ba7cd60f",
+      "mergedAt": "2026-10-29T09:14:02Z",
+      "number": 8,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-4d37fe2c-mutkq8",
+      "headRefOid": "4ecbde10196920cea252f28c5fb616af6be65117",
+      "mergedAt": "2026-10-28T11:52:23Z",
+      "number": 7,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-524a9d4f-is0zt7",
+      "headRefOid": "5a06fe05622bb680ecf294606e4afeab81510f77",
+      "mergedAt": "2026-10-28T10:39:08Z",
+      "number": 6,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "ccr-524a9d4f-is0zt7",
+      "headRefOid": "07386b0839d5c611b37a7ab31ea5bc94181ce0eb",
+      "mergedAt": "2026-10-28T10:10:59Z",
+      "number": 5,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "claude/netzel-python-package-analysis-adcv39",
+      "headRefOid": "a52bb4fa8931fa02abb1bd326f6a258aa0dd6747",
+      "mergedAt": "2026-10-28T05:41:04Z",
+      "number": 4,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "claude/netzel-python-package-analysis-adcv39",
+      "headRefOid": "8377626ba96a5ce988d3006b3c8e37797b79c5f4",
+      "mergedAt": "2026-10-27T20:16:48Z",
+      "number": 3,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "claude/netzel-python-package-analysis-adcv39",
+      "headRefOid": "4fe2fc40d1f977a896e322c54c9afcca4af4db07",
+      "mergedAt": "2026-10-27T18:38:33Z",
+      "number": 2,
+      "state": "MERGED"
+    },
+    {
+      "baseRefName": "main",
+      "headRefName": "claude/netzel-python-package-analysis-adcv39",
+      "headRefOid": "72943ef34e7bf4e1f9daf491b685255c0ec5ee04",
+      "mergedAt": "2026-10-27T17:55:50Z",
+      "number": 1,
+      "state": "MERGED"
+    }
+  ],
+  "pr38": {
+    "baseRefName": "codex/netzel-pollen-methods",
+    "headRefName": "codex/netzel-next-task-workflow",
+    "headRefOid": "d003fb97a21c967a44161230eed807e745ed5b0b",
+    "mergeStateStatus": "CLEAN",
+    "mergeable": "MERGEABLE",
+    "number": 38,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-31T09:16:27Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41187864475/job/124498346354",
+        "name": "test (3.11)",
+        "startedAt": "2026-10-31T09:14:18Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-31T09:15:44Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41187860833/job/124498335776",
+        "name": "test (3.11)",
+        "startedAt": "2026-10-31T09:14:15Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-31T09:16:05Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41187864475/job/124498346490",
+        "name": "test (3.13)",
+        "startedAt": "2026-10-31T09:14:18Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-31T09:16:13Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41187860833/job/124498336014",
+        "name": "test (3.13)",
+        "startedAt": "2026-10-31T09:14:15Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ],
+    "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/38"
+  },
+  "main_symmetric_difference": "0\t21",
+  "note": "New package directory untracked at snapshot time; original five worktrees clean and preserved. Initial PR38 mergeStateStatus UNSTABLE changed to CLEAN after successful CI; neither is merge authorization."
+}

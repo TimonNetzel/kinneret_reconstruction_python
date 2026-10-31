@@ -1,0 +1,30 @@
+{
+  "docs/thesis_research/t1_synthetic_t2_2026_10_31/config.json": {
+    "sha256": "5eeb8aca1837c768468267a42f945460edec1bbf588afe7eb59cb755b13541c6",
+    "bytes": 985
+  },
+  "docs/thesis_research/t1_synthetic_t2_2026_10_31/DESIGN.md": {
+    "sha256": "cdbfc2a285258a7c9d9d7f2205b3d9bf4e2841e5d09c49f5b4adcbe80c81abaf",
+    "bytes": 9215
+  },
+  "tools/taxon_synthetic/prototype.py": {
+    "sha256": "f1c4f4568d1c37837a10954768827ab21f3ddd5e522f2b03f329eb2ec954483a",
+    "bytes": 11223
+  },
+  "outputs/observations.json": {
+    "sha256": "32401f8dffcbeedc18a34617418e7ce03ba1a039fe49ebdfdf60941f74fbafa2",
+    "bytes": 97766
+  },
+  "outputs/results.json": {
+    "sha256": "c904f997b204ebc22986c9c20690c544c1a0e8bc6df9643b954d83e066907586",
+    "bytes": 79609
+  },
+  "outputs/posterior.csv.gz": {
+    "sha256": "ba9d1fd3579099c0f6cd14e4ddc1ab8eac0438ced2db8497e95d67931eaa1b0a",
+    "bytes": 1785824
+  },
+  "outputs/environment.json": {
+    "sha256": "6a47e55052ad2392e20277f120f03ef6107aa2d073a87f1f12f45d67eab9184b",
+    "bytes": 166
+  }
+}

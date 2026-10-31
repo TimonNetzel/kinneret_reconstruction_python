@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "posteriors_checked": 108,
+  "datasets": 38,
+  "grid_states_per_posterior": 1681,
+  "prior_only_cases": 6,
+  "datasets_recreated_from_locked_plan": 38,
+  "maximum_mass_absolute_error": 1.7486012637846216e-15,
+  "maximum_mean_absolute_error": 1.887379141862766e-15,
+  "manifest_files_checked": 7,
+  "method": "direct products and explicit per-row mixture; no producer import",
+  "shared_dependencies": [
+    "Python",
+    "NumPy"
+  ],
+  "independent_human_review": false,
+  "sbc": "not performed"
+}

@@ -17,6 +17,53 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+## Aktueller Paketabschluss: T1-Kandidat / synthetisches T2, 31.10.2026
+
+**Begrenzt abgeschlossen:** [Design und synthetischer Prototyp](./t1_synthetic_t2_2026_10_31/README.md)
+auf `codex/netzel-t1-synthetic-t2` ab PR #38, `d003fb9`.
+Design vor Implementierung/Lauf separat als `2b41c37` committed und gepusht.
+108 Posteriore/38 künstliche Datensätze, beide Priors und alle vorgesehenen
+Varianten/Grenzfälle berichtet; 29 neue Tests bestanden, separater Direktprüfer
+aller 108×1.681 Posteriormassen bestanden (max. Differenz 1,75×10⁻¹⁵),
+38 Datensätze nacherzeugt, fünf Produktionsdateien im Zweitlauf bytegleich.
+Alle Dateibytes werden in Git gesichert; keine neue Bytearchivlücke.
+
+Passende Modelle enthalten 58/60 innere Wahrheiten im diskreten 95%-HPD-Set,
+bewusst missspezifizierte 24/30; kein Deckungs-/SBC-Nachweis und keine Modellwahl.
+Widerspruch kann trotz engem Posterior bestehen; fehlende Dimension, Prior-only-
+und ±u-Mehrdeutigkeit bestätigt. Ein Randfall verfehlt HPD unter informativem Prior.
+Beobachtungsparameter/Antwortkurven sind vorgegeben, keine echten Arten/Pollen.
+**T1 für reale Pollenzählungen bleibt offen**, ebenso T0/T3/T4, W96 und
+Monticchio-P1. Modelle, bestehende Resultate/Register, Counts, Baseline und
+CLI/App unverändert; keine Unteragenten, Autorennachrichten oder Merges.
+
+Operative Prüfabweichung: Zusätzlich gestarteter Gesamtstandardtest abgebrochen,
+56 bestanden/zwei Browserfehler/zwei Langtests abgewählt; restliche Fälle nicht
+als geprüft ausweisen. Fehlendes Chromium-Binary ist belegt. Vorhandene kurze
+Regressionsketten mit realen Testeingängen liefen teilweise; keine neue
+wissenschaftliche Kernkurve ausgewertet/gesichert.
+[Prüfstand und genaue Abgrenzung](./t1_synthetic_t2_2026_10_31/TESTING.md).
+
+Aktuelle Standprüfung: #31–#38 offen, #38-Head exakt `d003fb9`, main `7f1826c`.
+Fünf bestehende Worktrees beim Einstieg sauber und erhalten; eigener Worktree
+`/workspace/netzel-t1-synthetic-t2`. PR #38 wechselte während seiner CI von
+UNSTABLE nach CLEAN, technisch MERGEABLE; keine Mergefreigabe.
+[Remote-/API-/Branch-Snapshot](./t1_synthetic_t2_2026_10_31/git_snapshot.json).
+Die folgenden älteren Paketabschnitte dokumentieren historische Prüfstände.
+
+**Vorbereitet – wartet auf Nutzer-OK:** genau ein Anschlussdesign für
+Pollen-Zählkomposition und Typgemische, ausschließlich Dokumentation ohne neue
+Läufe. Ziel, Dateien, Leseplan und Abschlusskriterien in [HANDOFF](./HANDOFF.md).
+Sicherung als [PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
+gegen `codex/netzel-next-task-workflow` (#38), offen und ohne Merge.
+Letzter gesicherter **Inhaltscommit** mit Code, Ergebnisbytes und Übergabe:
+`953d1e995429a209b336cb83e89c41fda66a3f62`; danach nur PR-/Übergabeverweise.
+654 bestehende Blobs einschließlich eines Symlinks gegen `d003fb9` unverändert
+(ausgenommen die zwei erlaubten Einstiegsdokumente), alle fünf ursprünglichen
+Worktrees sauber. [Erhaltungsprüfung](./t1_synthetic_t2_2026_10_31/preservation.json).
+Bei PR-Erstellung war #39 MERGEABLE/UNSTABLE bei laufender CI; kein behauptetes
+grünes Gesamtergebnis. [PR-Snapshot](./t1_synthetic_t2_2026_10_31/pr_snapshot.json).
+
 ## Git- und PR-Stand
 
 **Erneut geprüft für das Bestimmungspaket am 31.10.2026:** #31–#36 offen,

@@ -1,0 +1,26 @@
+{
+  "base_commit": "d003fb97a21c967a44161230eed807e745ed5b0b",
+  "status": "passed",
+  "existing_files_byte_identical": 654,
+  "unchanged_symlinks": [
+    "legacy/data/in"
+  ],
+  "allowed_existing_document_changes": [
+    "docs/thesis_research/HANDOFF.md",
+    "docs/thesis_research/PROJECT_STATUS.md"
+  ],
+  "original_worktree_statuses": {
+    "/workspace/kinneret_reconstruction_python": "",
+    "/workspace/netzel-original-names": "",
+    "/workspace/netzel-pilot-roadmap": "",
+    "/workspace/netzel-pollen": "",
+    "/workspace/netzel-workflow": ""
+  },
+  "new_paths_allowed": [
+    "docs/thesis_research/t1_synthetic_t2_2026_10_31/",
+    "tools/taxon_synthetic/",
+    "tests/test_synthetic_inversion.py"
+  ],
+  "git_blobs_sha1_compared": true,
+  "note": "Existing model/result/source/count/CLI/app files unchanged; no reference hashes replaced."
+}
