@@ -34,7 +34,10 @@ Der allgemeine gemeinsame Posterior allein ist kein belegter Neuheitsbeitrag.
 
 Basis `6e28a8541f58a263cbd455d46b5ef8df101bae43` aus PR #47; Worktree
 `/workspace/netzel-literature-check`, Branch `codex/netzel-method-literature-check`.
-Eigener PR nach Inhaltscommit gegen den #47-Branch, kein Merge.
+[PR #48](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/48)
+gegen den #47-Branch, offen/ungemergt. Inhaltscommit
+`288d6e02eca647254c8242a671182c1ee84abffa`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 723 geschützte bestehende Git-Blobs bytegleich; Quellen-/Link-/Diffprüfung bestanden.
 #47 beim
 Einstieg offen/ungemergt/mergefähig, CI 41201264089 erfolgreich, main `7f1826c`,

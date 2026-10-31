@@ -4,7 +4,11 @@
 Basis `6e28a8541f58a263cbd455d46b5ef8df101bae43` aus
 [PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47).
 Worktree `/workspace/netzel-literature-check`, Branch
-`codex/netzel-method-literature-check`; eigener PR nach Inhaltscommit.
+`codex/netzel-method-literature-check`;
+[PR #48](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/48)
+gegen den #47-Branch, offen/ungemergt; Inhaltscommit
+`288d6e02eca647254c8242a671182c1ee84abffa`, danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 
 **Ja: Die allgemeine hierarchisch-bayessche Architektur, Polleninversion,
 Zeitunsicherheit und gemeinsame Multiproxy-Inversion haben deutliche Vorläufer.**
