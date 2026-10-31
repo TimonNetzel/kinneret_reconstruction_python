@@ -15,8 +15,11 @@ Basis PR #50 bei `64a652982b0f271c02bfc0c89331537d6ec08eaa`, offen/ungemergt,
 mergebar; CI 41207312666 erfolgreich. Main `7f1826c`, #49-Head `df01632`.
 Fünf vorgefundene Worktrees sauber, keine Stashes; bestehende Arbeit erhalten.
 Eigener Worktree `/workspace/netzel-a1-novelty-matrix`, Branch
-`codex/netzel-a1-novelty-matrix`, eigener gestapelter PR gegen den #50-Branch.
-Sicherungscommit/PR und eigener CI-Stand: siehe neuesten PROJECT_STATUS-Abschnitt.
+`codex/netzel-a1-novelty-matrix`; [PR #51](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/51)
+gegen den #50-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`ccd16161646f74aae799f343de176181ac7ebbb9`; danach nur Sicherungsverweise.
+Automatische CI 41208517276 zum Inhaltscommit bei Abfrage noch queued,
+kein Erfolg behauptet. Letzter Remote-Head über PR/Branch prüfbar.
 
 ## Genau ein Folgeauftrag: A2 – vorbereitet, wartet auf Nutzer-OK
 

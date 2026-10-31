@@ -153,7 +153,7 @@ Implementierung, Tests, Fits, Scores, Simulationen oder Kernläufe ausgeführt.
 Bestehende Designs, Modelle, Resultate, Register, Verträge, Importer, Flags,
 Counts/Gruppen, Baseline und CLI/App bleiben unverändert; W96 und reale Gates
 offen. Quellenlocator, algebraische Aussagen, lokale Links und Diffumfang
-werden als Dokumentation geprüft.
+wurden als Dokumentation geprüft.
 
 Genau ein Folgeauftrag ist in [HANDOFF](./HANDOFF.md) konkret vorbereitet:
 A2, ausschließlich ein dokumentarischer MODEL_CONTRACT.md mit expliziten

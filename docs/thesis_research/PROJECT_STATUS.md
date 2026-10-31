@@ -36,12 +36,16 @@ Basis `64a652982b0f271c02bfc0c89331537d6ec08eaa`, PR #50 offen/ungemergt,
 mergebar, CI 41207312666 erfolgreich; #49-Head `df01632`, main `7f1826c`.
 Fünf vorgefundene Worktrees sauber, keine Stashes; kein Reset/Stash/Merge.
 Eigener Worktree `/workspace/netzel-a1-novelty-matrix`, Branch
-`codex/netzel-a1-novelty-matrix`; eigener gestapelter PR gegen #50 in Sicherung.
+`codex/netzel-a1-novelty-matrix`; [PR #51](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/51)
+gegen den #50-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`ccd16161646f74aae799f343de176181ac7ebbb9`; danach Sicherungsverweise.
+Automatische CI 41208517276 für den Inhaltscommit bei Abfrage queued,
+noch kein abschließender CI-Nachweis für den Übergabe-Head.
 
 Prüfung bestanden: Quellenlocator/Beleggrenzen und Normierungsalgebra geprüft;
-79 lokale Linkziele gültig, bisherige Statusabschnitte erhalten, erlaubter
+Lokale Linkziele gültig, bisherige Statusabschnitte erhalten, erlaubter
 Drei-Dateien-Diff. 726 geschützte bestehende Git-Blobs einschließlich eines
-Symlinks bytegleich; keine Projekt-/Modelltests ausgeführt.
+Symlinks bytegleich; keine Projekt-/Modelltests manuell ausgeführt.
 Nur NOVELTY_MATRIX neu sowie HANDOFF und dieser Status ergänzt/gepflegt.
 Keine Daten-/Modellwahl, Beschaffung, Bereinigung, Datenmatrix/Kohorte,
 Implementierung, Tests, Fits, Scores, Simulationen oder Kernläufe ausgeführt.
