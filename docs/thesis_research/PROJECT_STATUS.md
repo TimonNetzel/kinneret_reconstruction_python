@@ -18,6 +18,44 @@ auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
 
+
+## Aktueller Abschluss: A4-Auftragsgrenze dokumentiert, 31.10.2026
+
+Nutzer-OK nach PR #55 umgesetzt: [A4_TASK_BOUNDARY](./A4_TASK_BOUNDARY.md)
+grenzt ausschließlich dokumentarisch moderne Eingangsrollen, Abhängigkeiten,
+räumliche Datenrollen/Support, unabhängige Prüfung, Menezes-nahe Basis und
+Kalibrierunsicherheit samt offenen Nachweisen und Stopgrenzen ab.
+**Auftragsabgrenzung dokumentarisch abgeschlossen; A4-Umsetzung/reale
+Kalibrierung nicht begonnen.** Kein realer Datenvertrag ausgefüllt, keine
+Eingangs-/Modellwahl oder Gatefreigabe. A1/A2 dokumentarisch abgeschlossen;
+A3 ausschließlich endlich-synthetisch bestanden, Audit/Tabellen unverändert;
+A5/A6 nicht begonnen.
+
+Basis `b1e78244bd8484004bc8f46de8ecbc09dadf5963`,
+[PR #55](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/55)
+offen/ungemergt und mergebar; automatische CI 41236453941 erfolgreich.
+Sechs vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
+main unverändert `7f1826c`. Eigener Worktree `/workspace/netzel-a4-task-boundary`,
+Branch `codex/netzel-a4-task-boundary`, eigener gestapelter PR gegen #55.
+Inhaltscommit/PR und CI werden nach Erstellung ergänzt. Nur neues Dokument
+plus kurze HANDOFF-/Statuspflege; alte Statushistorie erhalten. Quellenzuordnung,
+17 lokale Links/Anker und Drei-Dateien-Umfang geprüft; 749 geschützte Blobs/
+Dateimodi einschließlich Symlink unverändert.
+
+Keine manuellen Tests oder Rechnungen, keine neuen Quellen, reale Auswahl,
+Beschaffung, Bereinigung, Matrix/Kohorte, Typbrücke, Implementierung,
+Fits, Scores, Optimierung, Simulationen oder Kernläufe. Bestehende Designs,
+MODEL_CONTRACT, Modelle, Resultate, Register, Verträge, Importer, Flags,
+Counts/Gruppen, Baseline und CLI/App unverändert. Parnell-Zugang blockiert,
+Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben Grenzen;
+kein eigener Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK:
+vorhandene EMPD2-Archiv-/Messstatusdokumente gezielt den offenen modernen
+E-Anforderungen zuordnen, ausschließlich dokumentarisch. Keine EMPD2-Auswahl,
+keine neue Beschaffung/Datenprüfung oder A4-Umsetzung. Startprompt in HANDOFF.
+
+
 ## Aktueller Abschluss: endliche synthetische A3-Prüfung bestanden, 31.10.2026
 
 Nutzerauftrag nach PR #54 umgesetzt: **A3 im gesperrten endlichen synthetischen
