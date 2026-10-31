@@ -1,0 +1,27 @@
+{
+  "environment.json": {
+    "byte_identical": true,
+    "bytes": 166,
+    "sha256": "6a47e55052ad2392e20277f120f03ef6107aa2d073a87f1f12f45d67eab9184b"
+  },
+  "manifest.json": {
+    "byte_identical": true,
+    "bytes": 1041,
+    "sha256": "8ef67748d43745c39cc68a8d4fffe13341c0d297f0853beac6ef6906e79eeaa2"
+  },
+  "observations.json": {
+    "byte_identical": true,
+    "bytes": 97766,
+    "sha256": "32401f8dffcbeedc18a34617418e7ce03ba1a039fe49ebdfdf60941f74fbafa2"
+  },
+  "posterior.csv.gz": {
+    "byte_identical": true,
+    "bytes": 1785824,
+    "sha256": "ba9d1fd3579099c0f6cd14e4ddc1ab8eac0438ced2db8497e95d67931eaa1b0a"
+  },
+  "results.json": {
+    "byte_identical": true,
+    "bytes": 79609,
+    "sha256": "c904f997b204ebc22986c9c20690c544c1a0e8bc6df9643b954d83e066907586"
+  }
+}

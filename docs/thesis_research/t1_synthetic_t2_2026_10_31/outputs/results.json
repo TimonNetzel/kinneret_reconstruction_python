@@ -1,0 +1,3352 @@
+[
+  {
+    "id": "known_independent_0_101:independent:uniform",
+    "dataset": "known_independent_0_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.39036949624672,
+    "mean": [
+      0.06514272817561993,
+      -3.899941557986894e-17
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9526730159058899,
+    "hpd_cutoff": 0.004052342976290205,
+    "edge_mass": 1.3656039837670316e-13,
+    "mean_error": 0.06514272817561993,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0528486280271968
+  },
+  {
+    "id": "known_independent_0_101:independent:informative",
+    "dataset": "known_independent_0_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.69292297547725,
+    "mean": [
+      0.07079826763462456,
+      -0.004967651456711336
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9507288245115263,
+    "hpd_cutoff": 0.0038689415365196476,
+    "edge_mass": 9.110867297428361e-14,
+    "mean_error": 0.0709723344766064,
+    "truth_in_hpd": true,
+    "truth_mass": 0.04938529676423461
+  },
+  {
+    "id": "known_independent_0_102:independent:uniform",
+    "dataset": "known_independent_0_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.28750135471783,
+    "mean": [
+      -0.03242300945562682,
+      -0.06514272817562027
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        -0.19999999999999996,
+        0.050000000000000044
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9508703308560855,
+    "hpd_cutoff": 0.0033663584715718725,
+    "edge_mass": 1.3954773493266307e-13,
+    "mean_error": 0.07276555899821299,
+    "truth_in_hpd": true,
+    "truth_mass": 0.04768245977656925
+  },
+  {
+    "id": "known_independent_0_102:independent:informative",
+    "dataset": "known_independent_0_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.65513043094994,
+    "mean": [
+      -0.025210198356107546,
+      -0.06909302234743948
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        -0.19999999999999996,
+        0.050000000000000044
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9519915489165804,
+    "hpd_cutoff": 0.0034299435119763536,
+    "edge_mass": 6.713536053650889e-14,
+    "mean_error": 0.07354862227301107,
+    "truth_in_hpd": true,
+    "truth_mass": 0.04755372854268182
+  },
+  {
+    "id": "known_independent_0_103:independent:uniform",
+    "dataset": "known_independent_0_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.28750135471783,
+    "mean": [
+      0.06514272817562007,
+      0.03242300945562673
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9508703308560853,
+    "hpd_cutoff": 0.003366358471571796,
+    "edge_mass": 1.3954773493266143e-13,
+    "mean_error": 0.07276555899821278,
+    "truth_in_hpd": true,
+    "truth_mass": 0.047682459776569514
+  },
+  {
+    "id": "known_independent_0_103:independent:informative",
+    "dataset": "known_independent_0_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.62339945432693,
+    "mean": [
+      0.07079826763462446,
+      0.02687159905884652
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9518888811568824,
+    "hpd_cutoff": 0.0036090964267168615,
+    "edge_mass": 9.13043555788458e-14,
+    "mean_error": 0.07572633317442035,
+    "truth_in_hpd": true,
+    "truth_mass": 0.04606849093007631
+  },
+  {
+    "id": "known_independent_0_104:independent:uniform",
+    "dataset": "known_independent_0_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.22849926184027,
+    "mean": [
+      -0.09847445632220785,
+      -0.08171109806098076
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.050000000000000044
+      ],
+      [
+        -0.25,
+        0.050000000000000044
+      ]
+    ],
+    "hpd_cells": 41,
+    "hpd_mass": 0.9526366458376961,
+    "hpd_cutoff": 0.004149483505057555,
+    "edge_mass": 5.7126121734129355e-12,
+    "mean_error": 0.12796062712524361,
+    "truth_in_hpd": true,
+    "truth_mass": 0.016536358759738336
+  },
+  {
+    "id": "known_independent_0_104:independent:informative",
+    "dataset": "known_independent_0_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -113.68400262963928,
+    "mean": [
+      -0.08972831585152546,
+      -0.08542106775998379
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.050000000000000044
+      ],
+      [
+        -0.25,
+        0.050000000000000044
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9517035393374272,
+    "hpd_cutoff": 0.00382332477707233,
+    "edge_mass": 6.944465027822739e-13,
+    "mean_error": 0.12388676072448927,
+    "truth_in_hpd": true,
+    "truth_mass": 0.018006492687193495
+  },
+  {
+    "id": "known_independent_0_105:independent:uniform",
+    "dataset": "known_independent_0_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.5451339922471,
+    "mean": [
+      -0.048726741437935366,
+      -0.016193170584019454
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.10000000000000009
+      ],
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9538177404096851,
+    "hpd_cutoff": 0.004110949746377738,
+    "edge_mass": 2.15495625851466e-14,
+    "mean_error": 0.05134699703704746,
+    "truth_in_hpd": true,
+    "truth_mass": 0.061694590215697905
+  },
+  {
+    "id": "known_independent_0_105:independent:informative",
+    "dataset": "known_independent_0_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.97720640302714,
+    "mean": [
+      -0.041181869431756134,
+      -0.020892279204928005
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.10000000000000009
+      ],
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9522440427548166,
+    "hpd_cutoff": 0.0036307658111811346,
+    "edge_mass": 1.3787296223358342e-15,
+    "mean_error": 0.046178281694654655,
+    "truth_in_hpd": true,
+    "truth_mass": 0.06562365143178556
+  },
+  {
+    "id": "known_independent_1_101:independent:uniform",
+    "dataset": "known_independent_1_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -86.34598436628819,
+    "mean": [
+      -0.4694069597273878,
+      0.5535408419363474
+    ],
+    "marginal_95": [
+      [
+        -0.8,
+        -0.25
+      ],
+      [
+        0.30000000000000004,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 158,
+    "hpd_mass": 0.9501807377258599,
+    "hpd_cutoff": 0.0010061562053754697,
+    "edge_mass": 0.015551040640466961,
+    "mean_error": 0.06166486737498602,
+    "truth_in_hpd": true,
+    "truth_mass": 0.018546007398689987
+  },
+  {
+    "id": "known_independent_1_101:independent:informative",
+    "dataset": "known_independent_1_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -87.65626157548132,
+    "mean": [
+      -0.4221465356563539,
+      0.492396840537485
+    ],
+    "marginal_95": [
+      [
+        -0.7,
+        -0.25
+      ],
+      [
+        0.30000000000000004,
+        0.8
+      ]
+    ],
+    "hpd_cells": 115,
+    "hpd_mass": 0.9500041900949515,
+    "hpd_cutoff": 0.0010405286927647958,
+    "edge_mass": 0.002801517316535839,
+    "mean_error": 0.07822384511208717,
+    "truth_in_hpd": true,
+    "truth_mass": 0.017756083297794486
+  },
+  {
+    "id": "known_independent_1_102:independent:uniform",
+    "dataset": "known_independent_1_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -75.52752709818553,
+    "mean": [
+      -0.7234947563613087,
+      0.5984630899904486
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.3999999999999999
+      ],
+      [
+        0.3500000000000001,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 164,
+    "hpd_mass": 0.9507047818564196,
+    "hpd_cutoff": 0.001683434972134428,
+    "edge_mass": 0.08513780038592507,
+    "mean_error": 0.2442230255554703,
+    "truth_in_hpd": true,
+    "truth_mass": 0.007467422569536952
+  },
+  {
+    "id": "known_independent_1_102:independent:informative",
+    "dataset": "known_independent_1_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -77.70769530289913,
+    "mean": [
+      -0.6323809947787637,
+      0.5282761325302764
+    ],
+    "marginal_95": [
+      [
+        -0.95,
+        -0.35
+      ],
+      [
+        0.30000000000000004,
+        0.8500000000000001
+      ]
+    ],
+    "hpd_cells": 150,
+    "hpd_mass": 0.9504143828936666,
+    "hpd_cutoff": 0.0011695563172888454,
+    "edge_mass": 0.022672701308022847,
+    "mean_error": 0.1353671579427035,
+    "truth_in_hpd": true,
+    "truth_mass": 0.017063036991412223
+  },
+  {
+    "id": "known_independent_1_103:independent:uniform",
+    "dataset": "known_independent_1_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -81.87642537603828,
+    "mean": [
+      -0.51005863117822,
+      0.6429465107458644
+    ],
+    "marginal_95": [
+      [
+        -0.9,
+        -0.29999999999999993
+      ],
+      [
+        0.3500000000000001,
+        1.0
+      ]
+    ],
+    "hpd_cells": 168,
+    "hpd_mass": 0.9509164345896276,
+    "hpd_cutoff": 0.0010849847963896042,
+    "edge_mass": 0.039061527831183815,
+    "mean_error": 0.14329996858198185,
+    "truth_in_hpd": true,
+    "truth_mass": 0.014839667248161208
+  },
+  {
+    "id": "known_independent_1_103:independent:informative",
+    "dataset": "known_independent_1_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -83.52977043965801,
+    "mean": [
+      -0.4533417693504381,
+      0.5654728067960113
+    ],
+    "marginal_95": [
+      [
+        -0.75,
+        -0.25
+      ],
+      [
+        0.3500000000000001,
+        0.9000000000000001
+      ]
+    ],
+    "hpd_cells": 133,
+    "hpd_mass": 0.9506888136056946,
+    "hpd_cutoff": 0.0011160131781924932,
+    "edge_mass": 0.008950068215418126,
+    "mean_error": 0.08039700813522568,
+    "truth_in_hpd": true,
+    "truth_mass": 0.020022273245698774
+  },
+  {
+    "id": "known_independent_1_104:independent:uniform",
+    "dataset": "known_independent_1_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -79.82813098648398,
+    "mean": [
+      -0.7865766019705762,
+      0.3681321330588206
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.5
+      ],
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ]
+    ],
+    "hpd_cells": 101,
+    "hpd_mass": 0.9501440802500907,
+    "hpd_cutoff": 0.0016150965780809994,
+    "edge_mass": 0.10789865816035658,
+    "mean_error": 0.315460430369038,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0019136442822280967
+  },
+  {
+    "id": "known_independent_1_104:independent:informative",
+    "dataset": "known_independent_1_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -81.71350916204413,
+    "mean": [
+      -0.7008065026444023,
+      0.3435994861636584
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.44999999999999996
+      ],
+      [
+        0.15000000000000013,
+        0.55
+      ]
+    ],
+    "hpd_cells": 100,
+    "hpd_mass": 0.9507778151582024,
+    "hpd_cutoff": 0.0018549799015266995,
+    "edge_mass": 0.03811932127383039,
+    "mean_error": 0.25452774354193297,
+    "truth_in_hpd": true,
+    "truth_mass": 0.003256275438066611
+  },
+  {
+    "id": "known_independent_1_105:independent:uniform",
+    "dataset": "known_independent_1_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -77.32438866198629,
+    "mean": [
+      -0.642946510745865,
+      0.6429465107458648
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.35
+      ],
+      [
+        0.3500000000000001,
+        1.0
+      ]
+    ],
+    "hpd_cells": 175,
+    "hpd_mass": 0.9532346628119933,
+    "hpd_cutoff": 0.001663128319894704,
+    "edge_mass": 0.06416532932468078,
+    "mean_error": 0.2021568941907135,
+    "truth_in_hpd": true,
+    "truth_mass": 0.010933980035893397
+  },
+  {
+    "id": "known_independent_1_105:independent:informative",
+    "dataset": "known_independent_1_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -79.35681749521002,
+    "mean": [
+      -0.5584567574615967,
+      0.5654728067960112
+    ],
+    "marginal_95": [
+      [
+        -0.9,
+        -0.29999999999999993
+      ],
+      [
+        0.3500000000000001,
+        0.9000000000000001
+      ]
+    ],
+    "hpd_cells": 155,
+    "hpd_mass": 0.9508599962614591,
+    "hpd_cutoff": 0.0010544930610409506,
+    "edge_mass": 0.014849125564967312,
+    "mean_error": 0.08777175469746377,
+    "truth_in_hpd": true,
+    "truth_mass": 0.021552690232236948
+  },
+  {
+    "id": "known_independent_2_101:independent:uniform",
+    "dataset": "known_independent_2_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -90.25254438014233,
+    "mean": [
+      0.3986190518251638,
+      -0.5100586311782203
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ],
+      [
+        -0.9,
+        -0.29999999999999993
+      ]
+    ],
+    "hpd_cells": 131,
+    "hpd_mass": 0.9507554250138086,
+    "hpd_cutoff": 0.0010564786680578796,
+    "edge_mass": 0.007317579578661642,
+    "mean_error": 0.101878715706512,
+    "truth_in_hpd": true,
+    "truth_mass": 0.013199860632298853
+  },
+  {
+    "id": "known_independent_2_101:independent:informative",
+    "dataset": "known_independent_2_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -89.3326406522676,
+    "mean": [
+      0.39669931373122785,
+      -0.4925745107097244
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 118,
+    "hpd_mass": 0.9507515673632351,
+    "hpd_cutoff": 0.0010598141692060455,
+    "edge_mass": 0.003649215340472912,
+    "mean_error": 0.1035672229752217,
+    "truth_in_hpd": true,
+    "truth_mass": 0.013743260630316854
+  },
+  {
+    "id": "known_independent_2_102:independent:uniform",
+    "dataset": "known_independent_2_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -79.8388984518464,
+    "mean": [
+      0.7234947563613087,
+      -0.4694069597273877
+    ],
+    "marginal_95": [
+      [
+        0.40000000000000013,
+        1.0
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 144,
+    "hpd_mass": 0.9504792461028264,
+    "hpd_cutoff": 0.0010774660632189023,
+    "edge_mass": 0.06884495175678579,
+    "mean_error": 0.22557890024140645,
+    "truth_in_hpd": true,
+    "truth_mass": 0.007967039608286411
+  },
+  {
+    "id": "known_independent_2_102:independent:informative",
+    "dataset": "known_independent_2_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -79.0711088240342,
+    "mean": [
+      0.6969114416635394,
+      -0.4565320157660809
+    ],
+    "marginal_95": [
+      [
+        0.40000000000000013,
+        1.0
+      ],
+      [
+        -0.75,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 134,
+    "hpd_mass": 0.9506634371715057,
+    "hpd_cutoff": 0.0011442709598643481,
+    "edge_mass": 0.04588478824604818,
+    "mean_error": 0.20165212994504597,
+    "truth_in_hpd": true,
+    "truth_mass": 0.00965783379828698
+  },
+  {
+    "id": "known_independent_2_103:independent:uniform",
+    "dataset": "known_independent_2_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -78.92012151044008,
+    "mean": [
+      0.5984630899904485,
+      -0.6429465107458648
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.9500000000000002
+      ],
+      [
+        -1.0,
+        -0.35
+      ]
+    ],
+    "hpd_cells": 177,
+    "hpd_mass": 0.9511276495277285,
+    "hpd_cutoff": 0.0014948355497842653,
+    "edge_mass": 0.0527132947634009,
+    "mean_error": 0.17357616491006134,
+    "truth_in_hpd": true,
+    "truth_mass": 0.013092926621028263
+  },
+  {
+    "id": "known_independent_2_103:independent:informative",
+    "dataset": "known_independent_2_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -78.19927788821725,
+    "mean": [
+      0.5789722957648875,
+      -0.611603036809672
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        -0.35
+      ]
+    ],
+    "hpd_cells": 168,
+    "hpd_mass": 0.9505912363259186,
+    "hpd_cutoff": 0.001261081995377264,
+    "edge_mass": 0.030545116127418295,
+    "mean_error": 0.13671818212482884,
+    "truth_in_hpd": true,
+    "truth_mass": 0.016634428174562305
+  },
+  {
+    "id": "known_independent_2_104:independent:uniform",
+    "dataset": "known_independent_2_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -74.38317828732153,
+    "mean": [
+      0.46940695972738755,
+      -0.8114280170734418
+    ],
+    "marginal_95": [
+      [
+        0.25,
+        0.8
+      ],
+      [
+        -1.0,
+        -0.5
+      ]
+    ],
+    "hpd_cells": 122,
+    "hpd_mass": 0.9506941774833271,
+    "hpd_cutoff": 0.0012192872859467052,
+    "edge_mass": 0.13319850330557342,
+    "mean_error": 0.3129270584839503,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0023778603986799526
+  },
+  {
+    "id": "known_independent_2_104:independent:informative",
+    "dataset": "known_independent_2_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -73.81731609145257,
+    "mean": [
+      0.46210167897007015,
+      -0.7803206832762576
+    ],
+    "marginal_95": [
+      [
+        0.25,
+        0.75
+      ],
+      [
+        -1.0,
+        -0.5
+      ]
+    ],
+    "hpd_cells": 119,
+    "hpd_mass": 0.950447897535277,
+    "hpd_cutoff": 0.0011571224977491438,
+    "edge_mass": 0.0917354413923948,
+    "mean_error": 0.28287093913895706,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0035274841794080978
+  },
+  {
+    "id": "known_independent_2_105:independent:uniform",
+    "dataset": "known_independent_2_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -84.99091687822552,
+    "mean": [
+      0.5535408419363471,
+      -0.5100586311782205
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.9500000000000002
+      ],
+      [
+        -0.9,
+        -0.29999999999999993
+      ]
+    ],
+    "hpd_cells": 170,
+    "hpd_mass": 0.9509050187672169,
+    "hpd_cutoff": 0.0010413255344224224,
+    "edge_mass": 0.018837311008985513,
+    "mean_error": 0.05447749825783463,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01970205873338487
+  },
+  {
+    "id": "known_independent_2_105:independent:informative",
+    "dataset": "known_independent_2_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -84.12311489162543,
+    "mean": [
+      0.5382165351861099,
+      -0.492574510709724
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.9000000000000001
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 151,
+    "hpd_mass": 0.9500677410664977,
+    "hpd_cutoff": 0.0010471057167234642,
+    "edge_mass": 0.010535360099745839,
+    "mean_error": 0.038931240062849,
+    "truth_in_hpd": true,
+    "truth_mass": 0.021610237751819132
+  },
+  {
+    "id": "known_shared_0_101:shared:uniform",
+    "dataset": "known_shared_0_101",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -110.39258737779998,
+    "mean": [
+      -0.02747678685694577,
+      0.07799225437111092
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.15000000000000013
+      ],
+      [
+        -0.09999999999999998,
+        0.25
+      ]
+    ],
+    "hpd_cells": 79,
+    "hpd_mass": 0.9506054334528609,
+    "hpd_cutoff": 0.0020193218107100205,
+    "edge_mass": 8.069759281072551e-14,
+    "mean_error": 0.08269078278665705,
+    "truth_in_hpd": true,
+    "truth_mass": 0.02693718356623107
+  },
+  {
+    "id": "known_shared_0_101:shared:informative",
+    "dataset": "known_shared_0_101",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -109.90392375892493,
+    "mean": [
+      -0.01274715867886886,
+      0.06573009620697214
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.25
+      ]
+    ],
+    "hpd_cells": 77,
+    "hpd_mass": 0.9512186660486897,
+    "hpd_cutoff": 0.0019621337001536057,
+    "edge_mass": 6.263435112054837e-15,
+    "mean_error": 0.06695472800155397,
+    "truth_in_hpd": true,
+    "truth_mass": 0.031016257857872036
+  },
+  {
+    "id": "known_shared_0_101:independent:uniform",
+    "dataset": "known_shared_0_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.5451339922471,
+    "mean": [
+      -0.016193170584019437,
+      0.048726741437935275
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        -0.09999999999999998,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9538177404096851,
+    "hpd_cutoff": 0.004110949746377683,
+    "edge_mass": 2.1549562585146633e-14,
+    "mean_error": 0.051346997037047364,
+    "truth_in_hpd": true,
+    "truth_mass": 0.06169459021569795
+  },
+  {
+    "id": "known_shared_0_101:independent:informative",
+    "dataset": "known_shared_0_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.99822779002909,
+    "mean": [
+      -0.009286097381700643,
+      0.04285314956923836
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ],
+      [
+        -0.09999999999999998,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9536584203299763,
+    "hpd_cutoff": 0.004401855379008907,
+    "edge_mass": 1.6159202178869493e-15,
+    "mean_error": 0.043847736915215374,
+    "truth_in_hpd": true,
+    "truth_mass": 0.06701775324460667
+  },
+  {
+    "id": "known_shared_0_102:shared:uniform",
+    "dataset": "known_shared_0_102",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -105.96905646669059,
+    "mean": [
+      -0.04803227927992001,
+      0.02461767038820839
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.15000000000000013
+      ],
+      [
+        -0.1499999999999999,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 72,
+    "hpd_mass": 0.9503884577919779,
+    "hpd_cutoff": 0.00231908839750283,
+    "edge_mass": 1.100830262213958e-15,
+    "mean_error": 0.05397341519828725,
+    "truth_in_hpd": true,
+    "truth_mass": 0.035612371848013705
+  },
+  {
+    "id": "known_shared_0_102:shared:informative",
+    "dataset": "known_shared_0_102",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -105.44779917503772,
+    "mean": [
+      -0.03451748965720174,
+      0.014570399224955241
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.15000000000000013
+      ],
+      [
+        -0.1499999999999999,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 70,
+    "hpd_mass": 0.9503569902142415,
+    "hpd_cutoff": 0.0021866222670823094,
+    "edge_mass": 6.736243370906238e-17,
+    "mean_error": 0.03746670022579524,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0396901609408422
+  },
+  {
+    "id": "known_shared_0_102:independent:uniform",
+    "dataset": "known_shared_0_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.67385743464176,
+    "mean": [
+      -0.03242300945562681,
+      0.016193170584019364
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9526529133919464,
+    "hpd_cutoff": 0.0033466456008186688,
+    "edge_mass": 3.5419301988037054e-15,
+    "mean_error": 0.03624183102055987,
+    "truth_in_hpd": true,
+    "truth_mass": 0.07016991729486861
+  },
+  {
+    "id": "known_shared_0_102:independent:informative",
+    "dataset": "known_shared_0_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.11413815659357,
+    "mean": [
+      -0.02521019835610757,
+      0.010942519267591558
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.10000000000000009
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9521644139736497,
+    "hpd_cutoff": 0.0033841260431920696,
+    "edge_mass": 2.019118014255764e-16,
+    "mean_error": 0.027482591382107718,
+    "truth_in_hpd": true,
+    "truth_mass": 0.07525391468411911
+  },
+  {
+    "id": "known_shared_0_103:shared:uniform",
+    "dataset": "known_shared_0_103",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -108.02272364158685,
+    "mean": [
+      0.15121075359294778,
+      0.10705024478137869
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.3500000000000001
+      ],
+      [
+        -0.09999999999999998,
+        0.30000000000000004
+      ]
+    ],
+    "hpd_cells": 76,
+    "hpd_mass": 0.9501548518174449,
+    "hpd_cutoff": 0.0018620649014113703,
+    "edge_mass": 4.12824541968805e-12,
+    "mean_error": 0.18526858047143413,
+    "truth_in_hpd": true,
+    "truth_mass": 0.006876293974767958
+  },
+  {
+    "id": "known_shared_0_103:shared:informative",
+    "dataset": "known_shared_0_103",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -107.37640494237164,
+    "mean": [
+      0.15898163975066476,
+      0.09355521908158539
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.3500000000000001
+      ],
+      [
+        -0.09999999999999998,
+        0.30000000000000004
+      ]
+    ],
+    "hpd_cells": 74,
+    "hpd_mass": 0.9513638767943146,
+    "hpd_cutoff": 0.0018393661756123869,
+    "edge_mass": 2.3369897629540393e-12,
+    "mean_error": 0.18446609660101118,
+    "truth_in_hpd": true,
+    "truth_mass": 0.006762743515562951
+  },
+  {
+    "id": "known_shared_0_103:independent:uniform",
+    "dataset": "known_shared_0_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.46098326908248,
+    "mean": [
+      0.09847445632220796,
+      0.06514272817562007
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.25
+      ],
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 41,
+    "hpd_mass": 0.9529363423586654,
+    "hpd_cutoff": 0.00393327644054747,
+    "edge_mass": 5.0118135579715265e-12,
+    "mean_error": 0.1180711378030938,
+    "truth_in_hpd": true,
+    "truth_mass": 0.020864424363898747
+  },
+  {
+    "id": "known_shared_0_103:independent:informative",
+    "dataset": "known_shared_0_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -113.799795294964,
+    "mean": [
+      0.10370674649018562,
+      0.05892137573560753
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.25
+      ],
+      [
+        -0.09999999999999998,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 40,
+    "hpd_mass": 0.9517590885287519,
+    "hpd_cutoff": 0.003956653108012758,
+    "edge_mass": 3.1551063861257636e-12,
+    "mean_error": 0.11927622473131964,
+    "truth_in_hpd": true,
+    "truth_mass": 0.02021702483446543
+  },
+  {
+    "id": "known_shared_0_104:shared:uniform",
+    "dataset": "known_shared_0_104",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -106.22158052631099,
+    "mean": [
+      -0.13810332080677823,
+      -0.2472474798895467
+    ],
+    "marginal_95": [
+      [
+        -0.29999999999999993,
+        0.050000000000000044
+      ],
+      [
+        -0.44999999999999996,
+        -0.04999999999999993
+      ]
+    ],
+    "hpd_cells": 74,
+    "hpd_mass": 0.950773375263815,
+    "hpd_cutoff": 0.0019480542281142639,
+    "edge_mass": 6.6754699284899435e-09,
+    "mean_error": 0.28320283107623007,
+    "truth_in_hpd": false,
+    "truth_mass": 0.0007430753273190119
+  },
+  {
+    "id": "known_shared_0_104:shared:informative",
+    "dataset": "known_shared_0_104",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -105.67946512847593,
+    "mean": [
+      -0.12261767238585894,
+      -0.24908403289908
+    ],
+    "marginal_95": [
+      [
+        -0.29999999999999993,
+        0.050000000000000044
+      ],
+      [
+        -0.44999999999999996,
+        -0.04999999999999993
+      ]
+    ],
+    "hpd_cells": 72,
+    "hpd_mass": 0.9511614272265647,
+    "hpd_cutoff": 0.002113877857885404,
+    "edge_mass": 3.0491023192794303e-09,
+    "mean_error": 0.27762915737831967,
+    "truth_in_hpd": false,
+    "truth_mass": 0.0008110660848962754
+  },
+  {
+    "id": "known_shared_0_104:independent:uniform",
+    "dataset": "known_shared_0_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -112.77030822628303,
+    "mean": [
+      -0.09847445632220789,
+      -0.15041632885509257
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.050000000000000044
+      ],
+      [
+        -0.29999999999999993,
+        0.0
+      ]
+    ],
+    "hpd_cells": 43,
+    "hpd_mass": 0.9510889999285256,
+    "hpd_cutoff": 0.0034561178248790378,
+    "edge_mass": 7.047228387762854e-10,
+    "mean_error": 0.17978401078571415,
+    "truth_in_hpd": true,
+    "truth_mass": 0.003847295685993663
+  },
+  {
+    "id": "known_shared_0_104:independent:informative",
+    "dataset": "known_shared_0_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -112.18556730716293,
+    "mean": [
+      -0.08972831585152555,
+      -0.15312415799347276
+    ],
+    "marginal_95": [
+      [
+        -0.25,
+        0.050000000000000044
+      ],
+      [
+        -0.29999999999999993,
+        0.0
+      ]
+    ],
+    "hpd_cells": 42,
+    "hpd_mass": 0.9519314700414636,
+    "hpd_cutoff": 0.0033431823749737184,
+    "edge_mass": 3.262657805979283e-10,
+    "mean_error": 0.17747726171755396,
+    "truth_in_hpd": true,
+    "truth_mass": 0.004024083065988018
+  },
+  {
+    "id": "known_shared_0_105:shared:uniform",
+    "dataset": "known_shared_0_105",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -112.60181466104561,
+    "mean": [
+      -5.063720300336641e-17,
+      0.05711528849546753
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.25
+      ]
+    ],
+    "hpd_cells": 85,
+    "hpd_mass": 0.953593000027825,
+    "hpd_cutoff": 0.00180700924862795,
+    "edge_mass": 2.0232111120695386e-13,
+    "mean_error": 0.05711528849546753,
+    "truth_in_hpd": true,
+    "truth_mass": 0.03123837775750332
+  },
+  {
+    "id": "known_shared_0_105:shared:informative",
+    "dataset": "known_shared_0_105",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -112.05320301309361,
+    "mean": [
+      0.013660607204848014,
+      0.0443789651381674
+    ],
+    "marginal_95": [
+      [
+        -0.19999999999999996,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.25
+      ]
+    ],
+    "hpd_cells": 80,
+    "hpd_mass": 0.9507398268756222,
+    "hpd_cutoff": 0.0017996560411278227,
+    "edge_mass": 1.670414932028015e-14,
+    "mean_error": 0.046433874875351756,
+    "truth_in_hpd": true,
+    "truth_mass": 0.033875880089848764
+  },
+  {
+    "id": "known_shared_0_105:independent:uniform",
+    "dataset": "known_shared_0_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.6995652775274,
+    "mean": [
+      -1.8584513275004412e-17,
+      0.03242300945562667
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9503759957821204,
+    "hpd_cutoff": 0.004341323122053302,
+    "edge_mass": 3.216709100906745e-15,
+    "mean_error": 0.03242300945562667,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0719972218971377
+  },
+  {
+    "id": "known_shared_0_105:independent:informative",
+    "dataset": "known_shared_0_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -115.11310265509574,
+    "mean": [
+      0.0066239176457835655,
+      0.026871599058846517
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ],
+      [
+        -0.09999999999999998,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 39,
+    "hpd_mass": 0.9527599415880093,
+    "hpd_cutoff": 0.0037482962878378923,
+    "edge_mass": 2.738620177185035e-16,
+    "mean_error": 0.027675966486421462,
+    "truth_in_hpd": true,
+    "truth_mass": 0.07517602947483071
+  },
+  {
+    "id": "known_shared_1_101:shared:uniform",
+    "dataset": "known_shared_1_101",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -91.67812398436719,
+    "mean": [
+      -0.5653376398877743,
+      0.4979200810652168
+    ],
+    "marginal_95": [
+      [
+        -0.85,
+        -0.35
+      ],
+      [
+        0.30000000000000004,
+        0.75
+      ]
+    ],
+    "hpd_cells": 105,
+    "hpd_mass": 0.9507517986771211,
+    "hpd_cutoff": 0.0013042843979506188,
+    "edge_mass": 0.0026038252645914552,
+    "mean_error": 0.06537073694612709,
+    "truth_in_hpd": true,
+    "truth_mass": 0.02958020990827878
+  },
+  {
+    "id": "known_shared_1_101:shared:informative",
+    "dataset": "known_shared_1_101",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -93.15650881790313,
+    "mean": [
+      -0.5225619172520861,
+      0.4662415661924538
+    ],
+    "marginal_95": [
+      [
+        -0.75,
+        -0.29999999999999993
+      ],
+      [
+        0.25,
+        0.7000000000000002
+      ]
+    ],
+    "hpd_cells": 88,
+    "hpd_mass": 0.9506065860034068,
+    "hpd_cutoff": 0.0016205557231713757,
+    "edge_mass": 0.0004384557826275249,
+    "mean_error": 0.0406038417299208,
+    "truth_in_hpd": true,
+    "truth_mass": 0.03350473676428251
+  },
+  {
+    "id": "known_shared_1_101:independent:uniform",
+    "dataset": "known_shared_1_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -94.00143288318596,
+    "mean": [
+      -0.4322532607624251,
+      0.36813213305882053
+    ],
+    "marginal_95": [
+      [
+        -0.75,
+        -0.25
+      ],
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ]
+    ],
+    "hpd_cells": 105,
+    "hpd_mass": 0.9503319950480196,
+    "hpd_cutoff": 0.0011394261374907857,
+    "edge_mass": 0.0018006972865601998,
+    "mean_error": 0.14825233559354328,
+    "truth_in_hpd": true,
+    "truth_mass": 0.008024396796365798
+  },
+  {
+    "id": "known_shared_1_101:independent:informative",
+    "dataset": "known_shared_1_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -94.79749522920508,
+    "mean": [
+      -0.3930432188968429,
+      0.3435994861636582
+    ],
+    "marginal_95": [
+      [
+        -0.6499999999999999,
+        -0.19999999999999996
+      ],
+      [
+        0.15000000000000013,
+        0.55
+      ]
+    ],
+    "hpd_cells": 81,
+    "hpd_mass": 0.9502406100573098,
+    "hpd_cutoff": 0.0015046079095916774,
+    "edge_mass": 0.0002163695287913978,
+    "mean_error": 0.18947525894485645,
+    "truth_in_hpd": true,
+    "truth_mass": 0.004593973263372287
+  },
+  {
+    "id": "known_shared_1_102:shared:uniform",
+    "dataset": "known_shared_1_102",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -95.56471952583414,
+    "mean": [
+      -0.4903238666608203,
+      0.5073257489169677
+    ],
+    "marginal_95": [
+      [
+        -0.75,
+        -0.29999999999999993
+      ],
+      [
+        0.30000000000000004,
+        0.75
+      ]
+    ],
+    "hpd_cells": 103,
+    "hpd_mass": 0.9512488103514153,
+    "hpd_cutoff": 0.0012708796353647562,
+    "edge_mass": 0.0010683422422660366,
+    "mean_error": 0.012136480280214626,
+    "truth_in_hpd": true,
+    "truth_mass": 0.03179599830033014
+  },
+  {
+    "id": "known_shared_1_102:shared:informative",
+    "dataset": "known_shared_1_102",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -96.85368009039937,
+    "mean": [
+      -0.4554733534947049,
+      0.47477709421304576
+    ],
+    "marginal_95": [
+      [
+        -0.7,
+        -0.25
+      ],
+      [
+        0.30000000000000004,
+        0.7000000000000002
+      ]
+    ],
+    "hpd_cells": 88,
+    "hpd_mass": 0.9502187333465701,
+    "hpd_cutoff": 0.0015014079539542146,
+    "edge_mass": 0.00017758070828394274,
+    "mean_error": 0.051174380556535094,
+    "truth_in_hpd": true,
+    "truth_mass": 0.02979967372186772
+  },
+  {
+    "id": "known_shared_1_102:independent:uniform",
+    "dataset": "known_shared_1_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -97.36491207901456,
+    "mean": [
+      -0.34027697913457083,
+      0.36813213305882053
+    ],
+    "marginal_95": [
+      [
+        -0.55,
+        -0.1499999999999999
+      ],
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ]
+    ],
+    "hpd_cells": 84,
+    "hpd_mass": 0.9505289245507946,
+    "hpd_cutoff": 0.0015195889323312193,
+    "edge_mass": 0.00035622469816961694,
+    "mean_error": 0.2071245464110783,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0033179841761557926
+  },
+  {
+    "id": "known_shared_1_102:independent:informative",
+    "dataset": "known_shared_1_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -97.94139704010176,
+    "mean": [
+      -0.31638581511260333,
+      0.3435994861636582
+    ],
+    "marginal_95": [
+      [
+        -0.5,
+        -0.1499999999999999
+      ],
+      [
+        0.15000000000000013,
+        0.55
+      ]
+    ],
+    "hpd_cells": 70,
+    "hpd_mass": 0.9500868222840805,
+    "hpd_cutoff": 0.001967730058473386,
+    "edge_mass": 4.21589277701423e-05,
+    "mean_error": 0.24119554228910373,
+    "truth_in_hpd": false,
+    "truth_mass": 0.0015250677288795084
+  },
+  {
+    "id": "known_shared_1_103:shared:uniform",
+    "dataset": "known_shared_1_103",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -103.28704048435321,
+    "mean": [
+      -0.39375066469636427,
+      0.425756332608815
+    ],
+    "marginal_95": [
+      [
+        -0.6,
+        -0.19999999999999996
+      ],
+      [
+        0.25,
+        0.6500000000000001
+      ]
+    ],
+    "hpd_cells": 87,
+    "hpd_mass": 0.95008107374059,
+    "hpd_cutoff": 0.001609852214780086,
+    "edge_mass": 5.4201343475763116e-05,
+    "mean_error": 0.1296188389091544,
+    "truth_in_hpd": true,
+    "truth_mass": 0.014883900741669122
+  },
+  {
+    "id": "known_shared_1_103:shared:informative",
+    "dataset": "known_shared_1_103",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -104.12302020228388,
+    "mean": [
+      -0.36548386214517303,
+      0.39967836719069677
+    ],
+    "marginal_95": [
+      [
+        -0.55,
+        -0.1499999999999999
+      ],
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ]
+    ],
+    "hpd_cells": 80,
+    "hpd_mass": 0.9510539450219226,
+    "hpd_cutoff": 0.0017982087440702628,
+    "edge_mass": 7.294934099310168e-06,
+    "mean_error": 0.1678064997337811,
+    "truth_in_hpd": true,
+    "truth_mass": 0.008868062125389467
+  },
+  {
+    "id": "known_shared_1_103:independent:uniform",
+    "dataset": "known_shared_1_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -103.83600125200672,
+    "mean": [
+      -0.24642196588379583,
+      0.29054217547571504
+    ],
+    "marginal_95": [
+      [
+        -0.44999999999999996,
+        -0.09999999999999998
+      ],
+      [
+        0.15000000000000013,
+        0.5
+      ]
+    ],
+    "hpd_cells": 61,
+    "hpd_mass": 0.9521324988310573,
+    "hpd_cutoff": 0.0024902643598421173,
+    "edge_mass": 1.1533467161772382e-05,
+    "mean_error": 0.328898768074137,
+    "truth_in_hpd": false,
+    "truth_mass": 0.00010663899331481795
+  },
+  {
+    "id": "known_shared_1_103:independent:informative",
+    "dataset": "known_shared_1_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -104.05292193416874,
+    "mean": [
+      -0.23124854369369396,
+      0.2744853529883089
+    ],
+    "marginal_95": [
+      [
+        -0.3999999999999999,
+        -0.09999999999999998
+      ],
+      [
+        0.10000000000000009,
+        0.4500000000000002
+      ]
+    ],
+    "hpd_cells": 55,
+    "hpd_mass": 0.9507399856908133,
+    "hpd_cutoff": 0.0024028019379682864,
+    "edge_mass": 1.2251308660459963e-06,
+    "mean_error": 0.35083358060990677,
+    "truth_in_hpd": false,
+    "truth_mass": 3.4211654321507446e-05
+  },
+  {
+    "id": "known_shared_1_104:shared:uniform",
+    "dataset": "known_shared_1_104",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -100.02768793135202,
+    "mean": [
+      -0.620154878770102,
+      0.32888380198314365
+    ],
+    "marginal_95": [
+      [
+        -0.9,
+        -0.3999999999999999
+      ],
+      [
+        0.10000000000000009,
+        0.55
+      ]
+    ],
+    "hpd_cells": 105,
+    "hpd_mass": 0.9512660622240176,
+    "hpd_cutoff": 0.0014422835809859648,
+    "edge_mass": 0.00730917896210231,
+    "mean_error": 0.20908837393791627,
+    "truth_in_hpd": true,
+    "truth_mass": 0.005684808832151338
+  },
+  {
+    "id": "known_shared_1_104:shared:informative",
+    "dataset": "known_shared_1_104",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -101.29079246692255,
+    "mean": [
+      -0.5696100942572753,
+      0.30643849811714813
+    ],
+    "marginal_95": [
+      [
+        -0.8,
+        -0.35
+      ],
+      [
+        0.10000000000000009,
+        0.5
+      ]
+    ],
+    "hpd_cells": 93,
+    "hpd_mass": 0.9505581394785722,
+    "hpd_cutoff": 0.0014804441471502718,
+    "edge_mass": 0.001498715815675489,
+    "mean_error": 0.20569788582688936,
+    "truth_in_hpd": true,
+    "truth_mass": 0.005191893532878559
+  },
+  {
+    "id": "known_shared_1_104:independent:uniform",
+    "dataset": "known_shared_1_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -99.31345845371509,
+    "mean": [
+      -0.4694069597273879,
+      0.18700219259949907
+    ],
+    "marginal_95": [
+      [
+        -0.8,
+        -0.25
+      ],
+      [
+        0.050000000000000044,
+        0.3500000000000001
+      ]
+    ],
+    "hpd_cells": 84,
+    "hpd_mass": 0.9501050481441919,
+    "hpd_cutoff": 0.001534519016676188,
+    "edge_mass": 0.0033373374005661073,
+    "mean_error": 0.31448936635543456,
+    "truth_in_hpd": false,
+    "truth_mass": 8.0924345439188e-05
+  },
+  {
+    "id": "known_shared_1_104:independent:informative",
+    "dataset": "known_shared_1_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -99.86889034553676,
+    "mean": [
+      -0.422146535656354,
+      0.17707530551101788
+    ],
+    "marginal_95": [
+      [
+        -0.7,
+        -0.25
+      ],
+      [
+        0.050000000000000044,
+        0.3500000000000001
+      ]
+    ],
+    "hpd_cells": 68,
+    "hpd_mass": 0.9514808937600864,
+    "hpd_cutoff": 0.0019595624719232515,
+    "edge_mass": 0.0004359274965452638,
+    "mean_error": 0.3321769411339532,
+    "truth_in_hpd": false,
+    "truth_mass": 3.64209092918261e-05
+  },
+  {
+    "id": "known_shared_1_105:shared:uniform",
+    "dataset": "known_shared_1_105",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -97.15023345761328,
+    "mean": [
+      -0.5501020200564678,
+      0.4421589518857719
+    ],
+    "marginal_95": [
+      [
+        -0.8,
+        -0.35
+      ],
+      [
+        0.25,
+        0.6500000000000001
+      ]
+    ],
+    "hpd_cells": 105,
+    "hpd_mass": 0.9509260499727016,
+    "hpd_cutoff": 0.0012572457696701522,
+    "edge_mass": 0.002181686827475603,
+    "mean_error": 0.07652319426612528,
+    "truth_in_hpd": true,
+    "truth_mass": 0.025328656770750618
+  },
+  {
+    "id": "known_shared_1_105:shared:informative",
+    "dataset": "known_shared_1_105",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -98.449794959679,
+    "mean": [
+      -0.5077532153096197,
+      0.4150268991254437
+    ],
+    "marginal_95": [
+      [
+        -0.75,
+        -0.29999999999999993
+      ],
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ]
+    ],
+    "hpd_cells": 90,
+    "hpd_mass": 0.9503998190894539,
+    "hpd_cutoff": 0.0014676827038049213,
+    "edge_mass": 0.00036914633360687454,
+    "mean_error": 0.08532608170937442,
+    "truth_in_hpd": true,
+    "truth_mass": 0.023991374578504313
+  },
+  {
+    "id": "known_shared_1_105:independent:uniform",
+    "dataset": "known_shared_1_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -98.13769267033764,
+    "mean": [
+      -0.39861905182516383,
+      0.29054217547571504
+    ],
+    "marginal_95": [
+      [
+        -0.6499999999999999,
+        -0.19999999999999996
+      ],
+      [
+        0.15000000000000013,
+        0.5
+      ]
+    ],
+    "hpd_cells": 83,
+    "hpd_mass": 0.9514973533124436,
+    "hpd_cutoff": 0.001545084510637735,
+    "edge_mass": 0.000668212648638378,
+    "mean_error": 0.23270298001373976,
+    "truth_in_hpd": true,
+    "truth_mass": 0.001744733675863502
+  },
+  {
+    "id": "known_shared_1_105:independent:informative",
+    "dataset": "known_shared_1_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -98.69784597746717,
+    "mean": [
+      -0.3658667357532238,
+      0.2744853529883089
+    ],
+    "marginal_95": [
+      [
+        -0.6,
+        -0.19999999999999996
+      ],
+      [
+        0.10000000000000009,
+        0.4500000000000002
+      ]
+    ],
+    "hpd_cells": 68,
+    "hpd_mass": 0.9501016552284879,
+    "hpd_cutoff": 0.0021048387852831,
+    "edge_mass": 7.32564941618265e-05,
+    "mean_error": 0.2623901457644763,
+    "truth_in_hpd": false,
+    "truth_mass": 0.0007889531550608199
+  },
+  {
+    "id": "known_shared_2_101:shared:uniform",
+    "dataset": "known_shared_2_101",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -88.85686290330253,
+    "mean": [
+      0.5540846167075213,
+      -0.6291346802008384
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.8
+      ],
+      [
+        -0.9,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 119,
+    "hpd_mass": 0.9501758832511126,
+    "hpd_cutoff": 0.0013238048535797995,
+    "edge_mass": 0.010228510901371864,
+    "mean_error": 0.14000325494420585,
+    "truth_in_hpd": true,
+    "truth_mass": 0.018357156125927008
+  },
+  {
+    "id": "known_shared_2_101:shared:informative",
+    "dataset": "known_shared_2_101",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -88.06944908098937,
+    "mean": [
+      0.5455773477989776,
+      -0.6108847179577517
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.8
+      ],
+      [
+        -0.9,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 110,
+    "hpd_mass": 0.9512681637739503,
+    "hpd_cutoff": 0.001337572640460927,
+    "edge_mass": 0.005573953601774594,
+    "mean_error": 0.11988625988393793,
+    "truth_in_hpd": true,
+    "truth_mass": 0.021820538957422624
+  },
+  {
+    "id": "known_shared_2_101:independent:uniform",
+    "dataset": "known_shared_2_101",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -90.41238158570403,
+    "mean": [
+      0.43225326076242526,
+      -0.4694069597273876
+    ],
+    "marginal_95": [
+      [
+        0.25,
+        0.75
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 134,
+    "hpd_mass": 0.9504586183870118,
+    "hpd_cutoff": 0.0009327587415728306,
+    "edge_mass": 0.004872947666751355,
+    "mean_error": 0.0743340755673038,
+    "truth_in_hpd": true,
+    "truth_mass": 0.015487658437685266
+  },
+  {
+    "id": "known_shared_2_101:independent:informative",
+    "dataset": "known_shared_2_101",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -89.46998193877666,
+    "mean": [
+      0.42801820598498835,
+      -0.4565320157660803
+    ],
+    "marginal_95": [
+      [
+        0.25,
+        0.7000000000000002
+      ],
+      [
+        -0.75,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 118,
+    "hpd_mass": 0.9505108562802426,
+    "hpd_cutoff": 0.001067909193490642,
+    "edge_mass": 0.002469483718592062,
+    "mean_error": 0.08408831264200665,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01576653813194747
+  },
+  {
+    "id": "known_shared_2_102:shared:uniform",
+    "dataset": "known_shared_2_102",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -89.35825709722823,
+    "mean": [
+      0.5548055709380257,
+      -0.6522088279581764
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.8500000000000001
+      ],
+      [
+        -0.95,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 124,
+    "hpd_mass": 0.9510263453778565,
+    "hpd_cutoff": 0.0012603747303572743,
+    "edge_mass": 0.016526710539177106,
+    "mean_error": 0.16177508434318524,
+    "truth_in_hpd": true,
+    "truth_mass": 0.014879335864073666
+  },
+  {
+    "id": "known_shared_2_102:shared:informative",
+    "dataset": "known_shared_2_102",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -88.59847051214868,
+    "mean": [
+      0.5463340896499381,
+      -0.6313688110357261
+    ],
+    "marginal_95": [
+      [
+        0.3500000000000001,
+        0.8
+      ],
+      [
+        -0.9,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 116,
+    "hpd_mass": 0.9509498501012701,
+    "hpd_cutoff": 0.0013322651326697545,
+    "edge_mass": 0.009247926514982466,
+    "mean_error": 0.13930043925497437,
+    "truth_in_hpd": true,
+    "truth_mass": 0.018182013478611824
+  },
+  {
+    "id": "known_shared_2_102:independent:uniform",
+    "dataset": "known_shared_2_102",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -90.25254438014233,
+    "mean": [
+      0.39861905182516383,
+      -0.5100586311782204
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ],
+      [
+        -0.9,
+        -0.29999999999999993
+      ]
+    ],
+    "hpd_cells": 131,
+    "hpd_mass": 0.9507554250138086,
+    "hpd_cutoff": 0.0010564786680578792,
+    "edge_mass": 0.00731757957866166,
+    "mean_error": 0.10187871570651195,
+    "truth_in_hpd": true,
+    "truth_mass": 0.013199860632298851
+  },
+  {
+    "id": "known_shared_2_102:independent:informative",
+    "dataset": "known_shared_2_102",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -89.3326406522676,
+    "mean": [
+      0.39669931373122796,
+      -0.4925745107097245
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 118,
+    "hpd_mass": 0.9507515673632353,
+    "hpd_cutoff": 0.001059814169206045,
+    "edge_mass": 0.003649215340472921,
+    "mean_error": 0.10356722297522157,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01374326063031685
+  },
+  {
+    "id": "known_shared_2_103:shared:uniform",
+    "dataset": "known_shared_2_103",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -86.18749886765715,
+    "mean": [
+      0.6395500478366362,
+      -0.6010061566925214
+    ],
+    "marginal_95": [
+      [
+        0.40000000000000013,
+        0.9500000000000002
+      ],
+      [
+        -0.9,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 128,
+    "hpd_mass": 0.951046708270179,
+    "hpd_cutoff": 0.0013494513942867727,
+    "edge_mass": 0.016461560226773257,
+    "mean_error": 0.1722685680587194,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01343439612010465
+  },
+  {
+    "id": "known_shared_2_103:shared:informative",
+    "dataset": "known_shared_2_103",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -85.42861174730415,
+    "mean": [
+      0.6252228663675892,
+      -0.5844530725732904
+    ],
+    "marginal_95": [
+      [
+        0.40000000000000013,
+        0.9000000000000001
+      ],
+      [
+        -0.85,
+        -0.35
+      ]
+    ],
+    "hpd_cells": 117,
+    "hpd_mass": 0.9501774892655089,
+    "hpd_cutoff": 0.0012958295553221492,
+    "edge_mass": 0.00963598405905894,
+    "mean_error": 0.15104002028728858,
+    "truth_in_hpd": true,
+    "truth_mass": 0.016431121630105117
+  },
+  {
+    "id": "known_shared_2_103:independent:uniform",
+    "dataset": "known_shared_2_103",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -87.78352957815297,
+    "mean": [
+      0.5100586311782204,
+      -0.4694069597273876
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.9000000000000001
+      ],
+      [
+        -0.8,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 155,
+    "hpd_mass": 0.9508682605356538,
+    "hpd_cutoff": 0.0009021493558157872,
+    "edge_mass": 0.0099794465178102,
+    "mean_error": 0.03220419497986483,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01895871370412422
+  },
+  {
+    "id": "known_shared_2_103:independent:informative",
+    "dataset": "known_shared_2_103",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -86.86660598674275,
+    "mean": [
+      0.49896511073220334,
+      -0.45653201576608055
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.8500000000000001
+      ],
+      [
+        -0.75,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 136,
+    "hpd_mass": 0.9507218711035417,
+    "hpd_cutoff": 0.0009485547213717912,
+    "edge_mass": 0.005465980590641947,
+    "mean_error": 0.04348030185218211,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01979810220714574
+  },
+  {
+    "id": "known_shared_2_104:shared:uniform",
+    "dataset": "known_shared_2_104",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -90.96131656126572,
+    "mean": [
+      0.4148410166522226,
+      -0.6853001962837587
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6500000000000001
+      ],
+      [
+        -0.95,
+        -0.44999999999999996
+      ]
+    ],
+    "hpd_cells": 102,
+    "hpd_mass": 0.9500095200150528,
+    "hpd_cutoff": 0.0017766458378063216,
+    "edge_mass": 0.021425173333026425,
+    "mean_error": 0.20393188859917552,
+    "truth_in_hpd": true,
+    "truth_mass": 0.008273564037318604
+  },
+  {
+    "id": "known_shared_2_104:shared:informative",
+    "dataset": "known_shared_2_104",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -90.1965071024947,
+    "mean": [
+      0.41401477406210285,
+      -0.6629311467596817
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ],
+      [
+        -0.95,
+        -0.44999999999999996
+      ]
+    ],
+    "hpd_cells": 99,
+    "hpd_mass": 0.9506858169765132,
+    "hpd_cutoff": 0.001731023405506571,
+    "edge_mass": 0.012357273222713147,
+    "mean_error": 0.18422816740123144,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01005934387807823
+  },
+  {
+    "id": "known_shared_2_104:independent:uniform",
+    "dataset": "known_shared_2_104",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -92.87606516842082,
+    "mean": [
+      0.29054217547571515,
+      -0.5535408419363472
+    ],
+    "marginal_95": [
+      [
+        0.15000000000000013,
+        0.5
+      ],
+      [
+        -0.95,
+        -0.29999999999999993
+      ]
+    ],
+    "hpd_cells": 106,
+    "hpd_mass": 0.9507363713565331,
+    "hpd_cutoff": 0.00164345351919005,
+    "edge_mass": 0.012265107650754994,
+    "mean_error": 0.21619251145610716,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0026041824465831507
+  },
+  {
+    "id": "known_shared_2_104:independent:informative",
+    "dataset": "known_shared_2_104",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -92.00173131340685,
+    "mean": [
+      0.29297482927020413,
+      -0.5310137725133428
+    ],
+    "marginal_95": [
+      [
+        0.15000000000000013,
+        0.5
+      ],
+      [
+        -0.9,
+        -0.29999999999999993
+      ]
+    ],
+    "hpd_cells": 100,
+    "hpd_mass": 0.9504301788492576,
+    "hpd_cutoff": 0.0015711933917798573,
+    "edge_mass": 0.0062475393316922135,
+    "mean_error": 0.2093353180932699,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0028378052534423263
+  },
+  {
+    "id": "known_shared_2_105:shared:uniform",
+    "dataset": "known_shared_2_105",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -97.61073859901303,
+    "mean": [
+      0.5369411313581803,
+      -0.46229892201216377
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.8
+      ],
+      [
+        -0.7,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 107,
+    "hpd_mass": 0.9508917433242602,
+    "hpd_cutoff": 0.0011676190202975177,
+    "edge_mass": 0.0018098131497965358,
+    "mean_error": 0.05278274782035551,
+    "truth_in_hpd": true,
+    "truth_mass": 0.028126760007813976
+  },
+  {
+    "id": "known_shared_2_105:shared:informative",
+    "dataset": "known_shared_2_105",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -96.68296139087312,
+    "mean": [
+      0.5296802275429606,
+      -0.4553920450622307
+    ],
+    "marginal_95": [
+      [
+        0.30000000000000004,
+        0.8
+      ],
+      [
+        -0.7,
+        -0.25
+      ]
+    ],
+    "hpd_cells": 99,
+    "hpd_mass": 0.9507581812126589,
+    "hpd_cutoff": 0.0012990914011707367,
+    "edge_mass": 0.0010366835856001177,
+    "mean_error": 0.05357971211878593,
+    "truth_in_hpd": true,
+    "truth_mass": 0.029054990337247757
+  },
+  {
+    "id": "known_shared_2_105:independent:uniform",
+    "dataset": "known_shared_2_105",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -98.34436647277778,
+    "mean": [
+      0.36813213305882025,
+      -0.3145533006145021
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ],
+      [
+        -0.5,
+        -0.1499999999999999
+      ]
+    ],
+    "hpd_cells": 80,
+    "hpd_mass": 0.9504680385544286,
+    "hpd_cutoff": 0.0016544901316840432,
+    "edge_mass": 0.0002933153081262008,
+    "mean_error": 0.2275513406785201,
+    "truth_in_hpd": true,
+    "truth_mass": 0.00214529211051228
+  },
+  {
+    "id": "known_shared_2_105:independent:informative",
+    "dataset": "known_shared_2_105",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -97.33787898642491,
+    "mean": [
+      0.3678848540052412,
+      -0.3133661337424913
+    ],
+    "marginal_95": [
+      [
+        0.20000000000000018,
+        0.6000000000000001
+      ],
+      [
+        -0.5,
+        -0.1499999999999999
+      ]
+    ],
+    "hpd_cells": 76,
+    "hpd_mass": 0.9500868956411458,
+    "hpd_cutoff": 0.0017345062958932312,
+    "edge_mass": 0.00016152362666838416,
+    "mean_error": 0.22866265946901362,
+    "truth_in_hpd": true,
+    "truth_mass": 0.002048349328706542
+  },
+  {
+    "id": "boundary_0:independent:uniform",
+    "dataset": "boundary_0",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -61.421027354123325,
+    "mean": [
+      -0.7573641354489937,
+      0.8324327813175366
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.44999999999999996
+      ],
+      [
+        0.55,
+        1.0
+      ]
+    ],
+    "hpd_cells": 108,
+    "hpd_mass": 0.9501565290333949,
+    "hpd_cutoff": 0.0022508629484474007,
+    "edge_mass": 0.22609190817099908,
+    "mean_error": 0.29487444030195425,
+    "truth_in_hpd": true,
+    "truth_mass": 0.013176793994728866
+  },
+  {
+    "id": "boundary_0:independent:informative",
+    "dataset": "boundary_0",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -64.49250919373048,
+    "mean": [
+      -0.6677180542957022,
+      0.7650206494395231
+    ],
+    "marginal_95": [
+      [
+        -1.0,
+        -0.3999999999999999
+      ],
+      [
+        0.5,
+        1.0
+      ]
+    ],
+    "hpd_cells": 132,
+    "hpd_mass": 0.9514739362345099,
+    "hpd_cutoff": 0.0021161573211187588,
+    "edge_mass": 0.09659169147619012,
+    "mean_error": 0.40697246421700006,
+    "truth_in_hpd": false,
+    "truth_mass": 0.0019343510444485609
+  },
+  {
+    "id": "boundary_1:independent:uniform",
+    "dataset": "boundary_1",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -61.293180732051965,
+    "mean": [
+      0.8501679447943764,
+      -0.7234947563613089
+    ],
+    "marginal_95": [
+      [
+        0.55,
+        1.0
+      ],
+      [
+        -1.0,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 107,
+    "hpd_mass": 0.9510400416535114,
+    "hpd_cutoff": 0.00227121863498775,
+    "edge_mass": 0.23054959435888234,
+    "mean_error": 0.3144913266321235,
+    "truth_in_hpd": true,
+    "truth_mass": 0.011595425068450849
+  },
+  {
+    "id": "boundary_1:independent:informative",
+    "dataset": "boundary_1",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -60.91130056116398,
+    "mean": [
+      0.8292419428151617,
+      -0.6885840451459047
+    ],
+    "marginal_95": [
+      [
+        0.55,
+        1.0
+      ],
+      [
+        -1.0,
+        -0.3999999999999999
+      ]
+    ],
+    "hpd_cells": 114,
+    "hpd_mass": 0.9506890464151861,
+    "hpd_cutoff": 0.002270885827942411,
+    "edge_mass": 0.1720731603204628,
+    "mean_error": 0.35515941636288967,
+    "truth_in_hpd": true,
+    "truth_mass": 0.005510538962248735
+  },
+  {
+    "id": "conflict:independent:uniform",
+    "dataset": "conflict",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 80,
+    "log_evidence": -57.90121670952814,
+    "mean": [
+      -3.322368064502893e-18,
+      4.5916142697208996e-17
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ],
+      [
+        -0.95,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 287,
+    "hpd_mass": 0.9865488342613017,
+    "hpd_cutoff": 0.0007381087405165174,
+    "edge_mass": 0.04878048780487816,
+    "conflict_tail_upper_bound": 8.271806125530277e-25,
+    "conflict_flag": true
+  },
+  {
+    "id": "conflict:independent:informative",
+    "dataset": "conflict",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 80,
+    "log_evidence": -57.63066521539594,
+    "mean": [
+      0.0066239176457836176,
+      -0.2109708613823852
+    ],
+    "marginal_95": [
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ],
+      [
+        -0.95,
+        0.75
+      ]
+    ],
+    "hpd_cells": 217,
+    "hpd_mass": 0.9530599327750666,
+    "hpd_cutoff": 0.0008740385934443969,
+    "edge_mass": 0.02043160073110255,
+    "conflict_tail_upper_bound": 8.271806125530277e-25,
+    "conflict_flag": true
+  },
+  {
+    "id": "missing_one:independent:uniform",
+    "dataset": "missing_one",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 120,
+    "log_evidence": -87.25363961909669,
+    "mean": [
+      0.06514272817562013,
+      0.03374832647155946
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.25
+      ]
+    ],
+    "hpd_cells": 58,
+    "hpd_mass": 0.9508837145272623,
+    "hpd_cutoff": 0.002408107934514556,
+    "edge_mass": 2.1006762047510364e-08,
+    "mean_error": 0.07336569071298718,
+    "truth_in_hpd": true,
+    "truth_mass": 0.035043463223691534
+  },
+  {
+    "id": "missing_one:independent:informative",
+    "dataset": "missing_one",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 120,
+    "log_evidence": -86.59672306124781,
+    "mean": [
+      0.07079826763462467,
+      0.02223158689693529
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.1499999999999999,
+        0.20000000000000018
+      ]
+    ],
+    "hpd_cells": 57,
+    "hpd_mass": 0.951549930143297,
+    "hpd_cutoff": 0.0025136133082656296,
+    "edge_mass": 1.723887493908971e-09,
+    "mean_error": 0.07420672581390401,
+    "truth_in_hpd": true,
+    "truth_mass": 0.03410145499002054
+  },
+  {
+    "id": "only_u:independent:uniform",
+    "dataset": "only_u",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 80,
+    "log_evidence": -57.48915278671858,
+    "mean": [
+      0.0651427281756211,
+      3.9791754171161085e-17
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.95,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 246,
+    "hpd_mass": 0.9634718744318207,
+    "hpd_cutoff": 0.0011633755398341066,
+    "edge_mass": 0.04878048780500785,
+    "mean_error": 0.0651427281756211,
+    "truth_in_hpd": true,
+    "truth_mass": 0.004563041913862672,
+    "v_prior_max_error": 2.0816681711721685e-17
+  },
+  {
+    "id": "only_u:independent:informative",
+    "dataset": "only_u",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 80,
+    "log_evidence": -57.14096201462714,
+    "mean": [
+      0.07079826763462455,
+      -0.21097086138238508
+    ],
+    "marginal_95": [
+      [
+        -0.04999999999999993,
+        0.20000000000000018
+      ],
+      [
+        -0.95,
+        0.75
+      ]
+    ],
+    "hpd_cells": 214,
+    "hpd_mass": 0.9506758294756077,
+    "hpd_cutoff": 0.0008101116925897687,
+    "edge_mass": 0.02043160073119171,
+    "mean_error": 0.2225333661554812,
+    "truth_in_hpd": true,
+    "truth_mass": 0.0060464191905319365,
+    "v_prior_max_error": 8.326672684688674e-17
+  },
+  {
+    "id": "all_missing:independent:uniform",
+    "dataset": "all_missing",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 0,
+    "log_evidence": 0.0,
+    "mean": [
+      -6.08237418764368e-17,
+      3.5236570605778894e-17
+    ],
+    "marginal_95": [
+      [
+        -0.95,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 1681,
+    "hpd_mass": 0.9999999999999999,
+    "hpd_cutoff": 0.000594883997620464,
+    "edge_mass": 0.09518143961927424,
+    "prior_max_error": 0.0
+  },
+  {
+    "id": "all_missing:independent:informative",
+    "dataset": "all_missing",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 0,
+    "log_evidence": 0.0,
+    "mean": [
+      0.27618378022103773,
+      -0.21097086138238513
+    ],
+    "marginal_95": [
+      [
+        -0.6499999999999999,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.75
+      ]
+    ],
+    "hpd_cells": 1158,
+    "hpd_mass": 0.9501047399663491,
+    "hpd_cutoff": 0.0002018026288785594,
+    "edge_mass": 0.044625671394446134,
+    "prior_max_error": 6.505213034913027e-19
+  },
+  {
+    "id": "all_missing:shared:uniform",
+    "dataset": "all_missing",
+    "model": "shared",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 0,
+    "log_evidence": 0.0,
+    "mean": [
+      -6.08237418764368e-17,
+      3.5236570605778894e-17
+    ],
+    "marginal_95": [
+      [
+        -0.95,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 1681,
+    "hpd_mass": 0.9999999999999999,
+    "hpd_cutoff": 0.000594883997620464,
+    "edge_mass": 0.09518143961927424,
+    "prior_max_error": 0.0
+  },
+  {
+    "id": "all_missing:shared:informative",
+    "dataset": "all_missing",
+    "model": "shared",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": null,
+    "observed": 0,
+    "log_evidence": 0.0,
+    "mean": [
+      0.27618378022103773,
+      -0.21097086138238513
+    ],
+    "marginal_95": [
+      [
+        -0.6499999999999999,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.75
+      ]
+    ],
+    "hpd_cells": 1158,
+    "hpd_mass": 0.9501047399663491,
+    "hpd_cutoff": 0.0002018026288785594,
+    "edge_mass": 0.044625671394446134,
+    "prior_max_error": 6.505213034913027e-19
+  },
+  {
+    "id": "no_detection_information:independent:uniform",
+    "dataset": "no_detection_information",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "signed",
+    "detection_override": [
+      0.1,
+      0.1
+    ],
+    "observed": 160,
+    "log_evidence": -214.60789446551192,
+    "mean": [
+      -6.08237418764368e-17,
+      3.5236570605778894e-17
+    ],
+    "marginal_95": [
+      [
+        -0.95,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.9500000000000002
+      ]
+    ],
+    "hpd_cells": 1681,
+    "hpd_mass": 0.9999999999999999,
+    "hpd_cutoff": 0.000594883997620464,
+    "edge_mass": 0.09518143961927424,
+    "prior_max_error": 0.0
+  },
+  {
+    "id": "no_detection_information:independent:informative",
+    "dataset": "no_detection_information",
+    "model": "independent",
+    "prior": "informative",
+    "family": "signed",
+    "detection_override": [
+      0.1,
+      0.1
+    ],
+    "observed": 160,
+    "log_evidence": -214.60789446551192,
+    "mean": [
+      0.27618378022103784,
+      -0.2109708613823852
+    ],
+    "marginal_95": [
+      [
+        -0.6499999999999999,
+        0.9500000000000002
+      ],
+      [
+        -0.95,
+        0.75
+      ]
+    ],
+    "hpd_cells": 1158,
+    "hpd_mass": 0.9501047399663491,
+    "hpd_cutoff": 0.00020180262887855717,
+    "edge_mass": 0.04462567139444611,
+    "prior_max_error": 2.1467203015212988e-17
+  },
+  {
+    "id": "folded:independent:uniform",
+    "dataset": "folded",
+    "model": "independent",
+    "prior": "uniform",
+    "family": "folded",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -114.17031518155876,
+    "mean": [
+      2.1117523956881936e-16,
+      -1.1505880572279514e-16
+    ],
+    "marginal_95": [
+      [
+        -0.5,
+        0.5
+      ],
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 121,
+    "hpd_mass": 0.9527948522788096,
+    "hpd_cutoff": 0.0016396039930264505,
+    "edge_mass": 1.1611702336808122e-16,
+    "mean_error": 0.4999999999999998,
+    "truth_in_hpd": true,
+    "truth_mass": 0.01560166185176585,
+    "likelihood_reflection_max_error": 5.684341886080802e-14,
+    "posterior_reflection_max_error": 4.0939474033052647e-16,
+    "negative_u_mass": 0.49625451116587144,
+    "positive_u_mass": 0.49625451116587205
+  },
+  {
+    "id": "folded:independent:informative",
+    "dataset": "folded",
+    "model": "independent",
+    "prior": "informative",
+    "family": "folded",
+    "detection_override": null,
+    "observed": 160,
+    "log_evidence": -113.66632623979069,
+    "mean": [
+      0.17198991303489208,
+      -0.004967651456711347
+    ],
+    "marginal_95": [
+      [
+        -0.5,
+        0.55
+      ],
+      [
+        -0.1499999999999999,
+        0.15000000000000013
+      ]
+    ],
+    "hpd_cells": 116,
+    "hpd_mass": 0.9510763833134667,
+    "hpd_cutoff": 0.0013717261311815946,
+    "edge_mass": 3.4496238562760856e-17,
+    "mean_error": 0.32804770188473054,
+    "truth_in_hpd": true,
+    "truth_mass": 0.022668808215731282,
+    "likelihood_reflection_max_error": 5.684341886080802e-14,
+    "posterior_reflection_max_error": 0.02780560419818745,
+    "negative_u_mass": 0.27775300583180457,
+    "positive_u_mass": 0.7138027100435603
+  }
+]
