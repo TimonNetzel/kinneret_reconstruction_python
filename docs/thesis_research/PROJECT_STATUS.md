@@ -41,8 +41,13 @@ inzwischen erfolgreich.
 Acht vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
 main unverändert `7f1826c`. Eigener Worktree
 `/workspace/netzel-a4-e-climate-time-gaps`, Branch `codex/netzel-a4-e-climate-time-gaps`,
-eigener gestapelter PR gegen #57. Inhaltscommit/PR und CI nach Erstellung
-ergänzen. Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege;
+eigener gestapelter PR gegen #57. Inhaltscommit
+`bd3da492e39d4cfa2db56dd2967b6023d00cf583` über
+[PR #58](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41239313231
+bei Abfrage queued, kein abschließender Erfolg behauptet. Danach nur
+Sicherungsverweise; aktuellen Head/CI prüfen. Nur neues Ergebnisdokument
+plus kurze HANDOFF-/Statuspflege;
 alte Statushistorie erhalten. Quellen-/JSON-Feldbezüge, 16 lokale Links/Anker
 und Drei-Dateien-Umfang geprüft; 751 geschützte Blobs/Dateimodi einschließlich
 Symlink unverändert.

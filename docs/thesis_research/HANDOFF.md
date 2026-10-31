@@ -29,8 +29,13 @@ bei Einstieg laufend, inzwischen erfolgreich. Acht vorgefundene Worktrees
 sauber, keine Stashes/Resets/
 Merges; main unverändert `7f1826c`. Eigener Worktree
 `/workspace/netzel-a4-e-climate-time-gaps`, Branch `codex/netzel-a4-e-climate-time-gaps`,
-eigener gestapelter PR gegen #57. Inhaltscommit/PR und CI nach Erstellung
-ergänzen. Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege;
+eigener gestapelter PR gegen #57. Inhaltscommit
+`bd3da492e39d4cfa2db56dd2967b6023d00cf583` über
+[PR #58](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58)
+remote gesichert, offen/ungemergt und mergebar; automatische
+[CI 41239313231](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41239313231)
+an diesem Commit bei Abfrage queued. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen. Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege;
 alte Statushistorie erhalten. Keine manuellen Projekt-/Modelltests oder Rechnungen.
 
 ## Genau ein Folgeauftrag: konkrete Klima-/Zeit-Wiederöffnungskriterien – vorbereitet, wartet auf Nutzer-OK
@@ -92,13 +97,18 @@ Neuheitsbeitrag abgegrenzt. Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 ## Kopierfertiger Startprompt für den nächsten Chat
 
 Vorbereiteter Folgeauftrag; das Absenden dieses Prompts beauftragt nur die
-rein dokumentarische Nachweisanforderung. Sicherungscommit/PR aus dem neuesten
-Status übernehmen und aktuellen Remote-Head prüfen.
+rein dokumentarische Nachweisanforderung. Verlässlich gesicherter Inhaltscommit
+`bd3da492e39d4cfa2db56dd2967b6023d00cf583`, PR #58; danach nur
+Sicherungsverweise. Aktuellen Remote-Head prüfen.
 
 ```text
-Setze Netzel auf codex/netzel-a4-e-climate-time-gaps fort; Sicherungscommit/PR
-stehen in HANDOFF und neuestem PROJECT_STATUS. Git-/PR-/Merge-/CI-/Branch-/
-Worktree-/Änderungsstand zuerst prüfen, ungesicherte Arbeit erhalten. Eigener
+Setze Netzel nach PR #58 fort.
+Branch: codex/netzel-a4-e-climate-time-gaps
+Inhaltscommit: bd3da492e39d4cfa2db56dd2967b6023d00cf583
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58
+Danach nur Sicherungsverweise; aktuellen Remote-Head prüfen.
+Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand zuerst prüfen,
+ungesicherte Arbeit erhalten. Eigener
 Worktree, Branch und PR ohne Merge.
 
 Hiermit beauftrage ich genau den vorbereiteten Folgeauftrag aus HANDOFF:
