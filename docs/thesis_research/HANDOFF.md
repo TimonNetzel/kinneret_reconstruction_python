@@ -10,6 +10,48 @@ Morphologische Referenzbefunde liegen vor; **W96s tatsächliche Methodik und
 Bestimmungsreferenzen sind wegen fehlenden Volltextzugangs weiterhin offen**.
 Keine fossile Artbrücke oder T0-Freigabe.
 
+## Vorbereiteter Folgeauftrag – wartet auf Nutzer-OK
+
+Die Ablaufvereinbarung und dieser Folgeauftrag sind in
+[PR #38](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/38)
+auf `codex/netzel-next-task-workflow` gesichert, initialer Inhaltscommit
+`8244754`; PR-Ziel ist #37-Branch, kein Merge.
+
+**Nächstes empfohlenes Paket: T1-Design und begrenzter synthetischer T2-Prototyp.**
+Der Nutzer hat am 31.10.2026 den Ablauf „Ergebnis sichern → Folgeauftrag
+vorbereiten → mit OK fortsetzen“ festgelegt. Dieses Methodenpaket ist vorbereitet,
+noch nicht begonnen oder durch die Ablaufentscheidung fachlich freigegeben.
+
+- **Ziel:** eine vorab begründete Rekonstruktionsregel und einen kleinen
+  Forschungsprototyp für bekannte synthetische Klimazustände schaffen.
+- **Umfang:** zuerst Design mit Datenrollen, Beobachtungsmodell, mathematischer
+  Kombination/Inversion, Abhängigkeiten, Klimaprior, Support und behandelter/
+  fehlender Unsicherheit dokumentieren und vor wissenschaftlichen Anpassungen
+  sichern. Danach nur den davon abgedeckten synthetischen Prototyp implementieren.
+  Artenvorkommenswahrscheinlichkeit nicht mit fossiler Pollenhäufigkeit gleichsetzen.
+- **Eingänge/Leseplan:** AGENTS.md, PROJECT_STATUS, diese Übergabe und
+  TAXON_PILOT_ROADMAP T1/T2; danach gezielt taxon_transfer_2026_10_30/DESIGN.md
+  und config.json für die Bedeutung der vorhandenen Funktionen sowie das neue
+  Literaturpaket für die Quellen-/Artbrückengrenzen. Weitere Quellen nur zur
+  konkreten Methodenbegründung nachladen, keine Pflichtlektüre der Archive.
+- **Schutzumfang:** ausschließlich neues, getrenntes Forschungsdesign,
+  Prototyp und synthetische Ausgaben sowie Status/Übergabe. Bestehende Modelle,
+  Forschungsresultate/-register, Fossilcounts, Analog-Baseline und CLI/App
+  unverändert. Keine Modellwahl anhand bekannter äußerer Testergebnisse,
+  keine reale Kernrekonstruktion, Art-/Pilotfreigabe, Autorennachrichten oder Merges.
+- **Abschluss:** Design vorab gesichert; bekannte synthetische Zustände,
+  widersprüchliche Taxonsignale, fehlende Beobachtungen, Prior-only-Verhalten,
+  Supportgrenzen und nicht identifizierbare Fälle nach vorher festgelegten
+  Kriterien geprüft. Scheitern oder fehlende Identifizierbarkeit vollständig
+  dokumentieren; keine Erfolgsgarantie. Kein SBC-Nachweis ohne geeignetes
+  kohärentes generatives Modell. Eigenen PR, Ergebnisstatus und einen nächsten
+  klaren Folgeauftrag sichern.
+
+**OK-Bedeutung:** Ein kurzes OK zu diesem Folgeauftrag startet genau dieses
+Paket nach erneuter Standprüfung im eigenen Worktree/Branch. Die W96-Methodenkette
+bleibt ein gesondert blockierter Quellenauftrag; sie blockiert synthetische
+Methodenarbeit nicht, ersetzt aber weiterhin keine realen Eingangsfreigaben T3/T4.
+
 ## Zuerst lesen und Stand prüfen
 
 1. [Dauerhafte Arbeitsregeln](../../AGENTS.md) und [aktuellen Status](./PROJECT_STATUS.md)
@@ -30,7 +72,7 @@ Keine fossile Artbrücke oder T0-Freigabe.
    Alle vorhandenen Worktrees waren beim Einstieg sauber und wurden erhalten;
    eigener Worktree `/workspace/netzel-pollen-methods`. Kein Merge beauftragt.
 
-## Nächster Quellenauftrag: historische Methodenkette schließen
+## Weiterhin blockierter Quellenauftrag: historische Methodenkette schließen
 
 Lesbaren Methodenteil und Referenzverzeichnis von Watts, Allen & Huntley (1996),
 DOI 10.1016/0277-3791(95)00093-3, beschaffen; bisher nur Titel/Abstract/Metadaten
@@ -63,12 +105,27 @@ keine konkrete Modellvariante und keine geänderte Kernwahl dadurch genehmigt.
 
 ## Übergabe an einen neuen Chat
 
-Das Literaturpaket ist ein gesicherter Wechselpunkt mit offen ausgewiesener
-Originalmethodenlücke. Startauftrag: „Prüfe aktuellen Git-/PR-Stand, verwende
-`codex/netzel-pollen-methods` auf dem #36-Stand, lies AGENTS.md und HANDOFF.md.
-Schließe nur die in pollen_methods_2026_10_31/SOURCE_GAP.md dokumentierte
-historische Methodenkette; bereits gelesene Literatur nicht neu inventarisieren.
-Modelle/Resultate/Counts/Baseline/CLI/App unverändert, eigener PR, kein Merge.“
+Ein neuer Chat ist vor dem Wechsel von Quellenprüfung zu Methodendesign sinnvoll,
+aber nicht erforderlich. **Vorgeschlagener Startauftrag:** Wenn der Nutzer den
+folgenden Prompt absendet, beauftragt er damit das vorbereitete Paket.
+
+> Setze das Netzel-Projekt mit dem in HANDOFF.md vorbereiteten T1-/synthetischen
+> T2-Paket fort. Verwende den Branch `codex/netzel-next-task-workflow`;
+> Ablaufsicherung PR #38, initialer Inhaltscommit `8244754`;
+> letzter Forschungsstand darunter ist PR #37, Commit
+> `fc52ce7ea2733ad11c39a59e629a01d14361fb8e`. Prüfe zuerst den aktuellen Git-/PR-/
+> Merge-Stand, Branches und lokale Änderungen; erhalte ungesicherte Arbeit.
+> Lies AGENTS.md, docs/thesis_research/HANDOFF.md, PROJECT_STATUS.md und
+> TAXON_PILOT_ROADMAP.md. Führe genau den dort vorbereiteten Folgeauftrag aus:
+> zuerst das begründete Design sichern, dann einen begrenzten synthetischen
+> Forschungsprototyp prüfen. W96-Methodenteil und historische Artbrücken bleiben
+> offen; keine reale Kernrekonstruktion oder Artfreigabe. Bestehende Modelle,
+> Resultate, Fossilcounts, Analog-Baseline und CLI/App unverändert; keine
+> Modellentscheidungen aus äußeren Scores. Claude betreut CLI/App. Eigener
+> Worktree/Branch und PR, kein Merge und keine Autorennachrichten. Ohne
+> Unteragenten beginnen, kurze deutsche Updates. Ergebnis und nächsten
+> begrenzten Folgeauftrag im Repository sichern.
+
 Keine ungemergten Ergebnisse als schon auf main vorhanden behandeln.
 
 ## Nur bei konkretem Bedarf weiterlesen
