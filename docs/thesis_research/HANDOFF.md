@@ -1,70 +1,70 @@
-# Netzel: kompakte Übergabe
+# Netzel: kompakte Übergabe nach A1
 
-## Gesichert und beschlossen
+## Gesichertes Ergebnis
 
-Neuer operativer [MODULAR_RECONSTRUCTION_PLAN](./MODULAR_RECONSTRUCTION_PLAN.md),
-31.10.2026, auf ausdrücklichen Nutzerauftrag erstellt. Forschungsrichtung:
-geschützte moderne Pollen-Kalibrierung nach Menezes, gemeinsamer nachgelagerter
-Klima-/Chronologie-/Multiproxyblock als Weiterentwicklung der Dissertation.
-Konkrete Daten, Klimaziele, Modellparameter und reale Freigaben bleiben offen.
+[NOVELTY_MATRIX](./NOVELTY_MATRIX.md): sechs Prüffelder zu genau Parnell 2015,
+Bowen 2020 und Menezes 2026 v1 gegen Plan §1. A1 als begrenztes
+Dokumentationspaket abgeschlossen; Parnell-Originalzugang blockiert,
+Originalgleichungen dort nicht verifiziert. Keine Ersatzsuche.
+Menezes (2)/(5) als offener Formelklärpunkt belegt; SIR-Beschreibung getrennt
+beurteilt. Verbindung zur Dissertation als Projektanschluss gekennzeichnet,
+keine erneute Originalprüfung. Kein eigener Beitragskandidat abgegrenzt und
+keine Neuheit behauptet. Nach diesen drei Arbeiten gestoppt.
 
-Basis `df01632d2256a5a7f6c4d3576f9e77c8ea5d7cb9` aus PR #49.
-Worktree `/workspace/netzel-modular-plan`, Branch
-`codex/netzel-modular-reconstruction-plan`;
-[PR #50](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/50)
-gegen den #49-Branch, offen/ungemergt. Inhaltscommit
-`2c7adc8b748046b599783f7d40d7fe7b5a80b4a4`; danach Sicherungs-/Übergabeverweise.
-Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
-Plan, Status und Übergabe gesichert; keine Implementierung oder Rechnung.
+Basis PR #50 bei `64a652982b0f271c02bfc0c89331537d6ec08eaa`, offen/ungemergt,
+mergebar; CI 41207312666 erfolgreich. Main `7f1826c`, #49-Head `df01632`.
+Fünf vorgefundene Worktrees sauber, keine Stashes; bestehende Arbeit erhalten.
+Eigener Worktree `/workspace/netzel-a1-novelty-matrix`, Branch
+`codex/netzel-a1-novelty-matrix`, eigener gestapelter PR gegen den #50-Branch.
+Sicherungscommit/PR und eigener CI-Stand: siehe neuesten PROJECT_STATUS-Abschnitt.
 
-## Genau ein nächster Auftrag: A1 – bereits autorisiert, im neuen Chat ausführen
+## Genau ein Folgeauftrag: A2 – vorbereitet, wartet auf Nutzer-OK
 
-Neue NOVELTY_MATRIX.md plus Status/Übergabe. Methodenteile von genau drei
-Primärarbeiten gegen die Architektur aus Plan §1 vergleichen:
-Parnell 2015 (10.1111/rssc.12065), Bowen 2020 (10.5194/cp-16-65-2020),
-Menezes 2026 v1 (arXiv:2609.08866v1). Nach diesen drei Arbeiten stoppen.
-Sechs Prüffelder und konkrete Abschlusskriterien stehen in Plan §5.
-Schwerpunkt Menezes: Kalibrier-Cut/bedingte Normierung, zeitliche/Chronologie-
-Erweiterung und externe Proxy-Modelle. Höchstens einen überprüfbaren
-Beitragskandidaten abgrenzen oder fehlende Abgrenzung festhalten.
-Keine ungeprüfte Neuheitsbehauptung oder reale Modellentscheidung.
+**Ziel:** ausschließlich einen zusammenhängenden MODEL_CONTRACT.md als
+prüfbaren dokumentarischen Entwurf erstellen, gemäß A2 im Plan. A2 ist noch
+nicht begonnen; ein OK autorisiert nur dieses begrenzte Dokumentationspaket.
 
-**Kein erneutes OK verlangen:** A1 wurde bereits autorisiert. A2–A6 sind
-Planung, keine gleichzeitig aktiven Aufträge oder vorgezogenen Rechenfreigaben.
+**Erlaubter Umfang:** Aussageziel und Rollen E/P/Y/D/psi/C/tau/theta;
+Beobachtungsstatus und Nullen; Cut-Randverteilung und gemeinsame Normierung;
+Zeit-/Chronologie-Rückkanäle; Proxy-Abhängigkeiten; Support,
+Identifizierbarkeit und Stopbedingungen beschreiben. Nicht belegte
+Klimavariablen/Einheiten/Perioden, Verteilungen, Parameter und Eingänge
+explizit OFFEN lassen. Keine reale Daten- oder Modellwahl treffen.
 
-## Minimaler Lese- und Prüfplan
+**Eingänge/Leseplan:** zuerst kompakte Git-/PR-/CI-/Worktree-Prüfung,
+AGENTS, diese HANDOFF, nur neuester PROJECT_STATUS-Abschnitt,
+NOVELTY_MATRIX und Plan §1/§2-A2/§4. Quellen nur an konkreter offener
+Vertragsfrage gezielt nachladen; Parnell-Zugangslücke und M-(5)-Klärpunkt als
+solche erhalten. Keine neue Literatur-/Archivsuche oder Originalprüfung der
+Dissertation als stillen Zusatzauftrag beginnen.
 
-1. Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-   unversionierte Änderungen einmal kompakt prüfen, vorhandene Arbeit erhalten.
-   Aktuellen ungemergten Quellenstand verwenden; eigener Worktree/Branch/PR.
-2. AGENTS.md, diese Übergabe, Plan §1/§2-A1/§4/§5 und nur den obersten aktuellen
-   Abschnitt von PROJECT_STATUS lesen. Dann genau die drei Primärarbeiten
-   gezielt. Alte Memos/Designs/PDFs nur bei konkreter ungeklärter Frage nachladen.
-3. Quellenlocator/Version und Befund direkt in die Matrix sichern, keine
-   wiederholte Inventur, breite Suche oder Volltexte im Chat. Abschluss durch
-   Quellen-/Link-/Diffprüfung, keine pauschalen Tests bei Dokumentation.
+**Abschluss:** genau ein MODEL_CONTRACT.md mit unterscheidbaren
+Festlegungen aus Plan §1, offenen Feldern und Stopbedingungen; keine
+vorgeblich ausgefüllte Datenmatrix. Quellen-/Link-/Diffprüfung und
+Blobabgleich; eigener Branch/PR ohne Merge; kurze Status-/Übergabe mit genau
+einem weiteren vorbereiteten Auftrag.
 
-Keine Datenbeschaffung/-auswahl, Matrix/Kohorte/Bereinigung, Projektcode-/Test-/
-Fit-/Score-/Simulations-/Kernläufe, Unteragenten, Autorennachrichten oder Merges.
-Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-Baseline und CLI/App unverändert. W96, EMPD2-Archiv-/Messstatus und reale
-T0/T1/T3/T4/Monticchio-P1 offen; beendete Archivsuche nicht wieder öffnen.
+**Gesperrt:** Datenbeschaffung/-auswahl, Bereinigung, Datenmatrix/Kohorte,
+Implementierung, Tests, Fits, Scores, Simulationen und Kernläufe; bestehende
+Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+Baseline und CLI/App. W96, EMPD2-Archiv-/Messstatus sowie reale
+T0/T1/T3/T4/Monticchio-P1 offen. A3–A6 später, nicht aktiv.
+Keine Unteragenten, Autorennachrichten oder Merges.
 
-## Kopierfertiger Startprompt
+## Kopierfertiger Startprompt für einen optionalen Chatwechsel
 
-> Setze Netzel auf codex/netzel-modular-reconstruction-plan fort, gesicherter
-> Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-Stand, Branches,
-> Worktrees und lokale Änderungen; erhalte Arbeit. Lies nur AGENTS, HANDOFF,
-> MODULAR_RECONSTRUCTION_PLAN §1/§2-A1/§4/§5 und den neuesten Statusabschnitt.
-> Führe den bereits autorisierten Auftrag A1 aus: NOVELTY_MATRIX zu Parnell
-> 2015, Bowen 2020 und Menezes v1 2026. Schwerpunkt Menezes-Kalibrier-Cut/
-> Normierung, gemeinsame Klima-/Chronologie-Inferenz und zusätzliche Proxys.
-> Belege Gleichung/Abschnitt, Gemeinsamkeiten/Differenzen und offene Fragen;
-> höchstens einen prüfbaren Beitragskandidaten abgrenzen. Nach drei Arbeiten
-> stoppen. Alte Unterlagen nur bei konkreter Frage, kurze Ausgaben/Updates.
-> Keine ungeprüfte Neuheit, reale Auswahl, Datenbeschaffung, Bereinigung/
-> Matrix/Kohorte, Code-/Test-/Fit-/Score-/Simulations-/Kernläufe. Bestehende
+> Setze Netzel auf codex/netzel-a1-novelty-matrix fort; verlässlich gesicherter
+> Commit/PR im neuesten PROJECT_STATUS-Abschnitt. Prüfe Git/PR/Merge/CI,
+> Branches/Worktrees/lokale Änderungen kompakt und erhalte vorhandene Arbeit.
+> Lies AGENTS, HANDOFF, nur neuesten Status, NOVELTY_MATRIX und Plan
+> §1/§2-A2/§4. A1 ist abgeschlossen mit dokumentierter Parnell-Zugangslücke;
+> kein Neuheitsnachweis. Genau ein vorgeschlagenes Folgepaket A2 wartet auf
+> Nutzer-OK: ausschließlich MODEL_CONTRACT.md als dokumentarischen Entwurf
+> mit offenen Feldern und Stopbedingungen erstellen. Erst bei vorliegendem
+> OK ausführen, dann kein erneutes OK für dasselbe Paket verlangen. Keine
+> reale Daten-/Modellwahl oder Beschaffung/Bereinigung/Matrix/Kohorte,
+> Implementierung/Tests/Fits/Scores/Simulationen/Kernläufe. Bestehende
 > Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-> Baseline und CLI/App unverändert; W96 und reale Gates offen. Eigener
-> Worktree/Branch/PR, keine Unteragenten/Kontakte/Merges. Ergebnis und genau
-> einen nächsten begrenzten Folgeauftrag sichern. A2–A6 nicht vorziehen.
+> Baseline und CLI/App unverändert; W96/reale Gates offen. Keine Recherche-
+> ausweitung, Unteragenten, Autorennachrichten oder Merges. Eigener
+> Worktree/Branch/PR, Ergebnis und genau einen Folgeauftrag sichern.
