@@ -1,0 +1,265 @@
+{
+  "source_objects": [
+    {
+      "id": "paper",
+      "doi": "10.5194/essd-12-2423-2020",
+      "url": "https://essd.copernicus.org/articles/12/2423/2020/",
+      "read_sections": [
+        "2 Methods",
+        "2.2 Data processing",
+        "4 Discussion viewer reference",
+        "6 Data availability",
+        "References: Sommer et al. 2020"
+      ],
+      "article_date": "2020-10-09",
+      "locator_note": "HTML section/paragraph locators; original methods text read, no whole-paper byte archive claimed",
+      "climate_reference_period_explicit_in_read_sections": false
+    },
+    {
+      "id": "official_release",
+      "repository": "EMPD2/EMPD-data",
+      "tag": "v2.0",
+      "annotated_tag_sha1": "f543a1bf60fefb705e46db400f59ebdac96edaf7",
+      "tag_date_utc": "2020-10-05T09:28:20Z",
+      "commit": "737b76eb269b071422edded6ac332654ff83c103",
+      "paper_reference_doi": "10.5281/zenodo.4066498",
+      "reference_path": "Davis et al. 2020 bibliography identifies EMPD2/EMPD-data v2.0; official viewer links the same repository.",
+      "zenodo_landing_access": "web-tool redirect failed; not read or claimed archived",
+      "files": [
+        {
+          "path": "README.rst",
+          "git_blob_sha1": "974b609a7c942a464aa978724ac278be3de02d14",
+          "bytes": 6895,
+          "sha256": "bc8601330a765272b4f0544296c1260a4216136441668e1a2066418177dd7b47",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/README.rst",
+          "executed": false
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "git_blob_sha1": "807c210e1d3144d3bdfd3bd13ed97e218bccab88",
+          "bytes": 5345,
+          "sha256": "b4110ccbf5208cec2bef136b19d38616bfbd0179c6304b41c53378aae0bfdaf4",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/CONTRIBUTING.md",
+          "executed": false
+        },
+        {
+          "path": "postgres/scripts/create_empd2.sql",
+          "git_blob_sha1": "c0f1bba5fbb1897678ebd6f218e3e6a1f6679672",
+          "bytes": 10040,
+          "sha256": "f567630f69a5c906cabaa314d8d7e8ca66c9af82bc969fedd706519f1dc34841",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/postgres/scripts/create_empd2.sql",
+          "executed": false
+        },
+        {
+          "path": "postgres/scripts/import_into_empd2.py",
+          "git_blob_sha1": "f911713f780ab43f129e9b4acc5e94d415b2a94f",
+          "bytes": 19485,
+          "sha256": "eeb38e98208b842135474bdde31a715f77d464edf747140082936b2f432beebc",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/postgres/scripts/import_into_empd2.py",
+          "executed": false
+        },
+        {
+          "path": "postgres/scripts/makeFixedTables.py",
+          "git_blob_sha1": "91efbe47598bfed4ea7e2a2bcf4bc6b7c2e4cca0",
+          "bytes": 3410,
+          "sha256": "a3058961c6b15f8fe90cf82d8975e279b2793f6d47533c644f96450c26068f75",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/postgres/scripts/makeFixedTables.py",
+          "executed": false
+        },
+        {
+          "path": "postgres/scripts/updateFixedTables.py",
+          "git_blob_sha1": "9caad119d3003ed6cb5b2128de23d72f415e8b11",
+          "bytes": 1225,
+          "sha256": "da11ff6b8a7d42741118fc72e8c8fb1efb1971485417dbacc897dadf2949d44d",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/postgres/scripts/updateFixedTables.py",
+          "executed": false
+        },
+        {
+          "path": "postgres/scripts/tables/GroupID.tsv",
+          "git_blob_sha1": "3e2259955eae940eb8ca030152dd48e6897fab4d",
+          "bytes": 1407,
+          "sha256": "83eada82435168828f4de816b2ab2b7149f875fbe6a9eaa24618b40308f924c5",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/postgres/scripts/tables/GroupID.tsv",
+          "executed": false
+        },
+        {
+          "path": "samples/AlbaSanchez_a1.tsv",
+          "git_blob_sha1": "ccba07acec4a81df67e69060b5513b2d397542c6",
+          "bytes": 1406,
+          "sha256": "b44886acfbba9af311f1a243d2fe0a37b045cb9c4240352db9464cb406a10be7",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/samples/AlbaSanchez_a1.tsv",
+          "executed": false
+        },
+        {
+          "path": "samples/Champvillair_a18.tsv",
+          "git_blob_sha1": "9604151797e0735a0f469bd7987ee461aa5fa755",
+          "bytes": 3172,
+          "sha256": "7a7329aa9b6bc212b8cc432aaa354ef8e2488d28a9502e269c39ed67038f2f00",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/samples/Champvillair_a18.tsv",
+          "executed": false
+        },
+        {
+          "path": "samples/Barboni_a1000.tsv",
+          "git_blob_sha1": "44e94782e75481e27ce11a7499306e496bb02e20",
+          "bytes": 2503,
+          "sha256": "b2aa14a7bb2d14f4de93aa9d63803d16665474f6b8911ac5e44e681164486cba",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/samples/Barboni_a1000.tsv",
+          "executed": false
+        },
+        {
+          "path": "tests/test_critical.py",
+          "git_blob_sha1": "69e1ebcf4f4c639b96530bbd5edfc7e9d1bd7935",
+          "bytes": 1553,
+          "sha256": "c43dfa9d1ade600b17b2eb43fdf99df47cbc84329b1cb906d61ac14b10f241da",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/tests/test_critical.py",
+          "executed": false
+        },
+        {
+          "path": "tests/test_formatting.py",
+          "git_blob_sha1": "eb21b392ef442becf3360c010c637a2167767419",
+          "bytes": 1903,
+          "sha256": "08c77ff2eb6b7a5fef935e425f7d12af1e25f1e35b389212db1519c2c9b98b66",
+          "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/tests/test_formatting.py",
+          "executed": false
+        }
+      ],
+      "not_read": [
+        "Full postgres/EMPD2.sql: partial connector request returned empty content; metadata-only blob 939d03c02d5c65046407f38646cada18717b39e9, 17038789 bytes. No SQL dump rules inferred."
+      ]
+    }
+  ],
+  "locked_sqlite": {
+    "sha256_before": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "sha256_after": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "bytes": 21327872,
+    "open_mode": "ro&immutable=1; query_only=ON",
+    "matrix_exported": false
+  },
+  "sample_comparison": [
+    {
+      "sample": "AlbaSanchez_a1",
+      "rows_compared": 20,
+      "counts_equal_between_release_and_locked_sqlite": true,
+      "sum_used_in_sum_1": "311",
+      "percentage_values_checked": 20,
+      "percentage_blanks_checked": 0,
+      "all_percentages_compatible_with_100_count_over_group_sum_at_printed_precision": true,
+      "maximum_absolute_percentage_point_error": "4.8231511254019292605E-7",
+      "provided_percentages_never_used_to_generate_counts": true,
+      "representative_checks": [
+        {
+          "line": 2,
+          "absolute_error": "1.7041800643086816720E-8",
+          "printed_half_unit": "5E-8"
+        },
+        {
+          "line": 3,
+          "absolute_error": "1.6398713826366559486E-9",
+          "printed_half_unit": "5E-9"
+        }
+      ]
+    },
+    {
+      "sample": "Champvillair_a18",
+      "rows_compared": 49,
+      "counts_equal_between_release_and_locked_sqlite": true,
+      "sum_used_in_sum_1": "731",
+      "percentage_values_checked": 39,
+      "percentage_blanks_checked": 10,
+      "all_percentages_compatible_with_100_count_over_group_sum_at_printed_precision": true,
+      "maximum_absolute_percentage_point_error": "2.3255813953488372093E-7",
+      "provided_percentages_never_used_to_generate_counts": true,
+      "representative_checks": [
+        {
+          "line": 2,
+          "absolute_error": "3.1737346101231190150E-9",
+          "printed_half_unit": "5E-9"
+        },
+        {
+          "line": 3,
+          "absolute_error": "3.693570451436388509E-9",
+          "printed_half_unit": "5E-8"
+        }
+      ]
+    },
+    {
+      "sample": "Barboni_a1000",
+      "rows_compared": 39,
+      "counts_equal_between_release_and_locked_sqlite": true,
+      "sum_used_in_sum_1": "840",
+      "percentage_values_checked": 39,
+      "percentage_blanks_checked": 0,
+      "all_percentages_compatible_with_100_count_over_group_sum_at_printed_precision": true,
+      "maximum_absolute_percentage_point_error": "4.7619047619047619048E-7",
+      "provided_percentages_never_used_to_generate_counts": true,
+      "representative_checks": [
+        {
+          "line": 2,
+          "absolute_error": "9.523809523809523810E-10",
+          "printed_half_unit": "5E-9"
+        },
+        {
+          "line": 3,
+          "absolute_error": "4.7619047619047619048E-7",
+          "printed_half_unit": "0.000005"
+        }
+      ]
+    }
+  ],
+  "group_comparison": {
+    "release_group_rows": 36,
+    "sqlite_group_rows": 40,
+    "shared_rows": 36,
+    "all_shared_flags_and_parent_ids_equal": true,
+    "sqlite_only_groups": [
+      "MANG",
+      "PALM",
+      "SEED",
+      "SUCC"
+    ],
+    "release_only_groups": []
+  },
+  "import_code_application": {
+    "source": "postgres/scripts/import_into_empd2.py",
+    "read_csv_lines": [
+      438,
+      439
+    ],
+    "source_value_gate_line": 463,
+    "rounding_line": 464,
+    "insert_lines": [
+      466,
+      469
+    ],
+    "duplicate_accumulation_lines": [
+      474,
+      483
+    ],
+    "error_handling_lines": [
+      485,
+      497
+    ],
+    "application_to_locked_sqlite": "not_proven; new-sample insertion rounds 7.4 to 7, while already existing samples are skipped. Exact archive creation/export history is not established.",
+    "global_missing_pair_zero_rule_proven": false,
+    "existing_sample_skip_lines": [
+      435,
+      437
+    ]
+  },
+  "sparse_witness": {
+    "sample": "AlbaSanchez_a1",
+    "var_": 7,
+    "stored_rows": 0,
+    "interpretation": "Still not assigned zero; positive-only insertion demonstrates ambiguity, not original measurement status."
+  },
+  "rule_statuses": {
+    "raw_complete_assemblage_protocol": "documented in paper; no per-row original-count certification",
+    "percentage_denominator_in_three_release_samples": "compatible with used_in_sum group sum at every supplied printed precision",
+    "percent_values_flag_in_three_release_samples": "compatible with provided versus blank percentage fields",
+    "higher_groupid_aggregation_algorithm": "not_proven",
+    "original_measured_N": "not_proven",
+    "archive_specific_import_and_sparse_rule": "not_proven",
+    "climate_reference_period": "unverified"
+  },
+  "scope": "Two source objects: article and official pinned release. Only the same three witnesses; no new matrix/cohort, fits, scores, simulations, source-code execution or tests."
+}

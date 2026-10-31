@@ -1,88 +1,86 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesichertes Ergebnis: lesendes EMPD2-Counts-Readiness-Audit
+## Gesichertes Ergebnis: EMPD2-Nenner-/Sparse-Quellenpaket
 
-Nach Nutzer-OK hier im Chat am 31.10.2026 ausgeführt. Basis PR #41 bei
-`62ffeaf08ee7c7538f8d9c4cc99f78e7c0bdb394`; Worktree
-`/workspace/netzel-empd2-readiness`, Branch `codex/netzel-empd2-counts-readiness`.
-[PR #42](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42)
-sichert das Audit gegen `codex/netzel-synthetic-counts-t2` (#41), kein Merge.
-Letzter Inhaltscommit `1627a11d22f6fe8827dd7eed509acb6df2720b08`;
-danach nur PR-/Übergabeverweise. Eigene CI bei Erstellung noch laufend,
+Nach Nutzer-OK hier im Chat am 31.10.2026 ausgeführt. Basis PR #42 bei
+`e1e8ebe32f17487c4c91d2044db845112a8365bb`; Worktree
+`/workspace/netzel-empd2-rules`, Branch `codex/netzel-empd2-denominator-rules`.
+[PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43)
+sichert das Quellenpaket gegen `codex/netzel-empd2-counts-readiness` (#42), kein Merge.
+Letzter Inhaltscommit `ed979ba2dee39f2fc1b503f9b09353812f9fbcc4`;
+danach nur PR-/Übergabeverweise. CI bei Erstellung noch laufend,
 technisch MERGEABLE/UNSTABLE, keine fachliche Freigabe.
-[Ergebnis](./empd2_counts_readiness_2026_10_31/MODERN_COUNTS_READINESS.md),
-[Datenvertrag](./empd2_counts_readiness_2026_10_31/INPUT_CONTRACT.json),
-[Originalbelege/Abfragen](./empd2_counts_readiness_2026_10_31/evidence.json).
+[Ergebnis](./empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md),
+[Regelbelege](./empd2_denominator_rules_2026_10_31/RULE_EVIDENCE.json),
+[Quell-/Datenvergleich](./empd2_denominator_rules_2026_10_31/source_comparison.json).
 
-Technische moderne Pollen-/Metadateneingänge sind vorhanden; **Counts-Training
-ist noch nicht freigegeben**. Drei Zeugen/108 gespeicherte Messzeilen sowie
-Schema-/Gruppen-/Code-Metadaten gelesen. Das cached EMPD2-Original ist vor/nach
-read-only-Zugriff bytegleich zum Sperrhash, keine neuen Downloads.
-Champvillair_a18: gebrochener Wert 7,4 ist Probenvolumen außerhalb flag-1-Gruppen;
-244 historisch markierte Proben sind deshalb nicht automatisch 244 Proben mit
-gebrochenen Pollenkornzahlen. Alte Flags/Referenzen bleiben unverändert.
+Begrenzter Teilabschluss: Originalmethodik gelesen und offizielles v2.0-Release
+am Commit `737b76eb269b071422edded6ac332654ff83c103` gepinnt; zwölf
+Quelldateien per Git-Blobhash geprüft, kein fremder Code ausgeführt.
+Drei bekannte Zeugen, 108 Messwert-Tupel zwischen Release und Sperr-SQLite
+identisch; alle 98 bereitgestellten Prozentwerte mit S_flag=311/731/840 innerhalb
+Quellpräzision kompatibel. Zehn leere Prozentfelder passen zum percent_values-Flag.
+Dies ist keine globale Berechnungsregel oder N_original-Freigabe.
 
-Kein eigenes strukturiertes Proben-N im Schema. Arithmetische Gruppen- oder
-Gesamtsummen sind keine bestätigten ursprünglichen Zählnenner; Gesamtwerte
-können Volumen/Marker/weitere Messgrößen enthalten. Sparse-Nichttreffer bleiben
-unaufgelöst, Text-NULL und Standortklasse X nicht repariert. Klimaperiode weiterhin
-unverified, Typ-/Fossilbrücken weiterhin offen. Keine neue Matrix, Kohorte,
-Simulation, Fits, Scores, Tests oder Kernrekonstruktion erzeugt/ausgeführt.
+Der sichtbare Importpfad übernimmt positive Eingänge, rundet und überspringt
+bestehende Proben. Erhaltenes 7,4 und 36 gegenüber 40 Gruppen zeigen, dass die
+exakte SQLite-Erzeugungskette nicht belegt ist; kein Beweis, dass das Skript nie
+benutzt wurde. Allgemeine archiveigene Nullregel, N_original und hierarchischer
+Aggregationsalgorithmus bleiben offen. Kein Nullfüllen oder Runden angewandt.
+Klimaperiode weiter unverified, W96 und reale T0/T1/T3/T4/Monticchio-P1 offen.
 
-Vorherige Counts-T2-Ergebnisse und alle Designs/Modelle/Resultate/Register,
-Fossilcounts/Gruppen, Baseline und CLI/App unverändert. Acht bisherige Worktrees
-sauber erhalten; main `7f1826c`, #31–#41 bei Einstieg offen, #41-CI grün.
-Keine Unteragenten, Merges oder Kontakte. Reales T1, W96/T0/Artbrücken,
-T3/T4 und Monticchio-P1 bleiben offen.
+Kein Matrix-/Kohortenexport, Fits, Scores, Simulationen oder Tests; nur Quellen-
+und Dokumentationsprüfung. Originaldatenbankhash vor/nach unverändert.
+Alle bestehenden Designs/Modelle/Resultate/Register/Importer/Flags/Fossilcounts/
+Gruppen, Baseline und CLI/App unverändert. Neun bisherige Worktrees sauber
+geblieben; main `7f1826c`, #31–#42 bei Einstieg offen, #42-CI grün.
+Keine Unteragenten, Merges oder Kontakte. Nicht gelesene Zenodo-Seite/großer
+SQL-Dump nicht als geprüft behandeln; Details im Ergebnis.
 
 ## Genau ein vorbereiteter Folgeauftrag – wartet auf Nutzer-OK
 
-**EMPD2s ursprüngliche Nenner- und Sparse-Verarbeitungsregeln gezielt belegen.**
+**Erzeugungs-/Exportherkunft genau des gesperrten PANGAEA-SQLite-Originals prüfen.**
 
-- **Ziel:** die nun konkret belegte Lücke zwischen Tabellenflags und tatsächlichem
-  Zähl-/Erfassungsprozess schließen, soweit zugängliche Originalstellen es tragen.
-  Genaue Fragen/Begrenzung in [SOURCE_GAPS](./empd2_counts_readiness_2026_10_31/SOURCE_GAPS.md).
-- **Begrenzte Quellen:** zuerst die registrierte EMPD2-Methodenpublikation
-  Davis et al. (2020), DOI 10.5194/essd-12-2423-2020. Nur bei konkretem dortigem
-  oder offiziellem Archivverweis ein zweites Objekt (ursprünglicher Code oder
-  Datenwörterbuch) mit genauer Version lesen. Kein beliebiges späteres Paket
-  als damals benutzt eintragen, keine breite Ersatzdatensuche/Autorenkontakte.
-- **Regeln prüfen:** tatsächliche Anwendung von used_in_sum, percent_values und
-  higher_groupid; belegte Bedeutung nicht gespeicherter Sample×Typ-Paare;
-  originaler Zählnenner gegenüber gespeicherter arithmetischer Summe und bewusst
-  ausgewähltem n. Klima-Periodenbeleg nur mit sichern, falls dieselbe gelesene
-  Originalstelle ihn ausdrücklich liefert.
-- **Leseplan:** AGENTS.md, PROJECT_STATUS, diese Übergabe, Roadmap T1–T3;
-  MODERN_COUNTS_READINESS.md, INPUT_CONTRACT.json, SOURCE_GAPS.md und evidence.json
-  dieses Pakets. Dann gezielt die Originalmethodik. Alter Importer und #35-
-  Hash-/Reproduktionsnachweis nur für konkrete Datenvertrags-/Bytesfragen.
-  W96-Quellenbedarf getrennt lassen, keine komplette neue Taxoninventur.
-- **Umfang:** ausschließlich neues Quellen-/Regeldokumentpaket mit
-  DENOMINATOR_RULES.md, RULE_EVIDENCE.json und verbleibendem SOURCE_GAPS.md.
-  Quelle→Regel→Anwendung mit Seite/Abschnitt bzw. Code-Datei/Funktion/Zeile/Version
-  belegen. Höchstens die drei vorhandenen Zeugen lesend nachvollziehen, keine
-  neue Matrix, Probenkohorte, Harmonisierung oder fachliche Flagänderung.
-- **Abschlusskriterien:** Nenner- und Sparse-Regeln belegt oder präzise weiter
-  offen/blockiert; bibliographische Nennung nicht als Anwendung ausgeben.
-  Zugangsblock/fehlenden Beleg erhalten. Keine angenommene Nullfüllung oder
-  automatische Counts-Likelihood-Freigabe. Original-N, verfügbare Summe und
-  bedingtes n explizit auseinanderhalten. Genau nächsten Auftrag vorbereiten.
-- **Schutz/Sicherung:** bestehende Register/Importer/Flags/Designs/Modelle,
-  Resultate/Counts/Gruppen, Baseline und CLI/App unverändert. Keine Fits, Scores,
-  Simulationen, Kernel-/App-/Standardtests, Kernläufe, Merges, Kontakte oder
-  Unteragenten. Eigener Worktree/Branch/PR, nur neue Dokumente und Status/Übergabe,
-  Quellen-/Link-/Hash-/Diffprüfung. W96 und reale Freigabegates bleiben offen.
+- **Zielobjekt:** DOI 10.1594/PANGAEA.909130, EMPD2.sqlite3, 21.327.872 Bytes,
+  SHA-256 5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2.
+  Heutige Datenbank, ähnliches Release oder bloße Namensgleichheit genügen nicht.
+- **Konkrete Frage:** Welche offiziell zugeordnete Version/Exportlogik erklärt
+  erhaltenes 7,4, 40 Gruppen und fehlende Sample×Typ-Paare? Sind Messstatus,
+  Nullunterdrückung und ursprünglicher Nenner für genau diese Datei belegbar?
+- **Begrenzte Quellen:** zuerst offizielle Archivmetadaten/Dateibeschreibung
+  dieses DOI; nur bei präzisem offiziellen Verweis ein zweites ursprüngliches
+  Export-/Wörterbuch-/Codeobjekt. Schon gepinnte Repositorydateien lesend zur
+  Abgrenzung nutzen. Keine breite Suche nach weiteren Datenbanken oder Paketen.
+- **Leseplan:** AGENTS.md, PROJECT_STATUS, diese Übergabe und Roadmap T1–T3;
+  DENOMINATOR_RULES.md, RULE_EVIDENCE.json, SOURCE_GAPS.md und source_comparison.json
+  dieses Pakets. Voriger INPUT_CONTRACT und #35-Reproduktions-/Hashnachweis
+  nur bei konkreter Vertrags-/Bytefrage. W96 bleibt gesondert blockiert.
+- **Umfang:** nur neues ARCHIVE_LINEAGE.md, LINEAGE_EVIDENCE.json und verbleibendes
+  DECISION_GAPS.md plus Status/Übergabe. Höchstens die drei bekannten Zeugen
+  lesend prüfen, keine große SQL-Datenkopie oder weitere Messmatrix exportieren,
+  keinen Code ausführen oder Daten bereinigen. Keine neue Proben-/Typauswahl.
+- **Abschluss:** Quelle→Version→nachweislich angewandter Schritt→Archivfeld
+  mit Objekt/Datei/Zeilen/Hash belegen oder getrennt sperren. N_original,
+  S_flag/Prozentnenner und n_ausgewählt unterscheiden. Falls die zwei gezielten
+  Quellen die Kette nicht liefern, hier stoppen und einen konkreten
+  Entscheidungspunkt dokumentieren; keine Ersatzsuche oder Trainingsfreigabe.
+- **Schutz/Sicherung:** bestehende Designs/Modelle/Resultate/Register/Importer/
+  Flags/Fossilcounts/Gruppen, Baseline und CLI/App unverändert. Keine Fits,
+  Scores, Simulationen, Kern-/CLI-/App-/Standardtests, Merges, Kontakte oder
+  Unteragenten. Eigener Worktree/Branch/PR, Quellen-/Link-/Hash-/Diffprüfung,
+  Ergebnis und genau einen nächsten Auftrag sichern.
 
-Ein erneutes OK hier im Chat autorisiert genau dieses neue Quellenpaket.
-Der abgeschlossene Auditauftrag hat es noch nicht autorisiert. Kein Chatwechsel nötig.
+Ein weiteres OK hier im Chat autorisiert genau dieses neue Archivpaket.
+Der abgeschlossene Quellenauftrag hat keine neuen wissenschaftlichen Läufe
+freigegeben. Kein Chatwechsel erforderlich.
 
 ## Zuerst Stand prüfen
 
 1. Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-   unversionierte Änderungen prüfen; fremde Arbeit erhalten.
-2. Aktuellen Auditbranch verwenden; Inhaltscommit/PR in PROJECT_STATUS, danach
-   dürfen reine PR-/Übergabeverweise folgen. main enthält die Kette nicht automatisch.
-3. Gezielten Leseplan verfolgen. Keine alten Import-/Modell-/Ergebnisläufe wiederholen.
+   unversionierte Änderungen prüfen; vorhandene Arbeit erhalten.
+2. Aktuellen Quellenbranch verwenden; Inhaltscommit/PR in PROJECT_STATUS.
+   main enthält die ungemergte Kette nicht automatisch.
+3. Gezielten Leseplan befolgen; keine alten Import-/Modellläufe wiederholen.
 
 ## Weiterhin blockierter Quellenauftrag: historische Methodenkette schließen
 
@@ -120,24 +118,25 @@ sind dadurch genehmigt.
 
 **Vorgeschlagener Startauftrag, wartet auf OK; auch hier im Chat ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-empd2-counts-readiness` aus PR #42 fort;
-> letzter Inhaltscommit 1627a11d22f6fe8827dd7eed509acb6df2720b08, danach nur
-> PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten). Basis war PR #41
-> bei 62ffeaf. Prüfe Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale
+> Setze das Netzel-Projekt auf `codex/netzel-empd2-denominator-rules` aus PR #43 fort;
+> letzter Inhaltscommit ed979ba2dee39f2fc1b503f9b09353812f9fbcc4, danach nur
+> PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten). Basis war PR #42 bei
+> e1e8ebe. Prüfe Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale
 > Änderungen zuerst; erhalte ungesicherte Arbeit. Lies AGENTS.md, HANDOFF.md,
-> PROJECT_STATUS.md und den gezielten Leseplan. Führe ausschließlich den dort
-> vorbereiteten Quellenauftrag aus: ursprüngliche EMPD2-Nenner- und Sparse-
-> Regeln belegen, erste Quelle DOI 10.5194/essd-12-2423-2020, zweites Objekt
-> nur bei konkretem offiziellen Verweis. Höchstens die drei bekannten Zeugen
-> lesend nachvollziehen; keine neue Matrix/Kohorte/Harmonisierung oder Fits,
-> Scores, Simulationen oder Kernläufe. Bestehende Designs, Register/Importer/
-> Flags, Modelle/Resultate/Counts/Gruppen, Baseline und CLI/App unverändert.
-> W96, Artbrücken und Monticchio-P1 bleiben offen. Keine automatische Nullfüllung,
-> Counts-Freigabe, Autorennachrichten/Merges/Unteragenten. Eigener Worktree/
-> Branch/PR, Dokumentationsprüfung, kurze deutsche Updates. Ergebnis und genau
-> einen nächsten begrenzten Folgeauftrag im Repository sichern.
+> PROJECT_STATUS.md und den dortigen gezielten Leseplan. Führe ausschließlich
+> das vorbereitete Quellenpaket zur Erzeugungs-/Exportherkunft genau der
+> gesperrten PANGAEA-EMPD2.sqlite3 aus. Erst offizielle Archivmetadaten, zweites
+> Originalobjekt nur bei präzisem offiziellen Verweis; höchstens die drei
+> bekannten Zeugen lesend prüfen. Keine neue Matrix/Kohorte, Datenbereinigung,
+> Codeausführung, Fits, Scores, Simulationen oder Kernläufe. Nach zwei gezielten
+> Quellen ohne Kette stoppen und Entscheidungspunkt dokumentieren.
+> Bestehende Designs/Modelle/Resultate/Register/Importer/Flags/Fossilcounts/
+> Gruppen, Baseline und CLI/App unverändert. W96 und reale Freigaben bleiben
+> offen. Keine Nullfüllung/Rundung, Autorennachrichten/Merges/Unteragenten.
+> Eigener Worktree/Branch/PR, Quellen-/Dokumentationsprüfung, kurze deutsche
+> Updates; Ergebnis und genau einen nächsten Folgeauftrag im Repository sichern.
 
-Absenden dieses Prompts autorisiert genau das neue begrenzte Quellenpaket.
+Absenden dieses Prompts autorisiert genau das neue begrenzte Archivpaket.
 
 ## Nur bei konkretem Bedarf weiterlesen
 

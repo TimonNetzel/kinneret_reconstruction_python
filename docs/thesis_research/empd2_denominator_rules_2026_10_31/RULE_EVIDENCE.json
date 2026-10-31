@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "base_commit": "e1e8ebe32f17487c4c91d2044db845112a8365bb",
+  "scope": "bounded original methods and official pinned release audit; no execution",
+  "source_index": "source_comparison.json/source_objects",
+  "rules": [
+    {
+      "id": "P01",
+      "source": "paper",
+      "locator": "Davis et al. 2020, section 2 Methods and 2.2 Data processing",
+      "status": "documented_protocol",
+      "rule": "Complete raw assemblages rather than percentage-only or truncated inputs.",
+      "archive_specific_application_proven": false,
+      "limitations": "Protocol is not a complete per-pair measurement-status or denominator record."
+    },
+    {
+      "id": "G01",
+      "source": "official_release",
+      "paths": ["postgres/scripts/tables/GroupID.tsv", "postgres/scripts/makeFixedTables.py", "postgres/scripts/create_empd2.sql"],
+      "locators": ["GroupID.tsv header and relevant group rows", "makeFixedTables.py 113-124", "create_empd2.sql 209-217"],
+      "status": "field_provenance_verified",
+      "rule": "Parent ID and both group flags are stored and imported.",
+      "higher_groupid_recursive_aggregation_proven": false,
+      "limitations": "36 release groups versus 40 SQLite groups; shared flags/parents agree. No global recursive or denominator algorithm claimed."
+    },
+    {
+      "id": "D01",
+      "source": "official_release",
+      "paths": ["samples/AlbaSanchez_a1.tsv", "samples/Champvillair_a18.tsv", "samples/Barboni_a1000.tsv"],
+      "status": "three_witness_data_compatibility_verified",
+      "rule": "All 98 supplied percentages agree with 100*stored_count/sum(used_in_sum=1) within each printed half-unit.",
+      "candidate_denominators": {"AlbaSanchez_a1": 311, "Champvillair_a18": 731, "Barboni_a1000": 840},
+      "percent_values_flag_matches_presence_or_blank": true,
+      "percentage_blanks_checked": 10,
+      "count_tuples_equal_between_release_and_locked_sqlite": 108,
+      "original_measured_N_proven": false,
+      "global_algorithm_or_all_samples_proven": false,
+      "pseudocounts_derived_from_percentages": false
+    },
+    {
+      "id": "S01",
+      "source": "official_release",
+      "path": "postgres/scripts/import_into_empd2.py",
+      "locators": ["435-439 existing-sample exclusion and reading", "463-469 positive-input gate, rounding and insertion", "474-484 duplicate accumulation", "485-497 error handling"],
+      "status": "visible_new_sample_code_path_verified_not_executed",
+      "rule": "Only positive source values enter this new-sample insertion path; they are rounded. Existing samples are skipped.",
+      "stored_output_always_strictly_positive_proven": false,
+      "all_missing_archive_pairs_mean_measured_zero": false,
+      "limitations": "Source zero, missing/NaN and absent source lines need additional provenance; positive small values may round to zero."
+    },
+    {
+      "id": "V01",
+      "source": "official_release_and_locked_sqlite",
+      "locators": ["import_into_empd2.py 435-437,463-469", "samples/Champvillair_a18.tsv line 50", "SQLite p_counts[Champvillair_a18,693]"],
+      "status": "exact_archive_lineage_unresolved",
+      "rule": "The visible new-sample path would round 7.4; both witness sources preserve 7.4. Previously existing samples can be skipped.",
+      "code_never_used_claimed": false,
+      "code_as_complete_sqlite_reproduction_proven": false,
+      "limitations": "No creation/export history tying this precise script to the locked SQLite file."
+    },
+    {
+      "id": "C01",
+      "source": "paper",
+      "locator": "section 2 Methods, climate assignment paragraph",
+      "status": "source_method_read_reference_period_unverified",
+      "rule": "WorldClim2, nearest 30-arcsecond grid point.",
+      "period_explicit_in_read_section": false,
+      "WorldClim_2_1_or_CRU_label_assumed": false
+    }
+  ],
+  "denominator_roles": {
+    "N_original": "Original measured counting total/process: not established.",
+    "S_flag": "Sum over stored flag-1 source values: compatible with supplied percentages in three witnesses.",
+    "n_selected": "Prospective chosen conditional subset: no subset selected or approved."
+  },
+  "outputs_authorized": "new source documents and status/handoff only",
+  "code_executed": false,
+  "tests_run": false,
+  "new_matrix_or_cohort": false,
+  "zero_fill_or_rounding_applied": false,
+  "training_or_pilot_approved": false,
+  "W96_method_chain_closed": false
+}
