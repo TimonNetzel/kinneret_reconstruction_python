@@ -1,28 +1,53 @@
-# Kommunikation und Fortsetzung des Netzel-Projekts
+# Arbeitsregeln im Netzel-Projekt
 
-Vom Nutzer am 30.10.2026 gewünscht; aus PR #26/#27 übernommen.
+## Zuständigkeit und Schutzgrenzen
 
-- Vor fachlicher Weiterarbeit PR-/Merge-Stand und
-  [PROJECT_STATUS.md](docs/thesis_research/PROJECT_STATUS.md) prüfen.
-- Zu Beginn und nach Arbeitspaketen kurz auf Deutsch berichten:
-  **fertig / aktuell / als Nächstes**, mit Bezug zur taxonbasierten Multiproxy-App.
-- Statusdatei mit Ergebnis und PR-Verweis fortschreiben; begonnen, blockiert
-  und abgeschlossen unterscheiden. Fertige Analog-Baseline nicht als fertige
-  taxonbasierte Hauptmethode oder Fossilrekonstruktion bezeichnen.
-- Claude betreut CLI/App; Codex Kalibrierung, Quellen und unabhängige Prüfung.
-  Bestehende Baseline und Claudes Integrationsdateien unverändert lassen.
-- Keine stillen Quellenkorrekturen, automatischen Pilotfreigaben,
-  Autorennachrichten. Merges nur mit ausdrücklichem Nutzerauftrag; die
-  Zusammenführung von #18–#29 ist am 30.10.2026 ausdrücklich beauftragt.
-  Diese technische Zusammenführung ist keine fachliche Pilotfreigabe.
+- Claude betreut CLI/App; Codex Kalibrierung, Quellen und separate Prüfung.
+  Analog-Baseline und Claudes Integrationsdateien unverändert lassen.
+- Fertige Analog-Baseline, experimentelle Artenmodelle und fossile
+  Multiproxy-Rekonstruktion unterscheiden. Keine automatische Variantenübernahme,
+  Pollentyp-Zuordnung, Pilotfreigabe, stille Quellenkorrektur oder Autorennachricht.
+- Merges nur mit ausdrücklichem Auftrag für die betreffenden PRs. Ein früherer
+  Mergeauftrag ist keine dauerhafte Freigabe und keine wissenschaftliche Abnahme.
+- Keine neuen Modellentscheidungen anhand äußerer Testergebnisse: insbesondere
+  keine Auswahl von Gates, Blockgrößen, Architektur, Varianten oder Arten danach.
+  Bekannte Regionen nicht als vollständig ungesehene Bestätigung darstellen.
+  Bestätigende Bewertung benötigt vorher festgelegte neue unabhängige Evidenz.
+- Verbesserungen und Verschlechterungen aller vorgesehenen Varianten berichten;
+  Nichtschätzbarkeit, Ausfälle, Ausschlüsse und ungetestete Fälle vollständig
+  ausweisen. Fehlende Bänder niemals als Nullunsicherheit behandeln. Bedingte
+  Sensitivitätsbänder sind keine nominell validierten Konfidenzintervalle.
+- Wissenschaftliche Berichte, Quellenregister, Parameter und Resultate erhalten.
+  Änderungen daran erfordern ein eigenes fachlich begrenztes Arbeitspaket;
+  Referenzhashes nicht zur Anpassung an abweichende Ergebnisse ersetzen.
 
-Der Nutzer hat nach #27 die eigenständige Erstellung neuer Taxon-
-Transferfunktionen parallel zur offenen Chronologieprüfung beauftragt.
-Der Nutzer hat anschließend den Vergleich SMOTE + einfaches Netz nach seiner
-Dissertation beauftragt. Aktueller Einstieg:
-[CHAT_RESTART_SMOTE.md](docs/thesis_research/CHAT_RESTART_SMOTE.md).
-Nach der beauftragten Zusammenführung `main` verwenden. #28 bleibt am
-gesperrten Commit die wissenschaftliche Referenz für Daten und bisherige Modelle.
-Aktuelle gemeinsame Übergabe: [HANDOFF.md](docs/thesis_research/HANDOFF.md).
-Frühere getrennte Forschungsstände:
-[PR #27](https://github.com/TimonNetzel/kinneret_reconstruction_python/blob/5fd3bad46d5108e8986c054171fba66a05c26589/docs/thesis_research/CHAT_RESTART_VARIABLES.md).
+## Standardablauf je Arbeitspaket
+
+1. **Stand prüfen:** lokalen Status einschließlich ungesicherter/unversionierter
+   Dateien, Worktrees, verfügbare Branches und aktuelle relevante GitHub-PRs prüfen.
+   Remote-Heads und Mergezustand getrennt belegen; fehlenden API-Zugriff nicht als
+   Statusnachweis werten. Ungesicherte Arbeit erhalten, nichts blind zurücksetzen.
+   Basiscommit bewusst wählen und nennen. Bei gewünschter Isolation eigenes
+   Arbeitsverzeichnis/Worktree und eigenen Branch verwenden; in bereits isolierten
+   Cloud-Tasks ist ohne Nutzerauftrag kein zusätzlicher Worktree nötig.
+2. **Gezielt lesen:** [HANDOFF.md](docs/thesis_research/HANDOFF.md) für Einstieg
+   und Leseplan, [PROJECT_STATUS.md](docs/thesis_research/PROJECT_STATUS.md) für
+   belegten Stand. Danach nur die für das konkrete Paket notwendigen Berichte,
+   Designs und Quellen. Archive nur bei konkreter historischer Frage nachladen.
+3. **Begrenzt bearbeiten:** Ziel, erlaubte Änderungen, Eingänge und Abschlusskriterium
+   festhalten. Keine stillen fachlichen Erweiterungen. Vor neuen wissenschaftlichen
+   Fits Design, Datenrollen und Auswertungsregeln festlegen und sichern.
+4. **Angemessen prüfen:** bei Dokumentation Links, Aussagen, Referenzen, Hashabgleich
+   und Diffumfang prüfen; bei Code die betroffenen Tests. Große Läufe nur bei
+   fachlicher Notwendigkeit und entsprechendem Auftrag. Bestanden, fehlgeschlagen,
+   nicht schätzbar, übersprungen und nicht ausgeführt klar unterscheiden.
+5. **Sichern und übergeben:** Commit und eigenen PR erstellen, ohne Merge.
+   PROJECT_STATUS mit belegtem Ergebnis, Prüfungen, offen/blockiert/abgeschlossen
+   und PR-Verweis aktualisieren; HANDOFF mit genauem nächsten Auftrag und Leseplan.
+   Große Artefakte nur mit nachgewiesenem dauerhaften Speicherort als archiviert
+   bezeichnen; Hash und Reproduktionsbefehl allein sichern keine Dateibytes.
+
+Kurz auf Deutsch zu Beginn und nach Arbeitspaketen berichten: **fertig / aktuell /
+als Nächstes**. Gezielte Ausschnitte/Suchen, kompakte Werkzeugausgaben und keine
+vollständigen Datentabellen im Chat. Keine unnötigen Wiederholungstests oder
+Unteragenten; Delegation nur bei ausdrücklichem Auftrag.

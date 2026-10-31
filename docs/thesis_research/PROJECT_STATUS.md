@@ -1,124 +1,71 @@
-# Netzel-Projekt: kurzer Arbeitsstand
+# Netzel-Projekt: belegter aktueller Stand
 
-**Speicherprüfung 30.10.2026:** [Sicherungsnachweis der Chat-Arbeit](./CHAT_WORK_ARCHIVE_2026_10_30.md)
-mit Dateiinventar und festen Ergebniscommits für #31/#32. Code, Modelle,
-Parameter und Berichte liegen im Repository; vier große Laufausgaben sind bisher
-nur durch Hashes und Reproduktionsbefehle gesichert. Das vollständige Bytearchiv
-dieser vier Dateien bleibt offen. PRs weiterhin ungemergt.
+Standprüfung 31.10.2026. Ziel bleibt eine überprüfbare taxonbasierte
+Multiproxy-Klimarekonstruktion; kein fertiger fossiler Gesamtdurchlauf.
+Arbeitsregeln stehen ausschließlich in [AGENTS.md](../../AGENTS.md),
+der nächste Auftrag und Leseplan in [HANDOFF.md](./HANDOFF.md).
 
-Stand 30.10.2026. Vor Fortsetzung aktuellen PR-/Merge-Stand prüfen.
-Ziel: überprüfbare App für taxonbasierte Multiproxy-Klimarekonstruktionen
-europäischer Fundstellen, mit belegter Kalibrierung und Unsicherheiten.
+## Git- und PR-Stand
 
-| Bereich | Stand |
+| Stand | Nachweis am 31.10.2026 |
 | --- | --- |
-| Moderne Analog-Baseline #18 | Fertig; #18 auf main gemergt. Unveränderte Referenz f9acc16. |
-| Erste sieben Artenfunktionen #28 | Fertiger experimenteller Trainingsstand aus Meusel/BfN + WorldClim 2.1; feste Referenz. |
-| SMOTE + einfaches Netz #29 | **Berechnet und unabhängig geprüft:** sieben Arten, identische äußere räumliche Tests; deutlich bessere Balanced Accuracy, zugleich schlechtere rohe SMOTE-Wahrscheinlichkeiten im Brier. |
-| Historische 279 Funktionen | Nicht wiederhergestellt; keine bitgleiche historische R-/caret-Reproduktion. |
-| Räumliche Wahrscheinlichkeitskalibrierung #31 | **Berechnet und separat numerisch geprüft:** innere räumliche Kalibrierungsfolds, unabhängige äußere Bewertung je Fit; SMOTE-Brier verbessert, gegenüber rohem Netzensemble ohne SMOTE in 13/14 Fällen weiter schlechter. |
-| Bedingte Kalibrierungssensitivität #32 | **Berechnet und separat geprüft:** 200 räumliche Block-Replikate bei festen Netzen; Band für 22/28 Vollgebiets-Ensembles, 104/140 äußere Ensemble-Folds. Keine nominell validierte Deckung. |
-| Taxonverfahren insgesamt | Weitere Taxa, belegte Fossiltyp-Zuordnung, externe Bestätigung und Kalibrierungs-/Quellenunsicherheit offen. |
-| Monticchio-P1 | Weiter offen: physischer LGM90D→MON16-Crosswalk samt Korrelationsunsicherheit fehlt. |
-| Proben und Quellen aus #26/#27 | Unverändert: 28 numerische Kandidaten, 41 native Nichttreffer, 47 offene Herkunftsfragen. |
-| Fossilrekonstruktion / Multiproxy-App | Kein fertiger Gesamtdurchlauf, keine neue fossile Klimakurve und keine P2-Freigabe. Claude betreut CLI/App; Integration #19 in den gemeinsamen Stand übernommen. |
+| `main` / Integration #30 | Remote-Head `7f1826cffddc8893ba6354cd3cca3fa43954b9be`; #18–#29 erhalten |
+| [PR #31](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/31) | GitHub-Seite: OPEN; Head `9458011198c69368764b8698c966c0ac23cc381c`, Branch `codex/netzel-spatial-probability-calibration`, Ziel `main` |
+| [PR #32](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/32) | GitHub-Seite: OPEN; Head `9ee2f84e41a04fafe5af203e809deeaaf329dba3`, Branch `codex/netzel-calibration-block-uncertainty`, Ziel #31-Branch |
+| Vollständiger Forschungsstand | #32-Head enthält #31; gesperrter #32-Ergebniscommit `6d35bbfe06cf54572dba2cb439495a8556eddb4d`, danach nur Sicherungsdokumentation in `9ee2f84` |
+| Lokaler Ausgangspunkt | Checkout `work` bei `7f1826c`, sauber; keine ungesicherten Änderungen gefunden. Remote-Branches abgerufen; separater Worktree/Branch `codex/netzel-workflow-handoff` ab `9ee2f84` |
 
-**Aktueller Abschluss #32:** [Bedingte Kalibrierungssensitivität](./calibration_uncertainty_2026_10_30/README.md),
-[PR #32](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/32),
-Branch `codex/netzel-calibration-block-uncertainty`, abhängig von offenem #31 am
-festen Head `9458011`; PR-Ziel ist dessen Forschungsbranch. Kein Mergeauftrag.
-Vorabdesign `5a4a96f`, unverändert. 200 gepaarte geographische Block-Replikate,
-nur innere Original-Kalibrierungszellen neu gewichtet, Netze/Normierung/SMOTE fest.
-Äußere Labels nicht für Bänder oder Verfügbarkeitsauswahl verwendet.
+Abfrage über GitHub-PR-Seiten (eingebetteter Zustand OPEN) und `git ls-remote`
+für Branches/PR-Heads. REST und GraphQL waren bei der ersten Prüfung über den Proxy mit HTTP 403 gesperrt;
+das ist kein Beleg fehlender PRs. `main` enthält #31/#32 nach lokaler
+Abstammungsprüfung nicht. Kein Merge ausgeführt oder beauftragt.
 
-22/28 Vollgebiets-Ensembles und 104/140 äußere Ensemble-Folds mit bedingtem
-Sensitivitätsband; Abies in beiden Designs und Fagus 10° ohne Vollgebiets-Band.
-Gate 190/200 schätzbare Replikate unverändert; fehlende Bänder sind keine Nullbreite.
-95.876 Kalibrierungen / insgesamt 100.800 Mitglied×Replikat-Fälle, 1.589.440
-Zellzeilen, 2.174.335 Blockmultiplizitäten und alle 168 Tabellenzeilen separat
-geprüft. Zwei frische Endläufe: sieben bytegleiche Dateien, ohne Wiederherstellung.
-Vorige I/O-Befunde und exakte Hülleneckpunkt-Korrektur ausdrücklich dokumentiert.
-85 Repositorytests und sechs gezielte Tests bestanden; Browser-/Langtests ausgenommen.
+## Forschungsstand und Grenzen
 
-**Als Nächstes:** belegte Pollentyp-Zuordnung und weitere Arten/Areale.
-Vollständige Kalibrierungs-/Quellen-/Netzunsicherheit und Kreuztaxon-Kovarianz
-bleiben offen. Keine nominell validierten 95%-Konfidenzintervalle, unabhängige
-neue Region oder Fossilfreigabe. Monticchio-P1 und 28/41/47 unverändert.
-Aktuelle Fortsetzung: [CHAT_RESTART_UNCERTAINTY.md](./CHAT_RESTART_UNCERTAINTY.md).
-#31/#32 bleiben offen; Merges nur nach erneutem ausdrücklichem Auftrag.
+| Bereich | Belegter Stand / offene Grenze |
+| --- | --- |
+| Analog-Baseline #18, CLI/App #19 | Fertige Baseline, Referenz `f9acc16`; Integration über #30. Claude betreut CLI/App; beides unverändert. |
+| Quellen #20–#27 / Monticchio-P1 | 28 numerische Kandidaten, 41 native Nichttreffer, 47 Herkunftsfragen. Physischer LGM90D→MON16-Anschluss samt Korrelationsunsicherheit fehlt. 35 Plantago-Bilanzen und neun Scrophulariaceae-/Digitalis-Zahlengleichheiten sind kein Umcodierungsbeleg. [Quellenbedarf](./variable_provenance_2026_10_30/SOURCE_GAP.md) |
+| Artenfunktionen #28 | Sieben experimentelle Artenmodelle; feste Referenz `8f02794434f561f5b30228360247935f3c025cc8`. Historische 279 Funktionen nicht wiederhergestellt. [Bericht](./taxon_transfer_2026_10_30/README.md) |
+| SMOTE/Netze #29 | Balanced Accuracy 5°/10°: 71,64/69,20 % ohne gegen 90,41/89,74 % mit SMOTE (14/14 besser); Brier 0,03975/0,04438 gegen 0,07747/0,08245 (14/14 schlechter). Keine universelle Überlegenheit; keine fossile Wahrscheinlichkeitsfreigabe. [Bericht](./smote_nnet_2026_10_30/README.md) |
+| Kalibrierung #31 | Vorabdesign `afa0c8a`; drei räumliche Mitglieder je Fold, innen/außen 100-km-Puffer. SMOTE-Brier roh 0,07129/0,07699 → kalibriert 0,03995/0,04408 (14/14 besser); rohes Ensemble ohne SMOTE 0,03939/0,04321 in 13/14 Fällen besser. Ohne SMOTE Kalibrierung nur 3/14 besser, Mittel leicht schlechter. Vier Varianten vollständig berichtet, keine automatische Übernahme. Ensemblewerte nicht mit #29-Einzelfits gleichsetzen. [Bericht](./calibration_2026_10_30/README.md) |
+| Bedingte Sensitivität #32 | Vorabdesign `5a4a96f`; 200 gepaarte Block-Replikate, Netze/Normierung/SMOTE fest, nur innere Original-Kalibrierungszellen neu gewichtet. Band ab 190/200 schätzbaren Replikaten: 22/28 Vollgebiets-Ensembles, 104/140 äußere Folds. Abies beide Designs und Fagus 10° ohne Vollgebietsband; weitere äußere Lücken bei Picea/Taxus 10°. Fehlende Bänder sind keine Nullunsicherheit. [Bericht](./calibration_uncertainty_2026_10_30/README.md) |
 
-## Historischer Abschluss #31 vor der Sensitivitätsanalyse
+#32 ist bedingte Bootstrap-Sensitivität, kein nominell validiertes
+95%-Konfidenzintervall. Netz-, Karten-, Label-/Quellenunsicherheit,
+Kreuztaxon-Kovarianz und gemeinsame Beobachtungsmodelle bleiben offen.
+Belegte Pollentyp–Art-/Gattungszuordnung, weitere Taxa/Areale und neue unabhängige
+Bestätigung fehlen. Keine fossile Klimakurve oder P2-Freigabe. Äußere Scores
+werden nicht zur weiteren Modellwahl verwendet; bekannte Regionen sind keine
+vollständig ungesehene Bestätigung.
 
-**Abschluss #31:** [Kalibrierungsbericht](./calibration_2026_10_30/README.md),
-[PR #31](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/31),
-Branch `codex/netzel-spatial-probability-calibration`, Basis aktuelles main nach
-#30 (`7f1826c`). Design vor jedem Fit veröffentlicht in `afa0c8a` und unverändert.
-504 Netzfits / 1.512 Starts; 502 geschätzte und zwei vorab deklarierte Identitäts-
-Kalibratoren. 198.680 Labels, 397.360 Testzeilen und 2.279.093 synthetische
-Elternpaare separat geprüft. Kleinster innerer/äußerer Abstand 100,093 km.
+## Prüf- und Speicherstand
 
-Artenmittel Brier 5°/10°: SMOTE roh 0,07129/0,07699 → kalibriert
-0,03995/0,04408; Verbesserung in allen 14 Fällen. Rohes Ensemble ohne SMOTE
-0,03939/0,04321, besser als kalibriertes SMOTE in 13/14 Fällen. Ohne SMOTE
-verbessert Kalibrierung nur 3/14 Fälle und verschlechtert die Mittelwerte leicht.
-Vier Varianten vollständig berichtet; keine automatische Variantenübernahme.
-Verglichen werden dieselben drei Mitglieder je roh/kalibriert, keine direkten
-Einzelfit-Ergebnisse aus #29. Bereits untersuchte Regionen sind keine vollständig
-ungesehene Bestätigung; äußere #29/#31-Werte nicht zur Optimierung verwenden.
+Historische Prüfungen, **in diesem Dokumentationspaket nicht wiederholt**:
+#31: 504 Fits / 1.512 Starts, 502 Kalibratorlösungen plus zwei Identitäten;
+79 Repositorytests und fünf gezielte Tests dokumentiert. Elf Enddateien bytegleich
+nach dokumentierter Checkpoint-Wiederherstellung gegen vorhandenen Manifest-Hash;
+ein Lauf mit unvollständiger Gzip-Spur verworfen. #32: 100.800 Mitglied×Replikat-
+Fälle (95.876 geschätzt, 3.724 unzureichende Klassenunterstützung, 1.200 wegen
+gesperrtem Grundensemble), 1.589.440 Zellzeilen und 168 Zusammenfassungen geprüft;
+85 Repositorytests plus sechs gezielte Tests dokumentiert. Sieben Enddateien zweier
+frischer Läufe bytegleich, keine Wiederherstellung. Qhull-Eckpunktkorrektur nur im
+neuen Evaluator; #31-Quellen/Parameter unverändert. Je zwei Browser-/Langtests
+nicht ausgeführt. Dies ist kein zweiter menschlicher Review.
+Details und genaue Nachweise bleiben in den Berichten und im
+[historischen Archiv](./CHAT_WORK_ARCHIVE_2026_10_30.md).
 
-Elf Enddateien zweier vollständiger Trainingsausführungen bytegleich nach
-explizit dokumentierter Wiederherstellung des letzten Checkpoint-Eintrags aus
-der vollständigen Modellkopie desselben Laufs gegen den vorher gespeicherten
-Manifest-Hash. Ein Lauf mit unvollständiger Gzip-Spur wurde verworfen;
-[Ausführungshinweise](./calibration_2026_10_30/execution_notes.json).
-79 Repositorytests und fünf neue Forschungstests bestanden; zwei Browser-/zwei
-Langtests nicht ausgeführt. Reproduktion ohne alte Zwischendateien.
+Code, Modelle und kompakte Ergebnisse sind in Git gesichert; für vier große
+Ausgaben fehlt ein belegtes dauerhaftes Bytearchiv. [Artefaktverzeichnis](./ARTIFACTS.md)
+enthält Hash, Größe, Erzeugungsweg, Umgebung und ausdrücklich die Speicherlücke.
+Keine großen Läufe in diesem Paket.
 
-**Als Nächstes:** belegte Pollentyp-Zuordnung, weitere Taxa und Kalibrierungs-/
-Quellenunsicherheit bearbeiten. Kein fossiler Gesamtdurchlauf oder Pilotfreigabe.
-Claude behält CLI/App. Monticchio-P1 und 28/41/47 bleiben unverändert offen.
-#31 bleibt offen und wird nur auf erneuten ausdrücklichen Auftrag gemergt.
-Aktuelle Fortsetzung: [CHAT_RESTART_CALIBRATION.md](./CHAT_RESTART_CALIBRATION.md).
-
-## Historischer Stand nach #29, vor Kalibrierung
-
-**Fertig:** [SMOTE-/Netzvergleich](./smote_nnet_2026_10_30/README.md),
-[PR #29](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/29),
-ursprünglicher Ergebnisbranch `codex/netzel-smote-nnet-comparison`.
-Die Ergebnisse aus #18–#29 werden auf ausdrücklichen Nutzerauftrag gemeinsam
-auf `main` gesichert ([Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)); [gemeinsame Übergabe](./HANDOFF.md) und
-[Integrationsnachweis](./consolidation_2026_10_30/README.md). Vorabdesign veröffentlicht
-in `d47129c6b8be8bd5e73701f6137ffb196dab9d91`, bevor neuronale Fits begannen.
-
-Artenmittel der Balanced Accuracy bei Schwelle 0,5: ohne SMOTE 71,64/69,20 %,
-mit SMOTE 90,41/89,74 % (5°/10°-Blöcke, 100-km-Puffer). Gewinn in allen 14
-Art×Block-Fällen. Flächengewichteter Brier dagegen im Artenmittel 0,03975/0,04438
-ohne SMOTE und 0,07747/0,08245 mit SMOTE: Verschlechterung in allen 14 Fällen.
-Die vorab vorgesehene Prior-Odds-Diagnose hilft, garantiert aber keine Kalibrierung
-und schlägt das Netz ohne SMOTE im Brier nur in zwei von 14 Fällen.
-
-14 vollständige neue Artennetze und alle Foldparameter gespeichert.
-198.680 Art-Zell-Labels, 397.360 Testzeilen mit 1.589.440 Wahrscheinlichkeiten,
-1.274.548 synthetische Elternpaare und sämtliche 462 Optimierungsstarts separat
-geprüft. Zwei vollständige Läufe in allen zehn Ergebnisdateien bytegleich.
-Sechs neue Kerntests bestanden. Gemeinsame GIS-/Numerikbibliotheken benannt.
-
-**Aktuell:** Die Klassifikationsverbesserung aus der Dissertation wurde auf den
-neuen sieben Arten nachgebildet. Experimentelle Arealindikatoren sind noch
-keine validierten fossilen Auftretenswahrscheinlichkeiten. Keine automatische
-Variantenübernahme oder Pollentyp-Zuordnung. Die #28-Referenz wird ausdrücklich
-am gesperrten Commit `8f02794434f561f5b30228360247935f3c025cc8` bezogen; die ursprünglichen getrennten
-PR-Branches enthielten nicht automatisch alle Vorarbeiten. Der gemeinsame
-Integrationsstand enthält jetzt alle zwölf PR-Historien.
-
-**Als Nächstes:** neue trainingsinterne Wahrscheinlichkeitskalibrierung mit inneren
-räumlichen Teilungen und unabhängiger äußerer Bewertung vorab festlegen; weitere
-Arten/Areale und eine belegte Typ–Art-/Gattungs-Zuordnung bearbeiten. Äußere
-Testergebnisse dieses PR nicht zur weiteren Optimierung verwenden. Moderne
-Kalibrierung kann parallel zur weiterhin offenen Monticchio-Quellenfrage laufen.
-
-Die frühere Merge-Sperre wurde für die Zusammenführung #18–#29 durch den
-aktuellen ausdrücklichen Nutzerauftrag aufgehoben. Das ändert keine fachlichen
-Freigaben: keine stillen Quellenkorrekturen, Pilotfreigaben oder Autorennachrichten.
-Wissenschaftliche Berichte, Quellenregister, Modellparameter und Ergebniswerte
-werden unverändert erhalten. Der gemeinsame Einstieg ist [HANDOFF.md](./HANDOFF.md).
+Aktuelles Arbeitspaket: Einstiegsdokumentation vereinfacht, vollständige frühere
+Texte im [Einstiegsarchiv](./ENTRYPOINT_ARCHIVE_2026_10_31.md) erhalten;
+Links, Referenzen, Artefaktnachweise und reiner Dokumentationsumfang geprüft.
+PR-Sicherung: [PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33),
+Branch `codex/netzel-workflow-handoff` gegen #32-Branch. Nach Veröffentlichung
+der Netzwerkeinstellung funktioniert die GitHub-API; #33 wurde am 31.10.2026
+erstellt, ohne Merge.
+Nächste Forschung ist noch nicht begonnen: begrenztes Quellenpaket zur
+Pollentyp–Taxon-Zuordnung gemäß [HANDOFF](./HANDOFF.md).
