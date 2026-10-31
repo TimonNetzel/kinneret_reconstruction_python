@@ -87,8 +87,38 @@ und Artbrücke getrennt. Monticchio-P1 und 28/41/47 unverändert.
 
 Sicherung als [PR #34](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/34)
 auf `codex/netzel-pollen-taxon-evidence`, Basis `6f35df1` aus offenem #33;
-PR-Ziel ist der #33-Branch, kein Merge. Netzwerkentwurf für doi.pangaea.de und
-store.pangaea.de additiv gespeichert; noch nicht angewendet oder veröffentlicht.
-Als Nächstes Originaldefinitionen und vollständige EMPD2-Namensketten frisch
-hashprüfen, danach gezielte morphologische Belege, gemäß
-[SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md).
+PR-Ziel ist der #33-Branch, kein Merge. Der damalige Netzwerkentwurf wurde
+inzwischen vom Nutzer veröffentlicht; die Originalprüfung folgt unten.
+
+## Originaldefinitionen und EMPD2-Namensketten, 31.10.2026
+
+[Originalprüfung](./original_pollen_names_2026_10_31/README.md) abgeschlossen:
+EMPD2.sqlite3 und Monticchio PANGAEA.739452 frisch bezogen, beide bestehenden
+Hashes und Bytezahlen identisch. Sieben Fossildefinitionen und sieben direkte
+Artnamenslinks gesichert. Monticchio-Zeile 9 bezeichnet Parameterkommentare
+explizit als akzeptierte EPD-Namen; auch Taxus baccata ist damit kein für sich
+hinreichender Beleg einer ursprünglichen Artbestimmung.
+
+Alle 5.230 p_vars-Zeilen durchsucht; 128 lexikalische Treffer über sieben
+Abfragen, mit Referenzzielen 135 Abfrage×Zeilen / 120 unterschiedliche Zeilen.
+Alle ausgewählten acc_var_-Ketten schließen. Vollständigkeit gilt nur für die
+deklarierte Namenssuche, nicht alle botanischen Synonyme oder Aggregatpools.
+Neu originalbelegt u. a. Betula pendula 1731→128 Betula pubescens-type und
+Taxus 198→111 gegenüber Taxus 3433→3433. Datenbankrelationen sind keine hier
+bestätigten botanischen Synonyme. Vier Artnamenslinks enden auf dem bisherigen
+Katalogkandidaten, drei auf anderen IDs; keine neue Artmodell-Zuordnung genehmigt.
+
+Separater direkter Quellenprüfer: zwei Originalhashes, drei Repository-
+Hash-/Basisvergleiche, sieben Parameterdefinitionen, alle 135 Kettenzeilen und
+sieben Artnamenslinks bestanden. Kein unabhängiger menschlicher/palynologischer
+Review behauptet. Originalzählungen nicht ausgewertet, keine Modell-/Langläufe.
+Bestehende Modelle, Quellregister, Baseline und CLI/App unverändert.
+
+Gesichert als [PR #35](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/35),
+Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34), gegen den
+#34-Branch; offen und ohne Merge erstellt. Als Nächstes Methoden von
+Watts, Allen & Huntley (1996) und tatsächlich verwendete Bestimmungsreferenzen
+prüfen; je Art diagnostische Typgrenzen und verbleibende Lücken dokumentieren.
+[Präziser nächster Auftrag](./original_pollen_names_2026_10_31/SOURCE_GAP.md).
+2025-Matrix/S1 nicht frisch geprüft; Monticchio-P1, 28/41/47 und vier große
+Bytearchivlücken unverändert.

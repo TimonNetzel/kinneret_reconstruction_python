@@ -1,0 +1,23 @@
+{
+  "result": "passed",
+  "scope": "metadata_and_database_name_links_only",
+  "source_hashes_checked": 2,
+  "repository_input_hash_and_base_checks": 3,
+  "dictionary_rows_scanned": 5230,
+  "fossil_definitions_checked": 7,
+  "dictionary_chain_rows_checked": 135,
+  "unique_dictionary_rows_checked": 120,
+  "species_name_links_checked": 7,
+  "lexical_seed_rows_across_queries": 128,
+  "unclosed_selected_chains": 0,
+  "new_species_mappings_approved": 0,
+  "models_fitted": 0,
+  "palynological_identification_review": false,
+  "outputs_sha256": {
+    "empd_name_chains.csv": "17a474b3fa114ce2b64711c46cbcb2b0e9b4d56a7a6ca14ab7cc5dab513dc325",
+    "manifest.json": "8d566c39fab3ec3f870965271c04d9fd870cc2f4bc533c5f45ffaec4b09f6bc7",
+    "monticchio_definitions.csv": "a58b0bc6a7106943f40cad3356d404cff4cf0a323050b1399103356b6c0fbda1",
+    "species_name_links.csv": "da3531bad8faac699db9c747634f7f54033569312045a755d66454e90b20d112"
+  },
+  "audit_code_sha256": "5dd31df819f995449188831292d875995e373c05329b1931ed361855f3500f6d"
+}

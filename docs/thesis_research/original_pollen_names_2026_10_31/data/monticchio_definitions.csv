@@ -1,0 +1,8 @@
+model_id,fossil_column,original_parameter,abbreviation,archive_comment,metadata_line,data_header_line,data_column_1based,archive_context_line,archive_comment_role,species_identification_protocol_in_parameter,approved_species_mapping
+abies_alba,Abi [#],Abies,Abi,Abies,11,149,2,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+betula_pendula,Bet [#],Betula,Bet,Betula,19,149,10,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+corylus_avellana,Cor [#],Corylus,Cor,Corylus,40,149,31,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+fagus_sylvatica,Fag [#],Fagus,Fag,Fagus,50,149,41,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+picea_abies,Pic [#],Picea,Pic,Picea,85,149,76,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+taxus_baccata,Tax [#],Taxus,Tax,Taxus baccata,115,149,106,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
+tilia_cordata,Til [#],Tilia,Til,Tilia,117,149,108,9,accepted_EPD_name_not_proven_original_identification,not_stated,false
