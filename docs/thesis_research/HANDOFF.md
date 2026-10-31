@@ -9,29 +9,35 @@
    Am 31.10.2026 sind beide PRs offen, `main` enthält sie nicht. Der [Dokumentations-PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33)
    (`codex/netzel-workflow-handoff`) baut darauf auf; Ergebnisse daraus nicht nochmals
    nach main übertragen oder als schon gemergt behandeln.
-3. Für den folgenden Quellenauftrag nur die fachlichen Grenzen in
-   [Fortsetzung nach #32](./CHAT_RESTART_UNCERTAINTY.md), Abschnitt
-   „Aussagegrenzen und als Nächstes“, und den
-   [#28-Bericht](./taxon_transfer_2026_10_30/README.md) gezielt lesen.
-   Für Zuordnungsregeln anschließend die betroffenen Einträge in
-   [Taxonentscheidungen](./taxon_decisions_2026_10_29/README.md) und
-   [Variablenprovenienz](./variable_provenance_2026_10_30/README.md) nachladen.
+3. Aktuell ist die [Sieben-Arten-Inventur](./pollen_taxon_evidence_2026_10_31/README.md)
+   abgeschlossen; die Originalprüfung und Artbrücke sind offen. Dafür nur
+   [SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md) und die
+   betroffenen Zeilen von inventory.csv / sources.json desselben Ordners lesen.
+   Inventurbranch: `codex/netzel-pollen-taxon-evidence` ab `6f35df1` (#33),
+   zusätzlich zum vollständigen Forschungsstand. Kein Merge beauftragt.
 
-## Nächster Forschungsauftrag: belegte Pollentyp–Taxon-Zuordnung
+## Nächster Forschungsauftrag: Original-Namensketten prüfen
 
-Ein begrenztes Quellenpaket für die sieben bereits modellierten botanischen Arten
-anlegen: vorhandene Pollentyp-/Art-/Gattungsbezüge zunächst inventarisieren,
-Originalbelege mit Fundstelle und Herkunft nachweisen und belegte, mehrdeutige und
-fehlende Zuordnungen getrennt ausweisen. Keine automatische Verbindung einer
-Artfunktion mit Gattungspollen. Fehlende Belege als präzise Quellenanforderung
-sichern. Weitere Taxa/Areale erst nach dieser Bestandsaufnahme als eigenes Paket
-abgrenzen; keine Auswahl nach äußeren Scores.
+Frisch bezogene Monticchio-Parameterdefinitionen (PANGAEA.739452) und die
+EMPD2-p_vars-Namensketten (PANGAEA.909130) anhand der bestehenden Hashes prüfen:
+für alle sieben Modellarten Originalnamen/-codes, akzeptierte Namen/-IDs,
+Untertypen und Bestimmungsnotizen mit exakter Fundstelle sichern. Die sieben
+Katalogkandidaten sind keine vollständigen Gattungspools. Taxus besonders als
+Namens-vs.-Bestimmungsfrage prüfen, ohne eine Artzuordnung vorwegzunehmen.
 
-Abschlusskriterium: prüfbare Zuordnungstabelle und Quellen-/Lückenbericht mit
-expliziten nicht zuordenbaren Fällen, gezielter Prüfung und eigenem PR. In diesem
-Quellenpaket keine neuen Fits, Änderung der sieben Modelle, fossile Klimakurve,
-Pilotfreigabe oder CLI/App-Integration. Claude behält CLI/App; Analog-Baseline
-bleibt unverändert. Die Forschungsarbeit wird erst im anschließenden Paket begonnen.
+Der aktuelle Zugriff auf doi.pangaea.de und store.pangaea.de wird vom Proxy
+mit CONNECT HTTP 403 abgewiesen. Keine alten temporären Rohdateien voraussetzen.
+Nach verfügbarem Zugriff die betroffenen Operationen neu prüfen, keine
+Referenzhashes ersetzen. Anschließend gezielte palynologische Originalbelege
+zu Art-/Typgrenzen recherchieren; vollständige Anforderungen im SOURCE_GAP.
+
+Abschlusskriterium: prüfbare Original-Namensketten und verbleibende Beleglücken
+je Art, eigener PR, keine automatische Verbindung einer Artfunktion mit
+Gattungspollen. Keine neuen Fits, Modellwahl anhand äußerer Scores,
+Fossilrekonstruktion, Pilotfreigabe oder CLI/App-Integration. Claude behält
+CLI/App; Analog-Baseline bleibt unverändert. Weitere Taxa/Areale erst als
+separates Paket abgrenzen. Die historische Fortsetzung nach #32 nur bei Fragen
+zu den Kalibrierungs-/Unsicherheitsgrenzen nachladen.
 
 ## Nur bei konkretem Bedarf weiterlesen
 

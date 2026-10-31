@@ -1,0 +1,250 @@
+{
+  "checked_on": "2026-10-31",
+  "base_commit": "6f35df1cb751a2e516e75b94c1cb3bcb05050a9f",
+  "scope": "repository_evidence_inventory_not_primary_reanalysis",
+  "inputs": [
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "sha256": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071"
+    },
+    {
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/sources.json",
+      "sha256": "db63d65a9871e441889d1bc87833dde34921935f740c6677b4a0651034ea20f6"
+    },
+    {
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "sha256": "dde5dddd0e90dae24efb6104b200902ebde3e6b2edd0bda678377bf959146a91"
+    },
+    {
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/provenance.json",
+      "sha256": "a3dbdb96089632eb3c6408a951574708bcbbd5a87ea8b34a2d1030bc711cc8e5"
+    },
+    {
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/source_evidence.json",
+      "sha256": "c5455c7ffa0bd658086e8442b46e857c42b47576a149a30f37809ac890d3f5da"
+    },
+    {
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "sha256": "cf6ce1ccdcb91e06c2e4834f4049427e664a1b52d98017506824996ca32a6029"
+    },
+    {
+      "path": "docs/thesis_research/modern2025_2026_10_29/shared_features.json",
+      "sha256": "a2a85217c2918a503dd063d025730d496ec436be0a012c7f1bef802e666f5def"
+    },
+    {
+      "path": "docs/thesis_research/modern2025_2026_10_29/sources_2025.json",
+      "sha256": "142805c858db35d4f1a541a8352b5780c67a3038803fd17f0ab384d4c583fcf2"
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/original_variable_definitions.csv",
+      "sha256": "5fe4015bfa9ebf54b0d137e9c9209c5f57df169ffc5dbbe48d950425dd7cd1bd"
+    },
+    {
+      "path": "docs/thesis_research/variable_provenance_2026_10_30/manifest.json",
+      "sha256": "442840867bd0343f28f5ac41482ea31e4397dcb35bf9fb76f8c64e7acf82da5b"
+    },
+    {
+      "path": "docs/thesis_research/source_audit_2026_10_29/sources.json",
+      "sha256": "75474154d72899054860fc55f1ac8dd934c001c4dbe32a41bd0602e82f1124af"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "abies_alba:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/0",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "abies_alba:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:2",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "abies_alba:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:2",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "betula_pendula:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/1",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "betula_pendula:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:10",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "betula_pendula:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:7",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "corylus_avellana:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/2",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "corylus_avellana:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:31",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "corylus_avellana:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:14",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "fagus_sylvatica:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/3",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "fagus_sylvatica:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:41",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "fagus_sylvatica:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:17",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "picea_abies:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/4",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "picea_abies:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:76",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "picea_abies:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:24",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "taxus_baccata:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/5",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "taxus_baccata:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:106",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "taxus_baccata:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:33",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "tilia_cordata:model",
+      "path": "docs/thesis_research/taxon_transfer_2026_10_30/config.json",
+      "locator": "/taxa/6",
+      "claim_scope": "botanical_model_target",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "tilia_cordata:fossil",
+      "path": "docs/thesis_research/taxon_decisions_2026_10_29/fossil_decisions.csv",
+      "locator": "line:108",
+      "claim_scope": "archived_fossil_label_and_catalogue_candidate",
+      "primary_bytes_retrieved_now": false
+    },
+    {
+      "evidence_id": "tilia_cordata:modern",
+      "path": "docs/thesis_research/modern2025_2026_10_29/feature_evidence.csv",
+      "locator": "line:35",
+      "claim_scope": "published_grouping_as_retained_in_repository",
+      "primary_bytes_retrieved_now": false
+    }
+  ],
+  "registered_primary_sources": [
+    {
+      "source_id": "empd2",
+      "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+      "doi": "10.1594/PANGAEA.909130",
+      "sha256": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+      "bytes": 21327872,
+      "license": "CC-BY-4.0",
+      "hash_status": "historical_registry_only_not_rehashed_now",
+      "access_check_on": "2026-10-31",
+      "access_result": "proxy_CONNECT_HTTP_403",
+      "required_content": "p_vars_original_and_accepted_codes_names_and_notes"
+    },
+    {
+      "source_id": "monticchio_739452",
+      "url": "https://doi.pangaea.de/10.1594/PANGAEA.739452?format=textfile",
+      "doi": "10.1594/PANGAEA.739452",
+      "sha256": "46ab6cea3a636d1a25b8c15f4b9b79a94c8fd1bd41f2943ae5c8941f9050a4de",
+      "bytes": 86174,
+      "license": "CC-BY-NC-3.0",
+      "hash_status": "historical_registry_only_not_rehashed_now",
+      "access_check_on": "2026-10-31",
+      "access_result": "proxy_CONNECT_HTTP_403",
+      "required_content": "parameter_names_and_archive_comments"
+    },
+    {
+      "source_id": "empd2_ready2025",
+      "url": "https://download.pangaea.de/reference/130942/attachments/EMPD2_90taxa_7634sites.xlsx",
+      "doi": "10.1594/PANGAEA.973997",
+      "sha256": "dc0022303be38ada3aaeed87aaae9fe6fe57df9d718fe8dff57b9874fd9f730b",
+      "bytes": 38526116,
+      "license": "CC-BY-4.0",
+      "hash_status": "historical_registry_only_not_rehashed_now",
+      "access_result": "not_requested_this_package",
+      "required_content": "final_counts_sheet_headers"
+    },
+    {
+      "source_id": "mmc1",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12163141/supplementaryFiles",
+      "doi": "10.1016/j.dib.2025.111657",
+      "sha256": "71972d07734fe6f33166b7d2c290bb628639d1bc9735c7e62df17852ccc44188",
+      "bytes": 102298,
+      "license": "CC-BY-NC-ND-4.0",
+      "hash_status": "historical_registry_only_not_rehashed_now",
+      "access_result": "not_requested_this_package",
+      "required_content": "Supplement_S1_original_to_group_rows",
+      "container_sha256": "8485fa01ae8e773650d2c98f321fa801771915ae0b0c7163bf8718ebe9f72d77",
+      "container_bytes": 172477
+    }
+  ]
+}

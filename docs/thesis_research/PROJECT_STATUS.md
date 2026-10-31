@@ -67,5 +67,26 @@ PR-Sicherung: [PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_py
 Branch `codex/netzel-workflow-handoff` gegen #32-Branch. Nach Veröffentlichung
 der Netzwerkeinstellung funktioniert die GitHub-API; #33 wurde am 31.10.2026
 erstellt, ohne Merge.
-Nächste Forschung ist noch nicht begonnen: begrenztes Quellenpaket zur
-Pollentyp–Taxon-Zuordnung gemäß [HANDOFF](./HANDOFF.md).
+
+## Quellenpaket Pollentyp–Taxon, 31.10.2026
+
+[Sieben-Arten-Inventur](./pollen_taxon_evidence_2026_10_31/README.md) abgeschlossen:
+7/7 Namensbezüge mit 21 Fundstellen und elf gesperrten Repository-Eingängen.
+Sechs Fossilkommentare bleiben auf Gattungsebene; bei Taxus steht der Artname
+T. baccata im Kommentar. Dieser Namensbeleg ist keine hier bestätigte
+morphologische Artbestimmung. Keine der sieben Artmodell-Zuordnungen neu
+freigegeben, keine Counts/Gruppen/Modelle oder CLI/App geändert.
+
+Prüfung: sieben übertragene Datensätze, 21 Locator, elf Hash-/Basiscommit-
+Vergleiche und vier historische Originalquellenregistrierungen bestanden;
+Originaldateien nicht erneut gelesen oder gehasht. Monticchio/EMPD2-Downloads
+scheitern am Proxy (CONNECT HTTP 403 für doi.pangaea.de / store.pangaea.de).
+Die 2025-Originale wurden nicht angefordert. Keine neuen morphologischen
+Primärbelege behauptet; abgeschlossene Inventur von offener Originalprüfung
+und Artbrücke getrennt. Monticchio-P1 und 28/41/47 unverändert.
+
+Sicherung auf eigenem Branch `codex/netzel-pollen-taxon-evidence`, Basis
+`6f35df1` aus offenem #33; eigener PR gegen #33-Branch vorgesehen, kein Merge.
+Als Nächstes Originaldefinitionen und vollständige EMPD2-Namensketten frisch
+hashprüfen, danach gezielte morphologische Belege, gemäß
+[SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md).

@@ -1,0 +1,23 @@
+{
+  "result": "passed",
+  "scope": "repository_evidence_inventory_only",
+  "base_commit": "6f35df1cb751a2e516e75b94c1cb3bcb05050a9f",
+  "repository_inputs_hash_and_base_checked": 11,
+  "model_targets_checked": 7,
+  "evidence_locators_checked": 21,
+  "fossil_genus_labels": 6,
+  "fossil_species_name_comments": 1,
+  "new_species_mappings_approved": 0,
+  "registered_primary_sources_metadata_checked": 4,
+  "original_files_retrieved_or_rehashed": 0,
+  "models_fitted": 0,
+  "primary_access_limit": "CONNECT HTTP 403 for doi.pangaea.de and store.pangaea.de",
+  "independent_palynological_review": false,
+  "package_sha256": {
+    "README.md": "f35fbe298483d8cfa52ee611a70a78e069fa805dd2146c07b82a2774e86fa601",
+    "SOURCE_GAP.md": "778f1ea21ba0608195fb2714cb81c273a0491d00af9fd15d159b4db4cf123e0d",
+    "inventory.csv": "d3a0941d88079b9f4039c1fbdc695f4754f075e7b6fbd82f9306e917b706a76e",
+    "sources.json": "e5e38eb5531742296e40c70fd7d65d837d9d3975712a9510f40df7dd315433d7",
+    "verify.py": "06352638effb5de66ca51d1f424558a639ea0c58f5c7a9280dcf4199f8f88903"
+  }
+}
