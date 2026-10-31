@@ -17,7 +17,49 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: EMPD2-Counts-Entscheidungsvorlage, 31.10.2026
+## Aktueller Paketabschluss: Prozent-Indikatoridee geprüft, 31.10.2026
+
+Vom Nutzer beauftragter Abgleich mit Dissertation und Projektstand samt
+Bewertung/Verbesserung **als Konzeptpapier abgeschlossen**:
+[CONCEPT_REVIEW](./percentage_indicator_review_2026_10_31/CONCEPT_REVIEW.md).
+Originalstellen aus Dissertation §2.3/2.4 und §3.2.2 lesend mit dem frühen
+Multiproxy-Plan sowie vorhandenen T1-/Counts-/Artenfunktionsdesigns verglichen.
+Die Architektur ist anschlussfähig; Prozentanteile, Indikator-Auswahlgewichte
+und kartiertes Artenvorkommen haben verschiedene Wahrscheinlichkeitsrollen.
+Abdeckung nach Taxonauswahl erhalten; Prozent-only ersetzt kein originales N
+und benötigt eine eigene Evidenzstärke-/Unsicherheitsdefinition.
+
+Ein gemeinsamer Klimazustand mit explizitem prozentgewichtetem Indikatorscore
+wird als nächster schriftlicher Entwurf empfohlen, kein realer Posterior oder
+neue Hauptmethode beschlossen. Mischung und Klimamittel sind andere Aussageziele.
+Chronologie über ganze konsistente Kurven integrieren, geglättete Altersstufen
+nicht unabhängig zählen. Zusätzliche Proxys über Beobachtungsmodelle mit
+erklärtem Varianzanteil/Autokorrelation/Chronologie anbinden; keine nachträgliche
+R²-Anpassung, priornahe Stichprobenauswahl oder künstliche Bandverengung.
+
+Basis `e6a1dbe3611b636edfe3f29d9e8ee5b785eb8527` aus PR #45; Worktree
+`/workspace/netzel-percentage-review`, Branch `codex/netzel-percentage-indicator-review`.
+[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46)
+gegen den #45-Branch, offen/ungemergt. Inhaltscommit
+`4455eb01040fb2570c2c36451392929cd0ac6fad`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
+Quellenstellen, Verweise und mathematische Rollen geprüft; 721 bestehende
+Git-Blobs außerhalb Status/Übergabe bytegleich, Drei-Dateien-Diff geprüft.
+Beim Einstieg #45 offen/ungemergt/mergefähig, PR-CI Run 41198477399 erfolgreich;
+main `7f1826c`, sieben vorherige Worktrees sauber. Nur neues Konzeptpapier und
+Status/Übergabe. Keine neuen Quellen-/Datenabfragen, Auswahl, Bereinigung,
+Matrix/Kohorte, Projektcode-/Test-/Fit-/Score-/Simulations-/Kernläufe.
+Bestehende Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/
+Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten/Kontakte/Merges;
+EMPD2-Archivkette, W96 und reale Gates bleiben offen.
+
+**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** abstraktes
+Vorabdesign für den prozentgewichteten Indikatorscore einschließlich kleinem
+späteren synthetischen Prüfplan; keine Implementierung/Ausführung oder reale
+Datenwahl. [Umfang und Leseplan](./HANDOFF.md). Der neue Konzeptauftrag
+konkretisiert einen möglichen Weg B; keine rückwirkende A/B-Wahl behauptet.
+
+## Vorheriger Paketabschluss: EMPD2-Counts-Entscheidungsvorlage, 31.10.2026
 
 Nach Nutzer-OK **ausschließlich schriftlich abgeschlossen**:
 [COUNTS_DECISION_BRIEF](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
@@ -46,7 +88,7 @@ oder Kernläufe. SQLite nur gehasht, nicht geöffnet. Bestehende Designs/Modelle
 Resultate/Verträge/Register/Importer/Flags/Counts/Gruppen, Baseline und CLI/App
 unverändert. Keine Unteragenten/Autorennachrichten/Merges; W96 und reale Gates offen.
 
-**Genau ein Folgeauftrag vorbereitet, benötigt ausdrückliche Wahl A/B:**
+**Damals vorbereitet, durch den neuen Konzeptauftrag als nächster Einstieg ersetzt:**
 die gewählte Option in COUNTS_DECISION_RECORD dokumentieren und ihren weiteren
 Arbeitsumfang begrenzen; keine Umsetzung oder reale Freigabe.
 [Erforderlicher Eingang, Leseplan und Abschluss](./HANDOFF.md).
