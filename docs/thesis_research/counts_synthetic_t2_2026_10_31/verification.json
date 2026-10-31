@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "posteriors_checked": 52,
+  "states_per_posterior": 441,
+  "datasets_recreated": 25,
+  "explicit_non_estimable_cases": 2,
+  "maximum_mass_absolute_error": 1.2628786905111156e-15,
+  "maximum_mean_absolute_error": 7.216449660063518e-16,
+  "pmf_enumerations": [
+    {
+      "truth": [
+        0,
+        0
+      ],
+      "N": 0,
+      "model": "base",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        0,
+        0
+      ],
+      "N": 0,
+      "model": "sample_shared_mixture",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        0,
+        0
+      ],
+      "N": 8,
+      "model": "base",
+      "vectors": 495,
+      "sum": 1.0000000000000004
+    },
+    {
+      "truth": [
+        0,
+        0
+      ],
+      "N": 8,
+      "model": "sample_shared_mixture",
+      "vectors": 495,
+      "sum": 0.9999999999999984
+    },
+    {
+      "truth": [
+        -0.5,
+        0.5
+      ],
+      "N": 0,
+      "model": "base",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        -0.5,
+        0.5
+      ],
+      "N": 0,
+      "model": "sample_shared_mixture",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        -0.5,
+        0.5
+      ],
+      "N": 8,
+      "model": "base",
+      "vectors": 495,
+      "sum": 0.9999999999999999
+    },
+    {
+      "truth": [
+        -0.5,
+        0.5
+      ],
+      "N": 8,
+      "model": "sample_shared_mixture",
+      "vectors": 495,
+      "sum": 1.0000000000000004
+    },
+    {
+      "truth": [
+        0.5,
+        -0.5
+      ],
+      "N": 0,
+      "model": "base",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        0.5,
+        -0.5
+      ],
+      "N": 0,
+      "model": "sample_shared_mixture",
+      "vectors": 1,
+      "sum": 1.0
+    },
+    {
+      "truth": [
+        0.5,
+        -0.5
+      ],
+      "N": 8,
+      "model": "base",
+      "vectors": 495,
+      "sum": 0.9999999999999993
+    },
+    {
+      "truth": [
+        0.5,
+        -0.5
+      ],
+      "N": 8,
+      "model": "sample_shared_mixture",
+      "vectors": 495,
+      "sum": 1.0
+    }
+  ],
+  "manifest_files_checked": 9,
+  "method": "factorial direct products and exact finite mixtures; no producer import",
+  "shared_dependencies": [
+    "Python",
+    "NumPy"
+  ],
+  "independent_human_review": false,
+  "sbc": "not performed"
+}

@@ -1,0 +1,8 @@
+{
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "base_commit": "19a75426320d0143c09cd00c756bc31f97cef0d0",
+  "design_content_commit": "62e0ee6272323246f6d29eff5f390a12136f116b",
+  "real_inputs_loaded": false,
+  "sbc": "not performed"
+}

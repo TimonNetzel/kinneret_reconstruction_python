@@ -1,0 +1,38 @@
+{
+  "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md": {
+    "bytes": 15241,
+    "sha256": "87bc2acc63ee42f00f8718e58b3fcfac37429d9c7dd34275d8de0b11bcfdbe31"
+  },
+  "docs/thesis_research/counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md": {
+    "bytes": 8698,
+    "sha256": "e0b700bcc53fbc2204f7fb78dbc1298608d03f974d9b570e1cfc6963939db292"
+  },
+  "docs/thesis_research/counts_observation_design_2026_10_31/synthetic_plan.json": {
+    "bytes": 2322,
+    "sha256": "07061e74f2e395d1abf7762135be9b98f56a2fecf98e18196419af34f99b413f"
+  },
+  "tools/taxon_counts/run.py": {
+    "bytes": 6266,
+    "sha256": "d098d71e3dceff126b82b001db5d5f612966c867d1fe31ee3ef1a1574ab0c6bb"
+  },
+  "tools/taxon_counts/model.py": {
+    "bytes": 8795,
+    "sha256": "89d4283b8052f0725bf923a05e74aac93221361b7db77a1d500f7771a46ad3ab"
+  },
+  "outputs/observations.json": {
+    "bytes": 17026,
+    "sha256": "bdaaeaf5cc6c0245468e4a7af74dd951e1b637cbb1bf7f55c29756e77ebb4204"
+  },
+  "outputs/results.json": {
+    "bytes": 44272,
+    "sha256": "c54e842e699ef63b9edd9a755ad517d0dd03a1fb207bc1c1abaeac1bbac2197a"
+  },
+  "outputs/posterior.csv.gz": {
+    "bytes": 221685,
+    "sha256": "d9244ca8d5aa5efb35fb105c438d9cdf5973d61bc26878620b97423222d9efa9"
+  },
+  "outputs/environment.json": {
+    "bytes": 235,
+    "sha256": "629e2754e620682d2ce4ac731df4f6d7799cb1c6886a3a3b611aeb2498a76911"
+  }
+}
