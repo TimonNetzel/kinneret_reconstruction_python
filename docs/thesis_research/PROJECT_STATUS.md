@@ -17,7 +17,45 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: EMPD2-Counts-Readiness-Audit, 31.10.2026
+## Aktueller Paketabschluss: EMPD2-Nenner-/Sparse-Quellen, 31.10.2026
+
+Nach Nutzer-OK hier im Chat **als begrenztes Quellenpaket mit Teilbefunden erledigt**:
+[DENOMINATOR_RULES](./empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md),
+[RULE_EVIDENCE](./empd2_denominator_rules_2026_10_31/RULE_EVIDENCE.json),
+[Quellenvergleich](./empd2_denominator_rules_2026_10_31/source_comparison.json).
+Originalmethodik gelesen, offizielles EMPD2/EMPD-data v2.0 am Commit
+`737b76eb269b071422edded6ac332654ff83c103` geprüft, zwölf Dateien per Git-Blobhash
+verifiziert, nicht ausgeführt. Drei bekannte Zeugen: alle 108 Messwert-Tupel
+zwischen Release und Sperr-SQLite identisch; 98 bereitgestellte Prozentwerte
+innerhalb gedruckter Präzision kompatibel mit S_flag=311/731/840, zehn leere
+Prozentfelder passen zu percent_values=False. Keine Prozent→Counts-Rückrechnung.
+
+**Nicht geklärt:** ursprünglicher gemessener N_original, allgemeine archiveigene
+Sparse-Nullregel, rekursive higher_groupid-Aggregation und exakter Erzeugungs-/
+Exportpfad der gesperrten SQLite-Datei. Neuanlagecode rundet, bestehende Proben
+werden übersprungen; erhaltenes 7,4 und 36/40 Gruppen begrenzen den Transfer.
+Weder komplette Code→Archiv-Kette noch „Code nie benutzt“ behauptet.
+Klimanormalperiode unverifiziert; keine Nullfüllung/Rundung, Trainings-/Pilotfreigabe.
+W96/Artbrücken, reales T1/T0/T3/T4 und Monticchio-P1 unverändert offen.
+
+Basis PR #42 bei `e1e8ebe32f17487c4c91d2044db845112a8365bb`, Branch
+`codex/netzel-empd2-denominator-rules`, Worktree `/workspace/netzel-empd2-rules`.
+Neun bisherige Worktrees sauber erhalten; #31–#42 offen, main `7f1826c`,
+#42-CI grün. [Standprüfung](./empd2_denominator_rules_2026_10_31/git_snapshot.json).
+Keine Matrix/Kohorte, Fits, Scores, Simulationen oder Tests; Originaldatenbank-
+hash unverändert. Alle bestehenden Designs/Modelle/Resultate/Register/Importer/
+Flags/Fossilcounts/Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten,
+Merges oder Kontakte. [Prüfung](./empd2_denominator_rules_2026_10_31/verification.json).
+Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+
+**Vorbereitet, wartet auf neues OK:** enges Herkunfts-/Exportaudit genau der
+Sperr-SQLite anhand offizieller PANGAEA-Metadaten und nur bei Verweis eines
+zweiten Originalobjekts. Nach zwei gezielten Quellen ohne Kette einen
+Entscheidungspunkt dokumentieren, keine weitere Ersatzsuche.
+[Restbedarf](./empd2_denominator_rules_2026_10_31/SOURCE_GAPS.md),
+[genauer Folgeauftrag](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: EMPD2-Counts-Readiness-Audit, 31.10.2026
 
 Nach Nutzer-OK hier im Chat **lesend abgeschlossen**:
 [Ergebnis](./empd2_counts_readiness_2026_10_31/MODERN_COUNTS_READINESS.md),
@@ -57,7 +95,7 @@ Originaldatenbankhash unverändert. Eigene CI bei Erstellung noch laufend,
 technisch MERGEABLE/UNSTABLE; [PR-Snapshot](./empd2_counts_readiness_2026_10_31/pr_snapshot.json).
 Kein behaupteter grüner Gesamtstand und keine wissenschaftliche Freigabe.
 
-**Vorbereitet, wartet auf neues OK:** ursprüngliche EMPD2-Nenner- und Sparse-
+**Damals vorbereitet, inzwischen nach Nutzer-OK geprüft:** ursprüngliche EMPD2-Nenner- und Sparse-
 Verarbeitungsregeln anhand der registrierten Methodenpublikation und nur bei
 konkretem offiziellen Verweis eines zweiten Originalobjekts belegen.
 [Enger Quellenbedarf](./empd2_counts_readiness_2026_10_31/SOURCE_GAPS.md),
