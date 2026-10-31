@@ -17,7 +17,12 @@ CI [41220662031](https://github.com/TimonNetzel/kinneret_reconstruction_python/a
 erfolgreich. Main `7f1826c`, #52-Head `1bf23cd`; sechs vorgefundene
 Worktrees sauber, keine Stashes, kein Reset/Merge. Eigener Worktree
 `/workspace/netzel-a3-synthetic-design`, Branch `codex/netzel-a3-synthetic-design`;
-eigener PR gegen den #53-Branch; Sicherungsverweise im neuesten Status.
+[PR #54](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/54)
+gegen den #53-Branch, offen/ungemergt und mergebar. Design-Sperrcommit
+`a4c03c6752708dead6ecd98f016758538ddb71b2`, Design-Blob
+`21879814c77f0341457f9f4790dd40e24b555d55`; danach nur Sicherungsverweise.
+Automatische CI 41234277995 zum Inhaltscommit bei Abfrage queued; aktuellen
+Remote-Head und CI-Stand über PR #54 prüfen.
 Nur ein neues Designdokument plus kurze Übergabe/Status, keine Modellrechnung.
 
 ## Genau ein Folgeauftrag: endliche A3-Referenzprüfung – vorbereitet, wartet auf Nutzer-OK

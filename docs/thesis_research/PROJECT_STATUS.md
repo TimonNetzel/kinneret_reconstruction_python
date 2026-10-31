@@ -32,7 +32,13 @@ Head `ea3157068e53a765d77ded5214ddaf29a732e5b1`, offen/ungemergt und mergebar;
 CI [41220662031](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41220662031)
 erfolgreich. Main `7f1826c`, #52 `1bf23cd`; sechs vorgefundene Worktrees sauber,
 keine Stashes/Resets/Merges. Eigener Worktree `/workspace/netzel-a3-synthetic-design`,
-Branch `codex/netzel-a3-synthetic-design`; eigener PR gegen #53, Verweise folgen.
+Branch `codex/netzel-a3-synthetic-design`;
+[PR #54](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/54)
+gegen #53, offen/ungemergt und mergebar. Design-Sperrcommit
+`a4c03c6752708dead6ecd98f016758538ddb71b2`, Blob
+`21879814c77f0341457f9f4790dd40e24b555d55`; danach nur Sicherungsverweise.
+Automatische CI 41234277995 zum Inhaltscommit bei Abfrage queued; kein
+abschließender Erfolg des Übergabe-Heads behauptet. Remote-Head über #54 prüfen.
 
 Nur ein neues Designdokument plus HANDOFF/kurzer Status; alte Statushistorie
 erhalten. Quellenzuordnung, Definitionen/Fallabdeckung, 9 lokale Links/Anker
