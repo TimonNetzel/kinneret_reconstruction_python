@@ -31,7 +31,11 @@ und reale Eingangsprüfung nicht ersetzen. Bestehender INPUT_CONTRACT unverände
 
 Basis `308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus PR #44; Worktree
 `/workspace/netzel-empd2-decision`, Branch `codex/netzel-empd2-counts-decision`.
-Eigener PR folgt nach Inhaltscommit, gegen den #44-Branch, kein Merge.
+[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45)
+gegen den #44-Branch, offen/ungemergt. Inhaltscommit
+`053f75e2e8231904ece9e0f58a16f84040721a7d`; danach nur Sicherungs-/Übergabeverweise.
+Automatische PR-CI bei Erstellung noch nicht abschließend geprüft;
+kein grüner Gesamtstand oder fachliche Freigabe daraus behauptet.
 720 geschützte bestehende Git-Blobs bytegleich zur Basis; JSON-Eingänge,
 Verweise, Aussagen und Drei-Dateien-Diff geprüft, Sperrhash vor/nach unverändert.
 Beim Einstieg #44 offen/ungemergt/mergefähig, PR-CI Run 41197759461 erfolgreich;

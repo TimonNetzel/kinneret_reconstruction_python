@@ -4,7 +4,11 @@
 `308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus
 [PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44).
 Worktree `/workspace/netzel-empd2-decision`, Branch
-`codex/netzel-empd2-counts-decision`. Eigener PR nach Inhaltscommit.
+`codex/netzel-empd2-counts-decision`.
+Gesichert als [PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45)
+gegen den #44-Branch, offen und ungemergt; Inhaltscommit
+`053f75e2e8231904ece9e0f58a16f84040721a7d`, danach nur Sicherungs-/Übergabeverweise.
+Automatische eigene PR-CI bei Erstellung noch nicht abschließend geprüft.
 
 **Ergebnis:** Die vorhandenen Belege tragen keine Freigabe des realen
 Counts-T1. Zwei mögliche weitere Aufträge sind unten entscheidbar abgegrenzt.

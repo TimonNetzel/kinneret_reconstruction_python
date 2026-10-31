@@ -6,7 +6,12 @@ Nach Nutzer-OK am 31.10.2026 ausschließlich schriftlich erstellt. Basis
 `308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus
 [PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44).
 Worktree `/workspace/netzel-empd2-decision`, Branch
-`codex/netzel-empd2-counts-decision`; eigener PR folgt nach Inhaltscommit.
+`codex/netzel-empd2-counts-decision`;
+[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45)
+gegen den #44-Branch, offen/ungemergt. Inhaltscommit
+`053f75e2e8231904ece9e0f58a16f84040721a7d`; danach nur Sicherungs-/Übergabeverweise.
+Automatische PR-CI bei Erstellung noch nicht abschließend geprüft;
+kein grüner Gesamtstand oder fachliche Freigabe daraus behauptet.
 [COUNTS_DECISION_BRIEF](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
 
 **Vorlage abgeschlossen; fachliche Wahl weiterhin offen.**
