@@ -13,7 +13,8 @@
    abgeschlossen; die Originalprüfung und Artbrücke sind offen. Dafür nur
    [SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md) und die
    betroffenen Zeilen von inventory.csv / sources.json desselben Ordners lesen.
-   Inventurbranch: `codex/netzel-pollen-taxon-evidence` ab `6f35df1` (#33),
+   [Inventur-PR #34](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/34):
+   `codex/netzel-pollen-taxon-evidence` ab `6f35df1` (#33),
    zusätzlich zum vollständigen Forschungsstand. Kein Merge beauftragt.
 
 ## Nächster Forschungsauftrag: Original-Namensketten prüfen

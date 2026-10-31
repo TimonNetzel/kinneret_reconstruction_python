@@ -85,8 +85,10 @@ Die 2025-Originale wurden nicht angefordert. Keine neuen morphologischen
 Primärbelege behauptet; abgeschlossene Inventur von offener Originalprüfung
 und Artbrücke getrennt. Monticchio-P1 und 28/41/47 unverändert.
 
-Sicherung auf eigenem Branch `codex/netzel-pollen-taxon-evidence`, Basis
-`6f35df1` aus offenem #33; eigener PR gegen #33-Branch vorgesehen, kein Merge.
+Sicherung als [PR #34](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/34)
+auf `codex/netzel-pollen-taxon-evidence`, Basis `6f35df1` aus offenem #33;
+PR-Ziel ist der #33-Branch, kein Merge. Netzwerkentwurf für doi.pangaea.de und
+store.pangaea.de additiv gespeichert; noch nicht angewendet oder veröffentlicht.
 Als Nächstes Originaldefinitionen und vollständige EMPD2-Namensketten frisch
 hashprüfen, danach gezielte morphologische Belege, gemäß
 [SOURCE_GAP.md](./pollen_taxon_evidence_2026_10_31/SOURCE_GAP.md).
