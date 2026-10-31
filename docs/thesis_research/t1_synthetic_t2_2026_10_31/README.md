@@ -8,6 +8,9 @@ committed und nach origin gepusht. Keine fachlichen Designänderungen nach dem L
 Der [Git-/PR-Snapshot](./git_snapshot.json) belegt #31–#38 offen, main bei
 `7f1826c`, Ausgangsworktrees sauber; PR #38 technisch MERGEABLE/CLEAN nach CI.
 Kein Merge und keine Unteragenten.
+Gesichert als [PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
+gegen `codex/netzel-next-task-workflow` (#38), Inhaltscommit `953d1e9`;
+nachfolgende Sicherung ergänzt ausschließlich PR-/Übergabeverweise.
 
 **Begrenzt abgeschlossen:** ein kohärentes synthetisches Beobachtungsmodell,
 diskrete Inversion und alle vorab vorgesehenen Grenzfälle. **Weiter offen:**
@@ -99,6 +102,10 @@ ein fachliches Ergebnis und wird nicht als Rechenfehler weggezählt.
   Abhängigkeiten; kein unabhängiger menschlicher Review behauptet.
 - Zweiter frischer Lauf: alle fünf Ausgabedateien einschließlich Manifest
   bytegleich. [Hashes und Vergleich](./repeat_verification.json).
+- [Erhaltungsprüfung](./preservation.json): 654 bestehende Blobs einschließlich
+  eines Symlinks bytegleich gegen den Basiscommit; nur HANDOFF/PROJECT_STATUS
+  als bestehende Dokumente verändert. Fünf ursprüngliche Worktrees weiterhin
+  sauber, neue Pfade auf dieses Paket begrenzt; lokale Dokumentationslinks gültig.
 - Der zusätzlich versehentlich breit gestartete Standardtest wurde abgebrochen:
   56 bestanden, zwei Browserfehler, zwei Langtests abgewählt, Exit 2 nach Interrupt.
   Playwrights erwartetes Chromium-Binary fehlt. Vorhandene Tests enthalten auch

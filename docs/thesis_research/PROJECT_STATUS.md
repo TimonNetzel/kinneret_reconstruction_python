@@ -54,7 +54,15 @@ Die folgenden älteren Paketabschnitte dokumentieren historische Prüfstände.
 **Vorbereitet – wartet auf Nutzer-OK:** genau ein Anschlussdesign für
 Pollen-Zählkomposition und Typgemische, ausschließlich Dokumentation ohne neue
 Läufe. Ziel, Dateien, Leseplan und Abschlusskriterien in [HANDOFF](./HANDOFF.md).
-PR-/Inhaltssicherung wird nach Erstellung des eigenen PR hier ergänzt.
+Sicherung als [PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
+gegen `codex/netzel-next-task-workflow` (#38), offen und ohne Merge.
+Letzter gesicherter **Inhaltscommit** mit Code, Ergebnisbytes und Übergabe:
+`953d1e995429a209b336cb83e89c41fda66a3f62`; danach nur PR-/Übergabeverweise.
+654 bestehende Blobs einschließlich eines Symlinks gegen `d003fb9` unverändert
+(ausgenommen die zwei erlaubten Einstiegsdokumente), alle fünf ursprünglichen
+Worktrees sauber. [Erhaltungsprüfung](./t1_synthetic_t2_2026_10_31/preservation.json).
+Bei PR-Erstellung war #39 MERGEABLE/UNSTABLE bei laufender CI; kein behauptetes
+grünes Gesamtergebnis. [PR-Snapshot](./t1_synthetic_t2_2026_10_31/pr_snapshot.json).
 
 ## Git- und PR-Stand
 

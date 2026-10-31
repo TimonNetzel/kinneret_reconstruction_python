@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "local_links_checked": 50,
+  "local_links_checked": 53,
   "links": [
     [
       "docs/thesis_research/HANDOFF.md",
@@ -81,6 +81,14 @@
     [
       "docs/thesis_research/PROJECT_STATUS.md",
       "./HANDOFF.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/preservation.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/pr_snapshot.json"
     ],
     [
       "docs/thesis_research/PROJECT_STATUS.md",
@@ -185,6 +193,10 @@
     [
       "docs/thesis_research/t1_synthetic_t2_2026_10_31/README.md",
       "./repeat_verification.json"
+    ],
+    [
+      "docs/thesis_research/t1_synthetic_t2_2026_10_31/README.md",
+      "./preservation.json"
     ],
     [
       "docs/thesis_research/t1_synthetic_t2_2026_10_31/README.md",

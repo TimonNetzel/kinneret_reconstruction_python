@@ -22,10 +22,13 @@ Testeingängen liefen teilweise. [Prüfstand](./t1_synthetic_t2_2026_10_31/TESTI
 Keine neue wissenschaftliche Kernkurve ausgewertet/gesichert; bestehende
 Modelle, Resultate, Fossilcounts, Analog-Baseline und CLI/App unverändert.
 
-Aktuelle PR-Sicherung und letzter Inhaltscommit stehen in PROJECT_STATUS.
+[PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
+sichert das Paket gegen `codex/netzel-next-task-workflow` (#38), ohne Merge.
+Letzter gesicherter Inhaltscommit: `953d1e995429a209b336cb83e89c41fda66a3f62`;
+danach nur PR-/Übergabeverweise. CI war bei PR-Erstellung noch laufend,
+MERGEABLE/UNSTABLE ist keine fachliche Freigabe.
 Basis-/Remote-/Mergeprüfung: #31–#38 weiterhin offen; main bleibt `7f1826c`.
-Die eigene PR ist gegen `codex/netzel-next-task-workflow` (#38) zu richten;
-kein ungemergtes Ergebnis als auf main vorhanden behandeln.
+Kein ungemergtes Ergebnis als auf main vorhanden behandeln.
 
 ## Genau ein vorbereiteter Folgeauftrag – wartet auf Nutzer-OK
 
@@ -119,8 +122,9 @@ sind dadurch genehmigt.
 Ein Wechsel ist nach dem gesicherten Paketabschluss möglich, nicht erforderlich.
 **Vorgeschlagener Startauftrag, noch nicht autorisiert:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-t1-synthetic-t2` fort; letzter
-> verlässlich gesicherter Inhaltscommit und PR stehen in PROJECT_STATUS.md.
+> Setze das Netzel-Projekt auf `codex/netzel-t1-synthetic-t2` aus PR #39 fort;
+> letzter gesicherter Inhaltscommit 953d1e995429a209b336cb83e89c41fda66a3f62,
+> danach nur PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten).
 > Basis war PR #38 bei d003fb9, vorab gesichertes Design 2b41c37.
 > Prüfe Git-/PR-/Merge-Stand, Branches, Worktrees und lokale Änderungen zuerst;
 > erhalte ungesicherte Arbeit. Lies AGENTS.md, HANDOFF.md, PROJECT_STATUS.md,
