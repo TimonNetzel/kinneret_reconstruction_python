@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-31",
+  "base_commit": "62ffeaf08ee7c7538f8d9c4cc99f78e7c0bdb394",
+  "scope": "read_only_schema_metadata_and_three_witness_samples",
+  "readiness": {
+    "technical_input_present": true,
+    "modern_count_training_ready": false,
+    "approved_training_samples": null,
+    "new_matrix_exported": false,
+    "models_fitted": false,
+    "fossil_mapping_approved": false,
+    "pilot_approved": false,
+    "reason": "No approved sample-specific denominator or sparse-row rule; type concepts and climate provenance unresolved."
+  },
+  "source": {
+    "file": "EMPD2.sqlite3",
+    "doi": "10.1594/PANGAEA.909130",
+    "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+    "sha256": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "bytes": 21327872,
+    "license": "CC-BY-4.0",
+    "raw_byte_archive_claim": "cached local original only; not committed or claimed newly durably archived"
+  },
+  "keys": {
+    "sample": "metadata.samplename",
+    "measurement": ["p_counts.samplename", "p_counts.var_"],
+    "original_concept": "p_vars.var_",
+    "accepted_concept": "p_vars.acc_var_",
+    "group": "p_vars.groupid -> groupid.groupid",
+    "climate": "climate.samplename",
+    "preserve_original_ids_and_names": true,
+    "automatic_accepted_concept_pooling": false,
+    "cross_database_numeric_id_equivalence": false
+  },
+  "response": {
+    "source_column": "p_counts.count",
+    "sqlite_declared_type": "NUMERIC(12,6)",
+    "interpretation": "heterogeneous numeric values; not all rows are pollen grain counts",
+    "integer_pollen_values_observed_in_witnesses": true,
+    "all_rows_discrete_count_eligible": false,
+    "rounding_or_percentage_to_pseudocounts_allowed": false,
+    "fractional_witness": {"sample": "Champvillair_a18", "var_": 693, "value": "7.4", "name": "Volume (cm3)", "groupid": "NOPO", "used_in_sum": 0},
+    "historical_fractional_flags": {"samples": 244, "measurement_values": 1059, "freshly_recomputed": false, "source": "tools/thesis_import/reference_run.json", "meaning": "Any fractional stored measurement, including nonpollen; does not identify fractional pollen count cohort."}
+  },
+  "denominator": {
+    "structured_sample_specific_N_field_found": false,
+    "candidate_metadata": ["groupid.used_in_sum", "groupid.higher_groupid", "groupid.percent_values", "metadata.ispercent"],
+    "group_flag_sum_is_approved_N": false,
+    "sum_all_stored_values_is_N": false,
+    "rest_category_defined": false,
+    "needed": "Original processing definition, hierarchy and sample counting/selection process; disjoint exhaustive response partition."
+  },
+  "missingness": {
+    "sparse_pair_witness": {"sample": "AlbaSanchez_a1", "var_": 7, "dictionary_name": "Artemisia", "stored_rows": 0},
+    "absent_pair_means_zero": "unresolved",
+    "missing_values_filled": false,
+    "biological_absence_inferred": false,
+    "text_NULL": "preserve raw token and mark missing, never replace by zero"
+  },
+  "type_definition": {
+    "database_names_and_group_metadata_present": true,
+    "morphological_definition_proven_by_database_link": false,
+    "modern_observation_partition_approved": false,
+    "fossil_type_bridge": "blocked; W96 methods and applied identification categories unresolved"
+  },
+  "climate": {
+    "fields": ["climate.t_ann", "climate.p_ann"],
+    "different_temperature_field_not_interchangeable": "climate.t_djf",
+    "importer_contract_units": {"t_ann": "degrees Celsius", "p_ann": "mm per year"},
+    "source_recorded_in_repository": "WorldClim2",
+    "method_recorded_in_previous_source_report": "30 arcsecond nearest grid point",
+    "method_original_rechecked_this_package": false,
+    "reference_period": "unverified",
+    "WorldClim_2_1_or_CRU_label_inferred": false,
+    "text_NULL_witness": "Barboni_a1000",
+    "new_climate_join_or_spatial_analysis": false
+  },
+  "sample_context": {
+    "available_fields": ["metadata.sampletype", "metadata.samplecontext", "metadata.samplemethod", "metadata.agebp", "metadata.ageuncertainty", "metadata.locationreliability"],
+    "age_in_three_witnesses": "unknown raw text NULL",
+    "contemporaneous_with_climate_assumed": false,
+    "location_X_or_text_NULL_repaired": false,
+    "cohort_or_filters_selected": false
+  },
+  "prospective_roles": {
+    "response": "Observed pollen type composition conditional on verified counting process and N",
+    "predictors": "Climate with verified units/period and justified context roles",
+    "not_targets": ["mapped native species range indicator", "local species presence probability", "separate production or transport parameters"],
+    "split_policy": "To be specified before fits; site, collection and source dependence plus independent confirmation required.",
+    "known_outer_scores_used_for_decisions": false,
+    "new_model_family_chosen": false
+  },
+  "blockers": [
+    "EMPD2 denominator and group hierarchy application not verified in original processing documentation",
+    "Sparse absence versus unrecorded/unmeasured status not verified",
+    "Observation type partition and residual category not approved",
+    "Climate version/reference period and time-context eligibility unresolved",
+    "No new independent empirical confirmation or real fossil type bridge"
+  ]
+}

@@ -17,7 +17,53 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: synthetisches Counts-T2, 31.10.2026
+## Aktueller Paketabschluss: EMPD2-Counts-Readiness-Audit, 31.10.2026
+
+Nach Nutzer-OK hier im Chat **lesend abgeschlossen**:
+[Ergebnis](./empd2_counts_readiness_2026_10_31/MODERN_COUNTS_READINESS.md),
+[INPUT_CONTRACT](./empd2_counts_readiness_2026_10_31/INPUT_CONTRACT.json),
+[Originalbelege](./empd2_counts_readiness_2026_10_31/evidence.json).
+Cached EMPD2.sqlite3 vor/nach read-only-Zugriff identischer Sperrhash/21.327.872
+Bytes; kein neuer Download. Schema/Metadaten und genau drei Zeugen mit 108
+verschiedenen gespeicherten Messzeilen gelesen, kein kompletter Matrixexport.
+
+**Technische Eingänge vorhanden, Counts-Trainingsbereitschaft noch nicht belegt.**
+Kein eigenes Proben-N im Schema, Sparse-Nichttreffer unaufgelöst; Gruppenflags
+sind kein Nachweis der tatsächlich angewandten Nenner-/Hierarchieregeln.
+Champvillair_a18 enthält 7,4 als Volumen cm³ außerhalb used_in_sum=1, bei
+arithmetischer flag-1-Summe 731. Historische 244 fractional_counts-Proben sind
+nicht automatisch 244 Proben mit gebrochenen Pollenzählungen; historische
+1.059/244-Werte nicht neu berechnet, Flags/Importer/Referenzen unverändert.
+Gesamtsumme aller gespeicherten Werte kann physikalisch heterogene Größen
+addieren und ist kein N. Text-NULL/X nicht repariert, Klima-Periode unverified,
+Typ-/Fossilbrücken offen. Keine neue Kohorte/Matrix, Fits/Tests/Simulationen,
+Scores oder Kernläufe. Nur Quellen-/Dokumentations-/Link-/Hash-/Diffprüfung.
+[Prüfprotokoll](./empd2_counts_readiness_2026_10_31/verification.json).
+
+Basis PR #41 bei `62ffeaf08ee7c7538f8d9c4cc99f78e7c0bdb394`;
+Branch `codex/netzel-empd2-counts-readiness`, Worktree
+`/workspace/netzel-empd2-readiness`. Acht bisherige Worktrees sauber erhalten;
+#31–#41 offen, main `7f1826c`, #41-CI grün.
+[Standprüfung](./empd2_counts_readiness_2026_10_31/git_snapshot.json).
+Bestehende Modelle/Designs/Resultate/Register/Fossilcounts/Gruppen, Baseline
+und CLI/App bytegleich; keine Unteragenten, Merges oder Autorennachrichten.
+Reales T1, W96/Artbrücken, T0/T3/T4 und Monticchio-P1 unverändert offen.
+Sicherung als [PR #42](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42)
+gegen `codex/netzel-synthetic-counts-t2` (#41), offen, kein Merge.
+Letzter gesicherter **Inhaltscommit**:
+`1627a11d22f6fe8827dd7eed509acb6df2720b08`; danach nur PR-/Übergabeverweise.
+701 geschützte bestehende Git-Blobs bytegleich und acht vorherige Worktrees sauber;
+Originaldatenbankhash unverändert. Eigene CI bei Erstellung noch laufend,
+technisch MERGEABLE/UNSTABLE; [PR-Snapshot](./empd2_counts_readiness_2026_10_31/pr_snapshot.json).
+Kein behaupteter grüner Gesamtstand und keine wissenschaftliche Freigabe.
+
+**Vorbereitet, wartet auf neues OK:** ursprüngliche EMPD2-Nenner- und Sparse-
+Verarbeitungsregeln anhand der registrierten Methodenpublikation und nur bei
+konkretem offiziellen Verweis eines zweiten Originalobjekts belegen.
+[Enger Quellenbedarf](./empd2_counts_readiness_2026_10_31/SOURCE_GAPS.md),
+[genauer Auftrag und Leseplan](./HANDOFF.md). Keine Matrix-/Modellläufe daraus.
+
+## Vorheriger Paketabschluss: synthetisches Counts-T2, 31.10.2026
 
 Nach Nutzer-OK hier im Chat **begrenzt abgeschlossen**:
 [52 anonyme Counts-Auswertungen](./counts_synthetic_t2_2026_10_31/README.md),
@@ -58,7 +104,7 @@ weiterhin sauber; [Erhaltungsprüfung](./counts_synthetic_t2_2026_10_31/scope_ve
 Eigene CI bei PR-Erstellung noch laufend, technisch MERGEABLE/UNSTABLE;
 kein behaupteter grüner Gesamtstand. [PR-Snapshot](./counts_synthetic_t2_2026_10_31/pr_snapshot.json).
 
-**Vorbereitet, wartet auf neues OK:** lesendes Datenrollen-/Readiness-Audit eines
+**Damals vorbereitet, inzwischen nach Nutzer-OK ausgeführt:** lesendes Audit eines
 modernen Counts-Kalibrierungswegs an EMPD2, ohne Fits oder neue Auswertungsmatrix.
 Konkrete Eingänge, Dateien und Grenzen in [HANDOFF](./HANDOFF.md).
 
