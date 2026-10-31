@@ -12,6 +12,11 @@ Keine fossile Artbrücke oder T0-Freigabe.
 
 ## Vorbereiteter Folgeauftrag – wartet auf Nutzer-OK
 
+Die Ablaufvereinbarung und dieser Folgeauftrag sind in
+[PR #38](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/38)
+auf `codex/netzel-next-task-workflow` gesichert, initialer Inhaltscommit
+`8244754`; PR-Ziel ist #37-Branch, kein Merge.
+
 **Nächstes empfohlenes Paket: T1-Design und begrenzter synthetischer T2-Prototyp.**
 Der Nutzer hat am 31.10.2026 den Ablauf „Ergebnis sichern → Folgeauftrag
 vorbereiten → mit OK fortsetzen“ festgelegt. Dieses Methodenpaket ist vorbereitet,
@@ -106,6 +111,7 @@ folgenden Prompt absendet, beauftragt er damit das vorbereitete Paket.
 
 > Setze das Netzel-Projekt mit dem in HANDOFF.md vorbereiteten T1-/synthetischen
 > T2-Paket fort. Verwende den Branch `codex/netzel-next-task-workflow`;
+> Ablaufsicherung PR #38, initialer Inhaltscommit `8244754`;
 > letzter Forschungsstand darunter ist PR #37, Commit
 > `fc52ce7ea2733ad11c39a59e629a01d14361fb8e`. Prüfe zuerst den aktuellen Git-/PR-/
 > Merge-Stand, Branches und lokale Änderungen; erhalte ungesicherte Arbeit.

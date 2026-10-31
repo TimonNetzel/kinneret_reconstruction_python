@@ -207,6 +207,8 @@ in diesem Dokumentationspaket. W96-Methodenkette bleibt separat blockiert,
 T0 und reale Eingangsfreigaben bleiben offen. Bestehende Forschungsdateien und
 das Literaturpaket #37 unverändert. Eigener Branch
 `codex/netzel-next-task-workflow` ab `fc52ce7` (#37); kein Merge.
+Sicherung als [PR #38](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/38)
+gegen den #37-Branch; initialer Inhaltscommit `8244754`.
 
 Prüfung dieses Ablaufpakets: lokale Links und reiner Drei-Dateien-Diffumfang
 geprüft; keine Code-/Modelltests nötig oder ausgeführt.
