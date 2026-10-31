@@ -36,8 +36,12 @@ offen/ungemergt und mergebar; CI 41211699800 erfolgreich.
 Main `7f1826c`, #50-Head `64a6529`; fünf vorhandene Worktrees sauber,
 keine Stashes, kein Reset/Stash/Merge. Eigener Worktree
 `/workspace/netzel-a2-model-contract`, Branch `codex/netzel-a2-model-contract`;
-eigener PR gegen `codex/netzel-a1-novelty-matrix` wird nach Inhaltscommit
-angelegt; Sicherungsverweis folgt in diesem Abschnitt.
+[PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52)
+gegen `codex/netzel-a1-novelty-matrix`, offen/ungemergt und mergebar.
+Inhaltscommit `1aee3fd71fa50da256f372979dcc6927081fb38e`; danach nur
+Sicherungsverweise. Automatische CI 41216380268 zum Inhaltscommit bei Abfrage
+queued; kein abschließender CI-Erfolg für den Übergabe-Head behauptet.
+Letzter Remote-Head über PR #52 prüfbar.
 
 Prüfung bestanden: Quellenzuordnung zu Plan §1/A2/§4 und A1,
 Normierungsidentität, 86 lokale Linkziele/Anker und enger Drei-Dateien-Diff.

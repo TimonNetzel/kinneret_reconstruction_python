@@ -23,9 +23,14 @@ Basis PR #51, offen/ungemergt und mergebar, Head
 bei Standprüfung erfolgreich. Main unverändert `7f1826c`, #50-Head `64a6529`.
 Fünf vorgefundene Worktrees sauber, keine Stashes; kein Reset oder Merge.
 Eigener Worktree `/workspace/netzel-a2-model-contract`, Branch
-`codex/netzel-a2-model-contract`; eigener gestapelter PR gegen den #51-Branch.
-Commit/PR und abschließende Dokumentationsprüfung im
-[neuesten Status](./PROJECT_STATUS.md). Ältere Übergaben bleiben in Git erhalten.
+`codex/netzel-a2-model-contract`; [PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52)
+gegen den #51-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`1aee3fd71fa50da256f372979dcc6927081fb38e`; danach nur Sicherungsverweise.
+Quellen-/Link-/Diffprüfung bestanden, 727 geschützte Blobs bytegleich.
+Automatische CI 41216380268 zum Inhaltscommit bei Abfrage queued;
+kein abschließender CI-Erfolg behauptet. Aktueller Remote-Head über PR #52
+prüfbar; Details im [neuesten Status](./PROJECT_STATUS.md).
+Ältere Übergaben bleiben in Git erhalten.
 
 ## Genau ein Folgeauftrag: A3-Auftragsabgrenzung – vorbereitet, wartet auf Nutzer-OK
 
