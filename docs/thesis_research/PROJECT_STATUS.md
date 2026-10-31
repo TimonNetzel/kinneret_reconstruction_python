@@ -49,7 +49,14 @@ Keine ganzen Repository-/Browser-/Sampler-Tests, echten Modelle, realen Fits
 oder Kernläufe. Modelle, alte Designs/Resultate/Register/Fossilcounts/Gruppen,
 Baseline und CLI/App unverändert; keine Unteragenten, Kontakte oder Merges.
 Reales T1, W96/Artbrücken, T0/T3/T4/Monticchio-P1 bleiben offen.
-Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+Sicherung als [PR #41](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/41)
+gegen `codex/netzel-counts-observation-design` (#40), offen, kein Merge.
+Letzter gesicherter **Inhaltscommit**:
+`fa61c113904429f6b89b9ce6beca3d07fdeea749`; danach nur PR-/Übergabeverweise.
+682 geschützte vorhandene Git-Blobs bytegleich, sieben vorherige Worktrees
+weiterhin sauber; [Erhaltungsprüfung](./counts_synthetic_t2_2026_10_31/scope_verification.json).
+Eigene CI bei PR-Erstellung noch laufend, technisch MERGEABLE/UNSTABLE;
+kein behaupteter grüner Gesamtstand. [PR-Snapshot](./counts_synthetic_t2_2026_10_31/pr_snapshot.json).
 
 **Vorbereitet, wartet auf neues OK:** lesendes Datenrollen-/Readiness-Audit eines
 modernen Counts-Kalibrierungswegs an EMPD2, ohne Fits oder neue Auswertungsmatrix.

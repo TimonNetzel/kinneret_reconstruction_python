@@ -6,6 +6,9 @@ Eigener Branch `codex/netzel-synthetic-counts-t2`, Worktree
 `/workspace/netzel-counts-t2`; sieben ursprüngliche Worktrees sauber erhalten.
 [Git-/PR-/CI-Snapshot](./git_snapshot.json): #31–#40 offen, main `7f1826c`,
 #40 technisch CLEAN/MERGEABLE mit vier erfolgreichen CI-Checks, kein Merge.
+Gesichert als [PR #41](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/41)
+gegen `codex/netzel-counts-observation-design` (#40), Inhaltscommit `fa61c11`;
+danach nur PR-/Übergabeverweise. Eigene CI bei Erstellung noch laufend.
 
 **Dieses synthetische Paket ist abgeschlossen:** alle 52 vorab geplanten gültigen
 Posterioren berechnet, zwei zusätzliche unmögliche Fälle ausdrücklich nicht

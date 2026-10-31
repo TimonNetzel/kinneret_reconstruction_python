@@ -8,7 +8,11 @@ Nach Nutzer-OK am 31.10.2026 hier im Chat ausgeführt. Basis PR #40 bei
 [Ergebnis](./counts_synthetic_t2_2026_10_31/README.md),
 [Prüfergebnis](./counts_synthetic_t2_2026_10_31/verification.json),
 [Reproduktion](./counts_synthetic_t2_2026_10_31/REPRODUCE.md).
-PR-/Inhaltssicherung wird in PROJECT_STATUS geführt.
+[PR #41](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/41)
+sichert das Paket gegen `codex/netzel-counts-observation-design` (#40), kein Merge.
+Letzter Inhaltscommit `fa61c113904429f6b89b9ce6beca3d07fdeea749`;
+danach nur PR-/Übergabeverweise. CI bei PR-Erstellung noch laufend,
+MERGEABLE/UNSTABLE bedeutet keine fachliche Freigabe.
 
 52/52 geplante gültige Posteriore aus 25 künstlichen Datensätzen berechnet,
 zwei zusätzliche unmögliche Fälle explizit nicht schätzbar. 51 gezielte Tests,
@@ -125,8 +129,9 @@ sind dadurch genehmigt.
 
 **Vorgeschlagener Startauftrag, wartet auf Nutzer-OK; auch hier ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-synthetic-counts-t2` fort; letzter
-> gesicherter Inhaltscommit und PR stehen in PROJECT_STATUS.md. Basis war
+> Setze das Netzel-Projekt auf `codex/netzel-synthetic-counts-t2` aus PR #41 fort;
+> letzter Inhaltscommit fa61c113904429f6b89b9ce6beca3d07fdeea749, danach nur
+> PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten). Basis war
 > PR #40 bei 19a7542. Prüfe Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und
 > lokale Änderungen zuerst, erhalte ungesicherte Arbeit. Lies AGENTS.md,
 > HANDOFF.md, PROJECT_STATUS.md und den dortigen gezielten Leseplan.

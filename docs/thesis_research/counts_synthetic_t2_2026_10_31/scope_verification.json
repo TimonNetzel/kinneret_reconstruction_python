@@ -18,7 +18,7 @@
     "/workspace/netzel-t1-synthetic-t2": "",
     "/workspace/netzel-workflow": ""
   },
-  "local_links_checked": 64,
+  "local_links_checked": 66,
   "links": [
     [
       "docs/thesis_research/HANDOFF.md",
@@ -99,6 +99,14 @@
     [
       "docs/thesis_research/PROJECT_STATUS.md",
       "./counts_synthetic_t2_2026_10_31/git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_synthetic_t2_2026_10_31/scope_verification.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_synthetic_t2_2026_10_31/pr_snapshot.json"
     ],
     [
       "docs/thesis_research/PROJECT_STATUS.md",
