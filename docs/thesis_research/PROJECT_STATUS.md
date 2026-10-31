@@ -40,7 +40,11 @@ Auch #57 offen/ungemergt und mergebar. Fünf vorgefundene Worktrees sauber,
 keine Stashes/Resets/Merges. Eigener Worktree
 `/workspace/netzel-a4-e-reopening-requirements`, Branch
 `codex/netzel-a4-e-reopening-requirements`, eigener gestapelter PR gegen #58.
-Commit-/PR-Sicherung und eigene automatische CI werden nach Erstellung ergänzt.
+Inhaltscommit `00fa40b04095387174508b589a947ecdf77d2caf` über
+[PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41240341469
+an diesem Commit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 Nur neues Ergebnisdokument plus HANDOFF-/Statuspflege; alte Statushistorie
 vollständig erhalten. Ableitung, zwölf lokale Links/Anker und Drei-Dateien-

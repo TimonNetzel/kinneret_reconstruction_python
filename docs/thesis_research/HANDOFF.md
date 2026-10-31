@@ -22,7 +22,12 @@ Fünf vorgefundene Worktrees sauber, keine ungesicherten Änderungen gefunden;
 keine Stashes/Resets/Merges. Eigener Worktree
 `/workspace/netzel-a4-e-reopening-requirements`, Branch
 `codex/netzel-a4-e-reopening-requirements`, gestapelter eigener PR gegen #58.
-Commit-/PR-Sicherung und eigene automatische CI werden nach Erstellung ergänzt.
+Inhaltscommit `00fa40b04095387174508b589a947ecdf77d2caf` über
+[PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
+remote gesichert, offen/ungemergt und mergebar; automatische
+[CI 41240341469](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41240341469)
+an diesem Commit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 Gelesen: AGENTS, HANDOFF, aktueller Status, A4_E_CLIMATE_TIME_GAPS,
 MODEL_CONTRACT zu Rollen/Support/Stop und Plan §1, §2 nur A4, §4.
@@ -98,11 +103,15 @@ Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 ## Kopierfertiger Startprompt für den nächsten Chat
 
 Vorbereiteter Folgeauftrag; nur zusammen mit dem bezeichneten neuen
-Belegobjekt ausführbar. Aktuellen Remote-Head und Sicherungsverweise prüfen.
+Belegobjekt ausführbar. Verlässlich gesicherter Inhaltscommit
+`00fa40b04095387174508b589a947ecdf77d2caf`, PR #59; danach nur
+Sicherungsverweise. Aktuellen Remote-Head/CI prüfen.
 
 ```text
 Setze Netzel auf codex/netzel-a4-e-reopening-requirements fort.
-Sicherung: siehe Gesichertes Ergebnis dieser HANDOFF; aktuellen PR-Head/CI prüfen.
+Inhaltscommit: 00fa40b04095387174508b589a947ecdf77d2caf
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Beauftragt ist genau der vorbereitete Folgeauftrag: ein von mir eindeutig
 bezeichnetes, bereits bereitgestelltes Herkunfts-/Erzeugungs-Textdokument
 gegen R01–R03 aus A4_E_REOPENING_REQUIREMENTS dokumentarisch bewerten.
