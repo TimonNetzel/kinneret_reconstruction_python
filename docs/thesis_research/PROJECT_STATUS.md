@@ -17,7 +17,40 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: T1-Kandidat / synthetisches T2, 31.10.2026
+## Aktueller Paketabschluss: T1-Zählkomposition/Typgemische, 31.10.2026
+
+Nach Nutzer-OK hier im Chat **als begrenztes Designpaket abgeschlossen**:
+[Ergebnis](./counts_observation_design_2026_10_31/README.md),
+[DESIGN_COUNTS](./counts_observation_design_2026_10_31/DESIGN_COUNTS.md) und
+[INPUT_GAPS](./counts_observation_design_2026_10_31/INPUT_GAPS.md).
+Vegetation→Produktion/Transport/Erhaltung→Typzuordnung→Counts mathematisch
+getrennt, Multinomial-Likelihood/latente Mischung/Normierung und Nennervertrag
+festgelegt. Algebraische Gegenbeispiele belegen nicht identifizierbare
+Flussskala, Produktions-/Klimakompensation und untrennbare Typgemische.
+Proper Priors ersetzen diese fehlende Dateninformation nicht.
+
+**Vorbereitet, wartet auf neues OK:** ein kleiner anonymer Zählprototyp mit
+52 festgelegten Posterioren und Struktur-/Negativfällen, nach
+[SYNTHETIC_PLAN](./counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md) und
+[JSON](./counts_observation_design_2026_10_31/synthetic_plan.json).
+Der gemeinsame-H-Vergleich hält Einzelkorn-Marginalen gleich.
+**Hier nicht implementiert oder ausgeführt:** keine Simulationen, Fits,
+Posterioren, Tests oder realen Kernläufe. Nur Dokumentationsprüfung:
+Gleichungen/Gegenbeispiele, Nenner/Rest, Inventar, lokale Links,
+Eingangshashes, Erhaltungsprüfung und begrenzter Diff.
+[Prüfprotokoll](./counts_observation_design_2026_10_31/verification.json).
+
+Reales T1, T0/Artbrücken, W96, T3/T4 und Monticchio-P1 bleiben offen.
+Bestehende Designs, Modelle, Resultate/Quellregister, Fossilcounts/Gruppierungen,
+Baseline und CLI/App unverändert. Eigener Worktree `/workspace/netzel-counts-design`,
+Branch `codex/netzel-counts-observation-design` ab
+`35185534bf7f171c6f39537ebbc0449b28f5421a` aus offenem PR #39.
+Alle sechs vorhandenen Worktrees bei Einstieg sauber und erhalten;
+main weiterhin `7f1826c`, #31–#39 offen. Keine Unteragenten, Merges oder
+Autorennachrichten. [Standprüfung](./counts_observation_design_2026_10_31/git_snapshot.json).
+Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+
+## Vorheriger Paketabschluss: T1-Kandidat / synthetisches T2, 31.10.2026
 
 **Begrenzt abgeschlossen:** [Design und synthetischer Prototyp](./t1_synthetic_t2_2026_10_31/README.md)
 auf `codex/netzel-t1-synthetic-t2` ab PR #38, `d003fb9`.
@@ -51,9 +84,9 @@ UNSTABLE nach CLEAN, technisch MERGEABLE; keine Mergefreigabe.
 [Remote-/API-/Branch-Snapshot](./t1_synthetic_t2_2026_10_31/git_snapshot.json).
 Die folgenden älteren Paketabschnitte dokumentieren historische Prüfstände.
 
-**Vorbereitet – wartet auf Nutzer-OK:** genau ein Anschlussdesign für
-Pollen-Zählkomposition und Typgemische, ausschließlich Dokumentation ohne neue
-Läufe. Ziel, Dateien, Leseplan und Abschlusskriterien in [HANDOFF](./HANDOFF.md).
+**Damals vorbereitet, inzwischen durch Nutzer-OK ausgeführt:** Anschlussdesign
+für Pollen-Zählkomposition und Typgemische, siehe aktuellen Paketabschluss oben.
+Der neue Folgeauftrag steht in [HANDOFF](./HANDOFF.md).
 Sicherung als [PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
 gegen `codex/netzel-next-task-workflow` (#38), offen und ohne Merge.
 Letzter gesicherter **Inhaltscommit** mit Code, Ergebnisbytes und Übergabe:

@@ -1,0 +1,338 @@
+{
+  "status": "passed",
+  "base_commit": "35185534bf7f171c6f39537ebbc0449b28f5421a",
+  "existing_protected_git_blobs_compared": 674,
+  "allowed_existing_document_changes": [
+    "docs/thesis_research/HANDOFF.md",
+    "docs/thesis_research/PROJECT_STATUS.md"
+  ],
+  "new_paths_prefix": "docs/thesis_research/counts_observation_design_2026_10_31/",
+  "existing_worktree_statuses": {
+    "/workspace/kinneret_reconstruction_python": "",
+    "/workspace/netzel-original-names": "",
+    "/workspace/netzel-pilot-roadmap": "",
+    "/workspace/netzel-pollen": "",
+    "/workspace/netzel-t1-synthetic-t2": "",
+    "/workspace/netzel-workflow": ""
+  },
+  "local_links_checked": 67,
+  "local_links": [
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./counts_observation_design_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./counts_observation_design_2026_10_31/DESIGN_COUNTS.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./counts_observation_design_2026_10_31/INPUT_GAPS.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./t1_synthetic_t2_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./counts_observation_design_2026_10_31/synthetic_plan.json"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./calibration_uncertainty_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./calibration_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./smote_nnet_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./ARTIFACTS.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./variable_provenance_2026_10_30/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./CHAT_WORK_ARCHIVE_2026_10_30.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./CHAT_WORK_ARCHIVE_2026_10_30.json"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./ENTRYPOINT_ARCHIVE_2026_10_31.md"
+    ],
+    [
+      "docs/thesis_research/HANDOFF.md",
+      "./consolidation_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "../../AGENTS.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./HANDOFF.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./TAXON_PILOT_ROADMAP.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/DESIGN_COUNTS.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/INPUT_GAPS.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/synthetic_plan.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/verification.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/TESTING.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./HANDOFF.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/preservation.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./t1_synthetic_t2_2026_10_31/pr_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./pollen_methods_2026_10_31/git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./variable_provenance_2026_10_30/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./taxon_transfer_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./smote_nnet_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./calibration_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./calibration_uncertainty_2026_10_30/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./CHAT_WORK_ARCHIVE_2026_10_30.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./ARTIFACTS.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./ENTRYPOINT_ARCHIVE_2026_10_31.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./pollen_taxon_evidence_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./original_pollen_names_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./original_pollen_names_2026_10_31/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./pollen_methods_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./pollen_methods_2026_10_31/verification.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./pollen_methods_2026_10_31/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./HANDOFF.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md",
+      "../taxon_transfer_2026_10_30/DESIGN.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md",
+      "../taxon_transfer_2026_10_30/config.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md",
+      "./SYNTHETIC_PLAN.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md",
+      "./synthetic_plan.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md",
+      "./INPUT_GAPS.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../taxon_transfer_2026_10_30/DESIGN.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../taxon_transfer_2026_10_30/config.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../pollen_methods_2026_10_31/README.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../pollen_methods_2026_10_31/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../TAXON_PILOT_ROADMAP.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md",
+      "../variable_provenance_2026_10_30/SOURCE_GAP.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./DESIGN_COUNTS.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./INPUT_GAPS.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./SYNTHETIC_PLAN.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./synthetic_plan.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "./verification.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/README.md",
+      "../HANDOFF.md"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md",
+      "./synthetic_plan.json"
+    ],
+    [
+      "docs/thesis_research/counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md",
+      "../t1_synthetic_t2_2026_10_31/DESIGN.md"
+    ]
+  ],
+  "plan_checks": {
+    "planned_posteriors": 52,
+    "grid_states_per_posterior": 441,
+    "pmf_vectors_at_N8": 495,
+    "allocation_columns_normalized": true,
+    "count_totals_and_missing_aggregate_consistent": true
+  },
+  "mathematical_review": {
+    "type": "author algebraic and definition review, no simulation or fit",
+    "items": [
+      "Multinomial normalization by multinomial theorem",
+      "Mixture of normalized probability laws",
+      "Marginalization of unobserved categories at fixed N",
+      "Conditioning on selected-category count only with explicit sampling process",
+      "Scale invariance and production/climate compensation",
+      "Identical allocation columns and u-reflection symmetry",
+      "Shared-H N2 event probabilities derived as 17/288 versus 25/576",
+      "Proper priors and common-support conditions stated"
+    ],
+    "independent_human_review": false
+  },
+  "not_executed": [
+    "prototype implementation",
+    "simulations",
+    "parameter fits",
+    "posterior computations",
+    "repository unit/browser/CLI/sampler tests",
+    "real core reconstructions",
+    "SBC"
+  ],
+  "input_sha256": {
+    "AGENTS.md": "4fde81cd968de7ea75ef6c76a443c182ae6a9761988438c4104974e64fd83dbf",
+    "docs/thesis_research/TAXON_PILOT_ROADMAP.md": "26e414ffa796ed1c74404b51ed40cf2f1154c0f275369472d8857c2cdece50c3",
+    "docs/thesis_research/t1_synthetic_t2_2026_10_31/README.md": "8cb1f37d57d1e3991833e064936b247bf2eb9c35dbf67437622054f15b9139c8",
+    "docs/thesis_research/t1_synthetic_t2_2026_10_31/DESIGN.md": "cdbfc2a285258a7c9d9d7f2205b3d9bf4e2841e5d09c49f5b4adcbe80c81abaf",
+    "docs/thesis_research/t1_synthetic_t2_2026_10_31/config.json": "5eeb8aca1837c768468267a42f945460edec1bbf588afe7eb59cb755b13541c6",
+    "docs/thesis_research/taxon_transfer_2026_10_30/DESIGN.md": "57a5b61c91239cc973da2752abf9afeaed23a2ae68259f306b55a4659e2c1a1a",
+    "docs/thesis_research/taxon_transfer_2026_10_30/config.json": "c7ece43f095bbef8e87a404d1f35b6f09dbe56970e7fae54ee1f6a2312423071",
+    "docs/thesis_research/pollen_methods_2026_10_31/README.md": "b5dbd8dd8991568915df0ba6c0bde8cb6b3c5772bf0e0c835edd0f98745c7c73",
+    "docs/thesis_research/pollen_methods_2026_10_31/SOURCE_GAP.md": "3e4f3d9ca1c94056c2a1cab78f7ee360cf762236932a79259c4c8bd80db83680"
+  },
+  "new_document_sha256": {
+    "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md": "87bc2acc63ee42f00f8718e58b3fcfac37429d9c7dd34275d8de0b11bcfdbe31",
+    "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md": "6b8db890c530dd35892a469f74ff49ef814952293ebab4d13a4c4210a6274038",
+    "docs/thesis_research/counts_observation_design_2026_10_31/README.md": "31ef6be1acfb67f08994adcdb221e81f1f1c2835163f6dc763adc399e97c3f5c",
+    "docs/thesis_research/counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md": "e0b700bcc53fbc2204f7fb78dbc1298608d03f974d9b570e1cfc6963939db292",
+    "docs/thesis_research/counts_observation_design_2026_10_31/git_snapshot.json": "00acaa860fbe5975466729b775283ff0ab88a4f195c3790252ea98cc4b0b76f5",
+    "docs/thesis_research/counts_observation_design_2026_10_31/synthetic_plan.json": "07061e74f2e395d1abf7762135be9b98f56a2fecf98e18196419af34f99b413f"
+  }
+}
