@@ -1,0 +1,346 @@
+case	criterion	relation	expected	actual	difference	status
+S00	F alle Zustände exakt	==	0	0	0	bestanden
+S00	Z je psi exakt	==	0	0	0	bestanden
+S00	Q alle Zustände exakt	==	0	0	0	bestanden
+S00	alle Marginalen exakt	==	0	0	0	bestanden
+S00	Summe Q	==	1	1	0	bestanden
+S00	alle Q nichtnegativ	==	True	True	0	bestanden
+S00	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S00	Z(-1) positiv	>	0	1	1	bestanden
+S00	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S00	Z(1) positiv	>	0	1	1	bestanden
+S01	F alle Zustände exakt	==	0	0	0	bestanden
+S01	Z je psi exakt	==	0	0	0	bestanden
+S01	Q alle Zustände exakt	==	0	0	0	bestanden
+S01	alle Marginalen exakt	==	0	0	0	bestanden
+S01	Summe Q	==	1	1	0	bestanden
+S01	alle Q nichtnegativ	==	True	True	0	bestanden
+S01	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S01	Z(-1) positiv	>	0	13643/8388608	13643/8388608	bestanden
+S01	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S01	Z(1) positiv	>	0	32933/8388608	32933/8388608	bestanden
+S02-scaled	F alle Zustände exakt	==	0	0	0	bestanden
+S02-scaled	Z je psi exakt	==	0	0	0	bestanden
+S02-scaled	Q alle Zustände exakt	==	0	0	0	bestanden
+S02-scaled	alle Marginalen exakt	==	0	0	0	bestanden
+S02-scaled	Summe Q	==	1	1	0	bestanden
+S02-scaled	alle Q nichtnegativ	==	True	True	0	bestanden
+S02-scaled	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S02-scaled	Z(-1) positiv	>	0	13643/8388608	13643/8388608	bestanden
+S02-scaled	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S02-scaled	Z(1) positiv	>	0	98799/8388608	98799/8388608	bestanden
+S02-witness	F alle Zustände exakt	==	0	0	0	bestanden
+S02-witness	Z je psi exakt	==	0	0	0	bestanden
+S02-witness	Q alle Zustände exakt	==	0	0	0	bestanden
+S02-witness	alle Marginalen exakt	==	0	0	0	bestanden
+S02-witness	Summe Q	==	1	1	0	bestanden
+S02-witness	alle Q nichtnegativ	==	True	True	0	bestanden
+S02-witness	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S02-witness	Z(-1) positiv	>	0	1	1	bestanden
+S02-witness	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S02-witness	Z(1) positiv	>	0	3	3	bestanden
+S03	F alle Zustände exakt	==	0	0	0	bestanden
+S03	Z je psi exakt	==	0	0	0	bestanden
+S03	Q alle Zustände exakt	==	0	0	0	bestanden
+S03	alle Marginalen exakt	==	0	0	0	bestanden
+S03	Summe Q	==	1	1	0	bestanden
+S03	alle Q nichtnegativ	==	True	True	0	bestanden
+S03	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S03	Z(-1) positiv	>	0	1	1	bestanden
+S03	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S03	Z(1) positiv	>	0	1	1	bestanden
+S04	F alle Zustände exakt	==	0	0	0	bestanden
+S04	Z je psi exakt	==	0	0	0	bestanden
+S04	Q alle Zustände exakt	==	0	0	0	bestanden
+S04	alle Marginalen exakt	==	0	0	0	bestanden
+S04	Summe Q	==	1	1	0	bestanden
+S04	alle Q nichtnegativ	==	True	True	0	bestanden
+S04	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S04	Z(-1) positiv	>	0	1	1	bestanden
+S04	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S04	Z(1) positiv	>	0	1	1	bestanden
+S06a	F alle Zustände exakt	==	0	0	0	bestanden
+S06a	Z je psi exakt	==	0	0	0	bestanden
+S06a	Q alle Zustände exakt	==	0	0	0	bestanden
+S06a	alle Marginalen exakt	==	0	0	0	bestanden
+S06a	Summe Q	==	1	1	0	bestanden
+S06a	alle Q nichtnegativ	==	True	True	0	bestanden
+S06a	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S06a	Z(-1) positiv	>	0	36617/8388608	36617/8388608	bestanden
+S06a	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S06a	Z(1) positiv	>	0	19607/8388608	19607/8388608	bestanden
+S06b	F alle Zustände exakt	==	0	0	0	bestanden
+S06b	Z je psi exakt	==	0	0	0	bestanden
+S06b	Q alle Zustände exakt	==	0	0	0	bestanden
+S06b	alle Marginalen exakt	==	0	0	0	bestanden
+S06b	Summe Q	==	1	1	0	bestanden
+S06b	alle Q nichtnegativ	==	True	True	0	bestanden
+S06b	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S06b	Z(-1) positiv	>	0	2513/131072	2513/131072	bestanden
+S06b	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S06b	Z(1) positiv	>	0	2627/131072	2627/131072	bestanden
+S06c	F alle Zustände exakt	==	0	0	0	bestanden
+S06c	Z je psi exakt	==	0	0	0	bestanden
+S06c	Q alle Zustände exakt	==	0	0	0	bestanden
+S06c	alle Marginalen exakt	==	0	0	0	bestanden
+S06c	Summe Q	==	1	1	0	bestanden
+S06c	alle Q nichtnegativ	==	True	True	0	bestanden
+S06c	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S06c	Z(-1) positiv	>	0	31353/4194304	31353/4194304	bestanden
+S06c	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S06c	Z(1) positiv	>	0	38999/4194304	38999/4194304	bestanden
+S06d	F alle Zustände exakt	==	0	0	0	bestanden
+S06d	Z je psi exakt	==	0	0	0	bestanden
+S06d	Q alle Zustände exakt	==	0	0	0	bestanden
+S06d	alle Marginalen exakt	==	0	0	0	bestanden
+S06d	Summe Q	==	1	1	0	bestanden
+S06d	alle Q nichtnegativ	==	True	True	0	bestanden
+S06d	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S06d	Z(-1) positiv	>	0	2513/131072	2513/131072	bestanden
+S06d	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S06d	Z(1) positiv	>	0	2627/131072	2627/131072	bestanden
+S07	F alle Zustände exakt	==	0	0	0	bestanden
+S07	Z je psi exakt	==	0	0	0	bestanden
+S07	Q alle Zustände exakt	==	0	0	0	bestanden
+S07	alle Marginalen exakt	==	0	0	0	bestanden
+S07	Summe Q	==	1	1	0	bestanden
+S07	alle Q nichtnegativ	==	True	True	0	bestanden
+S07	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S07	Z(-1) positiv	>	0	28959/2097152	28959/2097152	bestanden
+S07	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S07	Z(1) positiv	>	0	24049/2097152	24049/2097152	bestanden
+S08a	F alle Zustände exakt	==	0	0	0	bestanden
+S08a	Z je psi exakt	==	0	0	0	bestanden
+S08a	Q alle Zustände exakt	==	0	0	0	bestanden
+S08a	alle Marginalen exakt	==	0	0	0	bestanden
+S08a	Summe Q	==	1	1	0	bestanden
+S08a	alle Q nichtnegativ	==	True	True	0	bestanden
+S08a	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S08a	Z(-1) positiv	>	0	1/2	1/2	bestanden
+S08a	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S08a	Z(1) positiv	>	0	1/2	1/2	bestanden
+S08b	F alle Zustände exakt	==	0	0	0	bestanden
+S08b	Z je psi exakt	==	0	0	0	bestanden
+S08b	Q alle Zustände exakt	==	0	0	0	bestanden
+S08b	alle Marginalen exakt	==	0	0	0	bestanden
+S08b	Summe Q	==	1	1	0	bestanden
+S08b	alle Q nichtnegativ	==	True	True	0	bestanden
+S08b	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S08b	Z(-1) positiv	>	0	13643/8388608	13643/8388608	bestanden
+S08b	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S08b	Z(1) positiv	>	0	32933/8388608	32933/8388608	bestanden
+S08c-a	F alle Zustände exakt	==	0	0	0	bestanden
+S08c-a	Z je psi exakt	==	0	0	0	bestanden
+S08c-a	Q alle Zustände exakt	==	0	0	0	bestanden
+S08c-a	alle Marginalen exakt	==	0	0	0	bestanden
+S08c-a	Summe Q	==	1	1	0	bestanden
+S08c-a	alle Q nichtnegativ	==	True	True	0	bestanden
+S08c-a	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S08c-a	Z(-1) positiv	>	0	5061/2097152	5061/2097152	bestanden
+S08c-a	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S08c-a	Z(1) positiv	>	0	12711/2097152	12711/2097152	bestanden
+S08c-b	F alle Zustände exakt	==	0	0	0	bestanden
+S08c-b	Z je psi exakt	==	0	0	0	bestanden
+S08c-b	Q alle Zustände exakt	==	0	0	0	bestanden
+S08c-b	alle Marginalen exakt	==	0	0	0	bestanden
+S08c-b	Summe Q	==	1	1	0	bestanden
+S08c-b	alle Q nichtnegativ	==	True	True	0	bestanden
+S08c-b	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S08c-b	Z(-1) positiv	>	0	3521/4194304	3521/4194304	bestanden
+S08c-b	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S08c-b	Z(1) positiv	>	0	7511/4194304	7511/4194304	bestanden
+S08d	F alle Zustände exakt	==	0	0	0	bestanden
+S08d	Z je psi exakt	==	0	0	0	bestanden
+S08d	Q alle Zustände exakt	==	0	0	0	bestanden
+S08d	alle Marginalen exakt	==	0	0	0	bestanden
+S08d	Summe Q	==	1	1	0	bestanden
+S08d	alle Q nichtnegativ	==	True	True	0	bestanden
+S08d	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S08d	Z(-1) positiv	>	0	13/128	13/128	bestanden
+S08d	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S08d	Z(1) positiv	>	0	7/128	7/128	bestanden
+S09-base	F alle Zustände exakt	==	0	0	0	bestanden
+S09-base	Z je psi exakt	==	0	0	0	bestanden
+S09-base	Q alle Zustände exakt	==	0	0	0	bestanden
+S09-base	alle Marginalen exakt	==	0	0	0	bestanden
+S09-base	Summe Q	==	1	1	0	bestanden
+S09-base	alle Q nichtnegativ	==	True	True	0	bestanden
+S09-base	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S09-base	Z(-1) positiv	>	0	13643/8388608	13643/8388608	bestanden
+S09-base	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S09-base	Z(1) positiv	>	0	32933/8388608	32933/8388608	bestanden
+S09-opposite	F alle Zustände exakt	==	0	0	0	bestanden
+S09-opposite	Z je psi exakt	==	0	0	0	bestanden
+S09-opposite	Q alle Zustände exakt	==	0	0	0	bestanden
+S09-opposite	alle Marginalen exakt	==	0	0	0	bestanden
+S09-opposite	Summe Q	==	1	1	0	bestanden
+S09-opposite	alle Q nichtnegativ	==	True	True	0	bestanden
+S09-opposite	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S09-opposite	Z(-1) positiv	>	0	19451/8388608	19451/8388608	bestanden
+S09-opposite	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S09-opposite	Z(1) positiv	>	0	15701/8388608	15701/8388608	bestanden
+S09-noY	F alle Zustände exakt	==	0	0	0	bestanden
+S09-noY	Z je psi exakt	==	0	0	0	bestanden
+S09-noY	Q alle Zustände exakt	==	0	0	0	bestanden
+S09-noY	alle Marginalen exakt	==	0	0	0	bestanden
+S09-noY	Summe Q	==	1	1	0	bestanden
+S09-noY	alle Q nichtnegativ	==	True	True	0	bestanden
+S09-noY	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S09-noY	Z(-1) positiv	>	0	551/65536	551/65536	bestanden
+S09-noY	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S09-noY	Z(1) positiv	>	0	761/65536	761/65536	bestanden
+S10	F alle Zustände exakt	==	0	0	0	bestanden
+S10	Z je psi exakt	==	0	0	0	bestanden
+S10	Q alle Zustände exakt	==	0	0	0	bestanden
+S10	alle Marginalen exakt	==	0	0	0	bestanden
+S10	Summe Q	==	1	1	0	bestanden
+S10	alle Q nichtnegativ	==	True	True	0	bestanden
+S10	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S10	Z(-1) positiv	>	0	1	1	bestanden
+S10	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S10	Z(1) positiv	>	0	1	1	bestanden
+S11-equal	F alle Zustände exakt	==	0	0	0	bestanden
+S11-equal	Z je psi exakt	==	0	0	0	bestanden
+S11-equal	Q alle Zustände exakt	==	0	0	0	bestanden
+S11-equal	alle Marginalen exakt	==	0	0	0	bestanden
+S11-equal	Summe Q	==	1	1	0	bestanden
+S11-equal	alle Q nichtnegativ	==	True	True	0	bestanden
+S11-equal	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S11-equal	Z(-1) positiv	>	0	9/4096	9/4096	bestanden
+S11-equal	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S11-equal	Z(1) positiv	>	0	9/256	9/256	bestanden
+S11-unequal	F alle Zustände exakt	==	0	0	0	bestanden
+S11-unequal	Z je psi exakt	==	0	0	0	bestanden
+S11-unequal	Q alle Zustände exakt	==	0	0	0	bestanden
+S11-unequal	alle Marginalen exakt	==	0	0	0	bestanden
+S11-unequal	Summe Q	==	1	1	0	bestanden
+S11-unequal	alle Q nichtnegativ	==	True	True	0	bestanden
+S11-unequal	psi=-1 bleibt q	==	1/3	1/3	0	bestanden
+S11-unequal	Z(-1) positiv	>	0	9/4096	9/4096	bestanden
+S11-unequal	psi=1 bleibt q	==	2/3	2/3	0	bestanden
+S11-unequal	Z(1) positiv	>	0	9/256	9/256	bestanden
+S01	q from E only,psi=-1	==	1/3	1/3	0	bestanden
+S01	q from E only,psi=1	==	2/3	2/3	0	bestanden
+S00	direct product of priors	==	0	0	0	bestanden
+S02-scaled	Q invariant under r	==	0	0	0	bestanden
+S02-witness	Q equals prior despite r	==	0	0	0	bestanden
+S03	entire predictive table	==	0	0	0	bestanden
+S03	predictive sum	==	1	1	0	bestanden
+S05	entire predictive table	==	0	0	0	bestanden
+S05	predictive sum	==	1	1	0	bestanden
+S10	entire predictive table	==	0	0	0	bestanden
+S10	predictive sum	==	1	1	0	bestanden
+S03	mean formula	==	5/12	5/12	0	bestanden
+S03	joint second moment	==	3/16	3/16	0	bestanden
+S03	Cov = Var(shared parameter)	==	1/72	1/72	0	bestanden
+S03	shared covariance positive	>	0	1/72	1/72	bestanden
+S10	mean formula	==	11/16	11/16	0	bestanden
+S10	joint second moment	==	61/128	61/128	0	bestanden
+S10	Cov = Var(shared parameter)	==	1/256	1/256	0	bestanden
+S10	shared covariance positive	>	0	1/256	1/256	bestanden
+S04	direct Markov pair table	==	0	0	0	bestanden
+S04	Pr(C2=C1)	==	3/4	3/4	0	bestanden
+S04	Cov(C1,C2)	==	3/8	3/8	0	bestanden
+S04	Cov positive	>	0	3/8	3/8	bestanden
+S05	fixed denominator every outcome	==	True	True	0	bestanden
+S05	Cov(nA,nB)=-N*pA*pB	==	-1/4	-1/4	0	bestanden
+S05	negative category covariance	<	0	-1/4	-1/4	bestanden
+S06a	P1 likelihood psi=-1,c=-1	==	1/16	1/16	0	bestanden
+S06b	P1 likelihood psi=-1,c=-1	==	1	1	0	bestanden
+S06c	P1 likelihood psi=-1,c=-1	==	1/2	1/2	0	bestanden
+S06d	P1 likelihood psi=-1,c=-1	==	1	1	0	bestanden
+S07	P1 likelihood psi=-1,c=-1	==	1/2	1/2	0	bestanden
+S06a	measured zero positive psi=-1,c=-1	>	0	1/16	1/16	bestanden
+S07	Pr(H=1/4 | R0=0),psi=-1,c=-1	==	1/2	1/2	0	bestanden
+S06a	P1 likelihood psi=-1,c=1	==	1/4	1/4	0	bestanden
+S06b	P1 likelihood psi=-1,c=1	==	1	1	0	bestanden
+S06c	P1 likelihood psi=-1,c=1	==	3/8	3/8	0	bestanden
+S06d	P1 likelihood psi=-1,c=1	==	1	1	0	bestanden
+S07	P1 likelihood psi=-1,c=1	==	3/4	3/4	0	bestanden
+S06a	measured zero positive psi=-1,c=1	>	0	1/4	1/4	bestanden
+S07	Pr(H=1/4 | R0=0),psi=-1,c=1	==	1/2	1/2	0	bestanden
+S06a	P1 likelihood psi=1,c=-1	==	1/4	1/4	0	bestanden
+S06b	P1 likelihood psi=1,c=-1	==	1	1	0	bestanden
+S06c	P1 likelihood psi=1,c=-1	==	3/8	3/8	0	bestanden
+S06d	P1 likelihood psi=1,c=-1	==	1	1	0	bestanden
+S07	P1 likelihood psi=1,c=-1	==	3/4	3/4	0	bestanden
+S06a	measured zero positive psi=1,c=-1	>	0	1/4	1/4	bestanden
+S07	Pr(H=1/4 | R0=0),psi=1,c=-1	==	1/2	1/2	0	bestanden
+S06a	P1 likelihood psi=1,c=1	==	1/16	1/16	0	bestanden
+S06b	P1 likelihood psi=1,c=1	==	1	1	0	bestanden
+S06c	P1 likelihood psi=1,c=1	==	1/2	1/2	0	bestanden
+S06d	P1 likelihood psi=1,c=1	==	1	1	0	bestanden
+S07	P1 likelihood psi=1,c=1	==	1/2	1/2	0	bestanden
+S06a	measured zero positive psi=1,c=1	>	0	1/16	1/16	bestanden
+S07	Pr(H=1/4 | R0=0),psi=1,c=1	==	1/2	1/2	0	bestanden
+S06d	N=0 Q equals missing P1 Q	==	0	0	0	bestanden
+S08a	tau=a date only	==	3/4	3/4	0	bestanden
+S08a	tau=b date only	==	1/4	1/4	0	bestanden
+S08b	same whole-curve posterior as S01	==	0	0	0	bestanden
+S08b	whole curve formula a	==	48905358/64186417	48905358/64186417	0	bestanden
+S08c-a	conditional trajectory at psi=-1	==	0	0	0	bestanden
+S08c-a	conditional trajectory at psi=1	==	0	0	0	bestanden
+S08b	whole curve formula b	==	15281059/64186417	15281059/64186417	0	bestanden
+S08c-b	conditional trajectory at psi=-1	==	0	0	0	bestanden
+S08c-b	conditional trajectory at psi=1	==	0	0	0	bestanden
+S08d	tau a/b odds for psi=+1	==	3/4	3/4	0	bestanden
+S08d	likelihood ratio modifies D odds	!=	3	3/4	-9/4	bestanden
+S09-base	truth has positive posterior support	>	0	1728/32933	1728/32933	bestanden
+S09-opposite	truth has positive posterior support	>	0	192/15701	192/15701	bestanden
+S09-noY	truth has positive posterior support	>	0	24/761	24/761	bestanden
+S09-opposite	Q differs from base	!=	0	64	64	bestanden
+S09-noY	Q differs from base	!=	0	64	64	bestanden
+S11-equal	equal likelihoods at psi=-1	==	9/4096	9/4096	0	bestanden
+S11-equal	UA/UB posterior odds psi=-1	==	1	1	0	bestanden
+S11-unequal	UA/UB posterior odds psi=-1	==	3	3	0	bestanden
+S11-equal	equal likelihoods at psi=1	==	9/256	9/256	0	bestanden
+S11-equal	UA/UB posterior odds psi=1	==	1	1	0	bestanden
+S11-unequal	UA/UB posterior odds psi=1	==	3	3	0	bestanden
+S02-witness	counter global_normalization violates witness	!=	2/3	6/7	4/21	bestanden
+S02-witness	counter global_normalization distribution sum	==	1	1	0	bestanden
+S02-witness	global psi+ witness formula	==	6/7	6/7	0	bestanden
+S03	defective covariance zero	==	0	0	0	bestanden
+S03	counter independent_psi violates witness	!=	1/72	0	-1/72	bestanden
+S03	counter independent_psi distribution sum	==	1	1	0	bestanden
+S10	defective covariance zero	==	0	0	0	bestanden
+S10	counter independent_theta violates witness	!=	1/256	0	-1/256	bestanden
+S10	counter independent_theta distribution sum	==	1	1	0	bestanden
+S05	counter independent_categories violates witness	!=	0	673/1024	673/1024	bestanden
+S05	counter independent_categories distribution sum	==	1	1	0	bestanden
+S04	counter independent_C_marginals violates witness	!=	3/4	9/16	-3/16	bestanden
+S04	counter independent_C_marginals distribution sum	==	1	1	0	bestanden
+S08d	counter D_only_chronology violates witness	!=	3/4	3	9/4	bestanden
+S08d	counter D_only_chronology distribution sum	==	1	1	0	bestanden
+S12	I01-negative	==	INVALID_CALIBRATION	INVALID_CALIBRATION	0	bestanden
+S12	I01-sum	==	INVALID_CALIBRATION	INVALID_CALIBRATION	0	bestanden
+S12	I01-missing	==	INVALID_CALIBRATION	INVALID_CALIBRATION	0	bestanden
+S12	I02	==	INVALID_NORMALIZER	INVALID_NORMALIZER	0	bestanden
+S12	I03-negative	==	INVALID_KERNEL	INVALID_KERNEL	0	bestanden
+S12	I03-infinity	==	INVALID_KERNEL	INVALID_KERNEL	0	bestanden
+S12	I03-undefined	==	INVALID_KERNEL	INVALID_KERNEL	0	bestanden
+S12	I04-N-unknown	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I04-N-negative	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I04-N-fraction	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I04-n-negative	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I04-n-fraction	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I04-sum	==	INVALID_OBSERVATION	INVALID_OBSERVATION	0	bestanden
+S12	I05-sparse-zero	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I05-unknown	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I05-not-reported	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I05-not-determined	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I05-outside	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I05-incomplete	==	UNRESOLVED_STATUS	UNRESOLVED_STATUS	0	bestanden
+S12	I06-percent	==	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	0	bestanden
+S12	I06-rounded-zero	==	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	0	bestanden
+S12	I06-detection-zero	==	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	0	bestanden
+S12	I06-N100	==	PSEUDOCOUNT_FORBIDDEN	PSEUDOCOUNT_FORBIDDEN	0	bestanden
+S12	I07-equal	==	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	0	bestanden
+S12	I07-reversed	==	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	0	bestanden
+S12	I07-outside	==	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	0	bestanden
+S12	I08-D	==	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	0	bestanden
+S12	I08-P	==	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	0	bestanden
+S12	I08-Y	==	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	0	bestanden
+S12	I09-real	==	OUT_OF_DESIGN	OUT_OF_DESIGN	0	bestanden
+S12	I09-category	==	OUT_OF_DESIGN	OUT_OF_DESIGN	0	bestanden
+S12	I09-unit	==	OUT_OF_DESIGN	OUT_OF_DESIGN	0	bestanden
+S12	I09-feedback	==	OUT_OF_DESIGN	OUT_OF_DESIGN	0	bestanden

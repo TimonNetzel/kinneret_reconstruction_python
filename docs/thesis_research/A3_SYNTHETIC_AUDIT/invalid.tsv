@@ -1,0 +1,34 @@
+case	input	expected	actual	Q_returned	status	difference	limit
+I01-negative	{'q': {-1: Fraction(-1, 3), 1: Fraction(4, 3)}}	INVALID_CALIBRATION	INVALID_CALIBRATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I01-sum	{'q': {-1: Fraction(1, 3), 1: Fraction(1, 3)}}	INVALID_CALIBRATION	INVALID_CALIBRATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I01-missing	{'q': {-1: Fraction(1, 3)}}	INVALID_CALIBRATION	INVALID_CALIBRATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I02	{'mutation': 'zero_plus'}	INVALID_NORMALIZER	INVALID_NORMALIZER	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I03-negative	{'mutation': 'negative'}	INVALID_KERNEL	INVALID_KERNEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I03-infinity	{'mutation': 'infinity'}	INVALID_KERNEL	INVALID_KERNEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I03-undefined	{'mutation': 'undefined'}	INVALID_KERNEL	INVALID_KERNEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-N-unknown	{'N': None}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-N-negative	{'N': -1}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-N-fraction	{'N': Fraction(3, 2)}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-n-negative	{'n': (-1, 3, 0)}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-n-fraction	{'n': (Fraction(1, 2), Fraction(3, 2), 0)}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I04-sum	{'n': (0, 0, 0)}	INVALID_OBSERVATION	INVALID_OBSERVATION	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-sparse-zero	{'status': 'sparse_nonhit_as_zero'}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-unknown	{'status': 'unknown'}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-not-reported	{'status': 'not_reported'}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-not-determined	{'status': 'not_determined'}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-outside	{'status': 'outside_coverage'}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I05-incomplete	{'n': (2, 0)}	UNRESOLVED_STATUS	UNRESOLVED_STATUS	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I06-percent	{'status': 'percent', 'precision': None}	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I06-rounded-zero	{'status': 'percent', 'precision': 'rounded_zero_undeclared'}	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I06-detection-zero	{'status': 'percent', 'precision': 'detection_zero_undeclared'}	MISSING_PRECISION_MODEL	MISSING_PRECISION_MODEL	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I06-N100	{'pseudo_N': 100}	PSEUDOCOUNT_FORBIDDEN	PSEUDOCOUNT_FORBIDDEN	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I07-equal	{'curve': (2, 2)}	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I07-reversed	{'curve': (2, 1)}	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I07-outside	{'curve': (2, 4)}	INVALID_CHRONOLOGY	INVALID_CHRONOLOGY	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I08-D	{'duplicate': 'D'}	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I08-P	{'duplicate': 'P1'}	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I08-Y	{'duplicate': 'Y1'}	DUPLICATE_EVIDENCE	DUPLICATE_EVIDENCE	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I09-real	{'source': 'real:/not/opened.csv'}	OUT_OF_DESIGN	OUT_OF_DESIGN	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I09-category	{'categories': ('A', 'B', 'X')}	OUT_OF_DESIGN	OUT_OF_DESIGN	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I09-unit	{'unit': 'undeclared'}	OUT_OF_DESIGN	OUT_OF_DESIGN	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.
+I09-feedback	{'feedback': 'undeclared'}	OUT_OF_DESIGN	OUT_OF_DESIGN	False	bestanden	0	Ablehnung dieses einen künstlichen Fehlereingangs.

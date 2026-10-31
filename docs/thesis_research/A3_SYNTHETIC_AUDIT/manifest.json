@@ -1,0 +1,70 @@
+{
+  "design_commit": "a4c03c6752708dead6ecd98f016758538ddb71b2",
+  "design_blob": "21879814c77f0341457f9f4790dd40e24b555d55",
+  "arithmetic": "fractions.Fraction; exact reduced rationals",
+  "posterior_cases": 22,
+  "invalid_subcases": 33,
+  "failures": 0,
+  "files": {
+    "states.tsv": {
+      "bytes": 70394,
+      "sha256": "67796af20d9ab7868165dcacde9e4c443789996840ce2e4d5a6ca104c4af1fad",
+      "rows": 1288
+    },
+    "normalizers.tsv": {
+      "bytes": 1355,
+      "sha256": "a02e484034e3f48de7fc3f4d324dfb04d2018f6dcd9b5aa2d677a367b2a6806b",
+      "rows": 44
+    },
+    "marginals.tsv": {
+      "bytes": 42782,
+      "sha256": "ecca679f340743b0c55dd6d058a41eb577377b2850e226b1abe70918108762ed",
+      "rows": 1056
+    },
+    "predictive.tsv": {
+      "bytes": 395,
+      "sha256": "da3ab5f3b13455d6aee34f79fe16cf2d8e98609505ab0c6cf762f47a9bc48a78",
+      "rows": 14
+    },
+    "likelihoods.tsv": {
+      "bytes": 407,
+      "sha256": "239c95241456718ca4a004896b6527d6a4c1aa86eb34d333a23b9dd8bf2ca6eb",
+      "rows": 20
+    },
+    "percent_latent.tsv": {
+      "bytes": 311,
+      "sha256": "4093ddbd1d08058003ae44cab5d5f69f9acc7fe1e60a96498ec2b0120f44505a",
+      "rows": 16
+    },
+    "witnesses.tsv": {
+      "bytes": 17804,
+      "sha256": "4cc32ac3a1f92d5a2cf821ee2c9df0829b88aa75edaa06b8e26ad1cd1b42a0cd",
+      "rows": 345
+    },
+    "invalid.tsv": {
+      "bytes": 4929,
+      "sha256": "764d66c863ec43054b3d66a30b7740a9cab362ed901978aae619528f79e1d02d",
+      "rows": 33
+    },
+    "countermethods.tsv": {
+      "bytes": 471,
+      "sha256": "679ed10f9b80d91c64653b28731fcd734e3380640962ed73daf63ec765aae806",
+      "rows": 6
+    },
+    "counterstates.tsv": {
+      "bytes": 5853,
+      "sha256": "df7f37118ba44b00cba3f47d8a9f80939eea6e36fa3a96d71727ffd46dcc1572",
+      "rows": 105
+    },
+    "comparisons.tsv": {
+      "bytes": 40516,
+      "sha256": "ac2b1e254bc4cbe9597dcadf3045ea0288e3522cdd4bf7151b4026d52ee3b2bf",
+      "rows": 576
+    },
+    "cases.tsv": {
+      "bytes": 6123,
+      "sha256": "e4ec7a59203513e0aad26f34d7f618fccce33c491ae4b6d772a33a192d7ffeb2",
+      "rows": 24
+    }
+  }
+}
