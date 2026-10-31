@@ -33,7 +33,11 @@ Automatische CI [41219952795](https://github.com/TimonNetzel/kinneret_reconstruc
 am Übergabe-Head erfolgreich. Main `7f1826c`; fünf vorgefundene Worktrees
 sauber, keine Stashes, kein Reset/Merge. Eigener Worktree
 `/workspace/netzel-a3-task-boundary`, Branch `codex/netzel-a3-task-boundary`;
-eigener PR gegen den #52-Branch; Sicherungsverweise folgen nach Commit/PR.
+[PR #53](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/53)
+gegen den #52-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`82598ed1825771656afe5c4f4f34afb3e85e6f51`; danach nur Sicherungsverweise.
+Automatische CI 41220607622 zum Inhaltscommit bei Abfrage in Arbeit; kein
+abschließender Erfolg für den Übergabe-Head behauptet. Remote-Head über #53 prüfen.
 
 Nur HANDOFF und dieser kurze Status geändert; ältere Statushistorie erhalten.
 Prüfung bestanden: Zuordnung zu Plan/Vertrag, 13 lokale Links/Anker und

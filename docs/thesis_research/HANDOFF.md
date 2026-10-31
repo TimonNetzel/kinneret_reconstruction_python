@@ -27,8 +27,12 @@ Automatische CI [41219952795](https://github.com/TimonNetzel/kinneret_reconstruc
 am Übergabe-Head erfolgreich. Main weiterhin `7f1826c`.
 Fünf vorgefundene Worktrees sauber, keine Stashes; ungesicherte Arbeit nicht
 angetastet. Eigener Worktree `/workspace/netzel-a3-task-boundary`, Branch
-`codex/netzel-a3-task-boundary`; eigener PR gegen den #52-Branch, ohne Merge.
-Sicherungscommit und PR werden im neuesten Status nachgetragen.
+`codex/netzel-a3-task-boundary`;
+[PR #53](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/53)
+gegen den #52-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`82598ed1825771656afe5c4f4f34afb3e85e6f51`; danach nur Sicherungsverweise.
+CI 41220607622 zum Inhaltscommit bei Abfrage in Arbeit; letzter Remote-Head
+und aktueller CI-Stand über PR #53 prüfbar.
 
 ## Genau ein Folgeauftrag: A3-Design dokumentieren – vorbereitet, wartet auf Nutzer-OK
 
