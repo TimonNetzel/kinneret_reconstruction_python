@@ -17,6 +17,40 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+## Aktueller Abschluss: A3-Auftragsabgrenzung, 31.10.2026
+
+**Nur die dokumentarische Auftragsabgrenzung abgeschlossen.**
+[HANDOFF](./HANDOFF.md) hält Ziel, Eingänge, erlaubte Änderungen,
+Schutzgrenzen, Stopbedingungen und prüfbares Ende des späteren A3-Designpakets
+anhand Plan §1/§2-Zeile A3/§4 und MODEL_CONTRACT fest. Genau ein Folgeauftrag:
+A3-Design dokumentieren, vorbereitet – wartet auf Nutzer-OK. A3 selbst und
+A4–A6 nicht begonnen; kein neues Konzeptpapier und keine reale Freigabe.
+
+Basis [PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52),
+offen/ungemergt und mergebar, Remote-Head `1bf23cded54a101aada68b79acf89a0b7a272fb4`;
+A2-Stand `7deff9f002bd8f865f63ef5812c843d6c0a6ec9b` ist Vorfahr.
+Automatische CI [41219952795](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41219952795)
+am Übergabe-Head erfolgreich. Main `7f1826c`; fünf vorgefundene Worktrees
+sauber, keine Stashes, kein Reset/Merge. Eigener Worktree
+`/workspace/netzel-a3-task-boundary`, Branch `codex/netzel-a3-task-boundary`;
+[PR #53](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/53)
+gegen den #52-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`82598ed1825771656afe5c4f4f34afb3e85e6f51`; danach nur Sicherungsverweise.
+Automatische CI 41220607622 zum Inhaltscommit bei Abfrage in Arbeit; kein
+abschließender Erfolg für den Übergabe-Head behauptet. Remote-Head über #53 prüfen.
+
+Nur HANDOFF und dieser kurze Status geändert; ältere Statushistorie erhalten.
+Prüfung bestanden: Zuordnung zu Plan/Vertrag, 13 lokale Links/Anker und
+Zwei-Dateien-Diff; 728 geschützte Blobs einschließlich MODEL_CONTRACT und
+Symlink bytegleich. Keine Projekt-/Modelltests oder sonstigen Rechnungen
+manuell gestartet. A1/A2 dokumentarisch
+abgeschlossen, MODEL_CONTRACT und alle übrigen bestehenden Dateien unverändert.
+Parnell-Zugang blockiert, Menezes-(2)/(5) offen, kein Neuheitsbeitrag abgegrenzt;
+W96, EMPD2-Archiv-/Messstatus und reale Gates offen. Keine Recherche,
+Originalprüfung der Dissertation, reale Auswahl/Beschaffung/Bereinigung,
+Datenmatrix/Kohorte, Implementierung, Fits, Scores, Simulationen oder Kernläufe.
+Keine Unteragenten, Autorennachrichten oder Merges.
+
 ## Aktueller Abschluss: A2-Modellvertrag, 31.10.2026
 
 Übergabeprompt auf Nutzerwunsch in HANDOFF gesichert. Verlässlich gesicherter
