@@ -21,6 +21,47 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Klima-/Zeit-Wiederöffnungskriterien dokumentiert, 31.10.2026
+
+Der ausdrückliche Nutzerauftrag nach PR #58 ist umgesetzt:
+[A4_E_REOPENING_REQUIREMENTS](./A4_E_REOPENING_REQUIREMENTS.md) deckt
+C04/C05/C06 und T02–T04 durch sechs konkrete Nachweisanforderungen ab.
+Belegtyp/Angaben, Identitätsbezug, zulässiger Schluss und Nichtbelegfolge
+sind getrennt; Herkunft, Annahme, technische Verfügbarkeit und fachliche
+Freigabe bleiben unterscheidbar. **Dokumentarischer Auftrag abgeschlossen;
+reale Klima-/Zeitverbindung und Counts-Bereitschaft weiter blockiert.**
+Kein realer Eingang/Zeitraum gewählt, kein Vertrag ausgefüllt oder Gate geöffnet.
+
+Basis `0ac78de8ec007bb8e92c5ea571cefc7ba9e414a0`,
+[PR #58](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58)
+offen/ungemergt und mergebar; automatische CI 41239359845 erfolgreich.
+Remote-Head entspricht Übergabe, nicht in main; main unverändert `7f1826c`.
+Auch #57 offen/ungemergt und mergebar. Fünf vorgefundene Worktrees sauber,
+keine Stashes/Resets/Merges. Eigener Worktree
+`/workspace/netzel-a4-e-reopening-requirements`, Branch
+`codex/netzel-a4-e-reopening-requirements`, eigener gestapelter PR gegen #58.
+Commit-/PR-Sicherung und eigene automatische CI werden nach Erstellung ergänzt.
+
+Nur neues Ergebnisdokument plus HANDOFF-/Statuspflege; alte Statushistorie
+vollständig erhalten. Ableitung, zwölf lokale Links/Anker und Drei-Dateien-
+Umfang geprüft; 752 geschützte Blobs/Dateimodi einschließlich Symlink
+unverändert, alte Statushistorie bytegleich. Keine neue Quelle/Fundstelle,
+Recherche, Beschaffung, reale Daten-/Dateiprüfung, Auswahl, Implementierung,
+Tests, Rechnungen, Fits, Scores, Optimierung, Simulationen oder Kernläufe.
+Beim Statuslesen zusätzlich ältere Abschlussabschnitte angezeigt; daraus keine
+fachliche Neuprüfung. Bestehende Fachdateien unverändert. A1/A2 dokumentarisch
+abgeschlossen, A3 ausschließlich endlich-synthetisch bestanden;
+A4-Umsetzung/reale Kalibrierung und A5/A6 nicht begonnen. Parnell,
+Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben Grenzen;
+kein eigener Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK
+und ein eindeutig bezeichnetes neues Herkunfts-/Erzeugungs-Textdokument:
+dessen Beitrag zu R01–R03 dokumentarisch bewerten, ohne weitere Beschaffung
+oder reale Freigabe. Ohne Belegobjekt blockiert; keine erneute Auswertung
+derselben Altangaben als neue Evidenz. Startprompt in HANDOFF.
+
+
 ## Aktueller Abschluss: Klima-/Zeit-Nachweiskette präzisiert, 31.10.2026
 
 Nutzer-OK nach PR #57 umgesetzt: [A4_E_CLIMATE_TIME_GAPS](./A4_E_CLIMATE_TIME_GAPS.md)
