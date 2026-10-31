@@ -1,88 +1,66 @@
-# Netzel-Projekt: nächster Einstieg
+# Netzel: kompakte Übergabe
 
-## Gesicherte Ergänzung: Dissertation und Menezes verbinden
+## Gesichert und beschlossen
 
-Am 31.10.2026 vor dem gewünschten Chatwechsel vom Nutzer erfragt:
-konsequente Verbindung der modernen Methoden mit der Dissertation und echter
-Mehrwert, Schwerpunkt Menezes. Basis
-`877f572e40ea028bbd12e4127fbb16ac5f4acd9b` aus
-[PR #48](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/48).
-Worktree `/workspace/netzel-menezes-integration`, Branch
-`codex/netzel-menezes-integration`;
-[PR #49](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/49)
-gegen den #48-Branch, offen/ungemergt. Inhaltscommit
-`08d8ec612bac8f967ce0b9d6be73f96378cee3ac`; danach Sicherungs-/Übergabeverweise.
-Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
-[INTEGRATION_MEMO](./menezes_integration_2026_10_31/INTEGRATION_MEMO.md).
-
-**Integrationsvorschlag schriftlich konkretisiert; keine reale Methode gewählt.**
-Menezes v1 §1.3/§2.1 und §5 gezielt nachgelesen: modern kalibrierte Pollen-
-Countsantworten mit cut-posterior, derzeit keine zeitliche Abhängigkeit oder
-Altersunsicherheit in der Inversion. Erweiterungen dazu nennen die Autoren
-selbst. Vorschlag: geschütztes modernes Kalibriermodul, nachgelagerter gemeinsamer
+Neuer operativer [MODULAR_RECONSTRUCTION_PLAN](./MODULAR_RECONSTRUCTION_PLAN.md),
+31.10.2026, auf ausdrücklichen Nutzerauftrag erstellt. Forschungsrichtung:
+geschützte moderne Pollen-Kalibrierung nach Menezes, gemeinsamer nachgelagerter
 Klima-/Chronologie-/Multiproxyblock als Weiterentwicklung der Dissertation.
-Dieser Block muss je Kalibrierparameterziehung bedingt normiert werden;
-Kalibrierunsicherheit gemeinsam über alle Proben erhalten. Damit wird #47s
-vollständiger gemeinsamer Posterior als Vorschlag präzisiert, nicht umgeschrieben.
+Konkrete Daten, Klimaziele, Modellparameter und reale Freigaben bleiben offen.
 
-Eigener Beitragskandidat: nachvollziehbare zeitliche/Chronologie-/Multiproxy-
-Erweiterung mit unabhängiger Prüfung und Konfliktdiagnose. Nicht als neu belegt;
-schmalere Bänder/glattere Kurven reichen nicht. Klimaziele (Menezes GDD5/MTCO/
-AET-PET versus unsere TANN/PANN) und Datenrollen vor Verbindung vereinheitlichen.
-Countsmodell benötigt echte Counts/N; keine Pseudo-Counts aus Prozenten.
-Arealfunktionen allenfalls als kalibrierte Merkmale oder separater Vergleich,
-keine doppelte Polleninformation. W96, Archiv-/Messstatus und reale Gates offen.
+Basis `df01632d2256a5a7f6c4d3576f9e77c8ea5d7cb9` aus PR #49.
+Worktree `/workspace/netzel-modular-plan`, Branch
+`codex/netzel-modular-reconstruction-plan`; eigener PR nach Inhaltscommit.
+Plan, Status und Übergabe gesichert; keine Implementierung oder Rechnung.
 
-## Genau ein nächster Auftrag – bereits autorisiert, für neuen Chat vorbereitet
+## Genau ein nächster Auftrag: A1 – bereits autorisiert, im neuen Chat ausführen
 
-**Begrenzte methodische Abgrenzungsmatrix zu drei nahen Primärarbeiten erstellen.**
-Der Nutzer hat diesem Auftrag bereits mit „Ok“ vor der Chatwechsel-Frage
-zugestimmt. Kein zusätzliches OK verlangen. Diese Ergänzungsfrage führt die
-vollständige Matrix nicht vorzeitig aus; die Fortsetzung erfolgt im neuen Chat.
+Neue NOVELTY_MATRIX.md plus Status/Übergabe. Methodenteile von genau drei
+Primärarbeiten gegen die Architektur aus Plan §1 vergleichen:
+Parnell 2015 (10.1111/rssc.12065), Bowen 2020 (10.5194/cp-16-65-2020),
+Menezes 2026 v1 (arXiv:2609.08866v1). Nach diesen drei Arbeiten stoppen.
+Sechs Prüffelder und konkrete Abschlusskriterien stehen in Plan §5.
+Schwerpunkt Menezes: Kalibrier-Cut/bedingte Normierung, zeitliche/Chronologie-
+Erweiterung und externe Proxy-Modelle. Höchstens einen überprüfbaren
+Beitragskandidaten abgrenzen oder fehlende Abgrenzung festhalten.
+Keine ungeprüfte Neuheitsbehauptung oder reale Modellentscheidung.
 
-- Neue NOVELTY_MATRIX.md plus Status/Übergabe. Nur Methodenteile von
-  Parnell 2015 (10.1111/rssc.12065), Bowen 2020 (10.5194/cp-16-65-2020) und
-  Menezes v1 2026 (arXiv:2609.08866v1) gegen #47 und dieses Integrationsmemo lesen.
-- Felder: Counts/Prozente/Nullen, Kalibrierbrücke, Klimaprozess, Chronologie,
-  Proxy-Abhängigkeit und Unsicherheitsvalidierung. Schwerpunkt Menezes:
-  cut versus gemeinsamer Posterior, Normalisierungsrollen von Gl. (2)/(5),
-  zeitliche Erweiterung und zusätzliche Proxy-Beobachtungsmodelle.
-- Je Feld Gleichung/Abschnitt, Gemeinsamkeit, konkrete Differenz und offene
-  Beleglage nennen. Bei fehlendem Volltext Zugangslücke; nach genau drei
-  Arbeiten stoppen, keine Schneeballsuche oder umfassende Neuheitsbehauptung.
-- Abschluss: höchstens einen überprüfbaren Beitragskandidaten abgrenzen oder
-  feststellen, dass noch keiner belegt ist. Keine neue reale Methode wählen.
-- Leseplan: AGENTS/HANDOFF/PROJECT_STATUS, INTEGRATION_MEMO, #48-LITERATURE_CHECK,
-  #47-PERCENTAGE_INDICATOR_DESIGN und genau die drei Originalarbeiten.
-- Keine Implementierung, Datenbeschaffung/-auswahl, Bereinigung/Matrix/Kohorte,
-  Code-/Test-/Fit-/Score-/Simulations-/Kernläufe, Kontakte, Merges oder Unteragenten.
-  Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-  Baseline und CLI/App unverändert; W96 und reale Gates offen. Eigener
-  Worktree/Branch/PR, Quellen-/Link-/Diffprüfung, genau ein Folgeauftrag.
+**Kein erneutes OK verlangen:** A1 wurde bereits autorisiert. A2–A6 sind
+Planung, keine gleichzeitig aktiven Aufträge oder vorgezogenen Rechenfreigaben.
 
-## Stand und Grenzen
+## Minimaler Lese- und Prüfplan
 
-Zuerst Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-unversionierte Änderungen prüfen, Arbeit erhalten, Basis nennen; eigener
-Worktree/Branch. main enthält die ungemergte Kette nicht automatisch.
-Einstieg #48 offen/ungemergt/mergefähig, CI 41205275351 erfolgreich,
-main `7f1826c`, zehn vorherige Worktrees sauber. Literaturmodelle ersetzen
-keine reale Eingangsprüfung. W96, Monticchio-P1 und physischer LGM90D→MON16-
-Anschluss, EMPD2-Exportkette/Messstatus bleiben offen; Archivsuche nicht wieder öffnen.
+1. Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
+   unversionierte Änderungen einmal kompakt prüfen, vorhandene Arbeit erhalten.
+   Aktuellen ungemergten Quellenstand verwenden; eigener Worktree/Branch/PR.
+2. AGENTS.md, diese Übergabe, Plan §1/§2-A1/§4/§5 und nur den obersten aktuellen
+   Abschnitt von PROJECT_STATUS lesen. Dann genau die drei Primärarbeiten
+   gezielt. Alte Memos/Designs/PDFs nur bei konkreter ungeklärter Frage nachladen.
+3. Quellenlocator/Version und Befund direkt in die Matrix sichern, keine
+   wiederholte Inventur, breite Suche oder Volltexte im Chat. Abschluss durch
+   Quellen-/Link-/Diffprüfung, keine pauschalen Tests bei Dokumentation.
 
-## Startprompt für den bereits beauftragten Methodenvergleich
+Keine Datenbeschaffung/-auswahl, Matrix/Kohorte/Bereinigung, Projektcode-/Test-/
+Fit-/Score-/Simulations-/Kernläufe, Unteragenten, Autorennachrichten oder Merges.
+Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+Baseline und CLI/App unverändert. W96, EMPD2-Archiv-/Messstatus und reale
+T0/T1/T3/T4/Monticchio-P1 offen; beendete Archivsuche nicht wieder öffnen.
 
-> Setze das Netzel-Projekt auf codex/netzel-menezes-integration fort,
-> gesicherter Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-Stand,
-> Branches, Worktrees und lokale Änderungen; erhalte Arbeit. Führe den bereits
-> autorisierten Auftrag NOVELTY_MATRIX zu Parnell 2015, Bowen 2020 und
-> Menezes v1 2026 aus, Schwerpunkt Verbindung von Menezes mit meiner Dissertation
-> gemäß INTEGRATION_MEMO. Prüfe besonders Kalibrier-Cut/Normierung, gemeinsame
-> Klima-/Chronologie-Inferenz und zusätzliche Proxy-Modelle. Nach drei Arbeiten
-> stoppen; höchstens einen prüfbaren eigenen Beitragskandidaten abgrenzen.
-> Keine ungeprüfte Neuheitsbehauptung, reale Modellwahl oder Datenbeschaffung/
-> Auswahl/Bereinigung/Matrix/Kohorte/Code-/Test-/Fit-/Score-/Simulations-/Kernläufe.
-> Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+## Kopierfertiger Startprompt
+
+> Setze Netzel auf codex/netzel-modular-reconstruction-plan fort, gesicherter
+> Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-Stand, Branches,
+> Worktrees und lokale Änderungen; erhalte Arbeit. Lies nur AGENTS, HANDOFF,
+> MODULAR_RECONSTRUCTION_PLAN §1/§2-A1/§4/§5 und den neuesten Statusabschnitt.
+> Führe den bereits autorisierten Auftrag A1 aus: NOVELTY_MATRIX zu Parnell
+> 2015, Bowen 2020 und Menezes v1 2026. Schwerpunkt Menezes-Kalibrier-Cut/
+> Normierung, gemeinsame Klima-/Chronologie-Inferenz und zusätzliche Proxys.
+> Belege Gleichung/Abschnitt, Gemeinsamkeiten/Differenzen und offene Fragen;
+> höchstens einen prüfbaren Beitragskandidaten abgrenzen. Nach drei Arbeiten
+> stoppen. Alte Unterlagen nur bei konkreter Frage, kurze Ausgaben/Updates.
+> Keine ungeprüfte Neuheit, reale Auswahl, Datenbeschaffung, Bereinigung/
+> Matrix/Kohorte, Code-/Test-/Fit-/Score-/Simulations-/Kernläufe. Bestehende
+> Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
 > Baseline und CLI/App unverändert; W96 und reale Gates offen. Eigener
-> Worktree/Branch/PR, keine Unteragenten/Kontakte/Merges. Kurze deutsche Updates,
-> knappe Abschlussantwort; Ergebnis und genau einen Folgeauftrag sichern.
+> Worktree/Branch/PR, keine Unteragenten/Kontakte/Merges. Ergebnis und genau
+> einen nächsten begrenzten Folgeauftrag sichern. A2–A6 nicht vorziehen.
