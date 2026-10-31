@@ -6,6 +6,9 @@ Worktree `/workspace/netzel-empd2-rules`, Branch
 `codex/netzel-empd2-denominator-rules`. Neun vorherige Worktrees erhalten;
 main `7f1826c`, #31–#42 offen, #42-CI grün. Kein Merge/Autorenkontakt.
 [Standprüfung](./git_snapshot.json).
+Gesichert als [PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43)
+gegen `codex/netzel-empd2-counts-readiness` (#42), Inhaltscommit `ed979ba`;
+danach nur PR-/Übergabeverweise. Eigene CI bei Erstellung noch laufend.
 
 **Ergebnis:** Der bereitgestellte Prozentnenner ist für die drei bekannten
 Zeugen datenbezogen nachvollzogen. Eine allgemeine archiveigene Nullregel und

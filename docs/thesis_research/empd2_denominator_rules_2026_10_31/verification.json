@@ -20,7 +20,7 @@
     "/workspace/netzel-t1-synthetic-t2": "",
     "/workspace/netzel-workflow": ""
   },
-  "local_links_checked": 79,
+  "local_links_checked": 80,
   "local_links": [
     [
       "docs/thesis_research/HANDOFF.md",
@@ -101,6 +101,10 @@
     [
       "docs/thesis_research/PROJECT_STATUS.md",
       "./empd2_denominator_rules_2026_10_31/verification.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./empd2_denominator_rules_2026_10_31/pr_snapshot.json"
     ],
     [
       "docs/thesis_research/PROJECT_STATUS.md",
@@ -367,7 +371,7 @@
   ],
   "independent_human_review": false,
   "new_document_sha256": {
-    "docs/thesis_research/empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md": "3bfe9e5d9ae9427d7c84c15ca34bc8176b61fccd6606026a7a1da6911e066edb",
+    "docs/thesis_research/empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md": "be7fbdc526659f0ea2d05427ff3f43cebad46dc6a376ce0a6645445ce4d7a823",
     "docs/thesis_research/empd2_denominator_rules_2026_10_31/REPRODUCE.md": "29d4da9fa6caa7f7b69e525448a686b708e1a128aafd7f6450ce1f1fdb90d9c4",
     "docs/thesis_research/empd2_denominator_rules_2026_10_31/RULE_EVIDENCE.json": "59e84a27140cab904c6dda260d841026c3ee7805f70ccf339ddd643708c2fc88",
     "docs/thesis_research/empd2_denominator_rules_2026_10_31/SOURCE_GAPS.md": "2b24fc163b0485a4a2734a735af3d5718aa8e9778fb6823491d253dbf88f562b",

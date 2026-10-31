@@ -5,7 +5,11 @@
 Nach Nutzer-OK hier im Chat am 31.10.2026 ausgeführt. Basis PR #42 bei
 `e1e8ebe32f17487c4c91d2044db845112a8365bb`; Worktree
 `/workspace/netzel-empd2-rules`, Branch `codex/netzel-empd2-denominator-rules`.
-PR-/Inhaltscommit-Verweis steht in PROJECT_STATUS.
+[PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43)
+sichert das Quellenpaket gegen `codex/netzel-empd2-counts-readiness` (#42), kein Merge.
+Letzter Inhaltscommit `ed979ba2dee39f2fc1b503f9b09353812f9fbcc4`;
+danach nur PR-/Übergabeverweise. CI bei Erstellung noch laufend,
+technisch MERGEABLE/UNSTABLE, keine fachliche Freigabe.
 [Ergebnis](./empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md),
 [Regelbelege](./empd2_denominator_rules_2026_10_31/RULE_EVIDENCE.json),
 [Quell-/Datenvergleich](./empd2_denominator_rules_2026_10_31/source_comparison.json).
@@ -114,8 +118,9 @@ sind dadurch genehmigt.
 
 **Vorgeschlagener Startauftrag, wartet auf OK; auch hier im Chat ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-empd2-denominator-rules` fort;
-> letzter Inhaltscommit/PR stehen in PROJECT_STATUS.md, Basis war PR #42 bei
+> Setze das Netzel-Projekt auf `codex/netzel-empd2-denominator-rules` aus PR #43 fort;
+> letzter Inhaltscommit ed979ba2dee39f2fc1b503f9b09353812f9fbcc4, danach nur
+> PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten). Basis war PR #42 bei
 > e1e8ebe. Prüfe Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale
 > Änderungen zuerst; erhalte ungesicherte Arbeit. Lies AGENTS.md, HANDOFF.md,
 > PROJECT_STATUS.md und den dortigen gezielten Leseplan. Führe ausschließlich

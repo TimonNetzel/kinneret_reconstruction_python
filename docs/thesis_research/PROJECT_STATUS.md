@@ -46,7 +46,14 @@ Keine Matrix/Kohorte, Fits, Scores, Simulationen oder Tests; Originaldatenbank-
 hash unverändert. Alle bestehenden Designs/Modelle/Resultate/Register/Importer/
 Flags/Fossilcounts/Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten,
 Merges oder Kontakte. [Prüfung](./empd2_denominator_rules_2026_10_31/verification.json).
-Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+Sicherung als [PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43)
+gegen `codex/netzel-empd2-counts-readiness` (#42), offen, kein Merge.
+Letzter gesicherter **Inhaltscommit**:
+`ed979ba2dee39f2fc1b503f9b09353812f9fbcc4`; danach nur PR-/Übergabeverweise.
+709 geschützte bestehende Git-Blobs bytegleich, neun vorherige Worktrees sauber.
+Eigene CI bei Erstellung noch laufend, technisch MERGEABLE/UNSTABLE;
+[PR-Snapshot](./empd2_denominator_rules_2026_10_31/pr_snapshot.json).
+Keine behauptete fachliche oder grüne Gesamtfreigabe.
 
 **Vorbereitet, wartet auf neues OK:** enges Herkunfts-/Exportaudit genau der
 Sperr-SQLite anhand offizieller PANGAEA-Metadaten und nur bei Verweis eines
