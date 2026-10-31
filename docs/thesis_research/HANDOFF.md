@@ -1,105 +1,86 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesicherter Abschluss: Prüfung der Prozent-Indikatoridee
+## Gesicherter Abschluss: neuer Gleichungsentwurf zu Dissertation 2.16
 
-Am 31.10.2026 vom Nutzer beauftragt: die neue Idee mit Dissertation und
-Projektstand abgleichen, bewerten und verbessern. Basis
-`e6a1dbe3611b636edfe3f29d9e8ee5b785eb8527` aus
-[PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45).
-Worktree `/workspace/netzel-percentage-review`, Branch
-`codex/netzel-percentage-indicator-review`;
-[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46)
-gegen den #45-Branch, offen/ungemergt. Inhaltscommit
-`4455eb01040fb2570c2c36451392929cd0ac6fad`; danach Sicherungs-/Übergabeverweise.
+Vom Nutzer am 31.10.2026 beauftragt: eine mathematisch/klimatologisch sauberere
+Weiterentwicklung von Gl. 2.16 formulieren und konkretisieren. Basis
+`d0c25a1e0a798c4625e132d4c22a26886c12878e` aus
+[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46).
+Worktree `/workspace/netzel-joint-equation`, Branch
+`codex/netzel-joint-percentage-equation`;
+[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
+gegen den #46-Branch, offen/ungemergt. Inhaltscommit
+`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`; danach Sicherungs-/Übergabeverweise.
 Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
-[CONCEPT_REVIEW](./percentage_indicator_review_2026_10_31/CONCEPT_REVIEW.md).
+[PERCENTAGE_INDICATOR_DESIGN](./joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md).
 
-**Konzeptprüfung abgeschlossen; keine neue Hauptmethode oder reale Freigabe.**
-Die Architektur knüpft an Dissertation §2.3/2.4 und den frühen Multiproxy-Plan
-an. Prozentwerte können relative Indikator-Auswahlgewichte sein; sie sind
-nicht die Wahrscheinlichkeiten kartierten Artenvorkommens der vorhandenen
-Transferfunktionen. Nur Taxa mit Funktion zu verwenden verlangt belegte
-Pollentyp–Taxon-Brücken und Erhaltung der ursprünglichen Spektralabdeckung.
-Prozent-only hebt den fehlenden Zählumfang nicht auf und braucht eine eigene
-Evidenzstärke-/Unsicherheitsdefinition.
+**Schriftlicher Gleichungsentwurf abgeschlossen, keine reale Methodenfreigabe.**
+Gemeinsamer Klimaverlauf C, latente Chronologien tau, Parameter Theta;
+Pollenanteils-Likelihood, externe Proxy-Likelihoods, Datierungs-Likelihood
+und getrennte Prozess-/Parameterpriors. Konkrete Kandidaten: bivariater
+Matérn-Prozess für TANN/log PANN, logistic-normal für latente Typkomposition
+mit Rundungs-/Fehlwertbeobachtung, Merkmalsbrücke aus vorhandenen Artenfunktionen
+mit separat modern zu kalibrierenden Koeffizienten; Proxy-Zeitreihenmodell
+mit Signalvarianzanteil rho statt Beta(R²) als alleinigem Faktor.
 
-Empfohlener nächster Entwurf: gemeinsamer Klimazustand mit explizitem
-prozentgewichtetem Indikatorscore; als verallgemeinerte Bayes-Auswertung
-kennzeichnen, keine abgeleitete Pollen-Likelihood behaupten. Taxonmischung und
-gewichtetes Klimamittel haben andere Aussageziele. Ganze Chronologiekurven
-weiterreichen; geglättete Altersstufen sind keine neuen unabhängigen Proben.
-Zusätzliche Proxys über eigene Beobachtungsmodelle mit erklärtem Varianzanteil,
-Autokorrelation/Chronologie und eindeutigen Datenrollen anbinden. Keine
-Nachkorrektur auf gewünschtes R², priornahe Stichprobenauswahl oder künstliche
-Bandverengung durch Mittelung von Posterior-Kopien.
-
-Die neue Nutzerfrage konkretisiert einen möglichen Weg B aus der
-[Entscheidungsvorlage](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
-Sie beauftragt hier nur Prüfung/Verbesserung der Idee, keine Implementierung
-oder Verwendung echter Daten. Die vorherige bloße A/B-Protokollierung ist
-als nächster Einstieg durch den folgenden konkreten Designvorschlag ersetzt;
-keine A/B-Wahl rückwirkend als erteilt behandeln.
+Der vorher diskutierte Indikatorscore wird für dieses generative Ziel als
+Hauptvorschlag zurückgestellt, bleibt eine andere methodische Möglichkeit.
+Keine Behauptung, die Artenfunktionen seien bereits Pollenfunktionen. Auswahl,
+Nullstatus, Präzision und reale Kalibrierung offen. Gemeinsame Chronologie erlaubt
+Proxy-Rückkopplung; Ausschluss dieser Rückkopplung wäre gesondert zu definieren.
+Neuheit nicht literaturgeprüft, keine Implementierung oder Ergebnisläufe.
+Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+Baseline und CLI/App unverändert; W96, EMPD2-Block und reale Gates offen.
 
 ## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzer-OK
 
-**Ein schriftliches Vorabdesign für den prozentgewichteten Indikatorscore
-mit gemeinsamem Klimazustand erstellen.**
+**Abstrakten Identifizierbarkeits- und Kalibriervertrag zum Gleichungsentwurf
+schriftlich festlegen.** Neue MODEL_CONTRACT.md plus Status/Übergabe.
 
-- **Ausgabe:** neue `PERCENTAGE_INDICATOR_DESIGN.md` plus Status/Übergabe.
-  Abstrakte Formulierung, keine reale Proben-/Taxon-/Kern-/Modellauswahl.
-- **Inhalt:** Aussageziel, Score/Prior/Normierung, Rolle der Evidenzstärke,
-  Abdeckung, Fehlwerte/Nullen, taxonübergreifende Abhängigkeiten, gemeinsamer
-  Support, Chronologieintegration und späterer Proxy-Anschluss. Unterschiede
-  zu Mischung/Klimamittel und echten Counts-/Kompositionsmodellen festhalten.
-- **Prüfplan nur vorbereiten:** Widerspruch, gleiche Prozente bei verschiedenem
-  N, geringe/fehlende Abdeckung, Prior-only, mehrdeutiges Klima und gemeinsame
-  Altersverschiebungen. Keine Simulationen oder Implementierung ausführen.
-- **Leseplan:** AGENTS, diese Übergabe, PROJECT_STATUS und CONCEPT_REVIEW;
-  `taxon_transfer_2026_10_30/DESIGN.md` und
-  `counts_observation_design_2026_10_31/DESIGN_COUNTS.md` nur zur Abgrenzung.
-  Dissertation nur bei einer konkreten ungeklärten Formelstelle nachladen.
-- **Abschluss:** alle mathematischen Rollen, Annahmen, freien Entscheidungen,
-  Nichtidentifizierbarkeit und Stopbedingungen prüfbar sichern. Keine empirische
-  Kalibrierung oder nominal gültigen Unsicherheitsbänder behaupten.
-- **Schutz:** alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/
-  Counts/Gruppen, Baseline und CLI/App unverändert. Keine Quellen-/Datenbeschaffung,
-  Datenauswahl, Bereinigung, Code-/Test-/Fit-/Score-/Simulations-/Kernläufe,
-  Autorennachrichten, Merges oder Unteragenten. Eigener Worktree/Branch/PR,
-  Dokument-/Link-/Hash-/Diffprüfung; genau einen Folgeauftrag sichern.
+- Für Pollenbrücke a/B/Sigma, Klimaprozess, Proxy-Skalen/rho und Chronologie
+  Evidenzbedarf, Referenzkonventionen, notwendige Fixierungen/Annahmen und
+  Abbruchfälle nennen. Klima–Brücke–Proxy-Skala und Klima–Alter explizit prüfen.
+- Kleinen späteren synthetischen Prüfplan beschreiben: Prior-only, Fehlwerte/
+  Rundungsnullen, Klima-/Skalenmehrdeutigkeit, gemeinsame Taxonfehler,
+  Chronologieverschiebung und korrelierte Proxys. Keine Ausführung.
+- Leseplan: AGENTS, HANDOFF, PROJECT_STATUS, neuer Gleichungsentwurf;
+  vorheriges Konzept- und Counts-Design nur bei konkreter Abgrenzungsfrage.
+- Abschluss: mathematische Rollen und Bedingungen einer späteren Kalibrierung
+  prüfbar sichern; keine reale Identifizierbarkeit/Neuheit/Freigabe behaupten.
+- Keine Recherche/Datenbeschaffung, reale Auswahl, Matrix/Kohorte/Bereinigung,
+  Code-/Test-/Fit-/Score-/Simulations-/Kernläufe, Kontakte, Merges oder Unteragenten.
+  Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
+  Baseline und CLI/App unverändert; eigener Worktree/Branch/PR, Dokument-/Link-/
+  Hash-/Diffprüfung, genau einen Folgeauftrag sichern.
 
-Ein OK beauftragt genau diesen schriftlichen Entwurf und Prüfplan, keine
-wissenschaftliche Ausführung oder reale Freigabe. Die Konzeptprüfung ist erledigt.
+Ein OK autorisiert nur diesen schriftlichen Vertrag/Prüfplan. Der Gleichungsentwurf
+ist erledigt; kein weiteres OK dafür erforderlich.
 
-## Zuerst Stand prüfen
+## Standprüfung und weiter offene Grenzen
 
-Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-unversionierte Änderungen prüfen; Arbeit erhalten. Aktuellen ungemergten
-Quellenstand verwenden, Basis nennen, eigenen Worktree/Branch anlegen.
-main enthält die offene Kette nicht automatisch. Nur gezielter Leseplan.
+Zuerst Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
+unversionierte Änderungen prüfen; Arbeit erhalten, Basis nennen, eigener
+Worktree/Branch. main enthält die ungemergte Kette nicht automatisch.
+Beim Einstieg #46 offen/ungemergt/mergefähig, PR-CI 41200027713 erfolgreich,
+main `7f1826c`, acht vorherige Worktrees sauber.
 
-## Separat offen, kein zusätzlicher Auftrag
-
-EMPD2-Counts-Pfad und genaue Archiv-Erzeugungskette bleiben blockiert; die
-[begrenzte Archivsuche](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md)
-endet nach zwei gezielten Quellen. Kein neuer Nenner-/Nullbeleg aus Prozenten.
-W96-Bestimmungs-/Artbrücken und Monticchio-P1 einschließlich physischem
-LGM90D→MON16-Anschluss/Unsicherheit bleiben offen. Klimaperioden/Variablen
-harmonisieren; moderne Kartenvalidierung ist kein fossiler Eignungsnachweis.
-Reale T0/T1/T3/T4 und allgemeine Multiproxy-App weiterhin nicht abgeschlossen.
+W96/Typbrücken, Monticchio-P1/physischer LGM90D→MON16-Anschluss, EMPD2-
+Archivkette und Messstatus bleiben offen. Keine N_original-Rekonstruktion
+oder Nullregel aus Prozenten. Keine neue Kern-/Modell-/Taxonauswahl.
+Die begrenzte Archivsuche wird nicht wieder geöffnet.
 
 ## Startprompt für eine spätere Fortsetzung
 
-> Setze das Netzel-Projekt auf codex/netzel-percentage-indicator-review fort;
-> nutze den gesicherten Head/PR aus PROJECT_STATUS. Prüfe zuerst Git-/PR-/Merge-/
-> CI-Stand, Branches, Worktrees und lokale Änderungen; erhalte ungesicherte Arbeit.
-> Erstelle ausschließlich das in HANDOFF vorbereitete abstrakte Vorabdesign
-> PERCENTAGE_INDICATOR_DESIGN.md samt kleinem späteren synthetischen Prüfplan.
-> Keine neue Recherche/Datenquelle, reale Proben-/Taxon-/Kern-/Modellwahl,
-> Matrix/Kohorte/Bereinigung/Codeausführung/Fits/Scores/Simulationen/Kernläufe.
-> Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-> Baseline und CLI/App unverändert. W96 und reale Gates offen. Eigener
-> Worktree/Branch/PR, keine Unteragenten/Kontakte/Merges; kurze deutsche Updates,
-> Ergebnis und genau einen nächsten begrenzten Folgeauftrag sichern.
+> Setze das Netzel-Projekt auf codex/netzel-joint-percentage-equation fort,
+> gesicherter Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-Stand,
+> Branches, Worktrees und lokale Änderungen; erhalte Arbeit. Erstelle nur den
+> in HANDOFF vorbereiteten abstrakten Identifizierbarkeits-/Kalibriervertrag
+> MODEL_CONTRACT.md samt späterem synthetischen Prüfplan. Keine Recherche,
+> Datenbeschaffung/Realwahl, Bereinigung/Matrix/Kohorte, Code-/Test-/Fit-/Score-/
+> Simulations-/Kernläufe. Alte Designs/Modelle/Resultate/Register/Verträge/
+> Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert; W96 und
+> reale Gates offen. Eigener Worktree/Branch/PR, keine Unteragenten/Kontakte/
+> Merges, kurze deutsche Updates, Ergebnis und genau einen Folgeauftrag sichern.
 
 Ein OK im passenden Kontext oder Absenden dieses Prompts beauftragt genau
-dieses Designpaket. Kein Chatwechsel erforderlich.
+dieses Vertragspaket. Kein Chatwechsel erforderlich.

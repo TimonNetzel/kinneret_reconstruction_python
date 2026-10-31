@@ -17,7 +17,42 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: Prozent-Indikatoridee geprüft, 31.10.2026
+## Aktueller Paketabschluss: gemeinsamer Gleichungsentwurf zu 2.16, 31.10.2026
+
+Nutzerauftrag zur Weiterentwicklung von Dissertation Gl. 2.16 **schriftlich
+konkretisiert**: [PERCENTAGE_INDICATOR_DESIGN](./joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md).
+Gemeinsamer Klimaverlauf, latente Chronologien, getrennte Pollen-/Proxy-/
+Datierungs-Likelihoods und Prozess-/Parameterpriors. Konkrete Kandidaten:
+bivariater Matérn-Klimaprozess, logistic-normal-Prozentmodell mit modern zu
+kalibrierender Brücke aus Artenfunktionsmerkmalen und Beobachtung von Rundung/
+Fehlwerten, Proxy-Zeitreihenmodell mit unsicherem Signalvarianzanteil rho.
+Der frühere Indikatorscore wird für dieses generative Ziel als Hauptvorschlag
+zurückgestellt; alte Designs unverändert. Keine Behauptung vorhandener
+Pollenhäufigkeitsfunktionen, Neuheit, Identifizierbarkeit oder realer Freigabe.
+Gemeinsame Chronologie erlaubt Rückkopplung der Proxys; eine Trennung benötigt
+einen ausdrücklich anderen modularen Ansatz. Kalibrierung/Messstatus weiter offen.
+
+Basis `d0c25a1e0a798c4625e132d4c22a26886c12878e` aus PR #46, Worktree
+`/workspace/netzel-joint-equation`, Branch `codex/netzel-joint-percentage-equation`.
+[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
+gegen den #46-Branch, offen/ungemergt. Inhaltscommit
+`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
+722 geschützte bestehende Git-Blobs unverändert; mathematische Rollen,
+Referenzen/Links und Drei-Dateien-Diff geprüft, keine Tests/Läufe.
+Beim Einstieg #46 offen/ungemergt/mergefähig, PR-CI 41200027713 erfolgreich,
+main `7f1826c`, acht vorherige Worktrees sauber. Nur neuer Entwurf und
+Status/Übergabe. Keine Recherche/Datenabfragen, Auswahl, Matrix/Kohorte,
+Bereinigung, Code-/Test-/Fit-/Score-/Simulations-/Kernläufe. Alte Designs,
+Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen, Baseline
+und CLI/App unverändert. Keine Unteragenten/Kontakte/Merges. W96, EMPD2-
+Archiv-/Messstatus und reale Gates bleiben offen.
+
+**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** abstrakten
+Identifizierbarkeits-/Kalibriervertrag samt späterem synthetischem Prüfplan
+schriftlich festlegen; keine Ausführung/Realwahl. [Leseplan/Umfang](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: Prozent-Indikatoridee geprüft, 31.10.2026
 
 Vom Nutzer beauftragter Abgleich mit Dissertation und Projektstand samt
 Bewertung/Verbesserung **als Konzeptpapier abgeschlossen**:
@@ -53,7 +88,7 @@ Bestehende Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/
 Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten/Kontakte/Merges;
 EMPD2-Archivkette, W96 und reale Gates bleiben offen.
 
-**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** abstraktes
+**Damals vorbereitet, durch den konkreten Gleichungsauftrag weiterentwickelt:** abstraktes
 Vorabdesign für den prozentgewichteten Indikatorscore einschließlich kleinem
 späteren synthetischen Prüfplan; keine Implementierung/Ausführung oder reale
 Datenwahl. [Umfang und Leseplan](./HANDOFF.md). Der neue Konzeptauftrag
