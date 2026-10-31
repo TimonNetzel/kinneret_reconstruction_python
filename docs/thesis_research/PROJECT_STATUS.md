@@ -17,7 +17,39 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: Literatur-Erstprüfung, 31.10.2026
+## Aktuelle Ergänzung: Dissertation–Menezes-Verbindung, 31.10.2026
+
+Nutzerfrage vor Chatwechsel **als Integrationsmemo beantwortet**:
+[INTEGRATION_MEMO](./menezes_integration_2026_10_31/INTEGRATION_MEMO.md).
+Gezielte Menezes-Lektüre §1.3/§2.1 und §5 bestätigt: moderne Pollen-Kalibrierung
+mit cut-posterior; zeitliche Abhängigkeit/Altersunsicherheit derzeit nicht
+berücksichtigt und als Erweiterung benannt. Vorschlag: Kalibrierblock schützen,
+Unsicherheit übertragen und nachgelagerten Klima-/Chronologie-/Multiproxyblock
+der Dissertation weiterentwickeln, je Kalibrierziehung bedingt normieren.
+Dies präzisiert den #47-Vorschlag, ohne alte Designs umzuschreiben.
+Eigenen Mehrwert an unabhängiger Vorhersage/Unsicherheitskalibrierung und
+Konfliktdiagnose prüfen; bloße Glättung oder schmalere Bänder genügen nicht.
+Keine Neuheit/Realvalidierung/Freigabe behauptet. Counts/N und Klimaziele
+nicht mit Prozenten beziehungsweise TANN/PANN gleichsetzen.
+
+Basis `877f572e40ea028bbd12e4127fbb16ac5f4acd9b` aus PR #48; Worktree
+`/workspace/netzel-menezes-integration`, Branch `codex/netzel-menezes-integration`.
+Eigener PR nach Inhaltscommit gegen den #48-Branch, kein Merge.
+724 geschützte Git-Blobs bytegleich, mathematische Rollen/Quellen/Verweise und
+Drei-Dateien-Diff geprüft. #48 beim
+Einstieg offen/ungemergt/mergefähig, CI 41205275351 erfolgreich, main `7f1826c`,
+zehn vorherige Worktrees sauber. Nur neues Memo plus Status/Übergabe;
+keine Datenbeschaffung/-auswahl, Bereinigung/Matrix/Kohorte, Code-/Test-/Fit-/
+Score-/Simulations-/Kernläufe. Alte Designs/Modelle/Resultate/Register/Verträge/
+Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert. Keine
+Unteragenten/Kontakte/Merges; W96 und reale Gates offen.
+
+**Genau ein nächster Auftrag, bereits per Nutzer-OK autorisiert:**
+Methoden-Abgrenzungsmatrix zu Parnell 2015, Bowen 2020 und Menezes v1 2026,
+Schwerpunkt Integration/Kalibrier-Cut/Normierung. Im neuen Chat ausführen,
+kein erneutes OK verlangen; nach drei Arbeiten stoppen. [Startprompt](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: Literatur-Erstprüfung, 31.10.2026
 
 Nutzerfrage nach bestehenden Anwendungen **begrenzt recherchiert und belegt**:
 [LITERATURE_CHECK](./method_literature_check_2026_10_31/LITERATURE_CHECK.md).
@@ -47,7 +79,7 @@ Score-/Simulations-/Kernläufe. Bestehende Designs/Modelle/Resultate/Register/
 Verträge/Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert;
 keine Unteragenten/Kontakte/Merges, W96 und reale Gates offen.
 
-**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** begrenzte
+**Danach per Nutzer-OK autorisiert, zur Fortsetzung im neuen Chat vorbereitet:** begrenzte
 Methoden-Abgrenzungsmatrix zu Parnell 2015, Bowen 2020 und Menezes v1 2026;
 nach genau drei Arbeiten stoppen. [Umfang und Leseplan](./HANDOFF.md).
 
