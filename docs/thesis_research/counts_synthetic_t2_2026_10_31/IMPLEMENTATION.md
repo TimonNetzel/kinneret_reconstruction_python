@@ -25,3 +25,10 @@ Operative Präzisierungen vor Ausführung, keine Planänderung:
 Keine echten Modelle, Fossilcounts, Baseline oder CLI/App bearbeiten.
 Keine Standardtests, realen Fits/Kernläufe, Unteragenten, Merges oder Kontakte.
 W96 und reale T0/T1/T3/T4/Monticchio-P1-Grenzen bleiben offen.
+
+## Implementierungsreparatur vor erstem Ergebnislauf
+
+Der erste gezielte pytest-Aufruf brach bereits bei der Sammlung mit SyntaxError
+ab: ein Parametrisierungsdekorator hatte einen überzähligen Doppelpunkt.
+Korrigiert und erneut vor Tests/Ergebnislauf gesichert. Keine Testszenarien oder
+wissenschaftlichen Parameter geändert; noch keine Produktionsausgaben erzeugt.

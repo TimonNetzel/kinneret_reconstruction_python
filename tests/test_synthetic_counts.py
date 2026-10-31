@@ -127,7 +127,7 @@ def test_structural_zero_and_impossible_all_states():
     ([1, 0, 0, 0, None], 2, {"scheme": "conditional", "selection_documented": True}),
     ([1, 0, 0, 0, 0], 1, {"scheme": "other"}),
     ([1, 0, 0, 0, 0], 1, {"model": "other"}),
-]):
+])
 def test_invalid_observations(counts, total, kwargs):
     with pytest.raises(ValueError):
         m.invert(m.grid(CFG), counts, total, CFG, **kwargs)
