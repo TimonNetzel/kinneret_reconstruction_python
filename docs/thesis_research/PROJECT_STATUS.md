@@ -48,7 +48,14 @@ Branch `codex/netzel-empd2-counts-readiness`, Worktree
 Bestehende Modelle/Designs/Resultate/Register/Fossilcounts/Gruppen, Baseline
 und CLI/App bytegleich; keine Unteragenten, Merges oder Autorennachrichten.
 Reales T1, W96/Artbrücken, T0/T3/T4 und Monticchio-P1 unverändert offen.
-Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+Sicherung als [PR #42](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42)
+gegen `codex/netzel-synthetic-counts-t2` (#41), offen, kein Merge.
+Letzter gesicherter **Inhaltscommit**:
+`1627a11d22f6fe8827dd7eed509acb6df2720b08`; danach nur PR-/Übergabeverweise.
+701 geschützte bestehende Git-Blobs bytegleich und acht vorherige Worktrees sauber;
+Originaldatenbankhash unverändert. Eigene CI bei Erstellung noch laufend,
+technisch MERGEABLE/UNSTABLE; [PR-Snapshot](./empd2_counts_readiness_2026_10_31/pr_snapshot.json).
+Kein behaupteter grüner Gesamtstand und keine wissenschaftliche Freigabe.
 
 **Vorbereitet, wartet auf neues OK:** ursprüngliche EMPD2-Nenner- und Sparse-
 Verarbeitungsregeln anhand der registrierten Methodenpublikation und nur bei

@@ -5,7 +5,11 @@
 Nach Nutzer-OK hier im Chat am 31.10.2026 ausgeführt. Basis PR #41 bei
 `62ffeaf08ee7c7538f8d9c4cc99f78e7c0bdb394`; Worktree
 `/workspace/netzel-empd2-readiness`, Branch `codex/netzel-empd2-counts-readiness`.
-PR-/Inhaltscommit-Verweis steht in PROJECT_STATUS.
+[PR #42](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42)
+sichert das Audit gegen `codex/netzel-synthetic-counts-t2` (#41), kein Merge.
+Letzter Inhaltscommit `1627a11d22f6fe8827dd7eed509acb6df2720b08`;
+danach nur PR-/Übergabeverweise. Eigene CI bei Erstellung noch laufend,
+technisch MERGEABLE/UNSTABLE, keine fachliche Freigabe.
 [Ergebnis](./empd2_counts_readiness_2026_10_31/MODERN_COUNTS_READINESS.md),
 [Datenvertrag](./empd2_counts_readiness_2026_10_31/INPUT_CONTRACT.json),
 [Originalbelege/Abfragen](./empd2_counts_readiness_2026_10_31/evidence.json).
@@ -116,8 +120,9 @@ sind dadurch genehmigt.
 
 **Vorgeschlagener Startauftrag, wartet auf OK; auch hier im Chat ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-empd2-counts-readiness` fort;
-> letzter Inhaltscommit und PR stehen in PROJECT_STATUS.md, Basis war PR #41
+> Setze das Netzel-Projekt auf `codex/netzel-empd2-counts-readiness` aus PR #42 fort;
+> letzter Inhaltscommit 1627a11d22f6fe8827dd7eed509acb6df2720b08, danach nur
+> PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten). Basis war PR #41
 > bei 62ffeaf. Prüfe Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale
 > Änderungen zuerst; erhalte ungesicherte Arbeit. Lies AGENTS.md, HANDOFF.md,
 > PROJECT_STATUS.md und den gezielten Leseplan. Führe ausschließlich den dort

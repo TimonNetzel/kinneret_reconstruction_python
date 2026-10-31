@@ -5,6 +5,9 @@
 `/workspace/netzel-empd2-readiness`, Branch `codex/netzel-empd2-counts-readiness`.
 [Git-/PR-Snapshot](./git_snapshot.json): #31–#41 offen, main `7f1826c`, #41 mit
 vier erfolgreichen CI-Checks CLEAN/MERGEABLE. Kein Merge und keine Unteragenten.
+Sicherung als [PR #42](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42)
+gegen `codex/netzel-synthetic-counts-t2` (#41), Inhaltscommit `1627a11`;
+danach nur PR-/Übergabeverweise. Eigene CI bei Erstellung noch laufend.
 
 **Ergebnis:** Technische Eingänge für einen direkten modernen Typkompositionsweg
 sind vorhanden. **Ein realer Trainingssatz oder eine Counts-Likelihood ist noch

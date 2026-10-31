@@ -1,0 +1,58 @@
+{
+  "observed_at_utc": "2026-10-31T10:37:21.720514+00:00",
+  "pr42": {
+    "baseRefName": "codex/netzel-synthetic-counts-t2",
+    "headRefName": "codex/netzel-empd2-counts-readiness",
+    "headRefOid": "1627a11d22f6fe8827dd7eed509acb6df2720b08",
+    "mergeStateStatus": "UNSTABLE",
+    "mergeable": "MERGEABLE",
+    "mergedAt": null,
+    "number": 42,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41193449756/job/124514744659",
+        "name": "test (3.11)",
+        "startedAt": "2026-10-31T10:36:33Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41193440274/job/124514715911",
+        "name": "test (3.11)",
+        "startedAt": "2026-10-31T10:36:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41193449756/job/124514744779",
+        "name": "test (3.13)",
+        "startedAt": "2026-10-31T10:36:38Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "0001-01-01T00:00:00Z",
+        "conclusion": "",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41193440274/job/124514716064",
+        "name": "test (3.13)",
+        "startedAt": "2026-10-31T10:36:24Z",
+        "status": "IN_PROGRESS",
+        "workflowName": "Tests"
+      }
+    ],
+    "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/42"
+  },
+  "remote_heads": "1627a11d22f6fe8827dd7eed509acb6df2720b08\trefs/heads/codex/netzel-empd2-counts-readiness\n62ffeaf08ee7c7538f8d9c4cc99f78e7c0bdb394\trefs/heads/codex/netzel-synthetic-counts-t2\n7f1826cffddc8893ba6354cd3cca3fa43954b9be\trefs/heads/main",
+  "note": "Before final PR-reference documentation commit. Running CI is not success; no merge."
+}
