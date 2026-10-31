@@ -149,6 +149,10 @@ Bytearchivlücken unverändert.
 
 ## Bestimmungsumfänge und Literaturgrenzen, 31.10.2026
 
+Gesichert als [PR #37](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/37),
+Branch `codex/netzel-pollen-methods`, Basis `f7e5290` und Ziel
+`codex/netzel-first-taxon-pilot-roadmap` (#36), ohne Merge.
+
 [Literaturpaket](./pollen_methods_2026_10_31/README.md): **7/7 Arten** mit
 morphologischen Referenzbefunden, Typgrenzen, Gegen-/Fehlbelegen und exakten
 Seiten/Abschnitten/Objekten dokumentiert. 14 gelesene Referenzquellen/-seiten,

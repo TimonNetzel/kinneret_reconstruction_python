@@ -5,6 +5,8 @@
 Auftrag: [SOURCE_GAP aus #35](../original_pollen_names_2026_10_31/SOURCE_GAP.md).
 Eigener Worktree `/workspace/netzel-pollen-methods`, Branch
 `codex/netzel-pollen-methods`; ohne Unteragenten.
+Gesichert als [PR #37](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/37)
+gegen den #36-Branch; kein Merge.
 
 **Ergebnis:** Für 7/7 Arten sind gelesene morphologische Referenzbefunde,
 Typgrenzen und verbleibende Fragen dokumentiert. **Die fossile Methodenkette

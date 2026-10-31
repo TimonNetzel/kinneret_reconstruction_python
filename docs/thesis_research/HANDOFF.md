@@ -3,7 +3,9 @@
 Gesamtziel und Weg zum ersten diagnostischen lokalen Kernlauf stehen in der
 [Taxon-Pilot-Roadmap](./TAXON_PILOT_ROADMAP.md). Aktuell ist das
 [Literaturpaket zu sieben Bestimmungsumfängen](./pollen_methods_2026_10_31/README.md)
-auf `codex/netzel-pollen-methods` ab `f7e5290` (#36) gesichert.
+in [PR #37](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/37)
+auf `codex/netzel-pollen-methods` ab `f7e5290` (#36) gesichert; Ziel ist der
+#36-Branch, kein Merge.
 Morphologische Referenzbefunde liegen vor; **W96s tatsächliche Methodik und
 Bestimmungsreferenzen sind wegen fehlenden Volltextzugangs weiterhin offen**.
 Keine fossile Artbrücke oder T0-Freigabe.
