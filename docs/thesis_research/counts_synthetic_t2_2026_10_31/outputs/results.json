@@ -1,0 +1,1718 @@
+{
+  "runs": [
+    {
+      "id": "base_s0_N8_seed201:base:uniform",
+      "dataset": "base_s0_N8_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.537407467117209,
+      "mean": [
+        0.6389230982154337,
+        -5.1011712215442984e-17
+      ],
+      "marginal_95": [
+        [
+          0.10000000000000009,
+          1.0
+        ],
+        [
+          -0.6,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.0012854594328402544,
+      "hpd_cells": 131,
+      "hpd_mass": 0.9502135867421928,
+      "edge_mass": 0.10482658019523963,
+      "mean_error": 0.6389230982154337,
+      "truth_mass": 0.0013467923540200818,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N8_seed201:base:informative",
+      "dataset": "base_s0_N8_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.907190900766541,
+      "mean": [
+        0.6021340322606992,
+        -0.07815996572691346
+      ],
+      "marginal_95": [
+        [
+          0.10000000000000009,
+          1.0
+        ],
+        [
+          -0.6,
+          0.5
+        ]
+      ],
+      "hpd_cutoff": 0.001525391691309848,
+      "hpd_cells": 112,
+      "hpd_mass": 0.9502985420491759,
+      "edge_mass": 0.06593516167416755,
+      "mean_error": 0.6071856166354412,
+      "truth_mass": 0.00138297821690998,
+      "truth_in_hpd": false
+    },
+    {
+      "id": "base_s0_N8_seed202:base:uniform",
+      "dataset": "base_s0_N8_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.734229999551161,
+      "mean": [
+        -8.20774925889417e-17,
+        0.17080904049339726
+      ],
+      "marginal_95": [
+        [
+          -0.6,
+          0.6000000000000001
+        ],
+        [
+          -0.3999999999999999,
+          0.7000000000000002
+        ]
+      ],
+      "hpd_cutoff": 0.0009266514033199214,
+      "hpd_cells": 166,
+      "hpd_mass": 0.9502822862099719,
+      "edge_mass": 0.00424421801649855,
+      "mean_error": 0.17080904049339726,
+      "truth_mass": 0.016397573336099428,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N8_seed202:base:informative",
+      "dataset": "base_s0_N8_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.4041868563620845,
+      "mean": [
+        0.08720468260269149,
+        0.06659737868192726
+      ],
+      "marginal_95": [
+        [
+          -0.3999999999999999,
+          0.6000000000000001
+        ],
+        [
+          -0.3999999999999999,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.0010973592948447127,
+      "hpd_cells": 127,
+      "hpd_mass": 0.9510413301786934,
+      "edge_mass": 0.0006944146511967157,
+      "mean_error": 0.10972633009054929,
+      "truth_mass": 0.022733062225388578,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N8_seed203:base:uniform",
+      "dataset": "base_s0_N8_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.731312708657075,
+      "mean": [
+        0.18431526055207464,
+        -0.34680089271018877
+      ],
+      "marginal_95": [
+        [
+          -0.3999999999999999,
+          0.8
+        ],
+        [
+          -0.9,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0010625574334045323,
+      "hpd_cells": 163,
+      "hpd_mass": 0.950641643130294,
+      "edge_mass": 0.01948285699155846,
+      "mean_error": 0.39273779351745997,
+      "truth_mass": 0.00817490327669897,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N8_seed203:base:informative",
+      "dataset": "base_s0_N8_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.981372332497555,
+      "mean": [
+        0.23237295481151865,
+        -0.33841806319123074
+      ],
+      "marginal_95": [
+        [
+          -0.29999999999999993,
+          0.8
+        ],
+        [
+          -0.8,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0011476907829796542,
+      "hpd_cells": 130,
+      "hpd_mass": 0.9505143833054146,
+      "edge_mass": 0.010334148479462235,
+      "mean_error": 0.41051671783490123,
+      "truth_mass": 0.007447352842659576,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed201:base:uniform",
+      "dataset": "base_s0_N40_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.653276555865638,
+      "mean": [
+        0.22471063463661722,
+        -0.033148650461134195
+      ],
+      "marginal_95": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0050431229564620456,
+      "hpd_cells": 31,
+      "hpd_mass": 0.9504500421079011,
+      "edge_mass": 1.3903371946661015e-08,
+      "mean_error": 0.22714247147150998,
+      "truth_mass": 0.020390392782841542,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed201:base:informative",
+      "dataset": "base_s0_N40_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -10.796032503952445,
+      "mean": [
+        0.23363470410955492,
+        -0.04711085592269282
+      ],
+      "marginal_95": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0061921817095326286,
+      "hpd_cells": 30,
+      "hpd_mass": 0.953594024467545,
+      "edge_mass": 8.301132083772197e-09,
+      "mean_error": 0.23833717232133136,
+      "truth_mass": 0.016685664425729694,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed202:base:uniform",
+      "dataset": "base_s0_N40_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.056934965993278,
+      "mean": [
+        -0.031953386147853424,
+        0.06377957868005144
+      ],
+      "marginal_95": [
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ],
+        [
+          -0.19999999999999996,
+          0.30000000000000004
+        ]
+      ],
+      "hpd_cutoff": 0.006065360177437101,
+      "hpd_cells": 30,
+      "hpd_mass": 0.9508176509428996,
+      "edge_mass": 3.1087655661555427e-12,
+      "mean_error": 0.07133620078837044,
+      "truth_mass": 0.086041306254187,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed202:base:informative",
+      "dataset": "base_s0_N40_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -10.538982408648113,
+      "mean": [
+        -0.010257839535750738,
+        0.04547938338156031
+      ],
+      "marginal_95": [
+        [
+          -0.19999999999999996,
+          0.20000000000000018
+        ],
+        [
+          -0.19999999999999996,
+          0.30000000000000004
+        ]
+      ],
+      "hpd_cutoff": 0.004399995562684219,
+      "hpd_cells": 29,
+      "hpd_mass": 0.9523418307393375,
+      "edge_mass": 2.2261963728851165e-13,
+      "mean_error": 0.04662185737085294,
+      "truth_mass": 0.09885014989845385,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed203:base:uniform",
+      "dataset": "base_s0_N40_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.629764067982425,
+      "mean": [
+        0.1286237623403537,
+        -0.09691867605172325
+      ],
+      "marginal_95": [
+        [
+          -0.09999999999999998,
+          0.40000000000000013
+        ],
+        [
+          -0.29999999999999993,
+          0.10000000000000009
+        ]
+      ],
+      "hpd_cutoff": 0.00522376518807017,
+      "hpd_cells": 31,
+      "hpd_mass": 0.9506042766597032,
+      "edge_mass": 1.5451299699101709e-10,
+      "mean_error": 0.16105061939094387,
+      "truth_mass": 0.045310165551498964,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s0_N40_seed203:base:informative",
+      "dataset": "base_s0_N40_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -10.79213253608477,
+      "mean": [
+        0.14247891243847474,
+        -0.10743848107922993
+      ],
+      "marginal_95": [
+        [
+          -0.09999999999999998,
+          0.40000000000000013
+        ],
+        [
+          -0.29999999999999993,
+          0.10000000000000009
+        ]
+      ],
+      "hpd_cutoff": 0.004359324209560532,
+      "hpd_cells": 30,
+      "hpd_mass": 0.9535800874147234,
+      "edge_mass": 9.696309428444836e-11,
+      "mean_error": 0.17844682038709067,
+      "truth_mass": 0.037812132535922055,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed201:base:uniform",
+      "dataset": "base_s1_N8_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.072308280787288,
+      "mean": [
+        -5.136407792150077e-17,
+        0.5006576761421299
+      ],
+      "marginal_95": [
+        [
+          -0.6,
+          0.6000000000000001
+        ],
+        [
+          -0.09999999999999998,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.0012336803585700858,
+      "hpd_cells": 150,
+      "hpd_mass": 0.9504028036115539,
+      "edge_mass": 0.04542434045415121,
+      "mean_error": 0.5000004325377208,
+      "truth_mass": 0.00473855171083374,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed201:base:informative",
+      "dataset": "base_s1_N8_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.300455514841689,
+      "mean": [
+        0.0923311370163305,
+        0.33213047481554747
+      ],
+      "marginal_95": [
+        [
+          -0.3999999999999999,
+          0.6000000000000001
+        ],
+        [
+          -0.19999999999999996,
+          0.8
+        ]
+      ],
+      "hpd_cutoff": 0.0011888846553581968,
+      "hpd_cells": 129,
+      "hpd_mass": 0.950352491364892,
+      "edge_mass": 0.0072643518841499,
+      "mean_error": 0.6156592835040436,
+      "truth_mass": 0.0015795465933370414,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed202:base:uniform",
+      "dataset": "base_s1_N8_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.872513505496343,
+      "mean": [
+        -0.5091839174792887,
+        0.1994482333970406
+      ],
+      "marginal_95": [
+        [
+          -1.0,
+          0.10000000000000009
+        ],
+        [
+          -0.3999999999999999,
+          0.8
+        ]
+      ],
+      "hpd_cutoff": 0.0013544506439301142,
+      "hpd_cells": 147,
+      "hpd_mass": 0.9508881712323718,
+      "edge_mass": 0.05295955780546062,
+      "mean_error": 0.3006920496927482,
+      "truth_mass": 0.010548005263438858,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed202:base:informative",
+      "dataset": "base_s1_N8_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.431985738123382,
+      "mean": [
+        -0.3096271786288316,
+        0.06986964977727599
+      ],
+      "marginal_95": [
+        [
+          -0.8,
+          0.20000000000000018
+        ],
+        [
+          -0.3999999999999999,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.001248003970125787,
+      "hpd_cells": 129,
+      "hpd_mass": 0.9502293314909653,
+      "edge_mass": 0.00572277980679506,
+      "mean_error": 0.4703763698354138,
+      "truth_mass": 0.004897221791010972,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed203:base:uniform",
+      "dataset": "base_s1_N8_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.607208821755248,
+      "mean": [
+        -0.23185901312403462,
+        0.7528915324063709
+      ],
+      "marginal_95": [
+        [
+          -0.9,
+          0.40000000000000013
+        ],
+        [
+          0.30000000000000004,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.001708312714212354,
+      "hpd_cells": 106,
+      "hpd_mass": 0.9514670755056746,
+      "edge_mass": 0.2056675787119447,
+      "mean_error": 0.36858339084345504,
+      "truth_mass": 0.00597776642552832,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N8_seed203:base:informative",
+      "dataset": "base_s1_N8_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.807114232542535,
+      "mean": [
+        -0.052907823025813726,
+        0.5836792470027643
+      ],
+      "marginal_95": [
+        [
+          -0.6,
+          0.5
+        ],
+        [
+          0.10000000000000009,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.0014836560865255388,
+      "hpd_cells": 115,
+      "hpd_mass": 0.9509172074463306,
+      "edge_mass": 0.057632337523193806,
+      "mean_error": 0.45485561565233723,
+      "truth_mass": 0.0052656861728476384,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed201:base:uniform",
+      "dataset": "base_s1_N40_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.494954353088778,
+      "mean": [
+        -0.2866319816883252,
+        0.3790207789206622
+      ],
+      "marginal_95": [
+        [
+          -0.6,
+          0.0
+        ],
+        [
+          0.10000000000000009,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.004840140042740215,
+      "hpd_cells": 35,
+      "hpd_mass": 0.951177716799983,
+      "edge_mass": 2.370582489522245e-05,
+      "mean_error": 0.24527919433008272,
+      "truth_mass": 0.020529199334117704,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed201:base:informative",
+      "dataset": "base_s1_N40_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.924020559362443,
+      "mean": [
+        -0.24223123685832929,
+        0.335591707004519
+      ],
+      "marginal_95": [
+        [
+          -0.5,
+          0.0
+        ],
+        [
+          0.10000000000000009,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.0053955098736010315,
+      "hpd_cells": 31,
+      "hpd_mass": 0.950262536476085,
+      "edge_mass": 1.827204027829772e-06,
+      "mean_error": 0.305736523917694,
+      "truth_mass": 0.008365980143350573,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed202:base:uniform",
+      "dataset": "base_s1_N40_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -10.271147292818197,
+      "mean": [
+        -0.5233448195021853,
+        0.4336333165454079
+      ],
+      "marginal_95": [
+        [
+          -0.8,
+          -0.29999999999999993
+        ],
+        [
+          0.20000000000000018,
+          0.7000000000000002
+        ]
+      ],
+      "hpd_cutoff": 0.0035927970238950283,
+      "hpd_cells": 40,
+      "hpd_mass": 0.9534337614486363,
+      "edge_mass": 0.0025160970062930417,
+      "mean_error": 0.07035280570348024,
+      "truth_mass": 0.06628097776865227,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed202:base:informative",
+      "dataset": "base_s1_N40_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.377756653589328,
+      "mean": [
+        -0.452530389145647,
+        0.3707683325598142
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          -0.19999999999999996
+        ],
+        [
+          0.10000000000000009,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.003908202468063278,
+      "hpd_cells": 35,
+      "hpd_mass": 0.9536422531685063,
+      "edge_mass": 0.00020542639087986676,
+      "mean_error": 0.13767420900093993,
+      "truth_mass": 0.05318473228800685,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed203:base:uniform",
+      "dataset": "base_s1_N40_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -9.887354609613695,
+      "mean": [
+        -0.47993264976263683,
+        0.6557265662701799
+      ],
+      "marginal_95": [
+        [
+          -0.8,
+          -0.19999999999999996
+        ],
+        [
+          0.40000000000000013,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.0038106742269873838,
+      "hpd_cells": 42,
+      "hpd_mass": 0.9536060545929465,
+      "edge_mass": 0.02671387622215623,
+      "mean_error": 0.15701420950936168,
+      "truth_mass": 0.03890193404863051,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s1_N40_seed203:base:informative",
+      "dataset": "base_s1_N40_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.416560426063807,
+      "mean": [
+        -0.3949128229772944,
+        0.5712394642543622
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          -0.09999999999999998
+        ],
+        [
+          0.30000000000000004,
+          0.8
+        ]
+      ],
+      "hpd_cutoff": 0.003939859167636342,
+      "hpd_cells": 37,
+      "hpd_mass": 0.9526060441198376,
+      "edge_mass": 0.003869366259306963,
+      "mean_error": 0.12695816650318328,
+      "truth_mass": 0.04763219256788444,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed201:base:uniform",
+      "dataset": "base_s2_N8_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.121465434986259,
+      "mean": [
+        0.8267712339645096,
+        -0.24406597015626952
+      ],
+      "marginal_95": [
+        [
+          0.40000000000000013,
+          1.0
+        ],
+        [
+          -0.9,
+          0.40000000000000013
+        ]
+      ],
+      "hpd_cutoff": 0.0018935354925421917,
+      "hpd_cells": 87,
+      "hpd_mass": 0.9507053463730971,
+      "edge_mass": 0.30789740559813383,
+      "mean_error": 0.4150682678533012,
+      "truth_mass": 0.003332395168686021,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed201:base:informative",
+      "dataset": "base_s2_N8_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -4.549889397828654,
+      "mean": [
+        0.79102056527558,
+        -0.25984015987778725
+      ],
+      "marginal_95": [
+        [
+          0.40000000000000013,
+          1.0
+        ],
+        [
+          -0.8,
+          0.30000000000000004
+        ]
+      ],
+      "hpd_cutoff": 0.0021478487193533277,
+      "hpd_cells": 82,
+      "hpd_mass": 0.9501526873020399,
+      "edge_mass": 0.23119945267531866,
+      "mean_error": 0.37731911987182,
+      "truth_mass": 0.005050180209577758,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed202:base:uniform",
+      "dataset": "base_s2_N8_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.180343288340213,
+      "mean": [
+        0.3654943478064432,
+        -0.3654943478064431
+      ],
+      "marginal_95": [
+        [
+          -0.19999999999999996,
+          0.9000000000000001
+        ],
+        [
+          -0.9,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0014044598113184441,
+      "hpd_cells": 153,
+      "hpd_mass": 0.9507635019587148,
+      "edge_mass": 0.03756677573705228,
+      "mean_error": 0.19021971754796654,
+      "truth_mass": 0.014350238328614592,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed202:base:informative",
+      "dataset": "base_s2_N8_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -5.376526252026407,
+      "mean": [
+        0.3721889534154521,
+        -0.3518285549856171
+      ],
+      "marginal_95": [
+        [
+          -0.09999999999999998,
+          0.9000000000000001
+        ],
+        [
+          -0.9,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0012711254746860532,
+      "hpd_cells": 128,
+      "hpd_mass": 0.9503718825479663,
+      "edge_mass": 0.020475743552633905,
+      "mean_error": 0.19567943363237683,
+      "truth_mass": 0.01724044649316048,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed203:base:uniform",
+      "dataset": "base_s2_N8_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -4.903970776586114,
+      "mean": [
+        0.7225438570973839,
+        -0.7225438570973836
+      ],
+      "marginal_95": [
+        [
+          0.20000000000000018,
+          1.0
+        ],
+        [
+          -1.0,
+          -0.19999999999999996
+        ]
+      ],
+      "hpd_cutoff": 0.0023750527413145344,
+      "hpd_cells": 73,
+      "hpd_mass": 0.9500643051207804,
+      "edge_mass": 0.310234675056669,
+      "mean_error": 0.31472454092994,
+      "truth_mass": 0.009109703902114278,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N8_seed203:base:informative",
+      "dataset": "base_s2_N8_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -4.41123494553169,
+      "mean": [
+        0.6725089026885785,
+        -0.658096671912161
+      ],
+      "marginal_95": [
+        [
+          0.20000000000000018,
+          1.0
+        ],
+        [
+          -1.0,
+          -0.19999999999999996
+        ]
+      ],
+      "hpd_cutoff": 0.0022173840715613412,
+      "hpd_cells": 78,
+      "hpd_mass": 0.9511251373580608,
+      "edge_mass": 0.19990382065604667,
+      "mean_error": 0.23399546828201384,
+      "truth_mass": 0.014938070579196978,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed201:base:uniform",
+      "dataset": "base_s2_N40_seed201",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -9.198914436669074,
+      "mean": [
+        0.8072941395349154,
+        -0.49916898742574384
+      ],
+      "marginal_95": [
+        [
+          0.5,
+          1.0
+        ],
+        [
+          -0.8,
+          -0.19999999999999996
+        ]
+      ],
+      "hpd_cutoff": 0.005859724241834453,
+      "hpd_cells": 35,
+      "hpd_mass": 0.9542702384147003,
+      "edge_mass": 0.1655932635916534,
+      "mean_error": 0.30729526318250105,
+      "truth_mass": 0.005859724241834453,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed201:base:informative",
+      "dataset": "base_s2_N40_seed201",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -8.515084589713645,
+      "mean": [
+        0.7792821945156468,
+        -0.4729997483949414
+      ],
+      "marginal_95": [
+        [
+          0.5,
+          1.0
+        ],
+        [
+          -0.8,
+          -0.19999999999999996
+        ]
+      ],
+      "hpd_cutoff": 0.005144528014414591,
+      "hpd_cells": 35,
+      "hpd_mass": 0.9550537716105958,
+      "edge_mass": 0.11250558564000844,
+      "mean_error": 0.2805843148862959,
+      "truth_mass": 0.007937364929947217,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed202:base:uniform",
+      "dataset": "base_s2_N40_seed202",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -10.182857031516104,
+      "mean": [
+        0.4407235449322224,
+        -0.4105343501082215
+      ],
+      "marginal_95": [
+        [
+          0.20000000000000018,
+          0.7000000000000002
+        ],
+        [
+          -0.7,
+          -0.09999999999999998
+        ]
+      ],
+      "hpd_cutoff": 0.004022354010373457,
+      "hpd_cells": 37,
+      "hpd_mass": 0.9506764309385852,
+      "edge_mass": 0.0004075371632962149,
+      "mean_error": 0.10732101674863385,
+      "truth_mass": 0.061590996785719124,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed202:base:informative",
+      "dataset": "base_s2_N40_seed202",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -9.198156071350471,
+      "mean": [
+        0.4357869993348918,
+        -0.40226839176937756
+      ],
+      "marginal_95": [
+        [
+          0.20000000000000018,
+          0.7000000000000002
+        ],
+        [
+          -0.7,
+          -0.09999999999999998
+        ]
+      ],
+      "hpd_cutoff": 0.0037748448891102558,
+      "hpd_cells": 35,
+      "hpd_mass": 0.9531620752988217,
+      "edge_mass": 0.00018656558142837287,
+      "mean_error": 0.11693920087704146,
+      "truth_mass": 0.0617518165674453,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed203:base:uniform",
+      "dataset": "base_s2_N40_seed203",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -8.80180813065166,
+      "mean": [
+        0.783629609967483,
+        -0.7836296099674831
+      ],
+      "marginal_95": [
+        [
+          0.5,
+          1.0
+        ],
+        [
+          -1.0,
+          -0.5
+        ]
+      ],
+      "hpd_cutoff": 0.007794393480775182,
+      "hpd_cells": 30,
+      "hpd_mass": 0.9525538273221326,
+      "edge_mass": 0.23804968427548678,
+      "mean_error": 0.40111284110660567,
+      "truth_mass": 0.007794393480775182,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "base_s2_N40_seed203:base:informative",
+      "dataset": "base_s2_N40_seed203",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -8.376571139719259,
+      "mean": [
+        0.7438900180967419,
+        -0.739802632745901
+      ],
+      "marginal_95": [
+        [
+          0.40000000000000013,
+          1.0
+        ],
+        [
+          -1.0,
+          -0.3999999999999999
+        ]
+      ],
+      "hpd_cutoff": 0.005371931218769456,
+      "hpd_cells": 33,
+      "hpd_mass": 0.9524206186447689,
+      "edge_mass": 0.1455306660722934,
+      "mean_error": 0.34203456491865636,
+      "truth_mass": 0.013673728298428922,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "shared:sample_shared_mixture:uniform",
+      "dataset": "shared",
+      "model": "sample_shared_mixture",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.824365749612667,
+      "mean": [
+        -0.14608772571714743,
+        -0.01948692979924644
+      ],
+      "marginal_95": [
+        [
+          -0.5,
+          0.20000000000000018
+        ],
+        [
+          -0.19999999999999996,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.004295809983848078,
+      "hpd_cells": 36,
+      "hpd_mass": 0.9525142827759,
+      "edge_mass": 2.7009968687768416e-06,
+      "mean_error": 0.14738169505813556,
+      "truth_mass": 0.061979060487428315,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "shared:sample_shared_mixture:informative",
+      "dataset": "shared",
+      "model": "sample_shared_mixture",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -11.39351565200865,
+      "mean": [
+        -0.08780152583064363,
+        -0.028069348301189147
+      ],
+      "marginal_95": [
+        [
+          -0.3999999999999999,
+          0.30000000000000004
+        ],
+        [
+          -0.19999999999999996,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.004676719374349581,
+      "hpd_cells": 34,
+      "hpd_mass": 0.9538307418620204,
+      "edge_mass": 1.7514048794617838e-07,
+      "mean_error": 0.09217915302411196,
+      "truth_mass": 0.07768612216306148,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "shared:grain_redrawn_matching_marginals:uniform",
+      "dataset": "shared",
+      "model": "grain_redrawn_matching_marginals",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -14.950302456686188,
+      "mean": [
+        -0.0721997805567015,
+        -0.027383326942088473
+      ],
+      "marginal_95": [
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.005253784917016256,
+      "hpd_cells": 30,
+      "hpd_mass": 0.9501844172100151,
+      "edge_mass": 6.65787555776595e-10,
+      "mean_error": 0.07721822910979738,
+      "truth_mass": 0.08701868476157737,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "shared:grain_redrawn_matching_marginals:informative",
+      "dataset": "shared",
+      "model": "grain_redrawn_matching_marginals",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -14.396740655895368,
+      "mean": [
+        -0.045460930536475326,
+        -0.03911727045711403
+      ],
+      "marginal_95": [
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.005894387730228991,
+      "hpd_cells": 29,
+      "hpd_mass": 0.9529318350858497,
+      "edge_mass": 3.841721687237266e-11,
+      "mean_error": 0.059973803058145654,
+      "truth_mass": 0.09647570348999493,
+      "truth_in_hpd": true
+    },
+    {
+      "id": "merged:base:uniform",
+      "dataset": "merged",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 4,
+      "log_evidence": -7.77405152057314,
+      "mean": [
+        3.764916980543326e-16,
+        -0.04207656336343659
+      ],
+      "marginal_95": [
+        [
+          -0.9,
+          0.9000000000000001
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0017197045528734363,
+      "hpd_cells": 110,
+      "hpd_mass": 0.9500255702776289,
+      "edge_mass": 0.021470392596646827,
+      "mean_error": 0.5017673137864571,
+      "truth_mass": 0.02224306402388812,
+      "truth_in_hpd": true,
+      "likelihood_reflection_error": 1.4210854715202004e-14,
+      "posterior_reflection_error": 3.5388358909926865e-16,
+      "negative_u_mass": 0.4932871953271168,
+      "positive_u_mass": 0.4932871953271174
+    },
+    {
+      "id": "merged:base:informative",
+      "dataset": "merged",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 4,
+      "log_evidence": -7.411035746755602,
+      "mean": [
+        0.34395765716685567,
+        -0.05682178907977358
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          0.9000000000000001
+        ],
+        [
+          -0.29999999999999993,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.001831596583792157,
+      "hpd_cells": 94,
+      "hpd_mass": 0.9503001928317517,
+      "edge_mass": 0.011253238518422262,
+      "mean_error": 0.16606603647670654,
+      "truth_mass": 0.03823221475411358,
+      "truth_in_hpd": true,
+      "likelihood_reflection_error": 1.4210854715202004e-14,
+      "posterior_reflection_error": 0.03492044424491618,
+      "negative_u_mass": 0.20350844271710328,
+      "positive_u_mass": 0.7782996707200525
+    },
+    {
+      "id": "missing_group:base:uniform",
+      "dataset": "missing_group",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "marginal",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 3,
+      "log_evidence": -5.316709130154558,
+      "mean": [
+        -3.1003814619451147e-17,
+        -0.34874830678868074
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          0.7000000000000002
+        ],
+        [
+          -0.9,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0009354705265021081,
+      "hpd_cells": 200,
+      "hpd_mass": 0.9515549158595908,
+      "edge_mass": 0.0219700955276851
+    },
+    {
+      "id": "missing_group:base:informative",
+      "dataset": "missing_group",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "marginal",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 3,
+      "log_evidence": -4.74258275154869,
+      "mean": [
+        0.12437345107549057,
+        -0.33599833319316336
+      ],
+      "marginal_95": [
+        [
+          -0.5,
+          0.7000000000000002
+        ],
+        [
+          -0.8,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0010369800748641052,
+      "hpd_cells": 150,
+      "hpd_mass": 0.9502169534267026,
+      "edge_mass": 0.00990250857870028
+    },
+    {
+      "id": "conditional_subset:base:uniform",
+      "dataset": "conditional_subset",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "conditional",
+      "total": 5,
+      "denominator_kind": "selected_subset",
+      "observed_categories": 4,
+      "log_evidence": -4.206087785384194,
+      "mean": [
+        0.2602489017135124,
+        -0.4619721306825628
+      ],
+      "marginal_95": [
+        [
+          -0.3999999999999999,
+          0.9000000000000001
+        ],
+        [
+          -1.0,
+          0.20000000000000018
+        ]
+      ],
+      "hpd_cutoff": 0.0011802013519318008,
+      "hpd_cells": 179,
+      "hpd_mass": 0.9502476545169508,
+      "edge_mass": 0.07033884842141935
+    },
+    {
+      "id": "conditional_subset:base:informative",
+      "dataset": "conditional_subset",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "conditional",
+      "total": 5,
+      "denominator_kind": "selected_subset",
+      "observed_categories": 4,
+      "log_evidence": -3.519009319077475,
+      "mean": [
+        0.30105811816422884,
+        -0.4287125841518907
+      ],
+      "marginal_95": [
+        [
+          -0.29999999999999993,
+          0.9000000000000001
+        ],
+        [
+          -1.0,
+          0.10000000000000009
+        ]
+      ],
+      "hpd_cutoff": 0.0013358816873127247,
+      "hpd_cells": 149,
+      "hpd_mass": 0.9508780163399029,
+      "edge_mass": 0.03898280411532848
+    },
+    {
+      "id": "all_missing:base:uniform",
+      "dataset": "all_missing",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "marginal",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 0,
+      "log_evidence": 0.0,
+      "mean": [
+        2.8492833092919057e-16,
+        3.729655473350135e-17
+      ],
+      "marginal_95": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.0022675736961451248,
+      "hpd_cells": 441,
+      "hpd_mass": 1.0000000000000002,
+      "edge_mass": 0.18140589569161,
+      "prior_max_error": 0.0
+    },
+    {
+      "id": "all_missing:base:informative",
+      "dataset": "all_missing",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "marginal",
+      "total": 40,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 0,
+      "log_evidence": 0.0,
+      "mean": [
+        0.28337457927290904,
+        -0.21645160710883699
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          1.0
+        ],
+        [
+          -1.0,
+          0.7000000000000002
+        ]
+      ],
+      "hpd_cutoff": 0.0007709770677404958,
+      "hpd_cells": 305,
+      "hpd_mass": 0.9541922059512384,
+      "edge_mass": 0.08732678531137836,
+      "prior_max_error": 2.6020852139652106e-18
+    },
+    {
+      "id": "zero_total:base:uniform",
+      "dataset": "zero_total",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 0,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": 0.0,
+      "mean": [
+        2.8492833092919057e-16,
+        3.729655473350135e-17
+      ],
+      "marginal_95": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -1.0,
+          1.0
+        ]
+      ],
+      "hpd_cutoff": 0.0022675736961451248,
+      "hpd_cells": 441,
+      "hpd_mass": 1.0000000000000002,
+      "edge_mass": 0.18140589569161,
+      "prior_max_error": 0.0
+    },
+    {
+      "id": "zero_total:base:informative",
+      "dataset": "zero_total",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 0,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": 0.0,
+      "mean": [
+        0.28337457927290904,
+        -0.21645160710883699
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          1.0
+        ],
+        [
+          -1.0,
+          0.7000000000000002
+        ]
+      ],
+      "hpd_cutoff": 0.0007709770677404958,
+      "hpd_cells": 305,
+      "hpd_mass": 0.9541922059512384,
+      "edge_mass": 0.08732678531137836,
+      "prior_max_error": 2.6020852139652106e-18
+    },
+    {
+      "id": "observed_zero:base:uniform",
+      "dataset": "observed_zero",
+      "model": "base",
+      "prior": "uniform",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.510261036575967,
+      "mean": [
+        -0.3402250473921363,
+        5.821654137756356e-18
+      ],
+      "marginal_95": [
+        [
+          -0.9,
+          0.20000000000000018
+        ],
+        [
+          -0.6,
+          0.6000000000000001
+        ]
+      ],
+      "hpd_cutoff": 0.0010558198470663226,
+      "hpd_cells": 164,
+      "hpd_mass": 0.9502369421324294,
+      "edge_mass": 0.01511166033064004
+    },
+    {
+      "id": "observed_zero:base:informative",
+      "dataset": "observed_zero",
+      "model": "base",
+      "prior": "informative",
+      "status": "computed",
+      "scheme": "complete",
+      "total": 8,
+      "denominator_kind": "full_counted_pool",
+      "observed_categories": 5,
+      "log_evidence": -6.5140687568667985,
+      "mean": [
+        -0.17683585306155067,
+        -0.06637143343852037
+      ],
+      "marginal_95": [
+        [
+          -0.7,
+          0.30000000000000004
+        ],
+        [
+          -0.6,
+          0.40000000000000013
+        ]
+      ],
+      "hpd_cutoff": 0.0010991897222004244,
+      "hpd_cells": 128,
+      "hpd_mass": 0.950960954871575,
+      "edge_mass": 0.001505882689257598
+    }
+  ],
+  "negative_cases": [
+    {
+      "case": "all_supported_states_impossible",
+      "prior": "uniform",
+      "status": "not_estimable",
+      "reason": "all supported states impossible; no posterior",
+      "posterior_saved": false
+    },
+    {
+      "case": "all_supported_states_impossible",
+      "prior": "informative",
+      "status": "not_estimable",
+      "reason": "all supported states impossible; no posterior",
+      "posterior_saved": false
+    }
+  ]
+}

@@ -17,7 +17,45 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: T1-Zählkomposition/Typgemische, 31.10.2026
+## Aktueller Paketabschluss: synthetisches Counts-T2, 31.10.2026
+
+Nach Nutzer-OK hier im Chat **begrenzt abgeschlossen**:
+[52 anonyme Counts-Auswertungen](./counts_synthetic_t2_2026_10_31/README.md),
+25 künstliche Datensätze, zwei zusätzliche unmögliche Fälle nicht schätzbar.
+51 neue gezielte Tests bestanden; alle 52×441 Massen separat nachgerechnet
+(max. Differenz 1,263×10⁻¹⁵), zwölf PMF-Normierungen per Enumeration einschließlich
+je 495 Countvektoren bei N=8 geprüft, fünf Produktionsdateien im Zweitlauf
+bytegleich. Code/Test/Prüfer vor erstem Ergebnislauf bei `5b7e67a` gesichert,
+ein Test-Syntaxfehler vor Produktion in `220ef55` repariert.
+[Prüfprotokoll](./counts_synthetic_t2_2026_10_31/verification.json),
+[Tests](./counts_synthetic_t2_2026_10_31/tests.json),
+[Wiederholung](./counts_synthetic_t2_2026_10_31/repeat_verification.json).
+Keine wissenschaftlichen Parameter/Seeds/Kriterien nach Ergebnis angepasst.
+
+Base-Mittelfehler N=8→40 uniform 0,36575→0,19421, informativ 0,38615→0,19704.
+Informativer Prior im Mittel schlechter, kleinere HPD-Sets; eine bekannte Wahrheit
+verfehlt HPD. Im einzelnen shared-Datensatz liefert die missspezifizierte
+je-Korn-Inferenz kleinere Mittelfehler als das Daten erzeugende gemeinsame Modell;
+alle Varianten berichtet, keine Modellwahl daraus. Typzusammenlegung bleibt
+strukturell ±u-mehrdeutig; fehlende Beobachtung/N=0 prior-only, unmögliche Fälle
+explizit ohne Posterior. Kein SBC-/Deckungsnachweis und keine echte Artfreigabe.
+
+Basis PR #40 bei `19a75426320d0143c09cd00c756bc31f97cef0d0`;
+eigener Branch `codex/netzel-synthetic-counts-t2`, Worktree
+`/workspace/netzel-counts-t2`. Sieben vorhandene Worktrees sauber erhalten;
+#31–#40 offen, main `7f1826c`, #40-CI grün.
+[Standprüfung](./counts_synthetic_t2_2026_10_31/git_snapshot.json).
+Keine ganzen Repository-/Browser-/Sampler-Tests, echten Modelle, realen Fits
+oder Kernläufe. Modelle, alte Designs/Resultate/Register/Fossilcounts/Gruppen,
+Baseline und CLI/App unverändert; keine Unteragenten, Kontakte oder Merges.
+Reales T1, W96/Artbrücken, T0/T3/T4/Monticchio-P1 bleiben offen.
+Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+
+**Vorbereitet, wartet auf neues OK:** lesendes Datenrollen-/Readiness-Audit eines
+modernen Counts-Kalibrierungswegs an EMPD2, ohne Fits oder neue Auswertungsmatrix.
+Konkrete Eingänge, Dateien und Grenzen in [HANDOFF](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: T1-Zählkomposition/Typgemische, 31.10.2026
 
 Nach Nutzer-OK hier im Chat **als begrenztes Designpaket abgeschlossen**:
 [Ergebnis](./counts_observation_design_2026_10_31/README.md),
@@ -29,7 +67,7 @@ festgelegt. Algebraische Gegenbeispiele belegen nicht identifizierbare
 Flussskala, Produktions-/Klimakompensation und untrennbare Typgemische.
 Proper Priors ersetzen diese fehlende Dateninformation nicht.
 
-**Vorbereitet, wartet auf neues OK:** ein kleiner anonymer Zählprototyp mit
+**Damals vorbereitet, inzwischen nach Nutzer-OK ausgeführt:** kleiner anonymer Zählprototyp mit
 52 festgelegten Posterioren und Struktur-/Negativfällen, nach
 [SYNTHETIC_PLAN](./counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md) und
 [JSON](./counts_observation_design_2026_10_31/synthetic_plan.json).
