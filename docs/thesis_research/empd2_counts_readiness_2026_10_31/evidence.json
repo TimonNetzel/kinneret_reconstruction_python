@@ -1,0 +1,1820 @@
+{
+  "source": {
+    "file": "EMPD2.sqlite3",
+    "doi": "10.1594/PANGAEA.909130",
+    "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+    "license": "CC-BY-4.0",
+    "bytes": 21327872,
+    "sha256_before": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "sha256_after": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "reused_cached_original": true,
+    "downloaded_this_package": false,
+    "sqlite_open": "mode=ro&immutable=1; PRAGMA query_only=ON"
+  },
+  "scope": "schema and metadata; three deterministic witness samples only; no full matrix export, cohort selection, fits, scores, spatial analysis or core runs",
+  "schemas": {
+    "metadata": {
+      "sql": "CREATE TABLE metadata (\n\tsamplename VARCHAR(25) NOT NULL, \n\toriginalsamplename VARCHAR(70), \n\tsitename VARCHAR(70), \n\tcountry VARCHAR(42), \n\tlongitude NUMERIC(16, 12), \n\tlatitude NUMERIC(12, 10), \n\televation NUMERIC(9, 4), \n\tlocationreliability VARCHAR(1), \n\tlocationnotes TEXT, \n\tareaofsite NUMERIC(12, 4), \n\tsamplecontext VARCHAR(40), \n\tsitedescription TEXT, \n\tvegdescription TEXT, \n\tsampletype VARCHAR(14), \n\tsamplemethod VARCHAR(31), \n\tagebp NUMERIC(14, 11), \n\tageuncertainty VARCHAR(1), \n\tispercent BOOLEAN, \n\tisdigitised BOOLEAN, \n\tnotes TEXT, \n\tempd_version VARCHAR(5), \n\tPRIMARY KEY (samplename), \n\tCHECK (ispercent IN (0, 1)), \n\tCHECK (isdigitised IN (0, 1))\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "samplename",
+          "type": "VARCHAR(25)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "originalsamplename",
+          "type": "VARCHAR(70)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "sitename",
+          "type": "VARCHAR(70)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "country",
+          "type": "VARCHAR(42)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "longitude",
+          "type": "NUMERIC(16, 12)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "latitude",
+          "type": "NUMERIC(12, 10)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "elevation",
+          "type": "NUMERIC(9, 4)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "locationreliability",
+          "type": "VARCHAR(1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "locationnotes",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "areaofsite",
+          "type": "NUMERIC(12, 4)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "samplecontext",
+          "type": "VARCHAR(40)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "sitedescription",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "vegdescription",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "sampletype",
+          "type": "VARCHAR(14)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "samplemethod",
+          "type": "VARCHAR(31)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "agebp",
+          "type": "NUMERIC(14, 11)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "ageuncertainty",
+          "type": "VARCHAR(1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "ispercent",
+          "type": "BOOLEAN",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "isdigitised",
+          "type": "BOOLEAN",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 19,
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 20,
+          "name": "empd_version",
+          "type": "VARCHAR(5)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "p_counts": {
+      "sql": "CREATE TABLE p_counts (\n\tsamplename VARCHAR(25) NOT NULL, \n\tvar_ INTEGER NOT NULL, \n\tcount NUMERIC(12, 6), \n\tPRIMARY KEY (samplename, var_)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "samplename",
+          "type": "VARCHAR(25)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "var_",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 2
+        },
+        {
+          "cid": 2,
+          "name": "count",
+          "type": "NUMERIC(12, 6)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "p_vars": {
+      "sql": "CREATE TABLE p_vars (\n\tvar_ INTEGER NOT NULL, \n\tacc_var_ INTEGER, \n\toriginal_varname VARCHAR(100) NOT NULL, \n\tacc_varname VARCHAR(100), \n\tgroupid VARCHAR(4), \n\tPRIMARY KEY (var_)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "var_",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "acc_var_",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "original_varname",
+          "type": "VARCHAR(100)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "acc_varname",
+          "type": "VARCHAR(100)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "groupid",
+          "type": "VARCHAR(4)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "groupid": {
+      "sql": "CREATE TABLE groupid (\n\tgroupid VARCHAR(4) NOT NULL, \n\tgroupname VARCHAR(60) NOT NULL, \n\thigher_groupid VARCHAR(4) NOT NULL, \n\tused_in_sum BOOLEAN, \n\tpercent_values BOOLEAN, \n\tPRIMARY KEY (groupid), \n\tCHECK (used_in_sum IN (0, 1)), \n\tCHECK (percent_values IN (0, 1))\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "groupid",
+          "type": "VARCHAR(4)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "groupname",
+          "type": "VARCHAR(60)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "higher_groupid",
+          "type": "VARCHAR(4)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "used_in_sum",
+          "type": "BOOLEAN",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "percent_values",
+          "type": "BOOLEAN",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "climate": {
+      "sql": "CREATE TABLE climate (\n\tsamplename VARCHAR(25) NOT NULL, \n\tt_jan NUMERIC(4, 1), \n\tt_feb NUMERIC(4, 1), \n\tt_mar NUMERIC(4, 1), \n\tt_apr NUMERIC(4, 1), \n\tt_may NUMERIC(4, 1), \n\tt_jun NUMERIC(3, 1), \n\tt_jul NUMERIC(3, 1), \n\tt_aug NUMERIC(3, 1), \n\tt_sep NUMERIC(3, 1), \n\tt_oct NUMERIC(4, 1), \n\tt_nov NUMERIC(4, 1), \n\tt_dec NUMERIC(4, 1), \n\tt_djf NUMERIC(5, 2), \n\tt_mam NUMERIC(5, 2), \n\tt_jja NUMERIC(4, 2), \n\tt_son NUMERIC(5, 2), \n\tt_ann NUMERIC(5, 2), \n\tp_jan INTEGER, \n\tp_feb INTEGER, \n\tp_mar INTEGER, \n\tp_apr INTEGER, \n\tp_may INTEGER, \n\tp_jun INTEGER, \n\tp_jul INTEGER, \n\tp_aug INTEGER, \n\tp_sep INTEGER, \n\tp_oct INTEGER, \n\tp_nov INTEGER, \n\tp_dec INTEGER, \n\tp_djf INTEGER, \n\tp_mam INTEGER, \n\tp_jja INTEGER, \n\tp_son INTEGER, \n\tp_ann INTEGER, \n\tPRIMARY KEY (samplename)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "samplename",
+          "type": "VARCHAR(25)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "t_jan",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "t_feb",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 3,
+          "name": "t_mar",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 4,
+          "name": "t_apr",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 5,
+          "name": "t_may",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 6,
+          "name": "t_jun",
+          "type": "NUMERIC(3, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 7,
+          "name": "t_jul",
+          "type": "NUMERIC(3, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 8,
+          "name": "t_aug",
+          "type": "NUMERIC(3, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 9,
+          "name": "t_sep",
+          "type": "NUMERIC(3, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 10,
+          "name": "t_oct",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 11,
+          "name": "t_nov",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 12,
+          "name": "t_dec",
+          "type": "NUMERIC(4, 1)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 13,
+          "name": "t_djf",
+          "type": "NUMERIC(5, 2)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 14,
+          "name": "t_mam",
+          "type": "NUMERIC(5, 2)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 15,
+          "name": "t_jja",
+          "type": "NUMERIC(4, 2)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 16,
+          "name": "t_son",
+          "type": "NUMERIC(5, 2)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 17,
+          "name": "t_ann",
+          "type": "NUMERIC(5, 2)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 18,
+          "name": "p_jan",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 19,
+          "name": "p_feb",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 20,
+          "name": "p_mar",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 21,
+          "name": "p_apr",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 22,
+          "name": "p_may",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 23,
+          "name": "p_jun",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 24,
+          "name": "p_jul",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 25,
+          "name": "p_aug",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 26,
+          "name": "p_sep",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 27,
+          "name": "p_oct",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 28,
+          "name": "p_nov",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 29,
+          "name": "p_dec",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 30,
+          "name": "p_djf",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 31,
+          "name": "p_mam",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 32,
+          "name": "p_jja",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 33,
+          "name": "p_son",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 34,
+          "name": "p_ann",
+          "type": "INTEGER",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "ageuncertainties": {
+      "sql": "CREATE TABLE ageuncertainties (\n\tageuncertainty VARCHAR(1) NOT NULL, \n\tdescription VARCHAR(21) NOT NULL, \n\tage VARCHAR(14), \n\tPRIMARY KEY (ageuncertainty)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "ageuncertainty",
+          "type": "VARCHAR(1)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "description",
+          "type": "VARCHAR(21)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "age",
+          "type": "VARCHAR(14)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "locationreliabilities": {
+      "sql": "CREATE TABLE locationreliabilities (\n\tlocationreliability VARCHAR(1) NOT NULL, \n\tdescription VARCHAR(55) NOT NULL, \n\terror VARCHAR(5), \n\tPRIMARY KEY (locationreliability)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "locationreliability",
+          "type": "VARCHAR(1)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "description",
+          "type": "VARCHAR(55)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "error",
+          "type": "VARCHAR(5)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    },
+    "metapubli": {
+      "sql": "CREATE TABLE metapubli (\n\tsamplename VARCHAR(25) NOT NULL, \n\tpubliid INTEGER NOT NULL, \n\tPRIMARY KEY (samplename, publiid)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "samplename",
+          "type": "VARCHAR(25)",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "publiid",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 2
+        }
+      ],
+      "foreign_keys": []
+    },
+    "publications": {
+      "sql": "CREATE TABLE publications (\n\tpubliid INTEGER NOT NULL, \n\tdoi VARCHAR(50), \n\treference TEXT NOT NULL, \n\tPRIMARY KEY (publiid)\n)",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "publiid",
+          "type": "INTEGER",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 1
+        },
+        {
+          "cid": 1,
+          "name": "doi",
+          "type": "VARCHAR(50)",
+          "notnull": 0,
+          "dflt_value": null,
+          "pk": 0
+        },
+        {
+          "cid": 2,
+          "name": "reference",
+          "type": "TEXT",
+          "notnull": 1,
+          "dflt_value": null,
+          "pk": 0
+        }
+      ],
+      "foreign_keys": []
+    }
+  },
+  "metadata_definitions": {
+    "groups": [
+      {
+        "groupid": "ACRI",
+        "groupname": "Acritarchs",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "ALGA",
+        "groupname": "Algae",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "AQBR",
+        "groupname": "Aquatic Bryophytes",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "AQPT",
+        "groupname": "Aquatic Pteridophyta",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "AQUA",
+        "groupname": "Aquatics",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "AQVP",
+        "groupname": "Aquatic Vascular Plants",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "BRYO",
+        "groupname": "Bryophytes",
+        "higher_groupid": "VACR",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "CHAR",
+        "groupname": "Charcoal",
+        "higher_groupid": "CHAR",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "CHLO",
+        "groupname": "Chlorophytes",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "CYAN",
+        "groupname": "Cyanobacteria",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "DINO",
+        "groupname": "Dinoflagellates",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "DWAR",
+        "groupname": "Dwarf shrubs",
+        "higher_groupid": "TRSH",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "FUNG",
+        "groupname": "Fungi",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "HELO",
+        "groupname": "Helophytes",
+        "higher_groupid": "AQUA",
+        "used_in_sum": 0,
+        "percent_values": 1
+      },
+      {
+        "groupid": "HEMI",
+        "groupname": "Hemi-parasitic",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "HERB",
+        "groupname": "Herbs",
+        "higher_groupid": "HERB",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "INUN",
+        "groupname": "Indeterminables and unknowns",
+        "higher_groupid": "INUN",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "INVE",
+        "groupname": "Invertebrates",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "LIAN",
+        "groupname": "Liana",
+        "higher_groupid": "LIAN",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "MACR",
+        "groupname": "Macrofossils",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "MANG",
+        "groupname": "Mangroves",
+        "higher_groupid": "MANG",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "MICR",
+        "groupname": "Microcrustaceans",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "MOSS",
+        "groupname": "Moss",
+        "higher_groupid": "VACR",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "NEMA",
+        "groupname": "Nematoda (roundworms)",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "NOPO",
+        "groupname": "Nonpollen",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "PALM",
+        "groupname": "Palms",
+        "higher_groupid": "PALM",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "PLAT",
+        "groupname": "Platyhelminthes (flatworms)",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "PREQ",
+        "groupname": "Pre-Quaternary type",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "RHIZ",
+        "groupname": "Rhizopods",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "ROTI",
+        "groupname": "Rotifera (Rotifers)",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "SEED",
+        "groupname": "Spermatophyte rank or clade above order",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "SPOR",
+        "groupname": "Taxonomically undifferentiated spores",
+        "higher_groupid": "INUN",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "SUCC",
+        "groupname": "Succulents",
+        "higher_groupid": "SUCC",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "TEAM",
+        "groupname": "Testate amoebae",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "TRSH",
+        "groupname": "Trees & Shrubs",
+        "higher_groupid": "TRSH",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "UNPP",
+        "groupname": "Undifferentiated NPP",
+        "higher_groupid": "INUN",
+        "used_in_sum": 0,
+        "percent_values": 0
+      },
+      {
+        "groupid": "UPBR",
+        "groupname": "Upland Bryophytes",
+        "higher_groupid": "VACR",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "UPHE",
+        "groupname": "Upland herbs",
+        "higher_groupid": "HERB",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "VACR",
+        "groupname": "Vascular cryptogams (Pteridophytes)",
+        "higher_groupid": "VACR",
+        "used_in_sum": 1,
+        "percent_values": 1
+      },
+      {
+        "groupid": "VEMI",
+        "groupname": "Vegetative microfossils",
+        "higher_groupid": "NOPO",
+        "used_in_sum": 0,
+        "percent_values": 0
+      }
+    ],
+    "location_codes": [
+      {
+        "locationreliability": "A",
+        "description": "Good for high resolution remote sensing (<100m)",
+        "error": "<100m"
+      },
+      {
+        "locationreliability": "B",
+        "description": "Good for lower resolution remote sensing (<1km)",
+        "error": "<1km"
+      },
+      {
+        "locationreliability": "C",
+        "description": "Ok for climate reconstruction or regional scale mapping",
+        "error": "<5km"
+      },
+      {
+        "locationreliability": "D",
+        "description": "Ok for mapping at continental scale",
+        "error": "<20km"
+      },
+      {
+        "locationreliability": "X",
+        "description": "Do not use!",
+        "error": "NULL"
+      }
+    ],
+    "age_codes": [
+      {
+        "ageuncertainty": "A",
+        "description": "Modern sample",
+        "age": "0BP to Present"
+      },
+      {
+        "ageuncertainty": "B",
+        "description": "Within last 100 years",
+        "age": "0-50BP"
+      },
+      {
+        "ageuncertainty": "C",
+        "description": "Within last 250 years",
+        "age": "50-200BP"
+      }
+    ],
+    "ispercent_values": [
+      {
+        "ispercent": 0,
+        "storage_type": "integer"
+      }
+    ]
+  },
+  "witness_selection": {
+    "first_nonpercent": "AlbaSanchez_a1",
+    "first_fractional": "Champvillair_a18",
+    "first_text_climate": "Barboni_a1000"
+  },
+  "examples": [
+    {
+      "role": "first_nonpercent",
+      "samplename": "AlbaSanchez_a1",
+      "metadata": {
+        "samplename": "AlbaSanchez_a1",
+        "originalsamplename": "1 béticas",
+        "sitename": "Sierra de las Nieves Natural Park, Málaga",
+        "country": "Spain",
+        "longitude": -5.04162,
+        "latitude": 36.66366,
+        "elevation": 1192,
+        "locationreliability": "B",
+        "locationnotes": "NULL",
+        "areaofsite": "NULL",
+        "samplecontext": "closed forest",
+        "sitedescription": "NULL",
+        "vegdescription": "Pinsapo fir forest",
+        "sampletype": "moss",
+        "samplemethod": "NULL",
+        "agebp": "NULL",
+        "ageuncertainty": "NULL",
+        "ispercent": 0,
+        "isdigitised": 0,
+        "notes": "NULL",
+        "empd_version": "EMPD2"
+      },
+      "climate": {
+        "samplename": "AlbaSanchez_a1",
+        "t_ann": 12.33,
+        "p_ann": 833,
+        "t_djf": 5.97,
+        "tann_storage_type": "real",
+        "pann_storage_type": "integer"
+      },
+      "stored_rows_inspected": 20,
+      "groups": {
+        "TRSH": {
+          "stored_rows": 11,
+          "arithmetic_sum": "285",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "HERB": {
+          "stored_rows": 9,
+          "arithmetic_sum": "26",
+          "used_in_sum": 1,
+          "percent_values": 1
+        }
+      },
+      "arithmetic_demonstration": {
+        "all_stored_values": "311",
+        "group_flag_1_values": "311",
+        "group_flag_0_values": "0",
+        "warning": "Arithmetic sums of stored heterogeneous values; none is an approved pollen denominator."
+      },
+      "first_five_stored_values": [
+        {
+          "var_": 5,
+          "value": "1",
+          "storage_type": "integer",
+          "original_varname": "Alnus",
+          "acc_var_": 5,
+          "acc_varname": "Alnus",
+          "groupid": "TRSH",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 12,
+          "value": "2",
+          "storage_type": "integer",
+          "original_varname": "Betula",
+          "acc_var_": 12,
+          "acc_varname": "Betula",
+          "groupid": "TRSH",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 18,
+          "value": "1",
+          "storage_type": "integer",
+          "original_varname": "Caryophyllaceae",
+          "acc_var_": 18,
+          "acc_varname": "Caryophyllaceae (periporate excl. Paronychioideae)",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 24,
+          "value": "2",
+          "storage_type": "integer",
+          "original_varname": "Chenopodiaceae",
+          "acc_var_": 24,
+          "acc_varname": "Chenopodiaceae/Amaranthaceae",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 424,
+          "value": "14",
+          "storage_type": "integer",
+          "original_varname": "Abies pinsapo",
+          "acc_var_": 424,
+          "acc_varname": "Abies pinsapo",
+          "groupid": "TRSH",
+          "used_in_sum": 1,
+          "percent_values": 1
+        }
+      ],
+      "fractional_values_in_this_sample": [],
+      "publication_records_metadata_only": []
+    },
+    {
+      "role": "first_fractional",
+      "samplename": "Champvillair_a18",
+      "metadata": {
+        "samplename": "Champvillair_a18",
+        "originalsamplename": "TRS 18",
+        "sitename": "La Thuile Valley",
+        "country": "Italy",
+        "longitude": 6.97739020278,
+        "latitude": 45.6800157611,
+        "elevation": 2219,
+        "locationreliability": "NULL",
+        "locationnotes": "NULL",
+        "areaofsite": "NULL",
+        "samplecontext": "NULL",
+        "sitedescription": "NULL",
+        "vegdescription": "Low-pressure grazed pasture with scattered Larix decidua, Pinus cembra, Alnus viridis. At ca 50 m distance, there is a lodge with ruderal species.",
+        "sampletype": "moss",
+        "samplemethod": "hand picking - multiple samples",
+        "agebp": "NULL",
+        "ageuncertainty": "NULL",
+        "ispercent": 0,
+        "isdigitised": 0,
+        "notes": "NULL",
+        "empd_version": "EMPD2"
+      },
+      "climate": {
+        "samplename": "Champvillair_a18",
+        "t_ann": 0.57,
+        "p_ann": 1867,
+        "t_djf": -5.97,
+        "tann_storage_type": "real",
+        "pann_storage_type": "integer"
+      },
+      "stored_rows_inspected": 49,
+      "groups": {
+        "TRSH": {
+          "stored_rows": 17,
+          "arithmetic_sum": "450",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "HERB": {
+          "stored_rows": 18,
+          "arithmetic_sum": "270",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "DWAR": {
+          "stored_rows": 1,
+          "arithmetic_sum": "1",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "RHIZ": {
+          "stored_rows": 2,
+          "arithmetic_sum": "27",
+          "used_in_sum": 0,
+          "percent_values": 0
+        },
+        "VACR": {
+          "stored_rows": 3,
+          "arithmetic_sum": "10",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "FUNG": {
+          "stored_rows": 1,
+          "arithmetic_sum": "6",
+          "used_in_sum": 0,
+          "percent_values": 0
+        },
+        "NOPO": {
+          "stored_rows": 3,
+          "arithmetic_sum": "11518.4",
+          "used_in_sum": 0,
+          "percent_values": 0
+        },
+        "CHAR": {
+          "stored_rows": 4,
+          "arithmetic_sum": "727",
+          "used_in_sum": 0,
+          "percent_values": 0
+        }
+      },
+      "arithmetic_demonstration": {
+        "all_stored_values": "13009.4",
+        "group_flag_1_values": "731",
+        "group_flag_0_values": "12278.4",
+        "warning": "Arithmetic sums of stored heterogeneous values; none is an approved pollen denominator."
+      },
+      "first_five_stored_values": [
+        {
+          "var_": 5,
+          "value": "35",
+          "storage_type": "integer",
+          "original_varname": "Alnus",
+          "acc_var_": 5,
+          "acc_varname": "Alnus",
+          "groupid": "TRSH",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 7,
+          "value": "2",
+          "storage_type": "integer",
+          "original_varname": "Artemisia",
+          "acc_var_": 7,
+          "acc_varname": "Artemisia",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 11,
+          "value": "8",
+          "storage_type": "integer",
+          "original_varname": "Aster type",
+          "acc_var_": 11,
+          "acc_varname": "Aster-type",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 12,
+          "value": "8",
+          "storage_type": "integer",
+          "original_varname": "Betula",
+          "acc_var_": 12,
+          "acc_varname": "Betula",
+          "groupid": "TRSH",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 18,
+          "value": "9",
+          "storage_type": "integer",
+          "original_varname": "Caryophyllaceae",
+          "acc_var_": 18,
+          "acc_varname": "Caryophyllaceae (periporate excl. Paronychioideae)",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        }
+      ],
+      "fractional_values_in_this_sample": [
+        {
+          "var_": 693,
+          "value": "7.4",
+          "storage_type": "real",
+          "original_varname": "Volume (cm3)",
+          "acc_var_": 693,
+          "acc_varname": "Volume of sample (cm3)",
+          "groupid": "NOPO",
+          "used_in_sum": 0,
+          "percent_values": 0
+        }
+      ],
+      "publication_records_metadata_only": [
+        {
+          "publiid": 22,
+          "doi": "10.1177/0959683618810395",
+          "reference": "Furlanetto G., Ravazzi C., Badino F., Brunetti M., Champvillair E., Maggi V. (2018). Elevational transects of modern pollen samples - site specific temperatures as a tool for paleoclimate reconstructions in the Alps. The Holocene, 1-16."
+        }
+      ]
+    },
+    {
+      "role": "first_text_climate",
+      "samplename": "Barboni_a1000",
+      "metadata": {
+        "samplename": "Barboni_a1000",
+        "originalsamplename": "MAROC124",
+        "sitename": "Moroc",
+        "country": "Morocco",
+        "longitude": "NULL",
+        "latitude": "NULL",
+        "elevation": "NULL",
+        "locationreliability": "X",
+        "locationnotes": "Do not use! Location information unreliable; long -5.12, lat 33.32.",
+        "areaofsite": "NULL",
+        "samplecontext": "NULL",
+        "sitedescription": "NULL",
+        "vegdescription": "NULL",
+        "sampletype": "NULL",
+        "samplemethod": "NULL",
+        "agebp": "NULL",
+        "ageuncertainty": "NULL",
+        "ispercent": 0,
+        "isdigitised": 0,
+        "notes": "",
+        "empd_version": "EMPD1"
+      },
+      "climate": {
+        "samplename": "Barboni_a1000",
+        "t_ann": "NULL",
+        "p_ann": "NULL",
+        "t_djf": "NULL",
+        "tann_storage_type": "text",
+        "pann_storage_type": "text"
+      },
+      "stored_rows_inspected": 39,
+      "groups": {
+        "HERB": {
+          "stored_rows": 25,
+          "arithmetic_sum": "358",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "TRSH": {
+          "stored_rows": 11,
+          "arithmetic_sum": "480",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "AQUA": {
+          "stored_rows": 1,
+          "arithmetic_sum": "3",
+          "used_in_sum": 0,
+          "percent_values": 1
+        },
+        "LIAN": {
+          "stored_rows": 1,
+          "arithmetic_sum": "1",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        "DWAR": {
+          "stored_rows": 1,
+          "arithmetic_sum": "1",
+          "used_in_sum": 1,
+          "percent_values": 1
+        }
+      },
+      "arithmetic_demonstration": {
+        "all_stored_values": "843",
+        "group_flag_1_values": "840",
+        "group_flag_0_values": "3",
+        "warning": "Arithmetic sums of stored heterogeneous values; none is an approved pollen denominator."
+      },
+      "first_five_stored_values": [
+        {
+          "var_": 7,
+          "value": "2",
+          "storage_type": "integer",
+          "original_varname": "Artemisia",
+          "acc_var_": 7,
+          "acc_varname": "Artemisia",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 18,
+          "value": "20",
+          "storage_type": "integer",
+          "original_varname": "Caryophyllaceae",
+          "acc_var_": 18,
+          "acc_varname": "Caryophyllaceae (periporate excl. Paronychioideae)",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 30,
+          "value": "9",
+          "storage_type": "integer",
+          "original_varname": "Plantago coronopus",
+          "acc_var_": 30,
+          "acc_varname": "Plantago coronopus-type",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 40,
+          "value": "1",
+          "storage_type": "integer",
+          "original_varname": "Euphorbia",
+          "acc_var_": 40,
+          "acc_varname": "Euphorbia",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        },
+        {
+          "var_": 52,
+          "value": "14",
+          "storage_type": "integer",
+          "original_varname": "Helianthemum",
+          "acc_var_": 52,
+          "acc_varname": "Helianthemum",
+          "groupid": "HERB",
+          "used_in_sum": 1,
+          "percent_values": 1
+        }
+      ],
+      "fractional_values_in_this_sample": [],
+      "publication_records_metadata_only": []
+    }
+  ],
+  "specific_sparse_pair": {
+    "dictionary": [
+      {
+        "var_": 7,
+        "acc_var_": 7,
+        "original_varname": "Artemisia",
+        "acc_varname": "Artemisia",
+        "groupid": "HERB"
+      }
+    ],
+    "sample": "AlbaSanchez_a1",
+    "stored_rows": [],
+    "interpretation": "No stored row for this pair; no zero/absence or measured-status inference."
+  },
+  "query_log": [
+    {
+      "label": "schema_metadata",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "metadata"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_metadata",
+      "sql": "PRAGMA table_info(metadata)",
+      "parameters": [],
+      "rows_returned": 21
+    },
+    {
+      "label": "foreign_keys_metadata",
+      "sql": "PRAGMA foreign_key_list(metadata)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_p_counts",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "p_counts"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_p_counts",
+      "sql": "PRAGMA table_info(p_counts)",
+      "parameters": [],
+      "rows_returned": 3
+    },
+    {
+      "label": "foreign_keys_p_counts",
+      "sql": "PRAGMA foreign_key_list(p_counts)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_p_vars",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "p_vars"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_p_vars",
+      "sql": "PRAGMA table_info(p_vars)",
+      "parameters": [],
+      "rows_returned": 5
+    },
+    {
+      "label": "foreign_keys_p_vars",
+      "sql": "PRAGMA foreign_key_list(p_vars)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_groupid",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "groupid"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_groupid",
+      "sql": "PRAGMA table_info(groupid)",
+      "parameters": [],
+      "rows_returned": 5
+    },
+    {
+      "label": "foreign_keys_groupid",
+      "sql": "PRAGMA foreign_key_list(groupid)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_climate",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "climate"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_climate",
+      "sql": "PRAGMA table_info(climate)",
+      "parameters": [],
+      "rows_returned": 35
+    },
+    {
+      "label": "foreign_keys_climate",
+      "sql": "PRAGMA foreign_key_list(climate)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_ageuncertainties",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "ageuncertainties"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_ageuncertainties",
+      "sql": "PRAGMA table_info(ageuncertainties)",
+      "parameters": [],
+      "rows_returned": 3
+    },
+    {
+      "label": "foreign_keys_ageuncertainties",
+      "sql": "PRAGMA foreign_key_list(ageuncertainties)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_locationreliabilities",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "locationreliabilities"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_locationreliabilities",
+      "sql": "PRAGMA table_info(locationreliabilities)",
+      "parameters": [],
+      "rows_returned": 3
+    },
+    {
+      "label": "foreign_keys_locationreliabilities",
+      "sql": "PRAGMA foreign_key_list(locationreliabilities)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_metapubli",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "metapubli"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_metapubli",
+      "sql": "PRAGMA table_info(metapubli)",
+      "parameters": [],
+      "rows_returned": 2
+    },
+    {
+      "label": "foreign_keys_metapubli",
+      "sql": "PRAGMA foreign_key_list(metapubli)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "schema_publications",
+      "sql": "SELECT sql FROM sqlite_master WHERE type='table' AND name=?",
+      "parameters": [
+        "publications"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "columns_publications",
+      "sql": "PRAGMA table_info(publications)",
+      "parameters": [],
+      "rows_returned": 3
+    },
+    {
+      "label": "foreign_keys_publications",
+      "sql": "PRAGMA foreign_key_list(publications)",
+      "parameters": [],
+      "rows_returned": 0
+    },
+    {
+      "label": "group_definitions",
+      "sql": "SELECT * FROM groupid ORDER BY groupid",
+      "parameters": [],
+      "rows_returned": 40
+    },
+    {
+      "label": "location_codes",
+      "sql": "SELECT * FROM locationreliabilities ORDER BY locationreliability",
+      "parameters": [],
+      "rows_returned": 5
+    },
+    {
+      "label": "age_codes",
+      "sql": "SELECT * FROM ageuncertainties ORDER BY ageuncertainty",
+      "parameters": [],
+      "rows_returned": 3
+    },
+    {
+      "label": "sample_percent_flags",
+      "sql": "SELECT DISTINCT ispercent,typeof(ispercent) AS storage_type FROM metadata ORDER BY ispercent",
+      "parameters": [],
+      "rows_returned": 1
+    },
+    {
+      "label": "choose_first_nonpercent",
+      "sql": "SELECT samplename FROM metadata m WHERE ispercent=0 AND EXISTS(SELECT 1 FROM p_counts c WHERE c.samplename=m.samplename) ORDER BY samplename LIMIT 1",
+      "parameters": [],
+      "rows_returned": 1
+    },
+    {
+      "label": "choose_first_fractional",
+      "sql": "SELECT samplename,var_,CAST(count AS TEXT) AS value FROM p_counts WHERE typeof(count) IN ('integer','real') AND count != CAST(count AS INTEGER) ORDER BY samplename,var_ LIMIT 1",
+      "parameters": [],
+      "rows_returned": 1
+    },
+    {
+      "label": "choose_first_text_climate",
+      "sql": "SELECT m.samplename FROM metadata m JOIN climate c USING(samplename) WHERE typeof(c.t_ann)='text' OR typeof(c.p_ann)='text' ORDER BY m.samplename LIMIT 1",
+      "parameters": [],
+      "rows_returned": 1
+    },
+    {
+      "label": "AlbaSanchez_a1_metadata",
+      "sql": "SELECT * FROM metadata WHERE samplename=?",
+      "parameters": [
+        "AlbaSanchez_a1"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "AlbaSanchez_a1_climate",
+      "sql": "SELECT samplename,t_ann,p_ann,t_djf,typeof(t_ann) AS tann_storage_type,typeof(p_ann) AS pann_storage_type FROM climate WHERE samplename=?",
+      "parameters": [
+        "AlbaSanchez_a1"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "AlbaSanchez_a1_rows",
+      "sql": "SELECT p.var_,CAST(p.count AS TEXT) AS value,typeof(p.count) AS storage_type,v.original_varname,v.acc_var_,v.acc_varname,v.groupid,g.used_in_sum,g.percent_values FROM p_counts p JOIN p_vars v USING(var_) LEFT JOIN groupid g ON g.groupid=v.groupid WHERE p.samplename=? ORDER BY p.var_",
+      "parameters": [
+        "AlbaSanchez_a1"
+      ],
+      "rows_returned": 20
+    },
+    {
+      "label": "AlbaSanchez_a1_publications",
+      "sql": "SELECT p.* FROM metapubli m JOIN publications p USING(publiid) WHERE m.samplename=? ORDER BY publiid",
+      "parameters": [
+        "AlbaSanchez_a1"
+      ],
+      "rows_returned": 0
+    },
+    {
+      "label": "Champvillair_a18_metadata",
+      "sql": "SELECT * FROM metadata WHERE samplename=?",
+      "parameters": [
+        "Champvillair_a18"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "Champvillair_a18_climate",
+      "sql": "SELECT samplename,t_ann,p_ann,t_djf,typeof(t_ann) AS tann_storage_type,typeof(p_ann) AS pann_storage_type FROM climate WHERE samplename=?",
+      "parameters": [
+        "Champvillair_a18"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "Champvillair_a18_rows",
+      "sql": "SELECT p.var_,CAST(p.count AS TEXT) AS value,typeof(p.count) AS storage_type,v.original_varname,v.acc_var_,v.acc_varname,v.groupid,g.used_in_sum,g.percent_values FROM p_counts p JOIN p_vars v USING(var_) LEFT JOIN groupid g ON g.groupid=v.groupid WHERE p.samplename=? ORDER BY p.var_",
+      "parameters": [
+        "Champvillair_a18"
+      ],
+      "rows_returned": 49
+    },
+    {
+      "label": "Champvillair_a18_publications",
+      "sql": "SELECT p.* FROM metapubli m JOIN publications p USING(publiid) WHERE m.samplename=? ORDER BY publiid",
+      "parameters": [
+        "Champvillair_a18"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "Barboni_a1000_metadata",
+      "sql": "SELECT * FROM metadata WHERE samplename=?",
+      "parameters": [
+        "Barboni_a1000"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "Barboni_a1000_climate",
+      "sql": "SELECT samplename,t_ann,p_ann,t_djf,typeof(t_ann) AS tann_storage_type,typeof(p_ann) AS pann_storage_type FROM climate WHERE samplename=?",
+      "parameters": [
+        "Barboni_a1000"
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "Barboni_a1000_rows",
+      "sql": "SELECT p.var_,CAST(p.count AS TEXT) AS value,typeof(p.count) AS storage_type,v.original_varname,v.acc_var_,v.acc_varname,v.groupid,g.used_in_sum,g.percent_values FROM p_counts p JOIN p_vars v USING(var_) LEFT JOIN groupid g ON g.groupid=v.groupid WHERE p.samplename=? ORDER BY p.var_",
+      "parameters": [
+        "Barboni_a1000"
+      ],
+      "rows_returned": 39
+    },
+    {
+      "label": "Barboni_a1000_publications",
+      "sql": "SELECT p.* FROM metapubli m JOIN publications p USING(publiid) WHERE m.samplename=? ORDER BY publiid",
+      "parameters": [
+        "Barboni_a1000"
+      ],
+      "rows_returned": 0
+    },
+    {
+      "label": "absent_code_definition",
+      "sql": "SELECT * FROM p_vars WHERE var_=?",
+      "parameters": [
+        7
+      ],
+      "rows_returned": 1
+    },
+    {
+      "label": "specific_absent_pair",
+      "sql": "SELECT * FROM p_counts WHERE samplename=? AND var_=?",
+      "parameters": [
+        "AlbaSanchez_a1",
+        7
+      ],
+      "rows_returned": 0
+    }
+  ]
+}
