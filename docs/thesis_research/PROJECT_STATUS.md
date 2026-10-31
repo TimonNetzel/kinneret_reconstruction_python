@@ -19,6 +19,11 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 ## Aktueller Abschluss: A2-Modellvertrag, 31.10.2026
 
+Übergabeprompt auf Nutzerwunsch in HANDOFF gesichert. Verlässlich gesicherter
+A2-Stand `7deff9f002bd8f865f63ef5812c843d6c0a6ec9b`, Remote-Head über PR #52
+bestätigt; danach nur diese Übergabepflege. MODEL_CONTRACT unverändert;
+A3-Auftragsabgrenzung vorbereitet, hier nicht ausgeführt.
+
 **A2 als autorisiertes Dokumentationspaket abgeschlossen.**
 [MODEL_CONTRACT](./MODEL_CONTRACT.md) bündelt Aussageziel,
 E/P/Y/D/psi/C/tau/theta, Beobachtungsstatus/Nullen, Kalibrier-Cut mit
