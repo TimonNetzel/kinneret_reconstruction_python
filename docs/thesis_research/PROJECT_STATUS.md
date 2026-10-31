@@ -19,6 +19,51 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+
+## Aktueller Abschluss: moderne E-Belege dokumentarisch zugeordnet, 31.10.2026
+
+Nutzer-OK nach PR #56 umgesetzt: [A4_E_EVIDENCE_GAPS](./A4_E_EVIDENCE_GAPS.md)
+ordnet 20 Anforderungen an modernes E vorhandenen EMPD2-Archiv-/Messstatus-
+dokumenten zu, jeweils mit genauen Fundstellen, Reichweite, Status und
+fehlenden Nachweisen. **Belegzuordnung dokumentarisch abgeschlossen; reale
+Counts-Bereitschaft bleibt blockiert.** Technische Schlüssel, Archividentität
+und begrenzte Prozentdarstellung dokumentiert; `N_original`, Sparse-Nullregel,
+angewandte Export-/Hierarchiekette und weitere reale Eignungsnachweise offen.
+`S_flag` nur bei drei bekannten Zeugen mit Prozentdarstellung kompatibel;
+keine Gleichsetzung mit ursprünglichem N. 36/40 Gruppen und Volumen 7,4
+unverändert. Keine unvereinbaren Dokumentaussagen gleichen Geltungsbereichs
+festgestellt; dokumentierte Release-Abweichungen erhalten.
+
+Basis `e69d95cd2833716987065833e5284d4430316b2f`,
+[PR #56](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/56)
+offen/ungemergt und mergebar; automatische CI 41237720645 erfolgreich.
+Sieben vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
+main unverändert `7f1826c`. Eigener Worktree `/workspace/netzel-a4-e-evidence-gaps`,
+Branch `codex/netzel-a4-e-evidence-gaps`, eigener gestapelter PR gegen #56.
+Inhaltscommit/PR und CI nach Erstellung ergänzen. Nur neues Ergebnisdokument
+plus kurze HANDOFF-/Statuspflege, alte Statushistorie erhalten. Quellenzuordnung,
+JSON-Feldbezüge, 22 lokale Links/Anker und Drei-Dateien-Umfang geprüft;
+750 geschützte Blobs/Dateimodi einschließlich Symlink unverändert. Sechs eng
+begrenzte Aussagen belegt, 13 Anforderungen offen, eine Modellfrage nicht geprüft.
+
+Nur vorhandene Dokumente gelesen, DENOMINATOR_RULES/COUNTS_DECISION_BRIEF
+zur konkreten Nenner-/Releasefrage. Keine zusätzlichen Evidenz-JSON oder
+Originaldaten geöffnet, alte Daten-/Originalprüfungen und Zahlen nicht
+wiederholt; keine manuellen Tests/Rechnungen, neue Quellen, reale Auswahl,
+Beschaffung, Bereinigung, Matrix/Kohorte, Typbrücke, Implementierung, Fits,
+Scores, Optimierung, Simulationen oder Kernläufe. Bestehende Fachdateien
+unverändert. A1/A2 dokumentarisch abgeschlossen, A3 ausschließlich endlich-
+synthetisch bestanden; A4-Umsetzung/reale Kalibrierung und A5/A6 nicht begonnen.
+Keine EMPD2-Auswahl, realen Vertragsfelder oder Gates freigegeben. Parnell,
+Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben Grenzen;
+kein eigener Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf Nutzer-OK:
+vorhandene Klimaprovenienz-/Zeitbezugsangaben zu E12/E13/E15 gezielt innerhalb
+der festgelegten Repository-Dokumente präzisieren, ohne neue Quelle, reale
+Auswahl oder Klima-Join. Kopierfertiger Startprompt in HANDOFF.
+
+
 ## Aktueller Abschluss: A4-Auftragsgrenze dokumentiert, 31.10.2026
 
 Nutzer-OK nach PR #55 umgesetzt: [A4_TASK_BOUNDARY](./A4_TASK_BOUNDARY.md)
