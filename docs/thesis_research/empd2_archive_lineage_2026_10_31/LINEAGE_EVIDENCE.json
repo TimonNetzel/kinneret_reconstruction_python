@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-31",
+  "base_commit": "90d0350f20d8adc5d1feab09722cf02f0ebb8b69",
+  "branch": "codex/netzel-empd2-archive-lineage",
+  "worktree": "/workspace/netzel-empd2-lineage",
+  "result": "bounded_search_closed_exact_sqlite_generation_chain_unproven",
+  "publication": {
+    "pr": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44",
+    "base_branch": "codex/netzel-empd2-denominator-rules",
+    "content_commit": "35152172f8f048a755bd5897d1687c888e9917d2",
+    "state_at_creation_check": "open, unmerged, mergeable, mergeable_state unstable",
+    "automatic_pr_ci_at_content_commit": {"run_id": 41197720179, "status": "in_progress", "conclusion": null},
+    "snapshot_not_claimed_as_latest_head_ci_or_scientific_approval": true
+  },
+  "source_objects": [
+    {
+      "id": "archive_metadata",
+      "doi": "10.1594/PANGAEA.909130",
+      "attribution": "Chevalier et al. (2019), PANGAEA, CC BY 4.0",
+      "representations": [
+        {
+          "url": "https://doi.pangaea.de/10.1594/PANGAEA.909130",
+          "bytes": 218102,
+          "sha256": "4ddc3774e0875ec8af9a3cdb687c1d131518fe0afa21a85b962377f1f9cb1bf1",
+          "locators": {
+            "original_object_URLs": "HTML lines 53-55 and Original version section",
+            "official_metadata_link": "HTML line 61",
+            "publication_and_registration_dates": "data-maintenance-dates paragraph",
+            "format_equivalence_claim": "Abstract",
+            "climate_table_scope": "Comment"
+          }
+        },
+        {
+          "url": "https://doi.pangaea.de/10.1594/PANGAEA.909130?format=metadata_datacite4",
+          "bytes": 9224,
+          "sha256": "4eaa0d1767777b1da57f1cbbbaba30355e0a88a0f2a9475baa28468bf3cac1c1",
+          "locators": [
+            "resource/identifier",
+            "resource/relatedIdentifiers/relatedIdentifier[@relationType='IsNewVersionOf']",
+            "resource/descriptions/description[@descriptionType='Abstract']",
+            "resource/descriptions/description[@descriptionType='TechnicalInfo']"
+          ],
+          "explicit_sqlite_conversion_code_or_command_identified": false
+        }
+      ],
+      "published_date": "2019-11-26",
+      "doi_registered_date": "2020-02-22",
+      "equivalent_formats": "publisher claim, not independently verified for all records",
+      "second_object_authorization": "Exact EMPD2.sql URL in Original version and DC.relation, confirmed by DataCite relatedIdentifier",
+      "relation_does_not_establish_conversion_direction": true
+    },
+    {
+      "id": "official_postgresql_original",
+      "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sql",
+      "retrieval": "curl --fail --max-time 30 --range 0-32767 --max-filesize 65536 URL; TLS and session proxy preserved",
+      "http_status": 206,
+      "content_range": "bytes 0-32767/12718488",
+      "total_bytes_from_header": 12718488,
+      "etag": "5dfcac2b-c21198",
+      "last_modified_http_utc": "2019-12-20T11:10:35Z",
+      "last_modified_is_build_date": false,
+      "read_range_bytes": 32768,
+      "range_sha256": "7c097392cccb08c86d4a39cc3c031cda9c2e8904e9cd4723140ccf7bc0dee1a8",
+      "full_object_sha256": null,
+      "full_dump_downloaded_or_verified": false,
+      "interpreted_lines": "Header/schema only, within lines 1-298; no sample comparison from subsequent climate rows in the prefix",
+      "locators": [
+        {"lines": "5-6", "finding": "database and pg_dump versions 11.2; engine/tool versions only"},
+        {"lines": "109-115", "finding": "groupid, groupname, higher_groupid, used_in_sum and percent_values schema"},
+        {"lines": "137-159", "finding": "sample metadata schema including ispercent, isdigitised and empd_version; no original-N column here"},
+        {"lines": "193-197", "finding": "p_counts.count double precision; representability is not proof of decimal value transfer"},
+        {"lines": "206-212", "finding": "p_vars original/accepted names and groupid"}
+      ],
+      "sql_executed": false,
+      "p_counts_measurement_rows_read": false,
+      "full_dump_absence_claimed": false,
+      "sqlite_export_application_proven": false
+    }
+  ],
+  "locked_sqlite": {
+    "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+    "local_cache": "/workspace/netzel-source-cache/pollen-originals-2026-10-31/EMPD2.sqlite3",
+    "bytes": 21327872,
+    "sha256_before": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "sha256_after": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "downloaded_this_package": false,
+    "database_opened_this_package": false,
+    "head_content_length": 21327872,
+    "head_last_modified_utc": "2019-12-20T11:10:38Z",
+    "head_etag": "5dfcac2e-1457000",
+    "head_proves_current_remote_full_byte_identity": false,
+    "prior_retrieval_proof": "../original_pollen_names_2026_10_31/REPRODUCE.md"
+  },
+  "inherited_evidence_not_recomputed": {
+    "source": "../empd2_denominator_rules_2026_10_31/source_comparison.json",
+    "source_rules": "../empd2_denominator_rules_2026_10_31/RULE_EVIDENCE.json",
+    "release_commit": "737b76eb269b071422edded6ac332654ff83c103",
+    "witnesses": ["AlbaSanchez_a1", "Champvillair_a18", "Barboni_a1000"],
+    "new_witness_reads": 0,
+    "prior_matching_measurement_tuples": 108,
+    "preserved_volume": "Champvillair_a18: 7.4 cm3",
+    "release_groups": 36,
+    "sqlite_groups": 40,
+    "import_path": "New-sample path rounds positive values; existing samples skipped. Neither complete archive reproduction nor code-never-used established."
+  },
+  "decision_status": {
+    "archive_object_assignment": "proven by official links plus inherited retrieval and current local locked hash",
+    "exact_release_and_applied_sqlite_export_chain": "unproven",
+    "measurement_status_of_missing_pairs": "unresolved",
+    "archive_zero_suppression_rule": "unresolved",
+    "N_original": "unproven original measured counting total/process",
+    "S_flag": "inherited compatibility with supplied percentages in three witnesses, not universal N_original",
+    "n_selected": "no subset selected or approved",
+    "higher_groupid_recursive_application": "unproven",
+    "search_stopped_after_two_targeted_sources": true,
+    "additional_replacement_search": false
+  },
+  "git_pr_start": {
+    "main": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+    "pr_43": {"state": "open", "merged": false, "mergeable": true, "head": "90d0350f20d8adc5d1feab09722cf02f0ebb8b69", "base": "codex/netzel-empd2-counts-readiness"},
+    "pr_43_pr_ci": {"run_id": 41195870613, "status": "completed", "conclusion": "success"},
+    "legacy_commit_statuses": [],
+    "open_unmerged_pr_numbers": [31,32,33,34,35,36,37,38,39,40,41,42,43],
+    "remote_heads_verified_by_ls_remote": {
+      "main": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+      "codex/netzel-empd2-counts-readiness": "e1e8ebe32f17487c4c91d2044db845112a8365bb",
+      "codex/netzel-empd2-denominator-rules": "90d0350f20d8adc5d1feab09722cf02f0ebb8b69"
+    },
+    "fetch_note": "Default refspec fetches main only; source branch fetched explicitly after supported network access enabled. Proxy not bypassed.",
+    "prior_worktrees_clean": [
+      {"path": "/workspace/kinneret_reconstruction_python", "branch": "work", "head": "7f1826cffddc8893ba6354cd3cca3fa43954b9be"},
+      {"path": "/workspace/netzel-original-names", "branch": "codex/netzel-original-pollen-names", "head": "b9c7932fa6c6b4e041618d10f400f38575312c00"},
+      {"path": "/workspace/netzel-pilot-roadmap", "branch": "codex/netzel-first-taxon-pilot-roadmap", "head": "f7e5290081dedb775a5cae7e210db88b71d9b1cb"},
+      {"path": "/workspace/netzel-pollen", "branch": "codex/netzel-pollen-taxon-evidence", "head": "98ef1bf980aaa71903fa8fe40ef7797bd9d16b87"},
+      {"path": "/workspace/netzel-workflow", "branch": "codex/netzel-workflow-handoff", "head": "6f35df1cb751a2e516e75b94c1cb3bcb05050a9f"}
+    ],
+    "previous_environment_worktree_count_not_assumed_current": true
+  },
+  "verification": {
+    "status": "passed_source_hash_json_link_and_scoped_diff_checks",
+    "protected_existing_git_blobs_unchanged": 717,
+    "protected_blob_check": "Base git ls-tree versus staged git ls-files: identical path/blob pairs after excluding only HANDOFF.md and PROJECT_STATUS.md; no unstaged changes",
+    "five_prior_worktrees_still_clean": true,
+    "local_referenced_files_exist": true,
+    "git_diff_check": "passed",
+    "allowed_existing_changes": ["docs/thesis_research/HANDOFF.md", "docs/thesis_research/PROJECT_STATUS.md"],
+    "new_files": ["ARCHIVE_LINEAGE.md", "LINEAGE_EVIDENCE.json", "DECISION_GAPS.md"],
+    "original_source_bytes_durably_archived_by_this_package": false,
+    "code_or_tests_executed": false,
+    "matrix_cohort_cleaning_fits_scores_simulations_core_runs": false,
+    "subagents_author_messages_merges": false,
+    "W96_and_real_gates_closed": false
+  }
+}

@@ -17,7 +17,43 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: EMPD2-Nenner-/Sparse-Quellen, 31.10.2026
+## Aktueller Paketabschluss: EMPD2-Archivherkunft, 31.10.2026
+
+Nach Nutzerauftrag **begrenzt abgeschlossen; exakte Erzeugungskette offen**:
+[ARCHIVE_LINEAGE](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md),
+[LINEAGE_EVIDENCE](./empd2_archive_lineage_2026_10_31/LINEAGE_EVIDENCE.json),
+[DECISION_GAPS](./empd2_archive_lineage_2026_10_31/DECISION_GAPS.md).
+Offizielle Archivmetadaten ordnen die drei Originalformate demselben DOI zu.
+Nur der dort ausdrücklich verlinkte PostgreSQL-Dump als zweites Originalobjekt
+begrenzt geprüft: HTTP-Header und Bytebereich 0–32767, kein vollständiger Dump.
+PostgreSQL/pg_dump 11.2 und gleitkommafähiges count-Feld belegt; keine angewandte
+Code-/Exportversion zur gesperrten SQLite nachgewiesen. Suche nach zwei Quellen
+beendet, keine Ersatzsuche. Fehlender Messstatus/Nullregel, N_original und
+Hierarchieanwendung bleiben offen; S_flag und n_ausgewählt nicht gleichsetzen.
+
+Basis `90d0350f20d8adc5d1feab09722cf02f0ebb8b69` aus PR #43; eigener Branch
+`codex/netzel-empd2-archive-lineage`, Worktree `/workspace/netzel-empd2-lineage`.
+[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44),
+gestapelt gegen den #43-Branch, offen/ungemergt. Inhaltscommit
+`35152172f8f048a755bd5897d1687c888e9917d2`; danach Sicherungs-/Übergabeverweise.
+717 geschützte bestehende Git-Blobs bytegleich, JSON/Links/Hashes/Diff geprüft.
+Bei PR-Erstellung technisch mergefähig; automatische PR-CI am Inhaltscommit
+noch laufend (Run 41197720179), keine grüne Gesamtfreigabe behauptet.
+Einstieg #31–#43 offen/ungemergt, main `7f1826c`, #43-PR-CI erfolgreich.
+Fünf hier vorhandene vorherige Worktrees sauber erhalten. Vorhandene SQLite
+nur gehasht, nicht geöffnet oder neu geladen; 21.327.872 Bytes/Sperrhash bestätigt.
+Keine neuen Zeugen gelesen, bekannte #43-Befunde unverändert übernommen.
+Keine neue Matrix/Kohorte, Bereinigung, Projekt-/Quellcodeausführung, Fits,
+Scores, Simulationen, Tests oder Kernläufe; Designs/Modelle/Resultate/Register/
+Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert. Keine
+Unteragenten, Autorennachrichten oder Merges. W96 und reale Gates weiter offen.
+
+**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** dokumentarische
+Entscheidungsvorlage zum blockierten realen EMPD2-Counts-Einstieg anhand
+vorhandener Evidenz; keine neue Suche, Zieländerung, Implementierung oder
+Freigabe. [Umfang und Leseplan](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: EMPD2-Nenner-/Sparse-Quellen, 31.10.2026
 
 Nach Nutzer-OK hier im Chat **als begrenztes Quellenpaket mit Teilbefunden erledigt**:
 [DENOMINATOR_RULES](./empd2_denominator_rules_2026_10_31/DENOMINATOR_RULES.md),
@@ -55,7 +91,7 @@ Eigene CI bei Erstellung noch laufend, technisch MERGEABLE/UNSTABLE;
 [PR-Snapshot](./empd2_denominator_rules_2026_10_31/pr_snapshot.json).
 Keine behauptete fachliche oder grüne Gesamtfreigabe.
 
-**Vorbereitet, wartet auf neues OK:** enges Herkunfts-/Exportaudit genau der
+**Damals vorbereitet, inzwischen nach Nutzerauftrag begrenzt abgeschlossen:** enges Herkunfts-/Exportaudit genau der
 Sperr-SQLite anhand offizieller PANGAEA-Metadaten und nur bei Verweis eines
 zweiten Originalobjekts. Nach zwei gezielten Quellen ohne Kette einen
 Entscheidungspunkt dokumentieren, keine weitere Ersatzsuche.
