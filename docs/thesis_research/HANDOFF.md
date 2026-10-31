@@ -1,5 +1,10 @@
 # Netzel-Projekt: nächster Einstieg
 
+Gesamtziel und Weg zum ersten diagnostischen Kernlauf stehen in der
+[Taxon-Pilot-Roadmap](./TAXON_PILOT_ROADMAP.md). Quellenprüfung und ein getrenntes
+Design-/synthetisches Methodenpaket sollen auf diesen Meilenstein zulaufen.
+Der nächste konkrete Quellenauftrag unten bleibt unverändert.
+
 ## Zuerst lesen und Stand prüfen
 
 1. [Dauerhafte Arbeitsregeln](../../AGENTS.md) und [aktuellen Status](./PROJECT_STATUS.md)
