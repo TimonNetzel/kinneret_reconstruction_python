@@ -17,7 +17,41 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktuelle Ergänzung: Dissertation–Menezes-Verbindung, 31.10.2026
+## Aktueller Abschluss: neuer modularer Forschungsplan, 31.10.2026
+
+Nutzerauftrag **erledigt: neuer Plan und tokensparende Chatübergabe erstellt**.
+[MODULAR_RECONSTRUCTION_PLAN](./MODULAR_RECONSTRUCTION_PLAN.md) ist der
+operative Einstieg: geschützte moderne Pollen-Kalibrierung, nachgelagerter
+gemeinsamer Klima-/Chronologie-/Multiproxyblock. Forschungsrichtung bestätigt;
+Datensätze, Klimaziele, konkrete Modellparameter und reale Freigaben offen.
+Weg A1 Methodenabgrenzung → A2 Modell-/Datenvertrag → A3 synthetische Prüfung
+→ A4 moderne Kalibrierung/Basis → A5 diagnostischer Kern → A6 Integration.
+Nur **A1 ist aktiver nächster Auftrag**, bereits autorisiert, im neuen Chat
+auszuführen: genau Parnell 2015, Bowen 2020 und Menezes v1 2026; danach stoppen.
+Die späteren Pakete sind Planung, keine pauschale Rechen-/Datenfreigabe.
+
+Minimaler Einstieg AGENTS/HANDOFF/gezielte Planabschnitte, nur dieser aktuelle
+Statusabschnitt; alte Memos/PDFs ausschließlich bei konkreter offener Frage.
+Ein Ergebnisdokument pro Paket, kompakte Belege, keine wiederholten Inventuren,
+breiten Suchen oder unveränderten erfolgreichen Läufe/Tests.
+
+Basis `df01632d2256a5a7f6c4d3576f9e77c8ea5d7cb9` aus PR #49; Worktree
+`/workspace/netzel-modular-plan`, Branch `codex/netzel-modular-reconstruction-plan`.
+[PR #50](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/50)
+gegen den #49-Branch, offen/ungemergt. Inhaltscommit
+`2c7adc8b748046b599783f7d40d7fe7b5a80b4a4`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
+725 geschützte bestehende Git-Blobs bytegleich; Links/Referenzen und erlaubten
+Drei-Dateien-Diff geprüft. #49 beim
+Einstieg offen/ungemergt/mergefähig, CI 41206168515 erfolgreich, main `7f1826c`,
+elf vorherige Worktrees sauber. Nur neuer Plan plus Status/Übergabe.
+Keine neue Recherche/Datenbeschaffung/-auswahl, Bereinigung/Matrix/Kohorte,
+Projektcode-/Test-/Fit-/Score-/Simulations-/Kernläufe. Alte Designs/Modelle/
+Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen, Baseline und CLI/App
+unverändert; keine Unteragenten/Kontakte/Merges. W96 und reale Gates offen.
+[Einziger nächster Auftrag und kopierfertiger Prompt](./HANDOFF.md).
+
+## Historischer Abschluss: Dissertation–Menezes-Verbindung, 31.10.2026
 
 Nutzerfrage vor Chatwechsel **als Integrationsmemo beantwortet**:
 [INTEGRATION_MEMO](./menezes_integration_2026_10_31/INTEGRATION_MEMO.md).
