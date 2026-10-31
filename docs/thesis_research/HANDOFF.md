@@ -1,89 +1,90 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesichertes Ergebnis: synthetischer T1-Kandidat und begrenztes T2
+## Gesichertes Ergebnis: T1-Anschlussdesign für Zählkomposition und Typgemische
 
-Das autorisierte Paket aus PR #38 bei `d003fb9` wurde am 31.10.2026 auf
-`codex/netzel-t1-synthetic-t2` im eigenen Worktree
-`/workspace/netzel-t1-synthetic-t2` ausgeführt, ohne Unteragenten oder Merge.
-[Ergebnis und Grenzen](./t1_synthetic_t2_2026_10_31/README.md),
-[Vorabdesign](./t1_synthetic_t2_2026_10_31/DESIGN.md),
-[Reproduktion](./t1_synthetic_t2_2026_10_31/REPRODUCE.md).
-Design separat vor Implementierung/Lauf als `2b41c37` committed und gepusht.
+Nach ausdrücklichem OK am 31.10.2026 **hier im bestehenden Chat** ausgeführt.
+Basis `35185534bf7f171c6f39537ebbc0449b28f5421a` aus PR #39; eigener Worktree
+`/workspace/netzel-counts-design`, Branch `codex/netzel-counts-observation-design`.
+Keine Unteragenten. Sicherung als
+[PR #40](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/40)
+gegen `codex/netzel-t1-synthetic-t2` (#39), offen, ohne Merge.
+Letzter Inhaltscommit `62e0ee6272323246f6d29eff5f390a12136f116b`;
+danach nur PR-/Übergabeverweise. Eigene CI bei PR-Erstellung noch laufend;
+Vorgänger #39 inzwischen mit vier erfolgreichen CI-Checks, weiterhin offen.
+[Ergebnis](./counts_observation_design_2026_10_31/README.md),
+[Gleichungen und Datenvertrag](./counts_observation_design_2026_10_31/DESIGN_COUNTS.md),
+[reale Eingangslücken](./counts_observation_design_2026_10_31/INPUT_GAPS.md).
 
-108 synthetische Posteriore/38 Datensätze, alle geplanten Fälle berechnet;
-29 neue Tests bestanden, separate Nachrechnung aller 1.681 Massen je Posterior
-und bytegleicher frischer Zweitlauf bestanden. Widerspruch kann trotz engem
-Posterior bestehen; Prior-only-/fehlende Dimension und Vorzeichenmehrdeutigkeit
-sind sichtbar. Alle Varianten und verfehlten HPD-Wahrheiten berichtet.
-Das ist **kein abgeschlossenes reales T1, kein SBC und keine fossile Freigabe**.
-Der zusätzlich zu breit gestartete Standardtest wurde bei 56 bestanden/zwei
-Browserfehlern abgebrochen; vorhandene kurze Regressionsketten mit realen
-Testeingängen liefen teilweise. [Prüfstand](./t1_synthetic_t2_2026_10_31/TESTING.md).
-Keine neue wissenschaftliche Kernkurve ausgewertet/gesichert; bestehende
-Modelle, Resultate, Fossilcounts, Analog-Baseline und CLI/App unverändert.
+Das begrenzte Designpaket ist abgeschlossen: Fluss→Typkomposition→bedingte
+Multinomial-Likelihood einschließlich Missingness/Nenner, gemeinsamer latenter
+Abhängigkeit und proper Priors definiert. Skalen-, Produktions-/Klima- und
+Typgemisch-Mehrdeutigkeit algebraisch belegt. Eine reale Counts-Rekonstruktionsregel
+bleibt wegen fehlender Brückeneingänge unvollständig; W96, T0/T3/T4 und
+Monticchio-P1 weiterhin offen. Keine neuen Fits, Simulationen oder Tests ausgeführt;
+nur Dokumentations-/Hash-/Diffprüfung. Bestehende wissenschaftliche Dateien,
+Fossilcounts, Baseline und CLI/App unverändert. Kein Merge/Autorenkontakt.
 
-[PR #39](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/39)
-sichert das Paket gegen `codex/netzel-next-task-workflow` (#38), ohne Merge.
-Letzter gesicherter Inhaltscommit: `953d1e995429a209b336cb83e89c41fda66a3f62`;
-danach nur PR-/Übergabeverweise. CI war bei PR-Erstellung noch laufend,
-MERGEABLE/UNSTABLE ist keine fachliche Freigabe.
-Basis-/Remote-/Mergeprüfung: #31–#38 weiterhin offen; main bleibt `7f1826c`.
-Kein ungemergtes Ergebnis als auf main vorhanden behandeln.
+Der binäre synthetische Vorgänger bleibt als
+[PR-#39-Ergebnis](./t1_synthetic_t2_2026_10_31/README.md) unverändert erhalten.
+Sein dokumentierter zu breiter Standardtest wird nicht wiederholt.
+main bleibt `7f1826c`; #31–#39 bei Einstieg offen. Aktuellen PR-/CI-Stand separat
+prüfen; technische CI-Freigabe ersetzt weder Bestimmungsbeleg noch Pilotfreigabe.
 
 ## Genau ein vorbereiteter Folgeauftrag – wartet auf Nutzer-OK
 
-**T1-Anschlussdesign für Pollen-Zählkomposition und Typgemische, ohne neue Läufe.**
+**Kleinen synthetischen Zählprototyp nach dem gesicherten Plan implementieren und prüfen.**
 
-- **Ziel:** den noch fehlenden Modellvertrag zwischen kartiertem Areal,
-  lokalem Vorkommen/Vegetation, Pollenfluss und beobachteter Zählkomposition
-  mathematisch eingrenzen. Welche Größen wären aus welchen Eingängen überhaupt
-  identifizierbar? Der binäre Spielzeugprototyp ist dafür keine fertige Brücke.
-- **Erlaubter Umfang:** ausschließlich neue Designdokumente mit einer begründeten
-  generativen Zählregel, konditionalen Abhängigkeiten und Datenrollen. Beobachtete
-  Pollentypen von botanischen Arten unterscheiden; unbekannte Typ-/Art-Mischungen,
-  Produktions-/Transportfaktoren und Restkategorie explizit führen. Verdeckte
-  Vegetations-/Flussgrößen, Normalisierung zur Komposition und Stichprobenmodell
-  mathematisch beschreiben; Voraussetzungen, nicht identifizierbare Parameter
-  und minimale externe Belege mit Quellen/Annahmen trennen. Multinomial- oder
-  zusätzliche Streuungsannahmen vorab begründen, keine Modellwahl durch Scores.
-- **Konkrete Ergebnisse:** DESIGN_COUNTS.md mit Gleichungen und Datenvertrag;
-  INPUT_GAPS.md mit vorhandenen/fehlenden Eingängen und Sperrgründen;
-  festes Konzept für einen späteren kleinen synthetischen Zähltest mit bekannten
-  Zuständen, Typgemischen, Nullcounts, Restkategorie, Gesamtzählung, Abhängigkeiten,
-  Support und Unsicherheitsgrenzen. Diesen Test nur vorbereiten, nicht ausführen.
-- **Leseplan:** zuerst AGENTS.md, PROJECT_STATUS und diese Übergabe sowie
-  TAXON_PILOT_ROADMAP T1–T3. Danach Ergebnis/DESIGN/config dieses synthetischen
-  Pakets; taxon_transfer_2026_10_30/DESIGN.md und config.json für die reale
-  Funktionsbedeutung; pollen_methods_2026_10_31/README.md und SOURCE_GAP.md für
-  Typgrenzen. Nur bei konkreter Gleichungs-/Datenfrage den Multiproxy-Plan oder
-  weitere Originalquellen gezielt lesen; keine breite Wiederinventur.
-- **Gesperrt:** bestehende Designs/Modelle/Resultate/Quellregister/Fossilcounts,
-  Gruppierungen, Baseline, CLI/App; keine echte Artbrücke, reale Fits/Kernläufe,
-  Integration, automatische Pilot-/Modellfreigabe, Autorennachrichten oder Merges.
-  Keine neuen Unteragenten ohne ausdrücklichen Auftrag. Keine Wiederholung des
-  gesamten Repository-Standardtests; Dokumentationsprüfung reicht hier.
-- **Abschlusskriterien:** alle Likelihood-/Prior-/Mischungsterme einschließlich
-  Normalisierung definiert; nicht identifizierbare Skalen/Typgemische algebraisch
-  mit mindestens einem Gegenbeispiel belegt; fehlend gegenüber Nullcount sauber
-  unterschieden; gemeinsame Support-/Unsicherheitsgrenzen und benötigte reale
-  Belege genannt. Keine ungelöste Kartenlabel→Pollen-Brücke still als bekannt
-  annehmen. Eigenen Worktree/Branch/PR, Status und genau nächsten Auftrag sichern.
+- **Ziel:** die neue bedingte Counts-Likelihood und korrekte Behandlung von
+  Typgemisch, Rest/Nenner, Missingness und gemeinsamer Probenabhängigkeit
+  rechnerisch prüfen. Keine echte Art und kein fossiler Datensatz beteiligt.
+- **Festgelegter Umfang:** ausschließlich neues Forschungsmodul und gezielte Tests,
+  neue synthetische Ausgaben und Ergebnisdokumentation. 52 gültige Posteriorszenarien
+  nach [SYNTHETIC_PLAN](./counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md)
+  und [synthetic_plan.json](./counts_observation_design_2026_10_31/synthetic_plan.json):
+  bekannte Zustände bei N=8/40, beide Priors, gemeinsamer-H-Vergleich bei exakt
+  gleichen Einzelkorn-Marginalen, zusammengelegte Typen, fehlende Gruppen,
+  bedingter ausgewählter Nenner, alle fehlend, N=0 und beobachtete Nullcounts.
+  Zusätzliche Negativfälle nur als solche, keine 52 scheinbar erfolgreichen Fälle
+  durch Weglassen unzulässiger Ergebnisse erzeugen.
+- **Leseplan:** AGENTS.md, PROJECT_STATUS, diese Übergabe und Roadmap T1/T2.
+  Danach DESIGN_COUNTS.md, INPUT_GAPS.md, SYNTHETIC_PLAN.md und JSON dieses Pakets.
+  Bei numerischen Fragen ausschließlich #39-DESIGN/Produzent/Prüfer als Referenz
+  lesen; deren Dateien nicht ändern oder deren Ergebniswerte neu erzeugen.
+- **Vor Lauf sichern:** vorhandenen Plan erhalten; neuen ausführbaren Quellstand
+  vor erstem Ergebnislauf committen. Bekannte Planlücke zuerst dokumentieren,
+  keine wissenschaftlichen Parameter/Seeds/Kriterien an Resultate anpassen.
+- **Prüf-/Abschlusskriterien:** normierte PMFs durch Enumeration (N=8: 495 Vektoren),
+  alle 52×441 Massen separat ohne Produzentenimport nachrechnen, Missingness-
+  Marginalisierung, probenweite Mischung, algebraische Invarianten und explizite
+  ungültige/impossible Fälle prüfen. Identifizierbarkeit/Mehrdeutigkeit und alle
+  Verbesserungen/Verschlechterungen berichten, kein SBC-/Deckungsnachweis.
+  Die fünf festgelegten Produktionsdateien (observations.json, results.json,
+  posterior.csv.gz, environment.json, manifest.json) im frischen Zweitlauf
+  bytegleich reproduzieren und alle Dateibytes in Git sichern. Neue Pfade:
+  tools/taxon_counts/, tests/test_synthetic_counts.py und neues Ergebnispaket
+  docs/thesis_research/counts_synthetic_t2_2026_10_31/.
+- **Gesperrt:** alte Designs/Modelle/Resultate/Register/Fossilcounts/Gruppen,
+  Baseline und CLI/App; echte Modelle laden, reale Fits/Kernläufe, automatische
+  Art-/Pilot-/Modellwahl, neue äußere Scoreentscheidungen, Autorennachrichten/Merges.
+  Keine Unteragenten ohne ausdrücklichen Auftrag. Kein gesamter Repository-
+  Standardtest: nur neue gezielte synthetische Tests und Dokument-/Diffprüfung.
+- **Sicherung:** eigener Worktree/Branch und PR gegen den aktuellen Designbranch;
+  PROJECT_STATUS mit vollständigem Ergebnis/Prüfstand, HANDOFF mit genau einem
+  nächsten begrenzten Auftrag. W96 und reale Eingangslücken gesondert erhalten.
 
-Ein kurzes OK autorisiert genau dieses Designpaket nach erneuter Standprüfung.
-Es erlaubt keine Implementierung oder neuen synthetischen/reellen Fits daraus.
-W96 bleibt der **separat blockierte** Quellenauftrag unten; T0/T3/T4 und
-Monticchio-P1 bleiben offen. Die nächste Designarbeit hebt diese Sperren nicht auf.
+Ein kurzes OK hier im Chat autorisiert genau dieses vorbereitete synthetische
+Paket nach Standprüfung. Dieses Design-OK hat es noch nicht beauftragt.
+Kein neuer Chat erforderlich; ein Wechsel ist bei Bedarf möglich.
 
 ## Zuerst Stand prüfen
 
-1. Arbeitsregeln und PROJECT_STATUS lesen, lokale/unversionierte Änderungen,
-   Worktrees, Branches, relevante Remote-Heads und PR-/Mergezustände prüfen.
-   Vorhandene Arbeit erhalten; kein Checkout/Reset fremder Worktrees.
-2. Aktuellen gesicherten Inhaltscommit aus PROJECT_STATUS bzw. PR verwenden.
-   #38-Basis `d003fb9` und Vorabdesign `2b41c37` sind historische Anker,
-   nicht mit dem letzten Code-/Ergebniscommit verwechseln.
-3. Für das vorbereitete Design nur den oben genannten Leseplan durcharbeiten.
-   Alte Archive und große Ergebnisdateien erst bei konkretem Bedarf öffnen.
+1. Git-Status einschließlich unversionierter Dateien, Worktrees und Branches,
+   relevante Remote-Heads, PR-/Merge-/CI-Zustand prüfen; fremde Arbeit erhalten.
+2. Aktuellen Designbranch verwenden, nicht main: die Kette #31 ff. ist nicht
+   automatisch zusammengeführt. Letzter gesicherter Inhaltscommit/PR steht
+   in PROJECT_STATUS. Danach dürfen reine PR-/Übergabeverweise folgen.
+3. Nur den gezielten Leseplan des vorbereiteten Pakets lesen. Historische
+   Archive, große Ausgaben und reale Daten nur bei eigenem konkretem Auftrag.
 
 ## Weiterhin blockierter Quellenauftrag: historische Methodenkette schließen
 
@@ -119,25 +120,26 @@ sind dadurch genehmigt.
 
 ## Übergabe an einen neuen Chat
 
-Ein Wechsel ist nach dem gesicherten Paketabschluss möglich, nicht erforderlich.
-**Vorgeschlagener Startauftrag, noch nicht autorisiert:**
+**Vorgeschlagener Startauftrag, wartet auf OK; hier im Chat ebenfalls ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-t1-synthetic-t2` aus PR #39 fort;
-> letzter gesicherter Inhaltscommit 953d1e995429a209b336cb83e89c41fda66a3f62,
+> Setze das Netzel-Projekt auf `codex/netzel-counts-observation-design` aus PR #40 fort.
+> Letzter Inhaltscommit 62e0ee6272323246f6d29eff5f390a12136f116b;
 > danach nur PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten).
-> Basis war PR #38 bei d003fb9, vorab gesichertes Design 2b41c37.
-> Prüfe Git-/PR-/Merge-Stand, Branches, Worktrees und lokale Änderungen zuerst;
-> erhalte ungesicherte Arbeit. Lies AGENTS.md, HANDOFF.md, PROJECT_STATUS.md,
-> TAXON_PILOT_ROADMAP.md und den gezielten Leseplan der Übergabe.
-> Führe ausschließlich den dort vorbereiteten Folgeauftrag aus:
-> T1-Anschlussdesign für Pollen-Zählkomposition und Typgemische, ohne neue Läufe.
-> Bestehende Modelle, Resultate, Register, Fossilcounts, Baseline und CLI/App
-> unverändert. W96, reale Artbrücken und Monticchio-P1 bleiben offen.
-> Keine äußeren Scores zur Wahl, keine Fits/Kernläufe, Autorennachrichten oder
-> Merges. Eigener Worktree/Branch/PR, ohne Unteragenten, kurze deutsche Updates.
-> Ergebnis und genau einen nächsten Folgeauftrag im Repository sichern.
+> Basis war PR #39 bei 3518553. Prüfe Git-/PR-/Merge-/CI-Stand, Worktrees,
+> Branches und lokale Änderungen zuerst; erhalte ungesicherte Arbeit.
+> Lies AGENTS.md, HANDOFF.md, PROJECT_STATUS.md und den dortigen gezielten
+> Leseplan. Führe genau den vorbereiteten synthetischen Zählprototyp-Auftrag
+> nach counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md und JSON aus:
+> 52 vorab festgelegte Posteriorfälle plus Struktur-/Negativprüfungen.
+> Neuen Quellstand vor Ergebnislauf sichern. Bestehende Designs, Modelle,
+> Resultate/Register, Fossilcounts/Gruppen, Baseline und CLI/App unverändert.
+> W96, reale Artbrücken und Monticchio-P1 bleiben offen. Keine echten Modelle,
+> realen Fits/Kernläufe, äußere Scoreauswahl, Autorennachrichten oder Merges.
+> Eigener Worktree/Branch/PR, ohne Unteragenten; nur neue gezielte Tests,
+> keinen Gesamtstandardtest. Kurze deutsche Updates; Ergebnisbytes/Prüfstand
+> und genau einen nächsten Folgeauftrag im Repository sichern.
 
-Wenn der Nutzer diesen Prompt absendet, autorisiert er das oben begrenzte Paket.
+Absenden dieses Prompts autorisiert genau das oben begrenzte neue Paket.
 
 ## Nur bei konkretem Bedarf weiterlesen
 
