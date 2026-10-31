@@ -34,7 +34,10 @@ nicht mit Prozenten beziehungsweise TANN/PANN gleichsetzen.
 
 Basis `877f572e40ea028bbd12e4127fbb16ac5f4acd9b` aus PR #48; Worktree
 `/workspace/netzel-menezes-integration`, Branch `codex/netzel-menezes-integration`.
-Eigener PR nach Inhaltscommit gegen den #48-Branch, kein Merge.
+[PR #49](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/49)
+gegen den #48-Branch, offen/ungemergt. Inhaltscommit
+`08d8ec612bac8f967ce0b9d6be73f96378cee3ac`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 724 geschützte Git-Blobs bytegleich, mathematische Rollen/Quellen/Verweise und
 Drei-Dateien-Diff geprüft. #48 beim
 Einstieg offen/ungemergt/mergefähig, CI 41205275351 erfolgreich, main `7f1826c`,
