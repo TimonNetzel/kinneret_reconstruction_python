@@ -1,5 +1,12 @@
 # Netzel-Projekt: nächster Einstieg
 
+Gesamtziel und Weg zum ersten diagnostischen Kernlauf stehen in der
+[Taxon-Pilot-Roadmap](./TAXON_PILOT_ROADMAP.md). Quellenprüfung und ein getrenntes
+Design-/synthetisches Methodenpaket sollen auf diesen Meilenstein zulaufen.
+Der nächste konkrete Quellenauftrag unten bleibt unverändert. Roadmap gesichert
+in [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/36),
+Branch `codex/netzel-first-taxon-pilot-roadmap` auf dem vollständigen #35-Stand.
+
 ## Zuerst lesen und Stand prüfen
 
 1. [Dauerhafte Arbeitsregeln](../../AGENTS.md) und [aktuellen Status](./PROJECT_STATUS.md)
@@ -49,7 +56,7 @@ Shared37-Referenz. Monticchio-P1 und weitere Arten bleiben getrennte Pakete.
 
 Das Originalquellenpaket ist ein abgeschlossener, gesicherter Wechselpunkt.
 Startauftrag: „Prüfe aktuellen Git-/PR-Stand, verwende den Forschungsstand auf
-`codex/netzel-original-pollen-names` (#35), lies AGENTS.md und HANDOFF.md.
+`codex/netzel-first-taxon-pilot-roadmap` (#36), lies AGENTS.md und HANDOFF.md.
 Bearbeite das dort begrenzte Paket zu Bestimmungsmethoden und Typdefinitionen;
 Modelle/Counts/Baseline/CLI/App unverändert, eigener PR, kein Merge.“
 Keine ungemergten Ergebnisse als schon auf main vorhanden behandeln.

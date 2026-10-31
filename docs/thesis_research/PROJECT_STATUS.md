@@ -5,6 +5,18 @@ Multiproxy-Klimarekonstruktion; kein fertiger fossiler Gesamtdurchlauf.
 Arbeitsregeln stehen ausschließlich in [AGENTS.md](../../AGENTS.md),
 der nächste Auftrag und Leseplan in [HANDOFF.md](./HANDOFF.md).
 
+Gemeinsamer nächster Meilenstein, am 31.10.2026 vom Nutzer festgehalten:
+**erster diagnostischer lokaler Kernlauf mit verbessertem Taxonverfahren**.
+Die [Roadmap](./TAXON_PILOT_ROADMAP.md) verbindet die vorhandenen Bausteine mit
+Bestimmungs-/Abdeckungsprüfung, vorab festgelegter Rekonstruktionsregel,
+synthetischer Prüfung und gesperrten realen Eingängen. Kernwahl und konkrete
+Modellvariante bleiben offen; Monticchio-P1 unverändert verbindlich. Keine
+Voraussetzung, zuerst alle 279 historischen Funktionen oder die App fertigzustellen.
+Nur die Roadmap dokumentiert, keine neuen Modelle oder Läufe in diesem Paket.
+Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/36)
+auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
+gegen den #35-Branch; ohne Merge erstellt.
+
 ## Git- und PR-Stand
 
 | Stand | Nachweis am 31.10.2026 |
