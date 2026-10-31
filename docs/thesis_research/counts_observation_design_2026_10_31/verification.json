@@ -15,7 +15,7 @@
     "/workspace/netzel-t1-synthetic-t2": "",
     "/workspace/netzel-workflow": ""
   },
-  "local_links_checked": 67,
+  "local_links_checked": 68,
   "local_links": [
     [
       "docs/thesis_research/HANDOFF.md",
@@ -116,6 +116,10 @@
     [
       "docs/thesis_research/PROJECT_STATUS.md",
       "./counts_observation_design_2026_10_31/git_snapshot.json"
+    ],
+    [
+      "docs/thesis_research/PROJECT_STATUS.md",
+      "./counts_observation_design_2026_10_31/pr_snapshot.json"
     ],
     [
       "docs/thesis_research/PROJECT_STATUS.md",
@@ -330,7 +334,7 @@
   "new_document_sha256": {
     "docs/thesis_research/counts_observation_design_2026_10_31/DESIGN_COUNTS.md": "87bc2acc63ee42f00f8718e58b3fcfac37429d9c7dd34275d8de0b11bcfdbe31",
     "docs/thesis_research/counts_observation_design_2026_10_31/INPUT_GAPS.md": "6b8db890c530dd35892a469f74ff49ef814952293ebab4d13a4c4210a6274038",
-    "docs/thesis_research/counts_observation_design_2026_10_31/README.md": "31ef6be1acfb67f08994adcdb221e81f1f1c2835163f6dc763adc399e97c3f5c",
+    "docs/thesis_research/counts_observation_design_2026_10_31/README.md": "b466eb414a3e15e1423d4353b5065672d670561d58ccf3676bfcceda2a5922e2",
     "docs/thesis_research/counts_observation_design_2026_10_31/SYNTHETIC_PLAN.md": "e0b700bcc53fbc2204f7fb78dbc1298608d03f974d9b570e1cfc6963939db292",
     "docs/thesis_research/counts_observation_design_2026_10_31/git_snapshot.json": "00acaa860fbe5975466729b775283ff0ab88a4f195c3790252ea98cc4b0b76f5",
     "docs/thesis_research/counts_observation_design_2026_10_31/synthetic_plan.json": "07061e74f2e395d1abf7762135be9b98f56a2fecf98e18196419af34f99b413f"

@@ -5,6 +5,8 @@
 `/workspace/netzel-counts-design`, Branch `codex/netzel-counts-observation-design`.
 Die sechs vorherigen Worktrees sind sauber geblieben; [Standprüfung](./git_snapshot.json).
 PR #31–#39 offen, main unverändert `7f1826c`; kein Merge.
+Gesichert als [PR #40](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/40)
+gegen den #39-Branch, Inhaltscommit `62e0ee6`; danach nur PR-/Übergabeverweise.
 
 **Dieses begrenzte Designpaket ist abgeschlossen.** Es definiert die mathematische
 Rolle von Vegetation, Pollenfluss, Klassifikationsmatrix, Rest und Zählnenner.
@@ -42,6 +44,7 @@ Dokumentationsprüfung: Gleichungen/Dimensionen, Zählnenner und Restlogik,
 algebraische Gegenbeispiele, 52-Fälle-Inventar gegen JSON, lokale Links,
 Hashvergleich aller geschützten vorhandenen Git-Blobs und begrenzter Diffumfang.
 [Prüfprotokoll](./verification.json) mit Eingangs- und Dokumenthashes.
+674 geschützte bestehende Blobs einschließlich des vorhandenen Symlinks unverändert.
 Kein unabhängiger menschlicher oder palynologischer Review behauptet.
 
 **Nicht ausgeführt:** Prototypen, Simulationen, Fits, Posterioren, bestehende

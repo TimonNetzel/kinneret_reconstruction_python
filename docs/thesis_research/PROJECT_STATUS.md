@@ -48,7 +48,16 @@ Branch `codex/netzel-counts-observation-design` ab
 Alle sechs vorhandenen Worktrees bei Einstieg sauber und erhalten;
 main weiterhin `7f1826c`, #31–#39 offen. Keine Unteragenten, Merges oder
 Autorennachrichten. [Standprüfung](./counts_observation_design_2026_10_31/git_snapshot.json).
-Eigene PR-/Inhaltssicherung wird nach Erstellung hier ergänzt.
+Sicherung als [PR #40](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/40)
+gegen `codex/netzel-t1-synthetic-t2` (#39), offen und ohne Merge.
+Letzter gesicherter **Inhaltscommit**:
+`62e0ee6272323246f6d29eff5f390a12136f116b`; danach nur PR-/Übergabeverweise.
+674 geschützte bestehende Git-Blobs unverändert gegen die Basis; ausschließlich
+Status/Übergabe als bestehende Dokumente fortgeschrieben.
+Bei eigener PR-Erstellung CI noch laufend, technisch MERGEABLE/UNSTABLE;
+PR #39 inzwischen vier erfolgreiche CI-Checks, CLEAN/MERGEABLE, weiterhin offen.
+[PR-/CI-Snapshot](./counts_observation_design_2026_10_31/pr_snapshot.json).
+Das ist kein neuer lokaler Testlauf und keine wissenschaftliche Freigabe.
 
 ## Vorheriger Paketabschluss: T1-Kandidat / synthetisches T2, 31.10.2026
 

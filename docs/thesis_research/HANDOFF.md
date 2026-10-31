@@ -5,7 +5,12 @@
 Nach ausdrücklichem OK am 31.10.2026 **hier im bestehenden Chat** ausgeführt.
 Basis `35185534bf7f171c6f39537ebbc0449b28f5421a` aus PR #39; eigener Worktree
 `/workspace/netzel-counts-design`, Branch `codex/netzel-counts-observation-design`.
-Keine Unteragenten. PR-/Inhaltscommit-Verweis steht in PROJECT_STATUS.
+Keine Unteragenten. Sicherung als
+[PR #40](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/40)
+gegen `codex/netzel-t1-synthetic-t2` (#39), offen, ohne Merge.
+Letzter Inhaltscommit `62e0ee6272323246f6d29eff5f390a12136f116b`;
+danach nur PR-/Übergabeverweise. Eigene CI bei PR-Erstellung noch laufend;
+Vorgänger #39 inzwischen mit vier erfolgreichen CI-Checks, weiterhin offen.
 [Ergebnis](./counts_observation_design_2026_10_31/README.md),
 [Gleichungen und Datenvertrag](./counts_observation_design_2026_10_31/DESIGN_COUNTS.md),
 [reale Eingangslücken](./counts_observation_design_2026_10_31/INPUT_GAPS.md).
@@ -117,8 +122,9 @@ sind dadurch genehmigt.
 
 **Vorgeschlagener Startauftrag, wartet auf OK; hier im Chat ebenfalls ausführbar:**
 
-> Setze das Netzel-Projekt auf `codex/netzel-counts-observation-design` fort.
-> Letzter gesicherter Inhaltscommit und PR stehen in PROJECT_STATUS.md;
+> Setze das Netzel-Projekt auf `codex/netzel-counts-observation-design` aus PR #40 fort.
+> Letzter Inhaltscommit 62e0ee6272323246f6d29eff5f390a12136f116b;
+> danach nur PR-/Übergabeverweise (aktueller Branch-Head darf diese enthalten).
 > Basis war PR #39 bei 3518553. Prüfe Git-/PR-/Merge-/CI-Stand, Worktrees,
 > Branches und lokale Änderungen zuerst; erhalte ungesicherte Arbeit.
 > Lies AGENTS.md, HANDOFF.md, PROJECT_STATUS.md und den dortigen gezielten
