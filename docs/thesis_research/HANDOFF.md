@@ -1,86 +1,81 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesicherter Abschluss: neuer Gleichungsentwurf zu Dissertation 2.16
+## Gesicherter Abschluss: Literatur-Erstprüfung des Gleichungsentwurfs
 
-Vom Nutzer am 31.10.2026 beauftragt: eine mathematisch/klimatologisch sauberere
-Weiterentwicklung von Gl. 2.16 formulieren und konkretisieren. Basis
-`d0c25a1e0a798c4625e132d4c22a26886c12878e` aus
-[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46).
-Worktree `/workspace/netzel-joint-equation`, Branch
-`codex/netzel-joint-percentage-equation`;
-[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
-gegen den #46-Branch, offen/ungemergt. Inhaltscommit
-`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`; danach Sicherungs-/Übergabeverweise.
-Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
-[PERCENTAGE_INDICATOR_DESIGN](./joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md).
+Am 31.10.2026 vom Nutzer gefragt, ob der Ansatz bereits verwendet wurde.
+Basis `6e28a8541f58a263cbd455d46b5ef8df101bae43` aus
+[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47).
+Worktree `/workspace/netzel-literature-check`, Branch
+`codex/netzel-method-literature-check`; eigener PR nach Inhaltscommit.
+[LITERATURE_CHECK](./method_literature_check_2026_10_31/LITERATURE_CHECK.md).
 
-**Schriftlicher Gleichungsentwurf abgeschlossen, keine reale Methodenfreigabe.**
-Gemeinsamer Klimaverlauf C, latente Chronologien tau, Parameter Theta;
-Pollenanteils-Likelihood, externe Proxy-Likelihoods, Datierungs-Likelihood
-und getrennte Prozess-/Parameterpriors. Konkrete Kandidaten: bivariater
-Matérn-Prozess für TANN/log PANN, logistic-normal für latente Typkomposition
-mit Rundungs-/Fehlwertbeobachtung, Merkmalsbrücke aus vorhandenen Artenfunktionen
-mit separat modern zu kalibrierenden Koeffizienten; Proxy-Zeitreihenmodell
-mit Signalvarianzanteil rho statt Beta(R²) als alleinigem Faktor.
+**Erstprüfung abgeschlossen: Grundarchitektur und wichtige Bausteine haben
+klare Vorläufer; exakte Kombination und eigener Neuheitsbeitrag bleiben offen.**
+Primärquellen: Parnell et al. 2015 (Bclim, Pollen/Chronologie), Werner & Tingley
+2015 (Aktualisierung unsicherer Altersmodelle), Bowen et al. 2020 (Joint Proxy
+Inversion, marine Anwendung ohne mitgerechnete Altersunsicherheit), Menezes
+et al. 2026 arXiv:2609.08866v1 (zero-/N-inflated multinomial logistic-normal,
+BART, cut-posterior, Monticchio). Letzteres ist eine sehr nahe Preprintarbeit,
+kein hier bestätigter begutachteter Zeitschriftenartikel. Counts nicht mit
+Prozent-only oder gemeinsamer Multiproxy-Chronologie gleichsetzen.
+Nur im Bericht benannte Abstract-/Textstellen gelesen, keine Vollprüfung.
 
-Der vorher diskutierte Indikatorscore wird für dieses generative Ziel als
-Hauptvorschlag zurückgestellt, bleibt eine andere methodische Möglichkeit.
-Keine Behauptung, die Artenfunktionen seien bereits Pollenfunktionen. Auswahl,
-Nullstatus, Präzision und reale Kalibrierung offen. Gemeinsame Chronologie erlaubt
-Proxy-Rückkopplung; Ausschluss dieser Rückkopplung wäre gesondert zu definieren.
-Neuheit nicht literaturgeprüft, keine Implementierung oder Ergebnisläufe.
-Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-Baseline und CLI/App unverändert; W96, EMPD2-Block und reale Gates offen.
+Der neue Nutzerauftrag begründet diese Literaturprüfung; der vorher
+vorbereitete Kalibrier-/Identifizierbarkeitsvertrag ist nicht ausgeführt und
+wird als nächster Einstieg durch die folgende Abgrenzung ersetzt. #47 bleibt
+unveränderter Entwurf. Keine Neuheit/Realvalidierung/Freigabe behauptet.
 
 ## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzer-OK
 
-**Abstrakten Identifizierbarkeits- und Kalibriervertrag zum Gleichungsentwurf
-schriftlich festlegen.** Neue MODEL_CONTRACT.md plus Status/Übergabe.
+**Begrenzte methodische Abgrenzungsmatrix zu drei nahen Primärarbeiten erstellen.**
 
-- Für Pollenbrücke a/B/Sigma, Klimaprozess, Proxy-Skalen/rho und Chronologie
-  Evidenzbedarf, Referenzkonventionen, notwendige Fixierungen/Annahmen und
-  Abbruchfälle nennen. Klima–Brücke–Proxy-Skala und Klima–Alter explizit prüfen.
-- Kleinen späteren synthetischen Prüfplan beschreiben: Prior-only, Fehlwerte/
-  Rundungsnullen, Klima-/Skalenmehrdeutigkeit, gemeinsame Taxonfehler,
-  Chronologieverschiebung und korrelierte Proxys. Keine Ausführung.
-- Leseplan: AGENTS, HANDOFF, PROJECT_STATUS, neuer Gleichungsentwurf;
-  vorheriges Konzept- und Counts-Design nur bei konkreter Abgrenzungsfrage.
-- Abschluss: mathematische Rollen und Bedingungen einer späteren Kalibrierung
-  prüfbar sichern; keine reale Identifizierbarkeit/Neuheit/Freigabe behaupten.
-- Keine Recherche/Datenbeschaffung, reale Auswahl, Matrix/Kohorte/Bereinigung,
-  Code-/Test-/Fit-/Score-/Simulations-/Kernläufe, Kontakte, Merges oder Unteragenten.
+- Neue NOVELTY_MATRIX.md plus Status/Übergabe. Nur Methodenteile von
+  Parnell 2015, Bowen 2020 und Menezes v1 2026 gegen den #47-Entwurf lesen.
+- Prüffelder: Beobachtung/Counts/Prozente/Nullen, Kalibrierbrücke, Klimaprozess,
+  Chronologie-Rückkopplung, Proxy-Abhängigkeit und Unsicherheitsvalidierung.
+- Je Feld Gleichung/Abschnitt, Gemeinsamkeit, konkrete Differenz und offene
+  Beleglage festhalten. Fehlender Volltext wird Zugangslücke. Nach genau diesen
+  drei Arbeiten stoppen, keine Schneeballsuche/umfassende Neuheitsbehauptung.
+- Abschluss: höchstens einen überprüfbaren eigenen Beitragskandidaten
+  abgrenzen oder feststellen, dass noch keiner belegt ist. Vorhandene Methoden
+  als Vorarbeiten anerkennen; keine neue reale Methode oder Variante wählen.
+- Leseplan: AGENTS/HANDOFF/PROJECT_STATUS, LITERATURE_CHECK, #47-Entwurf
+  joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md und
+  genau die drei im Bericht verlinkten Primärarbeiten.
+- Keine Implementierung, Datenbeschaffung/-auswahl, Matrix/Kohorte/Bereinigung,
+  Fits/Scores/Tests/Simulationen/Kernläufe, Kontakte, Merges oder Unteragenten.
   Alte Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen,
-  Baseline und CLI/App unverändert; eigener Worktree/Branch/PR, Dokument-/Link-/
-  Hash-/Diffprüfung, genau einen Folgeauftrag sichern.
+  Baseline und CLI/App unverändert; W96 und reale Gates offen. Eigener
+  Worktree/Branch/PR, Quellen-/Link-/Diffprüfung und genau ein Folgeauftrag.
 
-Ein OK autorisiert nur diesen schriftlichen Vertrag/Prüfplan. Der Gleichungsentwurf
-ist erledigt; kein weiteres OK dafür erforderlich.
+Ein OK beauftragt nur diese begrenzte Methodenlektüre und Matrix, keine
+wissenschaftliche Ausführung. Die Erstprüfung ist erledigt.
 
-## Standprüfung und weiter offene Grenzen
+## Zuerst Stand prüfen; separat offene Grenzen
 
-Zuerst Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
-unversionierte Änderungen prüfen; Arbeit erhalten, Basis nennen, eigener
+Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
+unversionierte Änderungen prüfen, Arbeit erhalten, Basis nennen; eigener
 Worktree/Branch. main enthält die ungemergte Kette nicht automatisch.
-Beim Einstieg #46 offen/ungemergt/mergefähig, PR-CI 41200027713 erfolgreich,
-main `7f1826c`, acht vorherige Worktrees sauber.
+Einstieg #47 offen/ungemergt/mergefähig, CI 41201264089 erfolgreich,
+main `7f1826c`, neun vorherige Worktrees sauber.
 
-W96/Typbrücken, Monticchio-P1/physischer LGM90D→MON16-Anschluss, EMPD2-
-Archivkette und Messstatus bleiben offen. Keine N_original-Rekonstruktion
-oder Nullregel aus Prozenten. Keine neue Kern-/Modell-/Taxonauswahl.
-Die begrenzte Archivsuche wird nicht wieder geöffnet.
+Literaturmodelle sind keine Freigabe unserer Typbrücken, Archiv-Messstatus,
+Kalibrierung oder Chronologie. W96, Monticchio-P1/physischer LGM90D→MON16-
+Anschluss und EMPD2-Exportkette bleiben offen; keine neue Kern-/Modellwahl.
+Begrenzte EMPD2-Archivsuche wird nicht wieder geöffnet.
 
-## Startprompt für eine spätere Fortsetzung
+## Startprompt
 
-> Setze das Netzel-Projekt auf codex/netzel-joint-percentage-equation fort,
+> Setze das Netzel-Projekt auf codex/netzel-method-literature-check fort,
 > gesicherter Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-Stand,
-> Branches, Worktrees und lokale Änderungen; erhalte Arbeit. Erstelle nur den
-> in HANDOFF vorbereiteten abstrakten Identifizierbarkeits-/Kalibriervertrag
-> MODEL_CONTRACT.md samt späterem synthetischen Prüfplan. Keine Recherche,
-> Datenbeschaffung/Realwahl, Bereinigung/Matrix/Kohorte, Code-/Test-/Fit-/Score-/
-> Simulations-/Kernläufe. Alte Designs/Modelle/Resultate/Register/Verträge/
-> Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert; W96 und
+> Branches, Worktrees und lokale Änderungen; erhalte Arbeit. Bearbeite nur die
+> vorbereitete NOVELTY_MATRIX zu Parnell 2015, Bowen 2020 und Menezes v1 2026
+> gegen den Entwurf aus PR #47. Nach drei Arbeiten stoppen. Keine umfassende
+> Neuheitsbehauptung oder reale Modellentscheidung, keine Datenbeschaffung/
+> Auswahl/Bereinigung/Matrix/Kohorte/Codeausführung/Fits/Scores/Tests/
+> Simulationen/Kernläufe. Alte Designs/Modelle/Resultate/Register/Verträge/
+> Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert. W96 und
 > reale Gates offen. Eigener Worktree/Branch/PR, keine Unteragenten/Kontakte/
-> Merges, kurze deutsche Updates, Ergebnis und genau einen Folgeauftrag sichern.
+> Merges; kurze deutsche Updates, Ergebnis und genau einen Folgeauftrag sichern.
 
-Ein OK im passenden Kontext oder Absenden dieses Prompts beauftragt genau
-dieses Vertragspaket. Kein Chatwechsel erforderlich.
+Ein OK oder Absenden dieses Prompts beauftragt genau dieses Paket.

@@ -17,7 +17,38 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
-## Aktueller Paketabschluss: gemeinsamer Gleichungsentwurf zu 2.16, 31.10.2026
+## Aktueller Paketabschluss: Literatur-Erstprüfung, 31.10.2026
+
+Nutzerfrage nach bestehenden Anwendungen **begrenzt recherchiert und belegt**:
+[LITERATURE_CHECK](./method_literature_check_2026_10_31/LITERATURE_CHECK.md).
+Grundarchitektur und zentrale Bausteine haben deutliche Vorläufer: Parnell
+2015 (Bclim/Pollen mit Zeitunsicherheit), Werner & Tingley 2015 (gemeinsame
+Altersmodell-/Klimainferenz in numerischen Experimenten), Bowen 2020 (Joint
+Proxy Inversion, marine Anwendungen; Altersunsicherheit dort nicht mitgerechnet).
+Besonders nah: Menezes et al., Preprint arXiv:2609.08866v1 vom 08.09.2026,
+zero-/N-inflated multinomial logistic-normal, BART, cut-posterior und Monticchio.
+Keine Zeitschriften-/Peer-Review-Bestätigung für diesen Preprint behauptet.
+Nur benannte Abstract-/Textstellen gelesen, keine komplette Methodenprüfung.
+Exakte Prozent-only-/Arealbrücken-/Multiproxy-Kombination und Neuheit weiter offen.
+Der allgemeine gemeinsame Posterior allein ist kein belegter Neuheitsbeitrag.
+
+Basis `6e28a8541f58a263cbd455d46b5ef8df101bae43` aus PR #47; Worktree
+`/workspace/netzel-literature-check`, Branch `codex/netzel-method-literature-check`.
+Eigener PR nach Inhaltscommit gegen den #47-Branch, kein Merge.
+723 geschützte bestehende Git-Blobs bytegleich; Quellen-/Link-/Diffprüfung bestanden.
+#47 beim
+Einstieg offen/ungemergt/mergefähig, CI 41201264089 erfolgreich, main `7f1826c`,
+neun vorherige Worktrees sauber. Nur neue Literaturnotiz plus Status/Übergabe.
+Keine Datenbeschaffung/-auswahl, Matrix/Kohorte/Bereinigung, Code-/Test-/Fit-/
+Score-/Simulations-/Kernläufe. Bestehende Designs/Modelle/Resultate/Register/
+Verträge/Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert;
+keine Unteragenten/Kontakte/Merges, W96 und reale Gates offen.
+
+**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** begrenzte
+Methoden-Abgrenzungsmatrix zu Parnell 2015, Bowen 2020 und Menezes v1 2026;
+nach genau drei Arbeiten stoppen. [Umfang und Leseplan](./HANDOFF.md).
+
+## Vorheriger Paketabschluss: gemeinsamer Gleichungsentwurf zu 2.16, 31.10.2026
 
 Nutzerauftrag zur Weiterentwicklung von Dissertation Gl. 2.16 **schriftlich
 konkretisiert**: [PERCENTAGE_INDICATOR_DESIGN](./joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md).
@@ -48,7 +79,7 @@ Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/Gruppen, Baseline
 und CLI/App unverändert. Keine Unteragenten/Kontakte/Merges. W96, EMPD2-
 Archiv-/Messstatus und reale Gates bleiben offen.
 
-**Genau ein Folgeauftrag vorbereitet, wartet auf Nutzer-OK:** abstrakten
+**Damals vorbereitet, durch den neuen Literaturauftrag als nächster Einstieg ersetzt:** abstrakten
 Identifizierbarkeits-/Kalibriervertrag samt späterem synthetischem Prüfplan
 schriftlich festlegen; keine Ausführung/Realwahl. [Leseplan/Umfang](./HANDOFF.md).
 
