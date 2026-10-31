@@ -40,7 +40,11 @@ offen/ungemergt und mergebar; automatische CI 41237720645 erfolgreich.
 Sieben vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
 main unverändert `7f1826c`. Eigener Worktree `/workspace/netzel-a4-e-evidence-gaps`,
 Branch `codex/netzel-a4-e-evidence-gaps`, eigener gestapelter PR gegen #56.
-Inhaltscommit/PR und CI nach Erstellung ergänzen. Nur neues Ergebnisdokument
+Inhaltscommit `b6b75f8b2296b197c189327b2dac08e6949a5d61` über
+[PR #57](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/57)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41238645929
+bei Abfrage queued, kein abschließender Erfolg behauptet. Danach nur
+Sicherungsverweise; aktuellen Head/CI prüfen. Nur neues Ergebnisdokument
 plus kurze HANDOFF-/Statuspflege, alte Statushistorie erhalten. Quellenzuordnung,
 JSON-Feldbezüge, 22 lokale Links/Anker und Drei-Dateien-Umfang geprüft;
 750 geschützte Blobs/Dateimodi einschließlich Symlink unverändert. Sechs eng
