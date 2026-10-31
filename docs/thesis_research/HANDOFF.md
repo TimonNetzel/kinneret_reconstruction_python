@@ -7,7 +7,11 @@ Weiterentwicklung von Gl. 2.16 formulieren und konkretisieren. Basis
 `d0c25a1e0a798c4625e132d4c22a26886c12878e` aus
 [PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46).
 Worktree `/workspace/netzel-joint-equation`, Branch
-`codex/netzel-joint-percentage-equation`; eigener PR nach Inhaltscommit.
+`codex/netzel-joint-percentage-equation`;
+[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
+gegen den #46-Branch, offen/ungemergt. Inhaltscommit
+`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 [PERCENTAGE_INDICATOR_DESIGN](./joint_percentage_equation_2026_10_31/PERCENTAGE_INDICATOR_DESIGN.md).
 
 **Schriftlicher Gleichungsentwurf abgeschlossen, keine reale Methodenfreigabe.**

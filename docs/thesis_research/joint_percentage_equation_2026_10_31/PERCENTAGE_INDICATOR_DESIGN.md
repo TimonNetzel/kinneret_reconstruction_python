@@ -7,6 +7,10 @@ klimatologisch begründen und mit Modellbausteinen füllen. Basis
 Eigener Worktree `/workspace/netzel-joint-equation`, Branch
 `codex/netzel-joint-percentage-equation`. Schriftlicher Methodenvorschlag,
 keine Implementierung, reale Modellwahl oder wissenschaftliche Ausführung.
+Gesichert als [PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
+gegen den #46-Branch, offen/ungemergt; Inhaltscommit
+`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`, danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 
 ## Neue Gleichung
 

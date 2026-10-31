@@ -34,7 +34,10 @@ einen ausdrücklich anderen modularen Ansatz. Kalibrierung/Messstatus weiter off
 
 Basis `d0c25a1e0a798c4625e132d4c22a26886c12878e` aus PR #46, Worktree
 `/workspace/netzel-joint-equation`, Branch `codex/netzel-joint-percentage-equation`.
-Eigener PR nach Inhaltscommit gegen den #46-Branch, kein Merge.
+[PR #47](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/47)
+gegen den #46-Branch, offen/ungemergt. Inhaltscommit
+`cd0591d9eb6384aeb3496972fb4786fba6c2f2ed`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 722 geschützte bestehende Git-Blobs unverändert; mathematische Rollen,
 Referenzen/Links und Drei-Dateien-Diff geprüft, keine Tests/Läufe.
 Beim Einstieg #46 offen/ungemergt/mergefähig, PR-CI 41200027713 erfolgreich,
