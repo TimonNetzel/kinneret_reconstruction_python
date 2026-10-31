@@ -1,103 +1,97 @@
 # Netzel-Projekt: nächster Einstieg
 
-## Gesichertes Ergebnis: begrenztes EMPD2-Archiv-Herkunftspaket
+## Gesichertes Ergebnis: Entscheidungsvorlage zum realen EMPD2-Counts-Einstieg
 
-Nach Nutzerauftrag am 31.10.2026 ausgeführt. Basis
-`90d0350f20d8adc5d1feab09722cf02f0ebb8b69` aus
-[PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43).
-Eigener Worktree `/workspace/netzel-empd2-lineage`, Branch
-`codex/netzel-empd2-archive-lineage`;
-[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44)
-gegen den #43-Branch, offen und ungemergt. Gesicherter Inhaltscommit
-`35152172f8f048a755bd5897d1687c888e9917d2`; danach nur Sicherungs-/Übergabeverweise.
-Bei PR-Erstellung technisch mergefähig; automatische PR-CI am Inhaltscommit
-noch laufend (Run 41197720179), keine grüne Gesamtfreigabe behauptet.
-[ARCHIVE_LINEAGE](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md),
-[LINEAGE_EVIDENCE](./empd2_archive_lineage_2026_10_31/LINEAGE_EVIDENCE.json),
-[DECISION_GAPS](./empd2_archive_lineage_2026_10_31/DECISION_GAPS.md).
+Nach Nutzer-OK am 31.10.2026 ausschließlich schriftlich erstellt. Basis
+`308efab1a7d55d2dcb2485f3346ba58d1d23e3bf` aus
+[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44).
+Worktree `/workspace/netzel-empd2-decision`, Branch
+`codex/netzel-empd2-counts-decision`; eigener PR folgt nach Inhaltscommit.
+[COUNTS_DECISION_BRIEF](./empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md).
 
-**Archivauftrag begrenzt abgeschlossen; Erzeugungskette weiterhin offen.**
-Zuerst offizielle DOI-Landingpage und verlinkte DataCite-Metadaten gelesen.
-Die dort ausdrücklich zugeordnete PostgreSQL-Datei als genau zweites
-Originalobjekt nur per Header und 32.768-Byte-Präfix geprüft, kein voller Dump.
-PostgreSQL/pg_dump 11.2 und `count double precision` belegt; das ist kein
-SQLite-Exportnachweis. Keine konkret angewandte Code-/Exportversion gefunden.
-Nach den zwei Quellen gestoppt, keine Ersatzsuche. Messstatus/Nullunterdrückung,
-N_original und Hierarchieanwendung offen; S_flag und n_ausgewählt getrennt.
+**Vorlage abgeschlossen; fachliche Wahl weiterhin offen.**
+A: reales Counts-T1 bis zu archivgenauen Belegen zurückstellen.
+B: ein separates, ausdrücklich annahmenabhängiges Forschungsziel zunächst
+schriftlich entwerfen lassen. Für beide Wege sind notwendige Entscheidung,
+minimale Evidenz, zulässige/nicht zulässige Schlussfolgerungen und Stopbedingungen
+gegenübergestellt. N_original, S_flag und n_ausgewählt getrennt.
+B ersetzt weder historische Provenienz noch reale Eingangsprüfung.
+Keine Option, konkrete Zielvariable, Taxon-/Nennerauswahl oder Modellfamilie gewählt.
 
-Vorhandene SQLite nur gehasht, nicht geöffnet oder neu heruntergeladen:
-21.327.872 Bytes, SHA-256
-`5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2`.
-Die drei bekannten Zeugen nicht erneut ausgelesen; #43-Befunde übernommen:
-108 gleiche Tupel, 7,4 erhalten, 36/40 Gruppen, sichtbarer Neuanlagepfad rundet
-und überspringt bestehende Proben. Keine neue Matrix/Kohorte, Bereinigung,
-Code-/Testausführung, Fits, Scores, Simulationen oder Kernläufe.
+Die begrenzte Archivsuche bleibt beendet; keine neue Recherche oder
+Originaldatenabfrage. Reale Counts-Bereitschaft, W96, T0, reales T1/T3/T4 und
+Monticchio-P1 bleiben offen. Kein Fit, Score, Test, keine Simulation,
+Codeausführung, Bereinigung, Matrix/Kohorte oder Kernlauf.
+Bestehende Designs/Modelle/Resultate/Verträge/Register/Importer/Flags/Counts/
+Gruppen, Baseline und CLI/App unverändert. Keine Unteragenten,
+Autorennachrichten oder Merges.
 
-Einstieg: #31–#43 offen/ungemergt; main `7f1826c`, #43-Head wie beauftragt,
-#43-PR-CI erfolgreich. Fünf vorherige Worktrees dieser Umgebung sauber erhalten.
-Bestehende Designs/Modelle/Resultate/Register/Importer/Flags/Counts/Gruppen,
-Baseline und CLI/App unverändert. Keine Unteragenten, Autorennachrichten oder
-Merges. W96 und reale T0/T1/T3/T4/Monticchio-P1 bleiben offen.
+Einstieg: #44 offen/ungemergt/mergefähig, Head entspricht Basis, PR-CI
+Run 41197759461 erfolgreich; main `7f1826c`. Sechs vorherige Worktrees sauber.
+Vorhandene SQLite nur gehasht, nicht geöffnet; Sperrhash unverändert.
 
-## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzer-OK
+## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzerentscheidung und OK
 
-**Eine dokumentarische Entscheidungsvorlage zum blockierten realen EMPD2-Counts-Einstieg erstellen.**
+**Die ausdrücklich gewählte Option in einer neuen COUNTS_DECISION_RECORD.md
+festhalten und ihren weiteren Arbeitsumfang begrenzen.**
 
-- **Ziel:** anhand vorhandener Belege gegenüberstellen: reales Counts-T1 bis
-  zu archivgenauer Evidenz zurückstellen oder später ausdrücklich ein anderes,
-  annahmenabhängiges Forschungsziel entwerfen lassen. Keine Wahl vorwegnehmen.
-- **Ergebnis:** genau eine neue `COUNTS_DECISION_BRIEF.md` plus Status/Übergabe.
-  Für beide Wege notwendige Entscheidung, minimale Evidenz, zulässige Aussagen
-  und Stopbedingung nennen; N_original/S_flag/n_ausgewählt auseinanderhalten.
-- **Leseplan:** AGENTS, diese Übergabe, PROJECT_STATUS; die drei Dateien des
-  aktuellen Archivpakets. Dann nur `INPUT_CONTRACT.json` und `SOURCE_GAPS.md`
-  aus `empd2_counts_readiness_2026_10_31`, Roadmap T1/T3; #43-RULE_EVIDENCE
-  ausschließlich bei konkreter Regelbehauptung.
-- **Grenzen:** keine weitere Recherche, neue Datenquelle, Daten-/Taxon-/
-  Nennerauswahl, Matrix/Kohorte, Bereinigung, Code-/Test-/Modell-/Kernlauf.
-  Bestehende Designs/Verträge/Register/Importer/Flags/Counts/Gruppen, Baseline
-  und CLI/App unverändert. Keine Nullfüllung/Rundung oder reale Freigabe.
-- **Sicherung:** eigener Worktree/Branch/PR, Quellen-/Link-/JSON-/Diffprüfung;
-  keine Unteragenten, Autorennachrichten oder Merges. W96 und reale Gates offen.
+- **Erforderlicher Eingang:** ausdrückliche Wahl **A** (Zurückstellung) oder
+  **B** (separaten schriftlichen Ziel-/Annahmenentwurf beauftragen).
+  Ein allgemeines OK für die Vorlage war keine Wahl; ohne zuordenbare Wahl
+  keine fachliche Entscheidung ausführen. Sperren bleiben bestehen.
+- **Umfang:** genau dieses neue Protokoll plus Status/Übergabe. Bei A
+  Zurückstellung und Wiederöffnungskriterium sichern. Bei B nur den späteren
+  begrenzten Designauftrag konkretisieren, noch kein Design entscheiden oder
+  ausführen. Keine neue Recherche, Datenquelle, Originaldatenabfrage,
+  Daten-/Taxon-/Nennerauswahl, Matrix/Kohorte, Bereinigung, Implementierung
+  oder wissenschaftliche Ausführung.
+- **Leseplan:** AGENTS, diese Übergabe, PROJECT_STATUS und COUNTS_DECISION_BRIEF;
+  INPUT_CONTRACT/Archivbelege ausschließlich bei konkreter Zuordnungsfrage.
+- **Abschluss:** Wahl und ausdrückliche Entscheidungsgrundlage, erlaubter Umfang,
+  nötige Evidenz und Stopbedingung nachvollziehbar sichern; keine Counts-,
+  Trainings-, Fossil- oder Pilotfreigabe aus Protokollierung ableiten.
+- **Sicherung:** eigener Worktree/Branch/PR, Link-/JSON-/Hash-/Diffprüfung.
+  Alte Designs/Verträge/Modelle/Resultate/Register/Importer/Flags/Counts/Gruppen,
+  Baseline und CLI/App unverändert; keine Unteragenten/Autorennachrichten/Merges.
 
-[Konkreter Entscheidungspunkt und Abschlusskriterien](./empd2_archive_lineage_2026_10_31/DECISION_GAPS.md).
-Ein OK beauftragt nur diese Vorlage, weder Zieländerung, Implementierung noch Lauf.
-Der jetzt erledigte Archivauftrag benötigt kein weiteres OK.
+Eine ausdrückliche Wahl A oder B im passenden Kontext autorisiert genau dieses
+Protokoll. Sie löst keine Datenverarbeitung oder Läufe aus. Kein neues OK für
+die bereits abgeschlossene Vorlage erforderlich.
 
 ## Zuerst Stand prüfen
 
 1. Git-/PR-/Merge-/CI-Stand, Remote-Heads, Branches, Worktrees und lokale/
    unversionierte Änderungen prüfen; vorhandene Arbeit erhalten.
-2. Aktuellen Quellenbranch verwenden, nicht main: die Kette ist ungemergt.
-   Basiscommit bewusst wählen und nennen; eigenen Worktree anlegen.
-3. Nur den obigen gezielten Leseplan bearbeiten, keine alten Läufe wiederholen.
+2. Den aktuellen ungemergten Quellenstand verwenden, Basiscommit nennen;
+   eigener Worktree und Branch. main enthält die Kette nicht automatisch.
+3. Nur den gezielten Leseplan; keine alten Läufe wiederholen.
 
 ## Separat blockiert oder später, kein zusätzlicher Folgeauftrag
 
-W96: lesbaren Methodenteil und Referenzverzeichnis von Watts, Allen & Huntley
-(1996), DOI 10.1016/0277-3791(95)00093-3, sowie tatsächlich verwendete
-Bestimmungsschlüssel und ihren datensatzbezogenen Einsatz weiterhin nicht
-belegt. [Präzise Grenze](./pollen_methods_2026_10_31/SOURCE_GAP.md).
-Keine Rückprojektion späterer Referenzen. Namensübereinstimmung ist keine
-botanische Synonymie oder Artfreigabe; Monticchio-Kommentare sind akzeptierte
-EPD-Namen. Physischer LGM90D→MON16-Anschluss einschließlich Unsicherheit offen.
-Klimanormalperiode unverifiziert. Synthetisches T1/T2 ersetzt keine reale Evidenz.
+Die [Archivprüfung](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md) endet
+mit offener Erzeugungskette nach zwei gezielten Quellen. Drei bekannte Zeugen
+und voriger Prozentnennerbefund sind kein universeller N_original-/Nullnachweis.
+[Alter INPUT_CONTRACT](./empd2_counts_readiness_2026_10_31/INPUT_CONTRACT.json)
+bleibt unverändert. Klimanormalperiode und zeitliche Eignung offen.
 
-## Vorgeschlagener Startprompt für eine spätere Fortsetzung
+W96-Bestimmungs-/Artbrücke und tatsächlich angewandte Schlüssel weiterhin
+[blockiert](./pollen_methods_2026_10_31/SOURCE_GAP.md); keine Rückprojektion
+späterer Referenzen oder botanische Synonymie aus Datenbanknamen.
+Physischer LGM90D→MON16-Anschluss einschließlich Unsicherheit offen.
+Synthetisches T1/T2 ersetzt keine reale Evidenz. Keine Modell-/Kernwahl erfolgt.
 
-> Setze das Netzel-Projekt auf codex/netzel-empd2-archive-lineage fort.
-> Nutze den gesicherten Head/PR aus PROJECT_STATUS; Basis des Archivpakets war
-> 90d0350f20d8adc5d1feab09722cf02f0ebb8b69 aus PR #43. Prüfe zuerst Git-/PR-/
-> Merge-/CI-Stand, Branches, Worktrees und lokale Änderungen; erhalte Arbeit.
-> Erstelle ausschließlich die in HANDOFF vorbereitete schriftliche
-> Entscheidungsvorlage zum blockierten realen EMPD2-Counts-Einstieg nach dem
-> gezielten Leseplan. Keine weitere Quellensuche oder wissenschaftliche
-> Entscheidung/Implementierung, keine Datenwahl/Matrix/Kohorte/Bereinigung,
-> Codeausführung/Fits/Scores/Simulationen/Kernläufe. Bestehende Designs,
-> Modelle, Resultate, Verträge, Register, Importer, Flags, Counts/Gruppen,
-> Baseline und CLI/App unverändert; W96 und reale Gates offen. Eigener
-> Worktree/Branch/PR, keine Unteragenten/Autorennachrichten/Merges, kurze
-> deutsche Updates. Ergebnis und genau einen nächsten begrenzten Auftrag sichern.
+## Startprompt für eine spätere Fortsetzung nach ausdrücklicher Wahl
 
-Absenden dieses Prompts oder ein OK im passenden Kontext autorisiert genau
-jene Vorlage. Kein Chatwechsel erforderlich.
+> Setze das Netzel-Projekt auf codex/netzel-empd2-counts-decision fort.
+> Nutze den gesicherten Head/PR aus PROJECT_STATUS. Prüfe Git-/PR-/Merge-/CI-
+> Stand, Branches, Worktrees und lokale Änderungen, erhalte ungesicherte Arbeit.
+> Meine Wahl ist [A oder B ausdrücklich einsetzen]. Erstelle nur das in HANDOFF
+> vorbereitete COUNTS_DECISION_RECORD samt genauer Begrenzung des weiteren
+> Auftrags. Keine neue Recherche/Datenquelle/Originaldatenabfrage, Datenwahl,
+> Matrix/Kohorte/Bereinigung/Codeausführung/Fits/Scores/Simulationen/Kernläufe.
+> Bestehende Designs/Modelle/Resultate/Verträge/Register/Importer/Flags/Counts/
+> Gruppen, Baseline und CLI/App unverändert; W96 und reale Gates bleiben offen.
+> Eigener Worktree/Branch/PR, keine Unteragenten/Autorennachrichten/Merges;
+> kurze deutsche Updates, Ergebnis und genau einen begrenzten Folgeauftrag sichern.
+
+Der Platzhalter ist keine Wahl. Kein Chatwechsel erforderlich.
