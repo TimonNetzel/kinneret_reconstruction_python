@@ -19,8 +19,13 @@ mergebar; automatische
 erfolgreich. Main unverändert `7f1826c`; sechs vorgefundene Worktrees sauber,
 keine Stashes/Resets/Merges. Eigener Worktree `/workspace/netzel-a4-task-boundary`,
 Branch `codex/netzel-a4-task-boundary`, eigener gestapelter PR gegen #55.
-Inhaltscommit/PR und CI werden nach Erstellung ergänzt. Nur neues
-A4_TASK_BOUNDARY plus kurze HANDOFF-/Statuspflege; alte Statushistorie erhalten.
+Inhaltscommit `e6653da9c88a09803c9ddb68bcb5e6826359b18a` über
+[PR #56](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/56)
+remote gesichert, offen/ungemergt und mergebar; automatische
+[CI 41237516679](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41237516679)
+an diesem Commit bei Abfrage queued. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen. Nur neues A4_TASK_BOUNDARY plus kurze
+HANDOFF-/Statuspflege; alte Statushistorie erhalten.
 
 ## Genau ein Folgeauftrag: vorhandene EMPD2-Belege zu modernen E-Lücken zuordnen – vorbereitet, wartet auf Nutzer-OK
 
@@ -83,13 +88,18 @@ Neuheitsbeitrag abgegrenzt. Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 ## Kopierfertiger Startprompt für den nächsten Chat
 
 Vorbereiteter Folgeauftrag; das Absenden dieses Prompts autorisiert nur die
-hier begrenzte dokumentarische Belegzuordnung. Sicherungscommit/PR aus dem
-neuesten Status übernehmen; aktuellen Remote-Head prüfen.
+hier begrenzte dokumentarische Belegzuordnung. Verlässlich gesicherter
+Inhaltscommit `e6653da9c88a09803c9ddb68bcb5e6826359b18a`, PR #56;
+danach nur Sicherungsverweise. Aktuellen Remote-Head prüfen.
 
 ```text
-Setze Netzel auf codex/netzel-a4-task-boundary fort; Sicherungscommit/PR stehen
-im neuesten PROJECT_STATUS und in HANDOFF. Prüfe Git-/PR-/Merge-/CI-/Branch-/
-Worktree-/Änderungsstand zuerst, erhalte ungesicherte Arbeit. Eigener Worktree,
+Setze Netzel nach PR #56 fort.
+Branch: codex/netzel-a4-task-boundary
+Inhaltscommit: e6653da9c88a09803c9ddb68bcb5e6826359b18a
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/56
+Danach nur Sicherungsverweise; aktuellen Remote-Head prüfen.
+Prüfe Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand zuerst, erhalte
+ungesicherte Arbeit. Eigener Worktree,
 Branch und PR; kein Merge.
 
 Hiermit beauftrage ich genau den vorbereiteten Folgeauftrag aus HANDOFF:

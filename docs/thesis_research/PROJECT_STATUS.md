@@ -37,7 +37,11 @@ offen/ungemergt und mergebar; automatische CI 41236453941 erfolgreich.
 Sechs vorgefundene Worktrees sauber, keine Stashes/Resets/Merges;
 main unverändert `7f1826c`. Eigener Worktree `/workspace/netzel-a4-task-boundary`,
 Branch `codex/netzel-a4-task-boundary`, eigener gestapelter PR gegen #55.
-Inhaltscommit/PR und CI werden nach Erstellung ergänzt. Nur neues Dokument
+Inhaltscommit `e6653da9c88a09803c9ddb68bcb5e6826359b18a` über
+[PR #56](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/56)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41237516679
+bei Abfrage queued, kein abschließender Erfolg behauptet. Danach nur
+Sicherungsverweise; aktuellen Head/CI prüfen. Nur neues Dokument
 plus kurze HANDOFF-/Statuspflege; alte Statushistorie erhalten. Quellenzuordnung,
 17 lokale Links/Anker und Drei-Dateien-Umfang geprüft; 749 geschützte Blobs/
 Dateimodi einschließlich Symlink unverändert.
