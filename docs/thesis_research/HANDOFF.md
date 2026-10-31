@@ -1,87 +1,118 @@
-# Netzel: kompakte Übergabe nach A2
+# Netzel: Übergabe nach dokumentarischer A3-Auftragsabgrenzung
 
-## Gesichertes Ergebnis
+## Gesichertes Ergebnis und Stand
 
-[MODEL_CONTRACT](./MODEL_CONTRACT.md) ist der zusammenhängende dokumentarische
-A2-Entwurf auf ausdrücklichen Nutzerauftrag. Festlegungen aus
-[Plan §1](./MODULAR_RECONSTRUCTION_PLAN.md#1-ziel-und-festgehaltene-arbeitsrichtung)
-sind von OFFEN-Feldern getrennt: Rollen E/P/Y/D/psi/C/tau/theta,
-Beobachtungsstatus/Nullen, Kalibrier-Cut mit gemeinsamer bedingter Normierung,
-Zeitprozess, begründungspflichtiger Chronologie-Rückkanal, Proxy-Abhängigkeiten,
-Support, Identifizierbarkeit und Stopbedingungen. Keine reale Daten-/Modellwahl
-oder ausgefüllte Datenmatrix. A2 dokumentarisch abgeschlossen; Modell- und
-Datenfreigabe weiterhin offen.
+Die ausdrücklich beauftragte **A3-Auftragsabgrenzung ist abgeschlossen**.
+Nur diese HANDOFF und ein kurzer [Status](./PROJECT_STATUS.md) wurden gepflegt;
+kein neues Konzeptpapier. A3 selbst und A4–A6 sind nicht begonnen.
+A1 und A2 bleiben als Dokumentationspakete abgeschlossen.
+[MODEL_CONTRACT](./MODEL_CONTRACT.md) bleibt unverändert: Planfestlegungen
+und OFFEN-Felder sind getrennt, keine reale Modell-/Datenfreigabe.
 
-A1 bleibt abgeschlossen. [NOVELTY_MATRIX](./NOVELTY_MATRIX.md) unverändert:
-Parnell-Originalzugang blockiert, Menezes-(2)/(5)-Formelklärpunkt offen;
-kein eigener Neuheitsbeitrag abgegrenzt. Keine neue Literatur-/Archivsuche
-oder Originalprüfung der Dissertation. W96, EMPD2-Archiv-/Messstatus und
-reale T0/T1/T3/T4/Monticchio-P1 offen.
+Grundlage der Abgrenzung sind
+[Plan §1](./MODULAR_RECONSTRUCTION_PLAN.md#1-ziel-und-festgehaltene-arbeitsrichtung),
+**ausschließlich Zeile A3** in
+[Plan §2](./MODULAR_RECONSTRUCTION_PLAN.md#2-arbeitspakete-mit-prüfbarem-ende),
+[Arbeitsmodus §4](./MODULAR_RECONSTRUCTION_PLAN.md#4-tokensparender-arbeitsmodus)
+und die unten benannten Vertragsabschnitte. Die A3-Zeile verlangt zuerst ein
+gesperrtes Design, erst danach separat beauftragte Implementierung/Ausführung.
+Hier werden nur dessen Auftrag und Abnahmegrenze festgehalten; keine
+Szenarien, künstlichen Wahrheiten, Verteilungen oder Parameter festgelegt.
 
-Basis PR #51, offen/ungemergt und mergebar, Head
-`665daede79048df7efb6fe60db85c765b45718bb`; automatische CI 41211699800
-bei Standprüfung erfolgreich. Main unverändert `7f1826c`, #50-Head `64a6529`.
-Fünf vorgefundene Worktrees sauber, keine Stashes; kein Reset oder Merge.
-Eigener Worktree `/workspace/netzel-a2-model-contract`, Branch
-`codex/netzel-a2-model-contract`; [PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52)
-gegen den #51-Branch, offen/ungemergt und mergebar. Inhaltscommit
-`1aee3fd71fa50da256f372979dcc6927081fb38e`; danach nur Sicherungsverweise.
-Quellen-/Link-/Diffprüfung bestanden, 727 geschützte Blobs bytegleich.
-Automatische CI 41216380268 zum Inhaltscommit bei Abfrage queued;
-kein abschließender CI-Erfolg behauptet. Aktueller Remote-Head über PR #52
-prüfbar; Details im [neuesten Status](./PROJECT_STATUS.md).
-Ältere Übergaben bleiben in Git erhalten.
+Basis: [PR #52](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52),
+offen/ungemergt und mergebar, Remote-Head
+`1bf23cded54a101aada68b79acf89a0b7a272fb4`; gesicherter A2-Stand
+`7deff9f002bd8f865f63ef5812c843d6c0a6ec9b` ist dessen Vorfahr.
+Automatische CI [41219952795](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41219952795)
+am Übergabe-Head erfolgreich. Main weiterhin `7f1826c`.
+Fünf vorgefundene Worktrees sauber, keine Stashes; ungesicherte Arbeit nicht
+angetastet. Eigener Worktree `/workspace/netzel-a3-task-boundary`, Branch
+`codex/netzel-a3-task-boundary`; eigener PR gegen den #52-Branch, ohne Merge.
+Sicherungscommit und PR werden im neuesten Status nachgetragen.
 
-## Genau ein Folgeauftrag: A3-Auftragsabgrenzung – vorbereitet, wartet auf Nutzer-OK
+## Genau ein Folgeauftrag: A3-Design dokumentieren – vorbereitet, wartet auf Nutzer-OK
 
-**Ziel:** ausschließlich den nächsten A3-Auftrag anhand seiner Planzeile und
-der OFFEN-Felder des A2-Vertrags konkret abgrenzen, ohne A3 auszuführen.
-Das OK hierfür autorisiert nur diese dokumentarische Auftragsklärung;
-A3–A6 sind noch nicht begonnen. Für A2 ist kein weiteres OK erforderlich.
+**Ziel:** den ersten, ausschließlich dokumentarischen Teil von A3 als vorab
+gesperrtes Design für einen späteren synthetischen Methodenprototyp ausarbeiten.
+Es soll festlegen, wie bekannte künstliche Wahrheit die methodischen Zusagen
+des Modellvertrags prüfbar macht, einschließlich erwarteter Grenzen und
+Fehlerfälle. Kein empirischer Einsatznachweis, keine reale Rekonstruktion und
+keine Ausführung des Prototyps. Der jetzige Nutzerauftrag gilt nur für die erledigte
+Auftragsabgrenzung; das Designpaket ist noch nicht beauftragt.
 
-**Erlaubter Umfang und Ergebnis:** nur HANDOFF und kurzen Status pflegen;
-Ziel, benötigte Eingänge, erlaubte Änderungen, Schutzgrenzen und prüfbares Ende
-des späteren A3-Pakets festhalten. Fehlende Voraussetzungen explizit als
-Blocker übernehmen. Kein neues Konzeptpapier, keine Wahl realer Daten,
-Klimavariablen, Verteilungen, Parameter oder Modelle aus OFFEN-Feldern ableiten.
+**Benötigte Eingänge und Leseplan:** zuerst Git-/PR-/Merge-/CI-Stand, Branches,
+Worktrees und lokale Änderungen prüfen, ungesicherte Arbeit erhalten; eigener
+Worktree/Branch/PR ohne Merge. Danach AGENTS, diese HANDOFF, ausschließlich
+neuester Status, MODEL_CONTRACT sowie Plan §1, §2-Zeile A3 und §4.
+NOVELTY_MATRIX nur bei einer konkreten Belegfrage nachladen; keine neue
+Literatur-/Archivsuche oder erneute Originalprüfung der Dissertation.
+Benötigt werden die dokumentierten Rollen und OFFEN-Felder aus
+[Rollen und Eingängen](./MODEL_CONTRACT.md#rollen-und-unbesetzte-eingänge),
+die Regeln zu [Beobachtungsstatus](./MODEL_CONTRACT.md#beobachtungsstatus-nullen-und-abdeckung),
+[Cut und Normierung](./MODEL_CONTRACT.md#kalibrier-cut-und-gemeinsame-bedingte-normierung),
+[Zeit und Chronologie](./MODEL_CONTRACT.md#zeitprozess-und-chronologie-rückkopplung),
+[Proxy-Abhängigkeiten](./MODEL_CONTRACT.md#proxy-abhängigkeiten-und-gemeinsame-evidenz),
+[Support/Identifizierbarkeit](./MODEL_CONTRACT.md#support-und-identifizierbarkeit)
+und [Stopbedingungen](./MODEL_CONTRACT.md#stopbedingungen-und-abschlussgrenze).
+Keine realen Daten oder neuen Originalbelege als Eingang beschaffen.
 
-**Eingänge/Leseplan:** kompakte Git-/PR-/Merge-/CI-/Worktree-Prüfung, AGENTS,
-diese HANDOFF, nur neuester Status, MODEL_CONTRACT; Plan ausschließlich
-§1/§2-Zeile A3/§4. NOVELTY_MATRIX nur bei konkreter Beleggrenze nachladen.
-Keine Originalquellen oder Archive erneut öffnen.
+**Erlaubte Änderungen im späteren Paket:** genau ein neues aktives
+A3-Designdokument plus kurze HANDOFF-/Statuspflege. Darin ausschließlich
+synthetische Annahmen, Evidenzrollen, bekannte Wahrheit, Szenariozuordnung,
+erwartete Befunde, Abnahmeregeln und getrennte Nachrechnung vorab beschreiben.
+Etwaige künstliche Größen, Verteilungen und Parameter müssen ausdrücklich
+lokale Designannahmen bleiben; sie füllen keine realen OFFEN-Felder des
+MODEL_CONTRACT und ändern keinen bestehenden Vertrag. Noch keine Generatoren,
+Datenartefakte, Implementierung, Tests oder Rechnungen erstellen/starten.
 
-**Abschluss:** genau ein konkret ausführbarer A3-Auftrag mit expliziten offenen
-Voraussetzungen und Stopbedingungen in HANDOFF; Dokumentations-/Link-/Diff-
-und Blobprüfung, eigener Branch/PR ohne Merge. Noch keine Ausführung von A3
-oder Vorgriff auf A4–A6.
+**Verbindliche Abdeckung aus Planzeile/Vertrag:** Das spätere Design muss
+Normierung und Cut-Marginalen, gemeinsame Kalibrierunsicherheit, fehlende
+Beobachtungen/Nullstatus, zeitliche und taxonübergreifende Abhängigkeiten,
+Altersverschiebung, Proxykonflikt und nicht identifizierbare Fälle adressieren.
+Prior-only und fehlerhafte Eingänge ausdrücklich berücksichtigen. Für jeden
+Punkt muss vorab erkennbar sein, welche künstliche Wahrheit und welche
+Prüfgröße eine Erfüllung, Verletzung oder Nichtschätzbarkeit zeigen sollen.
+Die getrennte Nachrechnung und vollständige Berichterstattung aller späteren
+Resultate einschließlich Ausfällen/Ausschlüssen sind zu planen, nicht
+auszuführen. Keine konkreten Szenario- oder Verfahrensentscheidungen werden
+durch diese Auftragsabgrenzung vorweggenommen.
 
-**Gesperrt:** neue Recherche, Datenwahl/-beschaffung, Bereinigung,
-Datenmatrix/Kohorte, Implementierung, Tests, Fits, Scores, Simulationen,
-Kernläufe sowie Änderungen bestehender Designs/Modelle/Resultate/Register/
-Verträge/Importer/Flags/Counts/Gruppen, Baseline und CLI/App.
-Keine Unteragenten, Autorennachrichten oder Merges.
+**Schutzgrenzen:** Bestehende Designs, Modelle, Resultate, Register und
+Verträge einschließlich MODEL_CONTRACT, Importer, Flags, Counts/Gruppen,
+Baseline und CLI/App unverändert. Keine reale Daten-/Modellwahl,
+Beschaffung, Bereinigung, Datenmatrix/Kohorte, Fits, Scores, Simulationen oder
+Kernläufe. A4–A6 bleiben außerhalb des Auftrags. Keine Unteragenten,
+Autorennachrichten oder Merges; keine stillen Literaturkorrekturen oder
+Neuheitsbehauptungen.
 
-## Kopierfertiger Übergabeprompt
+**Offene Voraussetzungen und Stopbedingungen:** Parnell-Originalzugang bleibt
+blockiert, Menezes-(2)/(5)-Formelklärpunkt offen; kein eigener Neuheitsbeitrag
+ist abgegrenzt. W96, EMPD2-Archiv-/Messstatus und reale
+T0/T1/T3/T4/Monticchio-P1 bleiben offen. Sie sind Grenzen realer Nutzung und
+der Beleglage, keine pauschalen Vorbedingungen für ein rein synthetisches
+Design und werden durch dessen spätere Fertigstellung nicht gelöst.
 
-Die folgende Anweisung ist für den nächsten Chat vorbereitet; erst ihr
-Absenden bzw. ein entsprechendes OK beauftragt die A3-Auftragsabgrenzung.
-In diesem Paket wurde nur der Prompt gesichert.
+- Benötigt ein Designpunkt neue Originalbelege, reale Auswahl oder die Lösung
+  eines dieser Blocker, den betroffenen Punkt als blockiert ausweisen; keine
+  Ersatzannahme als belegte reale Eingabe ausgeben.
+- Widerspricht eine synthetische Spezifikation den Vertragsregeln zu Cut,
+  gemeinsamer Normierung/Unsicherheit, Evidenzrollen oder Beobachtungsstatus,
+  nicht als vertragskonform sperren. Absichtlich fehlerhafte Eingänge nur als
+  vorab gekennzeichnete Fehlerfälle mit erwarteter Zurückweisung behandeln.
+- Sind künstliche Wahrheit, erwartete Konsequenz, Prüfkriterium oder getrennte
+  Nachrechnung nicht eindeutig beschreibbar, Designpunkt offen lassen und
+  keinen vollständigen Designabschluss behaupten. Nichtidentifizierbarkeit
+  darf ein erwartetes Ergebnis sein, keine durch enge Priors verdeckte Lösung.
+- Sobald Code, Datenerzeugung, Ausführung, Rechnung, reale Freigabe oder eine
+  Änderung bestehender geschützter Dateien nötig würde, an der
+  Dokumentationsgrenze stoppen. Keine automatische Fortsetzung nach A4–A6.
 
-> Setze das Netzel-Projekt nach PR #52 fort.
->
-> Branch: codex/netzel-a2-model-contract
-> Gesicherter A2-Stand: 7deff9f002bd8f865f63ef5812c843d6c0a6ec9b
-> PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/52
-> Danach gegebenenfalls nur Übergabepflege; aktuellen Remote-Head prüfen.
->
-> Prüfe zuerst Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale Änderungen; erhalte ungesicherte Arbeit. Eigener Worktree, Branch und PR, kein Merge.
->
-> Tokensparend lesen: AGENTS.md, HANDOFF.md, MODEL_CONTRACT.md, ausschließlich den neuesten Abschnitt von PROJECT_STATUS.md und MODULAR_RECONSTRUCTION_PLAN.md nur §1, §2-Zeile A3 und §4. NOVELTY_MATRIX.md nur bei konkreter Belegfrage nachladen.
->
-> A1 und A2 sind als Dokumentationspakete abgeschlossen. MODEL_CONTRACT trennt Planfestlegungen von OFFEN-Feldern; keine reale Modell-/Datenfreigabe. Parnell-Originalzugang und Menezes-Formelklärpunkt (2)/(5) bleiben Grenzen; kein eigener Neuheitsbeitrag ist abgegrenzt. W96, EMPD2-Archiv-/Messstatus und reale Gates bleiben offen.
->
-> Führe als nächsten begrenzten Auftrag ausschließlich die dokumentarische A3-Auftragsabgrenzung aus: aus Planzeile und Modellvertrag Ziel, benötigte Eingänge, erlaubte Änderungen, Schutzgrenzen, Stopbedingungen und prüfbares Ende für das spätere A3-Paket festhalten. Nur HANDOFF und kurzen Status pflegen; kein neues Konzeptpapier. A3 selbst und A4–A6 nicht ausführen. Für diese Auftragsabgrenzung kein erneutes OK verlangen.
->
-> Keine neue Literatur-/Archivsuche oder erneute Originalprüfung der Dissertation. Keine reale Daten-/Modellwahl, Datenbeschaffung, Bereinigung, Datenmatrix/Kohorte, Implementierung, Tests, Fits, Scores, Simulationen oder Kernläufe. Bestehende Designs, Modelle, Resultate, Register, Verträge einschließlich MODEL_CONTRACT, Importer, Flags, Counts/Gruppen, Baseline und CLI/App unverändert.
->
-> Keine Unteragenten, Autorennachrichten oder Merges. Kurze deutsche Updates, kompakte Werkzeugausgaben. Dokumentation durch Quellen-/Link-/Diffprüfung und Blobabgleich prüfen. Ergebnis und genau einen begrenzten Folgeauftrag sichern.
+**Prüfbares Ende:** genau ein vor Ausführung gesichertes A3-Designdokument;
+jeder geforderte Prüfpunkt mit Vertrags-/Planbezug, künstlicher Wahrheit,
+erwartetem Befund, Abnahmeregel und geplanter getrennter Nachrechnung
+nachverfolgbar. Offene/blockierte Punkte und Grenzen ausdrücklich ausweisen;
+keine Abdeckung, Identifikation oder reale Gültigkeit als bereits geprüft
+behaupten. Quellen-/Link-/Diffprüfung und Blobabgleich bestehen, nur neues
+Designdokument plus kurze Übergabe/Status ändern, Commit und eigenen PR ohne
+Merge sichern. Umsetzung/Ausführung bleiben separat zu beauftragen; der
+Designabschluss erteilt dafür keine Freigabe.
