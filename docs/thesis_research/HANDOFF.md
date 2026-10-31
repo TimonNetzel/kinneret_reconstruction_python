@@ -6,7 +6,12 @@ Nach Nutzerauftrag am 31.10.2026 ausgeführt. Basis
 `90d0350f20d8adc5d1feab09722cf02f0ebb8b69` aus
 [PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43).
 Eigener Worktree `/workspace/netzel-empd2-lineage`, Branch
-`codex/netzel-empd2-archive-lineage`; eigener PR folgt nach Inhaltscommit.
+`codex/netzel-empd2-archive-lineage`;
+[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44)
+gegen den #43-Branch, offen und ungemergt. Gesicherter Inhaltscommit
+`35152172f8f048a755bd5897d1687c888e9917d2`; danach nur Sicherungs-/Übergabeverweise.
+Bei PR-Erstellung technisch mergefähig; automatische PR-CI am Inhaltscommit
+noch laufend (Run 41197720179), keine grüne Gesamtfreigabe behauptet.
 [ARCHIVE_LINEAGE](./empd2_archive_lineage_2026_10_31/ARCHIVE_LINEAGE.md),
 [LINEAGE_EVIDENCE](./empd2_archive_lineage_2026_10_31/LINEAGE_EVIDENCE.json),
 [DECISION_GAPS](./empd2_archive_lineage_2026_10_31/DECISION_GAPS.md).

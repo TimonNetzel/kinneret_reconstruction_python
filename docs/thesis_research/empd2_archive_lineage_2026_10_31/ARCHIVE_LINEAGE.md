@@ -3,6 +3,10 @@
 31.10.2026. Autorisierter Archivauftrag aus [PR #43](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/43),
 Basis `90d0350f20d8adc5d1feab09722cf02f0ebb8b69`. Eigener Worktree
 `/workspace/netzel-empd2-lineage`, Branch `codex/netzel-empd2-archive-lineage`.
+Gesichert als [PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44)
+gegen den #43-Branch, Inhaltscommit `35152172f8f048a755bd5897d1687c888e9917d2`;
+danach nur Sicherungs-/Übergabeverweise, kein Merge. Automatische PR-CI bei
+Erstellung noch laufend; fachliche Sperren davon unabhängig.
 
 **Begrenzter Abschluss:** Die offizielle Zuordnung des SQLite-Originals zum DOI
 und ein PostgreSQL-Dumppfad sind belegt. Die tatsächlich angewandte
@@ -100,3 +104,5 @@ Fits, Scores, Simulationen, Kern-/CLI-/App-/Standardtests. Keine Unteragenten,
 Autorennachrichten oder Merges. Bestehende Designs/Modelle/Resultate/Register/
 Importer/Flags/Counts/Gruppen, Baseline und CLI/App unverändert.
 W96, reales T1/T0/T3/T4 und Monticchio-P1 bleiben offen.
+717 geschützte bestehende Git-Blobs bytegleich; JSON, lokale Verweise,
+Quell-/SQLite-Hashes und erlaubter Fünf-Dateien-Diff geprüft.

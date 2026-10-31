@@ -5,6 +5,14 @@
   "branch": "codex/netzel-empd2-archive-lineage",
   "worktree": "/workspace/netzel-empd2-lineage",
   "result": "bounded_search_closed_exact_sqlite_generation_chain_unproven",
+  "publication": {
+    "pr": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44",
+    "base_branch": "codex/netzel-empd2-denominator-rules",
+    "content_commit": "35152172f8f048a755bd5897d1687c888e9917d2",
+    "state_at_creation_check": "open, unmerged, mergeable, mergeable_state unstable",
+    "automatic_pr_ci_at_content_commit": {"run_id": 41197720179, "status": "in_progress", "conclusion": null},
+    "snapshot_not_claimed_as_latest_head_ci_or_scientific_approval": true
+  },
   "source_objects": [
     {
       "id": "archive_metadata",

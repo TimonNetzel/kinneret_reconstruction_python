@@ -33,7 +33,12 @@ Hierarchieanwendung bleiben offen; S_flag und n_ausgewählt nicht gleichsetzen.
 
 Basis `90d0350f20d8adc5d1feab09722cf02f0ebb8b69` aus PR #43; eigener Branch
 `codex/netzel-empd2-archive-lineage`, Worktree `/workspace/netzel-empd2-lineage`.
-Eigener PR folgt nach Inhaltscommit, gestapelt gegen den #43-Branch; kein Merge.
+[PR #44](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/44),
+gestapelt gegen den #43-Branch, offen/ungemergt. Inhaltscommit
+`35152172f8f048a755bd5897d1687c888e9917d2`; danach Sicherungs-/Übergabeverweise.
+717 geschützte bestehende Git-Blobs bytegleich, JSON/Links/Hashes/Diff geprüft.
+Bei PR-Erstellung technisch mergefähig; automatische PR-CI am Inhaltscommit
+noch laufend (Run 41197720179), keine grüne Gesamtfreigabe behauptet.
 Einstieg #31–#43 offen/ungemergt, main `7f1826c`, #43-PR-CI erfolgreich.
 Fünf hier vorhandene vorherige Worktrees sauber erhalten. Vorhandene SQLite
 nur gehasht, nicht geöffnet oder neu geladen; 21.327.872 Bytes/Sperrhash bestätigt.
