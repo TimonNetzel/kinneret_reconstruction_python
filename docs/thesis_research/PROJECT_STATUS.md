@@ -12,12 +12,24 @@ Bestimmungs-/Abdeckungsprüfung, vorab festgelegter Rekonstruktionsregel,
 synthetischer Prüfung und gesperrten realen Eingängen. Kernwahl und konkrete
 Modellvariante bleiben offen; Monticchio-P1 unverändert verbindlich. Keine
 Voraussetzung, zuerst alle 279 historischen Funktionen oder die App fertigzustellen.
-Nur die Roadmap dokumentiert, keine neuen Modelle oder Läufe in diesem Paket.
+Im Roadmap-Paket #36 nur den Weg dokumentiert, keine neuen Modelle oder Läufe.
 Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/36)
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
 ## Git- und PR-Stand
+
+**Erneut geprüft für das Bestimmungspaket am 31.10.2026:** #31–#36 offen,
+#36-Head `f7e5290081dedb775a5cae7e210db88b71d9b1cb`, Ziel #35-Branch,
+GitHub-Mergezustand CLEAN (technisch, keine Mergefreigabe), nicht gemergt.
+Remote-main unverändert `7f1826cffddc8893ba6354cd3cca3fa43954b9be`;
+enthält #36 und damit die ungemergte #31–#36-Kette nicht. Alle fünf vorhandenen
+Worktrees ohne lokale/unversionierte Änderungen; vollständig erhalten.
+Verfügbare lokale/Remote-Branches, Remote-Heads und separate API-Abfrage im
+[Snapshot](./pollen_methods_2026_10_31/git_snapshot.json).
+Eigener Worktree `/workspace/netzel-pollen-methods`, Branch
+`codex/netzel-pollen-methods` ab genau `f7e5290`; PR-Ziel #36-Branch.
+Keine Merges oder Autorennachrichten.
 
 | Stand | Nachweis am 31.10.2026 |
 | --- | --- |
@@ -72,7 +84,7 @@ Ausgaben fehlt ein belegtes dauerhaftes Bytearchiv. [Artefaktverzeichnis](./ARTI
 enthält Hash, Größe, Erzeugungsweg, Umgebung und ausdrücklich die Speicherlücke.
 Keine großen Läufe in diesem Paket.
 
-Aktuelles Arbeitspaket: Einstiegsdokumentation vereinfacht, vollständige frühere
+Dokumentationspaket #33: Einstiegsdokumentation vereinfacht, vollständige frühere
 Texte im [Einstiegsarchiv](./ENTRYPOINT_ARCHIVE_2026_10_31.md) erhalten;
 Links, Referenzen, Artefaktnachweise und reiner Dokumentationsumfang geprüft.
 PR-Sicherung: [PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33),
@@ -134,3 +146,43 @@ prüfen; je Art diagnostische Typgrenzen und verbleibende Lücken dokumentieren.
 [Präziser nächster Auftrag](./original_pollen_names_2026_10_31/SOURCE_GAP.md).
 2025-Matrix/S1 nicht frisch geprüft; Monticchio-P1, 28/41/47 und vier große
 Bytearchivlücken unverändert.
+
+## Bestimmungsumfänge und Literaturgrenzen, 31.10.2026
+
+[Literaturpaket](./pollen_methods_2026_10_31/README.md): **7/7 Arten** mit
+morphologischen Referenzbefunden, Typgrenzen, Gegen-/Fehlbelegen und exakten
+Seiten/Abschnitten/Objekten dokumentiert. 14 gelesene Referenzquellen/-seiten,
+ein zusätzlicher W96-Eintrag nur mit Metadaten/Abstract. Keine mikroskopische
+oder unabhängige menschliche/palynologische Prüfung behauptet.
+
+**W96-Methodenkette blockiert:** Watts, Allen & Huntley (1996), DOI
+10.1016/0277-3791(95)00093-3, Methodenteil und tatsächlich verwendete
+Bestimmungsreferenzen nicht zugänglich/gelesen. Verlags-/Durham-Weböffnung
+HTTP 403, während mehrere andere Referenztexte über das Webwerkzeug lesbar
+waren. Keine generelle Methodik von W96 oder dortige Schlüsselnutzung aus
+späterer Literatur konstruiert. Bei **allen sieben Fossilparametern weiterhin
+kein datensatzbezogener Bestimmungsbeleg im zugänglichen Material**.
+Die vollständige historische Methodenkette und T0 sind nicht abgeschlossen.
+
+Belegt sind unter anderem ein direkt beschriebener nicht artspezifischer
+Abies-Merkmalsumfang, indirekt referierter Betula-pubescens-Typ mit pendula,
+Corylus/Myrica-Überlappung im britischen Typkatalog, begrenzte Artunterscheidung
+in fremdem Fagus-Fossilmaterial und in modernen Taxus-Vergleichen sowie
+publizierte Tilia-Unterscheidungsmerkmale. Eine originale morphologische
+Picea-abies-type/obovata-Umschreibung fehlt weiterhin. Grenzen moderner Studien,
+Präparationen und fremder Regionen nicht auf LGM90D übertragen; Datenbankrelationen
+aus #35 bleiben ohne botanische Synonymiebehauptung oder automatische Artfreigabe.
+
+Dokumentationsprüfung: sieben Evidenzzeilen, Quellenreferenzen, lokale Links,
+Hash-/Basisabgleich der übernommenen Eingänge und begrenzter Diffumfang geprüft;
+[Prüfprotokoll](./pollen_methods_2026_10_31/verification.json).
+Keine Originalzählungen ausgewertet, Modelle gerechnet oder äußeren Scores
+zur Entscheidung verwendet. Bestehende Modelle/Forschungsresultate/-register,
+Fossilcounts, Analog-Baseline und CLI/App bytegleich; keine Unteragenten.
+
+**Nächster enger Quellenauftrag:** W96-Methodenteil/Referenzverzeichnis und
+daraus tatsächlich angewandte Schlüssel samt Kategorienkette nachliefern;
+[konkreter Restbedarf](./pollen_methods_2026_10_31/SOURCE_GAP.md).
+Die Referenzevidenz ist gesichert, der Datensatzbezug bleibt offen. T1 und
+synthetisches T2 können als getrenntes vorab gesichertes Designpaket folgen;
+T3/T4, Monticchio-P1, 28/41/47 und große Bytearchivlücken unverändert.

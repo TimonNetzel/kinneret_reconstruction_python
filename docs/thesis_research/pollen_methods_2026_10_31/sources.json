@@ -1,0 +1,147 @@
+{
+  "checked_on": "2026-10-31",
+  "access_channel": "web_tool; shell restrictions separately recorded",
+  "fulltext_bytes_archived": false,
+  "image_diagnosis_performed": false,
+  "watts_methods_read": false,
+  "confirmed_watts_identification_references": [],
+  "sources": [
+    {
+      "id": "W96",
+      "url": "https://www.sciencedirect.com/science/article/pii/0277379195000933",
+      "identifier": "10.1016/0277-3791(95)00093-3",
+      "read_status": "indexed_metadata_and_abstract_only",
+      "locator": "Title/Abstract in search index; methods and bibliography inaccessible",
+      "used_in_LGM90D": "not_verified"
+    },
+    {
+      "id": "A20",
+      "url": "https://mdpi-res.com/d_attachment/forests/forests-11-01125/article_deploy/forests-11-01125-v2.pdf",
+      "identifier": "10.3390/f11111125",
+      "read_status": "primary_selected_text_read",
+      "locator": "Abstract; section 3.2, PDF pp. 8–9; section 4, PDF pp. 17–18",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "C215",
+      "url": "https://www.quaternary.group.cam.ac.uk/pollen/articles/215/full.html",
+      "identifier": "CUPOD 215; modified 2022-02-09",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Data for this pollen > Visible notes; Abies vs Pinus/Picea and Fir (Abies) pollen paragraphs",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "B18",
+      "url": "https://link.springer.com/article/10.1007/s10453-018-9528-4",
+      "identifier": "10.1007/s10453-018-9528-4",
+      "read_status": "primary_selected_text_read",
+      "locator": "Section 1: Blackmore et al. (2003) paragraph (indirect key evidence); sections 2.1–2.2; section 3.1",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "C25",
+      "url": "https://www.paldat.org/pub/Corylus_avellana/306797",
+      "identifier": "PalDat 306797; published 2025-03-15",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Pollen Description > Shape, Size and Aperture; Ornamentation and Structure; Picture legend 5–10",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "Q-D",
+      "url": "https://chrono.qub.ac.uk/pollen/pc-dicot.html",
+      "identifier": "Bennett Catalogue of pollen types; British Isles",
+      "read_status": "reference_catalogue_sections_read",
+      "locator": "Myricaceae/Fagaceae/Betulaceae and Tiliaceae; Corylus avellana-type members",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "Q-N",
+      "url": "https://chrono.qub.ac.uk/pollen/pc-dicot-notes.html",
+      "identifier": "Bennett Catalogue of pollen types; British Isles",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Notes on angiosperms (dicots), notes 24 and 43",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "F26",
+      "url": "https://www.paldat.org/pub/Fagus_sylvatica/307041",
+      "identifier": "PalDat 307041; published 2026-07-28",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Pollen Description > Shape, Size and Aperture; Ornamentation and Structure",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "F07",
+      "url": "https://link.springer.com/article/10.1186/1471-2148-7-S2-S6",
+      "identifier": "10.1186/1471-2148-7-S2-S6",
+      "read_status": "primary_selected_text_read",
+      "locator": "Abstract; Results and discussion > Identification of fossil pollen: The sequences of 176 bp … Therefore, the results show …",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "P21",
+      "url": "https://www.paldat.org/pub/Picea_abies/306140",
+      "identifier": "PalDat 306140; published 2021-06-08",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Pollen Description > Shape, Size and Aperture; Ornamentation and Structure",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "T18",
+      "url": "https://journals.pan.pl/Content/102668/PDF/ABC%20Bot.%202-18%205-J.Bykowska.pdf",
+      "identifier": "10.24425/118051",
+      "read_status": "primary_selected_text_read",
+      "locator": "p. 45 Abstract; p. 56 Discussion; p. 57 Conclusions, first paragraph",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "T07",
+      "url": "https://www.vliz.be/imisdocs/publications/241875.pdf",
+      "identifier": "Deforce & Bastiaens 2007; Belgian Journal of Botany 140(2), 222–237",
+      "read_status": "review_selected_text_read",
+      "locator": "p. 225: Palaeobotanical records of Taxus > The pollen data > Characteristics of Taxus pollen",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "L74",
+      "url": "https://data.geus.dk/pure-pdf/1974_Stockmarr_Scanning_electron_micrographs.pdf",
+      "identifier": "Stockmarr 1974; DGU Årbog 1973, 107–109",
+      "read_status": "primary_text_pages_read_plates_missing",
+      "locator": "pp. 107–109 (3 PDF pages); plates 11–14 cited but not present/read",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "L-C",
+      "url": "https://www.paldat.org/pub/Tilia_cordata/306671",
+      "identifier": "PalDat 306671; published 2024-02-13",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Pollen Description > Shape, Size and Aperture; Ornamentation and Structure",
+      "used_in_LGM90D": "not_established"
+    },
+    {
+      "id": "L-P",
+      "url": "https://www.paldat.org/pub/Tilia_platyphyllos/306672",
+      "identifier": "PalDat 306672; published 2024-02-13",
+      "read_status": "morphological_reference_text_read",
+      "locator": "Pollen Description > Shape, Size and Aperture; Ornamentation and Structure; Picture legend 4–5/11–15",
+      "used_in_LGM90D": "not_established"
+    }
+  ],
+  "indirect_leads_not_original_read": [
+    {
+      "citation": "Blackmore et al. (2003), Betulaceae and Corylaceae, Review of Palaeobotany and Palynology 123, 71–98",
+      "seen_in": "B18 section 1; C25 literature",
+      "role": "later morphological key lead; not possible W96 1996 citation"
+    },
+    {
+      "citation": "Andrew (1971), Exine pattern in the pollen of British species of Tilia",
+      "seen_in": "L74 p. 109",
+      "role": "Tilia key lead; W96 use not established"
+    },
+    {
+      "citation": "Christensen & Blackmore (1988), Tiliaceae",
+      "seen_in": "Q-N note 43",
+      "role": "Tilia type-scope lead; W96 use not established"
+    }
+  ]
+}

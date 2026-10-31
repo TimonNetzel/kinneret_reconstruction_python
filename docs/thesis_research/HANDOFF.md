@@ -1,48 +1,52 @@
 # Netzel-Projekt: nächster Einstieg
 
-Gesamtziel und Weg zum ersten diagnostischen Kernlauf stehen in der
-[Taxon-Pilot-Roadmap](./TAXON_PILOT_ROADMAP.md). Quellenprüfung und ein getrenntes
-Design-/synthetisches Methodenpaket sollen auf diesen Meilenstein zulaufen.
-Der nächste konkrete Quellenauftrag unten bleibt unverändert. Roadmap gesichert
-in [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/36),
-Branch `codex/netzel-first-taxon-pilot-roadmap` auf dem vollständigen #35-Stand.
+Gesamtziel und Weg zum ersten diagnostischen lokalen Kernlauf stehen in der
+[Taxon-Pilot-Roadmap](./TAXON_PILOT_ROADMAP.md). Aktuell ist das
+[Literaturpaket zu sieben Bestimmungsumfängen](./pollen_methods_2026_10_31/README.md)
+auf `codex/netzel-pollen-methods` ab `f7e5290` (#36) gesichert.
+Morphologische Referenzbefunde liegen vor; **W96s tatsächliche Methodik und
+Bestimmungsreferenzen sind wegen fehlenden Volltextzugangs weiterhin offen**.
+Keine fossile Artbrücke oder T0-Freigabe.
 
 ## Zuerst lesen und Stand prüfen
 
 1. [Dauerhafte Arbeitsregeln](../../AGENTS.md) und [aktuellen Status](./PROJECT_STATUS.md)
    lesen. Git-Status, Branches, Worktrees und GitHub-PRs erneut prüfen; keine Merges.
-2. Vollständiger gesicherter Forschungsstand: `codex/netzel-calibration-block-uncertainty`
+2. Forschungsstand #31/#32: `codex/netzel-calibration-block-uncertainty`
    bei `9ee2f84e41a04fafe5af203e809deeaaf329dba3` einschließlich #31/#32.
-   Am 31.10.2026 sind beide PRs offen, `main` enthält sie nicht. Der [Dokumentations-PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33)
+   Am 31.10.2026 sind #31–#36 erneut als offen bestätigt; `main` bleibt `7f1826c`
+   und enthält diese Kette nicht. [Git-/PR-Snapshot](./pollen_methods_2026_10_31/git_snapshot.json).
+   Der [Dokumentations-PR #33](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/33)
    (`codex/netzel-workflow-handoff`) baut darauf auf; Ergebnisse daraus nicht nochmals
    nach main übertragen oder als schon gemergt behandeln.
-3. Die [Original-Namensprüfung](./original_pollen_names_2026_10_31/README.md)
-   ist abgeschlossen; die morphologische/fossile Artbrücke bleibt offen.
-   Für den nächsten Auftrag nur deren
-   [SOURCE_GAP.md](./original_pollen_names_2026_10_31/SOURCE_GAP.md) und bei
-   konkreten Namensfragen die sieben Zeilen von data/species_name_links.csv lesen.
-   [Originalquellen-PR #35](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/35):
-   Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34);
-   #34 bleibt die vorangegangene Inventur. Kein Merge beauftragt.
+3. Für den Quellenfolgeauftrag nur die neue
+   [Evidenztabelle](./pollen_methods_2026_10_31/README.md),
+   [Quellen/Fundstellen](./pollen_methods_2026_10_31/SOURCES.md) und den
+   [präzisen Restbedarf](./pollen_methods_2026_10_31/SOURCE_GAP.md) lesen.
+   Die [Original-Namensprüfung #35](./original_pollen_names_2026_10_31/README.md)
+   ist abgeschlossen; deren Tabellen nur bei konkreten Namensfragen nachladen.
+   Alle vorhandenen Worktrees waren beim Einstieg sauber und wurden erhalten;
+   eigener Worktree `/workspace/netzel-pollen-methods`. Kein Merge beauftragt.
 
-## Nächster Forschungsauftrag: Bestimmungsmethoden und Typdefinitionen
+## Nächster Quellenauftrag: historische Methodenkette schließen
 
-Gezielt die Methoden der im Originalarchiv genannten Publikation Watts,
-Allen & Huntley (1996), DOI 10.1016/0277-3791(95)00093-3, sowie deren tatsächlich
-zitierte Bestimmungsreferenzen prüfen. Je Modellart festhalten, ob ursprünglicher
-Bestimmungsumfang, nur allgemeine Methodik oder kein datensatzbezogener Beleg
-vorliegt. Danach artspezifische palynologische Belege mit exakter Fundstelle
-für Grenzen und Überschneidungen der Typen nachladen.
+Lesbaren Methodenteil und Referenzverzeichnis von Watts, Allen & Huntley (1996),
+DOI 10.1016/0277-3791(95)00093-3, beschaffen; bisher nur Titel/Abstract/Metadaten
+gelesen. Danach **tatsächlich verwendete** Schlüssel/Sammlungen und Anwendung
+je Fossilparameter mit Seite/Abschnitt prüfen. Nicht aus späteren Referenzen
+rückwärts auf W96 schließen. Die sieben Literaturbefunde nicht erneut breit
+inventarisieren; gezielt die in SOURCE_GAP genannten Grenzen ergänzen,
+besonders originale Picea-abies-type/obovata-Definition und erhaltene Untertypen.
 
 Besonders beachten: Monticchio-Kommentare sind akzeptierte EPD-Namen. EMPD2
 ordnet Betula pendula dem pubescens-type zu; bei Taxus gibt es zwei verschieden
 akzeptierte Einträge mit demselben Originalnamen. Diese Datenbankbefunde nicht
 als botanische Synonymie oder als Freigabe einer Artfunktion interpretieren.
 
-Abschlusskriterium: belegte Methodenkette und kompakte Evidenztabelle für alle
-sieben Arten; unterstützende, widersprechende und fehlende Belege vollständig
-mit Seiten/Abschnitten/Objektkennungen sichern, Zugangslücken konkret benennen,
-eigener PR. Nur gelesene Quellen als geprüft ausweisen. Keine automatische
+Die kompakte Evidenztabelle ist gesichert; die **Methodenkette als ursprüngliches
+Abschlusskriterium bleibt offen**. Unterstützende, widersprechende und fehlende
+Belege weiter mit Seiten/Abschnitten/Objektkennungen sichern, eigener PR.
+Nur gelesene Quellen als geprüft ausweisen. Keine automatische
 Artzuordnung, Modelle/Fossilcounts/Gruppierungen unverändert; keine Auswahl
 anhand äußerer Scores. Claude behält CLI/App; Analog-Baseline unverändert.
 
@@ -51,14 +55,18 @@ Neue Originalprüfung benötigt keine alten Chat-Dateien; Bezugsbefehle und
 Hashprüfungen in original_pollen_names_2026_10_31/REPRODUCE.md.
 Die 2025-Originale bei konkretem Bedarf gesondert prüfen, keine Änderung der
 Shared37-Referenz. Monticchio-P1 und weitere Arten bleiben getrennte Pakete.
+Ein eigenes vorab gesichertes T1-/synthetisches T2-Designpaket kann gemäß
+Roadmap unabhängig vom Volltextzugang vorankommen; kein realer Kernlauf,
+keine konkrete Modellvariante und keine geänderte Kernwahl dadurch genehmigt.
 
 ## Übergabe an einen neuen Chat
 
-Das Originalquellenpaket ist ein abgeschlossener, gesicherter Wechselpunkt.
-Startauftrag: „Prüfe aktuellen Git-/PR-Stand, verwende den Forschungsstand auf
-`codex/netzel-first-taxon-pilot-roadmap` (#36), lies AGENTS.md und HANDOFF.md.
-Bearbeite das dort begrenzte Paket zu Bestimmungsmethoden und Typdefinitionen;
-Modelle/Counts/Baseline/CLI/App unverändert, eigener PR, kein Merge.“
+Das Literaturpaket ist ein gesicherter Wechselpunkt mit offen ausgewiesener
+Originalmethodenlücke. Startauftrag: „Prüfe aktuellen Git-/PR-Stand, verwende
+`codex/netzel-pollen-methods` auf dem #36-Stand, lies AGENTS.md und HANDOFF.md.
+Schließe nur die in pollen_methods_2026_10_31/SOURCE_GAP.md dokumentierte
+historische Methodenkette; bereits gelesene Literatur nicht neu inventarisieren.
+Modelle/Resultate/Counts/Baseline/CLI/App unverändert, eigener PR, kein Merge.“
 Keine ungemergten Ergebnisse als schon auf main vorhanden behandeln.
 
 ## Nur bei konkretem Bedarf weiterlesen
