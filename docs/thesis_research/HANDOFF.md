@@ -7,7 +7,11 @@ Projektstand abgleichen, bewerten und verbessern. Basis
 `e6a1dbe3611b636edfe3f29d9e8ee5b785eb8527` aus
 [PR #45](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/45).
 Worktree `/workspace/netzel-percentage-review`, Branch
-`codex/netzel-percentage-indicator-review`; eigener PR nach Inhaltscommit.
+`codex/netzel-percentage-indicator-review`;
+[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46)
+gegen den #45-Branch, offen/ungemergt. Inhaltscommit
+`4455eb01040fb2570c2c36451392929cd0ac6fad`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 [CONCEPT_REVIEW](./percentage_indicator_review_2026_10_31/CONCEPT_REVIEW.md).
 
 **Konzeptprüfung abgeschlossen; keine neue Hauptmethode oder reale Freigabe.**

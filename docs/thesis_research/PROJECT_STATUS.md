@@ -39,7 +39,10 @@ R²-Anpassung, priornahe Stichprobenauswahl oder künstliche Bandverengung.
 
 Basis `e6a1dbe3611b636edfe3f29d9e8ee5b785eb8527` aus PR #45; Worktree
 `/workspace/netzel-percentage-review`, Branch `codex/netzel-percentage-indicator-review`.
-Eigener PR nach Inhaltscommit gegen den #45-Branch, kein Merge.
+[PR #46](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/46)
+gegen den #45-Branch, offen/ungemergt. Inhaltscommit
+`4455eb01040fb2570c2c36451392929cd0ac6fad`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 Quellenstellen, Verweise und mathematische Rollen geprüft; 721 bestehende
 Git-Blobs außerhalb Status/Übergabe bytegleich, Drei-Dateien-Diff geprüft.
 Beim Einstieg #45 offen/ungemergt/mergefähig, PR-CI Run 41198477399 erfolgreich;
