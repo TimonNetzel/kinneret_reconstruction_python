@@ -17,6 +17,47 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+## Aktueller Abschluss: A1-Methodenmatrix, 31.10.2026
+
+**A1 als begrenztes Dokumentationspaket abgeschlossen, mit Zugangslücke.**
+[NOVELTY_MATRIX](./NOVELTY_MATRIX.md) vergleicht sechs Prüffelder von genau
+Parnell 2015, Bowen 2020 und Menezes 2026 v1 mit Plan §1. Parnell-Original
+über DOI und bekannten Verlagslocator nicht erreichbar; keine dortigen
+Originalgleichungen verifiziert und keine Ersatzliteratur gesucht.
+Menezes (2)/(5): bedingt normierte Mischung versus wörtliches
+Likelihood-Mittel algebraisch getrennt; SIR-Resampling je Kalibrierziehung
+passt zur bedingten Normierung. Offener Formelklärpunkt, keine
+Software-/Resultatfehlerbehauptung. Dissertation-Anschluss aus bestehendem
+Projektmemo gekennzeichnet. Gemeinsame Klima-/Chronologie-Inferenz und
+externe Proxy-Abhängigkeiten abgegrenzt. Kein eigener Beitragskandidat
+belastbar abgegrenzt; keine Neuheitsbehauptung. Nach drei Arbeiten gestoppt.
+
+Basis `64a652982b0f271c02bfc0c89331537d6ec08eaa`, PR #50 offen/ungemergt,
+mergebar, CI 41207312666 erfolgreich; #49-Head `df01632`, main `7f1826c`.
+Fünf vorgefundene Worktrees sauber, keine Stashes; kein Reset/Stash/Merge.
+Eigener Worktree `/workspace/netzel-a1-novelty-matrix`, Branch
+`codex/netzel-a1-novelty-matrix`; [PR #51](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/51)
+gegen den #50-Branch, offen/ungemergt und mergebar. Inhaltscommit
+`ccd16161646f74aae799f343de176181ac7ebbb9`; danach Sicherungsverweise.
+Automatische CI 41208517276 für den Inhaltscommit bei Abfrage queued,
+noch kein abschließender CI-Nachweis für den Übergabe-Head.
+
+Prüfung bestanden: Quellenlocator/Beleggrenzen und Normierungsalgebra geprüft;
+Lokale Linkziele gültig, bisherige Statusabschnitte erhalten, erlaubter
+Drei-Dateien-Diff. 726 geschützte bestehende Git-Blobs einschließlich eines
+Symlinks bytegleich; keine Projekt-/Modelltests manuell ausgeführt.
+Nur NOVELTY_MATRIX neu sowie HANDOFF und dieser Status ergänzt/gepflegt.
+Keine Daten-/Modellwahl, Beschaffung, Bereinigung, Datenmatrix/Kohorte,
+Implementierung, Tests, Fits, Scores, Simulationen oder Kernläufe ausgeführt.
+Bestehende Designs/Modelle/Resultate/Register/Verträge/Importer/Flags/Counts/
+Gruppen, Baseline und CLI/App unverändert. W96, EMPD2-Archiv-/Messstatus
+und reale T0/T1/T3/T4/Monticchio-P1 offen. Keine Unteragenten,
+Autorennachrichten oder Merges.
+
+Genau ein [Folgeauftrag A2](./HANDOFF.md) dokumentarisch vorbereitet –
+**wartet auf Nutzer-OK**; MODEL_CONTRACT mit offenen Feldern/Stopbedingungen,
+keine reale Auswahl oder Rechnung. A2–A6 nicht begonnen.
+
 ## Aktueller Abschluss: neuer modularer Forschungsplan, 31.10.2026
 
 Nutzerauftrag **erledigt: neuer Plan und tokensparende Chatübergabe erstellt**.
