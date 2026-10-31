@@ -17,6 +17,34 @@ Sicherung als [PR #36](https://github.com/TimonNetzel/kinneret_reconstruction_py
 auf `codex/netzel-first-taxon-pilot-roadmap` ab `b9c7932` (#35),
 gegen den #35-Branch; ohne Merge erstellt.
 
+## Aktueller Abschluss: A3-Design dokumentiert, 31.10.2026
+
+**Nutzer-OK umgesetzt: nur A3-Design dokumentarisch abgeschlossen.**
+[A3_SYNTHETIC_DESIGN](./A3_SYNTHETIC_DESIGN.md) legt endliche künstliche
+Zustände/Wahrheit, Messprozesse, Cut, Fälle S00–S12/I01–I09 einschließlich
+Unterfällen/Gegenverfahren, exakte Abnahme und getrennte Nachrechnung fest.
+A3 insgesamt begonnen, Implementierung/Ausführung nicht erfolgt; A4–A6
+nicht begonnen. Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet, wartet auf
+Nutzer-OK: isolierte endliche A3-Referenzprüfung implementieren und ausführen.
+
+Basis [PR #53](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/53),
+Head `ea3157068e53a765d77ded5214ddaf29a732e5b1`, offen/ungemergt und mergebar;
+CI [41220662031](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41220662031)
+erfolgreich. Main `7f1826c`, #52 `1bf23cd`; sechs vorgefundene Worktrees sauber,
+keine Stashes/Resets/Merges. Eigener Worktree `/workspace/netzel-a3-synthetic-design`,
+Branch `codex/netzel-a3-synthetic-design`; eigener PR gegen #53, Verweise folgen.
+
+Nur ein neues Designdokument plus HANDOFF/kurzer Status; alte Statushistorie
+erhalten. Quellenzuordnung, Definitionen/Fallabdeckung, 9 lokale Links/Anker
+und Drei-Dateien-Umfang geprüft; 728 geschützte Blobs einschließlich
+MODEL_CONTRACT und Symlink bytegleich. Keine Implementierung, Tests,
+Rechnungen, Fits, Scores, Simulationen oder Kernläufe manuell gestartet.
+A1/A2 dokumentarisch abgeschlossen; MODEL_CONTRACT und alle übrigen bestehenden
+Dateien unverändert. Keine reale Auswahl/Beschaffung/Bereinigung, Datenmatrix/
+Kohorte, Recherche oder Originalprüfung der Dissertation. Parnell-Zugang,
+Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale Gates unverändert offen;
+kein Neuheitsbeitrag abgegrenzt. Keine Unteragenten/Autorennachrichten/Merges.
+
 ## Aktueller Abschluss: A3-Auftragsabgrenzung, 31.10.2026
 
 **Nur die dokumentarische Auftragsabgrenzung abgeschlossen.**
