@@ -19,6 +19,12 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 ## Aktueller Abschluss: A3-Design dokumentiert, 31.10.2026
 
+Kopierfertiger Startprompt in HANDOFF gesichert; beauftragt die endliche
+A3-Prüfung erst beim Absenden im nächsten Chat. Übergabestand `43d2b03` über
+PR #54 bestätigt, offen/ungemergt und mergebar; automatische CI 41234448012
+an diesem Head erfolgreich. Danach nur Prompt-/Statuspflege; Design-Sperrblob
+unverändert. Keine Implementierung oder Ausführung in dieser Übergabepflege.
+
 **Nutzer-OK umgesetzt: nur A3-Design dokumentarisch abgeschlossen.**
 [A3_SYNTHETIC_DESIGN](./A3_SYNTHETIC_DESIGN.md) legt endliche künstliche
 Zustände/Wahrheit, Messprozesse, Cut, Fälle S00–S12/I01–I09 einschließlich

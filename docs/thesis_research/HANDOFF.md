@@ -84,3 +84,48 @@ nur die künstlichen Fälle, keine reale Gültigkeit, Deckung oder Neuheit.
 kein eigener Neuheitsbeitrag abgegrenzt; W96, EMPD2-Archiv-/Messstatus und reale
 T0/T1/T3/T4/Monticchio-P1 offen. Diese Grenzen sperren reale Nutzung und werden
 auch durch synthetischen Erfolg nicht gelöst.
+
+## Kopierfertiger Startprompt für den nächsten Chat
+
+Vorbereitet, noch nicht ausgeführt: Erst das Absenden dieses Prompts beauftragt
+die endliche A3-Referenzprüfung. Verlässlich geprüfter Übergabestand
+`43d2b030c8c4de0264bef9e42773f184a37916af`; danach nur diese Prompt-/Statuspflege.
+
+```text
+Setze das Netzel-Projekt nach PR #54 fort.
+Branch: codex/netzel-a3-synthetic-design
+Geprüfter Übergabestand: 43d2b030c8c4de0264bef9e42773f184a37916af
+Design-Sperrcommit: a4c03c6752708dead6ecd98f016758538ddb71b2
+Design-Blob: 21879814c77f0341457f9f4790dd40e24b555d55
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/54
+Danach gegebenenfalls nur Übergabepflege; aktuellen Remote-Head prüfen.
+
+Prüfe zuerst Git-/PR-/Merge-/CI-Stand, Branches, Worktrees und lokale Änderungen;
+erhalte ungesicherte Arbeit. Eigener Worktree, Branch und PR, kein Merge.
+Lies AGENTS.md, HANDOFF.md, ausschließlich den neuesten Abschnitt von
+PROJECT_STATUS.md, A3_SYNTHETIC_DESIGN.md und MODEL_CONTRACT.md; Plan nur
+§1, §2-Zeile A3 und §4. NOVELTY_MATRIX nur bei konkreter Belegfrage nachladen.
+
+Hiermit beauftrage ich genau den vorbereiteten Folgeauftrag: das gesperrte
+endliche synthetische A3-Design isoliert implementieren, vollständig ausführen
+und getrennt nachrechnen. Kein erneutes OK für dieses Paket verlangen.
+Nur neue Dateien unter scripts/netzel_a3_synthetic/, das neue Prüfmodul
+tests/test_netzel_a3_synthetic.py und den neuen A3_SYNTHETIC_AUDIT.md samt
+kleinen vollständigen rationalen Ergebnistabellen sowie kurze HANDOFF-/Statuspflege.
+Nur die neue endliche Prüfung manuell starten; keine Zufallsdatenerzeugung,
+Fits, Scores, Optimierung, Simulationen oder Kernläufe. Alle S-/I-Unterfälle,
+Gegenverfahren, Ausfälle und Grenzen vollständig berichten; Tabellenbytes
+und Reproduktionsbefehle dauerhaft sichern. Design/Abnahme nicht an Resultate
+anpassen; bei nötiger Designänderung den betroffenen Teil blockiert ausweisen.
+
+Bestehende Designs einschließlich A3_SYNTHETIC_DESIGN, MODEL_CONTRACT,
+Modelle, Resultate, Register, Verträge, Importer, Flags, Counts/Gruppen,
+Baseline und CLI/App unverändert. Keine reale Daten-/Modellwahl, Beschaffung,
+Bereinigung, Datenmatrix/Kohorte, Literatur-/Archivsuche oder erneute
+Originalprüfung der Dissertation. A4–A6 nicht ausführen. A1/A2 dokumentarisch
+abgeschlossen; Parnell-Zugang, Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus
+und reale Gates bleiben Grenzen; kein eigener Neuheitsbeitrag abgegrenzt.
+Keine Unteragenten, Autorennachrichten oder Merges. Kurze deutsche Updates.
+Quellen-/Link-/Diff-/Blobprüfung und gezielte neue Prüfung; Ergebnis und
+genau einen begrenzten Folgeauftrag per Commit und eigenem PR sichern.
+```
