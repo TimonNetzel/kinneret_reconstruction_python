@@ -6,7 +6,11 @@ verbinden; Plan hochladen und eine tokensparende Chatübergabe erstellen.
 Basis `df01632d2256a5a7f6c4d3576f9e77c8ea5d7cb9` aus
 [PR #49](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/49).
 Worktree `/workspace/netzel-modular-plan`, Branch
-`codex/netzel-modular-reconstruction-plan`; eigener PR nach Inhaltscommit.
+`codex/netzel-modular-reconstruction-plan`;
+[PR #50](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/50)
+gegen den #49-Branch, offen/ungemergt. Inhaltscommit
+`2c7adc8b748046b599783f7d40d7fe7b5a80b4a4`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 
 ## 1. Ziel und festgehaltene Arbeitsrichtung
 

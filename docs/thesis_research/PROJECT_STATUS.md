@@ -37,7 +37,10 @@ breiten Suchen oder unveränderten erfolgreichen Läufe/Tests.
 
 Basis `df01632d2256a5a7f6c4d3576f9e77c8ea5d7cb9` aus PR #49; Worktree
 `/workspace/netzel-modular-plan`, Branch `codex/netzel-modular-reconstruction-plan`.
-Eigener PR nach Inhaltscommit gegen den #49-Branch, kein Merge.
+[PR #50](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/50)
+gegen den #49-Branch, offen/ungemergt. Inhaltscommit
+`2c7adc8b748046b599783f7d40d7fe7b5a80b4a4`; danach Sicherungs-/Übergabeverweise.
+Eigene automatische CI bei Erstellung noch nicht abschließend geprüft.
 725 geschützte bestehende Git-Blobs bytegleich; Links/Referenzen und erlaubten
 Drei-Dateien-Diff geprüft. #49 beim
 Einstieg offen/ungemergt/mergefähig, CI 41206168515 erfolgreich, main `7f1826c`,
