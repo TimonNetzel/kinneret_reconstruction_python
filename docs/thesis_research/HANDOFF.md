@@ -14,7 +14,8 @@
    Für den nächsten Auftrag nur deren
    [SOURCE_GAP.md](./original_pollen_names_2026_10_31/SOURCE_GAP.md) und bei
    konkreten Namensfragen die sieben Zeilen von data/species_name_links.csv lesen.
-   Neuer Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34);
+   [Originalquellen-PR #35](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/35):
+   Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34);
    #34 bleibt die vorangegangene Inventur. Kein Merge beauftragt.
 
 ## Nächster Forschungsauftrag: Bestimmungsmethoden und Typdefinitionen
@@ -43,6 +44,15 @@ Neue Originalprüfung benötigt keine alten Chat-Dateien; Bezugsbefehle und
 Hashprüfungen in original_pollen_names_2026_10_31/REPRODUCE.md.
 Die 2025-Originale bei konkretem Bedarf gesondert prüfen, keine Änderung der
 Shared37-Referenz. Monticchio-P1 und weitere Arten bleiben getrennte Pakete.
+
+## Übergabe an einen neuen Chat
+
+Das Originalquellenpaket ist ein abgeschlossener, gesicherter Wechselpunkt.
+Startauftrag: „Prüfe aktuellen Git-/PR-Stand, verwende den Forschungsstand auf
+`codex/netzel-original-pollen-names` (#35), lies AGENTS.md und HANDOFF.md.
+Bearbeite das dort begrenzte Paket zu Bestimmungsmethoden und Typdefinitionen;
+Modelle/Counts/Baseline/CLI/App unverändert, eigener PR, kein Merge.“
+Keine ungemergten Ergebnisse als schon auf main vorhanden behandeln.
 
 ## Nur bei konkretem Bedarf weiterlesen
 

@@ -114,8 +114,9 @@ sieben Artnamenslinks bestanden. Kein unabhängiger menschlicher/palynologischer
 Review behauptet. Originalzählungen nicht ausgewertet, keine Modell-/Langläufe.
 Bestehende Modelle, Quellregister, Baseline und CLI/App unverändert.
 
-Eigener Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34), eigener
-PR gegen den #34-Branch vorgesehen; kein Merge. Als Nächstes Methoden von
+Gesichert als [PR #35](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/35),
+Branch `codex/netzel-original-pollen-names` ab `98ef1bf` (#34), gegen den
+#34-Branch; offen und ohne Merge erstellt. Als Nächstes Methoden von
 Watts, Allen & Huntley (1996) und tatsächlich verwendete Bestimmungsreferenzen
 prüfen; je Art diagnostische Typgrenzen und verbleibende Lücken dokumentieren.
 [Präziser nächster Auftrag](./original_pollen_names_2026_10_31/SOURCE_GAP.md).
