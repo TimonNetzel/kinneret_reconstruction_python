@@ -21,6 +21,36 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: EMPD2-Klimaherkunft im Internet recherchiert, 01.11.2026
+
+Nutzerkorrektur: Codex sucht passende Herkunftsdokumente selbst; kein vom
+Nutzer zu benennendes Belegobjekt mehr als Startbedingung dieses Pakets.
+[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md)
+bewertet konkrete Primärquellen gegen R01–R03. Neu: ausdrückliche Periode
+1970–2000 im Anwendungsbericht Davis 2024; statische PostgreSQL-Feldabbildung
+und Bibliotheksdokumentation mit WorldClim2.0 (2019) gegenüber 2.1 (2022).
+Publikations-/Archiv-/Releasebezüge getrennt: R01–R03 für die konkrete
+PANGAEA-SQLite-Kette **teilweise belegt, weiter offen**. Keine Version/Periode
+festgelegt; bestehendes `unverified` und übrige Fachdateien unverändert.
+
+Recherchepaket dokumentarisch abgeschlossen; reale Herkunftskette und
+Counts-Bereitschaft weiter blockiert. Keine Rohdaten-/Datenbank-/Raster-/
+Archivdateiprüfung, Implementierung, manuellen Tests oder Rechnungen,
+Nachrichten, Unteragenten oder Merges. A4-Kalibrierung/A5/A6 nicht begonnen.
+Genau ein gezielter historischer Export-/Versionsfolgeauftrag in HANDOFF;
+Codex beschafft öffentlich verfügbare Belege selbst, kein Nutzerdatei-Blocker.
+
+Basis `76edec21a7f4caa13eb64c054f67033718d479c7`, PR #60 offen/ungemergt,
+mergebar; dessen CI 41284372025 erfolgreich. main `7f1826c`, fünf alte
+Worktrees sauber erhalten. Lokaler Fetch am Cloud-Proxy gescheitert;
+GitHub-Anbindung für Remote-Stand/Dokumente und Sicherung.
+Eigener sparsamer Worktree/Branch `codex/netzel-provenance-source-search`
+mit exakt verifizierter Git-Basis; gestapelter PR gegen #60 ohne Merge.
+Nur Ergebnisdokument/HANDOFF/Status; Quellen, sieben lokale Links/Anker und
+Diff geprüft; 753 geschützte Blobs/Dateimodi einschließlich Symlink und alte
+Statushistorie unverändert.
+Neue Commit-/PR-/CI-Verweise nach Sicherung ergänzen.
+
 ## Aktueller Abschluss: automatische Folgeprompts verbindlich, 01.11.2026
 
 Nutzerauftrag umgesetzt: [AGENTS.md](../../AGENTS.md) verpflichtet zur
