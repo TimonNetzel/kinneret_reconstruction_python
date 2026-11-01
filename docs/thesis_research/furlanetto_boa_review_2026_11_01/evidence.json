@@ -1,0 +1,115 @@
+{
+  "checked_at_utc": "2026-11-01T10:18:01.614852+00:00",
+  "base_pr": {
+    "number": 70,
+    "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70",
+    "state": "open",
+    "merged": false,
+    "head": "183ac3a8473fcc3f4ba4d0cbe691a165f880fdf2",
+    "content_commit": "346558c1290d0a0ca0506397ce5331ad3230fdfe",
+    "head_checks": {
+      "total": 4,
+      "completed_success": 4,
+      "workflow_run_ids": [
+        41291662668,
+        41291667788
+      ]
+    },
+    "legacy_commit_statuses": []
+  },
+  "authorization": {
+    "user_message": "OK, Furlanetto fortsetzen",
+    "scope": "Existing Furlanetto original-methods task only; authorization remains valid while technical input is missing"
+  },
+  "scope": {
+    "sample": "Champvillair_a18",
+    "original_sample": "TRS 18",
+    "doi": "10.1177/0959683618810395",
+    "purpose": "Bounded public-original access preflight; methods reading only after verified readable permitted original access"
+  },
+  "network_observation": {
+    "tool": "cloud_environment.environment_status",
+    "observations_current": true,
+    "spec_revision": "1",
+    "observed_spec_revision": "1",
+    "mode": "restricted",
+    "state": "enforced",
+    "boa_www_and_bare_allowed": true,
+    "executor_policy_version": 1,
+    "executor_boa_egress_hosts": [
+      "boa.unimib.it",
+      "www.boa.unimib.it"
+    ],
+    "vpn_configured": false,
+    "network_changes_by_agent": 0,
+    "interpretation": "Newly observed applied BOA permission compared with prior session; revision number alone does not identify equivalent host lists."
+  },
+  "request": {
+    "historical_source_id": "W6/P1",
+    "url": "https://www.boa.unimib.it/handle/10281/241319",
+    "tool": "exec_command / curl",
+    "executor_network_permission": true,
+    "attempts": 1,
+    "proxy": "inherited unchanged",
+    "tls_verification": true,
+    "command": "curl --proto '=https' --proto-redir '=https' --connect-timeout 15 --max-time 45 --location --max-redirs 3 --dump-header handle.headers --output handle.body --write-out '%{json}\\n' 'https://www.boa.unimib.it/handle/10281/241319'",
+    "response": {
+      "curl_exit_code": 0,
+      "proxy_connect_status": 200,
+      "http_status": 403,
+      "http_version": "2",
+      "content_type": "text/html; charset=UTF-8",
+      "cf_mitigated": "challenge",
+      "title": "Just a moment...",
+      "redirects": 0,
+      "effective_url": "https://www.boa.unimib.it/handle/10281/241319",
+      "body_bytes": 6166,
+      "body_sha256": "7f925a72049a85241f6f525633c61c7f3416e12a2f498e12a713d90df8f79521",
+      "location_header_present": false
+    },
+    "datensatz_page_read": false,
+    "verified_public_file_link": null,
+    "original_bytes_received": false,
+    "methods_read": false,
+    "document_version_verified": false,
+    "thesis_article_equivalence_verified": false
+  },
+  "other_requests": {
+    "sage": 0,
+    "alternate_boa_hostname": 0,
+    "guessed_pdf_path": 0,
+    "other_original_sources": 0,
+    "web_search_rounds": 0
+  },
+  "separate_findings": {
+    "binding": "Existing W1/W2: Champvillair_a18 -> TRS 18 -> DOI. No newly read original supports method-group membership.",
+    "collection": "Existing moss / hand picking - multiple samples metadata only; date, number, composition and simultaneity remain unknown.",
+    "deposition": "Not established.",
+    "integration": "Not established; multiple collection does not identify duration.",
+    "uncertainty": "Unknown, not zero.",
+    "R04": "Sample-level time evidence still absent from read sources; inaccessible sources not evaluated for absence.",
+    "R05": "Existing material/collection context partly evidenced; temporal integration not established."
+  },
+  "original_locations": [],
+  "stop": "First regular executor BOA request after confirmed host permission reaches challenge HTML (HTTP 403); no live repository page/file link/original methods readable. Stop at this concrete access gap. Unread original content is not assessed for absence.",
+  "user_actions": {
+    "required_now": "No further OK, host approval, user file or contact required. No verified user action currently resolves either website challenge.",
+    "optional": "An already known official public original URL may be named; no obligation to search or upload.",
+    "codex_next": "Continue the same authorized methods task only after a documented relevant permitted-access change or a newly verified public original link. Verify linked public files and version; separate TRS-18/group binding, collection, deposition, integration and uncertainty. No identical request under unchanged conditions."
+  },
+  "preservation": "Only selected access observations and hash retained here. Challenge response body/headers remain temporary under /tmp; no permanent response archive or original-document hash claimed. Existing originals, reports and evidence unchanged.",
+  "not_performed": [
+    "original methods reading",
+    "new sample/cohort",
+    "pollen/climate value analysis",
+    "data repair",
+    "implementation/manual tests",
+    "scientific calculations",
+    "R01-R03 research",
+    "R06/gate approval",
+    "A4 implementation/A5/A6",
+    "subagents",
+    "messages/contacts",
+    "merge"
+  ]
+}

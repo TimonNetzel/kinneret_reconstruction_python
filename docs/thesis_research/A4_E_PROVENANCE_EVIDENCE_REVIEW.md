@@ -470,3 +470,62 @@ oder Kontakte erforderlich. Kein verifizierter Nutzerschritt zur Behebung der
 Sage-Challenge. Genau ein Anschluss bleibt die bereits autorisierte
 Originalmethodenlesung bei tatsächlich geändertem erlaubtem Originalzugang;
 kein erneutes OK für denselben Auftrag und keine identischen Abrufe.
+
+
+## BOA-Executorzugriff nach bestätigter Hostfreigabe, 01.11.2026
+
+**Basis:** [PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70),
+Head `183ac3a8473fcc3f4ba4d0cbe691a165f880fdf2`, offen/ungemergt,
+vier erfolgreiche Head-Checks in den Läufen 41291662668 und 41291667788.
+Inhaltscommit `346558c1290d0a0ca0506397ce5331ad3230fdfe` erhalten.
+Fünf vorgefundene Worktrees sauber erhalten; eigener Worktree/Branch
+`codex/netzel-furlanetto-boa-review` ab diesem Head. Bestehendes Nutzer-OK
+gilt weiter. AGENTS, HANDOFF, neuester Status, aktueller Review/Evidenz und
+gezielt W3–W6/Champvillair sowie R04/R05/Herkunftsregeln berücksichtigt.
+
+**Neue wirksame Freigabe:** Laufzeitstatus meldet `observations_current=true`,
+Policy `restricted/enforced`, beide offiziellen BOA-Hosts erlaubt. Auch die
+Executor-Policy Version 1 enthält `www.boa.unimib.it` und `boa.unimib.it`.
+Obwohl die Revisionsnummer erneut 1 lautet, ist die Hostliste gegenüber dem
+vorigen Befund verändert. Keine Netzkonfiguration durch Codex geändert.
+Die bestätigte Freigabe erlaubt erstmals den regulären Executor-Aufruf des
+bekannten [institutionellen Handles](https://www.boa.unimib.it/handle/10281/241319).
+
+**Genau ein Abruf / konkrete Zugriffslücke:** Über den unveränderten Proxy
+mit TLS-Prüfung liefert CONNECT HTTP 200, danach HTTP/2 403,
+`Content-Type: text/html; charset=UTF-8`, `cf-mitigated: challenge`, Titel
+„Just a moment...“, 6.166 HTML-Antwortbytes. Keine Weiterleitung/Location.
+[Evidenz](./furlanetto_boa_review_2026_11_01/evidence.json) sichert Befehl,
+ausgewählte Antwortfelder und SHA-256 der Fehlerantwort. Kein lesbarer
+Datensatz, kein tatsächlich verlinkter öffentlicher Dateilink und keine
+Originalbytes. Kein PDF-Pfad aus dem historischen Dateinamen konstruiert;
+keine Hostvariante, Challenge-Lösung oder weitere Quelle verfolgt. Sage
+nicht erneut abgerufen; dessen letzte belegte Challenge bleibt historisch.
+
+| Getrennter Nachweis | Ergebnis / Beleggrenze |
+| --- | --- |
+| TRS-18-/Gruppenbindung | W1/W2-Identitäts-/DOI-Brücke erhalten; keine neue gelesene Originalstelle zur Methodengruppe. |
+| Sammlung | Nur bisheriges Material-/Entnahmelabel; Datum, Anzahl, Zusammensetzung und Gleichzeitigkeit offen. |
+| Ablagerung | Repräsentierte Zeit weiterhin unbekannt. |
+| Integration | Dauer weiterhin unbekannt; Mehrfachentnahme belegt kein Intervall. |
+| Unsicherheit | Unbekannt, keine Nullunsicherheit; kein Alter aus Publikationsjahr. |
+
+**Stop und Grenze:** Reguläre BOA-Zugriffsprüfung abgeschlossen;
+fachliche Originalmethodenlesung weiterhin **blockiert**. Kein Originalzitat,
+keine Seite oder Dokumentversion verifiziert; Dissertation und Artikel/
+Supplement nicht gleichgesetzt. Ungelesener Inhalt ist kein Nichtbeleg.
+R04/R05 bleiben im bisherigen Teilumfang offen; keine R06-/Gatefreigabe.
+Alte Review-/Statushistorie, Evidenz und Originale erhalten. Antwortbytes
+nur temporär unter `/tmp`, keine dauerhafte Archivierung behauptet.
+Nur Review/Evidenz und HANDOFF/Status geändert. JSON/Hashes/Links/Diffumfang
+geprüft; keine manuellen Projekt-/Modelltests, wissenschaftlichen Rechnungen,
+neuen Proben/Kohorten, Werteanalysen, Reparaturen, Implementierungen,
+R01–R03-Neusuche, A4-Umsetzung/A5/A6, Unteragenten, Kontakte oder Merges.
+
+**Nutzeraktion / genau ein Anschluss:** Kein weiteres OK und keine erneute
+BOA-Hostfreigabe nötig; beide Hosts sind erlaubt. Keine Nutzerdatei/Kontakte
+erforderlich. Aktuell kein verifizierter Nutzerschritt zur Behebung der
+BOA- oder Sage-Challenge. Optional kann ein bereits bekannter offizieller
+öffentlicher Original-Link genannt werden. Codex übernimmt dessen Prüfung
+bzw. nach belegter relevanter Zugriffsänderung die Fortsetzung desselben
+Auftrags; ohne neuen Eingang keine identischen Abrufe oder Diagnosepakete.
