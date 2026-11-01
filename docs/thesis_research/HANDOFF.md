@@ -21,7 +21,12 @@ Fünf vorgefundene Worktrees sauber und erhalten, keine ungesicherten Änderunge
 oder Stashes vorgefunden; kein Reset/Stash/Merge. Eigener Worktree
 `/workspace/netzel-a4-e-provenance-evidence-review`, Branch
 `codex/netzel-a4-e-provenance-evidence-review`; eigener gestapelter PR gegen #59.
-Sicherung/PR-Verweis werden nach Erstellung ergänzt.
+Inhaltscommit `921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f` über
+[PR #61](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61)
+remote gesichert, offen/ungemergt und mergebar. Automatische
+[CI 41284909253](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41284909253)
+an diesem Inhaltscommit bei Abfrage eingereiht; keine manuellen Tests ausgeführt.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
 Gelesen: AGENTS, HANDOFF, nur oberster aktueller PROJECT_STATUS-Abschnitt,
 R01–R03 samt Herkunfts-/Stopregeln, MODEL_CONTRACT Rollen/Stop sowie Plan §1,
@@ -89,7 +94,9 @@ Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 
 ```text
 Setze Netzel auf codex/netzel-a4-e-provenance-evidence-review fort.
-Gesicherter Commit/PR: siehe Sicherungsverweis oben; aktuellen Head/CI prüfen.
+Gesicherter Inhaltscommit: 921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61
+Danach nur Sicherungsverweise; aktuellen Remote-Head/CI prüfen.
 Genau ein Folgeauftrag: die bereits autorisierte Herkunftsbelegbewertung
 R01–R03 nach Eingang fortsetzen. Kein erneutes OK für dieses Paket nötig.
 Belegobjekt (Pfad/Ref und Archivbezug): noch eindeutig vom Nutzer zu benennen.

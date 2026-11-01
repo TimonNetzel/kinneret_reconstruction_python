@@ -41,7 +41,12 @@ main unverändert `7f1826cffddc8893ba6354cd3cca3fa43954b9be`.
 Fünf vorgefundene Worktrees sauber und erhalten, keine Stashes/Resets/Merges.
 Eigener Worktree `/workspace/netzel-a4-e-provenance-evidence-review`, Branch
 `codex/netzel-a4-e-provenance-evidence-review`, eigener gestapelter PR gegen #59.
-Sicherung/PR-Verweis werden nach Erstellung ergänzt.
+Inhaltscommit `921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f` über
+[PR #61](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61)
+remote gesichert, offen/ungemergt und mergebar. Automatische
+[CI 41284909253](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41284909253)
+an diesem Inhaltscommit bei Abfrage eingereiht; keine manuellen Tests ausgeführt.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
 Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege; bisherige
 Statushistorie bytegleich erhalten. Quellenbezüge, elf lokale Links/Anker
