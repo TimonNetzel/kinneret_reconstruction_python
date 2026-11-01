@@ -21,6 +21,44 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: reguläre BOA-Prüfung nach Hostfreigabe, 01.11.2026
+
+Basis [PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70),
+Head `183ac3a8473fcc3f4ba4d0cbe691a165f880fdf2`, offen/ungemergt;
+vier Head-Checks erfolgreich (Läufe 41291662668 und 41291667788).
+Bestehendes Furlanetto-OK gilt weiter. Eigener Worktree/Branch
+`codex/netzel-furlanetto-boa-review` ab #70, fünf vorgefundene Worktrees
+sauber erhalten. Nur Review/Evidenz und HANDOFF/Status geändert.
+
+**Erledigt:** aktuelle wirksame Policy und Executor-Hostliste bestätigen jetzt
+beide BOA-Hosts, obwohl die Revisionsnummer erneut 1 ist. Genau ein erster
+regulärer Executor-Aufruf des institutionellen Handles: CONNECT 200, danach
+HTTP/2 403 / `cf-mitigated: challenge`, 6.166 HTML-Bytes, keine Weiterleitung.
+**Blockiert:** kein lesbarer Datensatz, kein verifizierter öffentlicher Dateilink,
+keine Originalbytes oder fachliche Methodenlesung. Sage nicht erneut abgerufen.
+An dieser neuen konkreten Zugriffslücke gestoppt; keine Umgehung/Pfadkonstruktion.
+[Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#boa-executorzugriff-nach-bestätigter-hostfreigabe-01112026)
+und [Evidenz](./furlanetto_boa_review_2026_11_01/evidence.json) sichern die
+Beobachtung und den Fehlerantwort-Hash; Antwortbytes nur temporär, keine
+Originaldokument-Archivierung behauptet.
+
+TRS-18-/Gruppenbindung, Sammlung, Ablagerung, Integration und Unsicherheit
+getrennt unverändert im bisherigen Belegumfang; R04/R05 nicht geschlossen.
+Dissertation und Artikel/Supplement nicht gleichgesetzt; ungelesener Inhalt
+nicht als Nichtbeleg beurteilt. Alte Originale, Berichte, Evidenz und gesamte
+Review-/Statushistorie erhalten. JSON/Hash/Links/Diff geprüft, keine manuellen
+Projekt-/Modelltests oder wissenschaftlichen Rechnungen; keine neue Probe/
+Kohorte, Werteanalyse, Reparatur, Implementierung, R01–R03-Neusuche,
+R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten, Kontakte oder Merges.
+
+Genau ein Anschluss in HANDOFF: dieselbe bereits autorisierte Originallesung
+bei belegtem relevant verändertem erlaubtem Zugang oder neu verifiziertem
+öffentlichem Original-Link. Kein erneutes OK oder Hostfreigabe nötig, keine
+Nutzerdatei/Kontakte erforderlich. Aktuell kein verifizierter Nutzerschritt
+zur Behebung der BOA-/Sage-Challenge. Optional einen bereits bekannten
+öffentlichen Original-Link nennen; Codex übernimmt Prüfung und Lesung.
+Ohne neuen Eingang keine identischen Abrufe oder Diagnosepakete.
+
 ## Aktueller Abschluss: Furlanetto-Suche nach Nutzer-OK, 01.11.2026
 
 Nutzer-OK „OK, Furlanetto fortsetzen“ erhalten; derselbe Auftrag bleibt
