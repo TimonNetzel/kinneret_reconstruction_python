@@ -1,5 +1,17 @@
 # Netzel: Furlanetto-Originalmethodik für TRS 18 – Zugriff blockiert
 
+## Fortsetzung im bestehenden Chat, 01.11.2026
+
+Die [Arbeitsregel](../../AGENTS.md#effiziente-fortsetzung-im-bestehenden-chat)
+setzt den Nutzerwunsch zur sparsamen Fortsetzung um: bekannte unveränderte
+Inhalte weiterverwenden, nur relevante Änderungen nachlesen, kurz berichten
+und diesen unveränderten Folgeauftrag verlinken statt den Prompt erneut
+auszugeben. Kein neuer Chat und kein Wiederholungsdiagnosepaket nötig.
+Diese Regelpflege autorisiert keine Furlanetto-Lesung. Genau der nachstehende
+Auftrag bleibt vorbereitet, wartet auf Nutzer-OK und den technischen Eingang;
+letzter belegter Sage-Befund HTTP 403 / `cf-mitigated: challenge`.
+Kein erneuter Quellenabruf in diesem Paket. Fachliche Evidenz unverändert.
+
 ## Paketabschluss, 01.11.2026
 
 Nur den beauftragten Furlanetto-Versuch ausgeführt. Basis PR #67, Head
@@ -54,15 +66,17 @@ Unteragenten, Nachrichten/Kontakte oder Merges. Notwendige begrenzte
 schreibgeschützte Quellen-/Metadatenprüfung nach AGENTS ohne Extra-OK erlaubt.
 Alte Originale/Berichte erhalten. JSON/Quellen/Hashes/Links/Diff prüfen,
 Commit/eigener PR ohne Merge, genau einen sachlichen Folgeauftrag vorbereiten,
-Folgeprompt automatisch ausgeben. Fehlender technischer Eingang bleibt Blocker.
+Folgeprompt in HANDOFF pflegen; bei unverändertem Auftrag im selben Chat
+verlinken. Fehlender technischer Eingang bleibt Blocker.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-furlanetto-access-review fort.
-Inhaltscommit: 0126234303f74c9e4212a354e61d0dc81eaa5ec6
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
+Setze Netzel im bestehenden Chat auf codex/netzel-efficient-chat-continuation fort.
+Sicherung der Fortsetzungsregeln: siehe aktuellen Verweis am Ende von HANDOFF.
+Fachlicher Inhaltscommit: 0126234303f74c9e4212a354e61d0dc81eaa5ec6
+Fachlicher Basis-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68
+Bei tatsächlichem Arbeitsbeginn aktuellen PR-Head/CI prüfen.
 Führe nach Nutzer-OK ausschließlich den oben vorbereiteten Furlanetto-Auftrag
 für Champvillair_a18 / TRS 18, DOI 10.1177/0959683618810395, aus.
 Start erst bei nachgewiesen geändertem erlaubtem lesbarem Zugriff oder neu
@@ -79,7 +93,8 @@ schreibgeschützte Quellen-/Metadatenprüfung ohne Extra-OK erlaubt.
 Keine neue Probe/Kohorte, Werteanalyse, Reparatur, Implementierung, manuellen
 Tests, wissenschaftlichen Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe,
 A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder Merges.
-Ergebnis prüfen und sichern; genau einen Folgeauftrag samt Folgeprompt liefern.
+Ergebnis prüfen und sichern; genau einen Folgeauftrag samt Prompt in HANDOFF
+pflegen. Bei unverändertem Auftrag im selben Chat nur darauf verweisen.
 Kurz auf Deutsch berichten. Fehlenden technischen Eingang als Blocker erhalten.
 ```
 

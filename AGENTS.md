@@ -90,6 +90,36 @@ Auf Nutzerwunsch vom 01.11.2026 gilt für dieses Repository:
    Große Artefakte nur mit nachgewiesenem dauerhaften Speicherort als archiviert
    bezeichnen; Hash und Reproduktionsbefehl allein sichern keine Dateibytes.
 
+## Effiziente Fortsetzung im bestehenden Chat
+
+Auf Nutzerwunsch vom 01.11.2026 gilt:
+
+- Im bestehenden Chat weiterarbeiten. Ein Paketabschluss allein ist kein Grund
+  für einen neuen Chat; keinen Chat automatisch erstellen.
+- HANDOFF, neuester PROJECT_STATUS-Abschnitt und der zuletzt belegte Commit/PR
+  bilden den knappen Einstieg. Bereits im Chat gelesene unveränderte Inhalte
+  anhand bekannter Refs weiterverwenden; gezielt nur Änderungen oder für den
+  konkreten Schritt noch fehlende Stellen nachlesen. Nach Kontextverlust diese
+  Einstiegspunkte lesen, keine vollständige Historie erneut aufbauen.
+- Stand-/CI-Prüfungen zum Beginn eines tatsächlichen Arbeitspakets, vor
+  Remote-Schreibaktionen oder bei neuen Änderungshinweisen durchführen. Eine
+  reine Nachfrage oder unveränderte Blockade löst keine erneute Gesamtprüfung
+  aus. Historische Ergebnisse nicht als frisch geprüft ausgeben.
+- Bei einem dokumentierten Zugriffsblocker erst nach belegter relevanter
+  Zugriffsänderung oder neu verifiziertem zulässigem Originalzugang fortsetzen.
+  Keine identischen Abrufe, Warteschleifen, wiederholten Diagnose-/Planungspakete
+  oder Hintergrundprüfungen ohne neuen Anlass. Fehlende Eingänge und bereits
+  geltende Nutzer-OKs getrennt festhalten; ein OK beseitigt keinen technischen
+  Blocker. Autorisierte nötige Quellen-/Metadatenprüfung bleibt möglich.
+- Kurz nur neue Befunde, nötige Entscheidungen, Sicherung und den einen nächsten
+  Schritt berichten. Den vollständigen Folgeprompt einmal in HANDOFF pflegen;
+  im selben Chat bei unverändertem Auftrag darauf verweisen, statt ihn bei jeder
+  Antwort zu wiederholen. Kopiertext nur bei geändertem Folgeauftrag, auf Wunsch
+  oder bei einem tatsächlich nötigen Chatwechsel ausgeben.
+- Aufwand durch kleine Diffs, gezielte Ausschnitte und passende einmalige
+  Prüfungen begrenzen. Tokenfreiheit nicht versprechen; keine unveränderten
+  Dateien oder bloßen Statuswiederholungen eigens committen.
+
 ## Abschluss, Folgeauftrag und Nutzer-OK
 
 Auf Nutzerwunsch vom 31.10.2026 wird jedes begrenzte Arbeitspaket so übergeben,
@@ -109,27 +139,28 @@ dass zur Fortsetzung ein kurzes „OK“ genügt:
   Bereits autorisierte Arbeit vollständig erledigen; für das nächste neue Paket
   wieder einen klaren Folgeauftrag vorbereiten. Ein OK erteilt keine pauschale
   Merge-, Autorenkontakt- oder wissenschaftliche Freigabe.
-- **Folgeprompt nach Dokumentationsabschluss immer ausgeben:** Sobald ein
+- **Folgeprompt sichern und gezielt ausgeben:** Sobald ein
   Dokumentationspaket abgeschlossen und mit Commit in einem eigenen PR remote
-  gesichert ist, den kopierfertigen Startprompt für genau den in HANDOFF
-  vorbereiteten Folgeauftrag automatisch in die Abschlussantwort aufnehmen.
-  Nicht auf eine Nachfrage des Nutzers warten und die Ausgabe nicht von einer
-  Chatwechsel-Empfehlung abhängig machen. Denselben Prompt in HANDOFF sichern:
+  gesichert ist, den kopierfertigen Startprompt für genau den einen vorbereiteten
+  Folgeauftrag in HANDOFF sichern. Im bestehenden Chat bei unverändertem
+  Folgeauftrag den Abschnitt verlinken; Kopiertext gemäß der obigen
+  Fortsetzungsregel nur bei Bedarf ausgeben. Der Prompt nennt:
   Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe, Leseplan,
-  Schutzgrenzen, Abnahme und Stopbedingungen nennen. Fehlende Eingänge und
+  Schutzgrenzen, Abnahme und Stopbedingungen. Fehlende Eingänge und
   Blocker ausdrücklich angeben; ein fehlender Eingang bleibt eine Startbedingung.
   Den tatsächlichen PR-/CI-Stand getrennt berichten; laufende oder fehlgeschlagene
   CI nicht als erfolgreich ausgeben. Die Prompt-Ausgabe startet weder den
   Folgeauftrag noch einen neuen Chat und erteilt keine zusätzliche Freigabe.
-- **Chatwechsel gezielt empfehlen:** Einen kopierfertigen Übergabeprompt ausgeben,
-  wenn ein gesicherter Paketabschluss, ein deutlicher Themenwechsel oder viel
-  angesammelter Kontext einen neuen Chat sinnvoll macht. Prompt auch in HANDOFF
+- **Chatwechsel nur bei Bedarf:** Den bestehenden Chat bevorzugen; einen Wechsel
+  nur auf Nutzerwunsch oder bei einer konkreten technischen Notwendigkeit
+  empfehlen und den Grund benennen. Dann einen kopierfertigen Übergabeprompt
+  ausgeben. Prompt auch in HANDOFF
   sichern: Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe,
   Leseplan, Schutzregeln und bekannte Blocker. Bei noch ausstehendem OK den
   vorgeschlagenen Startauftrag ausdrücklich als solchen kennzeichnen.
 - **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; nach
-  Dokumentationsabschluss den Folgeprompt immer, bei anderen Paketen bei
-  sinnvollem Chatwechsel direkt mitliefern. Keinen neuen Chat selbst
+  Dokumentationsabschluss bei unverändertem Folgeauftrag auf HANDOFF verweisen,
+  sonst den geänderten Folgeprompt direkt mitliefern. Keinen neuen Chat selbst
   anlegen und keine Erinnerungs-/Hintergrundautomatisierung daraus ableiten.
 
 Kurz auf Deutsch zu Beginn und nach Arbeitspaketen berichten: **fertig / aktuell /

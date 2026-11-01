@@ -21,6 +21,25 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: effiziente Chatfortsetzung, 01.11.2026
+
+Nutzerwunsch in [AGENTS](../../AGENTS.md#effiziente-fortsetzung-im-bestehenden-chat)
+hinterlegt: bestehenden Chat bevorzugen, bekannte unveränderte Inhalte
+weiterverwenden, Prüfungen nur bei Arbeitsbeginn oder relevantem Anlass,
+keine wiederholten Abrufe/Diagnosepakete bei unverändertem Blocker und keine
+wiederholten vollständigen Folgeprompts. HANDOFF verweist auf diese Regel und
+behält genau den bisherigen bedingten Furlanetto-Auftrag.
+
+Basis PR #68, Head `a59758a2d54e0ede4543ed94cbfeb110497c05fc`, offen/ungemergt;
+zuletzt im selben Chat vier erfolgreiche Head-Checks belegt, hier keine neue
+CI-Abfrage der unveränderten Basis. Eigener Worktree/Branch
+`codex/netzel-efficient-chat-continuation` gegen #68. Nur AGENTS, HANDOFF und
+Status geändert; Fachberichte, Evidenz und Originale unverändert. Keine
+Quellenabrufe, manuellen Projekt-/Modelltests oder wissenschaftlichen Rechnungen.
+Prüfung: Diff, lokale Verweise, erhaltene Statushistorie und übrige Git-Blobs.
+Technischer Furlanetto-Blocker bleibt erhalten; Regelpflege ist kein Nutzer-OK
+für das fachliche Folgepaket und keine Gate-/Mergefreigabe.
+
 ## Aktueller Abschluss: Furlanetto-Zugriffsversuch TRS 18, 01.11.2026
 
 [Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-zugriffsprüfung-für-trs-18-01112026)
