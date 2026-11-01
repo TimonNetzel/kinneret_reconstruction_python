@@ -21,6 +21,49 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Herkunftsbeleg fehlt, Stand-/Eingangsprüfung dokumentiert, 01.11.2026
+
+[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md)
+hält den fehlenden Eingang fest: Pfad/Ref und Archivbezug im Nutzerauftrag
+sind nur ein Platzhalter. **Stand-/Eingangsprüfung abgeschlossen; inhaltliche
+R01–R03-Bewertung blockiert.** R01–R03 mangels Eingang unbelegt, nicht
+inhaltlich geprüft; kein Urteil über ein tatsächlich vorgelegtes Dokument.
+Nutzer-OK liegt vor, kein erneutes OK für dieses Paket nötig. Reale Klima-/
+Zeitverbindung und Counts-Bereitschaft bleiben blockiert; keine Gatefreigabe.
+
+Basis `02e004cea401f19146bee6b23cc97d4a982051d1`,
+[PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
+offen/ungemergt und mergebar, Head entspricht Sicherungscommit; automatische
+[CI 41240408738](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41240408738)
+erfolgreich, separate Commitstatus-Liste leer. #58 offen/ungemergt und mergebar,
+Head `0ac78de8ec007bb8e92c5ea571cefc7ba9e414a0`. #59 nicht in main;
+main unverändert `7f1826cffddc8893ba6354cd3cca3fa43954b9be`.
+Fünf vorgefundene Worktrees sauber und erhalten, keine Stashes/Resets/Merges.
+Eigener Worktree `/workspace/netzel-a4-e-provenance-evidence-review`, Branch
+`codex/netzel-a4-e-provenance-evidence-review`, eigener gestapelter PR gegen #59.
+Sicherung/PR-Verweis werden nach Erstellung ergänzt.
+
+Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege; bisherige
+Statushistorie bytegleich erhalten. Quellenbezüge, elf lokale Links/Anker
+und Drei-Dateien-Diff geprüft; 753 geschützte Git-Blobs/Dateimodi einschließlich
+Symlink und sämtlicher bestehender Fachdateien unverändert. R04–R06 bei einem zu weiten
+Tabellenausschnitt angezeigt, nicht bewertet. Keine Altangaben als neue Evidenz,
+Recherche, Beschaffung, realen Daten-/Dateiprüfungen, Auswahl, Klima-Joins,
+Implementierung, manuellen Tests oder Rechnungen. Automatische Repository-CI
+getrennt ausweisen. Keine Version, Periode oder Probe gewählt.
+A1/A2 dokumentarisch abgeschlossen, A3 nur endlich-synthetisch bestanden;
+A4-Umsetzung/reale Kalibrierung und A5/A6 nicht begonnen. R04–R06 und alle
+übrigen Gates offen; Parnell, Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus
+und reale T0/T1/T3/T4/Monticchio-P1 bleiben Grenzen; kein eigener Neuheitsbeitrag
+abgegrenzt. Keine Unteragenten, Autorennachrichten oder Beleganforderungsversand.
+
+Genau ein [Folgeauftrag](./HANDOFF.md) vorbereitet: die autorisierte R01–R03-
+Bewertung nach eindeutiger Benennung eines bereits bereitgestellten einzelnen
+Herkunfts-/Erzeugungs-Textdokuments fortsetzen. Am Belegobjekt blockiert;
+keine Ersatzrecherche und kein erneutes OK. Ohne neue Evidenz kein weiteres
+Dokumentationspaket. Startprompt in HANDOFF.
+
+
 ## Aktueller Abschluss: Klima-/Zeit-Wiederöffnungskriterien dokumentiert, 31.10.2026
 
 Der ausdrückliche Nutzerauftrag nach PR #58 ist umgesetzt:
