@@ -1,131 +1,116 @@
-# Netzel: Übergabe nach dokumentarischen Klima-/Zeit-Wiederöffnungskriterien
+# Netzel: Übergabe nach Stand-/Eingangsprüfung des Herkunftsbelegs
 
 ## Gesichertes Ergebnis
 
-Der ausdrückliche Nutzerauftrag nach
-[PR #58](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58)
-ist umgesetzt: [A4_E_REOPENING_REQUIREMENTS](./A4_E_REOPENING_REQUIREMENTS.md)
-übersetzt C04/C05/C06 und T02–T04 in sechs prüfbare Nachweisanforderungen.
-Belegtyp/Angaben, Archiv-/Feld-/Probenidentität, zulässiger Schluss und
-Nichtbelegfolge sind jeweils getrennt. MODEL_CONTRACT unverändert;
-keine konkrete Version, Periode, Probe, Zeitgrenze oder Datenrolle gewählt.
-**Dokumentarischer Auftrag abgeschlossen; reale Klima-/Zeitverbindung und
-Counts-Bereitschaft bleiben blockiert.** Die Anforderungen belegen selbst
-keine reale Voraussetzung und erteilen keine Gatefreigabe.
+[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md)
+dokumentiert den fehlenden Eingang: Der Nutzerauftrag enthält nur den
+Platzhalter für Pfad/Ref und Archivbezug. **Stand-/Eingangsprüfung abgeschlossen;
+inhaltliche Bewertung blockiert.** R01–R03 sind mangels Eingang unbelegt und
+nicht inhaltlich geprüft; keine Bewertung eines tatsächlich vorgelegten Dokuments.
+Das Nutzer-OK liegt vor, ersetzt aber kein Belegobjekt. Reale Klima-/Zeitverbindung
+und Counts-Bereitschaft bleiben blockiert; keine Gatefreigabe.
 
-Basis `0ac78de8ec007bb8e92c5ea571cefc7ba9e414a0`, PR #58 bei Einstieg
-offen/ungemergt und mergebar; automatische
-[CI 41239359845](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41239359845)
-erfolgreich. Auch #57 offen/ungemergt und mergebar. Remote-Head #58 entspricht
-der Übergabe; nicht in main enthalten, main unverändert `7f1826c`.
-Fünf vorgefundene Worktrees sauber, keine ungesicherten Änderungen gefunden;
-keine Stashes/Resets/Merges. Eigener Worktree
-`/workspace/netzel-a4-e-reopening-requirements`, Branch
-`codex/netzel-a4-e-reopening-requirements`, gestapelter eigener PR gegen #58.
-Inhaltscommit `00fa40b04095387174508b589a947ecdf77d2caf` über
+Basis `02e004cea401f19146bee6b23cc97d4a982051d1`,
 [PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
-remote gesichert, offen/ungemergt und mergebar; automatische
-[CI 41240341469](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41240341469)
-an diesem Commit bei Abfrage laufend. Danach nur Sicherungsverweise;
-aktuellen PR-Head/CI prüfen.
+offen/ungemergt und mergebar; Head entspricht dem bestätigten Sicherungscommit.
+Automatische [Head-CI 41240408738](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41240408738)
+erfolgreich; separate Commitstatus-Liste leer. #58 ebenfalls offen/ungemergt
+und mergebar, Head `0ac78de8ec007bb8e92c5ea571cefc7ba9e414a0`.
+#59-Head nicht in main; main unverändert `7f1826cffddc8893ba6354cd3cca3fa43954b9be`.
+Fünf vorgefundene Worktrees sauber und erhalten, keine ungesicherten Änderungen
+oder Stashes vorgefunden; kein Reset/Stash/Merge. Eigener Worktree
+`/workspace/netzel-a4-e-provenance-evidence-review`, Branch
+`codex/netzel-a4-e-provenance-evidence-review`; eigener gestapelter PR gegen #59.
+Inhaltscommit `921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f` über
+[PR #61](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61)
+remote gesichert, offen/ungemergt und mergebar. Automatische
+[CI 41284909253](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41284909253)
+an diesem Inhaltscommit bei Abfrage eingereiht; keine manuellen Tests ausgeführt.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
-Gelesen: AGENTS, HANDOFF, aktueller Status, A4_E_CLIMATE_TIME_GAPS,
-MODEL_CONTRACT zu Rollen/Support/Stop und Plan §1, §2 nur A4, §4.
-Beim ersten Statusausschnitt wurden zusätzlich ältere Abschlussabschnitte
-angezeigt; daraus keine neue fachliche Prüfung abgeleitet. Keine weitere
-Fundstelle oder Originalquelle nachgeladen, keine neue Recherche/Beschaffung,
-reale Datei-/Datenprüfung, Implementierung, Tests oder Modellrechnung.
-Nur neues Ergebnisdokument plus kurze HANDOFF-/Statuspflege; bestehende
-Fachdateien unverändert, Statushistorie erhalten. Ableitung, zwölf lokale
-Links/Anker und Drei-Dateien-Diff geprüft; 752 geschützte Blobs/Dateimodi
-einschließlich Symlink unverändert, alte Statushistorie bytegleich erhalten.
-A1/A2 dokumentarisch abgeschlossen, A3 nur endlich-synthetisch bestanden;
-A4-Umsetzung/reale Kalibrierung und A5/A6 nicht begonnen.
+Gelesen: AGENTS, HANDOFF, nur oberster aktueller PROJECT_STATUS-Abschnitt,
+R01–R03 samt Herkunfts-/Stopregeln, MODEL_CONTRACT Rollen/Stop sowie Plan §1,
+§2 nur A4 und §4. Ein Tabellenfilter zeigte zusätzlich R04–R06 an;
+daraus keine Bewertung oder neue fachliche Prüfung abgeleitet.
+Kein Herkunftsdokument und keine Altquelle als Ersatz geöffnet.
+Nur neues Ergebnisdokument und kurze HANDOFF-/Statuspflege; bestehende
+Fachdateien und bisherige Statushistorie erhalten. Dokumentarische Abnahme
+betrifft den fehlenden Eingang, nicht die weiter blockierte Inhaltsbewertung.
+Quellenbezüge, elf lokale Links/Anker und Drei-Dateien-Diff geprüft; 753
+geschützte Git-Blobs/Dateimodi einschließlich Symlink unverändert, alte
+Statushistorie bytegleich erhalten. Automatische Repository-CI separat ausweisen.
 
-## Genau ein Folgeauftrag: ein neues Herkunftsdokument gegen R01–R03 bewerten – vorbereitet, wartet auf Nutzer-OK und Belegobjekt
+## Genau ein Folgeauftrag: Herkunftsbelegbewertung R01–R03 nach eindeutigem Eingang fortsetzen – vorbereitet, am Eingang blockiert
 
-**Ziel:** nach tatsächlichem Eingang neuer Evidenz deren begrenzten Beitrag
-zur archivgenauen Klimaquelle/Version/Periode und Anwendungskette bewerten.
-Kein weiteres allgemeines Kriterienpapier und keine erneute Auswertung
-derselben Altangaben als neue Evidenz.
+**Ziel:** ausschließlich den begrenzten Nachweisbeitrag eines einzelnen,
+bereits bereitgestellten Herkunfts-/Erzeugungs-Textdokuments bewerten.
+Der Prüfauftrag ist bereits autorisiert; kein erneutes OK für dieses Paket
+nötig. Bis zur eindeutigen Bezeichnung des Belegobjekts nicht fortsetzen.
 
-**Nötiger Eingang / Startbedingung:** genau ein vom Nutzer eindeutig
-bezeichnetes, bereits bereitgestelltes lokales oder versioniertes
-Repository-Textdokument zur Herkunft/Erzeugung der betreffenden Archiv-
-Klimafelder, mit Pfad/Ref und beanspruchter Archividentität. Dieses neue
-Belegobjekt liegt im jetzigen Paket nicht vor. Ohne eindeutigen Eingang
-bleibt der Folgeauftrag blockiert; keine Ersatzquelle selbst suchen,
-herunterladen oder bei Autoren anfordern. Ein OK ohne Belegobjekt ersetzt
-nicht den fehlenden Eingang. Keine Datenbank, Rohdaten, Raster oder Archive
-als Ersatz öffnen.
+**Nötiger Eingang:** genau ein vom Nutzer bezeichneter lokaler oder versionierter
+Repository-Text mit Pfad/Ref und beanspruchter Archividentität. Kein bloßer
+Platzhalter. Keine eigene Dokument-/Archiv-/Versions-/Perioden-/Probenwahl,
+Ersatzsuche, Beschaffung oder Beleganforderung; keine Datenbank, Rohdaten,
+Raster oder Archive öffnen. Ein weiteres OK allein schließt die Eingangslücke nicht.
 
-**Leseplan:** zuerst Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand,
-ungesicherte Arbeit erhalten; eigener Worktree/Branch/PR ohne Merge.
+**Leseplan:** Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand prüfen,
+ungesicherte Arbeit erhalten; eigener Worktree/Branch/PR, kein Merge.
 AGENTS, diese HANDOFF, nur oberster aktueller PROJECT_STATUS-Abschnitt,
-A4_E_REOPENING_REQUIREMENTS ausschließlich R01–R03 und Herkunfts-/Stopregeln;
-MODEL_CONTRACT Rollen/Stop; Plan §1, §2 nur A4 und §4.
-Danach nur relevante Passagen des genau bezeichneten neuen Belegobjekts.
+A4_E_PROVENANCE_EVIDENCE_REVIEW und A4_E_REOPENING_REQUIREMENTS nur R01–R03
+samt Herkunfts-/Stopregeln; MODEL_CONTRACT Rollen/Stop; Plan §1, §2 nur A4,
+§4. Danach nur relevante Passagen des genau bezeichneten Belegobjekts.
 A4_E_CLIMATE_TIME_GAPS C04–C06 nur bei konkreter Rückfrage zum Altstand.
-Keine erneute Original-/Archiv-/Literatur-/Berichtssuche.
+Keine Original-/Archiv-/Literatur-/Berichtssuche oder erneute Altbelegbewertung.
 
-**Erlaubter Umfang:** genau ein neues
-`docs/thesis_research/A4_E_PROVENANCE_EVIDENCE_REVIEW.md` plus kurze
-HANDOFF-/Statuspflege. Für R01, R02 und R03 jeweils genaue neue Fundstelle,
-Originalaussage/Übernahme, Eingangs-/Archiv-/Feldidentität, Reichweite und
-Status belegt/teilweise belegt/unbelegt festhalten. Nur tatsächlich gedeckte
-Verbindungen benennen, fehlende oder widersprüchliche Angaben ausdrücklich
-offen halten. Ein einzelnes Dokument muss nicht alle Anforderungen erfüllen.
-Kein realer Datenvertrag wird ausgefüllt; keine Version/Periode ausgewählt.
+**Umfang:** ausschließlich A4_E_PROVENANCE_EVIDENCE_REVIEW.md mit dem tatsächlichen
+Eingang fortschreiben, dazu kurze HANDOFF-/Statuspflege. Kein zweites
+Ergebnisdokument oder allgemeines Kriterienpapier. Für R01–R03 jeweils genaue
+Fundstelle, Originalaussage/Übernahme, Herkunft, Eingangs-/Archiv-/Feldidentität,
+Reichweite und Status belegt/teilweise belegt/unbelegt ausweisen. Fehlendes und
+Widersprüche offen halten; ein Dokument muss nicht alle Anforderungen erfüllen.
+Keinen realen Vertrag ausfüllen, keine Version/Periode/Probe auswählen.
 
-**Sperren und Stop:** R04–R06 und sämtliche übrigen Gates bleiben außerhalb
-dieses Pakets offen. Alle bestehenden Fachdateien einschließlich Kriterien,
-Vertrag, Designs, Modelle, Resultate, Register, Importer, Flags/Counts/Gruppen,
-Baseline und CLI/App unverändert. Keine neue Recherche/Beschaffung,
-reale Daten-/Dateiprüfung, Modell-/Datenwahl, Klima-Joins, Bereinigung,
-Matrix/Kohorte, Typbrücke, Implementierung, Tests, Rechnungen, Fits,
-Scores, Optimierung, Simulationen oder Kernläufe. Benötigt die Bewertung
-ein weiteres Objekt oder eine reale Entscheidung, nur die Lücke dokumentieren.
+**Sperren/Stop:** R04–R06 und alle übrigen Gates bleiben außerhalb des Pakets offen.
+Alle bestehenden Fachdateien einschließlich Kriterien/Vertrag/Designs/Modelle/
+Resultate/Register/Importer/Flags/Counts/Gruppen/Baseline/CLI/App unverändert.
+Keine Recherche/Beschaffung, realen Daten-/Dateiprüfungen, Daten-/Modellwahl,
+Klima-Joins, Bereinigung, Matrix/Kohorte, Typbrücke, Implementierung, Tests,
+Rechnungen, Fits, Scores, Optimierung, Simulationen oder Kernläufe.
+Bei weiterem Objektbedarf oder realer Entscheidung nur die Lücke dokumentieren.
 A4 nicht umsetzen, A5/A6 nicht beginnen; keine Gatefreigabe, Unteragenten,
-Autorennachrichten, Beleganforderungsversand oder Merges.
+Autorennachrichten, versandte Beleganforderung oder Merges.
 
-**Abnahme:** ein nachvollziehbarer, begrenzter Nachweisbeitrag des einen neuen
-Dokuments mit unveränderten R01–R03; auch vollständiger Nichtbeleg ist ein
-zulässiges Ergebnis. Keine Gesamtfreigabe oder Probenzeiteignung daraus ableiten.
-Quellen-/Link-/Diff-/Blobprüfung, Statushistorie erhalten; Commit/eigener PR
-ohne Merge und genau einen anschließenden begrenzten Auftrag vorbereiten.
-Dieses neue Paket ist vorbereitet, nicht ausgeführt oder pauschal autorisiert.
+**Abnahme:** nachvollziehbarer Beitrag genau dieses Dokuments bei unveränderten
+R01–R03; auch vollständiger Nichtbeleg ist zulässig. Keine Gesamtfreigabe oder
+Probenzeiteignung. Quellen-/Link-/Diff-/Blobprüfung, Statushistorie erhalten,
+Commit/eigener PR ohne Merge und genau einen begrenzten Folgeauftrag vorbereiten.
 
 **Weiter offen/blockiert:** reale Klima-/Zeitverbindung, Counts-Bereitschaft,
 Parnell-Zugang, Menezes-(2)/(5), W96, EMPD2-Archiv-/Messstatus und reale
 T0/T1/T3/T4/Monticchio-P1; kein eigener Neuheitsbeitrag abgegrenzt.
 Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 
-## Kopierfertiger Startprompt für den nächsten Chat
-
-Vorbereiteter Folgeauftrag; nur zusammen mit dem bezeichneten neuen
-Belegobjekt ausführbar. Verlässlich gesicherter Inhaltscommit
-`00fa40b04095387174508b589a947ecdf77d2caf`, PR #59; danach nur
-Sicherungsverweise. Aktuellen Remote-Head/CI prüfen.
+## Kopierfertiger Startprompt für die Fortsetzung
 
 ```text
-Setze Netzel auf codex/netzel-a4-e-reopening-requirements fort.
-Inhaltscommit: 00fa40b04095387174508b589a947ecdf77d2caf
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
-Beauftragt ist genau der vorbereitete Folgeauftrag: ein von mir eindeutig
-bezeichnetes, bereits bereitgestelltes Herkunfts-/Erzeugungs-Textdokument
-gegen R01–R03 aus A4_E_REOPENING_REQUIREMENTS dokumentarisch bewerten.
-Belegobjekt (Pfad/Ref und Archivbezug): von mir noch zu benennen.
-Ohne dieses Objekt blockiert bleiben; keine Ersatzrecherche/Beschaffung.
-
-Zuerst Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand prüfen,
-ungesicherte Arbeit erhalten. Eigener Worktree/Branch/PR, kein Merge.
-Leseplan, Umfang, Sperren, Abnahme und Stop aus HANDOFF einhalten.
-Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md plus kurze HANDOFF-/Statuspflege.
-Bestehende Fachdateien unverändert. Keine Recherche, Beschaffung, reale
-Daten-/Dateiprüfung, Auswahl, Implementierung, Tests oder Rechnungen.
-A4 nicht umsetzen, A5/A6 nicht beginnen; keine Gatefreigabe, Unteragenten,
-Autorennachrichten oder Versand einer Beleganforderung. Ergebnis dokumentarisch
-prüfen, per Commit/eigenem PR sichern und genau einen Folgeauftrag vorbereiten.
-Kurze deutsche Updates. Für das dann eindeutig beauftragte Paket kein erneutes OK.
+Setze Netzel auf codex/netzel-a4-e-provenance-evidence-review fort.
+Gesicherter Inhaltscommit: 921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61
+Danach nur Sicherungsverweise; aktuellen Remote-Head/CI prüfen.
+Genau ein Folgeauftrag: die bereits autorisierte Herkunftsbelegbewertung
+R01–R03 nach Eingang fortsetzen. Kein erneutes OK für dieses Paket nötig.
+Belegobjekt (Pfad/Ref und Archivbezug): noch eindeutig vom Nutzer zu benennen.
+Ohne eindeutiges Belegobjekt blockiert bleiben; nur Stand/fehlenden Eingang
+melden, keine wiederholten Dokumentationspakete ohne neue Evidenz erzeugen.
+Keine Ersatzrecherche/Beschaffung oder Beleganforderung.
+Git-/PR-/Merge-/CI-/Branch-/Worktree-/Änderungsstand prüfen, Arbeit erhalten.
+Eigener Worktree/Branch/PR ohne Merge. Leseplan, Umfang, Abnahme und Stop aus
+HANDOFF einhalten. Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md fortschreiben plus
+kurze HANDOFF-/Statuspflege; bestehende Fachdateien unverändert.
+Keine Recherche, Beschaffung, realen Daten-/Dateiprüfungen, Auswahl, Klima-Joins,
+Implementierung, Tests oder Rechnungen. R04–R06/übrige Gates offen lassen.
+A4 nicht umsetzen, A5/A6 nicht beginnen. Keine Gatefreigabe, Unteragenten,
+Autorennachrichten oder versandte Beleganforderung. Dokumentarisch prüfen,
+Commit/eigenen PR sichern und genau einen begrenzten Folgeauftrag vorbereiten.
+Kurze deutsche Updates.
 ```
