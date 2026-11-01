@@ -21,6 +21,37 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: eigenständige Internetrecherche als Repository-Standard, 01.11.2026
+
+Nutzerwunsch umgesetzt: [AGENTS.md](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
+verlangt notwendige Recherche nach öffentlichen Quellen-/Herkunftsbelegen
+innerhalb des beauftragten Pakets ohne zusätzliches Recherche-OK.
+Codex sucht selbst, statt vom Nutzer Dokumenttitel/Pfad zu verlangen.
+Primärquellen und genaue Fundstellen, Reichweite und Nichtbeleg dokumentieren;
+Suche begrenzen. Aktuelle Nutzereinschränkungen gelten weiter;
+historische Paketsperren nicht pauschal fortschreiben. Keine technische
+App-/Netzfreigabe und keine automatische Ausführung weiterer Pakete.
+
+Regelpaket abgeschlossen; einziger fachlicher Folgeauftrag aus PR #63 in
+HANDOFF erhalten: historische Erzeugungs-/Exportverbindung der EMPD2-
+Klimafelder selbst recherchieren. Hier nicht ausgeführt. Reale Herkunftskette,
+Counts-Bereitschaft und übrige Gates weiter offen; A4-Umsetzung/A5/A6 nicht begonnen.
+
+Basis `560279524e8cd03ad721149b9602697b59efbd39`, PR #63 offen/ungemergt,
+mergebar; Head-CI 41286762809 erfolgreich. main `7f1826c`, sechs vorhandene
+Arbeitsverzeichnisse sauber erhalten. Eigener Worktree/Branch
+`codex/netzel-default-web-research`, eigener PR gegen #63 ohne Merge.
+Nur AGENTS/HANDOFF/Status geändert; Fachdateien und alte Statushistorie
+unverändert. Diff und vier lokale Links/Anker geprüft; 753 geschützte
+Blobs/Dateimodi einschließlich Symlink und der eine Fachfolgeauftrag unverändert.
+Keine wissenschaftliche Recherche, Daten-/Modellarbeit oder manuellen Tests.
+Inhaltscommit `65bd8b267300daf7cb8d55bd0c09f901d033391b` über
+[PR #64](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41287148906
+an diesem Inhaltscommit bei Abfrage wartend.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
+Regel vor einem gesondert beauftragten Merge noch nicht auf main.
+
 ## Aktueller Abschluss: EMPD2-Klimaherkunft im Internet recherchiert, 01.11.2026
 
 Nutzerkorrektur: Codex sucht passende Herkunftsdokumente selbst; kein vom
