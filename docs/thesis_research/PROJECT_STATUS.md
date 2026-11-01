@@ -40,6 +40,12 @@ Prüfung: Diff, lokale Verweise, erhaltene Statushistorie und übrige Git-Blobs.
 Technischer Furlanetto-Blocker bleibt erhalten; Regelpflege ist kein Nutzer-OK
 für das fachliche Folgepaket und keine Gate-/Mergefreigabe.
 
+Regelcommit `e9e9751a665e055368e176b1c90eaf91391bf902` in
+[PR #69](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/69)
+remote gesichert; offen/ungemergt gegen #68. Danach nur Sicherungsverweise.
+Automatische CI des aktuellen Heads separat prüfen; hier kein erfolgreicher
+neuer CI-Stand behauptet. Genau der bedingte Furlanetto-Folgeauftrag bleibt.
+
 ## Aktueller Abschluss: Furlanetto-Zugriffsversuch TRS 18, 01.11.2026
 
 [Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-zugriffsprüfung-für-trs-18-01112026)

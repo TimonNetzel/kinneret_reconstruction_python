@@ -108,3 +108,14 @@ gesichert; offen/ungemergt und bei Abfrage mergebar, gegen
 und [41290180432](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290180432)
 am Inhaltscommit bei Abfrage mit vier laufenden Checks. Danach nur
 Sicherungsverweise; aktuellen PR-Head/CI vor Fortsetzung prüfen. Kein Merge.
+
+## Sicherung der Fortsetzungsregeln
+
+Regelcommit `e9e9751a665e055368e176b1c90eaf91391bf902` in
+[PR #69](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/69)
+remote gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-access-review`
+(#68). Fortsetzungsbranch `codex/netzel-efficient-chat-continuation`.
+Danach nur dieser Sicherungsverweis und der Statusverweis ergänzt.
+CI des aktuellen Heads bei tatsächlichem Arbeitsbeginn prüfen.
+Genau ein Folgeauftrag bleibt die oben bedingte Furlanetto-Lesung; kein
+neues Fachpaket durch die Regelpflege begonnen oder autorisiert.
