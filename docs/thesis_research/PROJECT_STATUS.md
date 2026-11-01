@@ -54,6 +54,14 @@ Proben/Kohorten, Reparatur, Implementierung, manuellen Tests, wissenschaftlichen
 Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten,
 Nachrichten/Kontakte oder Merges.
 
+
+Inhaltscommit `346558c1290d0a0ca0506397ce5331ad3230fdfe` remote in
+[PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70)
+gesichert; offen/ungemergt gegen `codex/netzel-efficient-chat-continuation`
+(#69). Danach nur Sicherungsverweise ergänzt; aktuellen Head/CI bei
+tatsächlicher Fortsetzung prüfen. Kein Merge. Das Nutzer-OK bleibt gültig;
+nur der technische Eingang fehlt.
+
 ## Aktueller Abschluss: effiziente Chatfortsetzung, 01.11.2026
 
 Nutzerwunsch in [AGENTS](../../AGENTS.md#effiziente-fortsetzung-im-bestehenden-chat)

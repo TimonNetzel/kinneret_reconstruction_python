@@ -98,3 +98,10 @@ Sicherungsverweise“ gilt dort nur bis `9de48ac`, der spätere Regelzusatz ist
 Commit `47bbcc2`. Fachliche Basis bleibt
 [PR #68](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68),
 Inhaltscommit `0126234303f74c9e4212a354e61d0dc81eaa5ec6`.
+
+Inhaltscommit `346558c1290d0a0ca0506397ce5331ad3230fdfe` remote in
+[PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70)
+gesichert; offen/ungemergt gegen `codex/netzel-efficient-chat-continuation`
+(#69). Danach nur Sicherungsverweise ergänzt; aktuellen Head/CI bei
+tatsächlicher Fortsetzung prüfen. Kein Merge. Das Nutzer-OK bleibt gültig;
+nur der technische Eingang fehlt.
