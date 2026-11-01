@@ -137,6 +137,20 @@ Prüfungen notieren, soweit messbar. Keine Token-/Zeitersparnis daraus behaupten
 
 ## Dokumentarische Abnahme der Erstumsetzung
 
-Die Ergebnisse der drei im Plan festgelegten Fälle werden nach der Prüfung
-hier festgehalten. Keine PDF-Lektüre, Originalabrufe, neuen Chats/Unteragenten
-oder wissenschaftlichen Tests gehören zu dieser Abnahme.
+Am 01.11.2026 ausschließlich vorhandene Index-/Evidenzdaten und Git-Referenzen
+geprüft; keine Originaldatei geöffnet und kein Quellenabruf ausgeführt.
+
+| Planfall | Nachvollziehbarer Weg / Ergebnis |
+| --- | --- |
+| Fortsetzung findet TRS-18-Zitat ohne PDF | `furlanetto_thesis` → `findings` → D3 in `/reading/main_locations/2`: Druck-S.22 / PDF-S.36; Gruppenbindung über D4/D5 auf PDF-S.67/68. Gespeicherte Zitate/Fundstellen erreichbar, bestanden. |
+| Bekannte Sage-Challenge führt zu keinem Abruf | `furlanetto_supplement` → `access`: CONNECT 200, Website-403/Challenge, Inhalt ungelesen; ursprünglicher Versuch über `evidence_ref`, neue Startbedingungen über `retry_requires`. Kein neuer Request, bestanden. |
+| Fehlender dauerhafter Originalspeicher bleibt ungeklärt | `furlanetto_thesis.original`: Sitzungs-/Workspace-Locator und historischer Hash getrennt von `durable_storage_status: not_checked`. Lokale Dateipräsenz belegt keine Dauerablage; keine Archivierungsbehauptung, bestanden. |
+
+Zusätzlich: alle 19 JSON-Pointerreferenzen aufgelöst, fünf erwartete Evidenz-
+Blobs gegen Arbeitsstand und Basiscommit abgeglichen; lokale Links/Anker,
+wortgleicher wissenschaftlicher AGENTS-Schutzabschnitt, vollständige bisherige
+Statushistorie, genau ein Anschluss, fünf erlaubte Änderungsdateien und acht
+vorherige saubere Worktrees geprüft. AGENTS: 766 Wörter; HANDOFF bleibt inklusive
+Sicherungsverweis im Zielumfang 300–450 Wörter. Das sind Dokumentationsprüfungen
+und Umfangsangaben, keine gemessene Token-/Zeitersparnis. Kein wissenschaftlicher
+Test oder Modelllauf ausgeführt.

@@ -44,6 +44,13 @@ fachlich unverändert. Keine Pflichtaktion; keine neue Genehmigung für denselbe
 Auftrag. Token-/Zeitersparnis nicht gemessen oder behauptet. Sicherung siehe
 aktuellen Verweis in HANDOFF; Branch dient als unabhängig prüfbarer Head.
 
+Sicherung in [PR #74](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/74),
+offen/ungemergt gegen #73, Inhaltscommit `0cd217e62e8a371fee3708fca1121dab3da5d221`.
+Vier Checks dieses Commits bei Abfrage noch nicht abgeschlossen. Abschließend
+Abnahme/Verweis ergänzt: 19 Pointer, fünf unveränderte Evidenz-Blobs und drei
+Planfälle bestanden; AGENTS 766 Wörter, HANDOFF im Zielumfang. Aktuellen
+Branch-Head/CI vor tatsächlicher Fortsetzung prüfen. Kein Merge.
+
 ## Aktueller Abschluss: Plan für Quellenzugriff und Fortsetzung, 01.11.2026
 
 Nutzer beauftragt Internetrecherche und Umsetzungsplan gegen blockierte Quellen

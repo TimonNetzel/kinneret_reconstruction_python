@@ -57,3 +57,11 @@ Zuerst Quellenindex und referenzierte Evidenz nutzen; PhD nicht neu einlesen.
 Keine unveränderten BOA-/Sage-Abrufe. Grenzen, Abnahme und Stop aus HANDOFF
 und AGENTS einhalten. Ergebnis gemeinsam sichern, kein Merge.
 ```
+
+## Sicherung
+
+[PR #74](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/74),
+offen/ungemergt gegen #73; geprüfter Inhaltscommit
+`0cd217e62e8a371fee3708fca1121dab3da5d221`. Dessen vier Checks bei Abfrage
+noch nicht abgeschlossen. Danach Abnahme/Verweis ergänzt; aktuellen Remote-Head
+und CI bei tatsächlicher Fortsetzung prüfen. Kein Merge.
