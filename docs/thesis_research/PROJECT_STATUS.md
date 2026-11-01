@@ -46,6 +46,13 @@ remote gesichert; offen/ungemergt gegen #68. Danach nur Sicherungsverweise.
 Automatische CI des aktuellen Heads separat prüfen; hier kein erfolgreicher
 neuer CI-Stand behauptet. Genau der bedingte Furlanetto-Folgeauftrag bleibt.
 
+Ergänzung auf Nutzerwunsch, 01.11.2026, im selben PR #69: Bei Blockern künftig
+erforderliche und optionale Nutzeraktionen sowie selbst ausführbare Codex-Schritte
+konkret berichten. HANDOFF wendet dies auf Furlanetto an: Nutzer-OK weiterhin
+erforderlich, öffentliche Quellen selbst ermitteln/verifizieren, kein belegter
+Nutzerschritt zur Behebung der Sage-Challenge; keine Datei/Kontakte voraussetzen.
+Nur diese Regel und Übergabe ergänzt; keine neue Quellenprüfung oder Fachfreigabe.
+
 ## Aktueller Abschluss: Furlanetto-Zugriffsversuch TRS 18, 01.11.2026
 
 [Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-zugriffsprüfung-für-trs-18-01112026)

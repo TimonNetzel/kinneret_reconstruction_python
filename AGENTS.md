@@ -116,6 +116,13 @@ Auf Nutzerwunsch vom 01.11.2026 gilt:
   im selben Chat bei unverändertem Auftrag darauf verweisen, statt ihn bei jeder
   Antwort zu wiederholen. Kopiertext nur bei geändertem Folgeauftrag, auf Wunsch
   oder bei einem tatsächlich nötigen Chatwechsel ausgeben.
+- Bei Blockern zusätzlich konkret sagen, was der Nutzer tun **muss**, was er
+  optional tun **kann** und was Codex selbst übernimmt. Die nötige Aktion mit
+  ihrem Zweck und dem prüfbaren Eingang für die Fortsetzung nennen; ausstehendes
+  Nutzer-OK und technische Zugänglichkeit unterscheiden. Wenn aktuell keine
+  belegte Nutzeraktion den Blocker behebt, das ausdrücklich sagen, statt eine
+  ungesicherte Lösung zu versprechen. Selbst erledigbare Recherche nicht an den
+  Nutzer abgeben; keine unnötigen Extra-OKs, Nutzerdateien oder Kontakte verlangen.
 - Aufwand durch kleine Diffs, gezielte Ausschnitte und passende einmalige
   Prüfungen begrenzen. Tokenfreiheit nicht versprechen; keine unveränderten
   Dateien oder bloßen Statuswiederholungen eigens committen.

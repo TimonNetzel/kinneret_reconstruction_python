@@ -12,6 +12,15 @@ Auftrag bleibt vorbereitet, wartet auf Nutzer-OK und den technischen Eingang;
 letzter belegter Sage-Befund HTTP 403 / `cf-mitigated: challenge`.
 Kein erneuter Quellenabruf in diesem Paket. Fachliche Evidenz unverändert.
 
+**Was der Nutzer tun kann/muss:** Ein „OK“ kann den vorbereiteten Auftrag
+autorisieren; vor dessen Ausführung ist dieses OK erforderlich. Es beseitigt
+die Sage-Challenge nicht. Ein bereits bekannter öffentlicher Autorenoriginal-Link
+kann optional genannt werden; die Suche und Verifikation öffentlich zugänglicher
+Originale übernimmt Codex im erlaubten Rahmen selbst. Keine Nutzerdatei und
+kein Kontakt erforderlich. Aktuell ist keine Nutzeraktion verifiziert, die
+den Sage-Zugriff repariert; eine bloße Hostfreigabe genügt nicht. Fortsetzung
+erst mit tatsächlich lesbarem erlaubtem Originalzugang gemäß Startbedingung.
+
 ## Paketabschluss, 01.11.2026
 
 Nur den beauftragten Furlanetto-Versuch ausgeführt. Basis PR #67, Head
