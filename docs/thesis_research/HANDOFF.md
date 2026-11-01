@@ -29,7 +29,12 @@ Eigener Worktree `/workspace/netzel-provenance-source-search`, Branch
 `codex/netzel-provenance-source-search`; separate lokale Git-Objektablage
 mit exakt hashgeprüftem Basiscommit/allen Bäumen und sparsamer Dokumentausgabe.
 Übrige Dateiobjekte nicht heruntergeladen; keine Datenprüfung.
-Eigener gestapelter PR gegen #60, kein Merge; Sicherungsverweise nach Erstellung.
+Inhaltscommit `4eb90f9e2dd6fe4659dc8f04436b541aed5a415c` über
+[PR #63](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63)
+remote gesichert, offen/ungemergt und mergebar, gegen #60; kein Merge.
+Automatische [CI 41286663993](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41286663993)
+an diesem Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 Nur Ergebnisdokument und kurze HANDOFF-/Statuspflege.
 Quellen-/Versions-/Feldbezüge, sieben lokale Links/Anker und Diff geprüft;
@@ -106,8 +111,9 @@ Keine Dokumentationsschleife allein aufgrund fehlender Nutzerdatei.
 
 ```text
 Setze Netzel auf codex/netzel-provenance-source-search fort.
-Gesicherter Stand: Basis 76edec21a7f4caa13eb64c054f67033718d479c7 / PR #60;
-neue Inhaltscommit-/PR-Verweise werden nach Sicherung hier ergänzt.
+Inhaltscommit: 4eb90f9e2dd6fe4659dc8f04436b541aed5a415c
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Aktuellen PR-Head/CI prüfen; kein Merge.
 Prüfe den in HANDOFF vorbereiteten historischen Erzeugungs-/Exportnachweis:
 Mit welchem damaligen Programm-, Raster- und Auflösungsstand wurden die

@@ -49,7 +49,11 @@ mit exakt verifizierter Git-Basis; gestapelter PR gegen #60 ohne Merge.
 Nur Ergebnisdokument/HANDOFF/Status; Quellen, sieben lokale Links/Anker und
 Diff geprüft; 753 geschützte Blobs/Dateimodi einschließlich Symlink und alte
 Statushistorie unverändert.
-Neue Commit-/PR-/CI-Verweise nach Sicherung ergänzen.
+Inhaltscommit `4eb90f9e2dd6fe4659dc8f04436b541aed5a415c` über
+[PR #63](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63)
+remote gesichert, offen/ungemergt und mergebar, gegen #60 ohne Merge;
+automatische CI 41286663993 an diesem Inhaltscommit bei Abfrage laufend.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
 ## Aktueller Abschluss: automatische Folgeprompts verbindlich, 01.11.2026
 
