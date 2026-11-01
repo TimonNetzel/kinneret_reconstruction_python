@@ -2,66 +2,68 @@
 
 ## Aktueller Stand, 01.11.2026
 
-Nutzerauftrag „Weiter mit dem Gesamtprojekt Richtung A4 …“ begrenzt ausgeführt.
-[Ergebnis](./A4_MODERN_DATA_CANDIDATE.md): modernes Autorenobjekt
-`zanicc::pollen_climate` öffentlich identifiziert und strukturell geprüft.
-7.832 × 28 Y- und 7.832 × 8 X-Struktur, Spaltenrollen und identische Datenbytes
-an zwei Revisionen belegt. Keine Zeilennamen/Originalprobenkennungen oder
-probenbezogenen Zeit-/Herkunftsmetadaten im Objekt. Genaue Klimaperiode,
-Messnullen und ursprünglicher Nenner bleiben offen. Kein E gewählt, kein Gate
-geöffnet, kein Modelllauf. A1/A2/A3 und EMPD2-Prüfungen nicht wiederholt.
+Nutzer-„Mache weiter“ hat das vorbereitete RS10-Herkunftspaket autorisiert.
+[Prüfung abgeschlossen](./A4_RS10_ROW_PROVENANCE.md): Datenaufnahme-Commit
+enthält den gesicherten Blob, aber keine Herkunftstabelle/Aufbereitung.
+Zwei Suchrunden beendet; kein zeilenbezogener Originalnachweis ermittelt.
+Allen-Originalabruf HTTP 403, Methodeninhalt ungelesen.
 
-Basis [PR #74](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/74),
-`815b7f88e73efed00e52a9c88aaad954714bb68a`, offen/ungemergt, vier erfolgreiche
-Head-Checks. Branch `codex/netzel-a4-next-data-gap`, Worktree
-`/workspace/netzel-a4-next-data-gap`. Sicherung unten; kein Merge.
+Neuer Beleg: Salter-Townshend (2009), §6.1.1, Druck-S.138/PDF-S.152,
+beschreibt für einen älteren RS10-Stand teils angenommene Zählsummen N=400.
+Keine Übertragung auf heutige Zielzeilen, keine Fehlerbehauptung zu Menezes.
+Für das gepinnte `pollen_climate` fehlen weiterhin Originalproben-/Quellbindung,
+Messherkunft/ursprüngliches N und genauer Klima-Zeitbezug. Kein E gewählt,
+kein Gate geöffnet, kein Modelllauf. Objekt-/Strukturprüfung übernommen.
 
-## Genau ein Anschluss – RS10-Zeilenherkunft, vorbereitet
+Basis [PR #75](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/75),
+`10afa451def72a8a89ffe717dc0a00f5da3bc610`, offen/ungemergt,
+vier erfolgreiche Head-Checks. Branch `codex/netzel-rs10-row-provenance`,
+Arbeitsverzeichnis `/workspace/netzel-a4-next-data-gap`; Sicherung unten.
 
-**Ziel:** Für genau das gepinnte `pollen_climate`-Objekt einen öffentlichen
-Herkunfts-/Metadatennachweis finden, der Zeilen mit Originalproben,
-Sammlungen/Quellen und ihrem Klima-Zeitbezug verbindet. Keine breite
-Ersatzdatensuche oder Wiederholung von Verfügbarkeit/Struktur. Neues begrenztes
-Paket vorbereitet; noch nicht begonnen oder automatisch beauftragt.
+## Genau ein Anschluss – Originalbeleg bewerten, neuer Eingang fehlt
 
-**Eingang/Leseplan:** AGENTS, dieser HANDOFF, nur neuester PROJECT_STATUS;
-Quellenindex `menezes_modern_pollen_climate` → dortige Evidenz. Nur bei neuer
-Frage die exakten Autorenstellen nachladen. Erster zusätzlicher Gegenstand:
-Datenaufnahme-Commit `e51f6738df4a397b986c0cb9b6d089e612e90518` in `AndrMenezes/zanicc`
-auf Herkunftsverweise prüfen, keine Datenpatches drucken. Danach höchstens
-eine konkret verknüpfte ursprüngliche RS10-Datenbeschreibung/-ablage;
-falls dort kein Objekt verknüpft ist, höchstens zwei gezielte Suchrunden
-nach genau diesem Herkunftsnachweis. Keine erneute gesperrte Parnell-Route
-oder allgemeine Methodenlektüre.
+**Ziel/Eingang:** Nur mit neuem verifiziertem Originalbeleg die konkrete
+Zeilen-/Messherkunft bewerten: versionsgebundene Zuordnungstabelle oder
+nachweislich angewandter Aufbereitungsnachweis für Datenblob
+`e7a7d8b6fec3711af7a1888ba83871009ad8e981`. Zielzeile/-reihenfolge,
+Originalprobe, Sammlung/Quelle, ursprüngliche Counts/N gegenüber abgeleiteten
+Anteilen/angenommenen Summen und Zeit-/Klimabezug müssen zuordenbar sein.
+Unbekanntes erhalten. Dieser Anschluss ist vorbereitet; aktueller Suchauftrag
+abgeschlossen. Ohne neuen Beleg nicht ausführbar, keine erneute gleiche Suche.
 
-**Abnahme/Stop:** Quelle/Version/Fundstelle und tatsächliche Zeilenbindung
-sichern oder konkrete fehlende Tabelle/Schlüsselverbindung benennen. Bloße
-RS10-Ähnlichkeit, gleiche Zeilenzahl und Koordinaten ersetzen die Bindung nicht.
-Nach diesem Umfang stoppen. Keine weiteren Binärobjekte oder Beobachtungswerte,
-Kohorte, Datenwahl, Joins, Reparatur, Nennerrechnung, Forschungscode, Fits,
-Tests, Scores, Simulationen, Kontakte, Gates oder Merges. Alte Befunde erhalten;
-neue Evidenz gemeinsam mit kurzer Übergabe/Status sichern.
+**Leseplan:** AGENTS, dieser HANDOFF, nur neuester PROJECT_STATUS;
+Index `menezes_modern_pollen_climate`/`rs10_historical_measurement_provenance`
+→ Evidenz und konkrete Restlücke. Alte Objekt-/Struktur- und A1–A3-/EMPD2-
+Prüfungen übernehmen. Nur neue Frage/Version am Original lesen.
 
-**Separat vorgemerkt:** Furlanetto-Versionsabgleich bleibt autorisiert und am
-Zugang blockiert; bestehender Befund/PhD-Zitate nutzbar. Kein neuer BOA-/Sage-
-Abruf ohne belegten neuen Eingang. Keine PhD-Neulesung. R01–R03-Archivsuche,
-reales A4, A5/A6 und Monticchio-P1 bleiben im bisherigen Stand.
+**Abnahme/Stop:** Nach tatsächlicher Zeilenbindung oder konkretem Nichtbeleg
+stoppen. Keine Identität aus RS10-Label, Zeilenzahl, Koordinaten oder N=400;
+keine Werteanalyse, Datenwahl, Join, Reparatur, Zählsummenrechnung, neue
+Implementierung, manuellen wissenschaftlichen Tests, Fits, Scores, Simulationen,
+Gatefreigaben, Kontakte oder Merges. Neue Ergebnisse gemeinsam sichern.
+
+**Nutzeraktion:** Keine Pflichtdatei, Nachricht oder Konfigurationsaktion.
+Bekannter Originalbeleg/Link wäre optionaler neuer Eingang; seine Verfügbarkeit
+ist nicht belegt. Neuer Datenweg/Autorenkontakt nicht beschlossen.
+Furlanetto bleibt separat autorisiert, vorgemerkt und zugangsabhängig;
+keine PhD-Neulesung oder unveränderten BOA-/Sage-Abrufe. R01–R03, reales A4,
+A5/A6 und Monticchio-P1 behalten ihre bisherigen Grenzen.
 
 ## Folgeprompt
 
 ```text
-Prüfe begrenzt die RS10-Zeilenherkunft des in A4_MODERN_DATA_CANDIDATE.md
-gepinnten pollen_climate-Objekts gemäß HANDOFF. Vorhandene Evidenz übernehmen,
-Verfügbarkeit/Struktur und abgeschlossene EMPD2-/A1–A3-Prüfungen nicht wiederholen.
-Nur Herkunfts-/Metadatenbeleg suchen und Zeilenbindung dokumentarisch prüfen.
-Furlanetto vorgemerkt lassen; keine Datenwahl, Joins oder Modellläufe.
-An Umfang/Stop aus HANDOFF halten, gemeinsam sichern, kein Merge.
+Bewerte einen neu verfügbaren zeilenbezogenen Originalnachweis für den
+gepinnten pollen_climate-Datenblob gemäß HANDOFF. Bestehende Evidenz übernehmen.
+Ohne neuen belegten Eingang keine Wiederholung der abgeschlossenen RS10-Suche,
+Objekt-/Strukturprüfung oder anderen Fachprüfungen. Historischen N=400-Befund
+nicht auf aktuelle Zielzeilen übertragen. Nur Belegprüfung, keine Datenwahl,
+Joins oder Modellläufe; gemeinsam sichern, kein Merge.
 ```
 
 ## Sicherung
 
-[PR #75](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/75),
-offen/ungemergt gegen #74, Inhaltscommit
-`5bacf4ceab1c50acdd1dbda8d34b81222a3c73e9`. Vier automatische Head-Checks bei
-erster Abfrage laufend. Danach nur Sicherung/CI-Abgrenzung ergänzt; aktuellen
+[PR #76](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/76),
+offen/ungemergt gegen #75, Inhaltscommit
+`b44010ca6ddd84703d30ee26f3b12225738fcace`. Vier automatische Checks bei
+erster Abfrage wartend/laufend. Danach nur Sicherungsverweise ergänzt; aktuellen
 Head/CI bei tatsächlicher Fortsetzung prüfen. Kein Merge.
