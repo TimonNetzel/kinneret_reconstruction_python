@@ -21,6 +21,30 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Furlanetto-Zugriffsversuch TRS 18, 01.11.2026
+
+[Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-zugriffsprüfung-für-trs-18-01112026)
+und [Evidenz](./furlanetto_access_review_2026_11_01/evidence.json): Sage nun
+explizit erlaubt, genau ein erneuter Supplementabruf deshalb zulässig.
+Proxy-CONNECT HTTP 200; anschließend HTTP/2 403 / `cf-mitigated: challenge`,
+HTML statt DOCX, keine Weiterleitung. **Zugriffsdiagnose abgeschlossen,
+Originalmethodenlesung blockiert.** Kein inhaltlicher Nichtbeleg aus
+ungelesenem Supplement. Hauptmethoden nicht neu gelesen; W3/W4-Zugangsschranke
+historisch erhalten. Kein neu lesbares verifiziertes Autorenoriginal.
+TRS-18-/Gruppenbindung, Sammlung, Ablagerung, Integration und Unsicherheit
+getrennt bewertet; keine neue Zeitzuordnung, R04/R05 nicht geschlossen.
+
+Basis PR #67, offen/ungemergt, Head `947ae20621d929b51b13250b6a9665ff16778385`,
+vier erfolgreiche Checks (41289494570/41289490328). Fünf vorgefundene
+Worktrees sauber erhalten. Eigener Worktree/Branch
+`codex/netzel-furlanetto-access-review` gegen #67; kein Merge.
+Nur Review/Evidenz und HANDOFF/Status geändert, alte Berichte/Originale erhalten.
+Keine Projekt-/Modelltests oder wissenschaftlichen Rechnungen; JSON-/Link-/
+Diffprüfung. Genau ein Folgeauftrag in HANDOFF: dieselbe Originalmethodenlesung
+nach nachgewiesen verändertem erlaubtem lesbarem Zugriff; wartet auf Nutzer-OK
+und technischen Eingang. Keine identischen Abrufe bei unveränderter Challenge.
+Keine R01–R03-Neusuche, R06-/Gatefreigabe oder A4-Umsetzung/A5/A6.
+
 ## Aktueller Abschluss: Drei-Zeugen-Prüfung und korrigierte Lesevorgaben, 01.11.2026
 
 Nutzerauftrag ausgeführt: [AGENTS](../../AGENTS.md#eigenständige-internetrecherche-als-standard)

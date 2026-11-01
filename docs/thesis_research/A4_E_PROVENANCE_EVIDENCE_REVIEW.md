@@ -360,3 +360,53 @@ Statushistorie und übrige Fachdateien erhalten. Keine Datenreparatur,
 Modell-/Kohortenwahl, Projektimplementierung, manuellen Projekt-/Modelltests,
 wissenschaftlichen Rechnungen/Fits/Simulationen, A4-Umsetzung/A5/A6,
 Gatefreigabe, Unteragenten, Nachrichten/Kontakte oder Merges.
+
+
+## Furlanetto-Zugriffsprüfung für TRS 18, 01.11.2026
+
+**Auftrag und Basis:** nur Originalmethoden/Supplement zu DOI
+10.1177/0959683618810395 für Champvillair_a18 / TRS 18. PR #67 offen,
+Head `947ae20621d929b51b13250b6a9665ff16778385`, vier erfolgreiche
+Head-Checks; nach `42d365f` ausschließlich Sicherungsverweise. Fünf
+vorgefundene Worktrees sauber erhalten; eigener Worktree/Branch
+`codex/netzel-furlanetto-access-review` ab diesem Head. Leseplan aus HANDOFF,
+aktueller Drei-Zeugen-Abschnitt, W3–W6/Champvillair und R04/R05 samt
+Herkunftsregeln gelesen; keine neue Inventur.
+
+**Tatsächlich geänderter Zugriff:** `journals.sagepub.com` steht jetzt in
+`/etc/codex/network-policy.json` unter `egress_rules`. Laufzeitstatus meldet
+aktuelle Beobachtungen, verbunden, eingeschränkte Policy `enforced`.
+Deshalb genau ein neuer Abruf des bekannten W5-Supplements über den
+unveränderten Proxy mit TLS-Prüfung; keine Wiederholung unter gleichen
+Bedingungen. [Neues Evidenzprotokoll](./furlanetto_access_review_2026_11_01/evidence.json)
+sichert URL, Abrufbefehl, ausgewählte Antwortfelder und Antwort-Hash.
+
+**Konkrete neue Zugriffslücke:** Proxy-CONNECT nun HTTP 200, danach HTTP/2
+403, `Content-Type: text/html; charset=UTF-8`, `cf-mitigated: challenge`,
+Titel „Just a moment...“, 6.443 Antwortbytes. Keine Weiterleitung/Location;
+kein DOCX erhalten. Die Hostfreigabe allein schafft keinen lesbaren Zugriff.
+Keine Challenge-Lösung, URL-Varianten, Proxyumgehung oder Wiederholungsabrufe.
+An dieser Stelle gemäß Auftrag gestoppt. Hauptmethoden nicht neu gelesen;
+die historische Zugangsschranke aus W3/W4 bleibt. W6 bietet hier keinen
+neu verfügbaren verifizierten Autoren-Volltextzugriff; bekannte Hosts nicht
+in der geltenden Quellenfreigabe, kein Web-Lesewerkzeug verfügbar.
+Kein Nutzerdokument vorausgesetzt und keine Datei angefordert.
+
+| Getrennter Nachweis | Ergebnis und genaue Grenze |
+| --- | --- |
+| TRS-18-/Gruppenbindung | W1/W2 verbinden Archivkennung, Originalkennung und DOI. Keine gelesene Originalstelle belegt die Geltung einer Methodengruppe für TRS 18. |
+| Sammlung | Nur vorhandene W1/W2-Angaben `moss` und `hand picking - multiple samples`; Sammlungsdatum, Anzahl, Zusammensetzung und Gleichzeitigkeit offen. |
+| Ablagerung | Repräsentierte Ablagerungszeit weiterhin nicht belegt. |
+| Integration | Kein gelesenes Originalintervall; Mehrfachentnahme allein belegt keine Dauer. |
+| Unsicherheit | Nicht bestimmt; keine Nullunsicherheit und kein Alter aus Publikationsjahr. |
+
+**Abnahme/Stop:** Zugriffsversuch und Diagnose dokumentarisch abgeschlossen;
+Originalmethodenprüfung **blockiert**, keine inhaltliche Nichtbelegprüfung
+des unlesbaren Supplements behauptet. Keine neue Methoden-/Versions-/Seiten-
+oder Zitatangabe erfunden. R04/R05 unverändert offen im bisherigen Teilumfang,
+R06/übrige Gates nicht freigegeben. Alte Quellen und Berichte einschließlich
+W1–W6 bleiben unverändert; neuer Befund ergänzt die historische Proxy-Diagnose.
+Keine Werteanalyse, neue Probe/Kohorte, Reparatur, Implementierung, manuellen
+Tests, wissenschaftlichen Rechnungen, R01–R03-Neusuche, A4-Umsetzung/A5/A6,
+Unteragenten, Kontakte/Nachrichten oder Merges. JSON, Referenzen und Diffumfang
+geprüft; keine dauerhafte Archivierung der temporären Fehlerantwort behauptet.
