@@ -108,3 +108,11 @@ gesichert; offen/ungemergt gegen `codex/netzel-efficient-chat-continuation`
 tatsächlicher Fortsetzung prüfen. Dieser Absatz beschreibt die historische
 Sicherung von #70. Das Nutzer-OK bleibt gültig; die neue BOA-Zugriffslücke
 steht oben. Kein Merge.
+
+Inhaltscommit `577ff1cd28b5a6d8282e8bbb647e7a3d3dda2b80` remote in
+[PR #71](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/71)
+gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-public-original`
+(#70). Vier automatische Head-Checks bei Abfrage noch laufend, kein Erfolg
+behauptet. Danach nur dieser Sicherungsverweis ergänzt; aktuellen Head/CI
+bei tatsächlicher Fortsetzung prüfen. Kein Merge. Genau ein Anschluss bleibt
+die oben bedingte Originallesung; Nutzer-OK weiterhin gültig.
