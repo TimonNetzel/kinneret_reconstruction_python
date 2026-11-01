@@ -43,7 +43,12 @@ Datenbank-/Raster-/ZIP-Inhalte geprüft, keine Implementierung, manuellen Tests,
 Rechnungen, Unteragenten oder Nachrichten. A4-Umsetzung/A5/A6 nicht begonnen,
 keine Gates freigegeben. Genau ein R04/R05-Folgeauftrag in HANDOFF vorbereitet,
 wartet auf Nutzer-OK; öffentliche Belege beschafft Codex selbst.
-Sicherungsverweis wird nach Commit/PR eingetragen.
+Inhaltscommit `6a147f10313f92b022853a98375ecad93c1bf301` über
+[PR #65](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65)
+remote gesichert; offen/ungemergt und mergebar, gegen #64 ohne Merge.
+Automatische [CI 41287777279](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287777279)
+am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 ## Aktueller Abschluss: eigenständige Internetrecherche als Repository-Standard, 01.11.2026
 

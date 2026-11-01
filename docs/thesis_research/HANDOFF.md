@@ -17,7 +17,12 @@ Head-CI [41287220663](https://github.com/TimonNetzel/kinneret_reconstruction_pyt
 erfolgreich. Fünf vorgefundene Worktrees sauber erhalten; kein Reset/Stash/Merge.
 Eigener Worktree `/workspace/netzel-historical-export-evidence`, Branch
 `codex/netzel-historical-export-evidence`; eigener gestapelter PR gegen #64.
-Sicherungsverweis wird nach Commit/PR eingetragen.
+Inhaltscommit `6a147f10313f92b022853a98375ecad93c1bf301` über
+[PR #65](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65)
+remote gesichert; offen/ungemergt und mergebar, gegen #64 ohne Merge.
+Automatische [CI 41287777279](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287777279)
+am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 Nur Review ergänzt und HANDOFF/Status gepflegt. 14 gelesene Quelltexte gegen
 Git-Blob-SHAs geprüft; sieben lokale Links/Anker und Drei-Dateien-Diff geprüft,
@@ -73,7 +78,9 @@ keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
 
 ```text
 Setze Netzel auf codex/netzel-historical-export-evidence fort.
-Sicherungsverweis wird nach Commit/PR eingetragen.
+Inhaltscommit: 6a147f10313f92b022853a98375ecad93c1bf301
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
 Eigener Worktree/Branch/PR, kein Merge.
 Führe ausschließlich den in HANDOFF vorbereiteten R04/R05-Auftrag aus:
