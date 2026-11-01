@@ -21,6 +21,30 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: historischer EMPD2-Erzeugungs-/Exportnachweis, 01.11.2026
+
+[Review H1–H7](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#historischer-erzeugungs--und-exportnachweis-01112026)
+ergänzt: historische Basiscontainer-Vorgabe 5m, unversioniertes latlon-utils,
+WorldClim-2.0-Downloaderlogik und GitHub-Exportspur vom 05.10.2020.
+Öffentliche Supplementbeziehung v2.0/Zenodo↔PANGAEA belegt; tatsächlich
+angewandter Programm-/Raster-/Auflösungsstand und konkrete Verbindung zu den
+PANGAEA-SQLite-Klimafeldern unbelegt. **Dokumentarisch abgeschlossen und an
+dieser Restlücke gestoppt; reale Herkunftskette weiter blockiert.** R01–R03
+teilweise belegt, keine Version/Periode/Auflösung ausgewählt, `unverified` erhalten.
+
+Basis #64-Head `7628f1267ff60ec24f191365826e87a6add9caa5`, nach Inhaltscommit
+`65bd8b2` dort nur Sicherungsverweise; #64 offen/ungemergt, mergebar,
+Head-CI 41287220663 erfolgreich. Fünf bestehende Worktrees sauber erhalten.
+Eigener Worktree/Branch `codex/netzel-historical-export-evidence`, eigener
+PR gegen #64 ohne Merge. Nur Review/HANDOFF/Status; übrige Fachdateien und
+alte Statushistorie unverändert. 14 gelesene Quelltexte gegen Blob-SHAs geprüft;
+Sieben lokale Links/Anker und Diff geprüft; 753 geschützte Blobs/Dateimodi identisch. Keine realen Daten-/
+Datenbank-/Raster-/ZIP-Inhalte geprüft, keine Implementierung, manuellen Tests,
+Rechnungen, Unteragenten oder Nachrichten. A4-Umsetzung/A5/A6 nicht begonnen,
+keine Gates freigegeben. Genau ein R04/R05-Folgeauftrag in HANDOFF vorbereitet,
+wartet auf Nutzer-OK; öffentliche Belege beschafft Codex selbst.
+Sicherungsverweis wird nach Commit/PR eingetragen.
+
 ## Aktueller Abschluss: eigenständige Internetrecherche als Repository-Standard, 01.11.2026
 
 Nutzerwunsch umgesetzt: [AGENTS.md](../../AGENTS.md#eigenständige-internetrecherche-als-standard)

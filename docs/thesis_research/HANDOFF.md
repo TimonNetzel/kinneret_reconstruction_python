@@ -1,167 +1,92 @@
-# Netzel: eigenständige Internetrecherche dauerhaft als Standard
+# Netzel: historischer EMPD2-Erzeugungs-/Exportnachweis
 
-## Neue Arbeitsregel gesichert, 01.11.2026
+## Paketabschluss, 01.11.2026
 
-Auf ausdrücklichen Nutzerwunsch legt [AGENTS.md](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
-jetzt fest: fehlende öffentliche Herkunfts-/Quellenbelege innerhalb des
-beauftragten Pakets selbst im Internet suchen und lesen, ohne zusätzliches
-Recherche-OK. Kein vom Nutzer zu benennendes Dokument als künstliche
-Startbedingung. Primärquellen, Version/Fundstelle und Aussagegrenzen festhalten;
-gezielt abschließen, auch bei Nichtbeleg. Aktuelle Nutzereinschränkungen und
-technische Zugriffsgrenzen beachten. Keine automatische Folgeausführung.
+[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#historischer-erzeugungs--und-exportnachweis-01112026)
+ist um H1–H7 ergänzt. **Dokumentarisch abgeschlossen, reale Herkunftskette
+weiter blockiert:** historischer Basiscontainer mit 5m-Vorgabe und unversionierter
+latlon-utils-Installation; historischer WorldClim-2.0-Downloader; GitHub-Spur
+eines PostgreSQL-/TSV-Exports vom 05.10.2020. Öffentliche Supplementbeziehung
+v2.0/Zenodo↔PANGAEA belegt, konkrete Erzeugungs-/SQLite-Feldidentität unbelegt.
+Keine Auflösung/Unterversion/Periode für PANGAEA festgelegt; R01–R03 teilweise
+belegt, `unverified` bleibt. Begrenzt an der fehlenden Lauf-/Exportbindung gestoppt.
 
-Die Regel ist versioniert im Arbeitsbranch gesichert und gilt beim Arbeiten
-mit diesem Stand. Sie verändert keine App-/Netzberechtigungen und ist vor
-einem gesondert beauftragten Merge noch nicht Bestandteil von main.
-Der einzige fachliche Folgeauftrag unten bleibt unverändert vorbereitet;
-dieses Workflowpaket führt die historische Exportrecherche nicht aus.
+Basis/PR-#64-Head `7628f1267ff60ec24f191365826e87a6add9caa5` geprüft;
+nach `65bd8b2` dort nur Sicherungsverweise. #64 offen/ungemergt und mergebar,
+Head-CI [41287220663](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287220663)
+erfolgreich. Fünf vorgefundene Worktrees sauber erhalten; kein Reset/Stash/Merge.
+Eigener Worktree `/workspace/netzel-historical-export-evidence`, Branch
+`codex/netzel-historical-export-evidence`; eigener gestapelter PR gegen #64.
+Sicherungsverweis wird nach Commit/PR eingetragen.
 
-Basis `560279524e8cd03ad721149b9602697b59efbd39`,
-[PR #63](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63)
-offen/ungemergt, mergebar; Head-CI 41286762809 erfolgreich.
-main weiterhin `7f1826c`; sechs vorhandene Arbeitsverzeichnisse sauber erhalten.
-Eigener Worktree `/workspace/netzel-default-web-research`, Branch
-`codex/netzel-default-web-research`; eigener PR gegen #63 ohne Merge.
-Nur AGENTS und kurze HANDOFF-/Statuspflege; bestehende Fachdateien unverändert.
-Diff und vier lokale Links/Anker geprüft; 753 geschützte Blobs/Dateimodi,
-Statushistorie und der eine fachliche Folgeauftrag unverändert.
-Keine Recherche oder manuellen Projekt-/Modelltests in diesem Regelpaket.
-Inhaltscommit `65bd8b267300daf7cb8d55bd0c09f901d033391b` über
-[PR #64](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64)
-remote gesichert, offen/ungemergt und mergebar, gegen #63 ohne Merge.
-Automatische CI 41287148906 an diesem Inhaltscommit bei Abfrage wartend.
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
+Nur Review ergänzt und HANDOFF/Status gepflegt. 14 gelesene Quelltexte gegen
+Git-Blob-SHAs geprüft; sieben lokale Links/Anker und Drei-Dateien-Diff geprüft,
+753 geschützte Git-Blobs/Dateimodi und alte Statushistorie unverändert. Keine Prüfung realer Datenbytes,
+keine manuellen Projekt-/Modelltests oder Rechnungen; automatische CI separat.
+Alle übrigen Fachdateien unverändert. Keine Gatefreigabe/A4-Umsetzung/A5/A6,
+Unteragenten, Nachrichten oder Merges. Git-Fetch über freigegebenen Netzpfad
+möglich; Recherche über Web-/GitHub-Anbindung, kein Nutzerdatei-Blocker.
 
-## Ergebnis und korrigierter Arbeitsauftrag, 01.11.2026
+## Genau ein Folgeauftrag: Probenzeit und Integration – vorbereitet, wartet auf Nutzer-OK
 
-Der Nutzer hat klargestellt, dass er kein bestimmtes Herkunftsdokument kennt
-und Codex selbst im Internet danach suchen soll. Die bisherige Startbedingung
-„vom Nutzer benanntes, bereits bereitgestelltes Belegobjekt“ und das zugehörige
-Rechercheverbot sind für dieses neue Recherchepaket aufgehoben.
-Keine erneute Bestätigung für dieses eindeutig beauftragte Paket verlangt.
+**Ziel:** öffentlich dokumentierte Bedeutung und Herkunft von Sammlung,
+Probenalter, Altersunsicherheit und zeitlicher Integration in EMPD2 gegen
+R04/R05 bewerten. Nach abgeschlossener R01–R03-Suche die separate Zeitseite
+klären; keine Behauptung gemeinsamer Klimaperiodengeltung und kein R06-Nachweis.
 
-[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md)
-ordnet konkrete Primärquellen R01–R03 zu: zusätzlicher Periodenbezug
-1970–2000 bei Davis 2024, veröffentlichte PostgreSQL-Feldabbildung und
-historische WorldClim2.0-/spätere 2.1-Dokumentation der Bibliothek.
-**Recherche dokumentarisch abgeschlossen; die konkrete Raster-/Versions-/
-Perioden-/Ausführungskette des PANGAEA-SQLite-Archivs bleibt teilweise
-unbelegt.** Keine angewandte Unterversion oder Archivperiode ergänzt,
-bestehende Fachdateien und `unverified` unverändert.
+**Eingänge/Leseplan:** Stand/PR-Head/CI prüfen, ungesicherte Arbeit erhalten;
+eigener Worktree/Branch/PR ohne Merge. AGENTS, diese HANDOFF, nur neuester
+PROJECT_STATUS-Abschnitt; Review nur historischer Abschluss/Stop;
+A4_E_REOPENING_REQUIREMENTS nur R04/R05 und Herkunftsregeln;
+A4_E_CLIMATE_TIME_GAPS nur Zeitnachweiskette; MODEL_CONTRACT Eingänge/Stop;
+MODULAR_RECONSTRUCTION_PLAN §1, §2 nur A4, §4.
+Dann selbst öffentliche Original-/Herausgebertexte suchen und gezielt lesen:
+Davis 2020 Methoden/Metadaten, PANGAEA.909130-Metadatendefinitionen,
+README/Metadatendokumentation am EMPD-data-v2.0-Commit
+`737b76eb269b071422edded6ac332654ff83c103` sowie unmittelbar verknüpfte
+historische Definitionstexte. Öffentlich auffindbare Dokumente beschafft Codex
+nach AGENTS selbst ohne zusätzliches Recherche-OK. Kein Nutzer-Dokument nötig.
 
-Basis `76edec21a7f4caa13eb64c054f67033718d479c7`,
-[PR #60](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/60)
-offen/ungemergt, mergebar; dessen Head-CI
-[41284372025](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41284372025)
-erfolgreich. Nach Inhaltscommit `1244c84` dort nur Sicherungsverweise.
-main `7f1826c`; fünf alte Worktrees sauber erhalten.
-Git-Fetch wegen nicht erreichbarem Cloud-Proxy fehlgeschlagen.
-GitHub-Anbindung liefert Remote-Metadaten und Dokumente.
-Eigener Worktree `/workspace/netzel-provenance-source-search`, Branch
-`codex/netzel-provenance-source-search`; separate lokale Git-Objektablage
-mit exakt hashgeprüftem Basiscommit/allen Bäumen und sparsamer Dokumentausgabe.
-Übrige Dateiobjekte nicht heruntergeladen; keine Datenprüfung.
-Inhaltscommit `4eb90f9e2dd6fe4659dc8f04436b541aed5a415c` über
-[PR #63](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63)
-remote gesichert, offen/ungemergt und mergebar, gegen #60; kein Merge.
-Automatische [CI 41286663993](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41286663993)
-an diesem Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
-aktuellen PR-Head/CI prüfen.
+**Umfang:** nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md um einen datierten
+R04/R05-Abschnitt ergänzen, kurze HANDOFF-/Statuspflege. Je Aussage Quelle,
+Stand, Fundstelle, Zeitbedeutung/Unsicherheit, Archiv-/Probenreichweite und Grenze.
+Dokumentierte allgemeine Definition von tatsächlicher Zuordnung zu konkreten
+Proben unterscheiden. Fehlende Integration nicht als Nullunsicherheit behandeln.
 
-Nur Ergebnisdokument und kurze HANDOFF-/Statuspflege.
-Quellen-/Versions-/Feldbezüge, sieben lokale Links/Anker und Diff geprüft;
-753 geschützte Blobs/Dateimodi einschließlich Symlink und alte Statushistorie
-bytegleich erhalten.
-Keine manuellen Projekt-/Modelltests oder Rechnungen; automatische CI
-gesondert. A1/A2 dokumentarisch abgeschlossen, A3 nur endlich-synthetisch;
-A4-Kalibrierung/A5/A6 nicht begonnen. Reale Gates bleiben offen.
+**Abnahme/Stop:** R04 und R05 getrennt belegt/teilweise belegt/unbelegt bewerten,
+Restlücken konkret nennen. Nach relevanten auffindbaren Herausgeberpassagen
+abschließen, auch bei Nichtbeleg; keine allgemeine Literatur-/Dokumentationsschleife.
+Keine Wiederholung der R01–R03-Suche. Bei nur durch reale Proben-/Dateiprüfung,
+Kontakt oder fachliche Auswahl schließbarer Lücke stoppen, keine Nutzerdatei
+als künstlichen Blocker erfinden. Quellen-/Link-/Diff-/Blobprüfung,
+Statushistorie erhalten, Commit/eigener PR; genau einen nächsten Auftrag
+vorbereiten und Folgeprompt automatisch ausgeben.
 
-## Genau ein Folgeauftrag: historischen Erzeugungs-/Exportstand belegen – vorbereitet, wartet auf Nutzer-OK
-
-**In einfachen Worten:** herausfinden, ob die Herausgeber öffentlich
-dokumentiert haben, mit welchem damaligen Programm-/Klimadatenstand der
-bei PANGAEA veröffentlichte Datenbankexport erzeugt wurde. Codex sucht selbst;
-der Nutzer muss kein Dokument und keinen technischen Pfad liefern.
-Ein „weiter“ im passenden Kontext beauftragt genau dieses Paket.
-
-**Ziel:** die fehlenden Verbindungen aus R01–R03 an ihrer konkreten Lücke
-prüfen: Bibliothek/Rasterstand/Auflösung → dokumentierte Ausführung →
-PANGAEA.909130 bzw. abgegrenzter Release/Export → benannte Klimafelder.
-Die neuen Belege aus dem Review nicht als bereits geschlossene Archivkette
-übernehmen.
-
-**Eingänge und Leseplan:** zuerst Git-/PR-/Merge-/CI-/Branch-/Worktree-/
-Änderungsstand prüfen, ungesicherte Arbeit erhalten; eigener Worktree/Branch/PR,
-kein Merge. AGENTS, diese HANDOFF, nur neuesten PROJECT_STATUS-Abschnitt;
-Review insbesondere S5/S7–S10 und R01–R03; unveränderte Anforderungen
-R01–R03/Herkunftsregeln; MODEL_CONTRACT Eingänge/Stop; Plan §1, §2 nur A4, §4.
-Danach nur gezielt öffentlich auffindbare historische Release-/Build-/
-Exportdokumentation, relevante Commit-Metadaten und statische
-Verarbeitungspassagen der Herausgeber: PANGAEA.909130-Metadaten,
-EMPD2/EMPD-data v2.0 (`737b76e`, Zenodo.4066498),
-EMPD2/EMPD-admin und die dort tatsächlich verknüpfte Build-/Abhängigkeitskette,
-Chilipp/latlon-utils zu dem damit belegten historischen Stand.
-Keine ungeprüfte Annahme, dass heutige master-Stände historische Exporte erklären.
-
-**Erlaubter Umfang:** das bereits angelegte
-`A4_E_PROVENANCE_EVIDENCE_REVIEW.md` um einen klar datierten Abschnitt zu
-genau dieser historischen Bindung ergänzen, plus kurze HANDOFF-/Statuspflege.
-Neue Fundstellen mit dauerhaftem Dokument-/Commit-/Objektbezug,
-Originalaussage/Übernahme, Archiv-/Feldgeltung und Grenze dokumentieren.
-R01–R03 getrennt belegt/teilweise belegt/unbelegt bewerten; keine reale
-Version/Periode auswählen oder Verträge ausfüllen.
-
-**Begrenzung und Stop:** Recherche auf die drei Verbindungsschritte
-(1) historische Build-/Bibliotheks-/Rasterbindung,
-(2) dokumentierte Anwendung/Export,
-(3) Zuordnung PANGAEA versus GitHub-/Zenodo-Ausgabe begrenzen.
-Nach Prüfung der dafür auffindbaren relevanten Herausgeberunterlagen
-abschließen, auch bei Nichtbeleg. Keine allgemeinen WorldClim-Texte als
-weitere Evidenzschleife. Fehlende veröffentlichte Ausführungs-/ID-Bindung
-explizit ausweisen; kein Nutzer-Dokument als neue Startbedingung verlangen.
-Wenn nur reale Dateiprüfung oder Kontakt weiterhelfen könnte, das als
-Grenze benennen und hier stoppen.
-
-Alle übrigen bestehenden Fachdateien einschließlich Anforderungen,
-MODEL_CONTRACT, Designs, Modelle, Resultate, Register, Importer, Flags,
-Counts/Gruppen, Baseline und CLI/App bleiben unverändert.
-Keine Rohdaten, Raster, Datenbank-Dumps, SQLite-/TSV-Zeilen oder ZIP-Inhalte
-öffnen/beschaffen/prüfen; keine reale Daten-/Modellwahl, Joins, Reparatur,
-Implementierung, manuelle Tests, Rechnungen, Fits oder Simulationen.
-R04–R06 und alle übrigen Gates außerhalb dieses Pakets; A4 nicht umsetzen,
-A5/A6 nicht beginnen. Keine Freigabe, Unteragenten, Autoren-/andere Nachrichten,
-Beleganforderungsversand oder Merges.
-
-**Abnahme:** konkrete historische Herkunftsverbindung oder begrenzter
-Nichtbeleg mit genauer Restlücke; keine Gesamtfreigabe.
-Quellen-/Link-/Diff-/Blobprüfung, Statushistorie erhalten; Commit/eigener PR
-ohne Merge. Genau einen anschließenden sinnvollen Auftrag vorbereiten,
-dessen Eingänge Codex selbst beschaffen kann, soweit öffentlich verfügbar.
-Keine Dokumentationsschleife allein aufgrund fehlender Nutzerdatei.
+**Schutz:** keine Rohdaten-/Datenbank-/Raster-/ZIP-/TSV-Zeilenprüfung oder
+-beschaffung, keine Proben-/Daten-/Modellwahl, Joins, Reparatur, Implementierung,
+manuellen Tests, Rechnungen, Fits oder Simulationen. Übrige Fachdateien,
+Anforderungen, Verträge, Modelle/Resultate/Register, Importer/Flags,
+Counts/Gruppen, Baseline und CLI/App unverändert. R06/übrige Gates offen;
+keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-default-web-research fort.
-Inhaltscommit: 65bd8b267300daf7cb8d55bd0c09f901d033391b
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
-Aktuellen PR-Head/CI prüfen; ungesicherte Arbeit erhalten.
-Eigener Worktree/Branch/PR; kein Merge.
-Prüfe den in HANDOFF vorbereiteten historischen Erzeugungs-/Exportnachweis:
-Mit welchem damaligen Programm-, Raster- und Auflösungsstand wurden die
-EMPD2-Klimafelder des PANGAEA-Archivs 909130 erzeugt, und ist die Verbindung
-zum GitHub-/Zenodo-Release v2.0 öffentlich dokumentiert?
-Suche die passenden historischen Herausgeberunterlagen nach dem
-Recherche-Standard in AGENTS.md selbst im Internet, ohne zusätzliches OK.
-Ich muss kein Dokument benennen oder bereitstellen.
-Leseplan, genau begrenzten Umfang, Abnahme und Stop aus HANDOFF einhalten.
-Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md ergänzen und HANDOFF/Status kurz pflegen.
-Keine Rohdaten-/Datenbank-/Raster-/ZIP-Prüfung, Auswahl, Implementierung,
-manuellen Tests oder Rechnungen; bestehende übrige Fachdateien unverändert.
-Keine A4-Umsetzung, A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
-Bei fehlendem öffentlichen Nachweis die konkrete Lücke festhalten und stoppen.
+Setze Netzel auf codex/netzel-historical-export-evidence fort.
+Sicherungsverweis wird nach Commit/PR eingetragen.
+Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
+Eigener Worktree/Branch/PR, kein Merge.
+Führe ausschließlich den in HANDOFF vorbereiteten R04/R05-Auftrag aus:
+öffentliche EMPD2-Herausgeberbelege zu Probenzeit, Sammlung,
+Altersunsicherheit und Integration selbst suchen und bewerten.
+Leseplan, Umfang, Abnahme und Stop aus HANDOFF einhalten;
+Recherche nach AGENTS ohne zusätzliches OK und ohne Nutzerdatei.
+Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md ergänzen, HANDOFF/Status kurz pflegen.
+Keine erneute R01–R03-Suche, keine R06-Freigabe.
+Keine Rohdaten-/Datenbank-/Raster-/ZIP-/TSV-Zeilenprüfung, Auswahl,
+Implementierung, manuellen Tests oder Rechnungen; übrige Fachdateien unverändert.
+Keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
+Bei fehlendem öffentlichen Nachweis konkrete Lücke nennen und stoppen.
 Ergebnis prüfen, per Commit/eigenem PR sichern, genau einen Folgeauftrag
-vorbereiten und den Folgeprompt automatisch mitliefern.
-Kurz und verständlich auf Deutsch berichten. Für dieses Paket kein erneutes OK.
+vorbereiten und Folgeprompt automatisch mitliefern. Kurz auf Deutsch berichten.
 ```

@@ -102,3 +102,77 @@ genau drei geänderte/neue Dateien, erhaltene Statushistorie und geschützte
 Git-Blobs/Dateimodi einschließlich Symlink. Diese Git-Prüfung ist keine
 Prüfung realer Klima-/Pollen-Dateien. Automatische Repository-CI getrennt
 von nicht ausgeführten manuellen Projekt-/Modelltests berichten.
+
+## Historischer Erzeugungs- und Exportnachweis, 01.11.2026
+
+Fortsetzung ab PR #64, Inhaltscommit `65bd8b267300daf7cb8d55bd0c09f901d033391b`,
+geprüfter Head/Basis `7628f1267ff60ec24f191365826e87a6add9caa5`.
+Dieser Abschnitt ergänzt S1–S10; deren damalige Bewertung bleibt als Historie
+erhalten. Recherchiert wurden ausschließlich die drei beauftragten Verbindungen:
+historischer Build/Rasterstand, Anwendung/Export und PANGAEA↔GitHub/Zenodo.
+
+**Antwort:** Öffentlich belegt sind eine historische **Buildvorgabe mit 5m**,
+ein **WorldClim-2.0-Downloader im historischen Bibliothekscode** und eine
+**Supplementbeziehung des Release v2.0 zu PANGAEA.909130**. Damit ist weiterhin
+**nicht belegt, mit welchem tatsächlich installierten Programm-/Rasterstand
+und welcher wirksamen Auflösung die PANGAEA-SQLite-Klimafelder erzeugt wurden**.
+Die publizierten 30 Bogensekunden bleiben eine Anwendungsaussage (S1), die
+5m eine andere, hier nicht archivgenau zugeordnete Buildvorgabe. Keine der
+beiden Angaben wird zur nachgewiesenen Laufkonfiguration des Zielobjekts erklärt.
+
+### Historische Quellen und Reichweite
+
+Alle Abrufe am 01.11.2026; knappe eigene Übernahmen, kein fremder Code ausgeführt.
+Commit-Datumsfilter identifizieren erreichbare historische Quellstände, keine
+damals installierten Images/Pakete. Unversionierte Image-/master-Verweise
+werden nicht nachträglich zu historischen Pins umgedeutet.
+
+| ID | Herausgeberquelle, unverwechselbarer Stand und Fundstelle | Dokumentierter Befund und Beleggrenze |
+| --- | --- | --- |
+| H1 | EMPD2/EMPD-data v2.0, Commit `737b76eb269b071422edded6ac332654ff83c103`: [Dockerfile Z.1–14](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/Dockerfile#L1), Blob `61d8336743b32dfcdb8140f37815675ae2119a9e`; [.travis.yml Z.13–17](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/.travis.yml#L13), Blob `a2249bccef63f7705bfd72f342b2397aa28c26b9` | Verweist auf `empd2/empd-admin-base` ohne Tag/Digest; CI beschreibt Build und Testaufruf. Dauerhafter Quellstand, aber kein Image-/Ausführungsbeleg für den PANGAEA-Export. |
+| H2 | EMPD2/EMPD-admin, [Installationsdokumentation Z.64–99](https://github.com/EMPD2/EMPD-admin/blob/5cc6071f372cc48cbdad3ccc10a7558af20b2c84/docs/install.rst#L64), Blob `0afb540c7b7bef0c48a574891b365aa1fc89a4a4`, Commit `5cc6071f372cc48cbdad3ccc10a7558af20b2c84` vom 20.10.2019 | Verknüpft `latlon-utils` und die Umgebungsdatei in EMPD2/empd-admin-base. Damit ist der zusätzliche Buildquellenpfad tatsächlich vom Herausgeber dokumentiert. [Vergleich zum Stand 76c73ae vom 12.03.2020](https://github.com/EMPD2/EMPD-admin/compare/5cc6071f372cc48cbdad3ccc10a7558af20b2c84...76c73aea3a0fcd293770a0ce96031a82685d4e41) ändert nur common.py/diff.py, nicht diese Installations- oder unten genannten Exportpassagen. Keiner dieser Stände ist damit als PANGAEA-Lauf identifiziert. |
+| H3 | EMPD2/empd-admin-base, Commit `10cfa4e71348a1cec1af429a8cab1e2694a87f3b` vom 01.05.2019: [Dockerfile Z.1–4, 23–34](https://github.com/EMPD2/empd-admin-base/blob/10cfa4e71348a1cec1af429a8cab1e2694a87f3b/Dockerfile#L1), Blob `12dcf02e52926717296ff97211a1a11482428409`; [empd-admin-environment.yml Z.5–26](https://github.com/EMPD2/empd-admin-base/blob/10cfa4e71348a1cec1af429a8cab1e2694a87f3b/empd-admin-environment.yml#L5), Blob `b0c85a7b419dee1f8bc11a76b92066e71da6ffaa` | Basis `postgres:11.2`, Python 3.7; `LATLONRES=5m`; Downloadvorgabe `tavg prec`, Breiten 0–90, `-res 5m`. Sowohl Downloadumgebung als auch Anwendungsumgebung installieren `latlon-utils` ohne Versionspin. Dies ist der per Commit-Datumsfilter vor 26.11.2019 und 05.10.2020 erreichbare letzte Quellstand. Belegt eine konkrete historische Bauanweisung, weder deren Ausführung noch den verwendeten Paket-/Rasterdateistand. |
+| H4 | Chilipp/latlon-utils, Commit `510511d207fc30c8a38a457f5b4494daaf361b3c` vom 13.11.2019: [download.py Z.16, 68–110](https://github.com/Chilipp/latlon-utils/blob/510511d207fc30c8a38a457f5b4494daaf361b3c/latlon_utils/download.py#L16), Blob `f56127f8ef8c054324cfb534b07236454bca79c1`; [__init__.py Z.10, 52–60, 185–224, 329–343](https://github.com/Chilipp/latlon-utils/blob/510511d207fc30c8a38a457f5b4494daaf361b3c/latlon_utils/__init__.py#L52), Blob `001e4349b711ce05af8e566c93cd637ab34d36c7` | Quellversion 0.0.5; Downloader adressiert `/worldclim/v2.0/tif/base/` und `wc2.0_<res>_<var>.zip`, wandelt GeoTIFF in NetCDF. Auflösung: Funktionsargument vor `LATLONRES`, sonst 10m; alternative `data_files` möglich. Der Downloader-Blob ist auch in den historischen Ständen `cc98059fd1f624852bdbed9ff7e8bfd834df8c71` (28.03.2019) und `9182d1f214c8efbb4769c1021c481c3703be4b61` (28.04.2020) identisch. Das belegt historische WorldClim-2.0-Programmlogik, **keinen** tatsächlich installierten Stand aus H3 und keine Identität realer Rasterbytes. ZIP/Raster/NetCDF nicht geöffnet. |
+| H5 | EMPD2/EMPD-admin im H2-Stand: [finish.py Z.131–178](https://github.com/EMPD2/EMPD-admin/blob/5cc6071f372cc48cbdad3ccc10a7558af20b2c84/empd_admin/finish.py#L131), Blob `9e8f31be1bef710eb38ac285670704f087ee4324`; [repo_test.py Z.302–343](https://github.com/EMPD2/EMPD-admin/blob/5cc6071f372cc48cbdad3ccc10a7558af20b2c84/empd_admin/repo_test.py#L302), Blob `4a306c6c1b1cda3b937a7e2cd7dedb44665f77be` | Statische Folge: Importskript → PostgreSQL/pg_dump → Export öffentlicher Tabellen als TSV. S7 wurde gezielt bestätigt: Klima-Fixaufrufe Z.184–186/213–215 übergeben keine eigene Auflösung und betreffen fehlende/nan-Felder. Weder diese mögliche Kette noch S8 dokumentiert hier den konkreten PANGAEA-SQLite-Export mit seiner Schlüssel-/Feldidentität. |
+| H6 | EMPD2/EMPD-data, ausschließlich [Export-Commitmetadaten 8b28577](https://api.github.com/repos/EMPD2/EMPD-data/git/commits/8b28577fa7e64d284180816202f8ffaa73cc3546) und [direkter Vorgänger b5a97bb](https://api.github.com/repos/EMPD2/EMPD-data/git/commits/b5a97bb41c5a96e82dd50665c6504d0d1e73e40c), 05.10.2020, 08:54:01 bzw. 08:53:59 UTC | Committexte dokumentieren TSV-Aktualisierung aus PostgreSQL sowie vorherigen Dump für update.tsv. Der erste Commit ist über die pfadbezogene Commit-Historie von `tab-delimited/climate.tsv` am Release-Ref auffindbar. Eine konkrete Exportspur für diese GitHub-Ausgabe, stärker als bloß vorhandener Code; kein Laufmanifest mit Bibliotheks-/Rasterversion, wirksamer Auflösung oder Bezug zum PANGAEA-SQLite-Objekt. Keine Datenblobs oder Datenpatches gelesen. |
+| H7 | [GitHub-Release v2.0](https://github.com/EMPD2/EMPD-data/releases/tag/v2.0), [Tagobjekt f543a1b](https://api.github.com/repos/EMPD2/EMPD-data/git/tags/f543a1bf60fefb705e46db400f59ebdac96edaf7), [Zenodo.4066498, Description/Related works](https://zenodo.org/records/4066498), [PANGAEA.909130, Abstract/Original version](https://doi.pangaea.de/10.1594/PANGAEA.909130) | Erneut gezielt gelesen: GitHub verlinkt Zenodo; Tag verweist auf `737b76e`; Zenodo nennt ausdrücklich die Supplementbeziehung zu PANGAEA und zum Artikel. PANGAEA beschreibt seine drei äquivalenten Originalformate, nennt dort aber keinen GitHub-Commit/Zenodo-Build als Erzeuger. **Öffentliche bibliografische Verbindung belegt; konkrete Export-/ID-/Feldgleichheit nicht belegt.** Die Zenodo-ZIP-Prüfsumme identifiziert nur das dortige Objekt; sie verknüpft es nicht mit den PANGAEA-SQLite-Bytes. |
+
+Ergänzend gezielt geprüft: EMPD-admin-Dockerfile, environment.yml und setup.py
+im H2-Stand; EMPD-data-Quellbaum am Release-Ref als Pfad-/Objektverzeichnis,
+nicht als Dateninhalt. Zwei begrenzte Websuchrunden zu 909130/Export/SQLite/
+WorldClim und Committextsuche in EMPD-data vor 06.10.2020 nach WorldClim,
+sqlite und resolution lieferten keinen zusätzlichen archivgenauen Beleg.
+Leere Suchresultate beweisen keine weltweite Nichtexistenz. S1 §2/§6 und S2/S5
+wurden nur zur konkreten Archiv-/Releasegrenze nachgelesen; keine erneute
+allgemeine Produktrecherche. Alle 14 gelesenen vollständigen Quelltexte der
+Build-/Bibliothekskette stimmen mit ihren Git-Blob-SHAs überein.
+
+### R01–R03 und Stop
+
+| Anforderung | Stand nach historischer Prüfung | Konkrete Restlücke |
+| --- | --- | --- |
+| R01 | **Teilweise belegt.** Historische WorldClim-2.0-Downloaderlogik und Buildvorgabe sind genauer identifiziert. | Tatsächlich für PANGAEA verwendete Programm-/Bibliotheksversion, Image/Umgebung, Rastereingang mit Stand/Dateiidentität und wirksame Auflösung **unbelegt**. 0.0.5/2.0/5m sind keine Auswahl für das Archiv. |
+| R02 | **Teilweise belegt**, durch H1–H7 kein neuer archivgenauer Periodenbeleg. S3 behält seinen begrenzten Studienbezug. | Verknüpfung der Referenzperiode mit genau dem angewandten PANGAEA-Klimaeingang **unbelegt**; `unverified` bleibt bestehen. |
+| R03 | **Teilweise belegt.** Statische Feld-/Verarbeitungskette und eine GitHub-Exportspur sowie Supplementbeziehung sind dokumentiert. | Ausführung mit festgelegten Eingängen → identifizierter PANGAEA-SQLite-Export → `climate.t_ann/p_ann` samt Proben-/Schlüsselgeltung **unbelegt**. TSV-/PostgreSQL-/SQLite-Identität nicht aus Namen abgeleitet. |
+
+Die 5m-Bauvorgabe und die 30″-Publikationsangabe haben keinen nachgewiesenen
+identischen Lauf-/Objektbezug. Deshalb weder Bestätigung gleicher Archivauflösung
+noch bestätigter Widerspruch am selben Objekt. Ein Datum allein beweist keine
+verwendete WorldClim-Unterversion. Keine heutige Konfiguration wurde rückdatiert.
+
+**Begrenzter Nichtbeleg und Stop:** In den oben tatsächlich geprüften
+Herausgeberunterlagen fehlt ein Export-/Ausführungsnachweis, der Programm,
+Rasterstand und Auflösung mit PANGAEA.909130 und dessen SQLite-Klimafeldern
+verbindet. Weitere reale Datei-/Raster-/Datenbankprüfung oder Herausgeberkontakt
+wären eigene, hier nicht ausgeführte Arbeit; auch ein Bytevergleich allein
+würde den damaligen Programmlauf nicht beweisen. Keine weitere Suchschleife,
+kein Nutzer-Dokument als künstliche Startbedingung. Das beauftragte Paket ist
+dokumentarisch abgeschlossen; die reale Herkunftskette bleibt blockiert.
+
+Keine Datenzeilen, Datenbank-Dumps, ZIP-Inhalte oder Raster beschafft/geöffnet,
+keine Auswahl, Implementierung, manuellen Projekt-/Modelltests oder Rechnungen.
+Keine Gatefreigabe/A4-Umsetzung/A5/A6, Unteragenten, Nachrichten oder Merges.
+Übrige bestehende Fachdateien bleiben unverändert. Quellen-/Link-/Diff-/
+Blobprüfung und Sicherung stehen in Status/HANDOFF. Genau ein anschließendes
+Paket ist dort vorbereitet: öffentliche Probenzeit-/Integrationsdokumentation
+gegen R04/R05 prüfen; kein erneuter R01–R03-Durchlauf und keine Ausführung hier.
