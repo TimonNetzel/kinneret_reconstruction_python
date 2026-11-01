@@ -1,0 +1,120 @@
+{
+  "checked_on": "2026-11-01",
+  "base_commit": "47bbcc2c2770c28040086e72286e45e37e83c83f",
+  "base_pr": {
+    "number": 69,
+    "state": "open",
+    "merged": false,
+    "head": "47bbcc2c2770c28040086e72286e45e37e83c83f",
+    "checks_at_start": {
+      "total": 4,
+      "in_progress": 4,
+      "success": 0
+    }
+  },
+  "authorization": {
+    "user_message": "OK, Furlanetto fortsetzen",
+    "scope": "Existing Furlanetto original-methods task only; authorization remains valid while technical input is missing"
+  },
+  "scope": {
+    "sample": "Champvillair_a18",
+    "original_sample": "TRS 18",
+    "doi": "10.1177/0959683618810395",
+    "purpose": "Bounded public-original access preflight; methods reading only after verified readable permitted original access"
+  },
+  "access_context": {
+    "new_in_this_session": "Web search/reader callable, unlike previous access-review tool catalog. This is tool availability, not proof of improved site access.",
+    "executor_policy": "restricted/enforced, observations_current=true",
+    "sage_allowed": true,
+    "boa_www_and_bare_allowed": false,
+    "sage_requests": 0,
+    "network_changes": 0
+  },
+  "search": {
+    "tool": "search_service_web_run",
+    "rounds": 2,
+    "queries": [
+      "\"0959683618810395\" \"accepted\"",
+      "\"Elevational transects of modern pollen samples\" filetype:pdf",
+      "\"Furlanetto\" \"TRS 18\"",
+      "\"0959683618810395\" site:iris.cnr.it",
+      "\"Elevational transects\" site:boa.unimib.it/handle",
+      "\"0959683618810395\" manuscript OR repository OR download"
+    ],
+    "assessment": "Results identify known publisher/institutional records and unrelated works/citations; none verified as newly readable original. Search-result text is not a methods reading."
+  },
+  "candidates": [
+    {
+      "id": "P1",
+      "historical_id": "W6",
+      "url": "https://www.boa.unimib.it/handle/10281/241319",
+      "institution": "Università degli Studi di Milano-Bicocca, BOA",
+      "author": "Giulia Furlanetto",
+      "year": "2019 (historical bibliography; not a collection date)",
+      "title": "Quantitative reconstructions of climatic series in mountain environment based on paleoecological and ecological data",
+      "search_metadata": {
+        "file_name": "phd_unimib_809217.pdf",
+        "access_label": "Accesso Aperto",
+        "file_size_label": "12.37 MB",
+        "source_kind": "Indexed search result only; live page not read"
+      },
+      "direct_open": {
+        "tool": "search_service_web_run.open",
+        "requests": 1,
+        "result": "Failed to fetch https://www.boa.unimib.it/handle/10281/241319: (403) Forbidden",
+        "http_status": 403,
+        "raw_headers_available": false,
+        "response_body_hash": null
+      },
+      "verified_download_url": null,
+      "original_bytes_received": false,
+      "methods_read": false,
+      "version_limit": "No thesis PDF version or identity with the published article/supplement verified. No invented bitstream URL."
+    },
+    {
+      "id": "P2",
+      "historical_id": "W4",
+      "url": "https://flore.unifi.it/handle/2158/1408933",
+      "source_kind": "Search result only in current check",
+      "finding": "Indexed metadata still marks the publisher PDF closed. No direct file request, contact or copy request."
+    },
+    {
+      "id": "P3",
+      "historical_id": "W3/W5",
+      "url": "https://journals.sagepub.com/doi/10.1177/0959683618810395",
+      "source_kind": "Search result only in current check",
+      "finding": "No newly verified original-access change. Historical supplement HTTP 403 / cf-mitigated: challenge retained, not retested."
+    }
+  ],
+  "separate_findings": {
+    "binding": "Existing W1/W2: Champvillair_a18 -> TRS 18 -> DOI. No newly read original supports method-group membership.",
+    "collection": "Existing moss / hand picking - multiple samples metadata only; date, number, composition and simultaneity remain unknown.",
+    "deposition": "Not established.",
+    "integration": "Not established; multiple collection does not identify duration.",
+    "uncertainty": "Unknown, not zero.",
+    "R04": "Sample-level time evidence still absent from read sources; inaccessible sources not evaluated for absence.",
+    "R05": "Existing material/collection context partly evidenced; temporal integration not established."
+  },
+  "stop": "Bounded preflight ended at concrete BOA HTTP 403; no newly readable original verified, methods-reading start condition unmet. No Sage retry, hostname variant or guessed download path.",
+  "user_actions": {
+    "required_now": "No further OK for the same authorized task; no user file or contact required.",
+    "optional": "In the supported cloud-environment configuration, allow the official BOA hosts www.boa.unimib.it and boa.unimib.it to permit a first regular executor lookup of the known public handle. Only if the user elects this supported configuration change. Not performed or requested as a bypass here.",
+    "limit": "Host permission alone does not establish readable access or fix a website HTTP 403. No proven user action currently fixes the Sage challenge.",
+    "codex_next": "After a relevant permitted-access change, open the known institutional handle, verify its actual public file link, then read only the assigned TRS-18 methods; stop at original evidence or concrete access gap."
+  },
+  "preservation": "Existing reports/evidence/originals unchanged. New file contains selected search/access observations, not an archived full document or response. No original hash claimed without original bytes.",
+  "not_performed": [
+    "original methods reading",
+    "new sample/cohort",
+    "pollen/climate value analysis",
+    "data repair",
+    "implementation/manual tests",
+    "scientific calculations",
+    "R01-R03 research",
+    "R06/gate approval",
+    "A4 implementation/A5/A6",
+    "subagents",
+    "messages/contacts",
+    "merge"
+  ]
+}
