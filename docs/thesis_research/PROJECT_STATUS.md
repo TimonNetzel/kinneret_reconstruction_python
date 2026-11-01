@@ -55,6 +55,16 @@ manuellen Projekt-/Modelltests, wissenschaftlichen Rechnungen, R01–R03-Neusuch
 R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten, Kontakte oder Merges.
 An zugeordneten Originalstellen gestoppt.
 
+
+Inhaltscommit `10fd7975f285f4e25def18b1aca90665bd106c13` remote in
+[PR #72](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/72)
+gesichert; offen/ungemergt gegen `codex/netzel-furlanetto-boa-review` (#71).
+Vier automatische Head-Checks bei Abfrage noch nicht abgeschlossen
+(drei laufend, einer wartend); kein Erfolg behauptet. Danach nur
+Sicherungsverweise ergänzt; aktuellen Head/CI vor Fortsetzung prüfen.
+Bestehendes OK bleibt gültig, genau ein Versionsabgleich bei lesbarem Zugang
+vorbereitet. Kein Merge.
+
 ## Aktueller Abschluss: reguläre BOA-Prüfung nach Hostfreigabe, 01.11.2026
 
 Basis [PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70),

@@ -107,3 +107,14 @@ gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-public-original`
 behauptet. Danach nur dieser Sicherungsverweis ergänzt; aktuellen Head/CI
 bei tatsächlicher Fortsetzung prüfen. Kein Merge. Genau ein Anschluss bleibt
 die oben bedingte Originallesung; Nutzer-OK weiterhin gültig.
+
+## Aktuelle Sicherung der Dissertationslesung
+
+Inhaltscommit `10fd7975f285f4e25def18b1aca90665bd106c13` remote in
+[PR #72](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/72)
+gesichert; offen/ungemergt gegen `codex/netzel-furlanetto-boa-review` (#71).
+Vier automatische Head-Checks bei Abfrage noch nicht abgeschlossen
+(drei laufend, einer wartend); kein Erfolg behauptet. Danach nur
+Sicherungsverweise ergänzt; aktuellen Head/CI vor Fortsetzung prüfen.
+Bestehendes OK bleibt gültig, genau ein Versionsabgleich bei lesbarem Zugang
+vorbereitet. Kein Merge.
