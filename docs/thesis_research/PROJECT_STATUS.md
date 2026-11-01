@@ -21,6 +21,47 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Drei-Zeugen-Prüfung und korrigierte Lesevorgaben, 01.11.2026
+
+Nutzerauftrag ausgeführt: [AGENTS](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
+klärt notwendige begrenzte schreibgeschützte Original-/Metadatenprüfung als
+Teil beauftragter Provenienzarbeit ohne Extra-OK; alte Paketverbote sind
+Historie. Den vorbereiteten reinen Stop-/Eingangsplan durch die konkrete
+Prüfung ersetzt. [Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#konkrete-zeitprüfung-der-drei-zeugen-01112026)
+und [Evidenz](./witness_time_check_2026_11_01/evidence.json) sichern genau drei
+frisch geprüfte Original-Metadatenzeilen, eine direkte Publikationsrelation
+und den Vergleich mit drei Zeilen am festen EMPD2-v2.0-Release.
+
+AlbaSanchez_a1 / „1 béticas“, Champvillair_a18 / „TRS 18“, Barboni_a1000 /
+„MAROC124“ über Metadatenkennungen verbunden. Alter/Altersklasse bleiben bei
+allen unbekannt. R04 probenbezogen unbelegt; R05 für AlbaSanchez/Champvillair
+nur Material-/Entnahmekontext teilweise belegt, für Barboni unbelegt.
+Integration nicht zugeordnet. Furlanetto-DOI für Champvillair belegt;
+relevante Hauptmethoden/Supplement nicht gelesen: Zugangsschranke,
+Web-DOCX nicht unterstützt, Executor-Proxy-CONNECT HTTP 403. Keine fehlende
+Evidenz aus unzugänglichen Inhalten behauptet; keine unbekannten Daten ergänzt.
+Prüfplan bis zu konkreten Grenzen ausgeführt, reale Zeitfrage weiter offen.
+
+Basis #66-Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6`, offen/ungemergt,
+mergebar, vier Head-Checks erfolgreich (41288446572/41288442734). Sechs
+vorgefundene Worktrees sauber erhalten, eigener Worktree/Branch
+`codex/netzel-witness-time-check`, über
+[PR #67](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67)
+remote gesichert; offen/ungemergt und mergebar, gegen #66 ohne Merge.
+Inhaltscommit `42d365fc410feac53e90b1047fd0a5a184c8745b`; automatische
+[CI 41289425528](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289425528)
+bei Abfrage laufend. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen. Original-SQLite-Hash vor/nach unverändert,
+Release-Blob geprüft. Änderungen nur AGENTS, Review, neue begrenzte
+Evidenz-JSON, HANDOFF/Status; alte Fachberichte/Statushistorie erhalten.
+Quellen-/Identitäts-/JSON-/Diffprüfung und zehn lokale Links/Anker bestanden;
+752 geschützte Git-Objekte/Dateimodi außerhalb der erlaubten Pfade unverändert.
+Keine Counts-/Klimawertanalyse, neue Proben-/Modellwahl, Reparatur,
+Projektimplementierung, manuellen Tests oder wissenschaftlichen Rechnungen.
+R01–R03 nicht neu recherchiert, R06/Gates offen; keine A4-Umsetzung/A5/A6,
+Unteragenten, Kontakte/Nachrichten oder Merges. Genau ein sachlicher
+Furlanetto-Originalmethodenauftrag für TRS 18 in HANDOFF vorbereitet;
+wartet auf Nutzer-OK und tatsächlich lesbaren erlaubten Zugriff, keine Nutzerdatei.
+
 ## Aktueller Abschluss: öffentliche Probenzeit-/Integrationsbelege R04/R05, 01.11.2026
 
 [Review Z1–Z4](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#probenzeit-und-integration-r04r05-01112026)

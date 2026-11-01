@@ -43,15 +43,26 @@ Auf Nutzerwunsch vom 01.11.2026 gilt für dieses Repository:
   Nur gezielt beim Nutzer nachfragen, wenn ein privates/nicht zugängliches
   Objekt, eine nicht ermittelbare Identität oder eine echte fachliche
   Entscheidung nötig ist. Einen technischen Zugriffsfehler konkret benennen.
-- Historische paketbezogene Rechercheverbote gelten für das damalige Paket,
-  nicht pauschal für neue Aufträge. Aktuelle ausdrückliche Nutzereinschränkungen
-  bleiben maßgeblich. Neue HANDOFFs und Folgeprompts übernehmen diesen
-  Recherche-Standard und erfinden keinen Nutzerdatei-Blocker für öffentliche
-  Quellen. Der Standard startet kein weiteres Arbeitspaket automatisch.
+- Historische paketbezogene Recherche-/Datenprüfverbote gelten für das damalige
+  Paket, nicht pauschal für neue Aufträge. Auf Nutzerwunsch vom 01.11.2026
+  gehört die nötige, eng begrenzte **schreibgeschützte Prüfung vorhandener oder
+  öffentlich zugänglicher Originaldaten und Metadaten** zu einer beauftragten
+  Quellen-/Provenienzprüfung. Dazu passende Originalquellen selbst beschaffen
+  und lesen; kein zusätzliches OK für bloße Metadatenzeilenprüfung verlangen.
+  Objekte, Felder/Proben und Zweck vorab begrenzen, Herkunft/Version/Hash und
+  Abfragen nachvollziehbar sichern; Originale unverändert erhalten.
+- Aktuelle ausdrückliche Nutzereinschränkungen bleiben maßgeblich. Alte
+  Berichte/Verträge nicht rückwirkend umschreiben; HANDOFF/Status/Folgeprompts
+  müssen den aktuellen Auftrag wiedergeben und überholte Paketverbote als
+  Historie behandeln. Einen autorisierten Evidenzschritt nicht durch ein
+  zusätzliches reines Stop-/Planungspaket ersetzen. Kein Nutzerdatei-Blocker
+  für selbst ermittelbare öffentliche Quellen. Der Standard startet kein
+  weiteres Arbeitspaket automatisch.
 - Die Regel steuert das Arbeitsverhalten; sie schaltet keine Webwerkzeuge,
-  Netzfreigaben oder App-Berechtigungen frei. Bestehende Grenzen für reale
-  Datenbeschaffung/-prüfung, Daten-/Modellwahl, Implementierung, Rechnungen,
-  wissenschaftliche Freigaben, Nachrichten und Merges bleiben erhalten.
+  Netzfreigaben oder App-Berechtigungen frei. Daten-/Modellwahl, Reparaturen,
+  Implementierung, wissenschaftliche Rechnungen, Freigaben, Nachrichten und
+  Merges benötigen weiterhin den jeweiligen Auftrag. Eine Leseprüfung ist
+  keine Trainings-/Gatefreigabe und rechtfertigt keine Datenergänzung.
 
 ## Standardablauf je Arbeitspaket
 

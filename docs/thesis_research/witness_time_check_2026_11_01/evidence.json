@@ -1,0 +1,376 @@
+{
+  "checked_on": "2026-11-01",
+  "base_commit": "a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6",
+  "source": {
+    "doi": "10.1594/PANGAEA.909130",
+    "url": "https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3",
+    "cached_path": "/workspace/netzel-source-cache/pollen-originals-2026-10-31/EMPD2.sqlite3",
+    "bytes": 21327872,
+    "sha256_before": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "sha256_after": "5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2",
+    "open": "mode=ro&immutable=1; PRAGMA query_only=ON",
+    "downloaded_this_package": false
+  },
+  "scope": {
+    "samples": [
+      "AlbaSanchez_a1",
+      "Champvillair_a18",
+      "Barboni_a1000"
+    ],
+    "pollen_counts_read": false,
+    "climate_values_read": false,
+    "database_modified": false,
+    "model_or_data_selection": false
+  },
+  "queries": [
+    {
+      "sql": "SELECT samplename, originalsamplename, sitename, country, longitude, latitude,\nlocationnotes, samplecontext, sitedescription, vegdescription, sampletype,\nsamplemethod, agebp, typeof(agebp) AS agebp_storage_type,\nageuncertainty, typeof(ageuncertainty) AS ageuncertainty_storage_type,\nnotes, empd_version FROM metadata WHERE samplename IN (?,?,?) ORDER BY samplename",
+      "parameters": [
+        "AlbaSanchez_a1",
+        "Champvillair_a18",
+        "Barboni_a1000"
+      ],
+      "rows": [
+        {
+          "samplename": "AlbaSanchez_a1",
+          "originalsamplename": "1 béticas",
+          "sitename": "Sierra de las Nieves Natural Park, Málaga",
+          "country": "Spain",
+          "longitude": -5.04162,
+          "latitude": 36.66366,
+          "locationnotes": "NULL",
+          "samplecontext": "closed forest",
+          "sitedescription": "NULL",
+          "vegdescription": "Pinsapo fir forest",
+          "sampletype": "moss",
+          "samplemethod": "NULL",
+          "agebp": "NULL",
+          "agebp_storage_type": "text",
+          "ageuncertainty": "NULL",
+          "ageuncertainty_storage_type": "text",
+          "notes": "NULL",
+          "empd_version": "EMPD2"
+        },
+        {
+          "samplename": "Barboni_a1000",
+          "originalsamplename": "MAROC124",
+          "sitename": "Moroc",
+          "country": "Morocco",
+          "longitude": "NULL",
+          "latitude": "NULL",
+          "locationnotes": "Do not use! Location information unreliable; long -5.12, lat 33.32.",
+          "samplecontext": "NULL",
+          "sitedescription": "NULL",
+          "vegdescription": "NULL",
+          "sampletype": "NULL",
+          "samplemethod": "NULL",
+          "agebp": "NULL",
+          "agebp_storage_type": "text",
+          "ageuncertainty": "NULL",
+          "ageuncertainty_storage_type": "text",
+          "notes": "",
+          "empd_version": "EMPD1"
+        },
+        {
+          "samplename": "Champvillair_a18",
+          "originalsamplename": "TRS 18",
+          "sitename": "La Thuile Valley",
+          "country": "Italy",
+          "longitude": 6.97739020278,
+          "latitude": 45.6800157611,
+          "locationnotes": "NULL",
+          "samplecontext": "NULL",
+          "sitedescription": "NULL",
+          "vegdescription": "Low-pressure grazed pasture with scattered Larix decidua, Pinus cembra, Alnus viridis. At ca 50 m distance, there is a lodge with ruderal species.",
+          "sampletype": "moss",
+          "samplemethod": "hand picking - multiple samples",
+          "agebp": "NULL",
+          "agebp_storage_type": "text",
+          "ageuncertainty": "NULL",
+          "ageuncertainty_storage_type": "text",
+          "notes": "NULL",
+          "empd_version": "EMPD2"
+        }
+      ]
+    },
+    {
+      "sql": "SELECT m.samplename, m.publiid, p.doi, p.reference FROM metapubli m\nLEFT JOIN publications p ON p.publiid=m.publiid\nWHERE m.samplename IN (?,?,?) ORDER BY m.samplename, m.publiid",
+      "parameters": [
+        "AlbaSanchez_a1",
+        "Champvillair_a18",
+        "Barboni_a1000"
+      ],
+      "rows": [
+        {
+          "samplename": "Champvillair_a18",
+          "publiid": 22,
+          "doi": "10.1177/0959683618810395",
+          "reference": "Furlanetto G., Ravazzi C., Badino F., Brunetti M., Champvillair E., Maggi V. (2018). Elevational transects of modern pollen samples - site specific temperatures as a tool for paleoclimate reconstructions in the Alps. The Holocene, 1-16."
+        }
+      ]
+    }
+  ],
+  "release_comparison": {
+    "url": "https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/meta.tsv",
+    "commit": "737b76eb269b071422edded6ac332654ff83c103",
+    "blob_sha1": "1dca11169396f2eb2f1960ccd600cbd07705a4bf",
+    "sha256": "cd10f0a7ca79a684ecb5cf406dce5096f9f1e1f019c7eecba58777a8ad677d7e",
+    "bytes": 7405566,
+    "scope": "Extracted only the same three named witnesses; no pollen/climate fields or other sample rows retained or evaluated. Full metadata blob downloaded for exact-ref retrieval.",
+    "selected_fields": [
+      "SampleName",
+      "OriginalSampleName",
+      "SiteName",
+      "Country",
+      "SampleContext",
+      "SampleType",
+      "SampleMethod",
+      "AgeBP",
+      "AgeUncertainty",
+      "Notes",
+      "Publication1",
+      "DOI1",
+      "Publication2",
+      "DOI2",
+      "Publication3",
+      "DOI3",
+      "Publication4",
+      "DOI4",
+      "Publication5",
+      "DOI5",
+      "EMPD_version"
+    ],
+    "rows": [
+      {
+        "line": 2,
+        "fields": {
+          "SampleName": "AlbaSanchez_a1",
+          "OriginalSampleName": "1 béticas",
+          "SiteName": "Sierra de las Nieves Natural Park, Málaga",
+          "Country": "Spain",
+          "SampleContext": "closed forest",
+          "SampleType": "moss",
+          "SampleMethod": "",
+          "AgeBP": "",
+          "AgeUncertainty": "",
+          "Notes": "",
+          "Publication1": "",
+          "DOI1": "",
+          "Publication2": "",
+          "DOI2": "",
+          "Publication3": "",
+          "DOI3": "",
+          "Publication4": "",
+          "DOI4": "",
+          "Publication5": "",
+          "DOI5": "",
+          "EMPD_version": "EMPD2"
+        }
+      },
+      {
+        "line": 265,
+        "fields": {
+          "SampleName": "Barboni_a1000",
+          "OriginalSampleName": "MAROC124",
+          "SiteName": "Moroc",
+          "Country": "Morocco",
+          "SampleContext": "",
+          "SampleType": "",
+          "SampleMethod": "",
+          "AgeBP": "",
+          "AgeUncertainty": "",
+          "Notes": "",
+          "Publication1": "",
+          "DOI1": "",
+          "Publication2": "",
+          "DOI2": "",
+          "Publication3": "",
+          "DOI3": "",
+          "Publication4": "",
+          "DOI4": "",
+          "Publication5": "",
+          "DOI5": "",
+          "EMPD_version": "EMPD1"
+        }
+      },
+      {
+        "line": 2609,
+        "fields": {
+          "SampleName": "Champvillair_a18",
+          "OriginalSampleName": "TRS 18",
+          "SiteName": "La Thuile Valley",
+          "Country": "Italy",
+          "SampleContext": "",
+          "SampleType": "moss",
+          "SampleMethod": "hand picking - multiple samples",
+          "AgeBP": "",
+          "AgeUncertainty": "",
+          "Notes": "",
+          "Publication1": "Furlanetto G., Ravazzi C., Badino F., Brunetti M., Champvillair E., Maggi V. (2018). Elevational transects of modern pollen samples - site specific temperatures as a tool for paleoclimate reconstructions in the Alps. The Holocene, 1-16.",
+          "DOI1": "10.1177/0959683618810395",
+          "Publication2": "",
+          "DOI2": "",
+          "Publication3": "",
+          "DOI3": "",
+          "Publication4": "",
+          "DOI4": "",
+          "Publication5": "",
+          "DOI5": "",
+          "EMPD_version": "EMPD2"
+        }
+      }
+    ],
+    "identity_match": "For exactly these three samples, SampleName, OriginalSampleName and SiteName agree with SQLite. No equivalence of full exports asserted."
+  },
+  "sources": [
+    {
+      "id": "W1",
+      "kind": "read-only original metadata and direct publication join",
+      "locator": "queries[0] and queries[1]",
+      "verified": true
+    },
+    {
+      "id": "W2",
+      "kind": "publisher release metadata, only three witness rows",
+      "locator": "release_comparison",
+      "verified": true
+    },
+    {
+      "id": "W3",
+      "url": "https://journals.sagepub.com/doi/10.1177/0959683618810395",
+      "doi": "10.1177/0959683618810395",
+      "document_date_online": "2018-11-19",
+      "issue_year": "2019",
+      "read_sections": [
+        "Abstract",
+        "Data availability statement",
+        "Supplementary Material"
+      ],
+      "finding": "Publisher identifies moss surface sampling and says data will be archived in EMPD Stage 2. These sections do not assign a collection date, dating method/uncertainty or integration interval to TRS 18. Main methods not accessible (restricted access).",
+      "sample_scope": "Direct bibliography relation to Champvillair_a18; no individual sample-time binding in the read sections."
+    },
+    {
+      "id": "W4",
+      "url": "https://flore.unifi.it/handle/2158/1408933",
+      "read_sections": [
+        "bibliographic metadata",
+        "File in questo prodotto"
+      ],
+      "finding": "Institutional record for the same DOI; published PDF marked Accesso chiuso. File not requested; no author contact."
+    },
+    {
+      "id": "W5",
+      "url": "https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx",
+      "link_origin": "W3 Supplementary Material",
+      "access": [
+        {
+          "tool": "web",
+          "result": "Unsupported content-type: application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        },
+        {
+          "tool": "executor curl",
+          "result": "HTTP 403"
+        },
+        {
+          "tool": "executor urllib",
+          "result": "Tunnel connection failed: 403 Forbidden (proxy CONNECT); source host not in current allowed-host list"
+        }
+      ],
+      "content_read": false,
+      "supplement_archived": false
+    },
+    {
+      "id": "W6",
+      "url": "https://www.boa.unimib.it/handle/10281/241319",
+      "title": "Quantitative reconstructions of climatic series in mountain environment based on paleoecological and ecological data",
+      "author": "Giulia Furlanetto",
+      "year": 2019,
+      "status": "Search result only; open metadata/contents through web failed HTTP 403 for www and bare hostname. No method evidence claimed.",
+      "secondary_record": "https://tesidottorato.depositolegale.it/handle/20.500.14242/77337",
+      "secondary_access": "HTTP 403 through web",
+      "content_read": false
+    }
+  ],
+  "bounded_search": {
+    "purpose": "Only sources for the three existing witnesses; no R01-R03 re-search, no general modern-pollen literature used.",
+    "queries_by_target": {
+      "AlbaSanchez_a1": [
+        "\"Alba\" \"Sierra de las Nieves\" modern pollen moss collection samples",
+        "\"Alba-Sánchez\" \"Sabariego\" \"modern pollen\" moss samples 2018",
+        "\"1 béticas\" pollen OR polen OR EMPD",
+        "\"AlbaSanchez_a1\" \"2016\" OR \"2014\" OR \"2010\" OR \"2008\""
+      ],
+      "Barboni_a1000": [
+        "\"MAROC124\" pollen",
+        "\"MAROC124\" \"Barboni\" pollen",
+        "\"Barboni_a1000\" pollen source",
+        "\"Barboni\" \"MAROC124\" OR \"MAROC 124\""
+      ],
+      "Champvillair_a18": [
+        "\"10.1177/0959683618810395\" pdf",
+        "\"0959683618810395\" \"pdf\" -site:researchgate.net -site:journals.sagepub.com",
+        "\"Elevational transects of modern pollen samples\" \"pdf\" CNR",
+        "\"Elevational transects of modern pollen samples\" \"boa\" OR \"hdl\" OR \"iris\"",
+        "site:iris.cnr.it \"Elevational transects\"",
+        "site:boa.unimib.it \"0959683618810395\"",
+        "\"TRS 18\" pollen Thuile",
+        "\"0959683618810395\" site:sage.figshare.com",
+        "\"furlanetto_et_al._revised_supplementary_material\"",
+        "\"Quantitative reconstructions of climatic series\" pdf",
+        "\"phd_unimib_809217.pdf\"",
+        "\"Elevational transects of modern pollen samples\" \"sampling\" moss"
+      ]
+    },
+    "outcome": "No read public original method with an individual time/integration assignment found for the three witnesses. Related or later studies and viewer search snippets were not adopted as sample evidence; empty results do not prove non-existence.",
+    "additional_access_failures": [
+      {
+        "url": "https://iris.cnr.it/handle/20.500.14243/22/browse?authority=ou228&etal=-1&offset=900&order=ASC&rpp=20&sort_by=1&starts_with=E&type=contributorOrgunit",
+        "result": "HTTP 403 through web; no methods read"
+      },
+      {
+        "url": "https://boa.unimib.it/bitstream/10281/241319/1/phd_unimib_809217.pdf",
+        "result": "URL not accessible through web; candidate path from known filename, not a verified download link"
+      }
+    ]
+  },
+  "conclusions": [
+    {
+      "sample": "AlbaSanchez_a1",
+      "original": "1 béticas",
+      "identity": "documented in both sources",
+      "R04": "unbelegt for this sample: no collection/sample time, dating method or age uncertainty",
+      "R05": "partially documented context/material (moss in closed forest), no collection method or temporal integration",
+      "publication_join": "no returned row; five release publication/DOI slots empty"
+    },
+    {
+      "sample": "Champvillair_a18",
+      "original": "TRS 18",
+      "identity": "documented in both sources; direct publication id 22 and DOI",
+      "R04": "unbelegt for this sample: no collection/sample time, dating method or age uncertainty in metadata or read publication sections",
+      "R05": "partially documented moss and hand picking - multiple samples; duration, sub-sample count, mixture timing and uncertainty not established",
+      "publication_join": "one returned row, id 22"
+    },
+    {
+      "sample": "Barboni_a1000",
+      "original": "MAROC124",
+      "identity": "documented in both sources; location warning retained, not repaired",
+      "R04": "unbelegt for this sample",
+      "R05": "unbelegt: material/method/context/time not supplied",
+      "publication_join": "no returned row; five release publication/DOI slots empty"
+    }
+  ],
+  "not_performed": [
+    "pollen/climate value reads",
+    "new sample/cohort choice",
+    "new joins assigning climate or dates",
+    "data modification/repair",
+    "project implementation",
+    "manual project/model tests",
+    "scientific calculations/fits/simulations",
+    "R01-R03 re-search",
+    "R06 or other gate approval",
+    "author contact/messages",
+    "merge"
+  ],
+  "preservation": "Original SQLite SHA-256 unchanged before/after. Full release metadata blob cached temporarily, only three target rows/selected fields and query evidence committed; no claim of durable archiving of full original-file bytes."
+}
