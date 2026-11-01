@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "maintained_on": "2026-11-01",
+  "purpose": "Find existing Furlanetto evidence; not a new scientific review, complete bibliography or full-original archive.",
+  "scope": {
+    "sample": "Champvillair_a18",
+    "original_sample": "TRS 18",
+    "article_doi": "10.1177/0959683618810395"
+  },
+  "reference_format": "Paths relative to this file; # suffix is an RFC 6901 JSON Pointer. Evidence owns quotations and conclusions. Expected Git blobs detect changed evidence without re-reading originals.",
+  "evidence_base_commit": "bc9f5d8152b1b6cdf41cbe20a123122125cab8c3",
+  "evidence_files": {
+    "witness_time_check_2026_11_01/evidence.json": "01c9cd2cf338ed08dbcf7221cd7b47939cfabc32",
+    "furlanetto_access_review_2026_11_01/evidence.json": "a188c9a85db019a5f3308d56098a29fe31883c27",
+    "furlanetto_public_original_2026_11_01/evidence.json": "57e1924213f6aaf3b7c477aaa89acd232bce70d8",
+    "furlanetto_boa_review_2026_11_01/evidence.json": "a8a6e47d11dd79e065a4508c480ab7efd7277680",
+    "furlanetto_thesis_review_2026_11_01/evidence.json": "b7ecbc3e8ff664b368310640c3e14e61ed94aa50"
+  },
+  "sources": [
+    {
+      "id": "furlanetto_article",
+      "historical_ids": [
+        "W3"
+      ],
+      "identity": {
+        "doi": "10.1177/0959683618810395",
+        "version": "Published The Holocene article; full methods not read. Thesis accepted manuscript is a separately indexed version.",
+        "evidence_ref": "witness_time_check_2026_11_01/evidence.json#/sources/2",
+        "corresponding_thesis_heading": "Elevational transects of modern pollen samples - site specific temperatures as a tool for paleoclimate reconstructions in the Alps",
+        "heading_evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/reading/main_locations/1"
+      },
+      "original": {
+        "sha256": null,
+        "availability_status": "not_checked",
+        "durable_storage_status": "not_checked",
+        "locators": [
+          {
+            "kind": "publisher_url",
+            "value": "https://journals.sagepub.com/doi/10.1177/0959683618810395"
+          }
+        ],
+        "last_bytes_verification": null,
+        "limit": "No full original bytes archived in these evidence files. Historical partial publisher-page reading does not establish readable full methods."
+      },
+      "findings": [
+        {
+          "question": "Known publisher reading and TRS-18 dating limit",
+          "evidence_ref": "witness_time_check_2026_11_01/evidence.json#/sources/2"
+        },
+        {
+          "question": "Main methods access gap",
+          "evidence_ref": "furlanetto_access_review_2026_11_01/evidence.json#/not_retrieved/main_methods"
+        }
+      ],
+      "access": [
+        {
+          "route": "publisher page / historical web reading",
+          "url": "https://journals.sagepub.com/doi/10.1177/0959683618810395",
+          "observed_on": "2026-11-01",
+          "outcome": "partial_page_read_main_methods_restricted",
+          "http_status": null,
+          "evidence_ref": "witness_time_check_2026_11_01/evidence.json#/sources/2",
+          "retry_requires": [
+            "Documented relevant change in permitted access or authentication",
+            "New verified public original URL or newly available permitted route",
+            "Readable original bytes supplied voluntarily or already available"
+          ]
+        }
+      ],
+      "open_questions": [
+        "Final article methods not read",
+        "Equivalence with thesis methods not verified",
+        "Sample-specific time/uncertainty remain unresolved in read evidence"
+      ]
+    },
+    {
+      "id": "furlanetto_supplement",
+      "historical_ids": [
+        "W5"
+      ],
+      "identity": {
+        "article_doi": "10.1177/0959683618810395",
+        "version": "Publisher linked revised supplementary DOCX; content/version bytes not read.",
+        "evidence_ref": "witness_time_check_2026_11_01/evidence.json#/sources/4"
+      },
+      "original": {
+        "sha256": null,
+        "availability_status": "missing",
+        "durable_storage_status": "not_checked",
+        "locators": [
+          {
+            "kind": "linked_publisher_url",
+            "value": "https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx"
+          }
+        ],
+        "last_bytes_verification": null,
+        "limit": "DOCX not received. Recorded response hash belongs to challenge HTML, not the original supplement. missing means not held by the recorded retrieval, not nonexistent worldwide."
+      },
+      "findings": [
+        {
+          "question": "Supplement content unread; access gap only",
+          "evidence_ref": "furlanetto_access_review_2026_11_01/evidence.json#/attempt"
+        }
+      ],
+      "access": [
+        {
+          "route": "executor curl via inherited proxy",
+          "url": "https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx",
+          "observed_at": "Sun, 01 Nov 2026 08:43:12 GMT",
+          "outcome": "website_challenge",
+          "proxy_connect_status": 200,
+          "http_status": 403,
+          "cf_mitigated": "challenge",
+          "evidence_ref": "furlanetto_access_review_2026_11_01/evidence.json#/attempt",
+          "retry_requires": [
+            "Documented relevant change in permitted access or authentication",
+            "New verified public original URL or newly available permitted route",
+            "Readable original bytes supplied voluntarily or already available"
+          ]
+        }
+      ],
+      "open_questions": [
+        "Supplement original passages and version unavailable",
+        "No absence claim about unread contents"
+      ]
+    },
+    {
+      "id": "furlanetto_thesis",
+      "historical_ids": [
+        "W6",
+        "P1"
+      ],
+      "identity": {
+        "title": "Quantitative reconstructions of climatic series in mountain environment based on paleoecological and ecological data",
+        "author": "Giulia Furlanetto",
+        "cover_academic_year": "2017/2018",
+        "version": "Thesis Manuscript 1 labelled The Holocene accepted; final published article/DOI supplement equivalence unverified",
+        "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/source"
+      },
+      "original": {
+        "sha256": "8bd60270b42266dfd64344cb58c229b1dbb97dcdf0939fcb09198aa65c2cd440",
+        "bytes": 12666323,
+        "availability_status": "temporary_or_session_only",
+        "durable_storage_status": "not_checked",
+        "locators": [
+          {
+            "kind": "user_upload",
+            "value": "sediment://file_000000008894824397ec6b2f37af3566"
+          },
+          {
+            "kind": "workspace_path",
+            "value": "/workspace/attachments/77b23faa-51e0-46da-b895-af3c0d734f15/phd_unimib_809217.pdf"
+          }
+        ],
+        "presence_check": {
+          "checked_at_utc": "2026-11-01T14:17:31.604171+00:00",
+          "workspace_path_exists": true,
+          "method": "is_file only; no PDF bytes opened, hash recomputation or new content reading"
+        },
+        "last_bytes_verification": "2026-11-01T10:45:08.839764+00:00",
+        "hash_evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/source",
+        "limit": "Historical content/hash verification retained. File presence alone does not reverify bytes or prove a durable original store. Recheck reachability in a new environment only if original bytes are needed."
+      },
+      "review": "A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-dissertation-gezielte-trs-18-originalmethodenlesung-01112026",
+      "findings": [
+        {
+          "question": "TRS-18/group binding",
+          "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/separate_findings/binding",
+          "location_refs": [
+            "furlanetto_thesis_review_2026_11_01/evidence.json#/reading/main_locations/3",
+            "furlanetto_thesis_review_2026_11_01/evidence.json#/reading/main_locations/4"
+          ]
+        },
+        {
+          "question": "Collection, deposition and integration; original quotations",
+          "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/reading/main_locations/2"
+        },
+        {
+          "question": "Temporal uncertainty and R04/R05 limits",
+          "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/separate_findings"
+        },
+        {
+          "question": "Different manuscript monitoring period not transferable",
+          "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/reading/main_locations/5"
+        }
+      ],
+      "access": [
+        {
+          "route": "executor curl / institutional BOA handle",
+          "url": "https://www.boa.unimib.it/handle/10281/241319",
+          "observed_at": "2026-11-01T10:18:01.614852+00:00",
+          "outcome": "website_challenge",
+          "proxy_connect_status": 200,
+          "http_status": 403,
+          "cf_mitigated": "challenge",
+          "evidence_ref": "furlanetto_boa_review_2026_11_01/evidence.json#/request",
+          "retry_requires": [
+            "Documented relevant change in permitted access or authentication",
+            "New verified public original URL or newly available permitted route",
+            "Readable original bytes supplied voluntarily or already available"
+          ]
+        },
+        {
+          "route": "user supplied PDF / existing targeted reading",
+          "observed_at": "2026-11-01T10:45:08.839764+00:00",
+          "outcome": "targeted_original_passages_read",
+          "evidence_ref": "furlanetto_thesis_review_2026_11_01/evidence.json#/reading"
+        }
+      ],
+      "open_questions": [
+        "Collection date and dated deposition interval unresolved",
+        "Temporal uncertainty unquantified",
+        "Final published article/supplement equivalence unverified",
+        "Durable storage of full PDF bytes not established"
+      ]
+    }
+  ],
+  "prior_bounded_search_ref": "furlanetto_public_original_2026_11_01/evidence.json#/search"
+}

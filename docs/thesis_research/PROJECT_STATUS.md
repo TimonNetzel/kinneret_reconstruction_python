@@ -21,6 +21,36 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Quellenablauf und kurzer Einstieg umgesetzt, 01.11.2026
+
+Nutzer-OK zur Prozessumsetzung erhalten. [Rechercheablauf](./RESEARCH_WORKFLOW.md)
+und [Quellenindex](./SOURCE_INDEX.json) angelegt; AGENTS/HANDOFF entdoppelt.
+Index enthält genau Artikel, Supplement und Dissertation aus vorhandener
+Furlanetto-Evidenz mit JSON-Pointern, erwarteten Evidenz-Blobs, Versionsgrenzen,
+Originalverfügbarkeit und getrennten Zugriffsständen. PhD nur auf Dateipräsenz
+geprüft, nicht geöffnet/gehasht oder neu gelesen. Kein Originalabruf.
+
+Basis #73, `bc9f5d8152b1b6cdf41cbe20a123122125cab8c3`, offen/ungemergt,
+vier erfolgreiche Checks; eigener Worktree/Branch `codex/netzel-research-workflow`.
+Acht bisherige Worktrees erhalten. Wissenschaftlicher AGENTS-Schutzabschnitt
+wortgleich; gesamte Statushistorie, Plan und Fachdateien unverändert erhalten.
+Dokumentarische Abnahme der drei Planfälle im Rechercheablauf, JSON/Pointer/
+Blob-/Link-/Diffprüfung; keine wissenschaftlichen Tests oder Rechnungen.
+Keine Apps/Netzänderungen, Forschungscode, Unteragenten, Kontakte oder Merges.
+
+Prozesspaket abgeschlossen. Genau ein Anschluss in HANDOFF bleibt der bereits
+autorisierte zugangsabhängige Furlanetto-Versionsabgleich. R04/R05/Gates
+fachlich unverändert. Keine Pflichtaktion; keine neue Genehmigung für denselben
+Auftrag. Token-/Zeitersparnis nicht gemessen oder behauptet. Sicherung siehe
+aktuellen Verweis in HANDOFF; Branch dient als unabhängig prüfbarer Head.
+
+Sicherung in [PR #74](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/74),
+offen/ungemergt gegen #73, Inhaltscommit `0cd217e62e8a371fee3708fca1121dab3da5d221`.
+Vier Checks dieses Commits bei Abfrage noch nicht abgeschlossen. Abschließend
+Abnahme/Verweis ergänzt: 19 Pointer, fünf unveränderte Evidenz-Blobs und drei
+Planfälle bestanden; AGENTS 766 Wörter, HANDOFF im Zielumfang. Aktuellen
+Branch-Head/CI vor tatsächlicher Fortsetzung prüfen. Kein Merge.
+
 ## Aktueller Abschluss: Plan für Quellenzugriff und Fortsetzung, 01.11.2026
 
 Nutzer beauftragt Internetrecherche und Umsetzungsplan gegen blockierte Quellen
