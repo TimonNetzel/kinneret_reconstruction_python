@@ -45,7 +45,11 @@ Nur AGENTS/HANDOFF/Status geändert; Fachdateien und alte Statushistorie
 unverändert. Diff und vier lokale Links/Anker geprüft; 753 geschützte
 Blobs/Dateimodi einschließlich Symlink und der eine Fachfolgeauftrag unverändert.
 Keine wissenschaftliche Recherche, Daten-/Modellarbeit oder manuellen Tests.
-Neue Commit-/PR-/CI-Verweise nach Sicherung ergänzen.
+Inhaltscommit `65bd8b267300daf7cb8d55bd0c09f901d033391b` über
+[PR #64](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41287148906
+an diesem Inhaltscommit bei Abfrage wartend.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Regel vor einem gesondert beauftragten Merge noch nicht auf main.
 
 ## Aktueller Abschluss: EMPD2-Klimaherkunft im Internet recherchiert, 01.11.2026

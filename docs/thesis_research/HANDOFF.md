@@ -26,7 +26,11 @@ Nur AGENTS und kurze HANDOFF-/Statuspflege; bestehende Fachdateien unverändert.
 Diff und vier lokale Links/Anker geprüft; 753 geschützte Blobs/Dateimodi,
 Statushistorie und der eine fachliche Folgeauftrag unverändert.
 Keine Recherche oder manuellen Projekt-/Modelltests in diesem Regelpaket.
-Neue Sicherungsverweise nach Erstellung ergänzen.
+Inhaltscommit `65bd8b267300daf7cb8d55bd0c09f901d033391b` über
+[PR #64](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64)
+remote gesichert, offen/ungemergt und mergebar, gegen #63 ohne Merge.
+Automatische CI 41287148906 an diesem Inhaltscommit bei Abfrage wartend.
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 
 ## Ergebnis und korrigierter Arbeitsauftrag, 01.11.2026
 
@@ -139,8 +143,9 @@ Keine Dokumentationsschleife allein aufgrund fehlender Nutzerdatei.
 
 ```text
 Setze Netzel auf codex/netzel-default-web-research fort.
-Gesicherte Basis: 560279524e8cd03ad721149b9602697b59efbd39 / PR #63.
-Neue Inhaltscommit-/PR-Verweise werden nach Sicherung hier ergänzt.
+Inhaltscommit: 65bd8b267300daf7cb8d55bd0c09f901d033391b
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/64
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Aktuellen PR-Head/CI prüfen; ungesicherte Arbeit erhalten.
 Eigener Worktree/Branch/PR; kein Merge.
 Prüfe den in HANDOFF vorbereiteten historischen Erzeugungs-/Exportnachweis:
