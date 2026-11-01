@@ -529,3 +529,61 @@ BOA- oder Sage-Challenge. Optional kann ein bereits bekannter offizieller
 öffentlicher Original-Link genannt werden. Codex übernimmt dessen Prüfung
 bzw. nach belegter relevanter Zugriffsänderung die Fortsetzung desselben
 Auftrags; ohne neuen Eingang keine identischen Abrufe oder Diagnosepakete.
+
+
+## Furlanetto-Dissertation: gezielte TRS-18-Originalmethodenlesung, 01.11.2026
+
+**Basis/Quelle:** PR #71, Head `a55a38d3d233007e1ec0c7072a341d9e89778a40`,
+offen/ungemergt, vier erfolgreiche Head-Checks. Sechs bestehende Worktrees
+sauber erhalten; eigener Worktree/Branch `codex/netzel-furlanetto-thesis-review`.
+Nutzer stellt `phd_unimib_809217.pdf` bereit und bittet um tokensparende Lesung;
+bestehendes OK gilt. PDF unverändert: 12.666.323 Bytes, 193 Seiten, SHA-256
+`8bd60270b42266dfd64344cb58c229b1dbb97dcdf0939fcb09198aa65c2cd440`.
+[Evidenz mit Zitaten/Fundstellen](./furlanetto_thesis_review_2026_11_01/evidence.json).
+
+**Identität/Version:** Titelblatt, PDF-S.1: Giulia Furlanetto, Matrikel 809217,
+Università degli Studi di Milano-Bicocca, akademisches Jahr 2017/2018,
+„Quantitative reconstructions of climatic series in mountain environment based
+on paleoecological and ecological data“. Das frühere BOA-Jahr 2019 bleibt
+separate bibliographische Metainformation; kein Sammlungsdatum daraus.
+Manuscript 1, Druck-S.15 / PDF-S.29, trägt den korrespondierenden Werktitel
+„Elevational transects of modern pollen samples - site specific temperatures
+as a tool for paleoclimate reconstructions in the Alps“ und den Stand
+„The Holocene accepted“. Diese Dissertation ist eine lesbare Originalquelle;
+Identität mit finalem DOI-Artikel/Sage-Supplement **nicht verifiziert**.
+Kein erneuter BOA-/Sage-Abruf. Die Nutzerdatei wurde nicht ins Git übernommen;
+Zitate/Hash sind gesichert, keine dauerhafte PDF-Archivierung im PR behauptet.
+
+| Getrennter Nachweis | Gelesene Originalstelle und begrenzter Schluss |
+| --- | --- |
+| TRS-18-/Gruppenbindung | Appendix A, S1a, Zeile „TRS 18“, Druck-S.53 / PDF-S.67; Tabellenbeschriftung „Supplementary Table S1a La Thuile Valley elevational transect“, Druck-S.54 / PDF-S.68. §2.1, Druck-S.22 / PDF-S.36, nennt die La-Thuile-Gruppe von „TRS 1“ bis „TRS 27“ und anschließend „In each site“. Die Methode ist damit dieser Gruppe einschließlich TRS 18 zugeordnet. Vorhandene W1/W2-Archiv-/DOI-Brücke erhalten; keine neue Export-/Versionsgleichheit behauptet. |
+| Sammlung | §2.1, Druck-S.22 / PDF-S.36: „three moss polsters were collected within a circular area of 1.8 m radius (ca 10 m2) and mixed into one sample“. Weiter: „Mosses were sampled down to, but not including, the mineral soil.“ Drei räumliche Teilentnahmen/Mischprobe belegt; Datum und Gleichzeitigkeit damit nicht datiert. |
+| Ablagerung | Dieselbe Stelle: „their pollen content is an average pollen deposition of several years“. Autorenbeschreibung mit Verweisen auf Räsänen et al. (2004), Pardoe et al. (2010), Lisitsyna und Hicks (2014); diese Arbeiten nicht nachgelesen und nicht als zusätzliche unabhängige Evidenz gezählt. Kein datierter Beginn/Endpunkt für TRS 18. |
+| Integration | Qualitativ mehrjährig beschrieben. „Several years“ bleibt unquantifiziert; daraus keine feste Jahreszahl, Verteilung oder gemessene TRS-18-Dauer ableiten. Mischung von drei Polstern belegt keine drei Zeitpunkte. |
+| Unsicherheit | In diesen gelesenen Stellen keine quantifizierte zeitliche Unsicherheit für TRS 18; unbekannt, keine Nullunsicherheit. Keine weltweite/Dissertations-Gesamtaussage über fehlende Belege. |
+
+**Wichtige Geltungsgrenze:** „2016-2017“ auf Druck-S.87 / PDF-S.101 gehört
+zu Pollenfallen-Monitoring in Manuscript 2 (§3.4, Upper Brembana Valley;
+Manuskripttitel Druck-S.81 / PDF-S.95). Daraus kein Sammlungsdatum oder
+Integrationsintervall für TRS 18 aus Manuscript 1 ableiten. Klimaperioden
+in Tabellenköpfen sind ebenfalls keine Sammlungsjahre; keine R01–R03-Neusuche.
+
+**Ergebnis/Stop:** Zugeordnete Originalstellen in der bereitgestellten
+Dissertationsfassung gelesen, Kernseiten 22 und 53 zusätzlich visuell geprüft;
+keine Volllektüre der 193 Seiten oder Werteanalyse. **R04 bleibt offen**;
+**R05 stärker teilweise belegt** durch konkretisierte Mischprobenmethodik und
+qualitative Mehrjährigkeit, aber numerische Zeitspanne/Unsicherheit offen.
+Keine R06-/Gatefreigabe. An Originalstellen gemäß Auftrag gestoppt; keine
+Sekundärquellenkette erweitert. Alte Berichte/Evidenz/Originale erhalten,
+nur Review/Evidenz und HANDOFF/Status geändert. JSON, Zitate, Seiten, Hash,
+Links und Diff geprüft; keine manuellen Projekt-/Modelltests, Rechnungen,
+Reparatur, Implementierung, neue Probe/Kohorte, A4-Umsetzung/A5/A6,
+Unteragenten, Kontakte oder Merges.
+
+**Genau ein Anschluss:** Für denselben bereits autorisierten Auftrag nur noch
+die korrespondierenden Stellen der publizierten DOI-Fassung und des
+Verlagssupplements bei lesbarem erlaubtem Zugang gegen diesen Befund abgleichen.
+Dieser Versionsabgleich bleibt blockiert; kein erneutes OK, keine Pflichtdatei
+oder Kontaktaufnahme. Keine identischen BOA-/Sage-Abrufe ohne relevanten neuen
+Eingang. Optional kann eine bereits vorliegende lesbare Artikel-/Supplementfassung
+freiwillig bereitgestellt werden; Codex übernimmt Versions-/Stellenprüfung.

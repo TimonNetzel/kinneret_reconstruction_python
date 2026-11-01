@@ -1,0 +1,199 @@
+{
+  "checked_at_utc": "2026-11-01T10:45:08.839764+00:00",
+  "base_pr": {
+    "number": 71,
+    "head": "a55a38d3d233007e1ec0c7072a341d9e89778a40",
+    "state": "open",
+    "merged": false,
+    "head_checks": {
+      "total": 4,
+      "completed_success": 4
+    }
+  },
+  "authorization": "Existing OK, Furlanetto fortsetzen; user supplied PDF and asked for token-efficient reading. Only the existing TRS-18 methods task.",
+  "scope": {
+    "sample": "Champvillair_a18",
+    "original_sample": "TRS 18",
+    "article_doi": "10.1177/0959683618810395"
+  },
+  "source": {
+    "file_name": "phd_unimib_809217.pdf",
+    "user_upload": "sediment://file_000000008894824397ec6b2f37af3566",
+    "workspace_path": "/workspace/attachments/77b23faa-51e0-46da-b895-af3c0d734f15/phd_unimib_809217.pdf",
+    "bytes": 12666323,
+    "sha256": "8bd60270b42266dfd64344cb58c229b1dbb97dcdf0939fcb09198aa65c2cd440",
+    "pdf_pages": 193,
+    "pdf_version": "1.5",
+    "cover_academic_year": "2017/2018",
+    "historical_repository_year": "2019; previous BOA record/search metadata, not inferred collection date",
+    "pdf_metadata_creation_and_modification_utc": "2018-10-30 11:49:52; technical metadata, not proof of collection or publication date",
+    "institutional_candidate": "https://www.boa.unimib.it/handle/10281/241319",
+    "origin_limit": "Supplied by user as downloaded PhD file. Author/title/registration verified inside document; filename matches historical BOA candidate. Byte identity to a currently served institutional original not independently verified.",
+    "article_version": "Thesis Manuscript 1 labelled The Holocene accepted; final published article/DOI supplement equivalence unverified",
+    "publisher_supplement_read": false,
+    "original_preservation": "Uploaded file unchanged in attachment workspace. Not added to Git; remote repository stores selected quotations and provenance/hash only, not full PDF bytes."
+  },
+  "reading": {
+    "method": "pdftotext -layout, local bounded keyword search; targeted text reading and rendered-page verification",
+    "main_locations": [
+      {
+        "id": "D1",
+        "pdf_page": 1,
+        "printed_page": null,
+        "section": "Title page",
+        "quotes": [
+          "Quantitative reconstructions of climatic series in mountain environment based on paleoecological and ecological data",
+          "ACADEMIC YEAR 2017/2018"
+        ],
+        "finding": "Giulia Furlanetto, Milano-Bicocca, cycle XXXI, registration 809217; identifies the supplied thesis, not a sample collection date."
+      },
+      {
+        "id": "D2",
+        "pdf_page": 29,
+        "printed_page": "15",
+        "section": "Manuscript 1 heading",
+        "quotes": [
+          "Manuscript 1",
+          "(The Holocene accepted)",
+          "Elevational transects of modern pollen samples - site specific temperatures as a tool for paleoclimate reconstructions in the Alps"
+        ],
+        "finding": "Title and author group identify the corresponding accepted work in this thesis. Final DOI article and publisher supplement byte/text equivalence unverified."
+      },
+      {
+        "id": "D3",
+        "pdf_page": 36,
+        "printed_page": "22",
+        "section": "Manuscript 1, 2.1 Pollen data and other microfossils",
+        "quotes": [
+          "A total of 27 sites from La Thuile Valley (from the lowermost TRS 1 to the uppermost TRS 27)",
+          "In each site, three moss polsters were collected within a circular area of 1.8 m radius (ca 10 m2) and mixed into one sample.",
+          "Mosses were sampled down to, but not including, the mineral soil.",
+          "their pollen content is an average pollen deposition of several years"
+        ],
+        "finding": "Group-bound collection/mixing method and qualitative multiyear deposition rationale. Last statement cites Räsänen et al. (2004), Pardoe et al. (2010), Lisitsyna and Hicks (2014); these references were not read or counted as independent evidence."
+      },
+      {
+        "id": "D4",
+        "pdf_page": 67,
+        "printed_page": "53",
+        "section": "Manuscript 1, Appendix A. Supplementary data, S1a, row TRS 18",
+        "quotes": [
+          "TRS 18"
+        ],
+        "finding": "Explicit TRS 18 row within La Thuile transect; low-pressure grazed pasture with scattered Larix decidua, Pinus cembra, Alnus viridis and lodge about 50 m away. Row/header visually checked. Numeric pollen/climate values not analysed."
+      },
+      {
+        "id": "D5",
+        "pdf_page": 68,
+        "printed_page": "54",
+        "section": "Caption below continuation of preceding table",
+        "quotes": [
+          "Supplementary Table S1a La Thuile Valley elevational transect."
+        ],
+        "finding": "Labels the Appendix A table containing TRS 18 on preceding PDF page 67."
+      },
+      {
+        "id": "D6",
+        "pdf_page": 101,
+        "printed_page": "87",
+        "section": "Manuscript 2, 3.4 Pollen analysis - modern pollen assemblages",
+        "quotes": [
+          "Pollen monitoring data represents the period 2016-2017."
+        ],
+        "finding": "Trap monitoring in a different manuscript about Upper Brembana Valley (title PDF page 95 / printed 81). Not a TRS-18 collection date or moss integration interval."
+      }
+    ],
+    "visual_checks_pdf_pages": [
+      36,
+      67
+    ],
+    "toc_and_context_pdf_pages": [
+      5,
+      6,
+      95
+    ],
+    "search_terms": [
+      "TRS 18",
+      "Champvill",
+      "Elevational transects",
+      "collect",
+      "deposit",
+      "integrat",
+      "uncertain",
+      "year",
+      "polster",
+      "mix"
+    ],
+    "full_document_text_extracted_locally": true,
+    "full_thesis_substantive_review": false,
+    "limit": "Only relevant passages read, no exhaustive absence claim for rest of thesis. No reference-chain expansion or numerical analysis."
+  },
+  "separate_findings": {
+    "binding": {
+      "status": "Supported within identified thesis version",
+      "evidence": [
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "claim": "Existing W1/W2 bridge Champvillair_a18 -> TRS 18 -> article DOI retained. Explicit S1a row places TRS 18 in La Thuile transect, whose group method applies to each site. No new archive bytes or final publisher version equality checked."
+    },
+    "collection": {
+      "status": "Group-bound procedure supported; date unknown",
+      "evidence": [
+        "D3",
+        "D4"
+      ],
+      "claim": "Three moss polsters within radius 1.8 m (source ca 10 m2), mixed into one sample; moss down to but excluding mineral soil. No collection date or simultaneity established in selected passages."
+    },
+    "deposition": {
+      "status": "Qualitative multiyear description",
+      "evidence": [
+        "D3"
+      ],
+      "claim": "Authors characterize moss pollen content as average deposition of several years, with literature citations. No dated beginning/end for TRS 18."
+    },
+    "integration": {
+      "status": "Qualitatively multiyear; numeric interval unresolved",
+      "evidence": [
+        "D3"
+      ],
+      "claim": "Several years retained verbatim without converting to a fixed duration or distribution; mixing three polsters is spatial collection, not three collection dates. Not sample-specific measured duration."
+    },
+    "uncertainty": {
+      "status": "Unquantified",
+      "evidence": [
+        "D3",
+        "D4"
+      ],
+      "claim": "No temporal uncertainty estimate for TRS 18 in read locations; unknown, not zero. No age from cover/repository/PDF metadata or 2016-2017 trap monitoring."
+    },
+    "R04": "Still open: collection/deposition time and its uncertainty unassigned for TRS 18.",
+    "R05": "Stronger partial evidence in thesis version: explicit group method, three-polster mixture and qualitative several-years integration. Exact represented interval and uncertainty remain open; not closed."
+  },
+  "requests": {
+    "boa": 0,
+    "sage": 0,
+    "web_search": 0
+  },
+  "stop": "Assigned original thesis passages and group binding obtained. Stop without extending to other samples, other manuscript results, cited papers or numerical analysis. Remaining version boundary: published DOI article/supplement unreviewed.",
+  "one_continuation": "Same authorized task: compare only corresponding TRS-18 methods in final DOI article and publisher supplement once readable permitted bytes or a verified public original link are available. No unchanged BOA/Sage retries, no fresh OK needed for same scope.",
+  "user_actions": {
+    "required_now": "None; uploaded thesis is sufficient for this bounded thesis reading. No mandatory additional file, contact or repeated host approval.",
+    "optional": "If already available, a readable published article or original supplement may be supplied voluntarily. Codex verifies identity/version and passages; no user search obligation."
+  },
+  "not_performed": [
+    "new sample/cohort",
+    "pollen/climate value analysis",
+    "data repair",
+    "implementation/manual project tests",
+    "scientific calculations",
+    "R01-R03 research",
+    "R06/gate approval",
+    "A4 implementation/A5/A6",
+    "subagents",
+    "contacts",
+    "merge"
+  ]
+}
