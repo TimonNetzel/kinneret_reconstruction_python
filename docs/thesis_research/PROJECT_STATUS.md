@@ -21,6 +21,44 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: RS10-Herkunftsprüfung mit historischem N-Beleg, 01.11.2026
+
+Nutzer-„Mache weiter“ autorisiert das in #75 vorbereitete Herkunftspaket.
+[Bericht](./A4_RS10_ROW_PROVENANCE.md) und
+[Evidenz](./a4_rs10_provenance_2026_11_01/evidence.json): Commit
+`e51f6738df4a397b986c0cb9b6d089e612e90518` identifiziert den bekannten modernen
+Blob; Nachricht „add datasets“, keine Kommentare oder mitgeführte Aufbereitung.
+Allen et al. (2000), direkt dokumentierter Originalverweis, beim Erstabruf
+HTTP 403; Methodenteil nicht gelesen. Zwei begrenzte Suchrunden abgeschlossen,
+kein verifiziertes zeilenbezogenes Herkunfts-/Metadatenobjekt gefunden.
+
+Neuer Originalbeleg: Salter-Townshend (2009), institutionelle Dissertation,
+§6.1.1, Druck-S.138/PDF-S.152. Beschreibt für den älteren RS10-Stand bei
+fehlenden Zählsummen angenommene N=400. Das belegt historische Verarbeitung,
+keine Anwendung auf heutige Zielzeilen. Keine aktuelle Zeile als Pseudo-Count
+klassifiziert. Objekt-/Strukturprüfung aus #75 übernommen, keine Datenbytes,
+Beobachtungswerte, Summen oder sonstigen Binärobjekte gelesen.
+
+Zeilenbindung, Originalcount-/Nennerherkunft und genauer Klima-Zeitbezug für
+das heutige Objekt bleiben offen. Kein E gewählt, kein Gate geöffnet und
+keine reale Kalibrierung. Aktive Suche dieses Datenwegs endet an dieser
+Grenze; genau ein Anschluss nur bei neuem verifiziertem Herkunfts-/
+Aufbereitungsbeleg vorbereitet. Keine Pflichtdatei oder verifizierte
+Konfigurationsaktion für den Nutzer; neue Datenwege/Kontakte nicht beschlossen.
+
+Basis #75, `10afa451def72a8a89ffe717dc0a00f5da3bc610`, offen/ungemergt,
+vier Head-Checks erfolgreich. Branch `codex/netzel-rs10-row-provenance` im
+vorhandenen Arbeitsverzeichnis. Alte Quellen-/Strukturevidenz, Statushistorie,
+Verträge, Modelle, Originale, Importer, Baseline und CLI/App erhalten.
+Furlanetto/Netzel-PhD nicht gelesen, A1–A3/EMPD2-Prüfungen nicht wiederholt.
+Keine Datenwahl, Joins, Reparatur, Nennerrechnung, Implementierung, manuellen
+wissenschaftlichen Tests, Fits, Scores, Simulationen, Unteragenten, Kontakte
+oder Merges. Quellen/Fundstellen, 25 Index-Pointer, sieben Evidenz-Blobs, neun
+lokale Links/Anker, alte Evidenz/Hash und Statushistorie sowie Fünf-Dateien-Diff
+geprüft; übrige Worktrees sauber. Eigene automatische Repository-CI getrennt
+berichten. Sicherung folgt
+in HANDOFF.
+
 ## Aktueller Abschluss: moderner Menezes-Datenkandidat identifiziert, 01.11.2026
 
 Nutzerauftrag zur begrenzten Gesamtprojektfortsetzung Richtung A4 ausgeführt.

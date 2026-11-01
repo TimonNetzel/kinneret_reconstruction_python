@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-01",
+  "base_commit": "10afa451def72a8a89ffe717dc0a00f5da3bc610",
+  "authorization": "User: Mache weiter. Executes the single prepared RS10 row-provenance check in HANDOFF from PR 75.",
+  "scope": {
+    "question": "Find an author/original source binding rows of the pinned zanicc pollen_climate object to original samples, collections/sources and climate-time metadata.",
+    "allowed": "Data-addition commit metadata, one directly referenced historical description/access attempt, at most two focused search rounds when no row-provenance object is linked; assess an original search lead only for this question.",
+    "stop": "After the bounded route, record exact available provenance and remaining row-binding gap. Do not turn failure into another generic search package.",
+    "excluded": "No binary data or observation values, no repeated object/structure verification, joins, count sums, sample or taxon selection, model/score/simulation runs, project dependency changes, contacts or merges."
+  },
+  "existing_evidence": {
+    "path": "../a4_menezes_data_2026_11_01/evidence.json",
+    "sha256": "dca3bc768b7e01f6151cc0bd2600c9073ab0fccc4b67536bb8a86f1ec1827261",
+    "reuse": "Public object identity, two-revision byte agreement, shape/column roles, NULL row dimnames and lack of metadata fields reused without data fetch/deserialization.",
+    "target": {
+      "repository": "AndrMenezes/zanicc",
+      "path": "data/pollen_climate.rda",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "git_blob_sha1": "e7a7d8b6fec3711af7a1888ba83871009ad8e981",
+      "sha256": "2a1e8ecaac28a3f88ccffcec4000eba9db2c8ec612f3ce29afe5fa9bface5daa",
+      "documented_rows": 7832
+    }
+  },
+  "sources": [
+    {
+      "id": "R1",
+      "kind": "immutable author commit metadata",
+      "url": "https://github.com/AndrMenezes/zanicc/commit/e51f6738df4a397b986c0cb9b6d089e612e90518",
+      "sha": "e51f6738df4a397b986c0cb9b6d089e612e90518",
+      "date": "2026-08-26T21:59:43Z",
+      "message": "add datasets",
+      "comment_count": 0,
+      "tree": "01ca6a4786aa8a092fb822694e8d31b9563e59f7",
+      "parents": [
+        "30b7361e92af3dba5a92942ece7c156f574fe352"
+      ],
+      "files": [
+        {
+          "path": "data/microbiome_gut.rda",
+          "git_blob_sha1": "3a0d0746e57a472a315a624b519b3f5117b81a9e",
+          "status": "added",
+          "patch_provided": false
+        },
+        {
+          "path": "data/pollen_climate.rda",
+          "git_blob_sha1": "e7a7d8b6fec3711af7a1888ba83871009ad8e981",
+          "status": "added",
+          "patch_provided": false
+        },
+        {
+          "path": "data/pollen_monticchio.rda",
+          "git_blob_sha1": "87efbb4f26b49040908df243031f1d56248207e0",
+          "status": "added",
+          "patch_provided": false
+        }
+      ],
+      "scope_note": "Only commit metadata and file descriptors read; no binary content, patches, sample values or other datasets fetched.",
+      "assessment": "The target blob was added under the message add datasets, with no commit comments or text preprocessing/provenance file in this commit. No external row-source table or processing trace is supplied by the inspected metadata. This does not establish absence in the whole repository history or elsewhere."
+    },
+    {
+      "id": "R2",
+      "kind": "directly referenced original description; access gap",
+      "authors": "Allen, Watts and Huntley",
+      "year": 2000,
+      "doi": "10.1016/S1040-6182(00)00067-7",
+      "title": "Weichselian palynostratigraphy, palaeovegetation and palaeoenvironment; the record from Lago Grande di Monticchio, southern Italy",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1040618200000677",
+      "link_evidence": "Prior pinned R/datasets.R lines 41 and 49-53; cached lines consulted without new source fetch.",
+      "attempt": {
+        "route": "web open of publisher original",
+        "result": "HTTP 403 Forbidden",
+        "read_methods": false
+      },
+      "assessment": "Search/abstract text is not an original methods or row-binding proof. No conclusion about unseen contents.",
+      "retry_condition": "New verified lawful readable original route or bytes, not time elapsed or another chat."
+    },
+    {
+      "id": "R3",
+      "kind": "original author dissertation in institutional repository; new RS10 data question",
+      "author": "Michael Salter-Townshend",
+      "year": 2009,
+      "version": "University of Dublin, Trinity College; title page April 2009, declaration dated May 7, 2009",
+      "title": "Fast Approximate Inverse Bayesian Inference in non-parametric Multivariate Regression with application to palaeoclimate reconstruction",
+      "url": "https://www.tara.tcd.ie/tara8/server/api/core/bitstreams/40a72ac0-4fc4-4e81-97a9-167da1cf68f5/content",
+      "read_scope": [
+        "Title/declaration for identity only",
+        "Section 6.1.1 The RS10 Dataset, printed p.138, PDF p.152 (zero-based 151); data-description paragraphs only, web text lines 5353-5367"
+      ],
+      "literal_excerpt": "assuming a total count of 400",
+      "excerpt_normalization": "Line break between total and count replaced with a space.",
+      "paraphrase": "The older RS10 analysis has 7742 locations and 28 taxa. Where only proportions and no totals were reported, a total of 400 was assumed. Nearby-station climate is discussed.",
+      "assessment": "Historical RS10 measurement-provenance finding. No mapping from this version to the 7832-row target is provided in the read passage; no affected target rows identified. It does not prove current target pseudo-counts or a defect in Menezes.",
+      "availability": {
+        "route": "institutional PDF readable through web tool",
+        "sha256": null,
+        "original_local_path": null,
+        "durable_storage_status": "not_checked",
+        "limit": "No full PDF bytes archived or hashed; compact quote, locators, identity and findings are saved."
+      }
+    }
+  ],
+  "search_budget": {
+    "max_rounds": 2,
+    "performed_rounds": 2,
+    "rounds": [
+      {
+        "round": 1,
+        "queries": [
+          "\"RS10\" pollen dataset original sample climate",
+          "\"pollen_climate\" \"7832\" source data",
+          "\"Weichselian palynostratigraphy\" \"2000\" data RS10"
+        ],
+        "outcome": "Found the institutional Salter-Townshend thesis, directly relevant original RS10 data-description lead; publisher Allen source attempted separately. No target row-to-sample table found."
+      },
+      {
+        "round": 2,
+        "queries": [
+          "\"RS10\" \"pollen\" \"data\" \"download\" sample",
+          "\"7832\" \"pollen\" \"data\" provenance",
+          "\"pollen_climate\" \"sample\" \"RS10\""
+        ],
+        "outcome": "No verified target row-binding or preprocessing object found. Unrelated pollen datasets sharing the number 7832 and fossil reconstruction outputs were not treated as source identity or opened as new data routes."
+      }
+    ],
+    "limit": "Search-result snippets used only to locate originals or reject irrelevant matches; no worldwide nonexistence claim. No extra search round, new source family or contact."
+  },
+  "findings": [
+    {
+      "id": "P01",
+      "status": "verified_commit_provenance_only",
+      "claim": "Data-addition commit identifies the same target Git blob, without explaining source-row identity or preparation.",
+      "target_relevance": "Repository-level origin extends the earlier identity chain; original measurement lineage remains open."
+    },
+    {
+      "id": "P02",
+      "status": "verified_historical_method_with_version_limit",
+      "claim": "An original 2009 RS10 description explicitly uses an assumed total of 400 for cases supplied only as proportions.",
+      "target_relevance": "Existing original-count/N requirement now has a concrete historical reason. Applicability to the pinned current object's rows is unverified; no pseudo-count classification or correction."
+    },
+    {
+      "id": "P03",
+      "status": "not_established_in_bounded_search",
+      "claim": "No target row-to-original-sample/source/collection/time bridge obtained.",
+      "target_relevance": "Row identity, original-versus-derived count status, exact climate calendar period, observation status and dependencies remain unresolved."
+    }
+  ],
+  "required_new_input": {
+    "object": "A versioned row-provenance table or demonstrably applied source-to-target preprocessing record for the exact pinned target blob.",
+    "minimum_fields": [
+      "target version/blob and row identifier/order",
+      "original sample and source/collection IDs",
+      "original count versus proportion-derived status and original N/assumed-total provenance where applicable",
+      "sample collection/deposition/integration and uncertainty when known",
+      "applied climate source/period and sample/row assignment"
+    ],
+    "limit": "These describe missing roles under the existing model contract, not new numeric eligibility thresholds. Unknowns must remain unknown; metadata alone would not complete every A4 gate.",
+    "reopening": "New verified original linked metadata/processing evidence; no unchanged RS10 search or blocked Allen route repeated.",
+    "user_action": "No mandatory upload, contact or further tool/network setup. A known original provenance file/link would be optional new input; none is assumed available."
+  },
+  "readiness": {
+    "real_E_selected": false,
+    "row_provenance_verified": false,
+    "current_target_pseudo_count_status": "unverified",
+    "current_target_original_N_verified": false,
+    "exact_climate_period_verified": false,
+    "real_calibration_ready": false,
+    "models_fitted": false
+  },
+  "not_performed": [
+    "No data-object downloads, decoding, sample/value/sum checks or matrix exports",
+    "No rerun of completed A1/A2/A3, EMPD2 archive or previous candidate audit",
+    "No Furlanetto/Netzel PhD reading or requests",
+    "No Parnell-blocked-route retry",
+    "No row linkage by coordinates, names, dimensions or similar RS10 labels",
+    "No preprocessing, corrections, model/data selection, manual scientific tests, fits, scores or simulations",
+    "No author contact, automation, delegation or merge"
+  ],
+  "basis": {
+    "pr": 75,
+    "head": "10afa451def72a8a89ffe717dc0a00f5da3bc610",
+    "state": "open",
+    "merged": false,
+    "head_checks": "four completed success at entry"
+  },
+  "acceptance": "Documentary/source, locator, JSON/index, preserved-evidence/history and diff checks; no independent palynological review."
+}

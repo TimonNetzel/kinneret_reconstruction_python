@@ -16,7 +16,8 @@
     "furlanetto_public_original_2026_11_01/evidence.json": "57e1924213f6aaf3b7c477aaa89acd232bce70d8",
     "furlanetto_boa_review_2026_11_01/evidence.json": "a8a6e47d11dd79e065a4508c480ab7efd7277680",
     "furlanetto_thesis_review_2026_11_01/evidence.json": "b7ecbc3e8ff664b368310640c3e14e61ed94aa50",
-    "a4_menezes_data_2026_11_01/evidence.json": "f6405a12a89f039c536e8a9ad5f5856f1e0a84d4"
+    "a4_menezes_data_2026_11_01/evidence.json": "f6405a12a89f039c536e8a9ad5f5856f1e0a84d4",
+    "a4_rs10_provenance_2026_11_01/evidence.json": "b5e4f5278a6ec51436119644a818e20b5b85dd12"
   },
   "sources": [
     {
@@ -254,6 +255,10 @@
         {
           "question": "Exact source files, versions and line locators for modern data loading and documentation",
           "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/text_sources"
+        },
+        {
+          "question": "Bounded row-provenance search and historical assumed-N finding; applicability to target rows unverified",
+          "evidence_ref": "a4_rs10_provenance_2026_11_01/evidence.json#/findings"
         }
       ],
       "access": [
@@ -262,6 +267,50 @@
           "observed_on": "2026-11-01",
           "outcome": "readable_and_hash_verified",
           "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/data_object"
+        }
+      ]
+    },
+    {
+      "id": "rs10_historical_measurement_provenance",
+      "scope": {
+        "role": "Historical RS10 description; no mapping to the pinned 7832-row target",
+        "search_package": "A4_RS10_ROW_PROVENANCE.md"
+      },
+      "identity": {
+        "author": "Michael Salter-Townshend",
+        "year": 2009,
+        "version": "Trinity College Dublin dissertation, April 2009 title page",
+        "evidence_ref": "a4_rs10_provenance_2026_11_01/evidence.json#/sources/2"
+      },
+      "original": {
+        "sha256": null,
+        "availability_status": "not_checked",
+        "durable_storage_status": "not_checked",
+        "locators": [
+          {
+            "kind": "institutional_pdf",
+            "value": "https://www.tara.tcd.ie/tara8/server/api/core/bitstreams/40a72ac0-4fc4-4e81-97a9-167da1cf68f5/content#page=152"
+          }
+        ],
+        "last_bytes_verification": null,
+        "limit": "Selected original text read through web tool; full original bytes not archived or hashed locally. This is a distinct thesis from Furlanetto or Netzel."
+      },
+      "findings": [
+        {
+          "question": "Older RS10 analysis assumes N=400 where only proportions supplied; target-row applicability unverified",
+          "evidence_ref": "a4_rs10_provenance_2026_11_01/evidence.json#/findings/1"
+        },
+        {
+          "question": "Exact unresolved row/measurement/time provenance and reopening condition after exhausted search budget",
+          "evidence_ref": "a4_rs10_provenance_2026_11_01/evidence.json#/required_new_input"
+        }
+      ],
+      "access": [
+        {
+          "route": "institutional PDF via web",
+          "observed_on": "2026-11-01",
+          "outcome": "selected_text_read",
+          "evidence_ref": "a4_rs10_provenance_2026_11_01/evidence.json#/sources/2"
         }
       ]
     }
