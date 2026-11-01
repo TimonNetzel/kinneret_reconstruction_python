@@ -1,74 +1,59 @@
-# Netzel: Quellenzugriff und Fortsetzung verbessern
+# Netzel: kurzer Projekteinstieg
 
-## Aktueller Auftrag, 01.11.2026
+## Aktueller Stand, 01.11.2026
 
-Internetrecherche und konkreten Umsetzungsplan zur Verringerung von
-Zugriffsblockaden, Kontextverlust und Wiederholungsaufwand erstellen.
-**Planung abgeschlossen; Umsetzung noch nicht begonnen.**
-[Recherche, Zielbild und Abnahme](./RESEARCH_WORKFLOW_PLAN.md).
-Eigener Branch/Worktree `codex/netzel-research-workflow-plan` /
-`/workspace/netzel-research-workflow-plan`, ab
-`cb7ce16007d440252c82c8913c7e6b89d3511bd3` ([PR #72](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/72)).
-#72 bei Einstieg offen/ungemergt, vier erfolgreiche Checks. Sieben bisherige
-Worktrees erhalten. Nur Plan und Übergabe/Status geändert; kein Merge.
+Prozessumsetzung nach „Klingt gut. Dann machen wir weiter.“ abgeschlossen:
+[AGENTS](../../AGENTS.md) gekürzt, [Rechercheablauf](./RESEARCH_WORKFLOW.md)
+und [Quellenindex](./SOURCE_INDEX.json) angelegt. Index verlinkt bestehende
+Furlanetto-Evidenz statt Zitate zu duplizieren; wissenschaftliche Befunde
+unverändert. PhD nicht erneut geöffnet, keine Originalquellen abgerufen.
+Dokumentarische Abnahme steht am Ende des Rechercheablaufs.
 
-## Gesicherter wissenschaftlicher Stand
+Arbeitsbranch `codex/netzel-research-workflow`, Worktree
+`/workspace/netzel-research-workflow`. Basis [PR #73](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/73),
+Head `bc9f5d8152b1b6cdf41cbe20a123122125cab8c3`, bei Einstieg offen/ungemergt,
+vier erfolgreiche Checks. Aktuelle Sicherung siehe unten; kein Merge.
+[Frühere Übergabe](https://github.com/TimonNetzel/kinneret_reconstruction_python/blob/bc9f5d8152b1b6cdf41cbe20a123122125cab8c3/docs/thesis_research/HANDOFF.md).
 
-Furlanetto-PhD gezielt gelesen; [Evidenz](./furlanetto_thesis_review_2026_11_01/evidence.json)
-enthält Zitate/Seiten/Version/Hash. TRS-18-Gruppenmethode, drei Moospolster als
-Mischprobe und qualitative mehrjährige Ablagerung belegt; R04 offen, R05
-teilweise belegt. **PhD für diesen Plan nicht erneut eingelesen.**
-Das bisherige Furlanetto-OK bleibt gültig. Versionsabgleich mit Artikel/
-Supplement bleibt mangels lesbarem Zugang blockiert und wird durch dieses
-Prozesspaket nicht gestartet oder neu genehmigungspflichtig.
-[Gesicherte vorherige Übergabe](https://github.com/TimonNetzel/kinneret_reconstruction_python/blob/cb7ce16007d440252c82c8913c7e6b89d3511bd3/docs/thesis_research/HANDOFF.md).
+## Genau ein Anschluss – Furlanetto-Versionsabgleich, autorisiert, Zugang fehlt
 
-## Genau ein Anschluss – Prozessumsetzung vorbereitet, wartet auf Nutzer-OK
+**Ziel:** Nur korrespondierende TRS-18-Methodenstellen der publizierten Fassung
+DOI 10.1177/0959683618810395 und des Originalsupplements gegen die bereits
+belegte Dissertation prüfen. Bestehendes „OK, Furlanetto fortsetzen“ bleibt
+gültig; das Prozesspaket erteilt keine zusätzliche wissenschaftliche Freigabe.
 
-**Ziel:** Den verlinkten Plan in einem gemeinsamen Dokumentationspaket umsetzen:
-AGENTS/HANDOFF entdoppeln, bedarfsweise Workflowanleitung anlegen, vorhandene
-Furlanetto-Evidenzen in einem kleinen Quellenindex auffindbar machen.
-Alle wissenschaftlichen Schutzgrenzen erhalten. Keine neue PhD-Lektüre,
-Quellenabrufe, Apps/Netzänderungen oder neue Infrastruktur voraussetzen.
+**Eingang:** Lesbare erlaubte Originalbytes, neu verifizierter öffentlicher
+Original-Link oder belegte relevante Zugriffsänderung. Sage-Supplement und BOA
+lieferten zuletzt Website-403/Challenge trotz Hostfreigabe. Kein identischer
+Abruf ohne neuen Eingang. Keine Umgehung oder erfundenen Dateipfade.
 
-**Leseplan:** AGENTS, dieser HANDOFF, neuester Status und der verlinkte Plan;
-für die Erstbefüllung nur vorhandene Furlanetto-Evidenzdateien. Historie und
-Originaldateien nicht routinemäßig neu laden. Bei tatsächlichem Arbeitsbeginn
-aktuellen Head/CI und Worktreezustand prüfen.
+**Leseplan:** AGENTS, dieser HANDOFF, nur neuester PROJECT_STATUS-Abschnitt;
+im Index `furlanetto_article`/`furlanetto_supplement`/`furlanetto_thesis`, dann
+nur verlinkte Evidenz. Bekannte unveränderte Stellen wiederverwenden. PhD nicht
+pauschal erneut einlesen; Sammlung/Integration stehen in D3, Bindung in D4/D5.
+R04 offen, R05 teilweise belegt; keine genaue Dauer oder Zeitunsicherheit
+ableiten. Dauerhafter Originalspeicher ungeklärt; vorhandene Zitate bleiben
+nutzbar. Bei tatsächlichem Arbeitsbeginn aktuellen Head/CI prüfen.
 
-**Abnahme/Stop:** Links/JSON/Evidenzbezüge und die drei im Plan beschriebenen
-Fortsetzungs-/Blockerfälle dokumentarisch prüfen. Ein kurzer aktueller Einstieg,
-genau eine nächste Aktion, klarer Originalspeicherstatus; wissenschaftliche
-Berichte/Evidenz/Modelle unverändert. Keine neuen Proben/Kohorten, Werteanalyse,
-Reparatur, Forschungscode, manuellen wissenschaftlichen Tests, Rechnungen,
-R01–R03-Recherche, R06-/Gatefreigabe, A4/A5/A6, Unteragenten, Kontakte oder Merges.
-Eigener gemeinsamer Branch/PR, kein PR je Abruffehler. An dieser Abnahme stoppen.
+**Abnahme/Stop:** Version und TRS-18-/Gruppenbindung sichern; Sammlung,
+Ablagerung, Integration und Unsicherheit getrennt mit Originalstelle und Grenze
+belegen. Nach zugeordneten Stellen oder konkreter neuer Zugriffslücke stoppen.
+Nur Review/Evidenz und Übergabe/Status, nötige Indexverweise; keine neuen Proben,
+Werteanalysen, Reparatur, Forschungscode, manuellen wissenschaftlichen Tests,
+Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe, A4/A5/A6, Unteragenten,
+Kontakte oder Merges. Originale und alte Berichte erhalten.
 
-**Nutzeraktion:** Für dieses neue Umsetzungspaket genügt ein OK; die
-Recherche/Planung ist bereits erledigt. Kein Chatwechsel, keine Datei,
-App-Installation oder zusätzliche Hostfreigabe nötig. ChatGPT-Projekt als
-optionale Ergänzung, kein Ersatz für die Repo-Evidenz oder zugesicherter
-Codex-Dateizugriff.
+**Nutzeraktion:** Keine Pflichtaktion und kein weiteres OK. Optional kann eine
+bereits vorliegende Artikel-/Supplementfassung oder ein bekannter öffentlicher
+Original-Link bereitgestellt werden. Codex übernimmt Identitäts-/Stellenprüfung;
+ohne neuen Eingang keine weiteren Abrufe oder Diagnosepakete.
 
 ## Folgeprompt
 
 ```text
-Setze den gesicherten RESEARCH_WORKFLOW_PLAN im bestehenden Chat um.
-Branch und Sicherung: aktueller Verweis unten; Head/CI vor Beginn prüfen.
-Nur Prozessdokumentation und kleiner Index vorhandener Furlanetto-Evidenzen.
-AGENTS/HANDOFF entdoppeln, Schutzgrenzen erhalten, bedarfsweise Workflowanleitung.
-Kein PhD-Neueinlesen, kein neuer Quellenabruf, keine App-/Netzkonfiguration.
-Drei dokumentarische Abnahmefälle aus dem Plan prüfen; kein wissenschaftlicher
-Test, Modelllauf oder fachliches Folgepaket. Vorhandenes Furlanetto-OK erhalten.
-Alle Umfangs-/Stopgrenzen aus HANDOFF beachten. Gemeinsam sichern, kein Merge;
-genau einen Anschluss pflegen und kurz auf Deutsch berichten.
+Setze den bereits autorisierten Furlanetto-Versionsabgleich gemäß HANDOFF fort,
+sobald dessen technischer Eingang vorliegt. Branch/Sicherung siehe HANDOFF.
+Zuerst Quellenindex und referenzierte Evidenz nutzen; PhD nicht neu einlesen.
+Keine unveränderten BOA-/Sage-Abrufe. Grenzen, Abnahme und Stop aus HANDOFF
+und AGENTS einhalten. Ergebnis gemeinsam sichern, kein Merge.
 ```
-
-## Sicherung
-
-Planungsinhalt `66abf2bd3da3dd210015881a5128fa08b5bfa4a3` in
-[PR #73](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/73)
-remote gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-thesis-review`
-(#72). Vier Head-Checks des Inhaltscommits bei Abfrage laufend. Anschließend
-nur Sicherungsverweise ergänzt; Branch `codex/netzel-research-workflow-plan`,
-aktuellen Remote-Head/CI vor tatsächlicher Umsetzung prüfen. Kein Merge.
