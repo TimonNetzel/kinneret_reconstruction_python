@@ -35,7 +35,11 @@ Basis #65-Head `6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a`; nach `6a147f1`
 dort nur Sicherungsverweise. #65 offen/ungemergt, mergebar, Head-CI
 41287829015/41287825150 erfolgreich. Fünf bestehende Worktrees sauber erhalten;
 eigener Worktree/Branch `codex/netzel-sample-time-evidence`, PR gegen #65
-vorgesehen, ohne Merge. Sicherungsverweis folgt nach Push.
+über [PR #66](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66)
+remote gesichert, offen/ungemergt und mergebar, ohne Merge.
+Inhaltscommit `7a7f84ed922066e763dceb779fef6e22c986e986`; automatische
+[CI 41288401620](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41288401620)
+bei Abfrage laufend. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen.
 README/CONTRIBUTING gegen zwei Git-Blob-SHAs geprüft; Quellen-/Link-/Diff-/
 Blobprüfung bestanden: fünf lokale Links/Anker, 753 geschützte Objekt-IDs/Modi
 unverändert; alter Reviewtext und vollständige Statushistorie erhalten. Nur Review/HANDOFF/Status;

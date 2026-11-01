@@ -19,7 +19,12 @@ mergebar; Head-CI [41287829015](https://github.com/TimonNetzel/kinneret_reconstr
 und 41287825150 erfolgreich (Python 3.11/3.13). Fünf vorgefundene Worktrees
 sauber erhalten, kein Reset/Stash/Merge. Eigener Worktree
 `/workspace/netzel-sample-time-evidence`, Branch `codex/netzel-sample-time-evidence`;
-eigener gestapelter PR gegen #65 vorgesehen. Sicherungsverweis folgt nach Push.
+Inhaltscommit `7a7f84ed922066e763dceb779fef6e22c986e986` über
+[PR #66](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66)
+remote gesichert; offen/ungemergt und mergebar, gegen #65 ohne Merge.
+Automatische [CI 41288401620](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41288401620)
+am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 Nur Review ergänzt und HANDOFF/Status gepflegt. README/CONTRIBUTING am festen
 Release-Ref gegen zwei Git-Blob-SHAs geprüft; Quellen/Fundstellen, lokale
@@ -74,9 +79,9 @@ weitere reale Prüfung wird durch dieses Paket nicht freigegeben.
 
 ```text
 Setze Netzel auf codex/netzel-sample-time-evidence fort.
-Letzte verlässliche Sicherung: Basis 6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a,
-PR https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65;
-eigener Inhaltscommit/PR werden nach Sicherung hier ergänzt.
+Inhaltscommit: 7a7f84ed922066e763dceb779fef6e22c986e986
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
 Eigener Worktree/Branch/PR, kein Merge.
 Führe ausschließlich den in HANDOFF vorbereiteten A4-E-Stop-/Eingangsplan aus:
