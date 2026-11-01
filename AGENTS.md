@@ -66,14 +66,27 @@ dass zur Fortsetzung ein kurzes „OK“ genügt:
   Bereits autorisierte Arbeit vollständig erledigen; für das nächste neue Paket
   wieder einen klaren Folgeauftrag vorbereiten. Ein OK erteilt keine pauschale
   Merge-, Autorenkontakt- oder wissenschaftliche Freigabe.
+- **Folgeprompt nach Dokumentationsabschluss immer ausgeben:** Sobald ein
+  Dokumentationspaket abgeschlossen und mit Commit in einem eigenen PR remote
+  gesichert ist, den kopierfertigen Startprompt für genau den in HANDOFF
+  vorbereiteten Folgeauftrag automatisch in die Abschlussantwort aufnehmen.
+  Nicht auf eine Nachfrage des Nutzers warten und die Ausgabe nicht von einer
+  Chatwechsel-Empfehlung abhängig machen. Denselben Prompt in HANDOFF sichern:
+  Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe, Leseplan,
+  Schutzgrenzen, Abnahme und Stopbedingungen nennen. Fehlende Eingänge und
+  Blocker ausdrücklich angeben; ein fehlender Eingang bleibt eine Startbedingung.
+  Den tatsächlichen PR-/CI-Stand getrennt berichten; laufende oder fehlgeschlagene
+  CI nicht als erfolgreich ausgeben. Die Prompt-Ausgabe startet weder den
+  Folgeauftrag noch einen neuen Chat und erteilt keine zusätzliche Freigabe.
 - **Chatwechsel gezielt empfehlen:** Einen kopierfertigen Übergabeprompt ausgeben,
   wenn ein gesicherter Paketabschluss, ein deutlicher Themenwechsel oder viel
   angesammelter Kontext einen neuen Chat sinnvoll macht. Prompt auch in HANDOFF
   sichern: Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe,
   Leseplan, Schutzregeln und bekannte Blocker. Bei noch ausstehendem OK den
   vorgeschlagenen Startauftrag ausdrücklich als solchen kennzeichnen.
-- **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; bei
-  sinnvollem Chatwechsel den Prompt direkt mitliefern. Keinen neuen Chat selbst
+- **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; nach
+  Dokumentationsabschluss den Folgeprompt immer, bei anderen Paketen bei
+  sinnvollem Chatwechsel direkt mitliefern. Keinen neuen Chat selbst
   anlegen und keine Erinnerungs-/Hintergrundautomatisierung daraus ableiten.
 
 Kurz auf Deutsch zu Beginn und nach Arbeitspaketen berichten: **fertig / aktuell /

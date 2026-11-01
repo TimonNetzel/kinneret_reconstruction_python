@@ -1,6 +1,27 @@
-# Netzel: Übergabe nach dokumentarischen Klima-/Zeit-Wiederöffnungskriterien
+# Netzel: automatische Folgeprompts nach Dokumentationsabschluss
 
-## Gesichertes Ergebnis
+## Gesicherte Workflowänderung, 01.11.2026
+
+Nutzerauftrag umgesetzt: [AGENTS.md](../../AGENTS.md) verlangt nach jedem
+abgeschlossenen, per Commit/eigenem PR remote gesicherten Dokumentationspaket
+den kopierfertigen Folgeprompt direkt in der Abschlussantwort, ohne Nachfrage
+und unabhängig von einer Chatwechsel-Empfehlung. Prompt auch hier sichern;
+fehlende Eingänge bleiben Startbedingungen. Keine automatische Ausführung,
+Chat-Erstellung, Merge- oder fachliche Freigabe.
+
+Basis `02e004cea401f19146bee6b23cc97d4a982051d1`,
+[PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
+offen/ungemergt und mergebar; CI 41240408738 erfolgreich. Sechs vorgefundene
+Worktrees sauber und erhalten. Eigener Worktree `/workspace/netzel-auto-followup-prompt`,
+Branch `codex/netzel-auto-followup-prompt`, eigener PR gegen #59 ohne Merge.
+Nur AGENTS und kurze HANDOFF-/Statuspflege; keine Fachdateien geändert,
+keine Forschung, Daten-/Modellarbeit oder manuellen Projekt-/Modelltests.
+Diff/Links geprüft; 752 geschützte Blobs/Dateimodi einschließlich Symlink,
+Statushistorie und fachlicher Folgeauftrag unverändert. Sicherungsverweise
+nach Erstellung ergänzen. Der einzige fachliche
+Folgeauftrag und seine Startbedingung bleiben unten unverändert vorbereitet.
+
+## Fachlicher Abschluss aus PR #59
 
 Der ausdrückliche Nutzerauftrag nach
 [PR #58](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/58)

@@ -21,6 +21,28 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: automatische Folgeprompts verbindlich, 01.11.2026
+
+Nutzerauftrag umgesetzt: [AGENTS.md](../../AGENTS.md) verpflichtet zur
+ungefragten Ausgabe des kopierfertigen Folgeprompts nach jedem abgeschlossenen,
+per Commit/eigenem PR remote gesicherten Dokumentationspaket, unabhängig von
+einer Chatwechsel-Empfehlung. Prompt in HANDOFF und Abschlussantwort;
+fehlende Eingänge ausdrücklich nennen. Keine automatische Folgeausführung
+oder zusätzliche Freigabe. Fachlicher Auftrag und Belegobjekt-Blocker aus
+PR #59 bleiben unverändert; genau ein Folgeauftrag in [HANDOFF](./HANDOFF.md).
+
+Basis `02e004cea401f19146bee6b23cc97d4a982051d1`,
+[PR #59](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/59)
+offen/ungemergt und mergebar, CI 41240408738 erfolgreich. Sechs vorhandene
+Worktrees sauber und erhalten; eigener Worktree/Branch
+`codex/netzel-auto-followup-prompt`, gestapelter eigener PR gegen #59 ohne Merge.
+Nur AGENTS/HANDOFF/Status geändert; alte Statushistorie erhalten, Fachdateien
+unverändert. Keine Recherche, Daten-/Modellarbeit, Implementierung oder manuellen
+Projekt-/Modelltests. Diff und Links geprüft; 752 geschützte Blobs/Dateimodi
+einschließlich Symlink sowie Statushistorie und fachlicher Folgeauftrag unverändert;
+Commit-/PR-Verweise nach Erstellung ergänzen.
+
+
 ## Aktueller Abschluss: Klima-/Zeit-Wiederöffnungskriterien dokumentiert, 31.10.2026
 
 Der ausdrückliche Nutzerauftrag nach PR #58 ist umgesetzt:
