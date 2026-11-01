@@ -60,7 +60,9 @@ Folgeprompt automatisch ausgeben. Fehlender technischer Eingang bleibt Blocker.
 
 ```text
 Setze Netzel auf codex/netzel-furlanetto-access-review fort.
-Sicherung: siehe nachstehenden Commit-/PR-Verweis; aktuellen PR-Head/CI prüfen.
+Inhaltscommit: 0126234303f74c9e4212a354e61d0dc81eaa5ec6
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Führe nach Nutzer-OK ausschließlich den oben vorbereiteten Furlanetto-Auftrag
 für Champvillair_a18 / TRS 18, DOI 10.1177/0959683618810395, aus.
 Start erst bei nachgewiesen geändertem erlaubtem lesbarem Zugriff oder neu
@@ -80,3 +82,14 @@ A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder Merges.
 Ergebnis prüfen und sichern; genau einen Folgeauftrag samt Folgeprompt liefern.
 Kurz auf Deutsch berichten. Fehlenden technischen Eingang als Blocker erhalten.
 ```
+
+## Sicherungsverweis
+
+Inhaltscommit `0126234303f74c9e4212a354e61d0dc81eaa5ec6` remote in
+[PR #68](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68)
+gesichert; offen/ungemergt und bei Abfrage mergebar, gegen
+`codex/netzel-witness-time-check` (#67). Automatische CI
+[41290185931](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290185931)
+und [41290180432](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290180432)
+am Inhaltscommit bei Abfrage mit vier laufenden Checks. Danach nur
+Sicherungsverweise; aktuellen PR-Head/CI vor Fortsetzung prüfen. Kein Merge.

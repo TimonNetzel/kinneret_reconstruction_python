@@ -45,6 +45,18 @@ nach nachgewiesen verändertem erlaubtem lesbarem Zugriff; wartet auf Nutzer-OK
 und technischen Eingang. Keine identischen Abrufe bei unveränderter Challenge.
 Keine R01–R03-Neusuche, R06-/Gatefreigabe oder A4-Umsetzung/A5/A6.
 
+
+## Sicherungsverweis
+
+Inhaltscommit `0126234303f74c9e4212a354e61d0dc81eaa5ec6` remote in
+[PR #68](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68)
+gesichert; offen/ungemergt und bei Abfrage mergebar, gegen
+`codex/netzel-witness-time-check` (#67). Automatische CI
+[41290185931](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290185931)
+und [41290180432](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290180432)
+am Inhaltscommit bei Abfrage mit vier laufenden Checks. Danach nur
+Sicherungsverweise; aktuellen PR-Head/CI vor Fortsetzung prüfen. Kein Merge.
+
 ## Aktueller Abschluss: Drei-Zeugen-Prüfung und korrigierte Lesevorgaben, 01.11.2026
 
 Nutzerauftrag ausgeführt: [AGENTS](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
