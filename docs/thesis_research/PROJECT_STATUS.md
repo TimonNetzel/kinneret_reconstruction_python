@@ -51,10 +51,16 @@ Autorenprogramme ausgeführt und keine Projektabhängigkeiten geändert.
 Originalbytes nur im Sitzungscache, kompakte Evidenz dauerhaft in Git gesichert.
 Quellenindex um genau diesen Kandidaten erweitert; alte Einträge erhalten.
 A1/A2/A3, EMPD2-Archivsuche/Zeugen und R01–R03 nicht wiederholt. Keine Auswahl,
-Bereinigung, Joins, Nennerrechnung, Implementierung, Tests, Fits, Scores,
+Bereinigung, Joins, Nennerrechnung, Implementierung, manuelle Tests, Fits, Scores,
 Simulationen, Unteragenten, Kontakte oder Merges. Quellen-/Hash-/Struktur-,
 JSON-/Link-/Diffprüfung; PR und aktuelle CI siehe HANDOFF.
 Genau ein Anschluss vorbereitet: begrenzter zeilenbezogener RS10-Herkunftsbeleg.
+
+Sicherung [PR #75](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/75)
+gegen #74, offen/ungemergt. Inhaltscommit
+`5bacf4ceab1c50acdd1dbda8d34b81222a3c73e9`; vier automatische Head-Checks bei
+erster Abfrage laufend. Anschließend Sicherung/Abgrenzung ergänzt; aktueller
+Head/CI bei tatsächlicher Fortsetzung zu prüfen. Kein Merge.
 
 ## Aktueller Abschluss: Quellenablauf und kurzer Einstieg umgesetzt, 01.11.2026
 

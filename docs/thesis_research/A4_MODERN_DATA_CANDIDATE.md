@@ -84,7 +84,8 @@ Furlanetto bleibt vorgemerkt; keine PhD-Neulesung oder unveränderten Abrufe.
 Gesichert werden Bericht und kompakte Evidenz. Originaldaten und vollständige
 Autorenquellen liegen nur im Sitzungscache; dauerhafte Vollablage nicht belegt.
 Keine Matrix exportiert, Daten-/Taxon-/Klimazielwahl, Bereinigung, Nennerrechnung,
-Implementierung, Tests, Fits, Scores, Simulationen, Kernläufe, Kontakte oder Merges.
+Implementierung, manuelle Tests, Fits, Scores, Simulationen, Kernläufe, Kontakte
+oder Merges. Automatische Repository-CI nach Push wird separat ausgewiesen.
 Abnahme bestanden: sieben Textquellen mit Blob/SHA-256 und Literalzeilen,
 identische Binärbytes an zwei Revisionen und Hash vor/nach Dekodierung;
 20 Index-Pointer, sechs Evidenz-Blobs und 13 lokale Links/Anker geprüft.

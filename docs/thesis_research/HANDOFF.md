@@ -60,5 +60,8 @@ An Umfang/Stop aus HANDOFF halten, gemeinsam sichern, kein Merge.
 
 ## Sicherung
 
-Bericht/Evidenz, Quellenindex, Status und Übergabe werden gemeinsam im Branch
-`codex/netzel-a4-next-data-gap` gesichert; PR-Verweis folgt nach Erstellung.
+[PR #75](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/75),
+offen/ungemergt gegen #74, Inhaltscommit
+`5bacf4ceab1c50acdd1dbda8d34b81222a3c73e9`. Vier automatische Head-Checks bei
+erster Abfrage laufend. Danach nur Sicherung/CI-Abgrenzung ergänzt; aktuellen
+Head/CI bei tatsächlicher Fortsetzung prüfen. Kein Merge.

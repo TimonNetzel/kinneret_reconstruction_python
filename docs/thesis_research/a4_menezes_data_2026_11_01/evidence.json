@@ -397,7 +397,7 @@
     "No Furlanetto original/PhD read or unchanged blocked request",
     "No renewed EMPD2 archive/R01-R03 search or witness audit",
     "No other data-object or fossil-file read",
-    "No author R scripts executed; no package installation of zanicc; no MCMC/fit/score/simulation/test/model run",
+    "No author R scripts executed; no package installation of zanicc; no manual MCMC/fit/score/simulation/test/model run",
     "No sample, taxon, climate-target, likelihood, split or gate selection",
     "No missing-value repair, rounding, N reconstruction, joins, matrix export or support computation",
     "No author contact or merge"
