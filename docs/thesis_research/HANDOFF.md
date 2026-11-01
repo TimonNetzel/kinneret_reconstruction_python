@@ -1,119 +1,95 @@
-# Netzel: konkrete Drei-Zeugen-Zeitprüfung und zulässige Leseprüfungen
+# Netzel: Furlanetto-Originalmethodik für TRS 18 – Zugriff blockiert
 
 ## Paketabschluss, 01.11.2026
 
-Nutzerauftrag ausgeführt: [AGENTS](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
-erlaubt notwendige, begrenzte schreibgeschützte Original-/Metadatenprüfung
-innerhalb einer beauftragten Provenienzfrage ohne zusätzliches OK. Alte
-Paketverbote gelten als Historie; der zuvor vorbereitete reine
-Stop-/Eingangsplan wurde durch den konkreten Drei-Zeugen-Auftrag ersetzt.
+Nur den beauftragten Furlanetto-Versuch ausgeführt. Basis PR #67, Head
+`947ae20621d929b51b13250b6a9665ff16778385`, offen/ungemergt, vier erfolgreiche
+Checks; gegenüber Inhaltscommit `42d365f` nur Sicherungsverweise.
+Fünf vorgefundene Worktrees sauber erhalten, eigener Worktree
+`/workspace/netzel-furlanetto-access-review`, Branch
+`codex/netzel-furlanetto-access-review` gegen `codex/netzel-witness-time-check`.
 
-[Review der drei Zeugen](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#konkrete-zeitprüfung-der-drei-zeugen-01112026)
-und [Evidenzprotokoll](./witness_time_check_2026_11_01/evidence.json) sichern:
-AlbaSanchez_a1 → „1 béticas“, Champvillair_a18 → „TRS 18“, Barboni_a1000 →
-„MAROC124“. Genau deren SQLite-Metadaten/Publikationsrelationen frisch
-geprüft und mit drei Zeilen des festen v2.0-Release verglichen. Bei allen
-Alter/Altersklasse unbekannt; keine individuelle Zeitzuordnung gewonnen.
-Material/Entnahme für AlbaSanchez/Champvillair teilweise dokumentiert,
-Integration unbekannt; Barboni ohne Zeit-/Material-/Methodenbeleg.
-Champvillair ist direkt mit DOI 10.1177/0959683618810395 verknüpft.
+[Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-zugriffsprüfung-für-trs-18-01112026)
+und [Evidenz](./furlanetto_access_review_2026_11_01/evidence.json) sichern den
+neuen Zugriff: Sage ist jetzt explizit erlaubt, Proxy-CONNECT HTTP 200.
+Genau ein Supplementabruf liefert danach HTTP/2 403 und
+`cf-mitigated: challenge`, HTML statt DOCX, keine Weiterleitung.
+**Dokumentarischer Zugriffsabschluss; fachliche Originalmethodenlesung blockiert.**
+Hauptmethoden nicht neu gelesen; historische Zugangsschranke W3/W4 erhalten.
+Kein neu verfügbarer verifizierter öffentlicher Autoren-Volltextzugriff.
+An konkreter Zugriffslücke gestoppt, keine Challenge-/Proxyumgehung.
+Ungelesener Inhalt ist kein fachlicher Nichtbeleg. Quellenbytes nur temporär
+im Cache, ausgewählte Diagnose/Hash dauerhaft in Evidenz; alte Originale,
+Berichte und Evidenz erhalten. Keine Werteanalyse/Implementierung/Rechnungen.
 
-**Konkrete technische Restlücke:** Hauptmethoden zugangsbeschränkt;
-FLORE-PDF als geschlossen geführt. Verlinktes Supplement ist DOCX, vom
-Webwerkzeug nicht gelesen; Executor-Download scheitert am Proxy-CONNECT
-mit HTTP 403. `journals.sagepub.com` fehlt in der geltenden Hostliste.
-Gefundene öffentliche Furlanetto-Dissertation ebenfalls nicht abrufbar
-(Web HTTP 403). Keine Inhalte dieser Dateien als geprüft behauptet und
-kein fachlicher Nichtbeleg daraus. Kein Nutzer-Dokument erforderlich;
-Repo-Regeln können die technische Netzwerkgrenze nicht aufheben.
-Aktuell verfügbare Cloud-Werkzeuge bieten hier keine Konfigurationsänderung.
+## Genau ein Folgeauftrag – vorbereitet, wartet auf Nutzer-OK und lesbaren Zugriff
 
-Basis #66-Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6` geprüft;
-#66 offen/ungemergt und mergebar, Head-CI 41288446572/41288442734 mit vier
-erfolgreichen Checks. Sechs vorgefundene Worktrees sauber erhalten;
-eigener Worktree `/workspace/netzel-witness-time-check`, Branch
-`codex/netzel-witness-time-check`. Inhaltscommit
-`42d365fc410feac53e90b1047fd0a5a184c8745b` über
-[PR #67](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67)
-remote gesichert, offen/ungemergt und mergebar, gestapelt gegen #66.
-Automatische [CI 41289425528](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289425528)
-am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
-aktuellen PR-Head/CI prüfen. Kein Merge.
+**Ziel:** weiterhin ausschließlich die zugeordnete öffentliche Originalmethodik
+und das Supplement zu DOI 10.1177/0959683618810395 für Champvillair_a18 /
+TRS 18 lesen. Kein reines Planungs- oder Wiederholungsdiagnosepaket starten.
 
-SQLite-Original vor/nach SHA-256 identisch; Release-Metadatenblob gegen
-Git-Blob-SHA geprüft. Nur drei Zeugen inhaltlich bewertet; Gesamtblob für
-gezielte Extraktion temporär bezogen, drei Auszüge/Abfragen im Repo gesichert.
-Identitäts-/JSON-/Diffprüfung und zehn lokale Links/Anker bestanden; alter
-Reviewtext, vollständige Statushistorie sowie 752 geschützte Objekte/Modi erhalten.
-Keine Counts-/Klimawerte, neuen Proben, Reparaturen, Projektimplementierung,
-manuellen Projekt-/Modelltests, Rechnungen/Fits/Simulationen oder Freigaben.
-R01–R03 nicht neu gesucht, R06/übrige Gates offen; keine A4-Umsetzung/A5/A6,
-Unteragenten, Kontakte/Nachrichten oder Merges. Ergebnis fachlich teilweise,
-Prüfplan bis zu den benannten Nachweis-/Zugriffsgrenzen ausgeführt.
+**Technische Startbedingung:** nachgewiesen veränderter erlaubter Zugriff,
+der tatsächlich lesbare Original-/Supplementbytes liefert, oder ein neu
+verifizierter öffentlich zugänglicher Autorenoriginal-Link. Sage-Hostfreigabe
+allein reicht nach der Challenge-Antwort nicht. Ohne solchen Eingang kein
+identischer Abruf, keine Umgehung, keine Nutzerdatei voraussetzen. Öffentliche
+Originale selbst beschaffen; bekannte Kandidaten W3–W6 erhalten. Keine
+privaten Kopien/Autorenkontakte, keine erfundenen Downloadpfade.
 
-## Genau ein Folgeauftrag: Furlanetto-Originalmethodik für TRS 18 – vorbereitet, wartet auf Nutzer-OK und lesbaren Zugriff
+**Leseplan:** AGENTS, HANDOFF, neuester PROJECT_STATUS-Abschnitt; Review nur
+aktueller Furlanetto-Abschnitt und bei Bedarf vorherige W3–W6/Champvillair-
+Stellen; neue Evidenz sowie alte evidence.json ausschließlich Champvillair/
+W3–W6; A4_E_REOPENING_REQUIREMENTS nur R04/R05 und Herkunftsregeln. Aktuelle
+PR-Heads/CI/Worktrees prüfen, ungesicherte Arbeit erhalten.
 
-**Ziel:** die konkrete noch nicht gelesene Methodik für Champvillair_a18 /
-TRS 18 aus DOI 10.1177/0959683618810395 samt öffentlichem Supplement lesen.
-Sammlung, Ablagerungs-/Integrationsbezug und Unsicherheit proben-/gruppenbezogen
-belegen oder den genauen Nichtbeleg der gelesenen Stellen sichern.
-
-**Technische Startbedingung:** erlaubter lesbarer Download des bereits
-verlinkten Supplement-DOCX (Executor-Host `journals.sagepub.com`, notwendige
-tatsächliche Weiterleitungen separat prüfen) oder zugängliches öffentliches
-Autorenoriginal. Ein öffentlich ermitteltes Original beschafft Codex selbst.
-Keine Nutzerdatei oder Autorennachricht. Die heutige HTTP-/Werkzeuggrenze
-ist real; derselbe abgewiesene Abruf wird ohne geänderten Zugriff nicht
-wiederholt. Keine Netzwerkregel umgehen oder deren Änderung vortäuschen.
-
-**Leseplan:** aktuellen PR-Head/CI/Worktrees prüfen, Arbeit erhalten;
-AGENTS, diese HANDOFF, neuester Status; Review nur aktueller Drei-Zeugen-
-Abschnitt; evidence.json nur Champvillair/W3–W6/Zugriffsstatus;
-A4_E_REOPENING_REQUIREMENTS R04/R05 und Herkunftsregeln. Anschließend exakt
-zugeordnete Originalmethoden/Supplement, gegebenenfalls die bereits gefundene
-öffentliche Autorenfassung. Keine erneute Inventur/Definitionstextsuche.
-
-**Umfang/Abnahme:** Review ergänzen und Quellen-/Abfrageevidenz aktualisieren,
-HANDOFF/Status kurz pflegen. Einen nachgewiesenen Gruppengeltungsbezug oder
-explizite TRS-18-Bindung verlangen; Zitat/Seite/Version und Aussagegrenze
-festhalten. Keine Datenergänzung aus allgemeinem Moostyp oder Publikationsjahr.
-Nach diesem Original-/Supplementversuch stoppen, auch bei Nichtbeleg;
-Zugriffsfehler von inhaltlichem Nichtbeleg trennen. Quellen/Hashes/Links/Diff
-prüfen, Commit/eigener PR ohne Merge, genau einen sachlichen Anschluss
-vorbereiten und Folgeprompt automatisch mitliefern.
-
-**Schutz:** vorhandene Originale/alte Berichte/Verträge erhalten. Keine neue
-Probe/Kohorte, Pollen-/Klimawertanalyse, Datenreparatur, Projektimplementierung,
-manuellen Tests, wissenschaftlichen Rechnungen, Gate-/R06-Freigabe,
-A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder Merges.
-Notwendige schreibgeschützte Quellen-/Metadatenprüfung ist nach AGENTS erlaubt.
+**Umfang/Abnahme/Stop:** nur Review/Evidenz und HANDOFF/Status. Explizite
+TRS-18-Bindung oder nachgewiesenen Gruppengeltungsbezug mit Originalzitat,
+Seite/Abschnitt, Version/DOI/URL und Grenze sichern. Sammlung, Ablagerung,
+Integration und Unsicherheit getrennt belegen; Unbekanntes erhalten, kein
+Alter aus Publikationsjahr. Nach zugeordneten Originalstellen oder konkreter
+neuer Zugriffslücke stoppen. Keine neue Probe/Kohorte, Pollen-/Klimawertanalyse,
+Datenreparatur, Projektimplementierung, manuellen Tests, wissenschaftlichen
+Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6,
+Unteragenten, Nachrichten/Kontakte oder Merges. Notwendige begrenzte
+schreibgeschützte Quellen-/Metadatenprüfung nach AGENTS ohne Extra-OK erlaubt.
+Alte Originale/Berichte erhalten. JSON/Quellen/Hashes/Links/Diff prüfen,
+Commit/eigener PR ohne Merge, genau einen sachlichen Folgeauftrag vorbereiten,
+Folgeprompt automatisch ausgeben. Fehlender technischer Eingang bleibt Blocker.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-witness-time-check fort.
-Inhaltscommit: 42d365fc410feac53e90b1047fd0a5a184c8745b
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67
+Setze Netzel auf codex/netzel-furlanetto-access-review fort.
+Inhaltscommit: 0126234303f74c9e4212a354e61d0dc81eaa5ec6
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68
 Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
-Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
-Eigener Worktree/Branch/PR, kein Merge.
-Führe ausschließlich den in HANDOFF vorbereiteten Furlanetto-Auftrag für
-Champvillair_a18 / TRS 18 aus: zugeordnete öffentliche Originalmethodik und
-Supplement zu DOI 10.1177/0959683618810395 selbst beschaffen und lesen.
-Leseplan, lesbare technische Startbedingung, Umfang, Abnahme und Stop einhalten.
-Supplementzugriff scheiterte am Executor-Proxy mit HTTP 403; Web kann DOCX
-nicht lesen. Ohne geänderten erlaubten Zugriff keinen identischen Abruf
-wiederholen; keine Umgehung und keine Nutzerdatei voraussetzen.
-Nur Review/Evidenz und HANDOFF/Status pflegen; alte Originale/Berichte erhalten.
-Nötige begrenzte schreibgeschützte Quellen-/Metadatenprüfung nach AGENTS
-ist erlaubt, kein zusätzliches Recherche-/Zeilenprüfungs-OK verlangen.
-Keine neue Probe/Kohorte, Pollen-/Klimawertanalyse, Datenreparatur,
-Projektimplementierung, manuellen Tests oder wissenschaftlichen Rechnungen.
-Keine R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6,
-Unteragenten, Nachrichten/Kontakte oder Merges.
+Führe nach Nutzer-OK ausschließlich den oben vorbereiteten Furlanetto-Auftrag
+für Champvillair_a18 / TRS 18, DOI 10.1177/0959683618810395, aus.
+Start erst bei nachgewiesen geändertem erlaubtem lesbarem Zugriff oder neu
+verifiziertem öffentlichem Autorenoriginal. Sage ist erlaubt, liefert aber
+HTTP 403 / cf-mitigated: challenge; ohne Änderung keinen identischen Abruf.
+Keine Umgehung, Nutzerdatei oder Kontakte voraussetzen. Quellen selbst beschaffen.
+Leseplan, Umfang, Abnahme und Stop aus HANDOFF einhalten: AGENTS, HANDOFF,
+neuester Status, aktueller Review/Evidenz, W3–W6/Champvillair, R04/R05/Herkunft.
 TRS-18-/Gruppenbindung, Sammlung, Ablagerung, Integration und Unsicherheit
-getrennt belegen; nach den Originalstellen oder konkreter Zugriffslücke stoppen.
-Ergebnis prüfen, per Commit/eigenem PR sichern, genau einen sachlichen
-Folgeauftrag vorbereiten und Folgeprompt automatisch mitliefern.
-Kurz auf Deutsch berichten.
+mit Originalstellen/Version getrennt belegen; nach Lesung oder Zugriffslücke stoppen.
+Nur Review/Evidenz und HANDOFF/Status; alte Originale/Berichte und ungesicherte
+Arbeit erhalten. Eigener Worktree/Branch/PR, kein Merge. Begrenzte nötige
+schreibgeschützte Quellen-/Metadatenprüfung ohne Extra-OK erlaubt.
+Keine neue Probe/Kohorte, Werteanalyse, Reparatur, Implementierung, manuellen
+Tests, wissenschaftlichen Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe,
+A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder Merges.
+Ergebnis prüfen und sichern; genau einen Folgeauftrag samt Folgeprompt liefern.
+Kurz auf Deutsch berichten. Fehlenden technischen Eingang als Blocker erhalten.
 ```
+
+## Sicherungsverweis
+
+Inhaltscommit `0126234303f74c9e4212a354e61d0dc81eaa5ec6` remote in
+[PR #68](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/68)
+gesichert; offen/ungemergt und bei Abfrage mergebar, gegen
+`codex/netzel-witness-time-check` (#67). Automatische CI
+[41290185931](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290185931)
+und [41290180432](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41290180432)
+am Inhaltscommit bei Abfrage mit vier laufenden Checks. Danach nur
+Sicherungsverweise; aktuellen PR-Head/CI vor Fortsetzung prüfen. Kein Merge.

@@ -1,0 +1,115 @@
+{
+  "checked_on": "2026-11-01",
+  "base_commit": "947ae20621d929b51b13250b6a9665ff16778385",
+  "scope": {
+    "sample": "Champvillair_a18",
+    "original_sample": "TRS 18",
+    "doi": "10.1177/0959683618810395",
+    "purpose": "Only original methodology/supplement access and R04/R05 evidence; no new sample or value analysis"
+  },
+  "base_pr": {
+    "baseRefName": "codex/netzel-sample-time-evidence",
+    "headRefName": "codex/netzel-witness-time-check",
+    "headRefOid": "947ae20621d929b51b13250b6a9665ff16778385",
+    "mergeable": "MERGEABLE",
+    "mergedAt": null,
+    "number": 67,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-01T09:36:49Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289494570/job/124797574050",
+        "name": "test (3.11)",
+        "startedAt": "2026-11-01T09:35:21Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-01T09:37:32Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289490328/job/124797562782",
+        "name": "test (3.11)",
+        "startedAt": "2026-11-01T09:35:19Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-01T09:37:49Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289494570/job/124797573844",
+        "name": "test (3.13)",
+        "startedAt": "2026-11-01T09:35:21Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-11-01T09:37:39Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289490328/job/124797562620",
+        "name": "test (3.13)",
+        "startedAt": "2026-11-01T09:35:18Z",
+        "status": "COMPLETED",
+        "workflowName": "Tests"
+      }
+    ],
+    "url": "https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67"
+  },
+  "access_change": {
+    "historical": "W5 proxy CONNECT 403; Sage absent from previous host list",
+    "current": "Sage explicitly in executor egress_rules; environment_status observations_current=true, running, connected, restricted policy enforced",
+    "policy_version": 1,
+    "host_allowed": true,
+    "vpn_configured": false
+  },
+  "attempt": {
+    "url": "https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx",
+    "command": "curl --max-time 45 -sS -D supplement.headers -o supplement.response 'https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx'",
+    "transport": "Inherited HTTPS proxy and CA trust; TLS verification retained; no redirect following, retries, cookies or challenge solving",
+    "requests": 1,
+    "curl_exit_code": 0,
+    "connect_status": "HTTP/1.1 200 OK",
+    "http_status": "HTTP/2 403",
+    "response_date": "Sun, 01 Nov 2026 08:43:12 GMT",
+    "content_type": "text/html; charset=UTF-8",
+    "cf_mitigated": "challenge",
+    "location_header": null,
+    "response_title": "Just a moment...",
+    "response_bytes": 6443,
+    "response_sha256": "eaa3854c76c2805742980e24237801356fbc9006c17a9a4e2d725eedad46b48e",
+    "docx_received": false,
+    "content_read": false
+  },
+  "not_retrieved": {
+    "main_methods": "Not read; historical W3/W4 access restriction retained. Stop after concrete supplement access gap.",
+    "authors_original": "Historical W6 inaccessible, known hosts outside current allowed sources; no newly accessible verified public original available in this session. No new fetch or bypass.",
+    "web": "No web search/reader tool available in current tool catalog; historical web DOCX limitation not retested."
+  },
+  "separate_findings": {
+    "binding": "Existing W1/W2 identify Champvillair_a18 -> TRS 18 and publication id 22 -> DOI. No method-group membership verified in original text.",
+    "collection": "Existing metadata moss; hand picking - multiple samples. Collection date, number, spatial composition and simultaneity not established.",
+    "deposition": "Represented deposition time not established.",
+    "integration": "Integration interval not established.",
+    "uncertainty": "Temporal uncertainty not established; not zero."
+  },
+  "outcome": "Blocked access, not content-based absence of evidence. Stop reached; R04/R05 not closed; no R06 or gate approval.",
+  "preservation": "Old evidence/report text retained. No originals modified. Response body/headers remain temporary cache only, no durable full-byte archive claimed; selected diagnostic fields and body hash committed here.",
+  "not_performed": [
+    "Identical retry after new 403",
+    "challenge solving or proxy bypass",
+    "new sample/cohort",
+    "pollen/climate values",
+    "data repair",
+    "project implementation/manual tests",
+    "scientific calculations",
+    "R01-R03 search",
+    "A4 implementation/A5/A6",
+    "subagents",
+    "contacts/messages",
+    "merge"
+  ]
+}
