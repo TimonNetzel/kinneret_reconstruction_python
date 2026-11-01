@@ -21,6 +21,35 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: automatische Folgeprompts im Fortsetzungsbranch verankert, 01.11.2026
+
+Auf Nutzerfrage die bereits in PR #60 vorhandene Regel in den Stand nach #61
+übernommen und auf jeden gesicherten Teilaufgabenabschluss erweitert.
+[AGENTS.md](../../AGENTS.md) verlangt automatisch einen aktuellen, vollständig
+kopierfertigen Folgeprompt im Chat und in [HANDOFF](./HANDOFF.md). Ein bloßer
+Verweis genügt nicht. Der Prompt übernimmt die Ausgaberegel selbst und wahrt
+Autorisierung und Eingangsblocker. Neue Chats müssen diesen Branch verwenden;
+#60 offen/ungemergt, Regel zuvor im #61-Branch nicht enthalten.
+
+Basis `7630c480a71849a45a4e58646be2e2ffa7d5e431`,
+[PR #61](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61)
+offen/ungemergt und mergebar; automatische Head-CI 41284948221 erfolgreich.
+Eigener Worktree `/workspace/netzel-followup-prompt-continuation`, Branch
+`codex/netzel-followup-prompt-continuation`, eigener PR gegen #61 ohne Merge.
+Sicherungsverweis nach Erstellung ergänzen.
+
+Nur AGENTS/HANDOFF/Status geändert; Fachdateien und bisherige Statushistorie
+unverändert. Dokumentarische Diff-/Link-/Blobprüfung, keine manuellen Tests.
+Keine Recherche, Beschaffung, reale Daten-/Dateiprüfung oder Modellarbeit.
+Genau ein bestehender Folgeauftrag erhalten: bereits autorisierte R01–R03-
+Bewertung nach eindeutigem Eingang fortsetzen; kein erneutes OK, keine
+Ersatzsuche und kein weiteres Dokumentationspaket ohne neue Evidenz.
+Belegobjekt fehlt weiterhin. Reale Klima-/Zeitverbindung und Counts-Bereitschaft
+blockiert; R04–R06 und übrige Gates offen. A4-Umsetzung/reale Kalibrierung und
+A5/A6 nicht begonnen; keine Gatefreigabe, Unteragenten, Autorennachrichten
+oder versandte Beleganforderung.
+
+
 ## Aktueller Abschluss: Herkunftsbeleg fehlt, Stand-/Eingangsprüfung dokumentiert, 01.11.2026
 
 [A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md)
