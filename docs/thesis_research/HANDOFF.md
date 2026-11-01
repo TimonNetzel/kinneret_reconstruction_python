@@ -32,8 +32,13 @@ Basis #66-Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6` geprüft;
 #66 offen/ungemergt und mergebar, Head-CI 41288446572/41288442734 mit vier
 erfolgreichen Checks. Sechs vorgefundene Worktrees sauber erhalten;
 eigener Worktree `/workspace/netzel-witness-time-check`, Branch
-`codex/netzel-witness-time-check`, gestapelter eigener PR gegen #66 vorgesehen.
-Sicherungsverweis folgt nach Push. Kein Merge.
+`codex/netzel-witness-time-check`. Inhaltscommit
+`42d365fc410feac53e90b1047fd0a5a184c8745b` über
+[PR #67](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67)
+remote gesichert, offen/ungemergt und mergebar, gestapelt gegen #66.
+Automatische [CI 41289425528](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289425528)
+am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen. Kein Merge.
 
 SQLite-Original vor/nach SHA-256 identisch; Release-Metadatenblob gegen
 Git-Blob-SHA geprüft. Nur drei Zeugen inhaltlich bewertet; Gesamtblob für
@@ -87,9 +92,9 @@ Notwendige schreibgeschützte Quellen-/Metadatenprüfung ist nach AGENTS erlaubt
 
 ```text
 Setze Netzel auf codex/netzel-witness-time-check fort.
-Letzte verlässliche Sicherung: Basis a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6,
-PR https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66;
-eigener Inhaltscommit/PR werden nach Sicherung hier ergänzt.
+Inhaltscommit: 42d365fc410feac53e90b1047fd0a5a184c8745b
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67
+Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
 Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
 Eigener Worktree/Branch/PR, kein Merge.
 Führe ausschließlich den in HANDOFF vorbereiteten Furlanetto-Auftrag für

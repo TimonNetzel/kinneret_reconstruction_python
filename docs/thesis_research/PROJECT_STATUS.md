@@ -45,8 +45,12 @@ Prüfplan bis zu konkreten Grenzen ausgeführt, reale Zeitfrage weiter offen.
 Basis #66-Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6`, offen/ungemergt,
 mergebar, vier Head-Checks erfolgreich (41288446572/41288442734). Sechs
 vorgefundene Worktrees sauber erhalten, eigener Worktree/Branch
-`codex/netzel-witness-time-check`, PR gegen #66 vorgesehen, kein Merge.
-Sicherungsverweis folgt nach Push. Original-SQLite-Hash vor/nach unverändert,
+`codex/netzel-witness-time-check`, über
+[PR #67](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/67)
+remote gesichert; offen/ungemergt und mergebar, gegen #66 ohne Merge.
+Inhaltscommit `42d365fc410feac53e90b1047fd0a5a184c8745b`; automatische
+[CI 41289425528](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41289425528)
+bei Abfrage laufend. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen. Original-SQLite-Hash vor/nach unverändert,
 Release-Blob geprüft. Änderungen nur AGENTS, Review, neue begrenzte
 Evidenz-JSON, HANDOFF/Status; alte Fachberichte/Statushistorie erhalten.
 Quellen-/Identitäts-/JSON-/Diffprüfung und zehn lokale Links/Anker bestanden;
