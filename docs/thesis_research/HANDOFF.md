@@ -18,7 +18,15 @@ erfolgreich. Separater Worktree `/workspace/netzel-followup-prompt-continuation`
 Branch `codex/netzel-followup-prompt-continuation`, eigener PR gegen #61 ohne Merge.
 Nur AGENTS und kurze HANDOFF-/Statuspflege; kein fachliches Paket ausgeführt.
 Der genau eine fachliche Folgeauftrag unten bleibt am fehlenden Belegobjekt
-blockiert. Sicherungsverweis nach Erstellung ergänzen.
+blockiert.
+Inhaltscommit `07018718f639392ee2c92d02387eb541076d5f87` über
+[PR #62](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/62)
+remote gesichert, offen/ungemergt und mergebar; automatische
+[CI 41285333092](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41285333092)
+bei Abfrage eingereiht. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen.
+Drei-Dateien-Diff und neun lokale Links/Anker geprüft; 753 geschützte Git-Blobs/
+Dateimodi einschließlich Symlink und sämtlicher Fachdateien unverändert,
+Statushistorie bytegleich und fachlicher Folgeauftrag unverändert erhalten.
 
 ## Gesichertes Ergebnis
 
@@ -114,8 +122,10 @@ Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 
 ```text
 Setze Netzel auf codex/netzel-followup-prompt-continuation fort.
-Gesicherter Commit/PR: siehe aktueller Sicherungsverweis oben.
-Aktuellen Remote-Head/CI prüfen. AGENTS.md enthält die automatische Promptregel.
+Gesicherter Inhaltscommit: 07018718f639392ee2c92d02387eb541076d5f87
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/62
+Danach nur Sicherungsverweise; aktuellen Remote-Head/CI prüfen.
+AGENTS.md enthält die automatische Promptregel.
 Fertig: Stand-/Eingangsprüfung und verbindliche Regel für Folgeprompts.
 Vorgänger-Head-CI #61 erfolgreich; aktuelle eigene CI gesondert prüfen.
 Inhaltliche R01–R03-Bewertung weiterhin am fehlenden Belegobjekt blockiert.
