@@ -1,11 +1,12 @@
 {
   "schema_version": 1,
   "maintained_on": "2026-11-01",
-  "purpose": "Find existing Furlanetto evidence; not a new scientific review, complete bibliography or full-original archive.",
+  "purpose": "Find existing Furlanetto and A4 modern-data evidence; not a complete bibliography, new scientific review or full-original archive.",
   "scope": {
     "sample": "Champvillair_a18",
     "original_sample": "TRS 18",
-    "article_doi": "10.1177/0959683618810395"
+    "article_doi": "10.1177/0959683618810395",
+    "scope_note": "The sample/article fields above describe Furlanetto entries only. Each additional source declares its own scope."
   },
   "reference_format": "Paths relative to this file; # suffix is an RFC 6901 JSON Pointer. Evidence owns quotations and conclusions. Expected Git blobs detect changed evidence without re-reading originals.",
   "evidence_base_commit": "bc9f5d8152b1b6cdf41cbe20a123122125cab8c3",
@@ -14,7 +15,8 @@
     "furlanetto_access_review_2026_11_01/evidence.json": "a188c9a85db019a5f3308d56098a29fe31883c27",
     "furlanetto_public_original_2026_11_01/evidence.json": "57e1924213f6aaf3b7c477aaa89acd232bce70d8",
     "furlanetto_boa_review_2026_11_01/evidence.json": "a8a6e47d11dd79e065a4508c480ab7efd7277680",
-    "furlanetto_thesis_review_2026_11_01/evidence.json": "b7ecbc3e8ff664b368310640c3e14e61ed94aa50"
+    "furlanetto_thesis_review_2026_11_01/evidence.json": "b7ecbc3e8ff664b368310640c3e14e61ed94aa50",
+    "a4_menezes_data_2026_11_01/evidence.json": "f6405a12a89f039c536e8a9ad5f5856f1e0a84d4"
   },
   "sources": [
     {
@@ -212,6 +214,55 @@
         "Temporal uncertainty unquantified",
         "Final published article/supplement equivalence unverified",
         "Durable storage of full PDF bytes not established"
+      ]
+    },
+    {
+      "id": "menezes_modern_pollen_climate",
+      "scope": {
+        "role": "A4 source candidate check, not selected E",
+        "object": "AndrMenezes/zanicc:data/pollen_climate.rda"
+      },
+      "identity": {
+        "paper": "arXiv:2609.08866v1",
+        "repository_commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+        "git_blob_sha1": "e7a7d8b6fec3711af7a1888ba83871009ad8e981",
+        "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/data_object"
+      },
+      "evidence_revision_note": "Added after evidence_base_commit; this entry is identified by the expected evidence_files Git blob and this PR, not by the older Furlanetto base snapshot.",
+      "original": {
+        "sha256": "2a1e8ecaac28a3f88ccffcec4000eba9db2c8ec612f3ce29afe5fa9bface5daa",
+        "availability_status": "temporary_or_session_only",
+        "durable_storage_status": "not_checked",
+        "locators": [
+          {
+            "kind": "public_pinned_repository_object",
+            "value": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/data/pollen_climate.rda"
+          },
+          {
+            "kind": "session_cache",
+            "value": "/tmp/netzel-a4-menezes/pollen_climate-current.rda"
+          }
+        ],
+        "last_bytes_verification": "2026-11-01",
+        "limit": "Original bytes verified at two revisions and passively decoded for structure only; no permanent original storage or real training readiness established."
+      },
+      "findings": [
+        {
+          "question": "Verified data availability, dimensions, column labels and missing row/sample metadata",
+          "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/findings"
+        },
+        {
+          "question": "Exact source files, versions and line locators for modern data loading and documentation",
+          "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/text_sources"
+        }
+      ],
+      "access": [
+        {
+          "route": "GitHub contents API at fixed revisions",
+          "observed_on": "2026-11-01",
+          "outcome": "readable_and_hash_verified",
+          "evidence_ref": "a4_menezes_data_2026_11_01/evidence.json#/data_object"
+        }
       ]
     }
   ],
