@@ -40,7 +40,11 @@ Nur AGENTS/HANDOFF/Status geändert; alte Statushistorie erhalten, Fachdateien
 unverändert. Keine Recherche, Daten-/Modellarbeit, Implementierung oder manuellen
 Projekt-/Modelltests. Diff und Links geprüft; 752 geschützte Blobs/Dateimodi
 einschließlich Symlink sowie Statushistorie und fachlicher Folgeauftrag unverändert;
-Commit-/PR-Verweise nach Erstellung ergänzen.
+Inhaltscommit `1244c84b4570f74b670890686886e25df9de0ce5` über
+[PR #60](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/60)
+remote gesichert, offen/ungemergt und mergebar; automatische CI 41284312338
+an diesem Commit bei Abfrage laufend. Danach nur Sicherungsverweise;
+aktuellen PR-Head/CI prüfen.
 
 
 ## Aktueller Abschluss: Klima-/Zeit-Wiederöffnungskriterien dokumentiert, 31.10.2026
