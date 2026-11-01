@@ -176,3 +176,97 @@ Keine Gatefreigabe/A4-Umsetzung/A5/A6, Unteragenten, Nachrichten oder Merges.
 Blobprüfung und Sicherung stehen in Status/HANDOFF. Genau ein anschließendes
 Paket ist dort vorbereitet: öffentliche Probenzeit-/Integrationsdokumentation
 gegen R04/R05 prüfen; kein erneuter R01–R03-Durchlauf und keine Ausführung hier.
+
+## Probenzeit und Integration: R04/R05, 01.11.2026
+
+Fortsetzung ab PR #65, Inhaltscommit `6a147f10313f92b022853a98375ecad93c1bf301`,
+geprüfter Head/Basis `6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a`.
+Danach in #65 nur HANDOFF-/Statusverweise; Head-CI erfolgreich.
+Die historischen Abschnitte oben bleiben unverändert. Dieses Paket prüft nur
+öffentliche Zeit-/Sammlungsdefinitionen gegen die unveränderten
+[R04/R05](./A4_E_REOPENING_REQUIREMENTS.md#anforderungen-an-künftig-vorzulegende-evidenz)
+und [T01–T06](./A4_E_CLIMATE_TIME_GAPS.md#nachweiskette-für-probenzeit-integration-und-räumlichen-bezug).
+Keine erneute R01–R03-Suche und keine R06-Bewertung/Freigabe.
+
+**Ergebnis:** R04 und R05 sind **teilweise belegt**: öffentliche allgemeine
+Definitionen und eine begrenzte Integrationsregel sind nachvollziehbar.
+Eine tatsächliche Zeit-/Unsicherheits-/Integrationszuordnung zu identifizierten
+PANGAEA-Archivproben ist dadurch **unbelegt**. Die früheren unbekannten Alter
+der drei Zeugen werden nicht ergänzt; keine Aussage über alle Archivproben.
+
+### Gelesene Herausgeberstellen und ihre Reichweite
+
+Abrufe am 01.11.2026; eigene knappe Paraphrasen. Allgemeine Dokumentation,
+beabsichtigter Erfassungsweg und tatsächlicher Probennachweis werden getrennt.
+Keine Datenlinks, Datenzeilen, Datenbank-, Raster- oder ZIP-Inhalte geöffnet.
+
+| ID | Quelle, Stand und genaue Fundstelle | Zeitbedeutung / Unsicherheit und Grenze |
+| --- | --- | --- |
+| Z1 | Davis et al. 2020, DOI [10.5194/essd-12-2423-2020](https://essd.copernicus.org/articles/12/2423/2020/essd-12-2423-2020.html), Endfassung 09.10.2020: §1, Absatz unmittelbar vor Tabelle 1; §2, Absatz zum Datenbankprotokoll; §2.2, erste Absätze. [PDF S.2426–2427, Tabelle 1](https://essd.copernicus.org/articles/12/2423/2020/essd-12-2423-2020.pdf#page=5), als Text gelesen. | §1 nennt das Sammlungsjahr als Metadateninhalt; Tabelle 1 unterscheidet Probenalter BP (numerisch), Altersunsicherheit (Liste), Material und Entnahmemethode. §2 beschreibt jünger als 200 BP und bei Fallen mindestens zehnjährig gemittelte Daten statt Monats-/Jahresdaten. §2.2 beschreibt die Übernahme von Beiträgerdaten und Ergänzung fehlender Angaben aus Beiträger-/Originalquellen. Das ist ein allgemeines Protokoll, kein Datierungsprotokoll oder Integrationsintervall einer konkreten Probe. |
+| Z2 | EMPD2/EMPD-data v2.0, Commit `737b76eb269b071422edded6ac332654ff83c103` vom 05.10.2020, [README.rst Z.81–86](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/README.rst#L81) und [Z.112–144](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/README.rst#L112), Blob `974b609a7c942a464aa978724ac278be3de02d14`. | `SampleName` ist der EMPD-Schlüssel, `OriginalSampleName` die Autorenkennung. `AgeBP` bezeichnet Jahre vor (+) bzw. nach (−) AD 1950. `AgeUncertainty` ist ein Zuverlässigkeitscode: A ab 0 BP bis „Present“; B letzte 100 Jahre / 0–50 BP; C letzte 250 Jahre / 50–200 BP. Kontext, Material und Sammlungs-/Entnahmemethode sind getrennte Codefelder; Notizen und Publikationsfelder erlauben weitere Angaben. Keine numerische Fehlerverteilung, Datierungsmethode oder Integrationsdauer definiert; keine tatsächliche Befüllung/Zuordnung geprüft. |
+| Z3 | Derselbe Release-Commit, [CONTRIBUTING.md, „Quick and Dirty“, Z.22–27](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/CONTRIBUTING.md#L22) sowie „Contributing new data through Github“, Blob `807c210e1d3144d3bdfd3bd13ed97e218bccab88`. | Verweist auf eine Metadatenvorlage und beschreibt die Einreichung einer Metadatenzeile je Probe mit `SampleName`-Bezug. Nur dokumentierter Einreichungsweg; keine geprüfte Einreichung, Sammlung oder Datierung. Die dortige Vorlage ist als veränderlicher master-Link angegeben, kein eigener archivgenauer Zeitbeleg. Vorlage und verlinkte Beispieldaten nicht geöffnet; keine Nachricht versandt. |
+| Z4 | Chevalier et al. 2019, [PANGAEA.909130](https://doi.pangaea.de/10.1594/PANGAEA.909130), veröffentlicht 26.11.2019, DOI registriert 22.02.2020: Abstract, Original version, Comment und vollständige Parameterliste der Landingpage. | Die Parameterliste gehört laut Comment zur Klimatabelle; sie definiert kein Probenalter, Sammlungsjahr, Datierungsverfahren oder Integrationsintervall. Links zu drei Originalformaten und deren behauptete Äquivalenz schließen die fehlende Probenzeit-/Methodenzuordnung nicht. Veröffentlichungs-/Registrierungsdatum sind keine Sammlungsdaten. Nur Metadatenseite gelesen; keine Tabellenzeilen oder Originaldateien beschafft. |
+
+**Auslegung und Grenzen:** Die Vorzeichen-/Referenzkonvention aus Z2 ist
+dokumentiert, ihre reale Anwendung auf eine bestimmte Archivprobe hier nicht.
+Die relativen Zeitformulierungen der Klassen B/C stehen neben festen
+BP-Bereichen; ihr Bezugsdatum wird in dieser Passage nicht angegeben.
+Die Originalangaben bleiben nebeneinander erhalten, ohne Neuberechnung,
+Aktualisierung auf 2026 oder Umdeutung in ±Jahre, Standardabweichung oder
+Konfidenzintervall. Ein möglicherweise historischer relativer Wortlaut ist
+kein hier bestätigter Widerspruch zweier Datierungen derselben Probe.
+
+Die Sammlungsjahr-Aussage in Z1 und das Probenalterfeld in Z2 liefern allein
+keine allgemeine Gleichsetzungsregel. Material-/Methodencodes sind kein
+Nachweis der repräsentierten Ablagerungszeit. Die Fallenregel aus Z1 belegt
+eine Protokollanforderung, keine tatsächliche Mindestintegration jedes
+Moos-, Boden- oder Sedimentdatensatzes und keine konkrete Mischung.
+Nicht quantifizierte Integration bleibt unbekannt, niemals Nullunsicherheit.
+
+### Begrenzte Suche und Zugriffsgrenze
+
+Zunächst zwei gezielte Websuchen zu Davis 2020/EMPD2-Alter/Sammlung und
+PANGAEA.909130; danach Endfassung, Tabelle 1, Landingpage und README am
+festen Release-Ref gelesen. Die direkt verlinkte CONTRIBUTING-Dokumentation
+wurde nachgelesen. Der Git-Quellbaum diente nur der Identifikation von
+Dokumentationspfaden/Blobkennungen; keine darin bezeichneten Datenblobs gelesen.
+README und CONTRIBUTING vollständig abgerufen und gegen ihre Git-Blob-SHAs
+geprüft; keine EMPD-Programmlogik ausgeführt.
+
+§2 von Z1 verweist für Struktur/Metadaten unmittelbar auf Davis et al. 2013,
+DOI [10.1007/s00334-012-0388-5](https://link.springer.com/article/10.1007/s00334-012-0388-5).
+Die Verlagsseite bietet Abstract und Zugangsvorschau, keinen gelesenen
+Methodenvolltext. Eine weitere begrenzte Suchrunde nach diesem historischen
+Definitionstext und den Zeitfeldern führte zur
+[Autorenkopie der Davis-Gruppe](https://wp.unil.ch/davisgroup/files/2018/08/Davis_et_al_2013.pdf).
+Der erste Webabruf lieferte Anfangsseiten; die gezielten Folgeabrufe nach
+Alter/Moos/Sammlung sowie auf den Methodenteil scheiterten mit HTTP 404.
+Deshalb **keine Prüfung der relevanten 2013-Methodenpassagen behauptet**.
+Der erste PDF-Abruf von Z1 hatte ein Timeout; der zweite lieferte die gelesene
+Tabelle 1. Keine Ersatzbehauptung aus Suchtreffern oder nicht lesbaren Bildern.
+Die Zugriffslücke beweist weder fehlende öffentliche Existenz noch, dass der
+historische Text die konkrete Probenlücke schließen würde. Keine weitere
+Literatur-/Dokumentationsschleife und kein Nutzerdatei-Blocker.
+
+### Getrennte Abnahme und Stop
+
+| Anforderung | Bewertung für den beauftragten Umfang | Konkreter weiterhin fehlender Nachweis |
+| --- | --- | --- |
+| **R04 – Probenzeit und Unsicherheit** | **Teilweise belegt.** Allgemeine Alterskonvention und kategoriale Unsicherheitsrolle sind mit Z1/Z2 dokumentiert; Z3 beschreibt einen möglichen Herkunftsweg. | Archivstand + eindeutige Proben-/Originalkennung + tatsächlich beobachtete/datierte Zeit und Methode + Unsicherheit/Lücken + belegter Zuordnungsschritt zu genau dieser PANGAEA-Probe. Weder Publikationsjahr noch Code-/Felddefinition ersetzt diesen Nachweis. Die drei bekannten unbekannten Zeugenalter bleiben unbekannt. |
+| **R05 – Sammlung, Ablagerung und Integration** | **Teilweise belegt.** Z1/Z2 unterscheiden Erfassungsrollen und liefern eine begrenzte methodische Protokollregel. | Nachweislich zugeordnete Proben-/Gruppenmethode mit Verhältnis von Sammlungsdatum zu repräsentierter Ablagerungszeit, Integrationsspanne und gegebenenfalls Mehrfachsammlung/Mischung samt Unsicherheit. Für konkrete Archivproben in den gelesenen Dokumenten **unbelegt**. |
+
+**Stop erreicht:** Öffentliche allgemeine Definitionen wurden bewertet; die
+fehlende tatsächliche Proben-/Methodenbindung lässt sich daraus nicht ableiten.
+Eine reale Proben-/Dateiprüfung, zusätzliche konkret zugeordnete Originale oder
+Kontakt wären gesonderte Arbeit. Hier kein Nachladen realer Daten, keine
+Datierung aus dem Namen „modern“, keine Auswahl geeigneter Proben und keine
+fachliche Schließung der Lücke. Dokumentarisch abgeschlossen; reale
+Zeit-/Integrationsverbindung weiter blockiert. R01–R03 unverändert, R06 und
+übrige Gates offen; keine A4-Umsetzung/A5/A6.
+
+Nur dieser Abschnitt ergänzt, HANDOFF/Status kurz gepflegt. Übrige Fachdateien
+unverändert; Quellen-/Link-/Diff-/Git-Blobprüfung, keine manuellen Projekt- oder
+Modelltests, Rechnungen, Implementierung, Unteragenten, Nachrichten oder Merges.
+Genau ein nächster **dokumentarischer Stop-/Eingangsplan** ist in
+[HANDOFF](./HANDOFF.md) vorbereitet; er führt keine weitere Suche oder reale
+Prüfung aus und erteilt keine R06-/Gatefreigabe.

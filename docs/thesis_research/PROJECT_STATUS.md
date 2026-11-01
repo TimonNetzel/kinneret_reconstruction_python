@@ -21,6 +21,31 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: öffentliche Probenzeit-/Integrationsbelege R04/R05, 01.11.2026
+
+[Review Z1–Z4](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#probenzeit-und-integration-r04r05-01112026)
+ergänzt: R04/R05 jeweils **teilweise belegt**, konkrete Archivprobenbindung
+samt Datierungsmethode, Unsicherheit und Ablagerungs-/Integrationsspanne
+weiter **unbelegt**. Allgemeine Definitionen nicht auf reale Zeugen übertragen;
+unbekannte Alter bleiben unbekannt. Historische Davis-2013-Methodenpassagen
+nach Teilabruf wegen HTTP 404 nicht geprüft; kein Nutzerdatei-Blocker.
+Dokumentarisch abgeschlossen und begrenzt gestoppt; reale Zeitseite blockiert.
+
+Basis #65-Head `6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a`; nach `6a147f1`
+dort nur Sicherungsverweise. #65 offen/ungemergt, mergebar, Head-CI
+41287829015/41287825150 erfolgreich. Fünf bestehende Worktrees sauber erhalten;
+eigener Worktree/Branch `codex/netzel-sample-time-evidence`, PR gegen #65
+vorgesehen, ohne Merge. Sicherungsverweis folgt nach Push.
+README/CONTRIBUTING gegen zwei Git-Blob-SHAs geprüft; Quellen-/Link-/Diff-/
+Blobprüfung bestanden: fünf lokale Links/Anker, 753 geschützte Objekt-IDs/Modi
+unverändert; alter Reviewtext und vollständige Statushistorie erhalten. Nur Review/HANDOFF/Status;
+übrige Fachdateien unverändert. Keine reale Daten-/Datenbank-/Raster-/ZIP-/
+TSV-Zeilenprüfung, Auswahl, Implementierung, manuellen Tests oder Rechnungen.
+R01–R03 nicht neu recherchiert, R06/übrige Gates offen; keine A4-Umsetzung/A5/A6,
+Unteragenten, Nachrichten oder Merges. Genau ein dokumentarischer
+A4-E-Stop-/Eingangsplan in HANDOFF vorbereitet, wartet auf Nutzer-OK;
+keine neue Suche oder reale Prüfung darin freigegeben. Automatische CI separat.
+
 ## Aktueller Abschluss: historischer EMPD2-Erzeugungs-/Exportnachweis, 01.11.2026
 
 [Review H1–H7](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#historischer-erzeugungs--und-exportnachweis-01112026)

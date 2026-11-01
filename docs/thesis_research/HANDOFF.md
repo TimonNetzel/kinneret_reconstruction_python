@@ -1,99 +1,95 @@
-# Netzel: historischer EMPD2-Erzeugungs-/Exportnachweis
+# Netzel: öffentliche Probenzeit-/Integrationsbelege R04/R05
 
 ## Paketabschluss, 01.11.2026
 
-[A4_E_PROVENANCE_EVIDENCE_REVIEW](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#historischer-erzeugungs--und-exportnachweis-01112026)
-ist um H1–H7 ergänzt. **Dokumentarisch abgeschlossen, reale Herkunftskette
-weiter blockiert:** historischer Basiscontainer mit 5m-Vorgabe und unversionierter
-latlon-utils-Installation; historischer WorldClim-2.0-Downloader; GitHub-Spur
-eines PostgreSQL-/TSV-Exports vom 05.10.2020. Öffentliche Supplementbeziehung
-v2.0/Zenodo↔PANGAEA belegt, konkrete Erzeugungs-/SQLite-Feldidentität unbelegt.
-Keine Auflösung/Unterversion/Periode für PANGAEA festgelegt; R01–R03 teilweise
-belegt, `unverified` bleibt. Begrenzt an der fehlenden Lauf-/Exportbindung gestoppt.
+[Review Z1–Z4](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#probenzeit-und-integration-r04r05-01112026)
+ergänzt. **Dokumentarisch abgeschlossen, reale Zeit-/Integrationsverbindung
+weiter blockiert.** R04/R05 jeweils teilweise belegt: allgemeine Zeit-/
+Unsicherheitsdefinitionen und methodische Protokollregel dokumentiert;
+tatsächliche Zuordnung zu identifizierten Archivproben mit Datierungsmethode,
+Unsicherheit und repräsentierter Ablagerungs-/Integrationsspanne unbelegt.
+Unbekannte Zeugenalter nicht ergänzt. Relevante historische Methodenpassagen
+von Davis 2013 nach Teilabruf der Autorenkopie wegen HTTP 404 nicht geprüft.
+Kein Beweis weltweiter Nichtverfügbarkeit und kein Nutzerdatei-Blocker.
+Begrenzt gestoppt; keine weitere Suchschleife.
 
-Basis/PR-#64-Head `7628f1267ff60ec24f191365826e87a6add9caa5` geprüft;
-nach `65bd8b2` dort nur Sicherungsverweise. #64 offen/ungemergt und mergebar,
-Head-CI [41287220663](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287220663)
-erfolgreich. Fünf vorgefundene Worktrees sauber erhalten; kein Reset/Stash/Merge.
-Eigener Worktree `/workspace/netzel-historical-export-evidence`, Branch
-`codex/netzel-historical-export-evidence`; eigener gestapelter PR gegen #64.
-Inhaltscommit `6a147f10313f92b022853a98375ecad93c1bf301` über
-[PR #65](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65)
-remote gesichert; offen/ungemergt und mergebar, gegen #64 ohne Merge.
-Automatische [CI 41287777279](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287777279)
-am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
-aktuellen PR-Head/CI prüfen.
+Basis/PR-#65-Head `6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a` geprüft;
+seit Inhaltscommit `6a147f1` nur Sicherungsverweise. #65 offen/ungemergt,
+mergebar; Head-CI [41287829015](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287829015)
+und 41287825150 erfolgreich (Python 3.11/3.13). Fünf vorgefundene Worktrees
+sauber erhalten, kein Reset/Stash/Merge. Eigener Worktree
+`/workspace/netzel-sample-time-evidence`, Branch `codex/netzel-sample-time-evidence`;
+eigener gestapelter PR gegen #65 vorgesehen. Sicherungsverweis folgt nach Push.
 
-Nur Review ergänzt und HANDOFF/Status gepflegt. 14 gelesene Quelltexte gegen
-Git-Blob-SHAs geprüft; sieben lokale Links/Anker und Drei-Dateien-Diff geprüft,
-753 geschützte Git-Blobs/Dateimodi und alte Statushistorie unverändert. Keine Prüfung realer Datenbytes,
-keine manuellen Projekt-/Modelltests oder Rechnungen; automatische CI separat.
-Alle übrigen Fachdateien unverändert. Keine Gatefreigabe/A4-Umsetzung/A5/A6,
-Unteragenten, Nachrichten oder Merges. Git-Fetch über freigegebenen Netzpfad
-möglich; Recherche über Web-/GitHub-Anbindung, kein Nutzerdatei-Blocker.
+Nur Review ergänzt und HANDOFF/Status gepflegt. README/CONTRIBUTING am festen
+Release-Ref gegen zwei Git-Blob-SHAs geprüft; Quellen/Fundstellen, lokale
+Links/Anker (fünf), Drei-Dateien-Diff und 753 geschützte Git-Blobs/Dateimodi
+geprüft; alter Reviewtext und vollständige Statushistorie unverändert. Keine Rohdaten-/Datenbank-/
+Raster-/ZIP-/TSV-Zeilenprüfung oder -beschaffung, Auswahl, Implementierung,
+manuellen Projekt-/Modelltests oder Rechnungen. R01–R03 nicht neu recherchiert,
+R06/übrige Gates offen; keine A4-Umsetzung/A5/A6, Unteragenten, Nachrichten
+oder Merges. Übrige Fachdateien unverändert; automatische CI separat prüfen.
 
-## Genau ein Folgeauftrag: Probenzeit und Integration – vorbereitet, wartet auf Nutzer-OK
+## Genau ein Folgeauftrag: A4-E-Stop-/Eingangsplan – vorbereitet, wartet auf Nutzer-OK
 
-**Ziel:** öffentlich dokumentierte Bedeutung und Herkunft von Sammlung,
-Probenalter, Altersunsicherheit und zeitlicher Integration in EMPD2 gegen
-R04/R05 bewerten. Nach abgeschlossener R01–R03-Suche die separate Zeitseite
-klären; keine Behauptung gemeinsamer Klimaperiodengeltung und kein R06-Nachweis.
+**Ziel:** Aus den abgeschlossenen R01–R05-Reviews eine knappe, prüfbare
+Entscheidungsvorlage für den weiter blockierten A4-E-Eingang erstellen.
+Welche konkrete Nachweiskette fehlt, welcher Beleg müsste vor einer späteren
+realen Prüfung identifiziert sein, und wo muss weiterhin gestoppt werden?
+Keine neue allgemeine Recherche und keine Fortsetzung der Probenprüfung.
 
-**Eingänge/Leseplan:** Stand/PR-Head/CI prüfen, ungesicherte Arbeit erhalten;
+**Leseplan/Eingänge:** aktuellen PR-Head/CI prüfen, ungesicherte Arbeit erhalten;
 eigener Worktree/Branch/PR ohne Merge. AGENTS, diese HANDOFF, nur neuester
-PROJECT_STATUS-Abschnitt; Review nur historischer Abschluss/Stop;
-A4_E_REOPENING_REQUIREMENTS nur R04/R05 und Herkunftsregeln;
-A4_E_CLIMATE_TIME_GAPS nur Zeitnachweiskette; MODEL_CONTRACT Eingänge/Stop;
-MODULAR_RECONSTRUCTION_PLAN §1, §2 nur A4, §4.
-Dann selbst öffentliche Original-/Herausgebertexte suchen und gezielt lesen:
-Davis 2020 Methoden/Metadaten, PANGAEA.909130-Metadatendefinitionen,
-README/Metadatendokumentation am EMPD-data-v2.0-Commit
-`737b76eb269b071422edded6ac332654ff83c103` sowie unmittelbar verknüpfte
-historische Definitionstexte. Öffentlich auffindbare Dokumente beschafft Codex
-nach AGENTS selbst ohne zusätzliches Recherche-OK. Kein Nutzer-Dokument nötig.
+PROJECT_STATUS-Abschnitt; Review nur Bewertungen/Stop R01–R03 und R04/R05;
+A4_E_REOPENING_REQUIREMENTS R01–R05/Herkunftsregeln; MODEL_CONTRACT Eingänge/Stop;
+MODULAR_RECONSTRUCTION_PLAN §1, §2 nur A4, §4. Keine weiteren Eingänge nötig,
+kein Nutzer-Dokument als Startbedingung. Öffentliche Quellen sucht Codex nach
+AGENTS bei konkretem Bedarf selbst; dieser reine Syntheseauftrag braucht
+keine neue Suche und eröffnet keine abgeschlossene Suche erneut.
 
-**Umfang:** nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md um einen datierten
-R04/R05-Abschnitt ergänzen, kurze HANDOFF-/Statuspflege. Je Aussage Quelle,
-Stand, Fundstelle, Zeitbedeutung/Unsicherheit, Archiv-/Probenreichweite und Grenze.
-Dokumentierte allgemeine Definition von tatsächlicher Zuordnung zu konkreten
-Proben unterscheiden. Fehlende Integration nicht als Nullunsicherheit behandeln.
+**Umfang:** nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md um eine kurze datierte
+Stop-/Eingangstabelle ergänzen, HANDOFF/Status kurz pflegen. Je R01–R05
+bestehenden Review-Locator, fehlende Identitäts-/Methodenverbindung,
+erforderlichen Beleg und Grenze einer später separat zu autorisierenden
+Prüfung nennen. Keine neuen Anforderungen, Datenquellen oder Proben wählen;
+kein Rechercheauftrag an Dritte. Fehlender realer Beleg bleibt ausdrücklich
+fehlend und ist keine bereits autorisierte Beschaffung.
 
-**Abnahme/Stop:** R04 und R05 getrennt belegt/teilweise belegt/unbelegt bewerten,
-Restlücken konkret nennen. Nach relevanten auffindbaren Herausgeberpassagen
-abschließen, auch bei Nichtbeleg; keine allgemeine Literatur-/Dokumentationsschleife.
-Keine Wiederholung der R01–R03-Suche. Bei nur durch reale Proben-/Dateiprüfung,
-Kontakt oder fachliche Auswahl schließbarer Lücke stoppen, keine Nutzerdatei
-als künstlichen Blocker erfinden. Quellen-/Link-/Diff-/Blobprüfung,
-Statushistorie erhalten, Commit/eigener PR; genau einen nächsten Auftrag
-vorbereiten und Folgeprompt automatisch ausgeben.
+**Abnahme/Stop:** alle fünf Restlücken auf bestehende Reviews zurückführen,
+Definition/Anwendungsnachweis und Dokumentationsabschluss/reale Sperre trennen.
+R06 nicht bearbeiten/freigeben. Nach der einen Tabelle und konkreter
+Start-/Stopgrenze beenden; keine neue Dokumentations- oder Suchschleife.
+Links/Referenzen/Diff/geschützte Git-Blobs und alte Statushistorie prüfen;
+Commit/eigener PR, genau einen Folgeauftrag vorbereiten, Folgeprompt mitliefern.
 
-**Schutz:** keine Rohdaten-/Datenbank-/Raster-/ZIP-/TSV-Zeilenprüfung oder
--beschaffung, keine Proben-/Daten-/Modellwahl, Joins, Reparatur, Implementierung,
-manuellen Tests, Rechnungen, Fits oder Simulationen. Übrige Fachdateien,
-Anforderungen, Verträge, Modelle/Resultate/Register, Importer/Flags,
-Counts/Gruppen, Baseline und CLI/App unverändert. R06/übrige Gates offen;
-keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
+**Schutz:** keine erneute R01–R05-Suche, keine Daten-/Datenbank-/Raster-/ZIP-/
+TSV-Zeilenprüfung oder -beschaffung, Auswahl, Joins, Reparatur, Implementierung,
+manuellen Tests, Rechnungen/Fits/Simulationen. Anforderungen/Verträge,
+Modelle/Resultate/Register, Importer/Flags, Counts/Gruppen, Baseline und CLI/App
+unverändert. Keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten
+oder Merges. Reale Herkunfts-/Zeitbelege und übrige Gates bleiben blockiert;
+weitere reale Prüfung wird durch dieses Paket nicht freigegeben.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-historical-export-evidence fort.
-Inhaltscommit: 6a147f10313f92b022853a98375ecad93c1bf301
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
+Setze Netzel auf codex/netzel-sample-time-evidence fort.
+Letzte verlässliche Sicherung: Basis 6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a,
+PR https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/65;
+eigener Inhaltscommit/PR werden nach Sicherung hier ergänzt.
 Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
 Eigener Worktree/Branch/PR, kein Merge.
-Führe ausschließlich den in HANDOFF vorbereiteten R04/R05-Auftrag aus:
-öffentliche EMPD2-Herausgeberbelege zu Probenzeit, Sammlung,
-Altersunsicherheit und Integration selbst suchen und bewerten.
-Leseplan, Umfang, Abnahme und Stop aus HANDOFF einhalten;
-Recherche nach AGENTS ohne zusätzliches OK und ohne Nutzerdatei.
+Führe ausschließlich den in HANDOFF vorbereiteten A4-E-Stop-/Eingangsplan aus:
+R01–R05-Restlücken aus bestehenden Reviews in genau einer kurzen Tabelle
+mit Review-Locator, fehlender Identitäts-/Methodenverbindung, nötigem Beleg
+und Start-/Stopgrenze einer späteren realen Prüfung zusammenführen.
+Leseplan, Umfang, Abnahme und Stop aus HANDOFF einhalten.
 Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md ergänzen, HANDOFF/Status kurz pflegen.
-Keine erneute R01–R03-Suche, keine R06-Freigabe.
-Keine Rohdaten-/Datenbank-/Raster-/ZIP-/TSV-Zeilenprüfung, Auswahl,
+Keine neue R01–R05-Suche; kein Nutzerdatei-Blocker für öffentliche Quellen.
+Keine R06-Bearbeitung/Freigabe, Datenbeschaffung/-zeilenprüfung, Auswahl,
 Implementierung, manuellen Tests oder Rechnungen; übrige Fachdateien unverändert.
 Keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
-Bei fehlendem öffentlichen Nachweis konkrete Lücke nennen und stoppen.
+Fehlende reale Belege benennen; nach der Entscheidungsvorlage stoppen.
 Ergebnis prüfen, per Commit/eigenem PR sichern, genau einen Folgeauftrag
 vorbereiten und Folgeprompt automatisch mitliefern. Kurz auf Deutsch berichten.
 ```
