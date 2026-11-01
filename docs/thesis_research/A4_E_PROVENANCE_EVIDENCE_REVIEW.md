@@ -410,3 +410,63 @@ Keine Werteanalyse, neue Probe/Kohorte, Reparatur, Implementierung, manuellen
 Tests, wissenschaftlichen Rechnungen, R01–R03-Neusuche, A4-Umsetzung/A5/A6,
 Unteragenten, Kontakte/Nachrichten oder Merges. JSON, Referenzen und Diffumfang
 geprüft; keine dauerhafte Archivierung der temporären Fehlerantwort behauptet.
+
+
+## Öffentlicher Furlanetto-Originalzugang nach Nutzer-OK, 01.11.2026
+
+**Basis und Autorisierung:** PR #69, Head
+`47bbcc2c2770c28040086e72286e45e37e83c83f`, offen/ungemergt; vier
+Head-Checks zu Beginn noch laufend, kein Erfolg behauptet. Nutzer hat mit
+„OK, Furlanetto fortsetzen“ genau den vorbereiteten Auftrag autorisiert.
+Sechs bestehende Worktrees sauber erhalten; eigener Worktree/Branch
+`codex/netzel-furlanetto-public-original` ab #69. AGENTS/HANDOFF/Status,
+vorhandene Furlanetto-Evidenz, W3–W6/Champvillair sowie R04/R05 und
+Herkunftsregeln berücksichtigt. Nur vorgeschaltete begrenzte Zugangssuche;
+keine neue Probe, keine Originaldateninventur.
+
+**Neue tatsächlich verfügbare Fähigkeit:** Websuche/-Lesewerkzeug jetzt
+aufrufbar; die historische Angabe „kein Web-Lesewerkzeug“ bleibt als damaliger
+Befund erhalten. Das beweist keine neue Lesbarkeit einer Website. Zwei
+begrenzte Suchrunden mit sechs genauen Anfragen sind in der
+[Evidenz](./furlanetto_public_original_2026_11_01/evidence.json) dokumentiert.
+Suchauszüge bestätigen nur bekannte Quellenkandidaten, keine gelesenen Methoden.
+Kein neuer Sage-Abruf; dessen letzte belegte Challenge-Diagnose unverändert.
+
+**Konkrete Zugriffslücke:** W6, institutioneller
+[BOA-Datensatz 10281/241319](https://www.boa.unimib.it/handle/10281/241319),
+Giulia Furlanetto, Dissertation 2019. Der Suchindex führt
+`phd_unimib_809217.pdf` als „Accesso Aperto“ (12.37 MB). Genau ein direktes
+Öffnen des Datensatzes im jetzt verfügbaren Webwerkzeug ergibt HTTP 403.
+Keine Seiten-/Dateilinks gelesen, kein verifizierter PDF-Link, keine
+Originalbytes erhalten. Kein Volltext oder Gleichstand mit der publizierten
+DOI-/Supplementfassung behauptet; kein Downloadpfad aus Dateinamen gebildet.
+FLORE bleibt im aktuellen Suchauszug als geschlossene Verlagsfassung geführt;
+kein weiterer Direktabruf. Andere Werke/Zitate sind kein Ersatzoriginal.
+
+| Getrennter Nachweis | Ergebnis nach dieser Zugangssuche |
+| --- | --- |
+| TRS-18-/Gruppenbindung | Vorhandene W1/W2-Identitäts-/DOI-Brücke erhalten; keine neu gelesene Originalstelle zur Methodengruppe. |
+| Sammlung | Nur bisheriges Material-/Entnahmelabel; Datum, Anzahl, Zusammensetzung und Gleichzeitigkeit weiter offen. |
+| Ablagerung | Repräsentierte Zeit unbekannt. |
+| Integration | Dauer unbekannt; Mehrfachentnahme belegt kein Intervall. |
+| Unsicherheit | Unbekannt, keine Nullunsicherheit; kein Probenalter aus 2019 abgeleitet. |
+
+**Abnahme/Stop:** Zugangssuche an konkreter HTTP-403-Lücke beendet;
+Startbedingung für die Methodenlesung nicht erfüllt. R04/R05 fachlich
+unverändert, ungelesener Inhalt nicht als Nichtbeleg bewertet. Keine
+Originalzitate/Seiten oder Dokumentversion erfunden. Alte Evidenz und
+Reviewtexte unverändert, nur dieser Abschnitt ergänzt. Keine Umgehung oder
+weiteren Abrufvarianten. JSON/Referenzen/Links/Diff geprüft, keine manuellen
+Projekt-/Modelltests, Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe,
+A4-Umsetzung/A5/A6, Unteragenten, Kontakte oder Merges.
+
+**Nutzeraktion und Anschluss:** Das OK bleibt gültig. Optional kann der Nutzer
+über die unterstützte Cloud-Konfiguration `www.boa.unimib.it` und
+`boa.unimib.it` erlauben; beide fehlen in der Executor-Hostliste. Das würde
+einen ersten regulären Executor-Aufruf des institutionellen Datensatzes
+ermöglichen, garantiert jedoch keinen lesbaren Inhalt und behebt keine
+Verlagssperre. Keine Konfigurationsänderung hier ausgeführt. Keine Nutzerdatei
+oder Kontakte erforderlich. Kein verifizierter Nutzerschritt zur Behebung der
+Sage-Challenge. Genau ein Anschluss bleibt die bereits autorisierte
+Originalmethodenlesung bei tatsächlich geändertem erlaubtem Originalzugang;
+kein erneutes OK für denselben Auftrag und keine identischen Abrufe.

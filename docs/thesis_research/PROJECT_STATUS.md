@@ -21,6 +21,47 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Furlanetto-Suche nach Nutzer-OK, 01.11.2026
+
+Nutzer-OK „OK, Furlanetto fortsetzen“ erhalten; derselbe Auftrag bleibt
+autorisiert, kein weiteres OK nötig. Basis #69-Head
+`47bbcc2c2770c28040086e72286e45e37e83c83f`, offen/ungemergt, vier
+Checks beim Einstieg laufend. Eigener Worktree/Branch
+`codex/netzel-furlanetto-public-original` gegen #69; sechs bestehende
+Worktrees sauber erhalten, kein Merge.
+
+[Review-Anhang](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#öffentlicher-furlanetto-originalzugang-nach-nutzer-ok-01112026)
+und [Evidenz](./furlanetto_public_original_2026_11_01/evidence.json):
+Webwerkzeug jetzt verfügbar, zwei Suchrunden/sechs Anfragen; kein neu
+verifiziertes lesbares Original. BOA-Dissertation im Suchindex öffentlich
+gekennzeichnet, direktes Öffnen des Handles einmalig HTTP 403. Kein PDF-Link
+verifiziert, keine Originalbytes oder Methoden gelesen. Sage nicht erneut
+abgerufen. An Zugriffslücke gestoppt, keine Nichtbelegbehauptung zum ungelesenen
+Inhalt. TRS-18-/Gruppenbindung, Sammlung, Ablagerung, Integration und Unsicherheit
+getrennt unverändert offen im bisherigen Teilumfang; R04/R05 nicht geschlossen.
+
+Genau ein Anschluss in HANDOFF: bereits autorisierte Originalmethodenlesung
+bei relevant geändertem erlaubtem Zugang. Optional kann der Nutzer über die
+unterstützte Cloud-Konfiguration die offiziellen BOA-Hosts erlauben; das
+ermöglicht einen ersten regulären Executor-Aufruf des Handles, garantiert
+jedoch keine Lesbarkeit. Keine Konfigurationsänderung hier; kein sicherer
+Nutzerschritt zur Behebung der Sage-Challenge belegt. Keine Nutzerdatei/Kontakte.
+
+Nur Review, neue begrenzte Evidenz, HANDOFF und Status; alte Evidenz/Originale,
+Reviewtext und gesamte Statushistorie erhalten. JSON/Quellen-/Link-/Diffprüfung,
+keine Originalhashes ohne erhaltene Bytes behauptet. Keine Werteanalyse, neuen
+Proben/Kohorten, Reparatur, Implementierung, manuellen Tests, wissenschaftlichen
+Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten,
+Nachrichten/Kontakte oder Merges.
+
+
+Inhaltscommit `346558c1290d0a0ca0506397ce5331ad3230fdfe` remote in
+[PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70)
+gesichert; offen/ungemergt gegen `codex/netzel-efficient-chat-continuation`
+(#69). Danach nur Sicherungsverweise ergänzt; aktuellen Head/CI bei
+tatsächlicher Fortsetzung prüfen. Kein Merge. Das Nutzer-OK bleibt gültig;
+nur der technische Eingang fehlt.
+
 ## Aktueller Abschluss: effiziente Chatfortsetzung, 01.11.2026
 
 Nutzerwunsch in [AGENTS](../../AGENTS.md#effiziente-fortsetzung-im-bestehenden-chat)
