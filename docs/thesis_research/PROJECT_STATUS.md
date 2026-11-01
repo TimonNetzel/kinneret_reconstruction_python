@@ -21,6 +21,40 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Furlanetto-Dissertation für TRS 18 gelesen, 01.11.2026
+
+Basis [PR #71](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/71),
+Head `a55a38d3d233007e1ec0c7072a341d9e89778a40`, offen/ungemergt,
+vier erfolgreiche Checks. Nutzerdatei macht erstmals diese Originalfassung
+lesbar; bestehendes OK gilt. Eigener Worktree/Branch
+`codex/netzel-furlanetto-thesis-review`; sechs bestehende Worktrees sauber erhalten.
+
+**Erledigt:** gezielte PhD-Lesung, keine Volllektüre: Titelblatt/Manuscript 1
+„The Holocene accepted“, §2.1 Druck-S.22 / PDF-S.36 und S1a, TRS 18,
+Druck-S.53–54 / PDF-S.67–68. Drei Moospolster innerhalb Radius 1,8 m zu einer
+Probe gemischt, Mineralboden ausgeschlossen; Gruppenbezug ausdrücklich belegt.
+Ablagerung qualitativ „several years“, keine feste Dauer daraus abgeleitet.
+[Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-dissertation-gezielte-trs-18-originalmethodenlesung-01112026)
+und [Evidenz](./furlanetto_thesis_review_2026_11_01/evidence.json) sichern
+Originalzitate, Seiten, Hash und Versionsgrenze; Kernseiten visuell geprüft.
+**Offen:** R04 (Datum/Datierung/Unsicherheit), R05 stärker teilweise belegt,
+aber genaues Integrationsintervall unbestimmt. 2016–2017-Pollenfallenmonitoring
+in Manuscript 2 gilt nicht als TRS-18-Probenzeit. Keine Gatefreigabe.
+
+**Blockiert:** Gleichheit/Abgleich mit publiziertem DOI-Artikel/Sage-Supplement
+nicht verifiziert. Genau ein bereits autorisierter Anschluss dazu in HANDOFF
+bei lesbarem erlaubtem Originalzugang. Keine Pflichtaktion oder neues OK;
+optional bereits vorliegende lesbare Artikel-/Supplementfassung bereitstellen.
+Keine erneuten BOA-/Sage-Abrufe. Nutzer-PDF unverändert, nicht ins Git kopiert;
+Zitate/Provenienz/Hash gesichert, keine dauerhafte PDF-Archivierung behauptet.
+
+Nur Review/Evidenz und HANDOFF/Status geändert; alte Evidenz/Originale/Berichte
+und gesamte Review-/Statushistorie erhalten. JSON/Zitate/Seiten/Hash/Links/Diff
+geprüft. Keine neue Probe/Kohorte, Werteanalyse, Reparatur, Implementierung,
+manuellen Projekt-/Modelltests, wissenschaftlichen Rechnungen, R01–R03-Neusuche,
+R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten, Kontakte oder Merges.
+An zugeordneten Originalstellen gestoppt.
+
 ## Aktueller Abschluss: reguläre BOA-Prüfung nach Hostfreigabe, 01.11.2026
 
 Basis [PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70),

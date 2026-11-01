@@ -1,95 +1,86 @@
-# Netzel: Furlanetto TRS 18 – Auftrag autorisiert, Originalzugang blockiert
+# Netzel: Furlanetto TRS 18 – Dissertation gelesen, publizierte Fassung offen
 
 ## Aktueller Stand, 01.11.2026
 
-Nutzer-OK „OK, Furlanetto fortsetzen“ bleibt für denselben Auftrag gültig.
-Basis [PR #70](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/70),
-Head `183ac3a8473fcc3f4ba4d0cbe691a165f880fdf2`, offen/ungemergt;
-alle vier Head-Checks erfolgreich abgeschlossen. Eigener Worktree
-`/workspace/netzel-furlanetto-boa-review`, Branch
-`codex/netzel-furlanetto-boa-review`, ab #70. Fünf vorgefundene Worktrees
-sauber erhalten; kein Merge.
+Nutzer-OK „OK, Furlanetto fortsetzen“ gilt weiter. Bereitgestellte PhD-Datei
+gezielt gelesen; kein BOA-/Sage-Abruf. Basis [PR #71](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/71),
+Head `a55a38d3d233007e1ec0c7072a341d9e89778a40`, offen/ungemergt,
+vier Head-Checks erfolgreich. Eigener Worktree
+`/workspace/netzel-furlanetto-thesis-review`, Branch
+`codex/netzel-furlanetto-thesis-review`; sechs vorherige Worktrees sauber erhalten.
 
-Beide BOA-Hosts jetzt wirksam erlaubt (`restricted/enforced`, aktuelle
-Beobachtungen; Executor-Policy bestätigt). Trotz erneuter Revision 1 ist
-die Hostliste verändert. Erster regulärer Executor-Aufruf des bekannten
-[BOA-Handles](https://www.boa.unimib.it/handle/10281/241319): Proxy-CONNECT
-200, danach HTTP/2 403 / `cf-mitigated: challenge`, HTML statt Datensatz,
-keine Weiterleitung. Kein verifizierter öffentlicher Dateilink, keine
-Originalbytes oder Methodenlesung. An dieser konkreten Zugriffslücke gestoppt.
-Sage nicht erneut abgerufen; letzter belegter Befund bleibt ebenfalls eine
-Challenge. Keine Umgehung und kein erfundener PDF-Pfad.
+[Review](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#furlanetto-dissertation-gezielte-trs-18-originalmethodenlesung-01112026)
+und [Evidenz](./furlanetto_thesis_review_2026_11_01/evidence.json) sichern
+Identität, Hash, Version, Originalzitate und getrennte Nachweise.
+TRS 18 ausdrücklich in S1a (Druck-S.53 / PDF-S.67); Gruppenmethode in §2.1
+(Druck-S.22 / PDF-S.36): drei Moospolster innerhalb Radius 1,8 m zu einer
+Probe gemischt, Entnahme bis zum Mineralboden ohne diesen. Pollenablagerung
+qualitativ als Mittel mehrerer Jahre beschrieben; kein datiertes Intervall.
+R04 weiterhin offen; R05 stärker teilweise belegt, zeitliche Unsicherheit
+unquantifiziert. Kein Probenalter aus Publikations-/Dissertationsjahr oder
+dem 2016–2017-Pollenfallenmonitoring eines anderen Manuskripts abgeleitet.
 
-[Aktueller Review-Anhang](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#boa-executorzugriff-nach-bestätigter-hostfreigabe-01112026)
-und [neue Evidenz](./furlanetto_boa_review_2026_11_01/evidence.json)
-sichern die neue Beobachtung. Alte Reviewtexte, Evidenz und Originale erhalten.
-R04/R05 bleiben im bisherigen Teilumfang offen; keine Gatefreigabe.
+Dissertation akademisches Jahr 2017/2018, Manuscript 1 „The Holocene accepted“;
+keine verifizierte Gleichheit mit finalem DOI-Artikel/Verlagssupplement.
+Gezielte Lesung an zugeordneten Originalstellen beendet. Historische
+BOA-/Sage-Challenges bleiben erhalten; sie blockieren die Nutzerdatei nicht.
+PDF unverändert im Anhangsarbeitsbereich, nicht im Git archiviert. Alte
+Berichte/Evidenz/Originale erhalten; kein Merge und keine Gatefreigabe.
 
 ## Was der Nutzer tun kann/muss
 
-**Kein weiteres OK und keine erneute BOA-Hostfreigabe nötig.** Keine
-Nutzerdatei und keine Kontakte erforderlich. Aktuell ist kein Nutzerschritt
-als sichere Behebung der BOA- oder Sage-Challenge verifiziert. Optional kann
-ein bereits bekannter offizieller öffentlicher Original-Link genannt werden;
-Codex prüft den Zugang selbst. Für eine Fortsetzung ist ein belegter relevant
-veränderter erlaubter Originalzugang oder neu verifizierter öffentlicher
-Original-Link nötig. Die Hostfreigabe allein hat die Lesbarkeit nicht hergestellt.
-Ohne neuen Eingang keine identischen Abrufe oder weiteren Diagnosepakete.
+Keine Pflichtaktion, kein erneutes OK, keine erneute Hostfreigabe und keine
+Kontakte nötig. Die freiwillig bereitgestellte Dissertation ist gelesen.
+Optional kann eine bereits vorliegende lesbare publizierte Artikel- oder
+Originalsupplementfassung bereitgestellt werden. Kein Such-/Uploadzwang.
+Codex prüft dann Identität/Version und nur die korrespondierenden Stellen.
+Aktuell kein verifizierter Nutzerschritt zur Behebung der Website-Challenges.
 
-## Genau ein Anschluss – bereits autorisiert, wartet nur auf technischen Eingang
+## Genau ein Anschluss – Versionsabgleich, bereits autorisiert, Zugang fehlt
 
-**Ziel:** Furlanetto-Originalmethodik/Supplement für Champvillair_a18 / TRS 18,
-DOI 10.1177/0959683618810395, lesen. Kein neues Planungs-/Diagnosepaket.
+**Ziel:** nur die TRS-18-Methodenstellen der publizierten Fassung zu
+DOI 10.1177/0959683618810395 und des Originalsupplements gegen die belegte
+Dissertationsfassung abgleichen. Keine weitere Dissertations-Volllektüre.
 
-**Startbedingung:** belegte relevante Änderung des erlaubten Originalzugangs
-oder neu verifizierter öffentlicher Autorenoriginal-Link. Für die fachliche
-Lesung müssen tatsächlich lesbare Originalbytes vorliegen. BOA-Hostfreigabe
-ist bestätigt und der erste reguläre Abruf an einer Website-Challenge beendet.
-Kein identischer BOA-/Sage-Abruf ohne belegte relevante Änderung, keine
-erfundenen Dateipfade und keine Umgehung.
+**Eingang:** lesbare erlaubte Originalbytes oder ein neu verifizierter
+öffentlicher Original-Link. BOA/Sage ohne belegte relevante Zugriffsänderung
+nicht identisch erneut abrufen; keine erfundenen Pfade oder Umgehung.
+Kein Pflichtdokument vom Nutzer voraussetzen. Bestehendes OK bleibt gültig.
 
-**Leseplan:** AGENTS, dieser HANDOFF und neuester Status; aktueller Review-Anhang
-und neue Evidenz, bei Bedarf W3–W6/Champvillair und alte Furlanetto-Evidenz;
-A4_E_REOPENING_REQUIREMENTS nur R04/R05 samt Herkunftsregeln. Bei tatsächlichem
-Arbeitsbeginn aktuellen Head/CI/Worktrees prüfen. Ungesicherte Arbeit erhalten.
+**Leseplan:** AGENTS, dieser HANDOFF, neuester Status, aktueller
+Dissertations-Review/Evidenz. Bekannte unveränderte Stellen weiterverwenden;
+bei Bedarf nur R04/R05/Herkunftsregeln und W3–W6/Champvillair. Bei tatsächlichem
+Arbeitsbeginn aktuellen Head/CI/Worktrees prüfen; ungesicherte Arbeit erhalten.
 
-**Umfang/Abnahme/Stop:** nur Review/Evidenz und HANDOFF/Status pflegen.
-Explizite TRS-18-/nachgewiesene Gruppenbindung, Sammlung, Ablagerung, Integration
-und Unsicherheit getrennt mit Originalstelle, kurzem Zitat, Seite/Abschnitt,
-Dokumentversion/DOI/URL und Beleggrenze sichern. Keine Versionsgleichheit von
-Dissertation und Artikel voraussetzen. Unbekanntes erhalten, kein Probenalter
-aus Publikationsjahr. Nach zugeordneten Originalstellen oder konkreter
-Zugriffslücke stoppen. Keine neue Probe/Kohorte, Werteanalyse, Reparatur,
-Implementierung, manuellen Tests, wissenschaftlichen Rechnungen, R01–R03-Neusuche,
-R06-/Gatefreigabe, A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder
-Merges. Nötige begrenzte schreibgeschützte Quellen-/Metadatenprüfung ohne
-Extra-OK erlaubt. Alte Originale/Berichte erhalten. JSON/Links/Quellen/Hashes
-und Diff prüfen; eigener Worktree/Branch/PR, kein Merge. Genau einen Anschluss
-mit Prompt in HANDOFF pflegen; im bestehenden Chat nur verlinken, solange
-der fachliche Auftrag unverändert ist. Nutzeraktionen konkret nennen.
+**Abnahme/Stop:** Versionsbezug und TRS-18-/Gruppenbindung prüfen; Sammlung,
+Ablagerung, Integration, Unsicherheit getrennt mit Zitat, Seite/Abschnitt,
+Version/DOI/URL und Beleggrenze dokumentieren. Nach Originalstellen oder
+konkreter neuer Zugriffslücke stoppen. Nur Review/Evidenz und HANDOFF/Status;
+alte Originale/Berichte erhalten. Keine neue Probe/Kohorte, Werteanalyse,
+Reparatur, Implementierung, manuellen Projekt-/Modelltests, wissenschaftlichen
+Rechnungen, R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6,
+Unteragenten, Kontakte oder Merges. JSON/Zitate/Quellen/Hashes/Links/Diff prüfen;
+eigener Worktree/Branch/PR, kein Merge. Genau einen Anschluss in HANDOFF pflegen.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze den bereits autorisierten Furlanetto-Auftrag im bestehenden Chat fort.
-Branch: codex/netzel-furlanetto-boa-review
-Sicherung: siehe nachstehenden aktuellen Commit-/PR-Verweis.
-Fachliche Basis: PR #68, Inhaltscommit 0126234303f74c9e4212a354e61d0dc81eaa5ec6.
-Nutzer-OK liegt vor; für denselben Auftrag nicht erneut fragen.
-Nur Champvillair_a18 / TRS 18, DOI 10.1177/0959683618810395.
-Vor Fortsetzung belegte relevante Zugriffsänderung oder verifizierten öffentlichen
-Originalzugang verlangen. Beide BOA-Hosts wirksam erlaubt; erster regulärer
-Executor-Handleabruf HTTP 403 / cf-mitigated: challenge, kein Dateilink verifiziert.
-BOA und Sage ohne belegte Änderung nicht identisch erneut abrufen. Nur tatsächlich
-verlinkte öffentliche Originaldateien verfolgen; keinen PDF-Pfad erfinden.
-Fachliche Lesung erst bei lesbaren Originalbytes; Dissertation und Artikel
-nicht ungeprüft gleichsetzen. Keine Umgehung. Aktuellen Head/CI prüfen.
-Leseplan, getrennte Belege, Umfang und Stop aus HANDOFF einhalten.
-Nur Review/Evidenz und HANDOFF/Status; alte Originale und ungesicherte Arbeit
-erhalten. Eigener Worktree/Branch/PR, kein Merge. Alle Schutzgrenzen aus HANDOFF
-einhalten. Ergebnis prüfen und sichern; genau einen Anschluss mit Prompt in
-HANDOFF, im selben Chat bei unverändertem Auftrag nur verlinken.
-Kurz auf Deutsch, nötige/optionale Nutzeraktionen konkret nennen.
+Setze denselben bereits autorisierten Furlanetto-Auftrag im bestehenden Chat fort.
+Branch: codex/netzel-furlanetto-thesis-review
+Sicherung: siehe aktuellen Commit-/PR-Verweis am Ende dieses HANDOFF.
+Dissertationslesung abgeschlossen: TRS 18 in S1a, Gruppenmethode §2.1,
+drei Moospolster/Mischprobe, qualitative mehrjährige Ablagerung; kein datiertes
+Intervall oder quantifizierte Zeitunsicherheit. R04 offen, R05 teilweise belegt.
+Genau ein Anschluss: entsprechende Originalstellen der publizierten DOI-Fassung
+10.1177/0959683618810395 und des Verlagssupplements auf Versionsgeltung prüfen.
+Nur bei lesbarem erlaubtem Originalzugang/neuem verifiziertem öffentlichen Link.
+BOA/Sage zuletzt HTTP 403 / cf-mitigated: challenge; ohne relevante Änderung
+nicht identisch erneut abrufen. Keine Umgehung, erfundenen Pfade, Pflichtdatei
+oder Kontakte. Bestehendes OK gilt; nicht erneut fragen.
+Leseplan, getrennte Nachweise, Grenzen und Stop aus HANDOFF einhalten.
+Nur Review/Evidenz und HANDOFF/Status, alle anderen Dateien/Originale erhalten.
+Ergebnis prüfen, eigener Worktree/Branch/PR, kein Merge. Genau einen Anschluss
+pflegen; kurz auf Deutsch mit erforderlichen/optionalen Nutzeraktionen berichten.
 ```
 
 ## Sicherung
