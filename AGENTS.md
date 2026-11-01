@@ -21,6 +21,38 @@
   Änderungen daran erfordern ein eigenes fachlich begrenztes Arbeitspaket;
   Referenzhashes nicht zur Anpassung an abweichende Ergebnisse ersetzen.
 
+## Eigenständige Internetrecherche als Standard
+
+Auf Nutzerwunsch vom 01.11.2026 gilt für dieses Repository:
+
+- Bei fachlichen Aufgaben fehlende öffentlich zugängliche Quellen,
+  Herkunfts-, Versions-, Methoden- oder Erzeugungsnachweise standardmäßig
+  selbst im Internet suchen und die relevanten Dokumentstellen lesen.
+  Notwendige Recherche innerhalb des beauftragten Pakets ohne zusätzliches
+  Recherche-OK durchführen. Vom Nutzer weder einen Dokumenttitel noch
+  einen Pfad/Ref als Voraussetzung verlangen, wenn Codex die passenden
+  öffentlichen Belege selbst ermitteln kann.
+- Zuerst den gezielten Repository-Einstieg lesen, dann möglichst Original-
+  und Herausgeberquellen verwenden. URL/DOI, Dokumentstand/Version, genaue
+  Fundstelle, Aussage, Archiv-/Objektbezug und Beleggrenze dokumentieren.
+  Suchtreffer und allgemeine Produkttexte sind keine archivgenauen Nachweise;
+  nicht gelesene oder unzugängliche Inhalte nicht als geprüft ausgeben.
+- Suche auf die konkrete Frage und Abnahme begrenzen. Bei fehlender Evidenz
+  die tatsächlich geprüften Stellen und verbleibende Lücke nennen; keine
+  Endlossuche oder Wiederholung derselben Angaben als neue Evidenz.
+  Nur gezielt beim Nutzer nachfragen, wenn ein privates/nicht zugängliches
+  Objekt, eine nicht ermittelbare Identität oder eine echte fachliche
+  Entscheidung nötig ist. Einen technischen Zugriffsfehler konkret benennen.
+- Historische paketbezogene Rechercheverbote gelten für das damalige Paket,
+  nicht pauschal für neue Aufträge. Aktuelle ausdrückliche Nutzereinschränkungen
+  bleiben maßgeblich. Neue HANDOFFs und Folgeprompts übernehmen diesen
+  Recherche-Standard und erfinden keinen Nutzerdatei-Blocker für öffentliche
+  Quellen. Der Standard startet kein weiteres Arbeitspaket automatisch.
+- Die Regel steuert das Arbeitsverhalten; sie schaltet keine Webwerkzeuge,
+  Netzfreigaben oder App-Berechtigungen frei. Bestehende Grenzen für reale
+  Datenbeschaffung/-prüfung, Daten-/Modellwahl, Implementierung, Rechnungen,
+  wissenschaftliche Freigaben, Nachrichten und Merges bleiben erhalten.
+
 ## Standardablauf je Arbeitspaket
 
 1. **Stand prüfen:** lokalen Status einschließlich ungesicherter/unversionierter

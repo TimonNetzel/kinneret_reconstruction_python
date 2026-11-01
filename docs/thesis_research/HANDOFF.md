@@ -1,4 +1,32 @@
-# Netzel: Herkunft der EMPD2-Klimawerte recherchiert
+# Netzel: eigenständige Internetrecherche dauerhaft als Standard
+
+## Neue Arbeitsregel gesichert, 01.11.2026
+
+Auf ausdrücklichen Nutzerwunsch legt [AGENTS.md](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
+jetzt fest: fehlende öffentliche Herkunfts-/Quellenbelege innerhalb des
+beauftragten Pakets selbst im Internet suchen und lesen, ohne zusätzliches
+Recherche-OK. Kein vom Nutzer zu benennendes Dokument als künstliche
+Startbedingung. Primärquellen, Version/Fundstelle und Aussagegrenzen festhalten;
+gezielt abschließen, auch bei Nichtbeleg. Aktuelle Nutzereinschränkungen und
+technische Zugriffsgrenzen beachten. Keine automatische Folgeausführung.
+
+Die Regel ist versioniert im Arbeitsbranch gesichert und gilt beim Arbeiten
+mit diesem Stand. Sie verändert keine App-/Netzberechtigungen und ist vor
+einem gesondert beauftragten Merge noch nicht Bestandteil von main.
+Der einzige fachliche Folgeauftrag unten bleibt unverändert vorbereitet;
+dieses Workflowpaket führt die historische Exportrecherche nicht aus.
+
+Basis `560279524e8cd03ad721149b9602697b59efbd39`,
+[PR #63](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63)
+offen/ungemergt, mergebar; Head-CI 41286762809 erfolgreich.
+main weiterhin `7f1826c`; sechs vorhandene Arbeitsverzeichnisse sauber erhalten.
+Eigener Worktree `/workspace/netzel-default-web-research`, Branch
+`codex/netzel-default-web-research`; eigener PR gegen #63 ohne Merge.
+Nur AGENTS und kurze HANDOFF-/Statuspflege; bestehende Fachdateien unverändert.
+Diff und vier lokale Links/Anker geprüft; 753 geschützte Blobs/Dateimodi,
+Statushistorie und der eine fachliche Folgeauftrag unverändert.
+Keine Recherche oder manuellen Projekt-/Modelltests in diesem Regelpaket.
+Neue Sicherungsverweise nach Erstellung ergänzen.
 
 ## Ergebnis und korrigierter Arbeitsauftrag, 01.11.2026
 
@@ -110,16 +138,17 @@ Keine Dokumentationsschleife allein aufgrund fehlender Nutzerdatei.
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-provenance-source-search fort.
-Inhaltscommit: 4eb90f9e2dd6fe4659dc8f04436b541aed5a415c
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/63
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
-Aktuellen PR-Head/CI prüfen; kein Merge.
+Setze Netzel auf codex/netzel-default-web-research fort.
+Gesicherte Basis: 560279524e8cd03ad721149b9602697b59efbd39 / PR #63.
+Neue Inhaltscommit-/PR-Verweise werden nach Sicherung hier ergänzt.
+Aktuellen PR-Head/CI prüfen; ungesicherte Arbeit erhalten.
+Eigener Worktree/Branch/PR; kein Merge.
 Prüfe den in HANDOFF vorbereiteten historischen Erzeugungs-/Exportnachweis:
 Mit welchem damaligen Programm-, Raster- und Auflösungsstand wurden die
 EMPD2-Klimafelder des PANGAEA-Archivs 909130 erzeugt, und ist die Verbindung
 zum GitHub-/Zenodo-Release v2.0 öffentlich dokumentiert?
-Suche die passenden historischen Herausgeberunterlagen selbst im Internet.
+Suche die passenden historischen Herausgeberunterlagen nach dem
+Recherche-Standard in AGENTS.md selbst im Internet, ohne zusätzliches OK.
 Ich muss kein Dokument benennen oder bereitstellen.
 Leseplan, genau begrenzten Umfang, Abnahme und Stop aus HANDOFF einhalten.
 Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md ergänzen und HANDOFF/Status kurz pflegen.
