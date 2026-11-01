@@ -46,6 +46,14 @@ blockiert. Kein neues OK für denselben Furlanetto-Auftrag. Kein Pflichtupload,
 Chatwechsel oder Konfigurationsschritt nötig. Dieses neue Prozesspaket erfordert
 nur das OK zur Umsetzung des konkret vorliegenden Plans.
 
+
+Planungsinhalt `66abf2bd3da3dd210015881a5128fa08b5bfa4a3` in
+[PR #73](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/73)
+remote gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-thesis-review`
+(#72). Vier Head-Checks des Inhaltscommits bei Abfrage laufend. Anschließend
+nur Sicherungsverweise ergänzt; Branch `codex/netzel-research-workflow-plan`,
+aktuellen Remote-Head/CI vor tatsächlicher Umsetzung prüfen. Kein Merge.
+
 ## Aktueller Abschluss: Furlanetto-Dissertation für TRS 18 gelesen, 01.11.2026
 
 Basis [PR #71](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/71),

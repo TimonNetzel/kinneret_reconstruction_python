@@ -63,3 +63,12 @@ Test, Modelllauf oder fachliches Folgepaket. Vorhandenes Furlanetto-OK erhalten.
 Alle Umfangs-/Stopgrenzen aus HANDOFF beachten. Gemeinsam sichern, kein Merge;
 genau einen Anschluss pflegen und kurz auf Deutsch berichten.
 ```
+
+## Sicherung
+
+Planungsinhalt `66abf2bd3da3dd210015881a5128fa08b5bfa4a3` in
+[PR #73](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/73)
+remote gesichert, offen/ungemergt gegen `codex/netzel-furlanetto-thesis-review`
+(#72). Vier Head-Checks des Inhaltscommits bei Abfrage laufend. Anschließend
+nur Sicherungsverweise ergänzt; Branch `codex/netzel-research-workflow-plan`,
+aktuellen Remote-Head/CI vor tatsächlicher Umsetzung prüfen. Kein Merge.
