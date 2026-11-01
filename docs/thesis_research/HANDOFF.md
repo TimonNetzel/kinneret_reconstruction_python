@@ -62,5 +62,8 @@ Joins oder Modellläufe; gemeinsam sichern, kein Merge.
 
 ## Sicherung
 
-Bericht/Evidenz, Quellenindex und Übergabe/Status werden gemeinsam auf
-`codex/netzel-rs10-row-provenance` gesichert; PR-Verweis folgt nach Erstellung.
+[PR #76](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/76),
+offen/ungemergt gegen #75, Inhaltscommit
+`b44010ca6ddd84703d30ee26f3b12225738fcace`. Vier automatische Checks bei
+erster Abfrage wartend/laufend. Danach nur Sicherungsverweise ergänzt; aktuellen
+Head/CI bei tatsächlicher Fortsetzung prüfen. Kein Merge.

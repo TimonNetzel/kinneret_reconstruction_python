@@ -56,8 +56,13 @@ wissenschaftlichen Tests, Fits, Scores, Simulationen, Unteragenten, Kontakte
 oder Merges. Quellen/Fundstellen, 25 Index-Pointer, sieben Evidenz-Blobs, neun
 lokale Links/Anker, alte Evidenz/Hash und Statushistorie sowie Fünf-Dateien-Diff
 geprüft; übrige Worktrees sauber. Eigene automatische Repository-CI getrennt
-berichten. Sicherung folgt
-in HANDOFF.
+berichten. Sicherung siehe HANDOFF.
+
+Gesichert in [PR #76](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/76)
+gegen #75, offen/ungemergt, Inhaltscommit
+`b44010ca6ddd84703d30ee26f3b12225738fcace`. Vier automatische Checks bei
+erster Abfrage wartend/laufend; danach nur Sicherungsverweise ergänzt.
+Aktuellen Head/CI bei tatsächlicher Fortsetzung prüfen. Kein Merge.
 
 ## Aktueller Abschluss: moderner Menezes-Datenkandidat identifiziert, 01.11.2026
 
