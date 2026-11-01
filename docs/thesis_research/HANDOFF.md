@@ -1,100 +1,114 @@
-# Netzel: öffentliche Probenzeit-/Integrationsbelege R04/R05
+# Netzel: konkrete Drei-Zeugen-Zeitprüfung und zulässige Leseprüfungen
 
 ## Paketabschluss, 01.11.2026
 
-[Review Z1–Z4](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#probenzeit-und-integration-r04r05-01112026)
-ergänzt. **Dokumentarisch abgeschlossen, reale Zeit-/Integrationsverbindung
-weiter blockiert.** R04/R05 jeweils teilweise belegt: allgemeine Zeit-/
-Unsicherheitsdefinitionen und methodische Protokollregel dokumentiert;
-tatsächliche Zuordnung zu identifizierten Archivproben mit Datierungsmethode,
-Unsicherheit und repräsentierter Ablagerungs-/Integrationsspanne unbelegt.
-Unbekannte Zeugenalter nicht ergänzt. Relevante historische Methodenpassagen
-von Davis 2013 nach Teilabruf der Autorenkopie wegen HTTP 404 nicht geprüft.
-Kein Beweis weltweiter Nichtverfügbarkeit und kein Nutzerdatei-Blocker.
-Begrenzt gestoppt; keine weitere Suchschleife.
+Nutzerauftrag ausgeführt: [AGENTS](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
+erlaubt notwendige, begrenzte schreibgeschützte Original-/Metadatenprüfung
+innerhalb einer beauftragten Provenienzfrage ohne zusätzliches OK. Alte
+Paketverbote gelten als Historie; der zuvor vorbereitete reine
+Stop-/Eingangsplan wurde durch den konkreten Drei-Zeugen-Auftrag ersetzt.
 
-Basis/PR-#65-Head `6cb9603fa3dc6262f81f1ddb7af7d4492219aa8a` geprüft;
-seit Inhaltscommit `6a147f1` nur Sicherungsverweise. #65 offen/ungemergt,
-mergebar; Head-CI [41287829015](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41287829015)
-und 41287825150 erfolgreich (Python 3.11/3.13). Fünf vorgefundene Worktrees
-sauber erhalten, kein Reset/Stash/Merge. Eigener Worktree
-`/workspace/netzel-sample-time-evidence`, Branch `codex/netzel-sample-time-evidence`;
-Inhaltscommit `7a7f84ed922066e763dceb779fef6e22c986e986` über
-[PR #66](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66)
-remote gesichert; offen/ungemergt und mergebar, gegen #65 ohne Merge.
-Automatische [CI 41288401620](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41288401620)
-am Inhaltscommit bei Abfrage laufend. Danach nur Sicherungsverweise;
-aktuellen PR-Head/CI prüfen.
+[Review der drei Zeugen](./A4_E_PROVENANCE_EVIDENCE_REVIEW.md#konkrete-zeitprüfung-der-drei-zeugen-01112026)
+und [Evidenzprotokoll](./witness_time_check_2026_11_01/evidence.json) sichern:
+AlbaSanchez_a1 → „1 béticas“, Champvillair_a18 → „TRS 18“, Barboni_a1000 →
+„MAROC124“. Genau deren SQLite-Metadaten/Publikationsrelationen frisch
+geprüft und mit drei Zeilen des festen v2.0-Release verglichen. Bei allen
+Alter/Altersklasse unbekannt; keine individuelle Zeitzuordnung gewonnen.
+Material/Entnahme für AlbaSanchez/Champvillair teilweise dokumentiert,
+Integration unbekannt; Barboni ohne Zeit-/Material-/Methodenbeleg.
+Champvillair ist direkt mit DOI 10.1177/0959683618810395 verknüpft.
 
-Nur Review ergänzt und HANDOFF/Status gepflegt. README/CONTRIBUTING am festen
-Release-Ref gegen zwei Git-Blob-SHAs geprüft; Quellen/Fundstellen, lokale
-Links/Anker (fünf), Drei-Dateien-Diff und 753 geschützte Git-Blobs/Dateimodi
-geprüft; alter Reviewtext und vollständige Statushistorie unverändert. Keine Rohdaten-/Datenbank-/
-Raster-/ZIP-/TSV-Zeilenprüfung oder -beschaffung, Auswahl, Implementierung,
-manuellen Projekt-/Modelltests oder Rechnungen. R01–R03 nicht neu recherchiert,
-R06/übrige Gates offen; keine A4-Umsetzung/A5/A6, Unteragenten, Nachrichten
-oder Merges. Übrige Fachdateien unverändert; automatische CI separat prüfen.
+**Konkrete technische Restlücke:** Hauptmethoden zugangsbeschränkt;
+FLORE-PDF als geschlossen geführt. Verlinktes Supplement ist DOCX, vom
+Webwerkzeug nicht gelesen; Executor-Download scheitert am Proxy-CONNECT
+mit HTTP 403. `journals.sagepub.com` fehlt in der geltenden Hostliste.
+Gefundene öffentliche Furlanetto-Dissertation ebenfalls nicht abrufbar
+(Web HTTP 403). Keine Inhalte dieser Dateien als geprüft behauptet und
+kein fachlicher Nichtbeleg daraus. Kein Nutzer-Dokument erforderlich;
+Repo-Regeln können die technische Netzwerkgrenze nicht aufheben.
+Aktuell verfügbare Cloud-Werkzeuge bieten hier keine Konfigurationsänderung.
 
-## Genau ein Folgeauftrag: A4-E-Stop-/Eingangsplan – vorbereitet, wartet auf Nutzer-OK
+Basis #66-Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6` geprüft;
+#66 offen/ungemergt und mergebar, Head-CI 41288446572/41288442734 mit vier
+erfolgreichen Checks. Sechs vorgefundene Worktrees sauber erhalten;
+eigener Worktree `/workspace/netzel-witness-time-check`, Branch
+`codex/netzel-witness-time-check`, gestapelter eigener PR gegen #66 vorgesehen.
+Sicherungsverweis folgt nach Push. Kein Merge.
 
-**Ziel:** Aus den abgeschlossenen R01–R05-Reviews eine knappe, prüfbare
-Entscheidungsvorlage für den weiter blockierten A4-E-Eingang erstellen.
-Welche konkrete Nachweiskette fehlt, welcher Beleg müsste vor einer späteren
-realen Prüfung identifiziert sein, und wo muss weiterhin gestoppt werden?
-Keine neue allgemeine Recherche und keine Fortsetzung der Probenprüfung.
+SQLite-Original vor/nach SHA-256 identisch; Release-Metadatenblob gegen
+Git-Blob-SHA geprüft. Nur drei Zeugen inhaltlich bewertet; Gesamtblob für
+gezielte Extraktion temporär bezogen, drei Auszüge/Abfragen im Repo gesichert.
+Identitäts-/JSON-/Diffprüfung und zehn lokale Links/Anker bestanden; alter
+Reviewtext, vollständige Statushistorie sowie 752 geschützte Objekte/Modi erhalten.
+Keine Counts-/Klimawerte, neuen Proben, Reparaturen, Projektimplementierung,
+manuellen Projekt-/Modelltests, Rechnungen/Fits/Simulationen oder Freigaben.
+R01–R03 nicht neu gesucht, R06/übrige Gates offen; keine A4-Umsetzung/A5/A6,
+Unteragenten, Kontakte/Nachrichten oder Merges. Ergebnis fachlich teilweise,
+Prüfplan bis zu den benannten Nachweis-/Zugriffsgrenzen ausgeführt.
 
-**Leseplan/Eingänge:** aktuellen PR-Head/CI prüfen, ungesicherte Arbeit erhalten;
-eigener Worktree/Branch/PR ohne Merge. AGENTS, diese HANDOFF, nur neuester
-PROJECT_STATUS-Abschnitt; Review nur Bewertungen/Stop R01–R03 und R04/R05;
-A4_E_REOPENING_REQUIREMENTS R01–R05/Herkunftsregeln; MODEL_CONTRACT Eingänge/Stop;
-MODULAR_RECONSTRUCTION_PLAN §1, §2 nur A4, §4. Keine weiteren Eingänge nötig,
-kein Nutzer-Dokument als Startbedingung. Öffentliche Quellen sucht Codex nach
-AGENTS bei konkretem Bedarf selbst; dieser reine Syntheseauftrag braucht
-keine neue Suche und eröffnet keine abgeschlossene Suche erneut.
+## Genau ein Folgeauftrag: Furlanetto-Originalmethodik für TRS 18 – vorbereitet, wartet auf Nutzer-OK und lesbaren Zugriff
 
-**Umfang:** nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md um eine kurze datierte
-Stop-/Eingangstabelle ergänzen, HANDOFF/Status kurz pflegen. Je R01–R05
-bestehenden Review-Locator, fehlende Identitäts-/Methodenverbindung,
-erforderlichen Beleg und Grenze einer später separat zu autorisierenden
-Prüfung nennen. Keine neuen Anforderungen, Datenquellen oder Proben wählen;
-kein Rechercheauftrag an Dritte. Fehlender realer Beleg bleibt ausdrücklich
-fehlend und ist keine bereits autorisierte Beschaffung.
+**Ziel:** die konkrete noch nicht gelesene Methodik für Champvillair_a18 /
+TRS 18 aus DOI 10.1177/0959683618810395 samt öffentlichem Supplement lesen.
+Sammlung, Ablagerungs-/Integrationsbezug und Unsicherheit proben-/gruppenbezogen
+belegen oder den genauen Nichtbeleg der gelesenen Stellen sichern.
 
-**Abnahme/Stop:** alle fünf Restlücken auf bestehende Reviews zurückführen,
-Definition/Anwendungsnachweis und Dokumentationsabschluss/reale Sperre trennen.
-R06 nicht bearbeiten/freigeben. Nach der einen Tabelle und konkreter
-Start-/Stopgrenze beenden; keine neue Dokumentations- oder Suchschleife.
-Links/Referenzen/Diff/geschützte Git-Blobs und alte Statushistorie prüfen;
-Commit/eigener PR, genau einen Folgeauftrag vorbereiten, Folgeprompt mitliefern.
+**Technische Startbedingung:** erlaubter lesbarer Download des bereits
+verlinkten Supplement-DOCX (Executor-Host `journals.sagepub.com`, notwendige
+tatsächliche Weiterleitungen separat prüfen) oder zugängliches öffentliches
+Autorenoriginal. Ein öffentlich ermitteltes Original beschafft Codex selbst.
+Keine Nutzerdatei oder Autorennachricht. Die heutige HTTP-/Werkzeuggrenze
+ist real; derselbe abgewiesene Abruf wird ohne geänderten Zugriff nicht
+wiederholt. Keine Netzwerkregel umgehen oder deren Änderung vortäuschen.
 
-**Schutz:** keine erneute R01–R05-Suche, keine Daten-/Datenbank-/Raster-/ZIP-/
-TSV-Zeilenprüfung oder -beschaffung, Auswahl, Joins, Reparatur, Implementierung,
-manuellen Tests, Rechnungen/Fits/Simulationen. Anforderungen/Verträge,
-Modelle/Resultate/Register, Importer/Flags, Counts/Gruppen, Baseline und CLI/App
-unverändert. Keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten
-oder Merges. Reale Herkunfts-/Zeitbelege und übrige Gates bleiben blockiert;
-weitere reale Prüfung wird durch dieses Paket nicht freigegeben.
+**Leseplan:** aktuellen PR-Head/CI/Worktrees prüfen, Arbeit erhalten;
+AGENTS, diese HANDOFF, neuester Status; Review nur aktueller Drei-Zeugen-
+Abschnitt; evidence.json nur Champvillair/W3–W6/Zugriffsstatus;
+A4_E_REOPENING_REQUIREMENTS R04/R05 und Herkunftsregeln. Anschließend exakt
+zugeordnete Originalmethoden/Supplement, gegebenenfalls die bereits gefundene
+öffentliche Autorenfassung. Keine erneute Inventur/Definitionstextsuche.
+
+**Umfang/Abnahme:** Review ergänzen und Quellen-/Abfrageevidenz aktualisieren,
+HANDOFF/Status kurz pflegen. Einen nachgewiesenen Gruppengeltungsbezug oder
+explizite TRS-18-Bindung verlangen; Zitat/Seite/Version und Aussagegrenze
+festhalten. Keine Datenergänzung aus allgemeinem Moostyp oder Publikationsjahr.
+Nach diesem Original-/Supplementversuch stoppen, auch bei Nichtbeleg;
+Zugriffsfehler von inhaltlichem Nichtbeleg trennen. Quellen/Hashes/Links/Diff
+prüfen, Commit/eigener PR ohne Merge, genau einen sachlichen Anschluss
+vorbereiten und Folgeprompt automatisch mitliefern.
+
+**Schutz:** vorhandene Originale/alte Berichte/Verträge erhalten. Keine neue
+Probe/Kohorte, Pollen-/Klimawertanalyse, Datenreparatur, Projektimplementierung,
+manuellen Tests, wissenschaftlichen Rechnungen, Gate-/R06-Freigabe,
+A4-Umsetzung/A5/A6, Unteragenten, Nachrichten/Kontakte oder Merges.
+Notwendige schreibgeschützte Quellen-/Metadatenprüfung ist nach AGENTS erlaubt.
 
 ## Kopierfertiger Folgeprompt
 
 ```text
-Setze Netzel auf codex/netzel-sample-time-evidence fort.
-Inhaltscommit: 7a7f84ed922066e763dceb779fef6e22c986e986
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66
-Danach nur Sicherungsverweise; aktuellen PR-Head/CI prüfen.
+Setze Netzel auf codex/netzel-witness-time-check fort.
+Letzte verlässliche Sicherung: Basis a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6,
+PR https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/66;
+eigener Inhaltscommit/PR werden nach Sicherung hier ergänzt.
 Prüfe aktuellen PR-Head/CI; erhalte ungesicherte Arbeit.
 Eigener Worktree/Branch/PR, kein Merge.
-Führe ausschließlich den in HANDOFF vorbereiteten A4-E-Stop-/Eingangsplan aus:
-R01–R05-Restlücken aus bestehenden Reviews in genau einer kurzen Tabelle
-mit Review-Locator, fehlender Identitäts-/Methodenverbindung, nötigem Beleg
-und Start-/Stopgrenze einer späteren realen Prüfung zusammenführen.
-Leseplan, Umfang, Abnahme und Stop aus HANDOFF einhalten.
-Nur A4_E_PROVENANCE_EVIDENCE_REVIEW.md ergänzen, HANDOFF/Status kurz pflegen.
-Keine neue R01–R05-Suche; kein Nutzerdatei-Blocker für öffentliche Quellen.
-Keine R06-Bearbeitung/Freigabe, Datenbeschaffung/-zeilenprüfung, Auswahl,
-Implementierung, manuellen Tests oder Rechnungen; übrige Fachdateien unverändert.
-Keine A4-Umsetzung/A5/A6, Gatefreigabe, Unteragenten, Nachrichten oder Merges.
-Fehlende reale Belege benennen; nach der Entscheidungsvorlage stoppen.
-Ergebnis prüfen, per Commit/eigenem PR sichern, genau einen Folgeauftrag
-vorbereiten und Folgeprompt automatisch mitliefern. Kurz auf Deutsch berichten.
+Führe ausschließlich den in HANDOFF vorbereiteten Furlanetto-Auftrag für
+Champvillair_a18 / TRS 18 aus: zugeordnete öffentliche Originalmethodik und
+Supplement zu DOI 10.1177/0959683618810395 selbst beschaffen und lesen.
+Leseplan, lesbare technische Startbedingung, Umfang, Abnahme und Stop einhalten.
+Supplementzugriff scheiterte am Executor-Proxy mit HTTP 403; Web kann DOCX
+nicht lesen. Ohne geänderten erlaubten Zugriff keinen identischen Abruf
+wiederholen; keine Umgehung und keine Nutzerdatei voraussetzen.
+Nur Review/Evidenz und HANDOFF/Status pflegen; alte Originale/Berichte erhalten.
+Nötige begrenzte schreibgeschützte Quellen-/Metadatenprüfung nach AGENTS
+ist erlaubt, kein zusätzliches Recherche-/Zeilenprüfungs-OK verlangen.
+Keine neue Probe/Kohorte, Pollen-/Klimawertanalyse, Datenreparatur,
+Projektimplementierung, manuellen Tests oder wissenschaftlichen Rechnungen.
+Keine R01–R03-Neusuche, R06-/Gatefreigabe, A4-Umsetzung/A5/A6,
+Unteragenten, Nachrichten/Kontakte oder Merges.
+TRS-18-/Gruppenbindung, Sammlung, Ablagerung, Integration und Unsicherheit
+getrennt belegen; nach den Originalstellen oder konkreter Zugriffslücke stoppen.
+Ergebnis prüfen, per Commit/eigenem PR sichern, genau einen sachlichen
+Folgeauftrag vorbereiten und Folgeprompt automatisch mitliefern.
+Kurz auf Deutsch berichten.
 ```

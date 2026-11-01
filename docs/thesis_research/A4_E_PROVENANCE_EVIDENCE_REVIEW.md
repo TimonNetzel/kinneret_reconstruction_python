@@ -270,3 +270,93 @@ Modelltests, Rechnungen, Implementierung, Unteragenten, Nachrichten oder Merges.
 Genau ein nächster **dokumentarischer Stop-/Eingangsplan** ist in
 [HANDOFF](./HANDOFF.md) vorbereitet; er führt keine weitere Suche oder reale
 Prüfung aus und erteilt keine R06-/Gatefreigabe.
+
+## Konkrete Zeitprüfung der drei Zeugen, 01.11.2026
+
+**Aktueller Nutzerauftrag:** notwendige Metadaten-/Originalquellenprüfung
+zulassen und den konkreten Drei-Zeugen-Plan ausführen. Der oben noch
+vorbereitete reine Stop-/Eingangsplan ist damit ersetzt. Die Umfangsverbote
+der früheren Pakete bleiben historische Angaben; die aktuelle
+[AGENTS-Regel](../../AGENTS.md#eigenständige-internetrecherche-als-standard)
+erlaubt nötige, begrenzte schreibgeschützte Provenienzprüfungen ohne neues OK.
+Basis ist PR #66, geprüfter Head `a9177cf84b2cc3d0b1e1983c7315880d93e5c5e6`;
+offen/ungemergt und mergebar, vier Head-Checks erfolgreich.
+
+**Ausgeführt:** genau `AlbaSanchez_a1`, `Champvillair_a18` und `Barboni_a1000`
+aus dem bestehenden Readiness-Bericht, ohne neue Probenauswahl. Original-
+Metadaten samt Notizen und direkter Publikationsrelation frisch gelesen,
+dieselben Zeugen am festen Herausgeber-Release verglichen und zugeordnete
+öffentliche Quellen gezielt gesucht. Pollenmesswerte und Klimawerte wurden
+in diesem Paket nicht gelesen. Alle drei tatsächlichen Altersangaben bleiben
+unbekannt. Das Ergebnis ist ein gesichertes, probenbezogenes Teilergebnis;
+die reale Zeit-/Integrationsfrage ist weiterhin offen.
+
+### Quellen, Zugriff und nachprüfbare Identität
+
+Das [Evidenzprotokoll](./witness_time_check_2026_11_01/evidence.json) sichert
+die exakten SQL-Abfragen/Parameter, Rohmetadaten der drei Zeugen, drei
+Release-Auszüge mit Zeilennummern, Quellen-/Zugriffsstatus und Einzelergebnisse.
+Wörtliches `"NULL"`, leeres Feld und SQLite-NULL werden nicht still gleichgesetzt.
+Die unten genannten unbekannten Alter/Altersklassen sind in W1 Text `"NULL"`;
+W2 enthält dafür leere Felder. Keine Datenergänzung oder Originalkorrektur.
+
+| ID | Quelle / fester Stand / genaue Stelle | Gelesener Befund und Grenze |
+| --- | --- | --- |
+| W1 | Vorhandenes [PANGAEA.909130-SQLite-Original](https://store.pangaea.de/Publications/ChevalierM-etal_2019/EMPD2.sqlite3), 21.327.872 Bytes; SHA-256 vor/nach `5634e85d922ee0741c41a77d081010c9cc1c113966b283bc52e2051a9d3722e2`. `metadata` nur die drei festen Schlüssel; `metapubli` → `publications` nur für sie. Abfragen in `evidence.json: queries`. | Mit `mode=ro&immutable=1` und `PRAGMA query_only=ON` geöffnet. Genau drei Metadatenzeilen; genau eine direkte Publikationsrelation für Champvillair, `publiid=22`, DOI 10.1177/0959683618810395. Kein direkter Publikationstreffer für AlbaSanchez/Barboni; das beweist keine Quellenlosigkeit. Notizen enthalten keine Datierungs-/Integrationsangabe. Keine Counts-, Klima- oder Arbeitertabellen gelesen. |
+| W2 | EMPD2/EMPD-data v2.0, Commit `737b76eb269b071422edded6ac332654ff83c103`, [meta.tsv](https://github.com/EMPD2/EMPD-data/blob/737b76eb269b071422edded6ac332654ff83c103/meta.tsv), ausschließlich Zeilen 2, 265 und 2609. Vollständiger Metadatenblob `1dca11169396f2eb2f1960ccd600cbd07705a4bf`, 7.405.566 Bytes; gegen Git-Blob-SHA geprüft. | Zum Herausgebervergleich den vollständigen Metadatenblob temporär heruntergeladen, nur dieselben drei Zeilen in den benötigten Feldern inhaltlich ausgewertet/gesichert; keine Bestandsstatistik oder weiteren Proben bewertet. `SampleName` + `OriginalSampleName` + `SiteName` stimmen für die drei Zeugen mit W1 überein. Alters-/Unsicherheitsfelder leer, gleiche Champvillair-Publikation; bei den anderen je fünf Publikations-/DOI-Felder leer. Diese konkrete Metadatenverbindung beweist keine Identität vollständiger SQLite-/TSV-Exporte. |
+| W3 | Furlanetto et al., [DOI 10.1177/0959683618810395](https://journals.sagepub.com/doi/10.1177/0959683618810395), online 19.11.2018, The Holocene 29(2), 2019, S.271–286. Verlagsseite: Abstract, Data availability statement, Supplementary Material. | Abstract beschreibt Moos-Oberflächenproben in alpinen Höhentransekten; die Daten sollen in EMPD Stage 2 archiviert werden. W1/W2 verknüpfen die konkrete Probe bibliographisch mit dieser Arbeit. Die gelesenen Abschnitte liefern weder Sammlungsdatum noch Datierung/Unsicherheit oder Integrationsintervall für `TRS 18`. Hauptmethoden hinter Zugangsschranke, nicht gelesen. 2018/2019 sind Publikationsstände, keine Probenjahre. |
+| W4 | Institutioneller [FLORE-Datensatz 2158/1408933](https://flore.unifi.it/handle/2158/1408933), bibliographischer Datensatz und „File in questo prodotto“. | Derselbe DOI; Verlags-PDF als „Accesso chiuso“ geführt. Keine Kopie angefordert und kein Autorenkontakt. Der Datensatz liefert keinen zusätzlichen gelesenen Methodenvolltext. |
+| W5 | Unmittelbar auf W3 verlinktes [Supplement-DOCX](https://journals.sagepub.com/doi/suppl/10.1177/0959683618810395/suppl_file/furlanetto_et_al._revised_supplementary_material.docx). | Webwerkzeug: nicht unterstützter DOCX-Inhaltstyp. Executor: HTTP 403; Diagnose präzisiert `Tunnel connection failed: 403 Forbidden` beim Proxy-CONNECT. `journals.sagepub.com` steht nicht in der geltenden Executor-Hostliste. Deshalb Inhalt nicht gelesen; **technische Zugriffslücke, kein Nichtbeleg im Supplement**. Repo-Regeln ändern diese Netzwerkgrenze nicht; keine Umgehung. |
+| W6 | Gefundene Furlanetto-Dissertation 2019, [Bicocca 10281/241319](https://www.boa.unimib.it/handle/10281/241319), sekundärer [Pflichtabgabe-Datensatz](https://tesidottorato.depositolegale.it/handle/20.500.14242/77337). | Suchtreffer bezeichnet eine öffentliche Dissertation; beide Datensatzabrufe scheitern im Webwerkzeug mit HTTP 403. Auch der aus bekanntem Dateinamen gebildete PDF-Kandidat war nicht abrufbar und ist kein verifizierter Dateilink. Kein Volltext gelesen, keine Zuordnung einer Dissertationstabelle oder Methode zu `TRS 18` behauptet. |
+
+Die neue Metadatenprüfung bestätigt die schon berichteten unbekannten
+Zeugenalter jetzt direkt am unveränderten Original. W2 schließt für genau
+diese drei Kennungen eine dokumentierte Metadatenbrücke, keine historische
+Programm-/Raster-/Exportkette. R01–R03 wurden nicht erneut recherchiert.
+Die Vollbytes der neu bezogenen Metadaten liegen nur temporär im Cache;
+im Repository sind die begrenzten Auszüge und Abfragen gesichert, kein
+dauerhaftes Vollarchiv der Quelldateien behauptet.
+
+### Ergebnis je Zeuge gegen R04/R05
+
+| Archivprobe und Originalkennung | Sammlungs-/Probenzeit, Methode und Unsicherheit (R04) | Ablagerung, Mehrfachsammlung und Integration (R05) | Verbleibende konkrete Lücke |
+| --- | --- | --- | --- |
+| **AlbaSanchez_a1 → `1 béticas`**, Sierra de las Nieves Natural Park, Málaga, Spain; Identitätsfelder in W1/W2 gleich. | **Unbelegt für diese Probe:** Alter, Altersklasse, Sammlungsdatum und Datierungsmethode fehlen in den geprüften Metadaten; keine direkte Publikationsrelation. | **Teilweise belegt:** Material `moss`, Kontext `closed forest`, Vegetation Pinsapo-Tannenwald dokumentiert. Entnahmemethode und repräsentierte Ablagerungs-/Integrationsspanne unbekannt. | Ein öffentliches Original muss genau `1 béticas`/diesen EMPD-Schlüssel identifizieren und Zeit, Methode samt Unsicherheit sowie Integrationsbezug liefern. Eine ähnliche Studie aus demselben Naturpark reicht nicht. |
+| **Champvillair_a18 → `TRS 18`**, La Thuile Valley, Italy; W1/W2 gleich, direkte Relation zu W3. | **Unbelegt für diese Probe:** Metadatenalter/Altersklasse unbekannt. Bibliographische Bindung belegt; gelesene W3-Abschnitte datieren `TRS 18` nicht. Methodenvolltext/Supplement in W4–W6 nicht gelesen. | **Teilweise belegt:** Material `moss`, Methode `hand picking - multiple samples`. Zahl, räumliche Zusammensetzung, Gleichzeitigkeit der Teilentnahmen und repräsentierte Zeitspanne damit nicht belegt. | Lesbare Originalmethoden/Erhebungsmetadaten mit explizitem `TRS 18`- oder nachweislichem Gruppengeltungsbezug. Anschließend Sammlung, Ablagerungszeit und Integration getrennt beurteilen; kein Alter aus Publikationsjahr ergänzen. |
+| **Barboni_a1000 → `MAROC124`**, `Moroc`, Morocco; Identitätsfelder in W1/W2 gleich. | **Unbelegt für diese Probe:** Alter, Altersklasse, Datierungs-/Sammlungsangaben fehlen. Keine direkte Publikationsrelation; Notiz leer. | **Unbelegt:** Material, Kontext, Entnahmemethode und Integration fehlen. Die Ortswarnung bleibt unverändert erhalten. | Zuerst ein Original mit eindeutiger `MAROC124`-Herkunfts-/Probenbindung und den fehlenden Zeit-/Methodenangaben. Unzuverlässige Lageangaben werden weder repariert noch zur Quellenidentität umgedeutet. |
+
+Die probenbezogenen R04-Nichtbelege sind von der bereits teilweise belegten
+allgemeinen R04-Definition in Z1/Z2 zu unterscheiden. R05 ist für AlbaSanchez
+und Champvillair nur im oben bezeichneten Material-/Entnahmeumfang teilweise
+belegt, für Barboni unbelegt. **Kein Zeuge hat jetzt eine belegte vollständige
+Zeit-/Integrationszuordnung.** Fehlende Integration bleibt unbekannt und
+ist keine Nullunsicherheit; keine geeignete Trainingsprobe daraus ausgewählt.
+
+### Begrenzter Abschluss und Anschluss
+
+Die gezielten Suchfragen stehen im Evidenzprotokoll: Originalkennungen,
+Autor-/Ortskombinationen und die direkt verknüpfte DOI sowie öffentliche
+Autoren-/Institutionsfassungen und das Verlags-Supplement. Jahreszahlen in
+Suchanfragen waren Suchhilfen, keine Datierungshypothesen. Für AlbaSanchez
+und Barboni wurde keine gelesene öffentliche Originalmethode mit eindeutiger
+Zeugenbindung ermittelt; Viewer-Suchauszüge, verwandte/später erschienene
+Studien und leere Trefferlisten wurden nicht als Probenbeleg übernommen.
+Für Champvillair ist die Quellenidentität konkret, die relevante Lesung
+an den oben genannten Zugriffsgrenzen offen. Keine allgemeine Literatur-
+oder erneute Definitionssuche, keine Behauptung weltweiter Nichtexistenz.
+
+Der beauftragte Prüfplan ist bis zu diesen konkreten Nachweis-/Zugriffsgrenzen
+ausgeführt. Die frühere Repo-Sperre ist behoben; R04/R05 sind fachlich nicht
+geschlossen. Als genau ein sachlicher Folgeauftrag ist die **gezielte
+Beschaffung/Lesung der öffentlich verlinkten Furlanetto-Originalmethodik für
+`TRS 18`** vorbereitet, mit expliziter technischer Startbedingung, ohne neue
+Metadateninventur oder zusätzliches reines Planungspapier. Kein Nutzer muss
+ein Dokument benennen oder bereitstellen; ein erlaubter lesbarer Zugriff
+muss tatsächlich verfügbar sein. R06/übrige Gates und R01–R03 bleiben offen.
+
+Original-Hash vor/nach und Release-Blob geprüft; Evidenz-JSON, Identitätsfelder,
+Quellen-/Linkbezüge und zulässiger Diffumfang geprüft. Bestehender Reviewtext,
+Statushistorie und übrige Fachdateien erhalten. Keine Datenreparatur,
+Modell-/Kohortenwahl, Projektimplementierung, manuellen Projekt-/Modelltests,
+wissenschaftlichen Rechnungen/Fits/Simulationen, A4-Umsetzung/A5/A6,
+Gatefreigabe, Unteragenten, Nachrichten/Kontakte oder Merges.
