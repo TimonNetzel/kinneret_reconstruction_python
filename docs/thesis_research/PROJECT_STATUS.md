@@ -21,6 +21,31 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: Plan für Quellenzugriff und Fortsetzung, 01.11.2026
+
+Nutzer beauftragt Internetrecherche und Umsetzungsplan gegen blockierte Quellen
+und wiederholten Kontextaufbau. Offizielle OpenAI-Dokumentation zu Website-
+Sperren, Codex-Anweisungen/Netzzugriff, Projektkontext, Compaction und
+Research-Quellen gelesen. [Plan mit Quellen und Abnahme](./RESEARCH_WORKFLOW_PLAN.md)
+gesichert: kurzer Einstieg, Index bestehender Evidenzen, getrennte Zugriffs-/
+Verfügbarkeits-/Belegzustände, begrenzte Alternativsuche und weniger Wiederholung.
+Das sind projektspezifische Vorschläge, keine garantierte Tokenersparnis.
+
+Planung abgeschlossen; Prozessumsetzung vorbereitet, wartet als genau ein
+neuer Anschluss auf Nutzer-OK. Basis #72, Head
+`cb7ce16007d440252c82c8913c7e6b89d3511bd3`, offen/ungemergt, vier erfolgreiche
+Checks. Eigener Worktree/Branch `codex/netzel-research-workflow-plan`.
+Sieben bisherige Worktrees erhalten. Nur Plan, HANDOFF und neuer Statusabschnitt;
+AGENTS, wissenschaftliche Berichte/Evidenz, Originale und Statushistorie erhalten.
+PhD nicht erneut eingelesen; keine neuen Originalquellenabrufe oder Facharbeit.
+Keine Apps/Netzänderungen, Tests/Modelle/Rechnungen, Unteragenten, Kontakte oder
+Merges. Referenzen/Links/Diffumfang geprüft.
+
+Furlanetto-OK bleibt separat gültig; Versionsabgleich weiterhin am Zugang
+blockiert. Kein neues OK für denselben Furlanetto-Auftrag. Kein Pflichtupload,
+Chatwechsel oder Konfigurationsschritt nötig. Dieses neue Prozesspaket erfordert
+nur das OK zur Umsetzung des konkret vorliegenden Plans.
+
 ## Aktueller Abschluss: Furlanetto-Dissertation für TRS 18 gelesen, 01.11.2026
 
 Basis [PR #71](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/71),
