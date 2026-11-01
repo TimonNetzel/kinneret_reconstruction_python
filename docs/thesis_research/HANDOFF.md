@@ -1,4 +1,32 @@
-# Netzel: Übergabe nach Stand-/Eingangsprüfung des Herkunftsbelegs
+# Netzel: automatische Folgeprompts und blockierte Herkunftsbelegbewertung
+
+## Aktueller Arbeitsablauf: Folgeprompt bei jedem gesicherten Abschluss
+
+Am 01.11.2026 auf Nutzerfrage die Regel aus
+[PR #60](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/60)
+übernommen und in [AGENTS.md](../../AGENTS.md) auf jeden gesicherten
+Teilaufgabenabschluss erweitert. #60 ist offen/ungemergt; der #61-Branch
+enthielt die Regel deshalb nicht. Prompt künftig automatisch aus dem aktuellen
+HANDOFF erzeugen, vollständig im Chat ausgeben und hier speichern. Keine neue
+Nachfrage nötig; neuer Chat muss den Branch mit dieser Regel verwenden.
+
+Basis `7630c480a71849a45a4e58646be2e2ffa7d5e431`,
+[PR #61](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61)
+offen/ungemergt und mergebar, automatische
+[Head-CI 41284948221](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41284948221)
+erfolgreich. Separater Worktree `/workspace/netzel-followup-prompt-continuation`,
+Branch `codex/netzel-followup-prompt-continuation`, eigener PR gegen #61 ohne Merge.
+Nur AGENTS und kurze HANDOFF-/Statuspflege; kein fachliches Paket ausgeführt.
+Der genau eine fachliche Folgeauftrag unten bleibt am fehlenden Belegobjekt
+blockiert.
+Inhaltscommit `07018718f639392ee2c92d02387eb541076d5f87` über
+[PR #62](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/62)
+remote gesichert, offen/ungemergt und mergebar; automatische
+[CI 41285333092](https://github.com/TimonNetzel/kinneret_reconstruction_python/actions/runs/41285333092)
+bei Abfrage eingereiht. Danach nur Sicherungsverweise; aktuellen Head/CI prüfen.
+Drei-Dateien-Diff und neun lokale Links/Anker geprüft; 753 geschützte Git-Blobs/
+Dateimodi einschließlich Symlink und sämtlicher Fachdateien unverändert,
+Statushistorie bytegleich und fachlicher Folgeauftrag unverändert erhalten.
 
 ## Gesichertes Ergebnis
 
@@ -93,10 +121,14 @@ Keine reale Gültigkeit/Deckung aus A3 abgeleitet.
 ## Kopierfertiger Startprompt für die Fortsetzung
 
 ```text
-Setze Netzel auf codex/netzel-a4-e-provenance-evidence-review fort.
-Gesicherter Inhaltscommit: 921b5ccb5b1bdb0cb7b1fe20c3e12d7ea254ea7f
-PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/61
+Setze Netzel auf codex/netzel-followup-prompt-continuation fort.
+Gesicherter Inhaltscommit: 07018718f639392ee2c92d02387eb541076d5f87
+PR: https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/62
 Danach nur Sicherungsverweise; aktuellen Remote-Head/CI prüfen.
+AGENTS.md enthält die automatische Promptregel.
+Fertig: Stand-/Eingangsprüfung und verbindliche Regel für Folgeprompts.
+Vorgänger-Head-CI #61 erfolgreich; aktuelle eigene CI gesondert prüfen.
+Inhaltliche R01–R03-Bewertung weiterhin am fehlenden Belegobjekt blockiert.
 Genau ein Folgeauftrag: die bereits autorisierte Herkunftsbelegbewertung
 R01–R03 nach Eingang fortsetzen. Kein erneutes OK für dieses Paket nötig.
 Belegobjekt (Pfad/Ref und Archivbezug): noch eindeutig vom Nutzer zu benennen.
@@ -111,6 +143,12 @@ Keine Recherche, Beschaffung, realen Daten-/Dateiprüfungen, Auswahl, Klima-Join
 Implementierung, Tests oder Rechnungen. R04–R06/übrige Gates offen lassen.
 A4 nicht umsetzen, A5/A6 nicht beginnen. Keine Gatefreigabe, Unteragenten,
 Autorennachrichten oder versandte Beleganforderung. Dokumentarisch prüfen,
+Abnahme: R01–R03 mit Fundstelle, Originalaussage/Übernahme, Identitätsbezug,
+Reichweite und Status belegt/teilweise belegt/unbelegt nachvollziehbar bewerten;
+Quellen-/Link-/Diff-/Blobprüfung und Statushistorie erhalten.
 Commit/eigenen PR sichern und genau einen begrenzten Folgeauftrag vorbereiten.
+Nach jedem gesicherten Teilaufgabenabschluss den Folgeprompt automatisch aus
+dem aktuellen HANDOFF erzeugen, dort speichern und hier vollständig als
+kopierfertigen Textblock ausgeben; diese Anweisung in den Folgeprompt übernehmen.
 Kurze deutsche Updates.
 ```

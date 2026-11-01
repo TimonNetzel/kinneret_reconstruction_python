@@ -56,25 +56,44 @@ dass zur Fortsetzung ein kurzes „OK“ genügt:
   Prüfungen, offene/blockierte Teile sowie Commit/PR. Ein gesichertes Teilergebnis
   darf nicht als fachlich abgeschlossene Gesamtaufgabe erscheinen.
 - **Einen konkreten Folgeauftrag vorbereiten:** HANDOFF führt genau ein nächstes
-  empfohlenes Paket mit Status „vorbereitet – wartet auf Nutzer-OK“, Ziel,
-  erlaubtem Umfang, gesperrten Bereichen, nötigen Eingängen/Leseplan und
-  Abschlusskriterien. Weitere offene Aufgaben separat als blockiert oder später
-  ausweisen. Den Folgeauftrag vor dem OK bereits konkret und prüfbar beschreiben.
+  empfohlenes Paket mit Ziel, erlaubtem Umfang, gesperrten Bereichen, nötigen
+  Eingängen/Leseplan und Abschlusskriterien. Neues Paket: „vorbereitet – wartet
+  auf Nutzer-OK“. Bereits autorisiertes Paket: kein erneutes OK verlangen;
+  fehlende Eingänge als eigenen Blocker ausweisen. Weitere offene Aufgaben
+  separat als blockiert oder später ausweisen. Den Folgeauftrag vor dem OK bereits konkret und prüfbar beschreiben.
 - **OK eindeutig anwenden:** Ein „OK“, „weiter“ oder sinngleiches Signal im
   passenden Gesprächskontext autorisiert dieses vorbereitete Paket. Nach kurzer
   Standprüfung ausführen, ohne denselben Auftrag erneut bestätigen zu lassen.
   Bereits autorisierte Arbeit vollständig erledigen; für das nächste neue Paket
   wieder einen klaren Folgeauftrag vorbereiten. Ein OK erteilt keine pauschale
   Merge-, Autorenkontakt- oder wissenschaftliche Freigabe.
-- **Chatwechsel gezielt empfehlen:** Einen kopierfertigen Übergabeprompt ausgeben,
-  wenn ein gesicherter Paketabschluss, ein deutlicher Themenwechsel oder viel
-  angesammelter Kontext einen neuen Chat sinnvoll macht. Prompt auch in HANDOFF
-  sichern: Branch, letzter verlässlich gesicherter Commit/PR, genaue Aufgabe,
-  Leseplan, Schutzregeln und bekannte Blocker. Bei noch ausstehendem OK den
-  vorgeschlagenen Startauftrag ausdrücklich als solchen kennzeichnen.
-- **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; bei
-  sinnvollem Chatwechsel den Prompt direkt mitliefern. Keinen neuen Chat selbst
-  anlegen und keine Erinnerungs-/Hintergrundautomatisierung daraus ableiten.
+- **Folgeprompt nach jedem gesicherten Teilaufgabenabschluss automatisch ausgeben:**
+  Nach jedem abgeschlossenen und per Commit/eigenem PR remote gesicherten
+  Arbeitspaket den nächsten Startprompt selbst aus dem aktuellen HANDOFF und
+  verifizierten Git-/PR-Stand erzeugen. Das gilt auch für dokumentarische Pakete
+  und gesicherte Teilergebnisse mit weiter blockierter Fachaufgabe. Den Prompt
+  vollständig als kopierfertigen Textblock in der Abschlussantwort ausgeben
+  und in HANDOFF speichern; ein Link, eine Erwähnung oder ein Angebot genügt nicht.
+  Nicht auf Nachfrage warten und nicht von einer Chatwechsel-Empfehlung abhängig
+  machen. Keine unverändert alte Vorlage mit veralteten Branch-/Commitangaben.
+  Der Prompt nennt Branch, gesicherten Commit/PR, erledigten Stand, genau einen
+  Folgeauftrag, Autorisierungsstatus, nötige Eingänge, Leseplan, erlaubten Umfang,
+  Schutzgrenzen, Abnahme und Stopbedingungen. Bekannte Werte konkret einsetzen;
+  fehlende Eingänge ausdrücklich als fehlend kennzeichnen, niemals erfinden.
+  Tatsächlichen PR-/CI-Stand getrennt nennen; laufende CI ist kein Erfolg.
+  Bei bereits autorisierter Fortsetzung kein erneutes OK verlangen. Ohne nötigen
+  Eingang nur Stand und Blocker melden, keine Ersatzsuche oder wiederholte
+  Dokumentationspakete erzeugen. Der Prompt enthält dieselbe Anweisung zur
+  automatischen Ausgabe nach dem nächsten gesicherten Abschluss. Der neue Chat
+  muss auf einem Stand mit dieser AGENTS.md beginnen; eine Regel nur auf einem
+  anderen ungemergten Branch gilt nicht automatisch im verwendeten Branch.
+  Die Ausgabe führt den Folgeauftrag nicht aus und erteilt keine neue Freigabe.
+- **Chatwechsel gezielt empfehlen:** Unabhängig von der verpflichtenden
+  Prompt-Ausgabe bei Paketabschluss bei deutlichem Themenwechsel oder viel
+  Kontext einen neuen Chat empfehlen. Keinen Chat selbst anlegen.
+- **Kurz berichten:** Ergebnis, Sicherung und nächsten Auftrag nennen; nach
+  jedem gesicherten Teilaufgabenabschluss den Folgeprompt vollständig mitliefern.
+  Keinen neuen Chat selbst anlegen und keine Erinnerungs-/Hintergrundautomatisierung daraus ableiten.
 
 Kurz auf Deutsch zu Beginn und nach Arbeitspaketen berichten: **fertig / aktuell /
 als Nächstes**. Gezielte Ausschnitte/Suchen, kompakte Werkzeugausgaben und keine
