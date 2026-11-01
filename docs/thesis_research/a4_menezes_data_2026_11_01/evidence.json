@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-01",
+  "recorded_at_utc": "2026-11-01T14:53:27.311715+00:00",
+  "base_commit": "815b7f88e73efed00e52a9c88aaad954714bb68a",
+  "authorization": "User requested overall project progress toward A4: choose and address one bounded data bottleneck; retain Furlanetto; no repeated completed checks or model runs without prerequisites.",
+  "scope": {
+    "question": "Is the author-linked modern calibration input for Menezes v1 publicly identifiable and structurally documented; which sample/time/climate/m measurement roles remain missing?",
+    "objects": [
+      "one modern binary data object data/pollen_climate.rda (same bytes at two fixed revisions)",
+      "seven small author documentation/loading-script files"
+    ],
+    "data_read_boundary": "Deserialize the one object in memory and inspect container keys, storage types, dimensions, column labels and serialization attributes only. No individual observation values, row sums, validity statistics, taxon inventories beyond column labels, support, site grouping or sample selection assessed.",
+    "stop": "Stop at verified object identity/structure and precise remaining provenance gap. No further source expansion."
+  },
+  "existing_evidence_reused": [
+    "../NOVELTY_MATRIX.md",
+    "../A4_E_EVIDENCE_GAPS.md",
+    "../empd2_counts_decision_2026_10_31/COUNTS_DECISION_BRIEF.md",
+    "../A4_E_PROVENANCE_EVIDENCE_REVIEW.md"
+  ],
+  "paper": {
+    "authors": [
+      "André F. B. Menezes",
+      "Andrew C. Parnell",
+      "Brian Huntley",
+      "Keefe Murphy"
+    ],
+    "url": "https://arxiv.org/html/2609.08866v1",
+    "version": "arXiv:2609.08866v1, 2026-09-08",
+    "read_scope": [
+      "section 1.1, paragraphs on modern data only (HTML lines 55-60)",
+      "Appendix D, repository and posterior-draw availability (HTML lines 624-627)"
+    ],
+    "new_question": "Data-object identity and availability, not renewed A1 methods/formula review.",
+    "paraphrase": "Modern calibration: expanded RS10, 7832 samples and 28 taxa; GDD5/MTCO/AET-PET climate from station-weighted approximately 30-year periods. Appendix D links the reproduction repository and zanicc. Fitted posterior draws offered on request.",
+    "original_links": [
+      "https://github.com/AndrMenezes/zanicc",
+      "https://github.com/AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart"
+    ],
+    "original_bytes_availability": "HTML read through web tool; no complete paper bytes saved or hashed here."
+  },
+  "repository_identity": {
+    "reproduction": {
+      "repository": "AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart",
+      "commit": "42429c039c33bb9872d4bf8f2f7402802d376ed1",
+      "commit_date": "2026-09-18T10:02:23Z",
+      "tree_truncated": false
+    },
+    "package": {
+      "repository": "AndrMenezes/zanicc",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "commit_date": "2026-11-01T10:55:59Z",
+      "tree_truncated": false,
+      "description_version": "0.1.0"
+    },
+    "preprint_date_snapshot": {
+      "commit": "e051432081cc20dd5990ad3c54cad7f8265d89f4",
+      "commit_date": "2026-09-04T11:58:35Z",
+      "selection_query": "repos/AndrMenezes/zanicc/commits?until=2026-09-08T23%3A59%3A59Z&per_page=1",
+      "limit": "Date-filtered reachable repository snapshot, not proof of author runtime/paper exact analysis environment."
+    },
+    "data_path_history": {
+      "query": "repos/AndrMenezes/zanicc/commits?path=data/pollen_climate.rda&per_page=3",
+      "returned_count": 1,
+      "commit": "e51f6738df4a397b986c0cb9b6d089e612e90518",
+      "commit_date": "2026-08-26T21:59:43Z",
+      "message": "add datasets"
+    }
+  },
+  "text_sources": [
+    {
+      "repository": "AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart",
+      "commit": "42429c039c33bb9872d4bf8f2f7402802d376ed1",
+      "path": "README.md",
+      "url": "https://github.com/AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart/blob/42429c039c33bb9872d4bf8f2f7402802d376ed1/README.md",
+      "git_blob_sha1": "430a98e3bcb5ba8eef67cfe760c5f851cbf485f5",
+      "sha256": "e3644e9f91735e074f6c6751539ee00f2b1ede17b99c40381216e9e40de9a288",
+      "bytes": 1466,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 3,
+          "end_line": 9
+        },
+        {
+          "start_line": 12,
+          "end_line": 15
+        }
+      ],
+      "selected_literal_lines": {}
+    },
+    {
+      "repository": "AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart",
+      "commit": "42429c039c33bb9872d4bf8f2f7402802d376ed1",
+      "path": "application/03__fit_zanim_ln_bart.R",
+      "url": "https://github.com/AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart/blob/42429c039c33bb9872d4bf8f2f7402802d376ed1/application/03__fit_zanim_ln_bart.R",
+      "git_blob_sha1": "aebfa73e375b0bc894a0c9c60e6db18c7cabaeb7",
+      "sha256": "614ce9ddf02a5756a17a00f472daede1158e93d1e8263f23b4a181d48b21248c",
+      "bytes": 998,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 16,
+          "end_line": 20
+        }
+      ],
+      "selected_literal_lines": {
+        "17": "data(\"pollen_climate\")",
+        "18": "Y <- pollen_climate$Y",
+        "19": "X <- pollen_climate$X[, c(\"gdd5\", \"mtco\", \"aet.pet\")]",
+        "20": "X <- scale(X)"
+      }
+    },
+    {
+      "repository": "AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart",
+      "commit": "42429c039c33bb9872d4bf8f2f7402802d376ed1",
+      "path": "application/01__descriptive_statistics.R",
+      "url": "https://github.com/AndrMenezes/reproduce__palaeoclimate_zanim_ln_bart/blob/42429c039c33bb9872d4bf8f2f7402802d376ed1/application/01__descriptive_statistics.R",
+      "git_blob_sha1": "cc9ae9034457c605d4ac047786fa0cacd8976263",
+      "sha256": "bebb9414cc6c9c911e3d901bf5d7b01526efcee92fa6cb472c6829c687dc430c",
+      "bytes": 1352,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 10,
+          "end_line": 16
+        },
+        {
+          "start_line": 23,
+          "end_line": 25
+        }
+      ],
+      "selected_literal_lines": {
+        "11": "data(\"pollen_climate\", package = \"zanicc\")",
+        "24": "  zi = format_numbers(apply(Y, 2, zi_binomial, N = rowSums(Y)),"
+      }
+    },
+    {
+      "repository": "AndrMenezes/zanicc",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "path": "README.md",
+      "url": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/README.md",
+      "git_blob_sha1": "76f2265f9b4386c8662416b796c10f9ddf4c4652",
+      "sha256": "87ab700c8427e5d45ba25662c83a9da621a17e0ec7a666debc8af82d5036dced",
+      "bytes": 1769,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 21,
+          "end_line": 26
+        },
+        {
+          "start_line": 38,
+          "end_line": 40
+        }
+      ],
+      "selected_literal_lines": {}
+    },
+    {
+      "repository": "AndrMenezes/zanicc",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "path": "DESCRIPTION",
+      "url": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/DESCRIPTION",
+      "git_blob_sha1": "79f94a4de5f57a27c20e0021b15904a9f363b040",
+      "sha256": "045de3ee6493f79ddfbaf94c50df28fd45dbf1c7d71cad3e456bac6e18ed8974",
+      "bytes": 2530,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 1,
+          "end_line": 4
+        },
+        {
+          "start_line": 35,
+          "end_line": 37
+        }
+      ],
+      "selected_literal_lines": {}
+    },
+    {
+      "repository": "AndrMenezes/zanicc",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "path": "R/datasets.R",
+      "url": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/R/datasets.R",
+      "git_blob_sha1": "722e5190b305ce78aeda88dcbd4b74a258ec13e1",
+      "sha256": "97f84ef52a1e38ca246411f298e7af8d9b5a579f4c67684189fe4e91bf2bd0db",
+      "bytes": 5644,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 6,
+          "end_line": 8
+        },
+        {
+          "start_line": 10,
+          "end_line": 44
+        }
+      ],
+      "selected_literal_lines": {
+        "42": "#' The compositional pollen counts were obtained from the uppermost 5--10mm of lake sediment.",
+        "44": "#' nearby weather stations over climatological periods of approximately 30 years."
+      }
+    },
+    {
+      "repository": "AndrMenezes/zanicc",
+      "commit": "de7259b433c37a5628bca49254316fe63b2761c3",
+      "path": "man/pollen_climate.Rd",
+      "url": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/man/pollen_climate.Rd",
+      "git_blob_sha1": "39e5ca97680da5af2716cc6bd7fa74aad8cf7832",
+      "sha256": "d66ddc91dc3ef0176553234b5b0b6de305b1603cd84c1d4c035ae28a29b85be4",
+      "bytes": 2351,
+      "read_scope": "full small text fetched; only stated locators assessed for modern data provenance; no execution",
+      "locators": [
+        {
+          "start_line": 12,
+          "end_line": 31
+        },
+        {
+          "start_line": 44,
+          "end_line": 50
+        }
+      ],
+      "selected_literal_lines": {}
+    }
+  ],
+  "data_object": {
+    "repository": "AndrMenezes/zanicc",
+    "path": "data/pollen_climate.rda",
+    "url": "https://github.com/AndrMenezes/zanicc/blob/de7259b433c37a5628bca49254316fe63b2761c3/data/pollen_climate.rda",
+    "bytes": 182619,
+    "git_blob_sha1": "e7a7d8b6fec3711af7a1888ba83871009ad8e981",
+    "sha256": "2a1e8ecaac28a3f88ccffcec4000eba9db2c8ec612f3ce29afe5fa9bface5daa",
+    "compared_revisions": [
+      "de7259b433c37a5628bca49254316fe63b2761c3",
+      "e051432081cc20dd5990ad3c54cad7f8265d89f4"
+    ],
+    "identity_at_these_revisions": "byte-identical, SHA-256 and Git blob verified for both downloads",
+    "availability_status": "temporary_or_session_only",
+    "verified_local_path": "/tmp/netzel-a4-menezes/pollen_climate-current.rda",
+    "durable_storage_status": "not_checked",
+    "redistribution": "No raw data, full author scripts, posterior draws, or full paper committed; compact provenance and structure evidence saved. Package DESCRIPTION declares GPL (>= 3); no independent upstream data-rights audit."
+  },
+  "structure": {
+    "parser": {
+      "name": "rdata",
+      "version": "1.1.0",
+      "mode": "passive R-serialization decoding; no R interpreter or external source code executed"
+    },
+    "sha256_before": "2a1e8ecaac28a3f88ccffcec4000eba9db2c8ec612f3ce29afe5fa9bface5daa",
+    "objects": [
+      "pollen_climate"
+    ],
+    "members": {
+      "Y": {
+        "type": "DataArray",
+        "shape": [
+          7832,
+          28
+        ],
+        "dtype": "int32",
+        "dimensions": [
+          "dim_0",
+          "dim_1"
+        ],
+        "attributes": {},
+        "coordinates": {
+          "dim_1": {
+            "size": 28,
+            "dtype": "<U14",
+            "labels": [
+              "Abies",
+              "Alnus",
+              "Betula",
+              "Carpinus",
+              "Castanea",
+              "Cedrus",
+              "Corylus",
+              "Ephedra",
+              "Fagus",
+              "Juniperus",
+              "Larix",
+              "Olea",
+              "Ostrya",
+              "Phillyrea",
+              "Picea",
+              "Pinus.D",
+              "Pinus.H",
+              "Pistacia",
+              "Quercus.D",
+              "Quercus.E",
+              "Salix",
+              "Tilia",
+              "Ulmus",
+              "Artemisia",
+              "Chenopodiaceae",
+              "Cyperaceae",
+              "Ericales",
+              "Gramineae"
+            ]
+          }
+        }
+      },
+      "X": {
+        "type": "DataArray",
+        "shape": [
+          7832,
+          8
+        ],
+        "dtype": "float64",
+        "dimensions": [
+          "dim_0",
+          "dim_1"
+        ],
+        "attributes": {},
+        "coordinates": {
+          "dim_1": {
+            "size": 8,
+            "dtype": "<U9",
+            "labels": [
+              "longitude",
+              "latitude",
+              "altitude",
+              "gdd0",
+              "gdd5",
+              "mtco",
+              "mtwa",
+              "aet.pet"
+            ]
+          }
+        }
+      }
+    },
+    "sha256_after": "2a1e8ecaac28a3f88ccffcec4000eba9db2c8ec612f3ce29afe5fa9bface5daa",
+    "raw_serialization": {
+      "format": 3,
+      "root_attribute_names": [],
+      "object_attribute_names": [
+        "names"
+      ],
+      "members": {
+        "Y": {
+          "R_type": "INT",
+          "attribute_names": [
+            "dim",
+            "dimnames"
+          ],
+          "row_dimnames_R_type": "NILVALUE",
+          "column_dimnames_R_type": "STR"
+        },
+        "X": {
+          "R_type": "REAL",
+          "attribute_names": [
+            "dim",
+            "dimnames"
+          ],
+          "row_dimnames_R_type": "NILVALUE",
+          "column_dimnames_R_type": "STR"
+        }
+      }
+    }
+  },
+  "findings": [
+    {
+      "id": "M01",
+      "status": "verified",
+      "claim": "Public modern input is a pinned serialized pollen_climate object, directly loaded by the author reproduction script; package data bytes agree at the two inspected revisions.",
+      "limit": "Does not prove historical runtime, full author output reproduction or sample origin."
+    },
+    {
+      "id": "M02",
+      "status": "verified_structure_only",
+      "claim": "Y is 7832x28 in R integer storage; X is 7832x8 real storage, both with only column dimnames; column labels recorded.",
+      "limit": "Integer storage does not prove original grain counts, nonnegativity, completeness, N_original or measured zero status. No numeric cell values or summaries inspected."
+    },
+    {
+      "id": "M03",
+      "status": "documented_not_independently_verified",
+      "claim": "Author documentation calls Y compositional pollen counts and describes uppermost 5-10 mm lake sediment and station-weighted climate over approximately 30 years.",
+      "limit": "Documentation and generated Rd are one source lineage, not independent evidence. No sample-specific collection/deposition dates, integration duration, exact calendar normal period or station build manifest proven."
+    },
+    {
+      "id": "M04",
+      "status": "verified_absence_in_this_object",
+      "claim": "The serialized object contains only Y and X with names/dim/dimnames attributes. Both matrices have NULL row dimnames. No separate sample-ID, source, collection-date, uncertainty, sample-context or N field is present.",
+      "limit": "Row order supplies author-intended within-object pairing, not an external identity key. This does not establish that no separate public provenance table exists elsewhere."
+    },
+    {
+      "id": "M05",
+      "status": "open",
+      "claim": "Original sample IDs and source/collection groups, row-metadata binding, exact climate period/source and observation/zero/denominator rules remain needed before a real input decision.",
+      "limit": "No linkage to EMPD2, external sample source, or fossil concepts inferred. No real E selection or use permitted from this check."
+    }
+  ],
+  "not_performed": [
+    "No repeated A1/A2/A3 audit or synthetic run",
+    "No Furlanetto original/PhD read or unchanged blocked request",
+    "No renewed EMPD2 archive/R01-R03 search or witness audit",
+    "No other data-object or fossil-file read",
+    "No author R scripts executed; no package installation of zanicc; no MCMC/fit/score/simulation/test/model run",
+    "No sample, taxon, climate-target, likelihood, split or gate selection",
+    "No missing-value repair, rounding, N reconstruction, joins, matrix export or support computation",
+    "No author contact or merge"
+  ],
+  "tooling": {
+    "parser_installation": "rdata 1.1.0 and dependencies installed only under /tmp/netzel-a4-menezes/parser, outside project dependency configuration; passive decoding in Python",
+    "first_decode_attempt": "Failed before reading object because optional conversion dependency pandas was absent; dependencies then installed in the same temporary directory.",
+    "project_environment_modified": false
+  },
+  "reproduction": {
+    "fetch": "GitHub contents API at each exact ref, base64 decode; verify blob SHA1 of b\"blob \"+decimal byte length+b\"\\0\"+bytes, and SHA-256.",
+    "parse": "rdata.read_rda(path)[\"pollen_climate\"]: inspect keys, shape, dtype, dims, coords column labels and attrs only. rdata.parser.parse_file(path): inspect attribute names and dimnames types to confirm NULL row names; do not print value arrays.",
+    "source_texts": "GitHub contents API at text_sources.commit/path; same Git-blob and SHA-256 verification.",
+    "preservation": "SHA-256 before/after parsing equal; no writes to data objects; existing repository scientific files checked separately against base."
+  },
+  "readiness": {
+    "real_E_selected": false,
+    "real_calibration_ready": false,
+    "counts_N_and_zero_status_verified": false,
+    "sample_row_provenance_verified": false,
+    "exact_climate_calendar_period_verified": false,
+    "models_fitted": false
+  }
+}

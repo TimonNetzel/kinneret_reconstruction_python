@@ -21,6 +21,41 @@ gegen den #35-Branch; ohne Merge erstellt.
 
 
 
+## Aktueller Abschluss: moderner Menezes-Datenkandidat identifiziert, 01.11.2026
+
+Nutzerauftrag zur begrenzten Gesamtprojektfortsetzung Richtung A4 ausgeführt.
+[Bericht](./A4_MODERN_DATA_CANDIDATE.md) und
+[Evidenz](./a4_menezes_data_2026_11_01/evidence.json): Die bisher ungeprüfte
+Datenverfügbarkeit der vorgesehenen Menezes-Basis gezielt untersucht. v1 §1.1
+und Anhang D führen zu Autoren-Reproduktion und `zanicc::pollen_climate`.
+Ein modernes Binärobjekt, sieben kleine Textquellen, ausschließlich Struktur/
+Rollen; keine Messwerte oder Datenqualität ausgewertet. 182.619 Bytes,
+identischer Git-Blob/SHA-256 am aktuellen gepinnten Paketstand und am letzten
+per Datum gefundenen Stand vor Ende des Preprint-Tages. Kein historischer
+Analyse-/Ausführungsnachweis daraus abgeleitet.
+
+Y: 7.832 × 28, R-Integer; X: 7.832 × 8 mit Ort und benannten Klimagrößen.
+Beide ohne Zeilennamen; Container/Attribute enthalten keine Originalproben-
+kennungen, Herkunftsgruppen, Probenzeiten oder eigenen N-Vektor. Autorenbeleg
+beschreibt oberste 5–10 mm Sediment und ungefähr 30-jährige Stationsmittel,
+keine probenbezogene Integration oder genaue Kalendernormalperiode.
+Speichertyp ist kein Originalcount-/Null-/Nennernachweis. Der neue Engpass ist
+Zeile → Originalprobe/Sammlung/Quelle → Klima-Zeitbezug. Kein E gewählt,
+kein Gate geöffnet; reale Kalibrierung/A5/A6 nicht begonnen. Furlanetto bleibt
+separat autorisiert, vorgemerkt und zugangsabhängig. PhD nicht erneut gelesen.
+
+Basis #74, `815b7f88e73efed00e52a9c88aaad954714bb68a`, offen/ungemergt,
+vier erfolgreiche Head-Checks. Eigener Branch `codex/netzel-a4-next-data-gap`.
+Passive Binärdekodierung mit temporär installiertem Python-Parser; keine
+Autorenprogramme ausgeführt und keine Projektabhängigkeiten geändert.
+Originalbytes nur im Sitzungscache, kompakte Evidenz dauerhaft in Git gesichert.
+Quellenindex um genau diesen Kandidaten erweitert; alte Einträge erhalten.
+A1/A2/A3, EMPD2-Archivsuche/Zeugen und R01–R03 nicht wiederholt. Keine Auswahl,
+Bereinigung, Joins, Nennerrechnung, Implementierung, Tests, Fits, Scores,
+Simulationen, Unteragenten, Kontakte oder Merges. Quellen-/Hash-/Struktur-,
+JSON-/Link-/Diffprüfung; PR und aktuelle CI siehe HANDOFF.
+Genau ein Anschluss vorbereitet: begrenzter zeilenbezogener RS10-Herkunftsbeleg.
+
 ## Aktueller Abschluss: Quellenablauf und kurzer Einstieg umgesetzt, 01.11.2026
 
 Nutzer-OK zur Prozessumsetzung erhalten. [Rechercheablauf](./RESEARCH_WORKFLOW.md)
