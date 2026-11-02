@@ -189,6 +189,8 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 .nachbau-req-kopf { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .forschung-status[data-status="conflicting"] { color: var(--warn); background: var(--warn-bg); }
 .forschung-status[data-status="central"] { font-weight: 600; }
+.forschung-status[data-status="conditional"] { color: var(--muted); white-space: nowrap; }
+.nachbau-tabelle td[data-removed="true"] { color: var(--warn); }
 .nachbau-tabelle { width: auto; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
 .nachbau-tabelle th, .nachbau-tabelle td { padding: 4px 6px; }
 .nachbau-karte p.nachbau-titel { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; }

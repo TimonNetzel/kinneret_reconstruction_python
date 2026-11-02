@@ -51,7 +51,25 @@
       `</tbody></table></div>`;
   }
 
-  function beispiel(ex) {
+  // Artificial pruning case: columns are artificial taxa; R removes every taxon matching sort(r)[16:T]
+  function pruning(p) {
+    if (!p) return "";
+    const n = p.zero_counts.length;
+    const kopf = Array.from({ length: n }, (_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const zeile = (label, cells, attr = "") => `<tr${attr}><th scope="row">${esc(label)}</th>${cells.join("")}</tr>`;
+    const raus = (k) => p.removed_taxa.includes(k);
+    return `<h4>${esc(text("nb_ex_pruning", { n: fmt(n, 0) }))}</h4><p>${esc(text("nb_ex_pruning_body", { rows: fmt(p.rows, 0), n: fmt(n, 0) }))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="pruning"><thead><tr><th scope="col">${esc(t("nb_ex_taxa_head"))}</th>${kopf}</tr></thead><tbody>` +
+      zeile(text("nb_ex_zeros", { rows: fmt(p.rows, 0) }), p.zero_counts.map((z) => `<td>${fmt(z, 0)}</td>`)) +
+      zeile(t("nb_ex_ratio"), p.null_ratio_exact.map((r, k) => `<td title="${fmt(p.null_ratio[k], 4)}">${esc(r)}</td>`)) +
+      zeile(t("nb_ex_removed"), p.zero_counts.map((_, k) =>
+        `<td${raus(k) ? ' data-removed="true"' : ""}>${raus(k) ? `<strong>${esc(t("nb_yes"))}</strong>` : esc(t("nb_no"))}</td>`)) +
+      `</tbody></table></div><p>${esc(t("nb_ex_pruning_why"))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: p.sha256.result.slice(0, 12), b: p.sha256.rational.slice(0, 12) }))} ` +
+      `${link(p.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -70,7 +88,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p></details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}</details>`;
   }
 
   function nachbau() {
@@ -82,6 +100,7 @@
         `<p class="warn" role="status">${esc(t("nb_unavailable"))}</p></section>`;
     }
     const modules = nb.modules.map((m) => `<li data-module="${esc(m.id)}"><strong>${esc(t("nb_mod_" + m.id))}</strong> ` +
+      (m.conditional ? `<span class="forschung-status" data-status="conditional">${esc(t("nb_conditional"))}</span> ` : "") +
       `<span class="hinweis-klein">${esc(text("nb_tests_n", { n: fmt(m.new_tests, 0) }))}</span>` +
       `<br>${esc(t("nb_mod_" + m.id + "_body"))}<br><span class="hinweis-klein">${esc(t("nb_sources_label"))} ` +
       `${m.original_sources.map(esc).join(", ")}</span> · ${link(m.url, "nb_evidence")}</li>`).join("");
@@ -92,14 +111,17 @@
       `</div>${esc(t("nb_req_" + r.id + "_body"))}</li>`).join("");
     return `<section class="nachbau" data-research="reproduction">${kopf}` +
       `<p class="hinweis-klein">${esc(text("nb_date", { date: nb.date }))}</p>` +
-      `<p>${esc(text("nb_summary", { tests: fmt(nb.tests_passed, 0) }))}</p>` +
+      (nb.earlier_states || []).map((s) => `<p class="hinweis-klein" data-earlier-state="${esc(s.state_sha256)}">` +
+        `${esc(text("nb_earlier", { date: s.date, modules: fmt(s.modules, 0), tests: fmt(s.tests_passed, 0),
+          hash: s.state_sha256.slice(0, 12) }))} ${link(s.url, "nb_evidence")}</p>`).join("") +
+      `<p>${esc(text("nb_summary", { n: fmt(nb.modules.length, 0), tests: fmt(nb.tests_passed, 0) }))}</p>` +
       `<article class="karte nachbau-karte" data-part="modules"><h3>${esc(t("nb_modules"))}</h3><ol class="nachbau-liste">${modules}</ol>` +
       `<p>${esc(text("nb_chain", { n: fmt(nb.chain_check.new_tests, 0), c: fmt(nb.contract.tests, 0) }))} ` +
       `${link(nb.chain_check.url, "nb_chain_link")} · ${link(nb.contract.url, "nb_contract_link")}</p></article>` +
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
-      beispiel(nb.example) + `</section>`;
+      beispiel(nb.example, nb.pruning_example) + `</section>`;
   }
 
   function zeige() {

@@ -1,5 +1,33 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Taxon-Pruning nachgebildet, App-Stand 2, 02.11.2026
+
+**Abgeschlossen:** [Determinismusprüfung und Taxon-Pruning](literal_taxon_pruning_2026_11_02/README.md).
+Von `weightedMedian`, Taxon-Pruning, Splines und Zufallsschritten ist nur das
+Pruning (`mcmc_prepare.R:51–80`) ohne Zufall und ohne ungebundene Paketsemantik;
+`weightedMedian` hängt an der unbekannten `matrixStats`-Fassung, Splines wirken
+nur in auskommentierten Zeilen. Modul mit R-Eigenheiten (abwärts zählendes
+`16:ncol`, Gleichstände über `%in%`, `next()` als Signal). Im gebundenen
+Hauptlauf abgeschaltet (`main_v1.2.R:659`) → bedingter Schritt, keine
+Laufaktivierung. [App-Stand 2](app_reproduction_2026_11_02_pruning/README.md):
+neuer datierter Nachbaustand mit eigenem Pin, sechs Teilmodule, Stand vom
+02.11.2026 bytegleich eingefroren und weiter geprüft.
+
+**Prüfung:** 46 neue Tests gegen unabhängige Bruchreferenz, mit bisherigen
+**297** historischen Teil-/Belegtests grün; 40 App-/Daten-/Buildtests
+(2 Wrapper übersprungen, explizit ersetzt); Edge offline in beiden Formaten ×
+Handy/PC × Hell/Dunkel × DE/EN inkl. Gesten und zwei Standorten bestanden;
+beide Phase-1-Prüfer Exit 2. Gesamtsuite und `verify_packet.py` nicht ausgeführt.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel
+offen, keine Variante gewählt. `weightedMedian` wartet auf die belegte
+`matrixStats`-Fassung. Keine Trainings, Sampler, Altersmodelle, R-Läufe oder
+Fossilrekonstruktionen. PR #77 laut GitHub mit `main` in Konflikt (#78);
+Lösung nur auf Nutzerauftrag. [Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_TAXON_PRUNING_2026_11_02.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Dissertationsnachbau in der App sichtbar, 02.11.2026
 
 **Abgeschlossen:** [App-Anbindung des geprüften Nachbaus](app_reproduction_2026_11_02/README.md).

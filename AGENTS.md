@@ -1,3 +1,12 @@
+> **Aktuell: Taxon-Pruning nachgebildet, App-Stand 2, 02.11.2026:**
+> [Determinismusprüfung und Modul](docs/thesis_research/literal_taxon_pruning_2026_11_02/README.md):
+> nur das Pruning ist ohne Zufall und ohne ungebundene Paketsemantik;
+> im gebundenen Hauptlauf abgeschaltet (bedingter Schritt). 46 neue Tests,
+> 297 grün. [App-Stand 2](docs/thesis_research/app_reproduction_2026_11_02_pruning/README.md)
+> mit eigenem Pin; Stand 1 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_TAXON_PRUNING_2026_11_02.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Dissertationsnachbau in der App sichtbar, 02.11.2026:**
 > [Ergebnis und Prüfung](docs/thesis_research/app_reproduction_2026_11_02/README.md):
 > Forschungsansicht zeigt fünf geprüfte Teilmodule, elf offene Originaleingaben

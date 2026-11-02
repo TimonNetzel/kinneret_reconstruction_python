@@ -10,6 +10,25 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: sechstes Teilmodul (Taxon-Pruning) in der App, 02.11.2026
+
+Schritt 1 und 2 des folgenden Abschnitts sind erledigt:
+[Taxon-Pruning](literal_taxon_pruning_2026_11_02/README.md) nach belegter
+Determinismusprüfung nachgebildet (bedingter Schritt, im gebundenen Hauptlauf
+abgeschaltet), [App-Stand 2](app_reproduction_2026_11_02_pruning/README.md)
+mit eigenem Pin, Stand 1 eingefroren. 297 Teil-/Belegtests grün. Reihenfolge:
+
+1. Nächsten deterministischen Quellschritt belegen und nachbilden; Kandidat
+   Gamma-Prior-Raster `mcmc_prepare.R:114–121/1270–1281` oder NA-Entfernungs-
+   mechanik 1664–1679 mit expliziter Maske. `weightedMedian` erst nach belegter
+   `matrixStats`-Fassung; Zufallsschritte nur dokumentieren.
+2. Danach weiterer datierter Nachbaustand (Eintrag ans Ende von `STATES`).
+3. Fachlicher Meilenstein unverändert: Eingabevertrag eines lokalen
+   Originalfalls schließen, erst dann historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_TAXON_PRUNING_2026_11_02.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: geprüfte Rechenteile in der App, 02.11.2026
 
 Die erste App-Anbindung ist abgeschlossen:
