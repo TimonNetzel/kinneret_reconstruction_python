@@ -148,6 +148,15 @@ async function pruefeStandorte(browser, datei) {
   await page.selectOption("#standort-wahl", "kinneret");
   await page.waitForTimeout(300);
   if (await page.locator("#arten-inhalt").innerText() !== foldsVorher) fehler.push("Foldwerte aendern sich mit Standort");
+  // Research snapshot and dissertation reproduction state are project-wide as well
+  await page.click('.reiter button[data-ansicht="forschung"]');
+  await page.waitForSelector('[data-research="reproduction"] [data-module]');
+  await page.click('[data-research="reproduction"] [data-part="example"] summary');
+  const forschungVorher = await page.locator("#forschung-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(300);
+  if (await page.locator("#forschung-inhalt").innerText() !== forschungVorher) fehler.push("Forschungs-/Nachbaustand aendert sich mit Standort");
+  await page.selectOption("#standort-wahl", "kinneret");
   return fehler;
 }
 
@@ -267,12 +276,56 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
     fehler.push("Forschungsstand: Quellen nicht gebunden");
   }
+  // Dissertation reproduction: five checked submodules, eleven open inputs, synthetic example kept apart
+  const nb = '[data-research="reproduction"]';
+  const nbText = await page.textContent(nb);
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("251") ||
+      await page.locator(nb + " [data-module]").count() !== 5 || await page.locator(nb + " [data-requirement]").count() !== 11 ||
+      await page.locator(nb + " [data-central]").count() !== 4 ||
+      await page.locator(nb + ' [data-requirement] [data-status="conflicting"]').count() !== 4) {
+    fehler.push("Nachbau: Teilmodule/Voraussetzungen unvollstaendig");
+  }
+  const nbLinks = await page.locator(nb + " a").evaluateAll((links) => links.map((a) => a.href));
+  if (nbLinks.length !== 9 || nbLinks.some((url) => !url.includes("/blob/26d65af68b6e7dc142b7af1030fb64223940bd89/"))) {
+    fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
+  }
+  if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
+  await page.click(nb + ' [data-part="example"] summary');
+  const exText = await page.textContent(nb + ' [data-part="example"]');
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 4 ||
+      await page.locator('[data-row-mass="2/3"]').count() !== 1 || await page.locator('[data-row-mass="1"]').count() !== 1 ||
+      !["Kunsttaxon 2", "1/3", "Kunstprobe 4", "0,5005", "0,1000", "0,3333", "2,22", "keine Kalenderalter"].every((x) => exText.includes(x))) {
+    fehler.push("Nachbau: synthetisches Beispiel unvollstaendig");
+  }
+  if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) fehler.push("Forschungsstand: horizontaler Ueberlauf");
+  const nbUeberlauf = await page.locator(nb + " .tabelle-rahmen").evaluateAll((r) => r.filter((x) => x.scrollWidth > x.clientWidth + 1).length);
+  if (nbUeberlauf) fehler.push("Nachbau: " + nbUeberlauf + " Tabellen breiter als ihr Rahmen");
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_forschung.png`, fullPage: true });
   await page.click("#sprache");
-  if (!(await page.textContent("#forschung-inhalt")).includes("not 279 independent species functions")) {
+  const enText = await page.textContent("#forschung-inhalt");
+  if (!enText.includes("not 279 independent species functions")) {
     fehler.push("Forschungsstand: englische Grenze fehlt");
   }
+  if (!enText.includes("Submodules checked; full original case open") || !enText.includes("Artificial sample 4") ||
+      !(await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open))) {
+    fehler.push("Nachbau: englische Fassung oder Aufklappzustand fehlt");
+  }
   await page.click("#sprache");
+  // Absent or partial evidence stays visible as such; the two bindings do not depend on each other
+  const nbKontrolle = await page.evaluate(() => {
+    const [f, n] = [KR.D.forschung, KR.D.nachbau];
+    KR.D.nachbau = { schema_version: 1, available: false };
+    KR.zeige();
+    const ohneNachbau = [document.querySelectorAll(".forschung-karte").length,
+      !!document.querySelector('[data-research="reproduction"] [role="status"]'), document.querySelectorAll("[data-module]").length];
+    KR.D.nachbau = n; KR.D.forschung = { available: false };
+    KR.zeige();
+    const ohneSnapshot = [document.querySelectorAll(".forschung-karte").length, document.querySelectorAll("[data-module]").length];
+    KR.D.forschung = f;
+    KR.zeige();
+    return JSON.stringify([ohneNachbau, ohneSnapshot]);
+  });
+  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 5]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Stored species scores: both measures together and both spatial designs.

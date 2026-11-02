@@ -10,6 +10,25 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: geprüfte Rechenteile in der App, 02.11.2026
+
+Die erste App-Anbindung ist abgeschlossen:
+[App-Nachbaupaket](app_reproduction_2026_11_02/README.md). Die Forschungsansicht
+zeigt Nachbaustatus, fünf geprüfte Teilmodule, elf offene Originaleingaben und
+ein ausdrücklich synthetisches Rechenbeispiel, offline in beiden App-Formaten.
+Das ist keine Fallreproduktion. Reihenfolge ab jetzt:
+
+1. Nächsten begrenzten **deterministischen** Quellschritt (Kandidaten
+   `weightedMedian`, Taxon-Pruning, Splines; Zufallsschritte nur dokumentieren)
+   isolieren und gegen unabhängige Referenz prüfen.
+2. Danach neuen datierten Nachbaustand in der App ergänzen (alter Stand bleibt
+   eingefroren).
+3. Fachlicher Meilenstein unverändert: vollständigen Eingabevertrag eines lokalen
+   Originalfalls schließen, erst dann historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_APP_REPRODUCTION_2026_11_02.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktueller Meilenstein: geprüfte Rechenteile zur App führen, 02.11.2026
 
 Der Nutzer bekräftigt den vorrangigen Dissertationsnachbau **mit Implementierung

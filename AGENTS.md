@@ -1,3 +1,11 @@
+> **Aktuell: Dissertationsnachbau in der App sichtbar, 02.11.2026:**
+> [Ergebnis und Prüfung](docs/thesis_research/app_reproduction_2026_11_02/README.md):
+> Forschungsansicht zeigt fünf geprüfte Teilmodule, elf offene Originaleingaben
+> und ein ausdrücklich synthetisches Rechenbeispiel, beide Offlineformate geprüft.
+> Kein Originalfall reproduziert; elf Nachweisbündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_APP_REPRODUCTION_2026_11_02.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: TF-Vorbereitung und fünfteilige Kunstkette geprüft, 02.11.2026:**
 > [Ergebnis und Quellen](docs/thesis_research/literal_tf_preparation_2026_11_02/README.md):
 > 51 neue Tests, mit bisherigen Teilen 251 grün. TF-Zeilennormierung vor

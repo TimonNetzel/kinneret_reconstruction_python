@@ -7,6 +7,8 @@
   ``DecompressionStream``). Fuer das Handy.
 - Manifest und Service Worker fuer den Offline-Betrieb ueber ``localhost`` oder HTTPS (PWA).
 - Ansicht "Moderne Validierung": gespeicherte Metriken der Shared37-Baseline (``baseline.py``), ``daten/validierung.js``.
+- Ansicht "Forschungsstand": Snapshot (``forschungsstand.py``) und getrennt gebundener Dissertationsnachbau
+  (``nachbaustand.py``), ``daten/forschung.js`` und ``daten/nachbau.js``.
 """
 
 from __future__ import annotations
@@ -21,7 +23,7 @@ import socket
 from functools import partial
 from pathlib import Path
 
-from . import artenvergleich, baseline, forschungsstand
+from . import artenvergleich, baseline, forschungsstand, nachbaustand
 from .app_daten import APP_DIR
 from .katalog import KATALOG_DIR
 
@@ -67,6 +69,7 @@ def baue_ordner(out: Path, root: Path | None = None) -> Path:
     root = Path(root or Path.cwd())
     katalog, standorte, laeufe = lade_daten(root)
     forschung = forschungsstand.app_daten(root)
+    nachbau = nachbaustand.app_daten(root)
     arten = artenvergleich.app_daten(root)
     if out.exists():
         shutil.rmtree(out)
@@ -76,6 +79,7 @@ def baue_ordner(out: Path, root: Path | None = None) -> Path:
         shutil.copy2(QUELLE / f, out / f)
     (out / "daten/katalog.js").write_text(_js("katalog", katalog), encoding="utf-8")
     (out / "daten/forschung.js").write_text(_js("forschung", forschung), encoding="utf-8")
+    (out / "daten/nachbau.js").write_text(_js("nachbau", nachbau), encoding="utf-8")
     (out / "daten/artenvergleich.js").write_text(_js("artenvergleich", arten), encoding="utf-8")
     for key, d in standorte.items():
         (out / f"daten/standort_{key}.js").write_text(_js(f"standort/{key}", d), encoding="utf-8")
@@ -116,9 +120,11 @@ def baue_eine_datei(path: Path, root: Path | None = None) -> Path:
     if (v := baseline.app_daten(root)) is not None:
         daten += _js("validierung", v)
     daten += _js("forschung", forschungsstand.app_daten(root))
+    daten += _js("nachbau", nachbaustand.app_daten(root))
     daten += _js("artenvergleich", artenvergleich.app_daten(root))
     html = html.replace('<script src="daten/artenvergleich.js"></script>', "")
     html = html.replace('<script src="daten/forschung.js"></script>', "")
+    html = html.replace('<script src="daten/nachbau.js"></script>', "")
     daten = daten.replace("</", "<\\/")
     eingebettet = "".join(
         f'<script type="application/gzip-base64" id="kr-lauf-{lid}">' +

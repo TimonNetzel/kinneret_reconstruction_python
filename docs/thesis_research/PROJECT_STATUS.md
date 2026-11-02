@@ -1,5 +1,32 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Dissertationsnachbau in der App sichtbar, 02.11.2026
+
+**Abgeschlossen:** [App-Anbindung des geprüften Nachbaus](app_reproduction_2026_11_02/README.md).
+Die Ansicht „Forschungsstand“ zeigt in Ordner- und Ein-Datei-App einen eigenen
+Abschnitt „Dissertationsnachbau“: Status „Teilmodule geprüft; vollständiger
+Originalfall offen“, fünf Teilmodule mit Belegen (251 Teil-/Belegtests), die
+elf offenen Originaleingaben aus dem unveränderten Belegvertrag und ein
+eingeklapptes, ausdrücklich synthetisches TF-/Kettenbeispiel (Summen 1 und 2/3).
+Neuer datierter Nachbaustand per SHA-256 gebunden; alter Forschungs-Snapshot,
+Pins, Belege und frühere Übergaben unverändert.
+
+**Prüfung:** 34 App-/Daten-/Buildtests (2 Wrapper übersprungen, explizit
+ersetzt), Browserregression offline mit Edge in beiden Formaten × Handy/PC ×
+Hell/Dunkel × DE/EN inkl. Gesten und zwei Standorten bestanden; 251 historische
+Tests grün; beide Phase-1-Prüfer weiter Exit 2. Paketgebundener
+`verify_packet.py` des TF-Pakets endet erwartungsgemäß an „src unverändert“.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel
+offen, keine Variante gewählt. Keine Trainings, Sampler, Altersmodelle,
+R-Läufe oder Fossilrekonstruktionen. Gates und Baseline erhalten.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_APP_REPRODUCTION_2026_11_02.md):
+nächsten deterministischen Quellschritt isolieren, danach neuer datierter
+Nachbaustand in der App. Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der Hinweis „App/CLI/Baseline in diesem Paket unverändert“ im folgenden
+Abschnitt betrifft nur das TF-Paket und ist Verlauf.
+
 ## Historische TF-Vorbereitung als App-Baustein geprüft, 02.11.2026
 
 **Abgeschlossen:** [TF-Zeilennormierung und anschließende Zellmaske](literal_tf_preparation_2026_11_02/README.md)
