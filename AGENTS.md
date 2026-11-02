@@ -6,7 +6,9 @@
 > Die [Fallmatrix](docs/thesis_research/local_case_matrix_2026_11_02/README.md)
 > ist abgeschlossen. [Kinnerets ältere Eingaben](docs/thesis_research/kinneret_binding_2026_11_02/README.md)
 > sind teilweise gebunden; finale Basis/TFs fehlen, weiterer Speicherort unbekannt.
-> Als Nächstes Referenz-/Ankervertrag gezielt prüfen. Kein Fall vollständig
+> [Referenz-/Ankervertrag](docs/thesis_research/kinneret_references_2026_11_02/README.md)
+> ist dokumentiert; numerische Eingaben/Laufbindung offen. Als Nächstes
+> historische Nachbearbeitung gezielt binden. Kein Fall vollständig
 > reproduzierbar; keine neuen Läufe oder pauschalen Inventuren.
 > Historische Befunde und wissenschaftliche Gates bleiben erhalten; frühere
 > Prioritäten unten sind Verlauf.

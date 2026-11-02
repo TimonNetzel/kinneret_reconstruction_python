@@ -1,5 +1,14 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Referenz-/Ankerabgleich, 02.11.2026:**
+> [Vertrag, Quellstellen und Grenzen](kinneret_references_2026_11_02/README.md).
+> AP-Maske, Soreq-/MEDSTACK-Verbraucher und Ankerzweige sind dokumentiert;
+> finale numerische Eingaben/Laufbindung bleiben offen. Aktive Testüberschreibungen
+> nicht still entfernen oder ältere Daten substituieren. Nächster unabhängiger
+> Einstieg: historische Ziehungsauswahl und Dichtekombination anhand
+> `mcmc_case_studies.R`, Dissertation und aktuellem Trimming-Einstieg binden.
+> Keine neuen Läufe, keine pauschale Inventur. Ältere Einstiege folgen als Verlauf.
+
 > **Aktueller Einstieg nach Kinneret-Teilbindung, 02.11.2026:**
 > [Ergebnis, Crosswalks und Grenzen](kinneret_binding_2026_11_02/README.md).
 > 160 Proben und zwölf ältere Taxonspalten exakt gebunden; finale v1.2-Basis

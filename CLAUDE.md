@@ -14,8 +14,12 @@ Kinnerets älterer Proben-/Taxonstand ist jetzt teilweise exakt gebunden:
 `docs/thesis_research/kinneret_binding_2026_11_02/README.md`.
 Die finale v1.2-Basisdatei und numerischen TFs fehlen weiter; der Nutzer kennt
 keinen weiteren Speicherort. Noch kein Fall vollständig reproduzierbar.
-Nächster unabhängiger Schritt: Kinnerets Referenz-/Ankervertrag (AP-Maske,
-Soreq/MEDSTACK, Csa, konsumierte CRU-Zeitgrundlagen) gezielt konkretisieren.
+Kinnerets Referenz-/Ankerpfad ist dokumentiert, numerische Eingaben und
+Laufbindung bleiben offen:
+`docs/thesis_research/kinneret_references_2026_11_02/README.md`.
+Nächster unabhängiger Schritt: historische Nachbearbeitung in
+`mcmc_case_studies.R` gegen Dissertation und aktuellen Trimming-Einstieg binden
+(Ziehungsauswahl, Prior/IAT/Pareto, Dichtekombination).
 Keine erneute pauschale Suche oder neuen Läufe; ältere Eingaben nicht ersetzen.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.

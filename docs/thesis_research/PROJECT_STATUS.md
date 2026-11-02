@@ -1,5 +1,37 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kinneret: Referenz-/Ankerpfad gebunden, 02.11.2026
+
+**Abgeschlossenes Quellenpaket:** [Referenz-/Ankervertrag](kinneret_references_2026_11_02/README.md)
+trennt Dissertationstext und erhaltene Verbraucher. 160 AP-Prozentwerte als
+100×AP/(AP+NAP) geprüft; zwölf konkrete Ladepfade fehlen weiterhin. Source-
+Auszüge, Hashes, Verzweigungen und ein gezielt gelesener späterer Speläothem-
+Container sind dokumentiert; keine neue Referenz- oder Klimakurve berechnet.
+
+**Wichtige Befunde:** Die AP-Altersmaske bleibt bei `hi_time=FALSE` wirksam.
+Soreq-Auswahl 105 wird im neueren aktiven Speläothemzweig durch 170 und eine
+0–220500-a-Zeitachse mit Lücke überschrieben; die ältere Vorbereitung setzt
+für Kinneret 37. Keine dieser Positionen ist ohne den fehlenden Workspace als
+konkrete Reihe identifiziert. MEDSTACK wird über Klassen-/Endposition gewählt.
+Bei Altern ≤0 verwendet der Ankerpfad eine lokale Zeitreihe, sonst Klassen-
+Klimamittel. Zeitindizes 50:115 sind ohne Zeitachse keine belegten Kalenderjahre.
+Die heutigen Quellstände sind damit keine laufgebundene finale Konfiguration.
+
+**Weiter offen:** finale Basis und TFs, ursprüngliche Isotopen-/CRU-Workspaces,
+Paket-/Zeitachsenbindung, numerische Anker und tatsächliche historische
+Ausführungsfassung. Der Nutzer kennt keinen weiteren Basisdatei-Speicherort;
+keine wiederholte pauschale Suche oder Ersatzdatenübernahme.
+**Als Nächstes:** unabhängig davon die historische Nachbearbeitung in
+`mcmc_case_studies.R` gegen Dissertation und aktuellen Trimming-Einstieg binden:
+Ziehungsauswahl, Prior-/IAT-/Pareto-Schritte und Dichtekombination.
+
+**Geprüft und Sicherung:** Wiederholbare Metadaten-/Prozentprüfung, Quellen vor/
+nach dem Lesen unverändert, Vorpakete und Forschungssnapshot erhalten. Fortsetzung
+auf bestehendem Branch in [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+Basis `44092d3`; kein Merge. Keine R-Ausführung, Fits, Wavelets, Altersmodelle,
+Sampler oder Fossilrekonstruktionen. App/CLI, Baseline, Referenzdaten und alle
+Monticchio-/Chronologie-Gates bleiben erhalten; Phase 1 zuerst. Jung links, alt rechts.
+
 ## Kinneret: ältere Proben-/Taxonbasis gebunden, 02.11.2026
 
 **Abgeschlossenes Teilpaket:** [Kinneret-Eingabebindung](kinneret_binding_2026_11_02/README.md)

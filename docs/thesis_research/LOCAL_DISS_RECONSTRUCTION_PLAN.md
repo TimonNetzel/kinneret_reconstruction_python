@@ -42,6 +42,9 @@ geordnete Proben-/Taxon-/TF-Zuordnung an erhaltene Originaleingaben binden
 belegt 160 Proben und zwölf ältere Taxonspalten. Finale Basisdatei und TFs
 bleiben offen; weiterer Speicherort ist dem Nutzer nicht bekannt. Nächster
 unabhängiger Schritt in Phase 1: Referenz-/Ankervertrag konkretisieren.
+**Weiterer Teilfortschritt:** [Referenz-/Ankerpfad](kinneret_references_2026_11_02/README.md)
+ist dokumentiert; numerische Eingaben und Laufbindung bleiben offen. Als Nächstes
+historische Nachbearbeitung (Ziehungsauswahl und Dichtekombination) gezielt binden.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

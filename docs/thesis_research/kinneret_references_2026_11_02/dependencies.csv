@@ -1,0 +1,13 @@
+source_file,line,literal_consumer_path,role,path_scope,exists_at_literal_consumer_path,status
+main_v1.2.R,107,in/core_data_additional_sites_v1.2.rdata,final Kinneret base,original_relative,False,missing_at_explicit_path
+main_v1.2.R,325,../../reconstructions/cru_nh/cru_pann_ww.nc,global mean PANN and stn mask,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,326,../../reconstructions/cru_nh/cru_tann_ww.nc,global mean TANN,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,343,../../reconstructions/cru_nh/cru4_pann_v1.2.nc,recent PANN series indices 50:115,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,344,../../reconstructions/cru_nh/cru4_tann_v1.2.nc,recent TANN series indices 50:115,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,388,in/reference_speleo_iso.rdata,loaded reference workspace,original_relative,False,missing_at_explicit_path
+main_v1.2.R,391,../../stalage_speleodatabase/sisal/SISAL_V2/speleo_info.csv,cave metadata,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,392,../../stalage_speleodatabase/sisal/SISAL_V2/ages_info.csv,cave ages metadata,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,394,../../stalage_speleodatabase/sisal/SISAL_V2/d18_d13.RData,loaded isotope workspace,historical_relative,False,missing_at_explicit_path
+main_v1.2.R,397,in/isotope_info.rdata,loaded isotope workspace,original_relative,False,missing_at_explicit_path
+main_v1.2.R,401,in/isotope_speleo_other.rdata,loaded isotope workspace,original_relative,False,missing_at_explicit_path
+main_v1.2.R,569,out/transfer_functions/mixed_partial_arts_emd.rdata,numeric TANN/PANN TF arrays,original_relative,False,missing_at_explicit_path
