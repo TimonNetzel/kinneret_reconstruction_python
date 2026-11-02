@@ -1,0 +1,90 @@
+{
+  "status": "preserved_source_fragment_not_final_run_binding",
+  "basis_commit": "74999b09ae5f7d7aaf784a7e2bf0cb2aba4005fa",
+  "source": "original:src/mcmc_functions_v1.6.R",
+  "source_sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "source_bytes": 99905,
+  "function": "final_reconstruction",
+  "spans": [
+    {
+      "first_line": 375,
+      "last_line": 384,
+      "text": "    combs_unique <- which(!duplicated(energy))\n    energy <- energy[combs_unique] /sum(energy[combs_unique], na.rm=T)\n    energy_weight <- (energy - max(energy, na.rm=T))/(min(energy, na.rm=T)-max(energy, na.rm=T))\n    \n#     if( !is.null(nrow(taxa_weights)) ) taxa_weights <- taxa_weights[combs_unique,]\n    if( nrow(post.which.combs) <= 1 ){\n#         post.which.combs <- t(as.matrix(post.which.combs))\n        averaging_data <- F\n        averaging_pdfs <- T\n    }"
+    },
+    {
+      "first_line": 411,
+      "last_line": 425,
+      "text": "    all.avail.temp <- taxa.spectrum.depth <- all.avail\n    all.avail.age.temp <- taxa.spectrum.age <- all.avail.age\n    for(j in 1:num_taxa){\n        all.avail.temp[,j] <- all.avail[,j]/max(all.avail[,j], na.rm=T)\n        all.avail.age.temp[,j] <- all.avail.age[,j]/max(all.avail.age[,j], na.rm=T)\n    }\n    taxa_information_depth <- c(t(all.avail.temp))\n    ncol_taxa_array_depth <- ncol(all.avail.temp)\n    nrow_taxa_array_depth <- nrow(all.avail.temp)\n    taxa_means_depth <- colMeans(all.avail.temp, na.rm=T)\n    \n    taxa_information_age <- c(t(all.avail.age.temp))\n    ncol_taxa_array_age <- ncol(all.avail.age.temp)\n    nrow_taxa_array_age <- nrow(all.avail.age.temp)\n    taxa_means_age <- colMeans(all.avail.age.temp, na.rm=T)"
+    },
+    {
+      "first_line": 433,
+      "last_line": 462,
+      "text": "        if(gibbs){\n            which.taxa.unique[count,] <- post.which.combs[i,]\n            pollen_info_depth <- all.avail.temp[,which.taxa.unique[count,]] / rowSums(all.avail.temp[,which.taxa.unique[count,]], na.rm=T)\n            pollen_info_age <- all.avail.age.temp[,which.taxa.unique[count,]] / rowSums(all.avail.age.temp[,which.taxa.unique[count,]], na.rm=T)\n            \n            # depth\n            tmp.recon.depth <- pollen_info_depth %*% tf.x1.current[which.taxa.unique[count,],]\n            pann.recon.depth <- pollen_info_depth %*% tf.x2.current[which.taxa.unique[count,],]\n            # age\n            tmp.recon.age <- pollen_info_age %*% tf.x1.current[which.taxa.unique[count,],]\n            pann.recon.age <- pollen_info_age %*% tf.x2.current[which.taxa.unique[count,],]\n            # mean\n            reconst_mean <- pollen_info_age %*% tf_x12_mean_current[which.taxa.unique[count,],]\n            all_tmp_mean[count,] <- reconst_mean[,1]\n            all_pann_mean[count,] <- reconst_mean[,2]\n        }else{\n#             mean_factor_depth <- taxa_weights[i,]/taxa_means_depth\n            taxa.spectrum.depth <- matrix(taxa_information_depth * taxa_weights[i,],ncol = ncol_taxa_array_depth,nrow=nrow_taxa_array_depth,byrow=T)\n            taxa.spectrum.depth <- taxa.spectrum.depth / rowSums(taxa.spectrum.depth, na.rm=T)\n\n#             mean_factor_age <- taxa_weights[i,]/taxa_means_age\n            taxa.spectrum.age <- matrix(taxa_information_age * taxa_weights[i,],ncol = ncol_taxa_array_age,nrow=nrow_taxa_array_age,byrow=T)\n            taxa.spectrum.age <- taxa.spectrum.age / rowSums(taxa.spectrum.age, na.rm=T)\n        \n            # depth\n            tmp.recon.depth <- taxa.spectrum.depth %*% tf.x1.current\n            pann.recon.depth <- taxa.spectrum.depth %*% tf.x2.current\n            # age\n            tmp.recon.age <- taxa.spectrum.age[reconst_ages,] %*% tf.x1.current\n            pann.recon.age <- taxa.spectrum.age[reconst_ages,] %*% tf.x2.current"
+    },
+    {
+      "first_line": 541,
+      "last_line": 547,
+      "text": "        # averaging the pdfs\n        # depth\n        tmp_mixt_avg_pdfs_depth <- tmp_mixt_avg_pdfs_depth + tmp.recon.depth \n        pann_mixt_avg_pdfs_depth <- pann_mixt_avg_pdfs_depth + pann.recon.depth  \n        # age\n        tmp_mixt_avg_pdfs_age <- tmp_mixt_avg_pdfs_age + tmp.recon.age  \n        pann_mixt_avg_pdfs_age <- pann_mixt_avg_pdfs_age + pann.recon.age  "
+    },
+    {
+      "first_line": 709,
+      "last_line": 716,
+      "text": "    pann_trafo <- spline( x2range.bck,seq(min(x2range.bck),max(x2range.bck),length.out=dims), n=1000 ) \n    # which combination technique\n    if(averaging_pdfs){\n        tmp.recon.depth.mixt <- tmp_mixt_avg_pdfs_depth\n        pann.recon.depth.mixt <- pann_mixt_avg_pdfs_depth\n        tmp.recon.age.mixt <- tmp_mixt_avg_pdfs_age\n        pann.recon.age.mixt <- pann_mixt_avg_pdfs_age  \n    }else if(averaging_data){"
+    },
+    {
+      "first_line": 755,
+      "last_line": 760,
+      "text": "    # normalize mixture models to pdfs\n    tmp.recon.depth.mixt <- tmp.recon.depth.mixt / rowSums(tmp.recon.depth.mixt, na.rm=T)\n    pann.recon.depth.mixt <- pann.recon.depth.mixt / rowSums(pann.recon.depth.mixt, na.rm=T)\n    \n    tmp.recon.age.mixt <- tmp.recon.age.mixt / rowSums(tmp.recon.age.mixt, na.rm=T)\n    pann.recon.age.mixt <- pann.recon.age.mixt / rowSums(pann.recon.age.mixt, na.rm=T)"
+    }
+  ],
+  "implemented": {
+    "column_max_taxa": [
+      411,
+      416
+    ],
+    "rw_coefficients": [
+      417,
+      425,
+      450,
+      455
+    ],
+    "gibbs_coefficients": [
+      433,
+      436
+    ],
+    "apply_taxon_densities": [
+      439,
+      443,
+      458,
+      462
+    ],
+    "unique_energy_ids": [
+      375,
+      375
+    ],
+    "sum_pdf_branch": [
+      375,
+      428,
+      541,
+      547,
+      711,
+      715,
+      755,
+      760
+    ]
+  },
+  "supported_domain": "Finite nonnegative nonempty numeric arrays, positive column maxima and positive final row masses; exact finite energy equality. Gibbs subsets must preserve matrix dimensions.",
+  "not_implemented": [
+    "NA/NaN/Inf propagation or R na.rm semantics",
+    "zero-maximum/zero-mass paths",
+    "R vector recycling for mismatched inputs",
+    "historical draw selection before final_reconstruction",
+    "chronology/resampling",
+    "taxa_change branch and reconst_ages selection",
+    "averaging_data, KDE, splines, medians, EMD and kgc outputs",
+    "any original-run or final-case binding"
+  ],
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null
+}

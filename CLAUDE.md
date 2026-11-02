@@ -24,9 +24,15 @@ Der maschinenprüfbare Phase-1-Belegvertrag ist abgeschlossen:
 `docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md`.
 Lesender Prüfer: `python tools/check_kinneret_phase1_spec.py` (erwartet Exit 2).
 26 Belegdateien, 19 Befunde und 50 Snapshotdateien intakt; elf Nachweisbündel offen.
-Nächster fachlicher Einstieg erfordert finale Originalbasis/Chronologieliste,
+Für den vollständigen Fall fehlen finale Originalbasis/Chronologieliste,
 numerische TFs und historische Laufzuordnung. Keine Quelle automatisch auswählen;
 keine Wiederholung der bereits beantworteten Speicherortfrage.
+Unabhängiger technischer Teilnachbau der erhaltenen Taxongewichtung/PDF-Summe:
+`docs/thesis_research/literal_final_pdf_2026_11_02/README.md`.
+22 neue synthetische Tests bestanden; keine finale Laufbindung hergestellt.
+Als nächsten begrenzten Teil historische Alters-/Tiefenübertragung aus dem
+bereits gebundenen `src/check_ages.R` isolieren und synthetisch prüfen.
+Keine neue Chronologie berechnen oder Matrix-/Listenformen gleichsetzen.
 Keine erneute pauschale Suche oder neuen Läufe; ältere Eingaben nicht ersetzen.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.

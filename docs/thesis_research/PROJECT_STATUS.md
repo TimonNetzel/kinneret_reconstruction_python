@@ -1,5 +1,36 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Historischer deterministischer Teilnachbau, 02.11.2026
+
+**Abgeschlossen:** [Taxongewichtung und PDF-Summe](literal_final_pdf_2026_11_02/README.md)
+als getrenntes Modul `tools/historical_final_pdf.py`. Belegte Zeilen der erhaltenen
+`final_reconstruction`-Fassung nachgebildet: Spaltenmaximum, RW-/Gibbs-Koeffizienten,
+TF-Matrixprodukt, exakte Energieduplikate und anschließende PDF-Zeilensumme.
+Kein Runner, keine App-Integration, keine automatische finale Variantenwahl.
+
+**Prüfung:** 22 neue Tests mit handgeleiteten rationalen Sollwerten und
+Grenzfällen bestanden; zusammen mit den bisherigen 20 Belegvertragstests
+42 Tests grün. Uneinheitliche TF-Massen und rechteckige Proben-/Taxonmatrix
+prüfen Normierungszeitpunkt und Reihenfolge. Energie wird nicht zum
+Mischungsgewicht. Quellenhash vor/nach Lesen gleich dem Vorpaket. Kein R-
+Laufzeitvergleich: nur Formeln im dokumentierten endlichen, nichtnegativen
+Eingabebereich geprüft. NA-/Null-/Dimensionsverlustpfade nicht still repariert.
+
+**Grenze:** Die elf offenen Nachweisbündel und finale Laufbindung bleiben
+unverändert offen. Dies ist Schritt 4 als isolierter technischer Ausschnitt,
+keine abgeschlossene historische Fallreproduktion und keine Ersatzdatenwahl.
+**Nächster unabhängiger technischer Einstieg:** Alters-/Tiefenübertragung aus
+dem bereits gebundenen `src/check_ages.R` isolieren und mit synthetischen
+Matrizen prüfen. Finale Listenchronologie nicht durch Mittelwertmatrix ersetzen;
+keine neuen Altersmodelle oder Fossilkurven. Neue Originalbelege für einen
+vollständigen Lauf bleiben notwendig, Speicherortfrage nicht wiederholen.
+
+**Sicherung:** Basis `74999b0`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. App/CLI, Baseline, Originale, Referenzen und Monticchio-/Chronologie-
+Gates erhalten. Keine Trainings, Sampler oder Fossilrekonstruktionen; Phase 1
+bleibt vorrangig. Für spätere Plots jung links, alt rechts.
+
 ## Kinneret: Phase-1-Belegvertrag maschinenprüfbar, 02.11.2026
 
 **Abgeschlossen:** [Spezifikation, Prüfer und Grenzen](kinneret_phase1_spec_2026_11_02/README.md)

@@ -11,9 +11,13 @@
 > sind getrennt gebunden. Der [Phase-1-Belegvertrag](docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md)
 > ist maschinenprüfbar (26 Belege/19 Befunde/50 Snapshotdateien, elf offene
 > Nachweisbündel). Finaler Eingabestand und Laufbindung fehlen weiterhin.
-> Als Nächstes nur neu belegte Originalbasis/Chronologieliste und numerische
-> TFs an diesen Vertrag binden. Kein Fall vollständig reproduzierbar; keine neuen
-> Läufe, pauschalen Inventuren oder wiederholten Speicherortfragen.
+> Vollständiger Nachbau braucht neue Originalbasis-/Chronologie-/TF-Belege.
+> Unabhängig davon ist ein [deterministischer Teilnachbau](docs/thesis_research/literal_final_pdf_2026_11_02/README.md)
+> mit 22 neuen synthetischen Tests umgesetzt; keine finale Variante gewählt.
+> Nächster begrenzter technischer Teil: Alters-/Tiefenübertragung aus dem
+> bereits gebundenen `src/check_ages.R` synthetisch prüfen, keine neue Chronologie.
+> Kein Fall vollständig reproduzierbar; keine Modellläufe, pauschalen Inventuren
+> oder wiederholten Speicherortfragen.
 > Historische Befunde und wissenschaftliche Gates bleiben erhalten; frühere
 > Prioritäten unten sind Verlauf.
 

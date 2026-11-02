@@ -49,10 +49,16 @@ historische Nachbearbeitung (Ziehungsauswahl und Dichtekombination) gezielt bind
 Originalposterioren und finale Auswahl-/Kombinationsfassung offen.
 **Belegvertrag abgeschlossen:** [Maschinenprüfbare Phase-1-Spezifikation](kinneret_phase1_spec_2026_11_02/README.md)
 mit lesendem Prüfer, 26 Belegdateien, 19 Befunden und elf offenen Nachweisbündeln.
-Keine finale Laufvariante gewählt; Schritte 3 bis 5 bleiben fachlich offen.
-Nächster Einstieg erfordert neue Belege für Originalbasis/Chronologieliste,
-numerische TFs und Laufzuordnung. Bekannte Speicherortfrage nicht wiederholen.
-Ohne Originalbelege keine Ersatzdatenreproduktion oder Phase 2 voraussetzen.
+Keine finale Laufvariante gewählt; der vollständige historische Datenvertrag
+und Referenzlauf bleiben fachlich offen. Neue Belege für Originalbasis/Chronologieliste,
+numerische TFs und Laufzuordnung notwendig. Bekannte Speicherortfrage nicht
+wiederholen. Ohne Originalbelege keine Ersatzdatenreproduktion oder Phase 2 voraussetzen.
+**Isolierter Teilfortschritt in Schritt 4:** [Deterministische Taxongewichtung/PDF-Summe](literal_final_pdf_2026_11_02/README.md)
+als getrenntes Modul nachgebildet, 22 synthetische Tests bestanden. Weder finale
+Variante noch Fallreproduktion daraus ableiten. Unabhängig vom fehlenden
+Originaleingabestand als nächsten klar begrenzten Schritt die bereits gebundene
+Alters-/Tiefenübertragung aus `src/check_ages.R` mit synthetischen Matrizen
+prüfen. Keine neue Chronologie oder Fossilrekonstruktion.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

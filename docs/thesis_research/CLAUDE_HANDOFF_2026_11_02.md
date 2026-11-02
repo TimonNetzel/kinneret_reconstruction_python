@@ -1,5 +1,18 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach deterministischem Teilnachbau, 02.11.2026:**
+> [Taxongewichtung/PDF-Summe, Tests und Grenzen](literal_final_pdf_2026_11_02/README.md).
+> `tools/historical_final_pdf.py` bildet ausschließlich belegte deterministische
+> Ausschnitte der erhaltenen R-Funktion nach. 22 neue Tests, mit Belegvertrag
+> zusammen 42 bestanden. Keine R-Laufzeitgleichheit oder finale Laufbindung
+> behauptet. Dokumentierter endlicher Eingabebereich; keine stillen Reparaturen.
+> Nächster unabhängiger technischer Teil: Alters-/Tiefenübertragung aus dem
+> bereits gebundenen `src/check_ages.R` lesen und synthetisch prüfen. Keine
+> neue Chronologie und keine Gleichsetzung von Matrix-/Listenformen. Für einen
+> vollständigen Fall bleiben Originalbasis/TFs und Laufzuordnung notwendig.
+> Keine Speicherortfrage wiederholen, keine Ersatzdatenwahl oder Phase 2.
+> Frühere Einstiege unten sind Verlauf.
+
 > **Aktueller Einstieg nach Phase-1-Belegvertrag, 02.11.2026:**
 > [Spezifikation, Prüfung und Grenzen](kinneret_phase1_spec_2026_11_02/README.md).
 > `python tools/check_kinneret_phase1_spec.py` prüft 26 Belege, 19 Befunde und
