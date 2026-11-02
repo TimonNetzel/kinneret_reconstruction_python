@@ -1,5 +1,46 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Gemeinsame synthetische Rechenkette geprüft, 02.11.2026
+
+**Abgeschlossen:** [Gemeinsame Fixture, Bruchrechnung und Grenzen](literal_phase1_chain_2026_11_02/README.md)
+prüfen die vier unveränderten Teilmodule über ihre Schnittstellen. Chronologie
+4×5 → Probentiefenkern 4×3 → Pollen 4×2 → RW-Koeffizienten/TF-Produkt →
+Roh-CDF-Scores für Original-IDs 1 und 3 → Rohsumme und normierte Kunst-PDF.
+Nur Test-/Belegcode; kein historischer Runner und keine App-/CLI-Erweiterung.
+
+**Prüfung:** 33 neue Tests, mit Vorpaketen 200 grün. Unabhängige skalare
+`Fraction`-Rechnung ohne NumPy-/Modulimporte bestätigt sämtliche numerischen
+Zwischenstufen bis auf höchstens 2.23e-16 (Toleranz 2e-14). Energiegrößen werden
+keine Mischungsgewichte; nur verbleibende Original-IDs erhalten Scores.
+Gegenbeispiele erkennen verfrühte Normierung, ausgelassene Nullersetzung,
+Achsen-/Masken-/Platzhalterkonflikte und semantisch vertauschte TF-Zeilen.
+Drei Skripthashes entsprechen vor/nach Lesen den bisherigen Bindungen.
+
+**Bewusste Grenze:** Die TF-Massen 2 und 3 sind künstliche Schnittstelleneingaben;
+sie belegen keinen historischen TF-Vorbereitungslauf. Normierung jeder Ziehung
+vor der Summe verändert die Kunst-PDF maximal um 0.00282, stilles Normieren
+der gelieferten TF-Zeilen um 0.09716. Keine historische R-Laufzeitgleichheit,
+keine Originalnumerik, keine Wiederherstellung fehlender TFs oder Freigabe.
+
+**Claude kann direkt fortsetzen:** [Neuer konkreter Startauftrag](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md)
+mit portablen, hashgebundenen Originalauszügen, Formeln, Beispiel, Prüfkommandos
+und Abnahmekriterien. Nächster begrenzter Schritt: TF-Zeilennormierung und
+anschließendes Nullsetzen ausdrücklich maskierter Klimazellen aus
+`mcmc_prepare.R:1581–1586,1613–1618`. Keine unbelegte `inside.range`-Randkonvention
+wählen, keine neue TF schätzen oder umgebende Zufalls-/Medianpfade ausführen.
+Der bisherige Startauftrag bleibt als eingefrorener Nachweis unverändert.
+
+**Weiter offen:** Elf Nachweisbündel, finale Basis/Listenchronologie, numerische
+historische TFs und Laufzuordnung. Kein vollständiger Fall reproduziert und
+keine finale Kinneret-Variante gewählt. Keine Speicherortfrage oder Inventur.
+
+**Sicherung:** Basis `674bf13`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. App/CLI, Baseline, Originale, Referenzen, bisherige Pakete, Module
+und fallbezogene Monticchio-/Chronologie-Gates erhalten. Keine Trainings,
+Sampler, Altersmodelle oder Fossilrekonstruktionen. Phase 1 vor Phase 2;
+Plots jung links, alt rechts.
+
 ## Kumulative Rohdichte-/EMD-Teilprüfung und Claude-Auftrag, 02.11.2026
 
 **Abgeschlossen:** [Quellen, Formeln und Grenzen](literal_cdf_discrepancy_2026_11_02/README.md)

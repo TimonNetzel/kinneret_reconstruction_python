@@ -88,6 +88,16 @@ nächsten begrenzten Schritt: ein gemeinsames künstliches Beispiel zur Prüfung
 der vorhandenen Modulschnittstellen, Reihenfolge und Normierungszeitpunkte.
 Nur Test/Belegpaket; kein historischer Vollrunner oder neue App-/CLI-Integration.
 Elf Nachweisbündel bleiben offen, keine finale Laufbindung oder Phase 2.
+**Gemeinsame synthetische Modulprüfung abgeschlossen:**
+[Rechenkette und unabhängige Bruchrechnung](literal_phase1_chain_2026_11_02/README.md):
+33 neue Tests, mit Vorpaketen 200 grün. Vier Module unverändert, keine Original-
+Fallrechnung. TF-Eingaben mit ungleichen Massen sind bewusst ein Schnittstellen-
+beispiel; die historische TF-Vorbereitung ist damit nicht belegt.
+[Neuer Claude-Auftrag](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md): als nächsten
+begrenzten Teil TF-Zeilennormierung und explizite Zellmaskierung aus den
+bereits gebundenen Quellzeilen prüfen; keine unbelegte Randkonvention wählen.
+Der alte Startauftrag und die bisherigen Belegpakete bleiben eingefroren.
+Elf Nachweisbündel und fehlende Originaleingaben bleiben offen; kein Vollrunner.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

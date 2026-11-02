@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "basis_commit": "674bf132691aadf51359ee83052987a97e7c8587",
+  "tests": {
+    "new_chain_cases_passed": 33,
+    "previous_cdf_cases_passed": 43,
+    "previous_age_selection_cases_passed": 39,
+    "previous_age_depth_cases_passed": 43,
+    "previous_literal_final_pdf_cases_passed": 22,
+    "previous_spec_cases_passed": 20,
+    "total_passed": 200,
+    "failed": 0,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_historical_phase1_chain.py tests/test_historical_cdf_discrepancy.py tests/test_historical_age_selection.py tests/test_historical_age_depth.py tests/test_historical_final_pdf.py tests/test_kinneret_phase1_spec.py -q -o cache_dir=.local/phase1_spec_v1/pytest_cache"
+  },
+  "source_scripts_hash_before_after_and_prior_equal": 3,
+  "prior_packet_files_byte_equal_to_basis": 52,
+  "prior_packet_directories": [
+    "local_case_matrix_2026_11_02",
+    "kinneret_binding_2026_11_02",
+    "kinneret_references_2026_11_02",
+    "kinneret_postprocessing_2026_11_02",
+    "kinneret_phase1_spec_2026_11_02",
+    "literal_final_pdf_2026_11_02",
+    "literal_age_depth_2026_11_02",
+    "literal_age_selection_2026_11_02",
+    "literal_cdf_discrepancy_2026_11_02"
+  ],
+  "previous_fragment_modules_byte_equal": 4,
+  "previous_fragment_test_modules_byte_equal": 4,
+  "previous_claude_brief_byte_equal": true,
+  "previous_manifest_file_hash_entries_verified": 28,
+  "phase1_cli_rechecks": [
+    {
+      "arguments": [],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": null
+    },
+    {
+      "arguments": [
+        "--with-local"
+      ],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": {
+        "matches_audited_bytes": 28,
+        "missing_at_audited_path": 12
+      }
+    }
+  ],
+  "R_execution": false,
+  "historical_R_equivalence_claimed": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "new_training_sampling_age_model_or_fossil_runs": false,
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false,
+  "changed_code_scope": [
+    "tests/test_historical_phase1_chain.py",
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/check_chain.py",
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/rational_reference.py",
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/collect_evidence.py"
+  ],
+  "claude_next_step": "docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md",
+  "preserved": [
+    "App/CLI",
+    "baseline",
+    "originals",
+    "references",
+    "nine_previous_evidence_packets",
+    "four_historical_modules_and_tests",
+    "previous_frozen_claude_brief",
+    "50_file_research_snapshot",
+    "site_specific_Monticchio_and_chronology_gates"
+  ],
+  "files": {
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/check_chain.py": {
+      "bytes": 3200,
+      "sha256": "4d097ed362bb8d28096c3701eae254dcdacd96853dbbdf6cb5bf1fd061f971f1"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/collect_evidence.py": {
+      "bytes": 7257,
+      "sha256": "3ffcd2741297ea423703c1038bb23a8d9daaa6f97f18718dd53ee5218544435a"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/next_step_source_excerpt.json": {
+      "bytes": 5328,
+      "sha256": "4a60d67e89df3b30208cd1815d0ff539b02345e4360e3bbe9865bebb01376ca2"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/rational_expectations.json": {
+      "bytes": 9042,
+      "sha256": "bb37c1e183856155c6ca87b827242838ea191528d1dac331225fa9aed73c3dc9"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/rational_reference.py": {
+      "bytes": 3531,
+      "sha256": "8f100d4fb91c456149eb264585b64999d878431fd38b3d2d0cf394af22f27ee1"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/README.md": {
+      "bytes": 10475,
+      "sha256": "1414ab50298ccb2ac4eadfa162926fc78ba070a2bf54d86fb1236013dd5a9d1b"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/source_binding.json": {
+      "bytes": 3215,
+      "sha256": "9fbbb6f687e78424281d0ebc6dcdca6a0e54dc71dc282f74e69e98d42cfd0ccb"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/synthetic_fixture.json": {
+      "bytes": 2365,
+      "sha256": "f521d552169721a0fdc05aee49a5b59eb9b67c70439432e8f9f44f3e0680850f"
+    },
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/synthetic_result.json": {
+      "bytes": 7620,
+      "sha256": "5cb1117bc811e94c1e3532c3c356c06010b1c7f2cd1b8de6be81413333a0f3f7"
+    },
+    "tests/test_historical_phase1_chain.py": {
+      "bytes": 8979,
+      "sha256": "ae7fd6a21bfa4a52cff31c58e99ac514e138c737337e48df469c1fcc7a22c2c1"
+    },
+    "docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md": {
+      "bytes": 9232,
+      "sha256": "b5ba55cf28c2321b04b20364e34d66751b7a341395e065ce513c4f4c52450149"
+    }
+  },
+  "relative_links_resolve": {
+    "docs/thesis_research/literal_phase1_chain_2026_11_02/README.md": 13,
+    "docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md": 5
+  },
+  "git_diff_check_passed": true
+}

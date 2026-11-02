@@ -1,0 +1,71 @@
+{
+  "status": "synthetic_composition_of_preserved_fragments_not_historical_runner",
+  "basis_commit": "674bf132691aadf51359ee83052987a97e7c8587",
+  "checked_original_scripts": {
+    "original:src/check_ages.R": {
+      "bytes": 12904,
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "hash_before_equals_after_and_prior": true
+    },
+    "original:src/mcmc_prepare.R": {
+      "bytes": 82630,
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "hash_before_equals_after_and_prior": true
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "bytes": 99905,
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "hash_before_equals_after_and_prior": true
+    }
+  },
+  "source_reports": {
+    "docs/thesis_research/literal_age_depth_2026_11_02/source_binding.json": {
+      "bytes": 11980,
+      "sha256": "a9438a7a27913581ff8433906b2d9b87f95b3e7e2203dce316110821bf9370e1"
+    },
+    "docs/thesis_research/literal_age_selection_2026_11_02/source_binding.json": {
+      "bytes": 14676,
+      "sha256": "fc36290eee19cb4d82a84d67af084b28b16606e5b27d9e987e93c33bd41c5900"
+    },
+    "docs/thesis_research/literal_final_pdf_2026_11_02/source_binding.json": {
+      "bytes": 6455,
+      "sha256": "5350edda1076217a763aee24797f227779c983803c6a18fe2fdc8025ced38c5b"
+    },
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/source_binding.json": {
+      "bytes": 9335,
+      "sha256": "4f42b9a2efd36d9a53cffcd796880bde6f53b1fa8e9e07f2aeccc703c62c61dd"
+    }
+  },
+  "unchanged_modules": {
+    "tools/historical_age_depth.py": {
+      "bytes": 5066,
+      "sha256": "8974211152179659318e75743c3abe8418c4a650a9d082a79b1eb02e32d3cd9a"
+    },
+    "tools/historical_age_selection.py": {
+      "bytes": 4388,
+      "sha256": "69d779072f07b1a76e223e955abc2f3494f6f9915086e7a5b200346de565ea10"
+    },
+    "tools/historical_final_pdf.py": {
+      "bytes": 5671,
+      "sha256": "9d0b8d877c0cf38c0be1606a3f6482f58ebcf5b95194618a48e19d466e4fccc7"
+    },
+    "tools/historical_cdf_discrepancy.py": {
+      "bytes": 4109,
+      "sha256": "d7747fcec5903761d47102d9200fb3afd14220e12c3fa9f69c594e3044ab5de5"
+    }
+  },
+  "source_edges": {
+    "chronology": "check_ages.R:177,179,230-232; mcmc_prepare.R:11-20,83,91-94",
+    "age_selection": "mcmc_prepare.R:435-442,1462-1467,1500-1522; mcmc_functions_v1.6.R:461-462",
+    "draw_ids": "mcmc_functions_v1.6.R:375,428, before active per-draw products",
+    "weighting": "mcmc_functions_v1.6.R:411-425,450-455",
+    "cdf": "mcmc_functions_v1.6.R:369-370,485-489; inherited and current width explicit",
+    "mixture": "mcmc_functions_v1.6.R:543-547,711-715,755-760"
+  },
+  "TF_input_scope": "Artificial supplied TF rows with unequal masses 2 and 3; finite fragment interface probe. Historical preparation at mcmc_prepare.R:1581-1586 and its later mask is not reproduced or claimed.",
+  "oracle": "rational_reference.py: Python Fraction scalar sums only; no NumPy or implementation imports; fixed synthetic fixture",
+  "R_execution": false,
+  "actual_original_numerical_inputs_used": false,
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false
+}

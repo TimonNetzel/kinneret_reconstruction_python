@@ -1,16 +1,17 @@
 # Kommunikation und Fortsetzung des Netzel-Projekts
 
-> **Aktueller Einstieg nach CDF-/EMD-Teilprüfung, 02.11.2026:**
-> [Konkreter nächster Auftrag für Claude](docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md)
-> mit Modulkarte, Befehlen und Abnahmekriterien. Zuerst diesen Startauftrag und
-> den neuesten Projektstatus lesen. [Aktuelles Ergebnis](docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md):
-> 43 neue synthetische Tests, mit Vorpaketen 167 grün. Nullreferenzzweig,
-> kumulierte Rohdichten, Normierungszeitpunkt und geerbtes/späteres `dims`
-> getrennt belegt. Keine finale Laufbindung; elf Nachweisbündel offen.
-> Nächster Schritt: ausschließlich gemeinsame synthetische Rechenkette als
-> Test/Belegpaket; kein historischer Vollrunner oder neue App-/CLI-Funktion.
-> Original-IDs und bestehende Gates erhalten. Keine neuen Läufe, Ersatzdaten,
-> Speicherortfrage oder Phase 2. Die folgenden Einstiege sind Verlauf.
+> **Aktueller Einstieg nach gemeinsamer Rechenkettenprüfung, 02.11.2026:**
+> [Neuer Startauftrag für Claude](docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md)
+> mit portablen Quellauszügen, Formeln, Prüfkommandos und Abnahmekriterien.
+> [Aktuelles Ergebnis](docs/thesis_research/literal_phase1_chain_2026_11_02/README.md):
+> 33 neue Tests, mit Vorpaketen 200 grün. Vier Module unverändert; gemeinsame
+> Kunstfixture und unabhängige Bruchrechnung prüfen Reihenfolge und Achsen.
+> Kein historischer Runner oder Originalersatz; elf Nachweisbündel offen.
+> Nächster Schritt: begrenzte TF-Zeilennormierung und explizite Zellmaskierung
+> aus `mcmc_prepare.R:1581–1586,1613–1618`. Keine unbekannte `inside.range`-
+> Randkonvention wählen oder stochastische/Medianpfade starten.
+> Der alte Claude-Startauftrag ist abgeschlossen und bleibt hashgebunden
+> unverändert. Frühere Einstiege unten sind Verlauf. Phase 1 vor Phase 2.
 
 > **Neuester Teilfortschritt: Altersraster/Zeilenauswahl, 02.11.2026:**
 > [Belege und synthetische Prüfung](docs/thesis_research/literal_age_selection_2026_11_02/README.md).

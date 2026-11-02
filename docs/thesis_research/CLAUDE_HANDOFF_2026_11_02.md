@@ -1,17 +1,17 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
-> **Aktueller Claude-Startauftrag nach CDF-/EMD-Teilprüfung, 02.11.2026:**
-> **[Hier mit dem nächsten konkreten Schritt beginnen](CLAUDE_NEXT_STEP_2026_11_02.md).**
-> Der Auftrag enthält Git-/PR-Prüfung, Modulkarte, Grenzen, Prüfkommandos und
-> Abnahmekriterien für eine gemeinsame rein synthetische Rechenkette.
-> [Neues Ergebnis](literal_cdf_discrepancy_2026_11_02/README.md): 43 neue Tests,
-> mit Vorpaketen 167 grün. Fallstudien übergeben skalare Referenzen, die zu
-> Nullmatrizen werden; Vergleich kumulierter Rohdichten liegt vor späterer
-> Mischungsnormierung. Geerbtes und späteres `dims` nicht gleichsetzen.
-> Drei bisherige Quellhashbindungen bestätigt. Keine R-Laufzeitgleichheit,
-> keine finale Kinneret-Variante; elf Nachweisbündel weiter offen.
-> Keine historischen Vollrunner, Ersatzdaten, neuen Modelle/Sampler/Fossilläufe
-> oder App-Diagnostik. Phase 1 bleibt vorrangig, kein Merge.
+> **Aktueller Einstieg nach gemeinsamer synthetischer Prüfung, 02.11.2026:**
+> **[Claude beginnt hier mit dem nächsten konkreten Schritt](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md).**
+> Der neue Auftrag enthält portabel gebundene R-Auszüge, Normierungs-/Masken-
+> formeln, rationale Kontrollwerte, Prüfkommandos und Abnahmekriterien.
+> [Abgeschlossenes Paket](literal_phase1_chain_2026_11_02/README.md): 33 neue
+> Tests, mit Vorpaketen 200 grün. Vier Module bleiben unverändert; gemeinsame
+> Kunstrechnung bis zur PDF-Summe bestätigt alle Zwischenstufen gegen exakte
+> Brüche. Keine historische R-Gleichheit oder finale Laufbindung.
+> Nächster Schritt: TF-Zeilennormierung und explizite Zellmaskierung; keine
+> unbelegte `inside.range`-Randkonvention, TF-Neuschätzung oder Zufalls-/Median-
+> Ausführung. Der frühere Startauftrag bleibt als eingefrorener Nachweis erhalten.
+> Elf Nachweisbündel offen; Phase 1 vorrangig, keine neuen Fossilläufe oder Merges.
 > Ältere nächste Schritte unten sind Verlauf.
 
 > **Aktueller Einstieg nach Altersraster-/Zeilenauswahlprüfung, 02.11.2026:**
