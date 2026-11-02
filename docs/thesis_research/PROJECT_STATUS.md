@@ -1,5 +1,19 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## CI-Testabhängigkeit korrigiert, 02.11.2026
+
+Die frische GitHub-CI von [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77)
+scheiterte beim Einsammeln der neuen Lesertests an fehlendem `rdata`.
+Das Test-Extra enthält jetzt die lokal geprüfte Version `rdata==1.1.0`,
+da die Leser deren interne Parserstrukturen verwenden. App-Laufzeitabhängigkeiten
+und wissenschaftliche Ergebnisse bleiben unverändert. 67 betroffene Tests
+lokal erneut bestanden; der neue GitHub-Lauf prüft beide Python-Versionen.
+
+Die weitere Arbeit erfolgt hier im Chat; abgeschlossene, geprüfte Pakete werden
+auf dem bestehenden Branch gesichert. Nächster App-Schritt bleibt die lesende
+Forschungsstands-/Quellenansicht.
+
+
 ## GitHub-Sicherung und Claude-/App-Übergabe, 02.11.2026
 
 Auf Nutzerauftrag auf GitHub gesichert: [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
