@@ -1,3 +1,15 @@
+@AGENTS.md
+
+# Quellmaterial der Dissertation
+
+- Die ungeordneten Originaldateien der Dissertation liegen lokal in einem
+  zusätzlich eingebundenen Arbeitsverzeichnis `diss` (außerhalb des Repos).
+- `diss` nur lesen: dort nichts ändern, verschieben oder löschen.
+- Übernommene Inhalte im Repo ablegen und die Herkunft (Datei in `diss`)
+  angeben; keine stillen Quellenkorrekturen.
+- Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
+  kurz melden statt Inhalte zu raten.
+
 > **Aktuell: Taxon-Pruning nachgebildet, App-Stand 2, 02.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_taxon_pruning_2026_11_02/README.md):
 > nur das Pruning ist ohne Zufall und ohne ungebundene Paketsemantik;
