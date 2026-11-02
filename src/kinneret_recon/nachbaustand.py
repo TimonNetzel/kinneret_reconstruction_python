@@ -31,7 +31,12 @@ STATES = (
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json"),
      "sha256": "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
-                 "gamma_prior_grid", "tf_missing_priors")},
+                 "gamma_prior_grid", "tf_missing_priors"),
+     "commit": "0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json"),
+     "sha256": "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -59,10 +64,10 @@ def app_daten(root: Path) -> dict:
         return {"schema_version": 1, "available": False, "missing": [STATE.as_posix()]}
     state = json.loads(_pinned(root, STATE.as_posix(), STATE_SHA256))
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
-    gex, mex = state.get("gamma_example"), state.get("missing_example")
+    gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex) if e for k in ("fixture", "result", "rational", "arithmetic")])
+             + [e[k] for e in (ex, pex, gex, mex, sex) if e for k in ("fixture", "result", "rational", "arithmetic")])
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
     earlier = []
@@ -136,6 +141,52 @@ def app_daten(root: Path) -> dict:
         "pruning_example": _pruning_example(root, pex, url) if pex else None,
         "gamma_example": _gamma_example(root, gex, url) if gex else None,
         "missing_example": _missing_example(root, mex, url) if mex else None,
+        "sampler_example": _sampler_example(root, sex, url) if sex else None,
+    }
+
+
+def _sampler_example(root: Path, sex: dict, url) -> dict:
+    """Stored values of artificial sampler-preparation cases; they must equal the independent reference exactly."""
+    fixture = json.loads(_pinned(root, sex["fixture"], sex["fixture_sha256"]))
+    result = json.loads(_pinned(root, sex["result"], sex["result_sha256"]))
+    rational = json.loads(_pinned(root, sex["rational"], sex["rational_sha256"]))
+    check = json.loads(_pinned(root, sex["arithmetic"], sex["arithmetic_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or result["historical_reproduction_ready"] or check["historical_reproduction_ready"]
+            or check["final_variant_selected"] or check["R_execution"]
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: sampler example claims historical inputs or a final variant")
+    names = [sex["matrix_case"], *sex["special_cases"], sex["gibbs_case"], sex["weights_case"]]
+    for name in names:
+        stored, exact, hand = result["cases"][name], rational["cases"][name], fixture["cases"][name]["hand"]
+        if (any(stored[k] != exact[k] for k in exact if k in stored)
+                or (hand["values"] is not None and hand["values"] != exact["values_exact"])
+                or stored["how_many_taxa"] != hand["how_many_taxa"]):
+            raise ValueError("Nachbaustand: stored sampler example differs from the reference or the hand value")
+    m, mx = result["cases"][sex["matrix_case"]], rational["cases"][sex["matrix_case"]]
+    ncol = m["ncol_taxa_array"]
+    rows = lambda v: [v[i * ncol:(i + 1) * ncol] for i in range(m["nrow_taxa_array"])]
+    special = []
+    for name in sex["special_cases"]:
+        stored, exact = result["cases"][name], rational["cases"][name]
+        special.append({"nrow": stored["nrow_taxa_array"], "ncol": stored["ncol_taxa_array"],
+                        "column_max": stored["column_max"],
+                        "na": stored["values"].count("NA"), "nan": stored["values"].count("NaN"),
+                        "minus_inf": stored["values"].count("-Inf"), "means_exact": exact["taxa_means_exact"]})
+    gibbs, weights = result["cases"][sex["gibbs_case"]], result["cases"][sex["weights_case"]]
+    if gibbs["values"] != weights["values"] or gibbs["parameter_stage"] == weights["parameter_stage"]:
+        raise ValueError("Nachbaustand: Gibbs and weights cases must differ only in lines 53-59")
+    return {
+        "url": url(sex["result"].rsplit("/", 1)[0] + "/README.md"),
+        "raw": fixture["cases"][sex["matrix_case"]]["taxa_appear_core"], "column_max": m["column_max"],
+        "normalized": rows(m["values"]), "normalized_exact": rows(mx["values_exact"]),
+        "values_exact": mx["values_exact"], "means_exact": mx["taxa_means_exact"],
+        "means_independent": m["taxa_means_accumulator_independent"],
+        "misaligned": check["naive_counterexamples"][sex["matrix_case"]]["misaligned_weight_positions"],
+        "special": special,
+        "num_taxa": weights["ncol_taxa_array"], "how_many_weights": weights["how_many_taxa"],
+        "how_many_gibbs": gibbs["how_many_taxa"], "jeffreys": weights["jeffreys_prior"][0],
+        "sha256": {k: sex[k + "_sha256"] for k in ("result", "rational")},
     }
 
 

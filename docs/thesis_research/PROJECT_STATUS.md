@@ -1,5 +1,56 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Sampler-Vorbereitung nachgebildet, App-Stand 5, 02.11.2026
+
+**Abgeschlossen:** [Determinismusprüfung und Modul](literal_sampler_preparation_2026_11_02/README.md).
+Die Sampler-Vorbereitung `mcmc_conduction.R:53–79` nutzt nur base R ohne Zufall und läuft im
+gebundenen Hauptlauf (`main_v1.2.R:676`; 53, 63–79 auf Klammertiefe 0). **Kein Samplerlauf.**
+Belegt und umgesetzt:
+
+- `gibbs <- F` (`main_v1.2.R:624`, Tiefe 0) ist die einzige Zuweisung in acht gebundenen Dateien;
+  `F`/`T` werden nie neu belegt. Daraus folgen `how_many_taxa = num_taxa` und
+  `parameter_stage_weights`. Der Gibbs-Zweig `floor(num_taxa/2)` wird nur gemeldet.
+- `c(t(.))` flacht zeilenweise ab; Zeile 75 überschreibt die Rohwerte aus 64; `ncol`/`nrow` und
+  `colMeans(na.rm = T)` gelten der Rohmatrix.
+- Spaltendivision durch `max(na.rm = T)`: NA bleibt NA, Maximum 0 gibt NaN bzw. `-Inf`.
+  Eine Ganz-NA-Spalte (`-Inf` mit Warnung) wird abgelehnt.
+- `jeffreys_prior = rep(0.5, n)`.
+
+Leser, nur dokumentiert:
+
+- `values`/`ncol`/`nrow` liest `parameter_stage_weights:1276`. Das Gewichtsrecycling stimmt nur
+  bei zeilenweiser Abflachung.
+- `taxa_means` hat keinen Leser; bei `colMeans` ist der Akkumulator markiert.
+- `jeffreys_prior` liest nur der tote Gibbs-Zweig.
+- `combs` hat keinen Leser; `tf_x12_mean_current` ist dokumentiert.
+
+Quellbefunde ohne Korrektur: `main_v1.2.R` hat drei überzählige `}` (740/788/829, nach der
+gebundenen Schleife), daher ist kein Ganzdatei-`source()` möglich. `c` in 1703 ist eine
+Schleifenvariable.
+[App-Stand 5](app_reproduction_2026_11_02_sampler_prep/README.md): neuer letzter `STATES`-Eintrag
+mit Pin `61c6f231…`, neun Teilmodule; Stände 1–4 bytegleich, Stand 4 nur mit Linkcommit `0a3dcdb`.
+
+**Prüfung:**
+
+- 118 neue Tests gegen eine unabhängige `Fraction`-Referenz und Handerwartungen (exakt); mit den
+  bisherigen **555** historischen Teil-/Belegtests grün.
+- 61 App-/Daten-/Buildtests (2 Wrapper übersprungen, explizit ersetzt).
+- Edge offline in beiden Formaten × Handy (390 px)/PC × Hell/Dunkel × DE/EN, inkl. Gesten und zwei
+  Standorten: bestanden im ersten und im Endlauf.
+- Beide Phase-1-Prüfer Exit 2.
+- Gesamtsuite, `verify_packet.py` und `tools/verify_*` nicht ausgeführt.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel offen, keine Variante
+gewählt. Offen bleiben die echte Taxonmatrix (Alters-Tiefen-Modell, Pollendaten, NA-Maske aus
+`weightedMedian`), die Sampler-Schleife und alle Zufallsschritte (`rmvnorm_rcpp`, `rdirichlet`,
+`rbeta`, `set.seed(2022)`). Keine Trainings, Sampler, Altersmodelle, R-Läufe oder
+Fossilrekonstruktionen. Rechenschritt `00ab021`; App-Sicherungscommit siehe
+`git log -1 -- docs/thesis_research/app_reproduction_2026_11_02_sampler_prep`.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_SAMPLER_PREP_2026_11_02.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Fehlende TF und `num_taxa`-Priors nachgebildet, App-Stand 4, 02.11.2026
 
 **Abgeschlossen:** [Determinismusprüfung und Modul](literal_tf_missing_priors_2026_11_02/README.md).

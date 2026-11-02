@@ -10,6 +10,17 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: Sampler-Vorbereitung nachgebildet, App-Stand 5, 02.11.2026:**
+> [Determinismusprüfung und Modul](docs/thesis_research/literal_sampler_preparation_2026_11_02/README.md):
+> `mcmc_conduction.R:53–79` ohne Zufall/Paketsemantik, kein Samplerlauf; `gibbs <- F`
+> (`main_v1.2.R:624`, einzige Zuweisung) → `how_many_taxa = num_taxa`; `c(t(.))` zeilenweise,
+> Zeile 75 überschreibt 64, Spaltenmaximum mit NA/NaN/`-Inf`, Ganz-NA-Spalte abgelehnt,
+> `colMeans` ohne Leser (Akkumulator markiert). 118 neue Tests, 555 grün.
+> [App-Stand 5](docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/README.md)
+> mit eigenem Pin; Stände 1–4 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_SAMPLER_PREP_2026_11_02.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: fehlende TF und `num_taxa`-Priors nachgebildet, App-Stand 4, 02.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_tf_missing_priors_2026_11_02/README.md):
 > `which.tf.missing` + Priors `mcmc_prepare.R:1664–1685` ohne Zufall/Paketsemantik, im

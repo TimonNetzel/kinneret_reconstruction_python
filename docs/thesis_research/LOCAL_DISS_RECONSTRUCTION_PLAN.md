@@ -10,6 +10,33 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: neuntes Teilmodul (Sampler-Vorbereitung) in der App, 02.11.2026
+
+Schritt 1 und 2 des folgenden Abschnitts sind erledigt: Die
+[Sampler-Vorbereitung](literal_sampler_preparation_2026_11_02/README.md) ist nach belegter
+Determinismusprüfung nachgebildet (`gibbs <- F` belegt, nur Kunstwerte, kein Samplerlauf).
+[App-Stand 5](app_reproduction_2026_11_02_sampler_prep/README.md) ist der neue letzte
+`STATES`-Eintrag, Stände 1–4 bleiben eingefroren. 555 Teil-/Belegtests grün. Reihenfolge:
+
+1. Nächsten deterministischen Quellschritt belegen und nachbilden. Empfohlen: der
+   **deterministische Kern der Gewichtsstufe** `parameter_stage_weights`
+   (`mcmc_functions_v1.6.R:1276–1280`) mit **expliziten** Gewichten. Er ist der einzige aktive
+   Leser von `taxa_information`. Zu klären:
+   - Recycling der Gewichte über `values`;
+   - `matrix(byrow = T)`;
+   - `rowSums(na.rm = T)` (überspringt NA und NaN, Akkumulator);
+   - zeilenweise Division, Zeilensumme 0;
+   - `z <- 1:ncol`.
+
+   `rdirichlet`/`ddirichlet` (Paket ungebunden, mehrere angehängte Pakete) und der
+   Akzeptanzschritt bleiben nur dokumentiert.
+2. Danach weiterer datierter Nachbaustand (Eintrag ans Ende von `STATES`).
+3. Fachlicher Meilenstein unverändert: Eingabevertrag eines lokalen Originalfalls schließen,
+   erst dann den historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_SAMPLER_PREP_2026_11_02.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: achtes Teilmodul (fehlende TF, `num_taxa`-Priors) in der App, 02.11.2026
 
 Schritt 1 und 2 des folgenden Abschnitts sind erledigt:

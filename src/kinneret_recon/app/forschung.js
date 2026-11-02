@@ -119,7 +119,44 @@
       `${link(m.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex) {
+  // Artificial sampler preparation: columns are artificial taxa; each column divided by its maximum, then read row-wise
+  function vorbereitung(s) {
+    if (!s) return "";
+    const n = s.column_max.length;
+    const kopf = Array.from({ length: n }, (_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const zeile = (label, cells) => `<tr><th scope="row">${esc(label)}</th>${cells.join("")}</tr>`;
+    const liste = (v) => v.map((x) => fmt(x, 0)).join(", ");
+    const roh = s.raw.map((r) => r.join(" ")).join(" / ");
+    const sp = s.special;
+    const fall = sp.map((_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const szeile = (key, cell, attr = "") => `<tr${attr}><th scope="row">${esc(t(key))}</th>${sp.map(cell).join("")}</tr>`;
+    return `<h4>${esc(text("nb_ex_sampler", { n: fmt(sp.length + 3, 0) }))}</h4>` +
+      `<p>${esc(text("nb_ex_sampler_body", { raw: roh }))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="sampler"><thead><tr><th scope="col">${esc(t("nb_ex_taxa_head"))}</th>${kopf}</tr></thead><tbody>` +
+      zeile(t("nb_ex_s_max"), s.column_max.map((v) => `<td>${fmt(v, 0)}</td>`)) +
+      s.normalized_exact.map((row, i) => zeile(text("nb_ex_s_row", { n: i + 1 }),
+        row.map((v, k) => `<td title="${fmt(s.normalized[i][k], 4)}">${esc(v)}</td>`))).join("") +
+      zeile(t("nb_ex_s_mean"), s.means_exact.map((v, k) => s.means_independent[k] ? `<td data-acc="exact">${esc(v)}</td>` :
+        `<td data-acc="dependent">${esc(v)}*</td>`)) +
+      `</tbody></table></div>` +
+      `<p data-sampler-values="true">${esc(text("nb_ex_sampler_flat", { values: s.values_exact.join(", "),
+        bad: fmt(s.misaligned.column_major, 0), n: fmt(s.values_exact.length, 0) }))}</p>` +
+      `<p class="nachbau-titel">${esc(t("nb_ex_sampler_special"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="sampler-special"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${fall}</tr></thead><tbody>` +
+      szeile("nb_ex_s_dims", (x) => `<td>${fmt(x.nrow, 0)}×${fmt(x.ncol, 0)}</td>`) +
+      szeile("nb_ex_s_maxima", (x) => `<td>${liste(x.column_max)}</td>`) +
+      szeile("nb_ex_s_na", (x) => `<td>${fmt(x.na, 0)}</td>`) +
+      szeile("nb_ex_s_nan", (x) => `<td${x.nan ? ' data-special="nan"' : ""}>${fmt(x.nan, 0)}</td>`) +
+      szeile("nb_ex_s_inf", (x) => `<td${x.minus_inf ? ' data-special="-inf"' : ""}>${fmt(x.minus_inf, 0)}</td>`) +
+      `</tbody></table></div>` +
+      `<p>${esc(text("nb_ex_sampler_special_why", { m1: sp[0].means_exact.join(", ") }))}</p>` +
+      `<p data-sampler-gibbs="true">${esc(text("nb_ex_sampler_gibbs", { w: fmt(s.how_many_weights, 0), n: fmt(s.num_taxa, 0),
+        g: fmt(s.how_many_gibbs, 0), j: fmt(s.jeffreys, 1) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: s.sha256.result.slice(0, 12), b: s.sha256.rational.slice(0, 12) }))} ` +
+      `${link(s.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex, mex, sex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -138,7 +175,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}</details>`;
   }
 
   function nachbau() {
@@ -171,7 +208,7 @@
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
-      beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example) + `</section>`;
+      beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example) + `</section>`;
   }
 
   function zeige() {
