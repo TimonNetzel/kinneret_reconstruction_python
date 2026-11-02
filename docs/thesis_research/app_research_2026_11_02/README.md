@@ -1,5 +1,8 @@
 # Forschungsstand direkt in der App
 
+> Fortsetzung: Der unten genannte nächste Sieben-Arten-App-Schritt ist
+> inzwischen umgesetzt. [Aktuelles Ergebnis und Einstieg](../app_species_2026_11_02/README.md).
+
 Stand 02.11.2026, Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Abgeschlossenes App-Arbeitspaket. Der Nutzer wünscht nach jedem abgeschlossenen,

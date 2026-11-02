@@ -3,8 +3,10 @@
 > Fortschritt 02.11.2026: Die unten als erster Schritt beschriebene
 > Forschungsstands-/Quellenansicht ist jetzt umgesetzt und geprüft.
 > [Aktuelles App-Ergebnis](app_research_2026_11_02/README.md).
-> Nächster begrenzter App-Schritt: gespeicherte Sieben-Arten-Metriken
-> gemeinsam mit Balanced Accuracy und Brier anzeigen; keine neuen Fits.
+> Auch der gespeicherte Sieben-Arten-Vergleich mit Balanced Accuracy und Brier
+> ist umgesetzt: [Ergebnis und nächster Einstieg](app_species_2026_11_02/README.md).
+> Nächster begrenzter Einstieg: Schema/Fehlwerte der gespeicherten Foldscores
+> prüfen; keine neuen Fits, Sampler oder Fossilläufe.
 > Die Fortsetzung erfolgt derzeit hier; geprüfte Pakete jeweils in PR #77 sichern.
 
 

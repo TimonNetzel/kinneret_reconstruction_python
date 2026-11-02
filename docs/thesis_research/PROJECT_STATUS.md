@@ -1,5 +1,28 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## App: Sieben-Arten-Vergleich umgesetzt, 02.11.2026
+
+**Abgeschlossen:** Lesende Ansicht „Artenvergleich“ mit Balanced Accuracy und
+Brier nebeneinander je Art, 5°-/10°-Blockwahl und beiden Blockdesigns im
+ungewichteten Artenmittel. Netze ohne/mit SMOTE standardmäßig sichtbar;
+Regression #28 und Prior-Diagnose ergänzbar. Experimenteller Status,
+Gewichtung, Testdesign und sechs feste Quellenlinks sichtbar. Beide
+Offlineformate, Deutsch/Englisch, keine neuen Fits oder Fossilläufe.
+
+**Geprüft:** 15 App-/Datentests, acht gezielte Offline-Browserfälle mit beiden
+Sprachen; 56 Original-Metrikzeilen und acht Artenmittel direkt abgeglichen.
+Fehlende/veränderte Metriken sichtbar behandelt, Mobil/Desktop-Bilder geprüft.
+Vollständige Browserregression (acht Fälle, zwei Gestenprüfungen) und
+Standortwechsel bestanden. Alle 50 bisherigen Forschungsnachweise unverändert. [Ergebnis und Nachweise](app_species_2026_11_02/README.md).
+
+**Sicherung:** Bestehender Branch und [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Ausgangsstand `2d2fdfd`, Checkout sauber und mit GitHub identisch.
+Baseline, Referenzdaten und Monticchio-/Chronologie-Gates bleiben erhalten.
+**Als Nächstes:** Schema und undefinierte Werte der gespeicherten Foldscores
+prüfen, dann eine rein deskriptive Detailansicht erwägen. Keine neuen Trainings,
+Sampler oder Fossilrekonstruktionen; Altersplots jung links, alt rechts.
+
+
 ## App: Forschungsstand und Quellen umgesetzt, 02.11.2026
 
 **Abgeschlossen:** Neue lesende Ansicht „Forschungsstand“ in Ordner- und

@@ -153,6 +153,13 @@ Einstellungen, Konvergenzdiagnostik). Formelzeichen stehen in den Texten in LaTe
 (`$T_\mathrm{DJF}$`) und werden mit echten Indizes gesetzt (`formel.py`). Die App liest `reference/app/` und `reference/laeufe/*/app.json`; nach neuen Läufen
 `kinneret-recon app` erneut aufrufen.
 
+Die zusätzlichen Ansichten **Forschungsstand** und **Artenvergleich** lesen
+gespeicherte Forschungsnachweise unabhängig von Lauf und Standort. Der
+Artenvergleich zeigt Balanced Accuracy und Brier je Art für 5°-/10°-Blöcke,
+mit/ohne SMOTE; Regression und Prior-Diagnose sind ergänzbar. Experimenteller
+Status und feste Quellenlinks bleiben sichtbar. Beide Offlineformate und
+Deutsch/Englisch werden unterstützt. [Ergebnis und Prüfungen](docs/thesis_research/app_species_2026_11_02/README.md).
+
 ## Prior des rezenten Klimas aus CRU-Daten
 
 Der Prior der jüngsten Altersstufe (`sampler.recent_*`) lässt sich reproduzierbar für ein festgelegtes

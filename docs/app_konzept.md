@@ -444,3 +444,18 @@ Snapshot-Bytes stoppen den Build. Fünf Bereiche und Quellenlinks trennen
 vorhandene, experimentelle und fehlende Ergebnisse. Keine Modellvorhersagen
 oder neuen Laufdaten; keine Abbildungsexport-Schaltfläche in dieser Ansicht.
 [Nachweise](thesis_research/app_research_2026_11_02/README.md).
+
+
+## Gespeicherte Sieben-Arten-Metriken (02.11.2026)
+
+`artenvergleich.py` bindet die unveränderte `metrics_summary.csv` an SHA256.
+`artenvergleich.js` registriert eine zusätzliche lesende Ansicht: BA und Brier
+nebeneinander, 5°/10°-Blockwahl, Netze ohne/mit SMOTE und ergänzbare feste
+Regression/Prior-Diagnose. Die Übersicht zeigt beide Designs im ungewichteten
+Artenmittel. Fehlende Scores bleiben sichtbar, veränderte Bytes stoppen den
+Build. `daten/artenvergleich.js` wird im Ordner gecacht und in der Ein-Datei-App
+eingebettet. Die zweisprachige Tabellenansicht bleibt unabhängig von Lauf und
+Standort, ohne Abbildungsexport oder automatische Variantenübernahme.
+Quellen sind an einen festen Commit gebunden. Experimenteller Status und
+wissenschaftliche Gates bleiben erhalten.
+[Ergebnis, Grenzen und Browserprüfung](thesis_research/app_species_2026_11_02/README.md).

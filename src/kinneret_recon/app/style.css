@@ -175,3 +175,24 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 .forschung-status[data-status="missing"], .forschung-status[data-status="open"] {
   color: var(--warn); background: var(--warn-bg); }
 .forschung-status[data-status="experimental"] { color: var(--accent); }
+
+/* Paired species scores: numeric tables stay readable on small offline screens. */
+.arten-steuerung h2 { margin: 0; font-size: 1.05rem; }
+.arten-steuerung p { margin: 0; }
+#arten-auswahl { display: flex; flex-direction: column; gap: 12px; }
+.arten-raster { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+#arten-inhalt section > h2 { font-size: 1.05rem; margin: 8px 0; }
+#arten-inhalt h3 { font-size: .95rem; margin: 2px 0 8px; }
+#arten-inhalt .karte-kopf { align-items: flex-start; flex-wrap: wrap; }
+#arten-inhalt .karte p { margin: 6px 0; }
+#arten-inhalt table { font-variant-numeric: tabular-nums; }
+#arten-inhalt th:first-child { white-space: normal; width: 48%; }
+#arten-inhalt th, #arten-inhalt td { padding: 6px; }
+#arten-inhalt th:nth-child(n+2), #arten-inhalt td { text-align: right; }
+#arten-inhalt tr[data-method="nnet_smote"] { background: var(--bg2); }
+.arten-definition { font-size: .9rem; }
+.arten-definition dt { font-weight: 600; margin-top: 8px; }
+.arten-definition dd { margin: 2px 0; max-width: 85ch; }
+.arten-quellen a { color: var(--accent); text-underline-offset: 2px; }
+.nur-leser { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (min-width: 1200px) { .arten-raster { grid-template-columns: 1fr 1fr; } }

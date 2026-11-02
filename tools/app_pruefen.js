@@ -135,6 +135,13 @@ async function pruefeStandorte(browser, datei) {
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForFunction(() => document.querySelectorAll("#sens-tabelle tbody tr").length >= 2, null, { timeout: 15000 })
     .catch(() => fehler.push("Sensitivitaet nach Rueckwechsel"));
+  // Species evidence is project-wide and stays identical when the selected site changes.
+  await page.click('.reiter button[data-ansicht="artenvergleich"]');
+  await page.waitForSelector(".arten-art");
+  const artenVorher = await page.locator("#arten-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(300);
+  if (await page.locator("#arten-inhalt").innerText() !== artenVorher) fehler.push("Artenvergleich aendert sich mit Standort");
   return fehler;
 }
 
@@ -262,6 +269,15 @@ async function pruefe(browser, datei, groesse, thema, name) {
   await page.click("#sprache");
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
+  // Stored species scores: both measures together and both spatial designs.
+  await page.click('.reiter button[data-ansicht="artenvergleich"]');
+  await page.waitForSelector(".arten-art");
+  if (await page.locator(".arten-art").count() !== 7) fehler.push("Artenvergleich: sieben Arten fehlen");
+  await page.click('#arten-block button[data-wert="10"]');
+  await page.check("#arten-extra");
+  if (await page.locator(".arten-art tbody tr").count() !== 28) fehler.push("Artenvergleich: Varianten fehlen");
+  if (await page.locator("#ansicht-artenvergleich .export-knopf").count()) fehler.push("Artenvergleich: unerwarteter Abbildungsexport");
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_artenvergleich.png`, fullPage: true });
   // Sprache
   await page.click("#sprache");
   await page.waitForTimeout(300);

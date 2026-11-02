@@ -181,6 +181,19 @@
     </aside>
     <div id="forschung-inhalt" class="inhalt" aria-live="polite"></div>
   </section>
+  <section id="ansicht-artenvergleich" class="ansicht" hidden>
+    <aside class="steuerung arten-steuerung">
+      <h2 data-t="ansicht_artenvergleich">Artenvergleich</h2>
+      <p data-t="av_intro"></p>
+      <div id="arten-auswahl">
+        <div class="feld"><span data-t="val_block">Blockgröße</span>
+          <div class="umschalter" id="arten-block"></div></div>
+        <label class="haken"><input type="checkbox" id="arten-extra"><span data-t="av_extra"></span></label>
+      </div>
+      <p class="hinweis-klein" data-t="fr_independent"></p>
+    </aside>
+    <div id="arten-inhalt" class="inhalt" aria-live="polite"></div>
+  </section>
 </main>
 
 <dialog id="export" class="export-dialog" aria-labelledby="export-titel">
@@ -233,6 +246,7 @@
 <script src="vendor/plotly-cartesian.min.js"></script>
 <script src="daten/katalog.js"></script>
 <script src="daten/forschung.js"></script>
+<script src="daten/artenvergleich.js"></script>
 <script src="i18n.js"></script>
 <script src="kern.js"></script>
 <script src="rekonstruktion.js"></script>
@@ -242,6 +256,7 @@
 <script src="lauf.js"></script>
 <script src="validierung.js"></script>
 <script src="forschung.js"></script>
+<script src="artenvergleich.js"></script>
 <script src="export.js"></script>
 <script src="start.js"></script>
 </body>

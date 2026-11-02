@@ -16,9 +16,10 @@ ohne fachlichen Anlass bzw. Freigabe. Monticchio-/Chronologie-Gates bewahren.
 Plots immer jung links, alt rechts. Technische Veröffentlichung ist keine
 wissenschaftliche Pilotfreigabe.
 
-Die lesende Forschungsstands-/Quellenansicht ist umgesetzt und geprüft;
-aktueller Nachweis: `docs/thesis_research/app_research_2026_11_02/README.md`.
-Nächster begrenzter App-Schritt: gespeicherte Sieben-Arten-Metriken gemeinsam
-mit Balanced Accuracy und Brier anzeigen, ohne neue Fits oder Fossilläufe.
+Die Forschungsstands-/Quellenansicht und der lesende Sieben-Arten-Vergleich
+mit Balanced Accuracy und Brier sind umgesetzt und geprüft; aktueller Nachweis:
+`docs/thesis_research/app_species_2026_11_02/README.md`.
+Nächster begrenzter Einstieg: Schema und Fehlwerte der gespeicherten Foldscores
+prüfen und eine deskriptive Detailansicht vorbereiten, ohne neue Fits oder Fossilläufe.
 Abgeschlossene, geprüfte Pakete auf Nutzerwunsch jeweils auf GitHub sichern.
 Details, portable Artefakte und Testbefehle stehen in der Übergabe.

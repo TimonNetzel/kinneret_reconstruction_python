@@ -30,8 +30,10 @@
         `<article class="karte forschung-karte" data-research="${card.key}">` +
         `<div class="karte-kopf"><h2>${esc(t("fr_" + card.key))}</h2>` +
         `<span class="forschung-status" data-status="${card.status}">${esc(t("fr_" + card.status))}</span></div>` +
-        `<p>${esc(text(card.body, card.values))}</p>${source(card.key)}</article>`).join("") +
+        `<p>${esc(text(card.body, card.values))}</p>${source(card.key)}` +
+        (card.key === "species" ? `<p><button class="knopf" id="fr-artenvergleich">${esc(t("av_open"))}</button></p>` : "") + `</article>`).join("") +
       `<p class="hinweis-klein">${esc(t("fr_links"))}</p>`;
+    $("fr-artenvergleich").onclick = () => { KR.Z.ansicht = "artenvergleich"; KR.merke(); KR.zeige(); };
   }
   KR.ansicht({ key: "forschung", zeige });
 })(window.KR);
