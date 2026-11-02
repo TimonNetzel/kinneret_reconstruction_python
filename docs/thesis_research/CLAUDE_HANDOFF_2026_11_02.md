@@ -1,5 +1,13 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Kinneret-Teilbindung, 02.11.2026:**
+> [Ergebnis, Crosswalks und Grenzen](kinneret_binding_2026_11_02/README.md).
+> 160 Proben und zwölf ältere Taxonspalten exakt gebunden; finale v1.2-Basis
+> und numerische TFs fehlen. Der Nutzer kennt keinen weiteren Speicherort.
+> Ältere Biom-/Sammelcontainer nicht ersetzen. Als nächsten unabhängigen Schritt
+> Kinnerets Referenz-/Ankervertrag anhand bekannter Verbraucher konkretisieren.
+> Keine neuen Rechenläufe oder pauschale Inventur. Frühere Einstiege folgen als Verlauf.
+
 > **Aktueller Einstieg nach abgeschlossener Fallmatrix, 02.11.2026:**
 > [Sieben Fälle, Quellen, Grenzen und Einstieg](local_case_matrix_2026_11_02/README.md).
 > Noch kein vollständig numerisch reproduzierbarer Dissertationsfall.

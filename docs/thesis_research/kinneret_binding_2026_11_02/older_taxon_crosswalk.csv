@@ -1,0 +1,13 @@
+older_column_R_1_based,older_taxon_name,raw_csv_column_R_1_based,raw_pollen_type,identity,compared_rows,max_absolute_error,raw_column_empty_cells,status
+1,Olea europaea,2,Olea europaea,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,1,exact_numeric_identity_of_older_candidate_not_final_v1_2
+2,Quercus evergreen,3,Quercus ilex-type,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,1,exact_numeric_identity_of_older_candidate_not_final_v1_2
+3,Quercus cerris,4,Quercus,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,0,exact_numeric_identity_of_older_candidate_not_final_v1_2
+4,Phillyrea,6,Phillyrea,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,59,exact_numeric_identity_of_older_candidate_not_final_v1_2
+5,Pinus cembra,10,Pinus,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,24,exact_numeric_identity_of_older_candidate_not_final_v1_2
+6,Betula,11,Betula,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,87,exact_numeric_identity_of_older_candidate_not_final_v1_2
+7,Juglans sp.,12,Juglans regia,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,92,exact_numeric_identity_of_older_candidate_not_final_v1_2
+8,Vitis sylvestris,13,Vitis,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,53,exact_numeric_identity_of_older_candidate_not_final_v1_2
+9,Fagus orientalis,15,Fagus,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,128,exact_numeric_identity_of_older_candidate_not_final_v1_2
+10,Alnus,16,Alnus,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,80,exact_numeric_identity_of_older_candidate_not_final_v1_2
+11,Tilia,17,Tilia,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,155,exact_numeric_identity_of_older_candidate_not_final_v1_2
+12,Chenopodium glaucum,19,Chenopodiaceae/Amaranthaceae,raw count / row sum of 60 taxon columns; empty raw cells zero for this check,160,0.0,0,exact_numeric_identity_of_older_candidate_not_final_v1_2

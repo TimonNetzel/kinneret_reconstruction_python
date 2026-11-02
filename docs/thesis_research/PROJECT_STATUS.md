@@ -1,5 +1,37 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kinneret: ältere Proben-/Taxonbasis gebunden, 02.11.2026
+
+**Abgeschlossenes Teilpaket:** [Kinneret-Eingabebindung](kinneret_binding_2026_11_02/README.md)
+mit 160-zeiligem Proben-Crosswalk, zwölf exakt gebundenen älteren Taxonspalten
+(1920 Werte), identischem numerischem Chronologieblock (283520 Werte) und
+drei expliziten aktuellen TF-Namens-/Poolzuweisungen. Eingaben nur gelesen;
+keine neuen Altersmodelle, TF-Ziehungen oder Fossilkurven berechnet.
+
+**Grenzen konkretisiert:** Der Einzelcontainer ist ein 35-Taxa-/3-Biomzweig.
+Der ältere Sammelstand besitzt zwölf andere Taxonspalten; die jüngeren
+positionsbezogenen Umbenennungen würden dort u.a. Pinus als Olea beschriften.
+Die erhaltene mittlere Chronologiematrix ersetzt keine vom finalen Code
+erwartete Liste mehrerer Altersraster. Gewichtsplots besitzen elf bzw. zehn
+Anzeigeeinträge und überschreiben Taxonlabels; daraus folgt kein eindeutiger
+finaler TF-Crosswalk. Die vollständige historische TF-Teilmenge bleibt offen.
+
+**Quelllücke:** `core_data_additional_sites_v1.2.rdata` samt finalem Kinneret-
+Eintrag oder dessen genauer Erzeuger fehlt weiter. Der Nutzer kennt laut
+Antwort vom 02.11.2026 keinen weiteren Speicherort. Keine erneute pauschale
+Inventur oder ungefragte Ersatzrekonstruktion. **Als Nächstes unabhängig davon:**
+Kinnerets Referenz-/Ankervertrag anhand der bekannten Verbraucher und vorhandenen
+Nachweise konkretisieren: AP-Maske, Soreq/MEDSTACK, Csa und konsumierte CRU-
+Zeiträume. Die offene Basisdatei dabei nicht als erledigt behandeln.
+
+**Geprüft und Sicherung:** Quellenhashes vor/nach dem Lesen gleich;
+Spaltenidentitäten ohne Toleranz, Chronologie als kompletter XDR-Block,
+Plotlabels und Archivgleichheit geprüft. Nachweise im Paket. Fortsetzung auf
+bestehendem Branch in [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+Basis `756865b`; kein Merge. Baseline, Referenzen, vorherige Fallmatrix,
+App/CLI, sieben Arten und Monticchio-/Chronologie-Gates bleiben erhalten.
+Keine Trainings oder Sampler; Phase 1 bleibt vorrangig. Jung links, alt rechts.
+
 ## Lokale Dissertationsfälle: Fallmatrix abgeschlossen, 02.11.2026
 
 **Abgeschlossen:** [Quellengebundene Fallmatrix](local_case_matrix_2026_11_02/README.md)

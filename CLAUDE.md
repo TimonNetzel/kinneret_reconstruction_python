@@ -10,9 +10,13 @@ Lies zuerst `AGENTS.md`, den neuesten Abschnitt von
 `docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md`.
 Die quellengebundene Fallmatrix ist abgeschlossen:
 `docs/thesis_research/local_case_matrix_2026_11_02/README.md`.
-Noch kein Fall vollständig reproduzierbar. Nächster Schritt: Kinnerets
-historischen Basiseintrag, Proben-/Taxonzuordnung und erforderliche numerische
-TF-Teilmenge gezielt an die erhaltenen Eingaben binden; keine neuen Läufe.
+Kinnerets älterer Proben-/Taxonstand ist jetzt teilweise exakt gebunden:
+`docs/thesis_research/kinneret_binding_2026_11_02/README.md`.
+Die finale v1.2-Basisdatei und numerischen TFs fehlen weiter; der Nutzer kennt
+keinen weiteren Speicherort. Noch kein Fall vollständig reproduzierbar.
+Nächster unabhängiger Schritt: Kinnerets Referenz-/Ankervertrag (AP-Maske,
+Soreq/MEDSTACK, Csa, konsumierte CRU-Zeitgrundlagen) gezielt konkretisieren.
+Keine erneute pauschale Suche oder neuen Läufe; ältere Eingaben nicht ersetzen.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.
 
