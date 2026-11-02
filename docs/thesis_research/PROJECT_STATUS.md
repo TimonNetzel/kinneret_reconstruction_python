@@ -1,5 +1,46 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kumulative Rohdichte-/EMD-Teilprüfung und Claude-Auftrag, 02.11.2026
+
+**Abgeschlossen:** [Quellen, Formeln und Grenzen](literal_cdf_discrepancy_2026_11_02/README.md)
+belegen den Nullreferenzzweig und kumulierten Rohdichtevergleich aus
+`final_reconstruction`; separates Modul `tools/historical_cdf_discrepancy.py`.
+Die erhaltenen Fallstudienaufrufe übergeben zweimal Skalar 1. Der einseitige
+Längentest der ersten Referenz ersetzt beide Referenzen durch Nullmatrizen.
+Verglichen wird vor späterer Mischungsnormierung mit `sum(abs(C−R))/dims`;
+kein Klima-Zellbreitenfaktor und keine zusätzliche Normierung.
+
+**Wichtige Grenze:** Die Platzhalteranlage verwendet `dims` vor der lokalen
+Zuweisung. Der Haupteinstieg setzt zwar 300, aber historische Aufrufumgebung
+und finale TF-Breite fehlen. Geerbte und spätere Breite werden ausdrücklich
+getrennt übergeben; Konflikte nicht still korrigiert. Nullreferenzscore ist
+kein belegter Abstand zu einer älteren Rekonstruktions-CDF oder in °C/mm.
+
+**Prüfung:** 43 neue synthetische Tests, mit Vorpaketen 167 grün. Rationale
+Scorekontrollen exakt gleich; drei gezielt gelesene Skripte vor/nach Lesen
+identisch zu bisherigen Hashbindungen. Keine Originalnumerik oder historische
+R-/Paketlaufzeitgleichheit. Nichtendlichkeit, Recycling, Achsenreparatur und
+allgemeine R-Längensemantik außerhalb der dokumentierten Domäne bleiben aus.
+
+**Claude kann fortsetzen:** [Konkreter Startauftrag](CLAUDE_NEXT_STEP_2026_11_02.md)
+enthält Modulkarte, Prüfkommandos, erwarteten Ausgang und Abnahmekriterien.
+Nächster begrenzter Schritt: vorhandene Module über ein gemeinsames künstliches
+Beispiel auf Reihenfolge, Achsen und Normierungszeitpunkte prüfen. Nur neues
+Testmodul/Belegpaket, kein historischer Vollrunner und keine App-/CLI-Erweiterung.
+Exakte Energieduplikate vor aktiven Ziehungen bestimmen, Original-IDs erhalten.
+
+**Weiter offen:** Elf Nachweisbündel, finale Basis/Listenchronologie, numerische
+historische TFs und tatsächliche Laufzuordnung. Keine finale Kinneret-Variante
+gewählt, kein vollständiger Dissertationsfall reproduziert. Keine Speicherort-
+frage, Globalinventur oder Ersatzdatenwahl.
+
+**Sicherung:** Basis `d6e3343`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. App/CLI, Baseline, Originale, Referenzen, bisherige Belegpakete und
+fallbezogene Monticchio-/Chronologie-Gates erhalten. Keine Trainings, Sampler,
+Altersmodelle oder Fossilrekonstruktionen. Phase 1 vor Phase 2; Plots jung links,
+alt rechts.
+
 ## Historische Altersraster und Zeilenauswahl geprüft, 02.11.2026
 
 **Abgeschlossen:** [Quellen, Zustände, Formeln und Grenzen](literal_age_selection_2026_11_02/README.md)

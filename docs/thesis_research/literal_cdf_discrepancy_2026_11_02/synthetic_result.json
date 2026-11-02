@@ -1,0 +1,45 @@
+{
+  "kind": "synthetic_raw_cumulative_discrepancy_not_fossil_reconstruction",
+  "zero_placeholder_replaced": true,
+  "placeholder_shape": [
+    3,
+    4
+  ],
+  "raw_cumulative": [
+    [
+      2.0,
+      2.0,
+      2.0,
+      2.0
+    ],
+    [
+      0.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      0.0,
+      0.0,
+      3.0,
+      4.0
+    ]
+  ],
+  "zero_reference_scores": [
+    2.0,
+    0.75,
+    1.75
+  ],
+  "explicit_reference_scores": [
+    1.5625,
+    0.125,
+    1.375
+  ],
+  "max_abs_errors": {
+    "zero_reference_scores": 0.0,
+    "explicit_reference_scores": 0.0
+  },
+  "tolerance": 1e-14,
+  "R_execution": false,
+  "actual_original_numerical_inputs_used": false
+}

@@ -1,5 +1,19 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Claude-Startauftrag nach CDF-/EMD-Teilprüfung, 02.11.2026:**
+> **[Hier mit dem nächsten konkreten Schritt beginnen](CLAUDE_NEXT_STEP_2026_11_02.md).**
+> Der Auftrag enthält Git-/PR-Prüfung, Modulkarte, Grenzen, Prüfkommandos und
+> Abnahmekriterien für eine gemeinsame rein synthetische Rechenkette.
+> [Neues Ergebnis](literal_cdf_discrepancy_2026_11_02/README.md): 43 neue Tests,
+> mit Vorpaketen 167 grün. Fallstudien übergeben skalare Referenzen, die zu
+> Nullmatrizen werden; Vergleich kumulierter Rohdichten liegt vor späterer
+> Mischungsnormierung. Geerbtes und späteres `dims` nicht gleichsetzen.
+> Drei bisherige Quellhashbindungen bestätigt. Keine R-Laufzeitgleichheit,
+> keine finale Kinneret-Variante; elf Nachweisbündel weiter offen.
+> Keine historischen Vollrunner, Ersatzdaten, neuen Modelle/Sampler/Fossilläufe
+> oder App-Diagnostik. Phase 1 bleibt vorrangig, kein Merge.
+> Ältere nächste Schritte unten sind Verlauf.
+
 > **Aktueller Einstieg nach Altersraster-/Zeilenauswahlprüfung, 02.11.2026:**
 > [Quellen, Formeln, Kontrollfluss und Grenzen](literal_age_selection_2026_11_02/README.md).
 > Separates Modul `tools/historical_age_selection.py`, 39 neue Tests und mit

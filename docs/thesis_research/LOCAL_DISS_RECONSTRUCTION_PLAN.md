@@ -79,6 +79,15 @@ fehlende Laufzuordnung bleiben unverändert. Als nächsten unabhängigen Teil
 den kumulativen Dichte-/EMD-Ausschnitt in `src/mcmc_functions_v1.6.R:366–370,485–490`
 gegen skalare Referenzargumente der Fallstudien belegen und synthetisch prüfen.
 Keine neue Referenzkurve oder Kalibrierung; Module noch nicht zum Vollrunner verbinden.
+**Kumulative Rohdichte-/EMD-Teilprüfung abgeschlossen:**
+[Nullreferenz, Breitenbindung, Formeln und Prüfung](literal_cdf_discrepancy_2026_11_02/README.md).
+43 neue synthetische Tests, mit Vorpaketen 167 grün. Keine neue Referenzkurve,
+Normierung oder physikalische Distanz hinzugefügt. Drei Quellhashbindungen
+bestätigt. [Claude-Startauftrag](CLAUDE_NEXT_STEP_2026_11_02.md) beschreibt den
+nächsten begrenzten Schritt: ein gemeinsames künstliches Beispiel zur Prüfung
+der vorhandenen Modulschnittstellen, Reihenfolge und Normierungszeitpunkte.
+Nur Test/Belegpaket; kein historischer Vollrunner oder neue App-/CLI-Integration.
+Elf Nachweisbündel bleiben offen, keine finale Laufbindung oder Phase 2.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

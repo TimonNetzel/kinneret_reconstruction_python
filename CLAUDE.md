@@ -1,5 +1,17 @@
 # Aktueller Projekteinstieg für Claude
 
+> **Aktueller Einstieg nach CDF-/EMD-Teilprüfung, 02.11.2026:**
+> [Konkreter nächster Auftrag für Claude](docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md)
+> mit Modulkarte, Befehlen und Abnahmekriterien. Zuerst diesen Startauftrag und
+> den neuesten Projektstatus lesen. [Aktuelles Ergebnis](docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md):
+> 43 neue synthetische Tests, mit Vorpaketen 167 grün. Nullreferenzzweig,
+> kumulierte Rohdichten, Normierungszeitpunkt und geerbtes/späteres `dims`
+> getrennt belegt. Keine finale Laufbindung; elf Nachweisbündel offen.
+> Nächster Schritt: ausschließlich gemeinsame synthetische Rechenkette als
+> Test/Belegpaket; kein historischer Vollrunner oder neue App-/CLI-Funktion.
+> Original-IDs und bestehende Gates erhalten. Keine neuen Läufe, Ersatzdaten,
+> Speicherortfrage oder Phase 2. Die folgenden Einstiege sind Verlauf.
+
 > **Neuester Teilfortschritt: Altersraster/Zeilenauswahl, 02.11.2026:**
 > [Belege und synthetische Prüfung](docs/thesis_research/literal_age_selection_2026_11_02/README.md).
 > 39 neue Tests, mit Vorpaketen 124 grün. Exakte Rastermitgliedschaft ist kein
