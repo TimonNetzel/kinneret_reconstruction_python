@@ -12,29 +12,31 @@ STATE = json.loads((ROOT / nachbaustand.STATE).read_text(encoding="utf-8"))
 PACKET = "docs/thesis_research/literal_tf_preparation_2026_11_02/"
 PRUNING = "docs/thesis_research/literal_taxon_pruning_2026_11_02/"
 GAMMA = "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/"
+MISSING = "docs/thesis_research/literal_tf_missing_priors_2026_11_02/"
 FROZEN = nachbaustand.STATES[0]["path"].as_posix()
 FROZEN2 = nachbaustand.STATES[1]["path"].as_posix()
+FROZEN3 = nachbaustand.STATES[2]["path"].as_posix()
 
 
 def _kopie(tmp_path: Path) -> Path:
     """Copy exactly the pinned files so single bytes can be changed or removed."""
-    ex, contract, pex, gex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
-                              STATE["gamma_example"])
+    ex, contract, pex, gex, mex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
+                                   STATE["gamma_example"], STATE["missing_example"])
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
-                + [e[k] for e in (ex, pex, gex) for k in ("fixture", "result", "rational", "arithmetic")]):
+                + [e[k] for e in (ex, pex, gex, mex) for k in ("fixture", "result", "rational", "arithmetic")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, tmp_path / rel)
     return tmp_path
 
 
-def test_newest_state_binds_seven_modules_eleven_open_bundles_and_no_release():
+def test_newest_state_binds_eight_modules_eleven_open_bundles_and_no_release():
     d = nachbaustand.app_daten(ROOT)
     assert d["available"] and d["status"] == "submodules_checked_original_case_open"
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
-    assert d["modules"][-1]["id"] == "gamma_prior_grid" and not d["modules"][-1]["conditional"]
+    assert d["modules"][-1]["id"] == "tf_missing_priors" and not d["modules"][-1]["conditional"]
     assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning"]
-    assert d["tests_passed"] == 352 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
+    assert d["tests_passed"] == 437 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
     assert sum(r["status"] == "conflicting" for r in d["requirements"]) == 4
@@ -44,23 +46,43 @@ def test_newest_state_binds_seven_modules_eleven_open_bundles_and_no_release():
 
 
 def test_earlier_states_stay_frozen_pinned_and_listed():
-    first, second = nachbaustand.STATES[:2]
-    assert (first["sha256"], second["sha256"]) == (
+    first, second, third = nachbaustand.STATES[:3]
+    assert (first["sha256"], second["sha256"], third["sha256"]) == (
         "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
-        "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784")
-    for frozen in (first, second):
+        "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+        "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f")
+    assert third["commit"] == "7d3d0f6852dbdf869b6e479d4eeffe80faaf2038"
+    for frozen in (first, second, third):
         assert hashlib.sha256((ROOT / frozen["path"]).read_bytes()).hexdigest() == frozen["sha256"]
-    old, prev = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8")) for f in (first, second))
+    old, prev, last = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8")) for f in (first, second, third))
     assert (old["tests"]["passed"], len(old["modules"])) == (251, 5)
     assert (prev["tests"]["passed"], len(prev["modules"])) == (297, 6)
+    assert (last["tests"]["passed"], len(last["modules"])) == (352, 7)
     assert prev["supersedes"] == {"state": FROZEN, "state_sha256": first["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN2, "state_sha256": second["sha256"]}
+    assert last["supersedes"] == {"state": FROZEN2, "state_sha256": second["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN3, "state_sha256": third["sha256"]}
     assert nachbaustand.app_daten(ROOT)["earlier_states"] == [
         {"date": "2026-11-02", "state_sha256": f["sha256"], "modules": n, "tests_passed": tests,
          "url": nachbaustand.REPO_URL + f["commit"] + "/" + f["path"].as_posix()}
-        for f, n, tests in ((first, 5, 251), (second, 6, 297))]
-    assert [m["package_sha256"] for m in prev["modules"]] == [m["package_sha256"] for m in STATE["modules"][:6]]
-    assert all(STATE[k] == prev[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example"))
+        for f, n, tests in ((first, 5, 251), (second, 6, 297), (third, 7, 352))]
+    assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:7]]
+    assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
+                                             "gamma_example"))
+
+
+def test_missing_tf_example_is_taken_unchanged_from_the_pinned_packet():
+    m = nachbaustand.app_daten(ROOT)["missing_example"]
+    stored = json.loads((ROOT / MISSING / "synthetic_result.json").read_text(encoding="utf-8"))["cases"]
+    assert [(c["taxa"], c["missing"], c["num_taxa"], c["line"]) for c in m["cases"]] == [
+        (6, [2, 5], 4, 1678), (4, [1, 4], 2, 1678), (12, [3, 9], 10, 1678), (4, [2], 3, 1678)]
+    assert [c["sd"] for c in m["cases"]] == [stored[n]["nr_taxa_sd"] for n in STATE["missing_example"]["cases"]]
+    assert [(c["sd"], c["sd_half_up"], c["half_up_differs"]) for c in m["cases"]] == [
+        (1, 1, False), (0, 1, True), (2, 3, True), (1, 1, False)]
+    assert m["cases"][0]["kept"] == ["A", "C", "D", "F"] and m["cases"][3]["x2_only"] == [3]
+    assert [(c["phi"], c["stale_phi1"]) for c in m["cases"]] == [(2.0, 3.0), (1.0, 2.0), (5.0, 6.0), (1.5, 2.0)]
+    assert (m["empty"]["missing"], m["empty"]["num_taxa"], m["empty"]["line"], m["empty"]["sd"]) == ([], 5, 1435, 1)
+    assert m["half_up_differs_for"] == [2, 10, 18, 26, 34]
+    assert m["url"].endswith(MISSING + "README.md") and "/blob/" + STATE["source_commit"] + "/" in m["url"]
 
 
 def test_gamma_example_is_taken_unchanged_from_the_pinned_packet():
@@ -115,6 +137,8 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
     assert nachbaustand.app_daten(root)["missing"] == [FROZEN, PACKET + "arithmetic_check.json"]
     (root / GAMMA / "synthetic_fixture.json").unlink()
     assert nachbaustand.app_daten(root)["missing"][-1] == GAMMA + "synthetic_fixture.json"
+    (root / MISSING / "arithmetic_check.json").unlink()
+    assert nachbaustand.app_daten(root)["missing"][-1] == MISSING + "arithmetic_check.json"
 
 
 @pytest.mark.parametrize("rel", [nachbaustand.STATE.as_posix(), PACKET + "synthetic_result.json",
@@ -124,7 +148,10 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
                                  FROZEN, PRUNING + "README.md", PRUNING + "synthetic_result.json",
                                  PRUNING + "rational_expectations.json", FROZEN2, GAMMA + "README.md",
                                  GAMMA + "synthetic_result.json", GAMMA + "rational_expectations.json",
-                                 GAMMA + "synthetic_fixture.json", GAMMA + "arithmetic_check.json"])
+                                 GAMMA + "synthetic_fixture.json", GAMMA + "arithmetic_check.json", FROZEN3,
+                                 MISSING + "README.md", MISSING + "synthetic_result.json",
+                                 MISSING + "rational_expectations.json", MISSING + "synthetic_fixture.json",
+                                 MISSING + "arithmetic_check.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -157,4 +184,5 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "Synthetisches Rechenbeispiel" in html and "Synthetic worked example" in html
     assert "Taxon-Pruning nach Nullanteil" in html and "Taxon pruning by zero share" in html
     assert "Gamma-Prior über ein Formraster" in html and "Gamma prior from a shape grid" in html
-    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:2])
+    assert "Entfernung fehlender TF und Taxonzahl-Priors" in html and "Removal of missing TFs" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:3])

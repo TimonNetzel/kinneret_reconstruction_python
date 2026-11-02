@@ -1,5 +1,40 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Fehlende TF und `num_taxa`-Priors nachgebildet, App-Stand 4, 02.11.2026
+
+**Abgeschlossen:** [Determinismusprüfung und Modul](literal_tf_missing_priors_2026_11_02/README.md).
+`which.tf.missing` samt `num_taxa`-Priors (`mcmc_prepare.R:1664–1685`) nutzt nur base R ohne
+Zufall und läuft im gebundenen Hauptlauf (1664–1665/1681–1685 Klammertiefe 0; Entfernung
+hinter dem datenabhängigen Längenschutz). Die NA-Maske ist **explizite Eingabe**, weil
+`weightedMedian` offen bleibt; nur das x1-Mittel zählt. Belegt und umgesetzt: leere Maske
+→ keine Indizierung, `num_taxa` bleibt `ncol(all.avail)` aus **1435**; sonst `nrow` aus 1678;
+Reihenfolge bleibt; `taxa_change` Boolwert (im Lauf tot, `& FALSE` in 1500);
+`round(num_taxa/4)` nach dokumentierter R-Regel zur geraden Ziffer (Half-up wiche für
+n = 2, 10, 18 … ab; `prior$nr.taxa.sd` hat keinen aktiven Leser). Befunde: `phi1`/`phi2`
+(1439–1440) bleiben nach der Entfernung veraltet; `posterior <- list()` (1706) verwirft
+`posterior$nr.taxa.mean`. Ein Resttaxon (Dimensionsverlust), null Resttaxa und `drop`
+durch Ausdehnung 1 werden abgelehnt. Schwellen 131–137 nicht gewählt (`fitdistr`,
+`quantile`, `inside.range`). [App-Stand 4](app_reproduction_2026_11_02_tf_missing/README.md):
+neuer letzter `STATES`-Eintrag mit Pin `7b7bf1f4…`, acht Teilmodule; Stände 1–3 bytegleich,
+Stand 3 nur mit Linkcommit `7d3d0f6`.
+
+**Prüfung:** 85 neue Tests gegen unabhängige Listen-/Bruch-/Ganzzahlreferenz und
+Handerwartungen (exakt), mit bisherigen **437** historischen Teil-/Belegtests grün;
+54 App-/Daten-/Buildtests (2 Wrapper übersprungen, explizit ersetzt); Edge offline in
+beiden Formaten × Handy/PC × Hell/Dunkel × DE/EN inkl. Gesten und zwei Standorten bestanden
+(Erstlauf: Tabellenüberlauf auf Handybreite, behoben); beide Phase-1-Prüfer Exit 2.
+Gesamtsuite, `verify_packet.py` und `tools/verify_*` nicht ausgeführt.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel offen, keine
+Variante gewählt. Echte NA-Maske (`weightedMedian`, historische TFs), `prior.recent`-Anpassung
+und alle Zufallsschritte offen. Keine Trainings, Sampler, Altersmodelle, R-Läufe oder
+Fossilrekonstruktionen. Rechenschritt `9bb8ed9`; App-Sicherungscommit siehe
+`git log -1 -- docs/thesis_research/app_reproduction_2026_11_02_tf_missing`.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_TF_MISSING_2026_11_02.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Gamma-Prior-Raster nachgebildet, App-Stand 3, 02.11.2026
 
 **Abgeschlossen:** [Determinismusprüfung und Gamma-Prior-Raster](literal_gamma_prior_grid_2026_11_02/README.md).

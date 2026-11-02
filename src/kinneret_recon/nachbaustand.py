@@ -26,7 +26,12 @@ STATES = (
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/reproduction_state.json"),
      "sha256": "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
-                 "gamma_prior_grid")},
+                 "gamma_prior_grid"),
+     "commit": "7d3d0f6852dbdf869b6e479d4eeffe80faaf2038"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json"),
+     "sha256": "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -54,10 +59,10 @@ def app_daten(root: Path) -> dict:
         return {"schema_version": 1, "available": False, "missing": [STATE.as_posix()]}
     state = json.loads(_pinned(root, STATE.as_posix(), STATE_SHA256))
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
-    gex = state.get("gamma_example")
+    gex, mex = state.get("gamma_example"), state.get("missing_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex) if e for k in ("fixture", "result", "rational", "arithmetic")])
+             + [e[k] for e in (ex, pex, gex, mex) if e for k in ("fixture", "result", "rational", "arithmetic")])
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
     earlier = []
@@ -130,6 +135,39 @@ def app_daten(root: Path) -> dict:
         },
         "pruning_example": _pruning_example(root, pex, url) if pex else None,
         "gamma_example": _gamma_example(root, gex, url) if gex else None,
+        "missing_example": _missing_example(root, mex, url) if mex else None,
+    }
+
+
+def _missing_example(root: Path, mex: dict, url) -> dict:
+    """Stored values of artificial which.tf.missing cases; they must equal the independent reference exactly."""
+    fixture = json.loads(_pinned(root, mex["fixture"], mex["fixture_sha256"]))
+    result = json.loads(_pinned(root, mex["result"], mex["result_sha256"]))
+    rational = json.loads(_pinned(root, mex["rational"], mex["rational_sha256"]))
+    check = json.loads(_pinned(root, mex["arithmetic"], mex["arithmetic_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or result["historical_reproduction_ready"] or check["historical_reproduction_ready"]
+            or check["final_variant_selected"] or check["R_execution"]
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: missing-TF example claims historical inputs or a final variant")
+    keys = ("which_tf_missing", "taxa", "num_taxa", "num_taxa_line", "nr_taxa_sd", "phi", "stale_phi1", "stale_phi2")
+    cases = []
+    for name in [*mex["cases"], mex["empty_case"]]:
+        case, stored, exact = fixture["cases"][name], result["cases"][name], rational["cases"][name]
+        naive = check["naive_counterexamples"][name]
+        if any(stored[k] != exact[k] for k in keys) or stored["nr_taxa_sd"] != case["hand"]["nr_taxa_sd"]:
+            raise ValueError("Nachbaustand: stored missing-TF example differs from the reference or the hand value")
+        cases.append({"taxa": len(case["taxa"]), "missing": stored["which_tf_missing"],
+                      "x2_only": [i + 1 for i, v in enumerate(case["x2_mean"]) if v is None
+                                  and i + 1 not in stored["which_tf_missing"]],
+                      "kept": [n.rsplit(" ", 1)[-1] for n in stored["taxa"]], "num_taxa": stored["num_taxa"],
+                      "line": stored["num_taxa_line"], "sd": stored["nr_taxa_sd"],
+                      "sd_half_up": naive["round_half_up_sd"], "half_up_differs": naive["round_half_up_differs"],
+                      "phi": stored["phi"], "stale_phi1": stored["stale_phi1"], "stale_phi2": stored["stale_phi2"]})
+    return {
+        "url": url(mex["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases[:-1], "empty": cases[-1],
+        "half_up_differs_for": check["round_ties"]["half_up_differs_for"],
+        "sha256": {k: mex[k + "_sha256"] for k in ("result", "rational")},
     }
 
 

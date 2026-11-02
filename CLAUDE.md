@@ -10,6 +10,16 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: fehlende TF und `num_taxa`-Priors nachgebildet, App-Stand 4, 02.11.2026:**
+> [Determinismusprüfung und Modul](docs/thesis_research/literal_tf_missing_priors_2026_11_02/README.md):
+> `which.tf.missing` + Priors `mcmc_prepare.R:1664–1685` ohne Zufall/Paketsemantik, im
+> gebundenen Lauf aktiv; NA-Maske explizit (weightedMedian offen), leere Maske → `num_taxa`
+> aus 1435, `round(n/4)` zur geraden Ziffer, `phi1`/`phi2` veraltet. 85 neue Tests, 437 grün.
+> [App-Stand 4](docs/thesis_research/app_reproduction_2026_11_02_tf_missing/README.md)
+> mit eigenem Pin; Stände 1–3 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_TF_MISSING_2026_11_02.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Gamma-Prior-Raster nachgebildet, App-Stand 3, 02.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_gamma_prior_grid_2026_11_02/README.md):
 > Raster `mcmc_prepare.R:114–121/1270–1281` ohne Zufall und Paketsemantik, im

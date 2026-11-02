@@ -95,7 +95,31 @@
       `${link(g.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex) {
+  // Artificial which.tf.missing cases: columns are cases; the NA mask is given, never computed from weightedMedian
+  function fehlend(m) {
+    if (!m) return "";
+    const kopf = m.cases.map((_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const zeile = (key, cell) => `<tr><th scope="row">${esc(t(key))}</th>${m.cases.map(cell).join("")}</tr>`;
+    const liste = (v) => v.length ? v.map((x) => fmt(x, 0)).join(", ") : "–";
+    const e = m.empty;
+    return `<h4>${esc(text("nb_ex_missing", { n: fmt(m.cases.length, 0) }))}</h4><p>${esc(t("nb_ex_missing_body"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="missing"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${kopf}</tr></thead><tbody>` +
+      zeile("nb_ex_m_taxa", (x) => `<td>${fmt(x.taxa, 0)}</td>`) +
+      zeile("nb_ex_m_missing", (x) => `<td>${liste(x.missing)}</td>`) +
+      zeile("nb_ex_m_x2", (x) => `<td>${liste(x.x2_only)}</td>`) +
+      zeile("nb_ex_m_kept", (x) => `<td>${esc(x.kept.join(""))}</td>`) +
+      zeile("nb_ex_m_num", (x) => `<td data-line="${x.line}">${fmt(x.num_taxa, 0)}</td>`) +
+      zeile("nb_ex_m_sd", (x) => `<td data-sd="${x.sd}"><strong>${fmt(x.sd, 0)}</strong></td>`) +
+      zeile("nb_ex_m_half_up", (x) => `<td${x.half_up_differs ? ' data-differs="true"' : ""}>${fmt(x.sd_half_up, 0)}</td>`) +
+      zeile("nb_ex_m_phi", (x) => `<td>${fmt(x.phi, 1)}</td>`) +
+      zeile("nb_ex_m_phi1", (x) => `<td${x.stale_phi1 !== x.phi ? ' data-differs="true"' : ""}>${fmt(x.stale_phi1, 1)}</td>`) +
+      `</tbody></table></div><p>${esc(text("nb_ex_missing_why", { list: m.half_up_differs_for.map((x) => fmt(x, 0)).join(", ") }))}</p>` +
+      `<p data-missing-empty="true">${esc(text("nb_ex_missing_empty", { n: fmt(e.num_taxa, 0), line: e.line, sd: fmt(e.sd, 0) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: m.sha256.result.slice(0, 12), b: m.sha256.rational.slice(0, 12) }))} ` +
+      `${link(m.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex, mex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -114,7 +138,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}</details>`;
   }
 
   function nachbau() {
@@ -147,7 +171,7 @@
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
-      beispiel(nb.example, nb.pruning_example, nb.gamma_example) + `</section>`;
+      beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example) + `</section>`;
   }
 
   function zeige() {

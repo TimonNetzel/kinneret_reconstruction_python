@@ -10,6 +10,29 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: achtes Teilmodul (fehlende TF, `num_taxa`-Priors) in der App, 02.11.2026
+
+Schritt 1 und 2 des folgenden Abschnitts sind erledigt:
+[`which.tf.missing` und `num_taxa`-Priors](literal_tf_missing_priors_2026_11_02/README.md)
+nach belegter Determinismusprüfung nachgebildet (Maske explizit, Kunstwerte),
+[App-Stand 4](app_reproduction_2026_11_02_tf_missing/README.md) als neuer letzter
+`STATES`-Eintrag, Stände 1–3 eingefroren. 437 Teil-/Belegtests grün. Reihenfolge:
+
+1. Nächsten deterministischen Quellschritt belegen und nachbilden; empfohlen: die
+   Sampler-**Vorbereitung** aus `num_taxa` und `taxa.appear.core` in
+   `mcmc_conduction.R:53–79` (`gibbs <- F` in `main_v1.2.R:624` vorher belegen):
+   `how_many_taxa`, zeilenweises `c(t(taxa.appear.core))`, `colMeans(na.rm = T)`,
+   spaltenweise Division durch `max(na.rm = T)`, `jeffreys_prior`. Nur Vorbereitung,
+   kein Samplerlauf; Leser von `taxa_information` (ggf. Rcpp) vorher prüfen.
+   `combs` (1702–1703) hat keinen Leser → nur dokumentieren. `weightedMedian` erst nach
+   belegter `matrixStats`-Fassung; Zufallsschritte nur dokumentieren.
+2. Danach weiterer datierter Nachbaustand (Eintrag ans Ende von `STATES`).
+3. Fachlicher Meilenstein unverändert: Eingabevertrag eines lokalen
+   Originalfalls schließen, erst dann historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_TF_MISSING_2026_11_02.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: siebtes Teilmodul (Gamma-Prior-Raster) in der App, 02.11.2026
 
 Schritt 1 und 2 des folgenden Abschnitts sind erledigt:
