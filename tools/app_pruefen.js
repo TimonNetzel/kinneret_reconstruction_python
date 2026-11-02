@@ -142,6 +142,12 @@ async function pruefeStandorte(browser, datei) {
   await page.selectOption("#standort-wahl", "zweit");
   await page.waitForTimeout(300);
   if (await page.locator("#arten-inhalt").innerText() !== artenVorher) fehler.push("Artenvergleich aendert sich mit Standort");
+  await page.click('#arten-ebene button[data-wert="folds"]');
+  await page.selectOption("#arten-taxon", "taxus_baccata");
+  const foldsVorher = await page.locator("#arten-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "kinneret");
+  await page.waitForTimeout(300);
+  if (await page.locator("#arten-inhalt").innerText() !== foldsVorher) fehler.push("Foldwerte aendern sich mit Standort");
   return fehler;
 }
 
@@ -278,6 +284,12 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (await page.locator(".arten-art tbody tr").count() !== 28) fehler.push("Artenvergleich: Varianten fehlen");
   if (await page.locator("#ansicht-artenvergleich .export-knopf").count()) fehler.push("Artenvergleich: unerwarteter Abbildungsexport");
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_artenvergleich.png`, fullPage: true });
+  await page.click('#arten-ebene button[data-wert="folds"]');
+  await page.selectOption("#arten-taxon", "abies_alba");
+  if (await page.locator(".arten-fold").count() !== 5 || await page.locator(".arten-fold tbody tr").count() !== 20) {
+    fehler.push("Artenvergleich: Foldwerte fehlen");
+  }
+  await page.click('#arten-ebene button[data-wert="summary"]');
   // Sprache
   await page.click("#sprache");
   await page.waitForTimeout(300);

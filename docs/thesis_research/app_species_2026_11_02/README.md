@@ -1,5 +1,8 @@
 # Sieben-Arten-Metriken in der Offline-App
 
+> Fortsetzung: Die unten angekündigte Foldansicht ist umgesetzt.
+> [Aktuelles Ergebnis und nächster Einstieg](../app_folds_2026_11_02/README.md).
+
 Stand 02.11.2026. Arbeitspaket auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Ausgangsstand `2d2fdfd`, sauberer Checkout und identischer GitHub-Head;

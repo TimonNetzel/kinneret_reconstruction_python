@@ -5,8 +5,10 @@
 > [Aktuelles App-Ergebnis](app_research_2026_11_02/README.md).
 > Auch der gespeicherte Sieben-Arten-Vergleich mit Balanced Accuracy und Brier
 > ist umgesetzt: [Ergebnis und nächster Einstieg](app_species_2026_11_02/README.md).
-> Nächster begrenzter Einstieg: Schema/Fehlwerte der gespeicherten Foldscores
-> prüfen; keine neuen Fits, Sampler oder Fossilläufe.
+> Die Foldansicht ist ebenfalls umgesetzt und geprüft:
+> [Aktuelles Ergebnis und Einstieg](app_folds_2026_11_02/README.md).
+> Nächster begrenzter Einstieg: Schema, Gewichtung und leere Bins der gespeicherten
+> Reliabilitätstabelle prüfen; keine neuen Fits, Sampler oder Fossilläufe.
 > Die Fortsetzung erfolgt derzeit hier; geprüfte Pakete jeweils in PR #77 sichern.
 
 

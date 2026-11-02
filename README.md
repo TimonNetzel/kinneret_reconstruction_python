@@ -156,9 +156,10 @@ Einstellungen, Konvergenzdiagnostik). Formelzeichen stehen in den Texten in LaTe
 Die zusätzlichen Ansichten **Forschungsstand** und **Artenvergleich** lesen
 gespeicherte Forschungsnachweise unabhängig von Lauf und Standort. Der
 Artenvergleich zeigt Balanced Accuracy und Brier je Art für 5°-/10°-Blöcke,
-mit/ohne SMOTE; Regression und Prior-Diagnose sind ergänzbar. Experimenteller
-Status und feste Quellenlinks bleiben sichtbar. Beide Offlineformate und
-Deutsch/Englisch werden unterstützt. [Ergebnis und Prüfungen](docs/thesis_research/app_species_2026_11_02/README.md).
+mit/ohne SMOTE; Regression und Prior-Diagnose sind ergänzbar. Die zusätzliche
+Foldansicht erschließt fünf äußere Testfolds je Art samt Testzellzahlen.
+Experimenteller Status und feste Quellenlinks bleiben sichtbar. Beide Offlineformate und
+Deutsch/Englisch werden unterstützt. [Ergebnis und Prüfungen](docs/thesis_research/app_folds_2026_11_02/README.md).
 
 ## Prior des rezenten Klimas aus CRU-Daten
 

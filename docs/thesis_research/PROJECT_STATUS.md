@@ -1,5 +1,31 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## App: äußere Foldwerte erschlossen, 02.11.2026
+
+**Abgeschlossen:** Im Artenvergleich zwischen Übersicht und Foldwerten wechseln,
+Art und Blockgröße wählen, fünf äußere Testfolds mit BA/Brier und Testzellzahlen
+lesen. Beide Offlineformate und Sprachen; keine Neuberechnung oder Modellwahl.
+280 Foldzeilen und 56 Gesamtzeilen an gespeicherte Prüfsummen gebunden.
+Alle tatsächlichen Folds enthalten beide Klassen; hypothetisch fehlende Klassen
+bleiben in Negativkontrollen ausdrücklich undefiniert. Folds sind keine
+unabhängigen Wiederholungen oder fossilen Unsicherheitsintervalle.
+
+**Geprüft:** 23 App-/Datentests, acht gezielte Offline-Browserfälle mit beiden
+Sprachen, sämtliche Fold-/Gesamtwerte und Zellzahlen direkt abgeglichen.
+Fehlende Dateien, Klassen und widersprüchliche Daten geprüft. Standortwechsel
+und visuelle Mobil-/Desktopkontrolle bestanden. Vollständige Browserregression
+mit acht Durchläufen und beiden Gestenprüfungen bestanden. Alle 50 portablen
+Forschungsnachweise erhalten.
+[Ergebnis, Grenzen und Nachweise](app_folds_2026_11_02/README.md).
+
+**Sicherung:** Bestehender Branch und [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+Ausgangsstand `2f6d0eb`, kein Merge. Keine Trainings, Sampler oder Fossilfälle.
+Baseline, Referenzdaten und Monticchio-/Chronologie-Gates bleiben erhalten.
+**Als Nächstes:** Schema, Gewichtung und leere Bins der gespeicherten
+Reliabilitätstabelle prüfen; rein diagnostische Ansicht erwägen. Keine neue
+Kalibrierung; Altersplots jung links, alt rechts.
+
+
 ## App: Sieben-Arten-Vergleich umgesetzt, 02.11.2026
 
 **Abgeschlossen:** Lesende Ansicht „Artenvergleich“ mit Balanced Accuracy und

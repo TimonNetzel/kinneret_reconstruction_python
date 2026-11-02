@@ -18,8 +18,8 @@ wissenschaftliche Pilotfreigabe.
 
 Die Forschungsstands-/Quellenansicht und der lesende Sieben-Arten-Vergleich
 mit Balanced Accuracy und Brier sind umgesetzt und geprüft; aktueller Nachweis:
-`docs/thesis_research/app_species_2026_11_02/README.md`.
-Nächster begrenzter Einstieg: Schema und Fehlwerte der gespeicherten Foldscores
-prüfen und eine deskriptive Detailansicht vorbereiten, ohne neue Fits oder Fossilläufe.
+`docs/thesis_research/app_folds_2026_11_02/README.md` (einschließlich Foldansicht).
+Nächster begrenzter Einstieg: Schema, Gewichtung und leere Bins der gespeicherten
+Reliabilitätstabelle prüfen; nur diagnostische Darstellung, keine neuen Fits oder Fossilläufe.
 Abgeschlossene, geprüfte Pakete auf Nutzerwunsch jeweils auf GitHub sichern.
 Details, portable Artefakte und Testbefehle stehen in der Übergabe.

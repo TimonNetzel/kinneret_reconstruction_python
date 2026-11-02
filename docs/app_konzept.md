@@ -459,3 +459,16 @@ Standort, ohne Abbildungsexport oder automatische Variantenübernahme.
 Quellen sind an einen festen Commit gebunden. Experimenteller Status und
 wissenschaftliche Gates bleiben erhalten.
 [Ergebnis, Grenzen und Browserprüfung](thesis_research/app_species_2026_11_02/README.md).
+
+
+## Äußere Foldwerte im Artenvergleich (02.11.2026)
+
+Die Umschaltung Übersicht/Foldwerte verwendet dieselbe Datenbindung und
+Darstellung mit zusätzlicher Artwahl. `artenvergleich.py` bindet `scores.csv`
+mit SHA256, prüft 280 Foldzeilen und 56 mit der Gesamtübersicht identische
+Gesamtzeilen sowie Testzellzahlen. Fehlende Folddaten lassen die Übersicht
+verfügbar. Undefinierte BA bleibt `null`, Brier wird getrennt behandelt.
+Kein Foldmittel und kein Unsicherheitsintervall wird daraus erzeugt.
+Ansicht/Art/Block/Varianten bleiben im bestehenden Browserzustand gespeichert.
+Beide Offlineformate, Deutsch/Englisch und Standortunabhängigkeit bleiben erhalten.
+[Ergebnis und Prüfungen](thesis_research/app_folds_2026_11_02/README.md).
