@@ -10,6 +10,29 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: siebtes Teilmodul (Gamma-Prior-Raster) in der App, 02.11.2026
+
+Schritt 1 und 2 des folgenden Abschnitts sind erledigt:
+[Gamma-Prior-Raster](literal_gamma_prior_grid_2026_11_02/README.md) nach belegter
+Determinismusprüfung nachgebildet (unbedingt aktiv, Kunstwerte),
+[App-Stand 3](app_reproduction_2026_11_02_gamma_grid/README.md) als neuer letzter
+`STATES`-Eintrag, Stände 1 und 2 eingefroren. 352 Teil-/Belegtests grün. Reihenfolge:
+
+1. Nächsten deterministischen Quellschritt belegen und nachbilden; empfohlen:
+   NA-Entfernungsmechanik `which.tf.missing` (`mcmc_prepare.R:1664–1685`) mit
+   **explizit übergebener** Maske einschließlich der folgenden `num_taxa`-Priors
+   (`round(num_taxa/4)`: Rundungsregel bei ,5 belegen). Die Schwellen
+   `131–137` (Mittel ± Streuung) sind schwächer: `tann_thresh`/`pann_thresh` kommen
+   aus geseedeten Quantilen (1299/1303), Periodenschwellen teils aus Quantilen.
+   `weightedMedian` erst nach belegter `matrixStats`-Fassung; Zufallsschritte
+   (`set.seed(2022)`/`rgamma` 1297–1303, `rbeta` 1734) nur dokumentieren.
+2. Danach weiterer datierter Nachbaustand (Eintrag ans Ende von `STATES`).
+3. Fachlicher Meilenstein unverändert: Eingabevertrag eines lokalen
+   Originalfalls schließen, erst dann historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_GAMMA_GRID_2026_11_02.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: sechstes Teilmodul (Taxon-Pruning) in der App, 02.11.2026
 
 Schritt 1 und 2 des folgenden Abschnitts sind erledigt:

@@ -1,3 +1,13 @@
+> **Aktuell: Gamma-Prior-Raster nachgebildet, App-Stand 3, 02.11.2026:**
+> [Determinismusprüfung und Modul](docs/thesis_research/literal_gamma_prior_grid_2026_11_02/README.md):
+> Raster `mcmc_prepare.R:114–121/1270–1281` ohne Zufall und Paketsemantik, im
+> gebundenen Hauptlauf unbedingt aktiv; Obergrenze 50000/5000 explizit, Rezentzweig
+> 1733 ersetzt `rate`. 55 neue Tests, 352 grün.
+> [App-Stand 3](docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/README.md)
+> mit eigenem Pin; Stände 1 und 2 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_GAMMA_GRID_2026_11_02.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Taxon-Pruning nachgebildet, App-Stand 2, 02.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_taxon_pruning_2026_11_02/README.md):
 > nur das Pruning ist ohne Zufall und ohne ungebundene Paketsemantik;

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "kind": "app_reproduction_state_not_historical_reproduction",
+  "date": "2026-11-02",
+  "label": "Stand 3: Gamma-Prior-Raster",
+  "supersedes": {
+    "state": "docs/thesis_research/app_reproduction_2026_11_02_pruning/reproduction_state.json",
+    "state_sha256": "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784"
+  },
+  "source_commit": "95bd0efe477fd39c4333f29142c80ac8630bd296",
+  "status": "submodules_checked_original_case_open",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false,
+  "tests": {
+    "passed": 352,
+    "scope": "synthetic examples and evidence contracts; no original case computation",
+    "evidence": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/README.md"
+  },
+  "modules": [
+    {
+      "id": "age_depth",
+      "package": "docs/thesis_research/literal_age_depth_2026_11_02/README.md",
+      "package_sha256": "430ca0fa3debc7a52fa8a94103df0b176f7ff6fb3913cbffe345dde4eba3bd9d",
+      "module": "tools/historical_age_depth.py",
+      "original_sources": [
+        "src/check_ages.R",
+        "src/mcmc_prepare.R"
+      ],
+      "new_tests": 43
+    },
+    {
+      "id": "age_selection",
+      "package": "docs/thesis_research/literal_age_selection_2026_11_02/README.md",
+      "package_sha256": "9bdf28bfbb35602b3b0e4b51853bf849dfae56a922554bfecb9063ca4dd4ed7e",
+      "module": "tools/historical_age_selection.py",
+      "original_sources": [
+        "src/mcmc_prepare.R",
+        "src/mcmc_functions_v1.6.R"
+      ],
+      "new_tests": 39
+    },
+    {
+      "id": "final_pdf",
+      "package": "docs/thesis_research/literal_final_pdf_2026_11_02/README.md",
+      "package_sha256": "07bd52409510f63ea04ec886ebaea61c31f0b9364c368b6367de57fa9daac085",
+      "module": "tools/historical_final_pdf.py",
+      "original_sources": [
+        "src/mcmc_functions_v1.6.R"
+      ],
+      "new_tests": 22
+    },
+    {
+      "id": "cdf_discrepancy",
+      "package": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md",
+      "package_sha256": "2d88b8828b39fe3b35ca0401fb7bef48849f621c45af66baa7a252c24dc95a2d",
+      "module": "tools/historical_cdf_discrepancy.py",
+      "original_sources": [
+        "src/mcmc_functions_v1.6.R"
+      ],
+      "new_tests": 43
+    },
+    {
+      "id": "tf_preparation",
+      "package": "docs/thesis_research/literal_tf_preparation_2026_11_02/README.md",
+      "package_sha256": "b18f79a32658d4ef0fcf3e6d94d7670c0325fa8556708dce7e8477ec1c3a3ca1",
+      "module": "tools/historical_tf_preparation.py",
+      "original_sources": [
+        "src/mcmc_prepare.R"
+      ],
+      "new_tests": 51
+    },
+    {
+      "id": "taxon_pruning",
+      "package": "docs/thesis_research/literal_taxon_pruning_2026_11_02/README.md",
+      "package_sha256": "c427343a423bf5281bfee6e37ddcbfb950a1ee52e8f3efa29686ba4942912b78",
+      "module": "tools/historical_taxon_pruning.py",
+      "original_sources": [
+        "src/mcmc_prepare.R",
+        "main_v1.2.R"
+      ],
+      "new_tests": 46,
+      "conditional": true
+    },
+    {
+      "id": "gamma_prior_grid",
+      "package": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/README.md",
+      "package_sha256": "995c84019c0d09e1930844f3931b5b34e95c693dd10d575d709ec19a5826575f",
+      "module": "tools/historical_gamma_prior_grid.py",
+      "original_sources": [
+        "src/mcmc_prepare.R",
+        "src/mcmc_prep_v1.2.R"
+      ],
+      "new_tests": 55
+    }
+  ],
+  "chain_check": {
+    "package": "docs/thesis_research/literal_phase1_chain_2026_11_02/README.md",
+    "package_sha256": "1414ab50298ccb2ac4eadfa162926fc78ba070a2bf54d86fb1236013dd5a9d1b",
+    "new_tests": 33
+  },
+  "contract": {
+    "package": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md",
+    "package_sha256": "0cb97e72fd024851909c24ac51d0c1500dca8101da3317d2aba36f0d6ca6dc1e",
+    "spec": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/spec.json",
+    "spec_sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4",
+    "tests": 20
+  },
+  "synthetic_example": {
+    "tf_case": "source_brief",
+    "fixture": "docs/thesis_research/literal_tf_preparation_2026_11_02/synthetic_fixture.json",
+    "fixture_sha256": "6ec19b1b4e6f6bd80601775d3d44f8ae493a5ee2fedea76737861f5b7190a573",
+    "result": "docs/thesis_research/literal_tf_preparation_2026_11_02/synthetic_result.json",
+    "result_sha256": "54097531c719e64df0b69ab8a82ce890b5fa0fc0d2efdd5a612a8353e3e5698c",
+    "rational": "docs/thesis_research/literal_tf_preparation_2026_11_02/rational_expectations.json",
+    "rational_sha256": "01aef1f3405e5653f7cd872ed178ced7b27d6bf920ca652909e89b49669d0609",
+    "arithmetic": "docs/thesis_research/literal_tf_preparation_2026_11_02/arithmetic_check.json",
+    "arithmetic_sha256": "1366ddb0e2aaac4e16d76a28b73d4b66cc00f40a5e1b0d2efcf0f6ac7869e92c"
+  },
+  "pruning_example": {
+    "case": "short_core_descending_colon",
+    "fixture": "docs/thesis_research/literal_taxon_pruning_2026_11_02/synthetic_fixture.json",
+    "fixture_sha256": "3e5c7fd21c1b146142d0c4b933084782fa3948fa0187a3eaf8121beb5c455484",
+    "result": "docs/thesis_research/literal_taxon_pruning_2026_11_02/synthetic_result.json",
+    "result_sha256": "799d7dac38a92afc28f33f1262ac8c1fceafc68c94df3fcea80b2e9e7370614a",
+    "rational": "docs/thesis_research/literal_taxon_pruning_2026_11_02/rational_expectations.json",
+    "rational_sha256": "71b99f635b1e40500c73b2a13c9fe5d0ce8f03b1223113772c592339f09aaa50",
+    "arithmetic": "docs/thesis_research/literal_taxon_pruning_2026_11_02/arithmetic_check.json",
+    "arithmetic_sha256": "e8073acba43dffc23120167bd63feae7d2ce55b91f0679eda2580d4c16b137fe"
+  },
+  "gamma_example": {
+    "cases": [
+      "centre_25",
+      "midpoint_6_25",
+      "asymmetric_nearest_fails",
+      "beyond_upper_jumps_to_first"
+    ],
+    "chain_case": "chain_recent_after_2000",
+    "fixture": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/synthetic_fixture.json",
+    "fixture_sha256": "ab393d575ec28913ae049b67888e9e45f2475aaa38683edb772e157a7d515e57",
+    "result": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/synthetic_result.json",
+    "result_sha256": "0b9a3a4dd0f273891fd9d05b2d7cc4b502b5dd973e63ccaff854d60acb1ed563",
+    "rational": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/rational_expectations.json",
+    "rational_sha256": "4ba966c38352a15aeae9a1a3356561e2dd1f3c809d41972ded8ea924cd95badc",
+    "arithmetic": "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/arithmetic_check.json",
+    "arithmetic_sha256": "55992b44af28d3691c37f9d0bf4670796d3596920132fe0e5d1b9a342d4bd189"
+  }
+}

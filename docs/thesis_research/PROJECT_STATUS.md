@@ -1,5 +1,39 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Gamma-Prior-Raster nachgebildet, App-Stand 3, 02.11.2026
+
+**Abgeschlossen:** [Determinismusprüfung und Gamma-Prior-Raster](literal_gamma_prior_grid_2026_11_02/README.md).
+Von Gamma-Raster, `which.tf.missing`, `weightedMedian` und den geseedeten
+Ziehungen ist das Raster (`mcmc_prepare.R:114–128`, `526–536`, `1264–1281`, `1733`)
+der nächste Schritt ohne Zufall und ohne ungebundene Paketsemantik; es läuft im
+gebundenen Hauptlauf **unbedingt** (Klammertiefe 0, `else` von `stad_interstad <- FALSE`).
+`which.tf.missing` ist mit expliziter Maske ebenfalls deterministisch, hängt aber
+an der offenen `weightedMedian`-Ausgabe → dokumentiert, nicht gewählt. Modul hält
+`seq.default` (Fuzz, zwei Rundungen, `pmin`), erstes `which.min` und `rate` aus dem
+Wurzelzweig wörtlich; Obergrenze explizit (50000 in `mcmc_prepare.R`, **5000** in der
+Kopie `mcmc_prep_v1.2.R:1103`); `recent` und `min(age) ≥ 2000` als Boolwerte.
+Befunde: geschlossene Form und „nächster Rasterpunkt“ weichen in Kunstfällen ab,
+jenseits des Rasters springt `which.min` auf 0,1; der Rezentzweig (1733) ersetzt
+`rate` durch `shape/mean`. [App-Stand 3](app_reproduction_2026_11_02_gamma_grid/README.md):
+neuer letzter `STATES`-Eintrag mit Pin `43edfcb6…`, sieben Teilmodule, Stände 1 und 2
+bytegleich eingefroren.
+
+**Prüfung:** 55 neue Tests gegen unabhängige Float-/Bruchreferenz und
+Handerwartungen (bitgleich), mit bisherigen **352** historischen Teil-/Belegtests
+grün; 47 App-/Daten-/Buildtests (2 Wrapper übersprungen, explizit ersetzt); Edge
+offline in beiden Formaten × Handy/PC × Hell/Dunkel × DE/EN inkl. Gesten und zwei
+Standorten bestanden; beide Phase-1-Prüfer Exit 2. Gesamtsuite und
+`verify_packet.py` nicht ausgeführt.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel
+offen, keine Variante gewählt. `prior.recent`-Anpassung (`fitdistr`), `weightedMedian`
+(`matrixStats`-Fassung) und alle Zufallsschritte offen. Keine Trainings, Sampler,
+Altersmodelle, R-Läufe oder Fossilrekonstruktionen.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_GAMMA_GRID_2026_11_02.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Taxon-Pruning nachgebildet, App-Stand 2, 02.11.2026
 
 **Abgeschlossen:** [Determinismusprüfung und Taxon-Pruning](literal_taxon_pruning_2026_11_02/README.md).

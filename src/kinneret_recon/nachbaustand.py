@@ -21,7 +21,12 @@ STATES = (
      "commit": "47a926c3c8a6abc0db7c947b993f5e97f7408cdd"},
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_pruning/reproduction_state.json"),
      "sha256": "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
-     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning")},
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning"),
+     "commit": "3d013b276cb1b7af37ce4058d6c10e499a34b504"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/reproduction_state.json"),
+     "sha256": "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -49,9 +54,10 @@ def app_daten(root: Path) -> dict:
         return {"schema_version": 1, "available": False, "missing": [STATE.as_posix()]}
     state = json.loads(_pinned(root, STATE.as_posix(), STATE_SHA256))
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
+    gex = state.get("gamma_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex) if e for k in ("fixture", "result", "rational", "arithmetic")])
+             + [e[k] for e in (ex, pex, gex) if e for k in ("fixture", "result", "rational", "arithmetic")])
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
     earlier = []
@@ -123,6 +129,41 @@ def app_daten(root: Path) -> dict:
             "sha256": {k: ex[k + "_sha256"] for k in ("fixture", "result", "rational", "arithmetic")},
         },
         "pruning_example": _pruning_example(root, pex, url) if pex else None,
+        "gamma_example": _gamma_example(root, gex, url) if gex else None,
+    }
+
+
+def _gamma_example(root: Path, gex: dict, url) -> dict:
+    """Stored values of artificial gamma-grid cases; doubles must equal the independent reference bit for bit."""
+    fixture = json.loads(_pinned(root, gex["fixture"], gex["fixture_sha256"]))
+    result = json.loads(_pinned(root, gex["result"], gex["result_sha256"]))
+    rational = json.loads(_pinned(root, gex["rational"], gex["rational_sha256"]))
+    check = json.loads(_pinned(root, gex["arithmetic"], gex["arithmetic_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or result["historical_reproduction_ready"] or check["historical_reproduction_ready"]
+            or check["final_variant_selected"] or check["R_execution"]
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: gamma example claims historical inputs or a final variant")
+    cases = []
+    for name in gex["cases"]:
+        case, stored, exact = fixture["grid_cases"][name], result["cases"][name], rational["cases"][name]
+        naive = check["naive_counterexamples"][name]
+        if (any(stored[k] != exact[k] for k in ("index", "shape", "rate", "rate_expectation"))
+                or stored["index"] + 1 != case["hand_r_index"] or case["upper"] != 50000.0):
+            raise ValueError("Nachbaustand: stored gamma example differs from the reference or the hand expectation")
+        cases.append({"mean": case["mean_pann"], "sd": case["sd_pann"], "closed_form": naive["closed_form_shape"],
+                      "nearest": naive["nearest_grid_shape"], "nearest_differs": naive["nearest_grid_differs"],
+                      "r_index": stored["index"] + 1, "shape": stored["shape"], "rate": stored["rate"]})
+    chain, chain_exact = result["cases"][gex["chain_case"]], rational["cases"][gex["chain_case"]]
+    if any(chain[k] != chain_exact[k] for k in chain_exact) or not chain["variance_doubled"]:
+        raise ValueError("Nachbaustand: stored gamma chain differs from the reference")
+    seq = check["seq_sensitivity"]["50000"]
+    return {
+        "url": url(gex["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases,
+        "chain": {k: chain[k] for k in ("default_shape", "sd_pann", "final_shape", "final_rate",
+                                         "rate_after_recent_start")},
+        "grid_length": seq["length"], "grid_last": seq["last"],
+        "sha256": {k: gex[k + "_sha256"] for k in ("result", "rational")},
     }
 
 

@@ -11,27 +11,30 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE = json.loads((ROOT / nachbaustand.STATE).read_text(encoding="utf-8"))
 PACKET = "docs/thesis_research/literal_tf_preparation_2026_11_02/"
 PRUNING = "docs/thesis_research/literal_taxon_pruning_2026_11_02/"
+GAMMA = "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/"
 FROZEN = nachbaustand.STATES[0]["path"].as_posix()
+FROZEN2 = nachbaustand.STATES[1]["path"].as_posix()
 
 
 def _kopie(tmp_path: Path) -> Path:
     """Copy exactly the pinned files so single bytes can be changed or removed."""
-    ex, contract, pex = STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"]
+    ex, contract, pex, gex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
+                              STATE["gamma_example"])
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
-                + [e[k] for e in (ex, pex) for k in ("fixture", "result", "rational", "arithmetic")]):
+                + [e[k] for e in (ex, pex, gex) for k in ("fixture", "result", "rational", "arithmetic")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, tmp_path / rel)
     return tmp_path
 
 
-def test_newest_state_binds_six_modules_eleven_open_bundles_and_no_release():
+def test_newest_state_binds_seven_modules_eleven_open_bundles_and_no_release():
     d = nachbaustand.app_daten(ROOT)
     assert d["available"] and d["status"] == "submodules_checked_original_case_open"
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
-    assert d["modules"][-1]["id"] == "taxon_pruning" and d["modules"][-1]["conditional"]
-    assert not any(m["conditional"] for m in d["modules"][:-1])
-    assert d["tests_passed"] == 297 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
+    assert d["modules"][-1]["id"] == "gamma_prior_grid" and not d["modules"][-1]["conditional"]
+    assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning"]
+    assert d["tests_passed"] == 352 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
     assert sum(r["status"] == "conflicting" for r in d["requirements"]) == 4
@@ -40,16 +43,38 @@ def test_newest_state_binds_six_modules_eleven_open_bundles_and_no_release():
     assert ".local/" not in text and "C:\\" not in text and "historical_reproduction_ready" not in text
 
 
-def test_earlier_state_stays_frozen_pinned_and_listed():
-    frozen = nachbaustand.STATES[0]
-    assert hashlib.sha256((ROOT / FROZEN).read_bytes()).hexdigest() == frozen["sha256"]
-    old = json.loads((ROOT / FROZEN).read_text(encoding="utf-8"))
-    assert old["tests"]["passed"] == 251 and len(old["modules"]) == 5
-    assert STATE["supersedes"] == {"state": FROZEN, "state_sha256": frozen["sha256"]}
-    assert nachbaustand.app_daten(ROOT)["earlier_states"] == [{
-        "date": "2026-11-02", "state_sha256": frozen["sha256"], "modules": 5, "tests_passed": 251,
-        "url": nachbaustand.REPO_URL + frozen["commit"] + "/" + FROZEN}]
-    assert [m["package_sha256"] for m in old["modules"]] == [m["package_sha256"] for m in STATE["modules"][:5]]
+def test_earlier_states_stay_frozen_pinned_and_listed():
+    first, second = nachbaustand.STATES[:2]
+    assert (first["sha256"], second["sha256"]) == (
+        "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+        "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784")
+    for frozen in (first, second):
+        assert hashlib.sha256((ROOT / frozen["path"]).read_bytes()).hexdigest() == frozen["sha256"]
+    old, prev = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8")) for f in (first, second))
+    assert (old["tests"]["passed"], len(old["modules"])) == (251, 5)
+    assert (prev["tests"]["passed"], len(prev["modules"])) == (297, 6)
+    assert prev["supersedes"] == {"state": FROZEN, "state_sha256": first["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN2, "state_sha256": second["sha256"]}
+    assert nachbaustand.app_daten(ROOT)["earlier_states"] == [
+        {"date": "2026-11-02", "state_sha256": f["sha256"], "modules": n, "tests_passed": tests,
+         "url": nachbaustand.REPO_URL + f["commit"] + "/" + f["path"].as_posix()}
+        for f, n, tests in ((first, 5, 251), (second, 6, 297))]
+    assert [m["package_sha256"] for m in prev["modules"]] == [m["package_sha256"] for m in STATE["modules"][:6]]
+    assert all(STATE[k] == prev[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example"))
+
+
+def test_gamma_example_is_taken_unchanged_from_the_pinned_packet():
+    g = nachbaustand.app_daten(ROOT)["gamma_example"]
+    stored = json.loads((ROOT / GAMMA / "synthetic_result.json").read_text(encoding="utf-8"))["cases"]
+    assert [(c["mean"], c["sd"], c["r_index"]) for c in g["cases"]] == [(500, 100, 250), (500, 200, 62),
+                                                                       (315, 220, 20), (2500, 10, 1)]
+    assert [c["shape"] for c in g["cases"]] == [stored[n]["shape"] for n in STATE["gamma_example"]["cases"]]
+    assert g["cases"][0]["shape"] == 25.000000000000004 and g["cases"][3]["closed_form"] == 62500.0
+    assert [c["nearest_differs"] for c in g["cases"]] == [False, True, True, True]
+    assert g["chain"] == {"default_shape": 25.000000000000004, "sd_pann": 200.0, "final_shape": 6.2,
+                          "final_rate": 0.012449899597988732, "rate_after_recent_start": 0.0124}
+    assert (g["grid_length"], g["grid_last"]) == (500000, 50000.0)
+    assert g["url"].endswith(GAMMA + "README.md") and "/blob/" + STATE["source_commit"] + "/" in g["url"]
 
 
 def test_pruning_example_is_taken_unchanged_from_the_pinned_packet():
@@ -88,6 +113,8 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
     assert not d["available"] and d["missing"] == [PACKET + "arithmetic_check.json"]
     (root / FROZEN).unlink()
     assert nachbaustand.app_daten(root)["missing"] == [FROZEN, PACKET + "arithmetic_check.json"]
+    (root / GAMMA / "synthetic_fixture.json").unlink()
+    assert nachbaustand.app_daten(root)["missing"][-1] == GAMMA + "synthetic_fixture.json"
 
 
 @pytest.mark.parametrize("rel", [nachbaustand.STATE.as_posix(), PACKET + "synthetic_result.json",
@@ -95,7 +122,9 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
                                  "docs/thesis_research/kinneret_phase1_spec_2026_11_02/spec.json",
                                  "docs/thesis_research/literal_age_depth_2026_11_02/README.md",
                                  FROZEN, PRUNING + "README.md", PRUNING + "synthetic_result.json",
-                                 PRUNING + "rational_expectations.json"])
+                                 PRUNING + "rational_expectations.json", FROZEN2, GAMMA + "README.md",
+                                 GAMMA + "synthetic_result.json", GAMMA + "rational_expectations.json",
+                                 GAMMA + "synthetic_fixture.json", GAMMA + "arithmetic_check.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -127,4 +156,5 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "daten/nachbau.js" in (out / "sw.js").read_text()
     assert "Synthetisches Rechenbeispiel" in html and "Synthetic worked example" in html
     assert "Taxon-Pruning nach Nullanteil" in html and "Taxon pruning by zero share" in html
-    assert '"earlier_states"' in html and nachbaustand.STATES[0]["sha256"] in html
+    assert "Gamma-Prior über ein Formraster" in html and "Gamma prior from a shape grid" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:2])

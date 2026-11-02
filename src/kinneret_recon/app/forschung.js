@@ -69,7 +69,33 @@
       `${link(p.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex) {
+  // Artificial gamma-grid cases: columns are cases; the source takes the first which.min on the 0.1 grid
+  function gamma(g) {
+    if (!g) return "";
+    const kurz = (v, d = 4) => Number(v).toLocaleString(KR.Z.sprache === "de" ? "de-DE" : "en-GB",
+      { maximumSignificantDigits: Math.max(1, Math.ceil(Math.log10(Math.abs(v) + 1)) + d) });
+    const roh = (v) => String(v).replace(".", fmt(0.5, 1).charAt(1));
+    const kopf = g.cases.map((_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const zeile = (key, cell, attr = "") => `<tr${attr}><th scope="row">${esc(t(key))}</th>${g.cases.map(cell).join("")}</tr>`;
+    const c = g.chain;
+    return `<h4>${esc(text("nb_ex_gamma", { n: fmt(g.cases.length, 0) }))}</h4>` +
+      `<p>${esc(text("nb_ex_gamma_body", { n: fmt(g.grid_length, 0), last: fmt(g.grid_last, 0) }))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="gamma"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${kopf}</tr></thead><tbody>` +
+      zeile("nb_ex_g_mean", (x) => `<td>${fmt(x.mean, 0)}</td>`) +
+      zeile("nb_ex_g_sd", (x) => `<td>${fmt(x.sd, 0)}</td>`) +
+      zeile("nb_ex_g_closed", (x) => `<td title="${esc(roh(x.closed_form))}">${kurz(x.closed_form)}</td>`) +
+      zeile("nb_ex_g_nearest", (x) => `<td${x.nearest_differs ? ' data-differs="true"' : ""}>${kurz(x.nearest)}</td>`) +
+      zeile("nb_ex_g_source", (x) => `<td data-shape="${esc(String(x.shape))}" title="${esc(roh(x.shape))}"><strong>${kurz(x.shape)}</strong></td>`) +
+      zeile("nb_ex_g_index", (x) => `<td>${fmt(x.r_index, 0)}</td>`) +
+      zeile("nb_ex_g_rate", (x) => `<td title="${esc(roh(x.rate))}">${kurz(x.rate, 3)}</td>`) +
+      `</tbody></table></div><p>${esc(text("nb_ex_gamma_why", { shape: roh(g.cases[0].shape) }))}</p>` +
+      `<p data-gamma-chain="true">${esc(text("nb_ex_gamma_chain", { d: roh(c.default_shape), sd: fmt(c.sd_pann, 0),
+        f: roh(c.final_shape), r1281: roh(c.final_rate), r1733: roh(c.rate_after_recent_start) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: g.sha256.result.slice(0, 12), b: g.sha256.rational.slice(0, 12) }))} ` +
+      `${link(g.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -88,7 +114,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}</details>`;
   }
 
   function nachbau() {
@@ -121,7 +147,7 @@
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
-      beispiel(nb.example, nb.pruning_example) + `</section>`;
+      beispiel(nb.example, nb.pruning_example, nb.gamma_example) + `</section>`;
   }
 
   function zeige() {
