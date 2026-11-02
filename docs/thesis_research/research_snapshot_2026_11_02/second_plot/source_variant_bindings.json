@@ -1,0 +1,489 @@
+{
+  "selection": "Six named original all_trafo/all_transferfunctions variants, original main_v1.2.R and existing BBM comparison source; no new model inventory.",
+  "sources": [
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_trafo.R",
+      "sha256": "d03ce4282a36727a73f961362ddeee654a55af0d9c94916ad7babb0c94ccefb1",
+      "matched_lines": [
+        {
+          "line": 47,
+          "active": true,
+          "text": "temp <-  nc_open(\"../../reconstructions/cru_nh/tann_test.nc\", write=FALSE, readunlim=FALSE)"
+        },
+        {
+          "line": 48,
+          "active": true,
+          "text": "precip <-  nc_open(\"../../reconstructions/cru_nh/pann_test.nc\", write=FALSE, readunlim=FALSE)"
+        },
+        {
+          "line": 106,
+          "active": true,
+          "text": "years <- 61:90"
+        },
+        {
+          "line": 157,
+          "active": false,
+          "text": "# load(\"out/transfer_functions/mixed_partial_arts_info.rdata\")"
+        },
+        {
+          "line": 158,
+          "active": false,
+          "text": "# load(\"out/transfer_functions/mixed_partial_arts.rdata\")"
+        },
+        {
+          "line": 463,
+          "active": true,
+          "text": "    winner <- which.min(ranking)"
+        },
+        {
+          "line": 493,
+          "active": true,
+          "text": "    pdf(paste0(\"out/plots/trafo/2D/all_trafos_emd_\",i,\".pdf\"), width = 8, height = 8)"
+        },
+        {
+          "line": 515,
+          "active": true,
+          "text": "    trafo.info[[i]]$winner <- winner"
+        },
+        {
+          "line": 528,
+          "active": true,
+          "text": "    save(trafo.info, file = \"out/transfer_functions/mixed_partial_arts_emd_info.rdata\")"
+        },
+        {
+          "line": 529,
+          "active": true,
+          "text": "    save(transfer.functions, file = \"out/transfer_functions/mixed_partial_arts_emd.rdata\")"
+        },
+        {
+          "line": 544,
+          "active": true,
+          "text": "load(\"out/transfer_functions/mixed_partial_arts_emd_info.rdata\")"
+        },
+        {
+          "line": 545,
+          "active": true,
+          "text": "load(\"out/transfer_functions/mixed_partial_arts_emd.rdata\")"
+        },
+        {
+          "line": 547,
+          "active": true,
+          "text": "winner <- c()"
+        },
+        {
+          "line": 617,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 701,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 702,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 900,
+          "active": true,
+          "text": "winner <- 1"
+        },
+        {
+          "line": 956,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 960,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": [
+        {
+          "first": 45,
+          "last": 53,
+          "text": "temp <-  nc_open(\"../../reconstructions/cru_nh/cru_tann_ww.nc\", write=FALSE, readunlim=FALSE)\nprecip <-  nc_open(\"../../reconstructions/cru_nh/cru_pann_ww.nc\", write=FALSE, readunlim=FALSE)\ntemp <-  nc_open(\"../../reconstructions/cru_nh/tann_test.nc\", write=FALSE, readunlim=FALSE)\nprecip <-  nc_open(\"../../reconstructions/cru_nh/pann_test.nc\", write=FALSE, readunlim=FALSE)\nlon_ww <- ncvar_get(nc=precip,varid=\"lon\")\nlat_ww <- ncvar_get(nc=precip,varid=\"lat\")\np.ann.ww <- ncvar_get(nc=precip,varid=\"pre\")\nt.ann.ww <- ncvar_get(nc=temp,varid=\"tmp\")\n"
+        },
+        {
+          "first": 55,
+          "last": 113,
+          "text": "#------------------------------------------------------------------------------\n# create artifical data points within an unrealistic climate range on earth\n#------------------------------------------------------------------------------\n\ntann_ww <- t.ann.ww[!is.na(t.ann.ww)]\npann_ww <- p.ann.ww[!is.na(p.ann.ww)]\n\ntemp_range <- round(range(tann_ww))\ntemp_grid <- seq(temp_range[1],temp_range[2],by=1)\n\nprecip_range <- round(range(pann_ww))\nprecip_grid <- seq(precip_range[1],precip_range[2],by=10)\n\n\nlibrary(gplots)\n\nclimate_df <- data.frame(tann = tann_ww, pann = pann_ww)\nbin_data <- hist2d(climate_df, nbins=100, show = F)\n\n\n# image.plot(bin_data$x,bin_data$y,bin_data$counts)\n\nartifical_data_ids <- which(bin_data$counts == 0, arr.ind=T)\nsmote_input_unreal <- array(NA, dim = dim(artifical_data_ids))\nfor(i in 1:nrow(artifical_data_ids)){\n    smote_input_unreal[i,1] <- bin_data$x[artifical_data_ids[i,1]]\n    smote_input_unreal[i,2] <- bin_data$y[artifical_data_ids[i,2]]\n}\n\n# non_artifical_data_ids <- which(bin_data$counts > 0, arr.ind=T)\n# smote_input_real <- array(NA, dim = dim(non_artifical_data_ids))\n# for(i in 1:nrow(non_artifical_data_ids)){\n#     smote_input_real[i,1] <- bin_data$x[non_artifical_data_ids[i,1]]\n#     smote_input_real[i,2] <- bin_data$y[non_artifical_data_ids[i,2]]\n# }\n\n\nclasses <- as.factor(rep(\"unknown\",nrow(artifical_data_ids)))\nsmote_input <- data.frame(smote_input_unreal)\nsmote_input <- cbind(smote_input)\ncolnames(smote_input) <- c(\"Tann\",\"Pann\")\n\naugmented_unknown_data <- SMOTE(smote_input,classes, K = 5, dup_size = 5)$syn_data\n\nadd_art_unknown_data <- TRUE\n\n\n#------------------------------------------------------------------------------\n# mean of climate \n#------------------------------------------------------------------------------\n\nyears <- 61:90\ntann_ww <- pann_ww <- array(0,dim = c(length(lon_ww),length(lat_ww)))\nfor(i in 1:length(years)){\n    tann_ww <- tann_ww + t.ann.ww[,,years[i]]\n    pann_ww <- pann_ww + p.ann.ww[,,years[i]]\n}\nt.ann.ww <- tann_ww/length(years)\np.ann.ww <- pann_ww/length(years)"
+        },
+        {
+          "first": 175,
+          "last": 239,
+          "text": "    # 1 with the corresponing biome number.\n    #------------------------------------------------------------------------------\n\n    taxa.precip <- taxa.temp <- taxa.idx <- vector(\"list\", length = 2)\n\n    taxa.precip[[1]] <- p.ann.ww.trafo[which(taxa.appear==1)]\n    taxa.temp[[1]] <- t.ann.ww.trafo[which(taxa.appear==1)]\n    taxa.idx[[1]] <- rep(\"taxon\", length(taxa.precip[[1]]))\n    \n    if(length(taxa.precip[[1]]) == 1) next()\n\n    taxa.precip[[2]] <- p.ann.ww.trafo[which(taxa.not.appear == 0)][!is.na(p.ann.ww.trafo[which(taxa.not.appear == 0)])]\n    taxa.temp[[2]] <- t.ann.ww.trafo[which(taxa.not.appear == 0)][!is.na(t.ann.ww.trafo[which(taxa.not.appear == 0)])]\n    taxa.idx[[2]] <- rep(\"unknown\", length(taxa.precip[[2]]))\n    \n    \n    if(add_art_unknown_data){\n        taxa.precip[[2]] <- c(taxa.precip[[2]],augmented_unknown_data$Pann)\n        taxa.temp[[2]] <- c(taxa.temp[[2]],augmented_unknown_data$Tann)\n        taxa.idx[[2]] <- c(taxa.idx[[2]],augmented_unknown_data$class)\n    }\n\n    #------------------------------------------------------------------------------\n    # Creating a list containing the four vectors mentioned above for the qda.\n    #------------------------------------------------------------------------------\n\n    tf.input <- list()\n    tf.input$taxa <- unlist(taxa.idx)\n    tf.input$pann <- unlist(taxa.precip)\n    tf.input$tann <- unlist(taxa.temp)\n    \n\n    ##-------------------------------------------------------------------------------------------------------------------------\n    \n    # normalisation\n    ML.compet <- list()\n    ML.compet$taxa <- tf.input$taxa\n\n    normparameter <- fitdistr(tf.input$tann, \"normal\")\n    mean1     <- normparameter$es[1]\n    sd1       <- normparameter$es[2]\n    t.ann.norm <- ((tf.input$tann - mean1) / sd1)\n\n    tf.input$pann[tf.input$pann == 0] <- 1e-06\n    gammaparameter <- fitdistr(sqrt(tf.input$pann), \"gamma\")\n    shape1  <- gammaparameter$es[1]\n    rate1   <- gammaparameter$es[2]\n    p.ann.norm <- qnorm(pgamma(sqrt(tf.input$pann), shape1, rate1))\n    \n#     rm(tf.input)\n\n    #----------------------------------------------------------------------------------------------------------------\n\n    ML.compet$t.ann.norm <- t.ann.norm\n    ML.compet$p.ann.norm <- p.ann.norm\n    ML.compet$taxa <- as.factor(ML.compet$taxa)\n    \n    df.ML.compet <- data.frame(ML.compet$t.ann.norm, ML.compet$p.ann.norm, ML.compet$taxa)\n    colnames(df.ML.compet) <- c(\"t.ann.norm\", \"p.ann.norm\", \"Class\")\n\n    df.ML.compet.orig <- df.ML.compet\n\n    #------------------------------------------------------------------------------\n    # choose 70% dataset size for cv. The last 30% are divided in two additional \n    # 15% test datasets (held back dataset)."
+        },
+        {
+          "first": 246,
+          "last": 279,
+          "text": "    set.seed(seeds)\n    testIndex <- createDataPartition(df.ML.test0$Class, p=.5, list=F)\n    df.ML.test1 <- df.ML.test0[-testIndex, ]\n    df.ML.test2 <- df.ML.test0[testIndex, ]\n    \n   \n    # polynomial test data for glm\n    poly.input.test1.temp <- poly( matrix(c(df.ML.test1$t.ann.norm,df.ML.test1$p.ann.norm), ncol=2,nrow=length(df.ML.test1$t.ann.norm),byrow=F), 2, raw=T )\n    poly.input.test1 <- data.frame(Class=df.ML.test1$Class,poly.input.test1.temp)\n    \n    poly.input.test2.temp <- poly( matrix(c(df.ML.test2$t.ann.norm,df.ML.test2$p.ann.norm), ncol=2,nrow=length(df.ML.test2$t.ann.norm),byrow=F), 2, raw=T )\n    poly.input.test2 <- data.frame(Class=df.ML.test2$Class,poly.input.test2.temp)\n\n    \n    #------------------------------------------------------------------------------\n    # unbalanced dataset?\n    #------------------------------------------------------------------------------\n    \n    df.ML.compet <- df.ML.compet.orig\n\n    trafo.input.unsmote <- df.ML.compet\n    taxa.id <- which(df.ML.compet$Class == \"taxon\")\n    taxa.id.unknown <- which(df.ML.compet$Class == \"unknown\")\n\n    if( smote & 2*length(taxa.id) < length(taxa.id.unknown) & length(taxa.id) > 1 ){\n        # SMOTE\n        set.seed(seeds)\n        taxa.smoted <- SMOTE(df.ML.compet[,-ncol(df.ML.compet)],df.ML.compet[,ncol(df.ML.compet)], K = 1)$syn_data \n        colnames(taxa.smoted) <- colnames(df.ML.compet)\n        trafo.input <- rbind(taxa.smoted,df.ML.compet[c(taxa.id.unknown), ])\n        rm(taxa.smoted)\n    }\n     \n"
+        },
+        {
+          "first": 406,
+          "last": 411,
+          "text": "    # who wins the competition? what is its score?\n    x1range <- seq(range(t.ann.norm)[1],range(t.ann.norm)[2], length = dims)\n    x2range <- seq(range(p.ann.norm)[1],range(p.ann.norm)[2], length = dims)\n    \n    x1range.bck <- (x1range*sd1)+mean1 \n    x2range.bck <- (qgamma(pnorm(x2range), shape1, rate1))^2 "
+        },
+        {
+          "first": 423,
+          "last": 505,
+          "text": "  \n    emd <- emd_temp <- emd_precip <- c()\n    for(j in 1:5){    \n        # make grid\n        data <- df.ML.compet.orig[,1:2] \n        r <- sapply(data, range, na.rm = TRUE)\n        xs <- seq(r[1,1], r[2,1], length.out = dims)\n        ys <- seq(r[1,2], r[2,2], length.out = dims)\n        g <- cbind(rep(xs, each=dims), rep(ys, time = dims))\n        colnames(g) <- colnames(r)\n        g <- as.data.frame(g)\n        # glm\n        if(j == 4 | j == 9) g <- data.frame(X.1 = g[,1],X.2 = g[,2],X.11 = g[,1]^2,X.22 = g[,2]^2,X.21 = g[,2]*g[,1])\n        \n        # 2D distribution\n        p <- predict(fits[[j]], g, type = \"prob\") \n        z <- matrix(p[,1], nrow = dims, byrow = TRUE)\n        \n        # marginal distributions\n        prod.x1 <- apply(z, 1,sum,na.rm=T)\n        prod.x1 <- prod.x1/sum(prod.x1)\n        temp_fit_cdf <- cumsum(prod.x1)\n        \n        prod.x2 <- apply(z, 2,sum,na.rm=T)\n        prod.x2 <- prod.x2/sum(prod.x2)\n        precip_fit_cdf <- cumsum(prod.x2)\n        \n        # check the precipitation probabilities via EMD\n        emd_temp[j] <- mean(abs(temp_fit_cdf-temp_cdf))\n        emd_precip[j] <- mean(abs(precip_fit_cdf-precip_cdf))\n        emd[j] <- 0.5*(emd_temp[j]+emd_precip[j])\n    }\n\n    emd_ranking <- sort.int(emd, index.return = T)$ix\n    ba <- logloss.df[1:5,16]\n    if(all(is.na(ba)))  ba <- logloss.df[11:15,16]\n    ba_ranking <- sort.int(ba,decreasing = T,index.return = T)$ix\n    # give emd more weight\n    ranking <- c()\n    for(j in 1:length(ba_ranking)) ranking[j] <- which(emd_ranking == j)*0.75 + which(ba_ranking == j)*0.25\n    winner <- which.min(ranking)\n    measure <- logloss.df[c((length(fits)+1):(2*length(fits))),16][winner]\n      \n      \n    # winner fit\n    # make grid\n    data <- df.ML.compet.orig[,1:2] \n    dims <- 300\n    r <- sapply(data, range, na.rm = TRUE)\n    xs <- seq(r[1,1], r[2,1], length.out = dims)\n    ys <- seq(r[1,2], r[2,2], length.out = dims)\n    g <- cbind(rep(xs, each=dims), rep(ys, time = dims))\n    colnames(g) <- colnames(r)\n    g <- as.data.frame(g)\n    # glm\n    if(winner == 4 | winner == 9) g <- data.frame(X.1 = g[,1],X.2 = g[,2],X.11 = g[,1]^2,X.22 = g[,2]^2,X.21 = g[,2]*g[,1])\n    \n    # 2D distribution\n    p <- predict(fits[[winner]], g, type = \"prob\") \n    z <- matrix(p[,1], nrow = dims, byrow = TRUE)\n    \n    # marginal distributions\n    prod.x1 <- apply(z, 1,sum,na.rm=T)\n    prod.x1 <- prod.x1/max(prod.x1)\n\n    prod.x2 <- apply(z, 2,sum,na.rm=T)\n    prod.x2 <- prod.x2/max(prod.x2)\n\n    \n   \n    pdf(paste0(\"out/plots/trafo/2D/all_trafos_emd_\",i,\".pdf\"), width = 8, height = 8)\n\n        par(mar=c(4,5,2,4), las=1)\n        plot(0, 0, xlim = range(x1range.bck), ylim = range(x2range.bck), type = \"n\", main = \"\", xlab = expression(T[ANN]*\" [\u00b0C]\"), ylab = expression(P[ANN]*\" [mm]\"), cex.lab = 1.2, cex.axis = 1)\n\n#         points(tf.input$tann[tf.input$taxa == \"unknown\"], tf.input$pann[tf.input$taxa == \"unknown\"], col=\"grey\", pch=19,cex = 0.55)\n        points(tf.input$tann[tf.input$taxa == \"taxon\"], tf.input$pann[tf.input$taxa == \"taxon\"], col=\"seagreen\", pch=19,cex = 0.55)\n        \n        contour(x1range.bck, x2range.bck, levels=seq(0,1,by=0.2), z, lty = 1.2, lwd=2, labcex=1, col=\"black\",  add = T, drawlabels = T, labels = paste0(as.character(seq(0,1,by=0.2)*100),\"%\") )\n\n        title(paste0(taxa_names[i]), adj = 0.5)\n        \n    dev.off()"
+        },
+        {
+          "first": 515,
+          "last": 529,
+          "text": "    trafo.info[[i]]$winner <- winner\n    trafo.info[[i]]$measure <- measure\n    trafo.info[[i]]$logloss.df <- logloss.df\n    \n    transfer.functions[[i]]$prod.x1 <- prod.x1\n    transfer.functions[[i]]$prod.x2 <- prod.x2    \n    transfer.functions[[i]]$x1range.bck <- x1range.bck\n    transfer.functions[[i]]$x2range.bck <- x2range.bck\n\n    \n    # save output      \n    rm(fits)\n   \n    save(trafo.info, file = \"out/transfer_functions/mixed_partial_arts_emd_info.rdata\")\n    save(transfer.functions, file = \"out/transfer_functions/mixed_partial_arts_emd.rdata\")"
+        }
+      ]
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_trafo_verific_v1.R",
+      "sha256": "d9fe74af474467ec81d55b44452ea84c7b68543f1c8b9285ba2ff23d2df7a986",
+      "matched_lines": [
+        {
+          "line": 138,
+          "active": true,
+          "text": "winner <- measure <- c()"
+        },
+        {
+          "line": 702,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 786,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 787,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 887,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 890,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": []
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_transferfunctions_v0.9.R",
+      "sha256": "e25695226f577334bb5bc59137bbf75e2c3e77527afb218d584bb5b516ad08f1",
+      "matched_lines": [
+        {
+          "line": 46,
+          "active": true,
+          "text": "temp <-  nc_open(\"../../reconstructions/cru_nh/tann_test.nc\", write=FALSE, readunlim=FALSE)"
+        },
+        {
+          "line": 47,
+          "active": true,
+          "text": "precip <-  nc_open(\"../../reconstructions/cru_nh/pann_test.nc\", write=FALSE, readunlim=FALSE)"
+        },
+        {
+          "line": 58,
+          "active": true,
+          "text": "years <- 61:90"
+        },
+        {
+          "line": 140,
+          "active": true,
+          "text": "winner <- measure <- c()"
+        },
+        {
+          "line": 414,
+          "active": false,
+          "text": "#     winner <- which.max(logloss.df[1:length(fits[[1]]),16])"
+        },
+        {
+          "line": 416,
+          "active": false,
+          "text": "#     if( length(winner) == 0 ) winner <- which.max(logloss.df[c((length(fits[[1]])+1):(2*length(fits[[1]]))),16])"
+        },
+        {
+          "line": 472,
+          "active": false,
+          "text": "#     trafo.info[[i]]$winner <- winner"
+        },
+        {
+          "line": 488,
+          "active": false,
+          "text": "#     save(trafo.info, file = \"out/transfer_functions/mixed_tf_info_partials.rdata\")"
+        },
+        {
+          "line": 489,
+          "active": false,
+          "text": "#     save(transfer.functions, file = \"out/transfer_functions/mixed_tf_partials.rdata\")"
+        },
+        {
+          "line": 491,
+          "active": false,
+          "text": "#     save(trafo.info, file = \"out/transfer_functions/mixed_tf_info_partials2.rdata\")"
+        },
+        {
+          "line": 492,
+          "active": true,
+          "text": "    save(transfer.functions, file = \"out/transfer_functions/mixed_tf_partial_v1.2.rdata\")"
+        },
+        {
+          "line": 566,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 650,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 651,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 849,
+          "active": true,
+          "text": "winner <- 1"
+        },
+        {
+          "line": 905,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 909,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": []
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_transferfunctions_v1.1.R",
+      "sha256": "0ae8412e2bca1ff308c7e92f932a62885f023f779433a96052cd17a9259213c0",
+      "matched_lines": [
+        {
+          "line": 284,
+          "active": true,
+          "text": "save(transfer.functions, file = \"out/transfer_functions/all_nnet_transfer_functions.rdata\")"
+        },
+        {
+          "line": 354,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        }
+      ],
+      "spans": []
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_transferfunctions_v1.2.R",
+      "sha256": "784d6d2fc1609f268b7a9885b1ce1d7228acd17ee3736cd5db011b41d0c14f48",
+      "matched_lines": [
+        {
+          "line": 119,
+          "active": true,
+          "text": "winner <- measure <- c()"
+        },
+        {
+          "line": 331,
+          "active": true,
+          "text": "    winner <- which.max(logloss.df[1:length(fits),16])"
+        },
+        {
+          "line": 333,
+          "active": true,
+          "text": "    if( length(winner) == 0 ) winner <- which.max(logloss.df[c((length(fits)+1):(2*length(fits))),16])"
+        },
+        {
+          "line": 382,
+          "active": true,
+          "text": "    trafo.info[[i]]$winner <- winner"
+        },
+        {
+          "line": 398,
+          "active": true,
+          "text": "    save(trafo.info, file = \"out/transfer_functions/mixed_tf_info.rdata\")"
+        },
+        {
+          "line": 399,
+          "active": true,
+          "text": "    save(transfer.functions, file = \"out/transfer_functions/mixed_tf.rdata\")"
+        },
+        {
+          "line": 473,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 535,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 536,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 636,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 639,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": [
+        {
+          "first": 330,
+          "last": 374,
+          "text": "    # who wins the competition? what is its score?\n    winner <- which.max(logloss.df[1:length(fits),16])\n#     looser <- which.min(logloss.df[1:(length(fits)/2),16])\n    if( length(winner) == 0 ) winner <- which.max(logloss.df[c((length(fits)+1):(2*length(fits))),16])\n    measure[i] <- logloss.df[c((length(fits)+1):(2*length(fits))),16][winner]\n    \n    # transfer function on a 2D grid (climate space)\n    x1range <- seq(range(t.ann.norm)[1],range(t.ann.norm)[2], length = dims)\n    x2range <- seq(range(p.ann.norm)[1],range(p.ann.norm)[2], length = dims)\n\n    if(winner == 4){\n        x1x2ranges<- rbind(x1range, x2range)\n        pred.grid.temp <- array(,dim = c(nrow(x1x2ranges), dims^nrow(x1x2ranges)) )\n        for(j in 1:nrow(x1x2ranges)) pred.grid.temp[j,] <- rep(rep(x1x2ranges[j, ], each = dims^(j-1)))\n        rm(x1x2ranges)\n        pred.grid.glm <- data.frame(X1.0 = pred.grid.temp[1,],\n                            X2.0 = pred.grid.temp[1,]^2,\n                            X0.1 = pred.grid.temp[2,],\n                            X1.1 = pred.grid.temp[1,]*pred.grid.temp[2,],\n                            X0.2 = pred.grid.temp[2,]^2)\n        colnames(pred.grid.glm) <- colnames(fits[[4]]$trainingData)[2:6]\n                                                         \n        # projection of the winner into the climate space\n        prob.b.give.c <- array(predict(fits[[winner]], pred.grid.glm, type = \"prob\")[[1]], c(dims, dims))\n    }else{\n        x1x2ranges<- rbind(x1range, x2range)\n        pred.grid <- array(,dim = c(nrow(x1x2ranges), dims^nrow(x1x2ranges)) )\n        for(j in 1:nrow(x1x2ranges)) pred.grid[j,] <- rep(rep(x1x2ranges[j, ], each = dims^(j-1)))\n        pred.grid <- t(pred.grid)\n        colnames(pred.grid) <- c(\"t.ann.norm\", \"p.ann.norm\") \n        pred.grid <- as.data.frame(pred.grid)\n        rm(x1x2ranges)\n        \n        # projection of the winner into the climate space\n        prob.b.give.c <- array(predict(fits[[winner]], pred.grid, type = \"prob\")[[1]], c(dims, dims))\n    }\n    \n\n    prod.x1 <- apply(prob.b.give.c,c(1),sum,na.rm=T)\n    prod.x1 <- prod.x1/max(prod.x1)\n    prod.x2 <- apply(prob.b.give.c,c(2),sum,na.rm=T)\n    prod.x2 <- prod.x2/max(prod.x2)\n   \n    x1range.bck <- (x1range*sd1)+mean1 \n    x2range.bck <- (qgamma(pnorm(x2range), shape1, rate1))^2 "
+        },
+        {
+          "first": 382,
+          "last": 399,
+          "text": "    trafo.info[[i]]$winner <- winner\n    trafo.info[[i]]$measure <- measure[i]\n    trafo.info[[i]]$logloss.df <- logloss.df\n    \n    transfer.functions[[i]]$prod.x1 <- prod.x1\n    transfer.functions[[i]]$prod.x2 <- prod.x2    \n    transfer.functions[[i]]$x1range.bck <- x1range.bck\n    transfer.functions[[i]]$x2range.bck <- x2range.bck\n\n    \n    # save output    \n    # for i = 141 (olive tree)\n#     save(fits,file = \"out/transfer_functions/fits.rdata\")\n    \n    rm(prob.b.give.c,fits)\n\n    save(trafo.info, file = \"out/transfer_functions/mixed_tf_info.rdata\")\n    save(transfer.functions, file = \"out/transfer_functions/mixed_tf.rdata\")"
+        }
+      ]
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_transferfunctions_v1.R",
+      "sha256": "34563c61767d45950ad45a3a7f9c6defcb34319b8891f9646bb47531091d23b0",
+      "matched_lines": [
+        {
+          "line": 138,
+          "active": true,
+          "text": "winner <- measure <- c()"
+        },
+        {
+          "line": 720,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 804,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 805,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 905,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 908,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": []
+    },
+    {
+      "source_tree": "original",
+      "relative_path": "main_v1.2.R",
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "matched_lines": [
+        {
+          "line": 568,
+          "active": false,
+          "text": "# load(\"out/transfer_functions/mixed_partial_arts.rdata\") # 2D: chosen by the balanced accuracy only"
+        },
+        {
+          "line": 569,
+          "active": true,
+          "text": "load(\"out/transfer_functions/mixed_partial_arts_emd.rdata\") # 2D: chosen by the balanced accuracy and EMD (latter is more weighted)"
+        }
+      ],
+      "spans": [
+        {
+          "first": 325,
+          "last": 350,
+          "text": "precip <-  nc_open(\"../../reconstructions/cru_nh/cru_pann_ww.nc\", write=FALSE, readunlim=FALSE)\ntemp <-  nc_open(\"../../reconstructions/cru_nh/cru_tann_ww.nc\", write=FALSE, readunlim=FALSE)\nlon_ww <- ncvar_get(nc=precip,varid=\"lon\")\nlat_ww <- ncvar_get(nc=precip,varid=\"lat\")\np.ann.ww <- ncvar_get(nc=precip,varid=\"pre\")\nt.ann.ww <- ncvar_get(nc=temp,varid=\"tmp\")\n# nc_close(precip)\nnc_close(temp)\n\n# # for prior climate if timeslice younger than 1950 are available\n# precip_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru_pann2_ww.nc\", write=FALSE, readunlim=FALSE)\n# temp_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru_tann2_ww.nc\", write=FALSE, readunlim=FALSE)\n# \n# pann_ww <- ncvar_get(nc=precip_yearly,varid=\"pre\")[,,50:115] # 1950-2015\n# tann_ww <- ncvar_get(nc=temp_yearly,varid=\"tmp\")[,,50:115]\n\n\n# for prior climate if timeslice younger than 1950 are available\nprecip_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru4_pann_v1.2.nc\", write=FALSE, readunlim=FALSE)\ntemp_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru4_tann_v1.2.nc\", write=FALSE, readunlim=FALSE)\n\npann_v1.2 <- ncvar_get(nc=precip_yearly,varid=\"pre\")[,,50:115] # 1950-2015\ntann_v1.2 <- ncvar_get(nc=temp_yearly,varid=\"tmp\")[,,50:115]\n\nlon_v1.2 <- ncvar_get(nc=precip_yearly,varid=\"lon\")\nlat_v1.2 <- ncvar_get(nc=precip_yearly,varid=\"lat\")"
+        },
+        {
+          "first": 563,
+          "last": 589,
+          "text": "# load(\"out/transfer_functions/mixed_tf_partial.rdata\") # original\n# load(\"out/transfer_functions/mixed_tf_partial_v1.1.rdata\") # with more qda\n# load(\"out/transfer_functions/tf_qda_unsmote.rdata\") # qda without smote\n# load(\"out/transfer_functions/tf_qda_smote.rdata\") # qda with smote\n# load(\"out/transfer_functions/mixed_tf_partial_v1.2.rdata\") # without gbm\n# load(\"out/transfer_functions/mixed_partial_arts.rdata\") # 2D: chosen by the balanced accuracy only\nload(\"out/transfer_functions/mixed_partial_arts_emd.rdata\") # 2D: chosen by the balanced accuracy and EMD (latter is more weighted)\nx1range.bck <- transfer.functions[[1]]$x1range.bck\nx2range.bck <- transfer.functions[[1]]$x2range.bck\ntf.x1 <- tf.x2 <- array(NA, dim = c(length(transfer.functions),dims))\nnew_tf <- c()\ncount <- 0\nfor(i in 1:length(transfer.functions)){\n    if( is.null(transfer.functions[[i]])) next(\"Pine Taxa with only one presence gridpoint -> No transfer function available!\")\n    tf.x1[i,] <- transfer.functions[[i]]$prod.x1\n    tf.x2[i,] <- transfer.functions[[i]]$prod.x2\n    \n#     # correction of some dists (mostly tree based -> strange tails)\n#     # left tail\n#     tf.x1[i,tf.x1[i,1] ==  tf.x1[i,]] <- 0\n#     tf.x2[i,tf.x2[i,1] ==  tf.x2[i,]] <- 0\n#     # right tail\n#     tf.x1[i,tf.x1[i,dims] ==  tf.x1[i,]] <- 0\n#     tf.x2[i,tf.x2[i,dims] ==  tf.x2[i,]] <- 0\n    # norm the dist again\n    tf.x1[i,] <- tf.x1[i,] / max(tf.x1[i,])\n    tf.x2[i,] <- tf.x2[i,] / max(tf.x2[i,])"
+        }
+      ]
+    },
+    {
+      "source_tree": "additional",
+      "relative_path": "my_kinneret_bbm/src/all_trafo_verific_v1.R",
+      "sha256": "0fd7ec468088d9627d47d8d196b19f11a34aa4e8d87b21f82f91e92d796cf4d4",
+      "matched_lines": [
+        {
+          "line": 531,
+          "active": true,
+          "text": "winner <- measure <- c()"
+        },
+        {
+          "line": 1094,
+          "active": true,
+          "text": "    winner <- verific.meas.qda[[i]][1,17] < verific.meas.nnet[[i]][1,17]"
+        },
+        {
+          "line": 1178,
+          "active": true,
+          "text": "nnet.measure <- qda.measure <- mda.measure <- glm.measure <- gbm.measure <- svm.measure <- winner <- measure <- c()"
+        },
+        {
+          "line": 1179,
+          "active": true,
+          "text": "nnet.measure.smote <- qda.measure.smote <- mda.measure.smote <- glm.measure.smote <- gbm.measure.smote <- svm.measure.smote <- winner <- c()"
+        },
+        {
+          "line": 1279,
+          "active": true,
+          "text": "winner <- rank[1]"
+        },
+        {
+          "line": 1282,
+          "active": true,
+          "text": "contour.winner <- array(predict(fits[[rank[1]]], pred.grid, type = \"prob\")[[1]], c(dims, dims))"
+        }
+      ],
+      "spans": []
+    }
+  ],
+  "only_all_trafos_writer_in_selected_variants": [
+    {
+      "source_tree": "original",
+      "relative_path": "src/all_trafo.R",
+      "lines": [
+        493
+      ]
+    }
+  ],
+  "limits": [
+    "all_trafos.pdf cannot be assigned to a precise BA-only producer from its filename or main comment",
+    "61:90 are one-based time indices, not verified calendar years",
+    "temperature normal transform is affine; precipitation uses sqrt -> gamma CDF -> normal quantile and its inverse",
+    "native precipitation grid is generally nonuniform; source marginal sums use transformed-grid nodes, no spacing weights",
+    "main actively uses first TF axes globally; commented spline interpolation is not active",
+    "No R execution, training, numeric TF recovery, sampler or fossil run"
+  ]
+}

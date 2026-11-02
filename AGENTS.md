@@ -1,5 +1,11 @@
 # Kommunikation und Fortsetzung des Netzel-Projekts
 
+> Aktueller Einstieg 02.11.2026: Der Nutzer hat die GitHub-Sicherung und
+> Fortsetzung mit Claude beauftragt. Zuerst
+> [CLAUDE_HANDOFF_2026_11_02.md](docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md)
+> lesen; Branch `dissertation-reconstruction` bis zu einem belegten Merge
+> verwenden. Historische main-/Upload-Aussagen unten bleiben als Verlauf erhalten.
+
 Vom Nutzer am 30.10.2026 gewünscht; aus PR #26/#27 übernommen.
 
 - Vor fachlicher Weiterarbeit PR-/Merge-Stand und

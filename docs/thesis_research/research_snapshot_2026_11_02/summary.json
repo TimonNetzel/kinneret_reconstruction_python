@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "scientific_status": "experimental_taxon_method_incomplete",
+  "historical_models": {
+    "distinct_byte_contents": 78,
+    "file_aliases": 109,
+    "caret_fits": 167,
+    "binary_fits": 6,
+    "multiclass_fits": 161,
+    "independent_279_taxon_functions_recovered": false
+  },
+  "console": {
+    "matched_positions": 271,
+    "skipped_positions": 8,
+    "exact_historical_run_identified": false
+  },
+  "plots": {
+    "pages_per_pdf": 278,
+    "missing_ohrid_position": 151,
+    "juglans_snapshot_label": "Juglans sp.",
+    "compared_presence_point_pairs": 961568,
+    "max_stored_x_difference_pdf_points": 0.02,
+    "all_stored_y_coordinates_equal": true,
+    "numeric_TF_arrays_recovered": false
+  },
+  "validation": {
+    "handoff_targeted_tests_passed": 67,
+    "prior_console_checks": 34,
+    "second_plot_checks": 31
+  },
+  "gates": {
+    "monticchio_P1": "open",
+    "fossil_pilot_release": false,
+    "smote_raw_probabilities_validated_for_fossils": false
+  },
+  "app_next_step": "Read-only research status/source view, reusing existing baseline and seven-species artifacts; distinguish available, experimental and missing results."
+}

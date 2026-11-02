@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "status": "portable_research_handoff_not_scientific_release",
+  "basis_commit": "7f1826cffddc8893ba6354cd3cca3fa43954b9be",
+  "original_local_evidence_remains_unchanged": true,
+  "path_placeholders": [
+    "<CHECKOUT>",
+    "<ORIGINAL_DATA_ROOT>",
+    "<ADDITIONAL_SOURCE_ROOT>",
+    "<USER_HOME>"
+  ],
+  "entries": [
+    {
+      "source": ".local/provenance_continuation_v1/final_verification.json",
+      "published": "historical_provenance/provenance_continuation_v1_final_verification.json",
+      "local_original_sha256": "7c02e47409543576914521c3ba6d19aa4d8209123cdb9c0b8b3553a962dad7de",
+      "published_sha256": "e5070a0364f31e9cf683a7e4f59897230c905518da861edabc9ef12ad2cad4fa",
+      "decoded_sha256": "e5070a0364f31e9cf683a7e4f59897230c905518da861edabc9ef12ad2cad4fa",
+      "published_bytes": 12839,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_continuation_v1/climate_time_bounds.json",
+      "published": "historical_provenance/climate_time_bounds.json",
+      "local_original_sha256": "136e21c231dcf95a19234793061977f26c372bb2a8837916b926a06f2682935b",
+      "published_sha256": "50aa53572fc00b594293087975f43d72d2c4f6cf8f06452566517548293bd07e",
+      "decoded_sha256": "50aa53572fc00b594293087975f43d72d2c4f6cf8f06452566517548293bd07e",
+      "published_bytes": 3285,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_continuation_v1/eurasia_nonbinary.json",
+      "published": "historical_provenance/eurasia_nonbinary.json",
+      "local_original_sha256": "c2e674d21b0c7367502fd87102ef7bdd65e724ca43751470b47021b64ed8e2e9",
+      "published_sha256": "e22f98e1a88f094dff608ae36580a2903e2ad3452f3dca48ed63b6fca66b4daa",
+      "decoded_sha256": "e22f98e1a88f094dff608ae36580a2903e2ad3452f3dca48ed63b6fca66b4daa",
+      "published_bytes": 797,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_continuation_v1/ohrid_279_distribution.json",
+      "published": "historical_provenance/ohrid_279_distribution.json",
+      "local_original_sha256": "ec5b28b08427298c01257386c20e8448446cf4e192adae49604d8829f15e68b0",
+      "published_sha256": "dd932b64f0b9769f486709851cff340497870dc3b036c8b931bbfadb54f642f9",
+      "decoded_sha256": "dd932b64f0b9769f486709851cff340497870dc3b036c8b931bbfadb54f642f9",
+      "published_bytes": 79427,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_continuation_v1/source_evidence.json",
+      "published": "historical_provenance/source_evidence.json",
+      "local_original_sha256": "f1a370a9a3e6e93b6d93f205b2bd30fe6632977bb99d0ad5186603d2e87abde0",
+      "published_sha256": "8643876362fa52bace3710acba8b7a62cbdb20dc5802eb3e14fbbd4b88c52442",
+      "decoded_sha256": "8643876362fa52bace3710acba8b7a62cbdb20dc5802eb3e14fbbd4b88c52442",
+      "published_bytes": 24883,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_reader_followup_v1/final_verification.json",
+      "published": "historical_provenance/provenance_reader_followup_v1_final_verification.json",
+      "local_original_sha256": "7081c3f68dc543c68bb3c14786803a1e71644f9a2ed904312134e23ba2334629",
+      "published_sha256": "3652993f8a2e0f0fa2bd516bf2a4905b684984e540e96572b7c4ab780a4c9e9a",
+      "decoded_sha256": "3652993f8a2e0f0fa2bd516bf2a4905b684984e540e96572b7c4ab780a4c9e9a",
+      "published_bytes": 8599,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_reader_followup_v1/model_summary.json",
+      "published": "historical_provenance/model_summary.json",
+      "local_original_sha256": "233f2654de76912a95a2d3effdd4be79a8dab8c82206ab370f60ec61877ee7f2",
+      "published_sha256": "99833f899d8c548472a5f51c540806c7351a41f28bd27d75535b460a2170b1aa",
+      "decoded_sha256": "99833f899d8c548472a5f51c540806c7351a41f28bd27d75535b460a2170b1aa",
+      "published_bytes": 313800,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/provenance_reader_followup_v1/training_console_trace.json",
+      "published": "historical_provenance/training_console_trace.json",
+      "local_original_sha256": "24519720e1dd0dfbe29cd5b732f795e8ab3661661acba38430f787aaeb2285ae",
+      "published_sha256": "714b748bff0e4aa28d101372571221d6a8b8342314b517110ab2be92f548d6c7",
+      "decoded_sha256": "714b748bff0e4aa28d101372571221d6a8b8342314b517110ab2be92f548d6c7",
+      "published_bytes": 140257,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/my_reconst_source_audit_v3/audit.json",
+      "published": "historical_provenance/audit.json",
+      "local_original_sha256": "8691c98f7fa784ce403e48d74a31942ee9dec022ee776b7bb996db5d54cd15f1",
+      "published_sha256": "c46d0e6a7ec462447e296c825f10dc5dfe33a68cdc29c715ccd2642aabc5cef4",
+      "decoded_sha256": "c46d0e6a7ec462447e296c825f10dc5dfe33a68cdc29c715ccd2642aabc5cef4",
+      "published_bytes": 9241,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/cardinality/console_cardinality.json",
+      "published": "console/console_cardinality.json",
+      "local_original_sha256": "7adf3225a14ecb4d6a83c96c26c556db3d6dbdc3fafedb928b65c5bdd294143b",
+      "published_sha256": "882bbfab9ad3fd95de9ecbeaae4a237fdb708b43b4e23048960864546c49dbb4",
+      "decoded_sha256": "882bbfab9ad3fd95de9ecbeaae4a237fdb708b43b4e23048960864546c49dbb4",
+      "published_bytes": 515411,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/emd_plot_pages.json",
+      "published": "console/emd_plot_pages.json",
+      "local_original_sha256": "edfe39cbb0db03b5f1d910466bd10df90f3a0450ea8fa9692feb4cef639af684",
+      "published_sha256": "a6625fdbdc8b8ce57556f290b219eb6269f2dc1bf57187823bac7d1d711c8db9",
+      "decoded_sha256": "a6625fdbdc8b8ce57556f290b219eb6269f2dc1bf57187823bac7d1d711c8db9",
+      "published_bytes": 66775,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/source_bindings.json",
+      "published": "console/source_bindings.json",
+      "local_original_sha256": "24adf81d5ecb55a8abfd94075c023d545867c9454745346106556ccde5775b2d",
+      "published_sha256": "a0cee38d756fd135b566cbe2040c3a250754e579ef3bd5adc7903d5b43e115e1",
+      "decoded_sha256": "a0cee38d756fd135b566cbe2040c3a250754e579ef3bd5adc7903d5b43e115e1",
+      "published_bytes": 18337,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/independent_pdf_parser.json",
+      "published": "console/independent_pdf_parser.json",
+      "local_original_sha256": "6dd64784777fa16442d911816f9f4b4916a27177070d02ea8f5880460fdfdb01",
+      "published_sha256": "06d44033b8aa451d8967115d786f91b74c9b36e7f3236a77b79243263a3bdb95",
+      "decoded_sha256": "06d44033b8aa451d8967115d786f91b74c9b36e7f3236a77b79243263a3bdb95",
+      "published_bytes": 57303,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/stored_model_predictor_crosscheck.json",
+      "published": "console/stored_model_predictor_crosscheck.json",
+      "local_original_sha256": "3e7686c7464b86780b59d3fd1365d95b7351daee06b42d5060746df1bf1125ed",
+      "published_sha256": "c7f2160255724efc42d53c1eb53743d728f9d87a67e22d098c7aff4803663ddc",
+      "decoded_sha256": "c7f2160255724efc42d53c1eb53743d728f9d87a67e22d098c7aff4803663ddc",
+      "published_bytes": 440,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/package_source_manifest.json",
+      "published": "console/package_source_manifest.json",
+      "local_original_sha256": "151353094dcadc6ff07057e76e1b3928dd64d62a3accfdf02b9898e168a07140",
+      "published_sha256": "28568892dc2b18cdbcc3b0325dc96c8c4b6a4dfc1451a5eceb39a048fb726423",
+      "decoded_sha256": "28568892dc2b18cdbcc3b0325dc96c8c4b6a4dfc1451a5eceb39a048fb726423",
+      "published_bytes": 1291,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/explicit_dependency_paths.json",
+      "published": "console/explicit_dependency_paths.json",
+      "local_original_sha256": "0b252fdc88ab8809dfb1d61c75938da8d3fcb0ca00f7fc4d93844fb3c22d72ec",
+      "published_sha256": "665022a9527c580c95667dac80f98eb58ea06d4bb6ca810c985d3d66c709cdc9",
+      "decoded_sha256": "665022a9527c580c95667dac80f98eb58ea06d4bb6ca810c985d3d66c709cdc9",
+      "published_bytes": 940,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/final_verification.json",
+      "published": "console/console_provenance_v1_final_verification.json",
+      "local_original_sha256": "fa88fd42bd50bf8cc53224368be06370ea53b5162765d757f047f914b5d2658c",
+      "published_sha256": "7ff8878e1575a2a36eac6624810997b85ebe65952240f050123d42dc0cf63f6e",
+      "decoded_sha256": "7ff8878e1575a2a36eac6624810997b85ebe65952240f050123d42dc0cf63f6e",
+      "published_bytes": 8227,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/console_provenance_v1/pytest_v2.xml",
+      "published": "console/pytest_v2.xml",
+      "local_original_sha256": "1185451441264b14cc5b4259cc32803213aa771864c561e6b4f1637e45539d82",
+      "published_sha256": "1185451441264b14cc5b4259cc32803213aa771864c561e6b4f1637e45539d82",
+      "decoded_sha256": "1185451441264b14cc5b4259cc32803213aa771864c561e6b4f1637e45539d82",
+      "published_bytes": 7852,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/second_plot_pages.json",
+      "published": "second_plot/second_plot_pages.json",
+      "local_original_sha256": "031e3a573998055a034ff068ca4b61e0d7052626975101ae4b0038ae1d1016eb",
+      "published_sha256": "eaebec39830d33ff4cf16abb88c66aa28a36aa47946840b0a1e8e0c797fee835",
+      "decoded_sha256": "eaebec39830d33ff4cf16abb88c66aa28a36aa47946840b0a1e8e0c797fee835",
+      "published_bytes": 66771,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/vector_comparison.json",
+      "published": "second_plot/vector_comparison.json.gz",
+      "local_original_sha256": "b1763e2141bbb9e3f40bf47fee6bf659218ca9e69fe0fa0480a329b49ed3381b",
+      "published_sha256": "58d7980972413e2a89f385d750bd95e6539c691431b6ad24836f4cd871d88dbd",
+      "decoded_sha256": "94a7457f6d8c07e2483e3fb89786926f0e7f03610623f1b513c4520a2aa66d1b",
+      "published_bytes": 213927,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced; deterministic gzip"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/fixed_decimal_coordinates.json",
+      "published": "second_plot/fixed_decimal_coordinates.json",
+      "local_original_sha256": "48bde3ee6314c5c8219ad2d76c86b93ff12793a951721a74470eda8429967e71",
+      "published_sha256": "85081a0c3109ce024e233ae632b375feb1b9718e5051d94f7dcb83ff165e1bc0",
+      "decoded_sha256": "85081a0c3109ce024e233ae632b375feb1b9718e5051d94f7dcb83ff165e1bc0",
+      "published_bytes": 152776,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/source_variant_bindings.json",
+      "published": "second_plot/source_variant_bindings.json",
+      "local_original_sha256": "4225a59c5bdabaede0634802a895c511688d9ca43750e01a65cf626067efa6fa",
+      "published_sha256": "3f645144b12738f0d792d404aed0834e4ac1b8da65425c48c1ed363f3af91696",
+      "decoded_sha256": "3f645144b12738f0d792d404aed0834e4ac1b8da65425c48c1ed363f3af91696",
+      "published_bytes": 32571,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/missing_dependency_followup.json",
+      "published": "second_plot/missing_dependency_followup.json",
+      "local_original_sha256": "5787740821cf67847eda504d4ec8eef55b98408907c40d3b90563aa4cc206f90",
+      "published_sha256": "39f511c3cd2816313395bd3bf293503e3a0cc1512118052b3ba6c7bd46eb8276",
+      "decoded_sha256": "39f511c3cd2816313395bd3bf293503e3a0cc1512118052b3ba6c7bd46eb8276",
+      "published_bytes": 1866,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/final_verification.json",
+      "published": "second_plot/tf_plot_comparison_v1_final_verification.json",
+      "local_original_sha256": "2c8aecf11ee6b5c5536cb5f29fa8ba0b45ff5fee8344d84c19e94973948805f3",
+      "published_sha256": "90f1d830b769872e1f646cdd37af7c1829240eb6f65ebe36a12af1d519731e2a",
+      "decoded_sha256": "90f1d830b769872e1f646cdd37af7c1829240eb6f65ebe36a12af1d519731e2a",
+      "published_bytes": 6077,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/pytest.xml",
+      "published": "second_plot/pytest.xml",
+      "local_original_sha256": "4a96a2358887ef7b04c2cbdacef87833017c02dda1f1ee677267111d3ec98a4f",
+      "published_sha256": "4a96a2358887ef7b04c2cbdacef87833017c02dda1f1ee677267111d3ec98a4f",
+      "decoded_sha256": "4a96a2358887ef7b04c2cbdacef87833017c02dda1f1ee677267111d3ec98a4f",
+      "published_bytes": 4014,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/tf_plot_comparison_v1/check_fixed_decimal_coordinates.py",
+      "published": "second_plot/check_fixed_decimal_coordinates.py",
+      "local_original_sha256": "5b0ced9fdfced39d14b10d54760ea7d8ff212014b55ab0318d274d2e4afa14bd",
+      "published_sha256": "4104b618e11e949761045cfa2481bab9f54ae35ab5b7da30a7ad142159dea3cd",
+      "decoded_sha256": "4104b618e11e949761045cfa2481bab9f54ae35ab5b7da30a7ad142159dea3cd",
+      "published_bytes": 3053,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_reference_review_v2/verification.json",
+      "published": "paper_verification/verification.json",
+      "local_original_sha256": "d1f2c775f9698a71312d1075fccb77dbcf93b24673489a04989590f40829793b",
+      "published_sha256": "e36c50c767c322f6cd58714a5947b733e2b8afcf4aa723ca3d2e5ef0e7705d0c",
+      "decoded_sha256": "e36c50c767c322f6cd58714a5947b733e2b8afcf4aa723ca3d2e5ef0e7705d0c",
+      "published_bytes": 82183,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/corrected_full_replay.json",
+      "published": "paper_verification/corrected_full_replay.json",
+      "local_original_sha256": "474235ce1ae517b540df4d66a3ba55484fb91498ce6952cda5a7f6312bc2a8bf",
+      "published_sha256": "41cf1781f3b5a6f724deab6304babcf3bbebfef089075a8668f560487a90a382",
+      "decoded_sha256": "41cf1781f3b5a6f724deab6304babcf3bbebfef089075a8668f560487a90a382",
+      "published_bytes": 4357,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/original_full_replay.json",
+      "published": "paper_verification/original_full_replay.json",
+      "local_original_sha256": "b4f571f3fad7fca30e5d68c7f310b143705e20ef72ee0d48ac099eafeda4a5cb",
+      "published_sha256": "466de5b42343a8fb7198b530201fc5106d118da77eedd3c3b845511ad8cd11c9",
+      "decoded_sha256": "466de5b42343a8fb7198b530201fc5106d118da77eedd3c3b845511ad8cd11c9",
+      "published_bytes": 4301,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/corrected_posterior_diagnostics.json",
+      "published": "paper_verification/corrected_posterior_diagnostics.json",
+      "local_original_sha256": "d2c92d1d4127e3f6de8fa55908f05ed9829533fee9ce6d0aa7b8a68ddfcadd2f",
+      "published_sha256": "c02d4ef0bfd97204aeb2924cecd42c80b33a725c8567fbd44886efff8aa92026",
+      "decoded_sha256": "c02d4ef0bfd97204aeb2924cecd42c80b33a725c8567fbd44886efff8aa92026",
+      "published_bytes": 268,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/legacy_same_runtime_check.json",
+      "published": "paper_verification/legacy_same_runtime_check.json",
+      "local_original_sha256": "358aae5bb7362d8945b461f37501aa913338410ae31b3beb17a15d79e998885f",
+      "published_sha256": "14c57f9f32ee15ad73ec03f59ba40a367a0a18490d57204ea1341b462fa62b87",
+      "decoded_sha256": "14c57f9f32ee15ad73ec03f59ba40a367a0a18490d57204ea1341b462fa62b87",
+      "published_bytes": 1051,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/final_integrity_check.json",
+      "published": "paper_verification/final_integrity_check.json",
+      "local_original_sha256": "29808997775a83f188fb16f0910f7b125f8dd24ac3cd73a8dc7199c60fb8c25b",
+      "published_sha256": "840fdb2f231568373a67c7e366a35ea5b758f242effd2a7c01a761ccaaf3d7be",
+      "decoded_sha256": "840fdb2f231568373a67c7e366a35ea5b758f242effd2a7c01a761ccaaf3d7be",
+      "published_bytes": 240,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/requirements-lock.txt",
+      "published": "paper_verification/requirements-lock.txt",
+      "local_original_sha256": "6cdd2971fc383ea20410ba8f28de7e3a8e53c963b61e6ed529b25a6039cdc44a",
+      "published_sha256": "6cdd2971fc383ea20410ba8f28de7e3a8e53c963b61e6ed529b25a6039cdc44a",
+      "decoded_sha256": "6cdd2971fc383ea20410ba8f28de7e3a8e53c963b61e6ed529b25a6039cdc44a",
+      "published_bytes": 406,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": ".local/diagnostic-original.toml",
+      "published": "paper_verification/diagnostic-original.toml",
+      "local_original_sha256": "d1c2d76a5e9fbcbf89810ecc03d8104438f44a987e89d264d1021b2a1e1196ba",
+      "published_sha256": "d1c2d76a5e9fbcbf89810ecc03d8104438f44a987e89d264d1021b2a1e1196ba",
+      "decoded_sha256": "d1c2d76a5e9fbcbf89810ecc03d8104438f44a987e89d264d1021b2a1e1196ba",
+      "published_bytes": 882,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/corrected-reference.toml",
+      "published": "paper_verification/corrected-reference.toml",
+      "local_original_sha256": "f936824408d3a0dd0c21bb0918c627973d038f58bf6a30e550608f1fec2b66f0",
+      "published_sha256": "f936824408d3a0dd0c21bb0918c627973d038f58bf6a30e550608f1fec2b66f0",
+      "decoded_sha256": "f936824408d3a0dd0c21bb0918c627973d038f58bf6a30e550608f1fec2b66f0",
+      "published_bytes": 935,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": ".local/github_handoff_v1/pytest_v2.xml",
+      "published": "handoff_tests/pytest_v2.xml",
+      "local_original_sha256": "6ce1d2a65ebb1164fb487d478b0e3e0347909fc113f102fd6aa7be495c42bbe7",
+      "published_sha256": "6ce1d2a65ebb1164fb487d478b0e3e0347909fc113f102fd6aa7be495c42bbe7",
+      "decoded_sha256": "6ce1d2a65ebb1164fb487d478b0e3e0347909fc113f102fd6aa7be495c42bbe7",
+      "published_bytes": 8792,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_original_full/rekonstruktion_alter.csv",
+      "published": "paper_results/local_original_full/rekonstruktion_alter.csv",
+      "local_original_sha256": "45cfea775b1a6ebbf518164c77c14aff5ce6e1faedcf337898bcba52ee160837",
+      "published_sha256": "45cfea775b1a6ebbf518164c77c14aff5ce6e1faedcf337898bcba52ee160837",
+      "decoded_sha256": "45cfea775b1a6ebbf518164c77c14aff5ce6e1faedcf337898bcba52ee160837",
+      "published_bytes": 21287,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_original_full/rekonstruktion_tiefe.csv",
+      "published": "paper_results/local_original_full/rekonstruktion_tiefe.csv",
+      "local_original_sha256": "71d57a59074dd190fbb8b08010c627ce312dc0ae6152ebfa4708798292897fd7",
+      "published_sha256": "71d57a59074dd190fbb8b08010c627ce312dc0ae6152ebfa4708798292897fd7",
+      "decoded_sha256": "71d57a59074dd190fbb8b08010c627ce312dc0ae6152ebfa4708798292897fd7",
+      "published_bytes": 18808,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_original_full/diagnostik.csv",
+      "published": "paper_results/local_original_full/diagnostik.csv",
+      "local_original_sha256": "d834313b24ef13f37e86344c55c5f710ae88267d897615f6e622751c403fac36",
+      "published_sha256": "d834313b24ef13f37e86344c55c5f710ae88267d897615f6e622751c403fac36",
+      "decoded_sha256": "d834313b24ef13f37e86344c55c5f710ae88267d897615f6e622751c403fac36",
+      "published_bytes": 7235,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_original_full/config.toml",
+      "published": "paper_results/local_original_full/config.toml",
+      "local_original_sha256": "7c3cc4c84fb11ad3cf2d544d74b680acc9d55674967f42d0a149c9cdbf437282",
+      "published_sha256": "7c3cc4c84fb11ad3cf2d544d74b680acc9d55674967f42d0a149c9cdbf437282",
+      "decoded_sha256": "7c3cc4c84fb11ad3cf2d544d74b680acc9d55674967f42d0a149c9cdbf437282",
+      "published_bytes": 899,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_original_full/provenance.json",
+      "published": "paper_results/local_original_full/provenance.json",
+      "local_original_sha256": "68185c223acb0861280b813dddfbd713ace7237143900a38eb8c9e40acd568c5",
+      "published_sha256": "9933917efb4ada52e97ac8b1d659d4a88bcbaad7a0cdf0fcda277a63d50bd7fe",
+      "decoded_sha256": "9933917efb4ada52e97ac8b1d659d4a88bcbaad7a0cdf0fcda277a63d50bd7fe",
+      "published_bytes": 10348,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_original_full/meta.json",
+      "published": "paper_results/local_original_full/meta.json",
+      "local_original_sha256": "8162d4fa49819d2330a5477013a6142c07f3fc77b02056d87449c644b0bdd3d9",
+      "published_sha256": "9af50a82f326a8312494c3443d24a17f4c649625046bd2bd5c1fad30a121fd7c",
+      "decoded_sha256": "9af50a82f326a8312494c3443d24a17f4c649625046bd2bd5c1fad30a121fd7c",
+      "published_bytes": 419,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_corrected_full/rekonstruktion_alter.csv",
+      "published": "paper_results/local_corrected_full/rekonstruktion_alter.csv",
+      "local_original_sha256": "af03d97df953b2670bc083b8d72d82c6ef11104f8dfd03fa79255a66e0fd92a9",
+      "published_sha256": "af03d97df953b2670bc083b8d72d82c6ef11104f8dfd03fa79255a66e0fd92a9",
+      "decoded_sha256": "af03d97df953b2670bc083b8d72d82c6ef11104f8dfd03fa79255a66e0fd92a9",
+      "published_bytes": 21345,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_corrected_full/rekonstruktion_tiefe.csv",
+      "published": "paper_results/local_corrected_full/rekonstruktion_tiefe.csv",
+      "local_original_sha256": "7734d20b2d1f2daa13607a6948ab98f3c015c65eee40c1ad2c5131673ede2c36",
+      "published_sha256": "7734d20b2d1f2daa13607a6948ab98f3c015c65eee40c1ad2c5131673ede2c36",
+      "decoded_sha256": "7734d20b2d1f2daa13607a6948ab98f3c015c65eee40c1ad2c5131673ede2c36",
+      "published_bytes": 18774,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_corrected_full/diagnostik.csv",
+      "published": "paper_results/local_corrected_full/diagnostik.csv",
+      "local_original_sha256": "56b5adbcf33c74c7a598a27d26def5f6ea14b8fe3d70924fe8b4280067e1c207",
+      "published_sha256": "56b5adbcf33c74c7a598a27d26def5f6ea14b8fe3d70924fe8b4280067e1c207",
+      "decoded_sha256": "56b5adbcf33c74c7a598a27d26def5f6ea14b8fe3d70924fe8b4280067e1c207",
+      "published_bytes": 7348,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_corrected_full/config.toml",
+      "published": "paper_results/local_corrected_full/config.toml",
+      "local_original_sha256": "60723ce583525fe08b7a4d3f9743780e7f2467e45a6996bfc2fc5d1451678a51",
+      "published_sha256": "60723ce583525fe08b7a4d3f9743780e7f2467e45a6996bfc2fc5d1451678a51",
+      "decoded_sha256": "60723ce583525fe08b7a4d3f9743780e7f2467e45a6996bfc2fc5d1451678a51",
+      "published_bytes": 944,
+      "transformation": "Only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_corrected_full/provenance.json",
+      "published": "paper_results/local_corrected_full/provenance.json",
+      "local_original_sha256": "61506b52cbe90cd84796da1a81bcdd3d6a3da1d8dfeb263220ac68aadc1bc29d",
+      "published_sha256": "4891cced5a43499c37c48c0aefdbbdabd8e4c9a29e6879b03c8d6355f9538465",
+      "decoded_sha256": "4891cced5a43499c37c48c0aefdbbdabd8e4c9a29e6879b03c8d6355f9538465",
+      "published_bytes": 10549,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_corrected_full/meta.json",
+      "published": "paper_results/local_corrected_full/meta.json",
+      "local_original_sha256": "6d40a6b4822da8a0020084949de332c4e2cb7d18a5d0674819f5dece8aec7814",
+      "published_sha256": "37c261cc014f9f9e448f52803554314b1a54a2a4bb2c2bf278bfc058afe98ce9",
+      "decoded_sha256": "37c261cc014f9f9e448f52803554314b1a54a2a4bb2c2bf278bfc058afe98ce9",
+      "published_bytes": 1002,
+      "transformation": "JSON reserialized; only machine-specific path prefixes replaced"
+    },
+    {
+      "source": "results/local_reference_review_v2/comparison.png",
+      "published": "paper_results/comparison.png",
+      "local_original_sha256": "3a9708fa1d9d1c4d876faa33251658ce758c7e38ff8e0281f0684b6ba479115f",
+      "published_sha256": "3a9708fa1d9d1c4d876faa33251658ce758c7e38ff8e0281f0684b6ba479115f",
+      "decoded_sha256": "3a9708fa1d9d1c4d876faa33251658ce758c7e38ff8e0281f0684b6ba479115f",
+      "published_bytes": 338384,
+      "transformation": "byte_identical"
+    },
+    {
+      "source": "results/local_reference_review_v2/review.html",
+      "published": "paper_results/review.html",
+      "local_original_sha256": "52505dae7c26b2861d52baee5685de40b0d03a1664ceeb3897fe7b4d37c8c3c0",
+      "published_sha256": "52505dae7c26b2861d52baee5685de40b0d03a1664ceeb3897fe7b4d37c8c3c0",
+      "decoded_sha256": "52505dae7c26b2861d52baee5685de40b0d03a1664ceeb3897fe7b4d37c8c3c0",
+      "published_bytes": 456062,
+      "transformation": "Only machine-specific path prefixes replaced"
+    }
+  ],
+  "not_included": [
+    "Original PDFs and RData/NetCDF sources",
+    "Full samplers and posterior/prior NPZ archives",
+    "Compiler, virtual environments and personal configuration",
+    "Failed and superseded exploratory evidence"
+  ],
+  "historical_checks_note": "Saved verification files are historical results. Their source hashes refer to unredacted local files, not to the portable transformed copies. Re-run raw-source verifiers only with the original local inputs."
+}

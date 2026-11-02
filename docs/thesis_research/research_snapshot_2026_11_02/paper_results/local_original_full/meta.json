@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0.dev0",
+  "git": "7f1826c-dirty",
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "timings_s": {
+    "vorbereitung": 0.3,
+    "sampling": 62.36,
+    "auswertung": 44.24,
+    "diagnostik": 0.62,
+    "abbildungen": 14.52
+  },
+  "acceptance_rate": [
+    0.2816332816332816
+  ],
+  "n_samples_post": 10000,
+  "diagnostics_problems": [],
+  "posterior_aus": null
+}
