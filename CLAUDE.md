@@ -1,5 +1,17 @@
 # Aktueller Projekteinstieg für Claude
 
+> **Neuester Teilfortschritt: Altersraster/Zeilenauswahl, 02.11.2026:**
+> [Belege und synthetische Prüfung](docs/thesis_research/literal_age_selection_2026_11_02/README.md).
+> 39 neue Tests, mit Vorpaketen 124 grün. Exakte Rastermitgliedschaft ist kein
+> Intervalltest; vorläufige Holozänmaske wird im erhaltenen Kontrollfluss auf
+> alle Zeilen zurückgesetzt. Taxonwechselzweig bleibt durch `& FALSE` aus.
+> `age`/`site.age` und freie Maskenvariablen nicht still synchronisieren.
+> Keine finale Laufbindung; elf Nachweisbündel bleiben offen.
+> Nächster unabhängiger Einstieg: kumulativer Dichte-/EMD-Ausschnitt in
+> `src/mcmc_functions_v1.6.R:366–370,485–490` gegen skalare Referenzargumente
+> der Fallstudien prüfen. Keine neue Referenz/Kalibrierung oder Vollrunner.
+> Ältere Einstiege unten sind Verlauf. Keine neuen Läufe oder Speicherortfrage.
+
 > **Neuester Teilfortschritt, 02.11.2026:**
 > [Historische Alters-/Tiefenübertragung](docs/thesis_research/literal_age_depth_2026_11_02/README.md)
 > aus `check_ages.R` und `mcmc_prepare.R` begrenzt nachgebildet: 43 neue

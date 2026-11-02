@@ -1,5 +1,48 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Historische Altersraster und Zeilenauswahl geprüft, 02.11.2026
+
+**Abgeschlossen:** [Quellen, Zustände, Formeln und Grenzen](literal_age_selection_2026_11_02/README.md)
+verfolgen `age`, `site.age` und `reconst_ages` durch vier bereits gebundene
+Skripte. Separates Modul `tools/historical_age_selection.py`: exakte Perioden-
+rastermitgliedschaft, vorläufige/wirksame Maske des erhaltenen Kontrollflusses
+und boolesche RW-Zeilenauswahl vor dem Matrixprodukt. Kein Runner.
+
+**Belegt:** `age %in% grid` ist kein Intervalltest; erste Altersdifferenz
+bestimmt die Rasterweite. Die erhaltene Vorbereitung setzt zunächst bei
+`taxa.merge` eine Holozänmaske, überschreibt sie im wegen `& FALSE` erreichten
+Alternativzweig wieder mit allen Alterszeilen. Das gilt nur bei erfolgreichem
+Erreichen dieser Zeilen, nicht als historische Laufbindung. Gibbs verwendet
+an dieser Stelle keine `reconst_ages`-Maske. Drei Masken-/Schaltgrößen sind
+freie Umgebungsvariablen von `final_reconstruction`, keine formalen Parameter.
+`site.age` bleibt separat und kann im Speläothemzweig überschrieben werden.
+
+**Prüfung:** 39 neue synthetische Tests, mit den bisherigen Teilpaketen 124
+Tests grün. Rechteckige Produkte und rationale Sollwerte stimmen in der
+Prüfung exakt überein. Vier gelesene Quellskripte entsprechen vor/nach dem
+Lesen ihren bisherigen Hashbindungen. Kein historischer R-Laufzeitvergleich.
+Halbe/ganzzahlige Rastereinheiten und strikt passende Boolmasken begrenzen
+den Nachbau; keine stillen R-Recycling-/Dimensionsverlustreparaturen.
+
+**Grenzen:** Elf Nachweisbündel unverändert offen. Finale Originalbasis,
+Listenchronologie, numerische historische TFs und tatsächliche Laufzuordnung
+fehlen weiterhin. Kein finaler Kinneret-Pfad gewählt, keine Ersatzdaten und
+kein vollständiger Dissertationsfall reproduziert. Keine Synchronisierung
+von `age`/`site.age` oder Aktivierung des deaktivierten Taxonwechselzweigs.
+
+**Nächster Einstieg:** Kumulativen Dichte-/EMD-Ausschnitt im gebundenen
+`src/mcmc_functions_v1.6.R:366–370,485–490` gegen Fallstudienaufrufe mit skalaren
+Referenzargumenten lesen: Normierungszeitpunkt, `dims`-Faktor, Referenzform und
+Einheiten belegen und synthetisch prüfen. Keine neue Referenzkurve oder
+Kalibrierung; getrennte Module noch nicht zu einem Vollrunner verbinden.
+
+**Sicherung:** Basis `6241f41`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. App/CLI, Baseline, Originale, Referenzen, bisherige Belegpakete und
+fallbezogene Monticchio-/Chronologie-Gates erhalten. Keine Trainings, Sampler,
+Altersmodelle oder Fossilrekonstruktionen. Phase 1 vor Phase 2, Plots jung links,
+alt rechts. Keine wiederholte Speicherortfrage oder pauschale Inventur.
+
 ## Historischer Alters-/Tiefenteil synthetisch geprüft, 02.11.2026
 
 **Abgeschlossen:** [Quellen, Formeln und Grenzen](literal_age_depth_2026_11_02/README.md)

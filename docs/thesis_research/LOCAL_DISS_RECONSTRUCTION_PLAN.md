@@ -69,6 +69,16 @@ gewählt. Nächster unabhängiger Einstieg: Verbraucher von `age`/`site.age` und
 `reconst_ages` im gebundenen `src/mcmc_functions_v1.6.R` auf Zeilen-/Zeitfenster-
 auswahl prüfen, bevor die getrennten Module verbunden werden. Elf offene
 Nachweisbündel und fehlende Originaleingaben bleiben unberührt.
+**Altersraster und Zeilenauswahl abgeglichen:**
+[Getrennter technischer Ausschnitt](literal_age_selection_2026_11_02/README.md)
+mit 39 neuen synthetischen Tests, einschließlich Vorpaketen 124 grün.
+Exakte Rastermitgliedschaft, vorläufige/wirksame Maske und deaktivierter
+Taxonwechselzweig sind getrennt; keine automatische Achsensynchronisierung.
+Vier bisherige Quellhashbindungen bestätigt. Elf offene Nachweisbündel und
+fehlende Laufzuordnung bleiben unverändert. Als nächsten unabhängigen Teil
+den kumulativen Dichte-/EMD-Ausschnitt in `src/mcmc_functions_v1.6.R:366–370,485–490`
+gegen skalare Referenzargumente der Fallstudien belegen und synthetisch prüfen.
+Keine neue Referenzkurve oder Kalibrierung; Module noch nicht zum Vollrunner verbinden.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

@@ -1,5 +1,21 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Altersraster-/Zeilenauswahlprüfung, 02.11.2026:**
+> [Quellen, Formeln, Kontrollfluss und Grenzen](literal_age_selection_2026_11_02/README.md).
+> Separates Modul `tools/historical_age_selection.py`, 39 neue Tests und mit
+> Vorpaketen 124 grün. Raster verwenden exakte Mitgliedschaft und erste
+> Altersdifferenz. Vorläufige Holozänmaske wird im erhaltenen Kontrollfluss
+> wieder auf alle Zeilen gesetzt; `& FALSE` hält Taxonwechsel ausgeschaltet.
+> Das beweist keinen historischen Ausführungserfolg. `age`/`site.age` bleiben
+> getrennt; Masken sind freie Variablen von `final_reconstruction`.
+> Vier Quellhashes vor/nach Lesen gleich. Keine R-Laufzeitgleichheit/finale
+> Laufbindung; elf Nachweisbündel offen. Nächster unabhängiger Einstieg:
+> kumulative Dichte/EMD in `src/mcmc_functions_v1.6.R:366–370,485–490` gegen
+> Fallstudienaufrufe mit skalaren Referenzargumenten belegen und synthetisch
+> prüfen. Keine neue Referenzkurve, Kalibrierung oder Verbindung zum Vollrunner.
+> Phase 1 vorrangig; ältere Einstiege unten sind Verlauf. Keine Speicherortfrage,
+> neuen Trainings/Sampler/Altersmodelle/Fossilläufe oder automatische Merges.
+
 > **Aktueller Einstieg nach Alters-/Tiefenteilprüfung, 02.11.2026:**
 > [Quellen, Formeln, synthetische Prüfung und Grenzen](literal_age_depth_2026_11_02/README.md).
 > `tools/historical_age_depth.py` bildet begrenzte Teile aus `check_ages.R`

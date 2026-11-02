@@ -1,0 +1,176 @@
+{
+  "kind": "synthetic_arithmetic_only_no_original_numerical_inputs",
+  "age": [
+    -50,
+    0,
+    0.5,
+    11500,
+    11550.5,
+    115500
+  ],
+  "site_age_before_duplicate_shift": [
+    -50,
+    0,
+    0,
+    11500,
+    11550.5,
+    115500
+  ],
+  "unit": "abstract age unit; historical literals retain supplied scale, no a/ka conversion",
+  "expected_grid_counts": {
+    "hol": 231,
+    "lg": 2071,
+    "eem": 191
+  },
+  "expected_masks": {
+    "hol": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "lg": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "eem": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  "expected_initial_merge_mask": [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "expected_effective_mask": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "coefficients": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0.5,
+      0.5,
+      0
+    ],
+    [
+      0.25,
+      0,
+      0.75
+    ],
+    [
+      0,
+      0.25,
+      0.75
+    ]
+  ],
+  "transfer_functions": [
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      1
+    ]
+  ],
+  "expected_initial_selected_rows_R_1_based": [
+    1,
+    2
+  ],
+  "expected_initial_product": [
+    [
+      "2",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0",
+      "0"
+    ]
+  ],
+  "expected_effective_product": [
+    [
+      "2",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "1",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "3",
+      "1"
+    ],
+    [
+      "1",
+      "1/2",
+      "0",
+      "0"
+    ],
+    [
+      "1/2",
+      "0",
+      "9/4",
+      "3/4"
+    ],
+    [
+      "0",
+      "1/4",
+      "9/4",
+      "3/4"
+    ]
+  ],
+  "tolerance": 1e-14
+}
