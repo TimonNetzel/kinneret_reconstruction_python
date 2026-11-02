@@ -32,8 +32,13 @@ abgeschlossener Nachbau der taxonbasierten Dissertation.
 | 5. Lokalen Referenzfall reproduzieren | Bei belegten Eingaben und geklärter fallbezogener Freigabe einen abgegrenzten Lauf gegen vorhandene Originalausgaben prüfen. Bereits vorhandene passende Läufe wiederverwenden. | Gesicherte Konfiguration, Quell-/Eingabehashes, Laufzeitumgebung, Seeds, Ergebnisse, technische Diagnostik und Abweichungsbericht. Exakte, numerisch angenäherte und nur grafisch prüfbare Übereinstimmung auseinanderhalten. |
 | 6. Weitere lokale Fälle und App | Den belegten Ablauf auf die übrigen Fälle übertragen, jeweils erst nach Prüfung ihrer eigenen Eingaben und Chronologie; vorhandene App-/CLI-Muster verwenden. | Fallweise reproduzierte Ergebnisse, Quellen, Grenzen und Abweichungen. Nicht vorhandene Fälle bleiben offen und werden nicht durch bloße Darstellung als reproduziert gewertet. |
 
-**Nächster Arbeitsauftrag ist Schritt 1: die quellengebundene Fallmatrix.**
-Dafür zunächst die bereits abgeschlossenen Quellenprüfungen und lokalen
+**Schritt 1 abgeschlossen, 02.11.2026:**
+[Fallmatrix, Belege und Grenzen](local_case_matrix_2026_11_02/README.md).
+Noch kein Fall vollständig reproduzierbar; Kinneret ist der erste gezielte
+Klärungsfall. Nächster Auftrag: seinen historischen Basiseintrag und die
+geordnete Proben-/Taxon-/TF-Zuordnung an erhaltene Originaleingaben binden
+(Schritt 2/3), ohne neue Läufe.
+Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.
 

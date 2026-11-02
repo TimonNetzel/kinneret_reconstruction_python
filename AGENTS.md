@@ -3,9 +3,11 @@
 > **Aktuelle Reihenfolge auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
 > Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
 > Maßgeblich: [Arbeitsplan](docs/thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
-> Nächster Schritt ist die quellengebundene Fallmatrix, nicht neue Kalibrierung
-> oder zusätzliche Reliabilitätsansicht. Historische Befunde und bestehende
-> wissenschaftliche Gates bleiben erhalten; frühere Prioritäten unten sind Verlauf.
+> Die [Fallmatrix](docs/thesis_research/local_case_matrix_2026_11_02/README.md)
+> ist abgeschlossen. Als Nächstes Kinnerets historischen Datenvertrag gezielt
+> schließen; noch kein Fall vollständig reproduzierbar. Keine neuen Läufe.
+> Historische Befunde und wissenschaftliche Gates bleiben erhalten; frühere
+> Prioritäten unten sind Verlauf.
 
 
 > Aktueller Einstieg 02.11.2026: Der Nutzer hat die GitHub-Sicherung und

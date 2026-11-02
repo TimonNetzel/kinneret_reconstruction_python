@@ -1,5 +1,38 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Lokale Dissertationsfälle: Fallmatrix abgeschlossen, 02.11.2026
+
+**Abgeschlossen:** [Quellengebundene Fallmatrix](local_case_matrix_2026_11_02/README.md)
+für sieben Fälle an sechs Standorten, Totes Meer Holozän/Glazial getrennt.
+Lokale Vollfassung und Repository-Ausschnitt mit eigenen Seiten-/Abbildungsbelegen
+geprüft. Ohrid ausdrücklich 1165–1365 ka; Van nicht still auf 130 ka begrenzt.
+Fossil-/Chronologiekandidaten, Taxa/TFs, Klima, Referenzen, Anker, historische
+Code-/Nachbearbeitungsfassungen und Originalausgaben fallweise zugeordnet.
+
+**Ergebnis und Grenzen:** Noch kein Fall vollständig numerisch reproduzierbar.
+Historische numerische TFs, geordnete Zuordnung, globale Klima-/Referenzeingaben
+und genaue Laufbindung bleiben offen. Gezielte Prüfungen belegen zusätzliche
+Chronologie-/Versionslücken bei En Gedi, Birkat Ram, Van, Iznik und Ohrid.
+Elf von 14 Original-/Archivgrafikpaaren bytegleich; drei abweichende Stände am
+Toten Meer separat erhalten. Grafiken sind keine numerischen Originalposterioren.
+
+**Als Nächstes:** Kinneret als ersten Klärungsfall erschließen: 160 Pollenzeilen,
+160 Chronologieeinträge und beide bytegebundene Archivgrafiken liegen vor.
+Den historischen `core.data[[3]]`-Basiseintrag an lokale Einzelcontainer und
+Erzeuger binden, Proben-/Tiefen-/Pollentyp-/TF-Reihenfolge festhalten und erst
+daraus die benötigte numerische TF-Teilmenge ableiten. Keine pauschale Inventur,
+Neukalibrierung oder neue Reliabilitätsansicht vorziehen.
+
+**Geprüft und gesichert:** Explizite Quellen vor/nach dem Lesen unverändert;
+getrennte PDF-Seiten-/Abbildungsprüfung, strukturierte RData-/CSV-Metadaten,
+Archivhashvergleich und Dokumentationslinks geprüft. Nachweise im Matrixpaket.
+Ausgangspunkt `865d155`, sauberer Checkout und identischer offener PR #77
+vor Arbeitsbeginn bestätigt. Sicherung auf bestehendem Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Keine Trainings, Sampler oder Fossilrekonstruktionen. Paper-Biomfall,
+sieben moderne Arten, App/CLI, Baseline, Referenzdaten und Monticchio-/Chronologie-
+Gates bleiben erhalten. Phase 1 fortsetzen; Plots jung links, alt rechts.
+
 ## Priorität geändert: lokale Dissertation zuerst, Verbesserungen danach, 02.11.2026
 
 **Abgeschlossen – Planänderung auf ausdrücklichen Nutzerauftrag:**

@@ -8,8 +8,11 @@ anschließend Verbesserungen.** Verbindlicher Ablauf:
 Lies zuerst `AGENTS.md`, den neuesten Abschnitt von
 `docs/thesis_research/PROJECT_STATUS.md`, den neuen Arbeitsplan und
 `docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md`.
-Nächster Schritt: quellengebundene Fallmatrix der lokalen Dissertationsfälle,
-dann den ersten anhand der Originaleingaben belegbaren Referenzfall festlegen.
+Die quellengebundene Fallmatrix ist abgeschlossen:
+`docs/thesis_research/local_case_matrix_2026_11_02/README.md`.
+Noch kein Fall vollständig reproduzierbar. Nächster Schritt: Kinnerets
+historischen Basiseintrag, Proben-/Taxonzuordnung und erforderliche numerische
+TF-Teilmenge gezielt an die erhaltenen Eingaben binden; keine neuen Läufe.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.
 

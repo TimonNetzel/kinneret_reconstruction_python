@@ -1,5 +1,14 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach abgeschlossener Fallmatrix, 02.11.2026:**
+> [Sieben Fälle, Quellen, Grenzen und Einstieg](local_case_matrix_2026_11_02/README.md).
+> Noch kein vollständig numerisch reproduzierbarer Dissertationsfall.
+> Als Nächstes gezielt Kinnerets historischen Basiseintrag und geordnete
+> Proben-/Taxon-/TF-Zuordnung an die vorhandenen 160 Pollen-/Chronologieeinträge
+> binden. Beide Kinneret-Fallgrafiken sind bytegleich zum Dissertationsarchiv.
+> Keine neue Gesamtinventur oder Rechenläufe. Die folgenden älteren Hinweise
+> zur noch zu erstellenden Matrix beschreiben den vorherigen Stand.
+
 > **Neue Priorität auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
 > Rekonstruktionen der Dissertation nachbauen, danach verbessern.
 > [Verbindlicher Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md).
