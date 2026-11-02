@@ -1,5 +1,27 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Nutzerangabe zum Originalverlust dauerhaft verankert, 02.11.2026
+
+**Neue gesicherte Kontextinformation:** Alle Dateien mit historischem Pfadpräfix
+`/automount/` lagen laut Nutzer auf einer gelöschten Festplatte. Die dortigen
+Originale sind verloren; benötigte Dateien müssen neu erstellt werden.
+[Verbindlicher Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md) sowie Hinweise in
+`CLAUDE.md`, `AGENTS.md`, Arbeitsplan und Claude-Übergabe sichern die Regel für
+künftige Sitzungen. Quelle ist die Nutzerangabe, keine neue Dateiinventur.
+
+**Planfolge:** Für konkret an diesen Präfix gebundene Dateien Erzeugercode,
+benötigte Eingaben/Parameter, Achsen und Prüfmaßstäbe gezielt erfassen und
+Wiederaufbau vorbereiten. Nicht erneut nach dem Originaldatenträger/Speicherort
+fragen oder pauschal danach suchen. Andere Fehlpfade nicht ohne Beleg zuordnen.
+Neue Dateien als neu erzeugt kennzeichnen; keine automatische Originalidentität,
+finale Variantenwahl oder Schließung der elf Nachweisbündel.
+
+**Sicherung/Grenze:** Dokumentationsänderung auf Basis `91436c4` in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Eingefrorene Belege, Startaufträge und Numerik unverändert. Keine
+Neuberechnungen, Trainings, Sampler, Altersmodelle oder Fossilläufe gestartet.
+Nächster technischer Schritt bleibt die begrenzte TF-Vorbereitung.
+
 ## Gemeinsame synthetische Rechenkette geprüft, 02.11.2026
 
 **Abgeschlossen:** [Gemeinsame Fixture, Bruchrechnung und Grenzen](literal_phase1_chain_2026_11_02/README.md)

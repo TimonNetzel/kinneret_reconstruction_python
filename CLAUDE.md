@@ -1,5 +1,14 @@
 # Aktueller Projekteinstieg für Claude
 
+> **Dauerhafte Quellenregel – Nutzerangabe vom 02.11.2026:**
+> Alle Dateien mit historischem Pfadpräfix `/automount/` lagen auf einer
+> gelöschten Festplatte. Diese Originale sind verloren; benötigte Dateien
+> müssen anhand belegter Erzeugungsschritte neu erstellt werden. Nicht erneut
+> nach dem Datenträger/Speicherort fragen oder pauschal danach suchen.
+> [Verbindlicher Wiederaufbauplan](docs/thesis_research/SOURCE_RECOVERY_PLAN.md).
+> Neuberechnung nicht als Originalfund oder automatisch bytegleiche historische
+> Reproduktion behandeln. Eingefrorene Nachweise und bestehende Laufgrenzen erhalten.
+
 > **Aktueller Einstieg nach gemeinsamer Rechenkettenprüfung, 02.11.2026:**
 > [Neuer Startauftrag für Claude](docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md)
 > mit portablen Quellauszügen, Formeln, Prüfkommandos und Abnahmekriterien.

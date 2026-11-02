@@ -10,6 +10,23 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Dauerhafte Quellenlage: gelöschte Festplatte
+
+**Neue Nutzerangabe vom 02.11.2026:** Alle historischen Dateien unter
+`/automount/...` lagen auf einer gelöschten Festplatte. Die dortigen Originale
+sind verloren und müssen bei Bedarf erneut erstellt werden. Maßgeblich ist der
+[Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md): pro belegtem Pfad Rolle, Erzeuger,
+Eingaben/Parameter und Prüfmaßstab zuordnen, dann den kontrollierten Wiederaufbau
+vorbereiten. Für diese Dateien nicht weiter nach dem Originaldatenträger oder
+einem unbekannten Speicherort fragen und keine pauschale Suche wiederholen.
+
+Diese neue Herkunftsinformation ergänzt ältere Fehlpfadberichte; eingefrorene
+Belege bleiben unverändert. Andere fehlende/relative Dateien nicht ohne
+Pfadbeleg zuordnen. Neu erzeugte Dateien als solche kennzeichnen; keine
+Originalidentität oder historische Laufgleichheit voraussetzen. Phase 1 bleibt
+vorrangig, bestehende Laufgrenzen und fachliche Gates gelten weiterhin.
+Die Angabe selbst startet keine Neuberechnungen und schließt keine Nachweisbündel.
+
 ## Phase 1: lokale Rekonstruktionen der Dissertation nachbauen
 
 Ziel ist der nachvollziehbare Nachbau des historischen lokalen

@@ -1,5 +1,14 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Dauerhaft berücksichtigen: gelöschte Festplatte (Nutzer, 02.11.2026).**
+> Dateien mit historischem Pfadpräfix `/automount/` sind Originalverluste und
+> müssen bei Bedarf neu erstellt werden. [Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md)
+> lesen: keine erneute Speicherortfrage/Suchinventur, Erzeuger und Eingaben
+> gezielt zuordnen, neu erzeugte Ergebnisse als solche kennzeichnen.
+> Frühere Fehlpfad-/Unbekannt-Aussagen werden dadurch ergänzt; eingefrorene
+> Belege und Startaufträge unverändert lassen. Der technische nächste Schritt
+> bleibt die unten verlinkte TF-Vorbereitung; noch keine neuen Läufe gestartet.
+
 > **Aktueller Einstieg nach gemeinsamer synthetischer Prüfung, 02.11.2026:**
 > **[Claude beginnt hier mit dem nächsten konkreten Schritt](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md).**
 > Der neue Auftrag enthält portabel gebundene R-Auszüge, Normierungs-/Masken-
