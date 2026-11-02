@@ -1,0 +1,54 @@
+{
+  "basis_commit": "0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34",
+  "tracked_files_unchanged_since_basis": true,
+  "new_files_sha256": {
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/README.md": "c386f734154643153502cf5bc1009f6ae18eff5d9376b9961382a57dce645999",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/arithmetic_check.json": "19673976f98a6f62a6cfab2011f45786737e531010c675db7da1ed064c9f0046",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/bind_source.py": "2f5d266af8b355876f8283d0040db55d926485453304f2aff17c9206d86a40f6",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/check_sampler_preparation.py": "272f96821c1e459146c801c7c10d992221c902d4ffed00fc0fd75853416f66f2",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/determinism_audit.json": "0e527342ffb4b69bbb47acf9e39f9779241ddc1dd5a54c5804d9e921e4421ecf",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/make_fixture.py": "03b24a2b911d527c0f6f8a531fa64f3b8cb891a3ed18692d4ad86cb2f7000d04",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/rational_expectations.json": "919ef64a1913ed6368f521d82c805addd22682466c263e0f4760be71cfe6470b",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/rational_reference.py": "a49c13d62099d604621a6996924e27b7d52dff538dc62afa48b0fa2162f6e239",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/record_verification.py": "6b273135967d6d7cb4c2b7202d0bde4a47313a8fc74aa3259904297de9d33693",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/source_binding.json": "53a9e95551b55be882f9d9d974300dc6972f1cc51652da544e56f2334813fdec",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/source_excerpt.json": "6b361c2d973b2f26e7bf1c2410aebb88fced11cc431ca274e49296da1fb5364d",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/synthetic_fixture.json": "afd972ce98ca0f59b088c356e9cf7d62559acb38821baca3922659071e724c5e",
+    "docs/thesis_research/literal_sampler_preparation_2026_11_02/synthetic_result.json": "c6b9824168b9611bdcea1781158d234af46a51934a958b2ec7540d22aba4fbb6",
+    "tests/test_historical_sampler_preparation.py": "a70633220761f467c89ac6cf31b7c276901b65151805a2f1c0ccc858b731b945",
+    "tools/historical_sampler_preparation.py": "31a3f84145a176727f357457928d838ebf65eb7133d7c0403079bb53751ad460"
+  },
+  "targeted_pytest": {
+    "files": [
+      "tests/test_historical_sampler_preparation.py",
+      "tests/test_historical_tf_missing_priors.py",
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "tests": 555,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 118,
+    "previous_tests": 437
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "tools/verify_* (time-bound checkers, not regression checkers)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

@@ -1,0 +1,230 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34",
+  "sources": {
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json"
+    },
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "literal_tf_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_conduction.R": {
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "bytes": 25090,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "bytes": 99905,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_trimming_posterior_trafo.R": {
+      "sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "bytes": 27564,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    },
+    "original:src/check_ages.R": {
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "bytes": 12904,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json"
+    },
+    "original:src/prior_climate.R": {
+      "sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd",
+      "bytes": 6918,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/loess_functions.R": {
+      "sha256": "371e2761eb532644da9bd7c1e9dc09c930c41ea3026fa616680a9d3000071ead",
+      "bytes": 1682,
+      "previous_binding": "required_files_2026_11_02/source_dates.csv"
+    }
+  },
+  "source_hashes_before_equal_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "6b361c2d973b2f26e7bf1c2410aebb88fced11cc431ca274e49296da1fb5364d",
+  "implemented_spans": {
+    "sampler_preparation": [
+      "src/mcmc_conduction.R",
+      53,
+      79
+    ],
+    "gibbs_switch": [
+      "main_v1.2.R",
+      624,
+      624
+    ]
+  },
+  "brace_depth_at_line_start": {
+    "main_v1.2.R": {
+      "624": 0,
+      "625": 0,
+      "676": 1
+    },
+    "src/mcmc_conduction.R": {
+      "53": 0,
+      "54": 1,
+      "57": 1,
+      "63": 0,
+      "64": 0,
+      "67": 0,
+      "69": 0,
+      "70": 0,
+      "71": 1,
+      "75": 0,
+      "79": 0,
+      "101": 0,
+      "114": 0,
+      "142": 1
+    },
+    "src/mcmc_functions_v1.6.R": {
+      "1216": 2,
+      "1228": 1,
+      "1243": 1,
+      "1276": 1,
+      "1280": 1
+    }
+  },
+  "assignment_sites_without_comments": {
+    "gibbs": {
+      "main_v1.2.R": [
+        624
+      ]
+    },
+    "F": {},
+    "T": {},
+    "num_taxa": {
+      "src/mcmc_prepare.R": [
+        1435,
+        1678
+      ]
+    },
+    "taxa_information": {
+      "src/mcmc_conduction.R": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        75
+      ]
+    },
+    "c": {
+      "src/mcmc_prepare.R": [
+        747,
+        1703
+      ]
+    },
+    "t": {},
+    "max": {},
+    "colMeans": {},
+    "rep": {},
+    "floor": {},
+    "ncol": {},
+    "nrow": {},
+    "list": {}
+  },
+  "taxa_appear_core_assignments_mcmc_prepare": [
+    1454,
+    1666
+  ],
+  "occurrences_without_comments": {
+    "gibbs": {
+      "main_v1.2.R": [
+        624,
+        625
+      ],
+      "src/mcmc_conduction.R": [
+        53
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        366,
+        433,
+        2051,
+        2077
+      ]
+    },
+    "taxa_information": {
+      "src/mcmc_conduction.R": [
+        63,
+        64,
+        65,
+        66,
+        67,
+        75,
+        142
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1207,
+        1242,
+        1276
+      ]
+    },
+    "$taxa_means": {
+      "src/mcmc_conduction.R": [
+        67
+      ]
+    },
+    "jeffreys_prior": {
+      "src/mcmc_conduction.R": [
+        79
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1216
+      ]
+    },
+    "how_many_taxa": {
+      "src/mcmc_conduction.R": [
+        54,
+        57,
+        114
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1228
+      ]
+    },
+    "combs": {
+      "src/mcmc_prepare.R": [
+        1702,
+        1703
+      ]
+    },
+    "tf_x12_mean_current": {
+      "src/mcmc_prepare.R": [
+        1461,
+        1692,
+        1693,
+        1694
+      ],
+      "src/mcmc_conduction.R": [
+        146
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        445,
+        470,
+        855,
+        858
+      ]
+    }
+  },
+  "parameter_stage_weights_reads_taxa_appear_core_argument": false,
+  "base_functions_redefined": false,
+  "gibbs": "gibbs <- F at main_v1.2.R:624 (depth 0) is the only assignment; F is never reassigned: how_many_taxa <- num_taxa (57) and parameter_stage_weights (58) are active",
+  "main_stray_closing_braces": [
+    740,
+    788,
+    829
+  ],
+  "main_stray_note": "closing braces whose openings are commented out, all after the bound loop 651-684; a whole-file source() of main_v1.2.R would fail to parse, so it was run in parts; this stays a run-binding question (no correction)",
+  "c_loop_variable": "mcmc_prepare.R:747 binds c locally inside a function; 1703 binds c to an integer; R skips non-function bindings when it looks up the function in c(...) (documented R semantics, not executed)",
+  "col_means": "colMeans may accumulate in extended precision; taxa_means has no reader; means flagged",
+  "excluded_context": "sampler loop from 82 on, rmvnorm_rcpp (133), parameter stages, reconstruction, tf_x12_mean_current, combs, weightedMedian, seeded and unseeded draws",
+  "supported_domain": "finite numeric matrix with NA, at least two rows and two columns, num_taxa equal to ncol, no column of NA only, no negative zero",
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}
