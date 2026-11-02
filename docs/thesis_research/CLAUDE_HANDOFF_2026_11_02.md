@@ -1,5 +1,14 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Nachbearbeitungsabgleich, 02.11.2026:**
+> [Auswahl, Kombination und Grenzen](kinneret_postprocessing_2026_11_02/README.md).
+> Quellvarianten und zwei synthetische Rechenkontrollen sind dokumentiert;
+> Originalposterioren/finale Laufbindung bleiben offen. Indexverlust und
+> unterschiedliche Dichtemodi nicht still korrigieren oder harmonisieren.
+> Als Nächstes die Eingabe-, Referenz- und Nachbearbeitungsverträge zu einer
+> maschinenprüfbaren Phase-1-Spezifikation zusammenführen. Keine neuen Läufe.
+> Frühere Einstiege folgen als Verlauf.
+
 > **Aktueller Einstieg nach Referenz-/Ankerabgleich, 02.11.2026:**
 > [Vertrag, Quellstellen und Grenzen](kinneret_references_2026_11_02/README.md).
 > AP-Maske, Soreq-/MEDSTACK-Verbraucher und Ankerzweige sind dokumentiert;

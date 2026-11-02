@@ -45,6 +45,10 @@ unabhängiger Schritt in Phase 1: Referenz-/Ankervertrag konkretisieren.
 **Weiterer Teilfortschritt:** [Referenz-/Ankerpfad](kinneret_references_2026_11_02/README.md)
 ist dokumentiert; numerische Eingaben und Laufbindung bleiben offen. Als Nächstes
 historische Nachbearbeitung (Ziehungsauswahl und Dichtekombination) gezielt binden.
+**Nachbearbeitung abgeglichen:** [Quellvarianten und Grenzen](kinneret_postprocessing_2026_11_02/README.md).
+Originalposterioren und finale Auswahl-/Kombinationsfassung offen. Als Nächstes
+maschinenprüfbare Phase-1-Reproduktionsspezifikation aus den gebundenen
+Eingabe-/Referenz-/Auswertungsverträgen zusammenführen.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

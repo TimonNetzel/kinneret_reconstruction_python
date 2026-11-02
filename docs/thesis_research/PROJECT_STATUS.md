@@ -1,5 +1,40 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kinneret: Nachbearbeitungsfassungen gebunden, 02.11.2026
+
+**Abgeschlossenes Quellenpaket:** [Ziehungsauswahl und Dichtekombination](kinneret_postprocessing_2026_11_02/README.md)
+trennt Dissertationstext, Fallstudiencode, Vergleichsfassungen und aktuellen
+Trimming-Einstieg. Zwei deterministische synthetische Kontrollen belegen den
+möglichen Verlust der Originalindizes nach Filterung und den Unterschied
+zwischen Dichtemischung und Mittel unabhängiger Zufallsgrößen. Keine Original-
+ziehungen verändert und keine Klimakurven berechnet.
+
+**Konkret belegt:** Die Rückabbildung auf `best_combs` ist im Fallstudiencode
+kommentiert, in Vergleichsfassungen aktiv. Der Fallstudien-IAT-Refinementloop
+ist deaktiviert; der aktuelle `mcmc_trimming.R` schaltet sogar den ganzen
+IAT-Zweig ab. Fallstudiencode nutzt PDF-Mischung statt des textlich beschriebenen
+Zufallsgrößenmittels; der heutige aktive Einstieg bildet eine KDE über gespeicherte
+Klima-Punktwerte. Keine dieser Fassungen ist als finaler Kinneret-Lauf identifiziert.
+
+**Weiter offen:** Alle acht explizit geprüften Kinneret-Posteriorpfade fehlen;
+Original-IDs/zehn gewählte Ziehungen und numerische Enddichten sind nicht
+wiederhergestellt. Basis-, TF-, Referenz-/CRU- und Laufbindungslücken bleiben
+bestehen. Grafik-Bytegleichheit zum Dissertationsarchiv bestätigt nur das
+Ausgabeartefakt, keine Auswahl-/Kombinationsfassung. Keine stillen Reparaturen.
+
+**Als Nächstes:** Die gebundenen Eingabe-, Referenz- und Nachbearbeitungsbefunde
+zu einer maschinenprüfbaren Phase-1-Reproduktionsspezifikation zusammenführen.
+Textverfahren und Quellvarianten getrennt halten; unbekannte Originaleingaben,
+Indizes, Achsen, Paket-/RNG- und Ausführungsfassung als offen ausweisen.
+
+**Prüfung/Sicherung:** Quellenhashes vor/nach dem Lesen gleich, synthetische
+Kontrollen ohne Zufall, Nachweise wiederholbar; Vorpakete und Forschungssnapshot
+erhalten. Basis `edfd3f1`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Keine R-Ausführung, IAT-Schätzung, Dichteanpassung, Trainings,
+Sampler oder Fossilrekonstruktionen. App/CLI, Baseline, Originale und Monticchio-/
+Chronologie-Gates erhalten; Phase 1 vorrangig. Jung links, alt rechts.
+
 ## Kinneret: Referenz-/Ankerpfad gebunden, 02.11.2026
 
 **Abgeschlossenes Quellenpaket:** [Referenz-/Ankervertrag](kinneret_references_2026_11_02/README.md)

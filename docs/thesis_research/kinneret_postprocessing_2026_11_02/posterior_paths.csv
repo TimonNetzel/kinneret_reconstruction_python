@@ -1,0 +1,9 @@
+algorithm,percent,case_studies,station_id,sim_nr,relative_path,exists,scope
+rw,False,False,3,1,out/posterior/rw_posterior_add_3_1_counts.rdata,False,"exact current source branch candidate, not a recovered historical run"
+rw,False,True,3,1,out/posterior/rw_posterior_add_3_1_case_studies_counts.rdata,False,"exact current source branch candidate, not a recovered historical run"
+rw,True,False,3,1,out/posterior/rw_posterior_add_3_1.rdata,False,"exact current source branch candidate, not a recovered historical run"
+rw,True,True,3,1,out/posterior/rw_posterior_add_3_1_case_studies.rdata,False,"exact current source branch candidate, not a recovered historical run"
+gibbs,False,False,3,1,out/posterior/gibbs_posterior_add_3_1_counts.rdata,False,"exact current source branch candidate, not a recovered historical run"
+gibbs,False,True,3,1,out/posterior/gibbs_posterior_add_3_1_case_studies_counts.rdata,False,"exact current source branch candidate, not a recovered historical run"
+gibbs,True,False,3,1,out/posterior/gibbs_posterior_add_3_1.rdata,False,"exact current source branch candidate, not a recovered historical run"
+gibbs,True,True,3,1,out/posterior/gibbs_posterior_add_3_1_case_studies.rdata,False,"exact current source branch candidate, not a recovered historical run"

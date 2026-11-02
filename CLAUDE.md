@@ -17,9 +17,12 @@ keinen weiteren Speicherort. Noch kein Fall vollständig reproduzierbar.
 Kinnerets Referenz-/Ankerpfad ist dokumentiert, numerische Eingaben und
 Laufbindung bleiben offen:
 `docs/thesis_research/kinneret_references_2026_11_02/README.md`.
-Nächster unabhängiger Schritt: historische Nachbearbeitung in
-`mcmc_case_studies.R` gegen Dissertation und aktuellen Trimming-Einstieg binden
-(Ziehungsauswahl, Prior/IAT/Pareto, Dichtekombination).
+Die historischen Nachbearbeitungsfassungen sind getrennt gebunden:
+`docs/thesis_research/kinneret_postprocessing_2026_11_02/README.md`.
+Originalposterioren und finale Auswahl-/Kombinationsfassung fehlen weiter.
+Nächster Schritt: Eingabe-, Referenz- und Auswertungsverträge zu einer
+maschinenprüfbaren Phase-1-Reproduktionsspezifikation zusammenführen.
+Textverfahren, aktuelle Quellvarianten und offene Datenbindung getrennt halten.
 Keine erneute pauschale Suche oder neuen Läufe; ältere Eingaben nicht ersetzen.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.

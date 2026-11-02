@@ -7,8 +7,9 @@
 > ist abgeschlossen. [Kinnerets ältere Eingaben](docs/thesis_research/kinneret_binding_2026_11_02/README.md)
 > sind teilweise gebunden; finale Basis/TFs fehlen, weiterer Speicherort unbekannt.
 > [Referenz-/Ankervertrag](docs/thesis_research/kinneret_references_2026_11_02/README.md)
-> ist dokumentiert; numerische Eingaben/Laufbindung offen. Als Nächstes
-> historische Nachbearbeitung gezielt binden. Kein Fall vollständig
+> ist dokumentiert; [Nachbearbeitungsfassungen](docs/thesis_research/kinneret_postprocessing_2026_11_02/README.md)
+> sind getrennt gebunden. Numerische Eingaben/Laufbindung offen. Als Nächstes
+> maschinenprüfbare Phase-1-Reproduktionsspezifikation zusammenführen. Kein Fall vollständig
 > reproduzierbar; keine neuen Läufe oder pauschalen Inventuren.
 > Historische Befunde und wissenschaftliche Gates bleiben erhalten; frühere
 > Prioritäten unten sind Verlauf.
