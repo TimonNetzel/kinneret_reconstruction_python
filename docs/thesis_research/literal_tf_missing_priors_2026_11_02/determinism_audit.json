@@ -1,0 +1,72 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Which next step is deterministic without random state and without unbound package semantics?",
+  "candidates": [
+    {
+      "id": "which_tf_missing_num_taxa_priors",
+      "lines": "mcmc_prepare.R:1664-1685 (+1435-1442)",
+      "random_state": false,
+      "functions": [
+        "which",
+        "is.na",
+        "length",
+        "!=",
+        "[ with negative index",
+        "nrow",
+        "c",
+        ":",
+        "rep",
+        "/",
+        "round"
+      ],
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": true,
+      "evidence": "main_v1.2.R:675 sources mcmc_prepare.R; 1664-1665 and 1681-1685 lie at brace depth 0, the removal 1666-1678 inside the data-dependent guard length(which.tf.missing) != 0; taxa_change is FALSE (1462) and only set TRUE behind & FALSE (1500-1501)",
+      "mask": "explicit input is.na(tf.x1.current.mean); in the source it comes from weightedMedian (1631), which stays open; only the x1 mean is tested",
+      "round_note": "round(num_taxa/4): num_taxa/4 is an exact double; ties occur for num_taxa %% 4 == 2. R documents IEC 60559 rounding to the even digit (?Round); R version unbound, not executed. Half-up would differ for num_taxa %% 8 == 2. prior$nr.taxa.sd has no active reader in the bound loop files.",
+      "readers": "num_taxa is read downstream (1703 combs, mcmc_conduction.R, mcmc_functions_v1.6.R, postprocessing); prior$phi, phi1, phi2, taxa.weights, nr.taxa.mean and nr.taxa.sd have no non-comment reader in the five bound loop files; posterior <- list() in 1706 discards posterior$nr.taxa.mean[1]",
+      "decision": "implemented as tools/historical_tf_missing_priors.py; inputs only synthetic"
+    },
+    {
+      "id": "default_thresholds_131_137",
+      "lines": "mcmc_prepare.R:131-137",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "mean +/- sd is base arithmetic, but the period branches (200-208, 268-276, 356-364) overwrite the same variables from fitdistr (MASS) inputs and quantile; tann_thresh/pann_thresh come from seeded samples (1297-1303); readers use inside.range (mcmc_functions_v1.6.R:319-328), whose semantics are unbound",
+      "decision": "not selected; weaker candidate, documented"
+    },
+    {
+      "id": "weightedMedian",
+      "lines": "mcmc_prepare.R:1631,1632,1651,1652",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "main_v1.2.R:27 attaches matrixStats without version",
+      "decision": "documented only; stays open in the runtime_rng bundle; the NA mask is therefore an input"
+    },
+    {
+      "id": "prior_samples_seed_2022",
+      "lines": "mcmc_prepare.R:1297-1303",
+      "random_state": true,
+      "seed_in_bound_sources": true,
+      "evidence": "set.seed(2022) before rnorm and rgamma; RNG kind, sample.kind and R version unbound",
+      "decision": "documented only"
+    },
+    {
+      "id": "start_values_rbeta",
+      "lines": "mcmc_prepare.R:1709-1738",
+      "random_state": true,
+      "evidence": "rbeta(1, 0.1, 20) in the start values, after posterior <- list() (1706)",
+      "decision": "documented only"
+    },
+    {
+      "id": "tf_variance_sample",
+      "lines": "mcmc_prepare.R:1591-1592",
+      "random_state": true,
+      "evidence": "sample(..., replace = T) without a local seed; overwritten by range() in 1607-1608",
+      "decision": "documented only"
+    }
+  ],
+  "selected_for_implementation": "which_tf_missing_num_taxa_priors",
+  "final_variant_selected": false,
+  "R_execution": false
+}
