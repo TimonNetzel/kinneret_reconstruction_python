@@ -1,5 +1,19 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Alters-/Tiefenteilprüfung, 02.11.2026:**
+> [Quellen, Formeln, synthetische Prüfung und Grenzen](literal_age_depth_2026_11_02/README.md).
+> `tools/historical_age_depth.py` bildet begrenzte Teile aus `check_ages.R`
+> und seinem Verbraucher nach. 43 neue Tests; mit bisherigen Paketen 85 grün.
+> rho(D|A)-Orientierung, 1e-9 nach Normierung ohne Renormierung, Pollennullen
+> 1e-6 und einmalige Altersverschiebung getrennt dokumentiert. Drei Quellhashes
+> unverändert. Keine historische R-Gleichheit oder finale Laufbindung.
+> Mittelwertmatrix ersetzt keine Listenchronologie; elf Nachweisbündel offen.
+> Nächster unabhängiger technischer Einstieg: `age`/`site.age`/`reconst_ages`
+> im gebundenen `src/mcmc_functions_v1.6.R` auf Zeilen-/Zeitfensterauswahl
+> prüfen, bevor getrennte Module verbunden werden. Keine stillen Reparaturen,
+> Originalersatzwahl, neue Läufe oder Speicherortfrage. Frühere Einstiege unten
+> sind Verlauf. Phase 1 bleibt vorrangig; PR #77 offen, kein Merge.
+
 > **Aktueller Einstieg nach deterministischem Teilnachbau, 02.11.2026:**
 > [Taxongewichtung/PDF-Summe, Tests und Grenzen](literal_final_pdf_2026_11_02/README.md).
 > `tools/historical_final_pdf.py` bildet ausschließlich belegte deterministische

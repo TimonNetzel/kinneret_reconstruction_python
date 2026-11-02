@@ -1,5 +1,42 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Historischer Alters-/Tiefenteil synthetisch geprüft, 02.11.2026
+
+**Abgeschlossen:** [Quellen, Formeln und Grenzen](literal_age_depth_2026_11_02/README.md)
+binden `check_ages.R` an den tatsächlich rechnenden Verbraucher
+`mcmc_prepare.R`. Getrenntes Modul `tools/historical_age_depth.py`: explizite
+Listenposition, einmalige Altersduplikatverschiebung, Auswahl der Tiefenspalten,
+Zeilennormierung, historische Nullersetzungen und Pollen-Matrixprodukt.
+Orientierung rho(D|A): Alter × Tiefengitter, dann Alter × Probentiefe;
+Produkt mit Probentiefe × Taxon ergibt Alter × Taxon. Keine finale Auswahl.
+
+**Prüfung:** 43 neue synthetische Tests bestanden, zusammen mit Taxongewichtung/
+PDF-Summe und Belegvertrag 85 Tests grün. Rechteckige Matrizen und rationale
+Sollwerte prüfen Orientierung und Reihenfolge; maximaler Fehler 2.23e-16.
+Historisches `10e-10` nach Normierung bleibt 1e-9 ohne Renormierung;
+Pollennullen werden separat zu 1e-6. Altersverschiebung um 0,5 kann Duplikate
+übriglassen und verändert `site.age` nicht. Drei Quellhashes stimmen vor/nach
+Lesen mit der vorherigen Bindung überein. Kein R-Laufzeitvergleich.
+
+**Grenzen:** Mittelwertmatrix ersetzt keine Liste mehrerer Altersraster.
+Ungeordnete/doppelte oder nicht passend indizierbare Tiefen werden nicht still
+repariert. Standortüberschreibungen, Fallback, Birkat-Ram-LOESS und NA-Füllung
+sind ausgeschlossen. Alle elf Nachweisbündel bleiben offen; finale Originalbasis,
+Listenchronologie, historische TFs und Laufbindung fehlen weiterhin.
+Kein vollständiger Fall reproduziert, keine neue Chronologie oder Variante.
+
+**Nächster Einstieg:** Verbraucher von `age` gegenüber `site.age` und
+`reconst_ages` im bereits gebundenen `src/mcmc_functions_v1.6.R` gezielt auf
+Zeilen-/Zeitfensterauswahl verfolgen und einen belegten Ausschnitt synthetisch
+prüfen, bevor getrennte Module verbunden werden. Keine neue Gesamtinventur,
+Speicherortfrage, Ersatzdatenwahl oder Phase 2.
+
+**Sicherung:** Basis `f7d97c1`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. App/CLI, Baseline, Originale, Referenzen, bisherige Belegpakete und
+fallbezogene Monticchio-/Chronologie-Gates erhalten. Keine Trainings, Sampler,
+Altersmodelle oder Fossilrekonstruktionen. Plots weiter jung links, alt rechts.
+
 ## Historischer deterministischer Teilnachbau, 02.11.2026
 
 **Abgeschlossen:** [Taxongewichtung und PDF-Summe](literal_final_pdf_2026_11_02/README.md)

@@ -1,5 +1,16 @@
 # Aktueller Projekteinstieg für Claude
 
+> **Neuester Teilfortschritt, 02.11.2026:**
+> [Historische Alters-/Tiefenübertragung](docs/thesis_research/literal_age_depth_2026_11_02/README.md)
+> aus `check_ages.R` und `mcmc_prepare.R` begrenzt nachgebildet: 43 neue
+> synthetische Tests, mit Vorpaketen 85 grün. Listen-/Matrixform, rho(D|A),
+> Normierungszeitpunkt und einmalige Altersverschiebung bleiben getrennt.
+> Keine finale Variante oder R-Laufzeitgleichheit; elf Nachweisbündel offen.
+> Nächster unabhängiger Einstieg: `age`/`site.age`/`reconst_ages` im gebundenen
+> `src/mcmc_functions_v1.6.R` auf Zeilen-/Zeitfensterauswahl prüfen, bevor Module
+> verbunden werden. Keine neuen Läufe, Ersatzdaten oder Speicherortfrage.
+> Die älteren nächsten Schritte unten sind Verlauf. Phase 1 bleibt vorrangig.
+
 Aktuelle Priorität auf Nutzerauftrag vom 02.11.2026:
 **Zuerst die lokalen Rekonstruktionen der Dissertation nachbauen,
 anschließend Verbesserungen.** Verbindlicher Ablauf:

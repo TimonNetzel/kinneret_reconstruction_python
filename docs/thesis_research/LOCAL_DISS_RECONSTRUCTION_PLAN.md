@@ -59,6 +59,16 @@ Variante noch Fallreproduktion daraus ableiten. Unabhängig vom fehlenden
 Originaleingabestand als nächsten klar begrenzten Schritt die bereits gebundene
 Alters-/Tiefenübertragung aus `src/check_ages.R` mit synthetischen Matrizen
 prüfen. Keine neue Chronologie oder Fossilrekonstruktion.
+**Weiterer isolierter Teilfortschritt in Schritt 4:**
+[Alters-/Tiefenübertragung](literal_age_depth_2026_11_02/README.md)
+aus `check_ages.R` und `mcmc_prepare.R` begrenzt nachgebildet; 43 neue
+synthetische Tests, zusammen mit bisherigen Teilprüfungen 85 grün. Quelle,
+Dimensionen, rho(D|A)-Orientierung, Einheiten und Grenzen sind dokumentiert.
+Mittelwertmatrix bleibt von Listenchronologie getrennt, keine finale Variante
+gewählt. Nächster unabhängiger Einstieg: Verbraucher von `age`/`site.age` und
+`reconst_ages` im gebundenen `src/mcmc_functions_v1.6.R` auf Zeilen-/Zeitfenster-
+auswahl prüfen, bevor die getrennten Module verbunden werden. Elf offene
+Nachweisbündel und fehlende Originaleingaben bleiben unberührt.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.
