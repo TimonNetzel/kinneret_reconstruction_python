@@ -1,3 +1,13 @@
+> **Aktuell: TF-Vorbereitung und fünfteilige Kunstkette geprüft, 02.11.2026:**
+> [Ergebnis und Quellen](docs/thesis_research/literal_tf_preparation_2026_11_02/README.md):
+> 51 neue Tests, mit bisherigen Teilen 251 grün. TF-Zeilennormierung vor
+> expliziter Zellmaske; keine anschließende Renormierung. Noch kein Originalfall.
+> [Neue konkrete Claude-Übergabe: App-Anbindung](docs/thesis_research/CLAUDE_NEXT_STEP_APP_REPRODUCTION_2026_11_02.md).
+> Vorrangiges Ziel bleibt der Dissertationsnachbau mit Umsetzung in der App;
+> Verbesserungen danach. Jedes geprüfte Paket erhält eine eigene Claude-
+> Übergabedatei und deren Link im Abschluss. Alte Startaufträge bleiben erhalten.
+> Ältere nächste Schritte unten sind Verlauf. Elf Nachweisbündel bleiben offen.
+
 > **Aktueller Stand nach climate_modelling-Abgleich, 02.11.2026:**
 > [Neues Belegpaket](docs/thesis_research/climate_modelling_audit_2026_11_02/README.md):
 > 1.828 Dateien, 161 R-Quellen, ein ZIP tatsächlich zusätzlich geprüft.

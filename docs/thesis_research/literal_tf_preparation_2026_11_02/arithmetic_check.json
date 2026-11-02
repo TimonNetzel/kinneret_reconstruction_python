@@ -1,0 +1,14 @@
+{
+  "kind": "synthetic_fragment_check_not_historical_reproduction",
+  "maximum_absolute_rational_error": 2.220446049250313e-16,
+  "tolerance": 2e-14,
+  "post_mask_renormalization_TF_max_difference": 0.33333333333333337,
+  "post_mask_renormalization_chain_PDF_max_difference": 0.10001949796977816,
+  "active_original_draw_ids": [
+    1,
+    3
+  ],
+  "R_execution": false,
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

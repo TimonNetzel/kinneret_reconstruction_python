@@ -10,6 +10,28 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktueller Meilenstein: geprüfte Rechenteile zur App führen, 02.11.2026
+
+Der Nutzer bekräftigt den vorrangigen Dissertationsnachbau **mit Implementierung
+in die App**. Übergaben erfolgen pro abgeschlossenem geprüftem Paket als neue
+konkrete Claude-Datei; alte Aufgaben-/Hashnachweise bleiben eingefroren.
+
+[TF-Vorbereitung](literal_tf_preparation_2026_11_02/README.md) ist jetzt nachgebildet:
+Zeilennormierung, danach explizite Klimazellmaske ohne Renormierung; 51 neue und
+alle früheren 200 Teiltests grün. Eine neue Kunstkette verbindet fünf Module,
+mit maximal 2,22e-16 Abweichung zur unabhängigen Bruchrechnung. Die Original-
+Basis/Listenchronologie, numerischen historischen TFs und Laufbindung bleiben
+offen; keine vollständige Fallreproduktion und alle elf Nachweisbündel offen.
+
+[Nächster konkreter App-Auftrag für Claude](CLAUDE_NEXT_STEP_APP_REPRODUCTION_2026_11_02.md):
+separaten aktuellen Nachbaustand und das ausdrücklich synthetische Beispiel an
+die vorhandene Forschungsansicht anbinden, beide Offlineformate prüfen. Keine
+historischen Eingaben ersetzen oder vorhandene Läufe als taxonbasierten Nachbau
+umdeklarieren. Gesicherte Teile → geprüfte App-Anbindung; vollständiger lokaler
+Originalfall mit Eingabevertrag und Ergebnisabgleich bleibt der fachliche
+Meilenstein. Neue moderne Modelle/Verbesserungen erst nach Phase 1.
+
+
 ## Aktuell: zusätzlicher Quellenabgleich abgeschlossen, 02.11.2026
 
 [climate_modelling-Belegpaket](climate_modelling_audit_2026_11_02/README.md):

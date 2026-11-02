@@ -1,5 +1,34 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Historische TF-Vorbereitung als App-Baustein geprüft, 02.11.2026
+
+**Abgeschlossen:** [TF-Zeilennormierung und anschließende Zellmaske](literal_tf_preparation_2026_11_02/README.md)
+aus `mcmc_prepare.R:1581–1586,1613–1618` als isoliertes Modul nachgebildet.
+Endliche nichtnegative Eingaben, positive Ausgangsmassen und explizite
+Klimazellmasken; keine zweite Normierung. TANN/PANN bleiben getrennt.
+Quellhash und vier portable Originalspannen vor/nach Lesen bestätigt.
+
+**Prüfung:** 51 neue Fälle und alle bisherigen 200 historischen Teil-/Belegtests,
+insgesamt 251 bestanden. Neue Kunstverbindung mit allen fünf unveränderten/
+neuen Teilmodulen gegen unabhängige Bruchrechnung: maximal 2,22e-16 Abweichung.
+Zusätzliche Renormierung nach Maskierung verändert diese Kunst-End-PDF maximal
+um 0,1000195; keine historische Fehlerabschätzung. Alte Fixture und Belege
+unverändert. Beide Phase-1-Prüfer weiter Exit 2 mit elf offenen Voraussetzungen.
+
+**Ziel und nächste Übergabe:** Nutzer bestätigt den vorrangigen Auftrag,
+die Dissertation nachzubauen und in die App zu implementieren. Pro geprüftem
+Paket eine konkrete Claude-Übergabedatei mit Abschlusslink. [Nächster Auftrag](CLAUDE_NEXT_STEP_APP_REPRODUCTION_2026_11_02.md):
+den geprüften Nachbaustand und das klar synthetische TF-Beispiel an die bestehende
+Forschungsansicht in beiden Offlineformaten anbinden. Keine historische
+Reproduktionsbehauptung aus Kunsttests; ein vollständiger Originalfall bleibt
+der fachliche Meilenstein. App/CLI/Baseline in diesem Paket unverändert.
+
+**Grenzen/Sicherung:** Finale Basis/Listenchronologie, numerische TFs und
+Laufbindung weiter offen. Keine Variantenwahl, R-Ausführung, Trainings/Sampler,
+Altersmodelle oder Fossilläufe. Phase 1 vor Phase 2, Originale und fallbezogene
+Gates erhalten. Bestehender Branch/PR #77, kein automatischer Merge. Frühere
+„nächster Schritt TF-Vorbereitung“-Angaben unten sind Verlauf.
+
 ## climate_modelling tatsächlich zusätzlich abgeglichen, 02.11.2026
 
 **Abgeschlossen:** [Neues Quellen-/Kopienpaket](climate_modelling_audit_2026_11_02/README.md)
