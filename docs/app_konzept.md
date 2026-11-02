@@ -433,3 +433,14 @@ ein Klick, sondern die Auswahl „Detail“ in der Seitenleiste (je Alter bzw. T
 Achsen noch Kurven, zeigt Werte und öffnet kein Detail), Maus (Ziehen zoomt, Klick öffnet kein Detail), Detail über
 die Auswahl.
 
+
+## Forschungsstand und Quellen (02.11.2026)
+
+Eine zusätzliche lesende Ansicht `forschung.js` stellt den an SHA256 gebundenen
+Forschungs-Snapshot aus `forschungsstand.py` dar. Der App-Builder liefert
+`daten/forschung.js` im Ordner samt Offline-Cache und bettet dieselben Daten
+in die Ein-Datei-App ein. Fehlende Nachweise bleiben sichtbar, veränderte
+Snapshot-Bytes stoppen den Build. Fünf Bereiche und Quellenlinks trennen
+vorhandene, experimentelle und fehlende Ergebnisse. Keine Modellvorhersagen
+oder neuen Laufdaten; keine Abbildungsexport-Schaltfläche in dieser Ansicht.
+[Nachweise](thesis_research/app_research_2026_11_02/README.md).

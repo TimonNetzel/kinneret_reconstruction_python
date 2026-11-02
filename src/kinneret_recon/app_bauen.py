@@ -21,14 +21,14 @@ import socket
 from functools import partial
 from pathlib import Path
 
-from . import baseline
+from . import baseline, forschungsstand
 from .app_daten import APP_DIR
 from .katalog import KATALOG_DIR
 
 QUELLE = Path(__file__).parent / "app"
 # Skripte in der Reihenfolge von index.html; die Reihenfolge der Ansichten ist die der Reiter
 SKRIPTE = ("vendor/plotly-cartesian.min.js", "i18n.js", "kern.js", "rekonstruktion.js", "sensitivitaet.js",
-           "gewichte.js", "transferfunktionen.js", "lauf.js", "validierung.js", "export.js", "start.js")
+           "gewichte.js", "transferfunktionen.js", "lauf.js", "validierung.js", "forschung.js", "export.js", "start.js")
 STATISCH = ("index.html", "style.css", "manifest.webmanifest", "icon.svg", "vendor/LICENSE-plotly.txt", *SKRIPTE)
 
 
@@ -66,6 +66,7 @@ self.addEventListener("fetch", e => e.respondWith(caches.match(e.request).then(r
 def baue_ordner(out: Path, root: Path | None = None) -> Path:
     root = Path(root or Path.cwd())
     katalog, standorte, laeufe = lade_daten(root)
+    forschung = forschungsstand.app_daten(root)
     if out.exists():
         shutil.rmtree(out)
     (out / "daten/laeufe").mkdir(parents=True)
@@ -73,6 +74,7 @@ def baue_ordner(out: Path, root: Path | None = None) -> Path:
     for f in STATISCH:
         shutil.copy2(QUELLE / f, out / f)
     (out / "daten/katalog.js").write_text(_js("katalog", katalog), encoding="utf-8")
+    (out / "daten/forschung.js").write_text(_js("forschung", forschung), encoding="utf-8")
     for key, d in standorte.items():
         (out / f"daten/standort_{key}.js").write_text(_js(f"standort/{key}", d), encoding="utf-8")
     for lid, d in laeufe.items():
@@ -111,6 +113,8 @@ def baue_eine_datei(path: Path, root: Path | None = None) -> Path:
     daten = _js("katalog", katalog) + "".join(_js(f"standort/{k}", d) for k, d in standorte.items())
     if (v := baseline.app_daten(root)) is not None:
         daten += _js("validierung", v)
+    daten += _js("forschung", forschungsstand.app_daten(root))
+    html = html.replace('<script src="daten/forschung.js"></script>', "")
     daten = daten.replace("</", "<\\/")
     eingebettet = "".join(
         f'<script type="application/gzip-base64" id="kr-lauf-{lid}">' +

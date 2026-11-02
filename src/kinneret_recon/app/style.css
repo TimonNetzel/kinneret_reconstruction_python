@@ -164,3 +164,14 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
   .detail-raster { grid-template-columns: 1fr 1fr 1.4fr; }
   .detail-raster .plot-mittel { grid-column: auto; height: 260px; }
 }
+
+/* Read-only research status, deliberately separate from reconstruction controls. */
+.forschung-steuerung h2 { margin: 0; font-size: 1.05rem; }
+.forschung-steuerung p { margin: 0; }
+.forschung-karte p { margin: 4px 0 10px; max-width: 80ch; }
+.forschung-karte a { color: var(--accent); text-underline-offset: 2px; }
+.forschung-karte .karte-kopf { align-items: flex-start; flex-wrap: wrap; }
+.forschung-status { border: 1px solid var(--line); border-radius: 14px; padding: 2px 9px; font-size: .8rem; }
+.forschung-status[data-status="missing"], .forschung-status[data-status="open"] {
+  color: var(--warn); background: var(--warn-bg); }
+.forschung-status[data-status="experimental"] { color: var(--accent); }

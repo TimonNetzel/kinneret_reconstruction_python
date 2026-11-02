@@ -9,6 +9,8 @@ const fs = require("fs");
 const { chromium } = require("playwright");
 
 const args = process.argv.slice(2);
+const ki = args.indexOf("--kanal");
+const kanal = ki >= 0 ? args.splice(ki, 2)[1] : null;
 const fi = args.indexOf("--fotos");
 const fotos = fi >= 0 ? args.splice(fi, 2)[1] : null;
 if (fotos) fs.mkdirSync(fotos, { recursive: true });
@@ -236,6 +238,28 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (!v[1].includes("3,926") || !v[0].includes("10°-Gitter")) fehler.push("Validierung 10 Grad: " + v[1]);
   await page.click('#val-block button[data-wert="5"]');
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_validierung.png`, fullPage: true });
+  // Forschungsstand: five read-only evidence cards, source links, no figure export.
+  await page.click('.reiter button[data-ansicht="forschung"]');
+  await page.waitForSelector('[data-research="historical"]');
+  const researchText = await page.textContent("#forschung-inhalt");
+  if (await page.locator(".forschung-karte").count() !== 5 ||
+      !["167", "161", "278", "279", "Brier", "Marginalarrays"].every((x) => researchText.includes(x))) {
+    fehler.push("Forschungsstand unvollstaendig");
+  }
+  if (await page.locator('#ansicht-forschung .export-knopf').count() !== 0 ||
+      await page.locator('[data-research="historical"] [data-status="missing"]').count() !== 1) {
+    fehler.push("Forschungsstand: Kontroll-/Statusgrenze fehlt");
+  }
+  const sources = await page.locator('.forschung-karte a').evaluateAll((links) => links.map((a) => a.href));
+  if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
+    fehler.push("Forschungsstand: Quellen nicht gebunden");
+  }
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_forschung.png`, fullPage: true });
+  await page.click("#sprache");
+  if (!(await page.textContent("#forschung-inhalt")).includes("not 279 independent species functions")) {
+    fehler.push("Forschungsstand: englische Grenze fehlt");
+  }
+  await page.click("#sprache");
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Sprache
@@ -326,7 +350,7 @@ async function pruefeExport(page, fehler, foto, pdf) {
 }
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(kanal ? { channel: kanal } : {});
   let fehlerGesamt = 0;
   if (zweiStandorte) {
     for (const datei of args) {

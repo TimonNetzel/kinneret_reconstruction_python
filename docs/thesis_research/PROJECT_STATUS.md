@@ -1,5 +1,30 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## App: Forschungsstand und Quellen umgesetzt, 02.11.2026
+
+**Abgeschlossen:** Neue lesende Ansicht „Forschungsstand“ in Ordner- und
+Ein-Datei-App, offline und Deutsch/Englisch. Fünf Bereiche trennen vorhandene,
+experimentelle und fehlende Ergebnisse; Berichte sind an einen festen Commit
+gebunden. Fehlende oder veränderte Nachweise werden sichtbar behandelt.
+Keine neuen Modelle, Sampler oder Fossilrekonstruktionen.
+
+**Geprüft:** 11 App-/Daten-/Buildtests bestanden; zwei normale Browserwrapper
+übersprungen, durch explizite Browserprüfungen ergänzt. Acht vollständige
+Browserdurchläufe plus zwei Gestenprüfungen und vier abschließende
+Nachweis-/Sprachprüfungen erfolgreich. Mobil/Desktop, Hell/Dunkel, beide
+Offlineformate; Bilder visuell geprüft. Bisherige Ansichten/Exporte erhalten.
+Das portable Paket mit 50 Nachweisdateien bleibt unverändert. Die CI-Korrektur
+`954746c` ist auf GitHub erfolgreich geprüft.
+[App-Ergebnis und Nachweise](app_research_2026_11_02/README.md).
+
+**Gesichert:** Fortsetzung im selben Branch und [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
+Abgeschlossene, geprüfte Arbeitspakete auf Nutzerwunsch jeweils hochladen;
+keine automatischen Merges. Basis, Originale und wissenschaftliche Gates bewahren.
+**Als Nächstes:** Vorhandene Sieben-Arten-Metriken in der App gemeinsam mit
+Balanced Accuracy und Brier verständlich darstellen, ohne neue Trainings-
+oder Fossilläufe. Jung links, alt rechts.
+
+
 ## CI-Testabhängigkeit korrigiert, 02.11.2026
 
 Die frische GitHub-CI von [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77)

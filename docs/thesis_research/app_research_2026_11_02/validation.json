@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "scope": "read-only app research status; no new model, sampler or fossil run",
+  "app_tests": {
+    "passed": 11,
+    "skipped_browser_wrapper_tests": 2,
+    "reason": "Playwright unavailable on the default Node search path; explicit bundled Playwright/installed Edge checks below executed"
+  },
+  "full_browser_regression": {
+    "browser": "installed Microsoft Edge via Playwright channel msedge",
+    "offline": true,
+    "passed_cases": [
+      "index_handy_light: ok",
+      "index_handy_dark: ok",
+      "index_pc_light: ok",
+      "index_pc_dark: ok",
+      "index Gesten: ok",
+      "kinneret-app_handy_light: ok",
+      "kinneret-app_handy_dark: ok",
+      "kinneret-app_pc_light: ok",
+      "kinneret-app_pc_dark: ok",
+      "kinneret-app Gesten: ok"
+    ],
+    "local_log_sha256": "e3424641912994076f0f4d540562ae1a0972fa4fa71e75330f4ce0d8c66a6cec"
+  },
+  "final_research_view_browser_checks": {
+    "status": "passed",
+    "browser": "installed Microsoft Edge, Playwright Chromium channel msedge",
+    "cases": [
+      {
+        "case": "folder_mobile",
+        "language": "de",
+        "theme": "light",
+        "offline": true,
+        "absent_and_partial_snapshot_checked": true,
+        "page_errors": 0
+      },
+      {
+        "case": "folder_desktop",
+        "language": "en",
+        "theme": "dark",
+        "offline": true,
+        "absent_and_partial_snapshot_checked": true,
+        "page_errors": 0
+      },
+      {
+        "case": "single_mobile",
+        "language": "de",
+        "theme": "light",
+        "offline": true,
+        "absent_and_partial_snapshot_checked": true,
+        "page_errors": 0
+      },
+      {
+        "case": "single_desktop",
+        "language": "en",
+        "theme": "dark",
+        "offline": true,
+        "absent_and_partial_snapshot_checked": true,
+        "page_errors": 0
+      }
+    ]
+  },
+  "snapshots_visually_inspected": {
+    "mobile.png": "d6a03ce06bf26145358d89fcb29170864a5e4c044d31d4e74aa4886f0938c5f5",
+    "desktop.png": "64d3d0abf0e4f15914d4ee5fc78f9ff0e4a1be1433dff2f7c2740018542bbf38"
+  },
+  "prior_ci_dependency_fix": {
+    "commit": "954746cd0dc2a36d0d78b0e7c5ae6b97029c4c0d",
+    "run_id": 41391320977,
+    "conclusion": "success"
+  },
+  "portable_evidence_files_unchanged": 50
+}

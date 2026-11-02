@@ -173,6 +173,14 @@
         <div class="tabelle-rahmen"><table id="val-regional"></table></div></div>
     </div>
   </section>
+  <section id="ansicht-forschung" class="ansicht" hidden>
+    <aside class="steuerung forschung-steuerung">
+      <h2 data-t="ansicht_forschung">Forschungsstand</h2>
+      <p data-t="fr_intro"></p>
+      <p class="hinweis-klein" data-t="fr_independent"></p>
+    </aside>
+    <div id="forschung-inhalt" class="inhalt" aria-live="polite"></div>
+  </section>
 </main>
 
 <dialog id="export" class="export-dialog" aria-labelledby="export-titel">
@@ -224,6 +232,7 @@
 
 <script src="vendor/plotly-cartesian.min.js"></script>
 <script src="daten/katalog.js"></script>
+<script src="daten/forschung.js"></script>
 <script src="i18n.js"></script>
 <script src="kern.js"></script>
 <script src="rekonstruktion.js"></script>
@@ -232,6 +241,7 @@
 <script src="transferfunktionen.js"></script>
 <script src="lauf.js"></script>
 <script src="validierung.js"></script>
+<script src="forschung.js"></script>
 <script src="export.js"></script>
 <script src="start.js"></script>
 </body>

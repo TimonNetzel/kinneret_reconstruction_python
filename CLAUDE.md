@@ -16,6 +16,9 @@ ohne fachlichen Anlass bzw. Freigabe. Monticchio-/Chronologie-Gates bewahren.
 Plots immer jung links, alt rechts. Technische Veröffentlichung ist keine
 wissenschaftliche Pilotfreigabe.
 
-Nächster abgegrenzter App-Schritt: lesende Forschungsstands-/Quellenansicht
-nach vorhandenem App-Muster mit vorhandenen, experimentellen und fehlenden
-Ergebnissen. Details, portable Artefakte und Testbefehle stehen in der Übergabe.
+Die lesende Forschungsstands-/Quellenansicht ist umgesetzt und geprüft;
+aktueller Nachweis: `docs/thesis_research/app_research_2026_11_02/README.md`.
+Nächster begrenzter App-Schritt: gespeicherte Sieben-Arten-Metriken gemeinsam
+mit Balanced Accuracy und Brier anzeigen, ohne neue Fits oder Fossilläufe.
+Abgeschlossene, geprüfte Pakete auf Nutzerwunsch jeweils auf GitHub sichern.
+Details, portable Artefakte und Testbefehle stehen in der Übergabe.

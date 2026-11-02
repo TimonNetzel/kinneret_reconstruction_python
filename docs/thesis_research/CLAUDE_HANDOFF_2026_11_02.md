@@ -1,5 +1,13 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> Fortschritt 02.11.2026: Die unten als erster Schritt beschriebene
+> Forschungsstands-/Quellenansicht ist jetzt umgesetzt und geprüft.
+> [Aktuelles App-Ergebnis](app_research_2026_11_02/README.md).
+> Nächster begrenzter App-Schritt: gespeicherte Sieben-Arten-Metriken
+> gemeinsam mit Balanced Accuracy und Brier anzeigen; keine neuen Fits.
+> Die Fortsetzung erfolgt derzeit hier; geprüfte Pakete jeweils in PR #77 sichern.
+
+
 Stand 02.11.2026. **Aktueller Einstieg** für die Fortsetzung nach den lokalen
 Quellen-/Modellprüfungen vom 01.–02.11.2026. Branch `dissertation-reconstruction`,
 Basis `7f1826cffddc8893ba6354cd3cca3fa43954b9be` nach

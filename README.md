@@ -210,6 +210,15 @@ Sensitivität). Danach wird das Manifest mit `reference_manifest.json` vergliche
 Ausgabedateien) werden mit den Bibliotheksständen gemeldet, die Ausgabe bleibt zur Prüfung erhalten
 (`--ohne-referenz` überspringt den Abgleich). Moderne Testfehler sind keine fossilen Fehlerbänder.
 
+### Forschungsstand und Quellen
+
+Die zusätzliche Ansicht „Forschungsstand“ trennt vorhandene, experimentelle
+und fehlende Projektergebnisse. Sie funktioniert in beiden Offlineformaten,
+auf Deutsch und Englisch, unabhängig vom gewählten Lauf. Quellenlinks führen
+zu festgehaltenen Berichten auf GitHub und benötigen Netz. Keine neuen
+Rekonstruktionen oder Trainings werden dadurch gestartet.
+[Umsetzung und Prüfung](docs/thesis_research/app_research_2026_11_02/README.md).
+
 ## Leistung (4 CPU-Kerne)
 
 | | Original | Paket, `--legacy` | Paket, Standard v2 | Paket, Standard v3 |

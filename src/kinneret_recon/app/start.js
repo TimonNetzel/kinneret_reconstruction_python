@@ -39,8 +39,8 @@
       b.onclick = () => { Z.ansicht = a.key; merke(); zeige(); };
       reiter.appendChild(b);
     });
-    // Export in jeder Ansicht (export.js)
-    document.querySelectorAll(".ansicht > .steuerung").forEach((st) => {
+    // Figure export in plot views; the research overview is read-only (export.js)
+    document.querySelectorAll(".ansicht > .steuerung:not(.forschung-steuerung)").forEach((st) => {
       const b = document.createElement("button");
       b.className = "knopf export-knopf";
       b.dataset.t = "export_knopf";
