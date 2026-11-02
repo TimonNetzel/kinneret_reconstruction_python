@@ -1,5 +1,34 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kinneret: Phase-1-Belegvertrag maschinenprüfbar, 02.11.2026
+
+**Abgeschlossen:** [Spezifikation, Prüfer und Grenzen](kinneret_phase1_spec_2026_11_02/README.md)
+führen Eingabe-, Referenz- und Nachbearbeitungsbelege zusammen. Lesender
+Prüfer bestätigt 26 eingefrorene Dateien, 19 explizite Befunde und alle 50
+Snapshotdateien. Vier Quellgruppen bleiben getrennt, keine finale Variante
+gewählt. Elf Nachweisbündel offen; kein Fall vollständig reproduzierbar.
+
+**Geprüft:** 20 gezielte Integritätstests bestanden. Portabler und lokaler
+CLI-Aufruf ergeben erwarteten Exitcode 2 (offene Voraussetzungen). Der gezielte
+lokale Hashabgleich von 40 bereits dokumentierten Pfaden bestätigt 28 Dateien
+unverändert und zwölf Pfade weiterhin fehlend. Keine neue Inventur und keine
+Prüfung aller globalen Abhängigkeiten. Neu auftauchende Dateien schließen
+keinen Nachweis automatisch. Prüfer ist kein Runner oder App-Freigabesystem.
+
+**Nächster Einstieg/Grenze:** Finalen Originaleingabestand und Laufzuordnung
+beschaffen, beginnend mit Basis/Chronologieliste und numerischen TFs, dann an
+den eingefrorenen Vertrag binden. Ohne neue Originalbelege kein historischer
+Vollnachbau. Der Nutzer kennt keinen weiteren Basisdatei-Speicherort; nicht
+erneut danach fragen oder pauschal suchen. Ein Nachbau mit Ersatzdaten wäre
+eine gesonderte, noch nicht getroffene fachliche Entscheidung. Keine automatische
+Fortsetzung mit Verbesserungen, Kalibrierung oder Phase 2.
+
+**Sicherung:** Basis `00d7d2a`, bestehender Branch in
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Originalquellen nur gelesen; Vorpakete/Snapshot und App/CLI,
+Baseline, Referenzen sowie Monticchio-/Chronologie-Gates erhalten. Keine neuen
+Trainings, Sampler oder Fossilrekonstruktionen. Jung links, alt rechts.
+
 ## Kinneret: Nachbearbeitungsfassungen gebunden, 02.11.2026
 
 **Abgeschlossenes Quellenpaket:** [Ziehungsauswahl und Dichtekombination](kinneret_postprocessing_2026_11_02/README.md)

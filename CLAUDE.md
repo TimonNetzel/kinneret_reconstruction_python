@@ -20,9 +20,13 @@ Laufbindung bleiben offen:
 Die historischen Nachbearbeitungsfassungen sind getrennt gebunden:
 `docs/thesis_research/kinneret_postprocessing_2026_11_02/README.md`.
 Originalposterioren und finale Auswahl-/Kombinationsfassung fehlen weiter.
-Nächster Schritt: Eingabe-, Referenz- und Auswertungsverträge zu einer
-maschinenprüfbaren Phase-1-Reproduktionsspezifikation zusammenführen.
-Textverfahren, aktuelle Quellvarianten und offene Datenbindung getrennt halten.
+Der maschinenprüfbare Phase-1-Belegvertrag ist abgeschlossen:
+`docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md`.
+Lesender Prüfer: `python tools/check_kinneret_phase1_spec.py` (erwartet Exit 2).
+26 Belegdateien, 19 Befunde und 50 Snapshotdateien intakt; elf Nachweisbündel offen.
+Nächster fachlicher Einstieg erfordert finale Originalbasis/Chronologieliste,
+numerische TFs und historische Laufzuordnung. Keine Quelle automatisch auswählen;
+keine Wiederholung der bereits beantworteten Speicherortfrage.
 Keine erneute pauschale Suche oder neuen Läufe; ältere Eingaben nicht ersetzen.
 Neue Kalibrierung, methodische Verbesserungen und zusätzliche
 Reliabilitätsansicht gehören in Phase 2 nach dem gesicherten Nachbau.

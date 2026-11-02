@@ -1,5 +1,18 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Aktueller Einstieg nach Phase-1-Belegvertrag, 02.11.2026:**
+> [Spezifikation, Prüfung und Grenzen](kinneret_phase1_spec_2026_11_02/README.md).
+> `python tools/check_kinneret_phase1_spec.py` prüft 26 Belege, 19 Befunde und
+> 50 Snapshotdateien. Erwarteter Exitcode 2: elf Nachweisbündel offen,
+> kein startbereiter historischer Fall. `--with-local` liest nur die bereits
+> dokumentierten Original-/Zusatzpfade. 20 gezielte Tests bestanden.
+> Als Nächstes neue Originalbelege für finale Basis/Chronologieliste und TFs
+> sowie Laufzuordnung an den Vertrag binden. Weiterer Speicherort unbekannt;
+> keine wiederholte Frage oder pauschale Suche. Keine Quellvariante automatisch
+> wählen, keine Ersatzdaten oder Phase-2-Arbeit voraussetzen. Kein Runner,
+> keine neue App-Ansicht, keine Trainings/Sampler/Fossilläufe. Frühere Einstiege
+> unten beschreiben den Verlauf.
+
 > **Aktueller Einstieg nach Nachbearbeitungsabgleich, 02.11.2026:**
 > [Auswahl, Kombination und Grenzen](kinneret_postprocessing_2026_11_02/README.md).
 > Quellvarianten und zwei synthetische Rechenkontrollen sind dokumentiert;

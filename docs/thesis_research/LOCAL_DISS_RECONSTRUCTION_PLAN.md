@@ -46,9 +46,13 @@ unabhängiger Schritt in Phase 1: Referenz-/Ankervertrag konkretisieren.
 ist dokumentiert; numerische Eingaben und Laufbindung bleiben offen. Als Nächstes
 historische Nachbearbeitung (Ziehungsauswahl und Dichtekombination) gezielt binden.
 **Nachbearbeitung abgeglichen:** [Quellvarianten und Grenzen](kinneret_postprocessing_2026_11_02/README.md).
-Originalposterioren und finale Auswahl-/Kombinationsfassung offen. Als Nächstes
-maschinenprüfbare Phase-1-Reproduktionsspezifikation aus den gebundenen
-Eingabe-/Referenz-/Auswertungsverträgen zusammenführen.
+Originalposterioren und finale Auswahl-/Kombinationsfassung offen.
+**Belegvertrag abgeschlossen:** [Maschinenprüfbare Phase-1-Spezifikation](kinneret_phase1_spec_2026_11_02/README.md)
+mit lesendem Prüfer, 26 Belegdateien, 19 Befunden und elf offenen Nachweisbündeln.
+Keine finale Laufvariante gewählt; Schritte 3 bis 5 bleiben fachlich offen.
+Nächster Einstieg erfordert neue Belege für Originalbasis/Chronologieliste,
+numerische TFs und Laufzuordnung. Bekannte Speicherortfrage nicht wiederholen.
+Ohne Originalbelege keine Ersatzdatenreproduktion oder Phase 2 voraussetzen.
 Für diese Fortsetzung die bereits abgeschlossenen Quellenprüfungen und lokalen
 Bestandsnachweise verwenden. Erst aus einer konkreten Lücke neue gezielte
 Quellenarbeit ableiten. Keine bereits abgeschlossenen Gesamtprüfungen wiederholen.

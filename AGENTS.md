@@ -8,9 +8,12 @@
 > sind teilweise gebunden; finale Basis/TFs fehlen, weiterer Speicherort unbekannt.
 > [Referenz-/Ankervertrag](docs/thesis_research/kinneret_references_2026_11_02/README.md)
 > ist dokumentiert; [Nachbearbeitungsfassungen](docs/thesis_research/kinneret_postprocessing_2026_11_02/README.md)
-> sind getrennt gebunden. Numerische Eingaben/Laufbindung offen. Als Nächstes
-> maschinenprüfbare Phase-1-Reproduktionsspezifikation zusammenführen. Kein Fall vollständig
-> reproduzierbar; keine neuen Läufe oder pauschalen Inventuren.
+> sind getrennt gebunden. Der [Phase-1-Belegvertrag](docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md)
+> ist maschinenprüfbar (26 Belege/19 Befunde/50 Snapshotdateien, elf offene
+> Nachweisbündel). Finaler Eingabestand und Laufbindung fehlen weiterhin.
+> Als Nächstes nur neu belegte Originalbasis/Chronologieliste und numerische
+> TFs an diesen Vertrag binden. Kein Fall vollständig reproduzierbar; keine neuen
+> Läufe, pauschalen Inventuren oder wiederholten Speicherortfragen.
 > Historische Befunde und wissenschaftliche Gates bleiben erhalten; frühere
 > Prioritäten unten sind Verlauf.
 
