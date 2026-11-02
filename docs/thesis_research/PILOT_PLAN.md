@@ -1,5 +1,13 @@
 # Verbindlicher Ablauf für den Monticchio-Piloten
 
+> **Einordnung ab 02.11.2026:** Der Nutzer priorisiert zuerst den Nachbau der
+> lokalen Dissertationsrekonstruktionen, danach Verbesserungen:
+> [aktueller Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Der Monticchio-Pilot ist kein vorgeschalteter Abschluss für jeden anderen
+> lokalen Fall. Seine hier beschriebenen Chronologie-/Quellen-Gates bleiben
+> unverändert; keine neue P1-/P2-Freigabe.
+
+
 Vom Nutzer am 29.10.2026 im Chat bestätigt. Dieser Plan konkretisiert den
 nächsten Pilotabschluss. Der [langfristige Multiproxy-Plan](../plan_multiproxy.md)
 bleibt Hintergrund; seine Voraussetzung verfügbarer ursprünglicher

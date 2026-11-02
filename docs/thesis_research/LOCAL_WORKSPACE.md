@@ -1,5 +1,12 @@
 # Lokaler Einstieg: Dissertation und Rekonstruktion
 
+> **Aktueller Arbeitsplan, 02.11.2026:** Zuerst lokale Dissertationsfälle
+> nachbauen, danach verbessern: [Reihenfolge und nächster Einstieg](LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Zunächst eine quellengebundene Fallmatrix erstellen. Der unten dokumentierte
+> Papervergleich bleibt technische Referenz und ist keine vollständige
+> taxonbasierte Dissertationsreproduktion. Keine vorhandenen Läufe wiederholen.
+
+
 Stand: 01.11.2026. Dies ist die technische Bestandsaufnahme des neu eingebundenen
 Originalbestands. Wissenschaftlicher Gesamtstand weiterhin in
 [PROJECT_STATUS.md](PROJECT_STATUS.md) und [HANDOFF.md](HANDOFF.md).

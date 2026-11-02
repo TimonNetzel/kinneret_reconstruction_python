@@ -1,5 +1,13 @@
 # Kommunikation und Fortsetzung des Netzel-Projekts
 
+> **Aktuelle Reihenfolge auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
+> Maßgeblich: [Arbeitsplan](docs/thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Nächster Schritt ist die quellengebundene Fallmatrix, nicht neue Kalibrierung
+> oder zusätzliche Reliabilitätsansicht. Historische Befunde und bestehende
+> wissenschaftliche Gates bleiben erhalten; frühere Prioritäten unten sind Verlauf.
+
+
 > Aktueller Einstieg 02.11.2026: Der Nutzer hat die GitHub-Sicherung und
 > Fortsetzung mit Claude beauftragt. Zuerst
 > [CLAUDE_HANDOFF_2026_11_02.md](docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md)

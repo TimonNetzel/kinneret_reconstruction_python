@@ -1,5 +1,33 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Priorität geändert: lokale Dissertation zuerst, Verbesserungen danach, 02.11.2026
+
+**Abgeschlossen – Planänderung auf ausdrücklichen Nutzerauftrag:**
+[Verbindlicher Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md) mit zwei Phasen.
+Phase 1 bindet Originaleingaben und historischen Ablauf der lokalen
+Dissertationsrekonstruktionen, reproduziert zunächst einen belegbaren Fall
+und erschließt danach die weiteren lokalen Fälle. Bekannte methodische Kritik
+bleibt dokumentiert; Verbesserungen werden getrennt gegen den gesicherten
+historischen Referenzstand geprüft. Neue Kalibrierung und zusätzliche
+Reliabilitätsansicht sind keine Voraussetzungen und keine nächsten App-Aufträge.
+
+**Als Nächstes:** Quellengebundene Fallmatrix der lokalen Dissertationsfälle
+anhand vorhandener Berichte und Belege erstellen: Daten, Chronologie, TFs,
+Zuordnungen, Klima-/Referenzeingaben, Codefassung, Originalausgaben und Lücken.
+Danach ersten Referenzfall nach belegter Eingabeverfügbarkeit festlegen.
+Paper-Biomfall und sieben moderne Artenmodelle bleiben erhaltene Vorarbeiten;
+sie sind keine abgeschlossene historische Taxonreproduktion.
+
+**Grenzen und Sicherung:** Originaleingaben und numerische historische TFs
+bleiben teilweise offen. Monticchio-/Chronologie-Gates bleiben fallbezogen
+erhalten. Keine Trainings, Sampler oder Fossilfälle durch diese Planänderung.
+Reine Dokumentationsänderung; Einstiege, Prioritäten und lokale Links geprüft.
+Ausgangsstand `4b75ead`, Checkout sauber und mit GitHub identisch; Sicherung auf
+bestehendem Branch in [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+kein Merge. Jung links, alt rechts. Frühere „Als Nächstes“-Angaben unten
+beschreiben den damaligen Stand und werden durch diesen Plan nachgeordnet.
+
+
 ## App: äußere Foldwerte erschlossen, 02.11.2026
 
 **Abgeschlossen:** Im Artenvergleich zwischen Übersicht und Foldwerten wechseln,

@@ -1,5 +1,12 @@
 # Gespeicherte äußere Foldwerte in der App
 
+> **Neue Priorität, 02.11.2026:** Der unten vorgeschlagene nächste
+> Reliabilitätsschritt ist nachgeordnet. Zuerst die lokalen Rekonstruktionen
+> der Dissertation nachbauen, danach Verbesserungen:
+> [aktueller Arbeitsplan](../LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Die dokumentierte App-Umsetzung und Prüfung bleiben unverändert gültig.
+
+
 Stand 02.11.2026. Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Ausgangsstand `2f6d0eb`, Checkout sauber und mit GitHub identisch;

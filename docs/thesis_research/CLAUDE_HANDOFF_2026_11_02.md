@@ -1,5 +1,14 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
+> **Neue Priorität auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, danach verbessern.
+> [Verbindlicher Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Nächster Auftrag: quellengebundene Fallmatrix, anschließend belegbaren ersten
+> Originalfall festlegen. Neue Kalibrierung und zusätzliche Reliabilitätsansicht
+> gehören in Phase 2. Die folgenden Berichte bleiben gültig; ihre früheren
+> App-Aufträge und Prioritäten sind nachgeordnet.
+
+
 > Fortschritt 02.11.2026: Die unten als erster Schritt beschriebene
 > Forschungsstands-/Quellenansicht ist jetzt umgesetzt und geprüft.
 > [Aktuelles App-Ergebnis](app_research_2026_11_02/README.md).
@@ -7,8 +16,8 @@
 > ist umgesetzt: [Ergebnis und nächster Einstieg](app_species_2026_11_02/README.md).
 > Die Foldansicht ist ebenfalls umgesetzt und geprüft:
 > [Aktuelles Ergebnis und Einstieg](app_folds_2026_11_02/README.md).
-> Nächster begrenzter Einstieg: Schema, Gewichtung und leere Bins der gespeicherten
-> Reliabilitätstabelle prüfen; keine neuen Fits, Sampler oder Fossilläufe.
+> Der damals vorgeschlagene Reliabilitätseinstieg ist mit der neuen
+> Priorisierung in Phase 2 verschoben. Zuerst den Dissertationsnachbau verfolgen.
 > Die Fortsetzung erfolgt derzeit hier; geprüfte Pakete jeweils in PR #77 sichern.
 
 
@@ -96,7 +105,10 @@ sind historische Originalpfade; das Exportmanifest zeigt verfügbare Kopien.
 Die alten Erhaltungsverifier prüfen den damaligen Git-/Dateizustand und sind
 nach Übergabe-Commit oder einem frischen Checkout keine portable Testsuite.
 
-## Konkreter erster App-Arbeitsschritt
+## Historischer erster App-Arbeitsschritt (inzwischen abgeschlossen)
+
+Die weitere Reihenfolge bestimmt der [neue Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+Der folgende Abschnitt dokumentiert den bereits abgeschlossenen App-Einstieg.
 
 Die App soll den gesicherten Forschungsstand nutzbar machen. Zunächst die
 vorhandene Architektur und Tests lesen, dann eine kleine, lesende Ansicht

@@ -1,5 +1,12 @@
 # Kinneret-Rekonstruktion
 
+> **Aktueller Entwicklungsplan (02.11.2026):** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
+> [Arbeitsplan und nächster Schritt](docs/thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Die vorhandene Paper-/Biomreferenz und experimentellen Artenmodelle bleiben
+> erhalten; sie sind keine abgeschlossene historische Dissertationsreproduktion.
+
+
 Bayessche Rekonstruktion von Wintertemperatur (T_DJF) und Jahresniederschlag (P_ANN) aus
 Pollendaten des See Genezareth (Lake Kinneret). Das Paket setzt das hierarchische Modell aus
 
