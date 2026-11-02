@@ -1,0 +1,56 @@
+{
+  "basis_commit": "705cf7b68b2bfdfc99919ad50e4091dd113d907e",
+  "scope": "Only configured climate_modelling_source_root recursively; old inventories read, not rerun",
+  "private_config_key": "climate_modelling_source_root",
+  "excluded_directories": [
+    ".git",
+    ".local",
+    ".venv",
+    "__pycache__",
+    "build",
+    "node_modules"
+  ],
+  "files_indexed": 1828,
+  "extensions": {
+    ".txt": 65,
+    "": 109,
+    ".r": 161,
+    ".nc": 343,
+    ".dat": 19,
+    ".ncl": 7,
+    ".pdf": 720,
+    ".log": 1,
+    ".zip": 1,
+    ".rdata": 395,
+    ".swp": 1,
+    ".tab": 1,
+    ".cpp": 1,
+    ".csv": 4
+  },
+  "R_sources_read_and_hashed": 161,
+  "R_sources_modified_after_2021": 10,
+  "literal_src_files_modified_after_2021": 0,
+  "targeted_static_calls": 111,
+  "archives_read_directory_only": 1,
+  "queries": 48,
+  "priority_requirements": 39,
+  "posterior_variants": 8,
+  "priority_requirements_with_new_named_candidates": [
+    "F14",
+    "F15"
+  ],
+  "prior_read_calls_with_new_static_name_candidates": 57,
+  "candidate_files_hashed": 8,
+  "source_metadata_unchanged": true,
+  "errors": [],
+  "large_containers_decoded_by_collector": false,
+  "R_executed": false,
+  "models_or_samplers_started": false,
+  "final_variant_selected": false,
+  "limitations": [
+    "Names/paths do not prove historical identity or final execution.",
+    "R parser is static, not an execution/reachability interpreter. Dynamic names are not guessed.",
+    "mtime after 2021 is a priority signal, not historical creation/execution proof.",
+    "Renamed equivalent objects are not excluded by filename absence; no exhaustive numeric search."
+  ]
+}

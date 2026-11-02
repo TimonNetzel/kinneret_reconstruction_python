@@ -1,0 +1,50 @@
+[
+  {
+    "source": "climate_modelling:speleothems/speleo_data/speleo_info.csv",
+    "bytes": 53134,
+    "mtime_ns": 1562229710000000000,
+    "sha256": "ecf11a3259aa00f49642e54877584b1d6679770e0fa19f1a888eaf8762dde649"
+  },
+  {
+    "source": "climate_modelling:speleothems/speleo_data/ages_info.csv",
+    "bytes": 376598,
+    "mtime_ns": 1562229710000000000,
+    "sha256": "3fe07c97690bfa56458b613bbd48762f37cba1e61ac314d46eb666f8c15a7385"
+  },
+  {
+    "source": "climate_modelling:pollen/transfer_functions/input_data/data_out/taxa_distribution_ww.rdata",
+    "bytes": 3603177,
+    "mtime_ns": 1590647716000000000,
+    "sha256": "73efc9c9b9ba03d8e964db9b69f592d8aa707f7e2c72d45798e3549aec1e3dd8"
+  },
+  {
+    "source": "climate_modelling:pollen_speleothems/mcmc_recon/Data/pollen_g_climate_all_giesecke.rdata",
+    "bytes": 180541931,
+    "mtime_ns": 1595338644000000000,
+    "sha256": "d8b2f90b1e689bc76bb3581f744c8342c4f04dd2576a5615f63021fd3aa61743"
+  },
+  {
+    "source": "climate_modelling:pollen_speleothems/mcmc_recon/Data/pollen_g_climate_all_giesecke_v1.4.rdata",
+    "bytes": 65335056,
+    "mtime_ns": 1595949234000000000,
+    "sha256": "80fda992f4728978a19643f1a4e0f9c6c62983e88254f725990a7fae84377a03"
+  },
+  {
+    "source": "climate_modelling:verification/Data/my/pmip3_21k_sftlf_v0.nc",
+    "bytes": 272220,
+    "mtime_ns": 1656407812000000000,
+    "sha256": "9e21835b34c996f34b2f7de5184562b300db05e3c172a91922a61a7a5d6fb998"
+  },
+  {
+    "source": "climate_modelling:verification/Data/my/pollen_g_climate_all_giesecke.rdata",
+    "bytes": 180541931,
+    "mtime_ns": 1595403068000000000,
+    "sha256": "d8b2f90b1e689bc76bb3581f744c8342c4f04dd2576a5615f63021fd3aa61743"
+  },
+  {
+    "source": "climate_modelling:verification/Data/my/pollen_g_climate_all_giesecke_v1.4.rdata",
+    "bytes": 56092869,
+    "mtime_ns": 1595832106000000000,
+    "sha256": "7f01ac8208e3bfacfba48673c05a312610249b5bfbb6ea2ce1c4f21c225aea0d"
+  }
+]

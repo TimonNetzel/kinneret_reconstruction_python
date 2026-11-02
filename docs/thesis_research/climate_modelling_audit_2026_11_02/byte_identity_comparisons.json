@@ -1,0 +1,14 @@
+[
+  {
+    "new_source": "climate_modelling:pollen/transfer_functions/input_data/data_out/taxa_distribution_ww.rdata",
+    "prior_source": "additional:my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata",
+    "same_sha256": false,
+    "historical_run_identity_claimed": false
+  },
+  {
+    "new_source": "climate_modelling:pollen/transfer_functions/input_data/data_out/taxa_distribution_ww.rdata",
+    "prior_source": "additional:my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+    "same_sha256": true,
+    "historical_run_identity_claimed": false
+  }
+]

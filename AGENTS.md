@@ -1,3 +1,14 @@
+> **Aktueller Stand nach climate_modelling-Abgleich, 02.11.2026:**
+> [Neues Belegpaket](docs/thesis_research/climate_modelling_audit_2026_11_02/README.md):
+> 1.828 Dateien, 161 R-Quellen, ein ZIP tatsächlich zusätzlich geprüft.
+> main.R-Verbreitungsbasis bytegleich zur Kinneret-Kopie; F14/F15 sind
+> CSV-Kandidaten ohne gesicherte SISAL-V2-Version. v4.0, finale Basis und
+> numerische historische TFs weiter ungebunden; elf Nachweisbündel offen.
+> 23 Parser-/Lesertests bestanden. Keine neuen Modell-/Rekonstruktionsläufe.
+> [Aktueller nächster Auftrag für ChatGPT und Claude](docs/thesis_research/NEXT_STEP_AFTER_CLIMATE_AUDIT_2026_11_02.md):
+> begrenzte deterministische TF-Vorbereitung gemäß eingefrorenem Auftrag.
+> Frühere Hinweise „climate_modelling ungeprüft“ unten sind Verlauf.
+
 # Kommunikation und Fortsetzung des Netzel-Projekts
 
 > **Aktueller Einstieg für den Wechsel zu Claude, 02.11.2026:**

@@ -1,5 +1,37 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## climate_modelling tatsächlich zusätzlich abgeglichen, 02.11.2026
+
+**Abgeschlossen:** [Neues Quellen-/Kopienpaket](climate_modelling_audit_2026_11_02/README.md)
+prüft den bereitgestellten Ordner zusätzlich zum eingefrorenen Zwei-Wurzeln-
+Snapshot: 1.828 Dateien, 395 RData, 343 NetCDF, 161 R-Quellen und ein ZIP-
+Inhaltsverzeichnis. Zehn R-Quellen mit mtime nach 2021 priorisiert; Datum ist
+kein Erstellungs-/Ausführungsnachweis. Neuer Collector liest den privaten
+`climate_modelling_source_root` tatsächlich; keine pauschale PC-/Altinventur.
+
+**Funde und Konflikte:** `main.R:128`-Verbreitungsbasis vorhanden und bytegleich
+zur bereits belegten Kinneret-Fassung, 720 × 360 × 275; keine numerischen TFs.
+F14/F15 haben passende CSV-Kandidaten (455/6.849 Zeilen), SISAL-V2-Zugehörigkeit
+bleibt ungeklärt. Übrige 37 priorisierte Namen und alle acht benannten Posterior-
+varianten ohne neue Namenskopie. `main_v1.2.R:858`-Sammelstand v4.0 fehlt namentlich;
+gleichnamige v1.4-Dateien unterscheiden sich im Hash. Gefundene `sftlf`-Landfraktion
+enthält keine benötigte `mask2`; regionale CRU-Metadaten ersetzen keine globalen
+Klima-/Ankerdateien. Keine Quelle ausgewählt, umbenannt oder korrigiert.
+
+**Prüfung:** 23 vorhandene Parser-/Strukturlesertests bestanden; beide Phase-1-
+Prüfer erwarteter Exit 2, elf offene Nachweisbündel. Frühere 200 historische
+Teiltests hier nicht neu gerechnet. Eingefrorene Nachweise/Startaufträge und
+Originale erhalten; App/CLI/Baseline unverändert. Keine Trainings, Sampler,
+Altersmodelle, R-Ausführung oder Fossilrekonstruktionen.
+
+**Weiter:** [Neuer konkreter Übergabeauftrag](NEXT_STEP_AFTER_CLIMATE_AUDIT_2026_11_02.md).
+Zuerst unabhängig prüfbare deterministische TF-Zeilennormierung und explizite
+Zellmaskierung aus dem bereits eingefrorenen Auftrag, kein Vollrunner und
+keine fehlenden TFs neu schätzen. Wiederaufbau nur verbleibender notwendiger
+Lücken nach Versions-/Datenvertragsprüfung. Branch `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), kein Merge.
+Ältere Ankündigungen eines ungeprüften Ordners unten sind Verlauf.
+
 ## Datei-Abgleich gesichert; neuer Ordner für Claude angekündigt, 02.11.2026
 
 **Ergebnis:** [Notwendige Dateien, Lücken und lokale Kopien](MISSING_PROJECT_FILES_2026_11_02.md)

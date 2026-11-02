@@ -4,6 +4,29 @@ Stand 02.11.2026. Quelle: Nutzerangaben im Chat vom 02.11.2026 einschließlich
 der späteren Präzisierungen zu lokalen Kopien und `climate_modelling`.
 Dauerhafte Planungsgrundlage für Codex und Claude.
 
+## Aktuell: zusätzlicher Quellenabgleich abgeschlossen, 02.11.2026
+
+[climate_modelling-Belegpaket](climate_modelling_audit_2026_11_02/README.md):
+1.828 Dateien, 161 R-Quellen und ein ZIP tatsächlich zusätzlich geprüft, privat
+absolut gebunden. Neuer Collector erweitert den Suchumfang ausdrücklich;
+der alte Zwei-Wurzeln-Scanner und seine Nachweise bleiben eingefroren.
+main.R-Verbreitungsbasis bytegleich zur vorhandenen Kinneret-Kopie (275 Taxa).
+F14/F15 sind strukturell passende CSV-Kandidaten ohne gesicherten SISAL-V2-Bezug.
+Übrige 37 priorisierte Namen, acht benannte Posteriorvarianten und v4.0 ohne
+neue Namenskopie. Zwei v1.4-Fassungen mit verschiedenem Hash nicht gleichsetzen;
+sftlf ersetzt keine mask2-Eismaske, regionale CRU-Dateien keine globalen Anker.
+Alle elf Voraussetzungen bleiben offen; keine finale Laufvariante gewählt.
+
+23 Parser-/Lesertests bestanden, eingefrorene Belege/Startaufträge erhalten.
+Keine Neuerschaffung der beiden CSVs planen, solange ihre Versionsprüfung offen
+ist. Finale Basis/Listenchronologie, numerische TFs und übrige benötigte Lücken
+nur anhand konkreter Erzeuger-/Eingabe-/Achsenverträge für Wiederaufbau planen.
+[Neuer Übergabeauftrag](NEXT_STEP_AFTER_CLIMATE_AUDIT_2026_11_02.md): begrenzte
+synthetische Prüfung der belegten TF-Vorbereitung als nächster unabhängiger
+Phase-1-Schritt. Keine Trainings/Sampler/Altersmodelle/Fossilläufe oder Phase 2.
+Frühere Ankündigungen „Ordner ungeprüft“ unten dokumentieren den Altstand.
+
+
 ## Verbindliche Quellenlage
 
 Der historische Datenträger hinter **`/automount/...`** wurde gelöscht. Die dort
