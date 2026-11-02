@@ -10,22 +10,30 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
-## Dauerhafte Quellenlage: gelöschte Festplatte
+## Aktuelle Quellenlage und erster Auftrag nach dem Claude-Wechsel
 
-**Neue Nutzerangabe vom 02.11.2026:** Alle historischen Dateien unter
-`/automount/...` lagen auf einer gelöschten Festplatte. Die dortigen Originale
-sind verloren und müssen bei Bedarf erneut erstellt werden. Maßgeblich ist der
-[Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md): pro belegtem Pfad Rolle, Erzeuger,
-Eingaben/Parameter und Prüfmaßstab zuordnen, dann den kontrollierten Wiederaufbau
-vorbereiten. Für diese Dateien nicht weiter nach dem Originaldatenträger oder
-einem unbekannten Speicherort fragen und keine pauschale Suche wiederholen.
+Der Datenträger hinter `/automount/...` ist gelöscht; **lokale Kopien können
+weiterhin in bereitgestellten Ordnern/Dateien existieren**. Erst solche Kopien
+samt Struktur/Version prüfen, nur verbleibende notwendige Lücken neu erstellen.
+[Präzisierter Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md).
 
-Diese neue Herkunftsinformation ergänzt ältere Fehlpfadberichte; eingefrorene
-Belege bleiben unverändert. Andere fehlende/relative Dateien nicht ohne
-Pfadbeleg zuordnen. Neu erzeugte Dateien als solche kennzeichnen; keine
-Originalidentität oder historische Laufgleichheit voraussetzen. Phase 1 bleibt
-vorrangig, bestehende Laufgrenzen und fachliche Gates gelten weiterhin.
-Die Angabe selbst startet keine Neuberechnungen und schließt keine Nachweisbündel.
+**Neueste Nutzerinformation, 02.11.2026:** In der nächsten Sitzung wird ein
+zusätzlicher Ordner `climate_modelling` verfügbar. Dieser neue Bestand ist noch
+nicht geprüft, sein genauer Pfad noch nicht gebunden. **Erste Aufgabe für Claude
+ist der gezielte Abgleich**, insbesondere mit den Ladepfaden in `main.R` und
+`main_v1.2.R`, vor weiteren Neuerstellungen oder dem alten TF-Teilauftrag.
+[Vollständige Übergabe](CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md).
+
+Die neue [Fehlenden-/Kopienliste](MISSING_PROJECT_FILES_2026_11_02.md) enthält
+39 priorisierte Anforderungen und acht getrennte historische Ergebnisvarianten;
+16 direkte Ladelücken betreffen den bisherigen lokalen R-Einstieg. Sie ist ein
+Snapshot **vor climate_modelling**, kein endgültiges Urteil über den neuen
+Bestand. Relevante `src`-Dateien mit mtime nach 2021 sind priorisiert;
+Erstellungs-/Kopierzeiten sind kein Nachweis historischer Ausführung.
+
+Eingefrorene Nachweise/Startaufträge erhalten. Ein Dateifund schließt keine
+Voraussetzung automatisch. Keine Speicherortfrage zu der bereits als unbekannt
+beantworteten finalen Basisdatei, keine pauschale PC-Suche oder neuen Läufe.
 
 ## Phase 1: lokale Rekonstruktionen der Dissertation nachbauen
 

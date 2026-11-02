@@ -1,73 +1,69 @@
-# Bekannter Datenträgerverlust und Wiederaufbauplan
+# Quellenverlust, mögliche lokale Kopien und Wiederaufbauplan
 
-Stand 02.11.2026. **Quelle: ausdrückliche Nutzerangabe im Chat vom 02.11.2026.**
-Diese Angabe ist eine dauerhafte Planungsgrundlage für Codex und Claude.
+Stand 02.11.2026. Quelle: Nutzerangaben im Chat vom 02.11.2026 einschließlich
+der späteren Präzisierungen zu lokalen Kopien und `climate_modelling`.
+Dauerhafte Planungsgrundlage für Codex und Claude.
 
-## Gesicherte Nutzerangabe
+## Verbindliche Quellenlage
 
-Alle Dateien, deren historischer Pfad mit **`/automount/`** beginnt, lagen auf
-einer inzwischen gelöschten Festplatte. Die dortigen Originaldateien sind
-verloren; benötigte Dateien müssen erneut erstellt werden.
+Der historische Datenträger hinter **`/automount/...`** wurde gelöscht. Die dort
+referenzierten Originalpfade sind nicht mehr verfügbar. **Dateien können aber
+zuvor auf den lokalen PC kopiert worden sein** und in den bereitgestellten
+lokalen Ordnern/Dateien noch existieren. Der Pfadpräfix allein beweist deshalb
+nicht, dass der benötigte Dateiinhalt überall fehlt oder neu erzeugt werden muss.
 
-Solche Pfade bedeuten deshalb **bekannter Originalverlust / Wiederaufbau nötig**,
-nicht lediglich einen momentan nicht eingehängten Datenträger oder einen noch
-zu erfragenden Speicherort. Nicht wieder nach dieser Festplatte oder einem
-weiteren Speicherort dieser Originale fragen und keine pauschale Suche danach
-wiederholen.
+Zuerst konkrete lokale Kopien und deren Datenvertrag prüfen. Nur verbleibende
+notwendige Lücken anhand belegter Erzeugungsschritte kontrolliert neu erstellen.
+Nicht erneut nach dem gelöschten Datenträger oder dem schon als unbekannt
+beantworteten Speicherort/Erzeuger der finalen Basisdatei fragen.
+Andere Fehlpfade nicht ohne Herkunftsbeleg diesem Verlust zuordnen.
 
-Die Aussage gilt anhand des belegten Pfadpräfixes. Andere fehlende Dateien und
-rein relative Pfade nicht ohne Herkunftsbeleg diesem Verlust zuordnen.
-Eine bereits konkret gesicherte Kopie oder ein Export kann mit seiner eigenen
-Provenienz weiterverwendet werden; seine Identität mit dem verlorenen Original
-muss jeweils belegt sein.
+**Neueste Nutzerinformation:** In der nächsten Sitzung wird ein weiterer Ordner
+`climate_modelling` verfügbar. Er wurde hier noch nicht untersucht. Priorität
+hat nun der gezielte Abgleich mit `main.R`/`main_v1.2.R` und der
+[Dateiliste](MISSING_PROJECT_FILES_2026_11_02.md).
+[Claude setzt hier fort](CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md).
+Der genaue neue Pfad ist erst bei Bereitstellung zu binden; keine Dateifunde
+oder geschlossenen Voraussetzungen vorwegnehmen.
 
-## Verbindliche Konsequenz für Phase 1
+## Vorgehen je tatsächlich benötigter Datei
 
-Für jede tatsächlich benötigte und an `/automount/` gebundene Datei wird die
-Aufgabe von „Original noch finden“ zu **„belegten Erzeugungsweg nachvollziehen
-und Datei kontrolliert neu erstellen“** geändert. Dies ist keine pauschale Wahl
-von Ersatzdaten oder eine methodische Verbesserung in Phase 2.
+1. Verbraucher, historischen Pfad, Rolle, Format, Objektstruktur, Achsen,
+   Einheiten und relevante Quellfassung festhalten. `src` mit erhaltenem
+   Änderungsdatum nach 2021 priorisieren; Kopierzeit nicht als Erstellung ausgeben.
+2. In den bereitgestellten Quellen passende Kopien/Archivmitglieder gezielt
+   abgleichen. Namensgleichheit ist nur ein Kandidat; Provenienz, Hash,
+   Struktur und Variante/Laufbezug prüfen. Unterschiedliche Standortdateien
+   oder regionale/globale Klimaversionen nicht still gleichsetzen.
+3. Nur nach verbleibender Lücke Erzeugercode, benötigte Eingaben, Parameter,
+   Versions-/Paketstand und gegebenenfalls RNG/Seed zuordnen. Bereits vorhandene
+   Daten nicht unnötig neu erstellen. Keine pauschale PC-Suche.
+4. Einen abgegrenzten Wiederaufbau mit Prüfmaßstab und Grenzen planen.
+   Fachlich nicht ableitbare Daten-/Verfahrenswahl bleibt eine konkrete offene
+   Entscheidung; bestehende Laufgrenzen beachten.
+5. Neu erzeugte Artefakte als **neu erzeugt** mit Hash/Provenienz kennzeichnen.
+   Keine automatische Identität mit verlorenen Originalen, historischen
+   Posterioren oder R-Laufzeitgleichheit behaupten.
 
-Der Wiederaufbau wird fall- und dateibezogen vorbereitet:
+Die [aktuelle Dateiliste](MISSING_PROJECT_FILES_2026_11_02.md) enthält einen
+gezielt geprüften bisherigen Bestand. Ihr Abgleich ist vor Bereitstellung von
+`climate_modelling` entstanden und muss um diesen neuen Bestand ergänzt werden.
+Ein konkreter positiver Gegenbeleg zum pauschalen Verlust liegt schon vor:
+Die unter Automount referenzierte Ohrid-Verbreitungsbasis ist lokal erhalten.
 
-1. Historischen Pfad, erwartete Rolle, Format, Objektstruktur, Achsen und Einheiten
-   anhand vorhandener Verbraucher/Quellenberichte festhalten.
-2. Erhaltenen Erzeugercode, benötigte Eingaben, Parameter, Versions-/Paketstand
-   und gegebenenfalls RNG-/Seed-Abhängigkeiten konkret zuordnen. Fehlende
-   Voraussetzungen als solche ausweisen; keine neue Gesamtinventur.
-3. Prüfen, ob sich die Datei mit belegten erhaltenen Eingaben deterministisch
-   wiederherstellen lässt. Fachlich nicht ableitbare Daten-/Verfahrenswahl oder
-   fehlende Laufzuordnung bleibt eine konkrete offene Entscheidung.
-4. Einen abgegrenzten Wiederaufbau samt Konfiguration, Provenienz, Prüfungen
-   und Grenzen planen. Bestehende Einschränkungen für Trainings, Sampler,
-   Altersmodelle und Fossilrekonstruktionen vor einem tatsächlichen Lauf beachten.
-5. Neu erzeugte Dateien ausdrücklich als **neu erzeugt** kennzeichnen und ihre
-   Hashes sowie Abweichungen sichern. Sie sind nicht automatisch bytegleiche
-   Originale oder ein Nachweis der historischen numerischen Laufgleichheit.
+## Erhaltung und fachliche Grenzen
 
-Ein erfolgreich erzeugtes Artefakt schließt ein offenes Nachweisbündel erst,
-wenn dessen konkrete Voraussetzungen geprüft und die Reproduktionsspezifikation
-nachvollziehbar fortgeschrieben wurden. Der Datenträgerverlust selbst ist keine
-wissenschaftliche Freigabe und wählt keine finale Kinneret-Variante.
+Eingefrorene Quellenberichte, Hashmanifeste, Spezifikationen und frühere
+Startaufträge bleiben unverändert. Neue Nutzerangaben ergänzen ihren damaligen
+Stand. Ein Fund schließt ein Nachweisbündel erst nach Prüfung der konkreten
+Voraussetzungen und nachvollziehbarer Aktualisierung der Spezifikation.
+Alle elf bisherigen Nachweisbündel bleiben vorerst offen; keine finale
+Kinneret-Variante gewählt. Die neue Quelleninformation startet keine Trainings,
+Sampler, Altersmodelle oder Fossilrekonstruktionen.
 
-## Umgang mit bisherigen Nachweisen und Übergaben
-
-Eingefrorene Quellenberichte, Hashmanifeste, Spezifikationen und Startaufträge
-bleiben als Nachweise ihres damaligen Stands unverändert. Frühere Formulierungen
-wie „Speicherort unbekannt“ werden für belegte `/automount/`-Pfade durch diese
-neuere Nutzerangabe ergänzt; sie sind kein Auftrag zu erneuter Suche.
-Die bisher offenen elf Nachweisbündel werden durch diese Dokumentationsänderung
-nicht automatisch geschlossen.
-
-Aktueller technischer Einstieg bleibt die
-[TF-Vorbereitung](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md). Bei der weiteren
-Abhängigkeitsarbeit die Wiederaufbaupflicht gezielt berücksichtigen. Diese
-Festlegung startet noch keine Neuberechnungen oder Trainings.
-
-Die Regel ist in `CLAUDE.md`, `AGENTS.md`,
+Diese Regel ist in `CLAUDE.md`, `AGENTS.md`,
 [Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md),
 [Projektstatus](PROJECT_STATUS.md) und
-[Claude-Übergabe](CLAUDE_HANDOFF_2026_11_02.md) verlinkt, damit sie beim nächsten
-Sitzungsstart erneut gelesen wird. Maßgeblich bleibt zuerst Phase 1, danach
-Phase 2; Originale nur lesen, fallbezogene Gates erhalten, keine automatischen
-Merges. Plots jung links, alt rechts.
+[Claude-Übergabe](CLAUDE_HANDOFF_2026_11_02.md) verlinkt.
+Phase 1 vor Phase 2; Originale nur lesen, App/CLI/Baseline und fallbezogene
+Gates erhalten, keine automatischen Merges, Plots jung links und alt rechts.

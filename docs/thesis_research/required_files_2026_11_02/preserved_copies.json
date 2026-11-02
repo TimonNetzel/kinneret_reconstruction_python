@@ -1,0 +1,16 @@
+[
+  {
+    "source": "additional:my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata",
+    "bytes": 3703315,
+    "sha256": "89a5e35906e2bd50ae5c85881269aecc59992f91744c6f879cc481e7ff875073",
+    "matches_prior_structural_audit": true,
+    "identity_with_lost_original_run_claimed": false
+  },
+  {
+    "source": "additional:my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+    "bytes": 3603177,
+    "sha256": "73efc9c9b9ba03d8e964db9b69f592d8aa707f7e2c72d45798e3549aec1e3dd8",
+    "matches_prior_structural_audit": true,
+    "identity_with_lost_original_run_claimed": false
+  }
+]

@@ -1,26 +1,17 @@
 # Aktueller Projekteinstieg für Claude
 
-> **Dauerhafte Quellenregel – Nutzerangabe vom 02.11.2026:**
-> Alle Dateien mit historischem Pfadpräfix `/automount/` lagen auf einer
-> gelöschten Festplatte. Diese Originale sind verloren; benötigte Dateien
-> müssen anhand belegter Erzeugungsschritte neu erstellt werden. Nicht erneut
-> nach dem Datenträger/Speicherort fragen oder pauschal danach suchen.
-> [Verbindlicher Wiederaufbauplan](docs/thesis_research/SOURCE_RECOVERY_PLAN.md).
-> Neuberechnung nicht als Originalfund oder automatisch bytegleiche historische
-> Reproduktion behandeln. Eingefrorene Nachweise und bestehende Laufgrenzen erhalten.
-
-> **Aktueller Einstieg nach gemeinsamer Rechenkettenprüfung, 02.11.2026:**
-> [Neuer Startauftrag für Claude](docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md)
-> mit portablen Quellauszügen, Formeln, Prüfkommandos und Abnahmekriterien.
-> [Aktuelles Ergebnis](docs/thesis_research/literal_phase1_chain_2026_11_02/README.md):
-> 33 neue Tests, mit Vorpaketen 200 grün. Vier Module unverändert; gemeinsame
-> Kunstfixture und unabhängige Bruchrechnung prüfen Reihenfolge und Achsen.
-> Kein historischer Runner oder Originalersatz; elf Nachweisbündel offen.
-> Nächster Schritt: begrenzte TF-Zeilennormierung und explizite Zellmaskierung
-> aus `mcmc_prepare.R:1581–1586,1613–1618`. Keine unbekannte `inside.range`-
-> Randkonvention wählen oder stochastische/Medianpfade starten.
-> Der alte Claude-Startauftrag ist abgeschlossen und bleibt hashgebunden
-> unverändert. Frühere Einstiege unten sind Verlauf. Phase 1 vor Phase 2.
+> **Aktueller Einstieg für den Wechsel zu Claude, 02.11.2026:**
+> **[Hier beginnen: vollständige Übergabe und climate_modelling](docs/thesis_research/CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md).**
+> Der Nutzer stellt in der nächsten Sitzung einen neuen Ordner
+> `climate_modelling` bereit. Noch nicht geprüft, genauer Pfad noch nicht gebunden.
+> Zuerst gegen `main.R`, `main_v1.2.R` und die
+> [priorisierte Fehlenden-/Kopienliste](docs/thesis_research/MISSING_PROJECT_FILES_2026_11_02.md)
+> abgleichen. Dann erst verbleibende Lücken/weiteren technischen Auftrag festlegen.
+> `/automount/` lag auf gelöschter Festplatte; lokale Kopien können trotzdem
+> existieren. Erst Kopien prüfen, nur verbleibende nötige Dateien neu erstellen.
+> [Quellenregel](docs/thesis_research/SOURCE_RECOVERY_PLAN.md). Keine neuen Läufe.
+> Bisher 200 historische Teiltests gesichert; acht neue Parserprüfungen bestanden.
+> Elf Nachweisbündel offen, keine finale Variante. Frühere Einstiege sind Verlauf.
 
 > **Neuester Teilfortschritt: Altersraster/Zeilenauswahl, 02.11.2026:**
 > [Belege und synthetische Prüfung](docs/thesis_research/literal_age_selection_2026_11_02/README.md).

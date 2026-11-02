@@ -1,27 +1,15 @@
 # Claude-Übergabe: Dissertation zur überprüfbaren App weiterführen
 
-> **Dauerhaft berücksichtigen: gelöschte Festplatte (Nutzer, 02.11.2026).**
-> Dateien mit historischem Pfadpräfix `/automount/` sind Originalverluste und
-> müssen bei Bedarf neu erstellt werden. [Wiederaufbauplan](SOURCE_RECOVERY_PLAN.md)
-> lesen: keine erneute Speicherortfrage/Suchinventur, Erzeuger und Eingaben
-> gezielt zuordnen, neu erzeugte Ergebnisse als solche kennzeichnen.
-> Frühere Fehlpfad-/Unbekannt-Aussagen werden dadurch ergänzt; eingefrorene
-> Belege und Startaufträge unverändert lassen. Der technische nächste Schritt
-> bleibt die unten verlinkte TF-Vorbereitung; noch keine neuen Läufe gestartet.
-
-> **Aktueller Einstieg nach gemeinsamer synthetischer Prüfung, 02.11.2026:**
-> **[Claude beginnt hier mit dem nächsten konkreten Schritt](CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md).**
-> Der neue Auftrag enthält portabel gebundene R-Auszüge, Normierungs-/Masken-
-> formeln, rationale Kontrollwerte, Prüfkommandos und Abnahmekriterien.
-> [Abgeschlossenes Paket](literal_phase1_chain_2026_11_02/README.md): 33 neue
-> Tests, mit Vorpaketen 200 grün. Vier Module bleiben unverändert; gemeinsame
-> Kunstrechnung bis zur PDF-Summe bestätigt alle Zwischenstufen gegen exakte
-> Brüche. Keine historische R-Gleichheit oder finale Laufbindung.
-> Nächster Schritt: TF-Zeilennormierung und explizite Zellmaskierung; keine
-> unbelegte `inside.range`-Randkonvention, TF-Neuschätzung oder Zufalls-/Median-
-> Ausführung. Der frühere Startauftrag bleibt als eingefrorener Nachweis erhalten.
-> Elf Nachweisbündel offen; Phase 1 vorrangig, keine neuen Fossilläufe oder Merges.
-> Ältere nächste Schritte unten sind Verlauf.
+> **Aktuelle Übergabe für den unmittelbaren Wechsel zu Claude:**
+> **[Vollständiger Arbeitsstand und neuer climate_modelling-Auftrag](CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md).**
+> Darin sind abgeschlossene Chat-Pakete/Commits, Tests, Grenzen und die letzte
+> Nutzerinformation gesichert. Der neue Ordner wird erst in der nächsten Sitzung
+> bereitgestellt und wurde noch nicht geprüft. Zuerst dessen Dateien gegen
+> `main.R`/`main_v1.2.R` und die [Dateiliste](MISSING_PROJECT_FILES_2026_11_02.md)
+> abgleichen. Automount-Datenträger gelöscht, mögliche lokale Kopien trotzdem
+> gezielt prüfen; [präzisierte Quellenregel](SOURCE_RECOVERY_PLAN.md).
+> Danach verbleibende Lücken/TF-Vorbereitung planen. Keine neuen Modelle,
+> Sampler oder Fossilläufe; elf Nachweisbündel offen. Ältere Einstiege sind Verlauf.
 
 > **Aktueller Einstieg nach Altersraster-/Zeilenauswahlprüfung, 02.11.2026:**
 > [Quellen, Formeln, Kontrollfluss und Grenzen](literal_age_selection_2026_11_02/README.md).

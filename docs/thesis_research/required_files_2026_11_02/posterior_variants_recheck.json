@@ -1,0 +1,98 @@
+[
+  {
+    "algorithm": "rw",
+    "percent": "False",
+    "case_studies": "False",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/rw_posterior_add_3_1_counts.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "rw",
+    "percent": "False",
+    "case_studies": "True",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/rw_posterior_add_3_1_case_studies_counts.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "rw",
+    "percent": "True",
+    "case_studies": "False",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/rw_posterior_add_3_1.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "rw",
+    "percent": "True",
+    "case_studies": "True",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/rw_posterior_add_3_1_case_studies.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "gibbs",
+    "percent": "False",
+    "case_studies": "False",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/gibbs_posterior_add_3_1_counts.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "gibbs",
+    "percent": "False",
+    "case_studies": "True",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/gibbs_posterior_add_3_1_case_studies_counts.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "gibbs",
+    "percent": "True",
+    "case_studies": "False",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/gibbs_posterior_add_3_1.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  },
+  {
+    "algorithm": "gibbs",
+    "percent": "True",
+    "case_studies": "True",
+    "station_id": "3",
+    "sim_nr": "1",
+    "relative_path": "out/posterior/gibbs_posterior_add_3_1_case_studies.rdata",
+    "exists": "False",
+    "scope": "exact current source branch candidate, not a recovered historical run",
+    "local_filename_candidates_now": [],
+    "meaning": "Historical result/reference variant, not external input required before generating a new result; none selected as final"
+  }
+]

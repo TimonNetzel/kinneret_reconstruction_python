@@ -1,5 +1,33 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Datei-Abgleich gesichert; neuer Ordner für Claude angekündigt, 02.11.2026
+
+**Ergebnis:** [Notwendige Dateien, Lücken und lokale Kopien](MISSING_PROJECT_FILES_2026_11_02.md)
+mit 39 priorisierten Anforderungen und acht getrennten Posteriorvarianten.
+16 direkte Ladelücken des erhaltenen lokalen R-Einstiegs: zwölf RData/NC und
+vier TXT/CSV. 369 R-Dateien lesend geprüft; 35 Dissertations- und 149 Zusatz-
+`src`-Dateien mit mtime nach 2021 priorisiert. Dateizeiten sind keine gesicherte
+Erstellungsgeschichte. Index von 584 Datendateien (257 RData/RDS/NC) und 18 ZIP-
+Inhaltsverzeichnissen im bisherigen abgegrenzten Bestand. Keine gesamte PC-Suche.
+
+**Positive Kopien:** Die über Automount referenzierte Ohrid-Verbreitungsdatei
+liegt lokal vor. Zwei kleine Verbreitungscontainer gegen frühere Hashes bestätigt.
+Automount-Verlust bedeutet daher nicht automatisch fehlender Dateiinhalt.
+[Quellenregel entsprechend präzisiert](SOURCE_RECOVERY_PLAN.md).
+
+**Neueste Nutzerinformation, noch ungeprüft:** In der nächsten Sitzung steht
+zusätzlich `climate_modelling` zur Verfügung. Nutzer möchte zeitnah zu Claude
+wechseln. [Vollständige Übergabe und erster Auftrag](CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md)
+sichern den Chat-Arbeitsstand und diesen Hinweis. Claude soll den neuen Ordner
+zuerst mit `main.R`/`main_v1.2.R` und der Liste abgleichen. Genauer Pfad und Inhalt
+hier noch nicht bekannt; frühere Fehlbefunde gelten nur für bisherigen Suchumfang.
+
+**Prüfung/Grenzen:** Acht neue synthetische Parserprüfungen bestanden. Frühere
+200 historische Teiltests in diesem Datei-Abgleich nicht erneut gerechnet.
+Originale und eingefrorene Nachweise unverändert; keine R-Ausführung, Trainings,
+Sampler, Altersmodelle oder Fossilläufe. Elf Nachweisbündel bleiben offen,
+keine finale Kinneret-Variante. Bestehender Branch/PR #77, kein Merge.
+
 ## Nutzerangabe zum Originalverlust dauerhaft verankert, 02.11.2026
 
 **Neue gesicherte Kontextinformation:** Alle Dateien mit historischem Pfadpräfix
