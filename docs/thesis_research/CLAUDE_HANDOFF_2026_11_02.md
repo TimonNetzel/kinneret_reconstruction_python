@@ -4,8 +4,9 @@ Stand 02.11.2026. **Aktueller Einstieg** für die Fortsetzung nach den lokalen
 Quellen-/Modellprüfungen vom 01.–02.11.2026. Branch `dissertation-reconstruction`,
 Basis `7f1826cffddc8893ba6354cd3cca3fa43954b9be` nach
 [PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30).
-Der neue Sicherungs-PR sammelt die bisherigen lokalen Vorarbeiten; ein offener
-PR ist bereits über seinen Head-Branch vollständig für Claude erreichbar.
+[Sicherungs-PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77)
+sammelt die bisherigen lokalen Vorarbeiten; erster Sicherungscommit `973fddb`.
+Der offene PR ist über seinen Head-Branch vollständig für Claude erreichbar.
 Vor Beginn Branch/HEAD und PR-Stand prüfen; nicht ungeprüft nur `main` verwenden.
 
 ## Auftrag und Rollen

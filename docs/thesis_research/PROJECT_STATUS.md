@@ -2,8 +2,9 @@
 
 ## GitHub-Sicherung und Claude-/App-Übergabe, 02.11.2026
 
-Auf Nutzerauftrag werden die lokalen Vorarbeiten auf
-`dissertation-reconstruction` für GitHub und Claude gesichert.
+Auf Nutzerauftrag auf GitHub gesichert: [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77),
+Branch `dissertation-reconstruction`, erster Sicherungscommit `973fddb`.
+Der PR bleibt für die Claude-Fortsetzung offen; `main` ist unverändert.
 [Aktueller Einstieg](CLAUDE_HANDOFF_2026_11_02.md), automatisch auffindbar
 auch über `CLAUDE.md`. 50 ausgewählte Nachweise/Ergebnisdateien, rund 2,8 MB,
 stehen im [portablen Paket](research_snapshot_2026_11_02/README.md); persönliche
