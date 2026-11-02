@@ -1,0 +1,124 @@
+{
+  "status": "read_only_original_spans",
+  "spans": [
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 651,
+      "last_line": 677,
+      "role": "bound reconstruction loop: source(\"src/mcmc_prepare.R\") without a grid switch",
+      "text": "for(station_id in stations ){\n\n#     station_id <- 7\n    if( is.null(core.data[[station_id]]) | station_id == 469 ) next()\n    print(station_id)\n    age.reso <- 2\n    sim_nr <- 1\n    dims <- 300\n    null.ratio.check <- FALSE\n    metro_hastings <- FALSE\n    bias_corr <- FALSE\n    mean_median_trafo <- FALSE\n    IRD <- FALSE\n    \n    \n    core.data[[station_id]]$sitename\n\n    # consider case \n    giesecke_prespa <- F\n    past_climate_module <- F\n    iznik_iso <- F\n    case_studies <- F\n    \n    \n    source(\"src/mcmc_prepare.R\")  \n    source(\"src/mcmc_conduction.R\")    \n    source(\"src/mcmc_trimming_posterior_trafo.R\")"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 43,
+      "last_line": 43,
+      "role": "prior_climate.R sourced at depth 0; it creates prior.recent",
+      "text": "source(\"src/prior_climate.R\")"
+    },
+    {
+      "source": "original:src/prior_climate.R",
+      "first_line": 128,
+      "last_line": 130,
+      "role": "prior.recent from fitdistr estimates; floors sd.tmp >= 2 and sd.pann >= 150",
+      "text": "prior.recent <- list(mean.tmp = normparameter1$es[1], sd.tmp = normparameter1$es[2], mean.pann = normparameter2$es[1], sd.pann =  normparameter2$es[2])\nif(prior.recent$sd.tmp < 2)  prior.recent$sd.tmp <- 2\nif(prior.recent$sd.pann < 150)  prior.recent$sd.pann <- 150"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 114,
+      "last_line": 128,
+      "role": "implemented: default grid at depth 0 and the four period shape/rate copies",
+      "text": "# default density parameters\nshape_temp <- seq(0.1,50000,by=0.1)\nrate_temp1 <- shape_temp/prior.recent$mean.pann # includes the expectation value\nrate_temp2 <- sqrt(shape_temp)/prior.recent$sd.pann # includes the standard deviation\n# intersection of rate_temp and rate2\nintersect_id <- which.min(abs((rate_temp2-rate_temp1) - 0))\nshape <- shape_temp[intersect_id] \nrate  <- rate_temp2[intersect_id]\n\n\ntann_hist_mean <- tann_mh_mean <- tann_lgm_mean <- tann_past_mean <- prior.recent$mean.tmp\ntann_hist_sd <- tann_mh_sd <- tann_lgm_sd <- tann_past_sd <- prior.recent$sd.tmp\npann_hist_mean <- pann_mh_mean <- pann_lgm_mean <- pann_past_mean <- prior.recent$mean.pann\npann_hist_shape <- pann_mh_shape <- pann_lgm_shape <- pann_past_shape <- shape\npann_hist_rate  <- pann_mh_rate  <- pann_lgm_rate <- pann_past_rate <- rate"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 213,
+      "last_line": 219,
+      "role": "commented copy (also 281-287, 369-375): inactive",
+      "text": "#         shape_temp <- seq(0.1,50000,by=0.1)\n#         rate_temp1 <- shape_temp/prior.recent$mean.pann # includes the expectation value\n#         rate_temp2 <- sqrt(shape_temp)/prior.recent$sd.pann # includes the standard deviation\n#         # intersection of rate_temp and rate2\n#         intersect_id <- which.min(abs((rate_temp2-rate_temp1) - 0))\n#         shape <- shape_temp[intersect_id] \n#         rate  <- rate_temp2[intersect_id]"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 393,
+      "last_line": 413,
+      "role": "conditional copy for Birkat Ram inside periods_check[4]; same inputs as 114-121",
+      "text": "    if( periods_check[4] ){\n        if(sitename == \"Birkat Ram\"){\n            age_id_past <- which.min(abs(site.age-2000)) \n            \n            # create distributions\n            tann_past_mean <- prior.recent$mean.tmp\n            tann_past_sd  <- prior.recent$sd.tmp\n            \n            # default density parameters\n            shape_temp <- seq(0.1,50000,by=0.1)\n            rate_temp1 <- shape_temp/prior.recent$mean.pann # includes the expectation value\n            rate_temp2 <- sqrt(shape_temp)/prior.recent$sd.pann # includes the standard deviation\n            # intersection of rate_temp and rate2\n            intersect_id <- which.min(abs((rate_temp2-rate_temp1) - 0))\n            shape <- shape_temp[intersect_id] \n            rate  <- rate_temp2[intersect_id]\n            \n            pann_past_shape  <- shape\n            pann_past_rate   <- rate\n        }\n    }"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 466,
+      "last_line": 470,
+      "role": "stad_interstad <- FALSE at depth 0, so its else branch 524-545 is active",
+      "text": "}\n\nstad_interstad <- FALSE\n\nif(stad_interstad){"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 524,
+      "last_line": 545,
+      "role": "implemented: grid copy 526-531 and diff_rate <- shape/10",
+      "text": "}else{\n    # default density parameters\n    shape_temp <- seq(0.1,50000,by=0.1)\n    rate_temp1 <- shape_temp/prior.recent$mean.pann # includes the expectation value\n    rate_temp2 <- sqrt(shape_temp)/prior.recent$sd.pann # includes the standard deviation\n    # intersection of rate_temp and rate2\n    intersect_id <- which.min(abs((rate_temp2-rate_temp1) - 0))\n    shape <- shape_temp[intersect_id] \n    \n    # default density parameters\n    # tann\n    diff_shape <- 100\n    diff_rate <- shape/10\n    diff_mean_tann <- 10\n    # thresholds\n    diff_thresh_tann <- c(5,15)\n    # pann\n    diff_mean_pann <- diff_mean <- 10\n    diff_sd <- 2\n    # thresholds\n    diff_thresh_pann <- c(5,15)\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1261,
+      "last_line": 1281,
+      "role": "implemented: variance doubling if(recent & min(age) >= 2000), then grid at depth 0",
+      "text": "#-------------------------------------------------------------------------------------------------------------------------\n\n# make the climate prior more uninformative (increase of variance) if the recent age lies in younger holocene\nif( recent & min(age) >= 2000 ){\n    prior.recent$sd.pann <- prior.recent$sd.pann*2\n    prior.recent$sd.tmp <- prior.recent$sd.tmp*2\n}\n\n# For large shape parameter the gamma distribution converges to normal distribution with mean μ = shape/rate and variance σ^2 = shape/(rate)^2\nshape1 <- seq(0.1,50000,by=0.1)\nrate1 <- shape1/prior.recent$mean.pann # includes the expectation value\nrate2 <- sqrt(shape1)/prior.recent$sd.pann # includes the standard deviation\n\n# plot(shape1,rate1,ty=\"l\")\n# lines(shape1,rate2)\n# abline(v=shape1[which.min(abs((rate2-rate1) - 0))])\n\n# intersection of rate1 and rate2\nintersect_id <- which.min(abs((rate2-rate1) - 0))\nshape <- shape1[intersect_id] \nrate  <- rate2[intersect_id]"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1295,
+      "last_line": 1303,
+      "role": "documented only: set.seed(2022) + rnorm/rgamma + quantile read shape/rate",
+      "text": "# via interquantile range\n# tann\nset.seed(2022)\nprior_tann_sample <- rnorm(10000,prior.recent$mean.tmp,prior.recent$sd.tmp)\ntann_thresh <- quantile(prior_tann_sample,c(0.25,0.75))\n# pann\nset.seed(2022)\nprior_pann_sample <- rgamma(10000,shape=shape,rate=rate)\npann_thresh <- quantile(prior_pann_sample,c(0.25,0.75))"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1729,
+      "last_line": 1735,
+      "role": "implemented: if(recent) rate <- shape/prior.recent$mean.pann",
+      "text": "# recent climate start values\nif(recent){\n    posterior$post_tann[1] <- prior.recent$mean.tmp - prior.recent$sd.tmp +rbeta(1,0.1,20) #rnorm(1,prior.recent$mean.tmp,5)\n#     shape <- 20\n    rate <- shape/prior.recent$mean.pann\n    posterior$post_pann[1] <- prior.recent$mean.pann + prior.recent$sd.pann +rbeta(1,0.1,20) # rgamma(1,shape=shape,rate=rate)\n    "
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1622,
+      "last_line": 1660,
+      "role": "audit: weightedMedian fills tf.x1/x2.current.mean (matrixStats, version unbound)",
+      "text": "# weight them for faster sample calculations\ntf.x1.current.mean <- (tf.x1.current %*% x1range.bck)[,1] # expectation value\ntf.x2.current.mean <- (tf.x2.current %*% x2range.bck)[,1] # expectation value\n\ndims2 <- 100000\ntann_expand <- spline(x1range.bck,n=dims2)$y\ntf.x1.current.mean <- tf.x1.current.mean_change <- c()\nfor(j in 1:nrow(tf.x1.current) ){\n    # weighted median of temperature in climate space\n    tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )\n    if(taxa_change) tf.x1.current.mean_change[j] <- weightedMedian(x1range.bck,tf.x1.current_change[j,] )\n#     print(tf.x1.current.mean[j])\n    # weighted mean of temperature in standard normal space\n    \n#     clim_expand  <- spline(tf.x1.current[j,],n=dims2)\n#     tf.x1.current.mean[j] <- tann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x1range.bck[round(weightedMean(1:dims,tf.x1.current[j,] ) )])\n#     print(tf.x1.current.mean[j])\n}\n\n\n# image.plot(1:nrow(tf.x2.current),x2range.bck,tf.x2.current)\n\n\n\npann_expand <- spline(x2range.bck,n=dims2)$y\ntf.x2.current.mean <- tf.x2.current.mean_change <- c()\nfor(j in 1:nrow(tf.x2.current) ){\n    # weighted median of precip in standard climate space\n    tf.x2.current.mean[j] <- weightedMedian(x2range.bck,tf.x2.current[j,] ) \n    if(taxa_change) tf.x2.current.mean_change[j] <- weightedMedian(x2range.bck,tf.x2.current_change[j,] )\n#     print(weightedMedian(x2range.bck,tf.x2.current[j,] ) )\n\n    # weighted mean of precip in standard normal space\n#     clim_expand  <- spline(tf.x2.current[j,],n=dims2)\n#     tf.x2.current.mean[j] <- pann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x2range.bck[round(weightedMean(1:dims,tf.x2.current[j,] ) )])\n#     print(tf.x2.current.mean[j])\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1663,
+      "last_line": 1686,
+      "role": "audit: which.tf.missing removal and the num_taxa-derived priors that follow",
+      "text": "#  which transfer functions are available\nwhich.tf.missing <- which(is.na(tf.x1.current.mean))\nif(length(which.tf.missing) != 0){\n    taxa.appear.core <- taxa.appear.core[,-which.tf.missing]\n    tf.x1.current <- tf.x1.current[-which.tf.missing,]\n    tf.x2.current <- tf.x2.current[-which.tf.missing,]\n    tf.x1.current.mean <- tf.x1.current.mean[-which.tf.missing]\n    tf.x2.current.mean <- tf.x2.current.mean[-which.tf.missing]\n    if(taxa_change){\n        tf.x1.current.mean_change <- tf.x1.current.mean_change[-which.tf.missing]\n        tf.x2.current.mean_change <- tf.x2.current.mean_change[-which.tf.missing]\n    }\n    \n    all.avail <- all.avail[,-which.tf.missing]\n    all.avail.age <- all.avail.age[,-which.tf.missing]\n    num_taxa <- nrow(tf.x1.current)\n}\n\nwhich_taxa <- c(1:num_taxa)\nprior$taxa.weights <- rep(1/num_taxa,times = num_taxa)\nprior$phi <- num_taxa/2\nprior$nr.taxa.mean <- posterior$nr.taxa.mean[1] <- num_taxa\nprior$nr.taxa.sd <- round(num_taxa/4)\n"
+    },
+    {
+      "source": "original:src/mcmc_prep_v1.2.R",
+      "first_line": 1102,
+      "last_line": 1116,
+      "role": "source copy with upper bound 5000 instead of 50000; not sourced by main_v1.2.R",
+      "text": "# For large shape parameter the gamma distribution converges to normal distribution with mean μ = shape/rate and variance σ^2 = shape/(rate)^2\nshape1 <- seq(0.1,5000,by=0.1)\nrate1 <- shape1/prior.recent$mean.pann # includes the expectation value\nrate2 <- sqrt(shape1)/prior.recent$sd.pann # includes the standard deviation\n\n# plot(shape1,rate1,ty=\"l\")\n# lines(shape1,rate2)\n# abline(v=shape1[which.min(abs((rate2-rate1) - 0))])\n\n# intersection of rate1 and rate2\nintersect_id <- which.min(abs((rate2-rate1) - 0))\nshape <- shape1[intersect_id] \nrate  <- rate2[intersect_id]\n\nset.seed(2022)"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 153,
+      "last_line": 171,
+      "role": "reader (sampler, not run): dgamma(..., shape=shape, rate=rate) and period copies",
+      "text": "    # climate module\n    # recent climate: CRU (koeppen geiger)\n    tann_old_new <- dnorm(c(posterior$post_tann[i-1],posterior_temp$post_tann),mean=prior.recent$mean.tmp,sd=prior.recent$sd.tmp)    \n    pann_old_new <- dgamma(c(posterior$post_pann[i-1],posterior_temp$post_pann),shape=shape,rate=rate)\n    climate_ratio_recent[i] <- (tann_old_new[2]/tann_old_new[1]) * (pann_old_new[2]/pann_old_new[1]) \n    \n    # past climate: PMIP\n    tann_old_new_mh <- dnorm(c(posterior$tann_mh[i-1],posterior_temp$tann_mh),mean=tann_mh_mean,sd=tann_mh_sd)\n    pann_old_new_mh <- dgamma(c(posterior$pann_mh[i-1],posterior_temp$pann_mh),shape=pann_mh_shape,rate=pann_mh_rate)\n    climate_ratio_mh[i] <- (tann_old_new_mh[2]/tann_old_new_mh[1]) * (pann_old_new_mh[2]/pann_old_new_mh[1]) \n    \n    tann_old_new_lgm <- dnorm(c(posterior$tann_lgm[i-1],posterior_temp$tann_lgm),mean=tann_lgm_mean,sd=tann_lgm_sd)\n    pann_old_new_lgm <- dgamma(c(posterior$pann_lgm[i-1],posterior_temp$pann_lgm),shape=pann_lgm_shape,rate=pann_lgm_rate)\n    climate_ratio_lgm[i] <- (tann_old_new_lgm[2]/tann_old_new_lgm[1]) * (pann_old_new_lgm[2]/pann_old_new_lgm[1])\n    \n    # past climate: Other\n    tann_old_new_past <- dnorm(c(posterior$tann_past[i-1],posterior_temp$tann_past),mean=tann_past_mean,sd=tann_past_sd)\n    pann_old_new_past <- dgamma(c(posterior$pann_past[i-1],posterior_temp$pann_past),shape=pann_past_shape,rate=pann_past_rate)\n    climate_ratio_past[i] <- (tann_old_new_past[2]/tann_old_new_past[1]) * (pann_old_new_past[2]/pann_old_new_past[1]) "
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 227,
+      "last_line": 248,
+      "role": "reader (energy, not run): dgamma with shape/rate, period copies and diff_rate",
+      "text": "    # trace of energy\n    prob.tmp <- dnorm(post.tmp,mean=prior.recent$mean.tmp,sd=prior.recent$sd.tmp)\n    prob.pann <- dgamma(post.pann,shape=shape,rate=rate)\n    cru_energy <- prob.tmp*prob.pann\n    \n    prob.spec <- dbeta(post.post_spec,shape1,shape2)\n    prob.pollen <- dbeta(post.post_pollen,shape1,shape2)\n    prob.iso <- dbeta(post.post_iso,shape1,shape2)\n    exp_energy <- prob.spec*prob.pollen*prob.iso\n    \n    prob.tmp.hist <- dnorm(post.tmp_hist,mean=tann_hist_mean,sd=tann_hist_sd)\n    prob.pann.hist <- dgamma(post.pann_hist,shape=pann_hist_shape,rate=pann_hist_rate)\n    prob.tmp.mh <- dnorm(post.tmp_mh,mean=tann_mh_mean,sd=tann_mh_sd)\n    prob.pann.mh <- dgamma(post.pann_mh,shape=pann_mh_shape,rate=pann_mh_rate)\n    prob.tmp.lgm <- dnorm(post.tmp_lgm,mean=tann_lgm_mean,sd=tann_lgm_sd)\n    prob.pann.lgm <- dgamma(post.pann_lgm,shape=pann_lgm_shape,rate=pann_lgm_rate)\n    cpmip_energy <- prob.tmp.hist*prob.pann.hist*prob.tmp.mh*prob.pann.mh*prob.tmp.lgm*prob.pann.lgm\n    \n    \n    prob.means.tann <- dgamma(post_means_diff_tann,shape=diff_shape,rate=diff_rate)\n    prob.means.pann <- dnorm(post_means_diff_tann,mean=diff_mean,sd=diff_sd)\n    diff_energy <- prob.means.tann*prob.means.pann"
+    },
+    {
+      "source": "original:src/mcmc_trimming_posterior_trafo.R",
+      "first_line": 635,
+      "last_line": 638,
+      "role": "reader (postprocessing, not run): dgamma prior density",
+      "text": "set.seed(seeds)\ngamma_x <- seq(min(x2range.bck),max(x2range.bck),length.out=1000)\nprior_dens_pann <- dgamma(gamma_x,shape=shape, rate = rate)\nprior_dens_pann <- prior_dens_pann*(max(post_dens_pann$y)/max(prior_dens_pann))"
+    }
+  ]
+}
