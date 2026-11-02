@@ -1,0 +1,103 @@
+{
+  "status": "read_only_original_spans",
+  "spans": [
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 45,
+      "last_line": 83,
+      "role": "implemented: taxon pruning 51-80; 83 follows and is already in literal_age_depth",
+      "text": "#------------------------------------------------------------------------------\n# Reduce the number of taxa considered if they do not provide enough information, \n# i.e. many zero counts in terms of the depth of the core.\n#------------------------------------------------------------------------------\n\n\nif(null.ratio.check ){\n    null.ratio <- c()\n    for(i in 1:ncol(all.avail)){\n        null.ratio[i] <- length(which(all.avail[,i] == 0)) /  nrow(all.avail) \n    }\n    # keep all available relict taxa \n    if(sitename == \"Lake Ohrid\"){\n        relict.id <- c(3,8,23,24,25)\n        null.ratio[relict.id] <- 0\n        # remove pinus sylvestris\n        null.ratio[1] <- 1\n    }\n    \n    # remove the rarest taxa and limit the core to 15 taxa \n    rm.id1 <- which(null.ratio >= 0.95)\n    if(ncol(all.avail) - length(rm.id1) > 15) metro_hastings <- TRUE\n    if(!metro_hastings){\n        rm.id <- which(null.ratio %in% sort(null.ratio)[16:ncol(all.avail)])\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }else{\n        # remove the rarest taxa\n        rm.id <- which(null.ratio >= 0.95)\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }\n\n}\n\n\nall.avail[all.avail == 0] <- 1e-6"
+    },
+    {
+      "source": "original:src/mcmc_prep_v1.2.R",
+      "first_line": 147,
+      "last_line": 176,
+      "role": "copy of 51-80, compared byte for byte",
+      "text": "if(null.ratio.check ){\n    null.ratio <- c()\n    for(i in 1:ncol(all.avail)){\n        null.ratio[i] <- length(which(all.avail[,i] == 0)) /  nrow(all.avail) \n    }\n    # keep all available relict taxa \n    if(sitename == \"Lake Ohrid\"){\n        relict.id <- c(3,8,23,24,25)\n        null.ratio[relict.id] <- 0\n        # remove pinus sylvestris\n        null.ratio[1] <- 1\n    }\n    \n    # remove the rarest taxa and limit the core to 15 taxa \n    rm.id1 <- which(null.ratio >= 0.95)\n    if(ncol(all.avail) - length(rm.id1) > 15) metro_hastings <- TRUE\n    if(!metro_hastings){\n        rm.id <- which(null.ratio %in% sort(null.ratio)[16:ncol(all.avail)])\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }else{\n        # remove the rarest taxa\n        rm.id <- which(null.ratio >= 0.95)\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }\n\n}"
+    },
+    {
+      "source": "original:src/mcmc_prep.R",
+      "first_line": 144,
+      "last_line": 173,
+      "role": "copy of 51-80 except the relict condition: if(ohrid)",
+      "text": "if(null.ratio.check ){\n    null.ratio <- c()\n    for(i in 1:ncol(all.avail)){\n        null.ratio[i] <- length(which(all.avail[,i] == 0)) /  nrow(all.avail) \n    }\n    # keep all available relict taxa \n    if(ohrid){\n        relict.id <- c(3,8,23,24,25)\n        null.ratio[relict.id] <- 0\n        # remove pinus sylvestris\n        null.ratio[1] <- 1\n    }\n    \n    # remove the rarest taxa and limit the core to 15 taxa \n    rm.id1 <- which(null.ratio >= 0.95)\n    if(ncol(all.avail) - length(rm.id1) > 15) metro_hastings <- TRUE\n    if(!metro_hastings){\n        rm.id <- which(null.ratio %in% sort(null.ratio)[16:ncol(all.avail)])\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }else{\n        # remove the rarest taxa\n        rm.id <- which(null.ratio >= 0.95)\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }\n\n}"
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 651,
+      "last_line": 676,
+      "role": "bound reconstruction loop: null.ratio.check <- FALSE before source(mcmc_prepare.R)",
+      "text": "for(station_id in stations ){\n\n#     station_id <- 7\n    if( is.null(core.data[[station_id]]) | station_id == 469 ) next()\n    print(station_id)\n    age.reso <- 2\n    sim_nr <- 1\n    dims <- 300\n    null.ratio.check <- FALSE\n    metro_hastings <- FALSE\n    bias_corr <- FALSE\n    mean_median_trafo <- FALSE\n    IRD <- FALSE\n    \n    \n    core.data[[station_id]]$sitename\n\n    # consider case \n    giesecke_prespa <- F\n    past_climate_module <- F\n    iznik_iso <- F\n    case_studies <- F\n    \n    \n    source(\"src/mcmc_prepare.R\")  \n    source(\"src/mcmc_conduction.R\")    "
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 895,
+      "last_line": 895,
+      "role": "stop() before the plant-map loop; reachable only by interactive execution",
+      "text": "stop()"
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 904,
+      "last_line": 913,
+      "role": "plant-map loop: null.ratio.check <- TRUE before source(mcmc_prep.R)",
+      "text": "stations <- c(1:length(core.data))\nfor(station_id in stations ){\n\n    print(station_id)\n    age.reso <- 2\n    null.ratio.check <- TRUE\n    if( is.null(core.data[[station_id]]) ) next()\n    source(\"src/mcmc_prep.R\")\n    source(\"src/plant_winner_map.R\")\n}"
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 27,
+      "last_line": 27,
+      "role": "matrixStats attached; version not recorded",
+      "text": "library(matrixStats)"
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 50,
+      "last_line": 50,
+      "role": "spatstat.utils attached (inside.range); version not recorded",
+      "text": "library(spatstat.utils)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1589,
+      "last_line": 1608,
+      "role": "audit: unseeded sample/quantile, then overwritten by range()",
+      "text": "\n# reduce variance of tranfer functions\ntann_tf_samples <- sample(x1range.bck,10000,prob=apply(tf.x1.current,2,mean,na.rm=T),replace=T)\npann_tf_samples <- sample(x2range.bck,10000,prob=apply(tf.x2.current,2,mean,na.rm=T),replace=T)\n\ntann_tf_range <- c(0,25) #c( (mean(tann_tf_samples)-sd(tann_tf_samples)), (mean(tann_tf_samples)+sd(tann_tf_samples)) )\npann_tf_range <- c(0,1600) #c( (mean(pann_tf_samples)-sd(pann_tf_samples)), (mean(pann_tf_samples)+sd(pann_tf_samples)) )\n\nif(max(age) >= 11000){\n    tann_tf_range <- quantile(tann_tf_samples,c(0,0.95))\n    pann_tf_range <- c(0,quantile(pann_tf_samples,0.95))\n}else{\n    tann_tf_range <- quantile(tann_tf_samples,c(0.05,0.95))\n    pann_tf_range <- c(0,quantile(pann_tf_samples,0.95))\n}\n\n# no cutting of transfer functions\n\ntann_tf_range <- range(x1range.bck)\npann_tf_range <- range(x2range.bck)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1622,
+      "last_line": 1660,
+      "role": "audit: expectation overwritten, spline only used in comments, weightedMedian active",
+      "text": "# weight them for faster sample calculations\ntf.x1.current.mean <- (tf.x1.current %*% x1range.bck)[,1] # expectation value\ntf.x2.current.mean <- (tf.x2.current %*% x2range.bck)[,1] # expectation value\n\ndims2 <- 100000\ntann_expand <- spline(x1range.bck,n=dims2)$y\ntf.x1.current.mean <- tf.x1.current.mean_change <- c()\nfor(j in 1:nrow(tf.x1.current) ){\n    # weighted median of temperature in climate space\n    tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )\n    if(taxa_change) tf.x1.current.mean_change[j] <- weightedMedian(x1range.bck,tf.x1.current_change[j,] )\n#     print(tf.x1.current.mean[j])\n    # weighted mean of temperature in standard normal space\n    \n#     clim_expand  <- spline(tf.x1.current[j,],n=dims2)\n#     tf.x1.current.mean[j] <- tann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x1range.bck[round(weightedMean(1:dims,tf.x1.current[j,] ) )])\n#     print(tf.x1.current.mean[j])\n}\n\n\n# image.plot(1:nrow(tf.x2.current),x2range.bck,tf.x2.current)\n\n\n\npann_expand <- spline(x2range.bck,n=dims2)$y\ntf.x2.current.mean <- tf.x2.current.mean_change <- c()\nfor(j in 1:nrow(tf.x2.current) ){\n    # weighted median of precip in standard climate space\n    tf.x2.current.mean[j] <- weightedMedian(x2range.bck,tf.x2.current[j,] ) \n    if(taxa_change) tf.x2.current.mean_change[j] <- weightedMedian(x2range.bck,tf.x2.current_change[j,] )\n#     print(weightedMedian(x2range.bck,tf.x2.current[j,] ) )\n\n    # weighted mean of precip in standard normal space\n#     clim_expand  <- spline(tf.x2.current[j,],n=dims2)\n#     tf.x2.current.mean[j] <- pann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x2range.bck[round(weightedMean(1:dims,tf.x2.current[j,] ) )])\n#     print(tf.x2.current.mean[j])\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1663,
+      "last_line": 1679,
+      "role": "audit: NA-median taxon removal depends on weightedMedian",
+      "text": "#  which transfer functions are available\nwhich.tf.missing <- which(is.na(tf.x1.current.mean))\nif(length(which.tf.missing) != 0){\n    taxa.appear.core <- taxa.appear.core[,-which.tf.missing]\n    tf.x1.current <- tf.x1.current[-which.tf.missing,]\n    tf.x2.current <- tf.x2.current[-which.tf.missing,]\n    tf.x1.current.mean <- tf.x1.current.mean[-which.tf.missing]\n    tf.x2.current.mean <- tf.x2.current.mean[-which.tf.missing]\n    if(taxa_change){\n        tf.x1.current.mean_change <- tf.x1.current.mean_change[-which.tf.missing]\n        tf.x2.current.mean_change <- tf.x2.current.mean_change[-which.tf.missing]\n    }\n    \n    all.avail <- all.avail[,-which.tf.missing]\n    all.avail.age <- all.avail.age[,-which.tf.missing]\n    num_taxa <- nrow(tf.x1.current)\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1691,
+      "last_line": 1694,
+      "role": "audit: weightedMedian results stored in tf_x12_mean_current",
+      "text": "\ntf_x12_mean_current <- array(NA, dim = c(length(tf.x2.current.mean),2))\ntf_x12_mean_current[,1] <- tf.x1.current.mean\ntf_x12_mean_current[,2] <- tf.x2.current.mean"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1394,
+      "last_line": 1413,
+      "role": "audit: unseeded sample() inside loop, then weightedMedian",
+      "text": "        for(i in 1:1000){\n\n            for(j in 1:length(na.id)){\n                taxa_pool <- strsplit(taxa.sampled[[na.id[j]]],\"\\\"\")\n                taxa_pool <- taxa_pool[[1]][which(!even(2:length(taxa_pool[[1]])))]\n                taxa_pool_temp[[na.id[j]]] <- taxa_pool[sample(c(1:length(taxa_pool)),1)]\n            }\n\n            which_taxa <- match(taxa_pool_temp,taxa.distribution.ww$names)\n            tf.x1.current <- tf.x1[which_taxa,]\n            tf.x2.current <- tf.x2[which_taxa,]\n            \n            if(anyNA(tf.x1.current)) next()\n\n            tann.recon.age <- (pollen_percent %*% tf.x1.current)[1,]\n            pann.recon.age <- (pollen_percent %*% tf.x2.current)[1,]\n            \n            count <- count + 1\n            tann_recent[count] <- weightedMedian(x1range.bck,tann.recon.age)\n            pann_recent[count] <- weightedMedian(x2range.bck,pann.recon.age) "
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1890,
+      "last_line": 1914,
+      "role": "audit: set.seed(2023) + sample/density/quantile; sample algorithm depends on R RNG settings",
+      "text": "taxa_tann_dens <- taxa_pann_dens <- array(NA, dim = c(num_taxa,1000))\nsds_tann <- sds_pann <- c()\nfor(i in 1:nrow(tf.x1.current)){\n#     fit_tf_tann[[i]] <- ss(x=x1range.bck,y=tf.x1.current[i,])\n# #     fit_tf_pann[[i]] <- ss(x=x2range.bck,y=tf.x2.current[i,])\n    \n    set.seed(2023)\n    tf_tann_sample <- sample(x1range.bck,size=10000,prob = tf.x1.current[i,],replace = T)\n    set.seed(2023)\n    tf_pann_sample <- sample(x2range.bck,size=10000,prob = tf.x2.current[i,],replace = T)\n    \n    \n    # densities\n    dens_tann_temp <- density(tf_tann_sample,n = 1000, from = min(x1range.bck), to = max(x1range.bck))\n    dens_tann_temp$y <- dens_tann_temp$y/sum(dens_tann_temp$y)\n    dens_pann_temp <- density(tf_pann_sample,n = 1000, from = min(x2range.bck), to = max(x2range.bck))\n#     dens_pann_temp$y <- dens_pann_temp$y/sum(dens_pann_temp$y)\n    \n    taxa_tann_dens[i,] <- dens_tann_temp$y\n    taxa_pann_dens[i,] <- dens_pann_temp$y\n    \n    \n    #\n    tf_quarts_tann[i,] <- quantile(tf_tann_sample,c(0.05,0.5,0.95))\n    tf_quarts_pann[i,] <- c(0,quantile(tf_pann_sample,c(0.5,0.95)))"
+    }
+  ]
+}

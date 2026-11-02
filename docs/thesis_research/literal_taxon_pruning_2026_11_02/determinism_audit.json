@@ -1,0 +1,82 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Which step around the TF preparation is deterministic without random state and fully defined by bound sources?",
+  "candidates": [
+    {
+      "id": "taxon_pruning",
+      "lines": "mcmc_prepare.R:51-80",
+      "random_state": false,
+      "functions": [
+        "length",
+        "which",
+        "==",
+        ">=",
+        "%in%",
+        "sort",
+        ":",
+        "ncol",
+        "nrow",
+        "colMeans",
+        "next"
+      ],
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": false,
+      "evidence": "main_v1.2.R:659 sets null.ratio.check <- FALSE before main_v1.2.R:675 source(\"src/mcmc_prepare.R\"); main_v1.2.R:909 sets TRUE only for the plant-map loop with mcmc_prep.R, after stop() in line 895",
+      "decision": "implemented as conditional module; no run activation claimed"
+    },
+    {
+      "id": "weightedMedian",
+      "lines": "mcmc_prepare.R:1631,1632,1651,1652",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "active_in_bound_reconstruction_loop": true,
+      "evidence": "Not defined in the bound sources; main_v1.2.R:27 attaches matrixStats without version. Interpolation/tie and zero-weight rules depend on the package version.",
+      "decision": "documented only; implementing would select an unbound package variant (runtime_rng bundle)"
+    },
+    {
+      "id": "spline_expand",
+      "lines": "mcmc_prepare.R:1627,1647",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": false,
+      "evidence": "tann_expand/pann_expand are read only in commented lines 1637 and 1657",
+      "decision": "documented only; no effect on the preserved active flow"
+    },
+    {
+      "id": "expectation_value",
+      "lines": "mcmc_prepare.R:1623-1624",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": false,
+      "evidence": "tf.x1.current.mean/tf.x2.current.mean are reset to c() in 1628/1648 and refilled by weightedMedian",
+      "decision": "documented only; overwritten"
+    },
+    {
+      "id": "tf_variance_sample_quantile",
+      "lines": "mcmc_prepare.R:1591-1603",
+      "random_state": true,
+      "seed_in_bound_sources": false,
+      "active_in_bound_reconstruction_loop": false,
+      "evidence": "tann_tf_range/pann_tf_range are overwritten by range(x1range.bck)/range(x2range.bck) in 1607-1608",
+      "decision": "documented only; random and overwritten"
+    },
+    {
+      "id": "recent_taxa_sample",
+      "lines": "mcmc_prepare.R:1399",
+      "random_state": true,
+      "seed_in_bound_sources": false,
+      "decision": "documented only; no seed or RNG state bound"
+    },
+    {
+      "id": "tf_quantiles_seed_2023",
+      "lines": "mcmc_prepare.R:1896-1914",
+      "random_state": true,
+      "seed_in_bound_sources": true,
+      "evidence": "set.seed(2023) is present, but RNG kind, sample.kind and R version are not bound",
+      "decision": "documented only; no RNG emulation or substitute seed"
+    }
+  ],
+  "selected_for_implementation": "taxon_pruning",
+  "final_variant_selected": false,
+  "R_execution": false
+}

@@ -1,0 +1,51 @@
+{
+  "status": "bounded_conditional_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "47a926c3c8a6abc0db7c947b993f5e97f7408cdd",
+  "sources": {
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "literal_tf_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_prep_v1.2.R": {
+      "sha256": "badabd80978a074f42c25e06f1d254fd4ac8deef4e8f31bc591af6de65123949",
+      "bytes": 72528,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_prep.R": {
+      "sha256": "e8d3db1554582af5326ba00051256dd4f40343936575bbc6cf23774d4909aac2",
+      "bytes": 33296,
+      "previous_binding": "required_files_2026_11_02/source_dates.csv"
+    },
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json"
+    }
+  },
+  "source_hashes_before_equal_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "0ff68852d4818dd1529179dfba0e7f6ecd9fbb09b79ee5657589b1b7baadf346",
+  "implemented_span": {
+    "prune_taxa": [
+      "src/mcmc_prepare.R",
+      51,
+      80
+    ]
+  },
+  "copies": {
+    "src/mcmc_prep_v1.2.R:147-176": "identical",
+    "src/mcmc_prep.R:144-173": "identical except line 57 relict condition if(ohrid)"
+  },
+  "relict_condition": "explicit boolean input; mcmc_prepare.R uses sitename == \"Lake Ohrid\", mcmc_prep.R a free variable ohrid",
+  "activation": "main_v1.2.R:659 null.ratio.check <- FALSE in the bound reconstruction loop; no run activation claimed",
+  "excluded_context": "83 zero replacement (in literal_age_depth), weightedMedian, spline, sample/quantile, inside.range",
+  "next_semantics": "reported as skip_site; R next() across source() is not emulated",
+  "supported_domain": "nonempty real numeric depth-by-taxon matrix, finite nonnegative, at most 10**6 rows; relict override needs at least 25 taxa; at least two remaining taxa",
+  "NA_vector_extension_or_dimension_drop_semantics_reproduced": false,
+  "colMeans_long_double_bit_equality_claimed": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}
