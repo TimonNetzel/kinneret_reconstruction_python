@@ -10,6 +10,17 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: Laufzeitbelege und R-3.5.0-Gegenprobe, 03.11.2026:**
+> [Belegpaket](docs/thesis_research/r_runtime_crosscheck_2026_11_03/README.md). Auf Nutzerauftrag:
+> Kinneret ist **Slot 3** des Zusatzorte-Zweigs (`add.sites <- T`); `mcmc_prepare.R:1248` setzt für Kinneret
+> `tann <- FALSE`. Alle Laufeingaben stammen aus **R 3.5.0**; die Laufzeitfassung bleibt offen.
+> Im Fenster 2018-04-23…2023-07-07 liefert **LaplacesDemon** `rdirichlet`/`ddirichlet` (in allen vier Fassungen
+> textgleich) und **matrixStats** `weightedMedian`. R-Läufe für Gegenproben sind jetzt erlaubt: R 3.5.0 lokal
+> (`.local/R`); 389 Prüfungen der wörtlichen Originalzeilen auf Kunstfixtures sind **bitgleich** mit vier Modulen.
+> 702 Tests grün. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_R_CROSSCHECK_2026_11_03.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Kern der Gewichtsstufe nachgebildet, App-Stand 6, 03.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_weights_stage_2026_11_03/README.md):
 > `mcmc_functions_v1.6.R:1259/1276–1280` mit **expliziten** Gewichten, ohne Zufall/Paketsemantik, kein

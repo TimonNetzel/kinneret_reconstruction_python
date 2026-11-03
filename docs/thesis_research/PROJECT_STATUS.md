@@ -1,5 +1,47 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Laufzeitbelege und R-3.5.0-Gegenprobe, 03.11.2026
+
+**Auftrag (Chat 03.11.2026):** Kinneret-Index bestimmen, R- und Paketfassungen selbst suchen, CRAN-Quellen lesen,
+die Module mit R gegen den Originalcode prüfen. R-Läufe für Gegenproben sind damit **ausdrücklich erlaubt**; Sampler,
+Trainings, Altersmodelle und Fossilrekonstruktionen weiterhin nicht.
+
+**Abgeschlossen:** [Belegpaket](r_runtime_crosscheck_2026_11_03/README.md).
+
+- **Kinneret = Slot 3** des Zusatzorte-Zweigs. `add.sites <- T` ist die einzige Einstellung (`main_v1.2.R:73`);
+  `stations = 1:length(core.data)` ohne Slot 4. Kinneret-Schalter in `mcmc_prepare.R` 790, 881, 1145, 1209 und
+  **1248 `tann <- FALSE`** (oberste Ebene). Was `tann` im Lauf bewirkt, ist noch offen.
+- **R-Fassung:** Alle 13 Laufeingaben und 31 von 32 Kinneret-Containern stammen aus **R 3.5.0** (2019/2020). In
+  `diss` gibt es keine `sessionInfo`, `renv` oder Paketliste; die Laufzeitfassung bleibt ungebunden.
+- **Paketanbieter im Fenster 2018-04-23…2023-07-07:** Untersucht wurden 82 Pakete (55 angehängte samt `Depends`),
+  11 davon mit `exportPattern` am Tarball.
+  - `rdirichlet`/`ddirichlet` liefert vorne im Suchpfad **LaplacesDemon**. Der Funktionstext ist in allen vier
+    Fassungen gleich; `ddirichlet` ist deterministisch, normiert `x` aber wegen fehlender Zuweisung nicht.
+  - `weightedMedian` liefert nur **matrixStats**: 13 Fassungen mit gleicher Signatur und sechs Quelltextständen,
+    ohne erkennbare Änderung des Rechenwegs in den eigenen Dateien. Die Hilfsdateien sind noch nicht verglichen.
+- **R 3.5.0** aus dem CRAN-Archiv (MD5 und Signatur geprüft), nur für den Nutzer unter `.local/R` installiert.
+  Die wörtlichen Originalzeilen von Sampler-Vorbereitung, Gewichtsstufe, Gamma-Raster und Taxonzahl-Priors liefern
+  auf allen Kunstfixtures **389 bitgleiche Prüfungen**. Auch alle 14 akkumulatorabhängig markierten Werte stimmen
+  auf dieser Plattform.
+
+**Prüfung:**
+
+- 13 neue Belegtests (ohne R/Netz), **702** gezielte Tests grün.
+- Beide Phase-1-Prüfer Exit 2.
+- Gesamtsuite, `verify_packet.py` und `tools/verify_*` nicht ausgeführt.
+
+**Offen:**
+
+- Sechs Module noch ohne R-Gegenprobe.
+- `weightedMedian`-Hilfsdateien noch nicht verglichen.
+- Exakte Paketfassungen des Laufs ungebunden.
+- Kein Originalfall; elf Nachweisbündel offen. Keine App-Änderung in diesem Paket.
+
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_R_CROSSCHECK_2026_11_03.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Kern der Gewichtsstufe nachgebildet, App-Stand 6, 03.11.2026
 
 **Abgeschlossen:** [Determinismusprüfung und Modul](literal_weights_stage_2026_11_03/README.md).

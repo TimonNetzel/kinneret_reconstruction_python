@@ -10,6 +10,25 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: Laufzeitbelege und R-Gegenprobe, 03.11.2026
+
+Neu belegt: Kinneret = Slot 3 (`add.sites`). Eingaben stammen aus R 3.5.0. Im Zeitfenster liefern LaplacesDemon
+`rdirichlet`/`ddirichlet` und matrixStats `weightedMedian`. R-Gegenproben sind jetzt erlaubt; vier Module sind
+gegen die wörtlichen Originalzeilen bitgleich ([Paket](r_runtime_crosscheck_2026_11_03/README.md)). Reihenfolge:
+
+1. **`ddirichlet`-Quotient** (`mcmc_functions_v1.6.R:1269–1274`) mit expliziten alten und neuen Gewichten
+   nachbilden. Er ist jetzt deterministisch und an den LaplacesDemon-Text gebunden (unter der Fensterannahme).
+   Die R-Gegenprobe läuft mit LaplacesDemon aus dem CRAN-Archiv in `.local/R`.
+2. **`weightedMedian`**: zuerst die gemeinsamen matrixStats-Hilfsdateien im Fenster vergleichen. Dann die NA-Maske
+   von `which.tf.missing` nachbilden und gegen matrixStats in R 3.5.0 prüfen.
+3. Die übrigen sechs Module gegen die Originalzeilen in R 3.5.0 prüfen.
+4. Danach in der App einen Nachbaustand mit R-Gegenprobe zeigen (Eintrag ans Ende von `STATES`).
+5. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen. Offen sind vor allem
+   der fehlende `core_data_additional_sites_v1.2.rdata`, die Chronologie und die numerischen TF.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_R_CROSSCHECK_2026_11_03.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: zehntes Teilmodul (Kern der Gewichtsstufe) in der App, 03.11.2026
 
 Schritt 1 und 2 des folgenden Abschnitts sind erledigt: Der

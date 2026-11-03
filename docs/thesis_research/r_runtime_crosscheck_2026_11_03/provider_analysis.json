@@ -1,0 +1,954 @@
+{
+ "kind": "search_path_provider_analysis_from_CRAN_namespaces_not_runtime_binding",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "packages_checked": 82,
+ "search_path_front_to_back": [
+  "colorRamps",
+  "truncnorm",
+  "npreg",
+  "RRF",
+  "kernlab",
+  "mda",
+  "class",
+  "earth",
+  "plotmo",
+  "plotrix",
+  "TeachingDemos",
+  "nnet",
+  "gbm",
+  "caret",
+  "biwavelet",
+  "WaveletComp",
+  "spatstat.utils",
+  "rPref",
+  "EnvStats",
+  "pracma",
+  "readxl",
+  "stringr",
+  "wrswoR",
+  "LaplacesDemon",
+  "magic",
+  "PTAk",
+  "tensor",
+  "Rfast",
+  "NbClust",
+  "lsa",
+  "SnowballC",
+  "extraDistr",
+  "RcppZiggurat",
+  "RcppArmadillo",
+  "Rcpp",
+  "fitdistrplus",
+  "npsurv",
+  "lsei",
+  "matrixStats",
+  "MatrixCorrelation",
+  "broman",
+  "signal",
+  "emdist",
+  "kgc",
+  "shinythemes",
+  "shiny",
+  "plyr",
+  "abind",
+  "gtools",
+  "mvtnorm",
+  "RColorBrewer",
+  "NeuralNetTools",
+  "verification",
+  "dtw",
+  "proxy",
+  "CircStats",
+  "boot",
+  "MASS",
+  "smotefamily",
+  "fields",
+  "viridis",
+  "viridisLite",
+  "spam",
+  "dotCall64",
+  "maps",
+  "clam",
+  "gdata",
+  "Hmisc",
+  "survival",
+  "lattice",
+  "ggplot2",
+  "Formula",
+  "rbacon",
+  "rintcal",
+  "IntCal",
+  "ncdf4",
+  "doSNOW",
+  "snow",
+  "doParallel",
+  "iterators",
+  "foreach",
+  "SBMSplitMerge"
+ ],
+ "providers": {
+  "rdirichlet": {
+   "first_on_search_path": "LaplacesDemon",
+   "all_exporting": [
+    {
+     "package": "LaplacesDemon",
+     "versions_exporting": [
+      "16.1.0",
+      "16.1.1",
+      "16.1.4",
+      "16.1.6"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "extraDistr",
+     "versions_exporting": [
+      "1.8.8",
+      "1.8.9",
+      "1.8.10",
+      "1.8.11",
+      "1.9.1"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "gtools",
+     "versions_exporting": [
+      "3.5.0",
+      "3.8.1",
+      "3.8.2",
+      "3.9.2",
+      "3.9.2.1",
+      "3.9.2.2",
+      "3.9.3",
+      "3.9.4"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "SBMSplitMerge",
+     "versions_exporting": [
+      "1.1.1"
+     ],
+     "versions_not_exporting": []
+    }
+   ]
+  },
+  "ddirichlet": {
+   "first_on_search_path": "LaplacesDemon",
+   "all_exporting": [
+    {
+     "package": "LaplacesDemon",
+     "versions_exporting": [
+      "16.1.0",
+      "16.1.1",
+      "16.1.4",
+      "16.1.6"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "extraDistr",
+     "versions_exporting": [
+      "1.8.8",
+      "1.8.9",
+      "1.8.10",
+      "1.8.11",
+      "1.9.1"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "gtools",
+     "versions_exporting": [
+      "3.5.0",
+      "3.8.1",
+      "3.8.2",
+      "3.9.2",
+      "3.9.2.1",
+      "3.9.2.2",
+      "3.9.3",
+      "3.9.4"
+     ],
+     "versions_not_exporting": []
+    },
+    {
+     "package": "SBMSplitMerge",
+     "versions_exporting": [
+      "1.1.1"
+     ],
+     "versions_not_exporting": []
+    }
+   ]
+  },
+  "weightedMedian": {
+   "first_on_search_path": "matrixStats",
+   "all_exporting": [
+    {
+     "package": "matrixStats",
+     "versions_exporting": [
+      "0.53.1",
+      "0.54.0",
+      "0.55.0",
+      "0.56.0",
+      "0.57.0",
+      "0.58.0",
+      "0.59.0",
+      "0.60.0",
+      "0.60.1",
+      "0.61.0",
+      "0.62.0",
+      "0.63.0",
+      "1.0.0"
+     ],
+     "versions_not_exporting": []
+    }
+   ]
+  }
+ },
+ "export_pattern_packages_not_resolved_by_namespace": {
+  "fields": [
+   "^[^\\\\.]"
+  ],
+  "smotefamily": [
+   "^[[:alpha:]]+"
+  ],
+  "verification": [
+   "."
+  ],
+  "RcppZiggurat": [
+   "^z[[:alpha:]]+"
+  ],
+  "PTAk": [
+   "."
+  ],
+  "magic": [
+   "%eq%",
+   "%ge%",
+   "%gt%",
+   "%le%",
+   "%lt%",
+   "%ne%",
+   "^[[:alpha:]]+"
+  ],
+  "wrswoR": [
+   "^[a-zA-Z][[:alpha:]]*"
+  ],
+  "pracma": [
+   "^[[:alpha:]]+"
+  ],
+  "WaveletComp": [
+   "^[[:alpha:]]+"
+  ],
+  "biwavelet": [
+   "^[[:alpha:]]+"
+  ],
+  "gbm": [
+   "^[^\\\\.]"
+  ],
+  "npreg": [
+   "^[[:alpha:]]+"
+  ],
+  "colorRamps": [
+   "."
+  ],
+  "snow": [
+   "^[^.]"
+  ],
+  "CircStats": [
+   "."
+  ],
+  "tensor": [
+   "."
+  ]
+ },
+ "versions_missing_in_mirror": {
+  "CircStats": [
+   "0.2-3"
+  ]
+ },
+ "caveat": "exact package versions of the historical run are unbound; a provider is only bound if every version in the window agrees and no exportPattern package in front of it could export the name",
+ "tarball_resolution": {
+  "packages": {
+   "PTAk": {
+    "checked_for": [
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.2-12",
+      "sha256": "d3969d627524d4fd9a3e652e8a6a98b498132105e39bdc848a42eabfb0801dde",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.3-34",
+      "sha256": "74730f22c811788b8acbeaf536f26068c3ec44e0e37cfdeb05366c91c853967a",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.4-0",
+      "sha256": "6c31260e5f35749eeaa2f642ef6390eae442bf3061e3338fccf1713164eca142",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.0.0",
+      "sha256": "713afbf3dc8dc4f49833f36b72f923b58284ef0af1d2f3febfd58c68348dd2f6",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "RcppZiggurat": {
+    "checked_for": [
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "0.1.4",
+      "sha256": "e4432987d5f93e49c10c031acd758e79f74facf48807950404d8d8ff41d58d9b",
+      "defined": [],
+      "export_pattern": [
+       "^z[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "0.1.5",
+      "sha256": "db6d5fd3a77ac9473bf21f84b65da3c6e485f9ed33f5313bbf0ec852b71db97e",
+      "defined": [],
+      "export_pattern": [
+       "^z[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "0.1.6",
+      "sha256": "9c78255ca476c945c05a564d1e4da363de714d890e0e27f3b252fd73c50eed71",
+      "defined": [],
+      "export_pattern": [
+       "^z[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "WaveletComp": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.1",
+      "sha256": "c8550e05d982b32b22004d0e10dad512a2070b3888c007b1ef9bba288152821f",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "biwavelet": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "0.20.11",
+      "sha256": "01fc86ec37afc2c59841a8e10b47ecbd2bcd02bd047f042ca100afffd022b33a",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "0.20.17",
+      "sha256": "2bd9c7f038cdc0ea98244de9158bb38ec8b8e000cd66dbc39bf1c74b5b4d70a0",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "0.20.19",
+      "sha256": "2b9f99e4f56cee87ee2db53abcece205ff592887a9c9cf298c875a1ea594b25d",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "0.20.21",
+      "sha256": "dd4b54f354bc8c7c5e19ed6c09df2d3df985f029d10c24b716228a672bcfea6c",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "colorRamps": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "2.3",
+      "sha256": "3f10eab0602a42a2e5a79c7c04638be06cbf1e6f23979a1bd95d853e10940b6a",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.3.1",
+      "sha256": "61f1290824380ae2fe4649f296649e0a155b73ced41479686150400f8a9c568a",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "gbm": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "2.1.3",
+      "sha256": "eaf24be931d762f1ccca4f90e15997719d01005f152160a3d20d858a0bbed92b",
+      "defined": [],
+      "export_pattern": [
+       "^[^\\\\.]"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.4",
+      "sha256": "91fe50345f94a42a75a789cc2c05e489610c109508896479725df810920ee152",
+      "defined": [],
+      "export_pattern": [],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.5",
+      "sha256": "06fbde10639dfa886554379b40a7402d1f1236a9152eca517e97738895a4466f",
+      "defined": [],
+      "export_pattern": [],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.8",
+      "sha256": "7d5de3b980b8f23275e86ac9bed48a497c9aa53c58e407dfd676309f38272ec1",
+      "defined": [],
+      "export_pattern": [],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.8.1",
+      "sha256": "8d2456124552658ee9500707c4e9992cf42cb88705008c32ea258efb4f2be80b",
+      "defined": [],
+      "export_pattern": [],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "magic": {
+    "checked_for": [
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.5-8",
+      "sha256": "7f8bc26e05003168e9d2dadf64eb9a34b51bc41beba482208874803dee7d6c20",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+",
+       "%eq%",
+       "%ne%",
+       "%gt%",
+       "%ge%",
+       "%lt%",
+       "%le%"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.5-9",
+      "sha256": "fa1d5ef2d39e880f262d31b77006a2a7e76ea38e306aae4356e682b90d6cd56a",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+",
+       "%eq%",
+       "%ne%",
+       "%gt%",
+       "%ge%",
+       "%lt%",
+       "%le%"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.6-0",
+      "sha256": "4516d48c9618e3f395db873e886f5deb3b66b32ebe10d4c26c1420ac848acbbf",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+",
+       "%eq%",
+       "%ne%",
+       "%gt%",
+       "%ge%",
+       "%lt%",
+       "%le%"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.6-1",
+      "sha256": "ca79ec7ae92b736cb128556c081abf547f49956c326e053a76579889cbcb7976",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+",
+       "%eq%",
+       "%ne%",
+       "%gt%",
+       "%ge%",
+       "%lt%",
+       "%le%"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "npreg": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.0-0",
+      "sha256": "07ba05cade8d9610c59c54f765af221d0d4fbfb31b666c4fc5467aa89acaab45",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-1",
+      "sha256": "5063e1bc1c2c202c94a3f40fa345c21d9ce4595eb56ecbb311ec1bc160385d3b",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-2",
+      "sha256": "c6ab1b778b1bd026b2f47611a3dc23e04889de350876fb162e1c8a1c853b9683",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-3",
+      "sha256": "b4a4bf7c01b01cf509b08c92d60d322a76f91340ad49f8a127e8bf6d7fec30aa",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-4",
+      "sha256": "fa0c7c1cd6b28d22a87534fe1468dd80afb43b26feb4601c023d116a94a542b9",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-5",
+      "sha256": "dc7ed9ea222f93c84afeb05c15dcbc283350dc1b5e3ebfc4a1ff877e551cb9b5",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-6",
+      "sha256": "8afa1b6b83740985a44dc965440cf52878be5459c40f44a0ff8648a488844828",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-7",
+      "sha256": "5df9718516e31a15987494c2ba1c5dcb4ba0470143a7e7d6560e21c5ffb223bf",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-8",
+      "sha256": "b0a78a5e9e8f395d43bc54ce85c0c36cd1e5bf73cd1bfbdb272d527e738bc881",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.0-9",
+      "sha256": "b1197dac28802ddb989b1d628edba902eb57bf9cdc0faed7ecdb5a15a164ef82",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "pracma": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "2.1.4",
+      "sha256": "0ccaef86c1446971ca244e6dbcc605222c2f652b23a5db921070e37a6240f5f9",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.5",
+      "sha256": "c95993af91dba98307b3b8660cda8f87d8bbd2ecc2ebe5deabeba9fd043b9ba1",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.1.8",
+      "sha256": "9ff4c8fe27c30b06a690372b5e579c65d6b03b79afb149d7f2bc7b9761531455",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.2.2",
+      "sha256": "710ed4741bdc63164e7a64513eade5bcbca76b97b22e43e15dddf25740b4f0a3",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.2.5",
+      "sha256": "2fe83e3a556f5aab3ba4c9867630283c78c9a13912c04991daf55712811e4d47",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.2.9",
+      "sha256": "0cea0ff5e88643df121e07b9aebfe57084c61e11801680039752f371fe87bf1e",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.3.3",
+      "sha256": "cf1f8d7724a385d9a2e1a5496d9ba0e9908940b85669fb2c506b9059722cb93c",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.3.6",
+      "sha256": "17ac83fd48c9155e00dc3f0433f95723505dc73d046860afd9001866d699b8de",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.3.8",
+      "sha256": "2302d454406e72711714732658d0c59c9d5a1ead698f22ee23f38cba63d42764",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "2.4.2",
+      "sha256": "1d50337fdfd9a8d704a64f01dae5d52b9a2bd6d872fdaa4a6685b8d3bde89c16",
+      "defined": [],
+      "export_pattern": [
+       "^[[:alpha:]]+"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "tensor": {
+    "checked_for": [
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.5",
+      "sha256": "e1dec23e3913a82e2c79e76313911db9050fb82711a0da227f94fc6df2d3aea6",
+      "defined": [],
+      "export_pattern": [
+       "."
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   },
+   "wrswoR": {
+    "checked_for": [
+     "ddirichlet",
+     "rdirichlet",
+     "weightedMedian"
+    ],
+    "versions": [
+     {
+      "version": "1.1",
+      "sha256": "9f92deb3106cbd8958b6e94d4d57bf9c75483c84630e10455f81a0df5140cb4a",
+      "defined": [],
+      "export_pattern": [
+       "^[a-zA-Z][[:alpha:]]*"
+      ],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     },
+     {
+      "version": "1.1.1",
+      "sha256": "11045a62feef679bbcb02a0ede8a2c5985393df57f47b67da2733884116016e0",
+      "defined": [],
+      "export_pattern": [],
+      "rdirichlet": false,
+      "ddirichlet": false,
+      "weightedMedian": false
+     }
+    ],
+    "exports_any": {
+     "rdirichlet": false,
+     "ddirichlet": false,
+     "weightedMedian": false
+    }
+   }
+  },
+  "blocking_providers_in_front": {
+   "rdirichlet": [],
+   "ddirichlet": [],
+   "weightedMedian": []
+  }
+ },
+ "providers_bound_within_window": {
+  "rdirichlet": "LaplacesDemon",
+  "ddirichlet": "LaplacesDemon",
+  "weightedMedian": "matrixStats"
+ }
+}
