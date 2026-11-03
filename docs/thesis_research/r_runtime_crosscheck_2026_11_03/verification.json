@@ -13,11 +13,11 @@
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/diff_weighted_median.py": "2a7a6785d0be318a675393bf5daf4d00d54c84a654c689dd09d3bf0286e376fd",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/dirichlet_versions.json": "8d289993e5d0d33007678425db0eddd4a466f2bf55dd007cd374a518ec2aaade",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/provider_analysis.json": "1bf099282c8caad5a84d11be2d151f5dacc79a9fc6c5abd0427bc035ec0ab942",
-    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/rdata_writers.json": "70be2af311d4ad0ed797ca34c77b675cbae00a8abc22a2d8651c3e9c49722254",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/rdata_writers.json": "f81cb5dfc20c41a56b9e2db705afd4b91a5921bd84fed30ef55335ce3e7ed426",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/resolve_unresolved.py": "03a6a46e039feaffca396e8e11842bf468591eed215fe3ef0f5a9bf4a7463819",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/run_crosscheck.py": "60e0c2a9dbbcb4e5a5374bb0d8f294a7a03585cac11bbda5171d6ae4bb473379",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/site_binding.json": "5d1abb5304d1994c8b8c52a1fcf2ea5710e8fa8c118b9108ac5a1e95e42547bd",
-    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/weighted_median_diffs.txt": "839072027fe2b7cea171a68a3f8c4b0a7c33eedffbc4f2be78c0d67b68f462c7",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/weighted_median_diffs.txt": "938201cc89530526dd0f77f720e60b7544c220868ae70f864a8d4604d915fc72",
     "docs/thesis_research/r_runtime_crosscheck_2026_11_03/weighted_median_versions.json": "88659dc409379a32c8b89f713865c84da951e47d3214650692f45ed8e7c92856",
     "tests/test_r_runtime_crosscheck.py": "a1e5eb0781d6b6e33ac1e4c3bc12c60ad6409dc21a8e95989253fe86fe2c00ba"
   },
