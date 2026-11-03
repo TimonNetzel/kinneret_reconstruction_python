@@ -10,6 +10,17 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: Kern der Gewichtsstufe nachgebildet, App-Stand 6, 03.11.2026:**
+> [Determinismusprüfung und Modul](docs/thesis_research/literal_weights_stage_2026_11_03/README.md):
+> `mcmc_functions_v1.6.R:1259/1276–1280` mit **expliziten** Gewichten, ohne Zufall/Paketsemantik, kein
+> Samplerlauf; Gewichte über die zeilenweisen Werte recycelt, `byrow = T`, `rowSums(na.rm = T)` (NA/NaN
+> übersprungen, Akkumulator markiert), Division je Zeile (Summe 0 → NaN/±Inf, `-Inf` → NaN/`-0`), `z = 1:ncol`.
+> `rdirichlet`/`ddirichlet` sind in keiner Quelle definiert; Anbieter ungebunden, nur dokumentiert.
+> 134 neue Tests, 689 grün. [App-Stand 6](docs/thesis_research/app_reproduction_2026_11_03_weights_stage/README.md)
+> mit eigenem Pin; Stände 1–5 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_WEIGHTS_STAGE_2026_11_03.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Sampler-Vorbereitung nachgebildet, App-Stand 5, 02.11.2026:**
 > [Determinismusprüfung und Modul](docs/thesis_research/literal_sampler_preparation_2026_11_02/README.md):
 > `mcmc_conduction.R:53–79` ohne Zufall/Paketsemantik, kein Samplerlauf; `gibbs <- F`

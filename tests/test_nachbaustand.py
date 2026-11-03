@@ -14,31 +14,34 @@ PRUNING = "docs/thesis_research/literal_taxon_pruning_2026_11_02/"
 GAMMA = "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/"
 MISSING = "docs/thesis_research/literal_tf_missing_priors_2026_11_02/"
 SAMPLER = "docs/thesis_research/literal_sampler_preparation_2026_11_02/"
+WEIGHTS = "docs/thesis_research/literal_weights_stage_2026_11_03/"
 FROZEN = nachbaustand.STATES[0]["path"].as_posix()
 FROZEN2 = nachbaustand.STATES[1]["path"].as_posix()
 FROZEN3 = nachbaustand.STATES[2]["path"].as_posix()
 FROZEN4 = nachbaustand.STATES[3]["path"].as_posix()
+FROZEN5 = nachbaustand.STATES[4]["path"].as_posix()
 
 
 def _kopie(tmp_path: Path) -> Path:
     """Copy exactly the pinned files so single bytes can be changed or removed."""
-    ex, contract, pex, gex, mex, sex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
-                                        STATE["gamma_example"], STATE["missing_example"], STATE["sampler_example"])
+    ex, contract, pex, gex, mex, sex, wex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
+                                             STATE["gamma_example"], STATE["missing_example"],
+                                             STATE["sampler_example"], STATE["weights_example"])
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
-                + [e[k] for e in (ex, pex, gex, mex, sex) for k in ("fixture", "result", "rational", "arithmetic")]):
+                + [e[k] for e in (ex, pex, gex, mex, sex, wex) for k in ("fixture", "result", "rational", "arithmetic")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, tmp_path / rel)
     return tmp_path
 
 
-def test_newest_state_binds_nine_modules_eleven_open_bundles_and_no_release():
+def test_newest_state_binds_ten_modules_eleven_open_bundles_and_no_release():
     d = nachbaustand.app_daten(ROOT)
     assert d["available"] and d["status"] == "submodules_checked_original_case_open"
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
-    assert d["modules"][-1]["id"] == "sampler_preparation" and not d["modules"][-1]["conditional"]
+    assert d["modules"][-1]["id"] == "weights_stage" and not d["modules"][-1]["conditional"]
     assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning"]
-    assert d["tests_passed"] == 555 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
+    assert d["tests_passed"] == 689 == sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"] + d["contract"]["tests"]
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
     assert sum(r["status"] == "conflicting" for r in d["requirements"]) == 4
@@ -48,33 +51,71 @@ def test_newest_state_binds_nine_modules_eleven_open_bundles_and_no_release():
 
 
 def test_earlier_states_stay_frozen_pinned_and_listed():
-    first, second, third, fourth = nachbaustand.STATES[:4]
-    assert (first["sha256"], second["sha256"], third["sha256"], fourth["sha256"]) == (
+    first, second, third, fourth, fifth = nachbaustand.STATES[:5]
+    assert (first["sha256"], second["sha256"], third["sha256"], fourth["sha256"], fifth["sha256"]) == (
         "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
         "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
         "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
-        "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195")
+        "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+        "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb")
     assert third["commit"] == "7d3d0f6852dbdf869b6e479d4eeffe80faaf2038"
     assert fourth["commit"] == "0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34"
-    for frozen in (first, second, third, fourth):
+    assert fifth["commit"] == "235f79784d01f0a613a0d3f76f6fd690c245ab21"
+    for frozen in (first, second, third, fourth, fifth):
         assert hashlib.sha256((ROOT / frozen["path"]).read_bytes()).hexdigest() == frozen["sha256"]
-    old, prev, mid, last = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8"))
-                            for f in (first, second, third, fourth))
+    old, prev, mid, fourth_state, last = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8"))
+                                          for f in (first, second, third, fourth, fifth))
     assert (old["tests"]["passed"], len(old["modules"])) == (251, 5)
     assert (prev["tests"]["passed"], len(prev["modules"])) == (297, 6)
     assert (mid["tests"]["passed"], len(mid["modules"])) == (352, 7)
-    assert (last["tests"]["passed"], len(last["modules"])) == (437, 8)
+    assert (fourth_state["tests"]["passed"], len(fourth_state["modules"])) == (437, 8)
+    assert (last["tests"]["passed"], len(last["modules"])) == (555, 9)
     assert prev["supersedes"] == {"state": FROZEN, "state_sha256": first["sha256"]}
     assert mid["supersedes"] == {"state": FROZEN2, "state_sha256": second["sha256"]}
-    assert last["supersedes"] == {"state": FROZEN3, "state_sha256": third["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN4, "state_sha256": fourth["sha256"]}
+    assert fourth_state["supersedes"] == {"state": FROZEN3, "state_sha256": third["sha256"]}
+    assert last["supersedes"] == {"state": FROZEN4, "state_sha256": fourth["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN5, "state_sha256": fifth["sha256"]}
     assert nachbaustand.app_daten(ROOT)["earlier_states"] == [
         {"date": "2026-11-02", "state_sha256": f["sha256"], "modules": n, "tests_passed": tests,
          "url": nachbaustand.REPO_URL + f["commit"] + "/" + f["path"].as_posix()}
-        for f, n, tests in ((first, 5, 251), (second, 6, 297), (third, 7, 352), (fourth, 8, 437))]
-    assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:8]]
+        for f, n, tests in ((first, 5, 251), (second, 6, 297), (third, 7, 352), (fourth, 8, 437), (fifth, 9, 555))]
+    assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:9]]
     assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
-                                             "gamma_example", "missing_example"))
+                                             "gamma_example", "missing_example", "sampler_example"))
+
+
+def test_weights_example_is_taken_unchanged_from_the_pinned_packet():
+    w = nachbaustand.app_daten(ROOT)["weights_example"]
+    stored = json.loads((ROOT / WEIGHTS / "synthetic_result.json").read_text(encoding="utf-8"))["cases"]
+    case = stored[STATE["weights_example"]["matrix_case"]]
+    assert w["state5_case"] == STATE["sampler_example"]["matrix_case"] == "rowwise_flatten_three_by_four"
+    assert w["weights_exact"] == ["1/8", "3/8", "1/4", "1/4"] and w["rows"] == case["taxa_appear_core_temp"]
+    assert w["rows_exact"] == [[None] * 4, [None] * 4, ["1/29", "12/29", "8/29", "8/29"]]
+    assert w["sums_exact"][2] == "29/32" and w["independent"] == [False, False, True]
+    assert (w["z"], w["positions"], w["misaligned"]) == ([1, 2, 3, 4], 12, 8)
+    assert [(x["nrow"], x["ncol"], x["zero_rows"], x["minus_inf_rows"], x["na"], x["nan"], x["inf"], x["neg_zero"])
+            for x in w["special"]] == [(3, 3, 0, 0, 2, 1, 0, 0), (4, 3, 3, 0, 2, 5, 2, 0), (3, 3, 0, 1, 1, 2, 0, 2)]
+    assert w["special"][0]["sums_exact"] == ["1/4", "3/8", "5/8"] and w["special"][2]["sums_exact"][1] == "-Inf"
+    assert (w["reset_weights"], w["reset_first"], w["reset_third"]) == (["1/3"] * 3, 0.5714285714285715,
+                                                                         0.3333333333333333)
+    assert (w["scale_base"], w["scale_weights"]) == (["1/2", "1/4", "1/4"], ["1", "1/2", "1/2"])
+    assert w["url"].endswith(WEIGHTS + "README.md") and "/blob/" + STATE["source_commit"] + "/" in w["url"]
+    for key, sha in w["sha256"].items():
+        assert hashlib.sha256((ROOT / STATE["weights_example"][key]).read_bytes()).hexdigest() == sha
+
+
+def test_weights_example_rejects_a_dirichlet_package_claim(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    rel = STATE["weights_example"]["arithmetic"]
+    content = json.dumps(dict(json.loads((root / rel).read_text(encoding="utf-8")), dirichlet_package="x")).encode()
+    (root / rel).write_bytes(content)
+    state = json.loads(json.dumps(STATE))
+    state["weights_example"]["arithmetic_sha256"] = hashlib.sha256(content).hexdigest()
+    state_bytes = json.dumps(state).encode()
+    (root / nachbaustand.STATE).write_bytes(state_bytes)
+    monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
+    with pytest.raises(ValueError, match="package"):
+        nachbaustand.app_daten(root)
 
 
 def test_sampler_example_is_taken_unchanged_from_the_pinned_packet():
@@ -165,6 +206,8 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
     assert nachbaustand.app_daten(root)["missing"][-1] == MISSING + "arithmetic_check.json"
     (root / SAMPLER / "rational_expectations.json").unlink()
     assert nachbaustand.app_daten(root)["missing"][-1] == SAMPLER + "rational_expectations.json"
+    (root / WEIGHTS / "synthetic_fixture.json").unlink()
+    assert nachbaustand.app_daten(root)["missing"][-1] == WEIGHTS + "synthetic_fixture.json"
 
 
 @pytest.mark.parametrize("rel", [nachbaustand.STATE.as_posix(), PACKET + "synthetic_result.json",
@@ -179,7 +222,10 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
                                  MISSING + "rational_expectations.json", MISSING + "synthetic_fixture.json",
                                  MISSING + "arithmetic_check.json", FROZEN4, SAMPLER + "README.md",
                                  SAMPLER + "synthetic_result.json", SAMPLER + "rational_expectations.json",
-                                 SAMPLER + "synthetic_fixture.json", SAMPLER + "arithmetic_check.json"])
+                                 SAMPLER + "synthetic_fixture.json", SAMPLER + "arithmetic_check.json", FROZEN5,
+                                 WEIGHTS + "README.md", WEIGHTS + "synthetic_result.json",
+                                 WEIGHTS + "rational_expectations.json", WEIGHTS + "synthetic_fixture.json",
+                                 WEIGHTS + "arithmetic_check.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -214,4 +260,5 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "Gamma-Prior über ein Formraster" in html and "Gamma prior from a shape grid" in html
     assert "Entfernung fehlender TF und Taxonzahl-Priors" in html and "Removal of missing TFs" in html
     assert "Sampler-Vorbereitung aus Taxonzahl und Taxonmatrix" in html and "Sampler preparation from taxon" in html
-    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:4])
+    assert "Kern der Gewichtsstufe mit vorgegebenen Gewichten" in html and "Core of the weights stage" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:5])

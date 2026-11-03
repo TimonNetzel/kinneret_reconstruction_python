@@ -156,7 +156,48 @@
       `${link(s.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex) {
+  // Artificial weights stage: explicit weights instead of a Dirichlet draw; columns are artificial taxa, then cases
+  function gewichtsstufe(w) {
+    if (!w) return "";
+    const n = w.z.length;
+    const roh = (v) => String(v).replace(".", fmt(0.5, 1).charAt(1));
+    const kopf = Array.from({ length: n }, (_, k) => `<th scope="col">${fmt(k + 1, 0)}</th>`).join("");
+    const zeile = (label, cells) => `<tr><th scope="row">${esc(label)}</th>${cells.join("")}</tr>`;
+    const summe = (i) => w.independent[i] ? `<td data-acc="exact">${esc(w.sums_exact[i])}</td>` :
+      `<td data-acc="dependent" title="${esc(roh(w.sums[i]))}">${fmt(w.sums[i], 4)}*</td>`;
+    const sp = w.special;
+    const fall = sp.map((_, k) => `<th scope="col">${esc(text("nb_ex_w_case", { n: k + 1 }))}</th>`).join("");
+    const szeile = (key, cell) => `<tr><th scope="row">${esc(t(key))}</th>${sp.map(cell).join("")}</tr>`;
+    const markiert = (v, art) => `<td${v ? ` data-special="${art}"` : ""}>${fmt(v, 0)}</td>`;
+    return `<h4>${esc(text("nb_ex_weights", { n: fmt(sp.length + 4, 0) }))}</h4>` +
+      `<p>${esc(text("nb_ex_weights_body", { w: w.weights_exact.join(", ") }))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="weights"><thead><tr><th scope="col">${esc(t("nb_ex_taxa_head"))}</th>${kopf}` +
+      `<th scope="col">${esc(t("nb_ex_sum"))}</th></tr></thead><tbody>` +
+      zeile(t("nb_ex_w_weight"), [...w.weights_exact.map((v) => `<td>${esc(v)}</td>`), "<td></td>"]) +
+      w.rows.map((row, i) => zeile(text("nb_ex_s_row", { n: i + 1 }), [...row.map((v, k) => w.rows_exact[i][k] ?
+        `<td title="${fmt(v, 4)}">${esc(w.rows_exact[i][k])}</td>` : `<td title="${esc(roh(v))}">${fmt(v, 4)}</td>`), summe(i)])).join("") +
+      `</tbody></table></div>` +
+      `<p data-weights-flat="true">${esc(text("nb_ex_weights_flat", { bad: fmt(w.misaligned, 0), n: fmt(w.positions, 0),
+        k: fmt(n, 0) }))}</p>` +
+      `<p class="nachbau-titel">${esc(t("nb_ex_weights_special"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="weights-special"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${fall}</tr></thead><tbody>` +
+      szeile("nb_ex_s_dims", (x) => `<td>${fmt(x.nrow, 0)}×${fmt(x.ncol, 0)}</td>`) +
+      szeile("nb_ex_w_zero", (x) => markiert(x.zero_rows, "zero")) +
+      szeile("nb_ex_w_minf", (x) => markiert(x.minus_inf_rows, "-inf")) +
+      szeile("nb_ex_s_na", (x) => `<td>${fmt(x.na, 0)}</td>`) +
+      szeile("nb_ex_s_nan", (x) => `<td>${fmt(x.nan, 0)}</td>`) +
+      szeile("nb_ex_w_inf", (x) => `<td>${fmt(x.inf, 0)}</td>`) +
+      szeile("nb_ex_w_negzero", (x) => `<td>${fmt(x.neg_zero, 0)}</td>`) +
+      `</tbody></table></div>` +
+      `<p>${esc(text("nb_ex_weights_special_why", { s1: sp[0].sums_exact.join(", ") }))}</p>` +
+      `<p data-weights-reset="true">${esc(text("nb_ex_weights_reset", { w: w.reset_weights.join(", "), third: roh(w.reset_third),
+        first: roh(w.reset_first), sw: w.scale_weights.join(", "), bw: w.scale_base.join(", ") }))}</p>` +
+      `<p>${esc(t("nb_ex_weights_dirichlet"))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: w.sha256.result.slice(0, 12), b: w.sha256.rational.slice(0, 12) }))} ` +
+      `${link(w.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex, mex, sex, wex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -175,7 +216,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}</details>`;
   }
 
   function nachbau() {
@@ -208,7 +249,8 @@
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
-      beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example) + `</section>`;
+      beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
+        nb.weights_example) + `</section>`;
   }
 
   function zeige() {

@@ -10,6 +10,30 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: zehntes Teilmodul (Kern der Gewichtsstufe) in der App, 03.11.2026
+
+Schritt 1 und 2 des folgenden Abschnitts sind erledigt: Der
+[Kern der Gewichtsstufe](literal_weights_stage_2026_11_03/README.md) ist nach belegter Determinismusprüfung
+nachgebildet (explizite Gewichte, nur Kunstwerte, keine Dirichlet-Ziehung, kein Samplerlauf).
+[App-Stand 6](app_reproduction_2026_11_03_weights_stage/README.md) ist der neue letzte `STATES`-Eintrag,
+Stände 1–5 bleiben eingefroren. 689 Teil-/Belegtests grün. Reihenfolge:
+
+1. Nächsten deterministischen Quellschritt belegen und nachbilden. Empfohlen: die **deterministische
+   Sampler-Initialisierung** `mcmc_conduction.R:109–135` ohne 118 (`prior.recent`) und 133 (`rmvnorm_rcpp`):
+   - Startgewichte `rep(1/num_taxa, num_taxa)` (113) und `z = 1:how_many_taxa` (114);
+   - `tann_fill_ids`/`pann_fill_ids` (131–132, Verschränkung) und `x_curr` (130);
+   - `checking_intervals = seq(burn_in, sample_length, by = 1000)` (135) mit `sample_length`/`burn_in` aus
+     `main_v1.2.R:629–633` (`gibbs <- F`: 25000/5000).
+
+   Alternative: `tf_x12_mean_current` (`mcmc_prepare.R:1692–1700`), Eingaben hängen an `weightedMedian`.
+   `rdirichlet`/`ddirichlet` (Anbieter ungebunden) und alle Zufallsschritte bleiben nur dokumentiert.
+2. Danach weiterer datierter Nachbaustand (Eintrag ans Ende von `STATES`).
+3. Fachlicher Meilenstein unverändert: Eingabevertrag eines lokalen Originalfalls schließen,
+   erst dann den historischen Ablauf reproduzieren.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_WEIGHTS_STAGE_2026_11_03.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: neuntes Teilmodul (Sampler-Vorbereitung) in der App, 02.11.2026
 
 Schritt 1 und 2 des folgenden Abschnitts sind erledigt: Die

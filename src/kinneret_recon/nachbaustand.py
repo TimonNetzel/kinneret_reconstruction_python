@@ -36,7 +36,12 @@ STATES = (
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json"),
      "sha256": "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
-                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation")},
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation"),
+     "commit": "235f79784d01f0a613a0d3f76f6fd690c245ab21"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json"),
+     "sha256": "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -65,9 +70,11 @@ def app_daten(root: Path) -> dict:
     state = json.loads(_pinned(root, STATE.as_posix(), STATE_SHA256))
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
+    wex = state.get("weights_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex, sex) if e for k in ("fixture", "result", "rational", "arithmetic")])
+             + [e[k] for e in (ex, pex, gex, mex, sex, wex) if e
+                for k in ("fixture", "result", "rational", "arithmetic")])
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
     earlier = []
@@ -142,6 +149,71 @@ def app_daten(root: Path) -> dict:
         "gamma_example": _gamma_example(root, gex, url) if gex else None,
         "missing_example": _missing_example(root, mex, url) if mex else None,
         "sampler_example": _sampler_example(root, sex, url) if sex else None,
+        "weights_example": _weights_example(root, wex, url) if wex else None,
+    }
+
+
+def _hand_matches(text, value) -> bool:
+    """A hand entry of the weights fixture against a stored value; null is not written by hand."""
+    if text is None:
+        return True
+    if text in ("NA", "NaN", "Inf", "-Inf", "-0"):
+        return value == text
+    return not isinstance(value, str) and value == float(Fraction(text))
+
+
+def _weights_example(root: Path, wex: dict, url) -> dict:
+    """Stored values of artificial weights-stage cases; they must equal the independent reference exactly."""
+    fixture = json.loads(_pinned(root, wex["fixture"], wex["fixture_sha256"]))
+    result = json.loads(_pinned(root, wex["result"], wex["result_sha256"]))
+    rational = json.loads(_pinned(root, wex["rational"], wex["rational_sha256"]))
+    check = json.loads(_pinned(root, wex["arithmetic"], wex["arithmetic_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or fixture["dirichlet_package"] is not None or result["historical_reproduction_ready"]
+            or check["historical_reproduction_ready"] or check["final_variant_selected"] or check["R_execution"]
+            or check["dirichlet_package"] is not None
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: weights example claims historical inputs, a final variant or a package")
+    names = [wex["matrix_case"], *wex["special_cases"], wex["reset_case"], *wex["scale_cases"]]
+    for name in names:
+        stored, exact, hand = result["cases"][name], rational["cases"][name], fixture["cases"][name]["hand"]
+        flat = sum(stored["taxa_appear_core_temp"], [])
+        if (any(stored[k] != exact[k] for k in exact if k in stored)
+                or not all(map(_hand_matches, hand["result"], flat))
+                or not all(map(_hand_matches, hand["row_sums"], stored["row_sums"]))
+                or stored["z"] != hand["z"] or stored["zero_sum_rows"] != hand["zero_rows"]):
+            raise ValueError("Nachbaustand: stored weights example differs from the reference or the hand value")
+    base, scaled = (result["cases"][n] for n in wex["scale_cases"])
+    reset = result["cases"][wex["reset_case"]]
+    if (base["taxa_appear_core_temp"] != scaled["taxa_appear_core_temp"]
+            or Fraction(reset["row_sums_exact"][1]) != 1 - Fraction(1, 2**54) or reset["row_sums"][1] != 1.0
+            or not check["naive_counterexamples"][wex["reset_case"]]["unweighted_differs"]):
+        raise ValueError("Nachbaustand: weights example is internally inconsistent")
+    m, case = result["cases"][wex["matrix_case"]], fixture["cases"][wex["matrix_case"]]
+    ncol = len(m["z"])
+    hand_rows = [case["hand"]["result"][i * ncol:(i + 1) * ncol] for i in range(len(m["row_sums"]))]
+    special = []
+    for name in wex["special_cases"]:
+        stored = result["cases"][name]
+        flat = sum(stored["taxa_appear_core_temp"], [])
+        special.append({"nrow": len(stored["row_sums"]), "ncol": len(stored["z"]),
+                        "zero_rows": len(stored["zero_sum_rows"]), "minus_inf_rows": stored["row_sums"].count("-Inf"),
+                        "na": flat.count("NA"), "nan": flat.count("NaN"),
+                        "inf": flat.count("Inf") + flat.count("-Inf"), "neg_zero": flat.count("-0"),
+                        "sums_exact": stored["row_sums_exact"]})
+    return {
+        "url": url(wex["result"].rsplit("/", 1)[0] + "/README.md"),
+        "state5_case": case["state5_case"], "weights_exact": case["new_weights"],
+        "rows": m["taxa_appear_core_temp"], "rows_exact": hand_rows,
+        "sums": m["row_sums"], "sums_exact": m["row_sums_exact"], "independent": m["rows_accumulator_independent"],
+        "z": m["z"], "positions": len(m["products"]),
+        "misaligned": check["naive_counterexamples"][wex["matrix_case"]]["column_major_misaligned_weight_positions"],
+        "special": special,
+        "reset_weights": fixture["cases"][wex["reset_case"]]["new_weights"],
+        "reset_first": reset["taxa_appear_core_temp"][0][0], "reset_third": reset["taxa_appear_core_temp"][1][0],
+        "scale_base": fixture["cases"][wex["scale_cases"][0]]["new_weights"],
+        "scale_weights": fixture["cases"][wex["scale_cases"][1]]["new_weights"],
+        "sha256": {k: wex[k + "_sha256"] for k in ("result", "rational")},
     }
 
 

@@ -1,5 +1,55 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Kern der Gewichtsstufe nachgebildet, App-Stand 6, 03.11.2026
+
+**Abgeschlossen:** [Determinismusprüfung und Modul](literal_weights_stage_2026_11_03/README.md).
+Der deterministische Kern von `parameter_stage_weights` (`mcmc_functions_v1.6.R:1259, 1276–1280`) nutzt nur
+base R ohne Zufall. Die Funktion ist einmal definiert (1242), durch `gibbs <- F` gewählt und wird in jeder
+Iteration aufgerufen (`mcmc_conduction.R:142`); die Zeilen liegen auf Tiefe 1 des Funktionsrumpfs.
+**Kein Samplerlauf, keine Dirichlet-Ziehung:** Die Gewichte sind explizite Eingabe. Belegt und umgesetzt:
+
+- `values * new_weights` recycelt die `ncol` Gewichte über die zeilenweisen Werte aus Stand 5; jede
+  Position trifft ihr eigenes Taxon. `matrix(byrow = T)` füllt die Zeilen zurück.
+- `rowSums(na.rm = T)` überspringt NA und NaN; eine Zeile ohne Werte gibt 0, eine mit `-Inf` gibt `-Inf`.
+  Zeilen, deren Summe nicht akkumulator- und reihenfolgeunabhängig ist, werden markiert (hinreichende
+  Zweierpotenzschranke; die Referenz zählt alle Teilsummen auf).
+- Die Division recycelt den Summenvektor je Zeile: `0/0` NaN, `x/0` `±Inf`, `-Inf/-Inf` NaN, `x/-Inf`
+  vorzeichenbehaftete Null. `z = 1:ncol`; `taxa_weights` übernimmt die Gewichte ohne Renormierung.
+
+Nur dokumentiert:
+
+- `rdirichlet` (1248), Rücksetzung nach 1000 Versuchen (1253–1257), `ddirichlet`-Quotient und `is.na`
+  (1269–1274), Akzeptanz mit `runif` (`mcmc_conduction.R:304`).
+- `rdirichlet`/`ddirichlet` sind in keiner der acht Dateien definiert (auch nicht in Rcpp-Zeichenketten).
+  Gebunden ist nur die Reihenfolge von 55 `library()`-Aufrufen (52 vor der Schleife, frühere Pakete nannten
+  50; deren Angaben bleiben unverändert). Der Anbieter bleibt ungebunden, lokal gibt es keine R-Installation.
+- Leser: `reconstruction` (1817) liest `taxa.appear.core.temp`; `z` wählt in `mcmc_conduction.R:146` die
+  TF-Zeilen.
+
+[App-Stand 6](app_reproduction_2026_11_03_weights_stage/README.md): neuer letzter `STATES`-Eintrag mit Pin
+`7eb9ac5e…`, zehn Teilmodule; Stände 1–5 bytegleich, Stand 5 nur mit Linkcommit `235f797`.
+
+**Prüfung:**
+
+- 134 neue Tests gegen eine unabhängige `Fraction`-Referenz und Handerwartungen (exakt, einschließlich
+  Vorzeichen der Null); vier Fälle direkt aus dem Stand-5-Modul verkettet, Gegenprobe mit `rw_coefficients`.
+  Mit den bisherigen **689** historischen Teil-/Belegtests grün.
+- 69 App-/Daten-/Buildtests (2 Wrapper übersprungen, explizit ersetzt).
+- Edge offline in beiden Formaten × Handy (390 px)/PC × Hell/Dunkel × DE/EN, inkl. Gesten und zwei
+  Standorten: bestanden im ersten und im Endlauf.
+- Beide Phase-1-Prüfer Exit 2.
+- Gesamtsuite, `verify_packet.py` und `tools/verify_*` nicht ausgeführt.
+
+**Blockiert/offen:** Kein Originalfall reproduziert; alle elf Nachweisbündel offen, keine Variante und kein
+Dirichlet-Paket gewählt. Offen bleiben die echte Taxonmatrix (Alters-Tiefen-Modell, Pollendaten, NA-Maske
+aus `weightedMedian`), die echten Gewichte (`rdirichlet`), Sampler-Schleife und alle Zufallsschritte.
+Keine Trainings, Sampler, Altersmodelle, R-Läufe oder Fossilrekonstruktionen. Rechenschritt `4266c28`;
+App-Sicherungscommit siehe `git log -1 -- docs/thesis_research/app_reproduction_2026_11_03_weights_stage`.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_WEIGHTS_STAGE_2026_11_03.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Sampler-Vorbereitung nachgebildet, App-Stand 5, 02.11.2026
 
 **Abgeschlossen:** [Determinismusprüfung und Modul](literal_sampler_preparation_2026_11_02/README.md).

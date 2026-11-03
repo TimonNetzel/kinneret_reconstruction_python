@@ -276,15 +276,17 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
     fehler.push("Forschungsstand: Quellen nicht gebunden");
   }
-  // Dissertation reproduction: newest state with nine checked submodules, four frozen earlier states, synthetic examples kept apart
+  // Dissertation reproduction: newest state with ten checked submodules, five frozen earlier states, synthetic examples kept apart
   const nb = '[data-research="reproduction"]';
   const nbText = await page.textContent(nb);
-  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("555") ||
-      await page.locator(nb + " [data-module]").count() !== 9 ||
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("689") ||
+      await page.locator(nb + " [data-module]").count() !== 10 ||
       await page.locator(nb + ' [data-module="gamma_prior_grid"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="tf_missing_priors"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="sampler_preparation"] [data-status="conditional"]').count() !== 0 ||
-      await page.locator(nb + " [data-earlier-state]").count() !== 4 ||
+      await page.locator(nb + ' [data-module="weights_stage"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + " [data-earlier-state]").count() !== 5 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 9 Teilmodule, 555 Tests, SHA-256 61c6f23142df") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 8 Teilmodule, 437 Tests, SHA-256 7b7bf1f449a1") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 7 Teilmodule, 352 Tests, SHA-256 43edfcb67a64") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421") ||
@@ -298,16 +300,20 @@ async function pruefe(browser, datei, groesse, thema, name) {
   const frueher = ["/blob/47a926c3c8a6abc0db7c947b993f5e97f7408cdd/docs/thesis_research/app_reproduction_2026_11_02/reproduction_state.json",
     "/blob/3d013b276cb1b7af37ce4058d6c10e499a34b504/docs/thesis_research/app_reproduction_2026_11_02_pruning/reproduction_state.json",
     "/blob/7d3d0f6852dbdf869b6e479d4eeffe80faaf2038/docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/reproduction_state.json",
-    "/blob/0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34/docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json"];
+    "/blob/0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34/docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json",
+    "/blob/235f79784d01f0a613a0d3f76f6fd690c245ab21/docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json"];
   const istFrueher = (url) => frueher.some((f) => url.endsWith(f));
-  if (nbLinks.length !== 21 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
-      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/00ab021bc0936031bc1ce0b752f91284f1764b2e/"))) {
+  if (nbLinks.length !== 24 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
+      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/4266c285c04909dbf573b506176df3277fdc3d9f/"))) {
     fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
   }
   if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
   await page.click(nb + ' [data-part="example"] summary');
   const exText = await page.textContent(nb + ' [data-part="example"]');
-  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 9 ||
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 11 ||
+      await page.locator(nb + ' [data-table="weights"] [data-acc="dependent"]').count() !== 2 ||
+      await page.locator(nb + ' [data-table="weights"] [data-acc="exact"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="weights-special"] [data-special]').count() !== 2 ||
       await page.locator(nb + ' [data-table="sampler"] [data-acc="dependent"]').count() !== 3 ||
       await page.locator(nb + ' [data-table="sampler"] [data-acc="exact"]').count() !== 1 ||
       await page.locator(nb + ' [data-table="sampler-special"] [data-special]').count() !== 3 ||
@@ -324,7 +330,12 @@ async function pruefe(browser, datei, groesse, thema, name) {
         "ACDF", "aufgerundet", "Zeile 1678 (nrow)", "5 aus Zeile 1435", "2, 10, 18, 26, 34", "-integer(0)",
         "phi1 (alt)", "Sampler-Vorbereitung: 6 Kunstfälle", "2 1 4 3 / 4 3 2 6 / 1 6 8 9", "1/6", "7/3*",
         "8 von 12 Positionen", "Sonderwerte: drei Kunstfälle", "4×3", "8/3, 8/3, 4", "floor(5/2) = 2",
-        "how_many_taxa = num_taxa = 5", "0,5 je Taxon", "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung und Sampler-Vorbereitung"
+        "how_many_taxa = num_taxa = 5", "0,5 je Taxon",
+        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung und Gewichtsstufe",
+        "Kern der Gewichtsstufe: 7 Kunstfälle", "1/8, 3/8, 1/4, 1/4", "1/29", "29/32", "0,3333*", "0,5417*",
+        "8 von 12 Positionen ein fremdes Gewicht", "z = 1:4", "Zeilensummen mit Sonderwerten: drei Kunstfälle",
+        "G1", "G3", "1/4, 3/8, 5/8", "1 − 2⁻⁵⁴", "0,3333333333333333", "0,5714285714285715", "1, 1/2, 1/2",
+        "rdirichlet (Zeile 1248)"
         ].every((x) => exText.includes(x))) {
     fehler.push("Nachbau: synthetisches Beispiel unvollstaendig");
   }
@@ -343,6 +354,8 @@ async function pruefe(browser, datei, groesse, thema, name) {
       !enText.includes("Removal of missing TFs and taxon-count priors") || !enText.includes("half up") ||
       !enText.includes("Sampler preparation from taxon count and taxon matrix") ||
       !enText.includes("Special values: three artificial cases") || !enText.includes("8 of 12 positions") ||
+      !enText.includes("Core of the weights stage with given weights") ||
+      !enText.includes("Row sums with special values: three artificial cases") || !enText.includes("0.5714285714285715") ||
       !(await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open))) {
     fehler.push("Nachbau: englische Fassung oder Aufklappzustand fehlt");
   }
@@ -361,7 +374,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
     KR.zeige();
     return JSON.stringify([ohneNachbau, ohneSnapshot]);
   });
-  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 9]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
+  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 10]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Stored species scores: both measures together and both spatial designs.
