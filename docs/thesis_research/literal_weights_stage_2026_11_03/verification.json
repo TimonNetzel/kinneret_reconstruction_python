@@ -1,0 +1,55 @@
+{
+  "basis_commit": "235f79784d01f0a613a0d3f76f6fd690c245ab21",
+  "tracked_files_unchanged_since_basis": true,
+  "new_files_sha256": {
+    "docs/thesis_research/literal_weights_stage_2026_11_03/README.md": "14dc31a07477fb78d4d2ef73971405727d6cbb8fcb533a61205b3d1a5beded68",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/arithmetic_check.json": "8778c48f0db76f30dd0c155eabc8fc98272c32f9cf058b4f52450bb318789919",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/bind_source.py": "25826bb159fa1193d262665ccdacfe977c244b9aaa6b787fb2fed886b5a395c8",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/check_weights_stage.py": "331a624f17ecf78763b90eda071b1b139b20594a9d7e878d6aa2f65c4f1e600e",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/determinism_audit.json": "1f86342368a43f4d78ea13c26e97ad54477387a3beec8d299b7736e5aba58d1b",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/make_fixture.py": "2f6598aa786caa90c049942992922786a084a5a4a3eaa4153364659ae3f946d1",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/rational_expectations.json": "5dff7a253ce2556d62b00c81c4e0998b77b7ff3ccca8fe2770c206b9e48ada15",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/rational_reference.py": "ab4bc05ee89136518eb9073dc66537c84f013021368d22e0195515ca51e208cb",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/record_verification.py": "b23548ca64df646f060e23e3668cdc0c1374cca346f5585bea552db0bec8bf94",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/source_binding.json": "0c26ee4cfa0c4bf8b87573904fdd298cd2430655c2d65d82e5139d352561ed44",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/source_excerpt.json": "a7c1715035875d170beea14ddd80641fb6d87ef710893c8bddacc3901f8d7528",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/synthetic_fixture.json": "e91b760f6427d41acbfe8834f224a83ccbc8856f1d499caf2d5c77ef27f548cc",
+    "docs/thesis_research/literal_weights_stage_2026_11_03/synthetic_result.json": "275f268eff799c5cbeeec899b05d865a8d929b4a0553cf951b6c086bf2968e30",
+    "tests/test_historical_weights_stage.py": "8583c891de79dcbdbb7ce20744a4f74650ea712689c2a829de43204da18f44da",
+    "tools/historical_weights_stage.py": "a7289078c3c5be02ef5b32b119a02d778538df3f386eb286e403c14dee1beb47"
+  },
+  "targeted_pytest": {
+    "files": [
+      "tests/test_historical_weights_stage.py",
+      "tests/test_historical_sampler_preparation.py",
+      "tests/test_historical_tf_missing_priors.py",
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "tests": 689,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 134,
+    "previous_tests": 555
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "tools/verify_* (time-bound checkers, not regression checkers)",
+    "R, rdirichlet/ddirichlet, training, sampler, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

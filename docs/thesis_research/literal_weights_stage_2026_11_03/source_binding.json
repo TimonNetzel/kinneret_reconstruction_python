@@ -1,0 +1,585 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "235f79784d01f0a613a0d3f76f6fd690c245ab21",
+  "sources": {
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_conduction.R": {
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "bytes": 25090,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "bytes": 99905,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_trimming_posterior_trafo.R": {
+      "sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "bytes": 27564,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/check_ages.R": {
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "bytes": 12904,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/prior_climate.R": {
+      "sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd",
+      "bytes": 6918,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/loess_functions.R": {
+      "sha256": "371e2761eb532644da9bd7c1e9dc09c930c41ea3026fa616680a9d3000071ead",
+      "bytes": 1682,
+      "previous_binding": "literal_sampler_preparation_2026_11_02/source_binding.json"
+    }
+  },
+  "source_hashes_before_equal_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "a7c1715035875d170beea14ddd80641fb6d87ef710893c8bddacc3901f8d7528",
+  "implemented_spans": {
+    "store_weights": [
+      "src/mcmc_functions_v1.6.R",
+      1259,
+      1259
+    ],
+    "weights_stage_core": [
+      "src/mcmc_functions_v1.6.R",
+      1276,
+      1280
+    ]
+  },
+  "brace_depth_at_line_start": {
+    "main_v1.2.R": {
+      "624": 0,
+      "676": 1
+    },
+    "src/mcmc_prepare.R": {
+      "1867": 0,
+      "1885": 0,
+      "1886": 0
+    },
+    "src/mcmc_conduction.R": {
+      "58": 1,
+      "113": 0,
+      "142": 1,
+      "146": 1,
+      "304": 1,
+      "306": 2,
+      "330": 2,
+      "355": 1
+    },
+    "src/mcmc_functions_v1.6.R": {
+      "1242": 0,
+      "1243": 1,
+      "1248": 2,
+      "1254": 3,
+      "1259": 1,
+      "1269": 1,
+      "1273": 1,
+      "1276": 1,
+      "1277": 1,
+      "1280": 1,
+      "1282": 1,
+      "1283": 1,
+      "1781": 0,
+      "1817": 1
+    },
+    "src/mcmc_trimming_posterior_trafo.R": {
+      "416": 0
+    }
+  },
+  "assignment_sites_without_comments": {
+    "parameter_stage_weights": {
+      "src/mcmc_functions_v1.6.R": [
+        1242
+      ]
+    },
+    "parameter_stage": {
+      "src/mcmc_conduction.R": [
+        55,
+        58
+      ]
+    },
+    "reconstruction": {
+      "src/mcmc_functions_v1.6.R": [
+        855,
+        1781
+      ]
+    },
+    "rdirichlet": {},
+    "ddirichlet": {},
+    "new_weights": {
+      "src/mcmc_functions_v1.6.R": [
+        1248,
+        1254
+      ]
+    },
+    "old_weights": {
+      "src/mcmc_functions_v1.6.R": [
+        1243
+      ]
+    },
+    "matrix": {},
+    "rowSums": {},
+    "ncol": {},
+    "nrow": {},
+    "min": {},
+    "rep": {},
+    "is.na": {},
+    "gibbs": {
+      "main_v1.2.R": [
+        624
+      ]
+    },
+    "F": {},
+    "T": {},
+    "num_taxa": {
+      "src/mcmc_prepare.R": [
+        1435,
+        1678
+      ]
+    }
+  },
+  "rdirichlet_or_ddirichlet_defined_in_sources_incl_string_literals": false,
+  "occurrences_without_comments": {
+    "rdirichlet": {
+      "src/mcmc_functions_v1.6.R": [
+        1216,
+        1248
+      ]
+    },
+    "ddirichlet": {
+      "src/mcmc_functions_v1.6.R": [
+        1269,
+        1270
+      ]
+    },
+    "SBMSplitMerge::": {
+      "src/mcmc_functions_v1.6.R": [
+        1216,
+        1228
+      ]
+    },
+    "dirichlet_spread": {
+      "src/mcmc_prepare.R": [
+        1867
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1248,
+        1255
+      ]
+    },
+    "$taxa.appear.core.temp": {
+      "src/mcmc_functions_v1.6.R": [
+        1232,
+        1277,
+        1817
+      ]
+    },
+    "$z": {
+      "src/mcmc_conduction.R": [
+        112,
+        114,
+        146,
+        306,
+        330,
+        355
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1211,
+        1228,
+        1229,
+        1231,
+        1280
+      ]
+    },
+    "$taxa_weights": {
+      "src/mcmc_conduction.R": [
+        112,
+        113,
+        305,
+        329,
+        354
+      ],
+      "src/mcmc_functions_v1.6.R": [
+        1221,
+        1228,
+        1243,
+        1259
+      ],
+      "src/mcmc_trimming_posterior_trafo.R": [
+        190,
+        199,
+        550
+      ]
+    },
+    "parameter_stage(": {
+      "src/mcmc_conduction.R": [
+        142
+      ]
+    }
+  },
+  "weights_stage_free_num_taxa_lines": [
+    1254,
+    1269
+  ],
+  "parameter_stage_weights_reads_taxa_appear_core_argument": false,
+  "base_functions_redefined": false,
+  "library_calls_in_run_order": [
+    {
+      "source": "main_v1.2.R",
+      "line": 4,
+      "package": "SBMSplitMerge",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 5,
+      "package": "doParallel",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 6,
+      "package": "foreach",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 7,
+      "package": "doSNOW",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 8,
+      "package": "ncdf4",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 9,
+      "package": "rbacon",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 10,
+      "package": "Hmisc",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 11,
+      "package": "gdata",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 12,
+      "package": "clam",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 13,
+      "package": "fields",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 14,
+      "package": "maps",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 15,
+      "package": "smotefamily",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 16,
+      "package": "verification",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 17,
+      "package": "NeuralNetTools",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 18,
+      "package": "RColorBrewer",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 19,
+      "package": "mvtnorm",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 20,
+      "package": "gtools",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 21,
+      "package": "abind",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 22,
+      "package": "kgc",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 23,
+      "package": "emdist",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 24,
+      "package": "signal",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 25,
+      "package": "broman",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 26,
+      "package": "MatrixCorrelation",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 27,
+      "package": "matrixStats",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 28,
+      "package": "fitdistrplus",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 29,
+      "package": "Rcpp",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 30,
+      "package": "RcppArmadillo",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 31,
+      "package": "RcppZiggurat",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 32,
+      "package": "extraDistr",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 33,
+      "package": "lsa",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 34,
+      "package": "NbClust",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 35,
+      "package": "Rfast",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 36,
+      "package": "PTAk",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 37,
+      "package": "magic",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 38,
+      "package": "LaplacesDemon",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 39,
+      "package": "wrswoR",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 45,
+      "package": "stringr",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 46,
+      "package": "readxl",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 47,
+      "package": "pracma",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 48,
+      "package": "EnvStats",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 49,
+      "package": "rPref",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 50,
+      "package": "spatstat.utils",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 51,
+      "package": "WaveletComp",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 52,
+      "package": "biwavelet",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 55,
+      "package": "caret",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 56,
+      "package": "gbm",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 57,
+      "package": "nnet",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 58,
+      "package": "earth",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 59,
+      "package": "mda",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 60,
+      "package": "kernlab",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 61,
+      "package": "RRF",
+      "depth": 0
+    },
+    {
+      "source": "main_v1.2.R",
+      "line": 62,
+      "package": "MASS",
+      "depth": 0
+    },
+    {
+      "source": "src/mcmc_prepare.R",
+      "line": 1885,
+      "package": "npreg",
+      "depth": 0
+    },
+    {
+      "source": "src/mcmc_prepare.R",
+      "line": 1886,
+      "package": "truncnorm",
+      "depth": 0
+    },
+    {
+      "source": "src/mcmc_trimming_posterior_trafo.R",
+      "line": 416,
+      "package": "colorRamps",
+      "depth": 0
+    }
+  ],
+  "library_note": "main_v1.2.R 1-62 run before the bound loop 651-684; mcmc_prepare.R 1885-1886 and mcmc_trimming_posterior_trafo.R 416 run inside it (the latter only after the sampler of the first site). R searches the most recently attached package first; which of these packages exports rdirichlet or ddirichlet is not recorded in the bound sources (no version, no namespace file), so the provider of 1248/1269-1270 stays unbound",
+  "dirichlet_provider_bound": false,
+  "main_stray_closing_braces": [
+    740,
+    788,
+    829
+  ],
+  "rejection_note": "on rejection 329-330 restore taxa_weights and z, not taxa.appear.core.temp; the next iteration overwrites it in 1277 before reconstruction reads it in 1817",
+  "row_sums": "rowSums may accumulate in extended precision; rows whose sum is not accumulator independent are flagged",
+  "excluded_context": "rdirichlet (1248), the while loop and reset (1246-1258), ddirichlet and the ratio (1269-1274), acceptance (runif 304), reconstruction, sampler initialisation, weightedMedian, seeded and unseeded draws",
+  "supported_domain": "values from the prepared taxa_information (finite, NA, NaN, -Inf; no +Inf, no negative zero), at least two rows and two columns, length nrow*ncol, explicit weights: one finite positive double per column",
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}
