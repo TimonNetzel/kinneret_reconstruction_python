@@ -1,0 +1,82 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "94f81cc31e2ea14aaa7800c8b557200b0d3a9319",
+  "sources": {
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "literal_tf_preparation_2026_11_02/source_binding.json"
+    },
+    "original:src/mcmc_prep_v1.2.R": {
+      "sha256": "badabd80978a074f42c25e06f1d254fd4ac8deef4e8f31bc591af6de65123949",
+      "bytes": 72528,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json"
+    },
+    "original:src/prior_climate.R": {
+      "sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd",
+      "bytes": 6918,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_conduction.R": {
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "bytes": 25090,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "bytes": 99905,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_trimming_posterior_trafo.R": {
+      "sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "bytes": 27564,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    }
+  },
+  "source_hashes_before_equal_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "db0aa07c7dac3a081e9ee5435d92d8c781e2569379b7188eb42f7d2346921afb",
+  "implemented_spans": {
+    "default_grid": [
+      "src/mcmc_prepare.R",
+      114,
+      128
+    ],
+    "diff_rate": [
+      "src/mcmc_prepare.R",
+      526,
+      536
+    ],
+    "doubling_and_final_grid": [
+      "src/mcmc_prepare.R",
+      1264,
+      1281
+    ],
+    "recent_start_rate": [
+      "src/mcmc_prepare.R",
+      1733,
+      1733
+    ]
+  },
+  "block_identity": {
+    "mcmc_prepare.R:1270-1281": "equal to 115-121 up to variable names",
+    "mcmc_prepare.R:402-408": "equal to 115-121 (conditional, Birkat Ram)",
+    "mcmc_prepare.R:526-531": "equal to 115-120 (rate not assigned)",
+    "mcmc_prep_v1.2.R:1103-1114": "equal up to variable names except upper bound 5000"
+  },
+  "site_conditions": "recent and min(age) >= 2000 are explicit booleans; age/site.age is not evaluated",
+  "grid_upper_bound": "explicit input; 50000 for mcmc_prepare.R (sourced by main_v1.2.R:675), 5000 for mcmc_prep_v1.2.R",
+  "excluded_context": "prior.recent fit (fitdistr, MASS), seeded rnorm/rgamma 1297-1303, rbeta in 1734, dgamma readers in sampler and postprocessing, weightedMedian, which.tf.missing",
+  "supported_domain": "finite positive scalar mean.pann, sd.pann and sd.tmp; no vector recycling or NA",
+  "IEEE_double_bit_equality_with_independent_reference": true,
+  "R_seq_version_independence": "claimed only for upper 50000 (fuzz and pmin inactive); not for 5000",
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

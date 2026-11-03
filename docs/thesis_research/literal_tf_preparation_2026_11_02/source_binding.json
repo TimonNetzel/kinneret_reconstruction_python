@@ -1,0 +1,31 @@
+{
+  "status": "bounded_finite_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "956951b9546f3120620bf375bf073066c9f8bf44",
+  "source": "original:src/mcmc_prepare.R",
+  "source_bytes": 82630,
+  "source_sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "source_hash_before_equals_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "4a60d67e89df3b30208cd1815d0ff539b02345e4360e3bbe9865bebb01376ca2",
+  "implemented_spans": {
+    "normalize_tf_rows": [
+      1581,
+      1586
+    ],
+    "mask_tf_cells": [
+      1613,
+      1618
+    ]
+  },
+  "conditional_change_branch": "Same formulas only if taxa_change; no branch activated or final variant selected",
+  "excluded_context": "sample/quantile/spline/weightedMedian/inside.range/taxon pruning are not executed",
+  "axes": "ordered taxon rows x ordered climate-cell columns; separate explicit TANN and PANN masks",
+  "units": "discrete row sums without cell widths; no climate unit conversion or physical integration",
+  "supported_domain": "nonempty real numeric matrices converted to float64; finite nonnegative values; finite positive row sums before normalization; exactly one boolean per cell",
+  "NA_Inf_zero_row_recycling_or_dimension_drop_semantics_reproduced": false,
+  "inside_range_boundary_convention_or_package_selected": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

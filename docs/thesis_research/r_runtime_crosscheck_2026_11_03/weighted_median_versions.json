@@ -1,0 +1,207 @@
+{
+ "kind": "matrixStats_weightedMedian_source_comparison_not_runtime_binding",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "call_in_source": "weightedMedian(x1range.bck, tf.x1.current[j,]) and weightedMedian(x2range.bck, tf.x2.current[j,]) (mcmc_prepare.R 1631/1651), all defaults",
+ "versions": [
+  {
+   "version": "0.53.1",
+   "published": "2018-02-11",
+   "tarball_sha256": "df70bc9fb64716a7a633b5d0c2a2422b2c8d93ac5e64574528a325505df9712e",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "af9c77af36f5"
+  },
+  {
+   "version": "0.54.0",
+   "published": "2018-07-23",
+   "tarball_sha256": "8f0db4e181300a208b9aedbebfdf522a2626e6675d2662656efb8ba71b05a06f",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "af9c77af36f5"
+  },
+  {
+   "version": "0.55.0",
+   "published": "2019-09-07",
+   "tarball_sha256": "16d6bd90eee4cee8df4c15687de0f9b72730c03e56603c2998007d4533e8db19",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2440873576cb"
+  },
+  {
+   "version": "0.56.0",
+   "published": "2020-03-13",
+   "tarball_sha256": "39e34a3dc480b9df05bb1a555eaef1dc1971a53f3ea6e01eb3a68bd1d3760f27",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2440873576cb"
+  },
+  {
+   "version": "0.57.0",
+   "published": "2020-09-26",
+   "tarball_sha256": "f9681887cd3b121762c83f55f189cae26cb8443efce91fcd212ac714fde9f343",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2440873576cb"
+  },
+  {
+   "version": "0.58.0",
+   "published": "2021-01-30",
+   "tarball_sha256": "8367b4b98cd24b6e40022cb2b11e907aa0bcf5ee5b2f89fefb186f53661f4b49",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "dcefaf0e8cc1"
+  },
+  {
+   "version": "0.59.0",
+   "published": "2021-06-01",
+   "tarball_sha256": "07428726ad29d9b144c88946dc6ac240355df49dd97f10e8b071e5d332560b9d",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "b972842a027d"
+  },
+  {
+   "version": "0.60.0",
+   "published": "2021-07-26",
+   "tarball_sha256": "0ee09303cfcc7e5577c56a19cc5aa35183165fb923bfdb06321af35b56945f21",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "b972842a027d"
+  },
+  {
+   "version": "0.60.1",
+   "published": "2021-08-23",
+   "tarball_sha256": "2f77f1dc3d157e85d91f468e4ec4c569537b17a156e016ed723bdc4dcf128f7f",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2afb47e614d4"
+  },
+  {
+   "version": "0.61.0",
+   "published": "2021-09-17",
+   "tarball_sha256": "dbd3c0ec59b1ae62ff9b4c2c90c4687cbd680d1796f6fdd672319458d4d2fd9a",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2afb47e614d4"
+  },
+  {
+   "version": "0.62.0",
+   "published": "2022-04-19",
+   "tarball_sha256": "85e2016b6dd20cbfe32d38a2ef2578ae80e688d9a3590aefd1d2f4bf4bd44eca",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2afb47e614d4"
+  },
+  {
+   "version": "0.63.0",
+   "published": "2022-11-18",
+   "tarball_sha256": "c000b60421742eb035ff4ceedd3e588a79e4b28985484f0c81361e5a6c351f5f",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "2afb47e614d4"
+  },
+  {
+   "version": "1.0.0",
+   "published": "2023-06-02",
+   "tarball_sha256": "94876850e60ed16b50bf303cdfe4dd747ad2c28cae07bdc471a093eac23bad6f",
+   "files": [
+    "R/weightedMedian.R",
+    "src/weightedMedian.c",
+    "src/weightedMedian_lowlevel.h",
+    "src/weightedMedian_lowlevel_template.h"
+   ],
+   "signature": "x, w = NULL, idxs = NULL, na.rm = FALSE, interpolate = is.null(ties), ties = NULL, ...",
+   "source_group": "c41a57d7ffcb"
+  }
+ ],
+ "distinct_sources": 6,
+ "groups": {
+  "af9c77af36f5": [
+   "0.53.1",
+   "0.54.0"
+  ],
+  "2440873576cb": [
+   "0.55.0",
+   "0.56.0",
+   "0.57.0"
+  ],
+  "dcefaf0e8cc1": [
+   "0.58.0"
+  ],
+  "b972842a027d": [
+   "0.59.0",
+   "0.60.0"
+  ],
+  "2afb47e614d4": [
+   "0.60.1",
+   "0.61.0",
+   "0.62.0",
+   "0.63.0"
+  ],
+  "c41a57d7ffcb": [
+   "1.0.0"
+  ]
+ }
+}

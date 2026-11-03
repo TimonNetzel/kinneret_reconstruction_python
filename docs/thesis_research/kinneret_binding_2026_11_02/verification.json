@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "base_commit": "756865bea123b6494fd3a0e7babfce968bfcb29e",
+  "status": "passed_partial_source_binding_not_reconstruction",
+  "checks": {
+    "deterministic_repeat_files": 4,
+    "sample_rows_exactly_bound": 160,
+    "taxon_values_exactly_bound": 1920,
+    "chronology_values_hash_equal": 283520,
+    "wrong_AP_NAP_denominator_rejected_by_numeric_difference": true,
+    "all_explicit_sources_unchanged": true,
+    "plot_label_counts_verified": [
+      11,
+      10,
+      11
+    ],
+    "archive_weight_plot_bytes_equal": true,
+    "weight_plot_visually_reviewed": true,
+    "previous_matrix_files_unchanged": 4,
+    "preserved_snapshot_files": 50,
+    "package_links_resolved": 7,
+    "collector_AST_valid": true,
+    "no_personal_absolute_paths_in_package": true,
+    "only_expected_existing_entry_points_modified": true
+  },
+  "output_sha256": {
+    "summary.json": "a96c37acf98201bf5f184e3f885ee480d7f3d76a2268af3ede4f702ef4eb4633",
+    "sample_crosswalk.csv": "39b788cb2da5f176c6e6b6e39c191d603b52be1dd889c35922f4c1e15d47fd06",
+    "older_taxon_crosswalk.csv": "cfde620be35fd400038167c41600a9bd2979c77ad74f88f0efbd60684246cc2f",
+    "explicit_tf_requirements.csv": "8c171361cfe6f87ed585c9a7d9a39e0e6d7b0960898c4df8c2e0bbd798cb9125"
+  },
+  "user_source_response": "No additional location known, 2026-11-02",
+  "not_run": [
+    "R scripts",
+    "model training",
+    "samplers",
+    "Bacon recalculation",
+    "taxon combination draws",
+    "fossil reconstruction"
+  ],
+  "limits": "Final v1.2 base and numeric transfer functions remain missing; no substitution performed"
+}

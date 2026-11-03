@@ -1,0 +1,52 @@
+{
+  "basis_commit": "3104f3c9e9a7870138abcc301bdd4f108c009e73",
+  "new_files_sha256": {
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/README.md": "da21cb2bcc6f57f4b9a984dbff9e0155948fde3a1dc669b9f83ed87602336071",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/analyse_providers.py": "dcd34cdb33012c5b531855cd49b2c2556b0675335f37ef3714c1da02db6aa8cf",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/bind_sites.py": "fa2363b2ab990369a0923468face76463633653d195dc962c82c10bd61b02b34",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/collect_cran_exports.py": "c7ed694c8ec2ff535eec89b348c74cc5e2912dfdbe296ab220390a1447fa544f",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/collect_rdata_writers.py": "9bf24aba5d80de16293b2dfe5299fc3765e419ed6ae22126cb0e41034dd2801d",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/compare_dirichlet.py": "384d4ceba6fc796b09c75df37ec1bd0ef7af68c3d0802b65222c785539b78b6e",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/compare_weighted_median.py": "d75a4defca1d922cb5128337f09e562395231c7573c858da54ed0602bdb80d37",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/crosscheck.R": "3e02c1691c5f439d586547b6fa9175774084c3680aca6aec61b4f4cd87fa0730",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/crosscheck_result.json": "ec6a3fe949bc0960f493d5600023a35eb08aa29abf8e63e1ec0f09973d5d25ef",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/diff_weighted_median.py": "2a7a6785d0be318a675393bf5daf4d00d54c84a654c689dd09d3bf0286e376fd",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/dirichlet_versions.json": "8d289993e5d0d33007678425db0eddd4a466f2bf55dd007cd374a518ec2aaade",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/provider_analysis.json": "1bf099282c8caad5a84d11be2d151f5dacc79a9fc6c5abd0427bc035ec0ab942",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/rdata_writers.json": "f81cb5dfc20c41a56b9e2db705afd4b91a5921bd84fed30ef55335ce3e7ed426",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/resolve_unresolved.py": "03a6a46e039feaffca396e8e11842bf468591eed215fe3ef0f5a9bf4a7463819",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/run_crosscheck.py": "60e0c2a9dbbcb4e5a5374bb0d8f294a7a03585cac11bbda5171d6ae4bb473379",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/site_binding.json": "5d1abb5304d1994c8b8c52a1fcf2ea5710e8fa8c118b9108ac5a1e95e42547bd",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/weighted_median_diffs.txt": "938201cc89530526dd0f77f720e60b7544c220868ae70f864a8d4604d915fc72",
+    "docs/thesis_research/r_runtime_crosscheck_2026_11_03/weighted_median_versions.json": "88659dc409379a32c8b89f713865c84da951e47d3214650692f45ed8e7c92856",
+    "tests/test_r_runtime_crosscheck.py": "a1e5eb0781d6b6e33ac1e4c3bc12c60ad6409dc21a8e95989253fe86fe2c00ba"
+  },
+  "targeted_pytest": {
+    "tests": 702,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 13,
+    "previous_tests": 689
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "R": {
+    "version": "3.5.0",
+    "source": "https://cran-archive.r-project.org/bin/windows/base/old/3.5.0/R-3.5.0-win.exe",
+    "md5": "d3f579b3aacfdf45a008df3320cb3615",
+    "md5_matches_cran_md5sum_txt": true,
+    "authenticode": "Valid",
+    "install": "per user into .local/R/R-3.5.0, no tasks, no icons"
+  },
+  "r_crosscheck_checks": 389,
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "verify_packet.py and tools/verify_*",
+    "sampler, rdirichlet draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

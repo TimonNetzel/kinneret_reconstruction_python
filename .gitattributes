@@ -1,0 +1,6 @@
+# Quellen- und Ergebnispruefsummen beziehen sich auf die gespeicherten LF-Bytes.
+# Keine automatische CRLF-Konvertierung beim Checkout unter Windows.
+* text=auto eol=lf
+
+# Portable audit manifests bind exact exported bytes, including original CSV/XML line endings.
+docs/thesis_research/research_snapshot_2026_11_02/** -text

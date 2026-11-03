@@ -1,0 +1,428 @@
+{
+  "distribution": {
+    "source": "climate_modelling:pollen/transfer_functions/input_data/data_out/taxa_distribution_ww.rdata",
+    "sha256": "73efc9c9b9ba03d8e964db9b69f592d8aa707f7e2c72d45798e3549aec1e3dd8",
+    "top_level_objects": [
+      "taxa.distribution.ww"
+    ],
+    "fields": [
+      "dist",
+      "lon",
+      "lat",
+      "names"
+    ],
+    "dimensions_lon_lat_taxa": [
+      720,
+      360,
+      275
+    ],
+    "axes": {
+      "lon": {
+        "length": 720,
+        "first": -179.75,
+        "last": 179.75,
+        "strictly_increasing": true,
+        "unique_steps": [
+          0.5
+        ],
+        "units": "not stored as units attribute"
+      },
+      "lat": {
+        "length": 360,
+        "first": -89.75,
+        "last": 89.75,
+        "strictly_increasing": true,
+        "unique_steps": [
+          0.5
+        ],
+        "units": "not stored as units attribute"
+      }
+    },
+    "taxa_count": 275,
+    "taxa_names_ordered_sha256": "dd9a45b2f4135e0178ecc6d41503c5a41560ee1782835287c34ef60851c213bf",
+    "numeric_payload_materialized": false,
+    "skipped_numeric_blocks": 1,
+    "skipped_numeric_bytes": 570240000,
+    "small_numeric_bytes_retained": 11060,
+    "consumer_fields_match_main_R_129_130": true,
+    "role": "geographic occurrence grid; not numerical historical climate transfer functions",
+    "historical_run_identity_claimed": false,
+    "hash_unchanged_after_read": true
+  },
+  "metadata_csv_candidates": [
+    {
+      "source": "climate_modelling:speleothems/speleo_data/speleo_info.csv",
+      "sha256": "ecf11a3259aa00f49642e54877584b1d6679770e0fa19f1a888eaf8762dde649",
+      "rows": 455,
+      "columns": [
+        "",
+        "site_name",
+        "site_id",
+        "entity_id",
+        "latitude",
+        "longitude",
+        "elevation",
+        "distance_entrance",
+        "depth_ref",
+        "speleothem_type",
+        "C14",
+        "geology",
+        "cover_thickness",
+        "max_interp_age",
+        "min_interp_age"
+      ],
+      "row_widths": {
+        "15": 456
+      },
+      "required_metadata_fields_present": true,
+      "entity_id_unique_count": 455,
+      "units_metadata": "not declared in CSV headers; no inferred age/depth units",
+      "target_reference": "original:main_v1.2.R:391-392 points to SISAL_V2, not this source folder",
+      "SISAL_V2_identity_proven": false,
+      "historical_run_identity_claimed": false,
+      "hash_unchanged_after_read": true
+    },
+    {
+      "source": "climate_modelling:speleothems/speleo_data/ages_info.csv",
+      "sha256": "3fe07c97690bfa56458b613bbd48762f37cba1e61ac314d46eb666f8c15a7385",
+      "rows": 6849,
+      "columns": [
+        "",
+        "entity_id",
+        "date_type",
+        "calib_used",
+        "depth_dating",
+        "corr_age",
+        "corr_age_uncert_pos"
+      ],
+      "row_widths": {
+        "7": 6850
+      },
+      "required_metadata_fields_present": true,
+      "entity_id_unique_count": 455,
+      "units_metadata": "not declared in CSV headers; no inferred age/depth units",
+      "target_reference": "original:main_v1.2.R:391-392 points to SISAL_V2, not this source folder",
+      "SISAL_V2_identity_proven": false,
+      "historical_run_identity_claimed": false,
+      "hash_unchanged_after_read": true
+    }
+  ],
+  "nearby_netCDF_variants": [
+    {
+      "source": "climate_modelling:verification/Data/my/pmip3_21k_sftlf_v0.nc",
+      "sha256": "9e21835b34c996f34b2f7de5184562b300db05e3c172a91922a61a7a5d6fb998",
+      "dimensions": {
+        "lat": 180,
+        "bound": 2,
+        "lon": 360
+      },
+      "variables": {
+        "lat": {
+          "dimensions": [
+            "lat"
+          ],
+          "shape": [
+            180
+          ],
+          "attributes": {
+            "standard_name": "latitude",
+            "units": "degrees_north"
+          }
+        },
+        "bounds_lat": {
+          "dimensions": [
+            "lat",
+            "bound"
+          ],
+          "shape": [
+            180,
+            2
+          ],
+          "attributes": {}
+        },
+        "lon": {
+          "dimensions": [
+            "lon"
+          ],
+          "shape": [
+            360
+          ],
+          "attributes": {
+            "standard_name": "longitude",
+            "units": "degrees_east"
+          }
+        },
+        "bounds_lon": {
+          "dimensions": [
+            "lon",
+            "bound"
+          ],
+          "shape": [
+            360,
+            2
+          ],
+          "attributes": {}
+        },
+        "sftlf": {
+          "dimensions": [
+            "lat",
+            "lon"
+          ],
+          "shape": [
+            180,
+            360
+          ],
+          "attributes": {
+            "long_name": "Land Area Fraction",
+            "standard_name": "land_area_fraction",
+            "units": "%"
+          }
+        }
+      },
+      "small_axes": {
+        "lon": {
+          "length": 360,
+          "first": -180.0,
+          "last": 179.0
+        },
+        "lat": {
+          "length": 180,
+          "first": -89.5,
+          "last": 89.5
+        }
+      },
+      "climate_or_mask_arrays_loaded": false,
+      "has_required_mask2_lon_lat": false,
+      "historical_version_identity_claimed": false,
+      "hash_unchanged_after_read": true
+    },
+    {
+      "source": "climate_modelling:pollen/transfer_functions/input_data/data_in/cru/pann_cru4.nc",
+      "sha256": "8800d812cee16a8d72006b0e92ff6fc06950169a8f3f38786b893d6de5223571",
+      "dimensions": {
+        "time": null,
+        "bnds": 2,
+        "lon": 149,
+        "lat": 97
+      },
+      "variables": {
+        "time": {
+          "dimensions": [
+            "time"
+          ],
+          "shape": [
+            1
+          ],
+          "attributes": {
+            "standard_name": "time",
+            "long_name": "time",
+            "units": "days since 1900-1-1"
+          }
+        },
+        "time_bnds": {
+          "dimensions": [
+            "time",
+            "bnds"
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "attributes": {}
+        },
+        "lon": {
+          "dimensions": [
+            "lon"
+          ],
+          "shape": [
+            149
+          ],
+          "attributes": {
+            "standard_name": "longitude",
+            "long_name": "longitude",
+            "units": "degrees_east"
+          }
+        },
+        "lat": {
+          "dimensions": [
+            "lat"
+          ],
+          "shape": [
+            97
+          ],
+          "attributes": {
+            "standard_name": "latitude",
+            "long_name": "latitude",
+            "units": "degrees_north"
+          }
+        },
+        "pre": {
+          "dimensions": [
+            "time",
+            "lat",
+            "lon"
+          ],
+          "shape": [
+            1,
+            97,
+            149
+          ],
+          "attributes": {
+            "long_name": "precipitation",
+            "units": "mm/month"
+          }
+        },
+        "stn": {
+          "dimensions": [
+            "time",
+            "lat",
+            "lon"
+          ],
+          "shape": [
+            1,
+            97,
+            149
+          ],
+          "attributes": {}
+        }
+      },
+      "small_axes": {
+        "lon": {
+          "length": 149,
+          "first": -12.75,
+          "last": 61.25
+        },
+        "lat": {
+          "length": 97,
+          "first": 27.25,
+          "last": 75.25
+        },
+        "time": {
+          "length": 1,
+          "first": 21365.0,
+          "last": 21365.0
+        }
+      },
+      "climate_or_mask_arrays_loaded": false,
+      "has_required_mask2_lon_lat": false,
+      "historical_version_identity_claimed": false,
+      "hash_unchanged_after_read": true
+    },
+    {
+      "source": "climate_modelling:pollen/transfer_functions/input_data/data_in/cru/tann_cru4.nc",
+      "sha256": "4b6c6dfa0df10e4268be0e13958e50abc7828016529f4db76ee4952011bbe562",
+      "dimensions": {
+        "time": null,
+        "bnds": 2,
+        "lon": 149,
+        "lat": 97
+      },
+      "variables": {
+        "time": {
+          "dimensions": [
+            "time"
+          ],
+          "shape": [
+            1
+          ],
+          "attributes": {
+            "standard_name": "time",
+            "long_name": "time",
+            "units": "days since 1900-1-1"
+          }
+        },
+        "time_bnds": {
+          "dimensions": [
+            "time",
+            "bnds"
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "attributes": {}
+        },
+        "lon": {
+          "dimensions": [
+            "lon"
+          ],
+          "shape": [
+            149
+          ],
+          "attributes": {
+            "standard_name": "longitude",
+            "long_name": "longitude",
+            "units": "degrees_east"
+          }
+        },
+        "lat": {
+          "dimensions": [
+            "lat"
+          ],
+          "shape": [
+            97
+          ],
+          "attributes": {
+            "standard_name": "latitude",
+            "long_name": "latitude",
+            "units": "degrees_north"
+          }
+        },
+        "tmp": {
+          "dimensions": [
+            "time",
+            "lat",
+            "lon"
+          ],
+          "shape": [
+            1,
+            97,
+            149
+          ],
+          "attributes": {
+            "long_name": "near-surface temperature",
+            "units": "degrees Celsius"
+          }
+        },
+        "stn": {
+          "dimensions": [
+            "time",
+            "lat",
+            "lon"
+          ],
+          "shape": [
+            1,
+            97,
+            149
+          ],
+          "attributes": {}
+        }
+      },
+      "small_axes": {
+        "lon": {
+          "length": 149,
+          "first": -12.75,
+          "last": 61.25
+        },
+        "lat": {
+          "length": 97,
+          "first": 27.25,
+          "last": 75.25
+        },
+        "time": {
+          "length": 1,
+          "first": 21365.0,
+          "last": 21365.0
+        }
+      },
+      "climate_or_mask_arrays_loaded": false,
+      "has_required_mask2_lon_lat": false,
+      "historical_version_identity_claimed": false,
+      "hash_unchanged_after_read": true
+    }
+  ],
+  "large_pollen_RData_variants": "Hashes/filenames only; no full object or numeric decoding; not accepted as v4.0",
+  "R_execution": false,
+  "models_or_samplers_started": false,
+  "final_variant_selected": false
+}

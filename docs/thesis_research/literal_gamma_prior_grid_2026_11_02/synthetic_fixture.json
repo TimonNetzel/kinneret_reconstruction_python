@@ -1,0 +1,98 @@
+{
+ "kind": "synthetic_gamma_grid_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "note": "Invented prior.recent values; historical inputs come from prior_climate.R fits that are not bound.",
+ "grid_cases": {
+  "centre_25": {
+   "mean_pann": 500,
+   "sd_pann": 100,
+   "upper": 50000.0,
+   "hand_r_index": 250,
+   "hand_shape_approx": 25.0,
+   "hand": "s* = 25 lies on the grid (0.1 * 250); rate = sqrt(25)/100 = 0.05"
+  },
+  "midpoint_6_25": {
+   "mean_pann": 500,
+   "sd_pann": 200,
+   "upper": 50000.0,
+   "hand_r_index": 62,
+   "hand_shape_approx": 6.2,
+   "hand": "s* = 6.25 halfway between 6.2 and 6.3; concave sqrt favours the lower point"
+  },
+  "asymmetric_nearest_fails": {
+   "mean_pann": 315,
+   "sd_pann": 220,
+   "upper": 50000.0,
+   "hand_r_index": 20,
+   "hand_shape_approx": 2.0,
+   "hand": "s* = 2.0501: 2.1 is nearer, but 2.0 below s* has the smaller |difference|"
+  },
+  "beyond_upper_jumps_to_first": {
+   "mean_pann": 2500,
+   "sd_pann": 10,
+   "upper": 50000.0,
+   "hand_r_index": 1,
+   "hand_shape_approx": 0.1,
+   "hand": "s* = 62500 > 50000: f(0.1) = 0.0316 < f(50000) = 2.36, first point wins"
+  },
+  "below_first_point": {
+   "mean_pann": 30,
+   "sd_pann": 150,
+   "upper": 50000.0,
+   "hand_r_index": 1,
+   "hand_shape_approx": 0.1,
+   "hand": "s* = 0.04 < 0.1: f increases from the first grid point"
+  },
+  "centre_25_upper_5000": {
+   "mean_pann": 500,
+   "sd_pann": 100,
+   "upper": 5000.0,
+   "hand_r_index": 250,
+   "hand_shape_approx": 25.0,
+   "hand": "same interior result with the mcmc_prep_v1.2.R bound"
+  },
+  "just_beyond_5000_last_point": {
+   "mean_pann": 708,
+   "sd_pann": 10,
+   "upper": 5000.0,
+   "hand_r_index": 50000,
+   "hand_shape_approx": 5000.0,
+   "hand": "s* = 5012.64 > 5000: f(5000) = 0.0089 < f(0.1) = 0.0315; last point, clamped by pmin to exactly 5000"
+  },
+  "same_input_upper_50000": {
+   "mean_pann": 708,
+   "sd_pann": 10,
+   "upper": 50000.0,
+   "hand_r_index": 50126,
+   "hand_shape_approx": 5012.6,
+   "hand": "interior again: 5012.6 is nearer and below s*"
+  }
+ },
+ "chain_cases": {
+  "chain_recent_after_2000": {
+   "mean_pann": 500,
+   "sd_pann": 100,
+   "sd_tmp": 1.5,
+   "recent": true,
+   "min_age_at_least_2000": true,
+   "hand": "default shape 25; doubled sd 200 gives 6.2; rate 1733 = 6.2/500 = 0.0124"
+  },
+  "chain_recent_older": {
+   "mean_pann": 500,
+   "sd_pann": 100,
+   "sd_tmp": 1.5,
+   "recent": true,
+   "min_age_at_least_2000": false,
+   "hand": "no doubling; final equals default; rate 1733 = shape/500"
+  },
+  "chain_not_recent": {
+   "mean_pann": 500,
+   "sd_pann": 100,
+   "sd_tmp": 1.5,
+   "recent": false,
+   "min_age_at_least_2000": true,
+   "hand": "recent & ... is FALSE: no doubling, rate stays sqrt(shape)/sd from line 1281"
+  }
+ }
+}

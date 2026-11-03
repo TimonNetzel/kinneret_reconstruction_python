@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-02",
+  "base_commit": "44092d3856d1ab5f686e0ad30c57b3caf66e0ebd",
+  "status": "passed_static_reference_anchor_audit_not_a_reconstruction",
+  "checks": {
+    "deterministic_outputs": 3,
+    "AP_percentage_rows": 160,
+    "AP_max_rounding_error": 6.394884621840902e-14,
+    "source_change_guards": 16,
+    "dependency_paths_and_line_bindings": 12,
+    "source_flag_traces": 3,
+    "AP_mask_retained_with_hi_time_false": true,
+    "independently_checked_override_grid": {
+      "length": 418,
+      "gap_neighbors": [
+        2000,
+        14500
+      ]
+    },
+    "source_hashes_shared_with_previous_package": 5,
+    "all_explicit_sources_unchanged": true,
+    "previous_packet_files_byte_unchanged": 11,
+    "preserved_snapshot_files": 50,
+    "normalized_package_local_links_resolved": 9,
+    "collector_AST_valid": true,
+    "no_absolute_machine_paths_in_export": true,
+    "only_expected_existing_entry_points_changed": true
+  },
+  "output_sha256": {
+    "contract.json": "e960bd040bc725b5c07f54db198102fd61cfbc0a667e30a9ef4c32113e036eda",
+    "source_spans.json": "619337cbe33def324474f604292db9afe6e21df5681c7b5bbc1e1480143cf777",
+    "dependencies.csv": "d06d7c730174752b92fb7972163be0832e3122634bccf452f2aee2965b170e4f"
+  },
+  "not_run": [
+    "R",
+    "new calibration",
+    "wavelet calculation",
+    "Bacon",
+    "training",
+    "sampler",
+    "fossil reconstruction"
+  ],
+  "limits": "Missing workspaces, global climate data, final base/TFs and historical run/version binding remain unresolved"
+}

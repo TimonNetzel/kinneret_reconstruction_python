@@ -164,3 +164,58 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
   .detail-raster { grid-template-columns: 1fr 1fr 1.4fr; }
   .detail-raster .plot-mittel { grid-column: auto; height: 260px; }
 }
+
+/* Read-only research status, deliberately separate from reconstruction controls. */
+.forschung-steuerung h2 { margin: 0; font-size: 1.05rem; }
+.forschung-steuerung p { margin: 0; }
+.forschung-karte p { margin: 4px 0 10px; max-width: 80ch; }
+.forschung-karte a { color: var(--accent); text-underline-offset: 2px; }
+.forschung-karte .karte-kopf { align-items: flex-start; flex-wrap: wrap; }
+.forschung-status { border: 1px solid var(--line); border-radius: 14px; padding: 2px 9px; font-size: .8rem; }
+.forschung-status[data-status="missing"], .forschung-status[data-status="open"] {
+  color: var(--warn); background: var(--warn-bg); }
+.forschung-status[data-status="experimental"] { color: var(--accent); }
+/* Dissertation reproduction: checked submodules, open inputs, synthetic example (never a historical result). */
+.nachbau { margin-top: 18px; padding-top: 12px; border-top: 2px solid var(--line); }
+.nachbau > .karte-kopf { align-items: flex-start; flex-wrap: wrap; }
+.nachbau > .karte-kopf h2 { margin: 0; font-size: 1.15rem; }
+.nachbau > p { margin: 6px 0; max-width: 85ch; }
+.nachbau-karte h3 { font-size: 1rem; margin: 0 0 8px; display: inline; }
+.nachbau-karte h4 { font-size: .95rem; margin: 14px 0 4px; }
+.nachbau-karte p { margin: 8px 0; max-width: 85ch; }
+.nachbau-karte a { color: var(--accent); text-underline-offset: 2px; }
+.nachbau-liste { margin: 8px 0; padding-left: 1.3em; }
+.nachbau-liste li { margin: 0 0 10px; max-width: 85ch; }
+.nachbau-req-kopf { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.forschung-status[data-status="conflicting"] { color: var(--warn); background: var(--warn-bg); }
+.forschung-status[data-status="central"] { font-weight: 600; }
+.forschung-status[data-status="conditional"] { color: var(--muted); white-space: nowrap; }
+.nachbau-tabelle td[data-removed="true"], .nachbau-tabelle td[data-differs="true"] { color: var(--warn); }
+.nachbau-tabelle { width: auto; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
+.nachbau-tabelle th, .nachbau-tabelle td { padding: 4px 6px; }
+.nachbau-karte p.nachbau-titel { color: var(--muted); font-size: .85rem; margin: 10px 0 2px; }
+.nachbau-tabelle th[scope="row"] { text-align: left; white-space: nowrap; }
+@media (max-width: 520px) { .nachbau-tabelle { font-size: .78rem; } .nachbau-tabelle th, .nachbau-tabelle td { padding: 3px 4px; } }
+.nachbau-tabelle td:first-child, .nachbau-tabelle td:nth-child(2) { text-align: right; min-width: 0; }
+.nachbau-tabelle tr[data-row="keep"] td { color: var(--muted); }
+
+/* Paired species scores: numeric tables stay readable on small offline screens. */
+.arten-steuerung h2 { margin: 0; font-size: 1.05rem; }
+.arten-steuerung p { margin: 0; }
+#arten-auswahl { display: flex; flex-direction: column; gap: 12px; }
+.arten-raster { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px; }
+#arten-inhalt section > h2 { font-size: 1.05rem; margin: 8px 0; }
+#arten-inhalt h3 { font-size: .95rem; margin: 2px 0 8px; }
+#arten-inhalt .karte-kopf { align-items: flex-start; flex-wrap: wrap; }
+#arten-inhalt .karte p { margin: 6px 0; }
+#arten-inhalt table { font-variant-numeric: tabular-nums; }
+#arten-inhalt th:first-child { white-space: normal; width: 48%; }
+#arten-inhalt th, #arten-inhalt td { padding: 6px; }
+#arten-inhalt th:nth-child(n+2), #arten-inhalt td { text-align: right; }
+#arten-inhalt tr[data-method="nnet_smote"] { background: var(--bg2); }
+.arten-definition { font-size: .9rem; }
+.arten-definition dt { font-weight: 600; margin-top: 8px; }
+.arten-definition dd { margin: 2px 0; max-width: 85ch; }
+.arten-quellen a { color: var(--accent); text-underline-offset: 2px; }
+.nur-leser { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (min-width: 1200px) { .arten-raster { grid-template-columns: 1fr 1fr; } }

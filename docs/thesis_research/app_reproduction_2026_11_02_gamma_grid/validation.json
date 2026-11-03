@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (seven submodules incl. conditional taxon pruning and unconditional gamma prior grid), two frozen earlier states and synthetic examples; no historical case reproduction, no training, R run or fossil reconstruction",
+  "starting_commit": "94f81cc31e2ea14aaa7800c8b557200b0d3a9319",
+  "module_package_commit": "95bd0efe477fd39c4333f29142c80ac8630bd296",
+  "reproduction_state_sha256": "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[1] received only its link commit 3d013b2 (pushed, contains its unchanged state file); STATES[0] untouched",
+  "environment": {
+    "os": "Windows 11",
+    "python": ".venv with PYTHONPATH=src",
+    "node": "v24.19.0",
+    "playwright": "1.62.1 bundled with the Codex runtime via NODE_PATH",
+    "browser_channel": "msedge",
+    "offline": true
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 47,
+    "new_tests": 7,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same browser checks were executed explicitly below with --kanal msedge",
+    "local_junit_sha256": "c67e9ca16704852c71cad26254b9c712c0a3b41a4bd63000678fabdd5ddafad1"
+  },
+  "historical_tests": {
+    "files": [
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "passed": 352,
+    "new_tests": 55,
+    "local_junit_sha256": "8cf1cce2b5b20079f7da5018fe35dc142f86a49bdf7948c48ff76f83f745518f"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.5 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge --fotos .local/gamma_prior_grid_2026_11_02/fotos",
+    "status": "passed",
+    "cases": [
+      "index_handy_light",
+      "index_handy_dark",
+      "index_pc_light",
+      "index_pc_dark",
+      "index Gesten",
+      "kinneret-app_handy_light",
+      "kinneret-app_handy_dark",
+      "kinneret-app_pc_light",
+      "kinneret-app_pc_dark",
+      "kinneret-app Gesten"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "status_text": true,
+      "tests_shown": 352,
+      "modules": 7,
+      "conditional_tag_only_on_taxon_pruning": true,
+      "frozen_earlier_state_lines": [
+        "2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f",
+        "2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421"
+      ],
+      "open_requirements": 11,
+      "conflicting_requirements": 4,
+      "central_requirements": 4,
+      "links": 15,
+      "links_pinned_to_95bd0ef": 13,
+      "links_to_frozen_states": {
+        "47a926c": 1,
+        "3d013b2": 1
+      },
+      "example_collapsed_by_default": true,
+      "synthetic_warning_visible": true,
+      "example_tables": 6,
+      "pruning_removed_cells": 2,
+      "gamma_naive_differing_cells": 3,
+      "gamma_case1_shape_double": "25.000000000000004",
+      "open_state_kept_on_language_switch": true,
+      "page_or_table_overflow": false,
+      "absent_reproduction_state_visible": true,
+      "absent_snapshot_keeps_reproduction_state": true
+    },
+    "first_run_finding": "none; all ten cases passed in the first run",
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "two_sites": {
+    "tool": "tests/test_app.py::_zweiter_standort on results/app, then node tools/app_pruefen.js --zwei-standorte <copy>/index.html --kanal msedge",
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "gamma table at 390 px phone width, light",
+    "desktop.png": "gamma table and chain sentence, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite; contains sampler unit tests)",
+    "docs/thesis_research/literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "local_artifacts": ".local/gamma_prior_grid_2026_11_02/ (not versioned)",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

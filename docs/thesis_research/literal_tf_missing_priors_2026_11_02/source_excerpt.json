@@ -1,0 +1,131 @@
+{
+  "status": "read_only_original_spans",
+  "spans": [
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 673,
+      "last_line": 677,
+      "role": "bound reconstruction loop sources mcmc_prepare.R, then conduction and postprocessing",
+      "text": "    \n    \n    source(\"src/mcmc_prepare.R\")  \n    source(\"src/mcmc_conduction.R\")    \n    source(\"src/mcmc_trimming_posterior_trafo.R\")"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1433,
+      "last_line": 1442,
+      "role": "num_taxa <- ncol(all.avail) at depth 0 and the first priors incl. phi1/phi2",
+      "text": "# prior parameter distribution\nprior <- posterior <- list()\nnum_taxa <- ncol(all.avail)\n\nprior$phi <- num_taxa/2\nprior$taxa.weights <- rep(1/num_taxa,times = num_taxa)\nprior$phi2 <- (num_taxa-2)/2\nprior$phi1 <- num_taxa/2\nprior$nr.taxa.mean <- posterior$nr.taxa.mean[1] <- num_taxa\nprior$nr.taxa.sd <- round(num_taxa/4)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1450,
+      "last_line": 1454,
+      "role": "which_taxa <- c(1:num_taxa); taxa.appear.core <- all.avail.age[,which_taxa]",
+      "text": "which_taxa <- c(1:num_taxa)\n# if(add.sites) taxa.sampled <- colnames(all.avail)[which_taxa] \ntaxa.sampled <- colnames(all.avail)[which_taxa] \ntaxa.pool.current <- taxa.sampled\ntaxa.appear.core <- all.avail.age[,which_taxa]"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1460,
+      "last_line": 1467,
+      "role": "taxa_change <- FALSE at depth 0",
+      "text": "taxa.merge <- anyNA(match(taxa.sampled,taxa.distribution.ww$names)) \ntf_x12_mean_current <- c()\ntaxa_change <- FALSE\nif(!taxa.merge){\n    reconst_ages <- rep(TRUE, length(age))\n}else{\n    reconst_ages <- ages_hol\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1499,
+      "last_line": 1502,
+      "role": "the only taxa_change <- TRUE, behind if(any(...) & FALSE): inactive",
+      "text": "    # use two different taxa distributions for Holocene and Glacial respectively\n    if(any(sitename == c(\"Birkat Ram\",\"Dead Sea\")) & FALSE){\n        taxa_change <- TRUE\n        which_taxa_temp <- unlist(which_taxa)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1527,
+      "last_line": 1532,
+      "role": "renames colnames(all.avail) only; the column count is unchanged",
+      "text": "        for(j in 1:length(splitted_names)) taxa_names_temp[j] <- splitted_names[[j]][1]\n        for(j in 1:length(which_taxa)){\n            if(length(which_taxa[[j]]) > 1){\n                colnames(all.avail)[j] <- taxa_names_temp[which_taxa[[j]]][1]\n            }\n        }"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1572,
+      "last_line": 1582,
+      "role": "else branch: TF rows follow taxa.sampled = colnames(all.avail); row norm",
+      "text": "} else {\n    which_taxa <- match(taxa.sampled,taxa.distribution.ww$names)\n    tf.x1.current <- tf.x1[which_taxa,]\n    tf.x2.current <- tf.x2[which_taxa,]\n#     tf.x12.current <- tf.x12[which_taxa,,]\n#     tf_x12_mean_current <- tf_x12_mean[which_taxa,]\n}\n\n# norm the TFs\ntf.x1.current <- tf.x1.current/rowSums(tf.x1.current, na.rm=T)\ntf.x2.current <- tf.x2.current/rowSums(tf.x2.current, na.rm=T)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1626,
+      "last_line": 1632,
+      "role": "documented only: weightedMedian (matrixStats) produces the NA mask",
+      "text": "dims2 <- 100000\ntann_expand <- spline(x1range.bck,n=dims2)$y\ntf.x1.current.mean <- tf.x1.current.mean_change <- c()\nfor(j in 1:nrow(tf.x1.current) ){\n    # weighted median of temperature in climate space\n    tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )\n    if(taxa_change) tf.x1.current.mean_change[j] <- weightedMedian(x1range.bck,tf.x1.current_change[j,] )"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1663,
+      "last_line": 1686,
+      "role": "implemented: which.tf.missing removal and the num_taxa priors",
+      "text": "#  which transfer functions are available\nwhich.tf.missing <- which(is.na(tf.x1.current.mean))\nif(length(which.tf.missing) != 0){\n    taxa.appear.core <- taxa.appear.core[,-which.tf.missing]\n    tf.x1.current <- tf.x1.current[-which.tf.missing,]\n    tf.x2.current <- tf.x2.current[-which.tf.missing,]\n    tf.x1.current.mean <- tf.x1.current.mean[-which.tf.missing]\n    tf.x2.current.mean <- tf.x2.current.mean[-which.tf.missing]\n    if(taxa_change){\n        tf.x1.current.mean_change <- tf.x1.current.mean_change[-which.tf.missing]\n        tf.x2.current.mean_change <- tf.x2.current.mean_change[-which.tf.missing]\n    }\n    \n    all.avail <- all.avail[,-which.tf.missing]\n    all.avail.age <- all.avail.age[,-which.tf.missing]\n    num_taxa <- nrow(tf.x1.current)\n}\n\nwhich_taxa <- c(1:num_taxa)\nprior$taxa.weights <- rep(1/num_taxa,times = num_taxa)\nprior$phi <- num_taxa/2\nprior$nr.taxa.mean <- posterior$nr.taxa.mean[1] <- num_taxa\nprior$nr.taxa.sd <- round(num_taxa/4)\n"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1702,
+      "last_line": 1706,
+      "role": "downstream: combs over 1:num_taxa; posterior <- list() discards 1684",
+      "text": "combs <- c()\nfor(c in 1:num_taxa) combs[c] <- choose(num_taxa,c)\n\n# random starting values\nposterior <- list()"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 129,
+      "last_line": 137,
+      "role": "audit candidate: default thresholds mean +/- sd",
+      "text": "\n# default thresholds\ntann_thresh1 <- prior.recent$mean.tmp - prior.recent$sd.tmp\ntann_thresh2 <- prior.recent$mean.tmp + prior.recent$sd.tmp\ntann_thresh_hist <- tann_thresh_mh <- tann_thresh_lgm <- c(tann_thresh1,tann_thresh2)\n\npann_thresh1 <- prior.recent$mean.pann - prior.recent$sd.pann\npann_thresh2 <- prior.recent$mean.pann + prior.recent$sd.pann\npann_thresh_hist <- pann_thresh_mh <- pann_thresh_lgm <- c(pann_thresh1,pann_thresh2)"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 186,
+      "last_line": 208,
+      "role": "audit: period branch overwrites thresholds from fitdistr inputs and quantile",
+      "text": "        # create distributions\n        tann_hist <- tann_hist+tann_bias\n        params <- fitdistr(tann_hist, \"normal\")\n        tann_hist_mean <- params$es[1]\n        tann_hist_sd  <- params$es[2]\n\n        pann_hist <- pann_hist+pann_bias\n#         pann_hist[pann_hist == 0] <- 1e-06\n        params <- fitdistr(pann_hist, \"gamma\")\n        pann_hist_mean <- median(pann_hist)\n        pann_hist_shape  <- params$es[1]\n        pann_hist_rate   <- params$es[2]\n        \n        # thresholds\n        tann_thresh1 <- mean(tann_hist) - sd(tann_hist)\n        tann_thresh2 <- mean(tann_hist) + sd(tann_hist)\n        tann_thresh_hist <- c(tann_thresh1,tann_thresh2)\n        tann_thresh_hist <- c(quantile(tann_hist,0.25),quantile(tann_hist,0.75))  \n        \n        pann_thresh1 <- mean(pann_hist) - sd(pann_hist)\n        pann_thresh2 <- mean(pann_hist) + sd(pann_hist)\n        pann_thresh_hist <- c(pann_thresh1,pann_thresh2)\n        pann_thresh_hist <- c(quantile(pann_hist,0.25),quantile(pann_hist,0.75))  "
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1295,
+      "last_line": 1303,
+      "role": "documented only: set.seed(2022) + rnorm/rgamma + quantile thresholds",
+      "text": "# via interquantile range\n# tann\nset.seed(2022)\nprior_tann_sample <- rnorm(10000,prior.recent$mean.tmp,prior.recent$sd.tmp)\ntann_thresh <- quantile(prior_tann_sample,c(0.25,0.75))\n# pann\nset.seed(2022)\nprior_pann_sample <- rgamma(10000,shape=shape,rate=rate)\npann_thresh <- quantile(prior_pann_sample,c(0.25,0.75))"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1729,
+      "last_line": 1735,
+      "role": "documented only: rbeta in the recent start values",
+      "text": "# recent climate start values\nif(recent){\n    posterior$post_tann[1] <- prior.recent$mean.tmp - prior.recent$sd.tmp +rbeta(1,0.1,20) #rnorm(1,prior.recent$mean.tmp,5)\n#     shape <- 20\n    rate <- shape/prior.recent$mean.pann\n    posterior$post_pann[1] <- prior.recent$mean.pann + prior.recent$sd.pann +rbeta(1,0.1,20) # rgamma(1,shape=shape,rate=rate)\n    "
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 319,
+      "last_line": 328,
+      "role": "audit: thresholds are read through inside.range (semantics unbound)",
+      "text": "    tann_acc <- which(inside.range(post.tmp,tann_thresh))\n    pann_acc <- which(inside.range(post.pann,pann_thresh))\n    \n    tann_acc_hist <- which(inside.range(post.tmp_hist,tann_thresh_hist))\n    pann_acc_hist <- which(inside.range(post.pann_hist,pann_thresh_hist))\n    \n    tann_acc_mh <- which(inside.range(post.tmp_mh,tann_thresh_mh))\n    pann_acc_mh <- which(inside.range(post.pann_mh,pann_thresh_mh))\n    \n    tann_acc_lgm <- which(inside.range(post.tmp_lgm,tann_thresh_lgm))"
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1210,
+      "last_line": 1216,
+      "role": "prior$phi1 appears only in a comment; sampler uses jeffreys_prior",
+      "text": "    which_taxa <- rep(0,num_taxa)\n    which_taxa[posterior_temp$z] <- 1\n    # https://stats.stackexchange.com/questions/44494/why-is-the-dirichlet-distribution-the-prior-for-the-multinomial-distribution\n    # jeffreys prior (non-informative): prior$taxa.weights * prior$phi1\n    testing <- F\n    while (testing == F) {\n        new_weight <- SBMSplitMerge::rdirichlet(1,posterior_temp$jeffreys_prior + which_taxa)"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 52,
+      "last_line": 58,
+      "role": "reader (sampler, not run): num_taxa",
+      "text": "\nif(gibbs){\n    posterior$how_many_taxa <- floor(num_taxa/2) \n    parameter_stage <- parameter_stage_gibbs\n}else{\n    posterior$how_many_taxa <- num_taxa\n    parameter_stage <- parameter_stage_weights"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 110,
+      "last_line": 115,
+      "role": "reader (sampler, not run): taxa weights rebuilt from num_taxa",
+      "text": "predictant_tann <- predictant_pann <- c()\n \nposterior$taxa_weights <- posterior$z <- vector(\"list\",length = sample_length) \nposterior_temp$taxa_weights <- posterior$taxa_weights[[1]] <-  rep(1/((num_taxa)),num_taxa)\nposterior_temp$z <- posterior$z[[1]] <-  1:posterior$how_many_taxa\nposterior_temp$tf_sample <- array(NA, dim = c(num_taxa,2))"
+    }
+  ]
+}

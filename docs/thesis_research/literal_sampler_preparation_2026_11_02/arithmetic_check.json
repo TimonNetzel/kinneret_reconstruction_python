@@ -1,0 +1,308 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "cases": 8,
+ "agreement": "exact equality of counts, R specials and correctly rounded doubles",
+ "hand_expectations": {
+  "rowwise_flatten_three_by_four": {
+   "how_many_taxa": 4,
+   "agrees": true
+  },
+  "na_skipped_in_mean_and_max": {
+   "how_many_taxa": 3,
+   "agrees": true
+  },
+  "zero_column_gives_nan": {
+   "how_many_taxa": 3,
+   "agrees": true
+  },
+  "zero_max_negative_and_na": {
+   "how_many_taxa": 3,
+   "agrees": true
+  },
+  "gibbs_true_branch_odd_num_taxa": {
+   "how_many_taxa": 2,
+   "agrees": true
+  },
+  "weights_branch_odd_num_taxa": {
+   "how_many_taxa": 5,
+   "agrees": true
+  },
+  "minimal_two_by_two": {
+   "how_many_taxa": 2,
+   "agrees": true
+  },
+  "inexact_partial_sums_flagged": {
+   "how_many_taxa": 2,
+   "agrees": true
+  }
+ },
+ "naive_counterexamples": {
+  "rowwise_flatten_three_by_four": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 8
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.21428571428571427,
+     0.42857142857142855,
+     0.10714285714285714
+    ],
+    [
+     0.075,
+     0.225,
+     0.45
+    ],
+    [
+     0.21428571428571427,
+     0.10714285714285714,
+     0.42857142857142855
+    ],
+    [
+     0.125,
+     0.25,
+     0.375
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value",
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 2,
+   "weights_count": 4
+  },
+  "na_skipped_in_mean_and_max": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 6
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    "NA column (mean without na.rm)",
+    "NA column (mean without na.rm)",
+    "NA column (mean without na.rm)"
+   ],
+   "colmeans_without_na_rm": [
+    "NA",
+    "NA",
+    "NA"
+   ],
+   "gibbs_floor_half": 1,
+   "weights_count": 3
+  },
+  "zero_column_gives_nan": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 6
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.14285714285714285,
+     0.2857142857142857,
+     0.5714285714285714
+    ],
+    null,
+    [
+     0.2857142857142857,
+     0.5714285714285714,
+     0.14285714285714285
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 1,
+   "weights_count": 3
+  },
+  "zero_max_negative_and_na": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 6
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    "NA column (mean without na.rm)",
+    [
+     0.2857142857142857,
+     0.5714285714285714,
+     0.14285714285714285
+    ],
+    [
+     0.5,
+     0.16666666666666666,
+     0.3333333333333333
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "NA",
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 1,
+   "weights_count": 3
+  },
+  "gibbs_true_branch_odd_num_taxa": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 8
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.06666666666666667,
+     0.3333333333333333
+    ],
+    [
+     0.13333333333333333,
+     0.26666666666666666
+    ],
+    [
+     0.2,
+     0.2
+    ],
+    [
+     0.26666666666666666,
+     0.13333333333333333
+    ],
+    [
+     0.3333333333333333,
+     0.06666666666666667
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value",
+    "value",
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 2,
+   "weights_count": 5
+  },
+  "weights_branch_odd_num_taxa": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 8
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.06666666666666667,
+     0.3333333333333333
+    ],
+    [
+     0.13333333333333333,
+     0.26666666666666666
+    ],
+    [
+     0.2,
+     0.2
+    ],
+    [
+     0.26666666666666666,
+     0.13333333333333333
+    ],
+    [
+     0.3333333333333333,
+     0.06666666666666667
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value",
+    "value",
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 2,
+   "weights_count": 5
+  },
+  "minimal_two_by_two": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 2
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.3333333333333333,
+     0.6666666666666666
+    ],
+    [
+     0.3333333333333333,
+     0.6666666666666666
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 1,
+   "weights_count": 2
+  },
+  "inexact_partial_sums_flagged": {
+   "column_major_flatten_differs": true,
+   "misaligned_weight_positions": {
+    "rowwise": 0,
+    "column_major": 2
+   },
+   "line64_values_differ_from_75": true,
+   "global_max_differs": true,
+   "line72_commented_alternative": [
+    [
+     0.25,
+     0.5,
+     0.75
+    ],
+    [
+     0.25,
+     0.5,
+     0.75
+    ]
+   ],
+   "colmeans_without_na_rm": [
+    "value",
+    "value"
+   ],
+   "gibbs_floor_half": 1,
+   "weights_count": 2
+  }
+ },
+ "byrow_round_trip_1276": {
+  "rule": "matrix(values, ncol, nrow, byrow = T) restores the normalised matrix",
+  "cases": {
+   "rowwise_flatten_three_by_four": true,
+   "na_skipped_in_mean_and_max": true,
+   "zero_column_gives_nan": true,
+   "zero_max_negative_and_na": true,
+   "gibbs_true_branch_odd_num_taxa": true,
+   "weights_branch_odd_num_taxa": true,
+   "minimal_two_by_two": true,
+   "inexact_partial_sums_flagged": true
+  }
+ },
+ "col_means_precision": "module and reference give the correctly rounded exact mean; R may accumulate in extended precision, so only means flagged accumulator independent are R-exact; taxa_means has no reader in the bound loop files",
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false
+}

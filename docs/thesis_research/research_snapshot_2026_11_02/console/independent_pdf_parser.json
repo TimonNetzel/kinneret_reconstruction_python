@@ -1,0 +1,1962 @@
+{
+  "parser": "PyMuPDF 2.0",
+  "method": "unfiltered get_texttrace display operations; fill and stroke checked separately to avoid double counting Tr=2",
+  "encoding_note": "MuPDF extracts this PDF point glyph as G; count glyph characters by font/color rather than assuming Unicode bullet. Seven title hyphens extract as U+2212; only the independent comparison maps that typographic code back to raw PDF literal U+002D. Stored names and original PDF are unchanged.",
+  "regular_text_extraction_deduplicates_overlapping_points_and_is_not_used_for_counts": true,
+  "checks": {
+    "same_278_page_count": true,
+    "all_titles_match_with_explicit_font_minus_mapping": true,
+    "all_filled_glyph_counts_match": true,
+    "all_stroked_glyph_counts_match": true,
+    "all_point_colors_match": true
+  },
+  "all_checks_passed": true,
+  "pages": [
+    {
+      "page": 1,
+      "filled_glyph_count": 268,
+      "stroked_glyph_count": 268,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Groenlandia densa"
+    },
+    {
+      "page": 2,
+      "filled_glyph_count": 430,
+      "stroked_glyph_count": 430,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Groenlandia densa"
+    },
+    {
+      "page": 3,
+      "filled_glyph_count": 1933,
+      "stroked_glyph_count": 1933,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Hedera helix"
+    },
+    {
+      "page": 4,
+      "filled_glyph_count": 945,
+      "stroked_glyph_count": 945,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Hippophae rhamnoides"
+    },
+    {
+      "page": 5,
+      "filled_glyph_count": 13948,
+      "stroked_glyph_count": 13948,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Hippuris vulgaris"
+    },
+    {
+      "page": 6,
+      "filled_glyph_count": 7941,
+      "stroked_glyph_count": 7941,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Huperzia selago"
+    },
+    {
+      "page": 7,
+      "filled_glyph_count": 4509,
+      "stroked_glyph_count": 4509,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Hydrocharis morsus-ranae"
+    },
+    {
+      "page": 8,
+      "filled_glyph_count": 2420,
+      "stroked_glyph_count": 2420,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Hypochoeris radicata"
+    },
+    {
+      "page": 9,
+      "filled_glyph_count": 793,
+      "stroked_glyph_count": 793,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ilex aquifolium"
+    },
+    {
+      "page": 10,
+      "filled_glyph_count": 3949,
+      "stroked_glyph_count": 3949,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Iris pseudacorus"
+    },
+    {
+      "page": 11,
+      "filled_glyph_count": 3460,
+      "stroked_glyph_count": 3460,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer"
+    },
+    {
+      "page": 12,
+      "filled_glyph_count": 2926,
+      "stroked_glyph_count": 2926,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Juglans sp."
+    },
+    {
+      "page": 13,
+      "filled_glyph_count": 13002,
+      "stroked_glyph_count": 13002,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Juniperus communis"
+    },
+    {
+      "page": 14,
+      "filled_glyph_count": 814,
+      "stroked_glyph_count": 814,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Juniperus oxycedrus"
+    },
+    {
+      "page": 15,
+      "filled_glyph_count": 355,
+      "stroked_glyph_count": 355,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Juniperus phoenicea"
+    },
+    {
+      "page": 16,
+      "filled_glyph_count": 45,
+      "stroked_glyph_count": 45,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Juniperus thurifera L"
+    },
+    {
+      "page": 17,
+      "filled_glyph_count": 149,
+      "stroked_glyph_count": 149,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Koenigia islandica"
+    },
+    {
+      "page": 18,
+      "filled_glyph_count": 3650,
+      "stroked_glyph_count": 3650,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Larix"
+    },
+    {
+      "page": 19,
+      "filled_glyph_count": 94,
+      "stroked_glyph_count": 94,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Larix decidua"
+    },
+    {
+      "page": 20,
+      "filled_glyph_count": 3556,
+      "stroked_glyph_count": 3556,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Larix sibirica"
+    },
+    {
+      "page": 21,
+      "filled_glyph_count": 1402,
+      "stroked_glyph_count": 1402,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Lemna gibba"
+    },
+    {
+      "page": 22,
+      "filled_glyph_count": 1629,
+      "stroked_glyph_count": 1629,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer campestre"
+    },
+    {
+      "page": 23,
+      "filled_glyph_count": 4306,
+      "stroked_glyph_count": 4306,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Lemna trisulca"
+    },
+    {
+      "page": 24,
+      "filled_glyph_count": 1225,
+      "stroked_glyph_count": 1225,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ligustrum vulgare"
+    },
+    {
+      "page": 25,
+      "filled_glyph_count": 1425,
+      "stroked_glyph_count": 1425,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Linum perenne"
+    },
+    {
+      "page": 26,
+      "filled_glyph_count": 17,
+      "stroked_glyph_count": 17,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Liquidambar orientalis"
+    },
+    {
+      "page": 27,
+      "filled_glyph_count": 292,
+      "stroked_glyph_count": 292,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Loranthus europaeus"
+    },
+    {
+      "page": 28,
+      "filled_glyph_count": 2797,
+      "stroked_glyph_count": 2797,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Luzula campestris"
+    },
+    {
+      "page": 29,
+      "filled_glyph_count": 2764,
+      "stroked_glyph_count": 2764,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Luzula pallescens"
+    },
+    {
+      "page": 30,
+      "filled_glyph_count": 4810,
+      "stroked_glyph_count": 4810,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Lychnis flos-cuculi"
+    },
+    {
+      "page": 31,
+      "filled_glyph_count": 6205,
+      "stroked_glyph_count": 6205,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Lycopus europaeus"
+    },
+    {
+      "page": 32,
+      "filled_glyph_count": 12695,
+      "stroked_glyph_count": 12695,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Menyanthes trifoliata"
+    },
+    {
+      "page": 33,
+      "filled_glyph_count": 499,
+      "stroked_glyph_count": 499,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer monspessulanum"
+    },
+    {
+      "page": 34,
+      "filled_glyph_count": 4262,
+      "stroked_glyph_count": 4262,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Moehringia trinervia"
+    },
+    {
+      "page": 35,
+      "filled_glyph_count": 975,
+      "stroked_glyph_count": 975,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Myrica gale"
+    },
+    {
+      "page": 36,
+      "filled_glyph_count": 1576,
+      "stroked_glyph_count": 1576,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Myriophyllum alterniflorum"
+    },
+    {
+      "page": 37,
+      "filled_glyph_count": 5696,
+      "stroked_glyph_count": 5696,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Myriophyllum verticillatum"
+    },
+    {
+      "page": 38,
+      "filled_glyph_count": 9589,
+      "stroked_glyph_count": 9589,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Myriopyhyllum spicatum"
+    },
+    {
+      "page": 39,
+      "filled_glyph_count": 320,
+      "stroked_glyph_count": 320,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Najas marina"
+    },
+    {
+      "page": 40,
+      "filled_glyph_count": 1154,
+      "stroked_glyph_count": 1154,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Najas minor"
+    },
+    {
+      "page": 41,
+      "filled_glyph_count": 6315,
+      "stroked_glyph_count": 6315,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Nuphar lutea"
+    },
+    {
+      "page": 42,
+      "filled_glyph_count": 5834,
+      "stroked_glyph_count": 5834,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Nymphaea"
+    },
+    {
+      "page": 43,
+      "filled_glyph_count": 2794,
+      "stroked_glyph_count": 2794,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Nymphaea alba"
+    },
+    {
+      "page": 44,
+      "filled_glyph_count": 2423,
+      "stroked_glyph_count": 2423,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer platanoides"
+    },
+    {
+      "page": 45,
+      "filled_glyph_count": 4146,
+      "stroked_glyph_count": 4146,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Nymphaea candida"
+    },
+    {
+      "page": 46,
+      "filled_glyph_count": 967,
+      "stroked_glyph_count": 967,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Olea europaea"
+    },
+    {
+      "page": 47,
+      "filled_glyph_count": 9,
+      "stroked_glyph_count": 9,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Olea Europaea"
+    },
+    {
+      "page": 48,
+      "filled_glyph_count": 2283,
+      "stroked_glyph_count": 2283,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Osmunda regalis"
+    },
+    {
+      "page": 49,
+      "filled_glyph_count": 311,
+      "stroked_glyph_count": 311,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ostrya carpinifolia"
+    },
+    {
+      "page": 50,
+      "filled_glyph_count": 8317,
+      "stroked_glyph_count": 8317,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Oxycarpus micrococcus"
+    },
+    {
+      "page": 51,
+      "filled_glyph_count": 544,
+      "stroked_glyph_count": 544,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Phillyrea"
+    },
+    {
+      "page": 52,
+      "filled_glyph_count": 363,
+      "stroked_glyph_count": 363,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Phillyrea angustifolia"
+    },
+    {
+      "page": 53,
+      "filled_glyph_count": 434,
+      "stroked_glyph_count": 434,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Phillyrea latifolia"
+    },
+    {
+      "page": 54,
+      "filled_glyph_count": 6,
+      "stroked_glyph_count": 6,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Phillyrea Latifolia"
+    },
+    {
+      "page": 55,
+      "filled_glyph_count": 838,
+      "stroked_glyph_count": 838,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer pseudoplatanus"
+    },
+    {
+      "page": 56,
+      "filled_glyph_count": 2365,
+      "stroked_glyph_count": 2365,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Picea abies"
+    },
+    {
+      "page": 57,
+      "filled_glyph_count": 62,
+      "stroked_glyph_count": 62,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus brutia"
+    },
+    {
+      "page": 58,
+      "filled_glyph_count": 3789,
+      "stroked_glyph_count": 3789,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus cembra"
+    },
+    {
+      "page": 59,
+      "filled_glyph_count": 105,
+      "stroked_glyph_count": 105,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus halepensis"
+    },
+    {
+      "page": 60,
+      "filled_glyph_count": 141,
+      "stroked_glyph_count": 141,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus mugo"
+    },
+    {
+      "page": 61,
+      "filled_glyph_count": 253,
+      "stroked_glyph_count": 253,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus nigra"
+    },
+    {
+      "page": 62,
+      "filled_glyph_count": 107,
+      "stroked_glyph_count": 107,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus pinaster"
+    },
+    {
+      "page": 63,
+      "filled_glyph_count": 117,
+      "stroked_glyph_count": 117,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus pinea"
+    },
+    {
+      "page": 64,
+      "filled_glyph_count": 7711,
+      "stroked_glyph_count": 7711,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pinus sylvestris"
+    },
+    {
+      "page": 65,
+      "filled_glyph_count": 863,
+      "stroked_glyph_count": 863,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acer tataricum"
+    },
+    {
+      "page": 66,
+      "filled_glyph_count": 2672,
+      "stroked_glyph_count": 2672,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pistacia Europe"
+    },
+    {
+      "page": 67,
+      "filled_glyph_count": 428,
+      "stroked_glyph_count": 428,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pistacia lentiscus"
+    },
+    {
+      "page": 68,
+      "filled_glyph_count": 9,
+      "stroked_glyph_count": 9,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pistacia Lentiscus"
+    },
+    {
+      "page": 69,
+      "filled_glyph_count": 6629,
+      "stroked_glyph_count": 6629,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Plantago lanceolata"
+    },
+    {
+      "page": 70,
+      "filled_glyph_count": 11,
+      "stroked_glyph_count": 11,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Plantago Lanceolata"
+    },
+    {
+      "page": 71,
+      "filled_glyph_count": 14479,
+      "stroked_glyph_count": 14479,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Plantago major"
+    },
+    {
+      "page": 72,
+      "filled_glyph_count": 6718,
+      "stroked_glyph_count": 6718,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Plantago media"
+    },
+    {
+      "page": 73,
+      "filled_glyph_count": 6,
+      "stroked_glyph_count": 6,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Platanus Orientalis"
+    },
+    {
+      "page": 74,
+      "filled_glyph_count": 2758,
+      "stroked_glyph_count": 2758,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Polemonium caeruleum"
+    },
+    {
+      "page": 75,
+      "filled_glyph_count": 10389,
+      "stroked_glyph_count": 10389,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Polygonum aviculare"
+    },
+    {
+      "page": 76,
+      "filled_glyph_count": 4,
+      "stroked_glyph_count": 4,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Aesculus hippocastanum"
+    },
+    {
+      "page": 77,
+      "filled_glyph_count": 9463,
+      "stroked_glyph_count": 9463,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Polygonum hydropiper"
+    },
+    {
+      "page": 78,
+      "filled_glyph_count": 15757,
+      "stroked_glyph_count": 15757,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Polygonum lapathifolium"
+    },
+    {
+      "page": 79,
+      "filled_glyph_count": 5270,
+      "stroked_glyph_count": 5270,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Populus alba"
+    },
+    {
+      "page": 80,
+      "filled_glyph_count": 4515,
+      "stroked_glyph_count": 4515,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Populus nigra"
+    },
+    {
+      "page": 81,
+      "filled_glyph_count": 13435,
+      "stroked_glyph_count": 13435,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton"
+    },
+    {
+      "page": 82,
+      "filled_glyph_count": 2674,
+      "stroked_glyph_count": 2674,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton alpinus"
+    },
+    {
+      "page": 83,
+      "filled_glyph_count": 5024,
+      "stroked_glyph_count": 5024,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton crispus"
+    },
+    {
+      "page": 84,
+      "filled_glyph_count": 779,
+      "stroked_glyph_count": 779,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton densus"
+    },
+    {
+      "page": 85,
+      "filled_glyph_count": 191,
+      "stroked_glyph_count": 191,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton distinctus"
+    },
+    {
+      "page": 86,
+      "filled_glyph_count": 657,
+      "stroked_glyph_count": 657,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton filiformis"
+    },
+    {
+      "page": 87,
+      "filled_glyph_count": 2918,
+      "stroked_glyph_count": 2918,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ajuga reptans"
+    },
+    {
+      "page": 88,
+      "filled_glyph_count": 1467,
+      "stroked_glyph_count": 1467,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton frisii"
+    },
+    {
+      "page": 89,
+      "filled_glyph_count": 3453,
+      "stroked_glyph_count": 3453,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton gramineus"
+    },
+    {
+      "page": 90,
+      "filled_glyph_count": 9556,
+      "stroked_glyph_count": 9556,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton natans"
+    },
+    {
+      "page": 91,
+      "filled_glyph_count": 941,
+      "stroked_glyph_count": 941,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton obtusifolius"
+    },
+    {
+      "page": 92,
+      "filled_glyph_count": 12120,
+      "stroked_glyph_count": 12120,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton pectinatus"
+    },
+    {
+      "page": 93,
+      "filled_glyph_count": 4321,
+      "stroked_glyph_count": 4321,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton perfoliatus"
+    },
+    {
+      "page": 94,
+      "filled_glyph_count": 1615,
+      "stroked_glyph_count": 1615,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton praelongus"
+    },
+    {
+      "page": 95,
+      "filled_glyph_count": 3791,
+      "stroked_glyph_count": 3791,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton pusillus"
+    },
+    {
+      "page": 96,
+      "filled_glyph_count": 1125,
+      "stroked_glyph_count": 1125,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potamogeton trichoides"
+    },
+    {
+      "page": 97,
+      "filled_glyph_count": 11305,
+      "stroked_glyph_count": 11305,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potentilla anserina"
+    },
+    {
+      "page": 98,
+      "filled_glyph_count": 199,
+      "stroked_glyph_count": 199,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Aldrovanda vesiculosa"
+    },
+    {
+      "page": 99,
+      "filled_glyph_count": 4522,
+      "stroked_glyph_count": 4522,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potentilla erecta"
+    },
+    {
+      "page": 100,
+      "filled_glyph_count": 696,
+      "stroked_glyph_count": 696,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Potentilla heptaphylla"
+    },
+    {
+      "page": 101,
+      "filled_glyph_count": 1445,
+      "stroked_glyph_count": 1445,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Prunus avium"
+    },
+    {
+      "page": 102,
+      "filled_glyph_count": 9696,
+      "stroked_glyph_count": 9696,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Prunus padus"
+    },
+    {
+      "page": 103,
+      "filled_glyph_count": 3005,
+      "stroked_glyph_count": 3005,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Prunus spinosa"
+    },
+    {
+      "page": 104,
+      "filled_glyph_count": 11041,
+      "stroked_glyph_count": 11041,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pteridium aquilinum"
+    },
+    {
+      "page": 105,
+      "filled_glyph_count": 18,
+      "stroked_glyph_count": 18,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pterocarya fraxinifolia"
+    },
+    {
+      "page": 106,
+      "filled_glyph_count": 264,
+      "stroked_glyph_count": 264,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Pulsatilla alpina"
+    },
+    {
+      "page": 107,
+      "filled_glyph_count": 17,
+      "stroked_glyph_count": 17,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus Calliprinos"
+    },
+    {
+      "page": 108,
+      "filled_glyph_count": 485,
+      "stroked_glyph_count": 485,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus cerris"
+    },
+    {
+      "page": 109,
+      "filled_glyph_count": 14468,
+      "stroked_glyph_count": 14468,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alisma plantago-aquatica"
+    },
+    {
+      "page": 110,
+      "filled_glyph_count": 333,
+      "stroked_glyph_count": 333,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies alba"
+    },
+    {
+      "page": 111,
+      "filled_glyph_count": 470,
+      "stroked_glyph_count": 470,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus coccifera"
+    },
+    {
+      "page": 112,
+      "filled_glyph_count": 3374,
+      "stroked_glyph_count": 3374,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus deciduous"
+    },
+    {
+      "page": 113,
+      "filled_glyph_count": 984,
+      "stroked_glyph_count": 984,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus evergreen"
+    },
+    {
+      "page": 114,
+      "filled_glyph_count": 202,
+      "stroked_glyph_count": 202,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus frainetto"
+    },
+    {
+      "page": 115,
+      "filled_glyph_count": 491,
+      "stroked_glyph_count": 491,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus ilex"
+    },
+    {
+      "page": 116,
+      "filled_glyph_count": 661,
+      "stroked_glyph_count": 661,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus ilex-type"
+    },
+    {
+      "page": 117,
+      "filled_glyph_count": 8,
+      "stroked_glyph_count": 8,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus Ithaburensis"
+    },
+    {
+      "page": 118,
+      "filled_glyph_count": 1468,
+      "stroked_glyph_count": 1468,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus petraea"
+    },
+    {
+      "page": 119,
+      "filled_glyph_count": 891,
+      "stroked_glyph_count": 891,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus pubescens"
+    },
+    {
+      "page": 120,
+      "filled_glyph_count": 113,
+      "stroked_glyph_count": 113,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus pyrenaica"
+    },
+    {
+      "page": 121,
+      "filled_glyph_count": 5364,
+      "stroked_glyph_count": 5364,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alnus"
+    },
+    {
+      "page": 122,
+      "filled_glyph_count": 2982,
+      "stroked_glyph_count": 2982,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus robur"
+    },
+    {
+      "page": 123,
+      "filled_glyph_count": 124,
+      "stroked_glyph_count": 124,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus suber"
+    },
+    {
+      "page": 124,
+      "filled_glyph_count": 53,
+      "stroked_glyph_count": 53,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Quercus trojana"
+    },
+    {
+      "page": 125,
+      "filled_glyph_count": 6269,
+      "stroked_glyph_count": 6269,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ranunculus acris"
+    },
+    {
+      "page": 126,
+      "filled_glyph_count": 2614,
+      "stroked_glyph_count": 2614,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ranunculus flammula"
+    },
+    {
+      "page": 127,
+      "filled_glyph_count": 4648,
+      "stroked_glyph_count": 4648,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ranunculus lingua"
+    },
+    {
+      "page": 128,
+      "filled_glyph_count": 4861,
+      "stroked_glyph_count": 4861,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ranunculus sceleratus"
+    },
+    {
+      "page": 129,
+      "filled_glyph_count": 3870,
+      "stroked_glyph_count": 3870,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rhamnus cathartica"
+    },
+    {
+      "page": 130,
+      "filled_glyph_count": 2158,
+      "stroked_glyph_count": 2158,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rhynchospora alba"
+    },
+    {
+      "page": 131,
+      "filled_glyph_count": 4902,
+      "stroked_glyph_count": 4902,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rubus caesius"
+    },
+    {
+      "page": 132,
+      "filled_glyph_count": 18,
+      "stroked_glyph_count": 18,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alnus cordata"
+    },
+    {
+      "page": 133,
+      "filled_glyph_count": 10613,
+      "stroked_glyph_count": 10613,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rubus chamaemorus"
+    },
+    {
+      "page": 134,
+      "filled_glyph_count": 11837,
+      "stroked_glyph_count": 11837,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rubus idaeus"
+    },
+    {
+      "page": 135,
+      "filled_glyph_count": 6235,
+      "stroked_glyph_count": 6235,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rumex acetosa"
+    },
+    {
+      "page": 136,
+      "filled_glyph_count": 10569,
+      "stroked_glyph_count": 10569,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Rumex acetosella"
+    },
+    {
+      "page": 137,
+      "filled_glyph_count": 4564,
+      "stroked_glyph_count": 4564,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix alba"
+    },
+    {
+      "page": 138,
+      "filled_glyph_count": 10688,
+      "stroked_glyph_count": 10688,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix caprea"
+    },
+    {
+      "page": 139,
+      "filled_glyph_count": 725,
+      "stroked_glyph_count": 725,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix herbacea"
+    },
+    {
+      "page": 140,
+      "filled_glyph_count": 9478,
+      "stroked_glyph_count": 9478,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix myrtilloides"
+    },
+    {
+      "page": 141,
+      "filled_glyph_count": 11054,
+      "stroked_glyph_count": 11054,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix pentandra"
+    },
+    {
+      "page": 142,
+      "filled_glyph_count": 7670,
+      "stroked_glyph_count": 7670,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salix reticulata"
+    },
+    {
+      "page": 143,
+      "filled_glyph_count": 4349,
+      "stroked_glyph_count": 4349,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alnus glutinosa"
+    },
+    {
+      "page": 144,
+      "filled_glyph_count": 6619,
+      "stroked_glyph_count": 6619,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Salvinia natans"
+    },
+    {
+      "page": 145,
+      "filled_glyph_count": 2356,
+      "stroked_glyph_count": 2356,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sambucus"
+    },
+    {
+      "page": 146,
+      "filled_glyph_count": 2356,
+      "stroked_glyph_count": 2356,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sambucus nigra"
+    },
+    {
+      "page": 147,
+      "filled_glyph_count": 741,
+      "stroked_glyph_count": 741,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sambucus racemosa"
+    },
+    {
+      "page": 148,
+      "filled_glyph_count": 12835,
+      "stroked_glyph_count": 12835,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sanguisorba officinalis"
+    },
+    {
+      "page": 149,
+      "filled_glyph_count": 18,
+      "stroked_glyph_count": 18,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sarcopoterium Spinosum"
+    },
+    {
+      "page": 150,
+      "filled_glyph_count": 1157,
+      "stroked_glyph_count": 1157,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sarothamnus scoparius"
+    },
+    {
+      "page": 151,
+      "filled_glyph_count": 5401,
+      "stroked_glyph_count": 5401,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Scheuchzeria palustris"
+    },
+    {
+      "page": 152,
+      "filled_glyph_count": 4451,
+      "stroked_glyph_count": 4451,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Scirpus lacustris"
+    },
+    {
+      "page": 153,
+      "filled_glyph_count": 1914,
+      "stroked_glyph_count": 1914,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Scirpus tabernaemontani"
+    },
+    {
+      "page": 154,
+      "filled_glyph_count": 2867,
+      "stroked_glyph_count": 2867,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alnus incana"
+    },
+    {
+      "page": 155,
+      "filled_glyph_count": 1764,
+      "stroked_glyph_count": 1764,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Selaginella selaginoides"
+    },
+    {
+      "page": 156,
+      "filled_glyph_count": 5387,
+      "stroked_glyph_count": 5387,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Silene otites"
+    },
+    {
+      "page": 157,
+      "filled_glyph_count": 4650,
+      "stroked_glyph_count": 4650,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sisymbrium altissimum"
+    },
+    {
+      "page": 158,
+      "filled_glyph_count": 6337,
+      "stroked_glyph_count": 6337,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Solanum dulcamara"
+    },
+    {
+      "page": 159,
+      "filled_glyph_count": 2064,
+      "stroked_glyph_count": 2064,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sorbus aria"
+    },
+    {
+      "page": 160,
+      "filled_glyph_count": 11495,
+      "stroked_glyph_count": 11495,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sorbus aucuparia"
+    },
+    {
+      "page": 161,
+      "filled_glyph_count": 557,
+      "stroked_glyph_count": 557,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sorbus domestica"
+    },
+    {
+      "page": 162,
+      "filled_glyph_count": 892,
+      "stroked_glyph_count": 892,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sorbus torminalis"
+    },
+    {
+      "page": 163,
+      "filled_glyph_count": 5395,
+      "stroked_glyph_count": 5395,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sparganium minimum"
+    },
+    {
+      "page": 164,
+      "filled_glyph_count": 4277,
+      "stroked_glyph_count": 4277,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Sparganium simplex"
+    },
+    {
+      "page": 165,
+      "filled_glyph_count": 185,
+      "stroked_glyph_count": 185,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Alnus viridis"
+    },
+    {
+      "page": 166,
+      "filled_glyph_count": 3909,
+      "stroked_glyph_count": 3909,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Stellaria holostea"
+    },
+    {
+      "page": 167,
+      "filled_glyph_count": 2666,
+      "stroked_glyph_count": 2666,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Stratiotes aloides"
+    },
+    {
+      "page": 168,
+      "filled_glyph_count": 520,
+      "stroked_glyph_count": 520,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Taxus baccata"
+    },
+    {
+      "page": 169,
+      "filled_glyph_count": 751,
+      "stroked_glyph_count": 751,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Teucrium scorodonia"
+    },
+    {
+      "page": 170,
+      "filled_glyph_count": 1763,
+      "stroked_glyph_count": 1763,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Thalictrum aquilegifolium"
+    },
+    {
+      "page": 171,
+      "filled_glyph_count": 11788,
+      "stroked_glyph_count": 11788,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Thalictrum minus"
+    },
+    {
+      "page": 172,
+      "filled_glyph_count": 3448,
+      "stroked_glyph_count": 3448,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tilia"
+    },
+    {
+      "page": 173,
+      "filled_glyph_count": 3369,
+      "stroked_glyph_count": 3369,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tilia cordata"
+    },
+    {
+      "page": 174,
+      "filled_glyph_count": 765,
+      "stroked_glyph_count": 765,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tilia platyphyllos"
+    },
+    {
+      "page": 175,
+      "filled_glyph_count": 166,
+      "stroked_glyph_count": 166,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tilia tomentosa"
+    },
+    {
+      "page": 176,
+      "filled_glyph_count": 423,
+      "stroked_glyph_count": 423,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Arbutus unedo"
+    },
+    {
+      "page": 177,
+      "filled_glyph_count": 1932,
+      "stroked_glyph_count": 1932,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Trapa natans"
+    },
+    {
+      "page": 178,
+      "filled_glyph_count": 527,
+      "stroked_glyph_count": 527,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tsuga canadensis"
+    },
+    {
+      "page": 179,
+      "filled_glyph_count": 69,
+      "stroked_glyph_count": 69,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Tsuga diversifolia"
+    },
+    {
+      "page": 180,
+      "filled_glyph_count": 3154,
+      "stroked_glyph_count": 3154,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Typha angustifolia"
+    },
+    {
+      "page": 181,
+      "filled_glyph_count": 3315,
+      "stroked_glyph_count": 3315,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Typha latifolia"
+    },
+    {
+      "page": 182,
+      "filled_glyph_count": 4581,
+      "stroked_glyph_count": 4581,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ulmus"
+    },
+    {
+      "page": 183,
+      "filled_glyph_count": 2677,
+      "stroked_glyph_count": 2677,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ulmus carpinifolia"
+    },
+    {
+      "page": 184,
+      "filled_glyph_count": 3420,
+      "stroked_glyph_count": 3420,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ulmus glabra"
+    },
+    {
+      "page": 185,
+      "filled_glyph_count": 2557,
+      "stroked_glyph_count": 2557,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ulmus laevis"
+    },
+    {
+      "page": 186,
+      "filled_glyph_count": 2309,
+      "stroked_glyph_count": 2309,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ulmus minor"
+    },
+    {
+      "page": 187,
+      "filled_glyph_count": 4281,
+      "stroked_glyph_count": 4281,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Arctostaphylos alpinus"
+    },
+    {
+      "page": 188,
+      "filled_glyph_count": 16298,
+      "stroked_glyph_count": 16298,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Urtica dioica"
+    },
+    {
+      "page": 189,
+      "filled_glyph_count": 4988,
+      "stroked_glyph_count": 4988,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Viburnum"
+    },
+    {
+      "page": 190,
+      "filled_glyph_count": 1093,
+      "stroked_glyph_count": 1093,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Viburnum lantana"
+    },
+    {
+      "page": 191,
+      "filled_glyph_count": 4799,
+      "stroked_glyph_count": 4799,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Viburnum opulus"
+    },
+    {
+      "page": 192,
+      "filled_glyph_count": 3152,
+      "stroked_glyph_count": 3152,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Viscum album"
+    },
+    {
+      "page": 193,
+      "filled_glyph_count": 722,
+      "stroked_glyph_count": 722,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Vitis sylvestris"
+    },
+    {
+      "page": 194,
+      "filled_glyph_count": 1726,
+      "stroked_glyph_count": 1726,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Zannichellia palustris"
+    },
+    {
+      "page": 195,
+      "filled_glyph_count": 12028,
+      "stroked_glyph_count": 12028,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Zannichellia palustris"
+    },
+    {
+      "page": 196,
+      "filled_glyph_count": 181,
+      "stroked_glyph_count": 181,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Zelkova"
+    },
+    {
+      "page": 197,
+      "filled_glyph_count": 18,
+      "stroked_glyph_count": 18,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ziziphus Spina-christi"
+    },
+    {
+      "page": 198,
+      "filled_glyph_count": 5140,
+      "stroked_glyph_count": 5140,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Arctostaphylos uva-ursi"
+    },
+    {
+      "page": 199,
+      "filled_glyph_count": 787,
+      "stroked_glyph_count": 787,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Armeria maritima"
+    },
+    {
+      "page": 200,
+      "filled_glyph_count": 18,
+      "stroked_glyph_count": 18,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Artemisia"
+    },
+    {
+      "page": 201,
+      "filled_glyph_count": 442,
+      "stroked_glyph_count": 442,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies alba mediterraneum"
+    },
+    {
+      "page": 202,
+      "filled_glyph_count": 19,
+      "stroked_glyph_count": 19,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Atriplex Halimus"
+    },
+    {
+      "page": 203,
+      "filled_glyph_count": 565,
+      "stroked_glyph_count": 565,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Baldellia ranunculoides"
+    },
+    {
+      "page": 204,
+      "filled_glyph_count": 17795,
+      "stroked_glyph_count": 17795,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Batrachium aquatile"
+    },
+    {
+      "page": 205,
+      "filled_glyph_count": 9598,
+      "stroked_glyph_count": 9598,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Betula"
+    },
+    {
+      "page": 206,
+      "filled_glyph_count": 3257,
+      "stroked_glyph_count": 3257,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Betula humilis"
+    },
+    {
+      "page": 207,
+      "filled_glyph_count": 4339,
+      "stroked_glyph_count": 4339,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Betula nana"
+    },
+    {
+      "page": 208,
+      "filled_glyph_count": 7526,
+      "stroked_glyph_count": 7526,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Betula pendula"
+    },
+    {
+      "page": 209,
+      "filled_glyph_count": 8870,
+      "stroked_glyph_count": 8870,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Betula pubescens"
+    },
+    {
+      "page": 210,
+      "filled_glyph_count": 6749,
+      "stroked_glyph_count": 6749,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Butomus umbellatus"
+    },
+    {
+      "page": 211,
+      "filled_glyph_count": 130,
+      "stroked_glyph_count": 130,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Buxus sempervirens"
+    },
+    {
+      "page": 212,
+      "filled_glyph_count": 19,
+      "stroked_glyph_count": 19,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies borisii-regis"
+    },
+    {
+      "page": 213,
+      "filled_glyph_count": 3341,
+      "stroked_glyph_count": 3341,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Calluna vulgaris"
+    },
+    {
+      "page": 214,
+      "filled_glyph_count": 1647,
+      "stroked_glyph_count": 1647,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carduus nutans"
+    },
+    {
+      "page": 215,
+      "filled_glyph_count": 4273,
+      "stroked_glyph_count": 4273,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex acutiformis"
+    },
+    {
+      "page": 216,
+      "filled_glyph_count": 2066,
+      "stroked_glyph_count": 2066,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex aquatilis"
+    },
+    {
+      "page": 217,
+      "filled_glyph_count": 10660,
+      "stroked_glyph_count": 10660,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex canescens"
+    },
+    {
+      "page": 218,
+      "filled_glyph_count": 3669,
+      "stroked_glyph_count": 3669,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex elongata"
+    },
+    {
+      "page": 219,
+      "filled_glyph_count": 3171,
+      "stroked_glyph_count": 3171,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex flava"
+    },
+    {
+      "page": 220,
+      "filled_glyph_count": 529,
+      "stroked_glyph_count": 529,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex maritima"
+    },
+    {
+      "page": 221,
+      "filled_glyph_count": 4550,
+      "stroked_glyph_count": 4550,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex nigra"
+    },
+    {
+      "page": 222,
+      "filled_glyph_count": 1944,
+      "stroked_glyph_count": 1944,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex paniculata"
+    },
+    {
+      "page": 223,
+      "filled_glyph_count": 19,
+      "stroked_glyph_count": 19,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies bornm/xfclleriana"
+    },
+    {
+      "page": 224,
+      "filled_glyph_count": 3251,
+      "stroked_glyph_count": 3251,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex pseudocyperus"
+    },
+    {
+      "page": 225,
+      "filled_glyph_count": 5752,
+      "stroked_glyph_count": 5752,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex riparia"
+    },
+    {
+      "page": 226,
+      "filled_glyph_count": 12132,
+      "stroked_glyph_count": 12132,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carex rostrata"
+    },
+    {
+      "page": 227,
+      "filled_glyph_count": 1468,
+      "stroked_glyph_count": 1468,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carpinus betulus"
+    },
+    {
+      "page": 228,
+      "filled_glyph_count": 424,
+      "stroked_glyph_count": 424,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carpinus orientalis"
+    },
+    {
+      "page": 229,
+      "filled_glyph_count": 544,
+      "stroked_glyph_count": 544,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carpinus Ostrya"
+    },
+    {
+      "page": 230,
+      "filled_glyph_count": 785,
+      "stroked_glyph_count": 785,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carya glabra"
+    },
+    {
+      "page": 231,
+      "filled_glyph_count": 753,
+      "stroked_glyph_count": 753,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Carya tomentosa"
+    },
+    {
+      "page": 232,
+      "filled_glyph_count": 110,
+      "stroked_glyph_count": 110,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Castanea sativa"
+    },
+    {
+      "page": 233,
+      "filled_glyph_count": 44,
+      "stroked_glyph_count": 44,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cedrus libani"
+    },
+    {
+      "page": 234,
+      "filled_glyph_count": 29,
+      "stroked_glyph_count": 29,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies cephalonica"
+    },
+    {
+      "page": 235,
+      "filled_glyph_count": 243,
+      "stroked_glyph_count": 243,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Celtis australis"
+    },
+    {
+      "page": 236,
+      "filled_glyph_count": 12,
+      "stroked_glyph_count": 12,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ceratonia Siliqua"
+    },
+    {
+      "page": 237,
+      "filled_glyph_count": 3228,
+      "stroked_glyph_count": 3228,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ceratophyllum"
+    },
+    {
+      "page": 238,
+      "filled_glyph_count": 3182,
+      "stroked_glyph_count": 3182,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ceratophyllum demersum"
+    },
+    {
+      "page": 239,
+      "filled_glyph_count": 583,
+      "stroked_glyph_count": 583,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ceratophyllum submersum"
+    },
+    {
+      "page": 240,
+      "filled_glyph_count": 244,
+      "stroked_glyph_count": 244,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Chamaerops humilis"
+    },
+    {
+      "page": 241,
+      "filled_glyph_count": 7416,
+      "stroked_glyph_count": 7416,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Chelidonium majus"
+    },
+    {
+      "page": 242,
+      "filled_glyph_count": 9394,
+      "stroked_glyph_count": 9394,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Chenopodium glaucum"
+    },
+    {
+      "page": 243,
+      "filled_glyph_count": 4599,
+      "stroked_glyph_count": 4599,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Chenopodium polyspermum"
+    },
+    {
+      "page": 244,
+      "filled_glyph_count": 1026,
+      "stroked_glyph_count": 1026,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cladium mariscus"
+    },
+    {
+      "page": 245,
+      "filled_glyph_count": 21,
+      "stroked_glyph_count": 21,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies cilicica"
+    },
+    {
+      "page": 246,
+      "filled_glyph_count": 12802,
+      "stroked_glyph_count": 12802,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Comarum palustre"
+    },
+    {
+      "page": 247,
+      "filled_glyph_count": 1041,
+      "stroked_glyph_count": 1041,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cornus mas"
+    },
+    {
+      "page": 248,
+      "filled_glyph_count": 2410,
+      "stroked_glyph_count": 2410,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cornus sanguinea"
+    },
+    {
+      "page": 249,
+      "filled_glyph_count": 1229,
+      "stroked_glyph_count": 1229,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cornus suecica"
+    },
+    {
+      "page": 250,
+      "filled_glyph_count": 3346,
+      "stroked_glyph_count": 3346,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Corylus avellana"
+    },
+    {
+      "page": 251,
+      "filled_glyph_count": 3270,
+      "stroked_glyph_count": 3270,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Crataegus"
+    },
+    {
+      "page": 252,
+      "filled_glyph_count": 3244,
+      "stroked_glyph_count": 3244,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Crataegus monogyna"
+    },
+    {
+      "page": 253,
+      "filled_glyph_count": 1285,
+      "stroked_glyph_count": 1285,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Crataegus oxycantha"
+    },
+    {
+      "page": 254,
+      "filled_glyph_count": 1842,
+      "stroked_glyph_count": 1842,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Cyperus glomeratus"
+    },
+    {
+      "page": 255,
+      "filled_glyph_count": 490,
+      "stroked_glyph_count": 490,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Dryas octopetala"
+    },
+    {
+      "page": 256,
+      "filled_glyph_count": 114,
+      "stroked_glyph_count": 114,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies mediterraneum"
+    },
+    {
+      "page": 257,
+      "filled_glyph_count": 7424,
+      "stroked_glyph_count": 7424,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Eleocharis palustris"
+    },
+    {
+      "page": 258,
+      "filled_glyph_count": 3094,
+      "stroked_glyph_count": 3094,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Empetrum nigrum"
+    },
+    {
+      "page": 259,
+      "filled_glyph_count": 21,
+      "stroked_glyph_count": 21,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ephedra Aphylla"
+    },
+    {
+      "page": 260,
+      "filled_glyph_count": 2343,
+      "stroked_glyph_count": 2343,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Ephedra distachya"
+    },
+    {
+      "page": 261,
+      "filled_glyph_count": 419,
+      "stroked_glyph_count": 419,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Erica arborea"
+    },
+    {
+      "page": 262,
+      "filled_glyph_count": 395,
+      "stroked_glyph_count": 395,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Erica cinerea"
+    },
+    {
+      "page": 263,
+      "filled_glyph_count": 623,
+      "stroked_glyph_count": 623,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Erica tetralix"
+    },
+    {
+      "page": 264,
+      "filled_glyph_count": 13578,
+      "stroked_glyph_count": 13578,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Eriophorum vaginatum"
+    },
+    {
+      "page": 265,
+      "filled_glyph_count": 2176,
+      "stroked_glyph_count": 2176,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Euonymus europaea"
+    },
+    {
+      "page": 266,
+      "filled_glyph_count": 160,
+      "stroked_glyph_count": 160,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Fagus orientalis"
+    },
+    {
+      "page": 267,
+      "filled_glyph_count": 48,
+      "stroked_glyph_count": 48,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Abies nordmanniana"
+    },
+    {
+      "page": 268,
+      "filled_glyph_count": 951,
+      "stroked_glyph_count": 951,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Fagus sylvatica"
+    },
+    {
+      "page": 269,
+      "filled_glyph_count": 9950,
+      "stroked_glyph_count": 9950,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Filipendula"
+    },
+    {
+      "page": 270,
+      "filled_glyph_count": 9314,
+      "stroked_glyph_count": 9314,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Filipendula ulmaria"
+    },
+    {
+      "page": 271,
+      "filled_glyph_count": 4211,
+      "stroked_glyph_count": 4211,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Filipendula vulgaris"
+    },
+    {
+      "page": 272,
+      "filled_glyph_count": 4953,
+      "stroked_glyph_count": 4953,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Frangula alnus"
+    },
+    {
+      "page": 273,
+      "filled_glyph_count": 1556,
+      "stroked_glyph_count": 1556,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Fraxinus angustifolia"
+    },
+    {
+      "page": 274,
+      "filled_glyph_count": 2569,
+      "stroked_glyph_count": 2569,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Fraxinus excelsior"
+    },
+    {
+      "page": 275,
+      "filled_glyph_count": 431,
+      "stroked_glyph_count": 431,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Fraxinus ornus"
+    },
+    {
+      "page": 276,
+      "filled_glyph_count": 714,
+      "stroked_glyph_count": 714,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Galeopsis pubescens"
+    },
+    {
+      "page": 277,
+      "filled_glyph_count": 7181,
+      "stroked_glyph_count": 7181,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Galium palustre"
+    },
+    {
+      "page": 278,
+      "filled_glyph_count": 10,
+      "stroked_glyph_count": 10,
+      "all_point_colors_match": true,
+      "title_for_raw_pdf_literal_comparison": "Acacia Raddiana/Tortilis"
+    }
+  ]
+}

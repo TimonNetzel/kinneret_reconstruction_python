@@ -1,0 +1,89 @@
+{
+  "status": "preserved_fragments_not_final_run_binding",
+  "basis_commit": "f7d97c1fad6852ce948cb868a16b10f7b1f83b8f",
+  "sources": {
+    "original:src/check_ages.R": {
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "bytes": 12904,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json#/sources/original:src/check_ages.R",
+      "spans": [
+        {
+          "first_line": 175,
+          "last_line": 208,
+          "text": "if(add.sites){\n    if( sitename == \"Dead Sea\") age.reso <- 3\n    rho_depth_given_age <- core.data[[station_id]]$rho_depth_given_age[[age.reso]]\n    depth <- core.data[[station_id]]$depth\n    site.age <- age <- core.data[[station_id]]$age[[age.reso]]\n}else{\n    load(paste0(\"../bacon/Cores/\",core.data[[station_id]]$entity,\"/rho_depth_given_age.rdata\"))\n#     if( max(output$age[[1]]) >= 20000 ) age.reso <- 3\n    rho_depth_given_age <- output$rho_depth_given_age[[age.reso]]\n    depth <- output$depth\n    site.age <- age <- output$age[[age.reso]]\n    \n    if( length(rho_depth_given_age) == 0 ){\n        rho_depth_given_age <- output$rho_depth_given_age[[(age.reso+1)]]\n        site.age <- age <- output$age[[(age.reso+1)]]\n    }\n}\n\n\n\nwhich_depths <- core.data[[station_id]]$depth %in% depth\nif( any(which_depths == FALSE) ){\n    depth <- output$depth\n    if( length(depth) != nrow(all.avail) ) all.avail <- all.avail[which_depths,]\n}\n\nif( !all(sort(depth) == depth) ) depth <- sort(depth)\n    \nif( any(duplicated(depth)) ){\n    dupl.id <- which(duplicated(depth))\n#     depth[dupl.id] <- [dupl.id-1]*1.001\n    depth <- depth[-dupl.id]\n    all.avail <- all.avail[-dupl.id,]\n}"
+        },
+        {
+          "first_line": 213,
+          "last_line": 232,
+          "text": "if( diff(range(site.age)) <= 600)  next(\"Too short reconstruction range!\")\n\n\n\n\n\n#-------------------------------------------------------------------------------------------------------------------------\n# prepare the overall output of the local reconstructionn in order to do a spatial reconstructionn\n#-------------------------------------------------------------------------------------------------------------------------\n\ndepths.timeslice.id <- list( which(site.age <= 0), which(inside.range(site.age,c(5900,6100))), which(inside.range(site.age,c(18000,22000))), which(inside.range(site.age,c(115000,126000))) )\n# if( length(unlist(depths.timeslice.id)) == 0 & sitename != \"Lake Ohrid\" ) next(\"No timeslice of interest available!\")\n\nlat <- core.data[[station_id]]$lat\nlon <- core.data[[station_id]]$lon\n\n# if ages are duplicated\nif(any(duplicated(age))){\n    age[which(duplicated(age))] <- age[which(duplicated(age))]+.5\n}"
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    },
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json#/sources/original:src/mcmc_prepare.R",
+      "spans": [
+        {
+          "first_line": 3,
+          "last_line": 34,
+          "text": "source(\"src/check_ages.R\")\n \n\n\n#------------------------------------------------------------------------------\n# choose those values from the bacon model which are used actually\n#------------------------------------------------------------------------------\n\nrho.d.g.a <- array(NA, dim = c(length(age), length(depth)))\nfor(i in 1:length(age)){\n    for(j in 1:length(depth)){\n        rho.d.g.a[i,j] <- rho_depth_given_age[i,(depth[j]-min(depth, na.rm = T))+1] \n    }\n    rho.d.g.a[i,] <- rho.d.g.a[i,] / sum(rho.d.g.a[i,])\n}\n\n# to include every depth slice. zeros would remove some slices \nrho.d.g.a[which(rho.d.g.a == 0, arr.ind = T)] <- 10e-10 \n\n\n# smooth some smoothing kernels of the age-depth relation. Due to low sedimentation rate \nif(sitename == \"Birkat Ram\"){\n    which_depth_ids <- c(144:146)\n    for(i in 1:3){\n        df_temp <- data.frame(y=rho.d.g.a[,which_depth_ids[i]],x=c(1:length(age)))\n        loess_fit <- loess(df_temp$y ~ df_temp$x, data=df_temp,span=0.05)\n        smoothed_values <- predict(loess_fit)\n        rho.d.g.a[,which_depth_ids[i]] <- smoothed_values\n    }\n    for(i in 1:length(age)) rho.d.g.a[i,] <- rho.d.g.a[i,] / sum(rho.d.g.a[i,])\n    rho.d.g.a[which(rho.d.g.a <= 0, arr.ind = T)] <- 10e-10 \n}"
+        },
+        {
+          "first_line": 49,
+          "last_line": 101,
+          "text": "\n\nif(null.ratio.check ){\n    null.ratio <- c()\n    for(i in 1:ncol(all.avail)){\n        null.ratio[i] <- length(which(all.avail[,i] == 0)) /  nrow(all.avail) \n    }\n    # keep all available relict taxa \n    if(sitename == \"Lake Ohrid\"){\n        relict.id <- c(3,8,23,24,25)\n        null.ratio[relict.id] <- 0\n        # remove pinus sylvestris\n        null.ratio[1] <- 1\n    }\n    \n    # remove the rarest taxa and limit the core to 15 taxa \n    rm.id1 <- which(null.ratio >= 0.95)\n    if(ncol(all.avail) - length(rm.id1) > 15) metro_hastings <- TRUE\n    if(!metro_hastings){\n        rm.id <- which(null.ratio %in% sort(null.ratio)[16:ncol(all.avail)])\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }else{\n        # remove the rarest taxa\n        rm.id <- which(null.ratio >= 0.95)\n        if( length(rm.id) == ncol(all.avail) ) next()\n        if( length(rm.id) >= 1 ) all.avail <- all.avail[,-rm.id]\n        sorting.available.spectrum <-  colMeans(all.avail, na.rm = T)\n    }\n\n}\n\n\nall.avail[all.avail == 0] <- 1e-6\n\n\n\n#-------------------------------------------------------------------------------------------------------------------------\n# age-depth trafo\n#-------------------------------------------------------------------------------------------------------------------------\n\nall.avail.age <- array(NA, dim = c(length(age),ncol(all.avail)))\nfor(i in 1:ncol(all.avail)){\n    all.avail.age[,i] <-   rho.d.g.a %*% as.matrix(all.avail[,i])\n}\n\nif(anyNA(all.avail.age)){\n    which_na <- which(is.na(rowMeans(all.avail.age)))\n    for(i in 1:ncol(all.avail.age)){\n        all.avail.age[which_na,i] <- all.avail.age[which_na[1]-1,i]\n    }\n}"
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    },
+    "additional:my_kinneret/src/bacon_kinneret.R": {
+      "sha256": "c9406d13083ddbb8248ca4b6ac24b43b42067d1044bbc833a5155274145b5f48",
+      "bytes": 11517,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json#/sources/additional:my_kinneret/src/bacon_kinneret.R",
+      "spans": [
+        {
+          "first_line": 68,
+          "last_line": 100,
+          "text": "load(\"../../../european_pollen_database/local_reconstr_all_epd/in/core_data_kinneret.rdata\") \ndepths <- core.data[[1]]$depth\nages.mean <- c()\nfor(j in 1:length(depths)) ages.mean[j] <- round(mean(Bacon.Age.d(depths[j])))\nages.500 <- seq(-500,130000,by=500)\nages.50 <- seq(-50,130000,by=50)\n\nages <- list( ages.mean, ages.50[inside.range(ages.50,range(ages.mean))], ages.500[inside.range(ages.500,range(ages.mean))] )\n\nrho_depth_given_age_all <- list()\nfor(i in 1:length(ages)){\n    rho_depth_given_age <- array(NA, dim = c(length(ages[[i]]), round( max(depths) - min(depths))+1 ))\n    for(j in 1:length(ages[[i]])){\n        rho_depth <- Bacon.d.Age(ages[[i]][j])\n        if(length(rho_depth) <= 1) break()\n        rho_depth_given_age_temp <- density(rho_depth, from = min(depths), to = max(depths), n = round( max(depths) - min(depths))+1 , na.rm = T)\n        rho_depth_given_age_temp$y <- rho_depth_given_age_temp$y/sum(rho_depth_given_age_temp$y)\n        rho_depth_given_age[j,] <- rho_depth_given_age_temp$y\n    }\n#     X11();image.plot(min(depths):max(depths),ages[[i]],t(rho_depth_given_age))\n    rho_depth_given_age_all[[i]] <- rho_depth_given_age\n}\n\n\n\n#-------------------------------------------------------------------------------------------------------------\n\noutput <- list()\noutput$rho_depth_given_age  <- rho_depth_given_age_all\noutput$age  <- ages\noutput$depth  <- depths\n\nsave(output, file = \"data/out/age_depth/rho_depth_given_age.rdata\")     "
+        },
+        {
+          "first_line": 105,
+          "last_line": 146,
+          "text": "load(\"data/in/core/core_data.rdata\")\nages <- c()\nfor(i in 1:length(core_data$depths)) ages[i] <- round(mean(Bacon.Age.d(core_data$depths[i])))\n\n\n#-------------------------------------------------------------------------------------------------------------\n# Bacon.d.Age function\n#-------------------------------------------------------------------------------------------------------------\n\n\nBacon.d.Age <- function( a, set = get(\"info\")){\n    ages <- cbind(set$output[, 1])\n    for (i in 1:set$K) ages <- cbind(ages, ages[, i] + (set$thick * (set$output[, i + 1])))\n    accs <- c()\n    depth.g.age <- vector(\"list\", length = (ncol(ages)-1))\n    for (i in 2:ncol(ages)) {\n        these <- (ages[, i - 1] < a) * (ages[, i] > a)\n        if (sum(these) > 0){ \n            accs <- set$output[which(these > 0), i]\n            depth.g.age[[i-1]] <- set$elbows[i-1] +  (1/accs) * ( a - ages[which(these > 0), i - 1]) \n        }\n    }    \n    return(unlist(depth.g.age))\n}\n \n#-------------------------------------------------------------------------------------------------------------\n \nrho_depth_given_age <- array(NA, dim = c(length(core_data$depths), max(core_data$depths)))\nfor(i in 1:length(ages)){\n    rho_depth_given_age_temp <- density(Bacon.d.Age(ages[i]), from = min(core_data$depths), to = max(core_data$depths), n = max(core_data$depths), na.rm = T)\n    rho_depth_given_age_temp$y <- rho_depth_given_age_temp$y/sum(rho_depth_given_age_temp$y)\n    rho_depth_given_age[i,] <- rho_depth_given_age_temp$y\n}\n\n#-------------------------------------------------------------------------------------------------------------\n\noutput <- list()\noutput$rho_depth_given_age  <- rho_depth_given_age\noutput$age  <- ages\noutput$depth  <- core_data$depths\n\nsave(output, file = \"data/out/age_depth/rho_depth_given_age.rdata\")     "
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    }
+  },
+  "implemented": {
+    "select_list_age_grid": "check_ages.R:177,179; explicit synthetic position only",
+    "shift_duplicate_ages_once": "check_ages.R:230-232",
+    "depth_kernel_at_samples": "mcmc_prepare.R:11-20; Birkat Ram 24-34 excluded",
+    "pollen_at_ages": "mcmc_prepare.R:83,91-94; upstream filtering excluded"
+  },
+  "orientation": {
+    "rho": "age x full depth grid",
+    "weights": "age x sampled depth",
+    "pollen": "sampled depth x taxon",
+    "product": "age x taxon"
+  },
+  "depth_index_R_1_based": "(depth[j] - min(depth)) + 1",
+  "weights_formula": "q[a,j] = rho[a,k[j]] / sum_l(rho[a,k[l]]); W[a,j] = 1e-9 if q[a,j]==0 else q[a,j]",
+  "pollen_formula": "P'[j,t] = 1e-6 if P[j,t]==0 else P[j,t]; Y[a,t] = sum_j(W[a,j]*P'[j,t])",
+  "units": "Historical bound Kinneret depths: cm; ages: cal a BP. W discrete, dimensionless. Y inherits P units; no new calibration or conversion.",
+  "supported_domain": "Finite nonnegative matrices, explicit paired resolution lists, finite age vectors, already aligned unique increasing sampled depths with exact integer in-bounds offsets, positive selected row mass, finite product.",
+  "not_implemented": [
+    "site dispatch and age.reso override/fallback",
+    "depth membership repair, standalone sorting and duplicate-depth deletion",
+    "Birkat Ram loess",
+    "NA/Inf propagation, missing-output fill and fractional-index truncation",
+    "taxon filtering",
+    "Bacon/KDE/grid estimation",
+    "final chronology or run selection"
+  ],
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false,
+  "R_execution": false
+}

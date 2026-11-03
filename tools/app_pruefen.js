@@ -9,6 +9,8 @@ const fs = require("fs");
 const { chromium } = require("playwright");
 
 const args = process.argv.slice(2);
+const ki = args.indexOf("--kanal");
+const kanal = ki >= 0 ? args.splice(ki, 2)[1] : null;
 const fi = args.indexOf("--fotos");
 const fotos = fi >= 0 ? args.splice(fi, 2)[1] : null;
 if (fotos) fs.mkdirSync(fotos, { recursive: true });
@@ -133,6 +135,28 @@ async function pruefeStandorte(browser, datei) {
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForFunction(() => document.querySelectorAll("#sens-tabelle tbody tr").length >= 2, null, { timeout: 15000 })
     .catch(() => fehler.push("Sensitivitaet nach Rueckwechsel"));
+  // Species evidence is project-wide and stays identical when the selected site changes.
+  await page.click('.reiter button[data-ansicht="artenvergleich"]');
+  await page.waitForSelector(".arten-art");
+  const artenVorher = await page.locator("#arten-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(300);
+  if (await page.locator("#arten-inhalt").innerText() !== artenVorher) fehler.push("Artenvergleich aendert sich mit Standort");
+  await page.click('#arten-ebene button[data-wert="folds"]');
+  await page.selectOption("#arten-taxon", "taxus_baccata");
+  const foldsVorher = await page.locator("#arten-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "kinneret");
+  await page.waitForTimeout(300);
+  if (await page.locator("#arten-inhalt").innerText() !== foldsVorher) fehler.push("Foldwerte aendern sich mit Standort");
+  // Research snapshot and dissertation reproduction state are project-wide as well
+  await page.click('.reiter button[data-ansicht="forschung"]');
+  await page.waitForSelector('[data-research="reproduction"] [data-module]');
+  await page.click('[data-research="reproduction"] [data-part="example"] summary');
+  const forschungVorher = await page.locator("#forschung-inhalt").innerText();
+  await page.selectOption("#standort-wahl", "zweit");
+  await page.waitForTimeout(300);
+  if (await page.locator("#forschung-inhalt").innerText() !== forschungVorher) fehler.push("Forschungs-/Nachbaustand aendert sich mit Standort");
+  await page.selectOption("#standort-wahl", "kinneret");
   return fehler;
 }
 
@@ -236,8 +260,151 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (!v[1].includes("3,926") || !v[0].includes("10°-Gitter")) fehler.push("Validierung 10 Grad: " + v[1]);
   await page.click('#val-block button[data-wert="5"]');
   if (fotos) await page.screenshot({ path: `${fotos}/${name}_validierung.png`, fullPage: true });
+  // Forschungsstand: five read-only evidence cards, source links, no figure export.
+  await page.click('.reiter button[data-ansicht="forschung"]');
+  await page.waitForSelector('[data-research="historical"]');
+  const researchText = await page.textContent("#forschung-inhalt");
+  if (await page.locator(".forschung-karte").count() !== 5 ||
+      !["167", "161", "278", "279", "Brier", "Marginalarrays"].every((x) => researchText.includes(x))) {
+    fehler.push("Forschungsstand unvollstaendig");
+  }
+  if (await page.locator('#ansicht-forschung .export-knopf').count() !== 0 ||
+      await page.locator('[data-research="historical"] [data-status="missing"]').count() !== 1) {
+    fehler.push("Forschungsstand: Kontroll-/Statusgrenze fehlt");
+  }
+  const sources = await page.locator('.forschung-karte a').evaluateAll((links) => links.map((a) => a.href));
+  if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
+    fehler.push("Forschungsstand: Quellen nicht gebunden");
+  }
+  // Dissertation reproduction: newest state with eleven checked submodules, six frozen earlier states, R cross check, synthetic examples kept apart
+  const nb = '[data-research="reproduction"]';
+  const nbText = await page.textContent(nb);
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("752") ||
+      await page.locator(nb + " [data-module]").count() !== 11 ||
+      await page.locator(nb + ' [data-module="gamma_prior_grid"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + ' [data-module="tf_missing_priors"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + ' [data-module="sampler_preparation"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + ' [data-module="weights_stage"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + ' [data-module="dirichlet_ratio"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + " [data-earlier-state]").count() !== 6 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-03, 10 Teilmodule, 689 Tests, SHA-256 7eb9ac5e4eb6") ||
+      await page.locator(nb + ' [data-part="runtime"]').count() !== 1 ||
+      !["R version 3.5.0", "389 bitgleiche Prüfungen", "59 von 62", "höchstens 4 ulp", "Slot 3", "LaplacesDemon 16.1.6"
+        ].every((x) => nbText.includes(x)) ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 9 Teilmodule, 555 Tests, SHA-256 61c6f23142df") ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 8 Teilmodule, 437 Tests, SHA-256 7b7bf1f449a1") ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 7 Teilmodule, 352 Tests, SHA-256 43edfcb67a64") ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421") ||
+      await page.locator(nb + ' [data-module="taxon_pruning"] [data-status="conditional"]').count() !== 1 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f") || await page.locator(nb + " [data-requirement]").count() !== 11 ||
+      await page.locator(nb + " [data-central]").count() !== 4 ||
+      await page.locator(nb + ' [data-requirement] [data-status="conflicting"]').count() !== 4) {
+    fehler.push("Nachbau: Teilmodule/Voraussetzungen unvollstaendig");
+  }
+  const nbLinks = await page.locator(nb + " a").evaluateAll((links) => links.map((a) => a.href));
+  const frueher = ["/blob/47a926c3c8a6abc0db7c947b993f5e97f7408cdd/docs/thesis_research/app_reproduction_2026_11_02/reproduction_state.json",
+    "/blob/3d013b276cb1b7af37ce4058d6c10e499a34b504/docs/thesis_research/app_reproduction_2026_11_02_pruning/reproduction_state.json",
+    "/blob/7d3d0f6852dbdf869b6e479d4eeffe80faaf2038/docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/reproduction_state.json",
+    "/blob/0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34/docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json",
+    "/blob/235f79784d01f0a613a0d3f76f6fd690c245ab21/docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json",
+    "/blob/3104f3c9e9a7870138abcc301bdd4f108c009e73/docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json"];
+  const istFrueher = (url) => frueher.some((f) => url.endsWith(f));
+  if (nbLinks.length !== 28 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
+      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/766a1fffe9c7526d2afeff6d527b1992649ccca5/"))) {
+    fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
+  }
+  if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
+  await page.click(nb + ' [data-part="example"] summary');
+  const exText = await page.textContent(nb + ' [data-part="example"]');
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 12 ||
+      await page.locator(nb + ' [data-table="dirichlet"] [data-special="nan-zero"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="dirichlet"] [data-ulps="4"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="dirichlet"] [data-ulps="0"]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="weights"] [data-acc="dependent"]').count() !== 2 ||
+      await page.locator(nb + ' [data-table="weights"] [data-acc="exact"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="weights-special"] [data-special]').count() !== 2 ||
+      await page.locator(nb + ' [data-table="sampler"] [data-acc="dependent"]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="sampler"] [data-acc="exact"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="sampler-special"] [data-special]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="missing"] [data-differs="true"]').count() !== 6 ||
+      await page.locator(nb + ' [data-table="missing"] [data-sd="0"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="missing"] [data-line="1678"]').count() !== 4 ||
+      await page.locator(nb + ' [data-table="gamma"] [data-differs="true"]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="gamma"] [data-shape="25.000000000000004"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="pruning"] [data-removed="true"]').count() !== 2 ||
+      await page.locator('[data-row-mass="2/3"]').count() !== 1 || await page.locator('[data-row-mass="1"]').count() !== 1 ||
+      !["Kunsttaxon 2", "1/3", "Kunstprobe 4", "0,5005", "0,1000", "0,3333", "2,22", "keine Kalenderalter",
+        "Nullanteil", "Nullen (von 20)", "3/20", "16:T abwärts", "ohne Taxon-Pruning", "Kunstfall", "Form laut Quelle",
+        "25,000000000000004", "62.500", "0,0124", "Zeile 1733", "500.000", "Fehlende Transferfunktionen: 4 Kunstfälle",
+        "ACDF", "aufgerundet", "Zeile 1678 (nrow)", "5 aus Zeile 1435", "2, 10, 18, 26, 34", "-integer(0)",
+        "phi1 (alt)", "Sampler-Vorbereitung: 6 Kunstfälle", "2 1 4 3 / 4 3 2 6 / 1 6 8 9", "1/6", "7/3*",
+        "8 von 12 Positionen", "Sonderwerte: drei Kunstfälle", "4×3", "8/3, 8/3, 4", "floor(5/2) = 2",
+        "how_many_taxa = num_taxa = 5", "0,5 je Taxon",
+        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung, Gewichtsstufe und Dirichlet-Quotient",
+        "Dirichlet-Quotient: 4 Kunstfälle", "D1", "D4", "R (ulp)", "1,1547", "0,7071", "Inf", "2/√3, √6/4 und 1/√2",
+        "weist aber nichts zu", "in Zeile 1273 zu 0",
+        "Kern der Gewichtsstufe: 7 Kunstfälle", "1/8, 3/8, 1/4, 1/4", "1/29", "29/32", "0,3333*", "0,5417*",
+        "8 von 12 Positionen ein fremdes Gewicht", "z = 1:4", "Zeilensummen mit Sonderwerten: drei Kunstfälle",
+        "G1", "G3", "1/4, 3/8, 5/8", "1 − 2⁻⁵⁴", "0,3333333333333333", "0,5714285714285715", "1, 1/2, 1/2",
+        "rdirichlet (Zeile 1248)"
+        ].every((x) => exText.includes(x))) {
+    fehler.push("Nachbau: synthetisches Beispiel unvollstaendig");
+  }
+  if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)) fehler.push("Forschungsstand: horizontaler Ueberlauf");
+  const nbUeberlauf = await page.locator(nb + " .tabelle-rahmen").evaluateAll((r) => r.filter((x) => x.scrollWidth > x.clientWidth + 1).length);
+  if (nbUeberlauf) fehler.push("Nachbau: " + nbUeberlauf + " Tabellen breiter als ihr Rahmen");
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_forschung.png`, fullPage: true });
+  await page.click("#sprache");
+  const enText = await page.textContent("#forschung-inhalt");
+  if (!enText.includes("not 279 independent species functions")) {
+    fehler.push("Forschungsstand: englische Grenze fehlt");
+  }
+  if (!enText.includes("Submodules checked; full original case open") || !enText.includes("Artificial sample 4") ||
+      !enText.includes("Taxon pruning by zero share") || !enText.includes("Gamma prior from a shape grid") ||
+      !enText.includes("Shape per source") || !enText.includes("Earlier state frozen") ||
+      !enText.includes("Removal of missing TFs and taxon-count priors") || !enText.includes("half up") ||
+      !enText.includes("Sampler preparation from taxon count and taxon matrix") ||
+      !enText.includes("Special values: three artificial cases") || !enText.includes("8 of 12 positions") ||
+      !enText.includes("Core of the weights stage with given weights") ||
+      !enText.includes("Row sums with special values: three artificial cases") || !enText.includes("0.5714285714285715") ||
+      !enText.includes("Dirichlet ratio of the weights stage") || !enText.includes("Dirichlet ratio: 4 artificial cases") ||
+      !enText.includes("R cross check: in R version 3.5.0") ||
+      !(await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open))) {
+    fehler.push("Nachbau: englische Fassung oder Aufklappzustand fehlt");
+  }
+  await page.click("#sprache");
+  // Absent or partial evidence stays visible as such; the two bindings do not depend on each other
+  const nbKontrolle = await page.evaluate(() => {
+    const [f, n] = [KR.D.forschung, KR.D.nachbau];
+    KR.D.nachbau = { schema_version: 1, available: false };
+    KR.zeige();
+    const ohneNachbau = [document.querySelectorAll(".forschung-karte").length,
+      !!document.querySelector('[data-research="reproduction"] [role="status"]'), document.querySelectorAll("[data-module]").length];
+    KR.D.nachbau = n; KR.D.forschung = { available: false };
+    KR.zeige();
+    const ohneSnapshot = [document.querySelectorAll(".forschung-karte").length, document.querySelectorAll("[data-module]").length];
+    KR.D.forschung = f;
+    KR.zeige();
+    return JSON.stringify([ohneNachbau, ohneSnapshot]);
+  });
+  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 11]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
+  // Stored species scores: both measures together and both spatial designs.
+  await page.click('.reiter button[data-ansicht="artenvergleich"]');
+  await page.waitForSelector(".arten-art");
+  if (await page.locator(".arten-art").count() !== 7) fehler.push("Artenvergleich: sieben Arten fehlen");
+  await page.click('#arten-block button[data-wert="10"]');
+  await page.check("#arten-extra");
+  if (await page.locator(".arten-art tbody tr").count() !== 28) fehler.push("Artenvergleich: Varianten fehlen");
+  if (await page.locator("#ansicht-artenvergleich .export-knopf").count()) fehler.push("Artenvergleich: unerwarteter Abbildungsexport");
+  if (fotos) await page.screenshot({ path: `${fotos}/${name}_artenvergleich.png`, fullPage: true });
+  await page.click('#arten-ebene button[data-wert="folds"]');
+  await page.selectOption("#arten-taxon", "abies_alba");
+  if (await page.locator(".arten-fold").count() !== 5 || await page.locator(".arten-fold tbody tr").count() !== 20) {
+    fehler.push("Artenvergleich: Foldwerte fehlen");
+  }
+  await page.click('#arten-ebene button[data-wert="summary"]');
   // Sprache
   await page.click("#sprache");
   await page.waitForTimeout(300);
@@ -326,7 +493,7 @@ async function pruefeExport(page, fehler, foto, pdf) {
 }
 
 (async () => {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(kanal ? { channel: kanal } : {});
   let fehlerGesamt = 0;
   if (zweiStandorte) {
     for (const datei of args) {

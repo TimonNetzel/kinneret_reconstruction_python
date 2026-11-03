@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02",
+  "base_commit": "edfd3f1be486b94915dad6bf618b0b82e2a57f19",
+  "status": "passed_source_audit_and_synthetic_controls_not_fossil_reproduction",
+  "checks": {
+    "deterministic_outputs": 4,
+    "source_guards": 20,
+    "all_explicit_sources_unchanged": true,
+    "index_counterexample_independently_verified": true,
+    "PMF_control_independently_verified": true,
+    "current_rw_candidate_count_checked": 4000,
+    "exact_posterior_paths_missing": 8,
+    "archived_reconstruction_PDF_bytes_equal": true,
+    "original_mcmc_samples_PNG_visually_reviewed": "TANN/PANN climate curves, young left; no numeric draws recovered",
+    "previous_packet_files_byte_unchanged": 17,
+    "shared_source_hash_comparisons": 8,
+    "preserved_snapshot_files": 50,
+    "normalized_package_links_resolved": 9,
+    "collector_AST_valid": true,
+    "no_absolute_machine_paths_in_export": true,
+    "only_expected_existing_entry_points_changed": true
+  },
+  "output_sha256": {
+    "contract.json": "40a44920466615eb942353b0502ce3418e844e7aec75ed6aecc8d0554aa7eb3d",
+    "source_spans.json": "101f08e5c79ea1807059e9d56fd50aac19b91abc6bd1745dcf495ac1cc68961c",
+    "posterior_paths.csv": "777aa3ac7e0382fe6f52d796ec8c4753291cf8b14b6b7718fe548742e27b7415",
+    "synthetic_checks.json": "9914f30f5762b4a4777d9c3f5cb2fd4e6bf5d183e0cce54bde116d7a89cfe99e"
+  },
+  "not_run": [
+    "R",
+    "IAT estimation",
+    "rPref selection",
+    "random sampling",
+    "KDE fitting",
+    "training",
+    "sampler",
+    "fossil reconstruction"
+  ],
+  "limits": "Final historical choice of source, original draws and numerical densities remain unbound; no source correction applied"
+}

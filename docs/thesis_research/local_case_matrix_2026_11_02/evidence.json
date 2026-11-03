@@ -1,0 +1,1302 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "base_commit": "865d155c6f2d69f0a63e2ec7ce216c99e7954181",
+  "scope": "Seven explicitly named local cases; existing catalogs reused; no traversal or R execution",
+  "roots": "Resolve original/additional via private .local/my_reconst_paths.json; repository is this checkout",
+  "cases": [
+    {
+      "id": "dead_sea_holocene",
+      "pollen": {
+        "source": "additional:my_gedi/data/in/core/en_gedi_counts.csv",
+        "rows": 58,
+        "header_columns": 19,
+        "candidate_taxon_columns": [
+          "Quercus Ithaburensis",
+          "Quercus Calliprinos",
+          "Pistacia lentiscus",
+          "Ceratonia siliqua",
+          "Olea europaea",
+          "Phillyrea",
+          "Arbutus unedo",
+          "Pinus halepensis",
+          "Ziziphus Spina-christi",
+          "Acacia Raddiana/Tortilis",
+          " Artemisia",
+          "Ephedra Aphylla",
+          "Chenopodium glaucum",
+          "Sarcopoterium Spinosum"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "1",
+        "depth_last_literal": "1949",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_gedi/data/out/age_depth/rho_depth_given_age.rdata",
+        "structure": {
+          "output": {
+            "rho_depth_given_age": {
+              "shape": [
+                57,
+                1949
+              ],
+              "dtype": "float64",
+              "all_finite": true
+            },
+            "age": {
+              "shape": [
+                57
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 405.0,
+              "max": 10126.0
+            },
+            "depth": {
+              "shape": [
+                57
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 12.0,
+              "max": 1948.9999999999998
+            }
+          }
+        }
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/gedi/reconstruction.pdf",
+          "archive_member": "figures/gedi/reconstruction.pdf",
+          "archive_member_sha256": "56f85749eb3f4d07089baf2bf8ac88a74a1fdf0f7cb6bceaee06ddb280a39499",
+          "byte_equal": false
+        },
+        {
+          "source": "original:out/plots/case_studies/gedi/reference_curves.pdf",
+          "archive_member": "figures/gedi/reference_curves.pdf",
+          "archive_member_sha256": "dc634f0eb749931342362c36437bcead0be7ed7177047b1785b724adc6d5f9cd",
+          "byte_equal": true
+        }
+      ]
+    },
+    {
+      "id": "dead_sea_glacial",
+      "pollen": {
+        "source": "additional:my_gedi2/data/in/core/taxa_spectrum.csv",
+        "rows": 422,
+        "header_columns": 22,
+        "candidate_taxon_columns": [
+          "Alnus",
+          "Betula",
+          "Cedrus",
+          "Quercus Ithaburensis",
+          "Quercus Calliprinos",
+          "Pistacia lentiscus",
+          "Olea europaea",
+          "Phillyrea ",
+          "Pinus halepensis",
+          "Platanus Orientalis",
+          "Artemisia",
+          "Chenopodium",
+          "Sarcopoterium Spinosum",
+          "Fraxinus ornus",
+          "Filipendula",
+          "Tilia",
+          "Juniperus",
+          "Ephedra distachya",
+          "Thalictrum minus"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "92.345",
+        "depth_last_literal": "340.6",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_gedi2/data/in/age_depth/rho_depth_given_age_higher_resol.rdata"
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/gedi2/reconstruction.pdf",
+          "archive_member": "figures/dead_sea/reconstruction.pdf",
+          "archive_member_sha256": "3885beb0d5f289cf9255a29ae40bc4b8ab59c557f8d30b4d9ef4bb091ee83c57",
+          "byte_equal": false
+        },
+        {
+          "source": "original:out/plots/case_studies/gedi2/reference_curves.pdf",
+          "archive_member": "figures/dead_sea/reference_curves.pdf",
+          "archive_member_sha256": "c7e061550f2bf0dd18988f7d20608800653ca227d400b71e169959cd31ce4b2a",
+          "byte_equal": false
+        }
+      ]
+    },
+    {
+      "id": "kinneret",
+      "pollen": {
+        "source": "additional:my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+        "rows": 160,
+        "header_columns": 65,
+        "candidate_taxon_columns": [
+          "Olea europaea",
+          "Quercus ilex-type",
+          "Quercus",
+          "Pistacia",
+          "Phillyrea",
+          "Ephedra fragilis-type",
+          "Ephedra distachya-type",
+          "Tamarix",
+          "Pinus",
+          "Betula",
+          "Juglans regia",
+          "Vitis",
+          "Juniperus-type",
+          "Fagus",
+          "Alnus",
+          "Tilia",
+          "Eucalyptus",
+          "Chenopodiaceae/Amaranthaceae",
+          "Asteraceae subf. Cichorioideae ",
+          "Asteraceae subf. Asteroideae ",
+          "Artemisia",
+          "Poaceae",
+          "Cerealia-type",
+          "Plantaginaceae",
+          "Apiaceae",
+          "Brassicaceae",
+          "Caryophyllaceae (periporate excl. Paronychioideae) ",
+          "Rubiaceae",
+          "Centaurea",
+          "Rumex",
+          "Cistus",
+          "Rosaceae",
+          "Fabaceae",
+          "Salvia-type ",
+          "Mentha-type",
+          "Scrophulariaceae (colporate-reticulate) ",
+          "Sanguisorba minor-type ",
+          "Polygonaceae",
+          "Epilobium",
+          "Ranunculaceae",
+          "Theligonum cynocrambe ",
+          "Rhamnus-type",
+          "Asphodelus",
+          "Hypericum",
+          "Scabiosa",
+          "Humulus/Cannabis ",
+          "Thalictrum",
+          "Linum",
+          "Papaveraceae",
+          "Urticaceae",
+          "Anemone coronaria ",
+          "Lythrum",
+          "Adonis",
+          "Elatine",
+          "Malvaceae",
+          "Ericales (tetrad)",
+          "Campanulaceae",
+          "Cyperaceae",
+          "Filipendula",
+          "Sparganium-type "
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "1",
+        "depth_last_literal": "1772",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+        "structure": {
+          "output": {
+            "rho_depth_given_age": {
+              "shape": [
+                160,
+                1772
+              ],
+              "dtype": "float64",
+              "all_finite": true
+            },
+            "age": {
+              "shape": [
+                160
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": -60.0,
+              "max": 9015.0
+            },
+            "depth": {
+              "shape": [
+                160
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 1.0,
+              "max": 1772.0
+            }
+          }
+        }
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/kinneret/reconstruction.pdf",
+          "archive_member": "figures/kinneret/reconstruction.pdf",
+          "archive_member_sha256": "1b586d2acc8ec6527190ec5f0c6adc58abe1f20fff8ad328f2783d51a639334b",
+          "byte_equal": true
+        },
+        {
+          "source": "original:out/plots/case_studies/kinneret/reference_curves.pdf",
+          "archive_member": "figures/kinneret/reference_curves.pdf",
+          "archive_member_sha256": "851eb27a2ddfa77e60b002db56814143e035bc29f709bb01e8caf7ffb26b9fda",
+          "byte_equal": true
+        }
+      ]
+    },
+    {
+      "id": "birkat_ram",
+      "pollen": {
+        "source": "additional:my_birkat_ram/data/in/core/pollen_counts_composite.csv",
+        "rows": 161,
+        "header_columns": 18,
+        "candidate_taxon_columns": [
+          "Olea europaea",
+          "Quercus Ithaburensis",
+          "Quercus Calliprinos",
+          "Pistacia lentiscus",
+          "Phillyrea",
+          "Pinus halepensis",
+          "Juglans regia",
+          "Vitis sylvestris",
+          "Alnus",
+          "Tilia",
+          "Carpinus orientalis",
+          "Chenopodium",
+          "Artemisia",
+          "Plantago lanceolata"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "2.5 ",
+        "depth_last_literal": "1090",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_birkat_ram/data/out/age_depth/rho_depth_given_age.rdata",
+        "structure": {
+          "output": {
+            "rho_depth_given_age": {
+              "kind": "list",
+              "items": [
+                {
+                  "shape": [
+                    140,
+                    540
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true
+                },
+                {
+                  "shape": [
+                    174,
+                    540
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true
+                },
+                {
+                  "shape": [
+                    18,
+                    540
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true
+                }
+              ]
+            },
+            "age": {
+              "kind": "list",
+              "items": [
+                {
+                  "shape": [
+                    140
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true,
+                  "min": -48.0,
+                  "max": 8675.0
+                },
+                {
+                  "shape": [
+                    174
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true,
+                  "min": 0.0,
+                  "max": 8650.0
+                },
+                {
+                  "shape": [
+                    18
+                  ],
+                  "dtype": "float64",
+                  "all_finite": true,
+                  "min": 0.0,
+                  "max": 8500.0
+                }
+              ]
+            },
+            "depth": {
+              "shape": [
+                140
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 2.5,
+              "max": 542.0
+            }
+          }
+        }
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/birkat2/reconstruction.pdf",
+          "archive_member": "figures/birkat/reconstruction.pdf",
+          "archive_member_sha256": "4b4d17c9eb391e0daa9b528f88f32cc36482a93090cb384fd427668957c150a5",
+          "byte_equal": true
+        },
+        {
+          "source": "original:out/plots/case_studies/birkat2/reference_curves.pdf",
+          "archive_member": "figures/birkat/reference_curves.pdf",
+          "archive_member_sha256": "37e36624b24e9089a2cf5c48dd199f678392c45cb210102b72354dbffdd147df",
+          "byte_equal": true
+        }
+      ]
+    },
+    {
+      "id": "van",
+      "pollen": {
+        "source": "additional:my_van/data/in/core/taxa_spectrum.csv",
+        "rows": 350,
+        "header_columns": 22,
+        "candidate_taxon_columns": [
+          "Artemisia",
+          "Alnus glutinosa",
+          "Betula",
+          "Chenopodium",
+          "Ephedra distachya",
+          "Filipendula",
+          "Galium",
+          "Juglans",
+          "Juniperus oxycedrus",
+          "Olea europaea",
+          "Picea",
+          "Pinus",
+          "Pistacia lentiscus",
+          "Plantago lanceolata",
+          "Quercus deciduous",
+          "Quercus Calliprinos",
+          "Ranunculus acris",
+          "Rhamnus",
+          "Salix",
+          "Thalictrum minus",
+          "Ulmus minor"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "0.05",
+        "depth_last_literal": "48.955",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_van/data/in/age_depth/rho_depth_given_age.rdata"
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/van/reconstruction.pdf",
+          "archive_member": "figures/van/reconstruction.pdf",
+          "archive_member_sha256": "ae1b27be16047e873425026c4fda6278e22547b1b6b6ca1cbe34ebe58c928500",
+          "byte_equal": true
+        },
+        {
+          "source": "original:out/plots/case_studies/van/reference_curves.pdf",
+          "archive_member": "figures/van/reference_curves.pdf",
+          "archive_member_sha256": "c6d70e47dba47561fc7d31fd4d2b3f6a094c0069be855e836115d756deb9e330",
+          "byte_equal": true
+        }
+      ]
+    },
+    {
+      "id": "iznik",
+      "pollen": {
+        "source": "additional:my_iznik/data/in/core/pollen_counts_epd_taxanomy.csv",
+        "rows": 111,
+        "header_columns": 113,
+        "candidate_taxon_columns": [
+          "Abies",
+          "Acer campestre-type",
+          "Alnus",
+          "Betula",
+          "Buxus",
+          "Celtis",
+          "Ceratonia siliqua",
+          "Cornus",
+          "Corylus",
+          "Ephedra",
+          "Fagus",
+          "Fraxinus excelsior-type",
+          "Fraxinus ornus",
+          "Hippophae rhamnoides",
+          "Juglans regia",
+          "Juniperus-type",
+          "Ligustrum-type",
+          "Olea europaea",
+          "Phillyrea",
+          "Picea",
+          "Pinus",
+          "Pistacia",
+          "Platanus",
+          "Populus",
+          "Quercus",
+          "Quercus ilex-type",
+          "Salix",
+          "Sambucus",
+          "Rosaceae (non-operculate)",
+          "Taxus baccata",
+          "Tilia",
+          "Ulmus/Zelkova",
+          "Vaccinium-type",
+          "Vitis",
+          "Adonis aestivalis-type",
+          "Alchemilla/Aphanes",
+          "Allium vineale-type",
+          "Anemone coronaria",
+          "Apiaceae",
+          "Artemisia",
+          "Arum",
+          "Asteraceae",
+          "Ballota-type",
+          "Blackstonia-type",
+          "Brassicaceae",
+          "Campanulaceae",
+          "Caryophyllaceae (periporate excl. Paronychioideae)",
+          "Centaurea",
+          "Centranthus",
+          "Cerealia-type",
+          "Chenopodiaceae/Amaranthaceae",
+          "Cistus",
+          "Convolvulus arvensis-type",
+          "Cyperaceae",
+          "Dipsacaceae",
+          "Dipsacus-type",
+          "Echinops",
+          "Euphorbia",
+          "Fabaceae",
+          "Filipendula",
+          "Genista-group",
+          "Hedera",
+          "Hedysarum",
+          "Helianthemum",
+          "Herniaria-type",
+          "Humulus/Cannabis",
+          "Hypericum perforatum-type",
+          "Lamiaceae",
+          "Asteraceae subf. Cichorioideae",
+          "Liliaceae-type",
+          "Linum",
+          "Buglossoides arvensis",
+          "Loranthus europaeus",
+          "Lythrum",
+          "Melampyrum",
+          "Mentha-type",
+          "Mercurialis",
+          "Papaver argemone",
+          "Papaver rhoeas-type",
+          "Plantago",
+          "Plantago lanceolata-type",
+          "Plumbaginaceae",
+          "Poaceae",
+          "Polycnemum",
+          "Polygonum aviculare-type",
+          "Potentilla-type",
+          "Ranunculaceae",
+          "Ranunculus acris-type",
+          "Rhinanthus-type/Veronica-type",
+          "Rosaceae",
+          "Rubiaceae",
+          "Rumex/Oxyria",
+          "Rumex aquaticus-type",
+          "Salvia-type",
+          "Sanguisorba minor-type",
+          "Sanguisorba officinalis",
+          "Scabiosa argentea",
+          "Scrophulariaceae (colporate-reticulate)",
+          "Solanaceae",
+          "Teucrium",
+          "Thalictrum",
+          "Trifolium-type",
+          "Asteraceae subf. Asteroideae",
+          "Urtica pilulifera",
+          "Urticaceae/Moraceae",
+          "Valeriana"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "0.508",
+        "depth_last_literal": "18.14",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_iznik/data/out/age_depth/rho_depth_given_age.rdata",
+        "structure": {
+          "output": {
+            "rho_depth_given_age": {
+              "shape": [
+                111,
+                1764
+              ],
+              "dtype": "float64",
+              "all_finite": true
+            },
+            "age": {
+              "shape": [
+                111
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 512.0,
+              "max": 30925.0
+            },
+            "depth": {
+              "shape": [
+                111
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 50.8,
+              "max": 1814.0
+            }
+          }
+        }
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/iznik/reconstruction.pdf",
+          "archive_member": "figures/iznik/reconstruction.pdf",
+          "archive_member_sha256": "3e39ebcea8668abae97103e49027d5f08879b22ab0ce164596bcba8d0b182fe0",
+          "byte_equal": true
+        },
+        {
+          "source": "original:out/plots/case_studies/iznik/reference_curves.pdf",
+          "archive_member": "figures/iznik/reference_curves.pdf",
+          "archive_member_sha256": "5e19ab18dcfff22463911cc3ba5f91b491bec802893d543e6902dadd242b45f0",
+          "byte_equal": true
+        }
+      ]
+    },
+    {
+      "id": "ohrid",
+      "pollen": {
+        "source": "additional:my_ohrid/data/in/core/core_data_counts.csv",
+        "rows": 103,
+        "header_columns": 49,
+        "candidate_taxon_columns": [
+          "Pinus sylvestris-type",
+          "Pinus cembra-type",
+          "Cedrus",
+          "Abies",
+          "Picea abies",
+          "Picea omorika",
+          "Taxus",
+          "Tsuga",
+          "Quercus cerris",
+          "Quercus robur",
+          "Quercus ilex",
+          "Carpinus betulus",
+          "Ostrya",
+          "Betula",
+          "Fraxinus ornus",
+          "Fraxinus excelsior",
+          "Fagus",
+          "Alnus",
+          "Corylus",
+          "Tilia",
+          "Ulmus",
+          "Zelkova",
+          "Liquidambar",
+          "Carya",
+          "Pterocarya",
+          "Acer",
+          "Salix",
+          "Juglans",
+          "Phillyrea",
+          "Olea",
+          "Juniperus-type",
+          "Hippophae",
+          "Buxus",
+          "Celtis",
+          "Ericaceae",
+          "Pistacia",
+          "Rhamnus",
+          "Rubus",
+          "Vitis",
+          "Chenopodiaceae",
+          "Ephedra distachya-type",
+          "Hedera",
+          "Myrica",
+          "Viburnum",
+          "Cornus sanguinea",
+          "Castanea"
+        ],
+        "taxon_list_status": "candidate columns only; historical retained mapping unresolved",
+        "depth_first_literal": "400.56",
+        "depth_last_literal": "447.28",
+        "uniform_row_width": true
+      },
+      "chronology": {
+        "source": "additional:my_ohrid/data/out/age_depth/rho_depth_given_age.rdata",
+        "structure": {
+          "output": {
+            "rho_depth_given_age": {
+              "shape": [
+                103,
+                4673
+              ],
+              "dtype": "float64",
+              "all_finite": true
+            },
+            "age": {
+              "shape": [
+                103
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 1165841.0,
+              "max": 1366341.0
+            },
+            "depth": {
+              "shape": [
+                103
+              ],
+              "dtype": "float64",
+              "all_finite": true,
+              "min": 40056.0,
+              "max": 44728.0
+            }
+          }
+        }
+      },
+      "figure_comparisons": [
+        {
+          "source": "original:out/plots/case_studies/ohrid/reconstruction.pdf",
+          "archive_member": "figures/ohrid/reconstruction.pdf",
+          "archive_member_sha256": "95195973bb9e4025d75e1962e07fa2b9f524ddfcae65b1d892bc21f2382118df",
+          "byte_equal": true
+        },
+        {
+          "source": "original:out/plots/case_studies/ohrid/reference_curves.pdf",
+          "archive_member": "figures/ohrid/reference_curves.pdf",
+          "archive_member_sha256": "8dbc4bd7a67bd42c28e9b1c599e80988afcf615ec1aaa6e711cd8639d43e9a7f",
+          "byte_equal": true
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "additional:my_gedi/data/in/core/en_gedi_counts.csv": {
+      "scope": "additional",
+      "relative_path": "my_gedi/data/in/core/en_gedi_counts.csv",
+      "exists": true,
+      "bytes": 4062,
+      "sha256": "0b73fa6173794ce9efa8bed0b1e0545977b584b1aed21aed59a80816cd2567e7"
+    },
+    "additional:my_gedi/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_gedi/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 540651,
+      "sha256": "b4c3beb7df242cd939221a80bc032d8766aa10b50a516d0d26ea64baa6f02dda"
+    },
+    "original:out/plots/case_studies/gedi/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/gedi/reconstruction.pdf",
+      "exists": true,
+      "bytes": 298139,
+      "sha256": "3ecc728ac56b1e51db967fd48c574390953b35abcd614a951685beddc2fff6b7"
+    },
+    "original:out/plots/case_studies/gedi/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/gedi/reference_curves.pdf",
+      "exists": true,
+      "bytes": 18013,
+      "sha256": "dc634f0eb749931342362c36437bcead0be7ed7177047b1785b724adc6d5f9cd"
+    },
+    "additional:my_gedi2/data/in/core/taxa_spectrum.csv": {
+      "scope": "additional",
+      "relative_path": "my_gedi2/data/in/core/taxa_spectrum.csv",
+      "exists": true,
+      "bytes": 59007,
+      "sha256": "470700555d3e4dad05d8db1c08c83b8c5391bc161b2f88976bd4e500b2081a44"
+    },
+    "additional:my_gedi2/data/in/age_depth/rho_depth_given_age_higher_resol.rdata": {
+      "scope": "additional",
+      "relative_path": "my_gedi2/data/in/age_depth/rho_depth_given_age_higher_resol.rdata",
+      "exists": false
+    },
+    "original:out/plots/case_studies/gedi2/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/gedi2/reconstruction.pdf",
+      "exists": true,
+      "bytes": 428207,
+      "sha256": "14fc30b3e3fb5d611f202997f1c7156bebe7b913c9658855cf7047a3d175c9ab"
+    },
+    "original:out/plots/case_studies/gedi2/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/gedi2/reference_curves.pdf",
+      "exists": true,
+      "bytes": 19316,
+      "sha256": "4084790428fe4634a424172d8edf2b1a6f434a3ba0a6b2e8eaa5b946cb46ab78"
+    },
+    "additional:my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+      "exists": true,
+      "bytes": 23333,
+      "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    },
+    "additional:my_kinneret/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 1375335,
+      "sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762"
+    },
+    "original:out/plots/case_studies/kinneret/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/kinneret/reconstruction.pdf",
+      "exists": true,
+      "bytes": 308003,
+      "sha256": "1b586d2acc8ec6527190ec5f0c6adc58abe1f20fff8ad328f2783d51a639334b"
+    },
+    "original:out/plots/case_studies/kinneret/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/kinneret/reference_curves.pdf",
+      "exists": true,
+      "bytes": 19651,
+      "sha256": "851eb27a2ddfa77e60b002db56814143e035bc29f709bb01e8caf7ffb26b9fda"
+    },
+    "additional:my_birkat_ram/data/in/core/pollen_counts_composite.csv": {
+      "scope": "additional",
+      "relative_path": "my_birkat_ram/data/in/core/pollen_counts_composite.csv",
+      "exists": true,
+      "bytes": 16178,
+      "sha256": "25004e61619399eb6170ce048a04db0ea51a9e452de9ca8486fcf3b7d340b501"
+    },
+    "additional:my_birkat_ram/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_birkat_ram/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 995409,
+      "sha256": "ea4f6c8d9e92823993b1210bb930cdd3a13ae9eeb158524bdf5ff4f19f36e66b"
+    },
+    "original:out/plots/case_studies/birkat2/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/birkat2/reconstruction.pdf",
+      "exists": true,
+      "bytes": 1106969,
+      "sha256": "4b4d17c9eb391e0daa9b528f88f32cc36482a93090cb384fd427668957c150a5"
+    },
+    "original:out/plots/case_studies/birkat2/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/birkat2/reference_curves.pdf",
+      "exists": true,
+      "bytes": 25984,
+      "sha256": "37e36624b24e9089a2cf5c48dd199f678392c45cb210102b72354dbffdd147df"
+    },
+    "additional:my_van/data/in/core/taxa_spectrum.csv": {
+      "scope": "additional",
+      "relative_path": "my_van/data/in/core/taxa_spectrum.csv",
+      "exists": true,
+      "bytes": 19050,
+      "sha256": "03a0d06fb1571c9e2933f04b0e4f419e57532b23c2746008b5a296f4016cc5b5"
+    },
+    "additional:my_van/data/in/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_van/data/in/age_depth/rho_depth_given_age.rdata",
+      "exists": false
+    },
+    "original:out/plots/case_studies/van/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/van/reconstruction.pdf",
+      "exists": true,
+      "bytes": 4526850,
+      "sha256": "ae1b27be16047e873425026c4fda6278e22547b1b6b6ca1cbe34ebe58c928500"
+    },
+    "original:out/plots/case_studies/van/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/van/reference_curves.pdf",
+      "exists": true,
+      "bytes": 51777,
+      "sha256": "c6d70e47dba47561fc7d31fd4d2b3f6a094c0069be855e836115d756deb9e330"
+    },
+    "additional:my_iznik/data/in/core/pollen_counts_epd_taxanomy.csv": {
+      "scope": "additional",
+      "relative_path": "my_iznik/data/in/core/pollen_counts_epd_taxanomy.csv",
+      "exists": true,
+      "bytes": 31613,
+      "sha256": "ae00fa7b036833f3885188be943e6398009bac6730f4ce9ca494c52389b441ab"
+    },
+    "additional:my_iznik/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_iznik/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 945384,
+      "sha256": "43017ef2783b226aa324cc0903fc460ebe907ce10c0070d7c518326991ed7b16"
+    },
+    "original:out/plots/case_studies/iznik/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/iznik/reconstruction.pdf",
+      "exists": true,
+      "bytes": 1204484,
+      "sha256": "3e39ebcea8668abae97103e49027d5f08879b22ab0ce164596bcba8d0b182fe0"
+    },
+    "original:out/plots/case_studies/iznik/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/iznik/reference_curves.pdf",
+      "exists": true,
+      "bytes": 23511,
+      "sha256": "5e19ab18dcfff22463911cc3ba5f91b491bec802893d543e6902dadd242b45f0"
+    },
+    "additional:my_ohrid/data/in/core/core_data_counts.csv": {
+      "scope": "additional",
+      "relative_path": "my_ohrid/data/in/core/core_data_counts.csv",
+      "exists": true,
+      "bytes": 14062,
+      "sha256": "a31ecb0e0192a0f7f6fed20291ab5d4c3266db592c29d2688e1f8acfd2cf29c3"
+    },
+    "additional:my_ohrid/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_ohrid/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 2374284,
+      "sha256": "703a6b03fa32acdf99dce8191501c2bd5fa98ac1f88461da05a2ed54395aa45b"
+    },
+    "original:out/plots/case_studies/ohrid/reconstruction.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/ohrid/reconstruction.pdf",
+      "exists": true,
+      "bytes": 700964,
+      "sha256": "95195973bb9e4025d75e1962e07fa2b9f524ddfcae65b1d892bc21f2382118df"
+    },
+    "original:out/plots/case_studies/ohrid/reference_curves.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/ohrid/reference_curves.pdf",
+      "exists": true,
+      "bytes": 20867,
+      "sha256": "8dbc4bd7a67bd42c28e9b1c599e80988afcf615ec1aaa6e711cd8639d43e9a7f"
+    },
+    "original:main_v1.2.R": {
+      "scope": "original",
+      "relative_path": "main_v1.2.R",
+      "exists": true,
+      "bytes": 45494,
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "inspected_line_ranges": [
+        [
+          65,
+          79
+        ],
+        [
+          107,
+          181
+        ],
+        [
+          185,
+          291
+        ],
+        [
+          325,
+          347
+        ],
+        [
+          388,
+          433
+        ],
+        [
+          568,
+          591
+        ],
+        [
+          600,
+          678
+        ]
+      ]
+    },
+    "original:src/mcmc_prepare.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_prepare.R",
+      "exists": true,
+      "bytes": 82630,
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "inspected_line_ranges": [
+        [
+          1,
+          43
+        ],
+        [
+          109,
+          109
+        ],
+        [
+          306,
+          330
+        ],
+        [
+          710,
+          725
+        ],
+        [
+          1010,
+          1046
+        ],
+        [
+          1138,
+          1150
+        ],
+        [
+          1180,
+          1265
+        ],
+        [
+          1290,
+          1386
+        ]
+      ]
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_functions_v1.6.R",
+      "exists": true,
+      "bytes": 99905,
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "inspected_line_ranges": [
+        [
+          280,
+          363
+        ],
+        [
+          450,
+          477
+        ],
+        [
+          1242,
+          1284
+        ],
+        [
+          1781,
+          1820
+        ]
+      ]
+    },
+    "original:src/mcmc_conduction.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_conduction.R",
+      "exists": true,
+      "bytes": 25090,
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "inspected_line_ranges": [
+        [
+          138,
+          145
+        ],
+        [
+          427,
+          463
+        ]
+      ]
+    },
+    "original:src/mcmc_trimming_posterior_trafo.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_trimming_posterior_trafo.R",
+      "exists": true,
+      "bytes": 27564,
+      "sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "inspected_line_ranges": [
+        [
+          94,
+          113
+        ]
+      ]
+    },
+    "original:src/all_trafo.R": {
+      "scope": "original",
+      "relative_path": "src/all_trafo.R",
+      "exists": true,
+      "bytes": 56720,
+      "sha256": "d03ce4282a36727a73f961362ddeee654a55af0d9c94916ad7babb0c94ccefb1",
+      "inspected_line_ranges": [
+        [
+          45,
+          52
+        ],
+        [
+          106,
+          113
+        ],
+        [
+          217,
+          229
+        ],
+        [
+          407,
+          411
+        ],
+        [
+          469,
+          529
+        ]
+      ]
+    },
+    "original:src/prior_climate.R": {
+      "scope": "original",
+      "relative_path": "src/prior_climate.R",
+      "exists": true,
+      "bytes": 6918,
+      "sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd",
+      "inspected_line_ranges": [
+        [
+          1,
+          80
+        ],
+        [
+          108,
+          130
+        ]
+      ]
+    },
+    "original:src/check_ages.R": {
+      "scope": "original",
+      "relative_path": "src/check_ages.R",
+      "exists": true,
+      "bytes": 12904,
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "inspected_line_ranges": [
+        [
+          7,
+          19
+        ],
+        [
+          103,
+          113
+        ],
+        [
+          174,
+          231
+        ]
+      ]
+    },
+    "original:out/plots/mcmc/v5.0/diss_final.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/mcmc/v5.0/diss_final.pdf",
+      "exists": true,
+      "bytes": 34059341,
+      "sha256": "1770993ad65dd5024789568bc8f124f3b46ccc68ce36e4506a76170590209de8"
+    },
+    "original:out/plots/mcmc/v5.0/diss_final.zip": {
+      "scope": "original",
+      "relative_path": "out/plots/mcmc/v5.0/diss_final.zip",
+      "exists": true,
+      "bytes": 42244270,
+      "sha256": "5bb88cda23197c438ec54f28034a79ba3d425578743d067af7d4679df10bf837"
+    },
+    "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF": {
+      "scope": "repository",
+      "relative_path": "docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "exists": true,
+      "bytes": 14509384,
+      "sha256": "6bce0f18f65af10684f8d5fa3d445d1882482a7b912bfe5ebd6743d91203d6cb"
+    },
+    "repository:docs/paper/Phd_thesis_netzel_ch3.2.PDF": {
+      "scope": "repository",
+      "relative_path": "docs/paper/Phd_thesis_netzel_ch3.2.PDF",
+      "exists": true,
+      "bytes": 4559618,
+      "sha256": "2ca8df0a2b0c00e1e1a2d42b664f8ae9089c125303bdb21d6440ce07c9d6d343"
+    },
+    "repository:docs/paper/Phd_thesis_netzel_ch2.5.PDF": {
+      "scope": "repository",
+      "relative_path": "docs/paper/Phd_thesis_netzel_ch2.5.PDF",
+      "exists": true,
+      "bytes": 2935184,
+      "sha256": "93cd08173bb7d9cc57dc78a45054e00e1587ddf42ccb5f095006a51f34935b56"
+    },
+    "repository:.local/inventory/data_catalog.csv": {
+      "scope": "repository",
+      "relative_path": ".local/inventory/data_catalog.csv",
+      "exists": true,
+      "bytes": 222478,
+      "sha256": "89909b1e888ba1f5841233d69b080fbe8178a5588b7937eefc668c4b3dede57f"
+    },
+    "repository:.local/my_reconst_source_audit_v3/source_inventory.csv": {
+      "scope": "repository",
+      "relative_path": ".local/my_reconst_source_audit_v3/source_inventory.csv",
+      "exists": true,
+      "bytes": 215687,
+      "sha256": "04114d3590f62f65c34fb990514cf304efd1c16c9d2f7a22fc5f120532875557"
+    },
+    "additional:my_gedi2/data/in/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_gedi2/data/in/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 4746027,
+      "sha256": "d3c3a0ef25fb53e6cda22bfe6cc16ab7fa5471ad67c63cc56b42919bfd15eb98"
+    },
+    "additional:my_iznik/data/in/core/core_information.csv": {
+      "scope": "additional",
+      "relative_path": "my_iznik/data/in/core/core_information.csv",
+      "exists": false
+    },
+    "additional:my_ohrid/data/out/age_depth/core_data_ohrid.rdata": {
+      "scope": "additional",
+      "relative_path": "my_ohrid/data/out/age_depth/core_data_ohrid.rdata",
+      "exists": true,
+      "bytes": 2380797,
+      "sha256": "1a0d8dc2f47029e39318817cc1458bab849fd89f25af6be9c230093120546231"
+    },
+    "original:in/core_data_additional_sites_v1.2.rdata": {
+      "scope": "original",
+      "relative_path": "in/core_data_additional_sites_v1.2.rdata",
+      "exists": false
+    },
+    "original:in/reference_speleo_iso.rdata": {
+      "scope": "original",
+      "relative_path": "in/reference_speleo_iso.rdata",
+      "exists": false
+    },
+    "original:in/isotope_info.rdata": {
+      "scope": "original",
+      "relative_path": "in/isotope_info.rdata",
+      "exists": false
+    },
+    "original:in/isotope_speleo_other.rdata": {
+      "scope": "original",
+      "relative_path": "in/isotope_speleo_other.rdata",
+      "exists": false
+    },
+    "original:out/transfer_functions/prob_c_kgc.rdata": {
+      "scope": "original",
+      "relative_path": "out/transfer_functions/prob_c_kgc.rdata",
+      "exists": false
+    },
+    "original:out/transfer_functions/mixed_partial_arts_emd.rdata": {
+      "scope": "original",
+      "relative_path": "out/transfer_functions/mixed_partial_arts_emd.rdata",
+      "exists": false
+    },
+    "original:out/transfer_functions/mixed_partial_arts_emd_info.rdata": {
+      "scope": "original",
+      "relative_path": "out/transfer_functions/mixed_partial_arts_emd_info.rdata",
+      "exists": false
+    }
+  },
+  "page_checks": [
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 79,
+      "needle": "Holocene",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 87,
+      "needle": "14.5",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 96,
+      "needle": "3.3.2",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 104,
+      "needle": "3.3.3",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 111,
+      "needle": "3.3.4",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 119,
+      "needle": "3.3.5",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 125,
+      "needle": "3.3.6",
+      "found": true
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.pdf",
+      "pdf_page": 125,
+      "needle": "365",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 3,
+      "needle": "Holocene",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 11,
+      "needle": "14.5",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 20,
+      "needle": "3.3.2",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 27,
+      "needle": "3.3.3",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 34,
+      "needle": "3.3.4",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 42,
+      "needle": "3.3.5",
+      "found": true
+    },
+    {
+      "source": "repository:docs/paper/Phd_thesis_netzel_ch3.3.PDF",
+      "pdf_page": 47,
+      "needle": "3.3.6",
+      "found": true
+    }
+  ],
+  "checks": {
+    "case_count": 7,
+    "all_sources_unchanged_during_read": true,
+    "all_page_needles_found": true,
+    "figure_byte_matches": 11,
+    "figure_comparison_count": 14
+  },
+  "limits": [
+    "CSV rows are not proven retained samples or numeric TF order",
+    "RData structure and ranges are not validated R predictions or a verified chronology",
+    "Figure byte equality binds archive graphics, not underlying numeric samples",
+    "Missing means absent at the explicit consumer path; prior broader negative audits remain separate"
+  ]
+}

@@ -1,5 +1,12 @@
 # Projektstand
 
+> **Neue Reihenfolge auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
+> Maßgeblich: [Arbeitsplan](thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Der folgende ältere Stand bleibt als Verlauf bzw. späterer Entwurf erhalten.
+> Er ersetzt weder den historischen Ablauf noch die aktuellen Quell-/Chronologie-Gates.
+
+
 Stand: 29.10.2026. Dieses Dokument fasst Ziel, Plan, Ergebnisse, Entscheidungen und offene Punkte
 zusammen, damit die Arbeit jederzeit wieder aufgenommen werden kann.
 

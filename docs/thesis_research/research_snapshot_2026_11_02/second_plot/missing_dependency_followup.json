@@ -1,0 +1,46 @@
+{
+  "method": "Reuse prior catalogs and archive directory audit, without a repeated tree scan. Known explicit dependency paths rechecked only.",
+  "prior_additional_audit_sha256": "8691c98f7fa784ce403e48d74a31942ee9dec022ee776b7bb996db5d54cd15f1",
+  "original_catalog_matches": {
+    "mixed_partial_arts_emd.rdata": [],
+    "mixed_partial_arts_emd_info.rdata": [],
+    "tann_test.nc": [],
+    "pann_test.nc": [],
+    "cru_tann_ww.nc": [],
+    "cru_pann_ww.nc": []
+  },
+  "additional_prior_exact_results": {
+    "mixed_partial_arts_emd.rdata": [],
+    "mixed_partial_arts_emd_info.rdata": [],
+    "tann_test.nc": [],
+    "pann_test.nc": [],
+    "cru_tann_ww.nc": "not in prior exact-name query",
+    "cru_pann_ww.nc": "not in prior exact-name query"
+  },
+  "explicit_paths": [
+    {
+      "path": "<USER_HOME>\\OneDrive - Lore-Lorentz-Schule\\diss\\reconstructions\\cru_nh",
+      "exists": false,
+      "scope": "candidate translation of explicit historical path; no recursive sibling search",
+      "exists_now": false
+    },
+    {
+      "path": "<USER_HOME>\\OneDrive - Lore-Lorentz-Schule\\diss\\src\\cru_nh",
+      "exists": false,
+      "scope": "candidate translation of explicit historical path; no recursive sibling search",
+      "exists_now": false
+    },
+    {
+      "path": "<USER_HOME>\\OneDrive - Lore-Lorentz-Schule\\diss\\climate_modelling\\pollen\\transfer_functions\\input_data\\data_out",
+      "exists": false,
+      "scope": "candidate translation of explicit historical path; no recursive sibling search",
+      "exists_now": false
+    },
+    {
+      "path": "<USER_HOME>\\OneDrive - Lore-Lorentz-Schule\\diss\\src\\climate_modelling\\pollen\\transfer_functions\\input_data\\data_out",
+      "exists": false,
+      "scope": "candidate translation of explicit historical path; no recursive sibling search",
+      "exists_now": false
+    }
+  ]
+}

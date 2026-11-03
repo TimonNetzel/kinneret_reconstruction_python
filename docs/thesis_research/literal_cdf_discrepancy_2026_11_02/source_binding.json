@@ -1,0 +1,93 @@
+{
+  "status": "preserved_fragments_not_final_run_binding",
+  "basis_commit": "d6e3343decbb1e74409a6c10e179da4e9da7be9f",
+  "sources": {
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json",
+      "spans": [
+        {
+          "first_line": 65,
+          "last_line": 70,
+          "text": "seeds <- 2019\nnum.cores <- 10\nlength_sim <- 5\ndims <- 300\ntimeslice <- \"all\" # \"all\",\"hist\",\"mh\",\"lgm\",\"eem\"\nrm.similar.taxa <- FALSE"
+        },
+        {
+          "first_line": 650,
+          "last_line": 661,
+          "text": "\nfor(station_id in stations ){\n\n#     station_id <- 7\n    if( is.null(core.data[[station_id]]) | station_id == 469 ) next()\n    print(station_id)\n    age.reso <- 2\n    sim_nr <- 1\n    dims <- 300\n    null.ratio.check <- FALSE\n    metro_hastings <- FALSE\n    bias_corr <- FALSE"
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "bytes": 99905,
+      "previous_binding": "literal_age_selection_2026_11_02/source_binding.json",
+      "spans": [
+        {
+          "first_line": 366,
+          "last_line": 406,
+          "text": "final_reconstruction <- function(energy=energy,post.which.combs=post.which.combs, taxa_weights =taxa_weights, gibbs = FALSE,age=age,all.avail=all.avail,all.avail.age=all.avail.age,rho.d.g.a=rho.d.g.a,tf.x1.current=tf.x1.current,tf.x2.current=tf.x2.current,ecdf_ref1=ecdf_ref1,ecdf_ref2=ecdf_ref2,x1range.bck=x1range.bck,x2range.bck=x2range.bck){\n    \n    # place holder for reference reconstructions\n    if(length(ecdf_ref1) == 1){\n        ecdf_ref1 <- ecdf_ref2 <- array(0, dim =c(nrow(rho.d.g.a), dims))\n    }\n    \n    # create all accepted reconstructions\n    count <- 0\n    combs_unique <- which(!duplicated(energy))\n    energy <- energy[combs_unique] /sum(energy[combs_unique], na.rm=T)\n    energy_weight <- (energy - max(energy, na.rm=T))/(min(energy, na.rm=T)-max(energy, na.rm=T))\n    \n#     if( !is.null(nrow(taxa_weights)) ) taxa_weights <- taxa_weights[combs_unique,]\n    if( nrow(post.which.combs) <= 1 ){\n#         post.which.combs <- t(as.matrix(post.which.combs))\n        averaging_data <- F\n        averaging_pdfs <- T\n    }\n    \n    corr_check <- array(NA, dim = c(length(combs_unique),5))\n    all_tmp_mean <- all_pann_mean <- array(NA, dim = c( length(combs_unique),length(age) ) )\n    \n    dims <- length(x1range.bck)\n\n    tmp_mixt_avg_pdfs_depth <- pann_mixt_avg_pdfs_depth <- array(0, dim =c(length(depth), dims))\n    tmp_mixt_avg_pdfs_age <- pann_mixt_avg_pdfs_age <- array(0, dim =c(length(age), dims))\n    \n    tmp_mixt_confl_age <- pann_mixt_confl_age <- array(1, dim =c(length(age), dims))\n    tmp_mixt_confl_depth <- pann_mixt_confl_depth <- array(1, dim =c(length(depth), dims))\n    \n    tmp_mixt_conv_depth <- pann_mixt_conv_depth <- array(NA, dim =c(length(depth), dims))\n    tmp_mixt_conv_age <- pann_mixt_conv_age <- array(NA, dim =c(length(age), dims))\n    \n    tmp_mixt_conv_depth <- pann_mixt_conv_depth <- x_tann_depth <- x_pann_depth <-  vector(\"list\", length(depth))\n    tmp_mixt_conv_age <- pann_mixt_conv_age <- x_tann_age <- x_pann_age <- vector(\"list\", length(age))\n            \n      \n    all_tann_pdfs <- all_pann_pdfs <- array(0, dim =c(length(combs_unique),nrow(rho.d.g.a), dims)) \n    \n    emd_tmp <- emd_pann <- array(NA, dim = c(length(combs_unique),nrow(rho.d.g.a)))"
+        },
+        {
+          "first_line": 485,
+          "last_line": 490,
+          "text": "        ecdf_tmp_my_reconst <- rowCumsums(tmp.recon.age, na.rm=T)\n        ecdf_pann_my_reconst <- rowCumsums(pann.recon.age, na.rm=T)\n        for(j in 1:length(age)){\n            emd_tmp[count,j] <- (1/dims) * sum( abs(ecdf_tmp_my_reconst[j,] - ecdf_ref1[j,]), na.rm=T)   \n            emd_pann[count,j] <- (1/dims) * sum( abs(ecdf_pann_my_reconst[j,] - ecdf_ref2[j,]), na.rm=T)\n        }"
+        },
+        {
+          "first_line": 755,
+          "last_line": 760,
+          "text": "    # normalize mixture models to pdfs\n    tmp.recon.depth.mixt <- tmp.recon.depth.mixt / rowSums(tmp.recon.depth.mixt, na.rm=T)\n    pann.recon.depth.mixt <- pann.recon.depth.mixt / rowSums(pann.recon.depth.mixt, na.rm=T)\n    \n    tmp.recon.age.mixt <- tmp.recon.age.mixt / rowSums(tmp.recon.age.mixt, na.rm=T)\n    pann.recon.age.mixt <- pann.recon.age.mixt / rowSums(pann.recon.age.mixt, na.rm=T)"
+        },
+        {
+          "first_line": 846,
+          "last_line": 849,
+          "text": "    # output\n    output <- list(x2range.bck=x2range.bck,x1range.bck=x1range.bck,tmp.recon.depth.mixt = tmp.recon.depth.mixt,pann.recon.depth.mixt = pann.recon.depth.mixt,tmp.recon.age.mixt = tmp.recon.age.mixt,tmp.mixture.depth.mean=tmp.mixture.depth.mean,pann.recon.age.mixt=pann.recon.age.mixt,pann.mixture.depth.mean=pann.mixture.depth.mean,tmp.mixture.depth.median=tmp.mixture.depth.median,pann.mixture.depth.median=pann.mixture.depth.median,tmp.mixture.age.mean=tmp.mixture.age.mean,pann.mixture.age.mean=pann.mixture.age.mean,tmp.mixture.age.median=tmp.mixture.age.median,pann.mixture.age.median=pann.mixture.age.median,all_tmp_mean=all_tmp_mean,all_pann_mean=all_pann_mean,emd_tmp=emd_tmp,emd_pann=emd_pann,which_taxa=which.taxa.unique,medians_avg_pdf=medians_avg_pdf,kg_ticks=kg_ticks,kg_ages_id=kg_ages_id)\n\n    return(output)"
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    },
+    "original:src/mcmc_case_studies.R": {
+      "sha256": "37587ff08565bf284349e71a9ddbfd924d47fb786e0ccce5168a949be5b9c22e",
+      "bytes": 97405,
+      "previous_binding": "literal_age_selection_2026_11_02/source_binding.json",
+      "spans": [
+        {
+          "first_line": 306,
+          "last_line": 317,
+          "text": "    y_axis <- list(x2range.bck=x2range.bck,x2range.bck=x2range.bck)\n    \n    if(i == 1 ){\n        final.reconst_case_studies <- final_reconstruction(energy=energy,post.which.combs=combinations,taxa_weights=taxa_weights,gibbs = gibbs ,age=age,all.avail=all.avail,all.avail.age=all.avail.age,rho.d.g.a=rho.d.g.a,tf.x1.current=tf.x1.current,tf.x2.current=tf.x2.current,ecdf_ref1=1,ecdf_ref2=1,x1range.bck=x1range.bck,x2range.bck=x2range.bck)\n  \n        case_studies_variables <- vector(\"list\", length = 2)\n        case_studies_variables[[1]]$med1 <- final.reconst_case_studies$tmp.mixture.depth.median \n        case_studies_variables[[2]]$med1 <- final.reconst_case_studies$tmp.mixture.age.median\n        case_studies_variables[[1]]$med2 <- final.reconst_case_studies$pann.mixture.depth.median\n        case_studies_variables[[2]]$med2 <- final.reconst_case_studies$pann.mixture.age.median\n    }else{\n        final_reconst <- final_reconstruction(energy=energy,post.which.combs=combinations,taxa_weights=taxa_weights,gibbs = gibbs ,age=age,all.avail=all.avail,all.avail.age=all.avail.age,rho.d.g.a=rho.d.g.a,tf.x1.current=tf.x1.current,tf.x2.current=tf.x2.current,ecdf_ref1=1,ecdf_ref2=1,x1range.bck=x1range.bck,x2range.bck=x2range.bck)"
+        }
+      ],
+      "hash_before_equals_after_and_prior": true
+    }
+  },
+  "implemented": {
+    "prepare_reference_pair": "mcmc_functions_v1.6.R:369-370",
+    "raw_row_cumsums": "mcmc_functions_v1.6.R:485-486",
+    "cdf_discrepancy": "mcmc_functions_v1.6.R:487-489"
+  },
+  "formula": "C[a,k] = sum(l<=k) density[a,l]; score[a] = (1/dims) * sum_k abs(C[a,k]-reference[a,k])",
+  "orientation": "density/reference/cumulative: age rows x supplied ordered climate cells; score: one value per age row, per draw",
+  "scalar_placeholder": {
+    "guard": "length(ecdf_ref1)==1",
+    "effect": "both references become zero matrices",
+    "shape": "nrow(rho.d.g.a) x inherited dims",
+    "preserved_main_dims_assignments": "dims <- 300 at main_v1.2.R:68,658; no proof of final TF width",
+    "local_dims_assignment_after_guard": "dims <- length(x1range.bck) at 389",
+    "case_study_calls": "ecdf_ref1=1,ecdf_ref2=1 at 309 and 317"
+  },
+  "normalization_order": "No normalization in 485-489; final mixture normalization occurs later at 755-760",
+  "units": "No climate coordinates or cell widths appear; score retains cumulative array-value units, dimensionless for discrete probabilities. Physical temperature/precipitation distance is not established by this formula alone.",
+  "supported_domain": "Finite nonnegative nonempty 2D density; finite 2D supplied references with exactly matching comparison shape; explicit positive integer current dims equal cell count. Length-one first reference requires explicit positive integer placeholder rows/inherited width. Ignored second reference is not inspected or converted on replacement path.",
+  "excluded": [
+    "R/package runtime equivalence and NA/na.rm semantics",
+    "R recycling or implicit alignment",
+    "missing/mismatched environment dims repair",
+    "CDF validity enforcement, early normalization, physical cell widths or resampling",
+    "climate-class EMD branch, original reference recovery or final-run selection"
+  ],
+  "R_execution": false,
+  "actual_original_numerical_inputs_used": false,
+  "historical_reproduction_ready": false
+}

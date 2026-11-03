@@ -1,0 +1,108 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (six submodules incl. conditional taxon pruning), frozen earlier state and synthetic examples; no historical case reproduction, no training, R run or fossil reconstruction",
+  "starting_commit": "47a926c3c8a6abc0db7c947b993f5e97f7408cdd",
+  "module_package_commit": "f3b71bb2ac876eb3d961793c62c0b4f355bf6f82",
+  "reproduction_state_sha256": "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+  "frozen_earlier_state_sha256": "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+  "frozen_earlier_state_unchanged": true,
+  "environment": {
+    "os": "Windows 11",
+    "python": ".venv with PYTHONPATH=src",
+    "node": "v24.19.0",
+    "playwright": "1.62.1 bundled with the Codex runtime via NODE_PATH",
+    "browser_channel": "msedge",
+    "offline": true
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 40,
+    "new_tests": 6,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same browser checks were executed explicitly below with --kanal msedge",
+    "local_junit_sha256": "d6f8eef97cf63128e2a780df4851bbaefef4d54c0ce25931c717b3a0178176f7"
+  },
+  "historical_tests": {
+    "files": [
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "passed": 297,
+    "new_tests": 46,
+    "local_junit_sha256": "f19a6a7e0bd09e374329bb01df99001dd5e7ec64e3212e1398d3a8749d96a60b"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.5 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases": [
+      "index_handy_light",
+      "index_handy_dark",
+      "index_pc_light",
+      "index_pc_dark",
+      "index Gesten",
+      "kinneret-app_handy_light",
+      "kinneret-app_handy_dark",
+      "kinneret-app_pc_light",
+      "kinneret-app_pc_dark",
+      "kinneret-app Gesten"
+    ],
+    "languages": ["de", "en"],
+    "reproduction_checks": {
+      "status_text": true,
+      "tests_shown": 297,
+      "modules": 6,
+      "conditional_tag_on_taxon_pruning": true,
+      "frozen_earlier_state_line": "2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f",
+      "open_requirements": 11,
+      "conflicting_requirements": 4,
+      "central_requirements": 4,
+      "links": 12,
+      "links_pinned_to_f3b71bb": 11,
+      "link_to_frozen_state_at_47a926c": 1,
+      "example_collapsed_by_default": true,
+      "synthetic_warning_visible": true,
+      "example_tables": 5,
+      "pruning_removed_cells": 2,
+      "open_state_kept_on_language_switch": true,
+      "page_or_table_overflow": false,
+      "absent_reproduction_state_visible": true,
+      "absent_snapshot_keeps_reproduction_state": true
+    },
+    "first_run_finding": "Mobile pruning table was wider than its frame with 'Kunsttaxon n' column headers; fixed with numbered columns and a 'Kunsttaxon' corner header, then all cases rerun",
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "two_sites": {
+    "tool": "tests/test_app.py::_zweiter_standort on results/app, then node tools/app_pruefen.js --zwei-standorte <copy>/index.html --kanal msedge",
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2,
+    "verify_research_handoff": "passed (read-only research snapshot)"
+  },
+  "not_run": [
+    "pytest tests (full suite; contains sampler unit tests)",
+    "docs/thesis_research/literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "local_artifacts": ".local/taxon_pruning_2026_11_02/ (not versioned)",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

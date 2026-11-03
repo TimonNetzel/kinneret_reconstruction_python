@@ -1,0 +1,113 @@
+{
+  "status": "passed",
+  "basis_commit": "d6e3343decbb1e74409a6c10e179da4e9da7be9f",
+  "tests": {
+    "new_cdf_discrepancy_cases_passed": 43,
+    "previous_age_selection_cases_passed": 39,
+    "previous_age_depth_cases_passed": 43,
+    "previous_literal_final_pdf_cases_passed": 22,
+    "previous_spec_cases_passed": 20,
+    "total_passed": 167,
+    "failed": 0,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_historical_cdf_discrepancy.py tests/test_historical_age_selection.py tests/test_historical_age_depth.py tests/test_historical_final_pdf.py tests/test_kinneret_phase1_spec.py -q -o cache_dir=.local/phase1_spec_v1/pytest_cache"
+  },
+  "source_scripts_hash_before_after_and_prior_equal": 3,
+  "prior_packet_files_byte_equal_to_basis": 46,
+  "prior_packet_directories": [
+    "local_case_matrix_2026_11_02",
+    "kinneret_binding_2026_11_02",
+    "kinneret_references_2026_11_02",
+    "kinneret_postprocessing_2026_11_02",
+    "kinneret_phase1_spec_2026_11_02",
+    "literal_final_pdf_2026_11_02",
+    "literal_age_depth_2026_11_02",
+    "literal_age_selection_2026_11_02"
+  ],
+  "phase1_cli_rechecks": [
+    {
+      "arguments": [],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": null
+    },
+    {
+      "arguments": [
+        "--with-local"
+      ],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": {
+        "matches_audited_bytes": 28,
+        "missing_at_audited_path": 12
+      }
+    }
+  ],
+  "R_execution": false,
+  "historical_R_equivalence_claimed": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "new_training_sampling_age_model_or_fossil_runs": false,
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false,
+  "changed_code_scope": [
+    "tools/historical_cdf_discrepancy.py",
+    "tests/test_historical_cdf_discrepancy.py",
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/collect_evidence.py"
+  ],
+  "claude_next_step": "docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md",
+  "preserved": [
+    "App/CLI",
+    "baseline",
+    "originals",
+    "references",
+    "eight_previous_evidence_packets",
+    "50_file_research_snapshot",
+    "site_specific_Monticchio_and_chronology_gates"
+  ],
+  "files": {
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/collect_evidence.py": {
+      "bytes": 6050,
+      "sha256": "aa25cb940440dc8f05cc263c6327bc36c738598e68c7b75a8f9460ae172e1c6c"
+    },
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md": {
+      "bytes": 10666,
+      "sha256": "2d88b8828b39fe3b35ca0401fb7bef48849f621c45af66baa7a252c24dc95a2d"
+    },
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/source_binding.json": {
+      "bytes": 9335,
+      "sha256": "4f42b9a2efd36d9a53cffcd796880bde6f53b1fa8e9e07f2aeccc703c62c61dd"
+    },
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/synthetic_fixture.json": {
+      "bytes": 1154,
+      "sha256": "f729a1646ad06a46071ca448d29ef4ae53a2f8de471ce1814b21c9363858184b"
+    },
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/synthetic_result.json": {
+      "bytes": 680,
+      "sha256": "b762ed3a1398450df449bc0a2c61eec9d044da3178659c18114fb0a65b993a7c"
+    },
+    "tools/historical_cdf_discrepancy.py": {
+      "bytes": 4109,
+      "sha256": "d7747fcec5903761d47102d9200fb3afd14220e12c3fa9f69c594e3044ab5de5"
+    },
+    "tests/test_historical_cdf_discrepancy.py": {
+      "bytes": 7790,
+      "sha256": "82ccd3d37aa1f160ccd1f72368fd382d607d7daa1ee0fe328019a85b97c38d94"
+    },
+    "docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md": {
+      "bytes": 11559,
+      "sha256": "deca942727dc287aa57f412f009e139e7a93b5ad58bc74d5e4465b9c578b8b7f"
+    }
+  },
+  "relative_links_resolve": {
+    "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md": 13,
+    "docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md": 12
+  },
+  "git_diff_check_passed": true
+}

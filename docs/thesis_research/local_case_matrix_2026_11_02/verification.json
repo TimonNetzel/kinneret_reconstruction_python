@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-02",
+  "base_commit": "865d155c6f2d69f0a63e2ec7ce216c99e7954181",
+  "checks": {
+    "seven_unique_cases": true,
+    "source_hashes_unchanged_during_collection": true,
+    "separate_edition_page_checks_passed": 15,
+    "original_archive_figure_pairs": 14,
+    "byte_identical_pairs": 11,
+    "package_local_links_resolved": 15,
+    "collector_python_ast_valid": true,
+    "preserved_snapshot_files": 50,
+    "only_expected_existing_files_changed": true,
+    "no_absolute_user_paths_in_package": true,
+    "visual_source_review": [
+      "D PDF 99: Kinneret, Fig.3.31; young left, old right",
+      "D PDF 128: Ohrid, Fig.3.49; 1170-1360 ka ticks; young left, old right"
+    ],
+    "excerpt_reconstruction_captions_verified": {
+      "kinneret": [
+        23,
+        "3.30"
+      ],
+      "birkat_ram": [
+        30,
+        "3.35"
+      ],
+      "van": [
+        37,
+        "3.39"
+      ],
+      "iznik": [
+        45,
+        "3.44"
+      ],
+      "ohrid": [
+        50,
+        "3.48"
+      ]
+    }
+  },
+  "scope": "Documentation and bounded read-only source metadata; no application/numerical model changed",
+  "not_run": [
+    "training",
+    "samplers",
+    "fossil reconstruction",
+    "new calibration",
+    "runtime or browser regression unrelated to this documentation package"
+  ],
+  "result": "Matrix complete; no local dissertation case fully reproducible; Kinneret is the next source-binding case"
+}

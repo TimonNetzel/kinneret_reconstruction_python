@@ -1,0 +1,49 @@
+{
+  "basis_commit": "c0cdf81444d1dbbabe3282fb8b1ee7ad6cae6783",
+  "new_files_sha256": {
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/README.md": "896cfb4d64f80d84a0eaeaae1469000d12be433e0e95a93c3ad3732eba72d44c",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/arithmetic_check.json": "892991734209e2de05c00247a33fae37a6f5684fe8caa80f7057d8d576e964d0",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/bind_source.py": "6f8ae31e45ab2fab9e79b51c61096a2433008379c7681e162169097178181c1b",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/check_dirichlet_ratio.py": "97dca3e9576ca7c7edebdd88e1dddfe0a104a67903532e1685bb1cc4aaad8a0a",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/determinism_audit.json": "6a5e0600d69e5c03ba58733e968ab1c7436e1a1f66745017a1b11f1aae00a5cf",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/make_fixture.py": "7406e259b3554ee5f3781e4ddbe675fcf4ca1d2ca3e86ec227ea9bb5595656bf",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/precise_reference.py": "00c420db2701f1833e75a3c6242111367fd5751ab12869c37d4a8328e15ec88d",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/r_crosscheck.R": "71dbc7ae8341568f760d27100bf67f522940fa4eea70bceac7cab9f453c35b2d",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/r_crosscheck_result.json": "35ff16882bbf57c27fdbfe0e90a71d6191c772941fd4e5cf91d545ee7dd08662",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/reference_expectations.json": "2e7123e775f3f58e84738f467fd70f78e12345d236dbd128ee50c0bcf40b082e",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/run_r_crosscheck.py": "afb64cf516575ee97808c6ce7ec549f81a6897ca35110ef941ffd75b8b5b2633",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/source_binding.json": "0a0ce3ea019ffd61e54b192fb794ff3bfc7a7a1d3e610ac56b0bf15f3b2e5a2f",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/source_excerpt.json": "675892cd0c6f4d9d132372a0d59b9bef8bcda0d2d701777649e226a9bfe53367",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/synthetic_fixture.json": "68743b153a1228efb20c4f955b02a03766b9196b371cdbaea64fe3eecf6dcec5",
+    "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/synthetic_result.json": "a1e4481d40956d01a2703be6506ae0edd0d96672a93cb249d689d8b761fba06f",
+    "tests/test_historical_dirichlet_ratio.py": "2f7d7538cf35cb3489d00d9e511c1119a0bd17fb5e886128e3f3ab994e5bc331",
+    "tools/historical_dirichlet_ratio.py": "e8b20632e91515fc224f6cb0f02ff044e1a2b22d10ebc894ae61ef1b6d51766a"
+  },
+  "targeted_pytest": {
+    "tests": 752,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 50,
+    "previous_tests": 702
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "R_crosscheck": {
+    "R": "3.5.0",
+    "LaplacesDemon": "16.1.6",
+    "LaplacesDemon_tarball_sha256": "57b53882fd7a195b38bbdbbf0b17745405eb3159b1b42f7f11ce80c78ab94eb7",
+    "values": 62,
+    "bit_equal": 59,
+    "max_ulps": 4
+  },
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "verify_packet.py and tools/verify_*",
+    "rdirichlet draws, sampler, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

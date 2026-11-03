@@ -1,0 +1,61 @@
+{
+  "kind": "synthetic_arithmetic_comparison_not_fossil_reconstruction",
+  "depth_columns_R_1_based": [
+    1,
+    3,
+    5
+  ],
+  "weights": [
+    [
+      0.25,
+      0.5,
+      0.25
+    ],
+    [
+      1e-09,
+      0.75,
+      0.25
+    ],
+    [
+      0.5,
+      1e-09,
+      0.5
+    ],
+    [
+      0.5,
+      0.16666666666666666,
+      0.3333333333333333
+    ]
+  ],
+  "pollen_at_ages": [
+    [
+      2.0000005,
+      2.50000025
+    ],
+    [
+      1.500000752,
+      3.500000000000001
+    ],
+    [
+      4.000000000000001,
+      1.000000504
+    ],
+    [
+      3.0000001666666667,
+      1.333333833333333
+    ]
+  ],
+  "shifted_ages": [
+    -50.0,
+    100.0,
+    100.5,
+    100.5
+  ],
+  "max_abs_errors": {
+    "weights": 0.0,
+    "pollen_at_ages": 2.220446049250313e-16
+  },
+  "tolerance": 1e-14,
+  "actual_original_numerical_inputs_used": false,
+  "R_execution": false
+}

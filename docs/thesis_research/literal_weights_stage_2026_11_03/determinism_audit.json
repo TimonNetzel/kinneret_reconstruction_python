@@ -1,0 +1,116 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Which next step is deterministic without random state and without unbound package semantics?",
+  "candidates": [
+    {
+      "id": "weights_stage_core_1276_1280",
+      "lines": "mcmc_functions_v1.6.R:1259, 1276-1280",
+      "random_state": false,
+      "functions": [
+        "$ on a list",
+        "*",
+        "matrix(ncol, nrow, byrow = T)",
+        "rowSums(na.rm = T)",
+        "/",
+        "ncol",
+        ":",
+        "$<- on a list"
+      ],
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": true,
+      "inputs": "taxa_information$values, ncol_taxa_array, nrow_taxa_array (prepared in mcmc_conduction.R 63-75, app state 5) and new_weights from line 1248 or 1254, taken here as an EXPLICIT input",
+      "evidence": "parameter_stage_weights is defined once (1242); gibbs <- F (main_v1.2.R:624) selects it in mcmc_conduction.R:58; it is called in every iteration (142); 1259 and 1276-1280 lie at brace depth 1 of the function body, i.e. run unconditionally after the while loop; no base function used here is redefined in the eight files",
+      "precision_note": "rowSums may accumulate in extended precision (R version and platform unbound); the module flags every row whose sum is not accumulator independent; the products and the quotients are single IEEE double operations",
+      "readers": "posterior_temp$taxa.appear.core.temp: reconstruction (last definition 1781) reads it in 1817 (reconst <- taxa.appear.core[reconst_ages,] %*% posterior_temp$tf_sample); posterior_temp$z: tf.x1.current[z,], tf.x2.current[z,], tf_x12_mean_current[z,] in mcmc_conduction.R:146, stored in 306/355; posterior_temp$taxa_weights: acceptance 305/354, previous value restored in 329",
+      "masking_note": "like all earlier packets: base functions are assumed not to be masked by the attached packages; their namespaces are unbound and R was not run",
+      "decision": "implemented as tools/historical_weights_stage.py with explicit weights; inputs only synthetic"
+    },
+    {
+      "id": "rdirichlet_1248",
+      "lines": "mcmc_functions_v1.6.R:1246-1251",
+      "random_state": true,
+      "package_semantics_needed": true,
+      "evidence": "unqualified rdirichlet(1, old_weights*dirichlet_spread)[1,]; no definition in the eight files (also none in the Rcpp string literals); the provider is the first attached package on the search path that exports rdirichlet, which the bound sources cannot show (no version, no namespace file); SBMSplitMerge::rdirichlet in 1216 is qualified and lies in the dead Gibbs stage, so it is no evidence for 1248",
+      "decision": "documented only, no package chosen, no seed"
+    },
+    {
+      "id": "reset_after_1000_draws_1253_1257",
+      "lines": "mcmc_functions_v1.6.R:1253-1257",
+      "random_state": true,
+      "package_semantics_needed": true,
+      "evidence": "reached only after 1000 draws of rdirichlet without min(new_weights) > 0; then new_weights <- rep(1/num_taxa, num_taxa) with the global num_taxa and dirichlet_spread doubled",
+      "decision": "documented only; the reset weights can be given to the core as explicit weights"
+    },
+    {
+      "id": "ddirichlet_ratio_1269_1274",
+      "lines": "mcmc_functions_v1.6.R:1269-1274",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "ddirichlet is unqualified and not defined in the eight files; is.na in 1273 maps NA and NaN ratios to 0; the proposal ratio 1270 omits dirichlet_spread (already recorded in LOCAL_SOURCE_CROSSWALK.md)",
+      "decision": "documented only"
+    },
+    {
+      "id": "sampler_initialisation_109_135",
+      "lines": "mcmc_conduction.R:109-135 without 118 and 133",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "evidence": "start weights, z, fill ids and checking_intervals; 118 needs prior.recent (fitdistr) and 133 draws rmvnorm_rcpp",
+      "decision": "alternative for a later packet"
+    },
+    {
+      "id": "tf_x12_mean_current_1692_1700",
+      "lines": "mcmc_prepare.R:1692-1700",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "evidence": "pure column binding; inputs depend on weightedMedian",
+      "decision": "documented only"
+    },
+    {
+      "id": "weightedMedian",
+      "lines": "mcmc_prepare.R:1631,1632,1651,1652",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "main_v1.2.R:27 attaches matrixStats without version",
+      "decision": "open"
+    },
+    {
+      "id": "acceptance_runif_304",
+      "lines": "mcmc_conduction.R:304",
+      "random_state": true,
+      "evidence": "runif(1) without a local seed",
+      "decision": "documented only"
+    },
+    {
+      "id": "rmvnorm_rcpp_133",
+      "lines": "mcmc_conduction.R:133",
+      "random_state": true,
+      "evidence": "multivariate normal draws for the whole run",
+      "decision": "documented only"
+    },
+    {
+      "id": "prior_samples_seed_2022",
+      "lines": "mcmc_prepare.R:1297-1303",
+      "random_state": true,
+      "evidence": "set.seed(2022) before rnorm and rgamma; RNG kind unbound",
+      "decision": "documented only"
+    },
+    {
+      "id": "start_values_rbeta",
+      "lines": "mcmc_prepare.R:1709-1738",
+      "random_state": true,
+      "evidence": "rbeta in the start values",
+      "decision": "documented only"
+    },
+    {
+      "id": "tf_variance_sample",
+      "lines": "mcmc_prepare.R:1591-1592",
+      "random_state": true,
+      "evidence": "sample(..., replace = T) without a local seed",
+      "decision": "documented only"
+    }
+  ],
+  "selected_for_implementation": "weights_stage_core_1276_1280",
+  "dirichlet_provider_bound": false,
+  "final_variant_selected": false,
+  "R_execution": false
+}

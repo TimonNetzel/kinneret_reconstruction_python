@@ -173,6 +173,34 @@
         <div class="tabelle-rahmen"><table id="val-regional"></table></div></div>
     </div>
   </section>
+  <section id="ansicht-forschung" class="ansicht" hidden>
+    <aside class="steuerung forschung-steuerung">
+      <h2 data-t="ansicht_forschung">Forschungsstand</h2>
+      <p data-t="fr_intro"></p>
+      <p class="hinweis-klein" data-t="fr_independent"></p>
+    </aside>
+    <div id="forschung-inhalt" class="inhalt" aria-live="polite"></div>
+  </section>
+  <section id="ansicht-artenvergleich" class="ansicht" hidden>
+    <aside class="steuerung arten-steuerung">
+      <h2 data-t="ansicht_artenvergleich">Artenvergleich</h2>
+      <p data-t="av_intro"></p>
+      <div id="arten-auswahl">
+        <div class="feld"><span data-t="val_block">Blockgröße</span>
+          <div class="umschalter" id="arten-block"></div></div>
+        <div class="feld"><span data-t="av_view">Ansicht</span>
+          <div class="umschalter" id="arten-ebene">
+            <button data-wert="summary" data-t="av_overview">Übersicht</button>
+            <button data-wert="folds" data-t="av_fold_view">Foldwerte</button>
+          </div></div>
+        <label class="feld" id="arten-taxon-feld" hidden><span data-t="av_species">Art</span>
+          <select id="arten-taxon"></select></label>
+        <label class="haken"><input type="checkbox" id="arten-extra"><span data-t="av_extra"></span></label>
+      </div>
+      <p class="hinweis-klein" data-t="fr_independent"></p>
+    </aside>
+    <div id="arten-inhalt" class="inhalt" aria-live="polite"></div>
+  </section>
 </main>
 
 <dialog id="export" class="export-dialog" aria-labelledby="export-titel">
@@ -224,6 +252,9 @@
 
 <script src="vendor/plotly-cartesian.min.js"></script>
 <script src="daten/katalog.js"></script>
+<script src="daten/forschung.js"></script>
+<script src="daten/nachbau.js"></script>
+<script src="daten/artenvergleich.js"></script>
 <script src="i18n.js"></script>
 <script src="kern.js"></script>
 <script src="rekonstruktion.js"></script>
@@ -232,6 +263,8 @@
 <script src="transferfunktionen.js"></script>
 <script src="lauf.js"></script>
 <script src="validierung.js"></script>
+<script src="forschung.js"></script>
+<script src="artenvergleich.js"></script>
 <script src="export.js"></script>
 <script src="start.js"></script>
 </body>

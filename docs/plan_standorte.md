@@ -1,5 +1,12 @@
 # Plan: weitere Standorte (Birkat Ram, Totes Meer)
 
+> **Neue Reihenfolge auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
+> Maßgeblich: [Arbeitsplan](thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Der folgende ältere Stand bleibt als Verlauf bzw. späterer Entwurf erhalten.
+> Er ersetzt weder den historischen Ablauf noch die aktuellen Quell-/Chronologie-Gates.
+
+
 Stand 29.10.2026. Vom Autor gewünscht: analoge Rekonstruktionen für **Birkat Ram** und das **Tote Meer** mit
 derselben Biom-Transferfunktion und eigenen Taxa-Gewichten je Standort. Die Unsicherheiten der Alters-Tiefen-Modelle
 stammen aus der Dissertation Netzel (2022). Die Daten liefert der Autor nach (Abschnitt 2); bis dahin lassen sich

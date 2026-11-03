@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "base_commit": "44092d3856d1ab5f686e0ad30c57b3caf66e0ebd",
+  "status": "reference_anchor_contract_documented_numerical_inputs_and_run_binding_unresolved",
+  "dissertation_contract": {
+    "AP": "PANN reference only older than 6.5 cal ka BP",
+    "Soreq": "WPS linked to PANN across Kinneret period; Bar-Matthews 2003 family in caption",
+    "MEDSTACK": "TANN reference; Colleoni 2012 family in caption",
+    "anchor": "recent Csa climate class",
+    "climate": "TANN degrees C; PANN mm/a; CRU4.01 1961-1990 as text reference"
+  },
+  "consumer_contract": {
+    "AP_mask_literal": "!inside.range(pollen.age,c(-60,6500))",
+    "AP_mask_not_disabled_by_hi_time_false": true,
+    "AP_boundary_6500": "inside.range package implementation/version not restored; retain literal",
+    "Soreq_forced_105_only_in_multi_candidate_branch": true,
+    "Soreq_later_override": 170,
+    "site_age_override": {
+      "start": 0,
+      "end": 220500,
+      "step": 500,
+      "deleted_R_indices": "6:29",
+      "expected_length": 418
+    },
+    "marine_selection_if_Csa": "category 1, element length(d18o.age$loc_nr)-2; sign reversed",
+    "marine_actual_object_identity": "unresolved without d18o.age metadata and load provenance",
+    "anchor_if_nonpositive_age_present": "normal fit to local recent series indices 50:115",
+    "anchor_else": "normal fit to class-matched regional global-mean cells",
+    "anchor_sd_floors": {
+      "TANN": 2,
+      "PANN": 150
+    },
+    "anchor_density": {
+      "TANN": "normal",
+      "PANN": "gamma"
+    },
+    "calendar_years_for_indices_50_115": "unverified without time axis; source comment says 1950-2015",
+    "full_entry_execution": "not validated; preparation contains active stop at line 2057"
+  },
+  "source_variant_comparison": {
+    "older_preparation": "src/mcmc_prep_v1.2.R",
+    "older_Kinneret_forced_cave_index": 37,
+    "newer_initial_forced_index": 105,
+    "newer_later_override_index": 170,
+    "older_contains_220500_age_override": false,
+    "run_binding": "No version selected as the final Kinneret run"
+  },
+  "AP_csv_check": {
+    "rows": 160,
+    "identity": "tree_percentage = 100*AP/(AP+NAP)",
+    "maximum_absolute_percentage_point_error": 6.394884621840902e-14,
+    "scope": "existing CSV only, no depth-age transformation performed"
+  },
+  "saved_speleo_candidate": {
+    "source": "additional:dead_sea_reconstruction_R/data/in/speleo_data.rdata",
+    "which_site": 170.0,
+    "timeseries_shape": [
+      368,
+      2
+    ],
+    "column_names": [
+      "age",
+      "isotopes"
+    ],
+    "age_range_as_stored": [
+      0.0,
+      183500.0
+    ],
+    "distinct_age_steps": [
+      500.0
+    ],
+    "coi_shape": [
+      368,
+      55
+    ],
+    "wb_shape": [
+      1024,
+      55
+    ],
+    "len_coi": 13690.0,
+    "status": "saved later Dead Sea candidate; no proven identity with Kinneret inputs",
+    "warning": "Numeric index 170 alone does not identify a Soreq publication or release"
+  },
+  "control_flow_traces": [
+    {
+      "scenario": "main_three_channels",
+      "conditional_on_core_AP_source_available": true,
+      "active_source_indices": [
+        2,
+        3,
+        4
+      ],
+      "multiple": true,
+      "spectral": true,
+      "pollen_and_WPS_climate_variable": "PANN",
+      "marine_climate_variable": "TANN",
+      "hi_time": false,
+      "AP_mask": "!inside.range(pollen.age,c(-60,6500))",
+      "scope": "symbolic source-flag trace only; not a reconstructed historical run"
+    },
+    {
+      "scenario": "without_speleo",
+      "conditional_on_core_AP_source_available": true,
+      "active_source_indices": [
+        2,
+        4
+      ],
+      "multiple": true,
+      "spectral": false,
+      "pollen_and_WPS_climate_variable": "PANN",
+      "marine_climate_variable": "TANN",
+      "hi_time": false,
+      "AP_mask": "!inside.range(pollen.age,c(-60,6500))",
+      "scope": "symbolic source-flag trace only; not a reconstructed historical run"
+    },
+    {
+      "scenario": "case_study_switch",
+      "conditional_on_core_AP_source_available": true,
+      "active_source_indices": [
+        2
+      ],
+      "multiple": false,
+      "spectral": false,
+      "pollen_and_WPS_climate_variable": "PANN",
+      "marine_climate_variable": "TANN",
+      "hi_time": false,
+      "AP_mask": "all ages",
+      "scope": "symbolic source-flag trace only; not a reconstructed historical run"
+    }
+  ],
+  "sources": {
+    "original:main_v1.2.R": {
+      "scope": "original",
+      "relative_path": "main_v1.2.R",
+      "exists": true,
+      "bytes": 45494,
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520"
+    },
+    "original:src/check_ages.R": {
+      "scope": "original",
+      "relative_path": "src/check_ages.R",
+      "exists": true,
+      "bytes": 12904,
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729"
+    },
+    "original:src/prior_climate.R": {
+      "scope": "original",
+      "relative_path": "src/prior_climate.R",
+      "exists": true,
+      "bytes": 6918,
+      "sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd"
+    },
+    "original:src/mcmc_prepare.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_prepare.R",
+      "exists": true,
+      "bytes": 82630,
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e"
+    },
+    "original:src/mcmc_prep_v1.2.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_prep_v1.2.R",
+      "exists": true,
+      "bytes": 72528,
+      "sha256": "badabd80978a074f42c25e06f1d254fd4ac8deef4e8f31bc591af6de65123949"
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_functions_v1.6.R",
+      "exists": true,
+      "bytes": 99905,
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c"
+    },
+    "original:src/mcmc_conduction.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_conduction.R",
+      "exists": true,
+      "bytes": 25090,
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+    },
+    "original:out/plots/mcmc/v5.0/diss_final.zip": {
+      "scope": "original",
+      "relative_path": "out/plots/mcmc/v5.0/diss_final.zip",
+      "exists": true,
+      "bytes": 42244270,
+      "sha256": "5bb88cda23197c438ec54f28034a79ba3d425578743d067af7d4679df10bf837"
+    },
+    "additional:my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+      "exists": true,
+      "bytes": 23333,
+      "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    },
+    "additional:dead_sea_reconstruction_R/data/in/speleo_data.rdata": {
+      "scope": "additional",
+      "relative_path": "dead_sea_reconstruction_R/data/in/speleo_data.rdata",
+      "exists": true,
+      "bytes": 143551,
+      "sha256": "b5ba7d7c4278cb6089056c382cb26c2635ed8cd817faeb271429d2eb783bec4a"
+    },
+    "repository:docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/climate_time_bounds.json": {
+      "scope": "repository",
+      "relative_path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/climate_time_bounds.json",
+      "exists": true,
+      "bytes": 3285,
+      "sha256": "50aa53572fc00b594293087975f43d72d2c4f6cf8f06452566517548293bd07e"
+    },
+    "repository:.local/console_provenance_v1/explicit_dependency_paths.json": {
+      "scope": "repository",
+      "relative_path": ".local/console_provenance_v1/explicit_dependency_paths.json",
+      "exists": true,
+      "bytes": 982,
+      "sha256": "0b252fdc88ab8809dfb1d61c75938da8d3fcb0ca00f7fc4d93844fb3c22d72ec"
+    },
+    "repository:docs/thesis_research/download_manifest.json": {
+      "scope": "repository",
+      "relative_path": "docs/thesis_research/download_manifest.json",
+      "exists": true,
+      "bytes": 6420,
+      "sha256": "febd9506c8e450dd1bd579f1d5a7001996c6d6c6bc2d75f43e89811ca4029537"
+    },
+    "repository:docs/thesis_research/kinneret_binding_2026_11_02/summary.json": {
+      "scope": "repository",
+      "relative_path": "docs/thesis_research/kinneret_binding_2026_11_02/summary.json",
+      "exists": true,
+      "bytes": 9464,
+      "sha256": "a96c37acf98201bf5f184e3f885ee480d7f3d76a2268af3ede4f702ef4eb4633"
+    }
+  },
+  "archive_members": [
+    {
+      "member": "thesis_kinneret.tex",
+      "bytes": 14349,
+      "sha256": "2b9362fed9ab0b6fad66713884a6345d4649a68c8f99d85365a241ad6c2149c1"
+    },
+    {
+      "member": "thesis_dead_sea1.tex",
+      "bytes": 26973,
+      "sha256": "278eedb453a1526aaee32219b054017402ef6d8f09fc4b8888beaa41d27bf934"
+    }
+  ],
+  "checks": {
+    "source_needles": 16,
+    "all_sources_unchanged": true,
+    "dependency_paths_probed": 12,
+    "any_numerical_anchor_fitted": false
+  },
+  "limits": [
+    "Text-defined reconstruction and current source behavior remain separately identified",
+    "No entry-point change, data repair, silent Soreq/MEDSTACK substitution or climate recalibration",
+    "Final base, historical numeric TFs, original d18o.age workspaces and exact global CRU inputs still missing",
+    "Prior reader/model audits and broad inventory were not rerun"
+  ]
+}

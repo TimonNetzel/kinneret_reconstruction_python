@@ -1,0 +1,200 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (ten submodules incl. conditional taxon pruning and the deterministic core of the weights stage with explicit weights, no Dirichlet draw and no sampler run), five frozen earlier states and synthetic examples; no historical case reproduction, no training, R run, sampler run or fossil reconstruction",
+  "starting_commit": "235f79784d01f0a613a0d3f76f6fd690c245ab21",
+  "module_package_commit": "4266c285c04909dbf573b506176df3277fdc3d9f",
+  "reproduction_state_sha256": "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[4] received only its link commit 235f797 (confirmed with git log -1 --format=%H on its state file; pushed, contains its unchanged state file); STATES[0..3] untouched",
+  "environment": {
+    "os": "Windows 11",
+    "python": ".venv with PYTHONPATH=src",
+    "node": "v24.19.0",
+    "playwright": "bundled with the Codex runtime via NODE_PATH",
+    "browser_channel": "msedge",
+    "offline": true
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 69,
+    "new_tests": 8,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same browser checks were executed explicitly below with --kanal msedge",
+    "local_junit_sha256": "fff68e8ba5bd3311f58a94151e93ced3f985b3989d3859c45049516ee4d3b516"
+  },
+  "historical_tests": {
+    "files": [
+      "tests/test_historical_weights_stage.py",
+      "tests/test_historical_sampler_preparation.py",
+      "tests/test_historical_tf_missing_priors.py",
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "passed": 689,
+    "new_tests": 134,
+    "rerun_after_app_changes": 689,
+    "local_junit_sha256": "685fb297f236bf8c5414d3d87fa654662d0f8b3d438fc2e5ef895eaf70e29e6d"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.5 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases": [
+      "index_handy_light",
+      "index_handy_dark",
+      "index_pc_light",
+      "index_pc_dark",
+      "index Gesten",
+      "kinneret-app_handy_light",
+      "kinneret-app_handy_dark",
+      "kinneret-app_pc_light",
+      "kinneret-app_pc_dark",
+      "kinneret-app Gesten"
+    ],
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "status_text": true,
+      "tests_shown": 689,
+      "modules": 10,
+      "conditional_tag_only_on_taxon_pruning": true,
+      "frozen_earlier_state_lines": [
+        "2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f",
+        "2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421",
+        "2026-11-02, 7 Teilmodule, 352 Tests, SHA-256 43edfcb67a64",
+        "2026-11-02, 8 Teilmodule, 437 Tests, SHA-256 7b7bf1f449a1",
+        "2026-11-02, 9 Teilmodule, 555 Tests, SHA-256 61c6f23142df"
+      ],
+      "open_requirements": 11,
+      "conflicting_requirements": 4,
+      "central_requirements": 4,
+      "links": 24,
+      "links_pinned_to_4266c28": 19,
+      "links_to_frozen_states": {
+        "47a926c": 1,
+        "3d013b2": 1,
+        "7d3d0f6": 1,
+        "0a3dcdb": 1,
+        "235f797": 1
+      },
+      "example_collapsed_by_default": true,
+      "synthetic_warning_visible": true,
+      "example_tables": 11,
+      "weights_table_accumulator_dependent_row_sums": 2,
+      "weights_table_exact_row_sums": 1,
+      "weights_special_table_marked_cells": 2,
+      "weights_texts": [
+        "Kern der Gewichtsstufe: 7 Kunstfälle",
+        "1/8, 3/8, 1/4, 1/4",
+        "1/29",
+        "29/32",
+        "0,3333*",
+        "0,5417*",
+        "8 von 12 Positionen ein fremdes Gewicht",
+        "z = 1:4",
+        "Zeilensummen mit Sonderwerten: drei Kunstfälle",
+        "G1",
+        "G3",
+        "1/4, 3/8, 5/8",
+        "1 − 2⁻⁵⁴",
+        "0,3333333333333333",
+        "0,5714285714285715",
+        "1, 1/2, 1/2",
+        "rdirichlet (Zeile 1248)"
+      ],
+      "earlier_example_checks_unchanged": true,
+      "open_state_kept_on_language_switch": true,
+      "page_or_table_overflow": false,
+      "absent_reproduction_state_visible": true,
+      "absent_snapshot_keeps_reproduction_state": true
+    },
+    "runs": "first run after the app changes: all ten cases ok, no table wider than its frame at 390 px. The visual check then led to one wording change (the reset sentence now names the unweighted result as the double nearest 4/7 instead of \"4/7\"); final run after rebuilding: all ten cases ok",
+    "measured_table_widths_390px": {
+      "weights": [
+        300,
+        332
+      ],
+      "weights-special": [
+        164,
+        332
+      ],
+      "sampler": [
+        206,
+        332
+      ],
+      "sampler-special": [
+        184,
+        332
+      ]
+    },
+    "case_labels": {
+      "weights-special": [
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "new_labels_unique_in_section": true,
+      "note": "the older example tables keep their frozen numeric case headers (gamma 1-4, missing 1-4, sampler-special 1-3); the new tables use G1-G3 so that no new label repeats an earlier one"
+    },
+    "row_headers_nowrap": true,
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef",
+    "local_log_note": "byte-identical to earlier passing logs because a passing run prints only the case names with ok and the unchanged sensitivity table"
+  },
+  "two_sites": {
+    "tool": "tests/test_app.py::_zweiter_standort on results/app into .local/weights_stage_2026_11_03/app2, then node tools/app_pruefen.js --zwei-standorte <copy>/index.html --kanal msedge",
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "weights-stage tables and texts at 390 px phone width, light (sticky header set static for the clip)",
+    "desktop.png": "same part, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite; contains sampler unit tests)",
+    "docs/thesis_research/literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "tools/verify_* (time-bound checkers, not regression checkers)",
+    "R, rdirichlet/ddirichlet, training, sampler, age model or fossil reconstruction"
+  ],
+  "local_artifacts": ".local/weights_stage_2026_11_03/ (not versioned)",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

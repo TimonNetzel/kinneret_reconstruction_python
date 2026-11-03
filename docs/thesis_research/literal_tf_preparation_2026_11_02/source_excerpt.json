@@ -1,0 +1,28 @@
+{
+  "status": "read_only_source_for_next_step_not_implemented_in_this_chain",
+  "source": "original:src/mcmc_prepare.R",
+  "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "spans": [
+    {
+      "first_line": 1580,
+      "last_line": 1586,
+      "text": "# norm the TFs\ntf.x1.current <- tf.x1.current/rowSums(tf.x1.current, na.rm=T)\ntf.x2.current <- tf.x2.current/rowSums(tf.x2.current, na.rm=T)\nif(taxa_change){\n    tf.x1.current_change <- tf.x1.current_change/rowSums(tf.x1.current_change, na.rm=T)\n    tf.x2.current_change <- tf.x2.current_change/rowSums(tf.x2.current_change, na.rm=T)\n}"
+    },
+    {
+      "first_line": 1590,
+      "last_line": 1618,
+      "text": "# reduce variance of tranfer functions\ntann_tf_samples <- sample(x1range.bck,10000,prob=apply(tf.x1.current,2,mean,na.rm=T),replace=T)\npann_tf_samples <- sample(x2range.bck,10000,prob=apply(tf.x2.current,2,mean,na.rm=T),replace=T)\n\ntann_tf_range <- c(0,25) #c( (mean(tann_tf_samples)-sd(tann_tf_samples)), (mean(tann_tf_samples)+sd(tann_tf_samples)) )\npann_tf_range <- c(0,1600) #c( (mean(pann_tf_samples)-sd(pann_tf_samples)), (mean(pann_tf_samples)+sd(pann_tf_samples)) )\n\nif(max(age) >= 11000){\n    tann_tf_range <- quantile(tann_tf_samples,c(0,0.95))\n    pann_tf_range <- c(0,quantile(pann_tf_samples,0.95))\n}else{\n    tann_tf_range <- quantile(tann_tf_samples,c(0.05,0.95))\n    pann_tf_range <- c(0,quantile(pann_tf_samples,0.95))\n}\n\n# no cutting of transfer functions\n\ntann_tf_range <- range(x1range.bck)\npann_tf_range <- range(x2range.bck)\n\n# print(tann_tf_range)\n# print(pann_tf_range)\n\ntf.x1.current[,!inside.range(x1range.bck,tann_tf_range)] <- 0\ntf.x2.current[,!inside.range(x2range.bck,pann_tf_range)] <- 0\nif(taxa_change){\n    tf.x1.current_change[,!inside.range(x1range.bck,tann_tf_range)] <- 0\n    tf.x2.current_change[,!inside.range(x2range.bck,pann_tf_range)] <- 0\n}"
+    },
+    {
+      "first_line": 1622,
+      "last_line": 1652,
+      "text": "# weight them for faster sample calculations\ntf.x1.current.mean <- (tf.x1.current %*% x1range.bck)[,1] # expectation value\ntf.x2.current.mean <- (tf.x2.current %*% x2range.bck)[,1] # expectation value\n\ndims2 <- 100000\ntann_expand <- spline(x1range.bck,n=dims2)$y\ntf.x1.current.mean <- tf.x1.current.mean_change <- c()\nfor(j in 1:nrow(tf.x1.current) ){\n    # weighted median of temperature in climate space\n    tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )\n    if(taxa_change) tf.x1.current.mean_change[j] <- weightedMedian(x1range.bck,tf.x1.current_change[j,] )\n#     print(tf.x1.current.mean[j])\n    # weighted mean of temperature in standard normal space\n    \n#     clim_expand  <- spline(tf.x1.current[j,],n=dims2)\n#     tf.x1.current.mean[j] <- tann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x1range.bck[round(weightedMean(1:dims,tf.x1.current[j,] ) )])\n#     print(tf.x1.current.mean[j])\n}\n\n\n# image.plot(1:nrow(tf.x2.current),x2range.bck,tf.x2.current)\n\n\n\npann_expand <- spline(x2range.bck,n=dims2)$y\ntf.x2.current.mean <- tf.x2.current.mean_change <- c()\nfor(j in 1:nrow(tf.x2.current) ){\n    # weighted median of precip in standard climate space\n    tf.x2.current.mean[j] <- weightedMedian(x2range.bck,tf.x2.current[j,] ) \n    if(taxa_change) tf.x2.current.mean_change[j] <- weightedMedian(x2range.bck,tf.x2.current_change[j,] )"
+    },
+    {
+      "first_line": 1663,
+      "last_line": 1699,
+      "text": "#  which transfer functions are available\nwhich.tf.missing <- which(is.na(tf.x1.current.mean))\nif(length(which.tf.missing) != 0){\n    taxa.appear.core <- taxa.appear.core[,-which.tf.missing]\n    tf.x1.current <- tf.x1.current[-which.tf.missing,]\n    tf.x2.current <- tf.x2.current[-which.tf.missing,]\n    tf.x1.current.mean <- tf.x1.current.mean[-which.tf.missing]\n    tf.x2.current.mean <- tf.x2.current.mean[-which.tf.missing]\n    if(taxa_change){\n        tf.x1.current.mean_change <- tf.x1.current.mean_change[-which.tf.missing]\n        tf.x2.current.mean_change <- tf.x2.current.mean_change[-which.tf.missing]\n    }\n    \n    all.avail <- all.avail[,-which.tf.missing]\n    all.avail.age <- all.avail.age[,-which.tf.missing]\n    num_taxa <- nrow(tf.x1.current)\n}\n\nwhich_taxa <- c(1:num_taxa)\nprior$taxa.weights <- rep(1/num_taxa,times = num_taxa)\nprior$phi <- num_taxa/2\nprior$nr.taxa.mean <- posterior$nr.taxa.mean[1] <- num_taxa\nprior$nr.taxa.sd <- round(num_taxa/4)\n\n\n#------------------------------------------------------------------------------ \n# binomial coefficient for combinations of taxa\n#------------------------------------------------------------------------------ \n\ntf_x12_mean_current <- array(NA, dim = c(length(tf.x2.current.mean),2))\ntf_x12_mean_current[,1] <- tf.x1.current.mean\ntf_x12_mean_current[,2] <- tf.x2.current.mean\n\nif(taxa_change){\n    tf_x12_mean_current_change <- array(NA, dim = c(length(tf.x2.current.mean_change),2))\n    tf_x12_mean_current_change[,1] <- tf.x1.current.mean_change\n    tf_x12_mean_current_change[,2] <- tf.x2.current.mean_change"
+    }
+  ],
+  "limits": "No sample, quantile, spline, weightedMedian, inside.range or taxon-pruning code executed. Boundary convention/package binding still unresolved; no final mask selected."
+}

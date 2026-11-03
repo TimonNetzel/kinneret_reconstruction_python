@@ -1,0 +1,103 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "ratio_cases": 8,
+ "density_cases": 3,
+ "agreement": "module doubles equal the independent pipeline (Spouge lgamma, Decimal log/exp, each source operation rounded once) exactly, including Inf, NaN and the 1273 replacement",
+ "hand_expectations": {
+  "identical_weights": {
+   "weights_ratio": true,
+   "proposal_ratio": true,
+   "parameter_ratio": true
+  },
+  "two_taxa_closed_form": {
+   "weights_ratio_ulps_to_closed_form": 0,
+   "weights_ratio_reference_exact_matches_closed_form": true,
+   "proposal_ratio_ulps_to_closed_form": 1,
+   "proposal_ratio_reference_exact_matches_closed_form": true,
+   "parameter_ratio_ulps_to_closed_form": 0,
+   "parameter_ratio_reference_exact_matches_closed_form": true
+  },
+  "start_weights_to_proposal": {},
+  "reset_weights_as_new": {},
+  "unnormalised_weights_kept": {},
+  "overflow_nan_becomes_zero": {
+   "weights_ratio": true,
+   "proposal_ratio": true,
+   "parameter_ratio_before_na": true,
+   "parameter_ratio": true
+  },
+  "thirty_three_taxa": {},
+  "inexact_weights": {}
+ },
+ "naive_counterexamples": {
+  "identical_weights": {
+   "proposal_with_dirichlet_spread_1265": 1.0,
+   "proposal_with_spread_differs": false,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 2,
+   "symmetric_proposal_differs": false
+  },
+  "two_taxa_closed_form": {
+   "proposal_with_dirichlet_spread_1265": 0.6666666666666665,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 4,
+   "symmetric_proposal_differs": true
+  },
+  "start_weights_to_proposal": {
+   "proposal_with_dirichlet_spread_1265": 0.6673978213421666,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 4,
+   "symmetric_proposal_differs": true
+  },
+  "reset_weights_as_new": {
+   "proposal_with_dirichlet_spread_1265": 1.6650882997689174,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 4,
+   "symmetric_proposal_differs": true
+  },
+  "unnormalised_weights_kept": {
+   "proposal_with_dirichlet_spread_1265": 0.03256570567991478,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": 1.0,
+   "renormalisation_differs": true,
+   "cpython_lgamma_densities_differing": 3,
+   "symmetric_proposal_differs": true
+  },
+  "overflow_nan_becomes_zero": {
+   "proposal_with_dirichlet_spread_1265": "NaN",
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 1,
+   "symmetric_proposal_differs": true
+  },
+  "thirty_three_taxa": {
+   "proposal_with_dirichlet_spread_1265": 6.357534965074592e+30,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 3,
+   "symmetric_proposal_differs": true
+  },
+  "inexact_weights": {
+   "proposal_with_dirichlet_spread_1265": 3.460450279032752,
+   "proposal_with_spread_differs": true,
+   "renormalised_parameter_ratio": null,
+   "renormalisation_differs": false,
+   "cpython_lgamma_densities_differing": 3,
+   "symmetric_proposal_differs": true
+  }
+ },
+ "precision_note": "closed forms are met within the listed ulps; the source rounds after every operation, so a few ulps from the closed form are expected and are not errors",
+ "provider": "LaplacesDemon::ddirichlet (bound within 2018-04-23..2023-07-07 only)",
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false
+}

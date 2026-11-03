@@ -1,0 +1,93 @@
+{
+  "kind": "synthetic_finite_TF_preparation_not_historical_inputs",
+  "axes": "ordered taxa x ordered climate cells; masks index climate cells",
+  "units": "abstract TF values; row sum without climate-cell widths; no physical climate integration",
+  "tolerance": 2e-14,
+  "cases": {
+    "source_brief": {
+      "raw": [
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "keep": [
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    "rectangular": {
+      "raw": [
+        [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          5,
+          0,
+          0,
+          0,
+          5
+        ]
+      ],
+      "keep": [
+        true,
+        false,
+        true,
+        false,
+        true
+      ]
+    },
+    "PANN_separate_width": {
+      "raw": [
+        [
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          3
+        ]
+      ],
+      "keep": [
+        false,
+        true,
+        true
+      ]
+    }
+  },
+  "independent_pair": {
+    "TANN_case": "source_brief",
+    "PANN_case": "PANN_separate_width",
+    "meaning": "Two separate artificial axes; labels do not bind historical units or a final run"
+  },
+  "chain_bridge": {
+    "base_fixture": "docs/thesis_research/literal_phase1_chain_2026_11_02/synthetic_fixture.json",
+    "TF_case": "source_brief",
+    "meaning": "NEW test-only prepared TF input; frozen old fixture remains unchanged"
+  },
+  "historical_reproduction_ready": false,
+  "selected_final_variant": null
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "synthetic_arithmetic_only_no_original_numerical_inputs",
+  "density_age_by_cell": [
+    [
+      2,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      1
+    ]
+  ],
+  "expected_raw_cumulative": [
+    [
+      "2",
+      "2",
+      "2",
+      "2"
+    ],
+    [
+      "0",
+      "1",
+      "1",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "3",
+      "4"
+    ]
+  ],
+  "explicit_reference_cdf": [
+    [
+      0,
+      0.25,
+      0.5,
+      1
+    ],
+    [
+      0,
+      0.5,
+      1,
+      1
+    ],
+    [
+      0,
+      0,
+      0.5,
+      1
+    ]
+  ],
+  "expected_zero_reference_scores": [
+    "2",
+    "3/4",
+    "7/4"
+  ],
+  "expected_explicit_reference_scores": [
+    "25/16",
+    "1/8",
+    "11/8"
+  ],
+  "expected_scores_if_density_were_prematurely_normalized": [
+    "1",
+    "3/4",
+    "7/16"
+  ],
+  "rho_rows": 3,
+  "inherited_dims": 4,
+  "current_dims": 4,
+  "synthetic_cell_coordinates_for_counterexample": [
+    0,
+    1,
+    100,
+    1000
+  ],
+  "unit": "abstract discrete cell values; coordinates are not passed to the literal score",
+  "tolerance": 1e-14
+}

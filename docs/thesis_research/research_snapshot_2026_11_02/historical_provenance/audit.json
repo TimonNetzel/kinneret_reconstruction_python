@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "scientific_status": "global_distribution_recovered_tf_release_not_recovered",
+  "no_R_execution": true,
+  "no_training": true,
+  "no_sampler": true,
+  "file_count": 2687,
+  "total_bytes": 3101923547,
+  "format_counts": {
+    ".pdf": 758,
+    ".zip": 9,
+    "": 239,
+    ".txt": 46,
+    ".md": 19,
+    ".r": 275,
+    ".py": 19,
+    ".so": 1,
+    ".png": 827,
+    ".ppt": 1,
+    ".cpp": 43,
+    ".rdata": 193,
+    ".jpg": 2,
+    ".csv": 61,
+    ".docx": 3,
+    ".npy": 8,
+    ".odg": 5,
+    ".gif": 8,
+    ".nc": 49,
+    ".xls": 3,
+    ".bacon": 21,
+    ".out": 21,
+    ".xlsx": 14,
+    ".cc": 1,
+    ".odp": 1,
+    ".tab": 4,
+    ".rdb": 1,
+    ".rds": 1,
+    ".rd": 30,
+    ".h": 6,
+    ".rmd": 12,
+    ".html": 6
+  },
+  "exact_filename_search": {
+    "taxa_distribution_ww.rdata": [
+      "my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+      "my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata"
+    ],
+    "tann_test.nc": [],
+    "pann_test.nc": [],
+    "mixed_partial_arts_emd.rdata": [],
+    "mixed_partial_arts_emd_info.rdata": [],
+    "all_nnet_transfer_functions.rdata": []
+  },
+  "archive_directory_search": [
+    {
+      "archive": "kinneret_reconstruction_R-main.zip",
+      "members": 20,
+      "matches": []
+    },
+    {
+      "archive": "kinneret_paper_R/plots/copernicus_template.zip",
+      "members": 20,
+      "matches": []
+    },
+    {
+      "archive": "my_kinneret_bbm/data/out/paper/kinneret_paper.zip",
+      "members": 27,
+      "matches": []
+    },
+    {
+      "archive": "my_kinneret_bbm/plots/paper/copernicus_template.zip",
+      "members": 19,
+      "matches": []
+    },
+    {
+      "archive": "my_kinneret_bbm/plots/paper/lake_kinneret.zip",
+      "members": 19,
+      "matches": []
+    },
+    {
+      "archive": "my_kinneret_bbm/plots/v3/copernicus_template.zip",
+      "members": 17,
+      "matches": []
+    },
+    {
+      "archive": "my_kinneret_bbm/plots/v3/kinneret_paper.zip",
+      "members": 27,
+      "matches": []
+    },
+    {
+      "archive": "my_van/data/in/core/Pickarski_2015-2.zip",
+      "members": 5,
+      "matches": []
+    },
+    {
+      "archive": "my_van/data/in/core/Pickarski_2015.zip",
+      "members": 5,
+      "matches": []
+    }
+  ],
+  "same_named_local_block_hash_matches": {
+    "my_kinneret": true,
+    "my_ohrid": true
+  },
+  "fingerprints": {
+    "original/in/taxa_old_new_mediterr.rdata": "039f2116534aafb3e1cf77517eb715438bbfc47ede17e925fcbde68d3dad1d5b",
+    "my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata": "73efc9c9b9ba03d8e964db9b69f592d8aa707f7e2c72d45798e3549aec1e3dd8",
+    "my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata": "89a5e35906e2bd50ae5c85881269aecc59992f91744c6f879cc481e7ff875073",
+    "my_kinneret/data/in/climate_data/taxa_old_new_mediterr.rdata": "039f2116534aafb3e1cf77517eb715438bbfc47ede17e925fcbde68d3dad1d5b",
+    "my_ohrid/data/in/climate_data/taxa_old_new_mediterr.rdata": "039f2116534aafb3e1cf77517eb715438bbfc47ede17e925fcbde68d3dad1d5b",
+    "my_ohrid/data/out/transfer_function/best_fit_2D_v1.6.rdata": "4eea2ec0c9f833256456e584670f7f15e701e9e6f960a8036569408ec0db459c",
+    "my_ohrid/data/out/transfer_function/qda_2D_unsmoted_nh_unknown_relict_v2.6.rdata": "7a1629c70bee93e6c6c3099a3d74a71d2836e0161da092514c13d05211fb2d32",
+    "my_ohrid/src/climate_input_ww.R": "ccbfafb874dbcf762519e9ea32ed4623407120a736f9110377a842c968c9fa47",
+    "my_kinneret/src/climate_input_ww.R": "75030c13e413011ba74cdab4741aec560caeb75e78418b03ec8c55c98a8c2742",
+    "my_ohrid/src/ml_competition_ww.R": "7163e05fa4667c1cbca186de25cb465a72d1a1dbd0c4dbb72c249c6dfa98fc35"
+  },
+  "global_distributions": {
+    "my_kinneret": {
+      "relative_path": "my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+      "dimensions": [
+        720,
+        360,
+        275
+      ],
+      "payload_bytes": 570240000,
+      "payload_xdr_sha256": "6f533f3b7e63af7e07e11a7459524e12caa48e2b37985a19aae69a78e75ab668",
+      "R_writer_integer": 197888,
+      "coordinate_ranges": {
+        "lon": [
+          -179.75,
+          179.75
+        ],
+        "lat": [
+          -89.75,
+          89.75
+        ]
+      },
+      "coordinates_strictly_increasing": true,
+      "local_coordinates_exactly_found": true,
+      "exact_order_preserving_local_names": true,
+      "additional_names": [],
+      "all_finite_distribution_values_binary": true,
+      "local_crop": {
+        "compared_planes": 275,
+        "exactly_equal_planes": 27,
+        "total_cell_mismatches": 95006,
+        "mask_mismatches": 0,
+        "finite_value_mismatches": 95006
+      },
+      "documented_deleted_positions": [
+        {
+          "position": 8,
+          "name": "Abies nebrodensis"
+        },
+        {
+          "position": 10,
+          "name": "Abies numidica"
+        },
+        {
+          "position": 152,
+          "name": "Pinus brutia"
+        },
+        {
+          "position": 153,
+          "name": "Pinus cembra"
+        }
+      ],
+      "index_operation_status": "counterfactual_comparison_do_not_apply",
+      "resulting_name_count": 271,
+      "resulting_position_110_before_main_rename": "Juniperus phoenicea",
+      "contains_finished_transfer_functions": false
+    },
+    "my_ohrid": {
+      "relative_path": "my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata",
+      "dimensions": [
+        720,
+        360,
+        283
+      ],
+      "payload_bytes": 586828800,
+      "payload_xdr_sha256": "7afd56127f81b89270a466a5fa22ac62300eb9b9a316bf5cbc0cb55a51504e09",
+      "R_writer_integer": 197888,
+      "coordinate_ranges": {
+        "lon": [
+          -179.75,
+          179.75
+        ],
+        "lat": [
+          -89.75,
+          89.75
+        ]
+      },
+      "coordinates_strictly_increasing": true,
+      "local_coordinates_exactly_found": true,
+      "exact_order_preserving_local_names": true,
+      "additional_names": [
+        "Carya glabra",
+        "Carya tomentosa",
+        "Cedrus libani",
+        "Liquidambar orientalis",
+        "Pterocarya fraxinifolia",
+        "Tsuga canadensis",
+        "Tsuga diversifolia",
+        "Zelkova"
+      ],
+      "all_finite_distribution_values_binary": true,
+      "local_crop": {
+        "compared_planes": 275,
+        "exactly_equal_planes": 27,
+        "total_cell_mismatches": 95006,
+        "mask_mismatches": 0,
+        "finite_value_mismatches": 95006
+      },
+      "documented_deleted_positions": [
+        {
+          "position": 8,
+          "name": "Abies nebrodensis"
+        },
+        {
+          "position": 10,
+          "name": "Abies numidica"
+        },
+        {
+          "position": 152,
+          "name": "Phoenix Dactylifera"
+        },
+        {
+          "position": 153,
+          "name": "Picea abies"
+        }
+      ],
+      "index_operation_status": "referenced_by_main_v1.2",
+      "resulting_name_count": 279,
+      "resulting_position_110_before_main_rename": "Juglans sp.",
+      "contains_finished_transfer_functions": false
+    }
+  },
+  "models": [
+    {
+      "relative_path": "my_ohrid/data/out/transfer_function/best_fit_2D_v1.6.rdata",
+      "workspace_objects": [
+        "best.fit",
+        "sd1",
+        "mean1",
+        "rate1",
+        "shape1",
+        "logloss.df"
+      ],
+      "fit_class": [
+        "train",
+        "train.formula"
+      ],
+      "method": [
+        "qda"
+      ],
+      "class_levels": [
+        "taxa1",
+        "taxa2",
+        "taxa3",
+        "taxa4",
+        "taxa5",
+        "taxa6",
+        "unknown"
+      ],
+      "skipped_numeric_vectors": 3,
+      "interpretation": "one_saved_multiclass_caret_fit_not_a_collection_of_279_binary_functions"
+    },
+    {
+      "relative_path": "my_ohrid/data/out/transfer_function/qda_2D_unsmoted_nh_unknown_relict_v2.6.rdata",
+      "workspace_objects": [
+        "best.fit",
+        "sd1",
+        "mean1",
+        "rate1",
+        "shape1",
+        "logloss.df"
+      ],
+      "fit_class": [
+        "train",
+        "train.formula"
+      ],
+      "method": [
+        "qda"
+      ],
+      "class_levels": [
+        "taxa1",
+        "taxa2",
+        "taxa3",
+        "taxa4",
+        "taxa5",
+        "taxa6",
+        "unknown"
+      ],
+      "skipped_numeric_vectors": 2,
+      "interpretation": "one_saved_multiclass_caret_fit_not_a_collection_of_279_binary_functions"
+    }
+  ],
+  "checks": {
+    "source_metadata_unchanged": true,
+    "original_metadata_unchanged": true,
+    "selected_hashes_unchanged": true,
+    "both_global_axes_valid": true,
+    "both_ordered_name_crosswalks_exact": true,
+    "global_distribution_values_binary": true,
+    "ohrid_documented_deletion_yields_279": true,
+    "common_275_global_planes_identical": true,
+    "same_named_local_blocks_byte_identical": true,
+    "models_are_single_multiclass_fits": true
+  },
+  "all_checks_passed": true,
+  "reader_limitations": [
+    "XDR RData v2/v3 only",
+    "no R runtime/prediction validation",
+    "one larger caret-container probe failed at unsupported RObjectType 252; not decoded"
+  ],
+  "reader_hashes": {
+    "local_rdata_stream.py": "c245cb580f8ee8fbec1a77ba0d91b27461fec8f5bba8f8b22b26384eafdadccd",
+    "audit_my_reconst_sources.py": "2eb161b401e77b38e32bad93b23784e4a48a5a4d760811ee33122ae1f06a310f"
+  },
+  "parser_version": "1.1.0"
+}

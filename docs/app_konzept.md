@@ -433,3 +433,42 @@ ein Klick, sondern die Auswahl „Detail“ in der Seitenleiste (je Alter bzw. T
 Achsen noch Kurven, zeigt Werte und öffnet kein Detail), Maus (Ziehen zoomt, Klick öffnet kein Detail), Detail über
 die Auswahl.
 
+
+## Forschungsstand und Quellen (02.11.2026)
+
+Eine zusätzliche lesende Ansicht `forschung.js` stellt den an SHA256 gebundenen
+Forschungs-Snapshot aus `forschungsstand.py` dar. Der App-Builder liefert
+`daten/forschung.js` im Ordner samt Offline-Cache und bettet dieselben Daten
+in die Ein-Datei-App ein. Fehlende Nachweise bleiben sichtbar, veränderte
+Snapshot-Bytes stoppen den Build. Fünf Bereiche und Quellenlinks trennen
+vorhandene, experimentelle und fehlende Ergebnisse. Keine Modellvorhersagen
+oder neuen Laufdaten; keine Abbildungsexport-Schaltfläche in dieser Ansicht.
+[Nachweise](thesis_research/app_research_2026_11_02/README.md).
+
+
+## Gespeicherte Sieben-Arten-Metriken (02.11.2026)
+
+`artenvergleich.py` bindet die unveränderte `metrics_summary.csv` an SHA256.
+`artenvergleich.js` registriert eine zusätzliche lesende Ansicht: BA und Brier
+nebeneinander, 5°/10°-Blockwahl, Netze ohne/mit SMOTE und ergänzbare feste
+Regression/Prior-Diagnose. Die Übersicht zeigt beide Designs im ungewichteten
+Artenmittel. Fehlende Scores bleiben sichtbar, veränderte Bytes stoppen den
+Build. `daten/artenvergleich.js` wird im Ordner gecacht und in der Ein-Datei-App
+eingebettet. Die zweisprachige Tabellenansicht bleibt unabhängig von Lauf und
+Standort, ohne Abbildungsexport oder automatische Variantenübernahme.
+Quellen sind an einen festen Commit gebunden. Experimenteller Status und
+wissenschaftliche Gates bleiben erhalten.
+[Ergebnis, Grenzen und Browserprüfung](thesis_research/app_species_2026_11_02/README.md).
+
+
+## Äußere Foldwerte im Artenvergleich (02.11.2026)
+
+Die Umschaltung Übersicht/Foldwerte verwendet dieselbe Datenbindung und
+Darstellung mit zusätzlicher Artwahl. `artenvergleich.py` bindet `scores.csv`
+mit SHA256, prüft 280 Foldzeilen und 56 mit der Gesamtübersicht identische
+Gesamtzeilen sowie Testzellzahlen. Fehlende Folddaten lassen die Übersicht
+verfügbar. Undefinierte BA bleibt `null`, Brier wird getrennt behandelt.
+Kein Foldmittel und kein Unsicherheitsintervall wird daraus erzeugt.
+Ansicht/Art/Block/Varianten bleiben im bestehenden Browserzustand gespeichert.
+Beide Offlineformate, Deutsch/Englisch und Standortunabhängigkeit bleiben erhalten.
+[Ergebnis und Prüfungen](thesis_research/app_folds_2026_11_02/README.md).

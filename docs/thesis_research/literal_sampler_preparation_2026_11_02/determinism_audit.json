@@ -1,0 +1,89 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Which next step is deterministic without random state and without unbound package semantics?",
+  "candidates": [
+    {
+      "id": "sampler_preparation_53_79",
+      "lines": "mcmc_conduction.R:53-79 (+main_v1.2.R:624)",
+      "random_state": false,
+      "functions": [
+        "if",
+        "floor",
+        "/",
+        "list",
+        "c",
+        "t",
+        "ncol",
+        "nrow",
+        "colMeans(na.rm = T)",
+        "for",
+        ":",
+        "[ and [<- on a numeric matrix",
+        "max(na.rm = T)",
+        "rep"
+      ],
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": true,
+      "evidence": "main_v1.2.R:676 sources mcmc_conduction.R; 53, 63-79 lie at brace depth 0; gibbs is assigned only in main_v1.2.R:624 (gibbs <- F, depth 0); F and T are never assigned; no base function used here is redefined in the eight files",
+      "precision_note": "colMeans may accumulate in extended precision (R version and platform unbound); taxa_means has no reader, the module flags means that are not accumulator independent",
+      "readers": "taxa_information$values, ncol_taxa_array, nrow_taxa_array: parameter_stage_weights (mcmc_functions_v1.6.R:1276); taxa_information$taxa_means: none; posterior$jeffreys_prior and floor(num_taxa/2): only parameter_stage_gibbs (1216, 1228), dead with gibbs <- F; posterior$how_many_taxa: z start 1:how_many_taxa (mcmc_conduction.R:114), reset to 1:ncol in every weights stage (1280); taxa.appear.core.temp is passed in 142 but parameter_stage_weights never reads its taxa.appear.core argument",
+      "masking_note": "like all earlier packets: the base functions are assumed not to be masked by the 50 attached packages; their namespaces are unbound and R was not run",
+      "decision": "implemented as tools/historical_sampler_preparation.py; inputs only synthetic"
+    },
+    {
+      "id": "tf_x12_mean_current_1692_1700",
+      "lines": "mcmc_prepare.R:1692-1700",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "evidence": "pure column binding of the two mean vectors (initialised in 1461); read by the sampler (mcmc_conduction.R:146, argument of reconstruction) and in mcmc_functions_v1.6.R:445, 470 (final_reconstruction) and 858 (reconstruction)",
+      "decision": "documented only; its inputs depend on weightedMedian (open)"
+    },
+    {
+      "id": "combs_1702_1703",
+      "lines": "mcmc_prepare.R:1702-1703",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "evidence": "choose(num_taxa, c) for c in 1:num_taxa; combs has no reader in the eight files; the loop variable c becomes an integer but R skips non-function bindings when calling c(...)",
+      "decision": "documented only, no reader"
+    },
+    {
+      "id": "weightedMedian",
+      "lines": "mcmc_prepare.R:1631,1632,1651,1652",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "main_v1.2.R:27 attaches matrixStats without version",
+      "decision": "documented only; the NA mask of the previous packet stays an explicit input"
+    },
+    {
+      "id": "rmvnorm_rcpp_133",
+      "lines": "mcmc_conduction.R:133",
+      "random_state": true,
+      "evidence": "multivariate normal draws for the whole run, no local seed",
+      "decision": "documented only"
+    },
+    {
+      "id": "prior_samples_seed_2022",
+      "lines": "mcmc_prepare.R:1297-1303",
+      "random_state": true,
+      "evidence": "set.seed(2022) before rnorm and rgamma; RNG kind unbound",
+      "decision": "documented only"
+    },
+    {
+      "id": "start_values_rbeta",
+      "lines": "mcmc_prepare.R:1709-1738",
+      "random_state": true,
+      "evidence": "rbeta in the start values",
+      "decision": "documented only"
+    },
+    {
+      "id": "tf_variance_sample",
+      "lines": "mcmc_prepare.R:1591-1592",
+      "random_state": true,
+      "evidence": "sample(..., replace = T) without a local seed",
+      "decision": "documented only"
+    }
+  ],
+  "selected_for_implementation": "sampler_preparation_53_79",
+  "final_variant_selected": false,
+  "R_execution": false
+}

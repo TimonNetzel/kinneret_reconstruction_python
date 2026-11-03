@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "base_commit": "756865bea123b6494fd3a0e7babfce968bfcb29e",
+  "status": "partial_kinneret_binding_final_base_and_numeric_transfer_functions_missing",
+  "older_collection": {
+    "site_count": 4,
+    "kinneret_slot_R_1_based": 3,
+    "sitename": "Kinneret",
+    "spectrum_shape": [
+      160,
+      12
+    ],
+    "taxon_names": [
+      "Olea europaea",
+      "Quercus evergreen",
+      "Quercus cerris",
+      "Phillyrea",
+      "Pinus cembra",
+      "Betula",
+      "Juglans sp.",
+      "Vitis sylvestris",
+      "Fagus orientalis",
+      "Alnus",
+      "Tilia",
+      "Chenopodium glaucum"
+    ]
+  },
+  "sample_binding": {
+    "rows": 160,
+    "unique_depths": true,
+    "all_four_depth_vectors_exactly_equal": true,
+    "older_age_and_chronology_age_exactly_equal": true,
+    "age_range_cal_a_BP": [
+      -60.0,
+      9015.0
+    ],
+    "rho_matrix_shape": [
+      160,
+      1772
+    ],
+    "rho_xdr_payload_sha256": "e39d0dafe1f099bed0c2608eaf0e48fce039bd2a9cd6d6135d4597a17b24da96",
+    "rho_numeric_payload_exactly_equal": true,
+    "final_v1_2_binding": "unresolved"
+  },
+  "older_column_binding": {
+    "exactly_bound_columns": 12,
+    "compared_values": 1920,
+    "raw_taxon_columns": 60,
+    "raw_empty_cells": 3701,
+    "olea_max_error_if_AP_plus_NAP_denominator_used": 0.06666096305485447
+  },
+  "biom_candidate": {
+    "spectrum_shape": [
+      160,
+      35
+    ],
+    "biome_shape": [
+      35,
+      3
+    ],
+    "replacement_for_final_dissertation_base": false
+  },
+  "reference_binding": {
+    "older_qualitative_equals_csv_tree_percentage": false,
+    "current_consumer_replaces_reference_from_csv": true
+  },
+  "chronology_interface": {
+    "preserved_candidate": "matrix plus flat age vector",
+    "bacon_source": "first saves list/age-grid variant, later overwrites same filename with mean-age matrix",
+    "current_consumer": "age.reso=2 and [[age.reso]] expect a list; matrix candidate cannot be silently substituted"
+  },
+  "plot_labels": {
+    "taxa_weights.pdf": {
+      "first_panel_labels_in_text_order": [
+        "Ericales (tetrad)",
+        "Juglans regia",
+        "Olea Europaea",
+        "Phillyrea Latifolia",
+        "Pinus",
+        "Pistacia",
+        "Quercus Calliprinos",
+        "Quercus Ithaburensis",
+        "Chenopodiaceae",
+        "Artemisia",
+        "Ephedra distachya"
+      ],
+      "first_panel_label_count": 11,
+      "scope": "display labels, not numerical TF keys or base-column indices"
+    },
+    "gibbs_taxa_weights.pdf": {
+      "first_panel_labels_in_text_order": [
+        "Ericales (tetrad)",
+        "Juglans regia",
+        "Olea",
+        "Phillyrea",
+        "Pinus",
+        "Pistacia",
+        "Quercus Calliprinos",
+        "Quercus Ithaburensis",
+        "Artemisia",
+        "Ephedra distachya"
+      ],
+      "first_panel_label_count": 10,
+      "scope": "display labels, not numerical TF keys or base-column indices"
+    },
+    "rw_diff_taxa_weights.pdf": {
+      "first_panel_labels_in_text_order": [
+        "Ericales (tetrad)",
+        "Juglans regia",
+        "Olea Europaea",
+        "Phillyrea Latifolia",
+        "Pinus",
+        "Pistacia",
+        "Quercus Calliprinos",
+        "Quercus Ithaburensis",
+        "Atriplex Halimus",
+        "Artemisia",
+        "Ephedra distachya"
+      ],
+      "first_panel_label_count": 11,
+      "scope": "display labels, not numerical TF keys or base-column indices"
+    }
+  },
+  "plot_archive_comparisons": [
+    {
+      "source": "original:out/plots/case_studies/kinneret/taxa_weights.pdf",
+      "member": "figures/kinneret/taxa_weights.pdf",
+      "byte_equal": true
+    }
+  ],
+  "explicit_consumer_tf_assignments": 3,
+  "complete_final_tf_subset_known": false,
+  "all_explicit_sources_unchanged": true,
+  "sources": {
+    "original:in/core_data_all_andrea_taxa_additional_sites.rdata": {
+      "scope": "original",
+      "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+      "exists": true,
+      "bytes": 37982121,
+      "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    },
+    "additional:my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+      "exists": true,
+      "bytes": 23333,
+      "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    },
+    "additional:my_kinneret/data/in/core/core_data.rdata": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/in/core/core_data.rdata",
+      "exists": true,
+      "bytes": 27108,
+      "sha256": "3319fd6961787f6ed5ba21009a8e16c0cbdafee85fd85ab6b0a5aa35144b5baf"
+    },
+    "additional:my_kinneret/data/out/age_depth/rho_depth_given_age.rdata": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+      "exists": true,
+      "bytes": 1375335,
+      "sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762"
+    },
+    "repository:.local/my_reconst_source_audit_v3/global_taxon_crosswalk.csv": {
+      "scope": "repository",
+      "relative_path": ".local/my_reconst_source_audit_v3/global_taxon_crosswalk.csv",
+      "exists": true,
+      "bytes": 42523,
+      "sha256": "b644bc25e2847a039eb3996edee4c52354aeed5524dea97cbfa29eb4890cd288"
+    },
+    "original:main_v1.2.R": {
+      "scope": "original",
+      "relative_path": "main_v1.2.R",
+      "exists": true,
+      "bytes": 45494,
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520"
+    },
+    "original:src/check_ages.R": {
+      "scope": "original",
+      "relative_path": "src/check_ages.R",
+      "exists": true,
+      "bytes": 12904,
+      "sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729"
+    },
+    "original:src/mcmc_prepare.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_prepare.R",
+      "exists": true,
+      "bytes": 82630,
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e"
+    },
+    "original:src/mcmc_case_studies.R": {
+      "scope": "original",
+      "relative_path": "src/mcmc_case_studies.R",
+      "exists": true,
+      "bytes": 97405,
+      "sha256": "37587ff08565bf284349e71a9ddbfd924d47fb786e0ccce5168a949be5b9c22e"
+    },
+    "additional:my_kinneret/main.R": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/main.R",
+      "exists": true,
+      "bytes": 761,
+      "sha256": "2c705dfe53e0055da3b8cc1ac7a215fc67c0f02ff68c1a8ad349f653e7effebc"
+    },
+    "additional:my_kinneret/src/bacon_kinneret.R": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/src/bacon_kinneret.R",
+      "exists": true,
+      "bytes": 11517,
+      "sha256": "c9406d13083ddbb8248ca4b6ac24b43b42067d1044bbc833a5155274145b5f48"
+    },
+    "additional:my_kinneret/src/bbm_reconstruction.R": {
+      "scope": "additional",
+      "relative_path": "my_kinneret/src/bbm_reconstruction.R",
+      "exists": true,
+      "bytes": 26364,
+      "sha256": "1a04bd00ea61755ec077c3121de906a82c85f0c76314afbdaabc8e4782f22ab9"
+    },
+    "original:in/core_data_additional_sites_v1.2.rdata": {
+      "scope": "original",
+      "relative_path": "in/core_data_additional_sites_v1.2.rdata",
+      "exists": false
+    },
+    "original:in/core_data_kinneret.rdata": {
+      "scope": "original",
+      "relative_path": "in/core_data_kinneret.rdata",
+      "exists": false
+    },
+    "original:out/transfer_functions/mixed_partial_arts_emd.rdata": {
+      "scope": "original",
+      "relative_path": "out/transfer_functions/mixed_partial_arts_emd.rdata",
+      "exists": false
+    },
+    "original:out/transfer_functions/mixed_partial_arts_emd_info.rdata": {
+      "scope": "original",
+      "relative_path": "out/transfer_functions/mixed_partial_arts_emd_info.rdata",
+      "exists": false
+    },
+    "original:out/plots/mcmc/v5.0/diss_final.zip": {
+      "scope": "original",
+      "relative_path": "out/plots/mcmc/v5.0/diss_final.zip",
+      "exists": true,
+      "bytes": 42244270,
+      "sha256": "5bb88cda23197c438ec54f28034a79ba3d425578743d067af7d4679df10bf837"
+    },
+    "original:out/plots/case_studies/kinneret/taxa_weights.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/kinneret/taxa_weights.pdf",
+      "exists": true,
+      "bytes": 19488,
+      "sha256": "3ba9d43445056b4d84d50a86a9181b5aea5d25e1c420c3603a59bc809c3b6c33"
+    },
+    "original:out/plots/case_studies/kinneret/gibbs_taxa_weights.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/kinneret/gibbs_taxa_weights.pdf",
+      "exists": true,
+      "bytes": 19858,
+      "sha256": "af7f997a4563d7e3cd645f24d512ee8bfb90b8bd9359898ce2dfa71e46865b6a"
+    },
+    "original:out/plots/case_studies/kinneret/rw_diff_taxa_weights.pdf": {
+      "scope": "original",
+      "relative_path": "out/plots/case_studies/kinneret/rw_diff_taxa_weights.pdf",
+      "exists": true,
+      "bytes": 16361,
+      "sha256": "eb2d0ed8fe045924aa9c5e5a436ba182888bae6ca57fe14e5eb37e94df1bab32"
+    }
+  },
+  "limits": [
+    "A mathematical identity does not establish the historical producer execution",
+    "No final v1.2 sample/taxon contract has been restored",
+    "Display-name rewriting prevents inversion of the plot labels into a unique TF key list",
+    "No numerical TF arrays, taxon draws, climate curves or new Bacon outputs generated"
+  ]
+}

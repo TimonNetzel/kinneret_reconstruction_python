@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "basis_commit": "00d7d2a55759ccd8f3157294d16adaa4c3fae301",
+  "spec_sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4",
+  "checks": {
+    "portable_cli_exit": 2,
+    "local_cli_exit": 2,
+    "verified_assets": 26,
+    "verified_facts": 19,
+    "verified_snapshot_files": 50,
+    "unresolved_requirement_bundles": 11,
+    "local_existing_sources_unchanged": 28,
+    "local_still_missing_paths": 12,
+    "reports_repeated_after_documentation_edits": true,
+    "README_relative_links_resolve": 6,
+    "source_variant_selected": false,
+    "execution_supported": false,
+    "historical_reproduction_ready": false
+  },
+  "targeted_tests": {
+    "command": "python -m pytest tests/test_kinneret_phase1_spec.py -q -o cache_dir=.local/phase1_spec_v1/pytest_cache",
+    "passed": 20,
+    "failed": 0,
+    "temporary_files": "System temporary directory; no original data written",
+    "earlier_setup_errors": [
+      "missing parent of explicit basetemp",
+      "Windows path length under deeply nested explicit basetemp"
+    ],
+    "resolution": "Use the short system temporary directory"
+  },
+  "existing_handoff_verifier": {
+    "status": "passed",
+    "files_checked": 50,
+    "stored_bytes_checked": 2767578,
+    "targeted_test_cases": 67,
+    "note": "Existing saved test records checked; these 67 scientific/technical cases were not rerun"
+  },
+  "changed_code_scope": [
+    "tools/check_kinneret_phase1_spec.py",
+    "tests/test_kinneret_phase1_spec.py"
+  ],
+  "new_models_or_reconstruction_runs": false,
+  "originals_written": false,
+  "preserved": [
+    "app_cli",
+    "baseline",
+    "reference_data",
+    "four_previous_evidence_packets",
+    "research_snapshot",
+    "Monticchio_and_chronology_gates"
+  ],
+  "limits": [
+    "Integrity does not close missing scientific inputs or original-run provenance",
+    "Optional local check covers only explicit original/additional paths from three source documents, not every dependency",
+    "No source variant selected; no new calibration, sampler, training or fossil reconstruction"
+  ],
+  "files": {
+    "docs/thesis_research/kinneret_phase1_spec_2026_11_02/spec.json": {
+      "bytes": 17391,
+      "sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4"
+    },
+    "docs/thesis_research/kinneret_phase1_spec_2026_11_02/portable_report.json": {
+      "bytes": 13524,
+      "sha256": "172c9581d13645f65a3b2412f4575968c7d0f0c387ad44ce1fcafaa0e02f06c4"
+    },
+    "docs/thesis_research/kinneret_phase1_spec_2026_11_02/local_report.json": {
+      "bytes": 22595,
+      "sha256": "482b1c791d6fbc08a835412a453e77e60a790892f510eaa19fe0f76a367cd6a0"
+    },
+    "tools/check_kinneret_phase1_spec.py": {
+      "bytes": 9630,
+      "sha256": "24474827c4584c6e0d2a5aeea0aa1d437cef6675d2e092e9e59e5f5ba6a63c9b"
+    },
+    "tests/test_kinneret_phase1_spec.py": {
+      "bytes": 6424,
+      "sha256": "9f9eb4540571746cd7e0654d405fc7e79609d62a1b2b49f061114f1e18ac8d91"
+    }
+  }
+}

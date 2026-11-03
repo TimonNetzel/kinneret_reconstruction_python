@@ -1,0 +1,4 @@
+base_column_before_selection_R_1_based,explicit_consumer_name,original_source_line,older_name_at_same_position,older_raw_type_at_same_position,ohrid_global_position_before_documented_deletion,consumer_pool_position_after_documented_deletion,separate_lowercase_name,separate_lowercase_consumer_pool_position,required_fields,numerical_tf_status,scope
+5,Olea Europaea,148,Pinus cembra,Pinus,144,142,Olea europaea,141,prod.x1;prod.x2;x1range.bck;x2range.bck,missing,explicit current consumer assignments only; not complete final subset
+6,Phillyrea Latifolia,149,Betula,Betula,151,149,Phillyrea latifolia,148,prod.x1;prod.x2;x1range.bck;x2range.bck,missing,explicit current consumer assignments only; not complete final subset
+8,Pistacia Lentiscus,150,Vitis sylvestris,Vitis,166,162,Pistacia lentiscus,161,prod.x1;prod.x2;x1range.bck;x2range.bck,missing,explicit current consumer assignments only; not complete final subset

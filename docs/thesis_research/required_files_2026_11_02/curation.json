@@ -1,0 +1,318 @@
+{
+  "basis_commit": "26d06cfc3530eef5c65f53e270812894b5d84838",
+  "interpretation": "P0 means explicit read needed by unchanged preserved R entry, not scientifically necessary in every implementation. P1/P2 remain branch-dependent. No final variant selected.",
+  "entries": [
+    {
+      "id": "F01",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 107,
+      "role_de": "Finale Basis einschließlich Standort-/Taxon-/Chronologieobjekten",
+      "note_de": "Älterer Sammelcontainer vorhanden; ersetzt v1.2 und finale Listenchronologie nicht."
+    },
+    {
+      "id": "F02",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 569,
+      "role_de": "Historische numerische Taxon-TFs",
+      "note_de": "Grafische TF-Belege und moderne Einzelmodelle ersetzen diesen Container nicht."
+    },
+    {
+      "id": "F03",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 325,
+      "role_de": "Globales PANN-Mittel und Stationsmaske stn",
+      "note_de": "Regionale CRU-Dateien sind vorhanden, aber kein belegter Ersatz für globale Achsen/Zeiten/Version."
+    },
+    {
+      "id": "F04",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 326,
+      "role_de": "Globales TANN-Mittel",
+      "note_de": "Regionale CRU-Dateien sind vorhanden, aber kein belegter Ersatz für globale Achsen/Zeiten/Version."
+    },
+    {
+      "id": "F05",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 343,
+      "role_de": "Zeitaufgelöste PANN-Ankerdaten",
+      "note_de": "Regionale CRU-Dateien sind vorhanden, aber kein belegter Ersatz für globale Achsen/Zeiten/Version."
+    },
+    {
+      "id": "F06",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 344,
+      "role_de": "Zeitaufgelöste TANN-Ankerdaten",
+      "note_de": "Regionale CRU-Dateien sind vorhanden, aber kein belegter Ersatz für globale Achsen/Zeiten/Version."
+    },
+    {
+      "id": "F07",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 388,
+      "role_de": "Speläothem-Referenzworkspace",
+      "note_de": "Expliziter Load im erhaltenen Einstieg; genaue historische Objekt-/Laufbindung bleibt offen."
+    },
+    {
+      "id": "F08",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 394,
+      "role_de": "SISAL-d18O/d13C-Workspace",
+      "note_de": "Expliziter Load im erhaltenen Einstieg; genaue historische Objekt-/Laufbindung bleibt offen."
+    },
+    {
+      "id": "F09",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 397,
+      "role_de": "Isotopen-Metadatenworkspace",
+      "note_de": "Expliziter Load im erhaltenen Einstieg; genaue historische Objekt-/Laufbindung bleibt offen."
+    },
+    {
+      "id": "F10",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 401,
+      "role_de": "Gemeinsamer Isotopen-/Speläothem-Workspace",
+      "note_de": "Expliziter Load im erhaltenen Einstieg; genaue historische Objekt-/Laufbindung bleibt offen."
+    },
+    {
+      "id": "F11",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 432,
+      "role_de": "Klima-/Köppen-Geiger-Zuordnung aus Transferfunktionsumfeld",
+      "note_de": "Expliziter Load im erhaltenen Einstieg; genaue historische Objekt-/Laufbindung bleibt offen."
+    },
+    {
+      "id": "F12",
+      "priority": "P0_R_Einstieg",
+      "source": "original:src/mcmc_prepare.R",
+      "line": 451,
+      "role_de": "PMIP3-LGM-Eismaske mask2 mit lon/lat",
+      "note_de": "Automount-Ursprung. nc_open steht vor dem späteren Abschalten von stad_interstad und wird dadurch nicht übersprungen."
+    },
+    {
+      "id": "F13",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 367,
+      "role_de": "Insolationsreihe",
+      "note_de": ""
+    },
+    {
+      "id": "F14",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 391,
+      "role_de": "SISAL-Höhlenmetadaten",
+      "note_de": ""
+    },
+    {
+      "id": "F15",
+      "priority": "P0_R_Einstieg",
+      "source": "original:main_v1.2.R",
+      "line": 392,
+      "role_de": "SISAL-Altersmetadaten",
+      "note_de": ""
+    },
+    {
+      "id": "F16",
+      "priority": "P0_R_Einstieg",
+      "source": "original:src/check_ages.R",
+      "line": 238,
+      "role_de": "IRD-/Bond-Referenz",
+      "note_de": "Auch CSV/TXT gehören zur Eingabekette, obwohl RData/NC im Vordergrund stehen."
+    },
+    {
+      "id": "F17",
+      "priority": "P1_bedingt",
+      "source": "original:src/all_trafo.R",
+      "line": 544,
+      "role_de": "Numerische TF-Informationen und Qualitäts-/Zuordnungsdaten",
+      "note_de": "Für Nachweis/TF-Erzeuger, nicht separat im lokalen main-Load."
+    },
+    {
+      "id": "F18",
+      "priority": "P1_bedingt",
+      "source": "original:src/all_trafo.R",
+      "line": 47,
+      "role_de": "Klimaraster im erhaltenen TF-Erzeuger: TANN",
+      "note_de": "Aktiver Erzeuger überschreibt zuvor geöffnete globale Klimafelder; kein automatisch gewählter finaler Trainingslauf."
+    },
+    {
+      "id": "F19",
+      "priority": "P1_bedingt",
+      "source": "original:src/all_trafo.R",
+      "line": 48,
+      "role_de": "Klimaraster im erhaltenen TF-Erzeuger: PANN",
+      "note_de": "Wie TANN; keine neue Kalibrierung starten."
+    },
+    {
+      "id": "F20",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 90,
+      "role_de": "Erweiterte EPD-Kerndaten",
+      "note_de": "Nur Nicht-add.sites-/EPD-Zweig; nicht pauschal Voraussetzung für Kinneret."
+    },
+    {
+      "id": "F21",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 86,
+      "role_de": "Giesecke-Prozentbasis",
+      "note_de": "Nur Nicht-add.sites-/EPD-Zweig; nicht pauschal Voraussetzung für Kinneret."
+    },
+    {
+      "id": "F22",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 88,
+      "role_de": "Giesecke-Zählbasis",
+      "note_de": "Nur Nicht-add.sites-/EPD-Zweig; nicht pauschal Voraussetzung für Kinneret."
+    },
+    {
+      "id": "F23",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 161,
+      "role_de": "Iznik-Kerninformationen",
+      "note_de": "Fallbezogene Lücke; bestehende andere Kerncontainer nicht still umbenennen."
+    },
+    {
+      "id": "F24",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 221,
+      "role_de": "En-Gedi-Chronologie mit höherer Auflösung",
+      "note_de": "Andere En-Gedi-Chronologien vorhanden; diese benannte Variante fehlt."
+    },
+    {
+      "id": "F25",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 288,
+      "role_de": "Van-Chronologie am referenzierten Standortpfad",
+      "note_de": "Gleichnamige Chronologien anderer Seen sind vorhanden; kein passender my_van-Pfad gefunden."
+    },
+    {
+      "id": "F26",
+      "priority": "P1_bedingt",
+      "source": "original:main_v1.2.R",
+      "line": 858,
+      "role_de": "Älterer/globaler Pollen-Klima-Sammelstand",
+      "note_de": "Späterer räumlicher/Referenzzweig, keine generelle lokale Pflichtdatei."
+    },
+    {
+      "id": "F27",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_trimming_posterior_trafo.R",
+      "line": 461,
+      "role_de": "Jährliche globale PANN-Datei für Posterior-Transformation",
+      "note_de": "Nachbearbeitungsvariante; keine ungeprüfte Gleichsetzung mit cru4_*_v1.2.nc."
+    },
+    {
+      "id": "F28",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_trimming_posterior_trafo.R",
+      "line": 462,
+      "role_de": "Jährliche globale TANN-Datei für Posterior-Transformation",
+      "note_de": "Nachbearbeitungsvariante; keine ungeprüfte Gleichsetzung mit cru4_*_v1.2.nc."
+    },
+    {
+      "id": "F29",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_case_studies.R",
+      "line": 1514,
+      "role_de": "Monatsmittel PANN",
+      "note_de": "Spätere Fallstudien-/Kartenvariante; nicht als Pflicht für jeden lokalen Fall werten."
+    },
+    {
+      "id": "F30",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_case_studies.R",
+      "line": 1515,
+      "role_de": "Monatsmittel TANN",
+      "note_de": "Spätere Fallstudien-/Kartenvariante; nicht als Pflicht für jeden lokalen Fall werten."
+    },
+    {
+      "id": "F31",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_case_studies.R",
+      "line": 1572,
+      "role_de": "USA-Monatsmittel PANN",
+      "note_de": "Spätere Fallstudien-/Kartenvariante; nicht als Pflicht für jeden lokalen Fall werten."
+    },
+    {
+      "id": "F32",
+      "priority": "P1_bedingt",
+      "source": "original:src/mcmc_case_studies.R",
+      "line": 1573,
+      "role_de": "USA-Monatsmittel TANN",
+      "note_de": "Spätere Fallstudien-/Kartenvariante; nicht als Pflicht für jeden lokalen Fall werten."
+    },
+    {
+      "id": "F33",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_trafo.R",
+      "line": 560,
+      "role_de": "Gespeicherte Arten-Netzmodelle",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F34",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_trafo.R",
+      "line": 566,
+      "role_de": "Gespeicherte Arten-QDA-Modelle",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F35",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_trafo.R",
+      "line": 699,
+      "role_de": "TF-Metainformationen älterer Erzeugerfassung",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F36",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_trafo.R",
+      "line": 888,
+      "role_de": "Gespeicherte Fit-Sammlung",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F37",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_trafo.R",
+      "line": 1178,
+      "role_de": "Taxonkarte/Zuordnung",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F38",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_transferfunctions_v0.9.R",
+      "line": 146,
+      "role_de": "TF-Metadaten einer Vergleichsfassung",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    },
+    {
+      "id": "F39",
+      "priority": "P2_Erzeuger_Vergleich",
+      "source": "original:src/all_transferfunctions_v0.9.R",
+      "line": 147,
+      "role_de": "Numerische TFs einer Vergleichsfassung",
+      "note_de": "Gespeicherte Zwischen-/Vergleichsartefakte. Erzeuger-/Save-Hinweise in der CSV sind keine Ausführungsbelege oder Erlaubnis zum Neutrainieren."
+    }
+  ]
+}

@@ -9,3 +9,10 @@ dist/
 results/
 legacy/data/out/*.npz
 legacy/plots/*.pdf
+
+# Lokaler Dissertations-Arbeitsbereich: niemals Quellen/Pfade/Laufdaten einchecken
+.local/
+_local_data/
+.venv/
+*.pyd
+*.obj

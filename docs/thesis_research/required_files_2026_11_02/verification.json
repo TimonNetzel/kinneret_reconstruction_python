@@ -1,0 +1,100 @@
+{
+  "status": "documentation_and_audit_saved",
+  "basis_commit": "26d06cfc3530eef5c65f53e270812894b5d84838",
+  "parser_tests": {
+    "passed": 8,
+    "failed": 0,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_required_files_audit.py -q -o cache_dir=.local/required_files_2026_11_02/pytest_cache"
+  },
+  "previous_historical_synthetic_tests": {
+    "passed_previously": 200,
+    "rerun_in_this_file_audit": false
+  },
+  "prior_packet_files_byte_equal": 62,
+  "frozen_prior_start_briefs_unchanged": 2,
+  "tracked_tools_src_legacy_git_diff_empty": true,
+  "new_user_information": {
+    "new_folder": "climate_modelling",
+    "available_in": "next_session",
+    "absolute_path_provided": false,
+    "inspected_here": false,
+    "local_copies_possible_despite_deleted_automount_disk": true
+  },
+  "R_execution": false,
+  "model_training_or_sampling": false,
+  "new_reconstruction": false,
+  "final_variant_selected": false,
+  "new_handoff": "docs/thesis_research/CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md",
+  "files": {
+    "docs/thesis_research/required_files_2026_11_02/build_priority_list.py": {
+      "bytes": 3656,
+      "sha256": "eafba30613e4a954df4f42e2e0a98114c608efbd6885488c3d2470bcd24cff09"
+    },
+    "docs/thesis_research/required_files_2026_11_02/collect_evidence.py": {
+      "bytes": 16802,
+      "sha256": "99788b7d444f1920acd6ca8c73b8d24c5ccbc42be90d624a6693eca7f329b41d"
+    },
+    "docs/thesis_research/required_files_2026_11_02/curation.json": {
+      "bytes": 11750,
+      "sha256": "80a9ebe8a77fbb1d924dca67ff1d0d5d3fa704b0ee89ba2e1156bbb9994f645a"
+    },
+    "docs/thesis_research/required_files_2026_11_02/dependency_calls.csv": {
+      "bytes": 703066,
+      "sha256": "908c5407b374085c22590fff554153cfebbb2c99fc5960b4a9cd25c8be3b6253"
+    },
+    "docs/thesis_research/required_files_2026_11_02/missing_references.csv": {
+      "bytes": 245546,
+      "sha256": "53d6dcb8925497fe318ec235d9479c81ecb8ee1d78931a62e5c62c99e74b56ec"
+    },
+    "docs/thesis_research/required_files_2026_11_02/posterior_variants_recheck.json": {
+      "bytes": 3931,
+      "sha256": "aee40ee3b272fb0c471d999060584ef16e15878601b69d8e38f1fd515b91fa5a"
+    },
+    "docs/thesis_research/required_files_2026_11_02/preserved_copies.json": {
+      "bytes": 596,
+      "sha256": "0261a78cc384a3a61ac4d965d8a2fe10825970756f2f96aab395476ede377e88"
+    },
+    "docs/thesis_research/required_files_2026_11_02/priority_requirements.csv": {
+      "bytes": 13493,
+      "sha256": "483816d0ca79c37187fd2dc55b90c7b012b72da348a8d72ec0f51d8af71603b6"
+    },
+    "docs/thesis_research/required_files_2026_11_02/producer_calls.csv": {
+      "bytes": 87260,
+      "sha256": "1b2957e991fa694b084727109850c90cc9d0e68d8939aeac726e7aec4e4c3748"
+    },
+    "docs/thesis_research/required_files_2026_11_02/README.md": {
+      "bytes": 4286,
+      "sha256": "cf1e6a80a2ab83123eef572c2cd00d9a1a4750cb0892d40e40824dc5cf74c7ea"
+    },
+    "docs/thesis_research/required_files_2026_11_02/source_dates.csv": {
+      "bytes": 78140,
+      "sha256": "ad8c930ffa4ca1cc7e0c316268d93f479bed0685b19a381ea76512194ce4d6ce"
+    },
+    "docs/thesis_research/required_files_2026_11_02/source_edges.csv": {
+      "bytes": 13299,
+      "sha256": "9cf12dd62c66f6927c6ffef55c4f63fcc0c9d9c6347cfb0c3cea30cf8ccecceb"
+    },
+    "docs/thesis_research/required_files_2026_11_02/summary.json": {
+      "bytes": 5765,
+      "sha256": "e2ee5d7fc8f6281c9ad3ded9274f4559e117c45429949efe4b8c4d7e708ae67f"
+    },
+    "docs/thesis_research/required_files_2026_11_02/unresolved_reads.csv": {
+      "bytes": 4291,
+      "sha256": "c0dce6a753b8fe2156479d7274a1b2e8baa33452bfdf1b5de5b67fbffb817bf0"
+    },
+    "tests/test_required_files_audit.py": {
+      "bytes": 2954,
+      "sha256": "1a91c22eec113fbe00d97f5bf88b95579d3a566f92e9cae1808fe762dfe4a627"
+    },
+    "docs/thesis_research/MISSING_PROJECT_FILES_2026_11_02.md": {
+      "bytes": 15563,
+      "sha256": "0036a715ae682bf0938d431f1dc71ff515af0e80aa05b15a30c3bb2eb9c26aea"
+    },
+    "docs/thesis_research/CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md": {
+      "bytes": 9278,
+      "sha256": "33416064997f65f403cbeb1c28bc32ee28c5898ea107073a0c803060a3cc0606"
+    }
+  },
+  "relative_document_links_valid": 25,
+  "git_diff_check_passed": true
+}

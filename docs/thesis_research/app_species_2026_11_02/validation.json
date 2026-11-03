@@ -1,0 +1,189 @@
+{
+  "status": "passed",
+  "scope": "read-only display of stored seven-species metrics; no training, sampler or fossil run",
+  "starting_commit": "2d2fdfd019d7af09fd55fd8e60e429d1c2b2f7a0",
+  "metrics_sha256": "93ff7c368c17f39e87e7843a423f0f36bd259cd37a4c9bca7803586f54aa320b",
+  "app_tests": {
+    "passed": 15,
+    "skipped_browser_wrapper_tests": 2,
+    "reason": "Playwright unavailable on default Node search path; explicit bundled Playwright / installed Edge checks executed",
+    "local_junit_sha256": "9aa3e8a06d93011dde21125e0d2b023f3ef569b40906c50fafff5006051f82ef"
+  },
+  "targeted_browser": {
+    "status": "passed",
+    "browser": "msedge",
+    "cases": [
+      {
+        "file": "index.html",
+        "width": 390,
+        "theme": "light",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "index.html",
+        "width": 390,
+        "theme": "dark",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "index.html",
+        "width": 1366,
+        "theme": "light",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "index.html",
+        "width": 1366,
+        "theme": "dark",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "kinneret-app.html",
+        "width": 390,
+        "theme": "light",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "kinneret-app.html",
+        "width": 390,
+        "theme": "dark",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "kinneret-app.html",
+        "width": 1366,
+        "theme": "light",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      },
+      {
+        "file": "kinneret-app.html",
+        "width": 1366,
+        "theme": "dark",
+        "languages": [
+          "de",
+          "en"
+        ],
+        "offline": true,
+        "checked_mean_rows": 8,
+        "missing_scores_and_recovery": true,
+        "selection_persisted": true,
+        "page_errors": 0,
+        "network_requests": 0,
+        "checked_metric_rows": 56,
+        "checked_metric_values": 112
+      }
+    ]
+  },
+  "full_browser_regression": {
+    "offline": true,
+    "browser": "installed Microsoft Edge via Playwright channel msedge",
+    "passed_cases": [
+      "index_handy_light: ok",
+      "index_handy_dark: ok",
+      "index_pc_light: ok",
+      "index_pc_dark: ok",
+      "kinneret-app_handy_light: ok",
+      "kinneret-app_handy_dark: ok",
+      "kinneret-app_pc_light: ok",
+      "kinneret-app_pc_dark: ok"
+    ],
+    "gestures": [
+      "index Gesten: ok",
+      "kinneret-app Gesten: ok"
+    ],
+    "local_log_sha256": "e3424641912994076f0f4d540562ae1a0972fa4fa71e75330f4ce0d8c66a6cec"
+  },
+  "two_sites": {
+    "passed": true,
+    "species_evidence_unchanged_across_site_switch": true,
+    "local_log_sha256": "78051132173ebc599619dea7cf4f7b0474aefea33e348e4d1e347efa8d3c9086"
+  },
+  "snapshots_visually_inspected": {
+    "mobile.png": "9ead371cdc8c4411e7ecf470b2f8638c048e99179dade50dd33a52bdeb66c225",
+    "desktop.png": "07dbd4d037649d6f981fb4494032187607c721f05ea2a8b80bcaa3d730c81bfe"
+  },
+  "portable_evidence_files_unchanged": 50,
+  "limits": [
+    "experimental range indicators; not validated fossil occurrence probabilities",
+    "unweighted species means are not uncertainty intervals",
+    "prior adjustment is diagnostic only",
+    "Monticchio and chronology gates remain open"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (eight submodules incl. conditional taxon pruning, unconditional gamma prior grid and the which.tf.missing removal with num_taxa priors), three frozen earlier states and synthetic examples; no historical case reproduction, no training, R run or fossil reconstruction",
+  "starting_commit": "7d3d0f6852dbdf869b6e479d4eeffe80faaf2038",
+  "module_package_commit": "9bb8ed99df3edf0245da19bd7292dfbae26be7c2",
+  "reproduction_state_sha256": "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[2] received only its link commit 7d3d0f6 (pushed, contains its unchanged state file); STATES[0] and STATES[1] untouched",
+  "environment": {
+    "os": "Windows 11",
+    "python": ".venv with PYTHONPATH=src",
+    "node": "v24.19.0",
+    "playwright": "1.62.1 bundled with the Codex runtime via NODE_PATH",
+    "browser_channel": "msedge",
+    "offline": true
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 54,
+    "new_tests": 7,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same browser checks were executed explicitly below with --kanal msedge",
+    "local_junit_sha256": "78153b0c5d51b4c7ce37fbe652eae4b4f8e379b2bcbf42b64066f1e1afc2d47c"
+  },
+  "historical_tests": {
+    "files": [
+      "tests/test_historical_tf_missing_priors.py",
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "passed": 437,
+    "new_tests": 85,
+    "local_junit_sha256": "3d9a07eeec7c7674fb3ee4c14fa12a652824f1341148401f38a6c223b12d0f4f"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.5 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge --fotos .local/tf_missing_priors_2026_11_02/fotos",
+    "status": "passed",
+    "cases": [
+      "index_handy_light",
+      "index_handy_dark",
+      "index_pc_light",
+      "index_pc_dark",
+      "index Gesten",
+      "kinneret-app_handy_light",
+      "kinneret-app_handy_dark",
+      "kinneret-app_pc_light",
+      "kinneret-app_pc_dark",
+      "kinneret-app Gesten"
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "status_text": true,
+      "tests_shown": 437,
+      "modules": 8,
+      "conditional_tag_only_on_taxon_pruning": true,
+      "frozen_earlier_state_lines": [
+        "2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f",
+        "2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421",
+        "2026-11-02, 7 Teilmodule, 352 Tests, SHA-256 43edfcb67a64"
+      ],
+      "open_requirements": 11,
+      "conflicting_requirements": 4,
+      "central_requirements": 4,
+      "links": 18,
+      "links_pinned_to_9bb8ed9": 15,
+      "links_to_frozen_states": {
+        "47a926c": 1,
+        "3d013b2": 1,
+        "7d3d0f6": 1
+      },
+      "example_collapsed_by_default": true,
+      "synthetic_warning_visible": true,
+      "example_tables": 7,
+      "pruning_removed_cells": 2,
+      "gamma_naive_differing_cells": 3,
+      "missing_table_marked_cells": 6,
+      "missing_table_sd_zero_cells": 1,
+      "missing_table_num_taxa_from_line_1678": 4,
+      "empty_mask_sentence_line_1435": true,
+      "open_state_kept_on_language_switch": true,
+      "page_or_table_overflow": false,
+      "absent_reproduction_state_visible": true,
+      "absent_snapshot_keeps_reproduction_state": true
+    },
+    "first_run_finding": "the new table was wider than its frame at phone width (phone-width cases failed with 'Nachbau: 1 Tabellen breiter als ihr Rahmen'; three seen in the shown log tail, the first log lines were overwritten by the rerun; all PC cases ok); row headers shortened, line numbers and the half-up reading moved into the caption text; second run: all ten cases ok",
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef",
+    "local_log_note": "byte-identical to the state 3 log because a passing run prints only the case names with ok and the unchanged sensitivity table"
+  },
+  "two_sites": {
+    "tool": "tests/test_app.py::_zweiter_standort on results/app into .local/tf_missing_priors_2026_11_02/app2, then node tools/app_pruefen.js --zwei-standorte <copy>/index.html --kanal msedge",
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "missing-TF table at 390 px phone width, light",
+    "desktop.png": "missing-TF table, explanation and empty-mask sentence, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite; contains sampler unit tests)",
+    "docs/thesis_research/literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "tools/verify_* (time-bound checkers, not regression checkers)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "local_artifacts": ".local/tf_missing_priors_2026_11_02/ (not versioned)",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}
