@@ -1,0 +1,26 @@
+{
+  "status": "read_only_spans",
+  "spans": [
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1242,
+      "last_line": 1283,
+      "role": "parameter_stage_weights; implemented here: 1269-1274 with explicit weights",
+      "text": "parameter_stage_weights <- function(posterior_temp=posterior_temp,taxa.appear.core=taxa.appear.core,taxa_information=taxa_information){\n    old_weights <- posterior_temp$taxa_weights\n    testing <- F\n    counts <- 0\n    while (testing == F) {\n        counts <- counts + 1\n        new_weights <- rdirichlet(1,old_weights*posterior_temp$dirichlet_spread)[1,]  \n        if (min(new_weights) > 0) {\n            testing <- T\n        }\n        # start again, if the algorithm runs into a dead end\n        if(counts >= 1000){\n            new_weights <- rep(1/((num_taxa)),num_taxa)\n            posterior_temp$dirichlet_spread <- posterior_temp$dirichlet_spread*2\n            testing <- T\n        }\n    }\n    posterior_temp$taxa_weights <- new_weights\n    # parameter module\n    # https://stats.stackexchange.com/questions/64674/confused-with-mcmc-metropolis-hastings-variations-random-walk-non-random-walk\n    # better: https://stats.stackexchange.com/questions/64293/understanding-metropolis-hastings-with-asymmetric-proposal-distribution\n#     weights_ratio <- ddirichlet(posterior_temp$taxa_weights,rep(0.5,num_taxa))/ddirichlet(posterior$taxa_weights[[i-1]],rep(0.5,num_taxa))\n#     weights_ratio <- ddirichlet(new_weights,old_weights*posterior_temp$dirichlet_spread) / ddirichlet(old_weights,old_weights*posterior_temp$dirichlet_spread)\n#     proposal_ratio <- ddirichlet(old_weights,new_weights*posterior_temp$dirichlet_spread)/ddirichlet(new_weights,old_weights*posterior_temp$dirichlet_spread)\n\n    \n    # dirichlet is not a symmetric distribution\n    weights_ratio <- ddirichlet(new_weights,rep(0.5,num_taxa)) / ddirichlet(old_weights,rep(0.5,num_taxa))\n    proposal_ratio <- ddirichlet(old_weights,new_weights)/ddirichlet(new_weights,old_weights)\n    \n    parameter_ratio <- proposal_ratio * weights_ratio\n    if(is.na(parameter_ratio)) parameter_ratio <- 0\n    posterior_temp$parameter_ratio <- parameter_ratio\n    \n    taxa.appear.core.temp <- matrix(taxa_information$values * new_weights,ncol = taxa_information$ncol_taxa_array,nrow=taxa_information$nrow_taxa_array,byrow=T)\n    posterior_temp$taxa.appear.core.temp <- taxa.appear.core.temp / rowSums(taxa.appear.core.temp, na.rm=T)\n    \n    # default z values\n    posterior_temp$z <- 1:ncol(taxa.appear.core.temp)\n    \n    return(posterior_temp)\n}"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 149,
+      "last_line": 151,
+      "role": "reader of parameter_ratio",
+      "text": "    ## ratios and acceptance # 0.367\n    # parameter module\n    posterior$parameter_ratio[i] <- posterior_temp$parameter_ratio"
+    },
+    {
+      "source": "CRAN:LaplacesDemon 16.1.0-16.1.6 R/distributions.R",
+      "first_line": null,
+      "last_line": null,
+      "role": "ddirichlet as bound in the window (MIT licence)",
+      "text": "ddirichlet <- function(x, alpha, log=FALSE)\n     {\n     if(missing(x)) stop(\"x is a required argument.\")\n     if(missing(alpha)) stop(\"alpha is a required argument.\")\n     if(!is.matrix(x)) x <- rbind(x)\n     if(!is.matrix(alpha))\n          alpha <- matrix(alpha, nrow(x), length(alpha), byrow=TRUE)\n     if(any(rowSums(x) != 1)) x / rowSums(x)\n     if(any(x < 0)) stop(\"x must be non-negative.\")\n     if(any(alpha <= 0)) stop(\"alpha must be positive.\")\n     dens <- as.vector(lgamma(rowSums(alpha)) - rowSums(lgamma(alpha)) +\n          rowSums((alpha-1)*log(x)))\n     if(log == FALSE) dens <- exp(dens)\n     return(dens)\n     }"
+    }
+  ]
+}
