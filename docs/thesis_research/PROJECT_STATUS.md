@@ -1,5 +1,44 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Dirichlet-Quotient nachgebildet, App-Stand 7, 03.11.2026
+
+**Abgeschlossen** (Nutzerentscheidung „Ja, ddirichlet“): [Modul und Belege](literal_dirichlet_ratio_2026_11_03/README.md).
+
+- `mcmc_functions_v1.6.R:1269–1274` laufen nach jeder Ziehung unbedingt (Tiefe 1). `num_taxa` ist global, der
+  Vorschlag enthält `dirichlet_spread` nicht. Leser: `mcmc_conduction.R` 97/151/302.
+- `ddirichlet` wird wörtlich nach LaplacesDemon nachgebildet (im CRAN-Fenster gebunden):
+  - die Normierungszeile weist nichts zu, ungenormte Gewichte bleiben ungenormt;
+  - Abbruch bei `x < 0` oder `alpha <= 0`;
+  - `is.na` → 0 erfasst NaN aus `0 · Inf`, `Inf` bleibt.
+- `lgamma`, `log` und `exp` werden einmal korrekt gerundet; CPythons `math.lgamma` liegt bis zu 3 ulp daneben.
+
+**Prüfung:**
+
+- 8 Quotienten- und 3 Dichtefälle sind bitgleich mit einer unabhängigen Spouge/Decimal-Referenz; die geschlossenen
+  Formen werden auf 0–1 ulp getroffen.
+- **R 3.5.0 mit LaplacesDemon 16.1.6** wertet 1269–1274 wörtlich aus: 59 von 62 Werten bitgleich, höchstens 4 ulp.
+  Ursache: R rundet `lgamma(0.4)` 1 ulp neben dem korrekten Wert. Das ist als Befund markiert, nicht emuliert.
+- 50 neue Tests, **752** gezielte Tests grün; App-Tests 81 grün (2 Wrapper explizit ersetzt).
+- Edge in beiden Formaten (390 px/PC, Hell/Dunkel, DE/EN, Gesten, zwei Standorte) im ersten Lauf ok.
+- Phase-1-Prüfer Exit 2.
+
+[App-Stand 7](app_reproduction_2026_11_03_dirichlet_ratio/README.md): Pin `cf1b77f2…`, elf Teilmodule, Zeile zur
+R-Gegenprobe, Tabelle D1–D4. Stände 1–6 bytegleich, Stand 6 nur mit Linkcommit `3104f3c`.
+
+**Offen:**
+
+- Echte Gewichte (`rdirichlet`), Akzeptanz, Sampler.
+- Sechs Module ohne R-Gegenprobe.
+- `weightedMedian`.
+- Kein Originalfall; elf Nachweisbündel offen.
+
+Rechenschritt `766a1ff`; App-Sicherungscommit siehe
+`git log -1 -- docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio`.
+[Nächste Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_DIRICHLET_RATIO_2026_11_03.md).
+Gesichert auf `dissertation-reconstruction`,
+[PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77), nicht gemergt.
+Der folgende Abschnitt ist Verlauf.
+
 ## Laufzeitbelege und R-3.5.0-Gegenprobe, 03.11.2026
 
 **Auftrag (Chat 03.11.2026):** Kinneret-Index bestimmen, R- und Paketfassungen selbst suchen, CRAN-Quellen lesen,

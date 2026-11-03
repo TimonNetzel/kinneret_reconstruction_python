@@ -197,7 +197,35 @@
       `${link(w.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex) {
+  // Artificial Dirichlet-ratio cases: columns are cases D1-D4; weights are explicit, never drawn
+  function dirichlet(d, rt) {
+    if (!d) return "";
+    const zahl = (v) => typeof v === "string" ? esc(v) : fmt(v, 4);
+    const kopf = d.cases.map((_, k) => `<th scope="col">${esc(text("nb_ex_d_case", { n: k + 1 }))}</th>`).join("");
+    const zeile = (key, cell) => `<tr><th scope="row">${esc(t(key))}</th>${d.cases.map(cell).join("")}</tr>`;
+    const ulp = (c) => rt && c.name in rt.dirichlet_parameter_ulps ? rt.dirichlet_parameter_ulps[c.name] : null;
+    return `<h4>${esc(text("nb_ex_dirichlet", { n: fmt(d.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_dirichlet_body"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="dirichlet"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${kopf}</tr></thead><tbody>` +
+      zeile("nb_ex_d_taxa", (c) => `<td>${fmt(c.num_taxa, 0)}</td>`) +
+      zeile("nb_ex_d_weights", (c) => `<td>${zahl(c.weights_ratio)}</td>`) +
+      zeile("nb_ex_d_proposal", (c) => `<td>${zahl(c.proposal_ratio)}</td>`) +
+      zeile("nb_ex_d_product", (c) => `<td${c.na_replaced ? ' data-special="nan-zero"' : ""}>${zahl(c.parameter_ratio)}</td>`) +
+      zeile("nb_ex_d_r", (c) => ulp(c) === null ? "<td>–</td>" : `<td data-ulps="${ulp(c)}">${fmt(ulp(c), 0)}</td>`) +
+      `</tbody></table></div>` +
+      `<p data-dirichlet-why="true">${esc(text("nb_ex_dirichlet_why", { u: d.closed_form_ulps.map((x) => fmt(x, 0)).join("/") }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: d.sha256.result.slice(0, 12), b: d.sha256.rational.slice(0, 12) }))} ` +
+      `${link(d.url, "nb_evidence")}</p>`;
+  }
+
+  function laufzeit(rt) {
+    if (!rt) return "";
+    return `<p data-part="runtime">${esc(text("nb_runtime", { r: rt.r_version, m: fmt(rt.modules, 0), checks: fmt(rt.checks, 0),
+      ld: rt.laplacesdemon, eq: fmt(rt.dirichlet_bit_equal, 0), n: fmt(rt.dirichlet_values, 0), u: fmt(rt.dirichlet_max_ulps, 0),
+      slot: fmt(rt.kinneret_slot, 0), tests: fmt(rt.new_tests, 0) }))} ${link(rt.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -216,7 +244,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}</details>`;
   }
 
   function nachbau() {
@@ -245,12 +273,13 @@
       `<p>${esc(text("nb_summary", { n: fmt(nb.modules.length, 0), tests: fmt(nb.tests_passed, 0) }))}</p>` +
       `<article class="karte nachbau-karte" data-part="modules"><h3>${esc(t("nb_modules"))}</h3><ol class="nachbau-liste">${modules}</ol>` +
       `<p>${esc(text("nb_chain", { n: fmt(nb.chain_check.new_tests, 0), c: fmt(nb.contract.tests, 0) }))} ` +
-      `${link(nb.chain_check.url, "nb_chain_link")} · ${link(nb.contract.url, "nb_contract_link")}</p></article>` +
+      `${link(nb.chain_check.url, "nb_chain_link")} · ${link(nb.contract.url, "nb_contract_link")}</p>` +
+      `${laufzeit(nb.runtime_check)}</article>` +
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check) + `</section>`;
   }
 
   function zeige() {

@@ -1,3 +1,14 @@
+> **Aktuell: Dirichlet-Quotient nachgebildet, App-Stand 7, 03.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_dirichlet_ratio_2026_11_03/README.md): `mcmc_functions_v1.6.R:1269–1274`
+> mit **expliziten** Gewichten; `ddirichlet` wörtlich nach LaplacesDemon (im CRAN-Fenster gebunden): keine Normierung
+> (Zeile ohne Zuweisung), Vorschlag ohne `dirichlet_spread`, NaN → 0, `Inf` bleibt; `lgamma`/`log`/`exp` korrekt
+> gerundet. Bitgleich mit unabhängiger Spouge-Referenz; R 3.5.0 + LaplacesDemon 16.1.6: 59 von 62 Werten bitgleich,
+> höchstens 4 ulp wegen R-`lgamma(0.4)`. 50 neue Tests, 752 grün.
+> [App-Stand 7](docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/README.md) mit eigenem Pin, zeigt auch
+> die R-Gegenprobe; Stände 1–6 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_DIRICHLET_RATIO_2026_11_03.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Laufzeitbelege und R-3.5.0-Gegenprobe, 03.11.2026:**
 > [Belegpaket](docs/thesis_research/r_runtime_crosscheck_2026_11_03/README.md). Auf Nutzerauftrag:
 > Kinneret ist **Slot 3** des Zusatzorte-Zweigs (`add.sites <- T`); `mcmc_prepare.R:1248` setzt für Kinneret

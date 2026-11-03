@@ -10,6 +10,24 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: zwölfter Schritt offen, Dirichlet-Quotient in App-Stand 7, 03.11.2026
+
+Schritt 1 und 4 des folgenden Abschnitts sind für den Dirichlet-Quotienten erledigt
+([Paket](literal_dirichlet_ratio_2026_11_03/README.md), [App-Stand 7](app_reproduction_2026_11_03_dirichlet_ratio/README.md)).
+Reihenfolge jetzt:
+
+1. **`weightedMedian`** (`mcmc_prepare.R:1631/1651`), der zentrale offene Schritt zur NA-Maske des echten Falls:
+   - die gemeinsamen matrixStats-Hilfsdateien im Fenster vergleichen;
+   - die Funktion für den Originalaufruf nachbilden;
+   - in R 3.5.0 gegen matrixStats prüfen (Windows-Binärpaket für R 3.5 aus dem CRAN-Archiv).
+2. Die übrigen sechs Module gegen ihre Originalzeilen in R 3.5.0 prüfen.
+3. Belegen, was `tann <- FALSE` (`mcmc_prepare.R:1248`) im Kinneret-Lauf bewirkt (Leser von `tann`).
+4. Danach weiterer App-Stand am Ende von `STATES`.
+5. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+
+[Konkrete Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_DIRICHLET_RATIO_2026_11_03.md).
+Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: Laufzeitbelege und R-Gegenprobe, 03.11.2026
 
 Neu belegt: Kinneret = Slot 3 (`add.sites`). Eingaben stammen aus R 3.5.0. Im Zeitfenster liefern LaplacesDemon

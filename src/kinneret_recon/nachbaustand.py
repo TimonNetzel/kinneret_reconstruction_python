@@ -41,7 +41,12 @@ STATES = (
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json"),
      "sha256": "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
-                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage")},
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage"),
+     "commit": "3104f3c9e9a7870138abcc301bdd4f108c009e73"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/reproduction_state.json"),
+     "sha256": "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -70,11 +75,12 @@ def app_daten(root: Path) -> dict:
     state = json.loads(_pinned(root, STATE.as_posix(), STATE_SHA256))
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
-    wex = state.get("weights_example")
+    wex, dex, rtc = state.get("weights_example"), state.get("dirichlet_example"), state.get("runtime_check")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex, sex, wex) if e
-                for k in ("fixture", "result", "rational", "arithmetic")])
+             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex) if e
+                for k in ("fixture", "result", "rational", "arithmetic")]
+             + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
     earlier = []
@@ -150,7 +156,61 @@ def app_daten(root: Path) -> dict:
         "missing_example": _missing_example(root, mex, url) if mex else None,
         "sampler_example": _sampler_example(root, sex, url) if sex else None,
         "weights_example": _weights_example(root, wex, url) if wex else None,
+        "dirichlet_example": _dirichlet_example(root, dex, url) if dex else None,
+        "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
     }
+
+
+def _runtime_check(root: Path, rtc: dict, url) -> dict:
+    """Stored R 3.5.0 cross checks and the Kinneret slot; numbers only from the pinned result files."""
+    _pinned(root, rtc["package"], rtc["package_sha256"])
+    cross = json.loads(_pinned(root, rtc["crosscheck"], rtc["crosscheck_sha256"]))
+    dirichlet = json.loads(_pinned(root, rtc["dirichlet_crosscheck"], rtc["dirichlet_crosscheck_sha256"]))
+    sites = json.loads(_pinned(root, rtc["site_binding"], rtc["site_binding_sha256"]))
+    if (cross["historical_reproduction_ready"] or dirichlet["historical_reproduction_ready"]
+            or sites["historical_reproduction_ready"] or not cross["all_unflagged_values_bit_equal"]
+            or cross["packages_attached"] or cross["random_state_used"]):
+        raise ValueError("Nachbaustand: R cross check claims a release, packages or random state")
+    return {
+        "url": url(rtc["package"]), "new_tests": rtc["new_tests"],
+        "r_version": cross["R"]["version"], "checks": cross["checks"],
+        "modules": len(cross["original_lines"]),
+        "dirichlet_values": dirichlet["values_compared"], "dirichlet_bit_equal": dirichlet["bit_equal"],
+        "dirichlet_max_ulps": dirichlet["max_ulps"], "laplacesdemon": dirichlet["runtime"]["LaplacesDemon"],
+        "dirichlet_parameter_ulps": {name: row["parameter_ratio"]["ulps"][0]
+                                     for name, row in dirichlet["ratio_cases"].items()},
+        "kinneret_slot": sites["kinneret_slot"],
+    }
+
+
+def _dirichlet_example(root: Path, dex: dict, url) -> dict:
+    """Stored values of artificial Dirichlet-ratio cases; they must equal the independent reference exactly."""
+    fixture = json.loads(_pinned(root, dex["fixture"], dex["fixture_sha256"]))
+    result = json.loads(_pinned(root, dex["result"], dex["result_sha256"]))
+    rational = json.loads(_pinned(root, dex["rational"], dex["rational_sha256"]))
+    check = json.loads(_pinned(root, dex["arithmetic"], dex["arithmetic_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or result["historical_reproduction_ready"] or check["historical_reproduction_ready"]
+            or check["final_variant_selected"] or check["R_execution"]
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: Dirichlet example claims historical inputs or a final variant")
+    cases = []
+    for name in dex["cases"]:
+        stored, exact = result["ratio_cases"][name], rational["cases"][name]
+        if any(stored[k] != exact[k] for k in ("weights_ratio", "proposal_ratio", "parameter_ratio_before_na",
+                                               "parameter_ratio", "densities")):
+            raise ValueError("Nachbaustand: stored Dirichlet example differs from the reference")
+        case = fixture["ratio_cases"][name]
+        cases.append({"name": name, "num_taxa": case["num_taxa"], "weights_ratio": stored["weights_ratio"],
+                      "proposal_ratio": stored["proposal_ratio"], "parameter_ratio": stored["parameter_ratio"],
+                      "na_replaced": stored["na_replaced"],
+                      "normalisation_skipped": any(stored["normalisation_skipped"]),
+                      "spread_differs": check["naive_counterexamples"][name]["proposal_with_spread_differs"]})
+    two = check["hand_expectations"]["two_taxa_closed_form"]
+    return {"url": url(dex["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases,
+            "closed_form_ulps": [two["weights_ratio_ulps_to_closed_form"], two["proposal_ratio_ulps_to_closed_form"],
+                                 two["parameter_ratio_ulps_to_closed_form"]],
+            "sha256": {k: dex[k + "_sha256"] for k in ("result", "rational")}}
 
 
 def _hand_matches(text, value) -> bool:
