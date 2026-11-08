@@ -12,7 +12,7 @@ R 3.5.0 wertet die **Originalzeilen wörtlich** aus (Hashes der Originale geprü
 C99-Hex-Doubles). Es gibt zwei Eingabearten: die runden Fixtures der früheren Pakete und je 25 neue Stressfälle mit
 ungenauen Doubles ([Erzeuger](make_stress.py), [Eingaben](stress_fixture.json)).
 
-| Modul | Originalzeilen | Werte ohne Altersraster | bitgleich | Fixtures bitgleich | höchstens |
+| Modul | Originalzeilen | Werte ohne Altersraster | bitgleich | Fixtures bitgleich (samt Raster) | höchstens |
 | --- | --- | ---: | ---: | ---: | ---: |
 | Alters-/Tiefenübertragung | `check_ages.R:177–179, 230–232`; `mcmc_prepare.R:11–20, 83, 91–94` | 4.827 | 4.358 | 58/58 | 3 ulp |
 | Altersraster und Zeilenauswahl | `mcmc_prepare.R:435–442, 1462–1467, 1522`; `mcmc_functions_v1.6.R:461–462, 470` | 6.535 | 5.303 | 5.222/5.222 | 2 ulp |
