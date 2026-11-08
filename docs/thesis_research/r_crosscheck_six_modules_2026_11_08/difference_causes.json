@@ -1,0 +1,143 @@
+{
+ "kind": "attribution_of_ulp_differences_diagnostic_emulation_only",
+ "hypothesis": "R accumulates rowSums, sum and colMeans in 80-bit long double and multiplies with reference BLAS as a plain double loop; the modules use NumPy double sums and its BLAS",
+ "R_runtime": "R 3.5.0, Windows x86_64, sizeof(long double) = 16",
+ "emulation_bit_equal_everywhere": true,
+ "values": 24822,
+ "module_bit_equal": 17774,
+ "emulation_bit_equal": 24822,
+ "modules": {
+  "age_depth": {
+   "weights": {
+    "values": 846,
+    "module_bit_equal": 653,
+    "emulation_bit_equal": 846,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "2784ca2a39f234d5a30da8c5812ac956bdb0994a9707c7532b739c7a8884b0bd"
+   },
+   "pollen_at_ages": {
+    "values": 715,
+    "module_bit_equal": 439,
+    "emulation_bit_equal": 715,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "94a249cb700e27c8a67d5e47be210245a2ced00d4930a294f9789c19415cc9ee"
+   }
+  },
+  "selection": {
+   "product_initial": {
+    "values": 1358,
+    "module_bit_equal": 1050,
+    "emulation_bit_equal": 1358,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "177135df8ac210950134a2f6fa71000f429cbe223945fd1904e56f5e8c51a02d"
+   },
+   "product_effective": {
+    "values": 1374,
+    "module_bit_equal": 1066,
+    "emulation_bit_equal": 1374,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "f49221ef11683f3d51ba0bb352d228fc481a89a2943eb47da945675b58db1e47"
+   },
+   "product_effective_pann": {
+    "values": 1374,
+    "module_bit_equal": 1066,
+    "emulation_bit_equal": 1374,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "f49221ef11683f3d51ba0bb352d228fc481a89a2943eb47da945675b58db1e47"
+   },
+   "product_effective_mean": {
+    "values": 1374,
+    "module_bit_equal": 1066,
+    "emulation_bit_equal": 1374,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "f49221ef11683f3d51ba0bb352d228fc481a89a2943eb47da945675b58db1e47"
+   }
+  },
+  "final_pdf": {
+   "coefficients": {
+    "values": 5677,
+    "module_bit_equal": 4295,
+    "emulation_bit_equal": 5677,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "bc918eaa16278fc75ad9ff7da475ca7e3479406a6dd0828fdd1a5a89c4c817c0"
+   },
+   "density": {
+    "values": 3933,
+    "module_bit_equal": 2260,
+    "emulation_bit_equal": 3933,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "581de7c6ebdecb68ef3f061fc30cef3383c535dd14dc36f9b2a2229427a3cba4"
+   },
+   "pdf_sum_depth": {
+    "values": 1117,
+    "module_bit_equal": 561,
+    "emulation_bit_equal": 1117,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "a63a8c6760887e2c34d03f85a1aef28ff93f14fe1ed13f6398663258f6a968bf"
+   },
+   "pdf_sum_age": {
+    "values": 1117,
+    "module_bit_equal": 561,
+    "emulation_bit_equal": 1117,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "a63a8c6760887e2c34d03f85a1aef28ff93f14fe1ed13f6398663258f6a968bf"
+   },
+   "gibbs_coefficients": {
+    "values": 776,
+    "module_bit_equal": 643,
+    "emulation_bit_equal": 776,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "ec5fcf50b4640464f418b6aff1ad054de4ab63aeeb49b0300c13e69054f6f04d"
+   },
+   "gibbs_density": {
+    "values": 1117,
+    "module_bit_equal": 817,
+    "emulation_bit_equal": 1117,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "43b9ad3ad4933e583cc54df89dd780d953cbd6c791e6f35a9b189164d0813766"
+   }
+  },
+  "cdf": {
+   "cumulative": {
+    "values": 898,
+    "module_bit_equal": 898,
+    "emulation_bit_equal": 898,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "40efdd753c04048c6338f16c1898d780128cce7b3f66dc0c73bdda828bd3ed5f"
+   },
+   "score": {
+    "values": 133,
+    "module_bit_equal": 103,
+    "emulation_bit_equal": 133,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "2166059d780519c2cac3e4ea5e9a9e4766008602641a3f687a22b5925c916319"
+   }
+  },
+  "tf": {
+   "normalized": {
+    "values": 1290,
+    "module_bit_equal": 962,
+    "emulation_bit_equal": 1290,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "3068efb2c5638ee225c32a4cd2768ddceb5ad0d1c41b6341dea9cf13618b1198"
+   },
+   "masked": {
+    "values": 1290,
+    "module_bit_equal": 1038,
+    "emulation_bit_equal": 1290,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "47deef32a0d95881e975f9b165a21833e8a1fa0dea2b528e0293fe96e4b84315"
+   }
+  },
+  "pruning": {
+   "spectrum": {
+    "values": 433,
+    "module_bit_equal": 296,
+    "emulation_bit_equal": 433,
+    "max_emulation_ulps": 0,
+    "emulated_digest": "181f9dcf91c29862b1f3f8247db6f2eb3ac3e6fc16c24d0025cc0caef5c6585b"
+   }
+  }
+ },
+ "historical_reproduction_ready": false
+}
