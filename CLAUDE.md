@@ -10,6 +10,17 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: gewichteter Median nachgebildet, App-Stand 8, 08.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_weighted_median_2026_11_08/README.md): `mcmc_prepare.R:1628–1664`;
+> `weightedMedian` wörtlich nach dem C-Kern von matrixStats (normalisiert in allen 13 Fassungen des Fensters ein Text).
+> NA, sobald irgendein Gewicht NA/NaN oder keines positiv ist; bei `+Inf` zählt die Reihenfolge. R 3.5.0 + matrixStats
+> 0.56.0: 439 von 439 Werten bitgleich, `which.tf.missing` gleich. `tann <- FALSE` (Bedingung 1248, Zuweisung 1249) wird
+> nur in `mcmc_functions_v1.6.R:1939` gelesen. 182 neue Tests, 934 grün.
+> [App-Stand 8](docs/thesis_research/app_reproduction_2026_11_08_weighted_median/README.md) mit eigenem Pin; Stände 1–7
+> eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_WEIGHTED_MEDIAN_2026_11_08.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: Dirichlet-Quotient nachgebildet, App-Stand 7, 03.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_dirichlet_ratio_2026_11_03/README.md): `mcmc_functions_v1.6.R:1269–1274`
 > mit **expliziten** Gewichten; `ddirichlet` wörtlich nach LaplacesDemon (im CRAN-Fenster gebunden): keine Normierung

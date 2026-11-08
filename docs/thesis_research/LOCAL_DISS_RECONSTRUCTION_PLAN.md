@@ -10,6 +10,24 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: dreizehnter Schritt offen, gewichteter Median in App-Stand 8, 08.11.2026
+
+Der zwölfte Schritt ist erledigt: `weightedMedian` und NA-Maske
+([Paket](literal_weighted_median_2026_11_08/README.md), [App-Stand 8](app_reproduction_2026_11_08_weighted_median/README.md)).
+`tann <- FALSE` ist belegt (nur gesammelt, nicht gedeutet). Kein Originalfall; elf Bündel offen.
+
+Nächste begrenzte Schritte in dieser Reihenfolge:
+
+1. Die sechs Module ohne R-Gegenprobe gegen ihre Originalzeilen prüfen: Alters-/Tiefenübertragung, Altersauswahl,
+   End-PDF, CDF-Abweichung, TF-Vorbereitung, Taxon-Pruning.
+2. Weitere deterministische Ränder mit expliziten Eingaben: `reconstruction_climate`
+   (`mcmc_functions_v1.6.R:1188`), Korrelationsteil ab 1939.
+3. Danach je ein neuer App-Stand. Verbesserungen erst nach Phase 1.
+4. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+
+Weiterhin keine Sampler, Trainings, Altersmodelle oder Fossilrekonstruktionen.
+[Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_WEIGHTED_MEDIAN_2026_11_08.md).
+
 ## Aktuell: zwölfter Schritt offen, Dirichlet-Quotient in App-Stand 7, 03.11.2026
 
 Schritt 1 und 4 des folgenden Abschnitts sind für den Dirichlet-Quotienten erledigt

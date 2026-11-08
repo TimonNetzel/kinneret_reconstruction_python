@@ -198,6 +198,8 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 @media (max-width: 520px) { .nachbau-tabelle { font-size: .78rem; } .nachbau-tabelle th, .nachbau-tabelle td { padding: 3px 4px; } }
 .nachbau-tabelle td:first-child, .nachbau-tabelle td:nth-child(2) { text-align: right; min-width: 0; }
 .nachbau-tabelle tr[data-row="keep"] td { color: var(--muted); }
+.nachbau-tabelle[data-table^="median"] td { white-space: normal; }
+.nachbau-tabelle tr[data-removed="true"] th { color: var(--warn); }
 
 /* Paired species scores: numeric tables stay readable on small offline screens. */
 .arten-steuerung h2 { margin: 0; font-size: 1.05rem; }

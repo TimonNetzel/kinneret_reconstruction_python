@@ -46,7 +46,13 @@ STATES = (
     {"path": Path("docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/reproduction_state.json"),
      "sha256": "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
-                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio")},
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio"),
+     "commit": "cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_08_weighted_median/reproduction_state.json"),
+     "sha256": "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
+                 "weighted_median")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -76,10 +82,12 @@ def app_daten(root: Path) -> dict:
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
     wex, dex, rtc = state.get("weights_example"), state.get("dirichlet_example"), state.get("runtime_check")
+    medx = state.get("median_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex) if e
+             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx) if e
                 for k in ("fixture", "result", "rational", "arithmetic")]
+             + ([medx["crosscheck"]] if medx else [])
              + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
@@ -157,6 +165,7 @@ def app_daten(root: Path) -> dict:
         "sampler_example": _sampler_example(root, sex, url) if sex else None,
         "weights_example": _weights_example(root, wex, url) if wex else None,
         "dirichlet_example": _dirichlet_example(root, dex, url) if dex else None,
+        "median_example": _median_example(root, medx, url) if medx else None,
         "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
     }
 
@@ -181,6 +190,44 @@ def _runtime_check(root: Path, rtc: dict, url) -> dict:
                                      for name, row in dirichlet["ratio_cases"].items()},
         "kinneret_slot": sites["kinneret_slot"],
     }
+
+
+def _median_example(root: Path, medx: dict, url) -> dict:
+    """Stored weightedMedian cases and the artificial TF mask; values must equal the reference and the R record."""
+    fixture = json.loads(_pinned(root, medx["fixture"], medx["fixture_sha256"]))
+    result = json.loads(_pinned(root, medx["result"], medx["result_sha256"]))
+    rational = json.loads(_pinned(root, medx["rational"], medx["rational_sha256"]))
+    check = json.loads(_pinned(root, medx["arithmetic"], medx["arithmetic_sha256"]))
+    cross = json.loads(_pinned(root, medx["crosscheck"], medx["crosscheck_sha256"]))
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None
+            or result["historical_reproduction_ready"] or check["historical_reproduction_ready"]
+            or check["final_variant_selected"] or check["R_execution"] or cross["historical_reproduction_ready"]
+            or check["kind"] != "synthetic_fragment_check_not_historical_reproduction"):
+        raise ValueError("Nachbaustand: median example claims historical inputs or a final variant")
+    cases = []
+    for name in medx["cases"]:
+        stored, exact, r = result["cases"][name], rational["cases"][name], cross["cases"][name]
+        if (stored["kind"] != exact["kind"] or (exact["value"] is not None and stored["value"] != exact["value"])
+                or r["module"] != stored["value"]):
+            raise ValueError("Nachbaustand: stored median example differs from the reference or the R record")
+        case = fixture["cases"][name]
+        cases.append({"name": name, "x": case["x"], "w": case["w"], "kind": stored["kind"], "value": stored["decimal"],
+                      "path": stored["path"], "ulps": r["ulps"]})
+    tf = fixture["tf_case"]
+    which = result["tf_case"]["which_tf_missing"]
+    if which != tf["hand_which_tf_missing"] or which != cross["which_tf_missing_R"] or not cross["which_tf_missing_equal"]:
+        raise ValueError("Nachbaustand: stored mask differs from the hand value or the R record")
+    rows = [{"taxon": name.rsplit(" ", 1)[-1], "weights": [str(v) for v in row], "x1_kind": a["kind"],
+             "x1": a["decimal"], "x2_kind": b["kind"], "x2": b["decimal"], "removed": i + 1 in which}
+            for i, (name, row, a, b) in enumerate(zip(tf["taxa"], tf["tf_x1"], result["tf_case"]["x1"],
+                                                       result["tf_case"]["x2"]))]
+    naive = check["naive_counterexamples"]
+    return {"url": url(medx["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases, "rows": rows, "which": which,
+            "masks": check["masks_on_tf_case"], "stable_sort": naive["ties_trace_stable_sort"]["stable_sort"],
+            "true_median": naive["inf_odd_true_median"]["true_median"],
+            "r": {"matrixstats": cross["runtime"]["matrixStats"], "values": cross["values_compared"],
+                  "bit_equal": cross["bit_equal"], "max_ulps": cross["max_ulps"]},
+            "sha256": {k: medx[k + "_sha256"] for k in ("result", "rational")}}
 
 
 def _dirichlet_example(root: Path, dex: dict, url) -> dict:

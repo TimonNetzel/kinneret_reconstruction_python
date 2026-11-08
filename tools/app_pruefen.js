@@ -276,18 +276,22 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
     fehler.push("Forschungsstand: Quellen nicht gebunden");
   }
-  // Dissertation reproduction: newest state with eleven checked submodules, six frozen earlier states, R cross check, synthetic examples kept apart
+  // Dissertation reproduction: newest state with twelve checked submodules, seven frozen earlier states, R cross check, synthetic examples kept apart
   const nb = '[data-research="reproduction"]';
   const nbText = await page.textContent(nb);
-  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("752") ||
-      await page.locator(nb + " [data-module]").count() !== 11 ||
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("934") ||
+      await page.locator(nb + " [data-module]").count() !== 12 ||
       await page.locator(nb + ' [data-module="gamma_prior_grid"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="tf_missing_priors"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="sampler_preparation"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="weights_stage"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="dirichlet_ratio"] [data-status="conditional"]').count() !== 0 ||
-      await page.locator(nb + " [data-earlier-state]").count() !== 6 ||
+      await page.locator(nb + ' [data-module="weighted_median"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + " [data-earlier-state]").count() !== 7 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-03, 11 Teilmodule, 752 Tests, SHA-256 cf1b77f22bdd") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-03, 10 Teilmodule, 689 Tests, SHA-256 7eb9ac5e4eb6") ||
+      await page.locator(nb + ' [data-part="runtime-median"]').count() !== 1 ||
+      !["matrixStats 0.56.0", "439 von 439 Werten bitgleich", "höchstens 0 ulp"].every((x) => nbText.includes(x)) ||
       await page.locator(nb + ' [data-part="runtime"]').count() !== 1 ||
       !["R version 3.5.0", "389 bitgleiche Prüfungen", "59 von 62", "höchstens 4 ulp", "Slot 3", "LaplacesDemon 16.1.6"
         ].every((x) => nbText.includes(x)) ||
@@ -307,16 +311,22 @@ async function pruefe(browser, datei, groesse, thema, name) {
     "/blob/7d3d0f6852dbdf869b6e479d4eeffe80faaf2038/docs/thesis_research/app_reproduction_2026_11_02_gamma_grid/reproduction_state.json",
     "/blob/0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34/docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json",
     "/blob/235f79784d01f0a613a0d3f76f6fd690c245ab21/docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json",
-    "/blob/3104f3c9e9a7870138abcc301bdd4f108c009e73/docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json"];
+    "/blob/3104f3c9e9a7870138abcc301bdd4f108c009e73/docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json",
+    "/blob/cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68/docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/reproduction_state.json"];
   const istFrueher = (url) => frueher.some((f) => url.endsWith(f));
-  if (nbLinks.length !== 28 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
-      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/766a1fffe9c7526d2afeff6d527b1992649ccca5/"))) {
+  if (nbLinks.length !== 31 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
+      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/a21c8f1ea7f6c285cbed2695a8b3750e4d0bba10/"))) {
     fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
   }
   if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
   await page.click(nb + ' [data-part="example"] summary');
   const exText = await page.textContent(nb + ' [data-part="example"]');
-  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 12 ||
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 14 ||
+      await page.locator(nb + ' [data-table="median"] tbody tr').count() !== 9 ||
+      await page.locator(nb + ' [data-table="median"] [data-special="na"]').count() !== 4 ||
+      await page.locator(nb + ' [data-table="median"] [data-ulps="0"]').count() !== 9 ||
+      await page.locator(nb + ' [data-table="median-mask"] tr[data-removed="true"]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="median-mask"] [data-special="na"]').count() !== 4 ||
       await page.locator(nb + ' [data-table="dirichlet"] [data-special="nan-zero"]').count() !== 1 ||
       await page.locator(nb + ' [data-table="dirichlet"] [data-ulps="4"]').count() !== 1 ||
       await page.locator(nb + ' [data-table="dirichlet"] [data-ulps="0"]').count() !== 3 ||
@@ -340,7 +350,8 @@ async function pruefe(browser, datei, groesse, thema, name) {
         "phi1 (alt)", "Sampler-Vorbereitung: 6 Kunstfälle", "2 1 4 3 / 4 3 2 6 / 1 6 8 9", "1/6", "7/3*",
         "8 von 12 Positionen", "Sonderwerte: drei Kunstfälle", "4×3", "8/3, 8/3, 4", "floor(5/2) = 2",
         "how_many_taxa = num_taxa = 5", "0,5 je Taxon",
-        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung, Gewichtsstufe und Dirichlet-Quotient",
+        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung, Gewichtsstufe, Dirichlet-Quotient und gewichteter Median",
+        "Gewichteter Median: 9 Kunstfälle", "M1", "M9", "NA-Maske: Kunstmatrix mit 5 Taxa", "Maske: 2, 3, 5", "1,2857", "stabil sortiert käme 1,4000",
         "Dirichlet-Quotient: 4 Kunstfälle", "D1", "D4", "R (ulp)", "1,1547", "0,7071", "Inf", "2/√3, √6/4 und 1/√2",
         "weist aber nichts zu", "in Zeile 1273 zu 0",
         "Kern der Gewichtsstufe: 7 Kunstfälle", "1/8, 3/8, 1/4, 1/4", "1/29", "29/32", "0,3333*", "0,5417*",
@@ -369,6 +380,8 @@ async function pruefe(browser, datei, groesse, thema, name) {
       !enText.includes("Row sums with special values: three artificial cases") || !enText.includes("0.5714285714285715") ||
       !enText.includes("Dirichlet ratio of the weights stage") || !enText.includes("Dirichlet ratio: 4 artificial cases") ||
       !enText.includes("R cross check: in R version 3.5.0") ||
+      !enText.includes("Weighted median and the NA mask of the transfer functions") ||
+      !enText.includes("Weighted median: 9 artificial cases") || !enText.includes("439 of 439 values bit-identical") ||
       !(await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open))) {
     fehler.push("Nachbau: englische Fassung oder Aufklappzustand fehlt");
   }
@@ -387,7 +400,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
     KR.zeige();
     return JSON.stringify([ohneNachbau, ohneSnapshot]);
   });
-  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 11]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
+  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 12]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Stored species scores: both measures together and both spatial designs.

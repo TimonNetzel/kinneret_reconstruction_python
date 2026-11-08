@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (twelve submodules incl. the weighted median and its NA mask) and of the stored R 3.5.0 cross checks, seven frozen earlier states and synthetic examples; no historical case reproduction, no real transfer function, no sampler, no training or fossil reconstruction",
+  "starting_commit": "cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68",
+  "module_package_commit": "a21c8f1ea7f6c285cbed2695a8b3750e4d0bba10",
+  "reproduction_state_sha256": "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[6] received only its link commit cfd0ad8 (git log -1 --format=%H on its state file; pushed); STATES[0..5] untouched",
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 91,
+    "new_tests": 10,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "731b99c4f1428d46ca293495acef07e1b6b348c4e53430916e4471faa5af4c7a"
+  },
+  "historical_tests": {
+    "passed": 934,
+    "new_tests": 182,
+    "rerun_after_app_changes": 934,
+    "local_junit_sha256": "e45c0e4195469271cd76fb2e54eebeb6d0d085c28dfd89da9b89197a2cd48b32"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "tests_shown": 934,
+      "modules": 12,
+      "earlier_states": 7,
+      "links": 31,
+      "links_pinned_to_a21c8f1": 24,
+      "example_tables": 14,
+      "runtime_median_sentence": true,
+      "median_rows": 9,
+      "median_na_cells": 4,
+      "median_ulps_zero_cells": 9,
+      "mask_rows_removed": 3,
+      "mask_na_cells": 4
+    },
+    "runs": "first run failed on the absent-state count still set to 11 and one table wider than its frame at 390 px; after white-space: normal for the median cells all later runs passed all ten cases",
+    "measured_table_widths_390px": {
+      "median": [
+        297,
+        332
+      ],
+      "median-mask": [
+        332,
+        332
+      ]
+    },
+    "case_labels": {
+      "median": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9"
+      ],
+      "note": "new labels do not repeat 1-4, G1-G3 or D1-D4"
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "median and mask tables at 390 px, light",
+    "desktop.png": "same part, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

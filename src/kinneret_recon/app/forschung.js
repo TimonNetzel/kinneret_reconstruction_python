@@ -218,14 +218,47 @@
       `${link(d.url, "nb_evidence")}</p>`;
   }
 
-  function laufzeit(rt) {
+  // Artificial weightedMedian cases and one artificial TF matrix: rows are cases M1-M9, no real transfer function
+  function median(m) {
+    if (!m) return "";
+    const liste = (a) => a.join(", ");
+    const zahl = (v) => v === null ? "" : fmt(v, 4);
+    const ergebnis = (c) => c.kind === "number" ? `<td>${zahl(c.value)}</td>` : `<td data-special="na">${esc(c.kind)}</td>`;
+    const zeilen = m.cases.map((c, k) => `<tr><th scope="row">${esc(text("nb_ex_m_case", { n: k + 1 }))}</th>` +
+      `<td>${esc(liste(c.x))}</td><td>${esc(liste(c.w))}</td>${ergebnis(c)}` +
+      (c.ulps === null ? "<td>–</td>" : `<td data-ulps="${c.ulps}">${fmt(c.ulps, 0)}</td>`) + `</tr>`).join("");
+    const wert = (kind, v) => kind === "number" ? `<td>${zahl(v)}</td>` : `<td data-special="na">${esc(kind)}</td>`;
+    const maske = m.rows.map((r) => `<tr${r.removed ? ' data-removed="true"' : ""}><th scope="row">${esc(r.taxon)}</th>` +
+      `<td>${esc(liste(r.weights))}</td>${wert(r.x1_kind, r.x1)}${wert(r.x2_kind, r.x2)}` +
+      `<td>${esc(t(r.removed ? "nb_yes" : "nb_no"))}</td></tr>`).join("");
+    const ties = m.cases[m.cases.length - 1], odd = m.cases[m.cases.length - 2];
+    return `<h4>${esc(text("nb_ex_median", { n: fmt(m.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_median_body"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="median"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">x</th><th scope="col">${esc(t("nb_ex_m_w"))}</th><th scope="col">${esc(t("nb_ex_m_result"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-median-why="true">${esc(text("nb_ex_median_why", { odd: zahl(odd.value), truth: zahl(m.true_median),
+        value: zahl(ties.value), stable: zahl(m.stable_sort) }))}</p>` +
+      `<h4>${esc(text("nb_ex_mask_title", { n: fmt(m.rows.length, 0) }))}</h4>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="median-mask"><thead><tr><th scope="col">${esc(t("nb_ex_taxon_short"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_m_w_x1"))}</th><th scope="col">${esc(t("nb_ex_m_x1"))}</th><th scope="col">${esc(t("nb_ex_m_x2"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_m_removed"))}</th></tr></thead><tbody>${maske}</tbody></table></div>` +
+      `<p data-mask-why="true">${esc(text("nb_ex_mask_why", { which: liste(m.which), a: liste(m.masks.sum_is_zero_only),
+        b: liste(m.masks.treat_na_as_zero_weight), c: liste(m.masks.x1_or_x2) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: m.sha256.result.slice(0, 12), b: m.sha256.rational.slice(0, 12) }))} ` +
+      `${link(m.url, "nb_evidence")}</p>`;
+  }
+
+  function laufzeit(rt, m) {
     if (!rt) return "";
     return `<p data-part="runtime">${esc(text("nb_runtime", { r: rt.r_version, m: fmt(rt.modules, 0), checks: fmt(rt.checks, 0),
       ld: rt.laplacesdemon, eq: fmt(rt.dirichlet_bit_equal, 0), n: fmt(rt.dirichlet_values, 0), u: fmt(rt.dirichlet_max_ulps, 0),
-      slot: fmt(rt.kinneret_slot, 0), tests: fmt(rt.new_tests, 0) }))} ${link(rt.url, "nb_evidence")}</p>`;
+      slot: fmt(rt.kinneret_slot, 0), tests: fmt(rt.new_tests, 0) }))} ` +
+      (m ? `<span data-part="runtime-median">${esc(text("nb_runtime_median", { ms: m.r.matrixstats, eq: fmt(m.r.bit_equal, 0),
+        n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt) {
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -244,7 +277,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}</details>`;
   }
 
   function nachbau() {
@@ -274,12 +307,12 @@
       `<article class="karte nachbau-karte" data-part="modules"><h3>${esc(t("nb_modules"))}</h3><ol class="nachbau-liste">${modules}</ol>` +
       `<p>${esc(text("nb_chain", { n: fmt(nb.chain_check.new_tests, 0), c: fmt(nb.contract.tests, 0) }))} ` +
       `${link(nb.chain_check.url, "nb_chain_link")} · ${link(nb.contract.url, "nb_contract_link")}</p>` +
-      `${laufzeit(nb.runtime_check)}</article>` +
+      `${laufzeit(nb.runtime_check, nb.median_example)}</article>` +
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example) + `</section>`;
   }
 
   function zeige() {

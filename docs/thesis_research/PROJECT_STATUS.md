@@ -1,5 +1,42 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Gewichteter Median nachgebildet, App-Stand 8, 08.11.2026
+
+**Abgeschlossen** (Auftrag: [Übergabe nach dem Dirichlet-Quotienten](CLAUDE_NEXT_STEP_AFTER_DIRICHLET_RATIO_2026_11_03.md)):
+[Modul und Belege](literal_weighted_median_2026_11_08/README.md).
+
+- `mcmc_prepare.R:1628–1664` auf oberster Ebene; `taxa_change` ist `FALSE`. 1623/1624 werden überschrieben, die
+  `spline`-Ergebnisse 1627/1647 haben keine Leser.
+- matrixStats im Fenster: Der normalisierte C-Kern ist in allen 13 Fassungen ein Text; die R-Sortierung war im Fenster
+  für diesen Aufruf unverändert.
+- **Wann NA:** irgendein Gewicht NA/NaN oder kein Gewicht positiv; ein NA in `x` nur bei Gewicht `> 0`, bei `+Inf` zählt die
+  Reihenfolge. Damit fällt eine TF-Zeile bei endlichem Raster genau dann in `which.tf.missing`, wenn sie ein NA/NaN enthält
+  oder keinen positiven Wert hat. Nur der x1-Median wird in 1664 geprüft.
+- Quellnahe Eigenheiten erhalten: `-Inf` zählt im `+Inf`-Zweig, ungerades n im Gleichgewichtszweig ist nicht der Median,
+  Ties über das instabile `R_qsort_I`. Überlauf der Gesamtmasse wird abgelehnt (C liest außerhalb der Felder).
+
+**Prüfung:**
+
+- 29 Kunstfälle bitgleich mit einer unabhängigen Referenz (NA über geschlossene Regel, Werte in exakten Brüchen); die
+  NA-Regel stimmt für 400 Stressfälle.
+- **R 3.5.0 mit matrixStats 0.56.0** (Binärpaket vorher per Hash festgehalten): 439 von 439 Werten bitgleich, NA und NaN
+  unterschieden; Originalzeilen wörtlich auf Kunstmatrix, `which.tf.missing = 2 3 5`.
+- 182 neue Tests, **934** gezielte Tests grün; App-Tests 91 grün (2 Wrapper explizit ersetzt). Phase-1-Prüfer Exit 2.
+- Edge in beiden Formaten (390 px/PC, Hell/Dunkel, DE/EN, Gesten) und zwei Standorte ok, nach einer
+  Korrektur der Tabellenzellen.
+
+**Zusatz:** [`tann <- FALSE`](literal_weighted_median_2026_11_08/tann_binding.json) belegt: Bedingung 1248, Zuweisung 1249;
+einziger Leser im aktiven `reconstruction` ist `mcmc_functions_v1.6.R:1939`. Nur gesammelt, nicht gedeutet.
+
+**App:** [Stand 8](app_reproduction_2026_11_08_weighted_median/README.md) (Pin `4d25a3f6…`): zwölf Teilmodule, R-Zeile um
+matrixStats ergänzt, Tabellen M1–M9 und NA-Maske. Stände 1–7 eingefroren.
+
+**Offen:** Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. Paketanbieter nur im Fenster gebunden.
+Die sechs älteren Module sind weiterhin nicht gegen R geprüft. Lizenzfrage zu `tools/r_sort_gpl.py` (GPL-Übersetzung im
+sonst MIT-lizenzierten Repository) liegt beim Nutzer. PR #77 offen, nicht gemergt.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_WEIGHTED_MEDIAN_2026_11_08.md): sechs Module gegen R.
+
 ## Dirichlet-Quotient nachgebildet, App-Stand 7, 03.11.2026
 
 **Abgeschlossen** (Nutzerentscheidung „Ja, ddirichlet“): [Modul und Belege](literal_dirichlet_ratio_2026_11_03/README.md).
