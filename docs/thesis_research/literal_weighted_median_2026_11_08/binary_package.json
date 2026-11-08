@@ -1,0 +1,19 @@
+{
+ "kind": "matrixStats_windows_binary_recorded_before_installation",
+ "url": "https://cran-archive.r-project.org/bin/windows/contrib/3.5/matrixStats_0.56.0.zip",
+ "size": 1725192,
+ "sha256": "71740915432553e0f88ae493b937c2c4cceab97aa203da5749d21ed5aba382cb",
+ "md5": "1bbaba3be473a56536f013f7c09b65c7",
+ "server_last_modified": "Thu, 23 Apr 2020 12:58:31 GMT",
+ "description": {
+  "Version": "0.56.0",
+  "Packaged": "2020-03-13 03:14:13 UTC; hb",
+  "Date/Publication": "2020-03-13 10:00:15 UTC",
+  "Built": "R 3.5.3; x86_64-w64-mingw32; 2020-04-22 03:40:36 UTC; windows",
+  "Archs": "i386, x64"
+ },
+ "source_group_in_window": "2440873576cb",
+ "install_folder": ".local/R/library_ms",
+ "installer_report": "unpacked with matching MD5 sums",
+ "note": "R 3.5 has exactly one binary in the CRAN archive; built under R 3.5.3, loaded in R 3.5.0 with a warning"
+}

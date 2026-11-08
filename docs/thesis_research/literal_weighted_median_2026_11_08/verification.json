@@ -1,0 +1,50 @@
+{
+ "kind": "recorded_test_run_not_a_case_reproduction",
+ "date": "2026-11-08",
+ "new_tests": 182,
+ "earlier_tests": 752,
+ "total_passed": 934,
+ "test_files": [
+  "tests/test_historical_weighted_median.py",
+  "tests/test_historical_dirichlet_ratio.py",
+  "tests/test_r_runtime_crosscheck.py",
+  "tests/test_historical_weights_stage.py",
+  "tests/test_historical_sampler_preparation.py",
+  "tests/test_historical_tf_missing_priors.py",
+  "tests/test_historical_gamma_prior_grid.py",
+  "tests/test_historical_taxon_pruning.py",
+  "tests/test_historical_tf_preparation.py",
+  "tests/test_historical_phase1_chain.py",
+  "tests/test_historical_cdf_discrepancy.py",
+  "tests/test_historical_age_selection.py",
+  "tests/test_historical_age_depth.py",
+  "tests/test_historical_final_pdf.py",
+  "tests/test_kinneret_phase1_spec.py"
+ ],
+ "r_crosscheck": {
+  "values_compared": 439,
+  "bit_equal": 439,
+  "max_ulps": 0,
+  "special_mismatch": 0,
+  "which_tf_missing_equal": true
+ },
+ "r_runtime": {
+  "R": "R version 3.5.0 (2018-04-23)",
+  "matrixStats": "0.56.0",
+  "namespace": "matrixStats",
+  "built": "R 3.5.3; x86_64-w64-mingw32; 2020-04-22 03:40:36 UTC; windows",
+  "lookup_namespace": "matrixStats",
+  "formals": "x,w,idxs,na.rm,interpolate,ties,..."
+ },
+ "not_run": [
+  "full pytest tests",
+  "verify_packet.py",
+  "tools/verify_*",
+  "sampler",
+  "draws",
+  "training",
+  "age models",
+  "fossil reconstruction"
+ ],
+ "historical_reproduction_ready": false
+}

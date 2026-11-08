@@ -1,0 +1,61 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68",
+  "source_sha256": {
+    "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e"
+  },
+  "provider_evidence": "r_runtime_crosscheck_2026_11_03/provider_analysis.json",
+  "provider_record": "matrixStats",
+  "versions_compared": 13,
+  "normalised_kernel_groups": 1,
+  "implemented_span": [
+    "src/mcmc_prepare.R",
+    [
+      1628,
+      1640
+    ],
+    [
+      1648,
+      1660
+    ],
+    [
+      1664,
+      1664
+    ]
+  ],
+  "brace_depth_at_line_start": {
+    "1628": 0,
+    "1629": 0,
+    "1631": 1,
+    "1648": 0,
+    "1649": 0,
+    "1651": 1,
+    "1664": 0
+  },
+  "mean_writers": [
+    1623,
+    1624,
+    1628,
+    1631,
+    1648,
+    1651,
+    1669,
+    1670
+  ],
+  "spline_only_written": [
+    1627,
+    1647
+  ],
+  "taxa_change_writers": [
+    1462,
+    1501
+  ],
+  "only_x1_tested_in_1664": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "685e41eb56a55916bd65c38fc804ac1192f03182290f3db1efa4edcdf9ad7dfa",
+  "supported_domain": "double x and w of equal length, NA as None, NaN and +-Inf allowed; idxs = NULL, na.rm = FALSE, interpolate = TRUE, ties = NULL; an overflowing total weight is rejected",
+  "x_type_note": "x1range.bck comes from the missing transfer-function container; double is assumed from the call and from all_in_all.R (seq and matrix means), an integer x would use the integer kernel",
+  "actual_original_inputs_used_for_numerics": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}
