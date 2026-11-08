@@ -25,6 +25,8 @@ DIRICHLET = "docs/thesis_research/literal_dirichlet_ratio_2026_11_03/"
 RUNTIME = "docs/thesis_research/r_runtime_crosscheck_2026_11_03/"
 MEDIAN = "docs/thesis_research/literal_weighted_median_2026_11_08/"
 FROZEN7 = nachbaustand.STATES[6]["path"].as_posix()
+FROZEN8 = nachbaustand.STATES[7]["path"].as_posix()
+SIX = "docs/thesis_research/r_crosscheck_six_modules_2026_11_08/"
 
 
 def _kopie(tmp_path: Path) -> Path:
@@ -32,12 +34,12 @@ def _kopie(tmp_path: Path) -> Path:
     ex, contract, pex, gex, mex, sex, wex = (STATE["synthetic_example"], STATE["contract"], STATE["pruning_example"],
                                              STATE["gamma_example"], STATE["missing_example"],
                                              STATE["sampler_example"], STATE["weights_example"])
-    dex, rtc, medx = STATE["dirichlet_example"], STATE["runtime_check"], STATE["median_example"]
+    dex, rtc, medx, six = STATE["dirichlet_example"], STATE["runtime_check"], STATE["median_example"], STATE["six_check"]
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
                 + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx) for k in ("fixture", "result", "rational",
                                                                                     "arithmetic")]
-                + [medx["crosscheck"]]
+                + [medx["crosscheck"]] + [six[k] for k in ("package", "result", "causes", "provider")]
                 + [rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / rel, tmp_path / rel)
@@ -50,7 +52,7 @@ def test_newest_state_binds_twelve_modules_eleven_open_bundles_and_no_release():
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
     assert d["modules"][-1]["id"] == "weighted_median" and not d["modules"][-1]["conditional"]
     assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning"]
-    assert d["tests_passed"] == 934 == (sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
+    assert d["tests_passed"] == 975 == (d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
                                         + d["contract"]["tests"] + d["runtime_check"]["new_tests"])
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
@@ -61,7 +63,14 @@ def test_newest_state_binds_twelve_modules_eleven_open_bundles_and_no_release():
 
 
 def test_earlier_states_stay_frozen_pinned_and_listed():
-    first, second, third, fourth, fifth, sixth, seventh = nachbaustand.STATES[:7]
+    first, second, third, fourth, fifth, sixth, seventh, eighth = nachbaustand.STATES[:8]
+    assert eighth["commit"] == "416d547e67ebd349eab2508f87b12977d2b6ef4d"
+    assert eighth["sha256"] == "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6"
+    eighth_state = json.loads((ROOT / eighth["path"]).read_text(encoding="utf-8"))
+    assert (eighth_state["tests"]["passed"], len(eighth_state["modules"])) == (934, 12)
+    assert eighth_state["supersedes"] == {"state": FROZEN7, "state_sha256": seventh["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN8, "state_sha256": eighth["sha256"]}
+    assert STATE["modules"] == eighth_state["modules"] and STATE["median_example"] == eighth_state["median_example"]
     assert (first["sha256"], second["sha256"], third["sha256"], fourth["sha256"], fifth["sha256"],
             sixth["sha256"]) == (
         "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
@@ -79,11 +88,10 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
     seventh_state = json.loads((ROOT / seventh["path"]).read_text(encoding="utf-8"))
     assert (seventh_state["tests"]["passed"], len(seventh_state["modules"])) == (752, 11)
     assert seventh_state["supersedes"] == {"state": FROZEN6, "state_sha256": sixth["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN7, "state_sha256": seventh["sha256"]}
     assert [m["package_sha256"] for m in seventh_state["modules"]] == [m["package_sha256"] for m in STATE["modules"][:11]]
     assert all(STATE[k] == seventh_state[k] for k in ("chain_check", "contract", "synthetic_example", "weights_example",
                                                       "dirichlet_example", "runtime_check"))
-    for frozen in (first, second, third, fourth, fifth, sixth, seventh):
+    for frozen in (first, second, third, fourth, fifth, sixth, seventh, eighth):
         assert hashlib.sha256((ROOT / frozen["path"]).read_bytes()).hexdigest() == frozen["sha256"]
     old, prev, mid, fourth_state, last, sixth_state = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8"))
                                                        for f in (first, second, third, fourth, fifth, sixth))
@@ -107,7 +115,7 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
         for f, n, tests, date in ((first, 5, 251, "2026-11-02"), (second, 6, 297, "2026-11-02"),
                                   (third, 7, 352, "2026-11-02"), (fourth, 8, 437, "2026-11-02"),
                                   (fifth, 9, 555, "2026-11-02"), (sixth, 10, 689, "2026-11-03"),
-                                  (seventh, 11, 752, "2026-11-03"))]
+                                  (seventh, 11, 752, "2026-11-03"), (eighth, 12, 934, "2026-11-08"))]
     assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:9]]
     assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
                                              "gamma_example", "missing_example", "sampler_example"))
@@ -210,6 +218,33 @@ def test_median_example_rejects_a_release_claim(tmp_path, monkeypatch):
     (root / nachbaustand.STATE).write_bytes(state_bytes)
     monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
     with pytest.raises(ValueError, match="median example claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_six_check_reports_stored_r_results_and_keeps_the_differences():
+    s = nachbaustand.app_daten(ROOT)["six_check"]
+    assert (s["r_version"], s["matrixstats"], s["new_tests"]) == ("R version 3.5.0 (2018-04-23)", "0.56.0", 41)
+    assert [r["id"] for r in s["modules"]] == ["age_depth", "age_selection", "final_pdf", "cdf_discrepancy",
+                                               "tf_preparation", "taxon_pruning"]
+    assert [(r["values"], r["bit_equal"], r["max_ulps"]) for r in s["modules"]] == [
+        (4827, 4358, 3), (6535, 5303, 2), (15407, 10807, 4), (2827, 2797, 2), (2580, 2000, 3), (9790, 9653, 3)]
+    assert (s["values"], s["bit_equal"], s["max_ulps"], s["special_mismatch"]) == (41966, 34918, 4, 0)
+    assert s["fixture_values"] == s["fixture_bit_equal"] == 7064 and s["cause_values"] == s["cause_bit_equal"] == 24822
+    assert s["front_exporters"] == [] and s["url"].endswith(SIX + "README.md")
+    assert "/blob/" + STATE["source_commit"] + "/" in s["url"]
+
+
+def test_six_check_rejects_a_release_claim(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    rel = STATE["six_check"]["causes"]
+    content = json.dumps(dict(json.loads((root / rel).read_text(encoding="utf-8")), historical_reproduction_ready=True)).encode()
+    (root / rel).write_bytes(content)
+    state = json.loads(json.dumps(STATE))
+    state["six_check"]["causes_sha256"] = hashlib.sha256(content).hexdigest()
+    state_bytes = json.dumps(state).encode()
+    (root / nachbaustand.STATE).write_bytes(state_bytes)
+    monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
+    with pytest.raises(ValueError, match="six-module R check claims"):
         nachbaustand.app_daten(root)
 
 
@@ -319,6 +354,8 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
     assert nachbaustand.app_daten(root)["missing"][-1] == RUNTIME + "site_binding.json"
     (root / MEDIAN / "r_crosscheck_result.json").unlink()
     assert MEDIAN + "r_crosscheck_result.json" in nachbaustand.app_daten(root)["missing"]
+    (root / SIX / "difference_causes.json").unlink()
+    assert SIX + "difference_causes.json" in nachbaustand.app_daten(root)["missing"]
 
 
 @pytest.mark.parametrize("rel", [nachbaustand.STATE.as_posix(), PACKET + "synthetic_result.json",
@@ -343,7 +380,9 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
                                  RUNTIME + "crosscheck_result.json", RUNTIME + "site_binding.json", FROZEN7,
                                  MEDIAN + "README.md", MEDIAN + "synthetic_result.json",
                                  MEDIAN + "reference_expectations.json", MEDIAN + "synthetic_fixture.json",
-                                 MEDIAN + "arithmetic_check.json", MEDIAN + "r_crosscheck_result.json"])
+                                 MEDIAN + "arithmetic_check.json", MEDIAN + "r_crosscheck_result.json", FROZEN8,
+                                 SIX + "README.md", SIX + "six_crosscheck_result.json", SIX + "difference_causes.json",
+                                 SIX + "provider_rowcumsums.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -382,4 +421,5 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "Dirichlet-Quotient der Gewichtsstufe" in html and "Dirichlet ratio of the weights stage" in html
     assert "R-Gegenprobe" in html and "R cross check" in html
     assert "Gewichteter Median und NA-Maske" in html and "Weighted median and the NA mask" in html
-    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:7])
+    assert "R-Gegenprobe der sechs älteren Teilmodule" in html and "R cross check of the six older" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:8])

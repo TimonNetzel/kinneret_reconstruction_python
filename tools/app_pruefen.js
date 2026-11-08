@@ -276,10 +276,10 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
     fehler.push("Forschungsstand: Quellen nicht gebunden");
   }
-  // Dissertation reproduction: newest state with twelve checked submodules, seven frozen earlier states, R cross check, synthetic examples kept apart
+  // Dissertation reproduction: newest state with twelve checked submodules, eight frozen earlier states, R cross check, synthetic examples kept apart
   const nb = '[data-research="reproduction"]';
   const nbText = await page.textContent(nb);
-  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("934") ||
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("975") ||
       await page.locator(nb + " [data-module]").count() !== 12 ||
       await page.locator(nb + ' [data-module="gamma_prior_grid"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="tf_missing_priors"] [data-status="conditional"]').count() !== 0 ||
@@ -287,8 +287,13 @@ async function pruefe(browser, datei, groesse, thema, name) {
       await page.locator(nb + ' [data-module="weights_stage"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="dirichlet_ratio"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="weighted_median"] [data-status="conditional"]').count() !== 0 ||
-      await page.locator(nb + " [data-earlier-state]").count() !== 7 ||
+      await page.locator(nb + " [data-earlier-state]").count() !== 8 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-08, 12 Teilmodule, 934 Tests, SHA-256 4d25a3f69f73") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-03, 11 Teilmodule, 752 Tests, SHA-256 cf1b77f22bdd") ||
+      await page.locator(nb + ' [data-part="runtime-six"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="six-check"] tbody tr').count() !== 6 ||
+      !["Alle 7.064 von 7.064 Werten", "34.918 von 41.966 Werten", "höchstens 4 ulp daneben", "alle 24.822 von 24.822", "R summiert in long double"
+        ].every((x) => nbText.includes(x)) ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-03, 10 Teilmodule, 689 Tests, SHA-256 7eb9ac5e4eb6") ||
       await page.locator(nb + ' [data-part="runtime-median"]').count() !== 1 ||
       !["matrixStats 0.56.0", "439 von 439 Werten bitgleich", "höchstens 0 ulp"].every((x) => nbText.includes(x)) ||
@@ -312,16 +317,17 @@ async function pruefe(browser, datei, groesse, thema, name) {
     "/blob/0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34/docs/thesis_research/app_reproduction_2026_11_02_tf_missing/reproduction_state.json",
     "/blob/235f79784d01f0a613a0d3f76f6fd690c245ab21/docs/thesis_research/app_reproduction_2026_11_02_sampler_prep/reproduction_state.json",
     "/blob/3104f3c9e9a7870138abcc301bdd4f108c009e73/docs/thesis_research/app_reproduction_2026_11_03_weights_stage/reproduction_state.json",
-    "/blob/cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68/docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/reproduction_state.json"];
+    "/blob/cfd0ad8f1c0cb3f06909f50f21cc1e9a65592a68/docs/thesis_research/app_reproduction_2026_11_03_dirichlet_ratio/reproduction_state.json",
+    "/blob/416d547e67ebd349eab2508f87b12977d2b6ef4d/docs/thesis_research/app_reproduction_2026_11_08_weighted_median/reproduction_state.json"];
   const istFrueher = (url) => frueher.some((f) => url.endsWith(f));
-  if (nbLinks.length !== 31 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
-      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/a21c8f1ea7f6c285cbed2695a8b3750e4d0bba10/"))) {
+  if (nbLinks.length !== 33 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
+      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/0f044c01161dbadeaef3c9bec58082c93e2aa205/"))) {
     fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
   }
   if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
   await page.click(nb + ' [data-part="example"] summary');
   const exText = await page.textContent(nb + ' [data-part="example"]');
-  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 14 ||
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 15 ||
       await page.locator(nb + ' [data-table="median"] tbody tr').count() !== 9 ||
       await page.locator(nb + ' [data-table="median"] [data-special="na"]').count() !== 4 ||
       await page.locator(nb + ' [data-table="median"] [data-ulps="0"]').count() !== 9 ||
@@ -381,6 +387,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
       !enText.includes("Dirichlet ratio of the weights stage") || !enText.includes("Dirichlet ratio: 4 artificial cases") ||
       !enText.includes("R cross check: in R version 3.5.0") ||
       !enText.includes("Weighted median and the NA mask of the transfer functions") ||
+      !enText.includes("R cross check of the six older submodules") || !enText.includes("R sums in long double") ||
       !enText.includes("Weighted median: 9 artificial cases") || !enText.includes("439 of 439 values bit-identical") ||
       !(await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open))) {
     fehler.push("Nachbau: englische Fassung oder Aufklappzustand fehlt");

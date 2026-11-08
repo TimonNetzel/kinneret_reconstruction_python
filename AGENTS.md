@@ -1,3 +1,13 @@
+> **Aktuell: sechs ältere Module gegen R 3.5.0 geprüft, App-Stand 9, 08.11.2026:**
+> [Gegenprobe und Belege](docs/thesis_research/r_crosscheck_six_modules_2026_11_08/README.md): Originalzeilen wörtlich;
+> alle 7.064 Fixture-Werte bitgleich. Mit Stresszahlen 34.918 von 41.966 Werten bitgleich, höchstens 4 ulp, nur Summen und
+> Matrixprodukte. Ursache belegt: R rechnet in `long double` und mit Referenz-BLAS (24.822 von 24.822 Werten so nachgerechnet).
+> Module unverändert. 41 neue Tests, 975 grün.
+> [App-Stand 9](docs/thesis_research/app_reproduction_2026_11_08_r_crosscheck_six/README.md) mit eigenem Pin; Stände 1–8
+> eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_SIX_MODULE_CROSSCHECK_2026_11_08.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: gewichteter Median nachgebildet, App-Stand 8, 08.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_weighted_median_2026_11_08/README.md): `mcmc_prepare.R:1628–1664`;
 > `weightedMedian` wörtlich nach dem C-Kern von matrixStats (normalisiert in allen 13 Fassungen des Fensters ein Text).

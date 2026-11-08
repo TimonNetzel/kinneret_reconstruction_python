@@ -249,6 +249,20 @@
       `${link(m.url, "nb_evidence")}</p>`;
   }
 
+  // R 3.5.0 check of the six older modules on artificial inputs; differences are shown, never turned into a verdict
+  function sechsPruefung(s) {
+    if (!s) return "";
+    const zeilen = s.modules.map((r) => `<tr data-six="${esc(r.id)}"><th scope="row">${esc(t("nb_mod_" + r.id))}</th>` +
+      `<td>${fmt(r.values, 0)}</td><td>${fmt(r.bit_equal, 0)}</td><td data-ulps="${r.max_ulps}">${fmt(r.max_ulps, 0)}</td></tr>`).join("");
+    return `<h4>${esc(t("nb_six_title"))}</h4>` +
+      `<p data-part="runtime-six">${esc(text("nb_six", { r: s.r_version, fx: fmt(s.fixture_bit_equal, 0), fn: fmt(s.fixture_values, 0),
+        eq: fmt(s.bit_equal, 0), n: fmt(s.values, 0), u: fmt(s.max_ulps, 0), ce: fmt(s.cause_bit_equal, 0), cn: fmt(s.cause_values, 0),
+        ms: s.matrixstats, tests: fmt(s.new_tests, 0) }))} ${link(s.url, "nb_evidence")}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="six-check"><thead><tr><th scope="col">${esc(t("nb_six_module"))}</th>` +
+      `<th scope="col">${esc(t("nb_six_values"))}</th><th scope="col">${esc(t("nb_six_equal"))}</th><th scope="col">${esc(t("nb_six_ulps"))}</th></tr></thead>` +
+      `<tbody>${zeilen}</tbody></table></div>`;
+  }
+
   function laufzeit(rt, m) {
     if (!rt) return "";
     return `<p data-part="runtime">${esc(text("nb_runtime", { r: rt.r_version, m: fmt(rt.modules, 0), checks: fmt(rt.checks, 0),
@@ -307,7 +321,7 @@
       `<article class="karte nachbau-karte" data-part="modules"><h3>${esc(t("nb_modules"))}</h3><ol class="nachbau-liste">${modules}</ol>` +
       `<p>${esc(text("nb_chain", { n: fmt(nb.chain_check.new_tests, 0), c: fmt(nb.contract.tests, 0) }))} ` +
       `${link(nb.chain_check.url, "nb_chain_link")} · ${link(nb.contract.url, "nb_contract_link")}</p>` +
-      `${laufzeit(nb.runtime_check, nb.median_example)}</article>` +
+      `${laufzeit(nb.runtime_check, nb.median_example)}${sechsPruefung(nb.six_check)}</article>` +
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +

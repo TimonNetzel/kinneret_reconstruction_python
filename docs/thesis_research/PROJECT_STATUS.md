@@ -1,5 +1,27 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Sechs ältere Module gegen R 3.5.0 geprüft, App-Stand 9, 08.11.2026
+
+**Abgeschlossen** (Nutzerauftrag „Ja, weiter prüfen“): [Gegenprobe und Belege](r_crosscheck_six_modules_2026_11_08/README.md).
+
+- Originalzeilen der Alters-/Tiefenübertragung, Altersauswahl, End-PDF, CDF-Abweichung, TF-Vorbereitung und des Taxon-Prunings
+  wörtlich in R 3.5.0, auf den früheren Fixtures und auf 150 deterministischen Stressfällen mit ungenauen Doubles.
+- **Alle 7.064 Fixture-Werte bitgleich**, keine Abweichung bei Sonderwerten.
+- Zusammen mit den Stresszahlen 34.918 von 41.966 Werten bitgleich (ohne Altersraster), höchstens 4 ulp, nur Summen und
+  Matrixprodukte. Masken, Raster, Indizes und Pruning-Entscheidungen sind überall bitgleich.
+- **Ursache belegt:** R summiert in `long double` und nutzt Referenz-BLAS, die Module Double-Summen über NumPy. So nachgerechnet
+  stimmen alle 24.822 betroffenen Werte bitgenau mit R. Die Module bleiben unverändert und damit nicht bitgleich; markiert.
+- `rowCumsums` stammt im Fenster nur aus matrixStats. Quellbefund: `na.rm=T` wird dort von `...` verschluckt.
+- 41 neue Tests, **975** gezielte Tests grün; App-Tests 98 grün (2 Wrapper explizit ersetzt). Phase-1-Prüfer Exit 2.
+- Edge in beiden Formaten und zwei Standorte im ersten Lauf ok.
+
+**App:** [Stand 9](app_reproduction_2026_11_08_r_crosscheck_six/README.md) (Pin `50fe8b0a…`): Tabelle je Modul. Stände 1–8 eingefroren.
+
+**Offen:** Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. Lizenzfrage zu `tools/r_sort_gpl.py` liegt beim Nutzer.
+PR #77 offen, nicht gemergt.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_SIX_MODULE_CROSSCHECK_2026_11_08.md).
+
 ## Gewichteter Median nachgebildet, App-Stand 8, 08.11.2026
 
 **Abgeschlossen** (Auftrag: [Übergabe nach dem Dirichlet-Quotienten](CLAUDE_NEXT_STEP_AFTER_DIRICHLET_RATIO_2026_11_03.md)):

@@ -10,6 +10,19 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: alle Teilmodule gegen R geprüft, App-Stand 9, 08.11.2026
+
+Die sechs älteren Module sind gegen ihre Originalzeilen geprüft ([Paket](r_crosscheck_six_modules_2026_11_08/README.md),
+[App-Stand 9](app_reproduction_2026_11_08_r_crosscheck_six/README.md)). Nächste begrenzte Schritte:
+
+1. Weitere deterministische Ränder mit expliziten Eingaben: `reconstruction_climate` (`mcmc_functions_v1.6.R:1188`),
+   Korrelationsteil ab 1939.
+2. Danach je ein neuer App-Stand.
+3. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+
+Bitgleiche R-Rechenschicht für die Module nur auf ausdrückliche Nutzerentscheidung. Verbesserungen erst nach Phase 1.
+[Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_SIX_MODULE_CROSSCHECK_2026_11_08.md). Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: dreizehnter Schritt offen, gewichteter Median in App-Stand 8, 08.11.2026
 
 Der zwölfte Schritt ist erledigt: `weightedMedian` und NA-Maske

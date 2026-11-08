@@ -52,6 +52,12 @@ STATES = (
      "sha256": "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
                  "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
+                 "weighted_median"),
+     "commit": "416d547e67ebd349eab2508f87b12977d2b6ef4d"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_08_r_crosscheck_six/reproduction_state.json"),
+     "sha256": "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
                  "weighted_median")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
@@ -82,12 +88,13 @@ def app_daten(root: Path) -> dict:
     ex, contract, pex = state["synthetic_example"], state["contract"], state.get("pruning_example")
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
     wex, dex, rtc = state.get("weights_example"), state.get("dirichlet_example"), state.get("runtime_check")
-    medx = state.get("median_example")
+    medx, six = state.get("median_example"), state.get("six_check")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
              + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx) if e
                 for k in ("fixture", "result", "rational", "arithmetic")]
              + ([medx["crosscheck"]] if medx else [])
+             + ([six[k] for k in ("package", "result", "causes", "provider")] if six else [])
              + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
         return {"schema_version": 1, "available": False, "missing": missing}
@@ -166,6 +173,7 @@ def app_daten(root: Path) -> dict:
         "weights_example": _weights_example(root, wex, url) if wex else None,
         "dirichlet_example": _dirichlet_example(root, dex, url) if dex else None,
         "median_example": _median_example(root, medx, url) if medx else None,
+        "six_check": _six_check(root, six, url) if six else None,
         "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
     }
 
@@ -190,6 +198,32 @@ def _runtime_check(root: Path, rtc: dict, url) -> dict:
                                      for name, row in dirichlet["ratio_cases"].items()},
         "kinneret_slot": sites["kinneret_slot"],
     }
+
+
+def _six_check(root: Path, six: dict, url) -> dict:
+    """Stored R 3.5.0 results of the six older modules; differences stay visible, only release claims are rejected."""
+    _pinned(root, six["package"], six["package_sha256"])
+    result = json.loads(_pinned(root, six["result"], six["result_sha256"]))
+    causes = json.loads(_pinned(root, six["causes"], six["causes_sha256"]))
+    provider = json.loads(_pinned(root, six["provider"], six["provider_sha256"]))
+    if (result["historical_reproduction_ready"] or causes["historical_reproduction_ready"]
+            or provider["historical_reproduction_ready"] or result["random_state_used"]):
+        raise ValueError("Nachbaustand: six-module R check claims a release or random state")
+    rows = []
+    for key, module_id in six["modules"].items():
+        row = result["modules"][key]
+        counted = [s for k, s in row["keys"].items() if not k.startswith("grid_")]
+        rows.append({"id": module_id, "values": sum(s["values"] for s in counted),
+                     "bit_equal": sum(s["bit_equal"] for s in counted), "max_ulps": row["max_ulps"],
+                     "fixture_values": row["fixture_values"], "fixture_bit_equal": row["fixture_bit_equal"]})
+    return {"url": url(six["package"]), "new_tests": six["new_tests"], "r_version": result["runtime"]["R"],
+            "matrixstats": result["runtime"]["matrixStats"], "modules": rows,
+            "values": sum(r["values"] for r in rows), "bit_equal": sum(r["bit_equal"] for r in rows),
+            "fixture_values": sum(r["fixture_values"] for r in rows),
+            "fixture_bit_equal": sum(r["fixture_bit_equal"] for r in rows), "max_ulps": result["max_ulps"],
+            "special_mismatch": result["special_mismatch"], "cause_values": causes["values"],
+            "cause_bit_equal": causes["emulation_bit_equal"],
+            "front_exporters": provider["exporters_in_front_of_matrixStats"]}
 
 
 def _median_example(root: Path, medx: dict, url) -> dict:

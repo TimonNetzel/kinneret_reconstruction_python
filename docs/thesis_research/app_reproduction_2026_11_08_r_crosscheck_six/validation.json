@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the stored R 3.5.0 cross check of the six older modules on artificial inputs; no new computation module, no historical case reproduction, no sampler, no training or fossil reconstruction",
+  "starting_commit": "416d547e67ebd349eab2508f87b12977d2b6ef4d",
+  "evidence_commit": "8faa0351060bdead17f8fc1494fe4b655559cb85",
+  "source_links_commit": "0f044c01161dbadeaef3c9bec58082c93e2aa205",
+  "reproduction_state_sha256": "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+    "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[7] received only its link commit 416d547 (pushed); STATES[0..6] untouched",
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 98,
+    "new_tests": 7,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "b8978e6d6811136f69498c0d07964e066f2bff6f4a5acb714e2d79b6f650c997"
+  },
+  "historical_tests": {
+    "passed": 975,
+    "new_tests": 41,
+    "rerun_after_app_changes": 975,
+    "local_junit_sha256": "61406b8ea255defe42bbff21c8082765e0e3cfe6d3f6d407459b4dc3ec24385e"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "tests_shown": 975,
+      "modules": 12,
+      "earlier_states": 8,
+      "links": 33,
+      "example_and_check_tables": 15,
+      "six_check_rows": 6
+    },
+    "runs": "first run: all ten cases ok",
+    "measured_table_widths_390px": {
+      "six-check": [
+        332,
+        332
+      ]
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "six-module table at 390 px, light",
+    "desktop.png": "same part, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}
