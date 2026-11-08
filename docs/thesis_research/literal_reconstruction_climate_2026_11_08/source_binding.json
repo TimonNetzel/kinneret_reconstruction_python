@@ -1,0 +1,45 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "43733532ac20f183e5ee99631fc4e9fe3d357957",
+  "sources_sha256": {
+    "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+    "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e"
+  },
+  "implemented_span": [
+    "src/mcmc_functions_v1.6.R",
+    1188,
+    1199
+  ],
+  "r_files_searched": 540,
+  "files_naming_the_function": [
+    "src/local_reconstr_all_epd/src/mcmc_functions_backup.R",
+    "src/local_reconstr_all_epd/src/mcmc_functions_v1.6.R",
+    "src/local_reconstr_all_epd/src/mcmc_sampling_v1.4.R"
+  ],
+  "callers": [
+    {
+      "file": "src/local_reconstr_all_epd/src/mcmc_sampling_v1.4.R",
+      "line": 79,
+      "text": "recent_climate <- reconstruction_climate(taxa.appear.core.temp,which.taxa,tf.x1.current,tf.x2.current,recent)"
+    }
+  ],
+  "files_referencing_the_caller_file": [],
+  "caller_file_sourced_by_main_v1_2": false,
+  "reached_by_bound_run": false,
+  "bound_run_path": "mcmc_functions_v1.6.R:1850-1851 (post_tann from predictant_tann[1], sampled TF values)",
+  "add_sites_line": "main_v1.2.R:73",
+  "guard_1380_needs_not_add_sites": true,
+  "lines_1408_1413_reached_by_bound_run": false,
+  "globals_made_explicit": [
+    "x1range.bck",
+    "x2range.bck",
+    "prior.recent$mean.tmp",
+    "prior.recent$mean.pann"
+  ],
+  "which_taxa_read": false,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "05fd530adf7a698762270adca7bd1c50227b4fd8f598473f1dce9e0c7c28c7e7",
+  "actual_original_inputs_used_for_numerics": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

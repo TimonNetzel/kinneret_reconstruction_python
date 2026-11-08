@@ -1,0 +1,369 @@
+{
+ "kind": "synthetic_reconstruction_climate_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "x1range": [
+  -5,
+  0,
+  5,
+  10
+ ],
+ "x2range": [
+  100,
+  200,
+  300,
+  400
+ ],
+ "prior": {
+  "mean_tmp": "37/2",
+  "mean_pann": "640"
+ },
+ "cases": {
+  "recent_basic": {
+   "core": [
+    [
+     "1",
+     "3"
+    ],
+    [
+     "9",
+     "9"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "25/3",
+    "pann": "220",
+    "tann_weights": [
+     "1",
+     "0",
+     "3",
+     "9"
+    ],
+    "pann_weights": [
+     "1",
+     "7",
+     "3",
+     "0"
+    ]
+   }
+  },
+  "only_first_row_counts": {
+   "core": [
+    [
+     "1",
+     "3"
+    ],
+    [
+     "1000",
+     "0"
+    ],
+    [
+     "0",
+     "7"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "25/3",
+    "pann": "220"
+   },
+   "note": "the same first row as recent_basic with other later rows"
+  },
+  "prior_when_not_recent": {
+   "core": [
+    [
+     "bad",
+     "NA"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "NA"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "NA"
+    ]
+   ],
+   "recent": false,
+   "hand": {
+    "tann": "37/2",
+    "pann": "640"
+   },
+   "note": "nothing but the prior is read: R never forces the other arguments"
+  },
+  "first_row_zero": {
+   "core": [
+    [
+     "0",
+     "0"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "NA",
+    "pann": "NA"
+   }
+  },
+  "na_in_one_tf_cell": {
+   "core": [
+    [
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1",
+     "0",
+     "NA",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "NA",
+    "pann": "220"
+   }
+  },
+  "na_tf_at_zero_share": {
+   "core": [
+    [
+     "0",
+     "3"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "NA",
+     "NA",
+     "NA",
+     "NA"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "NA",
+    "pann": null
+   },
+   "note": "0 * NA is NA, a zero share does not protect against the NA row"
+  },
+  "na_in_first_row_share": {
+   "core": [
+    [
+     "NA",
+     "3"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1",
+     "0",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1",
+     "3"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1",
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "2",
+     "1",
+     "0"
+    ]
+   ],
+   "recent": true,
+   "hand": {
+    "tann": "NA",
+    "pann": "NA"
+   }
+  },
+  "inexact_shares": {
+   "core": [
+    [
+     "1/3",
+     "2/7"
+    ],
+    [
+     "1/9",
+     "1/11"
+    ]
+   ],
+   "tf_x1": [
+    [
+     "1/10",
+     "2/10",
+     "3/10",
+     "4/10"
+    ],
+    [
+     "1/3",
+     "1/7",
+     "1/9",
+     "1/11"
+    ]
+   ],
+   "tf_x2": [
+    [
+     "1/13",
+     "1/17",
+     "1/19",
+     "1/23"
+    ],
+    [
+     "1/29",
+     "1/31",
+     "1/37",
+     "1/41"
+    ]
+   ],
+   "recent": true,
+   "hand": null
+  }
+ },
+ "stress": {
+  "seed": 20261109,
+  "cases": 200
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false,
+ "naive_counterexamples": {
+  "row_mean_instead_of_first_row": {
+   "module": 8.333333333333334,
+   "row_mean": 7.708333333333333,
+   "differs": true
+  },
+  "expectation_instead_of_median": {
+   "module": 8.333333333333334,
+   "expectation": 7.6923076923076925,
+   "differs": true
+  },
+  "skip_na_at_zero_share": {
+   "module_kind": "NA",
+   "skipping_kind": "number",
+   "differs": true
+  }
+ }
+}
