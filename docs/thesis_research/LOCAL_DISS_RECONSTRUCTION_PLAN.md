@@ -10,6 +10,16 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein nach der Bindung von `rtruncnorm_cpp`, 09.11.2026
+
+`rtruncnorm_cpp` ist quellen- und bindungsgeprüft, ohne Ziehung ([Paket](literal_rtruncnorm_binding_2026_11_09/README.md)). App-Stand 13 bleibt aktuell.
+
+1. Vorschlag: `ratios_tfs_no_ages` (`mcmc_functions_v1.6.R:1485–1525`, Aufruf `mcmc_conduction.R:228`) mit expliziten Eingaben. Für den Teil mit `d_truncnorm` ist eine Nutzerentscheidung zu `R::pnorm`/`R::dnorm` nötig.
+2. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+3. Offen: R-Paket `truncnorm` (`mcmc_prepare.R:1957–1958`) binden; beim Nutzer die Lizenz von `tools/r_sort_gpl.py` und die R-nahe Rechenschicht.
+
+Übergabe: [nach der rtruncnorm-Bindung](CLAUDE_NEXT_STEP_AFTER_RTRUNCNORM_BINDING_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 13, 09.11.2026
 
 `wt_power` ist nachgebildet, auf Nutzerentscheidung mit NumPy-FFT und gemessener, markierter Abweichung, also nicht bitgleich zu R ([Paket](literal_wt_power_2026_11_09/README.md), [App-Stand 13](app_reproduction_2026_11_09_wt_power/README.md)).

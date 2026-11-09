@@ -1,0 +1,167 @@
+{
+ "kind": "source_binding_no_draw_no_compilation",
+ "date": "2026-11-09",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "sources_sha256": {
+  "main_v1.2.R": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+ },
+ "pinned_lines": {
+  "main_v1.2.R": [
+   29,
+   31,
+   644,
+   675,
+   676,
+   1055
+  ],
+  "src/mcmc_functions_v1.6.R": [
+   1556,
+   1557,
+   1558,
+   1560,
+   1561,
+   1563,
+   1564,
+   1565,
+   1566,
+   1568,
+   1812,
+   1813,
+   1354,
+   1362,
+   1363,
+   1437,
+   1483,
+   1485,
+   1516,
+   1517,
+   1520,
+   1521
+  ],
+  "src/mcmc_prepare.R": [
+   1886,
+   1896,
+   1897,
+   1898,
+   1899,
+   1913,
+   1914,
+   1922,
+   1923,
+   1945,
+   1946,
+   1957,
+   1958,
+   1979,
+   1980
+  ],
+  "src/mcmc_conduction.R": [
+   138,
+   146,
+   228
+  ]
+ },
+ "r_files_scanned_for_definitions": 95,
+ "definitions_of_rtruncnorm_cpp_in_source_tree": [
+  "src/mcmc_functions_v1.6.R:1563"
+ ],
+ "calls": {
+  "rtruncnorm_cpp": {
+   "src/mcmc_functions_v1.6.R": [
+    1812,
+    1813
+   ],
+   "src/mcmc_conduction.R": [],
+   "src/mcmc_prepare.R": []
+  },
+  "propose_cpp_uncommented": {
+   "src/mcmc_functions_v1.6.R": [],
+   "src/mcmc_conduction.R": []
+  },
+  "ratios_tfs_no_ages_uncommented": {
+   "src/mcmc_conduction.R": [
+    228
+   ]
+  },
+  "r_package_truncnorm_rtruncnorm_uncommented": {
+   "src/mcmc_prepare.R": [
+    1957,
+    1958
+   ]
+  }
+ },
+ "seeds_uncommented": {
+  "main_v1.2.R": [
+   1055
+  ],
+  "src/mcmc_functions_v1.6.R": [],
+  "src/mcmc_prepare.R": [
+   1297,
+   1301,
+   1332,
+   1341,
+   1354,
+   1896,
+   1898
+  ],
+  "src/mcmc_conduction.R": []
+ },
+ "rngkind_or_rngversion_uncommented": {
+  "main_v1.2.R": [],
+  "src/mcmc_functions_v1.6.R": [],
+  "src/mcmc_prepare.R": [],
+  "src/mcmc_conduction.R": []
+ },
+ "r_3_5_0": {
+  "tarball_sha256": "fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870",
+  "locations": {
+   "src/nmath/runif.c": {
+    "sha256": "57329661839af47e58ac36b7bdc810526c02eb1b77a4d5ae308e0e3272b633c7",
+    "lines": [
+     26,
+     30,
+     36
+    ]
+   },
+   "src/main/RNG.c": {
+    "sha256": "601ef3c491cfb7c664fb9e5d3283aec0b95466c632699ece228adc29f8c46fde",
+    "lines": [
+     97,
+     100,
+     101,
+     134,
+     31,
+     46
+    ]
+   },
+   "src/nmath/qnorm.c": {
+    "sha256": "29dbd1581fe1e1c14d6d162312ce0c28bfc2c602d6ab54e670fe2ec63b5ad2a4",
+    "lines": [
+     52
+    ]
+   },
+   "src/nmath/pnorm.c": {
+    "sha256": "37042e6a0f3c12876442588539ee9e77bfbc826b14f741b20d2a1fd7f28e84b6",
+    "lines": [
+     62
+    ]
+   },
+   "src/nmath/dnorm.c": {
+    "sha256": "5bfcdc773d36aa1e190efd3b1488775e4ccd6ba8996bce78ebd4a4362529e515",
+    "lines": [
+     34
+    ]
+   }
+  }
+ },
+ "random_state_used": false,
+ "draws_run": 0,
+ "compiled": false,
+ "historical_reproduction_ready": false
+}

@@ -1,0 +1,29 @@
+{
+ "kind": "recorded_test_run_not_a_case_reproduction",
+ "date": "2026-11-09",
+ "new_test_file": "tests/test_rtruncnorm_binding.py",
+ "new_tests": 32,
+ "earlier_tests": 1614,
+ "total_passed": 1646,
+ "test_files": 21,
+ "exit_code": 0,
+ "local_junit_sha256": "15dec4562b4161becb7a0fb4a1ea0058e16c1bf9404ec883e0330fc74cc4313b",
+ "versions_in_window": [
+  "RcppDist_0.1.1.tar.gz"
+ ],
+ "draws_run": 0,
+ "compiled": false,
+ "not_run": [
+  "full pytest tests",
+  "verify_packet.py",
+  "tools/verify_*",
+  "app tests and browser runs (no code of the app changed)",
+  "compilation of rtruncnorm_cpp",
+  "sampler",
+  "draws",
+  "training",
+  "age models",
+  "fossil reconstruction"
+ ],
+ "historical_reproduction_ready": false
+}

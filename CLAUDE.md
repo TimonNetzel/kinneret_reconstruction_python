@@ -10,6 +10,12 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: `rtruncnorm_cpp` quellen- und bindungsgeprüft, ohne Ziehung, 09.11.2026:**
+> [Belegpaket](docs/thesis_research/literal_rtruncnorm_binding_2026_11_09/README.md): `r_truncnorm` aus RcppDist; im Fenster auf CRAN genau 0.1.1 (2018-10-28), installierte Fassung unbekannt.
+> Inversion mit einem `R::runif` je Element (gelesen, nicht gemessen). 32 neue Tests, 1.646 grün. Kein Rechenmodul, App-Stand 13 bleibt aktuell. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_RTRUNCNORM_BINDING_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: `wt_power` nachgebildet (NumPy-FFT, nicht bitgleich zu R), App-Stand 13, 09.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_wt_power_2026_11_09/README.md): `mcmc_functions_v1.6.R:1003–1012`, Leser `2023–2026`, mit expliziten Reihen und `wb`. Auf Nutzerentscheidung NumPy-FFT mit gemessener, markierter Abweichung.
 > R 3.5.0, 120 Stressfälle: 22.256 von 22.256 zentrierten Werten bitgleich, 5.938 von 39.876 Leistungen, höchstens 606 ulp; `post_spec` höchstens 12 ulp. Für Kinneret offen, ob es läuft.

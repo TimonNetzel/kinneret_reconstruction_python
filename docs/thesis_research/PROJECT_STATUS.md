@@ -1,5 +1,19 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## `rtruncnorm_cpp`: Quellen- und Bindungsprüfung ohne Ziehung, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag „Mache weiter“): [Belegpaket](literal_rtruncnorm_binding_2026_11_09/README.md). Kein Rechenmodul, keine Ziehung, keine Kompilierung, kein neuer App-Stand; App-Stand 13 bleibt aktuell.
+
+- Eine Definition (`mcmc_functions_v1.6.R:1563`), zwei Aufrufer (1812, 1813). `r_truncnorm` kommt aus RcppDist. Im Fenster 2018-04-23…2023-07-07 gab es auf CRAN genau 0.1.1 (2018-10-28), davor keine Fassung. Die installierte Fassung des historischen Laufs ist unbekannt.
+- Inversion mit einem `R::runif(0, 1)` je Element, aus den Quellen gelesen und nicht gemessen: `2 · num_taxa` Zufallszahlen je Iteration.
+- 32 neue Tests, **1.646** gezielte Tests grün in 21 Dateien.
+
+**Offen:** Zweiter Anbieter R-Paket `truncnorm` (`mcmc_prepare.R:1886`, `1957–1958`) nicht gebunden; Zufallszustand beim Samplerstart nicht belegt. Kein Originalfall; elf Nachweisbündel offen. PR #77 offen, nicht gemergt.
+
+**Blockiert (Nutzerentscheidung):** `d_truncnorm` braucht `R::pnorm` und `R::dnorm`; bitgleich hieße GPL-Code aus R zu übersetzen.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_RTRUNCNORM_BINDING_2026_11_09.md); Vorschlag: `ratios_tfs_no_ages` (1485–1525) mit expliziten Eingaben.
+
 ## `wt_power` nachgebildet (NumPy-FFT, nicht bitgleich zu R), App-Stand 13, 09.11.2026
 
 **Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_wt_power_2026_11_09/README.md) (`ddbce9e`), [App-Stand 13](app_reproduction_2026_11_09_wt_power/README.md).
