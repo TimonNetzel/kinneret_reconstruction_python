@@ -37,6 +37,8 @@ FROZEN12 = nachbaustand.STATES[11]["path"].as_posix()
 TFR = "docs/thesis_research/literal_ratios_tfs_2026_11_09/"
 BIND = "docs/thesis_research/literal_rtruncnorm_binding_2026_11_09/"
 FROZEN13 = nachbaustand.STATES[12]["path"].as_posix()
+FROZEN14 = nachbaustand.STATES[13]["path"].as_posix()
+IC = "docs/thesis_research/kinneret_input_contract_2026_11_09/"
 CLIMATE = "docs/thesis_research/literal_reconstruction_climate_2026_11_08/"
 
 
@@ -47,13 +49,13 @@ def _kopie(tmp_path: Path) -> Path:
                                              STATE["sampler_example"], STATE["weights_example"])
     dex, rtc, medx, six = STATE["dirichlet_example"], STATE["runtime_check"], STATE["median_example"], STATE["six_check"]
     kex, cex, rex, wtx = STATE["climate_example"], STATE["cor_example"], STATE["reconst_example"], STATE["wt_example"]
-    tfx, rtb = STATE["ratios_example"], STATE["rtruncnorm_binding"]
+    tfx, rtb, icx = STATE["ratios_example"], STATE["rtruncnorm_binding"], STATE["input_contract"]
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
                 + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex, wtx, tfx) for k in ("fixture", "result", "rational",
                                                                                               "arithmetic")]
                 + [kex["crosscheck"], kex["binding"], cex["crosscheck"], cex["binding"], rex["crosscheck"], rex["binding"], rex["measurement"],
-                   wtx["crosscheck"], wtx["binding"], wtx["masking"], tfx["crosscheck"], tfx["binding"], rtb["package"]]
+                   wtx["crosscheck"], wtx["binding"], wtx["masking"], tfx["crosscheck"], tfx["binding"], rtb["package"], icx["package"], icx["contract"]]
                 + [medx["crosscheck"]] + [six[k] for k in ("package", "result", "causes", "provider")]
                 + [rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -67,7 +69,7 @@ def test_newest_state_binds_seventeen_modules_eleven_open_bundles_and_no_release
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
     assert d["modules"][-1]["id"] == "ratios_tfs" and not d["modules"][-1]["conditional"]
     assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning", "reconstruction_climate", "wt_power"]
-    assert d["tests_passed"] == 1858 == (d["rtruncnorm_binding"]["new_tests"] + d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
+    assert d["tests_passed"] == 2143 == (d["input_contract"]["new_tests"] + d["rtruncnorm_binding"]["new_tests"] + d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
                                         + d["contract"]["tests"] + d["runtime_check"]["new_tests"])
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
@@ -109,7 +111,14 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
     thirteenth_state = json.loads((ROOT / thirteenth["path"]).read_text(encoding="utf-8"))
     assert (thirteenth_state["tests"]["passed"], len(thirteenth_state["modules"])) == (1614, 16)
     assert thirteenth_state["supersedes"] == {"state": FROZEN12, "state_sha256": twelfth["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN13, "state_sha256": thirteenth["sha256"]}
+    fourteenth = nachbaustand.STATES[13]
+    assert fourteenth["commit"] == "ad0882a52793edceebaaf33a3d687013bac8b89c"
+    assert fourteenth["sha256"] == "a45d172c117805bc5d7e75a25ae22606650552aa0a8a73f04a4e706f76226230"
+    fourteenth_state = json.loads((ROOT / fourteenth["path"]).read_text(encoding="utf-8"))
+    assert (fourteenth_state["tests"]["passed"], len(fourteenth_state["modules"])) == (1858, 17)
+    assert fourteenth_state["supersedes"] == {"state": FROZEN13, "state_sha256": thirteenth["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN14, "state_sha256": fourteenth["sha256"]}
+    assert STATE["modules"] == fourteenth_state["modules"] and STATE["ratios_example"] == fourteenth_state["ratios_example"]
     assert STATE["modules"][:16] == thirteenth_state["modules"] and STATE["wt_example"] == thirteenth_state["wt_example"]
     assert STATE["modules"][:15] == twelfth_state["modules"] and STATE["reconst_example"] == twelfth_state["reconst_example"]
     assert STATE["modules"][:12] == ninth_state["modules"] and STATE["six_check"] == ninth_state["six_check"]
@@ -166,7 +175,8 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
                                   (fifth, 9, 555, "2026-11-02"), (sixth, 10, 689, "2026-11-03"),
                                   (seventh, 11, 752, "2026-11-03"), (eighth, 12, 934, "2026-11-08"),
                                   (ninth, 12, 975, "2026-11-08"), (tenth, 13, 1037, "2026-11-08"),
-                                  (eleventh, 14, 1172, "2026-11-09"), (twelfth, 15, 1402, "2026-11-09"), (nachbaustand.STATES[12], 16, 1614, "2026-11-09"))]
+                                  (eleventh, 14, 1172, "2026-11-09"), (twelfth, 15, 1402, "2026-11-09"), (nachbaustand.STATES[12], 16, 1614, "2026-11-09"),
+                                  (nachbaustand.STATES[13], 17, 1858, "2026-11-09"))]
     assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:9]]
     assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
                                              "gamma_example", "missing_example", "sampler_example"))
@@ -662,7 +672,7 @@ def test_wt_example_rejects_a_release_claim(tmp_path, monkeypatch):
                                  FROZEN12, WT + "README.md", WT + "synthetic_result.json", WT + "reference_expectations.json", WT + "synthetic_fixture.json",
                                  WT + "arithmetic_check.json", WT + "r_crosscheck_result.json", WT + "source_binding.json", WT + "fft_masking.json",
                                  FROZEN13, TFR + "README.md", TFR + "synthetic_result.json", TFR + "reference_expectations.json", TFR + "synthetic_fixture.json",
-                                 TFR + "arithmetic_check.json", TFR + "r_crosscheck_result.json", TFR + "source_binding.json", BIND + "README.md"])
+                                 TFR + "arithmetic_check.json", TFR + "r_crosscheck_result.json", TFR + "source_binding.json", BIND + "README.md", FROZEN14, IC + "README.md", IC + "input_contract.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -801,3 +811,74 @@ def test_every_language_key_is_defined_once():
     for start, end in ((blocks[0], blocks[1]), (blocks[1], len(lines))):
         keys = Counter(m.group(1) for line in lines[start:end] for m in [re.match(r"\s+([A-Za-z_0-9]+)\s*:", line)] if m)
         assert [k for k, n in keys.items() if n > 1] == []
+
+
+def _ic_changed(root, monkeypatch, mutate):
+    rel = STATE["input_contract"]["contract"]
+    data = json.loads((root / rel).read_text(encoding="utf-8"))
+    mutate(data)
+    content = json.dumps(data).encode()
+    (root / rel).write_bytes(content)
+    state = json.loads(json.dumps(STATE))
+    state["input_contract"]["contract_sha256"] = hashlib.sha256(content).hexdigest()
+    state_bytes = json.dumps(state).encode()
+    (root / nachbaustand.STATE).write_bytes(state_bytes)
+    monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
+
+
+def test_input_contract_is_shown_with_its_counts_and_keeps_every_input():
+    c = nachbaustand.app_daten(ROOT)["input_contract"]
+    stored = json.loads((ROOT / IC / "input_contract.json").read_text(encoding="utf-8"))
+    assert c["counts"] == {"gebunden": 5, "teilweise_gebunden": 10, "quellkonflikt": 6, "fehlend": 27} == stored["status_counts"] and c["total"] == 48
+    assert [i["id"] for i in c["inputs"]] == [i["id"] for i in stored["inputs"]] and [(x["id"], x["status"]) for x in c["conditions"]] == [(x["id"], x["status"]) for x in stored["conditions"]]
+    assert c["url"].endswith(IC + "README.md") and "/blob/" + STATE["source_commit"] + "/" in c["url"] and c["new_tests"] == 285
+    assert c["older_site_name"] == "Kinneret" and c["grid"] == {"lat": 34.75, "cells": 1, "lon": 24.75} and len(c["flags"]) == 8
+    site = next(i for i in c["inputs"] if i["id"] == "site_name")
+    assert site["status"] == "quellkonflikt" and site["lines"] == "check_ages 7; prepare 790, 881, 1145, 1209, 1248"
+
+
+@pytest.mark.parametrize("key,value", [("historical_reproduction_ready", True), ("draws_run", 1), ("sampler_run", True), ("r_scripts_run", True), ("models_trained", True), ("bundles_closed", 1), ("selected_variant", "x")])
+def test_input_contract_rejects_a_release_a_run_or_a_closed_bundle(tmp_path, monkeypatch, key, value):
+    root = _kopie(tmp_path)
+    _ic_changed(root, monkeypatch, lambda d: d.__setitem__(key, value))
+    with pytest.raises(ValueError, match="input contract claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_input_contract_rejects_a_bundle_marked_closed(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _ic_changed(root, monkeypatch, lambda d: d["phase1_bundles"][0].__setitem__("closed", True))
+    with pytest.raises(ValueError, match="input contract claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_input_contract_rejects_an_unknown_status(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _ic_changed(root, monkeypatch, lambda d: d["inputs"][0].__setitem__("status", "erledigt"))
+    with pytest.raises(ValueError, match="unknown or inconsistent"):
+        nachbaustand.app_daten(root)
+
+
+def test_input_contract_rejects_counts_that_do_not_fit(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _ic_changed(root, monkeypatch, lambda d: d["inputs"][0].__setitem__("status", "gebunden"))
+    with pytest.raises(ValueError, match="unknown or inconsistent"):
+        nachbaustand.app_daten(root)
+
+
+def test_input_contract_keeps_the_coordinate_condition_conditional(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _ic_changed(root, monkeypatch, lambda d: next(c for c in d["conditions"] if c["id"] == "inside_giesecke").__setitem__("status", "belegt"))
+    with pytest.raises(ValueError, match="inside.giesecke"):
+        nachbaustand.app_daten(root)
+
+
+def test_input_contract_has_a_label_for_every_row_in_both_languages():
+    import re
+    c = nachbaustand.app_daten(ROOT)["input_contract"]
+    lines = (ROOT / "src/kinneret_recon/app/i18n.js").read_text(encoding="utf-8").split("\n")
+    blocks = [i for i, line in enumerate(lines) if re.match(r"\s*(de|en)\s*:\s*\{", line)]
+    needed = {"nb_ic_i_" + i["id"] for i in c["inputs"]} | {"nb_ic_c_" + x["id"] for x in c["conditions"]} | {"nb_ic_g_" + g for g in c["groups"]}
+    for start, end in ((blocks[0], blocks[1]), (blocks[1], len(lines))):
+        keys = {m.group(1) for line in lines[start:end] for m in [re.match(r"\s+([A-Za-z_0-9]+)\s*:", line)] if m}
+        assert needed <= keys

@@ -1,5 +1,22 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Eingabevertrag des Kinneret-Falls (Slot 3) belegt, App-Stand 15, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag): [Belegpaket](kinneret_input_contract_2026_11_09/README.md) (`daaa2dc`), [App-Stand 15](app_reproduction_2026_11_09_input_contract/README.md).
+
+- 48 Eingaben (5 gebunden, 10 teilweise gebunden, 6 Quellkonflikte, 27 fehlend) und 18 Bedingungen, je mit Datei, Zeile und Stand, maschinenprüfbar. Keine Rechnung des Modells, keine Ziehung; die einzige Auswertung von Quellwerten ist die Koordinatenbedingung `mcmc_prepare.R:568–572`.
+- Neue Befunde: Standortname `Kinneret` gegen `Lake Kinneret` (entscheidet den Levante-Zweig 1209); `inside.giesecke` mit den älteren Koordinaten FALSE, daher `sources$core` im Zweig 636 gesetzt und nur der Varianztest 662 offen; `climatezones` steckt nicht in `kgc_distribution_ww.rdata`; aktives `stop()` in 2057; `site.age` wird im Speläothemzweig ersetzt.
+- Baut auf dem Phase-1-Belegvertrag auf und ändert ihn nicht. Phase-1-Prüfer Exit 2. Präzisiert die frühere Aussage „`tann <- FALSE` in jedem Kinneret-Lauf“, ohne das eingefrorene Paket zu ändern.
+- 285 neue Tests, **2.143** gezielte Tests grün in 23 Dateien; App-Tests 188 grün (2 Wrapper explizit ersetzt); Edge in beiden Formaten (zehn Fälle) und zwei Standorte mit Exit 0 und ohne `FEHLER`-Zeile; keine der 23 Tabellen bei 390 px breiter als ihr Rahmen.
+
+**App:** [Stand 15](app_reproduction_2026_11_09_input_contract/README.md) (Pin `0706f10d…`): neue Karte mit Zählungen, Befunden, Schaltertabelle, Bedingungen und allen Eingaben. Kein neuer Rechenbaustein, weiter 17 Teilmodule. Stände 1–14 eingefroren.
+
+**Offen:** `sources$speleothem` und damit `wt_power` für Kinneret; finaler Basiscontainer, Listenchronologie, numerische Transferfunktionen, globale CRU-Dateien, Isotopen-Workspaces; Zufallszustand beim Samplerstart; Standortname im finalen Container. Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. PR #77 offen, nicht gemergt.
+
+**Beim Nutzer:** Lizenz von `tools/r_sort_gpl.py`, R-nahe bitgleiche Rechenschicht für die sechs NumPy-Module, `dnorm`/`dgamma`/`dbeta` in `mcmc_conduction.R:155–186`.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_INPUT_CONTRACT_2026_11_09.md); Vorschlag: `inside.range` aus `spatstat.utils` ohne Ziehung binden.
+
 ## `ratios_tfs_no_ages` nachgebildet (eigene Normalverteilung, nicht bitgleich zu R), App-Stand 14, 09.11.2026
 
 **Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_ratios_tfs_2026_11_09/README.md) (`9f6165e`), [App-Stand 14](app_reproduction_2026_11_09_ratios_tfs/README.md).

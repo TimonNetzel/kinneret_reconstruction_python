@@ -190,6 +190,12 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 .forschung-status[data-status="conflicting"] { color: var(--warn); background: var(--warn-bg); }
 .forschung-status[data-status="central"] { font-weight: 600; }
 .forschung-status[data-status="conditional"] { color: var(--muted); white-space: nowrap; }
+.forschung-status[data-status="bound"] { color: var(--accent); }
+.nachbau-tabelle[data-table^="input-"] th, .nachbau-tabelle[data-table^="input-"] th[scope="row"], .nachbau-tabelle[data-table^="input-"] td { white-space: normal; text-align: left; overflow-wrap: anywhere; }
+.nachbau-tabelle[data-table^="input-"] td.nb-zeilen { overflow-wrap: anywhere; font-size: .82em; }
+.nachbau-tabelle[data-table^="input-"] tr[data-input-group] th { text-align: left; padding-top: 10px; }
+.nachbau-tabelle[data-table^="input-"] { width: 100%; }
+.nachbau-tabelle[data-table^="input-"] .forschung-status { white-space: nowrap; overflow-wrap: normal; }
 .nachbau-tabelle td[data-removed="true"], .nachbau-tabelle td[data-differs="true"] { color: var(--warn); }
 .nachbau-tabelle { width: auto; font-variant-numeric: tabular-nums; margin: 0 0 6px; }
 .nachbau-tabelle th, .nachbau-tabelle td { padding: 4px 6px; }

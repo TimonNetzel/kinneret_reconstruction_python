@@ -391,6 +391,28 @@
       `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}${wtLeistung(wtx)}${tfQuotienten(tfx, rtb)}</details>`;
   }
 
+  // Input contract of the Kinneret case: what the preserved code reads and how far it is bound; no calculation, no draw
+  function eingabevertrag(v) {
+    if (!v) return "";
+    const farbe = { gebunden: "bound", teilweise_gebunden: "conditional", quellkonflikt: "conflicting", fehlend: "missing", belegt: "bound", bedingt: "conditional", offen: "missing" };
+    const stand = (s) => `<span class="forschung-status" data-status="${farbe[s]}">${esc(t("nb_ic_st_" + s))}</span>`;
+    const kopf = (a, b, c) => `<thead><tr><th scope="col">${esc(t(a))}</th><th scope="col">${esc(t(b))}</th><th scope="col">${esc(t(c))}</th></tr></thead>`;
+    const eingaben = v.groups.map((g) => `<tr data-input-group="${esc(g)}"><th scope="colgroup" colspan="3">${esc(t("nb_ic_g_" + g))}</th></tr>` +
+      v.inputs.filter((e) => e.group === g).map((e) => `<tr data-input="${esc(e.id)}" data-input-status="${esc(e.status)}"><th scope="row">${esc(t("nb_ic_i_" + e.id))}</th><td>${stand(e.status)}</td><td class="nb-zeilen">${esc(e.lines)}</td></tr>`).join("")).join("");
+    const bedingungen = v.conditions.map((c) => `<tr data-condition="${esc(c.id)}" data-condition-status="${esc(c.status)}"><th scope="row">${esc(t("nb_ic_c_" + c.id))}</th><td>${stand(c.status)}</td><td class="nb-zeilen">${esc(c.lines)}</td></tr>`).join("");
+    const janein = (x) => esc(t(x ? "nb_yes" : "nb_no"));
+    const schalter = v.flags.map((f) => `<tr data-flag-site="${esc(f.site_name)}"><th scope="row">${esc(f.site_name)}</th><td>${f.sources_core}</td><td>${f.sources_speleothem}</td><td>${janein(f.multiple)}</td><td>${janein(f.spectral)}</td><td>${f.marine_ice_core_after_1212}</td><td>${janein(f.wt_power_reachable)}</td></tr>`).join("");
+    return `<article class="karte nachbau-karte" data-part="input-contract"><h3>${esc(t("nb_ic_title"))}</h3>` +
+      `<p>${esc(text("nb_ic_intro", { n: fmt(v.total, 0), g: fmt(v.counts.gebunden, 0), p: fmt(v.counts.teilweise_gebunden, 0), k: fmt(v.counts.quellkonflikt, 0), f: fmt(v.counts.fehlend, 0) }))}</p>` +
+      `<ul class="nachbau-liste"><li data-ic-finding="name">${esc(text("nb_ic_name", { old: v.older_site_name }))}</li>` +
+      `<li data-ic-finding="core">${esc(text("nb_ic_core", { lat: fmt(v.grid.lat, 2), cells: fmt(v.grid.cells, 0), lon: fmt(v.grid.lon, 2) }))}</li>` +
+      `<li data-ic-finding="wt">${esc(t("nb_ic_wt"))}</li><li data-ic-finding="rng">${esc(t("nb_ic_rng"))}</li><li data-ic-finding="stop">${esc(t("nb_ic_stop"))}</li></ul>` +
+      `<h4>${esc(t("nb_ic_flags"))}</h4><div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="input-flags"><thead><tr><th scope="col">${esc(t("nb_ic_col_name"))}</th><th scope="col">core</th><th scope="col">speleothem</th><th scope="col">multiple</th><th scope="col">spectral</th><th scope="col">marine</th><th scope="col">wt_power</th></tr></thead><tbody>${schalter}</tbody></table></div>` +
+      `<h4>${esc(text("nb_ic_conditions", { n: fmt(v.conditions.length, 0) }))}</h4><div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="input-conditions">${kopf("nb_ic_col_condition", "nb_ic_col_status", "nb_ic_col_lines")}<tbody>${bedingungen}</tbody></table></div>` +
+      `<details data-part="input-list"><summary>${esc(text("nb_ic_inputs", { n: fmt(v.total, 0) }))}</summary><div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="input-contract">${kopf("nb_ic_col_input", "nb_ic_col_status", "nb_ic_col_lines")}<tbody>${eingaben}</tbody></table></div></details>` +
+      `<p class="hinweis-klein">${esc(text("nb_ic_tests", { n: fmt(v.new_tests, 0), hash: v.sha256.slice(0, 12) }))} ${link(v.url, "nb_ic_link")}</p></article>`;
+  }
+
   function nachbau() {
     const nb = D.nachbau;
     const kopf = `<div class="karte-kopf"><h2>${esc(t("nb_title"))}</h2>` +
@@ -421,7 +443,7 @@
       `${laufzeit(nb.runtime_check, nb.median_example)}${sechsPruefung(nb.six_check)}</article>` +
       `<article class="karte nachbau-karte" data-part="requirements">` +
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
-      `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
+      `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` + eingabevertrag(nb.input_contract) +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
         nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example, nb.wt_example, nb.ratios_example, nb.rtruncnorm_binding) + `</section>`;
   }

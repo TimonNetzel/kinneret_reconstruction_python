@@ -10,6 +10,13 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: Eingabevertrag des Kinneret-Falls (Slot 3) belegt, App-Stand 15, 09.11.2026:**
+> [Belegpaket](docs/thesis_research/kinneret_input_contract_2026_11_09/README.md): 48 Eingaben (5 gebunden, 10 teilweise gebunden, 6 Quellkonflikte, 27 fehlend) und 18 Bedingungen, je mit Datei, Zeile und Stand, ohne Rechnung und Ziehung.
+> Neu: Der ältere Container nennt `Kinneret`, die Schalter prüfen `Lake Kinneret` (entscheidet den Levante-Zweig `mcmc_prepare.R:1209`); `inside.giesecke` ist mit den älteren Koordinaten FALSE; `mcmc_prepare.R:2057` ist ein aktives `stop()`; `sources$speleothem`, also `wt_power`, und der Zufallszustand bleiben offen.
+> 285 neue Tests, 2.143 grün. [App-Stand 15](docs/thesis_research/app_reproduction_2026_11_09_input_contract/README.md) mit eigenem Pin; Stände 1–14 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_INPUT_CONTRACT_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: `ratios_tfs_no_ages` nachgebildet (eigene Normalverteilung, nicht bitgleich zu R), App-Stand 14, 09.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_ratios_tfs_2026_11_09/README.md): `mcmc_functions_v1.6.R:1485–1525`, Leser `mcmc_conduction.R:228–230`, mit expliziten Eingaben. Auf Nutzerentscheidung eigene Normalverteilung mit gemessener, markierter Abweichung.
 > R 3.5.0, 120 Stressfälle: Gitterquotienten und Produkt mit R-Faktoren bitgleich; Dichtequotienten höchstens 15 ulp, `transfer_ratio` höchstens 35 ulp. Die C++-Zeilen liefen nicht (kein Compiler).

@@ -88,6 +88,12 @@ STATES = (
      "sha256": "a45d172c117805bc5d7e75a25ae22606650552aa0a8a73f04a4e706f76226230",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
                  "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
+                 "weighted_median", "reconstruction_climate", "local_cor", "reconst_predictant", "wt_power", "ratios_tfs"),
+     "commit": "ad0882a52793edceebaaf33a3d687013bac8b89c"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_09_input_contract/reproduction_state.json"),
+     "sha256": "0706f10d158408ccb8532ed00997510baaf6fda2e2b9975fe05967182a494333",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
                  "weighted_median", "reconstruction_climate", "local_cor", "reconst_predictant", "wt_power", "ratios_tfs")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
@@ -95,6 +101,11 @@ REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_w
                    "reference_variant", "anchor_variant", "posterior_selection", "postprocessing_variant",
                    "runtime_rng", "numeric_original_output")
 STATUS = {"fehlt": "missing", "widerspruechlich": "conflicting"}
+IC_INPUT_STATUS = ("gebunden", "teilweise_gebunden", "quellkonflikt", "fehlend")
+IC_CONDITION_STATUS = ("belegt", "bedingt", "offen")
+IC_GROUPS = ("kern", "transferfunktionen", "klima", "isotope", "nur_geladen", "laufzeit")
+IC_FILES = {"main_v1.2.R": "main_v1.2", "src/mcmc_prepare.R": "prepare", "src/mcmc_conduction.R": "conduction", "src/mcmc_functions_v1.6.R": "functions",
+            "src/check_ages.R": "check_ages", "src/prior_climate.R": "prior_climate", "src/mcmc_prep_v1.2.R": "prep_v1.2"}
 
 
 def _pinned(root: Path, rel: str, sha256: str) -> bytes:
@@ -121,6 +132,7 @@ def app_daten(root: Path) -> dict:
     medx, six, kex = state.get("median_example"), state.get("six_check"), state.get("climate_example")
     cex, rex, wtx = state.get("cor_example"), state.get("reconst_example"), state.get("wt_example")
     tfx, rtb = state.get("ratios_example"), state.get("rtruncnorm_binding")
+    icx = state.get("input_contract")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
              + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex, wtx, tfx) if e
@@ -130,6 +142,7 @@ def app_daten(root: Path) -> dict:
              + ([rex["crosscheck"], rex["binding"], rex["measurement"]] if rex else [])
              + ([wtx["crosscheck"], wtx["binding"], wtx["masking"]] if wtx else [])
              + ([tfx["crosscheck"], tfx["binding"]] if tfx else []) + ([rtb["package"]] if rtb else [])
+             + ([icx["package"], icx["contract"]] if icx else [])
              + ([six[k] for k in ("package", "result", "causes", "provider")] if six else [])
              + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
@@ -217,7 +230,38 @@ def app_daten(root: Path) -> dict:
         "ratios_example": _ratios_example(root, tfx, url) if tfx else None,
         "rtruncnorm_binding": {"new_tests": rtb["new_tests"], "url": url(rtb["package"]), "sha256": hashlib.sha256(_pinned(root, rtb["package"], rtb["package_sha256"])).hexdigest()} if rtb else None,
         "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
+        "input_contract": _input_contract(root, icx, url) if icx else None,
     }
+
+
+def _ic_lines(entry: dict) -> str:
+    grouped = {}
+    for ref in entry["code_reads"]:
+        grouped.setdefault(IC_FILES[ref["file"]], []).append(str(ref["line"]))
+    return "; ".join(f"{name} {', '.join(lines)}" for name, lines in grouped.items())
+
+
+def _input_contract(root: Path, icx: dict, url) -> dict:
+    """The input contract of the Kinneret case: status per input and condition. It closes no bundle and claims no run; anything else fails the build."""
+    _pinned(root, icx["package"], icx["package_sha256"])
+    c = json.loads(_pinned(root, icx["contract"], icx["contract_sha256"]))
+    if (c["historical_reproduction_ready"] or c["draws_run"] or c["sampler_run"] or c["r_scripts_run"] or c["models_trained"] or c["bundles_closed"]
+            or c["selected_variant"] is not None or len(c["phase1_bundles"]) != len(REQUIREMENT_IDS) or any(b["closed"] for b in c["phase1_bundles"])):
+        raise ValueError("Nachbaustand: input contract claims a release, a run or a closed bundle")
+    counts = {s: sum(i["status"] == s for i in c["inputs"]) for s in IC_INPUT_STATUS}
+    if (any(i["status"] not in IC_INPUT_STATUS or i["group"] not in IC_GROUPS for i in c["inputs"]) or any(x["status"] not in IC_CONDITION_STATUS for x in c["conditions"])
+            or counts != c["status_counts"]):
+        raise ValueError("Nachbaustand: input contract has an unknown or inconsistent status")
+    inside = next(x for x in c["conditions"] if x["id"] == "inside_giesecke")
+    if inside["status"] != "bedingt" or inside["value_under_older_coordinates"] is not False:
+        raise ValueError("Nachbaustand: input contract no longer keeps inside.giesecke conditional")
+    ev = inside["evaluation"]
+    return {"url": url(icx["package"]), "new_tests": icx["new_tests"], "counts": counts, "total": len(c["inputs"]), "groups": list(IC_GROUPS),
+            "inputs": [{"id": i["id"], "group": i["group"], "status": i["status"], "lines": _ic_lines(i)} for i in c["inputs"]],
+            "conditions": [{"id": x["id"], "status": x["status"], "lines": _ic_lines(x)} for x in c["conditions"]],
+            "flags": [{k: f[k] for k in ("site_name", "sources_core", "sources_speleothem", "multiple", "spectral", "marine_ice_core_after_1212", "wt_power_reachable")} for f in c["source_flag_table"]],
+            "older_site_name": c["older_container_slot_3"]["sitename"], "grid": {"lat": ev["nearest_lat"], "cells": ev["cells_on_nearest_lat"], "lon": ev["lon_range_on_nearest_lat"][0]},
+            "sha256": icx["contract_sha256"]}
 
 
 def _runtime_check(root: Path, rtc: dict, url) -> dict:

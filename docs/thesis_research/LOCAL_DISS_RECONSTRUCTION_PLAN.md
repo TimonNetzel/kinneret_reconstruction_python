@@ -10,6 +10,16 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: Eingabevertrag des Kinneret-Falls belegt, App-Stand 15, 09.11.2026
+
+Der fachliche Meilenstein ist erreicht: [Eingabevertrag](kinneret_input_contract_2026_11_09/README.md) mit 48 Eingaben und 18 Bedingungen, [App-Stand 15](app_reproduction_2026_11_09_input_contract/README.md). Er zeigt, dass der Originalfall an fehlenden Eingaben hängt, nicht an weiterem Nachbau.
+
+1. Vorschlag: `inside.range` aus `spatstat.utils` ohne Ziehung binden (Randwertregel der AP-Maske, `mcmc_prepare.R:716`).
+2. Danach: Anbieter von `wt` und `rcpp_wt_bases_morlet` (`mcmc_prepare.R:901`, `934`) und das R-Paket `truncnorm` (`mcmc_prepare.R:1957–1958`).
+3. Größere Fortschritte brauchen neue Originaldaten oder eine ausdrückliche fachliche Entscheidung; beide stehen aus. Offen beim Nutzer bleiben außerdem die Lizenz von `tools/r_sort_gpl.py`, die R-nahe Rechenschicht und `dnorm`/`dgamma`/`dbeta`.
+
+Übergabe: [nach dem Eingabevertrag](CLAUDE_NEXT_STEP_AFTER_INPUT_CONTRACT_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 14, 09.11.2026
 
 `ratios_tfs_no_ages` ist nachgebildet, auf Nutzerentscheidung mit eigener Normalverteilung und gemessener, markierter Abweichung, also nicht bitgleich zu R ([Paket](literal_ratios_tfs_2026_11_09/README.md), [App-Stand 14](app_reproduction_2026_11_09_ratios_tfs/README.md)).

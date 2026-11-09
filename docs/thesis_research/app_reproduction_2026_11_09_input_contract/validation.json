@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "exit_codes": {
+    "browser": 0,
+    "two_sites": 0,
+    "app_pytest": 0,
+    "hist_pytest2": 0
+  },
+  "standby_check": {
+    "windows_system_log_kernel_power_506_507": "2026-11-09T19:57:20+01:00 until the query at the end of the runs: none",
+    "local_record_sha256": "ed755771c34167d04c90e2b6439888c0fdf4d4b7dd9493ef6492544d6f7bdcd0"
+  },
+  "scope": "read-only app display of the input contract of the Kinneret case; no new module, no calculation, no historical case reproduction, no sampler, no training or fossil reconstruction",
+  "starting_commit": "daaa2dcc4abd51f6dfb706eaaf009a8dde7fc086",
+  "module_package_commit": "daaa2dcc4abd51f6dfb706eaaf009a8dde7fc086",
+  "reproduction_state_sha256": "0706f10d158408ccb8532ed00997510baaf6fda2e2b9975fe05967182a494333",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+    "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+    "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+    "329e6a8b2ada52e22be1a12272853091ca4a6c29894581167ae02b0898877f6a",
+    "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af",
+    "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d",
+    "d84fe644553c48325b53dbf29a7ac7fbe8fcfa040d53e6d8f5358ac45851f945",
+    "a45d172c117805bc5d7e75a25ae22606650552aa0a8a73f04a4e706f76226230"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[13] received only its link commit ad0882a (pushed); STATES[0..12] untouched",
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 188,
+    "new_tests": 16,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "6c9cd0323d5f2446406d29b614042f6d8995968ca88fa82a9f3226ba87999404"
+  },
+  "historical_tests": {
+    "passed": 2143,
+    "files": 23,
+    "new_tests_input_contract": 285,
+    "local_junit_sha256": "a409145be511f1ea287528e5aff1064acf060e61f04542d11ae06ae5d2956a57"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "fehler_lines": 0,
+    "reproduction_checks": {
+      "tests_shown": 2143,
+      "modules": 17,
+      "earlier_states": 14,
+      "links": 51,
+      "tables": 23,
+      "input_rows": 48,
+      "condition_rows": 18,
+      "flag_rows": 8
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "table_widths_390px": [
+    {
+      "table": "six-check",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "input-flags",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "input-conditions",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "input-contract",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "pruning",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "gamma",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "missing",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "dirichlet",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median-mask",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "climate",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "local-cor",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "reconst",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "wt-power",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "ratios-tfs",
+      "client": 332,
+      "scroll": 332
+    }
+  ],
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "input contract table at 390 px, light",
+    "desktop.png": "same table, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "R scripts",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}
