@@ -1,0 +1,120 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "7d3d0f6852dbdf869b6e479d4eeffe80faaf2038",
+  "sources": {
+    "original:src/mcmc_prepare.R": {
+      "sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "bytes": 82630,
+      "previous_binding": "literal_tf_preparation_2026_11_02/source_binding.json"
+    },
+    "original:main_v1.2.R": {
+      "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "bytes": 45494,
+      "previous_binding": "kinneret_binding_2026_11_02/summary.json"
+    },
+    "original:src/mcmc_conduction.R": {
+      "sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "bytes": 25090,
+      "previous_binding": "kinneret_references_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_functions_v1.6.R": {
+      "sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "bytes": 99905,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    },
+    "original:src/mcmc_trimming_posterior_trafo.R": {
+      "sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "bytes": 27564,
+      "previous_binding": "kinneret_postprocessing_2026_11_02/contract.json"
+    }
+  },
+  "source_hashes_before_equal_after_and_prior": true,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "61afa868f186fe8a1531d16010fd086d78895311ec705cb4500e931b593160a4",
+  "implemented_spans": {
+    "removal_and_priors": [
+      "src/mcmc_prepare.R",
+      1664,
+      1685
+    ],
+    "num_taxa_without_removal": [
+      "src/mcmc_prepare.R",
+      1435,
+      1435
+    ]
+  },
+  "brace_depth_at_line_start": {
+    "1435": 0,
+    "1462": 0,
+    "1500": 1,
+    "1501": 2,
+    "1664": 0,
+    "1665": 0,
+    "1666": 1,
+    "1671": 1,
+    "1672": 2,
+    "1676": 1,
+    "1678": 1,
+    "1680": 0,
+    "1681": 0,
+    "1685": 0,
+    "1706": 0
+  },
+  "assignment_sites_mcmc_prepare": {
+    "num_taxa": [
+      1435,
+      1678
+    ],
+    "taxa_change": [
+      1462,
+      1501
+    ],
+    "all.avail": [
+      70,
+      76,
+      83,
+      1676
+    ],
+    "taxa.appear.core": [
+      1454,
+      1666
+    ],
+    "all.avail.age": [
+      91,
+      93,
+      99,
+      1677
+    ],
+    "posterior": [
+      1434,
+      1706
+    ]
+  },
+  "prior_field_occurrences_without_comments": {
+    "src/mcmc_prepare.R": [
+      1437,
+      1438,
+      1439,
+      1440,
+      1441,
+      1442,
+      1682,
+      1683,
+      1684,
+      1685
+    ],
+    "src/mcmc_conduction.R": [],
+    "src/mcmc_functions_v1.6.R": [],
+    "src/mcmc_trimming_posterior_trafo.R": [],
+    "main_v1.2.R": []
+  },
+  "taxa_change": "FALSE at 1462; the only TRUE assignment 1501 lies behind if(... & FALSE) at 1500",
+  "mask": "explicit boolean input is.na(tf.x1.current.mean); weightedMedian (1631) is not evaluated",
+  "round": "R digits = 0 rounding to the even digit as documented (?Round, IEC 60559); not executed",
+  "excluded_context": "weightedMedian, spline expansion 1627/1647, tf_x12_mean_current 1692-1700, combs 1703, start values with rbeta, seeded samples 1297-1303, readers in the sampler",
+  "supported_domain": "one shared taxon order, at least two remaining taxa after a removal, no matrix with extent 1 on the other axis when a removal happens",
+  "actual_original_inputs_used_for_numerics": false,
+  "R_or_package_runtime_equivalence_claimed": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

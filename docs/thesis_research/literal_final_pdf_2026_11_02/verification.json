@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "basis_commit": "74999b09ae5f7d7aaf784a7e2bf0cb2aba4005fa",
+  "tests": {
+    "new_literal_fragment_cases_passed": 22,
+    "existing_spec_cases_passed": 20,
+    "total_passed": 42,
+    "failed": 0,
+    "command": "python -m pytest tests/test_historical_final_pdf.py tests/test_kinneret_phase1_spec.py -q -o cache_dir=.local/phase1_spec_v1/pytest_cache"
+  },
+  "source_hash_before_after": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "source_bytes_equal_to_previously_audited_contract": true,
+  "prior_packet_files_byte_equal_to_HEAD": 29,
+  "phase1_cli_rechecks": [
+    {
+      "arguments": [],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "snapshot_files": 50,
+      "local_source_statuses": null
+    },
+    {
+      "arguments": [
+        "--with-local"
+      ],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "snapshot_files": 50,
+      "local_source_statuses": {
+        "matches_audited_bytes": 28,
+        "missing_at_audited_path": 12
+      }
+    }
+  ],
+  "README_relative_links_resolve": 8,
+  "R_execution": false,
+  "historical_R_equivalence_claimed": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "new_training_sampling_or_fossil_runs": false,
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false,
+  "changed_code_scope": [
+    "tools/historical_final_pdf.py",
+    "tests/test_historical_final_pdf.py"
+  ],
+  "preserved": [
+    "App/CLI",
+    "baseline",
+    "originals",
+    "references",
+    "five_previous_evidence_packets",
+    "50_file_research_snapshot",
+    "site_specific_Monticchio_and_chronology_gates"
+  ],
+  "files": {
+    "docs/thesis_research/literal_final_pdf_2026_11_02/README.md": {
+      "bytes": 6962,
+      "sha256": "07bd52409510f63ea04ec886ebaea61c31f0b9364c368b6367de57fa9daac085"
+    },
+    "docs/thesis_research/literal_final_pdf_2026_11_02/source_binding.json": {
+      "bytes": 6455,
+      "sha256": "5350edda1076217a763aee24797f227779c983803c6a18fe2fdc8025ced38c5b"
+    },
+    "docs/thesis_research/literal_final_pdf_2026_11_02/synthetic_fixture.json": {
+      "bytes": 2380,
+      "sha256": "9597883dc4189d9082c87717e75173f1af552b04169b02d4689be79f8825ccd2"
+    },
+    "docs/thesis_research/literal_final_pdf_2026_11_02/synthetic_result.json": {
+      "bytes": 800,
+      "sha256": "9529f17a36c3ffbe1731b976afb6db5446aafdec53100756535fe35d9a49f92b"
+    },
+    "tools/historical_final_pdf.py": {
+      "bytes": 5671,
+      "sha256": "9d0b8d877c0cf38c0be1606a3f6482f58ebcf5b95194618a48e19d466e4fccc7"
+    },
+    "tests/test_historical_final_pdf.py": {
+      "bytes": 6561,
+      "sha256": "0325538706f714d931be359f2e2961152fa7b1b53b4476664a4b5f27878642a5"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+ "kind": "counterexamples_not_candidate_variants",
+ "stress_cases": 120,
+ "checks": {
+  "double_mean_instead_of_long_double": {
+   "changed": 4052,
+   "compared": 22256
+  },
+  "re2_plus_im2_as_in_wt_cpp": {
+   "changed": 26350,
+   "compared": 39876
+  },
+  "scaled_ifft_times_n": {
+   "changed": 0,
+   "compared": 79752
+  },
+  "real_input_to_fft": {
+   "changed": 0,
+   "compared": 44512
+  }
+ },
+ "historical_reproduction_ready": false
+}

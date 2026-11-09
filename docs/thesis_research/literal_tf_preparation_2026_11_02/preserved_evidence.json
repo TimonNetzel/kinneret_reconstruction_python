@@ -1,0 +1,996 @@
+{
+  "basis_commit": "956951b9546f3120620bf375bf073066c9f8bf44",
+  "files": [
+    {
+      "path": "docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md",
+      "bytes": 16312,
+      "sha256": "9f5dabfb36b0827a730a3f17756f423eab562ece28208728101c505b09afe44d",
+      "baseline_git_blob": "ed7ae8ceb6cc759637168698c000809cdb955b6d"
+    },
+    {
+      "path": "docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md",
+      "bytes": 11559,
+      "sha256": "deca942727dc287aa57f412f009e139e7a93b5ad58bc74d5e4465b9c578b8b7f",
+      "baseline_git_blob": "ab16bced582cde97b3dd305a41564d9138b1dcbf"
+    },
+    {
+      "path": "docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md",
+      "bytes": 9232,
+      "sha256": "b5ba55cf28c2321b04b20364e34d66751b7a341395e065ce513c4f4c52450149",
+      "baseline_git_blob": "4d6f6022c4d22df854312d312e4ca7d8a786b448"
+    },
+    {
+      "path": "docs/thesis_research/CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md",
+      "bytes": 9278,
+      "sha256": "33416064997f65f403cbeb1c28bc32ee28c5898ea107073a0c803060a3cc0606",
+      "baseline_git_blob": "15b1d561061ed84f7ea218dd958069ec9b39e2f6"
+    },
+    {
+      "path": "docs/thesis_research/NEXT_STEP_AFTER_CLIMATE_AUDIT_2026_11_02.md",
+      "bytes": 4357,
+      "sha256": "7d299f252ed3d9b5c3c318da8f98598393efb6c6f03719b64e71b92611125f88",
+      "baseline_git_blob": "2c42405b9782548e72dd0eb92acc23b60530955d"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/README.md",
+      "bytes": 9255,
+      "sha256": "12234c53ff6e559075f2b8d6cdc24c6feb7e788d11799c813aa7e3e3c83a1dfb",
+      "baseline_git_blob": "9d2e5268e9e94773abef9b3245e955b8ce8ae228"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/archive_directories.json",
+      "bytes": 216,
+      "sha256": "1513911e6f3bf299decde81642d034e24b51657b8ea6cacf2a1c2b63a298cbec",
+      "baseline_git_blob": "ed47147ad766f3638dbcaeedc56c4553963d782c"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/byte_identity_comparisons.json",
+      "bytes": 571,
+      "sha256": "c6d034400b5924532ff6019780fa18f4a24b95984dbc1fbb75a7423d2c4da64e",
+      "baseline_git_blob": "1e3f5041c639a4d69ef51ee89c099e7ccc09bd5c"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/candidate_hashes.json",
+      "bytes": 1937,
+      "sha256": "16c9bd824c10f6201e21274ca9c63facf33d3a60d0fd9e519b24ae60a625f29a",
+      "baseline_git_blob": "b044e4c0c76628083acce7e6db19aba012d6935e"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/candidate_structures.json",
+      "bytes": 10441,
+      "sha256": "801aebeb875fc734441e827fd7b640f5e98d29a5131bcec111443d8f75febb7e",
+      "baseline_git_blob": "ecc95040eec05b6b7baf9089cc63617c53f72b56"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/collect_evidence.py",
+      "bytes": 10887,
+      "sha256": "135e9ec361540ea0e70c1cff9b531fd0540f40d0e5b314401a81683d1d9e5b3b",
+      "baseline_git_blob": "f79bbb18417de21d8bcff1c010f9c0153d5489d0"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/entrypoint_bindings.json",
+      "bytes": 1332,
+      "sha256": "3fbc240a77333c56a3acb81662e9ca3b5268635bb9f3b7e27da398ea404a3bf6",
+      "baseline_git_blob": "f6a2f2e85291fb8b9d4051533b892e8e072e53fc"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/file_metadata.csv",
+      "bytes": 205308,
+      "sha256": "a1a9e79a325c498821b2baa3ba3f498be8670d90fbc8f658716797267482f248",
+      "baseline_git_blob": "3e5d2c176ef697cc5cd9be75bd9da992715c95ae"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/inspect_candidates.py",
+      "bytes": 6051,
+      "sha256": "25d5815ecf918e7c4e15a0271ffa10c0d860bd94c918928dbe2b47678f4d7712",
+      "baseline_git_blob": "8b71967a96e987b6b82280c393b4022faccd2258"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/phase1_local_check.json",
+      "bytes": 22583,
+      "sha256": "2f61a38e0ea174f1aae1426d925f86b737c4fce1a6f769b0572ffd2674095b05",
+      "baseline_git_blob": "70e0b5b3757830714f1f03777d14adba129a93dd"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/phase1_portable_check.json",
+      "bytes": 13512,
+      "sha256": "3687535bea65f0854dac2bc54892a52a16f2e902820f048721832477a7439519",
+      "baseline_git_blob": "ebd93cfb88dd1fe0c76247e74de9d3aa107ef3d0"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/preserved_evidence.json",
+      "bytes": 37877,
+      "sha256": "7dbb24955ea59b605a84533b5c0b9e93cedbbdb9dda1149bbb1e3d0d922431ae",
+      "baseline_git_blob": "46c7decb445d03d776de3f2fefa3676efc485e52"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/prior_reference_new_candidates.csv",
+      "bytes": 13287,
+      "sha256": "5923ea48057166d41707a47b4e427ec40df589e46f7f048fd494cb64dc09e22c",
+      "baseline_git_blob": "0e44ae6d312d00e96c8d1bbd7e875c3ef7680141"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/requirement_crosswalk.csv",
+      "bytes": 6745,
+      "sha256": "89146738308125eeefaa857044e7a92589de3a178fa298051f74c2976afe8122",
+      "baseline_git_blob": "590c3ff540b9d69b4bd10e0a2bacf0ab43785aff"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/source_dates.csv",
+      "bytes": 28777,
+      "sha256": "5bec931e30830b19e3dfcd0bc5e6b07aec7381f006db6f9a4db7757491a950b6",
+      "baseline_git_blob": "47cd91801b86fea55ec94d127a3c83b4789bd62b"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/summary.json",
+      "bytes": 1634,
+      "sha256": "5a893279ad8f4d85fa6ceceb2bbed0a1f6ed49bafaf71480605642bb4d21bffb",
+      "baseline_git_blob": "233fa003e04b60bd6c4b090f2b1c800aec05dd77"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/targeted_source_calls.csv",
+      "bytes": 14815,
+      "sha256": "abe1c786cd7f53944f8b081f6d91f1736ce928c03ddeb51f900acfdbebcc9a1d",
+      "baseline_git_blob": "bb21e4472bb3116e93da9da6541de0ab55ec4116"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/verification.json",
+      "bytes": 4418,
+      "sha256": "ba3be47d9366d7caa881f78e67a7fede5b8ab3c92f50533ff21f40e5af9bdc0d",
+      "baseline_git_blob": "7022763cf71ca8a862a4a96fff97fee6dfc6d7a9"
+    },
+    {
+      "path": "docs/thesis_research/climate_modelling_audit_2026_11_02/verify_evidence.py",
+      "bytes": 9051,
+      "sha256": "b5f13badc8008f116becd72ea2027539e7a2b8cc9046f559a13e790efee88f2c",
+      "baseline_git_blob": "7fdabbfa2540dcd637578b39350cd53e094c63fe"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/README.md",
+      "bytes": 14136,
+      "sha256": "99a11e9144bfd3c7d4ca11a7a7a5404199652be20645c63b35cf5a14e1a145f5",
+      "baseline_git_blob": "d2ce7fd9a4ef1939548852e34ef93dcd03c0f9f0"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/collect_evidence.py",
+      "bytes": 11748,
+      "sha256": "48043dd01a648c119feab4da81fc2ac045db75b75b8c333ff554f69c11591884",
+      "baseline_git_blob": "9169498c95022120cf5af20db19f57e04fc95447"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/explicit_tf_requirements.csv",
+      "bytes": 919,
+      "sha256": "8c171361cfe6f87ed585c9a7d9a39e0e6d7b0960898c4df8c2e0bbd798cb9125",
+      "baseline_git_blob": "8ef6db27aa5a8ea3dddce5f98dc6659bb42ecd90"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/older_taxon_crosswalk.csv",
+      "bytes": 2235,
+      "sha256": "cfde620be35fd400038167c41600a9bd2979c77ad74f88f0efbd60684246cc2f",
+      "baseline_git_blob": "60591b4016ac69fe2d9a246c3ef0ace8d1cebe22"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/sample_crosswalk.csv",
+      "bytes": 13383,
+      "sha256": "39b788cb2da5f176c6e6b6e39c191d603b52be1dd889c35922f4c1e15d47fd06",
+      "baseline_git_blob": "ce6e0e4bfef9bd46cad6d5459a2e47e627656830"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/summary.json",
+      "bytes": 9464,
+      "sha256": "a96c37acf98201bf5f184e3f885ee480d7f3d76a2268af3ede4f702ef4eb4633",
+      "baseline_git_blob": "7286875bafcfa9072a08f36225f7e38e98b88020"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_binding_2026_11_02/verification.json",
+      "bytes": 1604,
+      "sha256": "22b7b88502079cca7b17127d87d68492306fb1a6139488c16485d2c82d1852ec",
+      "baseline_git_blob": "c803b9474bf3213c4ff59c5b6781e33ac86d1587"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/README.md",
+      "bytes": 7556,
+      "sha256": "0cb97e72fd024851909c24ac51d0c1500dca8101da3317d2aba36f0d6ca6dc1e",
+      "baseline_git_blob": "6f31a2e2239196e077a3e14183f5c7861f21e8f5"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/local_report.json",
+      "bytes": 22595,
+      "sha256": "482b1c791d6fbc08a835412a453e77e60a790892f510eaa19fe0f76a367cd6a0",
+      "baseline_git_blob": "749778767a21bff9e53538d586da64b12cd399d2"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/portable_report.json",
+      "bytes": 13524,
+      "sha256": "172c9581d13645f65a3b2412f4575968c7d0f0c387ad44ce1fcafaa0e02f06c4",
+      "baseline_git_blob": "121a6993714392c4e03e0cccd9020a370932f48e"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/spec.json",
+      "bytes": 17391,
+      "sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4",
+      "baseline_git_blob": "2c730f1de41e85405c89cfd0dafc28e980573e8b"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_phase1_spec_2026_11_02/verification.json",
+      "bytes": 2986,
+      "sha256": "86733c9c1773441a5c1605b0933fd56c1f2d5586988ac411a8fd6f87d1f6c3c0",
+      "baseline_git_blob": "ebfcdeef13b8913a3f0d6f653902940e760e1473"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/README.md",
+      "bytes": 15342,
+      "sha256": "0c1534cc0c1ed8e91faacf3158316433da1640a6048fec61e271ffcc0e69ea84",
+      "baseline_git_blob": "1dcb33d7e04670d72af51b5e22ed6c07ea163b87"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/collect_evidence.py",
+      "bytes": 11234,
+      "sha256": "667e4ad9395e3a63fd45bf46961ac0d5dec8169824b44929a49ec3dfb57d27b6",
+      "baseline_git_blob": "4f15c120043d622fd636f8f98cf61e2c1238d77e"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/contract.json",
+      "bytes": 8778,
+      "sha256": "40a44920466615eb942353b0502ce3418e844e7aec75ed6aecc8d0554aa7eb3d",
+      "baseline_git_blob": "2c3ee4b45e817cb4410a2a7753983fd1c3cb6d34"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/posterior_paths.csv",
+      "bytes": 1276,
+      "sha256": "777aa3ac7e0382fe6f52d796ec8c4753291cf8b14b6b7718fe548742e27b7415",
+      "baseline_git_blob": "c303e4b804460ed4cfc465f26ebdceb63cf2612a"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/source_spans.json",
+      "bytes": 51710,
+      "sha256": "101f08e5c79ea1807059e9d56fd50aac19b91abc6bd1745dcf495ac1cc68961c",
+      "baseline_git_blob": "ffe3d2821af1a44fe532b2126244722de084ccc5"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/synthetic_checks.json",
+      "bytes": 1760,
+      "sha256": "9914f30f5762b4a4777d9c3f5cb2fd4e6bf5d183e0cce54bde116d7a89cfe99e",
+      "baseline_git_blob": "0112ddb1bfacf2e59ebda4ae17bf27ee8675d081"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_postprocessing_2026_11_02/verification.json",
+      "bytes": 1670,
+      "sha256": "79d72876906bea86e3b7f35f726e2d4422fb1f57522ad43bbda70d148c55ede5",
+      "baseline_git_blob": "3d0813efcdbb7343abbf2e664a5de0a3b39c5e4c"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/README.md",
+      "bytes": 15939,
+      "sha256": "5cbe0c8a5401a27eb80714477722662eb39508c5be1304ea95eddd3daa4b0ad1",
+      "baseline_git_blob": "61528d8fe4965c21c61005c87e58141f72b55b74"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/collect_evidence.py",
+      "bytes": 11591,
+      "sha256": "ea7411c1a0bb639f3ba3cdeaca50eab7402d8f7c1c40f5a3319a91e763d817a8",
+      "baseline_git_blob": "86befcd8a3c1aaa85be733f81edaa24672031ee5"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/contract.json",
+      "bytes": 9316,
+      "sha256": "e960bd040bc725b5c07f54db198102fd61cfbc0a667e30a9ef4c32113e036eda",
+      "baseline_git_blob": "6ce81b5633b5bc66ec6389b12bbf39a621e83866"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/dependencies.csv",
+      "bytes": 1719,
+      "sha256": "d06d7c730174752b92fb7972163be0832e3122634bccf452f2aee2965b170e4f",
+      "baseline_git_blob": "9dcfeab180bb5bae65d67c16de045543e0e55e8f"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/source_spans.json",
+      "bytes": 42375,
+      "sha256": "619337cbe33def324474f604292db9afe6e21df5681c7b5bbc1e1480143cf777",
+      "baseline_git_blob": "0c8721f5bc99715442263b3334955aaca4223bb9"
+    },
+    {
+      "path": "docs/thesis_research/kinneret_references_2026_11_02/verification.json",
+      "bytes": 1528,
+      "sha256": "8a9517452d48efc333e38d4238663b05308073a29204b6c4e7053bad708aaee2",
+      "baseline_git_blob": "36dacbf595719c26097d646274278d4d4497966d"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/README.md",
+      "bytes": 12477,
+      "sha256": "430ca0fa3debc7a52fa8a94103df0b176f7ff6fb3913cbffe345dde4eba3bd9d",
+      "baseline_git_blob": "2fbb596919699ddd2dca064f1434a942a53ebdfc"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/collect_evidence.py",
+      "bytes": 5368,
+      "sha256": "395e032e69697f698dd43c68b43fe741ec7f1d4d7ff323fd2861eeb82af1229f",
+      "baseline_git_blob": "9afc1a5aa8bed8952e78e59865f0940384dba7a6"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/source_binding.json",
+      "bytes": 11980,
+      "sha256": "a9438a7a27913581ff8433906b2d9b87f95b3e7e2203dce316110821bf9370e1",
+      "baseline_git_blob": "6a89fe82a86e923eb220ab594aac22f31b26a15b"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/synthetic_fixture.json",
+      "bytes": 1435,
+      "sha256": "2e0b32ecba37c410f25bbb8aa98c445d14c5dc551057b00db6b961a8d9e29458",
+      "baseline_git_blob": "68df9411a68cb00bd528cbb663162b7c41bc43c9"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/synthetic_result.json",
+      "bytes": 871,
+      "sha256": "8181c883e7dc3f7dd139a9e3dc4ff83fd9aef82cecbe11c22ba738e3bda7d0d1",
+      "baseline_git_blob": "6c4cfe5242c79769862ee5f371ad88efa9697432"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_depth_2026_11_02/verification.json",
+      "bytes": 3433,
+      "sha256": "12892ec0f2790bcfe19d548665a87fb1bc8067725d0f2a485e9b8613e5585a64",
+      "baseline_git_blob": "e2acd545f81f97846a6711b90420bc42b6b0b599"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/README.md",
+      "bytes": 13015,
+      "sha256": "9bdf28bfbb35602b3b0e4b51853bf849dfae56a922554bfecb9063ca4dd4ed7e",
+      "baseline_git_blob": "965061727d694fce38eb4efaf2f74b49258aa17c"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/collect_evidence.py",
+      "bytes": 6581,
+      "sha256": "2e057a70c825824ffa42cf60fdfe1ed581311780a0f91320f1edc29ac527145a",
+      "baseline_git_blob": "b200114dda983c70f673b1e5eb8e9819a38e4cd1"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/source_binding.json",
+      "bytes": 14676,
+      "sha256": "fc36290eee19cb4d82a84d67af084b28b16606e5b27d9e987e93c33bd41c5900",
+      "baseline_git_blob": "8b5b1361b96d42b410327e5e45de282d7d6e8bc5"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/synthetic_fixture.json",
+      "bytes": 2005,
+      "sha256": "d572bb572e268253afe57eef4f07788fbbb0206b815a1ab61a269ce2243ccdd6",
+      "baseline_git_blob": "1d2f8d2915bb7aabc892200f7694d59d75c7bfe0"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/synthetic_result.json",
+      "bytes": 1408,
+      "sha256": "9d2dcc156b54ec662ccc5f0d9068f5e6f2373a6b59c9bf5ae902a66fdc22033f",
+      "baseline_git_blob": "11a13a7c12d064398703d530fd71c731f314b91e"
+    },
+    {
+      "path": "docs/thesis_research/literal_age_selection_2026_11_02/verification.json",
+      "bytes": 3599,
+      "sha256": "37baff0fbbf964d4b80a435fdd087924da6296f0e111079f2ca69694e423673f",
+      "baseline_git_blob": "daa08cc7a02736e264810da74533685814d0dcbe"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/README.md",
+      "bytes": 10666,
+      "sha256": "2d88b8828b39fe3b35ca0401fb7bef48849f621c45af66baa7a252c24dc95a2d",
+      "baseline_git_blob": "ae4bab124598ce9b6652309e516ffa635c857fa4"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/collect_evidence.py",
+      "bytes": 6050,
+      "sha256": "aa25cb940440dc8f05cc263c6327bc36c738598e68c7b75a8f9460ae172e1c6c",
+      "baseline_git_blob": "a0637f1fb46d52bc4b9965f2c493256ec19fe883"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/source_binding.json",
+      "bytes": 9335,
+      "sha256": "4f42b9a2efd36d9a53cffcd796880bde6f53b1fa8e9e07f2aeccc703c62c61dd",
+      "baseline_git_blob": "cad7f69ed65a7ebff63567baa1ab5a3e5b595084"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/synthetic_fixture.json",
+      "bytes": 1154,
+      "sha256": "f729a1646ad06a46071ca448d29ef4ae53a2f8de471ce1814b21c9363858184b",
+      "baseline_git_blob": "d6368365a02e89951f4d1bc166111a2e5cdf2f23"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/synthetic_result.json",
+      "bytes": 680,
+      "sha256": "b762ed3a1398450df449bc0a2c61eec9d044da3178659c18114fb0a65b993a7c",
+      "baseline_git_blob": "42f541a326ce666d01781468055f9a6bf9463d99"
+    },
+    {
+      "path": "docs/thesis_research/literal_cdf_discrepancy_2026_11_02/verification.json",
+      "bytes": 4132,
+      "sha256": "8b9a1616543afc8e1079244536e0b51f4a2eda82f691ff7b8f5eb9b6c39bec52",
+      "baseline_git_blob": "adb03d172dac812eaaf8fe3f092c9c1157ff7a2e"
+    },
+    {
+      "path": "docs/thesis_research/literal_final_pdf_2026_11_02/README.md",
+      "bytes": 6962,
+      "sha256": "07bd52409510f63ea04ec886ebaea61c31f0b9364c368b6367de57fa9daac085",
+      "baseline_git_blob": "58edea789e8d221f83da0f327a23968dbdb62ae3"
+    },
+    {
+      "path": "docs/thesis_research/literal_final_pdf_2026_11_02/source_binding.json",
+      "bytes": 6455,
+      "sha256": "5350edda1076217a763aee24797f227779c983803c6a18fe2fdc8025ced38c5b",
+      "baseline_git_blob": "415b5813e129710fb80006267a0c1a7b4ff26b11"
+    },
+    {
+      "path": "docs/thesis_research/literal_final_pdf_2026_11_02/synthetic_fixture.json",
+      "bytes": 2380,
+      "sha256": "9597883dc4189d9082c87717e75173f1af552b04169b02d4689be79f8825ccd2",
+      "baseline_git_blob": "30ce747e98f409b17db3af028b1bd8efb7cbaadc"
+    },
+    {
+      "path": "docs/thesis_research/literal_final_pdf_2026_11_02/synthetic_result.json",
+      "bytes": 800,
+      "sha256": "9529f17a36c3ffbe1731b976afb6db5446aafdec53100756535fe35d9a49f92b",
+      "baseline_git_blob": "7a377173ddd8e87729c97a32fd7d136aa5cda985"
+    },
+    {
+      "path": "docs/thesis_research/literal_final_pdf_2026_11_02/verification.json",
+      "bytes": 2763,
+      "sha256": "14f3b1fc049f2d5bc923ee74dd64cf6b47e93e4fb9087d1eec4d3333a6f4e9a0",
+      "baseline_git_blob": "1364b40133ed9b8c033105d4d17012381c459ff8"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/README.md",
+      "bytes": 10475,
+      "sha256": "1414ab50298ccb2ac4eadfa162926fc78ba070a2bf54d86fb1236013dd5a9d1b",
+      "baseline_git_blob": "364a2d818d6c4f8619e8bb6396a815907ba4a093"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/check_chain.py",
+      "bytes": 3200,
+      "sha256": "4d097ed362bb8d28096c3701eae254dcdacd96853dbbdf6cb5bf1fd061f971f1",
+      "baseline_git_blob": "2485af3b59525507dc7bb120955cd3068cd7f025"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/collect_evidence.py",
+      "bytes": 7257,
+      "sha256": "3ffcd2741297ea423703c1038bb23a8d9daaa6f97f18718dd53ee5218544435a",
+      "baseline_git_blob": "f6877e44cad376ba8860172e7f82758575ae3005"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/next_step_source_excerpt.json",
+      "bytes": 5328,
+      "sha256": "4a60d67e89df3b30208cd1815d0ff539b02345e4360e3bbe9865bebb01376ca2",
+      "baseline_git_blob": "15ded370fc6cf52b5e84458e2ee4c54da1e94444"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/rational_expectations.json",
+      "bytes": 9042,
+      "sha256": "bb37c1e183856155c6ca87b827242838ea191528d1dac331225fa9aed73c3dc9",
+      "baseline_git_blob": "b212840a9b2ddd1ad47b77a79d615907e18c3441"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/rational_reference.py",
+      "bytes": 3531,
+      "sha256": "8f100d4fb91c456149eb264585b64999d878431fd38b3d2d0cf394af22f27ee1",
+      "baseline_git_blob": "d00ac9882f73465ecbd9d11c71977d94aaaa5998"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/source_binding.json",
+      "bytes": 3215,
+      "sha256": "9fbbb6f687e78424281d0ebc6dcdca6a0e54dc71dc282f74e69e98d42cfd0ccb",
+      "baseline_git_blob": "d194398a7617a6d3f7ffc1c961afd0fff01de176"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/synthetic_fixture.json",
+      "bytes": 2365,
+      "sha256": "f521d552169721a0fdc05aee49a5b59eb9b67c70439432e8f9f44f3e0680850f",
+      "baseline_git_blob": "fb36fb4d80e4002f5817e9b4b3a95b90de407785"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/synthetic_result.json",
+      "bytes": 7620,
+      "sha256": "5cb1117bc811e94c1e3532c3c356c06010b1c7f2cd1b8de6be81413333a0f3f7",
+      "baseline_git_blob": "b241040a71ce63293cbfa4a4159b9766231c3776"
+    },
+    {
+      "path": "docs/thesis_research/literal_phase1_chain_2026_11_02/verification.json",
+      "bytes": 5269,
+      "sha256": "2f01d0b14b5ce839fa0f4b819353ad619895444176345741c3fb16ab268f42e1",
+      "baseline_git_blob": "ec91bb5f40cda3bf590baf1218ffadbb42c9d1e6"
+    },
+    {
+      "path": "docs/thesis_research/local_case_matrix_2026_11_02/README.md",
+      "bytes": 29519,
+      "sha256": "3c8698077631feae8a4e4e09e44df13e6e6e9b9e697e52548c014a94b7d9a2df",
+      "baseline_git_blob": "d7c91a421d4aa0fbcd16ab34593b5a280c0e5378"
+    },
+    {
+      "path": "docs/thesis_research/local_case_matrix_2026_11_02/collect_evidence.py",
+      "bytes": 8439,
+      "sha256": "be979bb57fb0851d57be16f62ce26a4275105c53515ba25013268421a4c2f514",
+      "baseline_git_blob": "e13ce1976589d42aef3cc9d4e1ab1a566527435c"
+    },
+    {
+      "path": "docs/thesis_research/local_case_matrix_2026_11_02/evidence.json",
+      "bytes": 40207,
+      "sha256": "e07fe3aac25cfb5ee6646165f472882d1fa6edcef3fecc460703d64fe3f744f8",
+      "baseline_git_blob": "edd5f34eff2c33bee08b1dc917b80a87cac35d5c"
+    },
+    {
+      "path": "docs/thesis_research/local_case_matrix_2026_11_02/verification.json",
+      "bytes": 1435,
+      "sha256": "0957482d1cd9bcc9ac443ff180d2206fe8e202bb8fb21ba564ac9068969db170",
+      "baseline_git_blob": "488cc35a5ace92f3da792c4107a8600fcfb47a2c"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/README.md",
+      "bytes": 4286,
+      "sha256": "cf1e6a80a2ab83123eef572c2cd00d9a1a4750cb0892d40e40824dc5cf74c7ea",
+      "baseline_git_blob": "355b62125c5bec460060a6edf678f38069c349d1"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/build_priority_list.py",
+      "bytes": 3656,
+      "sha256": "eafba30613e4a954df4f42e2e0a98114c608efbd6885488c3d2470bcd24cff09",
+      "baseline_git_blob": "af22d9f0ec7795329db7f01d0d900410ed5d8fe7"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/collect_evidence.py",
+      "bytes": 16802,
+      "sha256": "99788b7d444f1920acd6ca8c73b8d24c5ccbc42be90d624a6693eca7f329b41d",
+      "baseline_git_blob": "82cc6783f1318ccba297fbb2b4937c4457b5f8ab"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/curation.json",
+      "bytes": 11750,
+      "sha256": "80a9ebe8a77fbb1d924dca67ff1d0d5d3fa704b0ee89ba2e1156bbb9994f645a",
+      "baseline_git_blob": "1d17988dcb79bbc030897f0c3edb6ee0583ffa8a"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/dependency_calls.csv",
+      "bytes": 703066,
+      "sha256": "908c5407b374085c22590fff554153cfebbb2c99fc5960b4a9cd25c8be3b6253",
+      "baseline_git_blob": "bee4f71e72cb4ba514fba21b488c4f8026ae5b42"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/missing_references.csv",
+      "bytes": 245546,
+      "sha256": "53d6dcb8925497fe318ec235d9479c81ecb8ee1d78931a62e5c62c99e74b56ec",
+      "baseline_git_blob": "6a8f7f9d982968ca348890ce4b4fbc10d5aaadd0"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/posterior_variants_recheck.json",
+      "bytes": 3931,
+      "sha256": "aee40ee3b272fb0c471d999060584ef16e15878601b69d8e38f1fd515b91fa5a",
+      "baseline_git_blob": "1285fdbe71bcbd88e3b70c90a33d85409f7867e4"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/preserved_copies.json",
+      "bytes": 596,
+      "sha256": "0261a78cc384a3a61ac4d965d8a2fe10825970756f2f96aab395476ede377e88",
+      "baseline_git_blob": "c706af4542404226af6ce3b8480de2ef098d58ac"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/priority_requirements.csv",
+      "bytes": 13493,
+      "sha256": "483816d0ca79c37187fd2dc55b90c7b012b72da348a8d72ec0f51d8af71603b6",
+      "baseline_git_blob": "a7398a88327600629831eae25a02c88e8443a631"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/producer_calls.csv",
+      "bytes": 87260,
+      "sha256": "1b2957e991fa694b084727109850c90cc9d0e68d8939aeac726e7aec4e4c3748",
+      "baseline_git_blob": "bfc9c28bb69e049b6dab0d09ebd75c7a208f37e3"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/source_dates.csv",
+      "bytes": 78140,
+      "sha256": "ad8c930ffa4ca1cc7e0c316268d93f479bed0685b19a381ea76512194ce4d6ce",
+      "baseline_git_blob": "d06062bdec45b7dac81f9fbd29c71aadc9e20ad5"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/source_edges.csv",
+      "bytes": 13299,
+      "sha256": "9cf12dd62c66f6927c6ffef55c4f63fcc0c9d9c6347cfb0c3cea30cf8ccecceb",
+      "baseline_git_blob": "49696e2db79bc1d7c6c3f1c4387e3624c0792bf9"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/summary.json",
+      "bytes": 5765,
+      "sha256": "e2ee5d7fc8f6281c9ad3ded9274f4559e117c45429949efe4b8c4d7e708ae67f",
+      "baseline_git_blob": "563100e79d53fa0c04b1fe5a0644454181752f82"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/unresolved_reads.csv",
+      "bytes": 4291,
+      "sha256": "c0dce6a753b8fe2156479d7274a1b2e8baa33452bfdf1b5de5b67fbffb817bf0",
+      "baseline_git_blob": "074db18910dc4e3cff96924104046b97cc5a2062"
+    },
+    {
+      "path": "docs/thesis_research/required_files_2026_11_02/verification.json",
+      "bytes": 4257,
+      "sha256": "34c1533a02d156b66ec8f964a80684e958a3e5bcbe734d2e58166426f93bb5b6",
+      "baseline_git_blob": "a0d3da8bea7b101abbfe857725e32d8ecb3418a3"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/README.md",
+      "bytes": 2565,
+      "sha256": "e38ce71e74037098002d449f8af1d0f694c60c82c177f90d136d707772582b52",
+      "baseline_git_blob": "275dcea6dc7156daf417a97fec4517492900d0b3"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/console_cardinality.json",
+      "bytes": 515411,
+      "sha256": "882bbfab9ad3fd95de9ecbeaae4a237fdb708b43b4e23048960864546c49dbb4",
+      "baseline_git_blob": "28ca69346b434eb27480503e38bd7c3d5c3b6726"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/console_provenance_v1_final_verification.json",
+      "bytes": 8227,
+      "sha256": "7ff8878e1575a2a36eac6624810997b85ebe65952240f050123d42dc0cf63f6e",
+      "baseline_git_blob": "ebd22e11d5e6c07ca4ec1350a530c248ac731fc7"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/emd_plot_pages.json",
+      "bytes": 66775,
+      "sha256": "a6625fdbdc8b8ce57556f290b219eb6269f2dc1bf57187823bac7d1d711c8db9",
+      "baseline_git_blob": "efb07d5162ce6a8fad7a498e3f8bba530603b922"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/explicit_dependency_paths.json",
+      "bytes": 940,
+      "sha256": "665022a9527c580c95667dac80f98eb58ea06d4bb6ca810c985d3d66c709cdc9",
+      "baseline_git_blob": "365993ff7641b940b7185990b56240f27b8e4e76"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/independent_pdf_parser.json",
+      "bytes": 57303,
+      "sha256": "06d44033b8aa451d8967115d786f91b74c9b36e7f3236a77b79243263a3bdb95",
+      "baseline_git_blob": "101cb1e40009aa2bd24083c5c72ea246d171459c"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/package_source_manifest.json",
+      "bytes": 1291,
+      "sha256": "28568892dc2b18cdbcc3b0325dc96c8c4b6a4dfc1451a5eceb39a048fb726423",
+      "baseline_git_blob": "be44114066444101abfa67cc992f80e500eff234"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/pytest_v2.xml",
+      "bytes": 7852,
+      "sha256": "1185451441264b14cc5b4259cc32803213aa771864c561e6b4f1637e45539d82",
+      "baseline_git_blob": "52968bab38d8e2d26458078aab6594efca602125"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/source_bindings.json",
+      "bytes": 18337,
+      "sha256": "a0cee38d756fd135b566cbe2040c3a250754e579ef3bd5adc7903d5b43e115e1",
+      "baseline_git_blob": "16150629f7a77b87f45ef338c299bc3c79663f77"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/console/stored_model_predictor_crosscheck.json",
+      "bytes": 440,
+      "sha256": "c7f2160255724efc42d53c1eb53743d728f9d87a67e22d098c7aff4803663ddc",
+      "baseline_git_blob": "f46c2c1aee6f884c46fe4b88c5b23a0fca8e6d29"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/handoff_tests/pytest_v2.xml",
+      "bytes": 8792,
+      "sha256": "6ce1d2a65ebb1164fb487d478b0e3e0347909fc113f102fd6aa7be495c42bbe7",
+      "baseline_git_blob": "d04de2307da58d8f60ad78235cbb8e8392096db9"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/audit.json",
+      "bytes": 9241,
+      "sha256": "c46d0e6a7ec462447e296c825f10dc5dfe33a68cdc29c715ccd2642aabc5cef4",
+      "baseline_git_blob": "c238450bbe765d3330a86481a19f5186bf25fcff"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/climate_time_bounds.json",
+      "bytes": 3285,
+      "sha256": "50aa53572fc00b594293087975f43d72d2c4f6cf8f06452566517548293bd07e",
+      "baseline_git_blob": "a2bcbd18db4c581b93a78dd7052255ca5f3994ce"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/eurasia_nonbinary.json",
+      "bytes": 797,
+      "sha256": "e22f98e1a88f094dff608ae36580a2903e2ad3452f3dca48ed63b6fca66b4daa",
+      "baseline_git_blob": "ba416da6416940dcd2c02473e0b3894e19adeb29"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/model_summary.json",
+      "bytes": 313800,
+      "sha256": "99833f899d8c548472a5f51c540806c7351a41f28bd27d75535b460a2170b1aa",
+      "baseline_git_blob": "0065251c7fa5fc7610c9f3fba657bf7793e66681"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/ohrid_279_distribution.json",
+      "bytes": 79427,
+      "sha256": "dd932b64f0b9769f486709851cff340497870dc3b036c8b931bbfadb54f642f9",
+      "baseline_git_blob": "18c4c310b8e2d97b5ff6ced8c37b6a5f0347839c"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/provenance_continuation_v1_final_verification.json",
+      "bytes": 12839,
+      "sha256": "e5070a0364f31e9cf683a7e4f59897230c905518da861edabc9ef12ad2cad4fa",
+      "baseline_git_blob": "04e50db749d2a6e06c9beaa71a2fe110d76a1486"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/provenance_reader_followup_v1_final_verification.json",
+      "bytes": 8599,
+      "sha256": "3652993f8a2e0f0fa2bd516bf2a4905b684984e540e96572b7c4ab780a4c9e9a",
+      "baseline_git_blob": "cc6575698607cbf7740ebbe328bbaebc9c6de3d9"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/source_evidence.json",
+      "bytes": 24883,
+      "sha256": "8643876362fa52bace3710acba8b7a62cbdb20dc5802eb3e14fbbd4b88c52442",
+      "baseline_git_blob": "5ae7232b8bdfd0e2da428bd16d9e55f02761e952"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/historical_provenance/training_console_trace.json",
+      "bytes": 140257,
+      "sha256": "714b748bff0e4aa28d101372571221d6a8b8342314b517110ab2be92f548d6c7",
+      "baseline_git_blob": "c6fef0734a98e497e28f140051719ac2963cf0d2"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/manifest.json",
+      "bytes": 28471,
+      "sha256": "7c0ee4ab5923603b4186ba4202bf8dacc453c189c348d8ae05fc52b20c650d4f",
+      "baseline_git_blob": "2792324bc278b9269e13ea27a894ce680ddd018a"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/comparison.png",
+      "bytes": 338384,
+      "sha256": "3a9708fa1d9d1c4d876faa33251658ce758c7e38ff8e0281f0684b6ba479115f",
+      "baseline_git_blob": "19b4ec7bf4341300bed06aeda60db3bfb01b3e6c"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/config.toml",
+      "bytes": 944,
+      "sha256": "60723ce583525fe08b7a4d3f9743780e7f2467e45a6996bfc2fc5d1451678a51",
+      "baseline_git_blob": "1ca40f567db3d2718a70a5cf54a5ed311ff37106"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/diagnostik.csv",
+      "bytes": 7348,
+      "sha256": "56b5adbcf33c74c7a598a27d26def5f6ea14b8fe3d70924fe8b4280067e1c207",
+      "baseline_git_blob": "4c348db55dc5154328bb8bf37adef6a152c7afb8"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/meta.json",
+      "bytes": 1002,
+      "sha256": "37c261cc014f9f9e448f52803554314b1a54a2a4bb2c2bf278bfc058afe98ce9",
+      "baseline_git_blob": "83aa4ce87698233df097146868649bb953afc606"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/provenance.json",
+      "bytes": 10549,
+      "sha256": "4891cced5a43499c37c48c0aefdbbdabd8e4c9a29e6879b03c8d6355f9538465",
+      "baseline_git_blob": "530aa096bcbdf59e1780ba65e23d29052ba491a6"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/rekonstruktion_alter.csv",
+      "bytes": 21345,
+      "sha256": "af03d97df953b2670bc083b8d72d82c6ef11104f8dfd03fa79255a66e0fd92a9",
+      "baseline_git_blob": "864f36b79d48baccc24609ca56b30690e6c28e3e"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_corrected_full/rekonstruktion_tiefe.csv",
+      "bytes": 18774,
+      "sha256": "7734d20b2d1f2daa13607a6948ab98f3c015c65eee40c1ad2c5131673ede2c36",
+      "baseline_git_blob": "88ee902946e4afbcbbbff8f900048e012af732b5"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/config.toml",
+      "bytes": 899,
+      "sha256": "7c3cc4c84fb11ad3cf2d544d74b680acc9d55674967f42d0a149c9cdbf437282",
+      "baseline_git_blob": "36203f8df38cb69a85b4b0aba7001d30a9e677cd"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/diagnostik.csv",
+      "bytes": 7235,
+      "sha256": "d834313b24ef13f37e86344c55c5f710ae88267d897615f6e622751c403fac36",
+      "baseline_git_blob": "d11675ceb4380999c96d96e7e13bb469118fc196"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/meta.json",
+      "bytes": 419,
+      "sha256": "9af50a82f326a8312494c3443d24a17f4c649625046bd2bd5c1fad30a121fd7c",
+      "baseline_git_blob": "8236001932cc039ec29f9560de59b7a371747f6e"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/provenance.json",
+      "bytes": 10348,
+      "sha256": "9933917efb4ada52e97ac8b1d659d4a88bcbaad7a0cdf0fcda277a63d50bd7fe",
+      "baseline_git_blob": "aac2ec8085facbc081a084eaa9257e26ac83c1df"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/rekonstruktion_alter.csv",
+      "bytes": 21287,
+      "sha256": "45cfea775b1a6ebbf518164c77c14aff5ce6e1faedcf337898bcba52ee160837",
+      "baseline_git_blob": "02ddd32ab11f18e86d06958953e12e99fcd632be"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/local_original_full/rekonstruktion_tiefe.csv",
+      "bytes": 18808,
+      "sha256": "71d57a59074dd190fbb8b08010c627ce312dc0ae6152ebfa4708798292897fd7",
+      "baseline_git_blob": "cb420ab56d12d3b9c507e007711ce5a559cf8fe4"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_results/review.html",
+      "bytes": 456062,
+      "sha256": "52505dae7c26b2861d52baee5685de40b0d03a1664ceeb3897fe7b4d37c8c3c0",
+      "baseline_git_blob": "a51ef94ec95882ddc6b89402c0ff7e528b2262cd"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/corrected-reference.toml",
+      "bytes": 935,
+      "sha256": "f936824408d3a0dd0c21bb0918c627973d038f58bf6a30e550608f1fec2b66f0",
+      "baseline_git_blob": "fbdb7b8f04b9f9b82e7d7e0ddd240ca920ad91ba"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/corrected_full_replay.json",
+      "bytes": 4357,
+      "sha256": "41cf1781f3b5a6f724deab6304babcf3bbebfef089075a8668f560487a90a382",
+      "baseline_git_blob": "945d55b70ebdb0d14072da01dcdb1030fc02aca0"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/corrected_posterior_diagnostics.json",
+      "bytes": 268,
+      "sha256": "c02d4ef0bfd97204aeb2924cecd42c80b33a725c8567fbd44886efff8aa92026",
+      "baseline_git_blob": "039bcd40b0ccca470a2978110f8e18a5457aff0e"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/diagnostic-original.toml",
+      "bytes": 882,
+      "sha256": "d1c2d76a5e9fbcbf89810ecc03d8104438f44a987e89d264d1021b2a1e1196ba",
+      "baseline_git_blob": "ac14797344cfbdafa3aeeb8583ce78d4edd1f71c"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/final_integrity_check.json",
+      "bytes": 240,
+      "sha256": "840fdb2f231568373a67c7e366a35ea5b758f242effd2a7c01a761ccaaf3d7be",
+      "baseline_git_blob": "5d615e993e15055ddbae97db0edec43e9999f2a3"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/legacy_same_runtime_check.json",
+      "bytes": 1051,
+      "sha256": "14c57f9f32ee15ad73ec03f59ba40a367a0a18490d57204ea1341b462fa62b87",
+      "baseline_git_blob": "595dbdbdb9e5df33b5f8ce8e5bd9f95f8ada8fcc"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/original_full_replay.json",
+      "bytes": 4301,
+      "sha256": "466de5b42343a8fb7198b530201fc5106d118da77eedd3c3b845511ad8cd11c9",
+      "baseline_git_blob": "2046fde6dbfc8dd670e5bdfff224ab31f349128a"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/requirements-lock.txt",
+      "bytes": 406,
+      "sha256": "6cdd2971fc383ea20410ba8f28de7e3a8e53c963b61e6ed529b25a6039cdc44a",
+      "baseline_git_blob": "17c2c5a63b5218e1c49eaba03053e27ef427103b"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/paper_verification/verification.json",
+      "bytes": 82183,
+      "sha256": "e36c50c767c322f6cd58714a5947b733e2b8afcf4aa723ca3d2e5ef0e7705d0c",
+      "baseline_git_blob": "7744b85cc41cdd542745a4577765a91d0baa8400"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/check_fixed_decimal_coordinates.py",
+      "bytes": 3053,
+      "sha256": "4104b618e11e949761045cfa2481bab9f54ae35ab5b7da30a7ad142159dea3cd",
+      "baseline_git_blob": "811e151c649c9f98c96bfc5c62f90545a9e6a7ed"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/fixed_decimal_coordinates.json",
+      "bytes": 152776,
+      "sha256": "85081a0c3109ce024e233ae632b375feb1b9718e5051d94f7dcb83ff165e1bc0",
+      "baseline_git_blob": "974d9e89bc665bea0939af37556b171090124a4e"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/missing_dependency_followup.json",
+      "bytes": 1866,
+      "sha256": "39f511c3cd2816313395bd3bf293503e3a0cc1512118052b3ba6c7bd46eb8276",
+      "baseline_git_blob": "f2594d80b03eb06f67c4db781d405fa477ca135d"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/pytest.xml",
+      "bytes": 4014,
+      "sha256": "4a96a2358887ef7b04c2cbdacef87833017c02dda1f1ee677267111d3ec98a4f",
+      "baseline_git_blob": "bb3392b99ffdb649485a437aef49cb2bb3e72f9e"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/second_plot_pages.json",
+      "bytes": 66771,
+      "sha256": "eaebec39830d33ff4cf16abb88c66aa28a36aa47946840b0a1e8e0c797fee835",
+      "baseline_git_blob": "c1d8513962ec556e312e020bd2bd192910932c8c"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/source_variant_bindings.json",
+      "bytes": 32571,
+      "sha256": "3f645144b12738f0d792d404aed0834e4ac1b8da65425c48c1ed363f3af91696",
+      "baseline_git_blob": "568a591b4ffd491d95516375e65f2ef7f9233e2b"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/tf_plot_comparison_v1_final_verification.json",
+      "bytes": 6077,
+      "sha256": "90f1d830b769872e1f646cdd37af7c1829240eb6f65ebe36a12af1d519731e2a",
+      "baseline_git_blob": "db38525905b810feb166a12a044952dbde42c674"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/second_plot/vector_comparison.json.gz",
+      "bytes": 213927,
+      "sha256": "58d7980972413e2a89f385d750bd95e6539c691431b6ad24836f4cd871d88dbd",
+      "baseline_git_blob": "85b711363f5cb725fbb7aa807c6047376b3470c6"
+    },
+    {
+      "path": "docs/thesis_research/research_snapshot_2026_11_02/summary.json",
+      "bytes": 1207,
+      "sha256": "642d7b5fdfb5984310892fc0c2c07e39c53d6f1f4ec4167ef63fa0d71862f707",
+      "baseline_git_blob": "b8bccaf582990a905e99c043e352c0285881e867"
+    },
+    {
+      "path": "tests/test_historical_age_depth.py",
+      "bytes": 7084,
+      "sha256": "59cf9e34a2fd9f956b44b4a9fb9d8c025d80a4d602a634bf6b6a83068f631c1f",
+      "baseline_git_blob": "e4e952ea680938eb7df434203849b0b07936046d"
+    },
+    {
+      "path": "tests/test_historical_age_selection.py",
+      "bytes": 7046,
+      "sha256": "d1b2fc2adfc3e9df4ee53e8706b2ef1b4c2ee56444b7d4831c5ca1d3458929bd",
+      "baseline_git_blob": "f2e4a9ad43956b2282e42a048e9fc3ee4f37f967"
+    },
+    {
+      "path": "tests/test_historical_cdf_discrepancy.py",
+      "bytes": 7790,
+      "sha256": "82ccd3d37aa1f160ccd1f72368fd382d607d7daa1ee0fe328019a85b97c38d94",
+      "baseline_git_blob": "c6422a4fb9a19d527a2e19fd67ff084b5de6c533"
+    },
+    {
+      "path": "tests/test_historical_final_pdf.py",
+      "bytes": 6561,
+      "sha256": "0325538706f714d931be359f2e2961152fa7b1b53b4476664a4b5f27878642a5",
+      "baseline_git_blob": "15660f810c7c0b51fe17c2ed1df0a633501f8dc6"
+    },
+    {
+      "path": "tests/test_historical_phase1_chain.py",
+      "bytes": 8979,
+      "sha256": "ae7fd6a21bfa4a52cff31c58e99ac514e138c737337e48df469c1fcc7a22c2c1",
+      "baseline_git_blob": "7b3c4fe70e26a27028c9353427f2522a5279bed3"
+    },
+    {
+      "path": "tests/test_kinneret_phase1_spec.py",
+      "bytes": 6424,
+      "sha256": "9f9eb4540571746cd7e0654d405fc7e79609d62a1b2b49f061114f1e18ac8d91",
+      "baseline_git_blob": "638d972207d2941b2bb84fc4b5ca6c7696b78b51"
+    },
+    {
+      "path": "tools/historical_age_depth.py",
+      "bytes": 5066,
+      "sha256": "8974211152179659318e75743c3abe8418c4a650a9d082a79b1eb02e32d3cd9a",
+      "baseline_git_blob": "fe3056627e00b192b5f67aca9da6e8518f4ac716"
+    },
+    {
+      "path": "tools/historical_age_selection.py",
+      "bytes": 4388,
+      "sha256": "69d779072f07b1a76e223e955abc2f3494f6f9915086e7a5b200346de565ea10",
+      "baseline_git_blob": "67d9dcb5c96e377687214ca4b3aba18f3b616563"
+    },
+    {
+      "path": "tools/historical_cdf_discrepancy.py",
+      "bytes": 4109,
+      "sha256": "d7747fcec5903761d47102d9200fb3afd14220e12c3fa9f69c594e3044ab5de5",
+      "baseline_git_blob": "cd3f51beae0eab760519798f45a4f9692b97a2c0"
+    },
+    {
+      "path": "tools/historical_final_pdf.py",
+      "bytes": 5671,
+      "sha256": "9d0b8d877c0cf38c0be1606a3f6482f58ebcf5b95194618a48e19d466e4fccc7",
+      "baseline_git_blob": "ee601c81561bbdb28c6ee433a23664323163fcb3"
+    }
+  ],
+  "prior_start_briefs": [
+    "docs/thesis_research/CLAUDE_HANDOFF_2026_11_02.md",
+    "docs/thesis_research/CLAUDE_NEXT_STEP_2026_11_02.md",
+    "docs/thesis_research/CLAUDE_NEXT_STEP_TF_PREPARATION_2026_11_02.md",
+    "docs/thesis_research/CLAUDE_RESUME_CLIMATE_MODELLING_2026_11_02.md",
+    "docs/thesis_research/NEXT_STEP_AFTER_CLIMATE_AUDIT_2026_11_02.md"
+  ]
+}

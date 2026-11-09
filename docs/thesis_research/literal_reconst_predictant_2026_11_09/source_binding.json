@@ -1,0 +1,362 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "38775e1fc959b936fb22b7dd6dc88bef69fb7eb1",
+  "sources_sha256": {
+    "main_v1.2.R": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+    "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+    "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+    "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+  },
+  "implemented_spans": [
+    [
+      "src/mcmc_functions_v1.6.R",
+      1817,
+      1820
+    ],
+    [
+      "src/mcmc_functions_v1.6.R",
+      1825,
+      1825
+    ],
+    [
+      "src/mcmc_functions_v1.6.R",
+      1829,
+      1857
+    ],
+    [
+      "src/mcmc_functions_v1.6.R",
+      1939,
+      1943
+    ]
+  ],
+  "left_out": {
+    "1812-1813": "rtruncnorm_cpp draws; tf_sample is an explicit input"
+  },
+  "active_definition": {
+    "line": 1781,
+    "replaces": 855,
+    "called_at": "mcmc_conduction.R:146",
+    "body_last_line": 2046
+  },
+  "formal_tf_sample_read_in_body": false,
+  "formal_tf_sample_note": "line 146 passes tf_x12_mean_current[posterior_temp$z,] as the formal tf_sample; the body reads only posterior_temp$tf_sample, the formal stays an unevaluated promise",
+  "mask": {
+    "writes": [
+      1464,
+      1466,
+      1522
+    ],
+    "reads": [
+      461,
+      462,
+      470,
+      1818
+    ],
+    "reads_in_active_reconstruction": [
+      1818
+    ],
+    "effect": "always all TRUE: 1464 for !taxa.merge; for taxa.merge 1466 is overwritten at 1522 because line 1500 ends in `& FALSE`",
+    "length_binding": "all.avail.age has length(age) rows (mcmc_prepare.R:91), check_ages.R is sourced before that (line 3) and is the only writer of age, so mask length equals nrow",
+    "consequence": "a single-row or row-dropping selection needs length(age) == 1 in the live path; ages_hol at 1466 never reaches line 1818"
+  },
+  "matrix_source": {
+    "parameter_stage": "mcmc_conduction.R:58 parameter_stage_weights (gibbs F)",
+    "written_at": "mcmc_functions_v1.6.R:1277",
+    "dimnames": "none: built by matrix() at 1276",
+    "may_hold_missing_values": "yes in the source domain: rowSums(na.rm=T) and row division (weights-stage packet); depends on final inputs"
+  },
+  "tf_sample_source": {
+    "filled_at": [
+      1812,
+      1813
+    ],
+    "random": true,
+    "initial": "logical NA array at mcmc_conduction.R:115, replaced by doubles before line 1818"
+  },
+  "occurrences": {
+    "reconst_ages": {
+      "src/mcmc_functions_v1.6.R": [
+        461,
+        462,
+        470,
+        1818
+      ],
+      "src/mcmc_prepare.R": [
+        1464,
+        1466,
+        1522
+      ]
+    },
+    "reconst": {
+      "src/mcmc_functions_v1.6.R": [
+        9,
+        10,
+        11,
+        858,
+        859,
+        860,
+        1818,
+        1819,
+        1820,
+        1825
+      ],
+      "src/mcmc_conduction.R": [
+        109
+      ]
+    },
+    "reconst_tann": {
+      "src/mcmc_functions_v1.6.R": [
+        924,
+        925,
+        1923,
+        1924
+      ]
+    },
+    "reconst_pann": {
+      "src/mcmc_functions_v1.6.R": [
+        929,
+        930,
+        1928,
+        1929
+      ]
+    },
+    "taxa_change": {
+      "src/mcmc_functions_v1.6.R": [
+        463,
+        471,
+        1829
+      ],
+      "src/mcmc_prepare.R": [
+        1462,
+        1501,
+        1583,
+        1615,
+        1632,
+        1652,
+        1671,
+        1696
+      ]
+    }
+  },
+  "active_body_reads": {
+    "predictant_tann": [
+      1819,
+      1831,
+      1834,
+      1837,
+      1850,
+      1867,
+      1879,
+      1901,
+      1940,
+      1966,
+      1993
+    ],
+    "predictant_pann": [
+      1820,
+      1832,
+      1835,
+      1837,
+      1851,
+      1868,
+      1880,
+      1892,
+      1902,
+      1942,
+      1982,
+      2009
+    ]
+  },
+  "predictant_current_occurrences": [
+    1940,
+    1942,
+    1964,
+    1999,
+    2023,
+    2031
+  ],
+  "global_shadowed": {
+    "mcmc_conduction.R:109-110": "reconst and predictant_* are assigned as globals and never read; the function assigns locals"
+  },
+  "youngest_values": {
+    "src/mcmc_functions_v1.6.R": [
+      1825
+    ],
+    "src/mcmc_conduction.R": [
+      117,
+      118,
+      420
+    ]
+  },
+  "age_writes": {
+    "src/check_ages.R": [
+      179,
+      185,
+      189
+    ]
+  },
+  "flag_writes": {
+    "past_climate_module": {
+      "main_v1.2.R": [
+        670
+      ]
+    },
+    "stad_interstad": {
+      "src/mcmc_prepare.R": [
+        463,
+        465,
+        468
+      ]
+    }
+  },
+  "final_reconstruction_callers_in_loaded_files": {},
+  "readers": [
+    {
+      "line": "1819, 1820",
+      "reads": "reconst",
+      "guard": "none",
+      "kinneret": "reached in every sampler iteration"
+    },
+    {
+      "line": 1825,
+      "reads": "reconst",
+      "guard": "none; stops in R when reconst has zero rows",
+      "kinneret": "reached; written to posterior$youngest_values[i,] at mcmc_conduction.R:420"
+    },
+    {
+      "line": "1831-1837",
+      "reads": "predictant_tann, predictant_pann",
+      "guard": "taxa_change",
+      "kinneret": "not reached: taxa_change stays FALSE; its only TRUE assignment is 1501 behind `& FALSE`"
+    },
+    {
+      "line": "1850, 1851",
+      "reads": "predictant_tann, predictant_pann",
+      "guard": "recent",
+      "kinneret": "reached when recent is TRUE; recent needs an age <= 11000 (mcmc_prepare.R:728, 1184), open without the final ages"
+    },
+    {
+      "line": "1867-1902",
+      "reads": "predictant_tann, predictant_pann",
+      "guard": "past_climate_module",
+      "kinneret": "not reached: main_v1.2.R:670 sets past_climate_module to F"
+    },
+    {
+      "line": "1923-1929",
+      "reads": "reconst_tann, reconst_pann (never assigned in a loaded file)",
+      "guard": "stad_interstad",
+      "kinneret": "not reached: mcmc_prepare.R:468 sets stad_interstad to FALSE unconditionally"
+    },
+    {
+      "line": 1940,
+      "reads": "predictant_tann",
+      "guard": "tann",
+      "kinneret": "not reached: mcmc_prepare.R:1249 sets tann to FALSE for Kinneret"
+    },
+    {
+      "line": 1942,
+      "reads": "predictant_pann",
+      "guard": "!tann",
+      "kinneret": "reached"
+    },
+    {
+      "line": "1964, 1966",
+      "reads": "predictant_current, predictant_tann",
+      "guard": "multiple",
+      "kinneret": "reached when sources$core is 1, see the local-cor packet"
+    },
+    {
+      "line": 1993,
+      "reads": "predictant_tann",
+      "guard": "!multiple & sources[,4]==1",
+      "kinneret": "reached only if sources$core is 0"
+    },
+    {
+      "line": 1999,
+      "reads": "predictant_current",
+      "guard": "!multiple & sources[,4]!=1",
+      "kinneret": "not reached: sources[,4] stays 1"
+    },
+    {
+      "line": "1982, 2009",
+      "reads": "predictant_pann",
+      "guard": "hi_time",
+      "kinneret": "not reached: add.sites <- T sets hi_time FALSE"
+    },
+    {
+      "line": 2023,
+      "reads": "predictant_current",
+      "guard": "spectral",
+      "kinneret": "depends on sources$speleothem; needs wt_power, not part of this module"
+    },
+    {
+      "line": 2031,
+      "reads": "predictant_current",
+      "guard": "spectral & hi_spec",
+      "kinneret": "not reached: mcmc_prepare.R:881 excludes Kinneret from hi_spec"
+    }
+  ],
+  "kinneret_flags": {
+    "add.sites": true,
+    "case_studies": false,
+    "past_climate_module": false,
+    "stad_interstad": false,
+    "taxa_change": false,
+    "tann": false,
+    "hi_time": false,
+    "hi_spec": false
+  },
+  "open_conditions": [
+    "recent needs at least one age <= 11000 (mcmc_prepare.R:728, 1184); not evaluated without the final v1.2 ages",
+    "sources$core decides 1964/1966 versus 1993, as in the local-cor packet",
+    "whether taxa.appear.core.temp holds NA, NaN or Inf depends on the final pollen matrix"
+  ],
+  "r_matprod_source": {
+    "tarball": "https://cran.r-project.org/src/base/R-3/R-3.5.0.tar.gz",
+    "tarball_sha256": "fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870",
+    "file_sha256": {
+      "src/main/array.c": "2b6f48ef228300abc8b28052c29b305c93bb1cf56ebbb4ee556567010fe2a70f",
+      "src/extra/blas/blas.f": "728f83254124da291890db32053e3ff46158d5c17daf7b5013e3c18726d241ae",
+      "src/library/base/man/options.Rd": "dfbe36b3eee14ebf457c4264821b773f9ec6e5209ddb9c3759c8f65aec9c97ae"
+    },
+    "array_c_lines": {
+      "internal_matprod": 686,
+      "internal_matprod_accumulator": "LDOUBLE",
+      "simple_matprod": 702,
+      "simple_matprod_accumulator": "double",
+      "matprod": 756,
+      "zero_extent": 761,
+      "nan_test": 776,
+      "simple_call": 777,
+      "dgemv_n": 800,
+      "dgemv_t": 805,
+      "dgemm": 808
+    },
+    "blas_f_lines": {
+      "dgemm": 491,
+      "dgemm_update": 732
+    },
+    "dgemm_zero_test_commented_out": true,
+    "options_rd_states_double_accumulator_for_three_loop_path": true,
+    "route_for_this_call": "x is taxa rows, y is the num_taxa x 2 tf_sample, so ncy is 2: dgemm for more than one row, dgemv with TRANS T for one row, simple_matprod whenever the NaN test fires",
+    "correction_of_the_handover": "The handover said the three-loop path uses long double. R 3.5.0 has two: internal_matprod (LDOUBLE, only with options(matprod = \"internal\")) and simple_matprod (double, the default path for NaN/Inf)."
+  },
+  "packages_needed": [],
+  "base_functions_used": [
+    "[",
+    "%*%",
+    "$"
+  ],
+  "globals_made_explicit": [
+    "reconst_ages",
+    "taxa_change",
+    "recent",
+    "prior.recent",
+    "tann"
+  ],
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "0702c47fe36aab7e9f24f073e301d798d73fc2f21ef25c011f24340df6b73f15",
+  "actual_original_inputs_used_for_numerics": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

@@ -1,0 +1,66 @@
+{
+ "kind": "tann_flag_source_collection_no_execution_no_interpretation",
+ "sources_sha256": {
+  "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+ },
+ "writers_in_mcmc_prepare": [
+  1208,
+  1210,
+  1219,
+  1229,
+  1241,
+  1249
+ ],
+ "switch_condition_line": 1248,
+ "switch_assignment_line": 1249,
+ "switch_brace_depth_condition_line": 0,
+ "note_on_earlier_citation": "earlier documents cite 1248 for tann <- FALSE; 1248 is the condition, 1249 the assignment. The earlier documents stay frozen.",
+ "line_1209_excludes_kinneret": true,
+ "other_code_lines_naming_tann_in_mcmc_prepare": [],
+ "caller": {
+  "file": "src/mcmc_conduction.R",
+  "line": 146
+ },
+ "reconstruction_definitions_in_v1_6": [
+  855,
+  1781
+ ],
+ "active_definition_line": 1781,
+ "active_definition_end": 2047,
+ "readers_of_tann_in_active_definition": [
+  {
+   "line": 1939,
+   "text": "if(tann){"
+  }
+ ],
+ "readers_of_predictant_current_in_active_definition": [
+  {
+   "line": 1940,
+   "text": "predictant_current <- predictant_tann"
+  },
+  {
+   "line": 1942,
+   "text": "predictant_current <- predictant_pann"
+  },
+  {
+   "line": 1964,
+   "text": "posterior_temp$post_pollen <- cor(predictant_current[ages_pollen][hi_ages_time], predictors1[hi_ages_time],na.rm=TRUE)"
+  },
+  {
+   "line": 1999,
+   "text": "posterior_temp$post_pollen <- cor(predictant_current[ages_pollen1][hi_ages_time],predictors$pollen[ages_pollen2][hi_ages_time],na.rm=TRUE)"
+  },
+  {
+   "line": 2023,
+   "text": "predictant_spec <- c(wt_power(predictant_current[ages_spec][hi_ages_spec],length_ages_spec2, n.obs=n.obs, zeros=zeros, invflen=invflen)[coi_array == 1])"
+  },
+  {
+   "line": 2031,
+   "text": "predictant_spec_hi <- c(wt_power(predictant_current[ages_spec][!hi_ages_spec],length_ages_spec3, n.obs=n.obs, zeros=zeros, invflen=invflen)[coi_array_hi == 1])"
+  }
+ ],
+ "effect_in_a_kinneret_run": "tann is FALSE when reconstruction runs, so line 1939 takes predictant_pann as predictant_current; what that does to the correlations is not assessed here",
+ "historical_reproduction_ready": false
+}

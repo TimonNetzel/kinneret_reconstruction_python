@@ -1,0 +1,48 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Is the ratio 1269-1274 deterministic once the provider of ddirichlet is bound?",
+  "candidates": [
+    {
+      "id": "ddirichlet_ratio_1269_1274",
+      "lines": "mcmc_functions_v1.6.R:1269-1274",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "package_semantics_bound": "LaplacesDemon::ddirichlet, first on the search path within 2018-04-23..2023-07-07, text identical in 16.1.0-16.1.6 (r_runtime_crosscheck_2026_11_03)",
+      "functions": [
+        "ddirichlet (LaplacesDemon): rbind, matrix(byrow=TRUE), rowSums, lgamma, log, exp",
+        "rep",
+        "/",
+        "*",
+        "is.na"
+      ],
+      "inputs": "old_weights (1243) and new_weights (1248 or the reset 1254) as EXPLICIT inputs; num_taxa global",
+      "readers": "posterior$parameter_ratio[i] <- posterior_temp$parameter_ratio (mcmc_conduction.R:151), then acc_prob (302), compared with runif(1) in 304",
+      "precision_note": "lgamma (R nmath), log and exp (C library) need not be correctly rounded and rowSums may accumulate in long double; the module rounds every elementary function correctly and measures the distance to R 3.5.0 instead of assuming bit equality",
+      "decision": "implemented as tools/historical_dirichlet_ratio.py; inputs only synthetic"
+    },
+    {
+      "id": "rdirichlet_1248",
+      "lines": "mcmc_functions_v1.6.R:1248",
+      "random_state": true,
+      "evidence": "LaplacesDemon::rdirichlet draws with rgamma",
+      "decision": "documented only, no seed"
+    },
+    {
+      "id": "reset_1253_1257",
+      "lines": "mcmc_functions_v1.6.R:1253-1257",
+      "random_state": true,
+      "evidence": "reached after 1000 draws without min > 0",
+      "decision": "documented only"
+    },
+    {
+      "id": "acceptance_runif_304",
+      "lines": "mcmc_conduction.R:304",
+      "random_state": true,
+      "evidence": "runif(1) without a local seed",
+      "decision": "documented only"
+    }
+  ],
+  "selected_for_implementation": "ddirichlet_ratio_1269_1274",
+  "final_variant_selected": false,
+  "R_execution_for_binding": false
+}

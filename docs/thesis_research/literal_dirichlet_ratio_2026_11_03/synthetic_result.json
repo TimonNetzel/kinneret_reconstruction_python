@@ -1,0 +1,274 @@
+{
+ "kind": "module_result_on_synthetic_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "ratio_cases": {
+  "identical_weights": {
+   "densities": [
+    0.900316316157106,
+    0.900316316157106,
+    0.4855879470116745,
+    0.4855879470116745
+   ],
+   "weights_ratio": 1.0,
+   "proposal_ratio": 1.0,
+   "parameter_ratio_before_na": 1.0,
+   "parameter_ratio": 1.0,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    -0.10500911500948229,
+    -0.10500911500948229,
+    -0.7223948603610464,
+    -0.7223948603610464
+   ]
+  },
+  "two_taxa_closed_form": {
+   "densities": [
+    0.7351051938957227,
+    0.6366197723675814,
+    0.45015815807855303,
+    0.7351051938957227
+   ],
+   "weights_ratio": 1.1547005383792515,
+   "proposal_ratio": 0.6123724356957946,
+   "parameter_ratio_before_na": 0.7071067811865476,
+   "parameter_ratio": 0.7071067811865476,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    -0.30774166906356437,
+    -0.4515827052894549,
+    -0.7981562955694276,
+    -0.30774166906356437
+   ]
+  },
+  "start_weights_to_proposal": {
+   "densities": [
+    5.0660591821168905,
+    4.248019765968881,
+    0.21210812300267629,
+    0.4062481953570694
+   ],
+   "weights_ratio": 1.1925695879998883,
+   "proposal_ratio": 0.5221146221123398,
+   "parameter_ratio_before_na": 0.6226580197812305,
+   "parameter_ratio": 0.6226580197812305,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    1.622563233729346,
+    1.4464529369346697,
+    -1.550659120159577,
+    -0.9007909875460394
+   ]
+  },
+  "reset_weights_as_new": {
+   "densities": [
+    1.6211389382774042,
+    2.068210000487975,
+    0.5337246591487091,
+    0.2208284323153382
+   ],
+   "weights_ratio": 0.7838367176906172,
+   "proposal_ratio": 2.416920020455346,
+   "parameter_ratio_before_na": 1.894470655754458,
+   "parameter_ratio": 1.894470655754458,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    0.4831289505409808,
+    0.7266834991153179,
+    -0.6278751925711319,
+    -1.5103692033251788
+   ]
+  },
+  "unnormalised_weights_kept": {
+   "densities": [
+    0.3183098861837906,
+    0.900316316157106,
+    1.2732395447351625,
+    0.12139698675291866
+   ],
+   "weights_ratio": 0.35355339059327373,
+   "proposal_ratio": 10.488230217168475,
+   "parameter_ratio_before_na": 3.708149354602742,
+   "parameter_ratio": 3.708149354602742,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    true,
+    false,
+    false,
+    true
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    -1.1447298858494004,
+    -0.10500911500948229,
+    0.2415644752704904,
+    -2.1086892214809367
+   ]
+  },
+  "overflow_nan_becomes_zero": {
+   "densities": [
+    "Inf",
+    0.826993343132688,
+    0.0,
+    "Inf"
+   ],
+   "weights_ratio": "Inf",
+   "proposal_ratio": 0.0,
+   "parameter_ratio_before_na": "NaN",
+   "parameter_ratio": 0.0,
+   "na_replaced": true,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    711.9635017617449,
+    -0.189958633407181,
+    -1425.405533078972,
+    948.778909830089
+   ]
+  },
+  "thirty_three_taxa": {
+   "densities": [
+    2.516162562013318e+31,
+    3.6955096181148935e+29,
+    1.1275080986404592e-05,
+    189.031472820238
+   ],
+   "weights_ratio": 68.08702512041711,
+   "proposal_ratio": 5.964658063647835e-08,
+   "parameter_ratio_before_na": 4.061158234142886e-06,
+   "parameter_ratio": 4.061158234142886e-06,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    72.30287283085944,
+    68.08208616272265,
+    -11.392915489771653,
+    5.241913524054652
+   ]
+  },
+  "inexact_weights": {
+   "densities": [
+    0.8388202017414507,
+    1.3451047731519024,
+    0.9647823595981286,
+    0.1797833554554023
+   ],
+   "weights_ratio": 0.6236095644623237,
+   "proposal_ratio": 5.36636084666612,
+   "parameter_ratio_before_na": 3.3465139503371257,
+   "parameter_ratio": 3.3465139503371257,
+   "na_replaced": false,
+   "normalisation_skipped": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "accumulator_independent": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "log_densities": [
+    -0.1757588961463319,
+    0.2964719082740934,
+    -0.035852737174993266,
+    -1.7160027337803192
+   ]
+  }
+ },
+ "density_cases": {
+  "jeffreys_half_half": {
+   "value": 0.6366197723675814,
+   "log_density": -0.4515827052894549,
+   "ulps_to_closed_form": 0,
+   "reference_exact_matches_closed_form": true
+  },
+  "beta_two_two": {
+   "value": 1.125,
+   "log_density": 0.11778303565638337,
+   "ulps_to_closed_form": 0,
+   "reference_exact_matches_closed_form": true
+  },
+  "uniform_four": {
+   "value": 6.0,
+   "log_density": 1.791759469228055,
+   "ulps_to_closed_form": 0,
+   "reference_exact_matches_closed_form": true
+  }
+ }
+}

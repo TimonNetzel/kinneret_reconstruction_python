@@ -1,0 +1,3072 @@
+{
+  "scientific_status": "provisional_not_approved",
+  "case": "Kinneret_paper_biome_TDJF_PANN",
+  "verification_script_sha256": "8d71f963f354e6bafdccf62ca78f059a503e7f5b876a59cd29f4c96b07c59cd7",
+  "dissertation_taxon_multiproxy_reproduced": false,
+  "runs": {
+    "Original lokal": {
+      "run": "results/local_original_full",
+      "source_and_output_hash_failures": [],
+      "invariants": {
+        "weights_finite": true,
+        "weights_nonnegative": true,
+        "weights_normalized": true,
+        "climate_finite": true,
+        "transfer_values_in_bounds": true,
+        "age_pann_nonnegative": true,
+        "depth_pann_nonnegative": true
+      },
+      "csv_checks": {
+        "age": [
+          {
+            "column": "T_DJF_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_mean",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_mean",
+            "passed": true,
+            "max_difference": 0.0
+          }
+        ],
+        "depth": [
+          {
+            "column": "T_DJF_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_mean",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_mean",
+            "passed": true,
+            "max_difference": 0.0
+          }
+        ]
+      },
+      "parameter_diagnostics": {
+        "parameters": 42,
+        "max_rhat": 1.0013735575187368,
+        "min_ess_bulk": 1346.2478527267479,
+        "min_ess_tail": 1430.1999470539045,
+        "failures": []
+      },
+      "climate_diagnostics": [],
+      "chains": 1,
+      "iterations_per_chain": 1000000,
+      "retained_postburn_draws": 10000,
+      "acceptance_rate": [
+        0.2816332816332816
+      ],
+      "elapsed_s": 126.16980409994721,
+      "peak_working_set_bytes": 446242816,
+      "deterministic_replay": {
+        "elapsed_s": 39.98192060017027,
+        "fields": {
+          "taxa_weights": true,
+          "tf_sample": true,
+          "expl_variance": true,
+          "recent_temp": true,
+          "recent_pann": true,
+          "log_target": true,
+          "alpha": true,
+          "iterations": true
+        },
+        "record_sha256": "b4f571f3fad7fca30e5d68c7f310b143705e20ef72ee0d48ac099eafeda4a5cb",
+        "threads": 1
+      }
+    },
+    "Korrigiert lokal": {
+      "run": "results/local_corrected_full",
+      "source_and_output_hash_failures": [],
+      "invariants": {
+        "weights_finite": true,
+        "weights_nonnegative": true,
+        "weights_normalized": true,
+        "climate_finite": true,
+        "transfer_values_in_bounds": true,
+        "age_pann_nonnegative": true,
+        "depth_pann_nonnegative": true
+      },
+      "csv_checks": {
+        "age": [
+          {
+            "column": "T_DJF_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_mean",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_mean",
+            "passed": true,
+            "max_difference": 0.0
+          }
+        ],
+        "depth": [
+          {
+            "column": "T_DJF_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "T_DJF_mean",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q2.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q25",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q50",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q75",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_q97.5",
+            "passed": true,
+            "max_difference": 0.0
+          },
+          {
+            "column": "P_ANN_mean",
+            "passed": true,
+            "max_difference": 0.0
+          }
+        ]
+      },
+      "parameter_diagnostics": {
+        "parameters": 43,
+        "max_rhat": 1.0008437412315938,
+        "min_ess_bulk": 8552.566485395959,
+        "min_ess_tail": 8122.135285400017,
+        "failures": []
+      },
+      "climate_diagnostics": [
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": -50.0,
+          "rhat": 1.0000720569270065,
+          "ess_bulk": 9816.096825805573,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 0.0,
+          "rhat": 1.0000894630947306,
+          "ess_bulk": 9826.74442348176,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 50.0,
+          "rhat": 1.000023880282759,
+          "ess_bulk": 9779.109341630394,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 100.0,
+          "rhat": 1.0000487079591218,
+          "ess_bulk": 9744.251562163303,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 150.0,
+          "rhat": 1.0000137225465913,
+          "ess_bulk": 9745.312475646368,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 200.0,
+          "rhat": 1.0000112351716548,
+          "ess_bulk": 9762.993437188416,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 250.0,
+          "rhat": 1.0000771581456671,
+          "ess_bulk": 9785.376241824019,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 300.0,
+          "rhat": 1.0001096856332519,
+          "ess_bulk": 9813.209569107174,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 350.0,
+          "rhat": 1.0000962024821851,
+          "ess_bulk": 9838.356274450389,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 400.0,
+          "rhat": 1.000042107632127,
+          "ess_bulk": 9838.074343898828,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 450.0,
+          "rhat": 1.000127045956756,
+          "ess_bulk": 9840.706990033781,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 500.0,
+          "rhat": 1.0000769689583435,
+          "ess_bulk": 9824.902071099068,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 550.0,
+          "rhat": 1.0000607196487858,
+          "ess_bulk": 9807.014789765799,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 600.0,
+          "rhat": 1.0000539605208554,
+          "ess_bulk": 9788.181706969592,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 650.0,
+          "rhat": 1.0000519182249699,
+          "ess_bulk": 9772.986763588824,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 700.0,
+          "rhat": 1.0001242450776495,
+          "ess_bulk": 9774.814615030293,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 750.0,
+          "rhat": 1.0001636125951292,
+          "ess_bulk": 9766.891225070396,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 800.0,
+          "rhat": 1.0001429054832969,
+          "ess_bulk": 9743.87392433364,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 850.0,
+          "rhat": 1.0001317946187886,
+          "ess_bulk": 9738.823318361887,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 900.0,
+          "rhat": 1.0000422754828824,
+          "ess_bulk": 9748.598314196019,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 950.0,
+          "rhat": 1.000032173002668,
+          "ess_bulk": 9784.370167878491,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1000.0,
+          "rhat": 1.0000050582901574,
+          "ess_bulk": 9820.932000085435,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1050.0,
+          "rhat": 0.99996330213266,
+          "ess_bulk": 9828.409481644858,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1100.0,
+          "rhat": 0.9999464987953176,
+          "ess_bulk": 9830.049996267213,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1150.0,
+          "rhat": 0.9999701382022778,
+          "ess_bulk": 9811.187932701385,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1200.0,
+          "rhat": 0.9999850105427741,
+          "ess_bulk": 9798.215025813957,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1250.0,
+          "rhat": 1.0000241664641027,
+          "ess_bulk": 9845.758908106016,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1300.0,
+          "rhat": 1.0000382616209178,
+          "ess_bulk": 9880.954845572189,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1350.0,
+          "rhat": 1.0000213820469623,
+          "ess_bulk": 9741.35412756003,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1400.0,
+          "rhat": 1.0000241161488224,
+          "ess_bulk": 9730.253816045266,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1450.0,
+          "rhat": 1.0000073924374844,
+          "ess_bulk": 9726.26585845204,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1500.0,
+          "rhat": 1.0000139351592827,
+          "ess_bulk": 9706.839931847848,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1550.0,
+          "rhat": 1.0000507999320731,
+          "ess_bulk": 9691.30724102447,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1600.0,
+          "rhat": 1.0000660169622424,
+          "ess_bulk": 9704.462015568803,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1650.0,
+          "rhat": 1.0000674470538025,
+          "ess_bulk": 9702.41749691949,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1700.0,
+          "rhat": 1.0000598474817368,
+          "ess_bulk": 9687.599142011946,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1750.0,
+          "rhat": 1.0000634325781583,
+          "ess_bulk": 9660.693817320156,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1800.0,
+          "rhat": 1.0000685749840528,
+          "ess_bulk": 9606.025226138068,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1850.0,
+          "rhat": 1.0001014028522888,
+          "ess_bulk": 9573.1117993567,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1900.0,
+          "rhat": 1.0001846087403805,
+          "ess_bulk": 9548.496242524294,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 1950.0,
+          "rhat": 1.0001466704434692,
+          "ess_bulk": 9530.012400720982,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2000.0,
+          "rhat": 1.000023224853807,
+          "ess_bulk": 9556.572768449276,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2050.0,
+          "rhat": 1.0000160160007565,
+          "ess_bulk": 9594.256318325879,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2100.0,
+          "rhat": 1.000018707095958,
+          "ess_bulk": 9641.001201199077,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2150.0,
+          "rhat": 1.0000307095232004,
+          "ess_bulk": 9627.654203725207,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2200.0,
+          "rhat": 1.0000385070857862,
+          "ess_bulk": 9539.506121718452,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2250.0,
+          "rhat": 1.000053791418515,
+          "ess_bulk": 9458.803761747602,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2300.0,
+          "rhat": 1.000056709499928,
+          "ess_bulk": 9420.601096467952,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2350.0,
+          "rhat": 1.0000623304458824,
+          "ess_bulk": 9377.216069980232,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2400.0,
+          "rhat": 1.0000722126301476,
+          "ess_bulk": 9351.194146903083,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2450.0,
+          "rhat": 1.000057980536894,
+          "ess_bulk": 9329.289825218633,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2500.0,
+          "rhat": 1.0000366806969267,
+          "ess_bulk": 9330.326719062106,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2550.0,
+          "rhat": 1.000027027432157,
+          "ess_bulk": 9366.09086753275,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2600.0,
+          "rhat": 1.0000271851432885,
+          "ess_bulk": 9410.798421002788,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2650.0,
+          "rhat": 1.000029665922941,
+          "ess_bulk": 9447.230495780004,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2700.0,
+          "rhat": 1.000032941188181,
+          "ess_bulk": 9470.422857632046,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2750.0,
+          "rhat": 1.0000400729992185,
+          "ess_bulk": 9490.461191056827,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2800.0,
+          "rhat": 1.000044524744877,
+          "ess_bulk": 9495.039770337418,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2850.0,
+          "rhat": 1.0000491674959588,
+          "ess_bulk": 9498.364868860977,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2900.0,
+          "rhat": 1.0000531382886213,
+          "ess_bulk": 9489.261938397112,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 2950.0,
+          "rhat": 1.0000568586988143,
+          "ess_bulk": 9485.887604608824,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3000.0,
+          "rhat": 1.0000561689526235,
+          "ess_bulk": 9484.10637393717,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3050.0,
+          "rhat": 1.0000575881811302,
+          "ess_bulk": 9485.395930256493,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3100.0,
+          "rhat": 1.0000544167775127,
+          "ess_bulk": 9480.596231679283,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3150.0,
+          "rhat": 1.0000574970068725,
+          "ess_bulk": 9482.3855201734,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3200.0,
+          "rhat": 1.0000606680073298,
+          "ess_bulk": 9480.317012583251,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3250.0,
+          "rhat": 1.0000667211248524,
+          "ess_bulk": 9494.308814858063,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3300.0,
+          "rhat": 1.0000662089401635,
+          "ess_bulk": 9527.97131682159,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3350.0,
+          "rhat": 1.000073712568375,
+          "ess_bulk": 9468.619078632852,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3400.0,
+          "rhat": 1.0000755844836757,
+          "ess_bulk": 9462.68821783246,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3450.0,
+          "rhat": 1.0000664535614199,
+          "ess_bulk": 9487.72324972469,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3500.0,
+          "rhat": 1.0000445894444323,
+          "ess_bulk": 9530.780423360327,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3550.0,
+          "rhat": 1.0000344477608156,
+          "ess_bulk": 9544.904902719245,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3600.0,
+          "rhat": 1.0000339391338875,
+          "ess_bulk": 9541.82362790092,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3650.0,
+          "rhat": 1.000033185147316,
+          "ess_bulk": 9536.08716745044,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3700.0,
+          "rhat": 1.000040389448559,
+          "ess_bulk": 9523.863042059489,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3750.0,
+          "rhat": 1.0000523323431179,
+          "ess_bulk": 9513.555268053497,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3800.0,
+          "rhat": 1.0000604432741493,
+          "ess_bulk": 9523.425292082173,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3850.0,
+          "rhat": 1.0000515651825743,
+          "ess_bulk": 9544.773008290573,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3900.0,
+          "rhat": 1.0001629727426156,
+          "ess_bulk": 9590.541111942724,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 3950.0,
+          "rhat": 1.000167221909863,
+          "ess_bulk": 9650.76537496615,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4000.0,
+          "rhat": 1.000162212613865,
+          "ess_bulk": 9618.336457919997,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4050.0,
+          "rhat": 1.0001077769479156,
+          "ess_bulk": 9547.389121300068,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4100.0,
+          "rhat": 1.0000703624813942,
+          "ess_bulk": 9472.072534411971,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4150.0,
+          "rhat": 1.000060872172151,
+          "ess_bulk": 9477.068065733232,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4200.0,
+          "rhat": 1.00003539688719,
+          "ess_bulk": 9548.787729835569,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4250.0,
+          "rhat": 1.0000202626260146,
+          "ess_bulk": 9630.174910868243,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4300.0,
+          "rhat": 1.0000319527846833,
+          "ess_bulk": 9610.396120464728,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4350.0,
+          "rhat": 1.0000556058495453,
+          "ess_bulk": 9551.089930603623,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4400.0,
+          "rhat": 1.0000862677209426,
+          "ess_bulk": 9535.289885800074,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4450.0,
+          "rhat": 1.0001090823051897,
+          "ess_bulk": 9542.167311575831,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4500.0,
+          "rhat": 1.0001401781510633,
+          "ess_bulk": 9575.964008432304,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4550.0,
+          "rhat": 1.0002141439902081,
+          "ess_bulk": 9639.706494162221,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4600.0,
+          "rhat": 1.0001641656873341,
+          "ess_bulk": 9697.289538639698,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4650.0,
+          "rhat": 1.0001411388526504,
+          "ess_bulk": 9685.859287166744,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4700.0,
+          "rhat": 1.0001038468723888,
+          "ess_bulk": 9596.846368559516,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4750.0,
+          "rhat": 1.0000326494839564,
+          "ess_bulk": 9550.957298042005,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4800.0,
+          "rhat": 1.0000494562327087,
+          "ess_bulk": 9604.631432729237,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4850.0,
+          "rhat": 1.0000745878217374,
+          "ess_bulk": 9694.708409697992,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4900.0,
+          "rhat": 1.0001976719996928,
+          "ess_bulk": 9647.89360146904,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 4950.0,
+          "rhat": 1.0002778947120516,
+          "ess_bulk": 9587.12528823443,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5000.0,
+          "rhat": 1.000291744098488,
+          "ess_bulk": 9544.042182064788,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5050.0,
+          "rhat": 1.0002972128523013,
+          "ess_bulk": 9527.117702882697,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5100.0,
+          "rhat": 1.0001845748152707,
+          "ess_bulk": 9505.970317525187,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5150.0,
+          "rhat": 1.0001313392771585,
+          "ess_bulk": 9500.895132245003,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5200.0,
+          "rhat": 1.000124441699074,
+          "ess_bulk": 9507.754530882892,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5250.0,
+          "rhat": 1.0001254487075664,
+          "ess_bulk": 9522.613154656703,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5300.0,
+          "rhat": 1.0001166995883297,
+          "ess_bulk": 9544.18963830062,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5350.0,
+          "rhat": 1.0000870517172507,
+          "ess_bulk": 9568.115138835823,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5400.0,
+          "rhat": 1.000112611880733,
+          "ess_bulk": 9598.258862789577,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5450.0,
+          "rhat": 1.0001224603855363,
+          "ess_bulk": 9626.49406267381,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5500.0,
+          "rhat": 1.0001326122973135,
+          "ess_bulk": 9640.1214336788,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5550.0,
+          "rhat": 1.0001804631769367,
+          "ess_bulk": 9638.614237126401,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5600.0,
+          "rhat": 1.0001994919621138,
+          "ess_bulk": 9624.619360167664,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5650.0,
+          "rhat": 1.0001414568112752,
+          "ess_bulk": 9604.590967216665,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5700.0,
+          "rhat": 1.0001008855033606,
+          "ess_bulk": 9600.777436623488,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5750.0,
+          "rhat": 1.000110248191517,
+          "ess_bulk": 9643.44382955932,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5800.0,
+          "rhat": 1.0001161395128368,
+          "ess_bulk": 9578.35089242537,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5850.0,
+          "rhat": 1.0001140962656705,
+          "ess_bulk": 9542.837009880093,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5900.0,
+          "rhat": 1.000104952381989,
+          "ess_bulk": 9511.870905378166,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 5950.0,
+          "rhat": 1.00014594927147,
+          "ess_bulk": 9496.963134851743,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6000.0,
+          "rhat": 1.0001860436840155,
+          "ess_bulk": 9521.899305965908,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6050.0,
+          "rhat": 1.0001788994089675,
+          "ess_bulk": 9556.107766360583,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6100.0,
+          "rhat": 1.0002175763126853,
+          "ess_bulk": 9582.63228977686,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6150.0,
+          "rhat": 1.0002256193797285,
+          "ess_bulk": 9586.627295897335,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6200.0,
+          "rhat": 1.0001774977956364,
+          "ess_bulk": 9588.085596907076,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6250.0,
+          "rhat": 1.0000253673659714,
+          "ess_bulk": 9589.604728356278,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6300.0,
+          "rhat": 1.0002063341761083,
+          "ess_bulk": 9607.124361827264,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6350.0,
+          "rhat": 1.0001760401647724,
+          "ess_bulk": 9564.486990058698,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6400.0,
+          "rhat": 1.0001558351152808,
+          "ess_bulk": 9536.483192560983,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6450.0,
+          "rhat": 1.0001604814966227,
+          "ess_bulk": 9545.459793606798,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6500.0,
+          "rhat": 1.0000920260270847,
+          "ess_bulk": 9540.087376283733,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6550.0,
+          "rhat": 1.0001729667164785,
+          "ess_bulk": 9538.07543513368,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6600.0,
+          "rhat": 1.0001920541481502,
+          "ess_bulk": 9555.482465907928,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6650.0,
+          "rhat": 1.0001730934552466,
+          "ess_bulk": 9598.217234378557,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6700.0,
+          "rhat": 1.000175607495889,
+          "ess_bulk": 9639.048111274722,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6750.0,
+          "rhat": 1.0002597836422957,
+          "ess_bulk": 9637.560784629897,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6800.0,
+          "rhat": 1.000302059107239,
+          "ess_bulk": 9578.0518157159,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6850.0,
+          "rhat": 1.0001698610447765,
+          "ess_bulk": 9535.926083432749,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6900.0,
+          "rhat": 1.000157036640832,
+          "ess_bulk": 9519.962299494624,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 6950.0,
+          "rhat": 1.0001132059241011,
+          "ess_bulk": 9515.658066504888,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7000.0,
+          "rhat": 1.0000878695103719,
+          "ess_bulk": 9546.188166851101,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7050.0,
+          "rhat": 1.0000603319290142,
+          "ess_bulk": 9559.410036081434,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7100.0,
+          "rhat": 1.000107206410001,
+          "ess_bulk": 9542.061928952831,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7150.0,
+          "rhat": 1.0000450053790144,
+          "ess_bulk": 9469.561691050938,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7200.0,
+          "rhat": 1.0000356296691417,
+          "ess_bulk": 9464.529300892009,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7250.0,
+          "rhat": 1.0000333448206637,
+          "ess_bulk": 9457.54060249458,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7300.0,
+          "rhat": 1.0000384096672,
+          "ess_bulk": 9438.260024251247,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7350.0,
+          "rhat": 1.0000394035730593,
+          "ess_bulk": 9413.75876552342,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7400.0,
+          "rhat": 1.0000388459913898,
+          "ess_bulk": 9397.122311433774,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7450.0,
+          "rhat": 1.0000293093190022,
+          "ess_bulk": 9396.558151374475,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7500.0,
+          "rhat": 1.0000208634716303,
+          "ess_bulk": 9405.891874894358,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7550.0,
+          "rhat": 1.0000157621266712,
+          "ess_bulk": 9425.234100230731,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7600.0,
+          "rhat": 1.0000084136907663,
+          "ess_bulk": 9460.951449365388,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7650.0,
+          "rhat": 1.0000074202081524,
+          "ess_bulk": 9442.596113763757,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7700.0,
+          "rhat": 1.000014115744466,
+          "ess_bulk": 9444.464288077012,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7750.0,
+          "rhat": 1.0000189382401459,
+          "ess_bulk": 9478.6583998946,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7800.0,
+          "rhat": 1.0000210948558956,
+          "ess_bulk": 9468.663036085134,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7850.0,
+          "rhat": 1.000027008655488,
+          "ess_bulk": 9442.504042854354,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7900.0,
+          "rhat": 1.000028745818396,
+          "ess_bulk": 9429.631765327289,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 7950.0,
+          "rhat": 1.0000383459288475,
+          "ess_bulk": 9427.750558885104,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8000.0,
+          "rhat": 1.0000409996460222,
+          "ess_bulk": 9446.453196475799,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8050.0,
+          "rhat": 1.0000301530220543,
+          "ess_bulk": 9425.375758055201,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8100.0,
+          "rhat": 1.0000221515422674,
+          "ess_bulk": 9420.53517750398,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8150.0,
+          "rhat": 1.0000187634259996,
+          "ess_bulk": 9416.923798196727,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8200.0,
+          "rhat": 1.0000161102673824,
+          "ess_bulk": 9416.998377200212,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8250.0,
+          "rhat": 1.0000161656531108,
+          "ess_bulk": 9424.240702707948,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8300.0,
+          "rhat": 1.0000219594499995,
+          "ess_bulk": 9431.646158497731,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8350.0,
+          "rhat": 1.0000262236473079,
+          "ess_bulk": 9445.825881772866,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8400.0,
+          "rhat": 1.000033278337495,
+          "ess_bulk": 9467.224942641298,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8450.0,
+          "rhat": 1.0000411604012265,
+          "ess_bulk": 9494.746880015797,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8500.0,
+          "rhat": 1.0000491001724656,
+          "ess_bulk": 9524.080923577383,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8550.0,
+          "rhat": 1.0000616030636003,
+          "ess_bulk": 9555.681084708405,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8600.0,
+          "rhat": 1.0000636015616884,
+          "ess_bulk": 9576.044744826027,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8650.0,
+          "rhat": 1.0000639537942193,
+          "ess_bulk": 9577.563136783941,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8700.0,
+          "rhat": 1.000061240776679,
+          "ess_bulk": 9564.600017116732,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8750.0,
+          "rhat": 1.0000561658679201,
+          "ess_bulk": 9549.413501891857,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8800.0,
+          "rhat": 1.0000565442271199,
+          "ess_bulk": 9537.43998207052,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8850.0,
+          "rhat": 1.000057285448105,
+          "ess_bulk": 9529.273688767558,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8900.0,
+          "rhat": 1.0000598518062516,
+          "ess_bulk": 9532.413072048916,
+          "passed": true
+        },
+        {
+          "variable": "T_DJF",
+          "age_cal_BP": 8950.0,
+          "rhat": 1.0000594289483693,
+          "ess_bulk": 9514.460154888597,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": -50.0,
+          "rhat": 1.0000089852706133,
+          "ess_bulk": 9967.6470896704,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 0.0,
+          "rhat": 1.000046857481154,
+          "ess_bulk": 9968.005202229206,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 50.0,
+          "rhat": 1.0003155202555416,
+          "ess_bulk": 10026.93733913147,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 100.0,
+          "rhat": 1.0002915480738754,
+          "ess_bulk": 10076.815715414175,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 150.0,
+          "rhat": 1.0003287678761943,
+          "ess_bulk": 9959.085404556168,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 200.0,
+          "rhat": 1.0002630137555104,
+          "ess_bulk": 10033.601113805948,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 250.0,
+          "rhat": 1.0002046076063476,
+          "ess_bulk": 10103.257257954067,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 300.0,
+          "rhat": 1.0001790057796596,
+          "ess_bulk": 10065.90538353174,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 350.0,
+          "rhat": 1.0000848215899558,
+          "ess_bulk": 10047.490318902725,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 400.0,
+          "rhat": 1.0000832359081961,
+          "ess_bulk": 10052.266215761461,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 450.0,
+          "rhat": 1.0000845949316388,
+          "ess_bulk": 10074.237428679628,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 500.0,
+          "rhat": 1.0000941950876814,
+          "ess_bulk": 10105.262725909994,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 550.0,
+          "rhat": 1.0001291389264948,
+          "ess_bulk": 10141.430999610717,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 600.0,
+          "rhat": 1.0001704644146683,
+          "ess_bulk": 10157.86010253819,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 650.0,
+          "rhat": 1.0001836400700328,
+          "ess_bulk": 10148.86399802752,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 700.0,
+          "rhat": 1.0001806951031884,
+          "ess_bulk": 10128.333824007339,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 750.0,
+          "rhat": 1.0002685667510502,
+          "ess_bulk": 10086.59692012123,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 800.0,
+          "rhat": 1.00028636430686,
+          "ess_bulk": 10098.6906373776,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 850.0,
+          "rhat": 1.0001434783816077,
+          "ess_bulk": 10132.339190972243,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 900.0,
+          "rhat": 1.000185198150105,
+          "ess_bulk": 10184.970319240894,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 950.0,
+          "rhat": 1.0001557205837852,
+          "ess_bulk": 10144.170635654571,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1000.0,
+          "rhat": 1.0000536608984243,
+          "ess_bulk": 10088.326756287066,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1050.0,
+          "rhat": 1.0000713079649877,
+          "ess_bulk": 10050.876948316176,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1100.0,
+          "rhat": 1.0001019660159116,
+          "ess_bulk": 10034.37841241237,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1150.0,
+          "rhat": 1.0001507383977148,
+          "ess_bulk": 10039.521879989532,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1200.0,
+          "rhat": 1.0002059104058645,
+          "ess_bulk": 9979.48976521338,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1250.0,
+          "rhat": 1.0001212036271483,
+          "ess_bulk": 9946.155763566925,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1300.0,
+          "rhat": 1.0001614107658094,
+          "ess_bulk": 9874.953662363532,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1350.0,
+          "rhat": 0.999974078915871,
+          "ess_bulk": 9827.300751213852,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1400.0,
+          "rhat": 0.999988569572583,
+          "ess_bulk": 9821.13525070256,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1450.0,
+          "rhat": 1.0001452052956756,
+          "ess_bulk": 9823.146777284364,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1500.0,
+          "rhat": 1.0000798263330444,
+          "ess_bulk": 9815.642152817678,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1550.0,
+          "rhat": 1.000113104467084,
+          "ess_bulk": 9797.83493927047,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1600.0,
+          "rhat": 1.0000961064583929,
+          "ess_bulk": 9795.190156491233,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1650.0,
+          "rhat": 1.000022889133758,
+          "ess_bulk": 9806.073328969942,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1700.0,
+          "rhat": 0.99996917419011,
+          "ess_bulk": 9825.028230694466,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1750.0,
+          "rhat": 0.9999215404522592,
+          "ess_bulk": 9828.9008809152,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1800.0,
+          "rhat": 1.000051071347828,
+          "ess_bulk": 9820.549231666157,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1850.0,
+          "rhat": 1.0000075862836513,
+          "ess_bulk": 9815.132743014965,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1900.0,
+          "rhat": 0.9999384983582222,
+          "ess_bulk": 9839.394505256285,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 1950.0,
+          "rhat": 1.0000040114511597,
+          "ess_bulk": 9904.960621537424,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2000.0,
+          "rhat": 1.0001406779252144,
+          "ess_bulk": 9863.251109029523,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2050.0,
+          "rhat": 1.0002504108130787,
+          "ess_bulk": 9761.775639367354,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2100.0,
+          "rhat": 1.0002741913013722,
+          "ess_bulk": 9721.251817197643,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2150.0,
+          "rhat": 1.0002618701410555,
+          "ess_bulk": 9674.648544919124,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2200.0,
+          "rhat": 1.0002705348294871,
+          "ess_bulk": 9530.376882331484,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2250.0,
+          "rhat": 1.0002906843893447,
+          "ess_bulk": 9533.584271726448,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2300.0,
+          "rhat": 1.0002485948278876,
+          "ess_bulk": 9632.183461881643,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2350.0,
+          "rhat": 1.0002029504000995,
+          "ess_bulk": 9642.26838786256,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2400.0,
+          "rhat": 1.0001276329627595,
+          "ess_bulk": 9600.20829895641,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2450.0,
+          "rhat": 1.000055301415228,
+          "ess_bulk": 9574.171604577654,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2500.0,
+          "rhat": 1.0000259655796249,
+          "ess_bulk": 9591.177577472397,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2550.0,
+          "rhat": 1.0000299863871682,
+          "ess_bulk": 9660.525564236528,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2600.0,
+          "rhat": 1.0000359528775686,
+          "ess_bulk": 9753.931115040765,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2650.0,
+          "rhat": 1.000078253717872,
+          "ess_bulk": 9865.516050417309,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2700.0,
+          "rhat": 1.0001006485739274,
+          "ess_bulk": 9923.432487995166,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2750.0,
+          "rhat": 1.0001636784623824,
+          "ess_bulk": 9927.477926581829,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2800.0,
+          "rhat": 1.0002432522098423,
+          "ess_bulk": 9908.259240735119,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2850.0,
+          "rhat": 1.0002916946438587,
+          "ess_bulk": 9889.552389979051,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2900.0,
+          "rhat": 1.0001732390222071,
+          "ess_bulk": 9865.559882411362,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 2950.0,
+          "rhat": 1.0000934009915639,
+          "ess_bulk": 9860.068329124228,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3000.0,
+          "rhat": 1.0000864773590148,
+          "ess_bulk": 9856.233087761731,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3050.0,
+          "rhat": 1.0000802882260917,
+          "ess_bulk": 9846.802997235467,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3100.0,
+          "rhat": 1.0000728136879706,
+          "ess_bulk": 9843.237412146393,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3150.0,
+          "rhat": 1.0000895013809634,
+          "ess_bulk": 9838.007599831442,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3200.0,
+          "rhat": 1.000131491324639,
+          "ess_bulk": 9829.776331277553,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3250.0,
+          "rhat": 1.0001825492582834,
+          "ess_bulk": 9612.042004614454,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3300.0,
+          "rhat": 1.0001781319445155,
+          "ess_bulk": 9440.903253752858,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3350.0,
+          "rhat": 1.0001599205415055,
+          "ess_bulk": 9455.047282253912,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3400.0,
+          "rhat": 1.00023684435487,
+          "ess_bulk": 9363.103498693765,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3450.0,
+          "rhat": 1.0002562220133298,
+          "ess_bulk": 9391.144180236979,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3500.0,
+          "rhat": 1.0001391930941237,
+          "ess_bulk": 9482.299172345382,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3550.0,
+          "rhat": 1.00023001592574,
+          "ess_bulk": 9535.122005640973,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3600.0,
+          "rhat": 1.0002991801681156,
+          "ess_bulk": 9546.851831780536,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3650.0,
+          "rhat": 1.0003338403363207,
+          "ess_bulk": 9536.289788830845,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3700.0,
+          "rhat": 1.0004307654963485,
+          "ess_bulk": 9547.610585368164,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3750.0,
+          "rhat": 1.0001661086755789,
+          "ess_bulk": 9450.526219429368,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3800.0,
+          "rhat": 1.0001137699931377,
+          "ess_bulk": 9429.622130351347,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3850.0,
+          "rhat": 1.0000882497614003,
+          "ess_bulk": 9513.587748878435,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3900.0,
+          "rhat": 1.000265073154749,
+          "ess_bulk": 9563.47371532574,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 3950.0,
+          "rhat": 1.000084084767279,
+          "ess_bulk": 9484.515543973605,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4000.0,
+          "rhat": 1.0001173200153137,
+          "ess_bulk": 9515.979722187434,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4050.0,
+          "rhat": 1.000248752200286,
+          "ess_bulk": 9287.0692285712,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4100.0,
+          "rhat": 1.0002266293005686,
+          "ess_bulk": 9216.989717595216,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4150.0,
+          "rhat": 1.0001273300884777,
+          "ess_bulk": 9444.307185095697,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4200.0,
+          "rhat": 1.0000902957907003,
+          "ess_bulk": 9569.81856045673,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4250.0,
+          "rhat": 1.0001513957071626,
+          "ess_bulk": 9801.996592425683,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4300.0,
+          "rhat": 1.0002461048929878,
+          "ess_bulk": 9836.818091724843,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4350.0,
+          "rhat": 1.0002992590559279,
+          "ess_bulk": 9816.734960688875,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4400.0,
+          "rhat": 1.0002365096816008,
+          "ess_bulk": 9582.508824149183,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4450.0,
+          "rhat": 1.0001664126955216,
+          "ess_bulk": 9457.916567442,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4500.0,
+          "rhat": 1.0001631970593627,
+          "ess_bulk": 9273.132977100131,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4550.0,
+          "rhat": 1.0002644834273922,
+          "ess_bulk": 9100.440137230391,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4600.0,
+          "rhat": 1.0002273200379983,
+          "ess_bulk": 8956.788353026006,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4650.0,
+          "rhat": 1.0002837344478834,
+          "ess_bulk": 8943.31241453112,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4700.0,
+          "rhat": 1.0001805982129608,
+          "ess_bulk": 9336.746869434757,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4750.0,
+          "rhat": 1.000109704561683,
+          "ess_bulk": 9889.256161084442,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4800.0,
+          "rhat": 1.0001804451209642,
+          "ess_bulk": 10019.5433273926,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4850.0,
+          "rhat": 1.000130672154184,
+          "ess_bulk": 10092.390568970428,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4900.0,
+          "rhat": 1.0000881708339193,
+          "ess_bulk": 10009.822210152344,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 4950.0,
+          "rhat": 0.9999441804630625,
+          "ess_bulk": 9962.27061244464,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5000.0,
+          "rhat": 1.0001306719639036,
+          "ess_bulk": 9923.920985047025,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5050.0,
+          "rhat": 1.000246204429856,
+          "ess_bulk": 9874.88600934715,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5100.0,
+          "rhat": 1.0003344549533348,
+          "ess_bulk": 9858.300350949125,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5150.0,
+          "rhat": 1.0003737513296662,
+          "ess_bulk": 9855.830205519596,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5200.0,
+          "rhat": 1.000326253742256,
+          "ess_bulk": 9849.160474639828,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5250.0,
+          "rhat": 1.0003907481646688,
+          "ess_bulk": 9843.044136686032,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5300.0,
+          "rhat": 1.0003114177698527,
+          "ess_bulk": 9836.147240840352,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5350.0,
+          "rhat": 1.000245461470455,
+          "ess_bulk": 9831.827092528069,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5400.0,
+          "rhat": 1.0002095109425766,
+          "ess_bulk": 9830.9196803795,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5450.0,
+          "rhat": 1.0002005653811312,
+          "ess_bulk": 9836.907789836892,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5500.0,
+          "rhat": 1.0001656251106135,
+          "ess_bulk": 9847.406338895546,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5550.0,
+          "rhat": 1.0001795287197326,
+          "ess_bulk": 9853.326057455744,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5600.0,
+          "rhat": 1.000207408499195,
+          "ess_bulk": 9854.512432043624,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5650.0,
+          "rhat": 1.0001936958516984,
+          "ess_bulk": 9849.771971722455,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5700.0,
+          "rhat": 1.0001849000275298,
+          "ess_bulk": 9843.605717120552,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5750.0,
+          "rhat": 1.0001238295027755,
+          "ess_bulk": 9846.166945138979,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5800.0,
+          "rhat": 1.000188561888264,
+          "ess_bulk": 9855.383419276683,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5850.0,
+          "rhat": 1.0001926211175554,
+          "ess_bulk": 9871.489193780102,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5900.0,
+          "rhat": 1.000181388874102,
+          "ess_bulk": 9886.786337293397,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 5950.0,
+          "rhat": 1.0003048091723012,
+          "ess_bulk": 9889.55374699861,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6000.0,
+          "rhat": 1.0002260703464123,
+          "ess_bulk": 9898.400186424904,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6050.0,
+          "rhat": 1.000114803287044,
+          "ess_bulk": 9905.465951849268,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6100.0,
+          "rhat": 1.0000957173697846,
+          "ess_bulk": 9912.97214240641,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6150.0,
+          "rhat": 1.000164188188023,
+          "ess_bulk": 9920.032771332157,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6200.0,
+          "rhat": 1.0002478626164863,
+          "ess_bulk": 9943.70458538213,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6250.0,
+          "rhat": 1.0001740066622378,
+          "ess_bulk": 9992.776468271797,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6300.0,
+          "rhat": 1.000075036676529,
+          "ess_bulk": 10052.340313321758,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6350.0,
+          "rhat": 1.0000265150727485,
+          "ess_bulk": 9977.606772933126,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6400.0,
+          "rhat": 1.0001338249488398,
+          "ess_bulk": 9907.92175180344,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6450.0,
+          "rhat": 1.000147304719982,
+          "ess_bulk": 9917.247119476973,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6500.0,
+          "rhat": 1.0001640216783507,
+          "ess_bulk": 9931.6619393803,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6550.0,
+          "rhat": 1.000102672672436,
+          "ess_bulk": 9935.382933324867,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6600.0,
+          "rhat": 1.000073246785556,
+          "ess_bulk": 9935.050039033342,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6650.0,
+          "rhat": 1.0000883053883864,
+          "ess_bulk": 9929.4059731873,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6700.0,
+          "rhat": 1.0000074782709414,
+          "ess_bulk": 9917.078757872352,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6750.0,
+          "rhat": 1.0001186621676394,
+          "ess_bulk": 9943.156679511934,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6800.0,
+          "rhat": 1.0003925522032726,
+          "ess_bulk": 9990.273370538345,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6850.0,
+          "rhat": 1.000269706448344,
+          "ess_bulk": 9976.8142042964,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6900.0,
+          "rhat": 1.0001556788151706,
+          "ess_bulk": 9953.810828729163,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 6950.0,
+          "rhat": 1.0001681173592483,
+          "ess_bulk": 9923.213794914378,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7000.0,
+          "rhat": 1.0001984026244115,
+          "ess_bulk": 9909.414907737599,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7050.0,
+          "rhat": 1.0002459871689195,
+          "ess_bulk": 9927.19917121148,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7100.0,
+          "rhat": 1.0002935718742219,
+          "ess_bulk": 9948.317327715704,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7150.0,
+          "rhat": 1.0000901061108292,
+          "ess_bulk": 9879.251667224831,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7200.0,
+          "rhat": 1.000042084568243,
+          "ess_bulk": 9694.5347437002,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7250.0,
+          "rhat": 0.9999442238847064,
+          "ess_bulk": 9662.99214713575,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7300.0,
+          "rhat": 0.99993897847292,
+          "ess_bulk": 9623.00038473027,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7350.0,
+          "rhat": 0.9999423278910353,
+          "ess_bulk": 9566.856225260472,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7400.0,
+          "rhat": 0.999947431165508,
+          "ess_bulk": 9512.438597178889,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7450.0,
+          "rhat": 0.9999844536837563,
+          "ess_bulk": 9487.767282289387,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7500.0,
+          "rhat": 1.0000403471210715,
+          "ess_bulk": 9482.192226210016,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7550.0,
+          "rhat": 1.000141904801795,
+          "ess_bulk": 9494.61338825547,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7600.0,
+          "rhat": 1.0001046050865905,
+          "ess_bulk": 9489.275807179883,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7650.0,
+          "rhat": 1.000088360397186,
+          "ess_bulk": 9460.628302337933,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7700.0,
+          "rhat": 1.0001508109169168,
+          "ess_bulk": 9434.800156077183,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7750.0,
+          "rhat": 1.000021372446419,
+          "ess_bulk": 9456.159194468226,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7800.0,
+          "rhat": 1.0000251613627593,
+          "ess_bulk": 9501.179969361987,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7850.0,
+          "rhat": 1.0000330258463095,
+          "ess_bulk": 9543.744058826851,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7900.0,
+          "rhat": 1.0000028172952342,
+          "ess_bulk": 9548.279131225805,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 7950.0,
+          "rhat": 1.0000450894944612,
+          "ess_bulk": 9507.128314932577,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8000.0,
+          "rhat": 1.000166920444082,
+          "ess_bulk": 9480.331534477793,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8050.0,
+          "rhat": 1.0001296920318372,
+          "ess_bulk": 9484.507726009286,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8100.0,
+          "rhat": 1.000134598456081,
+          "ess_bulk": 9477.232119424698,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8150.0,
+          "rhat": 1.0001235797784134,
+          "ess_bulk": 9482.847012433564,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8200.0,
+          "rhat": 1.0001337263235748,
+          "ess_bulk": 9491.57939458449,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8250.0,
+          "rhat": 1.0001216193172164,
+          "ess_bulk": 9506.230848751962,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8300.0,
+          "rhat": 1.0000892504322034,
+          "ess_bulk": 9518.376853500684,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8350.0,
+          "rhat": 1.0001048415216638,
+          "ess_bulk": 9512.149600937544,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8400.0,
+          "rhat": 1.0001497618962307,
+          "ess_bulk": 9492.86864704574,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8450.0,
+          "rhat": 1.0002062141295536,
+          "ess_bulk": 9453.516989648759,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8500.0,
+          "rhat": 1.000248660710341,
+          "ess_bulk": 9385.321027878323,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8550.0,
+          "rhat": 1.0001359178416391,
+          "ess_bulk": 9323.548528522744,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8600.0,
+          "rhat": 1.000109779243405,
+          "ess_bulk": 9294.90815845785,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8650.0,
+          "rhat": 1.0001098424641746,
+          "ess_bulk": 9334.580434572099,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8700.0,
+          "rhat": 1.0001632367119069,
+          "ess_bulk": 9403.43041387116,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8750.0,
+          "rhat": 1.000270322147307,
+          "ess_bulk": 9428.267656395634,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8800.0,
+          "rhat": 1.0002828117418234,
+          "ess_bulk": 9452.756410597325,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8850.0,
+          "rhat": 1.0003180184777956,
+          "ess_bulk": 9464.093492592136,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8900.0,
+          "rhat": 1.0004220938538486,
+          "ess_bulk": 9460.489782990868,
+          "passed": true
+        },
+        {
+          "variable": "P_ANN",
+          "age_cal_BP": 8950.0,
+          "rhat": 1.0002683017695924,
+          "ess_bulk": 9477.55654220475,
+          "passed": true
+        }
+      ],
+      "chains": 4,
+      "iterations_per_chain": 2000000,
+      "retained_postburn_draws": 10000,
+      "acceptance_rate": [
+        0.253001800180018,
+        0.2421797179717972,
+        0.235999599959996,
+        0.248001300130013
+      ],
+      "elapsed_s": 1334.2325965000782,
+      "peak_working_set_bytes": 426237952,
+      "deterministic_replay": {
+        "elapsed_s": 291.08030260005035,
+        "fields": {
+          "taxa_weights": true,
+          "tf_sample": true,
+          "expl_variance": true,
+          "recent_temp": true,
+          "recent_pann": true,
+          "log_target": true,
+          "alpha": true,
+          "iterations": true
+        },
+        "record_sha256": "474235ce1ae517b540df4d66a3ba55484fb91498ce6952cda5a7f6312bc2a8bf",
+        "threads": 2
+      }
+    }
+  },
+  "criteria": {
+    "rhat_max": 1.01,
+    "ess_bulk_min": 400,
+    "csv_comparison": "exact_at_existing_export_rounding"
+  },
+  "comparisons": [
+    {
+      "first": "Original lokal",
+      "second": "Archivierte Referenz",
+      "variable": "T_DJF",
+      "signed_mean_median_difference": 0.0038017623888787692,
+      "max_absolute_median_difference": 0.06149026340522745
+    },
+    {
+      "first": "Original lokal",
+      "second": "Archivierte Referenz",
+      "variable": "P_ANN",
+      "signed_mean_median_difference": 3.538528074999187,
+      "max_absolute_median_difference": 5.847175397414048
+    },
+    {
+      "first": "Korrigiert lokal",
+      "second": "Original lokal",
+      "variable": "T_DJF",
+      "signed_mean_median_difference": 0.05390700041317927,
+      "max_absolute_median_difference": 0.134127911752989
+    },
+    {
+      "first": "Korrigiert lokal",
+      "second": "Original lokal",
+      "variable": "P_ANN",
+      "signed_mean_median_difference": -11.948551102541385,
+      "max_absolute_median_difference": 18.36456422945048
+    }
+  ],
+  "legacy_runtime_equivalence": {
+    "n_iterations": 20000,
+    "original_runtime_s": 1.3102285999339074,
+    "fields": [
+      {
+        "field": "accepted",
+        "equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "field": "tf_sample",
+        "equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "field": "taxa_weights",
+        "equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "field": "expl_variance",
+        "equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "field": "recent_temp",
+        "equal": true,
+        "max_abs_difference": 0.0
+      },
+      {
+        "field": "recent_pann",
+        "equal": true,
+        "max_abs_difference": 0.0
+      }
+    ],
+    "comparison": "separately_built_unmodified_original_vs_packaged_legacy_same_local_runtime",
+    "passed": true,
+    "archive_acceptance_mismatches": 8141,
+    "archive_first_acceptance_mismatch": 3,
+    "original_source_sha256": "306bb66aae949daab35023ca5ac3c9347edf56fa2b46264b7e6dcb8ea083dc4d",
+    "original_binary_sha256": "f6ab98bea4439e567ccf197eb6f0c68bc574dc7b0f53e851660ea49bc845b30b"
+  },
+  "existing_test_summaries": {
+    "python-tests-lf.log": {
+      "summary": "15 passed in 5.48s",
+      "sha256": "166b24a77f5a92ce895aaf2a4055972a1b0b4056a3dc335492554c4839645d73"
+    },
+    "cpp-tests.log": {
+      "summary": "1 failed, 12 passed, 1 deselected in 9.40s",
+      "sha256": "598b83a1e111aed123609dcc1dc720f9a1cf718e1c85337b8f5b23060cceccd8"
+    },
+    "sampler-tests.log": {
+      "summary": "1 failed, 6 passed, 1 deselected in 105.14s (0:01:45)",
+      "sha256": "d265a3a0d875c88d4792794238ec4cfd19ca4cbe960107564bf2e6e8916017a1"
+    }
+  },
+  "dirichlet_prior_length_diagnostic": [
+    {
+      "iterations": 300000,
+      "burn_in": 75000,
+      "thin": 10,
+      "elapsed_s": 58.673910199897364,
+      "acceptance": [
+        0.1539184639487983,
+        0.14758491949731659,
+        0.039461315377179236,
+        0.15285176172539083
+      ],
+      "uniform_means": [
+        0.590446172824592,
+        0.4179001134202782,
+        0.5074818965549539,
+        0.5453362746125202,
+        0.5098599701294986,
+        0.5707697998019611
+      ],
+      "rhat": [
+        1.1377678472423471,
+        1.3230484928166255,
+        1.175324214627279,
+        1.048524343661056,
+        1.2696421936157778,
+        1.0576813108347978
+      ],
+      "ess_bulk": [
+        19.8852969356503,
+        9.727418855086182,
+        371.22319293755305,
+        83.39790190648077,
+        524.1126119162499,
+        56.15378276912171
+      ],
+      "original_absolute_mean_tolerance": 0.08,
+      "mean_check_passed": false
+    },
+    {
+      "iterations": 1200000,
+      "burn_in": 300000,
+      "thin": 40,
+      "elapsed_s": 216.0973870998714,
+      "acceptance": [
+        0.15016000533351112,
+        0.15370679022634087,
+        0.12081236041201374,
+        0.15295676522550752
+      ],
+      "uniform_means": [
+        0.5053700676621067,
+        0.5148348989061149,
+        0.4945338134051131,
+        0.5051242128551573,
+        0.49813676426316034,
+        0.5014980477753801
+      ],
+      "rhat": [
+        1.001724377521689,
+        1.000616931078445,
+        1.0024017481086815,
+        1.002794265201167,
+        1.0013299823270319,
+        1.004219523054515
+      ],
+      "ess_bulk": [
+        1939.1819293532044,
+        2347.707185430946,
+        2001.0004717323084,
+        1485.2351452291152,
+        2299.7563023956063,
+        1225.7883886343575
+      ],
+      "original_absolute_mean_tolerance": 0.08,
+      "mean_check_passed": true
+    }
+  ],
+  "random_runtime_probe": {
+    "libcpp_version": 230104,
+    "default_is_minstd_rand": true,
+    "default_is_minstd_rand0": false,
+    "default_first": 530981,
+    "minstd_rand0_first": 184877
+  },
+  "archived_bitwise_test": "failed_and_preserved_runtime_dependency",
+  "technical_checks_passed": true,
+  "corrected_convergence_passed": true,
+  "plot_rendering": {
+    "age_axis": "young_to_old_left_to_right",
+    "x_limits_ka_cal_BP": [
+      -0.05,
+      8.95
+    ]
+  }
+}

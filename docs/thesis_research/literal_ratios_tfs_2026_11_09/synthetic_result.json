@@ -1,0 +1,437 @@
+{
+ "kind": "module_result_on_synthetic_fixture",
+ "backend": "math.exp and math.erfc (own textbook formulas), not bit-identical with R dnorm.c and pnorm.c",
+ "cases": {
+  "two_taxa_plain": {
+   "num_taxa": 2,
+   "tann_tf_ratio": [
+    "0x1.5555555555556p+0",
+    "0x1.0000000000000p-1"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1",
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.f1c1a48bc68e7p-1",
+    "0x1.000a13008a1cap+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     1,
+     2,
+     1,
+     2
+    ],
+    [
+     1,
+     2,
+     1,
+     3
+    ]
+   ],
+   "transfer_ratio": "0x1.4be37cb46a832p+1",
+   "kind": "number"
+  },
+  "tie_takes_first_minimum": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.5555555555556p-2"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.afef3b477cc06p-1"
+   ],
+   "indices": [
+    [
+     0,
+     2,
+     1,
+     2
+    ]
+   ],
+   "transfer_ratio": "0x1.1ff4d22fa8805p-1",
+   "kind": "number"
+  },
+  "off_grid_takes_end": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p-1"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+2"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.47e8b241a2131p+0"
+   ],
+   "indices": [
+    [
+     0,
+     3,
+     0,
+     3
+    ]
+   ],
+   "transfer_ratio": "0x1.47e8b241a2131p+1",
+   "kind": "number"
+  },
+  "start_density_zero": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "Inf"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000001p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     1,
+     2,
+     1,
+     2
+    ]
+   ],
+   "transfer_ratio": "Inf",
+   "kind": "Inf"
+  },
+  "both_densities_zero": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "NaN"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000001p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     1,
+     2,
+     1,
+     2
+    ]
+   ],
+   "transfer_ratio": "NaN",
+   "kind": "NaN"
+  },
+  "old_outside_truncation": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     1,
+     3,
+     1,
+     2
+    ]
+   ],
+   "transfer_ratio": "0",
+   "kind": "0"
+  },
+  "live_shape_grid_1000": {
+   "num_taxa": 6,
+   "tann_tf_ratio": [
+    "0x1.bf1bf25628419p+1",
+    "0x1.0ce9727abd115p+1",
+    "0x1.bf914a9bf53b2p+0",
+    "0x1.0d1433cb6fa58p-2",
+    "0x1.8b83ab7b5d60ap-1",
+    "0x1.8f36c86e6a0dbp-3"
+   ],
+   "pann_tf_ratio": [
+    "0x1.ed86b5368db08p-3",
+    "0x1.55c2b61634913p-2",
+    "0x1.0000000000000p+0",
+    "0x1.29c8a9471a58ap+1",
+    "0x1.c06a1aaf95fafp+0",
+    "0x1.053d2c1ecab95p-1"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     697,
+     702,
+     155,
+     149
+    ],
+    [
+     579,
+     575,
+     140,
+     137
+    ],
+    [
+     637,
+     627,
+     86,
+     86
+    ],
+    [
+     646,
+     656,
+     224,
+     216
+    ],
+    [
+     667,
+     673,
+     74,
+     86
+    ],
+    [
+     550,
+     547,
+     181,
+     180
+    ]
+   ],
+   "transfer_ratio": "0x1.5bb89bcc8b89dp-4",
+   "kind": "number"
+  },
+  "wide_proposal_small_scale": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p-2"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.000000000a331p+0"
+   ],
+   "indices": [
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   "transfer_ratio": "0x1.000000000a331p-2",
+   "kind": "number"
+  },
+  "both_outside_truncation": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "NaN"
+   ],
+   "pann_dists_tf_ratio": [
+    "NaN"
+   ],
+   "indices": [
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "transfer_ratio": "NaN",
+   "kind": "NaN"
+  },
+  "new_far_below_window": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1"
+   ],
+   "tann_dists_tf_ratio": [
+    "Inf"
+   ],
+   "pann_dists_tf_ratio": [
+    "Inf"
+   ],
+   "indices": [
+    [
+     1,
+     3,
+     1,
+     3
+    ]
+   ],
+   "transfer_ratio": "Inf",
+   "kind": "Inf"
+  },
+  "equal_bounds": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "NaN"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.018ddb67fec4ep+0"
+   ],
+   "indices": [
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "transfer_ratio": "NaN",
+   "kind": "NaN"
+  },
+  "new_outside_truncation": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p-1"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "Inf"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.018ddb67fec4ep+0"
+   ],
+   "indices": [
+    [
+     3,
+     1,
+     1,
+     1
+    ]
+   ],
+   "transfer_ratio": "Inf",
+   "kind": "Inf"
+  },
+  "tiny_sigma_saturates": {
+   "num_taxa": 1,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "NaN"
+   ],
+   "pann_dists_tf_ratio": [
+    "NaN"
+   ],
+   "indices": [
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ],
+   "transfer_ratio": "NaN",
+   "kind": "NaN"
+  },
+  "three_taxa_quarters": {
+   "num_taxa": 3,
+   "tann_tf_ratio": [
+    "0x1.0000000000000p-2",
+    "0x1.0000000000000p-1",
+    "0x1.0000000000000p+0"
+   ],
+   "pann_tf_ratio": [
+    "0x1.0000000000000p+1",
+    "0x1.5555555555556p+0",
+    "0x1.0000000000000p+0"
+   ],
+   "tann_dists_tf_ratio": [
+    "0x1.597e990f38a2ep+0",
+    "0x1.fffffffffffffp-1",
+    "0x1.5518650fd1880p+0"
+   ],
+   "pann_dists_tf_ratio": [
+    "0x1.059b229f7e2fdp+0",
+    "0x1.e0e4198c5c781p-1",
+    "0x1.0000000000000p+0"
+   ],
+   "indices": [
+    [
+     0,
+     1,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     1,
+     2
+    ],
+    [
+     3,
+     2,
+     3,
+     0
+    ]
+   ],
+   "transfer_ratio": "0x1.268eb8f72649bp-1",
+   "kind": "number"
+  }
+ },
+ "historical_reproduction_ready": false
+}

@@ -1,0 +1,203 @@
+{
+ "kind": "cran_source_check_of_fft_masking",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "packages": {
+  "signal": {
+   "library_line_main_v1_2": 24,
+   "versions": [
+    {
+     "file": "signal_0.7-6.tar.gz",
+     "date": "2015-07-30",
+     "sha256": "6b60277b07cf0167f8272059b128cc82f27a9bab1fd33d74c2a9e1f2abca5def",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": false,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "signal_0.7-7.tar.gz",
+     "date": "2021-05-25",
+     "sha256": "67a015c46d67de7548c3adb83a1b22524de75501a861d91668c3c2ea761a4e61",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": false,
+     "defines_in_R": [],
+     "daughter_type": null
+    }
+   ]
+  },
+  "pracma": {
+   "library_line_main_v1_2": 47,
+   "versions": [
+    {
+     "file": "pracma_2.1.4.tar.gz",
+     "date": "2018-01-30",
+     "sha256": "0ccaef86c1446971ca244e6dbcc605222c2f652b23a5db921070e37a6240f5f9",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.1.5.tar.gz",
+     "date": "2018-08-26",
+     "sha256": "c95993af91dba98307b3b8660cda8f87d8bbd2ecc2ebe5deabeba9fd043b9ba1",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.1.8.tar.gz",
+     "date": "2018-10-16",
+     "sha256": "9ff4c8fe27c30b06a690372b5e579c65d6b03b79afb149d7f2bc7b9761531455",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.2.2.tar.gz",
+     "date": "2018-12-02",
+     "sha256": "710ed4741bdc63164e7a64513eade5bcbca76b97b22e43e15dddf25740b4f0a3",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.2.5.tar.gz",
+     "date": "2019-04-09",
+     "sha256": "2fe83e3a556f5aab3ba4c9867630283c78c9a13912c04991daf55712811e4d47",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.2.9.tar.gz",
+     "date": "2019-12-15",
+     "sha256": "0cea0ff5e88643df121e07b9aebfe57084c61e11801680039752f371fe87bf1e",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.3.3.tar.gz",
+     "date": "2021-01-23",
+     "sha256": "cf1f8d7724a385d9a2e1a5496d9ba0e9908940b85669fb2c506b9059722cb93c",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.3.6.tar.gz",
+     "date": "2021-12-07",
+     "sha256": "17ac83fd48c9155e00dc3f0433f95723505dc73d046860afd9001866d699b8de",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.3.8.tar.gz",
+     "date": "2022-03-04",
+     "sha256": "2302d454406e72711714732658d0c59c9d5a1ead698f22ee23f38cba63d42764",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    },
+    {
+     "file": "pracma_2.4.2.tar.gz",
+     "date": "2022-09-22",
+     "sha256": "1d50337fdfd9a8d704a64f01dae5d52b9a2bd6d872fdaa4a6685b8d3bde89c16",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    }
+   ]
+  },
+  "WaveletComp": {
+   "library_line_main_v1_2": 51,
+   "versions": [
+    {
+     "file": "WaveletComp_1.1.tar.gz",
+     "date": "2018-03-18",
+     "sha256": "c8550e05d982b32b22004d0e10dad512a2070b3888c007b1ef9bba288152821f",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": null
+    }
+   ]
+  },
+  "biwavelet": {
+   "library_line_main_v1_2": 52,
+   "versions": [
+    {
+     "file": "biwavelet_0.20.11.tar.gz",
+     "date": "2016-09-01",
+     "sha256": "01fc86ec37afc2c59841a8e10b47ecbd2bcd02bd047f042ca100afffd022b33a",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": "NumericVector"
+    },
+    {
+     "file": "biwavelet_0.20.17.tar.gz",
+     "date": "2018-05-20",
+     "sha256": "2bd9c7f038cdc0ea98244de9158bb38ec8b8e000cd66dbc39bf1c74b5b4d70a0",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": "NumericVector"
+    },
+    {
+     "file": "biwavelet_0.20.19.tar.gz",
+     "date": "2019-08-02",
+     "sha256": "2b9f99e4f56cee87ee2db53abcece205ff592887a9c9cf298c875a1ea594b25d",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": "NumericVector"
+    },
+    {
+     "file": "biwavelet_0.20.21.tar.gz",
+     "date": "2021-05-26",
+     "sha256": "dd4b54f354bc8c7c5e19ed6c09df2d3df985f029d10c24b716228a672bcfea6c",
+     "namespace_exports_fft": false,
+     "namespace_exports_mvfft": false,
+     "export_pattern": true,
+     "defines_in_R": [],
+     "daughter_type": "NumericVector"
+    }
+   ]
+  }
+ },
+ "versions_read": 17,
+ "versions_masking_fft_or_mvfft": [],
+ "not_checked": "the other packages attached by main_v1.2.R; the installed versions of the historical run are unknown",
+ "source": "CRAN source archives, read as archives only, nothing extracted or executed"
+}

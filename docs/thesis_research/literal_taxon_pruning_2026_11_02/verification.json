@@ -1,0 +1,50 @@
+{
+  "basis_commit": "47a926c3c8a6abc0db7c947b993f5e97f7408cdd",
+  "tracked_files_unchanged_since_basis": true,
+  "new_files_sha256": {
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/README.md": "c427343a423bf5281bfee6e37ddcbfb950a1ee52e8f3efa29686ba4942912b78",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/arithmetic_check.json": "e8073acba43dffc23120167bd63feae7d2ce55b91f0679eda2580d4c16b137fe",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/bind_source.py": "9015e87429388f73d2976f6e680938f6575c2d5a10c3afaf62cbb907f6e32881",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/check_taxon_pruning.py": "6a6d1e1df088a05c0e06d2c0b25315a429e68f7258b3b6c2fcb123ae192aae8e",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/determinism_audit.json": "9edfcb311ec61e792fd77cf691409c6453c70c3ec146f240637013b660b1801b",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/make_fixture.py": "6080eb97de8e09b216b4485f7323d5b33cb3a306f0cceb12712815987075bc35",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/rational_expectations.json": "71b99f635b1e40500c73b2a13c9fe5d0ce8f03b1223113772c592339f09aaa50",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/rational_reference.py": "47a33f95c73172cd0d1ba2ae49d1918ccaa6a563282a257ba05da6189526e68e",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/record_verification.py": "df109ba446338f38a646d0a6001c5e63325072ff9c56b078713fb55a799e5cf9",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/source_binding.json": "5b4d235bc23e12c61e826759c097552c5c3036526523ca34fc289c5c4ea1af4b",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/source_excerpt.json": "0ff68852d4818dd1529179dfba0e7f6ecd9fbb09b79ee5657589b1b7baadf346",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/synthetic_fixture.json": "3e5c7fd21c1b146142d0c4b933084782fa3948fa0187a3eaf8121beb5c455484",
+    "docs/thesis_research/literal_taxon_pruning_2026_11_02/synthetic_result.json": "799d7dac38a92afc28f33f1262ac8c1fceafc68c94df3fcea80b2e9e7370614a",
+    "tests/test_historical_taxon_pruning.py": "c24400642861a8658b9f6bae811b169387cc2e5ad644dc42b0d714da0685ad1b",
+    "tools/historical_taxon_pruning.py": "43d3ba36a56964a5865fb6eb749605285ec7724ef5dd21bad8f8affa9a26f1fa"
+  },
+  "targeted_pytest": {
+    "files": [
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "tests": 297,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 46,
+    "previous_tests": 251
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

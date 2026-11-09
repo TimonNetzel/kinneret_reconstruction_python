@@ -1,0 +1,114 @@
+{
+  "kind": "synthetic_age_selection_not_fossil_reconstruction",
+  "grid_counts": {
+    "hol": 231,
+    "lg": 2071,
+    "eem": 191
+  },
+  "period_masks": {
+    "hol": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "lg": [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false
+    ],
+    "eem": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      true
+    ]
+  },
+  "initial_merge_mask": [
+    true,
+    true,
+    false,
+    false,
+    false,
+    false
+  ],
+  "effective_mask_if_reached": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "taxa_change": false,
+  "initial_selected_rows_R_1_based": [
+    1,
+    2
+  ],
+  "initial_product": [
+    [
+      2.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "effective_product": [
+    [
+      2.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      3.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.5,
+      0.0,
+      0.0
+    ],
+    [
+      0.5,
+      0.0,
+      2.25,
+      0.75
+    ],
+    [
+      0.0,
+      0.25,
+      2.25,
+      0.75
+    ]
+  ],
+  "max_abs_errors": {
+    "initial_product": 0.0,
+    "effective_product": 0.0
+  },
+  "tolerance": 1e-14,
+  "actual_original_numerical_inputs_used": false,
+  "R_execution": false
+}

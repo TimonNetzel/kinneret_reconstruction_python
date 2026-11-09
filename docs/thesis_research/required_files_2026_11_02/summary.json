@@ -1,0 +1,142 @@
+{
+  "scope": "Configured two source roots, existing checkout excluding private/runtime dirs, and ZIP directories under source roots; no whole-PC search",
+  "source_count": 369,
+  "recent_src_count_by_scope": {
+    "additional": 149,
+    "original": 35
+  },
+  "date_limit": "mtime after 2021 is priority only, not historical creation/runtime proof; filesystem creation may reflect copying",
+  "indexed_data_files": 584,
+  "indexed_primary_data_files": 257,
+  "zip_directories_checked": [
+    {
+      "archive": "original:in/epd_giesecke_2016/quant_files.zip",
+      "data_members": 17,
+      "directory_digest": "cfe5f3acb33149ad02ac36ede061d537e0950c8da30853c1fa13d0f275c3d4a6"
+    },
+    {
+      "archive": "original:out/plots/diss/diss.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/diss/reconstruction_model.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/diss/dag/diss.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/diss/dag/diss_template.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/diss/dag/kinneret_paper.zip",
+      "data_members": 1,
+      "directory_digest": "5608040502e4d587ee702dbcd38cc8aae976da0582c8ada3e4bf164175ef008a"
+    },
+    {
+      "archive": "original:out/plots/mcmc/v5.0/diss.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/mcmc/v5.0/diss_final.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "original:out/plots/presentation/diss.zip",
+      "data_members": 0,
+      "directory_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "archive": "additional:kinneret_reconstruction_R-main.zip",
+      "data_members": 3,
+      "directory_digest": "8f7058044f88a1293b7a58e83189dc13981d487ca65fbc6b8634c5c164cfa849"
+    },
+    {
+      "archive": "additional:kinneret_paper_R/plots/copernicus_template.zip",
+      "data_members": 1,
+      "directory_digest": "2c65c8a3b9866b3dea03448776d08609e1dda99877d8da612d1d77d33fc0ed38"
+    },
+    {
+      "archive": "additional:my_kinneret_bbm/data/out/paper/kinneret_paper.zip",
+      "data_members": 1,
+      "directory_digest": "5608040502e4d587ee702dbcd38cc8aae976da0582c8ada3e4bf164175ef008a"
+    },
+    {
+      "archive": "additional:my_kinneret_bbm/plots/paper/copernicus_template.zip",
+      "data_members": 1,
+      "directory_digest": "2c65c8a3b9866b3dea03448776d08609e1dda99877d8da612d1d77d33fc0ed38"
+    },
+    {
+      "archive": "additional:my_kinneret_bbm/plots/paper/lake_kinneret.zip",
+      "data_members": 1,
+      "directory_digest": "2c65c8a3b9866b3dea03448776d08609e1dda99877d8da612d1d77d33fc0ed38"
+    },
+    {
+      "archive": "additional:my_kinneret_bbm/plots/v3/copernicus_template.zip",
+      "data_members": 1,
+      "directory_digest": "2c65c8a3b9866b3dea03448776d08609e1dda99877d8da612d1d77d33fc0ed38"
+    },
+    {
+      "archive": "additional:my_kinneret_bbm/plots/v3/kinneret_paper.zip",
+      "data_members": 1,
+      "directory_digest": "5608040502e4d587ee702dbcd38cc8aae976da0582c8ada3e4bf164175ef008a"
+    },
+    {
+      "archive": "additional:my_van/data/in/core/Pickarski_2015-2.zip",
+      "data_members": 1,
+      "directory_digest": "b7a583e95efb6eb68e4b140d5685a797fb0fa282d1a8e4ad0d58962c28f03f11"
+    },
+    {
+      "archive": "additional:my_van/data/in/core/Pickarski_2015.zip",
+      "data_members": 1,
+      "directory_digest": "6414bf1d38832a37c44c31d4c26fa73690820a49b868db894d9e999e893a8e62"
+    }
+  ],
+  "read_calls": 1178,
+  "unresolved_reads_without_renderable_data_extension": 13,
+  "availability_counts": {
+    "present_at_expected_path": 264,
+    "local_copy_candidate_needs_binding": 142,
+    "not_found_in_checked_scope": 615,
+    "dynamic_family_unresolved_or_missing": 157
+  },
+  "statically_reachable_sources_from_main_v1_2": [
+    "original:main_v1.2.R",
+    "original:src/check_ages.R",
+    "original:src/final_plotting.R",
+    "original:src/loess_functions.R",
+    "original:src/mcmc_IMH.R",
+    "original:src/mcmc_RWMH.R",
+    "original:src/mcmc_conduction.R",
+    "original:src/mcmc_converge.R",
+    "original:src/mcmc_functions_v1.5.R",
+    "original:src/mcmc_functions_v1.6.R",
+    "original:src/mcmc_plotting.R",
+    "original:src/mcmc_prep.R",
+    "original:src/mcmc_prep_v1.2.R",
+    "original:src/mcmc_prepare.R",
+    "original:src/mcmc_sampling_v1.2.R",
+    "original:src/mcmc_trimming_posterior_trafo.R",
+    "original:src/plant_winner_map.R",
+    "original:src/prior_climate.R",
+    "original:src/sampling_v1.2.R",
+    "original:src/sampling_v1.3.R"
+  ],
+  "errors": [],
+  "limitations": [
+    "No R execution or evaluation of control flow, function reachability, setwd or branch-dependent constants",
+    "No complete R dependency graph; package-internal reads and unrenderable filenames may be absent",
+    "Same basename is only a candidate; identity/schema/axes and actual run binding remain unverified",
+    "Missing means not found in this bounded scope, not absent everywhere on the PC",
+    "No separate upload artifacts were listed in this chat; no claim of inspecting unavailable attachments"
+  ],
+  "model_or_reconstruction_runs": false
+}

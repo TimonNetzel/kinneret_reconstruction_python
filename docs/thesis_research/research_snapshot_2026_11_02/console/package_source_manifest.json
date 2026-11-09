@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://cran.r-project.org/src/contrib/Archive/smotefamily/smotefamily_1.3.1.tar.gz",
+    "archive_sha256": "978d99afaf1bfe51d1752f652298a5e2e1fde2f667e10f8373dee2158ebe5e18",
+    "member": "smotefamily/DESCRIPTION",
+    "local_file": "DESCRIPTION",
+    "sha256": "20fb19c0658464831a435a4778b2286bfcd4676baa9f3fab1757db9acc169441"
+  },
+  {
+    "url": "https://cran.r-project.org/src/contrib/Archive/smotefamily/smotefamily_1.3.1.tar.gz",
+    "archive_sha256": "978d99afaf1bfe51d1752f652298a5e2e1fde2f667e10f8373dee2158ebe5e18",
+    "member": "smotefamily/R/SMOTE.R",
+    "local_file": "SMOTE.R",
+    "sha256": "1927df0e97ed35edd9078357c5cdc0da07eba451110fefb2556b230298d3705a"
+  },
+  {
+    "url": "https://cran.r-project.org/src/contrib/Archive/smotefamily/smotefamily_1.3.1.tar.gz",
+    "archive_sha256": "978d99afaf1bfe51d1752f652298a5e2e1fde2f667e10f8373dee2158ebe5e18",
+    "member": "smotefamily/R/n_dup_max.R",
+    "local_file": "n_dup_max.R",
+    "sha256": "f8da3af531a64b53313dde4fd38a4029514eceb11d650ef9d22b7f608ec0e4b9"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/cran/caret/6.0-84/R/createDataPartition.R",
+    "local_file": "caret_6.0-84_createDataPartition.R",
+    "sha256": "d8b615b0a2259b9e7f177739c25a6dcb279b4d4807461850c7c555d35775af7e"
+  }
+]

@@ -1,0 +1,211 @@
+{
+  "status": "passed",
+  "exit_codes": {
+    "browser": 0,
+    "two_sites": 0,
+    "app_pytest": 0,
+    "hist_pytest": 0
+  },
+  "standby_check": {
+    "windows_system_log_kernel_power_506_507": "none from 2026-11-09T18:25:00+01:00 until the query at the end of the runs",
+    "local_record_sha256": "f96910a75e8ad6aeaa3528bad0da7c2b598b24edb7ffc95028625cb96893753a"
+  },
+  "scope": "read-only app display of wt_power with explicit artificial series and bands, NumPy FFT with a measured and marked deviation from R; no historical case reproduction, no sampler, no training or fossil reconstruction",
+  "not_bit_identical_with_R": "by the decision of the user of 2026-11-09; the app states it in the state and in the example",
+  "starting_commit": "ddbce9e07daf088cb4b3be00ae91015317ab9cf3",
+  "module_package_commit": "ddbce9e07daf088cb4b3be00ae91015317ab9cf3",
+  "reproduction_state_sha256": "d84fe644553c48325b53dbf29a7ac7fbe8fcfa040d53e6d8f5358ac45851f945",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+    "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+    "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+    "329e6a8b2ada52e22be1a12272853091ca4a6c29894581167ae02b0898877f6a",
+    "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af",
+    "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[11] received only its link commit 9afab2e (pushed); STATES[0..10] untouched",
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 151,
+    "new_tests": 17,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "7e6b0116d8da2936c7e1c0d77eab02389cf5a5e97e85cafd670301b3cd5023e8"
+  },
+  "historical_tests": {
+    "passed": 1614,
+    "files": 20,
+    "new_tests": 212,
+    "local_junit_sha256": "c0d2b690e77f8aa8fe754db9616cacaca9005fc23e339a8259d068f497c4dad4"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "fehler_lines": 0,
+    "reproduction_checks": {
+      "tests_shown": 1614,
+      "modules": 16,
+      "earlier_states": 12,
+      "links": 45,
+      "tables": 19,
+      "wt_power_rows": 8
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "table_widths_390px": [
+    {
+      "table": "six-check",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "pruning",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "gamma",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "missing",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "dirichlet",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median-mask",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "climate",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "local-cor",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "reconst",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "wt-power",
+      "client": 332,
+      "scroll": 332
+    }
+  ],
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "wt_power table W1-W8 at 390 px, light",
+    "desktop.png": "same table, desktop dark",
+    "w8": "the row shows NaN for the module and NA for R; the case is marked kind mixed, for which the module claims only \"missing\""
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

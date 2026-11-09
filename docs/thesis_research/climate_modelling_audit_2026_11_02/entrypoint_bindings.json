@@ -1,0 +1,42 @@
+[
+  {
+    "source": "original:main.R",
+    "sha256": "71886d1fc2c7a5884564bed41eef9a524a0b14cc8f1e9cab4128dd70caded073",
+    "lines": [
+      {
+        "line": 128,
+        "text": "load(\"../../climate_modelling/pollen/transfer_functions/input_data/data_out/taxa_distribution_ww.rdata\")"
+      },
+      {
+        "line": 129,
+        "text": "taxa <- taxa.distribution.ww$dist"
+      },
+      {
+        "line": 130,
+        "text": "taxa_names <- taxa.distribution.ww$names"
+      }
+    ]
+  },
+  {
+    "source": "original:main_v1.2.R",
+    "sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+    "lines": [
+      {
+        "line": 391,
+        "text": "speleo_eu_info <- read.csv(\"../../stalage_speleodatabase/sisal/SISAL_V2/speleo_info.csv\", header = T, sep = ,)"
+      },
+      {
+        "line": 392,
+        "text": "ages_eu_info <- read.csv(\"../../stalage_speleodatabase/sisal/SISAL_V2/ages_info.csv\", header = T, sep = ,)"
+      },
+      {
+        "line": 858,
+        "text": "load(\"/automount/<LOST_DISK>/dissertation/palaeo_sfb/sciebo/diss_laptop/climate_modelling/pollen_speleothems/mcmc_recon/Data/pollen_g_climate_all_giesecke_v4.0.rdata\")"
+      },
+      {
+        "line": 860,
+        "text": "my_entities <- unlist(lapply(pollen.g.climate, function(x) x$entity))"
+      }
+    ]
+  }
+]

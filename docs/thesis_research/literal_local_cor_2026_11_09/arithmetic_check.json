@@ -1,0 +1,27 @@
+{
+ "kind": "counterexamples_not_candidate_variants",
+ "checks": {
+  "double_sum_for_the_mean": {
+   "module": "0x1.5555555555557p-2",
+   "double_sum": "0x1.5555555555555p-2",
+   "differs": true,
+   "stress_compared": 300,
+   "stress_changed": 199
+  },
+  "filter_y_as_well": {
+   "module_kind": "NA",
+   "variant_kind": "number",
+   "differs": true
+  },
+  "square_before_replacing": {
+   "module": "0x1.79ca10c924224p-67",
+   "variant": "0x1.0000000000000p+0",
+   "differs": true
+  },
+  "line_1966_reads_current_predictant": {
+   "module": "0x1.6db6db6db6db5p-1",
+   "variant": "0x1.f9bb096771e4bp-1",
+   "differs": true
+  }
+ }
+}

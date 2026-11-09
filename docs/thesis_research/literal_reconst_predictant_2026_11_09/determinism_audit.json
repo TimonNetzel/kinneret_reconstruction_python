@@ -1,0 +1,52 @@
+{
+  "kind": "determinism_audit_from_source_text_and_R_cross_check",
+  "question": "Which part of the reconstruction step is deterministic given tf_sample, and who reads its result for Kinneret?",
+  "candidates": [
+    {
+      "id": "selection_and_product",
+      "lines": "mcmc_functions_v1.6.R:1817-1820",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "reached_by_bound_run": true,
+      "decision": "implemented with explicit matrices"
+    },
+    {
+      "id": "youngest_values",
+      "lines": "1825",
+      "random_state": false,
+      "reached_by_bound_run": true,
+      "decision": "implemented"
+    },
+    {
+      "id": "taxa_change_block",
+      "lines": "1829-1839",
+      "random_state": true,
+      "reached_by_bound_run": false,
+      "decision": "not implemented; rejected when requested"
+    },
+    {
+      "id": "recent_values",
+      "lines": "1844-1857",
+      "random_state": false,
+      "reached_by_bound_run": "when recent is TRUE",
+      "decision": "implemented, both branches"
+    },
+    {
+      "id": "predictant_current",
+      "lines": "1939-1943",
+      "random_state": false,
+      "reached_by_bound_run": true,
+      "decision": "implemented"
+    },
+    {
+      "id": "proposal_draws",
+      "lines": "1812-1813",
+      "random_state": true,
+      "reached_by_bound_run": true,
+      "decision": "given explicitly; no draws"
+    }
+  ],
+  "selected_for_implementation": "selection, matrix product, column split and direct readers",
+  "final_variant_selected": false,
+  "R_execution_for_binding": false
+}

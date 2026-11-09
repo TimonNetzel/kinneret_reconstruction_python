@@ -1,5 +1,18 @@
 # Netzel-Projekt: gemeinsamer Einstieg
 
+> **Aktuelle Priorität, 02.11.2026:** Zuerst die lokalen Rekonstruktionen der
+> Dissertation nachbauen, anschließend Verbesserungen. Der
+> [neue Arbeitsplan](LOCAL_DISS_RECONSTRUCTION_PLAN.md) ersetzt die Reihenfolge
+> der älteren „Als Nächstes“-Liste. Kalibrierung und neue Modellvarianten
+> gehören in Phase 2; Quellenbefunde und fachliche Gates bleiben erhalten.
+
+
+> Neuer gemeinsamer Einstieg 02.11.2026:
+> [Claude-/App-Übergabe](CLAUDE_HANDOFF_2026_11_02.md) und
+> [portabler Forschungsstand](research_snapshot_2026_11_02/README.md).
+> Diese Fortsetzung liegt auf `dissertation-reconstruction`; den PR-Stand
+> vor Verwendung von `main` prüfen. Der folgende Stand vom 30.10. bleibt erhalten.
+
 Stand 30.10.2026. Nutzerauftrag: alle bisherigen Arbeiten hochladen und mergen,
 damit die Ergebnisse aus dem Chat erhalten bleiben. PR #18 ist gemergt;
 [Integrations-PR #30](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/30)

@@ -1,0 +1,55 @@
+{
+ "kind": "counterexamples_not_candidate_variants",
+ "checks": {
+  "long_double_in_three_loop_path": {
+   "module": "0x1.0000000000000p+0",
+   "variant": "0x1.0000000000001p+0",
+   "differs": true,
+   "source": "R-3.5.0 array.c simple_matprod uses double; the handover said long double",
+   "stress_finite_values": 2032,
+   "stress_changed": 367
+  },
+  "python_builtin_sum": {
+   "differs": true,
+   "stress_finite_values": 2032,
+   "stress_changed": 367,
+   "python": "3.12.10"
+  },
+  "exact_sum": {
+   "differs": true,
+   "stress_finite_values": 2032,
+   "stress_changed": 367
+  },
+  "numpy_matmul_not_used": {
+   "stress_finite_values": 2032,
+   "stress_changed": 0,
+   "note": "NumPy BLAS is not the reference BLAS; informative only"
+  },
+  "na_treated_as_zero": {
+   "module": "NA",
+   "variant": "0x1.0000000000000p+1",
+   "differs": true
+  },
+  "column_wise_reading": {
+   "module": [
+    "0x1.1800000000000p+4",
+    "0x1.9000000000000p+4",
+    "0x1.6800000000000p+4",
+    "0x1.7c00000000000p+4"
+   ],
+   "variant": [
+    "25/2",
+    "20",
+    "55/2"
+   ],
+   "differs": true
+  },
+  "line_1466_holocene_mask_taken_as_effective": {
+   "module_rows": 4,
+   "variant_rows": 2,
+   "differs": true,
+   "note": "line 1522 resets the mask to all rows"
+  },
+  "missing_value_rows_in_stress": 150
+ }
+}

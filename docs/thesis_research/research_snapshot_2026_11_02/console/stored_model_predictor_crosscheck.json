@@ -1,0 +1,22 @@
+{
+  "source_summary_sha256": "233f2654de76912a95a2d3effdd4be79a8dab8c82206ab370f60ec61877ee7f2",
+  "fit_count": 167,
+  "predictor_groups": [
+    {
+      "predictors": [
+        "t.djf.norm",
+        "p.ann.norm"
+      ],
+      "count": 165
+    },
+    {
+      "predictors": [
+        "t.ann.norm",
+        "p.ann.norm"
+      ],
+      "count": 2
+    }
+  ],
+  "no_five_predictor_fit_in_prior_selected_167": true,
+  "no_new_model_scan": true
+}

@@ -1,0 +1,633 @@
+{
+  "spec_id": "kinneret-phase1-2026-11-02",
+  "spec_sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4",
+  "spec_valid": true,
+  "status": "open_prerequisites",
+  "historical_reproduction_ready": false,
+  "execution_supported": false,
+  "verified_assets": 26,
+  "verified_facts": 19,
+  "verified_snapshot_files": 50,
+  "case": {
+    "id": "kinneret",
+    "phase": 1,
+    "target_variables": {
+      "TANN": "degC",
+      "PANN": "mm/a"
+    },
+    "text_window_cal_a_BP": [
+      0,
+      9000
+    ],
+    "window_kind": "approximate_text_window",
+    "final_numeric_window": null,
+    "plot_direction": "young_left_old_right"
+  },
+  "selected_variant": null,
+  "requirements": [
+    {
+      "id": "final_base",
+      "label_de": "Finaler Kinneret-Basiseintrag",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "binding",
+          "pointer": "/sample_binding/final_v1_2_binding"
+        }
+      ],
+      "needed_original_evidence": [
+        "core_data_additional_sites_v1.2.rdata: core.data[[3]] or exact producer/input binding"
+      ],
+      "observed_evidence": [
+        "unresolved"
+      ]
+    },
+    {
+      "id": "final_chronology",
+      "label_de": "Finale Listenchronologie und Proben-/Altersraster",
+      "unresolved_status": "widerspruechlich",
+      "evidence": [
+        {
+          "artifact": "binding",
+          "pointer": "/chronology_interface"
+        }
+      ],
+      "needed_original_evidence": [
+        "final list of age grids, depth/age axes, units and rho(D|A), tied to final base and run"
+      ],
+      "observed_evidence": [
+        {
+          "preserved_candidate": "matrix plus flat age vector",
+          "bacon_source": "first saves list/age-grid variant, later overwrites same filename with mean-age matrix",
+          "current_consumer": "age.reso=2 and [[age.reso]] expect a list; matrix candidate cannot be silently substituted"
+        }
+      ]
+    },
+    {
+      "id": "historical_tf",
+      "label_de": "Numerische historische TFs und finale Taxonzuordnung",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "binding",
+          "pointer": "/complete_final_tf_subset_known"
+        }
+      ],
+      "needed_original_evidence": [
+        "mixed_partial_arts_emd.rdata and info; final ordered fossil-type/TF mapping, axes, units and exclusions"
+      ],
+      "observed_evidence": [
+        false
+      ]
+    },
+    {
+      "id": "isotope_workspaces",
+      "label_de": "Ursprüngliche Isotopen-Workspaces",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "references",
+          "pointer": "/consumer_contract/marine_actual_object_identity"
+        }
+      ],
+      "needed_original_evidence": [
+        "original d18o.age objects, load order, cave/stack identities and prepared age axes"
+      ],
+      "observed_evidence": [
+        "unresolved without d18o.age metadata and load provenance"
+      ]
+    },
+    {
+      "id": "cru_kgc_inputs",
+      "label_de": "Globale Klimaeingaben und Paket-/Klassenbindung",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "references",
+          "pointer": "/consumer_contract/calendar_years_for_indices_50_115"
+        }
+      ],
+      "needed_original_evidence": [
+        "four consumed global CRU files, variables/units/time axes and historical kgc map/version"
+      ],
+      "observed_evidence": [
+        "unverified without time axis; source comment says 1950-2015"
+      ]
+    },
+    {
+      "id": "reference_variant",
+      "label_de": "Historische Soreq-/MEDSTACK-Vorbereitung",
+      "unresolved_status": "widerspruechlich",
+      "evidence": [
+        {
+          "artifact": "references",
+          "pointer": "/source_variant_comparison"
+        },
+        {
+          "artifact": "references",
+          "pointer": "/consumer_contract/site_age_override"
+        }
+      ],
+      "needed_original_evidence": [
+        "release-bound handling of cave indices 37/105/170 and Kinneret time window, without silent source fixes"
+      ],
+      "observed_evidence": [
+        {
+          "older_preparation": "src/mcmc_prep_v1.2.R",
+          "older_Kinneret_forced_cave_index": 37,
+          "newer_initial_forced_index": 105,
+          "newer_later_override_index": 170,
+          "older_contains_220500_age_override": false,
+          "run_binding": "No version selected as the final Kinneret run"
+        },
+        {
+          "start": 0,
+          "end": 220500,
+          "step": 500,
+          "deleted_R_indices": "6:29",
+          "expected_length": 418
+        }
+      ]
+    },
+    {
+      "id": "anchor_variant",
+      "label_de": "Historische Klimaankerquelle und Parameter",
+      "unresolved_status": "widerspruechlich",
+      "evidence": [
+        {
+          "artifact": "references",
+          "pointer": "/consumer_contract/anchor_if_nonpositive_age_present"
+        },
+        {
+          "artifact": "references",
+          "pointer": "/dissertation_contract/anchor"
+        }
+      ],
+      "needed_original_evidence": [
+        "original Csa/local-series anchor choice, normal/gamma parameters and reference period for the actual run"
+      ],
+      "observed_evidence": [
+        "normal fit to local recent series indices 50:115",
+        "recent Csa climate class"
+      ]
+    },
+    {
+      "id": "posterior_selection",
+      "label_de": "Originalposterioren und ausgewählte Ziehungs-IDs",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "postprocessing",
+          "pointer": "/checks/posterior_candidates_present"
+        },
+        {
+          "artifact": "postprocessing",
+          "pointer": "/case_studies_source/index_mapping_back_to_best_combs"
+        }
+      ],
+      "needed_original_evidence": [
+        "actual posterior pair, burn/thin provenance, original selected draw IDs and resolved version binding"
+      ],
+      "observed_evidence": [
+        0,
+        "commented out"
+      ]
+    },
+    {
+      "id": "postprocessing_variant",
+      "label_de": "Finale Auswahl-/Kombinationsfassung",
+      "unresolved_status": "widerspruechlich",
+      "evidence": [
+        {
+          "artifact": "postprocessing",
+          "pointer": "/thesis_text"
+        },
+        {
+          "artifact": "postprocessing",
+          "pointer": "/case_studies_source"
+        },
+        {
+          "artifact": "postprocessing",
+          "pointer": "/current_entry"
+        }
+      ],
+      "needed_original_evidence": [
+        "original-run binding of IQR/IAT/Pareto selection and density combination; no automatic variant selection"
+      ],
+      "observed_evidence": [
+        {
+          "selection": [
+            "prior IQR",
+            "continue trimming until IAT below 1.3",
+            "Pareto proximity to prior means",
+            "ten individual reconstructions"
+          ],
+          "combination": "convolution for mean of independent random variables, scaled by 1/N"
+        },
+        {
+          "combination_flags": {
+            "averaging_pdfs": true,
+            "averaging_data": false
+          },
+          "deduplication": "post_pollen rounded to five decimals; fallback to post_iso under source condition",
+          "index_mapping_back_to_best_combs": "commented out",
+          "IAT_refinement_loop": "inside >=100 & FALSE branch",
+          "active_IAT_use": "one IAT estimate followed by stride ceiling(IAT) when more than ten unique scores",
+          "final_selected_count": "at most ten, possibly fewer",
+          "explicit_burn_in_filter_in_selection_block": false,
+          "post_prior_Pareto": "additional high(proxy scores) preference and cap",
+          "stop_after_selection_and_reconstruction_line": 332
+        },
+        {
+          "active_postprocessor": "mcmc_trimming_posterior_trafo.R",
+          "case_studies_call": "commented",
+          "selection": "fixed burn/thin, five-decimal score dedup; IQR filter commented",
+          "output": "KDE of weighted taxon-climate point values over saved draws, not the selected TF-density combination",
+          "rw_source_settings": {
+            "sample_length": 25000,
+            "burn_in": 5000,
+            "thin_size": 5,
+            "pre_dedup_candidate_count": 4000
+          }
+        }
+      ]
+    },
+    {
+      "id": "runtime_rng",
+      "label_de": "Historische Laufzeit und Zufallszustände",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "postprocessing",
+          "pointer": "/limits/1"
+        }
+      ],
+      "needed_original_evidence": [
+        "R/packages, RNG kind/state, seeds, source/build identity and input hashes for the actual run"
+      ],
+      "observed_evidence": [
+        "No R/rPref/LaplacesDemon/DescTools behavior asserted without version binding"
+      ]
+    },
+    {
+      "id": "numeric_original_output",
+      "label_de": "Numerische Originalausgaben und Abweichungsvergleich",
+      "unresolved_status": "fehlt",
+      "evidence": [
+        {
+          "artifact": "postprocessing",
+          "pointer": "/limits/0"
+        },
+        {
+          "artifact": "postprocessing",
+          "pointer": "/archive_reconstruction_bytes_equal"
+        }
+      ],
+      "needed_original_evidence": [
+        "original final numeric densities/quantiles and selected-draw metadata; graphics alone do not close this requirement"
+      ],
+      "observed_evidence": [
+        "No original posterior IDs, selected ten draws or final numeric densities restored",
+        true
+      ]
+    }
+  ],
+  "variants": {
+    "thesis_text": {
+      "label_de": "Textlich beschriebenes Zielverfahren",
+      "role": "text_contract",
+      "evidence": {
+        "artifact": "postprocessing",
+        "pointer": "/thesis_text"
+      },
+      "observed_evidence": {
+        "selection": [
+          "prior IQR",
+          "continue trimming until IAT below 1.3",
+          "Pareto proximity to prior means",
+          "ten individual reconstructions"
+        ],
+        "combination": "convolution for mean of independent random variables, scaled by 1/N"
+      }
+    },
+    "case_studies_literal": {
+      "label_de": "Erhaltener Fallstudiencode",
+      "role": "preserved_source",
+      "evidence": {
+        "artifact": "postprocessing",
+        "pointer": "/case_studies_source"
+      },
+      "observed_evidence": {
+        "combination_flags": {
+          "averaging_pdfs": true,
+          "averaging_data": false
+        },
+        "deduplication": "post_pollen rounded to five decimals; fallback to post_iso under source condition",
+        "index_mapping_back_to_best_combs": "commented out",
+        "IAT_refinement_loop": "inside >=100 & FALSE branch",
+        "active_IAT_use": "one IAT estimate followed by stride ceiling(IAT) when more than ten unique scores",
+        "final_selected_count": "at most ten, possibly fewer",
+        "explicit_burn_in_filter_in_selection_block": false,
+        "post_prior_Pareto": "additional high(proxy scores) preference and cap",
+        "stop_after_selection_and_reconstruction_line": 332
+      }
+    },
+    "current_entry_literal": {
+      "label_de": "Heutiger Einstieg im Originalquellstand",
+      "role": "preserved_source",
+      "evidence": {
+        "artifact": "postprocessing",
+        "pointer": "/current_entry"
+      },
+      "observed_evidence": {
+        "active_postprocessor": "mcmc_trimming_posterior_trafo.R",
+        "case_studies_call": "commented",
+        "selection": "fixed burn/thin, five-decimal score dedup; IQR filter commented",
+        "output": "KDE of weighted taxon-climate point values over saved draws, not the selected TF-density combination",
+        "rw_source_settings": {
+          "sample_length": 25000,
+          "burn_in": 5000,
+          "thin_size": 5,
+          "pre_dedup_candidate_count": 4000
+        }
+      }
+    },
+    "comparison_sources": {
+      "label_de": "Verwandte Auswertungsfassungen",
+      "role": "preserved_source",
+      "evidence": {
+        "artifact": "postprocessing",
+        "pointer": "/alternative_sources"
+      },
+      "observed_evidence": {
+        "mcmc_trimming.R": "explicit index remapping, entire outer IAT branch FALSE, PDF sum mode",
+        "mcmc_algorithm_plots.R": "explicit index remapping, IAT refinement disabled in inspected block, random-variable-mean mode",
+        "independent_samples.R": "separate IAT refinement to 1.05 or small-pool exit; no final Kinneret run binding"
+      }
+    }
+  },
+  "preserved_gates": {
+    "artifact": "research_summary",
+    "pointer": "/gates",
+    "kinneret_prerequisite": false,
+    "reason": "Monticchio-P1 remains site-specific; these preserved gates do not become prerequisites for Kinneret",
+    "observed": {
+      "monticchio_P1": "open",
+      "fossil_pilot_release": false,
+      "smote_raw_probabilities_validated_for_fossils": false
+    }
+  },
+  "local_sources": [
+    {
+      "source": "additional:dead_sea_reconstruction_R/data/in/speleo_data.rdata",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "b5ba7d7c4278cb6089056c382cb26c2635ed8cd817faeb271429d2eb783bec4a",
+      "observed_bytes": 143551
+    },
+    {
+      "source": "additional:my_kinneret/data/in/core/core_data.rdata",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "3319fd6961787f6ed5ba21009a8e16c0cbdafee85fd85ab6b0a5aa35144b5baf",
+      "observed_bytes": 27108
+    },
+    {
+      "source": "additional:my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c",
+      "observed_bytes": 23333
+    },
+    {
+      "source": "additional:my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762",
+      "observed_bytes": 1375335
+    },
+    {
+      "source": "additional:my_kinneret/main.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "2c705dfe53e0055da3b8cc1ac7a215fc67c0f02ff68c1a8ad349f653e7effebc",
+      "observed_bytes": 761
+    },
+    {
+      "source": "additional:my_kinneret/src/bacon_kinneret.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "c9406d13083ddbb8248ca4b6ac24b43b42067d1044bbc833a5155274145b5f48",
+      "observed_bytes": 11517
+    },
+    {
+      "source": "additional:my_kinneret/src/bbm_reconstruction.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "1a04bd00ea61755ec077c3121de906a82c85f0c76314afbdaabc8e4782f22ab9",
+      "observed_bytes": 26364
+    },
+    {
+      "source": "original:in/core_data_additional_sites_v1.2.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:in/core_data_all_andrea_taxa_additional_sites.rdata",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888",
+      "observed_bytes": 37982121
+    },
+    {
+      "source": "original:in/core_data_kinneret.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+      "observed_bytes": 45494
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/gibbs_taxa_weights.pdf",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "af7f997a4563d7e3cd645f24d512ee8bfb90b8bd9359898ce2dfa71e46865b6a",
+      "observed_bytes": 19858
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/mcmc_samples.pdf",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "c02a06ef3ecfc3cfc0905fd1944180c8e13c7b9de8f9a1ffb17cb1098ca413f6",
+      "observed_bytes": 565730
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/mcmc_samples.png",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "9e642a1202a264c71e7573f6bd5634eb5e4fb26343a529d007c987037168abf6",
+      "observed_bytes": 559661
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/reconstruction.pdf",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "1b586d2acc8ec6527190ec5f0c6adc58abe1f20fff8ad328f2783d51a639334b",
+      "observed_bytes": 308003
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/rw_diff_taxa_weights.pdf",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "eb2d0ed8fe045924aa9c5e5a436ba182888bae6ca57fe14e5eb37e94df1bab32",
+      "observed_bytes": 16361
+    },
+    {
+      "source": "original:out/plots/case_studies/kinneret/taxa_weights.pdf",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "3ba9d43445056b4d84d50a86a9181b5aea5d25e1c420c3603a59bc809c3b6c33",
+      "observed_bytes": 19488
+    },
+    {
+      "source": "original:out/plots/mcmc/v5.0/diss_final.zip",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "5bb88cda23197c438ec54f28034a79ba3d425578743d067af7d4679df10bf837",
+      "observed_bytes": 42244270
+    },
+    {
+      "source": "original:out/posterior/gibbs_posterior_add_3_1.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/gibbs_posterior_add_3_1_case_studies.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/gibbs_posterior_add_3_1_case_studies_counts.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/gibbs_posterior_add_3_1_counts.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/rw_posterior_add_3_1.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/rw_posterior_add_3_1_case_studies.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/rw_posterior_add_3_1_case_studies_counts.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/posterior/rw_posterior_add_3_1_counts.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/transfer_functions/mixed_partial_arts_emd.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:out/transfer_functions/mixed_partial_arts_emd_info.rdata",
+      "status": "missing_at_audited_path",
+      "observed_sha256": null,
+      "observed_bytes": null
+    },
+    {
+      "source": "original:src/check_ages.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+      "observed_bytes": 12904
+    },
+    {
+      "source": "original:src/final_plotting.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "7b0ef6efd278b17236f9d92706beede86a61534cb13b69b82e0d798de4dddbf4",
+      "observed_bytes": 51030
+    },
+    {
+      "source": "original:src/independent_samples.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "a188c029099cca6ceba1b78210cec49d259e0dd17dc90bf929380022c2f03d86",
+      "observed_bytes": 1619
+    },
+    {
+      "source": "original:src/mcmc_algorithm_plots.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "ab217804c12372c62a8904e0fe6e5295e1bad8d81b9fbe0b78c94087d70edf86",
+      "observed_bytes": 77619
+    },
+    {
+      "source": "original:src/mcmc_case_studies.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "37587ff08565bf284349e71a9ddbfd924d47fb786e0ccce5168a949be5b9c22e",
+      "observed_bytes": 97405
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+      "observed_bytes": 25090
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+      "observed_bytes": 99905
+    },
+    {
+      "source": "original:src/mcmc_prep_v1.2.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "badabd80978a074f42c25e06f1d254fd4ac8deef4e8f31bc591af6de65123949",
+      "observed_bytes": 72528
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+      "observed_bytes": 82630
+    },
+    {
+      "source": "original:src/mcmc_trimming.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "d60d4d9ead63ccb3e7d4a9e766e2e388a23492dfba38672999b10f9da47ae107",
+      "observed_bytes": 12470
+    },
+    {
+      "source": "original:src/mcmc_trimming_posterior_trafo.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "5d9bc9d06ae172e64e398cff84b2a66866d9f7c4559721b7f5ebe903777a42c4",
+      "observed_bytes": 27564
+    },
+    {
+      "source": "original:src/prior_climate.R",
+      "status": "matches_audited_bytes",
+      "observed_sha256": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd",
+      "observed_bytes": 6918
+    }
+  ],
+  "local_check_scope": "Only original/additional paths recorded in the three source documents; not every dependency or global CRU path",
+  "exclusions": [
+    "paper_biom_as_historical_taxon_reproduction",
+    "modern_seven_species_as_missing_historical_TFs",
+    "automatic_source_repairs",
+    "new_calibration",
+    "training",
+    "sampling",
+    "new_fossil_reconstruction"
+  ],
+  "interpretation": "Integrity of frozen evidence is not scientific validation or permission to run; new files require a new source audit and reviewed specification"
+}

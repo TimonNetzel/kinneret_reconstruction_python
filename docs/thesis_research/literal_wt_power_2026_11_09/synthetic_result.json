@@ -1,0 +1,902 @@
+{
+ "kind": "module_result_on_synthetic_fixture",
+ "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c",
+ "numpy": "2.5.4",
+ "cases": {
+  "identity_wb_two_columns": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.0000000000000p-4",
+    "0x1.4400000000000p+2",
+    "0x1.8800000000000p+3",
+    "0x1.2000000000000p+1",
+    "0x1.0000000000000p-2",
+    "0x1.4400000000000p+4"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "one_column_drops": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.0000000000000p-4",
+    "0x1.4400000000000p+2"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "one_row_drops": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.8800000000000p+1",
+    "0x1.8800000000000p+3"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "one_by_one": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.8800000000000p+1"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "zero_wb": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "constant_series": {
+   "x": [
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "no_padding": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.0000000000000p-4",
+    "0x1.4400000000000p+2"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "l_d_differs_from_length": {
+   "x": [
+    "-0x1.8000000000000p-2",
+    "0x1.4000000000000p-1",
+    "0x1.a000000000000p+0",
+    "0x1.d000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.2000000000000p-3",
+    "0x1.9000000000000p-2",
+    "0x1.5200000000000p+1",
+    "0x1.a480000000000p+3"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "invflen_not_one_over_n": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.8800000000000p+3",
+    "0x1.2000000000000p+1",
+    "0x1.0000000000000p-2",
+    "0x1.4400000000000p+4"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "single_bin": {
+   "x": [
+    "-0x1.c000000000000p+0",
+    "-0x1.8000000000000p-1",
+    "0x1.0000000000000p-2",
+    "0x1.2000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.0b477b008bb06p-2",
+    "0x1.0b477b008bb06p-2",
+    "0x1.0b477b008bb06p-2",
+    "0x1.0b477b008bb06p-2"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "long_double_in_the_mean": {
+   "x": [
+    "0x1.7ffffffffffffp-1",
+    "-0x1.0000000000000p-2",
+    "-0x1.0000000000000p-2",
+    "-0x1.0000000000000p-2",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.1ffffffffffffp-1",
+    "0x1.0000000000000p-4",
+    "0x1.0000000000000p-4",
+    "0x1.0000000000000p-4"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "morlet_like_n16": {
+   "x": [
+    "-0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "-0x1.0000000000000p+1",
+    "0x1.8000000000000p+1",
+    "0",
+    "-0x1.8000000000000p+1",
+    "0x1.0000000000000p+1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    7,
+    5
+   ],
+   "power": [
+    "0x1.06a644c2e1009p+6",
+    "0x1.70139b9872080p+6",
+    "0x1.bcf467c7aa3bcp+6",
+    "0x1.c6ecc8c602f96p+6",
+    "0x1.84216f4da9560p+6",
+    "0x1.14b88287b4e63p+6",
+    "0x1.547588378e497p+5",
+    "0x1.73b2a4f5f778bp+6",
+    "0x1.1eac96f03d00ep+7",
+    "0x1.78c405e17458bp+7",
+    "0x1.a120973118d57p+7",
+    "0x1.828a5cf42f0e9p+7",
+    "0x1.2d17659307184p+7",
+    "0x1.91d3da2c693fbp+6",
+    "0x1.8884ff4b391e4p+6",
+    "0x1.4fef36a33d335p+7",
+    "0x1.e3fc3056055c1p+7",
+    "0x1.23704cfa8496ap+8",
+    "0x1.242c01325b7cap+8",
+    "0x1.e81d1858b0c1bp+7",
+    "0x1.554415073b7eep+7",
+    "0x1.4b47360666594p+6",
+    "0x1.348a178e7718cp+7",
+    "0x1.e27898f268fcfp+7",
+    "0x1.3931d5d40753dp+8",
+    "0x1.4fdbc090b7d17p+8",
+    "0x1.2907a9087f543p+8",
+    "0x1.b0be88cda8586p+7",
+    "0x1.dae83c534f398p+5",
+    "0x1.da271ab87b134p+6",
+    "0x1.8b1142e383f78p+7",
+    "0x1.0fb2900e3f148p+8",
+    "0x1.338cabe5ec48ep+8",
+    "0x1.1e97ce7d9718bp+8",
+    "0x1.b7d3c20f49859p+7"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "morlet_like_n32": {
+   "x": [
+    "-0x1.8000000000000p+2",
+    "0x1.4000000000000p+2",
+    "0x1.8000000000000p+1",
+    "0x1.0000000000000p+0",
+    "-0x1.0000000000000p+0",
+    "-0x1.8000000000000p+1",
+    "-0x1.4000000000000p+2",
+    "0x1.8000000000000p+2",
+    "0x1.0000000000000p+2",
+    "0x1.0000000000000p+1",
+    "0",
+    "-0x1.0000000000000p+1",
+    "-0x1.0000000000000p+2",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    13,
+    6
+   ],
+   "power": [
+    "0x1.75b8ede83f0bbp+9",
+    "0x1.3812eb9731280p+9",
+    "0x1.7a586686bb423p+8",
+    "0x1.64886003dc85ep+7",
+    "0x1.2293c8566212dp+7",
+    "0x1.0c2ff731f4c5fp+8",
+    "0x1.a37cf8d14995dp+8",
+    "0x1.cc2e1e6e10c55p+8",
+    "0x1.68ef0bb3f5492p+8",
+    "0x1.a904a0f207e4cp+7",
+    "0x1.db5f2f76c24acp+6",
+    "0x1.b14e347f3d23cp+6",
+    "0x1.12f6eaa716505p+7",
+    "0x1.d54e717f1a52cp+9",
+    "0x1.7673c62953082p+9",
+    "0x1.7584807bded20p+8",
+    "0x1.1c48b23845487p+6",
+    "0x1.956073459b394p+4",
+    "0x1.b5203c9cd87d6p+7",
+    "0x1.c9178a26d5a0ap+8",
+    "0x1.07af7077773a8p+9",
+    "0x1.7fc2aec95a2dap+8",
+    "0x1.4ea00c6c57558p+7",
+    "0x1.2fd82ad333eb7p+5",
+    "0x1.26c581ec00b29p+5",
+    "0x1.7eafc03eb9b43p+6",
+    "0x1.f44cc0c28a886p+9",
+    "0x1.a6c26b719de58p+9",
+    "0x1.e9ba24cb8fcc1p+8",
+    "0x1.803bd513d231ep+7",
+    "0x1.0ac6b4ed21dc0p+7",
+    "0x1.2c6c99ab5691dp+8",
+    "0x1.ffd996fd3a12dp+8",
+    "0x1.1846824c9284fp+9",
+    "0x1.90983bd47e184p+8",
+    "0x1.58aee6dff4643p+7",
+    "0x1.0b45f86d66117p+5",
+    "0x1.5d96900ed5cd8p+4",
+    "0x1.1b7ca6797ef46p+6",
+    "0x1.01699deba89a4p+10",
+    "0x1.f94bd0c4a9c46p+9",
+    "0x1.9cd784c2923d1p+9",
+    "0x1.413be835e0cebp+9",
+    "0x1.20c09aa73e525p+9",
+    "0x1.3b4cd624efb78p+9",
+    "0x1.5f48c4f4d5788p+9",
+    "0x1.50bff70c03514p+9",
+    "0x1.0295d95899cb2p+9",
+    "0x1.41b5cec0b1dc1p+8",
+    "0x1.70ed3cebef16dp+7",
+    "0x1.015971145b2bep+7",
+    "0x1.d32f20159248dp+6",
+    "0x1.fd191f3fbf347p+9",
+    "0x1.0efaafc77e415p+10",
+    "0x1.fe31b02201ddcp+9",
+    "0x1.d02a201fd6e23p+9",
+    "0x1.b9cad6b1a54c4p+9",
+    "0x1.bc53416173d51p+9",
+    "0x1.bb628eddc3533p+9",
+    "0x1.9775bebaf0d9dp+9",
+    "0x1.4c74f5ca360c9p+9",
+    "0x1.e9316d5afcc95p+8",
+    "0x1.58036ece4d775p+8",
+    "0x1.eca43888403cdp+7",
+    "0x1.6adba1fdbfca9p+7",
+    "0x1.b636833ed9823p+9",
+    "0x1.ba4e404b75b89p+9",
+    "0x1.8859586c48c52p+9",
+    "0x1.555564c58969fp+9",
+    "0x1.4c2bcabbe42b5p+9",
+    "0x1.6adc0066c04fbp+9",
+    "0x1.88fd1c791305dp+9",
+    "0x1.7e0920485a7d4p+9",
+    "0x1.43205edcb8d6bp+9",
+    "0x1.e4ff6a8044a05p+8",
+    "0x1.56ab0bead3054p+8",
+    "0x1.ea828ba5942bap+7",
+    "0x1.6cba753dbc8aap+7"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "small_scale": {
+   "x": [
+    "-0x1.8000000000000p-502",
+    "0x1.0000000000000p-503",
+    "-0x1.0000000000000p-503",
+    "0x1.8000000000000p-502",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.2000000000000p-1003",
+    "0x1.0000000000000p-1006",
+    "0x1.0000000000000p-1006",
+    "0x1.2000000000000p-1003"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "large_scale": {
+   "x": [
+    "-0x1.8000000000000p+498",
+    "0x1.0000000000000p+497",
+    "-0x1.0000000000000p+497",
+    "0x1.8000000000000p+498",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": null,
+   "power": [
+    "0x1.2000000000000p+997",
+    "0x1.0000000000000p+994",
+    "0x1.0000000000000p+994",
+    "0x1.2000000000000p+997"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "length_12_not_power_of_two": {
+   "x": [
+    "-0x1.5555555555550p-1",
+    "0x1.5555555555558p+0",
+    "-0x1.aaaaaaaaaaaa8p+0",
+    "0x1.aaaaaaaaaaaacp+1",
+    "0x1.5555555555560p-2",
+    "-0x1.5555555555554p+1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    6,
+    2
+   ],
+   "power": [
+    "0x1.022d2b76f1cdfp+6",
+    "0x1.5fbc868dbd803p+6",
+    "0x1.864c1b81f7494p+6",
+    "0x1.51f4aa96d1e46p+6",
+    "0x1.ac9f84675ccc1p+5",
+    "0x1.5e5ff1031bc9bp+4",
+    "0x1.34187c362e70cp+6",
+    "0x1.cc58335772df3p+6",
+    "0x1.12a1833d19698p+7",
+    "0x1.fd75a6882203fp+6",
+    "0x1.63266d42e6d48p+6",
+    "0x1.67669d7bc897cp+5"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "prime_length_7": {
+   "x": [
+    "-0x1.0000000000000p+0",
+    "0x1.0000000000000p+0",
+    "-0x1.0000000000000p+1",
+    "0x1.8000000000000p+1",
+    "0",
+    "-0x1.8000000000000p+1",
+    "0x1.0000000000000p+1"
+   ],
+   "dim": [
+    7,
+    2
+   ],
+   "power": [
+    "0x1.08055ea05bd2fp+6",
+    "0x1.08055ea05bd2fp+6",
+    "0x1.1c74458bc94bep+6",
+    "0x1.35fd96540deb2p+6",
+    "0x1.4160230845165p+6",
+    "0x1.35fd96540deb2p+6",
+    "0x1.1c74458bc94bep+6",
+    "0x1.808e5a132fdd7p+6",
+    "0x1.808e5a132fdd9p+6",
+    "0x1.b7f869999c55dp+6",
+    "0x1.fd372118411a3p+6",
+    "0x1.0e0abb113b382p+7",
+    "0x1.fd372118411a0p+6",
+    "0x1.b7f869999c560p+6"
+   ],
+   "kind": "number",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "na_in_d": {
+   "x": [
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA"
+   ],
+   "kind": "NA",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "nan_in_d": {
+   "x": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "NaN",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "na_then_nan": {
+   "x": [
+    "NA",
+    "NaN",
+    "NA",
+    "NA",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "mixed",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "nan_then_na": {
+   "x": [
+    "NaN",
+    "NA",
+    "NaN",
+    "NaN",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "mixed",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "plus_inf": {
+   "x": [
+    "-Inf",
+    "NaN",
+    "-Inf",
+    "-Inf",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "NaN",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "minus_inf": {
+   "x": [
+    "Inf",
+    "NaN",
+    "Inf",
+    "Inf",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "NaN",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "both_infinities": {
+   "x": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "NaN",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "inf_and_na": {
+   "x": [
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA"
+   ],
+   "kind": "NA",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  },
+  "both_infinities_then_na": {
+   "x": [
+    "NaN",
+    "NaN",
+    "NA",
+    "NaN",
+    "0",
+    "0",
+    "0",
+    "0"
+   ],
+   "dim": [
+    4,
+    2
+   ],
+   "power": [
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN",
+    "NaN"
+   ],
+   "kind": "mixed",
+   "backend": "numpy.fft (pocketfft), not bit-identical with R fft.c"
+  }
+ },
+ "chains": {
+  "kinneret_shape_all_true": {
+   "kind": "number",
+   "predictant_spec": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.4400000000000p+2",
+    "0x1.8800000000000p+3",
+    "0x1.0000000000000p-2",
+    "0x1.4400000000000p+4"
+   ],
+   "correlation_kind": "number",
+   "replaced": false,
+   "post_spec": "0x1.f534d65c15e29p-2",
+   "l_d": 4
+  },
+  "ages_mask_picks_rows": {
+   "kind": "number",
+   "predictant_spec": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.4400000000000p+2",
+    "0x1.8800000000000p+3",
+    "0x1.0000000000000p-2",
+    "0x1.4400000000000p+4"
+   ],
+   "correlation_kind": "number",
+   "replaced": false,
+   "post_spec": "0x1.f534d65c15e29p-2",
+   "l_d": 4
+  },
+  "negative_correlation_is_replaced": {
+   "kind": "number",
+   "predictant_spec": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.4400000000000p+2",
+    "0x1.8800000000000p+3",
+    "0x1.0000000000000p-2",
+    "0x1.4400000000000p+4"
+   ],
+   "correlation_kind": "number",
+   "replaced": true,
+   "post_spec": "0x1.79ca10c924224p-67",
+   "l_d": 4
+  },
+  "missing_series_is_replaced": {
+   "kind": "NA",
+   "predictant_spec": [
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA",
+    "NA"
+   ],
+   "correlation_kind": "NaN",
+   "replaced": true,
+   "post_spec": "0x1.79ca10c924224p-67",
+   "l_d": 4
+  },
+  "one_column_selection": {
+   "kind": "number",
+   "predictant_spec": [
+    "0x1.8800000000000p+1",
+    "0x1.2000000000000p-1",
+    "0x1.4400000000000p+2"
+   ],
+   "correlation_kind": "number",
+   "replaced": true,
+   "post_spec": "0x1.79ca10c924224p-67",
+   "l_d": 4
+  },
+  "morlet_like_chain": {
+   "kind": "number",
+   "predictant_spec": [
+    "0x1.06a644c2e1009p+6",
+    "0x1.70139b9872080p+6",
+    "0x1.c6ecc8c602f96p+6",
+    "0x1.84216f4da9560p+6",
+    "0x1.547588378e497p+5",
+    "0x1.73b2a4f5f778bp+6",
+    "0x1.78c405e17458bp+7",
+    "0x1.a120973118d57p+7",
+    "0x1.2d17659307184p+7",
+    "0x1.91d3da2c693fbp+6",
+    "0x1.8884ff4b391e4p+6",
+    "0x1.4fef36a33d335p+7",
+    "0x1.e3fc3056055c1p+7",
+    "0x1.23704cfa8496ap+8",
+    "0x1.242c01325b7cap+8",
+    "0x1.e81d1858b0c1bp+7",
+    "0x1.554415073b7eep+7",
+    "0x1.4b47360666594p+6",
+    "0x1.348a178e7718cp+7",
+    "0x1.3931d5d40753dp+8",
+    "0x1.4fdbc090b7d17p+8",
+    "0x1.b0be88cda8586p+7",
+    "0x1.dae83c534f398p+5",
+    "0x1.8b1142e383f78p+7",
+    "0x1.0fb2900e3f148p+8",
+    "0x1.1e97ce7d9718bp+8",
+    "0x1.b7d3c20f49859p+7"
+   ],
+   "correlation_kind": "number",
+   "replaced": false,
+   "post_spec": "0x1.1fb0251279418p-5",
+   "l_d": 7
+  }
+ },
+ "historical_reproduction_ready": false
+}

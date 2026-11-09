@@ -1,0 +1,10 @@
+{
+  "stage": "posterior_complete_prior_reference_and_report_running",
+  "chains": 4,
+  "retained_postburn_draws": 10000,
+  "parameters": 43,
+  "max_rhat": 1.0008437412315938,
+  "min_ess_bulk": 8552.566485395959,
+  "min_ess_tail": 8122.135285400017,
+  "failures": []
+}

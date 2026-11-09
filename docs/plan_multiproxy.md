@@ -1,5 +1,12 @@
 # Plan: Rekonstruktionsmodell auf Taxa-Basis mit mehreren Proxys
 
+> **Neue Reihenfolge auf Nutzerauftrag, 02.11.2026:** Zuerst die lokalen
+> Rekonstruktionen der Dissertation nachbauen, anschließend Verbesserungen.
+> Maßgeblich: [Arbeitsplan](thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Der folgende ältere Stand bleibt als Verlauf bzw. späterer Entwurf erhalten.
+> Er ersetzt weder den historischen Ablauf noch die aktuellen Quell-/Chronologie-Gates.
+
+
 Stand 29.10.2026. Vom Autor gewünscht: das Modell des Papers (Netzel et al., 2025) mit dem der Dissertation (Netzel,
 2022) verbinden. Das neue Modell soll **mathematisch sauber** sein, **keine Biominformationen** brauchen und auf
 **mehreren Proxys** beruhen. Grundlagen: `docs/abgleich_paper.md`, `docs/abgleich_thesis.md`, `docs/pruefbericht.md`.

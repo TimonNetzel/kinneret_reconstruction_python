@@ -1,0 +1,74 @@
+[
+  {
+    "source_tree": "original",
+    "relative_path": "in/tann_cru4.nc",
+    "sha256": "4b6c6dfa0df10e4268be0e13958e50abc7828016529f4db76ee4952011bbe562",
+    "units": "days since 1900-1-1",
+    "calendar": "gregorian",
+    "stored_bounds": [
+      [
+        380.0,
+        42352.0
+      ]
+    ],
+    "decoded_bounds": [
+      "1901-01-16T00:00:00",
+      "2015-12-16T00:00:00"
+    ],
+    "history": "Thu Oct 31 09:12:26 2019: cdo sellonlatbox,-12.75,61.25,27.25,75.25 tann_cru4.nc tann_cru4.nc\nThu Oct 31 08:30:37 2019: cdo timmean -sellonlatbox,-12.75,62.75,27.25,75.25 /automount/agh/Data/OBS/CRU/CRU_TS_4_00/tmp/cru_ts4.00.1901.2015.tmp.dat.nc tann.nc\nFri 27 Jan 2017 10:16:26 GMT : User ianharris : Program makegridsauto.for called by update.for"
+  },
+  {
+    "source_tree": "original",
+    "relative_path": "in/pann_cru4.nc",
+    "sha256": "8800d812cee16a8d72006b0e92ff6fc06950169a8f3f38786b893d6de5223571",
+    "units": "days since 1900-1-1",
+    "calendar": "gregorian",
+    "stored_bounds": [
+      [
+        380.0,
+        42352.0
+      ]
+    ],
+    "decoded_bounds": [
+      "1901-01-16T00:00:00",
+      "2015-12-16T00:00:00"
+    ],
+    "history": "Thu Oct 31 09:12:36 2019: cdo sellonlatbox,-12.75,61.25,27.25,75.25 pann_cru4.nc pann_cru4.nc\nThu Oct 31 08:32:26 2019: cdo timmean -yearsum -sellonlatbox,-12.75,62.75,27.25,75.25 /automount/agh/Data/OBS/CRU/CRU_TS_4_00/pre/cru_ts4.00.1901.2015.pre.dat.nc pann_cru4.nc\nFri 27 Jan 2017 13:03:51 GMT : User ianharris : Program makegridsauto.for called by update.for"
+  },
+  {
+    "source_tree": "additional",
+    "relative_path": "my_ohrid/data/in/climate_data/cru_tann_europe.nc",
+    "sha256": "3f794e1f81a90ac19962959acf7114917df5a2a635664b72c617277850762a9b",
+    "units": "days since 1900-1-1",
+    "calendar": "gregorian",
+    "stored_bounds": [
+      [
+        22295.0,
+        33221.0
+      ]
+    ],
+    "decoded_bounds": [
+      "1961-01-16T00:00:00",
+      "1990-12-16T00:00:00"
+    ],
+    "history": "Tue May 05 09:05:49 2020: cdo -sellonlatbox,-11,60,25,80.5 -timmean -selyear,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990 /automount/agh/Data/OBS/CRU/CRU_TS_4_00/tmp/cru_ts4.00.1901.2015.tmp.dat.nc cru_tann_europe.nc\nFri 27 Jan 2017 10:16:26 GMT : User ianharris : Program makegridsauto.for called by update.for"
+  },
+  {
+    "source_tree": "additional",
+    "relative_path": "my_ohrid/data/in/climate_data/cru_pann_europe.nc",
+    "sha256": "38eb08cb9683e8053b4561b5190351e2761d94c6cee99d6af8983202b3719ea4",
+    "units": "days since 1900-1-1",
+    "calendar": "gregorian",
+    "stored_bounds": [
+      [
+        22295.0,
+        33221.0
+      ]
+    ],
+    "decoded_bounds": [
+      "1961-01-16T00:00:00",
+      "1990-12-16T00:00:00"
+    ],
+    "history": "Mon Apr 06 16:14:36 2020: cdo timmean -mulc,12 -sellonlatbox,-11,60,25,80.5 -yearmean -selyear,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990 /automount/agh/Data/OBS/CRU/CRU_TS_4_00/pre/cru_ts4.00.1901.2015.pre.dat.nc cru_pann_europe.nc\nFri 27 Jan 2017 13:03:51 GMT : User ianharris : Program makegridsauto.for called by update.for"
+  }
+]

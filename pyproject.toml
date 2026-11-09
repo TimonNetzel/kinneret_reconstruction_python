@@ -17,7 +17,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest>=7"]
+# Historical serialization tests bind the rdata 1.1 parser internals.
+test = ["pytest>=7", "rdata==1.1.0"]
 
 [project.scripts]
 kinneret-recon = "kinneret_recon.cli:main"

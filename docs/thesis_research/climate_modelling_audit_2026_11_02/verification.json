@@ -1,0 +1,128 @@
+{
+  "basis_commit": "705cf7b68b2bfdfc99919ad50e4091dd113d907e",
+  "initial_worktree_clean": true,
+  "initial_PR_state": "open_unmerged_head_equals_basis",
+  "independent_index_files_verified": 1828,
+  "queries_independently_reconciled": 48,
+  "new_priority_name_candidates": [
+    "F14",
+    "F15"
+  ],
+  "all_8_posterior_variants_without_new_named_copy": true,
+  "new_R_source_hashes_verified": 161,
+  "source_metadata_and_selected_hashes_still_unchanged": true,
+  "prior_files_byte_equal_to_basis": 133,
+  "frozen_start_briefs_preserved": 2,
+  "previous_climate_handoff_preserved": true,
+  "parser_and_reader_tests": {
+    "passed": 23,
+    "failed": 0,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_required_files_audit.py tests/test_local_rdata_metadata.py tests/test_local_rdata_stream.py -q -o cache_dir=.local/climate_modelling_audit_2026_11_02/pytest_cache"
+  },
+  "prior_200_numerical_tests_rerun": false,
+  "phase1_checks": [
+    {
+      "with_local": false,
+      "exit_code": 2,
+      "verified_assets": 26,
+      "verified_facts": 19,
+      "verified_snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": null
+    },
+    {
+      "with_local": true,
+      "exit_code": 2,
+      "verified_assets": 26,
+      "verified_facts": 19,
+      "verified_snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": {
+        "matches_audited_bytes": 28,
+        "missing_at_audited_path": 12
+      }
+    }
+  ],
+  "relative_document_links_valid": 110,
+  "git_diff_check_passed": true,
+  "private_absolute_paths_found": false,
+  "R_execution": false,
+  "models_training_sampling_or_age_models_started": false,
+  "full_fossil_reconstruction_started": false,
+  "final_variant_selected": false,
+  "prior_numerics_app_cli_baseline_unchanged": true,
+  "evidence_files": {
+    "archive_directories.json": {
+      "bytes": 216,
+      "sha256": "1513911e6f3bf299decde81642d034e24b51657b8ea6cacf2a1c2b63a298cbec"
+    },
+    "byte_identity_comparisons.json": {
+      "bytes": 571,
+      "sha256": "c6d034400b5924532ff6019780fa18f4a24b95984dbc1fbb75a7423d2c4da64e"
+    },
+    "candidate_hashes.json": {
+      "bytes": 1937,
+      "sha256": "16c9bd824c10f6201e21274ca9c63facf33d3a60d0fd9e519b24ae60a625f29a"
+    },
+    "candidate_structures.json": {
+      "bytes": 10441,
+      "sha256": "801aebeb875fc734441e827fd7b640f5e98d29a5131bcec111443d8f75febb7e"
+    },
+    "collect_evidence.py": {
+      "bytes": 10887,
+      "sha256": "135e9ec361540ea0e70c1cff9b531fd0540f40d0e5b314401a81683d1d9e5b3b"
+    },
+    "entrypoint_bindings.json": {
+      "bytes": 1332,
+      "sha256": "3fbc240a77333c56a3acb81662e9ca3b5268635bb9f3b7e27da398ea404a3bf6"
+    },
+    "file_metadata.csv": {
+      "bytes": 205308,
+      "sha256": "a1a9e79a325c498821b2baa3ba3f498be8670d90fbc8f658716797267482f248"
+    },
+    "inspect_candidates.py": {
+      "bytes": 6051,
+      "sha256": "25d5815ecf918e7c4e15a0271ffa10c0d860bd94c918928dbe2b47678f4d7712"
+    },
+    "phase1_local_check.json": {
+      "bytes": 22583,
+      "sha256": "2f61a38e0ea174f1aae1426d925f86b737c4fce1a6f769b0572ffd2674095b05"
+    },
+    "phase1_portable_check.json": {
+      "bytes": 13512,
+      "sha256": "3687535bea65f0854dac2bc54892a52a16f2e902820f048721832477a7439519"
+    },
+    "preserved_evidence.json": {
+      "bytes": 37877,
+      "sha256": "7dbb24955ea59b605a84533b5c0b9e93cedbbdb9dda1149bbb1e3d0d922431ae"
+    },
+    "prior_reference_new_candidates.csv": {
+      "bytes": 13287,
+      "sha256": "5923ea48057166d41707a47b4e427ec40df589e46f7f048fd494cb64dc09e22c"
+    },
+    "README.md": {
+      "bytes": 9255,
+      "sha256": "12234c53ff6e559075f2b8d6cdc24c6feb7e788d11799c813aa7e3e3c83a1dfb"
+    },
+    "requirement_crosswalk.csv": {
+      "bytes": 6745,
+      "sha256": "89146738308125eeefaa857044e7a92589de3a178fa298051f74c2976afe8122"
+    },
+    "source_dates.csv": {
+      "bytes": 28777,
+      "sha256": "5bec931e30830b19e3dfcd0bc5e6b07aec7381f006db6f9a4db7757491a950b6"
+    },
+    "summary.json": {
+      "bytes": 1634,
+      "sha256": "5a893279ad8f4d85fa6ceceb2bbed0a1f6ed49bafaf71480605642bb4d21bffb"
+    },
+    "targeted_source_calls.csv": {
+      "bytes": 14815,
+      "sha256": "abe1c786cd7f53944f8b081f6d91f1736ce928c03ddeb51f900acfdbebcc9a1d"
+    },
+    "verify_evidence.py": {
+      "bytes": 9051,
+      "sha256": "b5f13badc8008f116becd72ea2027539e7a2b8cc9046f559a13e790efee88f2c"
+    }
+  }
+}

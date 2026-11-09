@@ -1,0 +1,3414 @@
+{
+ "kind": "input_contract_of_the_kinneret_case_no_calculation_no_draw",
+ "date": "2026-11-09",
+ "case": {
+  "site": "Kinneret",
+  "slot_R_1_based": 3,
+  "branch": "add.sites <- T"
+ },
+ "scope": "Which inputs the preserved code reads for slot 3 and how far each is bound. Builds on the Phase-1 contract and does not replace it. Bound means present at the consumer path or written literally in the code; it never means bound to the historical run.",
+ "status_values": {
+  "gebunden": "Datei am Verbraucherpfad vorhanden oder Literal im Code",
+  "teilweise_gebunden": "Teil des Inhalts belegt oder Kandidat mit benannter offener Differenz",
+  "quellkonflikt": "erhaltene Quellen widersprechen sich",
+  "fehlend": "keine Quelle in diss am Verbraucherpfad oder keine Bindung vorhanden"
+ },
+ "sources_sha256": {
+  "main_v1.2.R": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+  "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d",
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/check_ages.R": "c7f92e6030d83540c14f29a2e9d0ad07c74104dfe86befebda921c1cffbd2729",
+  "src/prior_climate.R": "77cfe4e2297abf5f0dd8f7179721702bb1a15e7f9989c9c62374a2fdda642ebd"
+ },
+ "status_counts": {
+  "gebunden": 5,
+  "teilweise_gebunden": 10,
+  "quellkonflikt": 6,
+  "fehlend": 27
+ },
+ "inputs": [
+  {
+   "id": "core_container",
+   "group": "kern",
+   "label_de": "Finaler Sammelcontainer der Zusatzorte",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt am Verbraucherpfad. Der ältere Sammelcontainer hat vier Standorte und eine andere Struktur.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 107,
+     "starts_with": "load(paste0(\"in/core_data_additional_sites_v1.2.rdata\"))"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 146,
+     "starts_with": "taxa_names <- core.data[[3]]$all.available.taxa$taxa.names"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 654,
+     "starts_with": "if( is.null(core.data[[station_id]]) | station_id == 469 ) next()"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/core_data_additional_sites_v1.2.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_additional_sites_v1.2.rdata",
+     "exists": false
+    },
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md",
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "core.data[[3]]"
+  },
+  {
+   "id": "site_name",
+   "group": "kern",
+   "label_de": "Standortname in Slot 3",
+   "status": "quellkonflikt",
+   "status_reason_de": "Der ältere Container nennt „Kinneret“, alle Schalter prüfen „Lake Kinneret“. main_v1.2.R setzt den Namen für Slot 3 nicht. Der Wert des finalen Containers ist unbekannt.",
+   "code_reads": [
+    {
+     "file": "src/check_ages.R",
+     "line": 7,
+     "starts_with": "sitename <- core.data[[station_id]]$sitename"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 790,
+     "starts_with": "if(sitename == \"Lake Kinneret\") which.site <- 105"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 881,
+     "starts_with": "if(length(human_impact) != 0 & !any(sitename == c(\"Lake Kinneret\",\"En Gedi\",\"Birkat Ram\")) ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1145,
+     "starts_with": "if(sitename == \"Lake Kinneret\")  sources$speleothem <- sources$marine_ice_core <- 0",
+     "note_de": "nicht erreicht: case_studies ist FALSE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1209,
+     "starts_with": "if( !inside.giesecke & add.sites & lat <= 36 & !any(sitename == c(\"Dead Sea\",\"Birkat Ram\",\"Lake Kinneret\")) ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1248,
+     "starts_with": "if(any(sitename == c(\"Lake Kinneret\", \"\"))){"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    },
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/core_data_additional_sites_v1.2.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_additional_sites_v1.2.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "final_base"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "sitename"
+  },
+  {
+   "id": "taxa_spectrum",
+   "group": "kern",
+   "label_de": "Pollenspektrum (Proben × Taxa)",
+   "status": "quellkonflikt",
+   "status_reason_de": "Der ältere Stand hat 160×12 und ist mit der CSV zahlengleich. Seine Spalten 5, 6 und 8 tragen aber andere Namen, als main_v1.2.R dort setzt. Anders als bei Prespa, En Gedi und Ohrid ersetzt der Code die Kinneret-Zahlen nicht aus der CSV.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 153,
+     "starts_with": "colnames( core.data[[3]]$all.available.taxa$taxa.spectrum) <- taxa_names"
+    },
+    {
+     "file": "src/check_ages.R",
+     "line": 14,
+     "starts_with": "all.avail <- core.data[[station_id]]$all.available.taxa$taxa.spectrum"
+    },
+    {
+     "file": "src/check_ages.R",
+     "line": 15,
+     "starts_with": "all.avail[which(is.na(all.avail))] <- 0"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 83,
+     "starts_with": "all.avail[all.avail == 0] <- 1e-6"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 93,
+     "starts_with": "all.avail.age[,i] <-   rho.d.g.a %*% as.matrix(all.avail[,i])"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1435,
+     "starts_with": "num_taxa <- ncol(all.avail)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1454,
+     "starts_with": "taxa.appear.core <- all.avail.age[,which_taxa]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    },
+    {
+     "role": "zaehlwerte_csv",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "diss_path": "src/my_reconst/my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "exists": true,
+     "bytes": 23333,
+     "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    },
+    {
+     "role": "anderer_biomzweig_kein_ersatz",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/in/core/core_data.rdata",
+     "diss_path": "src/my_reconst/my_kinneret/data/in/core/core_data.rdata",
+     "exists": true,
+     "bytes": 27108,
+     "sha256": "3319fd6961787f6ed5ba21009a8e16c0cbdafee85fd85ab6b0a5aa35144b5baf"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "all.avail"
+  },
+  {
+   "id": "taxon_names",
+   "group": "kern",
+   "label_de": "Taxonnamen und Reihenfolge",
+   "status": "quellkonflikt",
+   "status_reason_de": "main_v1.2.R überschreibt die Positionen 5, 6 und 8. Im älteren Stand stehen dort Pinus cembra, Betula und Vitis sylvestris. Die finale Grundreihenfolge fehlt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 147,
+     "starts_with": "taxa_names[5] <- \"Atriplex Halimus\"",
+     "note_de": "sofort durch Zeile 148 überschrieben"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 148,
+     "starts_with": "taxa_names[5] <- \"Olea Europaea\""
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 149,
+     "starts_with": "taxa_names[6] <- \"Phillyrea Latifolia\""
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 150,
+     "starts_with": "taxa_names[8] <- \"Pistacia Lentiscus\""
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 152,
+     "starts_with": "core.data[[3]]$all.available.taxa$taxa.names <- taxa_names"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1452,
+     "starts_with": "taxa.sampled <- colnames(all.avail)[which_taxa]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base",
+    "historical_tf"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "taxa.sampled"
+  },
+  {
+   "id": "depth",
+   "group": "kern",
+   "label_de": "Tiefenvektor",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "160 Tiefen stimmen in vier erhaltenen Quellen exakt überein. Der finale Container fehlt.",
+   "code_reads": [
+    {
+     "file": "src/check_ages.R",
+     "line": 178,
+     "starts_with": "depth <- core.data[[station_id]]$depth"
+    },
+    {
+     "file": "src/check_ages.R",
+     "line": 195,
+     "starts_with": "which_depths <- core.data[[station_id]]$depth %in% depth"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 14,
+     "starts_with": "rho.d.g.a[i,j] <- rho_depth_given_age[i,(depth[j]-min(depth, na.rm = T))+1]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    },
+    {
+     "role": "zaehlwerte_csv",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "diss_path": "src/my_reconst/my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "exists": true,
+     "bytes": 23333,
+     "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    },
+    {
+     "role": "chronologie_matrix",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "diss_path": "src/my_reconst/my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "exists": true,
+     "bytes": 1375335,
+     "sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base",
+    "final_chronology"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "depth"
+  },
+  {
+   "id": "age_grid",
+   "group": "kern",
+   "label_de": "Altersraster age[[2]]",
+   "status": "quellkonflikt",
+   "status_reason_de": "Der Verbraucher erwartet eine Liste. bacon_kinneret.R schreibt zuerst eine Dreierliste, deren zweites Element das 50-Jahres-Raster ist, und überschreibt denselben Dateinamen später mit einem Mittelwertvektor.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 656,
+     "starts_with": "age.reso <- 2"
+    },
+    {
+     "file": "src/check_ages.R",
+     "line": 179,
+     "starts_with": "site.age <- age <- core.data[[station_id]]$age[[age.reso]]"
+    },
+    {
+     "file": "src/check_ages.R",
+     "line": 223,
+     "starts_with": "depths.timeslice.id <- list( which(site.age <= 0)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 728,
+     "starts_with": "which.modern.avail <- which(age <= 11000)"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "chronologie_matrix",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "diss_path": "src/my_reconst/my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "exists": true,
+     "bytes": 1375335,
+     "sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762"
+    },
+    {
+     "role": "schreiber_liste_und_matrix",
+     "root": "additional",
+     "relative_path": "my_kinneret/src/bacon_kinneret.R",
+     "diss_path": "src/my_reconst/my_kinneret/src/bacon_kinneret.R",
+     "exists": true,
+     "bytes": 11517,
+     "sha256": "c9406d13083ddbb8248ca4b6ac24b43b42067d1044bbc833a5155274145b5f48"
+    }
+   ],
+   "phase1_bundles": [
+    "final_chronology"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "age, site.age"
+  },
+  {
+   "id": "rho_depth_given_age",
+   "group": "kern",
+   "label_de": "Dichte Tiefe gegeben Alter, rho[[2]]",
+   "status": "quellkonflikt",
+   "status_reason_de": "Erhalten ist eine 160×1772-Matrix. Der Verbraucher erwartet das zweite Listenelement, einen anderen Datentyp.",
+   "code_reads": [
+    {
+     "file": "src/check_ages.R",
+     "line": 177,
+     "starts_with": "rho_depth_given_age <- core.data[[station_id]]$rho_depth_given_age[[age.reso]]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 14,
+     "starts_with": "rho.d.g.a[i,j] <- rho_depth_given_age[i,(depth[j]-min(depth, na.rm = T))+1]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 648,
+     "starts_with": "predictors$pollen <- quali.reconstr.ref.age <- (rho.d.g.a %*% as.matrix(quali.reconstr.ref.depth))[,1]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "chronologie_matrix",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "diss_path": "src/my_reconst/my_kinneret/data/out/age_depth/rho_depth_given_age.rdata",
+     "exists": true,
+     "bytes": 1375335,
+     "sha256": "565e2abd6e19326404967261d54a36799de3c918400663fd611fb17418ce5762"
+    },
+    {
+     "role": "schreiber_liste_und_matrix",
+     "root": "additional",
+     "relative_path": "my_kinneret/src/bacon_kinneret.R",
+     "diss_path": "src/my_reconst/my_kinneret/src/bacon_kinneret.R",
+     "exists": true,
+     "bytes": 11517,
+     "sha256": "c9406d13083ddbb8248ca4b6ac24b43b42067d1044bbc833a5155274145b5f48"
+    }
+   ],
+   "phase1_bundles": [
+    "final_chronology"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "rho.d.g.a"
+  },
+  {
+   "id": "coordinates",
+   "group": "kern",
+   "label_de": "Koordinaten lat/lon",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Der ältere Container hat 32,79° N und 35,53° E. Der Wert des finalen Containers ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "src/prior_climate.R",
+     "line": 9,
+     "starts_with": "site.lat <- lat <- core.data[[station_id]]$lat"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 10,
+     "starts_with": "site.lon <- lon <- core.data[[station_id]]$lon"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 568,
+     "starts_with": "lat.id <- which.min(abs(giesecke.lat - site.lat))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 755,
+     "starts_with": "distances[i] <- distance(site.lat,site.lon,iso.lat[i],iso.lon[i])"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1209,
+     "starts_with": "if( !inside.giesecke & add.sites & lat <= 36"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "lat, lon"
+  },
+  {
+   "id": "country_elevation",
+   "group": "kern",
+   "label_de": "Land und Höhe",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Der ältere Container hat Israel und −210. Beide Felder steuern im Slot-3-Pfad keinen Rechenwert, müssen aber vorhanden sein.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1036,
+     "starts_with": "if(core.data[[station_id]]$elevation >= 2000 && add.sites == FALSE) which.site <- 3"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1080,
+     "starts_with": "if(!is.null(predictors$pollen) & core.data[[station_id]]$country != \"Israel\"){"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aelterer_kandidat_kein_ersatz",
+     "root": "original",
+     "relative_path": "in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/core_data_all_andrea_taxa_additional_sites.rdata",
+     "exists": true,
+     "bytes": 37982121,
+     "sha256": "c4782878d4b19c48d1e0651f4d6828e335079622cdc6b521be2811b12b36e888"
+    }
+   ],
+   "phase1_bundles": [
+    "final_base"
+   ],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F01"
+   ],
+   "evidence": [
+    "kinneret_binding_2026_11_02/README.md"
+   ],
+   "consumer_object": "country, elevation"
+  },
+  {
+   "id": "ap_reference",
+   "group": "kern",
+   "label_de": "AP-Referenz (tree_percentage)",
+   "status": "gebunden",
+   "status_reason_de": "Die CSV liegt am passenden Pfad und wird vom Code selbst in Slot 3 geschrieben, unabhängig vom fehlenden Container. Die Alterskurve hängt zusätzlich an rho[[2]].",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 143,
+     "starts_with": "kinneret_core <- read.csv(file=\"../../reconstructions/my_reconst/my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv\",header=T)"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 144,
+     "starts_with": "core.data[[3]]$qualitativ_data$qualitativ_reconstruction <- kinneret_core$tree_percentage[!is.na(kinneret_core$tree_percentage)]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 639,
+     "starts_with": "quali.reconstr.ref.depth <- core.data[[station_id]]$qualitativ_data$qualitativ_reconstruction"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 648,
+     "starts_with": "predictors$pollen <- quali.reconstr.ref.age"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "verbraucherpfad",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "diss_path": "src/my_reconst/my_kinneret/data/in/core/pollen_counts_epd_taxanomy.csv",
+     "exists": true,
+     "bytes": 23333,
+     "sha256": "32f86b4d7f91d90eb576cd6c0fcb91cae976c8f831a60719425ce3477f22db3c"
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "predictors$pollen"
+  },
+  {
+   "id": "human_impact",
+   "group": "kern",
+   "label_de": "Fenster menschlicher Einfluss",
+   "status": "gebunden",
+   "status_reason_de": "Das Literal c(-60,6500) steht in main_v1.2.R. Offen bleibt nur die Randwertregel von inside.range.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 154,
+     "starts_with": "core.data[[3]]$human_impact <- c(-60,6500)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 711,
+     "starts_with": "human_impact <- core.data[[station_id]]$human_impact"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 716,
+     "starts_with": "hi_ages_time <- !inside.range(pollen.age,human_impact)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 878,
+     "starts_with": "human_impact <- core.data[[station_id]]$human_impact"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "human_impact"
+  },
+  {
+   "id": "tf_container",
+   "group": "transferfunktionen",
+   "label_de": "Numerische Transferfunktionen",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Nur die Schreibzeile in all_trafo.R ist erhalten. Die sieben modernen Artenmodelle sind kein Ersatz.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 569,
+     "starts_with": "load(\"out/transfer_functions/mixed_partial_arts_emd.rdata\")"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 577,
+     "starts_with": "tf.x1[i,] <- transfer.functions[[i]]$prod.x1"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 578,
+     "starts_with": "tf.x2[i,] <- transfer.functions[[i]]$prod.x2"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 588,
+     "starts_with": "tf.x1[i,] <- tf.x1[i,] / max(tf.x1[i,])"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 589,
+     "starts_with": "tf.x2[i,] <- tf.x2[i,] / max(tf.x2[i,])"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "diss_path": "src/local_reconstr_all_epd/out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "exists": false
+    },
+    {
+     "role": "schreibzeile_all_trafo_529",
+     "root": "original",
+     "relative_path": "src/all_trafo.R",
+     "diss_path": "src/local_reconstr_all_epd/src/all_trafo.R",
+     "exists": true,
+     "bytes": 56720,
+     "sha256": "d03ce4282a36727a73f961362ddeee654a55af0d9c94916ad7babb0c94ccefb1"
+    }
+   ],
+   "phase1_bundles": [
+    "historical_tf"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F02"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "transfer.functions, tf.x1, tf.x2"
+  },
+  {
+   "id": "tf_axes",
+   "group": "transferfunktionen",
+   "label_de": "Klimaachsen x1range.bck, x2range.bck",
+   "status": "fehlend",
+   "status_reason_de": "Die Achsen stehen im fehlenden Container.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 570,
+     "starts_with": "x1range.bck <- transfer.functions[[1]]$x1range.bck"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 571,
+     "starts_with": "x2range.bck <- transfer.functions[[1]]$x2range.bck"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1445,
+     "starts_with": "x1range.bck <- transfer.functions[[1]]$x1range.bck"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1446,
+     "starts_with": "x2range.bck <- transfer.functions[[1]]$x2range.bck"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1934,
+     "starts_with": "tann_range <- seq( min(x1range.bck), max(x1range.bck), length.out = 1000)"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 159,
+     "starts_with": "tann_dens <- density(tann_temp[!is.na(tann_temp)], from = min(x1range.bck)"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "diss_path": "src/local_reconstr_all_epd/out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "historical_tf"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F02"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "x1range.bck, x2range.bck"
+  },
+  {
+   "id": "taxa_name_pool",
+   "group": "transferfunktionen",
+   "label_de": "Namenspool taxa.distribution.ww$names",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Eine Datei mit passendem Pfadsuffix liegt vor. Gleichheit mit dem verlorenen Automount-Original ist nicht belegt, und die Zuordnung Name zu TF-Index braucht den fehlenden Container. Die Kinneret-Kopie ist ein anderer Stand.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 433,
+     "starts_with": "load(\"/automount/agh/Projects/s6tinetz/dissertation/palaeo_sfb/sciebo/diss_laptop/reconstructions/my_reconst/my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata\")"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 434,
+     "starts_with": "taxa.distribution.ww$dist <- taxa.distribution.ww$dist[,,-c(8,10,152,153)]"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 435,
+     "starts_with": "taxa.distribution.ww$names <- taxa.distribution.ww$names[-c(8,10,152,153)]"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 436,
+     "starts_with": "taxa.distribution.ww$names[110] <- \"Juglans regia\""
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1460,
+     "starts_with": "taxa.merge <- anyNA(match(taxa.sampled,taxa.distribution.ww$names))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1573,
+     "starts_with": "which_taxa <- match(taxa.sampled,taxa.distribution.ww$names)"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "passendes_pfadsuffix",
+     "root": "additional",
+     "relative_path": "my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata",
+     "diss_path": "src/my_reconst/my_ohrid/data/in/climate_data/taxa_distribution_ww.rdata",
+     "exists": true,
+     "bytes": 3703315,
+     "sha256": "89a5e35906e2bd50ae5c85881269aecc59992f91744c6f879cc481e7ff875073"
+    },
+    {
+     "role": "anderer_stand_kein_ersatz",
+     "root": "additional",
+     "relative_path": "my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+     "diss_path": "src/my_reconst/my_kinneret/data/in/climate_data/taxa_distribution_ww.rdata",
+     "exists": true,
+     "bytes": 3603177,
+     "sha256": "73efc9c9b9ba03d8e964db9b69f592d8aa707f7e2c72d45798e3549aec1e3dd8"
+    }
+   ],
+   "phase1_bundles": [
+    "historical_tf"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md",
+    "climate_modelling_audit_2026_11_02/README.md"
+   ],
+   "consumer_object": "which_taxa"
+  },
+  {
+   "id": "tf_current",
+   "group": "transferfunktionen",
+   "label_de": "tf.x1.current, tf.x2.current (abgeleitet)",
+   "status": "fehlend",
+   "status_reason_de": "Abgeleitet aus dem fehlenden Container. Der Nachbau hat dafür nur Kunstwerte.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1574,
+     "starts_with": "tf.x1.current <- tf.x1[which_taxa,]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1575,
+     "starts_with": "tf.x2.current <- tf.x2[which_taxa,]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1535,
+     "starts_with": "tf.x1.current <- tf.x2.current <- array(NA, dim = c(length(which_taxa), dims))",
+     "note_de": "Zweig bei Mehrfachzuordnung"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1581,
+     "starts_with": "tf.x1.current <- tf.x1.current/rowSums(tf.x1.current, na.rm=T)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1582,
+     "starts_with": "tf.x2.current <- tf.x2.current/rowSums(tf.x2.current, na.rm=T)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1631,
+     "starts_with": "tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1664,
+     "starts_with": "which.tf.missing <- which(is.na(tf.x1.current.mean))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1897,
+     "starts_with": "tf_tann_sample <- sample(x1range.bck,size=10000,prob = tf.x1.current[i,],replace = T)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1899,
+     "starts_with": "tf_pann_sample <- sample(x2range.bck,size=10000,prob = tf.x2.current[i,],replace = T)"
+    },
+    {
+     "file": "src/mcmc_conduction.R",
+     "line": 146,
+     "starts_with": "posterior_temp <- reconstruction(posterior_temp=posterior_temp,tf.x1.current[posterior_temp$z,]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "diss_path": "src/local_reconstr_all_epd/out/transfer_functions/mixed_partial_arts_emd.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "historical_tf"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F02"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "tf.x1.current, tf.x2.current"
+  },
+  {
+   "id": "cru_pann_ww",
+   "group": "klima",
+   "label_de": "CRU-PANN global, Stationsmaske",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Regionale Ausschnitte sind kein Ersatz.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 325,
+     "starts_with": "precip <-  nc_open(\"../../reconstructions/cru_nh/cru_pann_ww.nc\", write=FALSE, readunlim=FALSE)"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 327,
+     "starts_with": "lon_ww <- ncvar_get(nc=precip,varid=\"lon\")"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 329,
+     "starts_with": "p.ann.ww <- ncvar_get(nc=precip,varid=\"pre\")"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 6,
+     "starts_with": "nh_mask <- ifelse(ncvar_get(nc=precip,varid=\"stn\") >= 0,0,NA )"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 156,
+     "starts_with": "pann_temp <- p.ann.ww*kg_map_temp"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "cru_nh/cru_pann_ww.nc",
+     "diss_path": "src/cru_nh/cru_pann_ww.nc",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "cru_kgc_inputs"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F03"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "p.ann.ww, nh_mask"
+  },
+  {
+   "id": "cru_tann_ww",
+   "group": "klima",
+   "label_de": "CRU-TANN global",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Regionale Ausschnitte sind kein Ersatz.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 326,
+     "starts_with": "temp <-  nc_open(\"../../reconstructions/cru_nh/cru_tann_ww.nc\", write=FALSE, readunlim=FALSE)"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 330,
+     "starts_with": "t.ann.ww <- ncvar_get(nc=temp,varid=\"tmp\")"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 154,
+     "starts_with": "tann_temp <- t.ann.ww*kg_map_temp"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "cru_nh/cru_tann_ww.nc",
+     "diss_path": "src/cru_nh/cru_tann_ww.nc",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "cru_kgc_inputs"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F04"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "t.ann.ww"
+  },
+  {
+   "id": "cru4_pann",
+   "group": "klima",
+   "label_de": "CRU4-PANN Zeitreihe 50:115",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Ohne Zeitachse ist 50:115 kein belegter Kalenderbezug.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 343,
+     "starts_with": "precip_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru4_pann_v1.2.nc\", write=FALSE, readunlim=FALSE)"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 346,
+     "starts_with": "pann_v1.2 <- ncvar_get(nc=precip_yearly,varid=\"pre\")[,,50:115]"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 71,
+     "starts_with": "pann_site <- pann_v1.2[loc_lon_idx,loc_lat_idx,]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "cru_nh/cru4_pann_v1.2.nc",
+     "diss_path": "src/cru_nh/cru4_pann_v1.2.nc",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "cru_kgc_inputs",
+    "anchor_variant"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F05"
+   ],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "pann_site"
+  },
+  {
+   "id": "cru4_tann",
+   "group": "klima",
+   "label_de": "CRU4-TANN Zeitreihe 50:115",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Ohne Zeitachse ist 50:115 kein belegter Kalenderbezug.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 344,
+     "starts_with": "temp_yearly <-  nc_open(\"../../reconstructions/cru_nh/cru4_tann_v1.2.nc\", write=FALSE, readunlim=FALSE)"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 347,
+     "starts_with": "tann_v1.2 <- ncvar_get(nc=temp_yearly,varid=\"tmp\")[,,50:115]"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 70,
+     "starts_with": "tann_site <- tann_v1.2[loc_lon_idx,loc_lat_idx,]"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "cru_nh/cru4_tann_v1.2.nc",
+     "diss_path": "src/cru_nh/cru4_tann_v1.2.nc",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "cru_kgc_inputs",
+    "anchor_variant"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F06"
+   ],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "tann_site"
+  },
+  {
+   "id": "climatezones",
+   "group": "klima",
+   "label_de": "Köppen-Geiger-Tabelle climatezones",
+   "status": "fehlend",
+   "status_reason_de": "Der Code lädt climatezones nicht aus der Datei daneben: Sie enthält nur kgc.distribution.ww. In den R-Quellen wird der Name nirgends zugewiesen. Als Anbieter kommt das Paket kgc infrage; dessen Fassung ist ungebunden und wurde hier nicht geprüft.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 360,
+     "starts_with": "cz <- climatezones"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 33,
+     "starts_with": "cz <- climatezones"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 39,
+     "starts_with": "site.info <- data.frame(site.info,ClimateZ=LookupCZ(site.info))"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 52,
+     "starts_with": "lon.cz <- cz$Lon[which(cz$Cls == site.kgcz[i])]"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "cru_kgc_inputs"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "cz, site.kgcz"
+  },
+  {
+   "id": "reference_speleo_iso",
+   "group": "isotope",
+   "label_de": "Workspace reference_speleo_iso",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Welche der Ladedateien d18o.age liefert, ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 388,
+     "starts_with": "load(\"in/reference_speleo_iso.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/reference_speleo_iso.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/reference_speleo_iso.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F07"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "d18o.age?"
+  },
+  {
+   "id": "sisal_speleo_info",
+   "group": "isotope",
+   "label_de": "SISAL speleo_info.csv",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Unter climate_modelling liegt ein Namenskandidat ohne Versionsbeleg. Im aktiven Pfad gibt es keinen Leser.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 391,
+     "starts_with": "speleo_eu_info <- read.csv(\"../../stalage_speleodatabase/sisal/SISAL_V2/speleo_info.csv\""
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "kandidat_version_offen",
+     "root": "climate_modelling",
+     "relative_path": "speleothems/speleo_data/speleo_info.csv",
+     "diss_path": "src/climate_modelling/speleothems/speleo_data/speleo_info.csv",
+     "exists": true,
+     "bytes": 53134,
+     "sha256": "ecf11a3259aa00f49642e54877584b1d6679770e0fa19f1a888eaf8762dde649"
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F14"
+   ],
+   "evidence": [
+    "climate_modelling_audit_2026_11_02/README.md"
+   ],
+   "consumer_object": "speleo_eu_info"
+  },
+  {
+   "id": "sisal_ages_info",
+   "group": "isotope",
+   "label_de": "SISAL ages_info.csv",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Unter climate_modelling liegt ein Namenskandidat ohne Versionsbeleg. Im aktiven Pfad gibt es keinen Leser.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 392,
+     "starts_with": "ages_eu_info <- read.csv(\"../../stalage_speleodatabase/sisal/SISAL_V2/ages_info.csv\""
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "kandidat_version_offen",
+     "root": "climate_modelling",
+     "relative_path": "speleothems/speleo_data/ages_info.csv",
+     "diss_path": "src/climate_modelling/speleothems/speleo_data/ages_info.csv",
+     "exists": true,
+     "bytes": 376598,
+     "sha256": "3fe07c97690bfa56458b613bbd48762f37cba1e61ac314d46eb666f8c15a7385"
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F15"
+   ],
+   "evidence": [
+    "climate_modelling_audit_2026_11_02/README.md"
+   ],
+   "consumer_object": "ages_eu_info"
+  },
+  {
+   "id": "sisal_d18_d13",
+   "group": "isotope",
+   "label_de": "SISAL d18_d13.RData",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Welche der Ladedateien d18o.age liefert, ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 394,
+     "starts_with": "load(\"../../stalage_speleodatabase/sisal/SISAL_V2/d18_d13.RData\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "stalage_speleodatabase/sisal/SISAL_V2/d18_d13.RData",
+     "diss_path": "src/stalage_speleodatabase/sisal/SISAL_V2/d18_d13.RData",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F08"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "d18o.age?"
+  },
+  {
+   "id": "isotope_info",
+   "group": "isotope",
+   "label_de": "Workspace isotope_info",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Welche der Ladedateien d18o.age liefert, ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 397,
+     "starts_with": "load(\"in/isotope_info.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/isotope_info.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/isotope_info.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F09"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "d18o.age?"
+  },
+  {
+   "id": "isotope_speleo_other",
+   "group": "isotope",
+   "label_de": "Workspace isotope_speleo_other",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Welche der Ladedateien d18o.age liefert, ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 401,
+     "starts_with": "load(\"in/isotope_speleo_other.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/isotope_speleo_other.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/isotope_speleo_other.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [
+    "isotope_workspaces"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [
+    "F10"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "d18o.age?"
+  },
+  {
+   "id": "d18o_age",
+   "group": "isotope",
+   "label_de": "Objekt d18o.age",
+   "status": "fehlend",
+   "status_reason_de": "Das Objekt wird in keiner R-Datei von local_reconstr_all_epd erzeugt, sondern nur aus einem der fehlenden Workspaces geladen. Koordinaten, Namen, Alter und Reihen fehlen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 751,
+     "starts_with": "iso.lat <- as.numeric(d18o.age$lat[1:170])"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 752,
+     "starts_with": "iso.lon <- as.numeric(d18o.age$lon[1:170])"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 766,
+     "starts_with": "mean[i] <- mean( diff( d18o.age$age[[speleo.check[i]]] ), na.rm=T )"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 767,
+     "starts_with": "included.ages[i] <- length( which(inside.range( site.age ,range(d18o.age$age[[speleo.check[i]]]) )) ) / length(site.age)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 794,
+     "starts_with": "iso.ref <- d18o.age$splined.series[[which.site]]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 828,
+     "starts_with": "iso.ref <- d18o.age$splined.series[[170]]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1038,
+     "starts_with": "iso.ref.time <- d18o.age$splined.series[[ (length(d18o.age$loc_nr)-3) + which.site ]]"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "isotope_workspaces",
+    "reference_variant"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "d18o.age"
+  },
+  {
+   "id": "soreq_index",
+   "group": "isotope",
+   "label_de": "Index der Soreq-Reihe",
+   "status": "quellkonflikt",
+   "status_reason_de": "Drei Quellstände nennen 37, 105 und 170. Ohne d18o.age sind sie keiner Reihe zuzuordnen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 790,
+     "starts_with": "if(sitename == \"Lake Kinneret\") which.site <- 105"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 828,
+     "starts_with": "iso.ref <- d18o.age$splined.series[[170]]"
+    },
+    {
+     "file": "src/mcmc_prep_v1.2.R",
+     "line": 773,
+     "starts_with": "if(sitename == \"Lake Kinneret\") which.site <- 37",
+     "note_de": "ältere Vergleichsfassung, nicht aktiv geladen"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "aeltere_vergleichsfassung",
+     "root": "original",
+     "relative_path": "src/mcmc_prep_v1.2.R",
+     "diss_path": "src/local_reconstr_all_epd/src/mcmc_prep_v1.2.R",
+     "exists": true,
+     "bytes": 72528,
+     "sha256": "badabd80978a074f42c25e06f1d254fd4ac8deef4e8f31bc591af6de65123949"
+    }
+   ],
+   "phase1_bundles": [
+    "reference_variant"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "iso.ref"
+  },
+  {
+   "id": "medstack_series",
+   "group": "isotope",
+   "label_de": "Marine Referenzreihe (MEDSTACK)",
+   "status": "fehlend",
+   "status_reason_de": "Die Auswahlregel ist belegt, die Reihe selbst fehlt. Der Code wählt über die Länge von d18o.age$loc_nr, nicht über einen Namen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1038,
+     "starts_with": "iso.ref.time <- d18o.age$splined.series[[ (length(d18o.age$loc_nr)-3) + which.site ]]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1039,
+     "starts_with": "if(which.site < 3 ) iso.ref.time$isotopes <- -iso.ref.time$isotopes"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1044,
+     "starts_with": "predictors$iso_time <- iso.ref.time$isotopes"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "isotope_workspaces",
+    "reference_variant"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": "predictors$iso_time"
+  },
+  {
+   "id": "giesecke_grid",
+   "group": "isotope",
+   "label_de": "Giesecke-Gitter (nur Koordinaten)",
+   "status": "gebunden",
+   "status_reason_de": "Die CSV-Dateien liegen am Verbraucherpfad. Im Slot-3-Pfad liest der Code nur Lat und Lon, die Inhaltsspalten nicht.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 407,
+     "starts_with": "epd.giesecke.files <- list.files(\"in/epd_giesecke_2016/quant_files/\")"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 412,
+     "starts_with": "all.taxa.giesecke[[i]] <- read.csv(paste0(\"in/epd_giesecke_2016/quant_files/\",epd.giesecke.files[i]))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 565,
+     "starts_with": "giesecke.lat <- all.taxa.giesecke[[1]]$Lat"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 566,
+     "starts_with": "giesecke.lon <- all.taxa.giesecke[[1]]$Lon"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/epd_giesecke_2016/quant_files/epdQuant_Abi.csv",
+     "diss_path": "src/local_reconstr_all_epd/in/epd_giesecke_2016/quant_files/epdQuant_Abi.csv",
+     "exists": true,
+     "bytes": 309533,
+     "sha256": "7b47843bcb0735f89a35b1aef8f4c9abda3a8674561f94d68b606327422f45b2"
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": "giesecke.lat, giesecke.lon"
+  },
+  {
+   "id": "insolation",
+   "group": "nur_geladen",
+   "label_de": "Insolationsreihe si.txt",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. sol.irr hat außerhalb von main_v1.2.R:367–381 keinen aktiven Leser.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 367,
+     "starts_with": "sol.irr <- read.table(\"../../insolation/si.txt\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "insolation/si.txt",
+     "diss_path": "src/insolation/si.txt",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F13"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "sol.irr"
+  },
+  {
+   "id": "station_ids",
+   "group": "nur_geladen",
+   "label_de": "station_ids_ref",
+   "status": "gebunden",
+   "status_reason_de": "Die Datei liegt vor und enthält station_ids_ref. Das Objekt hat im aktiven Pfad keinen Leser.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 431,
+     "starts_with": "load(\"in/station_ids_ref.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/station_ids_ref.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/station_ids_ref.rdata",
+     "exists": true,
+     "bytes": 254,
+     "sha256": "8441695591b130854f9f218ec4c7fc0ea94eef4ae25ad8095f9bf42dd12e0312"
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "station_ids_ref"
+  },
+  {
+   "id": "kgc_rdata",
+   "group": "nur_geladen",
+   "label_de": "kgc_distribution_ww.rdata",
+   "status": "gebunden",
+   "status_reason_de": "Die Datei liegt vor und enthält kgc.distribution.ww. Das Objekt hat im aktiven Pfad keinen Leser, die Tabelle climatezones steckt nicht darin.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 359,
+     "starts_with": "load(\"in/kgc_distribution_ww.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "verbraucherpfad",
+     "root": "original",
+     "relative_path": "in/kgc_distribution_ww.rdata",
+     "diss_path": "src/local_reconstr_all_epd/in/kgc_distribution_ww.rdata",
+     "exists": true,
+     "bytes": 405906,
+     "sha256": "b222419ed8ed96e35e1f8a5ac874e8bfefcd3c04496ba33451ddd824357e39fc"
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "kgc.distribution.ww"
+  },
+  {
+   "id": "prob_c_kgc",
+   "group": "nur_geladen",
+   "label_de": "prob_c_kgc.rdata",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. Ihre Objektnamen sind unbekannt, ein Einfluss ist daher weder belegt noch ausgeschlossen.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 432,
+     "starts_with": "load(\"out/transfer_functions/prob_c_kgc.rdata\")"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "original",
+     "relative_path": "out/transfer_functions/prob_c_kgc.rdata",
+     "diss_path": "src/local_reconstr_all_epd/out/transfer_functions/prob_c_kgc.rdata",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": "unbekannt",
+   "missing_list_ids": [
+    "F11"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "bond2001",
+   "group": "nur_geladen",
+   "label_de": "IRD-Reihe bond2001.csv",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt. ird_data wird im aktiven Pfad nur im nicht erreichbaren Zweig mcmc_prepare.R:872 gelesen.",
+   "code_reads": [
+    {
+     "file": "src/check_ages.R",
+     "line": 238,
+     "starts_with": "ird_percent <- read.csv(\"../../other_isotopes/bond2001.csv\")"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 872,
+     "starts_with": "if( any(sitename == c(\"\",\"\")) ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 873,
+     "starts_with": "df_speleo <- data.frame(age = ird_data$age, isotopes = ird_data$isotopes)"
+    }
+   ],
+   "diss_sources": [
+    {
+     "role": "fehlt_am_verbraucherpfad",
+     "root": "historical",
+     "relative_path": "other_isotopes/bond2001.csv",
+     "diss_path": "src/other_isotopes/bond2001.csv",
+     "exists": false
+    }
+   ],
+   "phase1_bundles": [],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F16"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "ird_data"
+  },
+  {
+   "id": "pmip3_mask",
+   "group": "nur_geladen",
+   "label_de": "PMIP3-Eismaske",
+   "status": "fehlend",
+   "status_reason_de": "Die Datei fehlt, wird aber geöffnet. Das Ergebnis der Prüfung in Zeile 462 wird in Zeile 468 unbedingt überschrieben.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 451,
+     "starts_with": "glaciers_lgm <-  nc_open(paste0(in_path,\"/pmip/lgm/glaciers_data/pmip3_21k_v0.nc\"), write=FALSE, readunlim=FALSE)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 462,
+     "starts_with": "if( length(which( c(hol_per,lg_per,eem_per) == 0)) > 1"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 468,
+     "starts_with": "stad_interstad <- FALSE"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [],
+   "affects_kinneret_result": false,
+   "missing_list_ids": [
+    "F12"
+   ],
+   "evidence": [
+    "MISSING_PROJECT_FILES_2026_11_02.md"
+   ],
+   "consumer_object": "glaciers"
+  },
+  {
+   "id": "r_version",
+   "group": "laufzeit",
+   "label_de": "R-Fassung des Laufs",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Die Eingabecontainer stammen aus R 3.5.0. Die Fassung des Laufs ist nicht belegt; die Quellen wurden bis 07.07.2023 geändert.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 644,
+     "starts_with": "source(\"src/mcmc_functions_v1.6.R\")",
+     "note_de": "kein Leser im engeren Sinn: Laufzeitumgebung aller Zeilen"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "r_runtime_crosscheck_2026_11_03/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_laplacesdemon",
+   "group": "laufzeit",
+   "label_de": "rdirichlet, ddirichlet",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Im Fenster 2018-04-23…2023-07-07 liefert LaplacesDemon beide Funktionen, in allen vier Fassungen textgleich. Die installierte Fassung ist unbekannt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 38,
+     "starts_with": "library(LaplacesDemon)"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1248,
+     "starts_with": "new_weights <- rdirichlet(1,old_weights*posterior_temp$dirichlet_spread)[1,]"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1269,
+     "starts_with": "weights_ratio <- ddirichlet(new_weights,rep(0.5,num_taxa)) / ddirichlet(old_weights,rep(0.5,num_taxa))"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "r_runtime_crosscheck_2026_11_03/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_matrixstats",
+   "group": "laufzeit",
+   "label_de": "weightedMedian",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Im Fenster liefert allein matrixStats die Funktion. Die installierte Fassung ist unbekannt.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 27,
+     "starts_with": "library(matrixStats)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1631,
+     "starts_with": "tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "r_runtime_crosscheck_2026_11_03/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_rcppdist",
+   "group": "laufzeit",
+   "label_de": "r_truncnorm, d_truncnorm",
+   "status": "teilweise_gebunden",
+   "status_reason_de": "Im Fenster gab es auf CRAN genau RcppDist 0.1.1. Die installierte Fassung ist unbekannt.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1566,
+     "starts_with": "out(i) = r_truncnorm(mean(i), sd(i), a(i), b(i));"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "literal_rtruncnorm_binding_2026_11_09/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_truncnorm",
+   "group": "laufzeit",
+   "label_de": "rtruncnorm aus dem Paket truncnorm",
+   "status": "fehlend",
+   "status_reason_de": "Die Funktion setzt die Startwerte tf_sample_tann und tf_sample_pann und verbraucht Zufallszahlen. Das Paket ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1886,
+     "starts_with": "library(truncnorm)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1957,
+     "starts_with": "posterior$tf_sample_tann[[1]][j,] <- rtruncnorm(1,"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1958,
+     "starts_with": "posterior$tf_sample_pann[[1]][j,] <- rtruncnorm(1,"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_spatstat_utils",
+   "group": "laufzeit",
+   "label_de": "inside.range",
+   "status": "fehlend",
+   "status_reason_de": "Bestimmt die Masken und die Randwertregel bei 6500 a BP. Das Paket ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 50,
+     "starts_with": "library(spatstat.utils)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 716,
+     "starts_with": "hi_ages_time <- !inside.range(pollen.age,human_impact)"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_rpref",
+   "group": "laufzeit",
+   "label_de": "psel (Pareto-Auswahl)",
+   "status": "fehlend",
+   "status_reason_de": "Wird im Mehrkandidatenzweig der Höhlen gerufen; die Ausgabeordnung ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 49,
+     "starts_with": "library(rPref)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 779,
+     "starts_with": "pareto.member <- psel(pareto.df, low(mean) * high(included.ages)* low(distance))"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_biwavelet",
+   "group": "laufzeit",
+   "label_de": "wt und rcpp_wt_bases_morlet",
+   "status": "fehlend",
+   "status_reason_de": "Nur im Speläothemzweig. rcpp_wt_bases_morlet ist in keiner R-Quelle definiert; der Anbieter ist nicht gebunden und wurde hier nicht geprüft.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 52,
+     "starts_with": "library(biwavelet)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 901,
+     "starts_with": "period <-  wt(df_speleo_nhp, s0 = s0, dj = dj, max.scale = max.scale, do.sig = FALSE)$period"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 934,
+     "starts_with": "wb[,a1] <- rcpp_wt_bases_morlet(k, scale[a1], -1)$daughter"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": "bedingt",
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_signal",
+   "group": "laufzeit",
+   "label_de": "fftfilt",
+   "status": "fehlend",
+   "status_reason_de": "Nur im Speläothemzweig über smoothing. Das Paket ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 24,
+     "starts_with": "library(signal)"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 2325,
+     "starts_with": "z <- fftfilt(rep(1, 8)/8, x_norm)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 868,
+     "starts_with": "df_speleo <- smoothing(iso.ref)"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": "bedingt",
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_mass",
+   "group": "laufzeit",
+   "label_de": "fitdistr",
+   "status": "fehlend",
+   "status_reason_de": "Setzt die Anker und die Parameter der Transferfunktionen. Das Paket ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 62,
+     "starts_with": "library(MASS)"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 106,
+     "starts_with": "normparameter1 <- fitdistr(tann_site, \"normal\")"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1916,
+     "starts_with": "fit_tf_tann_temp <- fitdistr(tf_tann_sample,densfun = \"normal\")"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_kgc",
+   "group": "laufzeit",
+   "label_de": "LookupCZ, RoundCoordinates, CZUncertainty",
+   "status": "fehlend",
+   "status_reason_de": "Bestimmen die Klimaklasse des Standorts. Das Paket ist nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 22,
+     "starts_with": "library(kgc)"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 37,
+     "starts_with": "site.info <- data.frame(site.info,rndCoord.lon = RoundCoordinates(site.info$Longitude)"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 40,
+     "starts_with": "site.info <- data.frame(site.info, CZUncertainty(site.info))"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "cru_kgc_inputs",
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [
+    "kinneret_references_2026_11_02/README.md"
+   ],
+   "consumer_object": null
+  },
+  {
+   "id": "pkg_armadillo",
+   "group": "laufzeit",
+   "label_de": "arma::randn in rmvnorm_rcpp",
+   "status": "fehlend",
+   "status_reason_de": "Verbraucht beim Samplerstart Zufallszahlen. Paket und Compiler des Laufs sind nicht gebunden.",
+   "code_reads": [
+    {
+     "file": "main_v1.2.R",
+     "line": 30,
+     "starts_with": "library(RcppArmadillo)"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1720,
+     "starts_with": "arma::mat Y = arma::randn(n, ncols);"
+    },
+    {
+     "file": "src/mcmc_conduction.R",
+     "line": 133,
+     "starts_with": "r_curr_all <- rmvnorm_rcpp(sample_length, rep(0,2*num_taxa*num_age), diag(2*num_taxa*num_age))"
+    }
+   ],
+   "diss_sources": [],
+   "phase1_bundles": [
+    "runtime_rng"
+   ],
+   "affects_kinneret_result": true,
+   "missing_list_ids": [],
+   "evidence": [],
+   "consumer_object": null
+  }
+ ],
+ "settings_literal": [
+  {
+   "name": "add.sites",
+   "value": "TRUE",
+   "file": "main_v1.2.R",
+   "line": 73,
+   "starts_with": "add.sites <- T"
+  },
+  {
+   "name": "percent",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 80,
+   "starts_with": "percent <- F"
+  },
+  {
+   "name": "stations",
+   "value": "1:length(core.data) ohne 4",
+   "file": "main_v1.2.R",
+   "line": 615,
+   "starts_with": "if(add.sites ) stations <- c(1:length(core.data))[-4]"
+  },
+  {
+   "name": "gibbs",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 624,
+   "starts_with": "gibbs <- F"
+  },
+  {
+   "name": "sample_length",
+   "value": "25000",
+   "file": "main_v1.2.R",
+   "line": 630,
+   "starts_with": "sample_length <- 25000"
+  },
+  {
+   "name": "burn_in",
+   "value": "5000",
+   "file": "main_v1.2.R",
+   "line": 631,
+   "starts_with": "burn_in <- 5000"
+  },
+  {
+   "name": "thin_size",
+   "value": "5",
+   "file": "main_v1.2.R",
+   "line": 632,
+   "starts_with": "thin_size <- 5"
+  },
+  {
+   "name": "age.reso",
+   "value": "2",
+   "file": "main_v1.2.R",
+   "line": 656,
+   "starts_with": "age.reso <- 2"
+  },
+  {
+   "name": "sim_nr",
+   "value": "1",
+   "file": "main_v1.2.R",
+   "line": 657,
+   "starts_with": "sim_nr <- 1"
+  },
+  {
+   "name": "dims",
+   "value": "300",
+   "file": "main_v1.2.R",
+   "line": 658,
+   "starts_with": "dims <- 300"
+  },
+  {
+   "name": "null.ratio.check",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 659,
+   "starts_with": "null.ratio.check <- FALSE"
+  },
+  {
+   "name": "giesecke_prespa",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 669,
+   "starts_with": "giesecke_prespa <- F"
+  },
+  {
+   "name": "past_climate_module",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 670,
+   "starts_with": "past_climate_module <- F"
+  },
+  {
+   "name": "case_studies",
+   "value": "FALSE",
+   "file": "main_v1.2.R",
+   "line": 672,
+   "starts_with": "case_studies <- F"
+  }
+ ],
+ "other_slot_paths_not_affecting_kinneret": [
+  {
+   "line": 112,
+   "relative_path": "my_prespa/data/in/core/core_data_counts.csv",
+   "diss_path": "src/my_reconst/my_prespa/data/in/core/core_data_counts.csv",
+   "exists": true
+  },
+  {
+   "line": 121,
+   "relative_path": "my_gedi/data/in/core/en_gedi_counts.csv",
+   "diss_path": "src/my_reconst/my_gedi/data/in/core/en_gedi_counts.csv",
+   "exists": true
+  },
+  {
+   "line": 127,
+   "relative_path": "my_gedi/data/out/age_depth/rho_depth_given_age.rdata",
+   "diss_path": "src/my_reconst/my_gedi/data/out/age_depth/rho_depth_given_age.rdata",
+   "exists": true
+  },
+  {
+   "line": 157,
+   "relative_path": "my_birkat_ram/data/in/core/pollen_counts_epd_taxanomy.csv",
+   "diss_path": "src/my_reconst/my_birkat_ram/data/in/core/pollen_counts_epd_taxanomy.csv",
+   "exists": true
+  },
+  {
+   "line": 161,
+   "relative_path": "my_iznik/data/in/core/core_information.csv",
+   "diss_path": "src/my_reconst/my_iznik/data/in/core/core_information.csv",
+   "exists": false
+  },
+  {
+   "line": 177,
+   "relative_path": "my_ohrid/data/in/core/core_data_counts.csv",
+   "diss_path": "src/my_reconst/my_ohrid/data/in/core/core_data_counts.csv",
+   "exists": true
+  },
+  {
+   "line": 186,
+   "relative_path": "my_gedi2/data/in/core/taxa_spectrum.csv",
+   "diss_path": "src/my_reconst/my_gedi2/data/in/core/taxa_spectrum.csv",
+   "exists": true
+  },
+  {
+   "line": 221,
+   "relative_path": "my_gedi2/data/in/age_depth/rho_depth_given_age_higher_resol.rdata",
+   "diss_path": "src/my_reconst/my_gedi2/data/in/age_depth/rho_depth_given_age_higher_resol.rdata",
+   "exists": false
+  },
+  {
+   "line": 231,
+   "relative_path": "my_birkat_ram/data/in/core/pollen_counts_composite.csv",
+   "diss_path": "src/my_reconst/my_birkat_ram/data/in/core/pollen_counts_composite.csv",
+   "exists": true
+  },
+  {
+   "line": 256,
+   "relative_path": "my_birkat_ram/data/out/age_depth/rho_depth_given_age.rdata",
+   "diss_path": "src/my_reconst/my_birkat_ram/data/out/age_depth/rho_depth_given_age.rdata",
+   "exists": true
+  },
+  {
+   "line": 265,
+   "relative_path": "my_van/data/in/core/taxa_spectrum.csv",
+   "diss_path": "src/my_reconst/my_van/data/in/core/taxa_spectrum.csv",
+   "exists": true
+  },
+  {
+   "line": 288,
+   "relative_path": "my_van/data/in/age_depth/rho_depth_given_age.rdata",
+   "diss_path": "src/my_reconst/my_van/data/in/age_depth/rho_depth_given_age.rdata",
+   "exists": false
+  },
+  {
+   "line": 294,
+   "relative_path": "my_van/data/in/core/overlap_check_2009.csv",
+   "diss_path": "src/my_reconst/my_van/data/in/core/overlap_check_2009.csv",
+   "exists": true
+  },
+  {
+   "line": 295,
+   "relative_path": "my_van/data/in/core/overlap_check_2014.csv",
+   "diss_path": "src/my_reconst/my_van/data/in/core/overlap_check_2014.csv",
+   "exists": true
+  }
+ ],
+ "older_container_slot_3": {
+  "slot_R_1_based": 3,
+  "sitename": "Kinneret",
+  "lat": 32.79,
+  "lon": 35.53,
+  "country": "Israel",
+  "elevation": -210.0,
+  "has_field_qualitativ_data": false,
+  "has_field_human_impact": false,
+  "all_sitenames": [
+   "Iznik",
+   "Birkat Ram",
+   "Kinneret",
+   "En Gedi"
+  ]
+ },
+ "conditions": [
+  {
+   "id": "sources_giesecke",
+   "status": "belegt",
+   "label_de": "sources$giesecke bleibt 0",
+   "reason_de": "Der Zweig 591 verlangt !add.sites oder giesecke_prespa. Beides ist im gebundenen Quellstand falsch.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 555,
+     "starts_with": "sources <- data.frame(giesecke = 0, core = 0, speleothem = 0, marine_ice_core = 0)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 591,
+     "starts_with": "if( inside.giesecke & !add.sites | giesecke_prespa ){"
+    }
+   ],
+   "depends_on_inputs": []
+  },
+  {
+   "id": "inside_giesecke",
+   "status": "bedingt",
+   "label_de": "inside.giesecke ist FALSE",
+   "reason_de": "Das Giesecke-Gitter endet im Süden bei 34,75° N mit einer einzigen Zelle bei 24,75° E. Mit den älteren Koordinaten ist die Raumbedingung falsch. Der finale Containerwert ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 568,
+     "starts_with": "lat.id <- which.min(abs(giesecke.lat - site.lat))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 572,
+     "starts_with": "inside.giesecke.space <- ( site.lon > (min(giesecke.site.lon)-1) & site.lon < (max(giesecke.site.lon)+1) )"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 575,
+     "starts_with": "inside.giesecke.time <- any(site.age <= 13000)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 587,
+     "starts_with": "inside.giesecke <- inside.giesecke.space & inside.giesecke.time"
+    }
+   ],
+   "depends_on_inputs": [
+    "coordinates",
+    "giesecke_grid"
+   ],
+   "value_under_older_coordinates": false,
+   "evaluation": {
+    "scope": "only mcmc_prepare.R:568-572 on the columns Lat and Lon, with the older coordinates; not a model step",
+    "first_listed_file": "epdQuant_Abi.csv",
+    "files_listed": 17,
+    "last_listed_file": "readme.txt",
+    "grid_cells": 3691,
+    "lat_range": [
+     34.75,
+     71.25
+    ],
+    "lon_range": [
+     -10.25,
+     41.25
+    ],
+    "nearest_lat": 34.75,
+    "cells_on_nearest_lat": 1,
+    "lon_range_on_nearest_lat": [
+     24.75,
+     24.75
+    ],
+    "site_lat_used": 32.79,
+    "site_lon_used": 35.53,
+    "inside_giesecke_space": false
+   }
+  },
+  {
+   "id": "sources_core",
+   "status": "bedingt",
+   "label_de": "sources$core",
+   "reason_de": "Der Zweig 636 wird erreicht, solange inside.giesecke falsch ist; dann wird sources$core gesetzt. Offen bleibt der Varianztest in Zeile 662, der die Alterskurve braucht.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 636,
+     "starts_with": "} else if( !inside.giesecke &  add.sites | sitename %in% c(\"Lake Prespa\", \"Lake Ohrid\", \"Lake Van\") ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 661,
+     "starts_with": "sources$core <- 1"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 662,
+     "starts_with": "if( var(predictors$pollen[pollen.age %in% site.age], na.rm=T)== 0 ) sources$core <- 0"
+    }
+   ],
+   "depends_on_inputs": [
+    "coordinates",
+    "giesecke_grid",
+    "ap_reference",
+    "age_grid",
+    "rho_depth_given_age"
+   ],
+   "branch_reached_under_older_coordinates": true,
+   "variance_test_open": true
+  },
+  {
+   "id": "sources_speleothem",
+   "status": "offen",
+   "label_de": "sources$speleothem",
+   "reason_de": "Hängt an den Höhlenkoordinaten und Altersachsen in d18o.age. Das Objekt fehlt. Der Dissertationstext nennt Soreq-WPS für Kinneret; das bindet den Code nicht.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 759,
+     "starts_with": "speleo.check <- which( distances <= 150 )"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 772,
+     "starts_with": "sources$speleothem <- 1"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 773,
+     "starts_with": "if(max(included.ages) <= 0.5) sources$speleothem <- 0"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 813,
+     "starts_with": "sources$speleothem <- 1"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 814,
+     "starts_with": "if(included.ages <= 0.5) sources$speleothem <- 0"
+    }
+   ],
+   "depends_on_inputs": [
+    "d18o_age",
+    "age_grid",
+    "coordinates",
+    "pkg_spatstat_utils"
+   ]
+  },
+  {
+   "id": "sources_marine",
+   "status": "bedingt",
+   "label_de": "sources$marine_ice_core",
+   "reason_de": "Zeile 1072 setzt den Wert ohne Bedingung auf 1. Zeile 1212 setzt ihn für Standorte außerhalb der Namensliste wieder auf 0. Das hängt am Standortnamen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1072,
+     "starts_with": "sources$marine_ice_core <- 1"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1212,
+     "starts_with": "sources[4] <- 0"
+    }
+   ],
+   "depends_on_inputs": [
+    "site_name",
+    "coordinates",
+    "giesecke_grid"
+   ]
+  },
+  {
+   "id": "multiple_spectral",
+   "status": "offen",
+   "label_de": "multiple und spectral",
+   "reason_de": "Folgen aus den vier Quellenschaltern. Die Tabelle source_flag_table führt alle Fälle auf.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1189,
+     "starts_with": "which_sources <- which(sources == 1)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1195,
+     "starts_with": "if( all(which_sources == c(2,4)) )  multiple <- TRUE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1200,
+     "starts_with": "if( all(which_sources == c(2,3,4)) )  multiple <- TRUE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1203,
+     "starts_with": "if( any(which_sources == 3) )  spectral <- TRUE"
+    }
+   ],
+   "depends_on_inputs": [
+    "site_name",
+    "d18o_age"
+   ]
+  },
+  {
+   "id": "wt_power_reachable",
+   "status": "offen",
+   "label_de": "wt_power erreichbar",
+   "reason_de": "Läuft genau dann, wenn sources$speleothem 1 ist: in der Vorbereitung und in jeder Iteration über spectral. Das bleibt offen, solange d18o.age fehlt.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 947,
+     "starts_with": "test <- c(wt_power(df_speleo_nhp$iso,length(df_speleo_nhp$iso), n.obs=n.obs, zeros=zeros, invflen=invflen)[coi_array == 1] )"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 966,
+     "starts_with": "test <- c(wt_power(df_speleo_nhp$iso,length(df_speleo_nhp$iso), n.obs=n.obs, zeros=zeros, invflen=invflen)[coi_array == 1] )"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 2021,
+     "starts_with": "if(spectral){"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 2023,
+     "starts_with": "predictant_spec <- c(wt_power(predictant_current[ages_spec][hi_ages_spec],length_ages_spec2, n.obs=n.obs, zeros=zeros, invflen=invflen)[coi_array == 1])"
+    }
+   ],
+   "depends_on_inputs": [
+    "d18o_age"
+   ]
+  },
+  {
+   "id": "site_age_override",
+   "status": "bedingt",
+   "label_de": "site.age wird im Speläothemzweig ersetzt",
+   "reason_de": "Ist sources$speleothem 1, ersetzt Zeile 825–826 site.age durch 418 Werte mit einer Lücke von 2000 bis 14500 a BP, und Zeile 828 setzt Reihe 170. Beides passt nicht zu einem 0–9-ka-Kern und ist ohne Laufbindung nicht als Kinneret-Lauf zu lesen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 825,
+     "starts_with": "site.age <- seq(0,220500,by=500)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 826,
+     "starts_with": "site.age <- site.age[-c(6:29)]"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 828,
+     "starts_with": "iso.ref <- d18o.age$splined.series[[170]]"
+    }
+   ],
+   "depends_on_inputs": [
+    "d18o_age",
+    "soreq_index"
+   ]
+  },
+  {
+   "id": "recent",
+   "status": "bedingt",
+   "label_de": "recent",
+   "reason_de": "recent ist genau dann FALSE, wenn kein Alter ≤ 11000 vorkommt. Die 160 älteren Mittelalter reichen von −60 bis 9015. Das finale Raster age[[2]] fehlt.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 728,
+     "starts_with": "which.modern.avail <- which(age <= 11000)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1183,
+     "starts_with": "recent <- TRUE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1184,
+     "starts_with": "if( length(which.modern.avail) == 0) recent <- FALSE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1264,
+     "starts_with": "if( recent & min(age) >= 2000 ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1730,
+     "starts_with": "if(recent){"
+    },
+    {
+     "file": "src/mcmc_conduction.R",
+     "line": 146,
+     "starts_with": "posterior_temp <- reconstruction("
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1844,
+     "starts_with": "if(recent){"
+    }
+   ],
+   "depends_on_inputs": [
+    "age_grid"
+   ]
+  },
+  {
+   "id": "anchor_branch",
+   "status": "bedingt",
+   "label_de": "Zweig des Klimaankers",
+   "reason_de": "Bei mindestens einem Alter ≤ 0 nimmt der Code die lokale CRU4-Zeitreihe, sonst die Klassenmittel. Das ältere Altersraster hat Werte ≤ 0, das finale fehlt. Das ist eine andere Bedingung als recent.",
+   "code_reads": [
+    {
+     "file": "src/check_ages.R",
+     "line": 223,
+     "starts_with": "depths.timeslice.id <- list( which(site.age <= 0)"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 69,
+     "starts_with": "if(length(depths.timeslice.id[[1]]) > 0){"
+    },
+    {
+     "file": "src/prior_climate.R",
+     "line": 109,
+     "starts_with": "t.ann.kg <- t.ann.ww[lon.kg.prior,lat.kg.prior][which(cz.map[lon.kg.prior,lat.kg.prior] == 1)]"
+    }
+   ],
+   "depends_on_inputs": [
+    "age_grid",
+    "cru4_pann",
+    "cru4_tann",
+    "cru_pann_ww",
+    "cru_tann_ww",
+    "climatezones"
+   ]
+  },
+  {
+   "id": "tann_flag",
+   "status": "bedingt",
+   "label_de": "tann",
+   "reason_de": "Bei „Lake Kinneret“ setzt Zeile 1249 FALSE. Bei einem anderen Namen setzt mit den älteren Koordinaten schon Zeile 1210 FALSE, schaltet dann aber auch multiple und die marine Reihe ab.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1208,
+     "starts_with": "tann <- TRUE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1209,
+     "starts_with": "if( !inside.giesecke & add.sites & lat <= 36"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1210,
+     "starts_with": "tann <- FALSE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1249,
+     "starts_with": "tann <- FALSE"
+    },
+    {
+     "file": "src/mcmc_functions_v1.6.R",
+     "line": 1939,
+     "starts_with": "if(tann){"
+    }
+   ],
+   "depends_on_inputs": [
+    "site_name",
+    "coordinates",
+    "giesecke_grid"
+   ]
+  },
+  {
+   "id": "hi_time",
+   "status": "belegt",
+   "label_de": "hi_time ist FALSE",
+   "reason_de": "Im Zusatzorte-Zweig setzt Zeile 718 hi_time zurück. Die Altersmaske hi_ages_time bleibt bestehen.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 713,
+     "starts_with": "hi_time <- FALSE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 715,
+     "starts_with": "hi_time <- TRUE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 718,
+     "starts_with": "if(add.sites) hi_time <- FALSE"
+    }
+   ],
+   "depends_on_inputs": [
+    "human_impact"
+   ]
+  },
+  {
+   "id": "hi_spec",
+   "status": "bedingt",
+   "label_de": "hi_spec",
+   "reason_de": "Zeile 881 schließt „Lake Kinneret“ aus. Bei einem anderen Namen würde hi_spec TRUE. Der Zweig läuft nur bei sources$speleothem 1.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 879,
+     "starts_with": "hi_spec <- FALSE"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 881,
+     "starts_with": "if(length(human_impact) != 0 & !any(sitename == c(\"Lake Kinneret\",\"En Gedi\",\"Birkat Ram\")) ){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 882,
+     "starts_with": "hi_spec <- TRUE"
+    }
+   ],
+   "depends_on_inputs": [
+    "site_name",
+    "d18o_age"
+   ]
+  },
+  {
+   "id": "stad_interstad",
+   "status": "belegt",
+   "label_de": "stad_interstad ist FALSE",
+   "reason_de": "Zeile 468 setzt den Wert unbedingt. Die PMIP-Maske beeinflusst das Ergebnis deshalb nicht.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 468,
+     "starts_with": "stad_interstad <- FALSE"
+    }
+   ],
+   "depends_on_inputs": [
+    "pmip3_mask"
+   ]
+  },
+  {
+   "id": "taxa_merge",
+   "status": "offen",
+   "label_de": "Mehrfachzuordnung von Taxa",
+   "reason_de": "Ob ein Name fehlt, hängt an der finalen Taxonliste. Der Zweig zieht ohne eigenen Seed (1557–1558) und überschreibt alle Rechenvarianten mit der letzten.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1460,
+     "starts_with": "taxa.merge <- anyNA(match(taxa.sampled,taxa.distribution.ww$names))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1470,
+     "starts_with": "if( taxa.merge){"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1557,
+     "starts_with": "tann_merge <- tann_merge + sample(x=x1range.bck,1000"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1567,
+     "starts_with": "tf.x1.current[p,] <- tann_merge_dens$y/sum(tann_merge_dens$y)"
+    }
+   ],
+   "depends_on_inputs": [
+    "taxon_names",
+    "taxa_name_pool",
+    "tf_container"
+   ]
+  },
+  {
+   "id": "tf_missing",
+   "status": "offen",
+   "label_de": "Fehlende Transferfunktionen",
+   "reason_de": "Welche Taxa ohne Funktion sind, hängt am fehlenden Container.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1664,
+     "starts_with": "which.tf.missing <- which(is.na(tf.x1.current.mean))"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1678,
+     "starts_with": "num_taxa <- nrow(tf.x1.current)"
+    }
+   ],
+   "depends_on_inputs": [
+    "tf_container",
+    "taxon_names"
+   ]
+  },
+  {
+   "id": "active_stop",
+   "status": "belegt",
+   "label_de": "Aktiver Abbruch vor dem Sampler",
+   "reason_de": "mcmc_prepare.R endet mit einem aktiven stop(). Im erhaltenen Quellstand wird mcmc_conduction.R daher nicht erreicht. Für den historischen Lauf muss eine andere Fassung gegolten haben; welche, ist nicht belegt.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 2057,
+     "starts_with": "stop()"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 675,
+     "starts_with": "source(\"src/mcmc_prepare.R\")"
+    },
+    {
+     "file": "main_v1.2.R",
+     "line": 676,
+     "starts_with": "source(\"src/mcmc_conduction.R\")"
+    }
+   ],
+   "depends_on_inputs": []
+  },
+  {
+   "id": "rng_start",
+   "status": "offen",
+   "label_de": "Zufallszustand beim Samplerstart",
+   "reason_de": "Belegt ist nur die Kette: letzter Reset set.seed(2023) in Zeile 1898, danach weitere Ziehungen. Die Startwerte in 1709–1763 liegen schon davor, nach set.seed(2022) in Zeile 1354. Der Zustand hängt an RNGkind, R-Fassung, Paketen und allen fehlenden Eingaben.",
+   "code_reads": [
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1354,
+     "starts_with": "set.seed(2022)"
+    },
+    {
+     "file": "src/mcmc_prepare.R",
+     "line": 1898,
+     "starts_with": "set.seed(2023)"
+    },
+    {
+     "file": "src/mcmc_conduction.R",
+     "line": 133,
+     "starts_with": "r_curr_all <- rmvnorm_rcpp(sample_length,"
+    }
+   ],
+   "depends_on_inputs": [
+    "r_version",
+    "pkg_truncnorm",
+    "pkg_armadillo",
+    "tf_current",
+    "taxon_names",
+    "age_grid"
+   ],
+   "rngkind_or_rngversion_calls_in_active_sources": 0
+  }
+ ],
+ "source_flag_table": [
+  {
+   "site_name": "Lake Kinneret",
+   "sources_core": 1,
+   "sources_speleothem": 1,
+   "marine_ice_core_after_1212": 1,
+   "active_source_indices_at_1189": [
+    2,
+    3,
+    4
+   ],
+   "multiple": true,
+   "spectral": true,
+   "tann": false,
+   "wt_power_reachable": true
+  },
+  {
+   "site_name": "Lake Kinneret",
+   "sources_core": 1,
+   "sources_speleothem": 0,
+   "marine_ice_core_after_1212": 1,
+   "active_source_indices_at_1189": [
+    2,
+    4
+   ],
+   "multiple": true,
+   "spectral": false,
+   "tann": false,
+   "wt_power_reachable": false
+  },
+  {
+   "site_name": "Lake Kinneret",
+   "sources_core": 0,
+   "sources_speleothem": 1,
+   "marine_ice_core_after_1212": 1,
+   "active_source_indices_at_1189": [
+    3,
+    4
+   ],
+   "multiple": false,
+   "spectral": true,
+   "tann": false,
+   "wt_power_reachable": true
+  },
+  {
+   "site_name": "Lake Kinneret",
+   "sources_core": 0,
+   "sources_speleothem": 0,
+   "marine_ice_core_after_1212": 1,
+   "active_source_indices_at_1189": [
+    4
+   ],
+   "multiple": false,
+   "spectral": false,
+   "tann": false,
+   "wt_power_reachable": false
+  },
+  {
+   "site_name": "Kinneret",
+   "sources_core": 1,
+   "sources_speleothem": 1,
+   "marine_ice_core_after_1212": 0,
+   "active_source_indices_at_1189": [
+    2,
+    3,
+    4
+   ],
+   "multiple": false,
+   "spectral": true,
+   "tann": false,
+   "wt_power_reachable": true
+  },
+  {
+   "site_name": "Kinneret",
+   "sources_core": 1,
+   "sources_speleothem": 0,
+   "marine_ice_core_after_1212": 0,
+   "active_source_indices_at_1189": [
+    2,
+    4
+   ],
+   "multiple": false,
+   "spectral": false,
+   "tann": false,
+   "wt_power_reachable": false
+  },
+  {
+   "site_name": "Kinneret",
+   "sources_core": 0,
+   "sources_speleothem": 1,
+   "marine_ice_core_after_1212": 0,
+   "active_source_indices_at_1189": [
+    3,
+    4
+   ],
+   "multiple": false,
+   "spectral": true,
+   "tann": false,
+   "wt_power_reachable": true
+  },
+  {
+   "site_name": "Kinneret",
+   "sources_core": 0,
+   "sources_speleothem": 0,
+   "marine_ice_core_after_1212": 0,
+   "active_source_indices_at_1189": [
+    4
+   ],
+   "multiple": false,
+   "spectral": false,
+   "tann": false,
+   "wt_power_reachable": false
+  }
+ ],
+ "rng_chain": [
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1297,
+   "starts_with": "set.seed(2022)",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1298,
+   "starts_with": "prior_tann_sample <- rnorm(10000,prior.recent$mean.tmp,prior.recent$sd.tmp)",
+   "condition_de": null
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1301,
+   "starts_with": "set.seed(2022)",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1302,
+   "starts_with": "prior_pann_sample <- rgamma(10000,shape=shape,rate=rate)",
+   "condition_de": null
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1332,
+   "starts_with": "set.seed(2022)",
+   "condition_de": "wenn multiple"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1333,
+   "starts_with": "beta_samples <- rbeta(10000,shape1,shape2)",
+   "condition_de": "wenn multiple"
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1341,
+   "starts_with": "set.seed(2022)",
+   "condition_de": "wenn nicht multiple"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1342,
+   "starts_with": "beta_samples <- rbeta(10000,shape1,shape2)",
+   "condition_de": "wenn nicht multiple"
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1354,
+   "starts_with": "set.seed(2022)",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1355,
+   "starts_with": "beta_samples <- rbeta(10000,shape4,shape5)",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1557,
+   "starts_with": "tann_merge <- tann_merge + sample(x=x1range.bck,1000",
+   "condition_de": "wenn Taxa zusammengeführt werden"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1558,
+   "starts_with": "pann_merge <- pann_merge + sample(x=x2range.bck,1000",
+   "condition_de": "wenn Taxa zusammengeführt werden"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1591,
+   "starts_with": "tann_tf_samples <- sample(x1range.bck,10000",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1592,
+   "starts_with": "pann_tf_samples <- sample(x2range.bck,10000",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1709,
+   "starts_with": "posterior$post_pollen[1] <- 0.01+rbeta(1,0.1,20)",
+   "condition_de": "wenn core oder giesecke"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1715,
+   "starts_with": "posterior$post_iso[1] <-  0.01+rbeta(1,0.1,20)",
+   "condition_de": "wenn marine_ice_core"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1716,
+   "starts_with": "posterior$post_iso_hi[1] <-  0.01+rbeta(1,0.1,20)",
+   "condition_de": "wenn marine_ice_core"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1723,
+   "starts_with": "posterior$post_spec[1] <- 0.01+rbeta(1,0.1,20)",
+   "condition_de": "wenn spectral"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1724,
+   "starts_with": "posterior$post_spec_hi[1] <- 0.01+rbeta(1,0.1,20)",
+   "condition_de": "wenn spectral"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1731,
+   "starts_with": "posterior$post_tann[1] <- prior.recent$mean.tmp - prior.recent$sd.tmp +rbeta(1,0.1,20)",
+   "condition_de": "wenn recent"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1734,
+   "starts_with": "posterior$post_pann[1] <- prior.recent$mean.pann + prior.recent$sd.pann +rbeta(1,0.1,20)",
+   "condition_de": "wenn recent"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1762,
+   "starts_with": "posterior$means_diff_tann[1] <- 1+rbeta(1,0.1,20)",
+   "condition_de": null
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1763,
+   "starts_with": "posterior$means_diff_pann[1] <- 0+rbeta(1,0.1,20)",
+   "condition_de": null
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1896,
+   "starts_with": "set.seed(2023)",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1897,
+   "starts_with": "tf_tann_sample <- sample(x1range.bck,size=10000",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "seed",
+   "file": "src/mcmc_prepare.R",
+   "line": 1898,
+   "starts_with": "set.seed(2023)",
+   "condition_de": "je Taxon, letzter Reset vor dem Sampler"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1899,
+   "starts_with": "tf_pann_sample <- sample(x2range.bck,size=10000",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1957,
+   "starts_with": "posterior$tf_sample_tann[[1]][j,] <- rtruncnorm(1,",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1958,
+   "starts_with": "posterior$tf_sample_pann[[1]][j,] <- rtruncnorm(1,",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1979,
+   "starts_with": "post_tf_samples[,j-1] <- rnorm(10000,means[ct],sds[ct])",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_prepare.R",
+   "line": 1980,
+   "starts_with": "post_tf_samples[,j] <- rgamma(10000,shape=shapes[ct],rate=rates[ct])",
+   "condition_de": "je Taxon"
+  },
+  {
+   "kind": "stop",
+   "file": "src/mcmc_prepare.R",
+   "line": 2057,
+   "starts_with": "stop()",
+   "condition_de": "aktiver Abbruch im erhaltenen Quellstand"
+  },
+  {
+   "kind": "draw",
+   "file": "src/mcmc_conduction.R",
+   "line": 133,
+   "starts_with": "r_curr_all <- rmvnorm_rcpp(sample_length,",
+   "condition_de": "erste Ziehung in mcmc_conduction.R"
+  }
+ ],
+ "rng_facts": {
+  "set_seed_uncommented": {
+   "main_v1.2.R": [
+    1055
+   ],
+   "src/mcmc_prepare.R": [
+    1297,
+    1301,
+    1332,
+    1341,
+    1354,
+    1896,
+    1898
+   ],
+   "src/mcmc_conduction.R": [],
+   "src/mcmc_functions_v1.6.R": [],
+   "src/check_ages.R": [],
+   "src/prior_climate.R": []
+  },
+  "rngkind_or_rngversion_uncommented": {
+   "main_v1.2.R": [],
+   "src/mcmc_prepare.R": [],
+   "src/mcmc_conduction.R": [],
+   "src/mcmc_functions_v1.6.R": [],
+   "src/check_ages.R": [],
+   "src/prior_climate.R": []
+  },
+  "seed_variable_seeds_in_main_line_65_has_no_active_reader": true,
+  "main_line_1055_is_after_the_station_loop": true,
+  "station_loop_lines": [
+   651,
+   684
+  ]
+ },
+ "writer_search": {
+  "scope": "R files below local_reconstr_all_epd only, not a search of all of diss",
+  "files_scanned": 95,
+  "d18o_age_assignments_or_saves": [],
+  "climatezones_assignments_or_saves": []
+ },
+ "container_objects": {
+  "in/kgc_distribution_ww.rdata": [
+   "kgc.distribution.ww"
+  ],
+  "in/station_ids_ref.rdata": [
+   "station_ids_ref"
+  ]
+ },
+ "phase1_bundles": [
+  {
+   "id": "final_base",
+   "label_de": "Finaler Kinneret-Basiseintrag",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [
+    "core_container",
+    "site_name",
+    "taxa_spectrum",
+    "taxon_names",
+    "depth",
+    "coordinates",
+    "country_elevation"
+   ]
+  },
+  {
+   "id": "final_chronology",
+   "label_de": "Finale Listenchronologie und Proben-/Altersraster",
+   "phase1_status": "widerspruechlich",
+   "closed": false,
+   "inputs": [
+    "depth",
+    "age_grid",
+    "rho_depth_given_age"
+   ]
+  },
+  {
+   "id": "historical_tf",
+   "label_de": "Numerische historische TFs und finale Taxonzuordnung",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [
+    "taxon_names",
+    "tf_container",
+    "tf_axes",
+    "taxa_name_pool",
+    "tf_current"
+   ]
+  },
+  {
+   "id": "isotope_workspaces",
+   "label_de": "Ursprüngliche Isotopen-Workspaces",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [
+    "reference_speleo_iso",
+    "sisal_speleo_info",
+    "sisal_ages_info",
+    "sisal_d18_d13",
+    "isotope_info",
+    "isotope_speleo_other",
+    "d18o_age",
+    "medstack_series"
+   ]
+  },
+  {
+   "id": "cru_kgc_inputs",
+   "label_de": "Globale Klimaeingaben und Paket-/Klassenbindung",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [
+    "cru_pann_ww",
+    "cru_tann_ww",
+    "cru4_pann",
+    "cru4_tann",
+    "climatezones",
+    "pkg_kgc"
+   ]
+  },
+  {
+   "id": "reference_variant",
+   "label_de": "Historische Soreq-/MEDSTACK-Vorbereitung",
+   "phase1_status": "widerspruechlich",
+   "closed": false,
+   "inputs": [
+    "d18o_age",
+    "soreq_index",
+    "medstack_series"
+   ]
+  },
+  {
+   "id": "anchor_variant",
+   "label_de": "Historische Klimaankerquelle und Parameter",
+   "phase1_status": "widerspruechlich",
+   "closed": false,
+   "inputs": [
+    "cru4_pann",
+    "cru4_tann"
+   ]
+  },
+  {
+   "id": "posterior_selection",
+   "label_de": "Originalposterioren und ausgewählte Ziehungs-IDs",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [],
+   "note_de": "Ausgabeseite, keine Eingabe des Samplers"
+  },
+  {
+   "id": "postprocessing_variant",
+   "label_de": "Finale Auswahl-/Kombinationsfassung",
+   "phase1_status": "widerspruechlich",
+   "closed": false,
+   "inputs": [],
+   "note_de": "Ausgabeseite, keine Eingabe des Samplers"
+  },
+  {
+   "id": "runtime_rng",
+   "label_de": "Historische Laufzeit und Zufallszustände",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [
+    "r_version",
+    "pkg_laplacesdemon",
+    "pkg_matrixstats",
+    "pkg_rcppdist",
+    "pkg_truncnorm",
+    "pkg_spatstat_utils",
+    "pkg_rpref",
+    "pkg_biwavelet",
+    "pkg_signal",
+    "pkg_mass",
+    "pkg_kgc",
+    "pkg_armadillo"
+   ]
+  },
+  {
+   "id": "numeric_original_output",
+   "label_de": "Numerische Originalausgaben und Abweichungsvergleich",
+   "phase1_status": "fehlt",
+   "closed": false,
+   "inputs": [],
+   "note_de": "Ausgabeseite, keine Eingabe des Samplers"
+  }
+ ],
+ "phase1_spec_sha256": "a76f15b32aa5b2c4cbbd30155147d64060b9c2990fcadb2c36164c78c9c117d4",
+ "bundles_closed": 0,
+ "selected_variant": null,
+ "draws_run": 0,
+ "sampler_run": false,
+ "r_scripts_run": false,
+ "models_trained": false,
+ "historical_reproduction_ready": false
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "determinism_audit_from_source_text_and_R_cross_check",
+  "question": "Is the local cor deterministic, which call sites does Kinneret reach, and which branch applies?",
+  "candidates": [
+    {
+      "id": "local_cor",
+      "lines": "mcmc_functions_v1.6.R:2355-2366",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "reached_by_bound_run": true,
+      "decision": "implemented with explicit vectors"
+    },
+    {
+      "id": "reader_multiple",
+      "lines": "1964-1970",
+      "random_state": false,
+      "reached_by_bound_run": "when sources$core is 1",
+      "decision": "implemented"
+    },
+    {
+      "id": "reader_single_iso",
+      "lines": "1993-1996",
+      "random_state": false,
+      "reached_by_bound_run": "only when sources$core is 0",
+      "decision": "implemented, marked conditional"
+    },
+    {
+      "id": "reader_single_pollen",
+      "lines": "1999-2002",
+      "random_state": false,
+      "reached_by_bound_run": false,
+      "decision": "implemented, marked unreachable for Kinneret"
+    },
+    {
+      "id": "reader_spectral",
+      "lines": "2024-2026",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "decision": "not implemented here; needs wt_power"
+    },
+    {
+      "id": "input_vectors",
+      "lines": "1812-1820",
+      "random_state": true,
+      "decision": "given explicitly; no draws"
+    }
+  ],
+  "selected_for_implementation": "local_cor and time-space readers",
+  "final_variant_selected": false,
+  "R_execution_for_binding": "older site record only"
+}

@@ -1,0 +1,110 @@
+{
+ "kind": "cran_source_binding_of_r_truncnorm_no_text_stored",
+ "package": "RcppDist",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "versions_listed_on_cran": [
+  "RcppDist_0.1.1.tar.gz",
+  "RcppDist_0.1.1.1.tar.gz"
+ ],
+ "versions_in_window": [
+  {
+   "file": "RcppDist_0.1.1.tar.gz",
+   "listing_date": "2018-10-28",
+   "version": "0.1.1",
+   "date_publication": "2018-10-28 22:50:09 UTC",
+   "license": "GPL (>= 2.0)",
+   "tarball_sha256": "3dfcc6f34d781f055ecba64e21bd9bc9e2d504a8304f03b6a4acdde8783fe509",
+   "header_member": "RcppDist/inst/include/truncnorm.h",
+   "header_sha256": "c1fdd6889a302b1056bf603561f5704e186ac8c8f412b7689ce757a04125e5c2",
+   "header_lines": 231,
+   "members_named_truncnorm_h": [
+    "RcppDist/inst/include/truncnorm.h"
+   ],
+   "members_defining_r_truncnorm": [
+    "RcppDist/inst/include/truncnorm.h"
+   ],
+   "functions": {
+    "d_truncnorm": {
+     "first_line": 142,
+     "last_line": 152,
+     "calls": {
+      "R::pnorm": 2,
+      "R::dnorm": 2
+     }
+    },
+    "q_truncnorm": {
+     "first_line": 209,
+     "last_line": 223,
+     "calls": {
+      "R::pnorm": 2,
+      "R::qnorm": 1,
+      "q_truncnorm(": 1
+     }
+    },
+    "r_truncnorm": {
+     "first_line": 225,
+     "last_line": 228,
+     "calls": {
+      "R::runif": 1,
+      "q_truncnorm(": 1
+     }
+    }
+   }
+  }
+ ],
+ "versions_outside_window_for_comparison": [
+  {
+   "file": "RcppDist_0.1.1.1.tar.gz",
+   "listing_date": "2025-06-12",
+   "version": "0.1.1.1",
+   "date_publication": "2025-06-12 08:37:39 UTC",
+   "license": "GPL (>= 2.0)",
+   "tarball_sha256": "aefd99dd207b9b545cf6070078bb9dd7f4ba51049063f3324e9849c7131b09ae",
+   "header_member": "RcppDist/inst/include/truncnorm.h",
+   "header_sha256": "c1fdd6889a302b1056bf603561f5704e186ac8c8f412b7689ce757a04125e5c2",
+   "header_lines": 231,
+   "members_named_truncnorm_h": [
+    "RcppDist/inst/include/truncnorm.h"
+   ],
+   "members_defining_r_truncnorm": [
+    "RcppDist/inst/include/truncnorm.h"
+   ],
+   "functions": {
+    "d_truncnorm": {
+     "first_line": 142,
+     "last_line": 152,
+     "calls": {
+      "R::pnorm": 2,
+      "R::dnorm": 2
+     }
+    },
+    "q_truncnorm": {
+     "first_line": 209,
+     "last_line": 223,
+     "calls": {
+      "R::pnorm": 2,
+      "R::qnorm": 1,
+      "q_truncnorm(": 1
+     }
+    },
+    "r_truncnorm": {
+     "first_line": 225,
+     "last_line": 228,
+     "calls": {
+      "R::runif": 1,
+      "q_truncnorm(": 1
+     }
+    }
+   }
+  }
+ ],
+ "last_version_before_window": null,
+ "first_publication_on_cran": "2018-10-28",
+ "window_days_without_any_cran_version": true,
+ "header_identical_in_all_cran_versions": true,
+ "source": "CRAN source archives, read as archives only, nothing extracted or executed",
+ "not_bound": "the installed version of the historical run is unknown; a non-CRAN installation (for example from GitHub) is not excluded and not checked"
+}

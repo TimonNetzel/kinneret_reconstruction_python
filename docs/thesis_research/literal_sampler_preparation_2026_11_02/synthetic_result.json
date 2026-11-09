@@ -1,0 +1,585 @@
+{
+ "kind": "module_result_on_synthetic_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "cases": {
+  "rowwise_flatten_three_by_four": {
+   "how_many_taxa": 4,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 4,
+   "values_line64": [
+    2.0,
+    1.0,
+    4.0,
+    3.0,
+    4.0,
+    3.0,
+    2.0,
+    6.0,
+    1.0,
+    6.0,
+    8.0,
+    9.0
+   ],
+   "values": [
+    0.5,
+    0.16666666666666666,
+    0.5,
+    0.3333333333333333,
+    1.0,
+    0.5,
+    0.25,
+    0.6666666666666666,
+    0.25,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "column_max": [
+    4.0,
+    6.0,
+    8.0,
+    9.0
+   ],
+   "taxa_means": [
+    2.3333333333333335,
+    3.3333333333333335,
+    4.666666666666667,
+    6.0
+   ],
+   "taxa_means_exact": [
+    "7/3",
+    "10/3",
+    "14/3",
+    "6"
+   ],
+   "taxa_means_accumulator_independent": [
+    false,
+    false,
+    false,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.5,
+     0.16666666666666666,
+     0.5,
+     0.3333333333333333
+    ],
+    [
+     1.0,
+     0.5,
+     0.25,
+     0.6666666666666666
+    ],
+    [
+     0.25,
+     1.0,
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "na_skipped_in_mean_and_max": {
+   "how_many_taxa": 3,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 4,
+   "ncol_taxa_array": 3,
+   "values_line64": [
+    1.0,
+    "NA",
+    2.0,
+    3.0,
+    4.0,
+    "NA",
+    "NA",
+    2.0,
+    8.0,
+    4.0,
+    2.0,
+    2.0
+   ],
+   "values": [
+    0.25,
+    "NA",
+    0.25,
+    0.75,
+    1.0,
+    "NA",
+    "NA",
+    0.5,
+    1.0,
+    1.0,
+    0.5,
+    0.25
+   ],
+   "column_max": [
+    4.0,
+    4.0,
+    8.0
+   ],
+   "taxa_means": [
+    2.6666666666666665,
+    2.6666666666666665,
+    4.0
+   ],
+   "taxa_means_exact": [
+    "8/3",
+    "8/3",
+    "4"
+   ],
+   "taxa_means_accumulator_independent": [
+    false,
+    false,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.25,
+     "NA",
+     0.25
+    ],
+    [
+     0.75,
+     1.0,
+     "NA"
+    ],
+    [
+     "NA",
+     0.5,
+     1.0
+    ],
+    [
+     1.0,
+     0.5,
+     0.25
+    ]
+   ]
+  },
+  "zero_column_gives_nan": {
+   "how_many_taxa": 3,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 3,
+   "values_line64": [
+    1.0,
+    0.0,
+    2.0,
+    2.0,
+    0.0,
+    4.0,
+    4.0,
+    0.0,
+    1.0
+   ],
+   "values": [
+    0.25,
+    "NaN",
+    0.5,
+    0.5,
+    "NaN",
+    1.0,
+    1.0,
+    "NaN",
+    0.25
+   ],
+   "column_max": [
+    4.0,
+    0.0,
+    4.0
+   ],
+   "taxa_means": [
+    2.3333333333333335,
+    0.0,
+    2.3333333333333335
+   ],
+   "taxa_means_exact": [
+    "7/3",
+    "0",
+    "7/3"
+   ],
+   "taxa_means_accumulator_independent": [
+    false,
+    true,
+    false
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.25,
+     "NaN",
+     0.5
+    ],
+    [
+     0.5,
+     "NaN",
+     1.0
+    ],
+    [
+     1.0,
+     "NaN",
+     0.25
+    ]
+   ]
+  },
+  "zero_max_negative_and_na": {
+   "how_many_taxa": 3,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 3,
+   "values_line64": [
+    0.0,
+    -2.0,
+    3.0,
+    -2.0,
+    -4.0,
+    1.0,
+    "NA",
+    -1.0,
+    2.0
+   ],
+   "values": [
+    "NaN",
+    2.0,
+    1.0,
+    "-Inf",
+    4.0,
+    0.3333333333333333,
+    "NA",
+    1.0,
+    0.6666666666666666
+   ],
+   "column_max": [
+    0.0,
+    -1.0,
+    3.0
+   ],
+   "taxa_means": [
+    -1.0,
+    -2.3333333333333335,
+    2.0
+   ],
+   "taxa_means_exact": [
+    "-1",
+    "-7/3",
+    "2"
+   ],
+   "taxa_means_accumulator_independent": [
+    true,
+    false,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     "NaN",
+     2.0,
+     1.0
+    ],
+    [
+     "-Inf",
+     4.0,
+     0.3333333333333333
+    ],
+    [
+     "NA",
+     1.0,
+     0.6666666666666666
+    ]
+   ]
+  },
+  "gibbs_true_branch_odd_num_taxa": {
+   "how_many_taxa": 2,
+   "how_many_taxa_line": 54,
+   "parameter_stage": "parameter_stage_gibbs",
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 5,
+   "values_line64": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    5.0,
+    4.0,
+    3.0,
+    2.0,
+    1.0
+   ],
+   "values": [
+    0.2,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    0.2
+   ],
+   "column_max": [
+    5.0,
+    4.0,
+    3.0,
+    4.0,
+    5.0
+   ],
+   "taxa_means": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "taxa_means_exact": [
+    "3",
+    "3",
+    "3",
+    "3",
+    "3"
+   ],
+   "taxa_means_accumulator_independent": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.2,
+     0.5,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     0.5,
+     0.2
+    ]
+   ]
+  },
+  "weights_branch_odd_num_taxa": {
+   "how_many_taxa": 5,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 5,
+   "values_line64": [
+    1.0,
+    2.0,
+    3.0,
+    4.0,
+    5.0,
+    5.0,
+    4.0,
+    3.0,
+    2.0,
+    1.0
+   ],
+   "values": [
+    0.2,
+    0.5,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.5,
+    0.2
+   ],
+   "column_max": [
+    5.0,
+    4.0,
+    3.0,
+    4.0,
+    5.0
+   ],
+   "taxa_means": [
+    3.0,
+    3.0,
+    3.0,
+    3.0,
+    3.0
+   ],
+   "taxa_means_exact": [
+    "3",
+    "3",
+    "3",
+    "3",
+    "3"
+   ],
+   "taxa_means_accumulator_independent": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.2,
+     0.5,
+     1.0,
+     1.0,
+     1.0
+    ],
+    [
+     1.0,
+     1.0,
+     1.0,
+     0.5,
+     0.2
+    ]
+   ]
+  },
+  "minimal_two_by_two": {
+   "how_many_taxa": 2,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 2,
+   "values_line64": [
+    1.0,
+    3.0,
+    2.0,
+    6.0
+   ],
+   "values": [
+    0.5,
+    0.5,
+    1.0,
+    1.0
+   ],
+   "column_max": [
+    2.0,
+    6.0
+   ],
+   "taxa_means": [
+    1.5,
+    4.5
+   ],
+   "taxa_means_exact": [
+    "3/2",
+    "9/2"
+   ],
+   "taxa_means_accumulator_independent": [
+    true,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.5,
+     0.5
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "inexact_partial_sums_flagged": {
+   "how_many_taxa": 2,
+   "how_many_taxa_line": 57,
+   "parameter_stage": "parameter_stage_weights",
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 2,
+   "values_line64": [
+    0.1,
+    1.0,
+    0.2,
+    2.0,
+    0.3,
+    3.0
+   ],
+   "values": [
+    0.33333333333333337,
+    0.3333333333333333,
+    0.6666666666666667,
+    0.6666666666666666,
+    1.0,
+    1.0
+   ],
+   "column_max": [
+    0.3,
+    3.0
+   ],
+   "taxa_means": [
+    0.2,
+    2.0
+   ],
+   "taxa_means_exact": [
+    "21617278211378381/108086391056891904",
+    "2"
+   ],
+   "taxa_means_accumulator_independent": [
+    false,
+    true
+   ],
+   "jeffreys_prior": [
+    0.5,
+    0.5
+   ],
+   "taxa_appear_core_temp": [
+    [
+     0.33333333333333337,
+     0.3333333333333333
+    ],
+    [
+     0.6666666666666667,
+     0.6666666666666666
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ }
+}

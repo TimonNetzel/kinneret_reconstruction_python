@@ -1,0 +1,46 @@
+{
+  "kind": "determinism_audit_from_source_text_and_R_cross_check",
+  "question": "Is the NA mask of which.tf.missing deterministic once weightedMedian is bound?",
+  "candidates": [
+    {
+      "id": "weighted_median_1631_1651",
+      "lines": "mcmc_prepare.R:1628-1640,1648-1660,1664",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "package_semantics_bound": "matrixStats::weightedMedian, first on the search path within 2018-04-23..2023-07-07; one normalised C kernel in all 13 versions (helper_comparison.json)",
+      "functions": [
+        "weightedMedian (matrixStats C kernel)",
+        "R_qsort_I and rPsort (R)",
+        "is.na",
+        "which"
+      ],
+      "inputs": "x1range.bck, x2range.bck and tf.x1/x2.current as EXPLICIT inputs; their numeric values are not recovered (the transfer-function container is missing)",
+      "readers": "tf.x1.current.mean tested in 1664; both means carried by 1669/1670 and 1693/1694",
+      "decision": "implemented as tools/historical_weighted_median.py; inputs only synthetic"
+    },
+    {
+      "id": "expectation_1623_1624",
+      "lines": "mcmc_prepare.R:1623-1624",
+      "random_state": false,
+      "evidence": "overwritten by c() in 1628 and 1648 before any reader",
+      "decision": "no reader, not implemented"
+    },
+    {
+      "id": "spline_expansion_1627_1647",
+      "lines": "mcmc_prepare.R:1627,1647",
+      "random_state": false,
+      "evidence": "tann_expand and pann_expand are only read in comments",
+      "decision": "no reader, not implemented"
+    },
+    {
+      "id": "other_calls_1412_1413",
+      "lines": "mcmc_prepare.R:1412-1413",
+      "random_state": false,
+      "evidence": "same function, different inputs, not part of the mask",
+      "decision": "not implemented here"
+    }
+  ],
+  "selected_for_implementation": "weighted_median_1631_1651",
+  "final_variant_selected": false,
+  "R_execution_for_binding": false
+}

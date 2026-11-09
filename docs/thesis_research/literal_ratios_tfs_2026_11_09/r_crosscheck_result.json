@@ -1,0 +1,1088 @@
+{
+ "kind": "R_cross_check_ratios_tfs_own_normal_functions_deviation_measured",
+ "runtime": {
+  "R": "R version 3.5.0 (2018-04-23)",
+  "pnorm_namespace": "stats",
+  "dnorm_namespace": "stats",
+  "long_double": "TRUE"
+ },
+ "python": "3.12.10",
+ "backend": "math.exp and math.erfc (own textbook formulas), not bit-identical with R dnorm.c and pnorm.c",
+ "source": "mcmc_functions_v1.6.R:1529-1552 (R twin of 1485-1525) and mcmc_conduction.R:228, 230, verbatim",
+ "cplusplus_lines_run": false,
+ "sources_sha256": {
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+ },
+ "bit_identical_with_R": false,
+ "named": {
+  "dnorm": {
+   "values": 88,
+   "bit_equal": 80,
+   "max_ulps": 19,
+   "ulp_histogram": {
+    "0": 80,
+    "1": 4,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 2,
+    "17-256": 2,
+    ">256": 0
+   },
+   "max_relative": 2.2831823391114844e-15,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "p_a": {
+   "values": 88,
+   "bit_equal": 39,
+   "max_ulps": 843,
+   "ulp_histogram": {
+    "0": 39,
+    "1": 10,
+    "2": 0,
+    "3-4": 1,
+    "5-16": 25,
+    "17-256": 11,
+    ">256": 2
+   },
+   "max_relative": 1.3289362278580194e-13,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "p_b": {
+   "values": 88,
+   "bit_equal": 73,
+   "max_ulps": 1,
+   "ulp_histogram": {
+    "0": 73,
+    "1": 15,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 1.5250227822222757e-16,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "d_truncnorm": {
+   "values": 88,
+   "bit_equal": 74,
+   "max_ulps": 9,
+   "ulp_histogram": {
+    "0": 70,
+    "1": 12,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 2,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 1.143399794846454e-15,
+   "non_finite": 4,
+   "non_finite_mismatch": 0
+  },
+  "grid_ratio": {
+   "values": 44,
+   "bit_equal": 44,
+   "max_ulps": 0,
+   "ulp_histogram": {
+    "0": 42,
+    "1": 0,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 0.0,
+   "non_finite": 2,
+   "non_finite_mismatch": 0
+  },
+  "density_ratio": {
+   "values": 44,
+   "bit_equal": 36,
+   "max_ulps": 2,
+   "ulp_histogram": {
+    "0": 28,
+    "1": 7,
+    "2": 1,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 3.332993458460536e-16,
+   "non_finite": 8,
+   "non_finite_mismatch": 0
+  },
+  "transfer_ratio": {
+   "values": 14,
+   "bit_equal": 13,
+   "max_ulps": 2,
+   "ulp_histogram": {
+    "0": 6,
+    "1": 0,
+    "2": 1,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 3.8595803508832005e-16,
+   "non_finite": 7,
+   "non_finite_mismatch": 0
+  },
+  "prod_from_R_factors": {
+   "values": 14,
+   "bit_equal": 14,
+   "max_ulps": 0,
+   "ulp_histogram": {
+    "0": 7,
+    "1": 0,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 0.0,
+   "non_finite": 7,
+   "non_finite_mismatch": 0
+  }
+ },
+ "stress": {
+  "dnorm": {
+   "values": 6812,
+   "bit_equal": 6790,
+   "max_ulps": 2,
+   "ulp_histogram": {
+    "0": 6790,
+    "1": 20,
+    "2": 2,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 2.275891536537879e-16,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "p_a": {
+   "values": 6812,
+   "bit_equal": 4208,
+   "max_ulps": 1595119717181408,
+   "ulp_histogram": {
+    "0": 4208,
+    "1": 829,
+    "2": 364,
+    "3-4": 267,
+    "5-16": 326,
+    "17-256": 621,
+    ">256": 197
+   },
+   "max_relative": 1.5836618771474597e-13,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "p_b": {
+   "values": 6812,
+   "bit_equal": 6095,
+   "max_ulps": 2,
+   "ulp_histogram": {
+    "0": 6095,
+    "1": 705,
+    "2": 12,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 2.9593642334081083e-16,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "d_truncnorm": {
+   "values": 6812,
+   "bit_equal": 5588,
+   "max_ulps": 22,
+   "ulp_histogram": {
+    "0": 5588,
+    "1": 651,
+    "2": 357,
+    "3-4": 176,
+    "5-16": 39,
+    "17-256": 1,
+    ">256": 0
+   },
+   "max_relative": 3.1569608580222667e-15,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "grid_ratio": {
+   "values": 3406,
+   "bit_equal": 3406,
+   "max_ulps": 0,
+   "ulp_histogram": {
+    "0": 3406,
+    "1": 0,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 0.0,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "density_ratio": {
+   "values": 3406,
+   "bit_equal": 2533,
+   "max_ulps": 15,
+   "ulp_histogram": {
+    "0": 2533,
+    "1": 466,
+    "2": 257,
+    "3-4": 131,
+    "5-16": 19,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 3.3278958826398318e-15,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "transfer_ratio": {
+   "values": 120,
+   "bit_equal": 39,
+   "max_ulps": 35,
+   "ulp_histogram": {
+    "0": 39,
+    "1": 17,
+    "2": 17,
+    "3-4": 14,
+    "5-16": 28,
+    "17-256": 5,
+    ">256": 0
+   },
+   "max_relative": 4.494295519531048e-15,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  },
+  "prod_from_R_factors": {
+   "values": 120,
+   "bit_equal": 120,
+   "max_ulps": 0,
+   "ulp_histogram": {
+    "0": 120,
+    "1": 0,
+    "2": 0,
+    "3-4": 0,
+    "5-16": 0,
+    "17-256": 0,
+    ">256": 0
+   },
+   "max_relative": 0.0,
+   "non_finite": 0,
+   "non_finite_mismatch": 0
+  }
+ },
+ "stress_cases": 120,
+ "indices_equal_everywhere": true,
+ "distance_to_true_value_ulps": {
+  "module": 14518,
+  "R": 14518,
+  "compared": 23
+ },
+ "cases": {
+  "two_taxa_plain": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.4be37cb46a832p+1",
+   "transfer_ratio_R": "0x1.4be37cb46a832p+1",
+   "grid_ratio": {
+    "values": 4,
+    "bit_equal": 4,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 4,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 4,
+    "bit_equal": 3,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 3,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 1.1419926879258645e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "tie_takes_first_minimum": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.1ff4d22fa8805p-1",
+   "transfer_ratio_R": "0x1.1ff4d22fa8805p-1",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 1,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 1.316019421630482e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "off_grid_takes_end": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.47e8b241a2131p+1",
+   "transfer_ratio_R": "0x1.47e8b241a2131p+1",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "start_density_zero": {
+   "kind": "Inf",
+   "transfer_ratio_module": "Inf",
+   "transfer_ratio_R": "Inf",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 1,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 2.220446049250313e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "both_densities_zero": {
+   "kind": "NaN",
+   "transfer_ratio_module": "NaN",
+   "transfer_ratio_R": "NaN",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 1,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 2.220446049250313e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "old_outside_truncation": {
+   "kind": "0",
+   "transfer_ratio_module": "0",
+   "transfer_ratio_R": "0",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "live_shape_grid_1000": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.5bb89bcc8b89dp-4",
+   "transfer_ratio_R": "0x1.5bb89bcc8b89dp-4",
+   "grid_ratio": {
+    "values": 12,
+    "bit_equal": 12,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 12,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 12,
+    "bit_equal": 12,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 12,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "wide_proposal_small_scale": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.000000000a331p-2",
+   "transfer_ratio_R": "0x1.000000000a331p-2",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 1,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  },
+  "both_outside_truncation": {
+   "kind": "NaN",
+   "transfer_ratio_module": "NaN",
+   "transfer_ratio_R": "NaN",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 2,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "new_far_below_window": {
+   "kind": "Inf",
+   "transfer_ratio_module": "Inf",
+   "transfer_ratio_R": "Inf",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 2,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "equal_bounds": {
+   "kind": "NaN",
+   "transfer_ratio_module": "NaN",
+   "transfer_ratio_R": "NaN",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 1,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 2.207047468207073e-16,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "new_outside_truncation": {
+   "kind": "Inf",
+   "transfer_ratio_module": "Inf",
+   "transfer_ratio_R": "Inf",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 1,
+    "max_ulps": 1,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 1,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 2.207047468207073e-16,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "tiny_sigma_saturates": {
+   "kind": "NaN",
+   "transfer_ratio_module": "NaN",
+   "transfer_ratio_R": "NaN",
+   "grid_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 2,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 2,
+    "bit_equal": 2,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 2,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 1,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 1,
+    "non_finite_mismatch": 0
+   }
+  },
+  "three_taxa_quarters": {
+   "kind": "number",
+   "transfer_ratio_module": "0x1.268eb8f72649bp-1",
+   "transfer_ratio_R": "0x1.268eb8f72649dp-1",
+   "grid_ratio": {
+    "values": 6,
+    "bit_equal": 6,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 6,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 6,
+    "bit_equal": 4,
+    "max_ulps": 2,
+    "ulp_histogram": {
+     "0": 4,
+     "1": 1,
+     "2": 1,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 3.332993458460536e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 1,
+    "bit_equal": 0,
+    "max_ulps": 2,
+    "ulp_histogram": {
+     "0": 0,
+     "1": 0,
+     "2": 1,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 3.8595803508832005e-16,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  }
+ },
+ "historical_reproduction_ready": false
+}

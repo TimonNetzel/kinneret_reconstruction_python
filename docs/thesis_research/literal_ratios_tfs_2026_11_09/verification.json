@@ -1,0 +1,122 @@
+{
+ "kind": "recorded_test_run_not_a_case_reproduction",
+ "date": "2026-11-09",
+ "new_test_file": "tests/test_historical_ratios_tfs.py",
+ "new_tests": 212,
+ "earlier_tests": 1646,
+ "total_passed": 1858,
+ "test_files": 22,
+ "exit_code": 0,
+ "local_junit_sha256": "8e802d2a0bce7108e4c1eae3618c4c718a7430f8dfa07e3f29fd394b19ed22ca",
+ "r_crosscheck": {
+  "bit_identical_with_R": false,
+  "cplusplus_lines_run": false,
+  "stress_cases": 120,
+  "stress": {
+   "grid_ratio": {
+    "values": 3406,
+    "bit_equal": 3406,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 3406,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "prod_from_R_factors": {
+    "values": 120,
+    "bit_equal": 120,
+    "max_ulps": 0,
+    "ulp_histogram": {
+     "0": 120,
+     "1": 0,
+     "2": 0,
+     "3-4": 0,
+     "5-16": 0,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 0.0,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "d_truncnorm": {
+    "values": 6812,
+    "bit_equal": 5588,
+    "max_ulps": 22,
+    "ulp_histogram": {
+     "0": 5588,
+     "1": 651,
+     "2": 357,
+     "3-4": 176,
+     "5-16": 39,
+     "17-256": 1,
+     ">256": 0
+    },
+    "max_relative": 3.1569608580222667e-15,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "density_ratio": {
+    "values": 3406,
+    "bit_equal": 2533,
+    "max_ulps": 15,
+    "ulp_histogram": {
+     "0": 2533,
+     "1": 466,
+     "2": 257,
+     "3-4": 131,
+     "5-16": 19,
+     "17-256": 0,
+     ">256": 0
+    },
+    "max_relative": 3.3278958826398318e-15,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   },
+   "transfer_ratio": {
+    "values": 120,
+    "bit_equal": 39,
+    "max_ulps": 35,
+    "ulp_histogram": {
+     "0": 39,
+     "1": 17,
+     "2": 17,
+     "3-4": 14,
+     "5-16": 28,
+     "17-256": 5,
+     ">256": 0
+    },
+    "max_relative": 4.494295519531048e-15,
+    "non_finite": 0,
+    "non_finite_mismatch": 0
+   }
+  }
+ },
+ "r_runtime": {
+  "R": "R version 3.5.0 (2018-04-23)",
+  "pnorm_namespace": "stats",
+  "dnorm_namespace": "stats",
+  "long_double": "TRUE"
+ },
+ "python": "3.12.10",
+ "not_run": [
+  "full pytest tests",
+  "verify_packet.py",
+  "tools/verify_*",
+  "compilation of the C++ lines",
+  "sampler",
+  "draws",
+  "training",
+  "age models",
+  "fossil reconstruction"
+ ],
+ "historical_reproduction_ready": false
+}

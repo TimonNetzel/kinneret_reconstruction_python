@@ -1,0 +1,40 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "c0cdf81444d1dbbabe3282fb8b1ee7ad6cae6783",
+  "sources_sha256": {
+    "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+    "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+  },
+  "provider_evidence": "r_runtime_crosscheck_2026_11_03/provider_analysis.json and dirichlet_versions.json",
+  "implemented_span": [
+    "src/mcmc_functions_v1.6.R",
+    1269,
+    1274
+  ],
+  "brace_depth_at_line_start": {
+    "1269": 1,
+    "1270": 1,
+    "1272": 1,
+    "1273": 1,
+    "1274": 1
+  },
+  "commented_alternatives": [
+    1263,
+    1264,
+    1265
+  ],
+  "proposal_ratio_contains_dirichlet_spread": false,
+  "num_taxa_is_global": true,
+  "parameter_ratio_readers_mcmc_conduction": [
+    97,
+    151,
+    302
+  ],
+  "ddirichlet_normalisation_line_assigns": false,
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "675892cd0c6f4d9d132372a0d59b9bef8bcda0d2d701777649e226a9bfe53367",
+  "supported_domain": "old and new weights: equal length num_taxa >= 2, finite doubles > 0 (the loop 1249 needs min > 0; start weights 1/num_taxa); no NA",
+  "actual_original_inputs_used_for_numerics": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}

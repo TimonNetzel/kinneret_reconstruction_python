@@ -1,0 +1,85 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "cases": 7,
+ "index_and_flag_agreement": "exact",
+ "tolerance": 2e-14,
+ "maximum_absolute_rational_error": 0.0,
+ "naive_counterexamples": {
+  "ratio_095_branch": {
+   "source_removed": [
+    0,
+    1
+   ],
+   "naive_ge095_removed": [
+    0,
+    1
+   ],
+   "naive_rank15_removed": [
+    0,
+    1,
+    2
+   ]
+  },
+  "rarest_15_tie_keeps_rare": {
+   "source_removed": [
+    0,
+    2,
+    3
+   ],
+   "naive_ge095_removed": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "naive_rank15_removed": [
+    2,
+    3
+   ]
+  },
+  "short_core_descending_colon": {
+   "source_removed": [
+    3,
+    4
+   ],
+   "naive_ge095_removed": [],
+   "naive_rank15_removed": []
+  },
+  "all_equal_skip_site": {
+   "source_removed": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "naive_ge095_removed": [],
+   "naive_rank15_removed": []
+  },
+  "metro_preset_true": {
+   "source_removed": [],
+   "naive_ge095_removed": [],
+   "naive_rank15_removed": []
+  }
+ },
+ "naive_readings_differing_from_source": {
+  "ratio_095_branch": [
+   "naive_rank15_removed"
+  ],
+  "rarest_15_tie_keeps_rare": [
+   "naive_ge095_removed",
+   "naive_rank15_removed"
+  ],
+  "short_core_descending_colon": [
+   "naive_ge095_removed",
+   "naive_rank15_removed"
+  ],
+  "all_equal_skip_site": [
+   "naive_ge095_removed",
+   "naive_rank15_removed"
+  ],
+  "metro_preset_true": []
+ },
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false
+}

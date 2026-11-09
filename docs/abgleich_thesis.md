@@ -1,5 +1,14 @@
 # Abgleich Dissertation ↔ Paper ↔ Code
 
+> **Einordnung ab 02.11.2026:** Die fachlichen Bewertungen unten bleiben
+> erhalten. Zuerst wird der belegte historische Ablauf für lokale
+> Dissertationsrekonstruktionen nachgebaut; Empfehlungen zum Ändern oder
+> Nichtübernehmen historischer Schritte betreffen den späteren Verbesserungspfad.
+> [Verbindlicher Arbeitsplan](thesis_research/LOCAL_DISS_RECONSTRUCTION_PLAN.md).
+> Belegte historische Varianten getrennt reproduzieren; offene Quellwidersprüche
+> nicht durch stille methodische Entscheidungen auflösen.
+
+
 Netzel, T. (2022): Dissertation, Universität Bonn. Gelesen wurden die Abschnitte 2.3–2.5, 3.2 und 3.3
 (`docs/paper/Phd_thesis_netzel*.PDF`, Stand 29.10.2026). Dieses Dokument fasst sie so zusammen, dass die PDFs für
 die weitere Arbeit nicht noch einmal gelesen werden müssen. Gleichungsnummern beziehen sich auf die Dissertation.

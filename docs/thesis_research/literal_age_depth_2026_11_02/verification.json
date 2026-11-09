@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "basis_commit": "f7d97c1fad6852ce948cb868a16b10f7b1f83b8f",
+  "tests": {
+    "new_age_depth_cases_passed": 43,
+    "previous_literal_final_pdf_cases_passed": 22,
+    "previous_spec_cases_passed": 20,
+    "total_passed": 85,
+    "failed": 0,
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_historical_age_depth.py tests/test_historical_final_pdf.py tests/test_kinneret_phase1_spec.py -q -o cache_dir=.local/phase1_spec_v1/pytest_cache"
+  },
+  "source_scripts_hash_before_after_and_prior_equal": 3,
+  "prior_packet_files_byte_equal_to_basis": 34,
+  "prior_packet_directories": [
+    "local_case_matrix_2026_11_02",
+    "kinneret_binding_2026_11_02",
+    "kinneret_references_2026_11_02",
+    "kinneret_postprocessing_2026_11_02",
+    "kinneret_phase1_spec_2026_11_02",
+    "literal_final_pdf_2026_11_02"
+  ],
+  "phase1_cli_rechecks": [
+    {
+      "arguments": [],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": null
+    },
+    {
+      "arguments": [
+        "--with-local"
+      ],
+      "exit": 2,
+      "status": "open_prerequisites",
+      "assets": 26,
+      "facts": 19,
+      "snapshot_files": 50,
+      "open_requirements": 11,
+      "local_source_statuses": {
+        "matches_audited_bytes": 28,
+        "missing_at_audited_path": 12
+      }
+    }
+  ],
+  "R_execution": false,
+  "historical_R_equivalence_claimed": false,
+  "actual_original_inputs_used_for_numerics": false,
+  "new_training_sampling_age_model_or_fossil_runs": false,
+  "final_variant_selected": false,
+  "historical_reproduction_ready": false,
+  "changed_code_scope": [
+    "tools/historical_age_depth.py",
+    "tests/test_historical_age_depth.py",
+    "docs/thesis_research/literal_age_depth_2026_11_02/collect_evidence.py"
+  ],
+  "preserved": [
+    "App/CLI",
+    "baseline",
+    "originals",
+    "references",
+    "six_previous_evidence_packets",
+    "50_file_research_snapshot",
+    "site_specific_Monticchio_and_chronology_gates"
+  ],
+  "files": {
+    "docs/thesis_research/literal_age_depth_2026_11_02/collect_evidence.py": {
+      "bytes": 5368,
+      "sha256": "395e032e69697f698dd43c68b43fe741ec7f1d4d7ff323fd2861eeb82af1229f"
+    },
+    "docs/thesis_research/literal_age_depth_2026_11_02/README.md": {
+      "bytes": 12477,
+      "sha256": "430ca0fa3debc7a52fa8a94103df0b176f7ff6fb3913cbffe345dde4eba3bd9d"
+    },
+    "docs/thesis_research/literal_age_depth_2026_11_02/source_binding.json": {
+      "bytes": 11980,
+      "sha256": "a9438a7a27913581ff8433906b2d9b87f95b3e7e2203dce316110821bf9370e1"
+    },
+    "docs/thesis_research/literal_age_depth_2026_11_02/synthetic_fixture.json": {
+      "bytes": 1435,
+      "sha256": "2e0b32ecba37c410f25bbb8aa98c445d14c5dc551057b00db6b961a8d9e29458"
+    },
+    "docs/thesis_research/literal_age_depth_2026_11_02/synthetic_result.json": {
+      "bytes": 871,
+      "sha256": "8181c883e7dc3f7dd139a9e3dc4ff83fd9aef82cecbe11c22ba738e3bda7d0d1"
+    },
+    "tools/historical_age_depth.py": {
+      "bytes": 5066,
+      "sha256": "8974211152179659318e75743c3abe8418c4a650a9d082a79b1eb02e32d3cd9a"
+    },
+    "tests/test_historical_age_depth.py": {
+      "bytes": 7084,
+      "sha256": "59cf9e34a2fd9f956b44b4a9fb9d8c025d80a4d602a634bf6b6a83068f631c1f"
+    }
+  },
+  "README_relative_links_resolve": 11,
+  "git_diff_check_passed": true
+}

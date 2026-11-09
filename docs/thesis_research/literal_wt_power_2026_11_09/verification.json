@@ -1,0 +1,57 @@
+{
+ "kind": "recorded_test_run_not_a_case_reproduction",
+ "date": "2026-11-09",
+ "new_tests": 212,
+ "earlier_tests": 1402,
+ "total_passed": 1614,
+ "test_files": [
+  "tests/test_historical_wt_power.py",
+  "tests/test_historical_reconst_predictant.py",
+  "tests/test_historical_local_cor.py",
+  "tests/test_historical_reconstruction_climate.py",
+  "tests/test_r_crosscheck_six_modules.py",
+  "tests/test_historical_weighted_median.py",
+  "tests/test_historical_dirichlet_ratio.py",
+  "tests/test_r_runtime_crosscheck.py",
+  "tests/test_historical_weights_stage.py",
+  "tests/test_historical_sampler_preparation.py",
+  "tests/test_historical_tf_missing_priors.py",
+  "tests/test_historical_gamma_prior_grid.py",
+  "tests/test_historical_taxon_pruning.py",
+  "tests/test_historical_tf_preparation.py",
+  "tests/test_historical_phase1_chain.py",
+  "tests/test_historical_cdf_discrepancy.py",
+  "tests/test_historical_age_selection.py",
+  "tests/test_historical_age_depth.py",
+  "tests/test_historical_final_pdf.py",
+  "tests/test_kinneret_phase1_spec.py"
+ ],
+ "r_crosscheck": {
+  "bit_identical_with_R": false,
+  "centred_values_bit_equal": 22423,
+  "power_values": 39876,
+  "power_bit_equal": 5938,
+  "power_max_ulps": 606,
+  "power_max_relative": 2.480186235696424e-15,
+  "post_spec_max_ulps": 12,
+  "token_mismatch": 0,
+  "missing_mismatch": 0
+ },
+ "r_runtime": {
+  "R": "R version 3.5.0 (2018-04-23)",
+  "fft_namespace": "stats",
+  "long_double": "TRUE"
+ },
+ "numpy": "2.5.4",
+ "not_run": [
+  "full pytest tests",
+  "verify_packet.py",
+  "tools/verify_*",
+  "sampler",
+  "draws",
+  "training",
+  "age models",
+  "fossil reconstruction"
+ ],
+ "historical_reproduction_ready": false
+}

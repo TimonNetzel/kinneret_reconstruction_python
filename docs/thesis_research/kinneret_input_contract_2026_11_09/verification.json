@@ -1,0 +1,36 @@
+{
+ "kind": "recorded_test_run_not_a_case_reproduction",
+ "date": "2026-11-09",
+ "new_test_file": "tests/test_kinneret_input_contract.py",
+ "new_tests": 285,
+ "earlier_tests": 1858,
+ "total_passed": 2143,
+ "test_files": 23,
+ "exit_code": 0,
+ "local_junit_sha256": "e1604e97e0ed42f0bc5e9c64f316bada01f6728c04acd3c57b248587e514970e",
+ "phase1_checker_exit_code": 2,
+ "line_references_checked_against_diss": true,
+ "inputs": 48,
+ "conditions": 18,
+ "status_counts": {
+  "gebunden": 5,
+  "teilweise_gebunden": 10,
+  "quellkonflikt": 6,
+  "fehlend": 27
+ },
+ "bundles_closed": 0,
+ "draws_run": 0,
+ "sampler_run": false,
+ "not_run": [
+  "full pytest tests",
+  "verify_packet.py",
+  "tools/verify_*",
+  "R scripts",
+  "sampler",
+  "draws",
+  "training",
+  "age models",
+  "fossil reconstruction"
+ ],
+ "historical_reproduction_ready": false
+}

@@ -1,0 +1,1824 @@
+{
+ "kind": "R_cross_check_reconst_predictant_on_synthetic_fixture",
+ "runtime": {
+  "R": "R version 3.5.0 (2018-04-23)",
+  "matprod": "default",
+  "long_double": "TRUE",
+  "rng_kind": "Mersenne-Twister",
+  "blas": ""
+ },
+ "source": "src/mcmc_functions_v1.6.R:1817-1820, 1825, 1829-1857, 1939-1943 and 1939-2018 with 2355-2366",
+ "source_sha256": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+ "values_compared": 3009,
+ "bit_equal": 3009,
+ "max_ulps": 0,
+ "ulp_histogram": {
+  "0": 3009
+ },
+ "special_mismatch": 0,
+ "stop_disagreements": 0,
+ "cases": {
+  "hand_all_rows": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "4x3",
+   "selected_dim_module": [
+    4,
+    3
+   ],
+   "reconst_dim_R": "4x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 0x1.9p+4 0x1.68p+4 0x1.7cp+4",
+   "pann_R": "0x1.5ep+7 0x1.f4p+7 0x1.c2p+7 0x1.dbp+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "tann_is_read": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "4x3",
+   "selected_dim_module": [
+    4,
+    3
+   ],
+   "reconst_dim_R": "4x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 0x1.9p+4 0x1.68p+4 0x1.7cp+4",
+   "pann_R": "0x1.5ep+7 0x1.f4p+7 0x1.c2p+7 0x1.dbp+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_tann"
+  },
+  "recent_false_uses_prior": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "4x3",
+   "selected_dim_module": [
+    4,
+    3
+   ],
+   "reconst_dim_R": "4x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 0x1.9p+4 0x1.68p+4 0x1.7cp+4",
+   "pann_R": "0x1.5ep+7 0x1.f4p+7 0x1.c2p+7 0x1.dbp+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "preliminary_holocene_mask": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 0x1.9p+4",
+   "pann_R": "0x1.5ep+7 0x1.f4p+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "interior_mask_youngest_is_first_selected": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1.9p+4 0x1.68p+4",
+   "pann_R": "0x1.f4p+7 0x1.c2p+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "one_row_selected_drops_to_vector": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:3",
+   "selected_dim_module": null,
+   "reconst_dim_R": "1x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0
+   ],
+   "pann_ulps": [
+    0
+   ],
+   "tann_R": "0x1.9p+4",
+   "pann_R": "0x1.f4p+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "one_row_matrix": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:3",
+   "selected_dim_module": null,
+   "reconst_dim_R": "1x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0
+   ],
+   "pann_ulps": [
+    0
+   ],
+   "tann_R": "0x1.18p+4",
+   "pann_R": "0x1.5ep+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "one_taxon_many_rows": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:3",
+   "selected_dim_module": null,
+   "reconst_dim_R": "3x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0,
+    0
+   ],
+   "tann_R": "0x1p+2 0x1p+1 0x1p+3",
+   "pann_R": "0x1p+3 0x1p+2 0x1p+4",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "one_by_one": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:1",
+   "selected_dim_module": null,
+   "reconst_dim_R": "1x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0
+   ],
+   "pann_ulps": [
+    0
+   ],
+   "tann_R": "0x1p+2",
+   "pann_R": "0x1p+3",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "no_row_selected": {
+   "R_stop": "1825",
+   "module_stop": "1825",
+   "selected_R": "0x3",
+   "selected_dim_module": [
+    0,
+    3
+   ],
+   "reconst_dim_R": "0x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [],
+   "pann_ulps": [],
+   "tann_R": "",
+   "pann_R": "",
+   "stops_agree": true
+  },
+  "no_row_selected_one_taxon": {
+   "R_stop": "1825",
+   "module_stop": "1825",
+   "selected_R": "vector:0",
+   "selected_dim_module": null,
+   "reconst_dim_R": "0x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [],
+   "pann_ulps": [],
+   "tann_R": "",
+   "pann_R": "",
+   "stops_agree": true
+  },
+  "empty_mask": {
+   "R_stop": "1825",
+   "module_stop": "1825",
+   "selected_R": "0x3",
+   "selected_dim_module": [
+    0,
+    3
+   ],
+   "reconst_dim_R": "0x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [],
+   "pann_ulps": [],
+   "tann_R": "",
+   "pann_R": "",
+   "stops_agree": true
+  },
+  "short_mask_recycled": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 0x1.68p+4",
+   "pann_R": "0x1.5ep+7 0x1.c2p+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "long_mask_stops": {
+   "R_stop": "1818",
+   "module_stop": "1818",
+   "stops_agree": true
+  },
+  "na_in_mask": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "3x3",
+   "selected_dim_module": [
+    3,
+    3
+   ],
+   "reconst_dim_R": "3x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0,
+    0
+   ],
+   "tann_R": "0x1.18p+4 NA 0x1.68p+4",
+   "pann_R": "0x1.5ep+7 NA 0x1.c2p+7",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "non_conformable_matrix": {
+   "R_stop": "1818",
+   "module_stop": "1818",
+   "stops_agree": true
+  },
+  "non_conformable_vector": {
+   "R_stop": "1818",
+   "module_stop": "1818",
+   "stops_agree": true
+  },
+  "tie_finite": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1p+0 0x1p+0",
+   "pann_R": "0x1p+0 0x1p+0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "tie_one_row_dgemv": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:3",
+   "selected_dim_module": null,
+   "reconst_dim_R": "1x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0
+   ],
+   "pann_ulps": [
+    0
+   ],
+   "tann_R": "0x1p+0",
+   "pann_R": "0x1p+0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "tie_with_nan_in_other_row": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1p+0 NaN",
+   "pann_R": "0x1p+0 NaN",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "tie_with_na_in_other_row": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1p+0 NA",
+   "pann_R": "0x1p+0 NA",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "tie_with_inf_in_other_row": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1p+0 Inf",
+   "pann_R": "0x1p+0 Inf",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "tie_with_nan_in_tf_column_1": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN NaN",
+   "pann_R": "0x1p+0 0x1p+0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "false_positive_nan_test": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1.800002p+23 0x1.800002p+23",
+   "pann_R": "0x1.8p+1023 0x1.8p+1023",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "product_overflow_finite_inputs": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "Inf NaN",
+   "pann_R": "Inf 0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "product_overflow_blas_path": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "Inf 0x1p+600",
+   "pann_R": "0x1p+600 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "zero_times_na": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NA NA",
+   "pann_R": "0x1.8p+1 0x1p+2",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "zero_times_inf": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN Inf",
+   "pann_R": "0x1.8p+1 0x1p+2",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "inf_minus_inf": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN 0x1p+1",
+   "pann_R": "NaN 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "token_x_na_y_nan": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NA NaN",
+   "pann_R": "NA 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "token_x_nan_y_na": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN NA",
+   "pann_R": "NaN 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "token_sum_na_then_nan": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NA 0x1p+1",
+   "pann_R": "NA 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "token_sum_nan_then_na": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN 0x1p+1",
+   "pann_R": "NaN 0x1p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "token_sum_inf_cancel_then_na": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "NaN 0x1.8p+1",
+   "pann_R": "NaN 0x1.8p+1",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  },
+  "negative_zero_terms": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0 0",
+   "pann_R": "-0x1p+0 0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "subnormal_terms": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x2",
+   "selected_dim_module": [
+    2,
+    2
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1p-1073 0x1p-1072",
+   "pann_R": "0x1.8p-1073 0x1.2p-1071",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "inexact_values": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "2x3",
+   "selected_dim_module": [
+    2,
+    3
+   ],
+   "reconst_dim_R": "2x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0,
+    0
+   ],
+   "pann_ulps": [
+    0,
+    0
+   ],
+   "tann_R": "0x1.6b56af5ac8c6p-4 0x1.3e4a5d8369e08p-3",
+   "pann_R": "0x1.0d099c34e45e7p-3 0x1.d798ca56f0b26p-3",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0,
+    0
+   ],
+   "current_is_tann_R": "FALSE",
+   "current_name_module": "predictant_pann"
+  },
+  "many_taxa_order_matters": {
+   "R_stop": null,
+   "module_stop": null,
+   "selected_R": "vector:4",
+   "selected_dim_module": null,
+   "reconst_dim_R": "1x2",
+   "reconst_dimnames_R": "none",
+   "tann_ulps": [
+    0
+   ],
+   "pann_ulps": [
+    0
+   ],
+   "tann_R": "0x1p+0",
+   "pann_R": "0x1p+0",
+   "stops_agree": true,
+   "youngest_ulps": [
+    0,
+    0
+   ],
+   "post_tann_ulps": [
+    0
+   ],
+   "post_pann_ulps": [
+    0
+   ],
+   "current_ulps": [
+    0
+   ],
+   "current_is_tann_R": "TRUE",
+   "current_name_module": "predictant_pann"
+  }
+ },
+ "stress": {
+  "count": 400,
+  "not_bit_equal": [],
+  "paths": {
+   "dgemm": 202,
+   "dgemv_t": 42,
+   "simple_matprod": 146,
+   "zero_extent": 10
+  },
+  "R": [
+   " | ",
+   "-0x1.ccb453732fac9p+11 0x1.63f7b90a8d3cp+9 -0x1.d4cca875cbc8fp+12 NA NA | -0x1.4dc9a621bcb4ap+18 0x1.01e77d6c1dd64p+16 -0x1.53a7162cbda8bp+19 NA NA",
+   "0x1.00000000003b2p+0 0x1.00000000002dep+0 0x1.0000000000d59p+0 0x1.0000000000333p+0 0x1.0000000000a6ap+0 0x1.00000000009d9p+0 | 0x1.0000000000357p+0 0x1.0000000000283p+0 0x1.0000000000cfep+0 0x1.00000000002d8p+0 0x1.0000000000a0fp+0 0x1.000000000097ep+0",
+   "-Inf | -Inf",
+   "0x1.30c834434f708p+13 0x1.5abff463e057cp-4 | 0x1.65232c47c74acp+19 0x1.96507b1ec577dp+2",
+   "NA NA | NA NA",
+   "-0x1.0f66081a2db6p+27 -0x1.a0210beb57066p+25 0x1.630257232fd4p+26 -0x1.029ab4a6e1963p+30 | -0x1.7d53312cc96e5p+33 -0x1.8936e325ce65ep+34 0x1.46b39ea123867p+35 -0x1.79b6e3d22fab3p+36",
+   "0x1.8000000000ccfp+2 | 0x1.8000000000c6bp+2",
+   "0x1.09f8c1c24b283p+3 0x1.c0a16b5ba9557p+2 0x1.4367a48597fd6p+2 0x1.016b9b9434127p+3 0x1.d5a84d80d321fp+1 | 0x1.171a8bcf286bp+11 0x1.1cbc4b3f37827p+11 0x1.efc745ab8ccc8p+10 0x1.156fdf282c6cbp+11 0x1.30a74ac85f897p+11",
+   "NA -0x1.040fc9d9b2dcap+22 0x1.661b47ce5dc3bp+29 NaN | NA 0x1.639dfe4af5e42p+29 0x1.e7daa61eb055ep+35 NaN",
+   "0x1.fb82378c67a2cp+3 0x1.4933e31b04e3dp+4 0x1.e9c8503391749p+3 0x1.6cc0e3c2214b9p+4 0x1.d08d3c9d92e66p+3 0x1.2525d135f5e8dp+4 | 0x1.76929f89515fcp+9 0x1.94b362cbf657cp+9 0x1.b5725cc68f0d6p+9 0x1.49c1a97b90ef4p+9 0x1.cd4ce6a8ea29dp+9 0x1.687f2510dc4e4p+9",
+   "Inf -0x1.9761245dc9a26p+22 -0x1.a3c2136501b0cp+16 | Inf 0x1.0a25a9025b30cp+28 -0x1.e871864c330b5p+25",
+   "0x1.4000000000ad2p+2 0x1.40000000006b8p+2 0x1.4000000000706p+2 0x1.40000000007d4p+2 0x1.400000000089bp+2 0x1.4000000000836p+2 | 0x1.4000000000a8cp+2 0x1.4000000000673p+2 0x1.40000000006cp+2 0x1.400000000078ep+2 0x1.4000000000856p+2 0x1.40000000007fp+2",
+   "NA | NA",
+   "0x1.b22ece0f9bacfp+16 | 0x1.587a03d23d976p+23",
+   "0x1.0baa33d254c53p+4 | 0x1.0ce5eccac50ap+9",
+   "-0x1.82d144da86f89p+13 -0x1.4514ab5de3e45p+17 0x1.27ca618b86859p+26 -0x1.f5960401fef6p+11 | -0x1.8e574d281bc43p+22 0x1.8eca767f9196ap+26 -0x1.dd665f3a76d7bp+35 -0x1.c9c385c72eacep+20",
+   "NaN 0x1.80000000004acp+1 0x1.80000000007d8p+1 0x1.8000000000e42p+1 0x1.80000000011bdp+1 | NaN 0x1.8000000000484p+1 0x1.80000000007bp+1 0x1.8000000000e19p+1 0x1.8000000001194p+1",
+   "0x1.07d5db325ffe2p+2 0x1.79f61346b84dbp+1 0x1.04bb8065d086ap-1 | 0x1.7b02fac31d0eap+10 0x1.2bae061fbc66p+10 0x1.cfb8ea3e8f85ap+9",
+   "0x1.2ce7bd74b772fp+18 0x1.6369290f7fec3p+12 0x1.38e711329cbf1p+24 0x1.43088a3738a53p+16 Inf 0x1.105f43446eef1p+29 | 0x1.5402b05ff744cp+24 0x1.06e0b2510491fp+19 0x1.6283b9e34468cp+30 0x1.92fe7d7d3f9f6p+22 Inf 0x1.344fb69e8709ep+35",
+   "0x1.6b6e7cfa0fb2p+4 0x1.d646c7b4a9f21p+4 0x1.1c1065f5cc51p-2 0x1.dffd61e60c53p+3 0x1.c637c6510ed69p+3 | 0x1.c31262edb8659p+10 0x1.10adf9847c6d7p+11 0x1.0c8af148aafe1p+9 0x1.562487a896a2cp+10 0x1.4ac56fa8b037bp+10",
+   "NA 0x1.d6a30c66a320bp+22 | NA NA",
+   "0x1.8000000000ff9p+2 0x1.8000000000be1p+2 0x1.8000000000c4ap+2 0x1.8000000000d4bp+2 0x1.8000000001102p+2 | 0x1.8000000000f7ep+2 0x1.8000000000b66p+2 0x1.8000000000bdp+2 0x1.8000000000cd2p+2 0x1.8000000001088p+2",
+   "0x1.fbe647be9d098p+2 0x1.473102cc5c876p+2 0x1.9b859a709cc41p+2 0x1.28ccef7e6f45p+0 | 0x1.52a1d4b9260d8p+10 0x1.c007dd6efec8cp+9 0x1.1580d185116fp+10 0x1.fc6a32764a235p+7",
+   "-0x1.378e74ab5fd8p+13 -0x1.0f9a5bd859f11p+17 | 0x1.575e7bfd0751fp+22 0x1.1415d2ae183a2p+25",
+   "NaN | NaN",
+   "-0x1.f8ee7eb228edp+26 -0x1.237d6244f3bdcp+27 0x1.b7f098bfd3354p+26 -0x1.67c99e195807fp+23 | 0x1.349665d70c1e4p+35 -0x1.8282098a554e8p+32 -0x1.14caa01dc64bep+34 -0x1.6f8da9547f34p+28",
+   "-Inf 0x1.400000000093ep+2 | -Inf 0x1.40000000008e2p+2",
+   "0x1.2d0b686630b29p+4 0x1.96e320b7dcb52p+3 0x1.b40a2aecf3f69p+3 | 0x1.d0da1d4f53db7p+10 0x1.c801148913594p+10 0x1.15dfd964fdb43p+11",
+   "NA 0x1.a15e1fffd7e55p+17 NaN NaN | NA 0x1.be404e20dcf9bp+21 NaN NaN",
+   "-0x1.d9baabd9a85c5p-1 | 0x1.712708794b2d2p+10",
+   "-0x1.76218e9dd4194p+26 -0x1.2834088cc0edap+15 -0x1.0d51626ef32b5p+26 | -0x1.b2250c7ce67ap+30 -0x1.55f346efabd5cp+20 -0x1.385adb1bad77ap+31",
+   "0x1.0000000000227p+0 0x1.0000000000308p+0 0x1.0000000000c79p+0 0x1.0000000000b7cp+0 0x1.00000000004fp+0 | 0x1.00000000001e1p+0 0x1.00000000002c2p+0 0x1.0000000000c33p+0 0x1.0000000000b36p+0 0x1.00000000004aap+0",
+   "0x1.989310ad3b47fp+4 0x1.4fae028cf9344p+4 NaN 0x1.6423d4d265dd6p+4 | 0x1.2fe5fc4d27ab2p+9 0x1.1ce112d1243c7p+10 NaN 0x1.04ade9ca366dep+10",
+   "-0x1.278640f7b330ap+18 0x1.7feaec0cc55f7p+21 -0x1.eebb3e52f5712p+16 -0x1.68d8766f9b27p+16 0x1.30d906698669ep-10 0x1.040cede94c7cbp+19 | 0x1.8f8fb8f30e172p+26 0x1.1de6c79989e41p+27 0x1.4e410708f5264p+25 0x1.e7a39a28450bep+24 0x1.d9b68ae953646p-5 0x1.838c13693350fp+24",
+   "-Inf | -Inf",
+   "0x1.778d92ca45f8p+26 0x1.07d5e96a2af88p+25 0x1.7eeaf7de3747dp+6 -0x1.021220b3f7bcfp+16 0x1.bfdf0d6fcc125p+26 | 0x1.5f6050d8ad482p+34 0x1.73ac248e5c571p+28 0x1.c5baa57754c6cp+9 -0x1.5412a328415c8p+16 0x1.b362f42d4aafp+32",
+   "NA 0x1.0000000000822p+2 NA NA 0x1.00000000007ep+2 0x1.0000000000b5cp+2 | NA 0x1.0000000000806p+2 NA NA 0x1.00000000007c4p+2 0x1.0000000000b4p+2",
+   "0x1.7333214584e54p+3 0x1.53cf9ff39feaep+3 0x1.d8f7fe411f5f6p+3 0x1.9c362110cc1bap+3 0x1.4e3c4d99f32f9p+3 0x1.3e4a629260865p+4 | 0x1.8b7fc8684d985p+10 0x1.91360e9e841aap+10 0x1.87f7cad790bfdp+10 0x1.8aa17ffbec904p+10 0x1.873bfae6b8cdep+10 0x1.83b7a449990b2p+10",
+   "0x1.043d47c49407dp+28 0x1.4b67159496137p+23 0x1.55b68da4e72fap+27 0x1.c40260edb0694p+15 0x1.3b2cc91ac8a32p+24 0x1.fdf9f06c36e5fp+0 | 0x1.124fa8812ce54p+37 0x1.01a586acace6fp+30 0x1.04e1c3411f3fbp+30 0x1.3f7bbdd925a4bp+21 0x1.122031763edfbp+34 0x1.9a74f9875e6a6p+10",
+   "0x1.cd26084df7914p+3 0x1.f1cc251143dadp+3 0x1.eccf13bf5d8dbp+3 0x1.88c51e8deb01dp+3 0x1.2cf1d4d321955p+4 0x1.085edbe415916p+4 | 0x1.a1c322d90af1cp+10 0x1.d4718b133720fp+10 0x1.71124ea9aa5e4p+10 0x1.6039af664db85p+10 0x1.f0782133338d7p+10 0x1.d0208724e97b1p+10",
+   "0x1.68316f499dae4p+15 NA -0x1.adc48bb8e8a7bp+25 0x1.69e952863aba6p+15 -0x1.875a5e7acb356p+27 -0x1.55c17f9cd802ap+26 | 0x1.58c145b8521d9p+26 NA -0x1.4eae7fba22417p+34 0x1.4a733cb17c941p+24 0x1.1006c4a623706p+36 -0x1.8783fdcdb94dp+32",
+   "0x1.0000000000fe1p+0 | 0x1.0000000000fccp+0",
+   "Inf 0x1.515e26111b783p+4 0x1.94d21b7522e5cp+4 | Inf 0x1.6b263992206c4p+11 0x1.2b8974bd5012fp+11",
+   "0x1.70cc92b8a388ap+28 0x1.edd0c40d543f3p+17 0x1.a401b6defa9dcp+15 0x1.392ca55416739p+31 0x1.7da31ccde9be7p+29 0x1.f22993c3c2223p+6 | 0x1.8c0bfd2f8b962p+35 0x1.20f91bd4667cdp+25 0x1.1be15d4e97ed5p+22 0x1.2b1dcfb21a3a5p+37 0x1.558b8f5cdfb2ep+35 0x1.d14c4450c9ca9p+12",
+   "NA NA NaN 0x1.dbd60fd7bed7cp+2 | NA NA NaN 0x1.1fb130ab821c6p+11",
+   "-0x1.b5e6ea61fbf7dp+11 -0x1.2a53899efbbc6p+25 0x1.3857c6c1ced8bp+3 -0x1.22a3c8a185544p+3 0x1.84d5e72285a45p+8 | 0x1.c750a4fc9d7eep+22 0x1.36306c10a2a81p+36 -0x1.44c3588a9bce4p+14 0x1.2e326bd9d4c0ap+14 -0x1.944c25e340319p+19",
+   "0x1.8000000000ea7p+1 0x1.8000000000f22p+1 0x1.8000000000a52p+1 0x1.8000000000e6cp+1 0x1.8000000000d06p+1 | 0x1.8000000000e3fp+1 0x1.8000000000ebbp+1 0x1.80000000009eap+1 0x1.8000000000e04p+1 0x1.8000000000cap+1",
+   "-0x1.2cfb20c8b757cp+2 -0x1.2cfb20c8b757cp+2 0x1.e0471db3f559cp+1 | 0x1.3cbaae5769627p+10 0x1.3cbaae5769627p+10 0x1.b2fdf4ea98544p+10",
+   " | ",
+   "0x1.836913b7be63cp+2 0x1.836913b7be63cp+2 0x1.836913b7be63cp+2 0x1.836913b7be63cp+2 0x1.836913b7be63cp+2 | 0x1.9ab3fc10e38eep+10 0x1.9ab3fc10e38eep+10 0x1.9ab3fc10e38eep+10 0x1.9ab3fc10e38eep+10 0x1.9ab3fc10e38eep+10",
+   "-Inf 0x1.42f15baae8c57p+1 -0x1.b506fcb4a1bebp+4 0x1.37a76c6d10888p+5 | -Inf 0x1.7e19e21c0d8e5p+6 -0x1.028ac6179fe2p+10 0x1.70be8e4b1085ep+10",
+   "0x1.8000000000886p+1 0x1.8000000000f24p+1 | 0x1.80000000007f6p+1 0x1.8000000000e93p+1",
+   "0x1.c65c29214ccf2p+2 0x1.b3f33bf7e71d8p+3 0x1.3b3924f8ad45p+4 0x1.1514abc1d8115p+4 NA NaN | 0x1.a543d9ebcc1a4p+10 0x1.278f35cd85a45p+11 0x1.b31626b461e9ep+10 0x1.bbccef29a0f03p+10 NA NaN",
+   "0x1.d45847b8493d1p-3 0x1.0aafd887449a9p+30 0x1.d4c08ed47ad93p-4 0x1.2831e2c6eb062p+11 0x1.1694f0113e7eap+18 | 0x1.124ef669be48ep+4 0x1.6fc7a4285e98fp+36 0x1.128c2782576a4p+3 0x1.008d73981a6e3p+19 0x1.4654479a35f2bp+24",
+   "0x1.8f9ba7834ac6bp+3 0x1.cfc9e48dd4a37p+2 0x1.c90c6939980fcp+3 0x1.e715e0343a53dp+3 0x1.dfda65c196f27p+2 | 0x1.252e66e23c29ep+10 0x1.46fe787e96786p+10 0x1.5fd46115a37p+10 0x1.8a38cdbf8e56cp+10 0x1.455c0c17a7d64p+10",
+   " | ",
+   "NA 0x1.40000000009d4p+2 NaN | NaN NaN NaN",
+   "0x1.74df621882b85p+3 0x1.28c41bea1d87ap+3 0x1.6e9bbe05dc7bbp+3 0x1.5cc6c5f48e848p+3 0x1.2b2dc5dd28449p+3 0x1.7a538731e1d82p+3 | 0x1.0b4641e1b6b25p+11 0x1.e8da403d6381cp+10 0x1.bc026a850ed4p+10 0x1.0eccf49395f7ap+11 0x1.1a9a361d0d1c5p+11 0x1.0939dbd95d9c2p+11",
+   "Inf 0x1.122baf52b1935p+8 0x1.59daae405520bp+19 0x1.d73621d2a507p+31 0x1.573666321e6a1p+27 0x1.b4ae093bd3842p+13 | Inf 0x1.9497f8f92e48bp+14 0x1.5154a0a6929d5p+26 0x1.5fb6a2c296b4fp+38 0x1.01cfca2425919p+34 0x1.46292b956bcb4p+20",
+   "0x1.895226f444f13p+2 0x1.523ef7d6a9a58p+2 0x1.07f8642363a48p+3 | 0x1.28ef232511a2cp+11 0x1.1753a616b2498p+11 0x1.14adaaa27aeb8p+11",
+   "NaN NaN -0x1.8f8615fc09aaep+25 0x1.636b50b6d1a94p+12 0x1.55224b8ccca9fp+17 0x1.85d171341aafcp+18 | NaN NaN 0x1.9e845f54cd71cp+34 -0x1.40a065ad1eb66p+18 -0x1.d95ace083add2p+25 0x1.06b8921939d5dp+25",
+   "0x1.4000000000ba5p+2 0x1.40000000009bap+2 | 0x1.4000000000b59p+2 0x1.400000000096fp+2",
+   "0x1.1a78db3823ee1p+4 0 | 0x1.62c042d48f61bp+9 0",
+   "0x1.0bcf8ea7650cap+16 0x1.ef56b44a584adp+21 | 0x1.4447ed37c4f9ep+22 0x1.7f45c5bf6c3ebp+27",
+   "-0x1.0a0825fcda818p+3 -0x1.0a0825fcda818p+3 -0x1.0a0825fcda818p+3 -0x1.0a0825fcda818p+3 -0x1.0a0825fcda818p+3 NaN | NaN NaN NaN NaN NaN NaN",
+   "0x1.be0524194e7d1p+16 -0x1.02fc1b88d3ea9p+21 0x1.b2ff25abcb59fp+13 -0x1.4bd8adc6a0e81p+23 0x1.dc6de3d1a3ec2p+19 0x1.a42b89181e6fap+17 | -0x1.dad1b6157762fp+25 -0x1.bcda7d717dabbp+29 -0x1.cde07f0fdf768p+22 0x1.61483c5663727p+32 0x1.6660e31796b1ep+28 0x1.6fc1e71f5b1fcp+26",
+   "-Inf 0x1.0000000000b5cp+2 0x1.00000000005aep+2 0x1.00000000003e2p+2 0x1.00000000008dep+2 | -Inf 0x1.0000000000b05p+2 0x1.0000000000558p+2 0x1.000000000038bp+2 0x1.0000000000887p+2",
+   "0x1.cc861f753b622p+2 | 0x1.b75d442b9d96p+10",
+   "-0x1.1c7230c1f0154p+16 NaN NaN 0x1.985058cf96125p+3 | 0x1.b013a30e93103p+29 NaN NaN 0x1.1bc6f6bc1a757p+9",
+   "0x1.1ddacf5ac450cp+3 | 0x1.e8c749be75c1cp+9",
+   "0x1.e12deb266ce03p+10 -0x1.8e2ad260170ecp+20 -0x1.9b5465574ad05p+20 0x1.4de07fa6a90eap+23 -0x1.bc3af45126ff8p+27 | -0x1.b873a2f8b1013p+17 0x1.5346cd4e39ccdp+27 0x1.69bcd9736a5c9p+27 -0x1.9a976c7dfc6e5p+29 -0x1.64ce8a89e107cp+34",
+   "0x1.40000000008fap+2 0x1.4000000000898p+2 0x1.4000000000afcp+2 | 0x1.40000000008cbp+2 0x1.400000000086bp+2 0x1.4000000000acep+2",
+   "NaN NA NaN | 0x1.5c04b5a498ba2p+10 NA 0x1.9a448c7957cafp+10",
+   "0x1.5e1bc07eceec4p+18 0x1.8b24277b3d305p+3 0x1.1b7c2468bc322p+24 0x1.353d0c006ac0ep+29 0x1.10acce46bcfdap-4 0x1.80b75c6e46b2dp+31 | 0x1.274c2c8864697p+24 0x1.4d47c268a37ebp+9 0x1.de355fd84db17p+29 0x1.04d37256a3366p+35 0x1.cbf92d25483c1p+1 0x1.447cc6bdf867cp+37",
+   "-Inf 0x1.028b322e76f91p+4 0x1.020fea6973011p+3 0x1.6560ed6f51b0cp+3 | -Inf 0x1.add9ede79ebf1p+10 0x1.ab5a81ecfe604p+10 0x1.b5617d7b5f51ep+10",
+   "0x1.3971ebc6a2385p+30 -0x1.c7630061bf26ap+26 | 0x1.dbcfd8f7b3a2bp+37 0x1.0897908ee88c2p+34",
+   "NA NA | NA 0x1.00000000001c2p+1",
+   "0x1.5a7b6d3d2484ap+2 0x1.8c87c31fd9a1ap+3 0x1.065b7e37acf4ep+2 0x1.c1259488f654p+3 0x1.b8be55f42f0ccp+1 | 0x1.2985bff92e936p+10 0x1.f31b5d13a1b72p+9 0x1.2e1f8bca90d4ap+10 0x1.e6d1b94406d22p+9 0x1.27a85e305004ap+10",
+   "0x1.06fcc2be633c4p+31 | 0x1.0bc6e07007fb8p+38",
+   "0x1.e46a0cf729a3p+3 0x1.12c9c4fb934fbp+4 0x1.0770f4337834dp+4 0x1.8eec38f1bdb4dp+3 0x1.2aa6509c2e294p+4 0x1.95521108a897p+3 | 0x1.b2f019ab07d52p+10 0x1.86b48d7867e72p+10 0x1.a6d76b1f5cbdep+10 0x1.db996d94ec2c3p+10 0x1.79715aaa9541ap+10 0x1.d2b994fef6bddp+10",
+   "NaN | NaN",
+   "0x1.8000000000c09p+1 0x1.8000000000bd4p+1 | 0x1.8000000000ba5p+1 0x1.8000000000b7p+1",
+   "0x1.cd14988b68efbp+3 Inf 0x1.c27d948f0664ep+3 0x1.c1ac021e5d3fp+3 0x1.b3d8884cdc95fp+3 | 0x1.da0de007afc72p+10 -Inf 0x1.0454481ec4626p+11 0x1.033319e33af89p+11 0x1.0b9b95b6530fdp+11",
+   "-0x1.6d54a8c0f014bp+30 0x1.80401fd658aa1p+29 | 0x1.83795da7a017p+39 0x1.44dbb1b692285p+38",
+   "NA 0x1.a309e0295adc6p+2 | NA 0x1.addaf8a20c69fp+10",
+   "0x1.ae2848cb2dedbp+27 | 0x1.79162470fe9ep+34",
+   "0x1.0000000000455p+0 0x1.00000000008b3p+0 | 0x1.0000000000429p+0 0x1.0000000000887p+0",
+   "0x1.023fe9754b212p+4 0x1.477cc159a4443p+3 | 0x1.9ad26df172094p+10 0x1.d827b9c5aa63ep+10",
+   "-0x1.804546f65d856p-7 -0x1.8f4228c4d3b6p-10 -0x1.417f9c9c5fe5ep-7 -0x1.c053aa31cb32cp-28 -0x1.2ae63a4914755p-11 NA | 0x1.aa167d165906ep+0 0x1.bab4e8c1f6c5dp-3 0x1.647c159ad21aap+0 0x1.f11d632a34304p-21 0x1.4b6d1f0750bfep-4 NA",
+   "0x1.041b8f5625e44p+4 0x1.041b8f5625e44p+4 | 0x1.e6988fe1b6defp+9 0x1.e6988fe1b6defp+9",
+   "-Inf | Inf",
+   "0x1.000000000035ap+1 0x1.0000000000a7ep+1 0x1.000000000076dp+1 0x1.0000000000705p+1 | 0x1.0000000000307p+1 0x1.0000000000a2cp+1 0x1.000000000071ap+1 0x1.00000000006b2p+1",
+   "NaN NaN NaN | NaN 0x1.ddab4d9a4545p+10 0x1.ddab4d9a4545p+10",
+   "0x1.31bfc940461d1p+15 0x1.f0d7590f1ff88p-4 0x1.1c513be6b7a12p+23 | 0x1.4eebe2aee237p+22 0x1.101f7d7927733p+4 0x1.3771d9238cf39p+30",
+   "0x1.06449abc7c79fp+2 0x1.83477ea827c5ep+2 0x1.045c21a6831f4p+3 0x1.fa90ffdd82652p+1 0x1.b790631671824p+1 | 0x1.400c456a75b2ap+10 0x1.850a3966627b4p+10 0x1.140980c948a44p+10 0x1.a6784e78db783p+10 0x1.72ed0f573b16bp+10",
+   "0x1.00ff400eddbf3p+20 0x1.63ff7a4335705p+23 -0x1.49cf6abc31051p+22 -0x1.10a85449e88b2p+29 -0x1.0bae5ac28878ap+25 | -0x1.9f815fefa538fp+28 -0x1.7776ad5352919p+32 -0x1.4547ed79705f8p+27 0x1.26fd7b166b34ap+34 0x1.76b0a1eeb34b7p+34",
+   "NA NA NA | NA NA 0x1.8000000000e25p+2",
+   "0x1.49af12cf7dc1ap+0 0x1.46cb7cf5ea65ap+3 | 0x1.30fd04f94cb8bp+10 0x1.0681772a21878p+10",
+   "Inf | Inf",
+   "0x1.2fa1ecfb6ae06p+1 0x1.44dc571c666d9p+1 0x1.4767fecb2b4dp+1 0x1.ebe92f4d7a6e2p+1 0x1.393a33df50103p+2 0x1.c5cc23c49717cp+1 | 0x1.00cbc100ef3c5p+10 0x1.26067dfc1d54bp+10 0x1.07c821ad94f3fp+10 0x1.28793f97468cbp+10 0x1.80215a53b9865p+10 0x1.d5bfa8aa3c0ebp+9",
+   "0x1.1502326d4b062p+9 NaN | 0x1.aea759b8fe66ep+18 NaN",
+   "0x1.00000000009ffp+1 0x1.0000000000664p+1 0x1.0000000000aeap+1 0x1.0000000000643p+1 0x1.00000000008b8p+1 | 0x1.00000000009aap+1 0x1.000000000060ep+1 0x1.0000000000a94p+1 0x1.00000000005eep+1 0x1.0000000000863p+1",
+   "0x1.095d07ef3d672p+4 0x1.012c6f4b18dbbp+4 0x1.16ca00feee945p+4 0x1.265eb06c91d7p+4 | 0x1.d303d002bc07ep+10 0x1.99666d140da48p+10 0x1.406805bdec60dp+10 0x1.363c97129d8a7p+10",
+   "-0x1.b29e17b5dafd4p-9 0x1.2aead50a11ecbp+32 0x1.5be44d69644e3p+20 | 0x1.25147298e2762p+2 0x1.2ac288b4b556ap+35 0x1.d54e2c8b2889bp+27",
+   "NaN NaN | 0x1.3ab1210a7cb5ap+11 0x1.268a98fe572cbp+11",
+   "-0x1.f8d1ad2d24589p+14 -0x1.96c1c43445bf5p+14 0x1.c295242fd21c7p+4 | 0x1.db76c2e7908b1p+22 0x1.7f1aa3a089232p+22 -0x1.a8619c05807dcp+12",
+   "0x1.0000000000766p+1 0x1.00000000009ep+1 -Inf | 0x1.000000000074ap+1 0x1.00000000009c4p+1 -Inf",
+   "-0x1.320f787c08999p+3 -0x1.320f787c08999p+3 -0x1.320f787c08999p+3 -0x1.320f787c08999p+3 -0x1.320f787c08999p+3 -0x1.320f787c08999p+3 | 0x1.1ad4d1ddca0b9p+9 0x1.1ad4d1ddca0b9p+9 0x1.1ad4d1ddca0b9p+9 0x1.1ad4d1ddca0b9p+9 0x1.1ad4d1ddca0b9p+9 0x1.1ad4d1ddca0b9p+9",
+   "NaN 0x1.ef7860748c9bbp+7 NaN 0x1.d4611a018b537p+24 0x1.acc3c301e193ep+33 0x1.5ec1dff2dc0cp+9 | NaN 0x1.1cedcd93eebcbp+19 NaN 0x1.2429f9e2ed59ep+27 0x1.41088871d3eecp+39 0x1.f8c280ba5e40dp+21",
+   "0x1.da6a1e0599225p+3 0x1.1e524fac9426dp+3 0x1.32511d3640b2cp+3 0x1.94a88327e7741p+2 0x1.502622c0d189cp+3 0x1.98bcbb6802cb1p+3 | 0x1.1eba376fd979ap+11 0x1.55ef81f5b51a7p+10 0x1.6e8c1f29028adp+10 0x1.dd1a44874cec7p+9 0x1.93445a1e6c051p+10 0x1.ec9d3b9367bc2p+10",
+   "0x1.183636e8dd9f4p+28 0x1.1f35529687f76p+24 0x1.44c476149a5b2p+21 | 0x1.71ccc3d2271edp+33 0x1.99e3ae75e664ap+29 0x1.9b99aab12e289p+28",
+   "0x1.8000000000f4ep+1 0x1.8000000000d8ap+1 | 0x1.8000000000edap+1 0x1.8000000000d16p+1",
+   "NA NA NA NA | 0x1.0f775945952e7p+11 0x1.c16763e2eac8ep+10 NA 0x1.28ffe261865d1p+10",
+   "0x1.239d9421bbe49p-14 | 0x1.594ed0c362b2bp-9",
+   "Inf | Inf",
+   "-0x1.82628af0ef4aep+26 -0x1.69814fabc6e7dp+28 | -0x1.57c45b2de5a0cp+34 -0x1.1a40ab464b6c1p+35",
+   "NaN NaN | NaN NaN",
+   "0x1.187cae8532f78p+4 0x1.22a7a934b1552p+4 0x1.196bcb63d31bap+4 0x1.02dd6ae869e02p+4 0x1.e7a7aa819cc6p+3 0x1.2bc038060565ep+4 | 0x1.2c2bb53bb5806p+10 0x1.07b5c78c417a6p+10 0x1.6e920f4f3af5p+8 0x1.ab1f97a1f8498p+9 0x1.26d751246fbf1p+10 0x1.793ad77dc677ap+8",
+   " | ",
+   "0x1.8bfe0e8d7574bp+2 0x1.5f564867aa4ebp+2 0x1.4d29a91482aeap+3 0x1.f2840d86bced3p+2 0x1.ac9a6a56735f5p+2 | 0x1.041ad4662a18ep+11 0x1.139e9d298b05p+11 0x1.b7995655185e2p+10 0x1.f152c9e7385bp+10 0x1.018a862498fap+11",
+   "NaN NA 0x1.5cf5d2765aa6cp+25 -0x1.49089c5516ec6p+25 | NaN NA NA NA",
+   "0x1.000000000086p+1 0x1.000000000087ap+1 0x1.00000000009cep+1 0x1.0000000000442p+1 0x1.00000000005e9p+1 | 0x1.0000000000826p+1 0x1.0000000000841p+1 0x1.0000000000994p+1 0x1.0000000000408p+1 0x1.00000000005bp+1",
+   "0x1.57b1587dc275ap+3 -Inf 0x1.2d7a910023fap+3 0x1.7b7a6b063e252p+3 | 0x1.91c27291befbfp+10 -Inf 0x1.957bcd19484b4p+10 0x1.875e3b1a5b974p+10",
+   "0x1.d2471a463cbc1p-12 0x1.960c3c1567ed6p+3 0x1.98e279ad5b2f3p+15 0x1.4b000f0b4dbbp+27 | 0x1.f5f937e9dd4dcp-6 0x1.a986a8882bb74p+9 0x1.3fac1b935eaa8p+23 0x1.86c9f6cc44021p+36",
+   "NaN NA 0x1.6c607269677d1p+3 0x1.99aa4a7082b83p+2 0x1.7d016328dc541p+2 | NaN NA 0x1.4df80785ae87dp+8 0x1.ddf70a337806cp+8 0x1.eae5fdaeafc03p+8",
+   "0x1.421c185357526p+8 0x1.b21eebd9d5322p+24 | -0x1.bcc0c13af685p+13 -0x1.afa3a3989af68p+32",
+   "0x1.8000000000d7ep+1 0x1.8000000000f5ap+1 0x1.80000000011e9p+1 0x1.8000000001138p+1 0x1.8000000000ae2p+1 0x1.8000000001484p+1 | 0x1.8000000000d33p+1 0x1.8000000000f1p+1 0x1.800000000119ep+1 0x1.80000000010edp+1 0x1.8000000000a97p+1 0x1.8000000001438p+1",
+   "0x1.3fd75fc68ffddp+4 0x1.96c06a5c885e6p+3 | 0x1.edcdb09cdfbecp+10 0x1.eba232a034042p+9",
+   "NaN 0x1.4b472873e990dp+29 -0x1.a113e53931f78p+5 NaN | NaN 0x1.e14621a1943b7p+35 0x1.aa806ddf32ca5p+17 NaN",
+   "0x1.dc45bc306d777p+2 0x1.54fbf3c55f73cp+2 0x1.0229e27acbfb9p+2 | 0x1.9b5d2a9ef4288p+10 0x1.9b80d52f7d724p+10 0x1.7f3eadbe27df2p+10",
+   "0x1.d87831bb827cdp-2 -0x1.2aca307e375b5p+2 0x1.56ff8ec4675bdp+8 -Inf -0x1.0af0d495aa4e4p-1 | 0x1.ab85797e6e644p+9 -0x1.0e5d567be27abp+13 0x1.365e08d8aa8e3p+19 -Inf -0x1.e31749c53646ap+9",
+   "0x1.c00000000140fp+2 0x1.c000000000bf2p+2 0x1.c0000000011aep+2 0x1.c000000000e44p+2 0x1.c00000000166bp+2 0x1.c00000000151cp+2 | 0x1.c00000000138dp+2 0x1.c000000000b72p+2 0x1.c00000000112cp+2 0x1.c000000000dc2p+2 0x1.c0000000015eap+2 0x1.c00000000149ap+2",
+   "NA 0x1.d16c4931d50fdp+1 NA NaN | NA 0x1.b29ef26258744p+10 NA NaN",
+   "0x1.45308d7db4ef3p+12 0x1.1d544e78b4484p+32 0x1.e74e9e6e11f8p+16 0x1.b79df5126f6e3p+17 | 0x1.5be6bdf05e66ap+19 0x1.117cb96ec37e7p+39 0x1.d317d8a5beca9p+23 0x1.09af6e5405549p+28",
+   "0x1.f111667cd3ae5p+2 0x1.1c4ef0f9b8019p+2 0x1.a0f99ba6fcf65p+2 0x1.bd82d94bb357fp+2 0x1.760ad56c912e5p+2 | 0x1.95d90bb6307d4p+10 0x1.109f13c07c7d1p+10 0x1.4a1cce35e999fp+10 0x1.7508e9e4490acp+10 0x1.3c3b79b169e14p+10",
+   "-0x1.00f449fedaacep+29 | -0x1.83ad88c5493fdp+36",
+   "NA 0x1.0000000000766p+2 NA | NA 0x1.000000000071ep+2 NA",
+   "0x1.c96d6e4d844bdp+2 0x1.3c1cf2dad706fp+3 0x1.53a9cf9516f38p+3 0x1.b41f46106b53bp+2 0x1.04b57f11ea199p+3 | 0x1.c3c7d32a51372p+9 0x1.74ab9742bac3ap+9 0x1.6b45f5778f477p+9 0x1.7733864664a49p+9 0x1.7ed62b9fe4a71p+9",
+   "Inf -0x1.62e1a2b941592p+22 0x1.d4a42c6617dfcp+32 | Inf 0x1.9060663c76878p+28 0x1.1f24d78a49013p+40",
+   "0x1.b09d5035820f7p+3 0x1.79aeb10f8bccap+3 | 0x1.5b68be2d7cab3p+10 0x1.772b40cf0abf8p+10",
+   "NA 0x1.7d2ef35af76fp+22 | NA -0x1.bce2012008576p+28",
+   "0x1.800000000108ep+1 | 0x1.800000000103ep+1",
+   "0x1.55e800bf0bc98p+3 0x1.666007abfd65p+3 0x1.84a7952765901p+4 0x1.2916155ed82ep+3 0x1.530d80a0b6917p+3 | 0x1.5c689a20d7eb7p+10 0x1.75f1739f07c9fp+10 0x1.7ae95358b29a5p+10 0x1.742d20f52f5fbp+10 0x1.05f6d7f2a784p+10",
+   "0x1.e8e6611a9d0d7p+17 0x1.01d79be3c2b01p+10 0x1.8d45aea9e9696p-12 0x1.53830708ad0f5p+21 0x1.2f218bce7790fp-16 0x1.9c2a399f71785p+13 | 0x1.608f8e2c2f5abp+23 0x1.73e03b8376ee3p+15 0x1.1e7c35bf191p-6 0x1.e9aa3274bf23bp+26 0x1.b531b8ba0181cp-11 0x1.29398d41c4109p+19",
+   "NA NA NA NA | NA 0x1.2d49b3bd418a8p+10 0x1.e855539c5394ap+9 0x1.8faab6a19fa6bp+9",
+   "-0x1.20b2ad4935d0dp+29 0x1.3061970f6d3e7p+29 0x1.ca0b38a7b80b7p+28 0x1.426d727b57283p+29 | -0x1.8e3bfe16daaa9p+36 0x1.a64d40f83c8ffp+36 0x1.3deb1cefb6207p+36 0x1.a3fdfd72925a7p+36",
+   "0x1.0000000000837p+2 Inf | 0x1.00000000007efp+2 Inf",
+   "0x1.27d2f7ad822c2p+0 | 0x1.000363793a11cp+11",
+   "NaN 0x1.578337189043cp+25 0x1.3913cad825d41p+10 0x1.c3f19357d7a38p-9 NA | NaN 0x1.414918e44aa4p+34 0x1.24d1d1c25ae63p+19 0x1.a6b35970aedb1p+0 NA",
+   "0x1.36b2af8c2fcfp+3 0x1.e4c5025cd7c23p+2 0x1.bc9224a0e578ap+2 0x1.590d5698aa732p+3 0x1.5c8e4ca41758ep+2 0x1.cb4789ac3f55fp+3 | 0x1.39ccc18e6d282p+10 0x1.ba29fb9014957p+9 0x1.3535b2ee4595p+10 0x1.56d32d3bd09a4p+10 0x1.873a237bcd66ap+10 0x1.15014a26689e2p+10",
+   "-0x1.76079d2179168p+17 | -0x1.1ce28ee3f6532p+25",
+   "0x1.8000000000a3p+2 0x1.8000000000c57p+2 0x1.8000000000cdp+2 0x1.8000000000dd2p+2 | 0x1.80000000009b8p+2 0x1.8000000000be1p+2 0x1.8000000000c59p+2 0x1.8000000000d5ap+2",
+   "NA NA | NA NA",
+   "0x1.8ac534e81153ep+11 0x1.76197ea25ce15p+25 | 0x1.2d999718c431fp+18 0x1.f5c0cd65af449p+29",
+   "0x1.c8324ed5ec362p+2 -Inf 0x1.1aefe38792f21p+3 | 0x1.17295e85c47ecp+11 -Inf 0x1.059abbf413bcbp+11",
+   "0x1.3f498edb2523bp+30 -0x1.ea9c94759585cp+21 | 0x1.b8a578790a85bp+35 -0x1.cd29cf7e43885p+28",
+   "NaN NaN NaN NaN NaN | 0x1.400000000094bp+2 0x1.4000000000deep+2 0x1.40000000008cap+2 NaN 0x1.4000000000c0cp+2",
+   "0x1.22ada984274bcp+4 0x1.14f06b47caae9p+4 0x1.52c403576b71cp+4 | 0x1.72442538d6d8ap+10 0x1.94c87dd753ff7p+10 0x1.f2e9de1c41a1ap+9",
+   "0x1.83112ffea0b0fp+14 0x1.71ebe753f5f6p+8 | 0x1.8b83603a7f087p+18 0x1.4fd2e7363fc84p+16",
+   "0x1.484fbc41717dbp+3 0x1.8d82dd586a019p+3 0x1.df95e8d6832eap+3 0x1.75091e09c91cep+3 | 0x1.87b99ba311adbp+10 0x1.14b2357eec6c6p+11 0x1.b1b72d270908bp+10 0x1.47f7886283c5ap+10",
+   "NA NA | 0x1.2c6f99d4868b7p+32 -0x1.01c1342ca60cap+34",
+   "0x1.00000000005d2p+1 0x1.0000000000354p+1 | 0x1.0000000000583p+1 0x1.0000000000304p+1",
+   "Inf | Inf",
+   "0x1.e9132caed09b9p+15 | 0x1.7aeb19937877ep+22",
+   "NA NaN NaN | NA NaN NaN",
+   "0x1.2ac470fb301a9p+25 0x1.ce0febf09eff2p+20 -0x1.075996584c38bp+18 -0x1.6d664722d82cep+26 0x1.96a584d41d4ddp+28 | -0x1.574e0c787cb6fp+32 0x1.cd4351612aa01p+25 0x1.288af3f2aca32p+26 0x1.e1ae0a9689a2ap+34 0x1.398f5b3e868cbp+34",
+   "0x1.4000000000f44p+2 0x1.40000000005acp+2 | 0x1.4000000000ee8p+2 0x1.400000000055p+2",
+   " | ",
+   "0x1.ac12716b30bbbp+7 0x1.211cac4c569f8p+22 0x1.48ab019a33f42p-22 0x1.85bc59cd35995p+27 0x1.0585b3ee8bde7p-17 NaN | 0x1.a86c2811fe9f7p+13 0x1.1ea5ac4e26b1cp+28 0x1.45ddac6e57f4ep-16 0x1.8269bc26d024ep+33 0x1.034aeb308218bp-11 NaN",
+   "0x1.03367473c8309p+4 0x1.9c3c366758ee1p+3 0x1.2f9a501305d1bp+4 0x1.eb9999b3c80cap+3 | 0x1.6407641607f53p+10 0x1.bb544687abb1ep+10 0x1.29ce9ea594fe2p+10 0x1.f788d51a8685ep+10",
+   "0x1.2bb235ebe4625p+29 -Inf | 0x1.13fd8c97b1ad6p+32 -Inf",
+   "0x1.0000000000483p+2 0x1.0000000000936p+2 0x1.0000000000824p+2 | 0x1.000000000045ep+2 0x1.0000000000912p+2 0x1.00000000008p+2",
+   "NaN NaN | NaN NaN",
+   "0x1.fd52e12eb6226p+6 0x1.46f5b82aaa2a3p+15 0x1.092aafd3b4582p+17 0x1.3b00557b6b0afp+11 | 0x1.6703a4db08ec4p+12 0x1.4385ab1817f4dp+21 0x1.0667c0c55ede7p+23 0x1.b95a9597f2e2dp+16",
+   "0x1.d668351d93226p+0 0x1.996b9324be7b9p+1 0x1.a984f61dc5f4p+0 | 0x1.0d4ca2f26c916p+11 0x1.cca22f1065a17p+10 0x1.df651cf03f54cp+10",
+   "-0x1.8905b4170817fp+20 0x1.f19c24f6db706p+22 -0x1.dc9ab79e96f65p+20 -0x1.9c65267c5c64ep+19 0x1.2ebd03c87a38ap+17 | -0x1.8aa32986c8ceap+28 0x1.175ef20dd8a1ep+29 -0x1.b73a1cac94be4p+26 -0x1.3bf2a898e0888p+26 0x1.6fe5cca08d3b3p+23",
+   "NA | NA",
+   "0 0 0x1.19a0e1d36d6d8p+4 0 | 0 0 0x1.6b0e4db992f13p+7 0",
+   "Inf | Inf",
+   "0x1.afe0894dfe7bcp+3 0x1.e9323dab2f49ep+2 0x1.8301f089b566p+3 0x1.c4506c84a2708p+3 0x1.ab489a13c639ep+2 0x1.f4f6a8d7d75d8p+3 | 0x1.a3993572b253ep+10 0x1.457683e6e02a4p+10 0x1.8f1c79aa9d06bp+10 0x1.2c2f6d450b867p+10 0x1.70980e55fd9fdp+10 0x1.049ffcb21388dp+11",
+   "0x1.95184e06f672ap+28 0x1.27fc484a6d21fp+12 0x1.3d5d15964b9abp+17 NaN | 0x1.2e1b4de1dc9f5p+36 0x1.883a2ea521099p+19 0x1.ca35cfb245bb6p+24 NaN",
+   "0x1.800000000109p+2 | 0x1.8000000001024p+2",
+   "0x1.4c38698df46b7p+3 0x1.8b69118452588p+3 0x1.37be93a1c2f71p+4 0x1.1a17f45c8f914p+4 | 0x1.883060478a678p+10 0x1.a9a09b8679178p+10 0x1.4a649c621420fp+10 0x1.207b6ea89a617p+10",
+   "0x1.aed71e2773448p+28 | 0x1.89027a7daf79cp+37",
+   "0x1.a3495b9560604p+3 0x1.a3495b9560604p+3 NA 0x1.a3495b9560604p+3 NaN | NaN NaN NA NaN NaN",
+   "-0x1.61457528d008bp+12 0x1.6448036358945p+28 -0x1.f1a457ad19f5ep+29 0x1.04647ecf89cecp+29 -0x1.6ed3676482197p+28 0x1.6eba3e787864ep+22 | -0x1.774fedf3430d3p+19 0x1.fa05faa1ef6c3p+35 -0x1.a680992f9c6b8p+36 0x1.a3506f37b8794p+35 -0x1.7f0477b04e712p+32 0x1.2a987dbd7b0ffp+29",
+   "0x1.c000000000f86p+2 0x1.c00000000110cp+2 Inf | 0x1.c000000000f06p+2 0x1.c00000000108cp+2 Inf",
+   "0x1.09beb68f7af6cp+3 | 0x1.1390935a3693bp+10",
+   "NaN | NaN",
+   "0x1.f4109bc4d306cp+3 0x1.5ab44880bb53ep+4 0x1.08b4a7b2cdeb4p+4 0x1.d77a3c1f08cfcp+3 | 0x1.8ff11146bdf14p+9 0x1.0493d50e4c5dp+10 0x1.a100d794f2992p+10 0x1.22beb771387eap+10",
+   "0x1.b912cc1717432p+19 0x1.45582bc00b731p+6 -0x1.5fd4329f93f46p-1 0x1.b6534df74889dp+27 -0x1.32a1a234e3baep+9 -0x1.224654cfec9f8p+10 | 0x1.cf8969d3e5fb3p+25 0x1.55e9f031f49afp+12 -0x1.71bf4388acb4bp+5 0x1.cca617b9648e2p+33 -0x1.423f6cb422e6ep+15 -0x1.310ede33fe3e6p+16",
+   "0x1.00000000007a5p+2 0x1.0000000000844p+2 | 0x1.000000000075cp+2 0x1.00000000007fcp+2",
+   "0x1.03980ce630676p+4 NA -0x1.30069dac887cbp+3 0x1.3e31c3797074p+3 0x1.68512af4f14fep+3 | 0x1.0e5e32eb2a091p+11 NA 0x1.5b40e5af4c80bp+11 0x1.b2da9bc26d7d9p+10 0x1.8e4ce930d214dp+10",
+   "0x1.fa86918737d03p+31 | 0x1.ba713de7ccae6p+38",
+   "0x1.06e61f59dc926p+4 Inf | 0x1.2a83489402f26p+10 Inf",
+   "0x1.8f3b182e17ad7p+18 | 0x1.075108bdd1eep+27",
+   "0x1.4000000000c4ap+2 0x1.4000000000803p+2 NaN 0x1.400000000077bp+2 | 0x1.4000000000bf7p+2 0x1.40000000007afp+2 NaN 0x1.4000000000727p+2",
+   "0x1.24849fbea907p+4 0x1.6748a0b29b192p+3 0x1.3b5b538b39eb7p+3 0x1.5ca14de4ddc34p+3 0x1.032caa8ef9a9cp+3 | 0x1.1f6db77c737f4p+10 0x1.3ced7ab137105p+10 0x1.558b862e8fe2bp+10 0x1.2d68932cf6911p+10 0x1.228c9f8e3717ap+10",
+   "0x1.14f086888fbffp+4 -0x1.a434246b65948p+22 0x1.44e1fb9db9febp+22 0x1.f302ac1818d1fp+26 | 0x1.1a1213a598e73p+12 0x1.61df945d356b2p+30 0x1.b396ecf92d194p+28 0x1.fc609c7b6f527p+34",
+   "0x1.30463b89f83b5p+4 0x1.2103e6a33e489p+3 | 0x1.f851a0ad5fd2ep+9 0x1.e26b792486589p+10",
+   "NaN NA -0x1.3f8cda10906fep+28 0x1.99de9867c1f04p+18 | NaN NA -0x1.de9dd6b2c2fc6p+34 -0x1.12d5c73fbddd1p+27",
+   "0x1.000000000001ep+0 | 0x1.000000000000dp+0",
+   "-Inf 0x1.0bb58417d2d33p+3 0x1.1f1138ac2a6cp+4 | Inf 0x1.00d3fea921c9cp+11 0x1.13355ea06168cp+11",
+   "0x1.d2847f7245a1p+29 | 0x1.737587f397a6cp+38",
+   "0x1.cb60b35d36e86p+3 NaN | 0x1.1eb3c3c6085c2p+10 NaN",
+   "0x1.c336989322204p+23 | -0x1.bbcef3251c5fdp+33",
+   "0x1.8000000000b08p+2 0x1.800000000122ap+2 0x1.8000000000dcp+2 0x1.80000000008e5p+2 | 0x1.8000000000ab3p+2 0x1.80000000011d6p+2 0x1.8000000000d6ap+2 0x1.8000000000891p+2",
+   "0x1.b8018d554c556p+2 0x1.3d4166c8dcf2bp+2 0x1.954167b04a27cp+2 0x1.2784f8c131653p+2 0x1.93f92dcd05abap+1 0x1.cd1045692178fp+2 | 0x1.a066cc162eaf1p+10 0x1.1022b2513b1f9p+10 0x1.a9212ee0abe6p+10 0x1.2846ec13662eap+10 0x1.1cd87e07e26adp+10 0x1.8d985adf2d8aap+10",
+   "NaN NaN | NaN NaN",
+   "0x1.86f0958517ca4p+4 0x1.86f0958517ca4p+4 | 0x1.d24772839b803p+9 0x1.d24772839b803p+9",
+   "-Inf | Inf",
+   "0x1.0000000000d24p+0 0x1.0000000000557p+0 0x1.0000000000ecdp+0 0x1.0000000000608p+0 | 0x1.0000000000cfcp+0 0x1.000000000052fp+0 0x1.0000000000ea5p+0 0x1.00000000005ep+0",
+   "NaN NA 0x1.ec64013ce3228p+1 0x1.377d053e11046p+1 0x1.eb37a78a5e3a6p+2 | NaN NA 0x1.8eb8cd3701d92p+10 0x1.6e88bbd692494p+10 0x1.63980dfb4559cp+10",
+   "0x1.899e24a6448ecp+19 0x1.58117dd0e2a3fp+3 0x1.31234e162a3dfp+32 | 0x1.03bc202a79a1ep+25 0x1.478f053028cccp+8 0x1.174ea159133e9p+39",
+   "0x1.b47d5d48d2cf4p+4 0x1.b47d5d48d2cf4p+4 | 0x1.34cb0ff516a7ap+11 0x1.34cb0ff516a7ap+11",
+   "-0x1.33ec60aa8e74cp+16 -0x1.557a3d6abfd1fp+23 0x1.247f681c69e35p+7 0x1.9bb15adecc698p+8 | 0x1.eb3c49dfe2f8fp+24 -0x1.cf1b84c250574p+31 -0x1.69255b791954cp+14 -0x1.186c555a5c18dp+15",
+   "0x1.8000000000a4ap+1 | 0x1.80000000009c1p+1",
+   "0x1.446cedfa0b988p+2 0x1.de6cb13f1d7fap+2 0x1.ac31d08b2d081p+1 0x1.685883e663a84p+2 | 0x1.1f74048ce7d16p+10 0x1.202e6a3bc3959p+10 0x1.760072445f1c7p+9 0x1.db146ed95d511p+9",
+   "0x1.d87fced8c8791p-5 0x1.347d8bf09dd51p+4 Inf -0x1.8627c7163393fp-6 | 0x1.29039b827c7f1p+2 0x1.80793d0845c34p+10 -Inf 0x1.413d46ef1f10ep+4",
+   "0x1.8a79609071768p+3 0x1.a1f52194c1d8bp+3 0x1.fc6499cd1dc2bp+3 0x1.8f21dc7c51a3ep+3 0x1.d9b3d7cc70feep+3 | 0x1.b12e17d6a9be8p+10 0x1.8f6eef5a83c42p+10 0x1.29bdfe1983ad8p+10 0x1.ad38fee253ffp+10 0x1.82bb097141cc6p+10",
+   "NaN NA | NaN NA",
+   "0x1.000000000026ep+1 0x1.000000000066p+1 | 0x1.0000000000238p+1 0x1.000000000062ap+1",
+   "0x1.29590220226e7p+4 0x1.29590220226e7p+4 0x1.29590220226e7p+4 | 0x1.4bbdb88a08db9p+9 0x1.4bbdb88a08db9p+9 0x1.4bbdb88a08db9p+9",
+   " | ",
+   "NaN NA 0x1.2808e09645a62p+4 0x1.cd75dcf544a5ap+3 | NaN NA 0x1.056720d363fd6p+10 0x1.1eca267f4c9d7p+10",
+   "0x1.aec28b964c251p+24 -0x1.131e52fb7e928p+28 | 0x1.9b2feb63d111ap+31 -0x1.069e212e6408cp+35",
+   "-Inf 0x1.c00000000121ap+2 | -Inf 0x1.c0000000011ap+2",
+   "0x1.e8c67cac933c2p+2 0x1.5f0b4258e8c6ap+2 -0x1.325bce1d0d905p+1 | 0x1.27046329f338ap+10 0x1.8aa56a56d7f53p+10 0x1.2a2ce74503a33p+10",
+   "NA 0x1.dc8766280d3cdp+25 NaN | NA 0x1.2cc76f9c3118cp+30 NaN",
+   "0x1.c13104f9f31c4p+2 0x1.9dfe06e7e97e7p+3 0x1.1286db6cafa4cp+4 0x1.b0eddc976c72dp+2 0x1.8957b332d3f3bp+3 | 0x1.58708c74ff96p+10 0x1.41aae63baa7ebp+10 0x1.3e83a71b093a8p+10 0x1.6755ad58d2acep+10 0x1.3c5a028fe9797p+10",
+   "-0x1.28f9a8cd2be7ap+22 -0x1.48a151232f305p+20 | 0x1.2235478a47165p+29 0x1.92ee7fafd031bp+28",
+   "0x1.c000000000c4ap+2 0x1.c000000000d13p+2 0x1.c000000000859p+2 | 0x1.c000000000ba6p+2 0x1.c000000000c6dp+2 0x1.c0000000007b2p+2",
+   "NA 0x1.1319ffa851bep+3 NaN | NA 0x1.45e8bd48423bcp+10 NaN",
+   "0x1.f878e0aac9c33p+19 0x1.2ce40d06fccedp-15 -0x1.099da438a5421p+9 -0x1.bff0235c4e38cp+15 | 0x1.94f9257f688acp+26 0x1.f79f405f6fed8p-9 0x1.9e7c6162c18fbp+17 0x1.51650c24cb3cbp+24",
+   "0x1.44967b6cb662ep+4 -Inf 0x1.074bc22f24dep+4 0x1.b2683ab4ede2ep+3 0x1.189e9bc4be2afp+4 0x1.079525cb2a6e1p+4 | 0x1.2924f22bbba56p+10 -Inf 0x1.7daf6bc1bf2dbp+10 0x1.54c13561f3909p+10 0x1.8d36ecf1fe47dp+10 0x1.db18ec7945fbfp+10",
+   "0x1.fc2e253b5742p+10 -0x1.ccc5869ea4612p-3 0x1.cc466ed106ec5p+6 -0x1.2fdbece296ce4p+6 | -0x1.1b2a140f2b788p+20 0x1.00bf671a73cdbp+7 -0x1.007895bf9e8a9p+16 0x1.52a0cd4acfb39p+15",
+   "0x1.c000000000d85p+2 0x1.c000000000fc2p+2 0x1.c000000000f44p+2 NA NaN | 0x1.c000000000d08p+2 0x1.c000000000f46p+2 0x1.c000000000ec9p+2 NA NaN",
+   "0x1.415bd4a3160dbp+3 0x1.9e011cad9bf59p+2 | 0x1.c357feeb9942p+10 0x1.1daa02f14e638p+11",
+   "0x1.9dd2811921231p+9 0x1.8e9e2190fe07ap+23 0x1.13c2d62e54b0cp+13 0x1.081a941244914p+24 0x1.88aed9ec4572cp+2 | 0x1.e7fc521452187p+17 0x1.10befed05e9dbp+31 0x1.bee0aec7bb162p+19 0x1.20f29e0a340f2p+30 0x1.9e409b04343d9p+7",
+   "0x1.b443d4540cccfp+3 0x1.8059299ae644p+1 0x1.868229b1953b4p+3 0x1.865d270fd9b72p+3 0x1.27c16eda6a5b3p+4 0x1.9ec661f0fec97p+3 | 0x1.0331190afd993p+11 0x1.1f95f54cf8df9p+11 0x1.26eff2371466dp+11 0x1.298ba94585799p+11 0x1.146c0c973d7e8p+11 0x1.0316305a5a391p+11",
+   "-0x1.925ec31fb356fp+19 NaN -0x1.e47301e70dc1p+22 -0x1.4284fa295ef96p+24 -0x1.53017b81f07f2p+27 | -0x1.a3cc94dd88909p+25 NaN -0x1.8264050d0e0e7p+23 -0x1.39a8e13a2a158p+32 -0x1.138487e876728p+32",
+   "0x1.00000000009dbp+2 0x1.000000000092cp+2 0x1.0000000000761p+2 0x1.000000000057ep+2 | 0x1.00000000009a3p+2 0x1.00000000008f4p+2 0x1.000000000072ap+2 0x1.0000000000546p+2",
+   "Inf | Inf",
+   "0x1.82dd694a9a02dp+7 -0x1.21f72eee51189p-3 0x1.6e8f3620cf402p-16 | 0x1.2e5ccd538ad7cp+13 0x1.0b48fb27ec52cp+4 0x1.90aa974027c2dp-6",
+   " | ",
+   "-0x1.e3f88f6264f63p+29 -0x1.23c3d3d928ae3p+29 | -0x1.362e69dd5b64ep+36 -0x1.2ae1be11afb14p+36",
+   "0x1.8000000000a66p+2 0x1.8000000000cdp+2 0x1.8000000000c28p+2 | 0x1.8000000000a0cp+2 0x1.8000000000c76p+2 0x1.8000000000bcfp+2",
+   "0x1.b0295078c1af2p+3 0x1.b0295078c1af2p+3 0x1.b0295078c1af2p+3 0 0x1.b0295078c1af2p+3 0 | 0x1.a25c7e9dfd294p+9 0x1.a25c7e9dfd294p+9 0x1.a25c7e9dfd294p+9 0 0x1.a25c7e9dfd294p+9 0",
+   "NaN | NaN",
+   "0x1.3056b00bec52ap+0 -0x1.84250e901d2ccp+1 0x1.170ed10def0fap+1 -0x1.09dbb80fcf62ap-1 | 0x1.7e82924de829ap+10 0x1.ad12a659015fcp+10 0x1.ffe5d2e537992p+10 0x1.559f2709b6b9cp+10",
+   "0x1.125edf983d242p+18 0x1.2f82ee0934d2p+20 Inf -0x1.12797ffbb9d36p+5 -0x1.f59a37ffaf0ddp+14 | 0x1.9bd391065314ep+25 -0x1.acbf303ba391ep+28 Inf 0x1.06f3c050ba87ap+12 -0x1.a6fa336a86e7ap+20",
+   "0x1.4000000000fbap+2 0x1.4000000000e36p+2 | 0x1.4000000000f88p+2 0x1.4000000000e05p+2",
+   "-0x1.5faebd2013573p+2 NaN 0 0 -0x1.5faebd2013573p+2 NaN | 0x1.a6d5c777a4c5dp+10 NaN 0 0 0x1.a6d5c777a4c5dp+10 NaN",
+   "0x1.08ed4a4554f0ap+7 -0x1.6f6bb7112153ap+30 0x1.0a143a0a80bf6p+28 0x1.4e8deeec09d1cp+24 0x1.da99033f33f38p+31 | 0x1.9231017bca348p+13 0x1.e8dc8c916558dp+38 0x1.3dc23aad2871bp+33 0x1.df97c2d4ac855p+29 0x1.c697d1128c5efp+38",
+   "0x1.c7a41ee8550bcp+0 0x1.71cd2765952c8p-1 -0x1.7014ee9a814fp-3 0x1.09dc30d24814cp-2 -0x1.b31720d189d9ap+0 0x1.175f54e2f4adep+1 | 0x1.46ddc8a9d9c5bp+10 0x1.9553cb9b51046p+10 0x1.7796b95510a8ep+10 0x1.accccbaa1f55p+10 0x1.bc69b4e05e09p+10 0x1.75bab83eedc32p+10",
+   "0x1.2ccd35f25d8c9p+28 -0x1.16bfef115a2e1p+30 | 0x1.34d2dda636477p+35 -0x1.e8c684d94e618p+35",
+   "NA NaN NaN NaN NaN NaN | NA 0x1.0000000000898p+1 0x1.000000000089dp+1 0x1.0000000000e06p+1 NaN 0x1.0000000000c05p+1",
+   "0x1.06256a1099fafp+3 0x1.ed67fcb869f1dp+2 0x1.7a80e25a89f16p+3 0x1.2feee5124a7f3p+2 0x1.2591bf23191a2p+3 | 0x1.1ac85be3983b4p+10 0x1.8a0ec156aa738p+10 0x1.9b611a5c15597p+10 0x1.9620bc9101d95p+10 0x1.4559cfd6442a5p+10",
+   "Inf | Inf",
+   "0x1.be2b46a0a77e6p+0 0x1.e3495abf902fap+2 0x1.26a67ac98286ap+1 0x1.4d4b7210c251fp+2 | 0x1.3334210c6ee86p+10 0x1.0841ae393c5a1p+10 0x1.2529324fb5894p+10 0x1.1d35111fafa49p+10",
+   "-0x1.2f6e2b0c2aa98p+9 NaN 0x1.6f35aa45eb6dfp+5 -0x1.5d06bd1c5f8e2p+19 -0x1.130140f4d7c21p+14 -0x1.44cffe5652a18p+7 | -0x1.1c5ce0a3c1bd2p+17 NaN 0x1.58225b0f827d7p+13 -0x1.4717f1cd6af4ep+27 -0x1.01b93e6e8000dp+22 -0x1.3066ba6145252p+15",
+   "0x1.4000000000baep+2 | 0x1.4000000000b7p+2",
+   "-0x1.d6d604d2ff34ap+2 -0x1.d6d604d2ff34ap+2 | 0x1.3ead70ceb5cb3p+10 0x1.3ead70ceb5cb3p+10",
+   "0x1.47b65741c6806p+21 0x1.c0f1a72f02cb8p+27 0x1.43469f6c381cbp+12 0x1.2bab512d120dep+25 | 0x1.9c946c1546382p+29 0x1.5744fc6493b02p+35 0x1.1cde84f40091dp+19 0x1.e01499239e0f6p+33",
+   "NaN NA 0x1.c9ba54d1c0715p+2 0x1.35bd6592e0aa6p+2 0x1.14bf81900aebcp+1 0x1.33986bc3ea98ap+2 | NaN NA NA NA NA NA",
+   "0x1.60f843a2e39cap+23 | 0x1.b7fff0b8a3f72p+29",
+   "0x1.c000000001148p+2 0x1.c000000000ccp+2 Inf 0x1.c000000001278p+2 0x1.c000000000ee2p+2 0x1.c000000000a3p+2 | 0x1.c0000000010c2p+2 0x1.c000000000c3ap+2 Inf 0x1.c0000000011f4p+2 0x1.c000000000e5bp+2 0x1.c0000000009aap+2",
+   "0x1.e7519abff9cf8p+3 0x1.05f0d04f66083p+4 0x1.560c859a216d7p+4 0x1.1f64ae4fb11bfp+4 | 0x1.ebee08555c34cp+9 0x1.32a120503814ep+10 0x1.111e8b61f5c3cp+10 0x1.f62e84b930837p+9",
+   "NaN -0x1.39b2cd0ef6d15p+25 NaN NaN | NaN 0x1.1072679cea383p+35 NaN NaN",
+   "-0x1.009fb5a732f1ep+3 -0x1.009fb5a732f1ep+3 -0x1.009fb5a732f1ep+3 -0x1.009fb5a732f1ep+3 -0x1.009fb5a732f1ep+3 -0x1.009fb5a732f1ep+3 | 0x1.5d99b921e356fp+9 0x1.5d99b921e356fp+9 0x1.5d99b921e356fp+9 0x1.5d99b921e356fp+9 0x1.5d99b921e356fp+9 0x1.5d99b921e356fp+9",
+   "-0x1.0583847930cacp+20 0x1.b15d119c69204p+23 -0x1.bf5bbb47a485ep+28 | -0x1.6a78f88d6144ap+34 0x1.74ced5fc84fe5p+32 -0x1.6104859d97222p+34",
+   "0x1.8000000001464p+1 0x1.8000000000691p+1 | 0x1.8000000001426p+1 0x1.8000000000653p+1",
+   "NA NA | NA NaN",
+   "0x1.f17ca77857907p+19 -0x1.baf83f10b66c8p+22 0x1.9700af289f62fp+7 -0x1.62cb2a9e39968p+21 0x1.3a35c9aed5cbp+23 | 0x1.e20315a0e1211p+24 0x1.2690c56726701p+32 0x1.31db6ab4aefa7p+12 0x1.46b8bd7de48acp+29 0x1.b3b5440263d43p+22",
+   "0x1.578451a2b4dedp+2 0x1.2a01057051874p+3 Inf 0x1.3a7a904d58152p+3 | 0x1.b1f8ed5f15d97p+10 0x1.a0a7b7249a83ap+10 Inf 0x1.be7619ce4e7acp+10",
+   "0x1.8e6532f8e1b2bp+20 -0x1.231ba74e70861p+22 0x1.d373c0f9bc6b1p+28 | 0x1.9664108e2da8cp+27 -0x1.ada0a58df820bp+29 0x1.dc7ac82a8e03p+35",
+   "0x1.4000000000a3ap+2 NaN NA 0x1.400000000099cp+2 0x1.4000000000942p+2 0x1.4000000000a2cp+2 | NaN NaN NA NaN NaN NaN",
+   "0x1.96de4f8bf15dcp+3 | 0x1.7499ab61b0028p+9",
+   "0x1.24689228ec726p+24 0x1.efed2f5588604p+29 0x1.59400529371d8p+28 0x1.3793a49f9239fp+20 0x1.0165be07a914fp+26 0x1.7080bccaca162p+29 | 0x1.954dedbc7a35p+27 0x1.4fe918044156ap+36 0x1.0730da0c1e27fp+35 0x1.db38915466a3dp+24 0x1.f07c5b4b8e804p+31 0x1.c7e0d2d599509p+34",
+   "0x1.52d46c6d4dc58p+3 | 0x1.274aaf0bd02f2p+10",
+   "NaN NA NA | NaN 0x1.1a3e97af4c9abp+33 NA",
+   "0x1.0000000000941p+2 0x1.0000000000ca1p+2 0x1.0000000000c76p+2 0x1.0000000000402p+2 | 0x1.0000000000915p+2 0x1.0000000000c75p+2 0x1.0000000000c4ap+2 0x1.00000000003d6p+2",
+   "-Inf 0x1.495e8590c4144p+3 0x1.c4aba1a81eec4p+3 0x1.0ee49241f6f59p+3 0x1.244a85606a2cep+2 | Inf 0x1.648d08d792304p+9 0x1.fcc978e3a2eb2p+8 0x1.b4cd27c2235c9p+9 0x1.b1ae00db320aep+8",
+   "0x1.5e356b2617f45p+11 -0x1.258dbb5acbc19p+18 | 0x1.1cb86d41c3019p+20 0x1.af2544fd95ba6p+26",
+   "0x1.66beb6d7a1c3ep+3 NaN 0x1.bdf8f98ed9468p+3 | 0x1.5f562706b85acp+10 NaN 0x1.44c3b0c45aea9p+10",
+   "0x1.a7cf435096879p+27 -0x1.1337552a59f3cp+17 0x1.2fa34dd7d2aa4p+21 0x1.4f6c102f23c4cp+28 0x1.734694759f6dep+21 | 0x1.74e6780819566p+33 0x1.ed1f38746bf68p+20 0x1.58e5b3141f423p+30 0x1.027885c9ccd4ep+36 0x1.60d5db6795a85p+24",
+   "0x1.4000000000e19p+2 0x1.4000000000be5p+2 | 0x1.4000000000dcep+2 0x1.4000000000b9ap+2",
+   "0x1.05b06a750102p+3 0x1.05b06a750102p+3 | 0x1.0f484b51e6c9p+11 0x1.0f484b51e6c9p+11",
+   "0x1.ac831751a4afep+23 0x1.c45a408501a79p+26 NaN 0x1.46c8aa8b63d4ap+31 0x1.1b1be542bcfb7p+15 NaN | NaN NaN NaN NaN NaN NaN",
+   "-0x1.521e96c3a9b84p-3 0x1.862c88182d9c6p+0 0x1.9abbb2859c288p+1 0x1.684b4565dcfa4p+2 0x1.ca403c7eeabd8p+1 | 0x1.66e949b685022p+10 0x1.b5f64c8d860a2p+10 0x1.997e9f17661e5p+10 0x1.3bb909dd68338p+10 0x1.c987e7a94c6f1p+10",
+   "Inf | -Inf",
+   "0x1.00000000005d4p+1 0x1.0000000000a64p+1 0x1.0000000000acp+1 0x1.000000000035p+1 0x1.0000000000098p+1 0x1.000000000037p+1 | 0x1.000000000058ep+1 0x1.0000000000a1ep+1 0x1.0000000000a7ap+1 0x1.000000000030ap+1 0x1.0000000000052p+1 0x1.0000000000329p+1",
+   "NA NaN | NA NaN",
+   " | ",
+   "0x1.b9e1f46cf86e4p+3 0x1.76c40d373faa6p+3 0x1.2d064a823b068p+4 0x1.a3631e8bdecc9p+3 0x1.1cc4152a46496p+4 0x1.e86c5c77298c5p+3 | 0x1.165996a9f3b67p+10 0x1.0acac4945043cp+10 0x1.384610f63c83bp+10 0x1.1b09ea12f2f59p+10 0x1.1c1249a47f2cep+10 0x1.301c1d0d571b3p+10",
+   "0x1.5cec236709393p+24 | 0x1.602bde967805ep+32",
+   "NaN | NaN",
+   "0x1.4f4b2f38cabbp+4 0x1.76eb2b0a53311p+3 | 0x1.d6c930dbb98a7p+10 0x1.f85236546f307p+10",
+   "0x1.1ded9cc6b0527p+20 0x1.256048ce660edp+28 0x1.f45bb7cf837e4p+23 0x1.6fd0f0b9079fbp+15 Inf | 0x1.32588bf115734p+30 0x1.9ba7e5ccda99ap+38 0x1.edc2a27e06275p+31 0x1.fcc88e3b60d1cp+19 Inf",
+   "0x1.3d96e29195de1p+2 0x1.3d96e29195de1p+2 0x1.3d96e29195de1p+2 0x1.3d96e29195de1p+2 0x1.3d96e29195de1p+2 | 0x1.204860dd74f4fp+10 0x1.204860dd74f4fp+10 0x1.204860dd74f4fp+10 0x1.204860dd74f4fp+10 0x1.204860dd74f4fp+10",
+   "NA | NA",
+   "0x1.c000000000d3dp+2 | 0x1.c000000000cb5p+2",
+   "-0x1.84e0063157e98p-1 0x1.cfadf9cb2cf18p+3 0x1.55aefb3f9c558p+3 | 0x1.5587fab8551f5p+10 0x1.4024c86cfe342p+11 0x1.1acc95a8c94b1p+11",
+   "-0x1.e2d3ec673dc36p-22 -0x1.9858c0cd46073p-11 -0x1.65839b25716bp-10 -0x1.477ad87277166p+1 -0x1.5387cc8715a8ep-17 -0x1.239269d6b86ecp-17 | 0x1.3bc3ba19e36e3p-13 0x1.0b0dfd1b18139p-2 0x1.d39f0ab84e0afp-2 0x1.ac564c16ed44p+9 0x1.bc195abf12ea1p-9 0x1.7d5ec7c665c52p-9",
+   "0x1.20a68314b02c3p+3 NaN 0x1.05e815a8de549p+3 0x1.8087f649ae944p+1 0x1.26e2630904dc2p+3 NA | 0x1.56c0ad0b64644p+10 NaN 0x1.d74ff3f196ac2p+9 0x1.f44691488f2a9p+10 0x1.6ce211039812ap+10 NA",
+   "-0x1.e3277aae9878bp+25 0x1.61ab61a6d7892p+9 -0x1.9b94874cf5c01p+24 | -0x1.93e9a71043eedp+33 0x1.849dfb3891ce1p+16 -0x1.7628af61d3e27p+32",
+   "-Inf 0x1.00000000009ddp+1 0x1.0000000000a02p+1 0x1.000000000055p+1 0x1.0000000000432p+1 | -Inf 0x1.000000000097p+1 0x1.0000000000996p+1 0x1.00000000004e2p+1 0x1.00000000003c6p+1",
+   "0x1.e9e0d5568ed9cp+3 | 0x1.a6c9f9730cbcep+10",
+   "0x1.6b7c28b0e5cddp+32 NaN 0x1.0926d8375f584p+27 NaN 0x1.088e20718c413p+23 | NaN NaN NaN NaN NaN",
+   "0x1.bad8df0272b9cp+4 0x1.bad8df0272b9cp+4 0x1.bad8df0272b9cp+4 0x1.bad8df0272b9cp+4 0x1.bad8df0272b9cp+4 0x1.bad8df0272b9cp+4 | 0x1.02560f5e3d00fp+11 0x1.02560f5e3d00fp+11 0x1.02560f5e3d00fp+11 0x1.02560f5e3d00fp+11 0x1.02560f5e3d00fp+11 0x1.02560f5e3d00fp+11",
+   "0x1.4a16477745318p+23 | -0x1.f1b11ca7dfa7p+30",
+   "0x1.8000000000b48p+1 0x1.800000000134ap+1 0x1.8000000000806p+1 | 0x1.8000000000b3p+1 0x1.8000000001333p+1 0x1.80000000007efp+1",
+   "NA 0x1.17376bc77faabp+3 0x1.0ca72d2601254p+1 0x1.e082e55eaadb7p+1 0x1.f786629e2415ep+2 0x1.e11f9a8420c2bp+1 | NA 0x1.0cdd5260e087dp+11 0x1.f3d5ff38a2e07p+10 0x1.089a59a1e9d22p+11 0x1.011f06070e99bp+11 0x1.e7f7f3297cffdp+10",
+   "0x1.49ce642d8246ep+16 0x1.92575027f91cap+16 -0x1.3f3ae99808ebap+24 -0x1.27e10c41a29bbp+24 -0x1.18ac9a307525ep+18 | 0x1.1143f7820513ap+23 0x1.634e940450b3bp+23 0x1.20ca44cf561adp+32 0x1.0baa65038b903p+32 0x1.69ecfe1b97bfap+23",
+   "0x1.5028f0dd30758p+4 | 0x1.0ff5bf401bb4ep+11",
+   "-0x1.30ed3ba288717p+28 0x1.6edf803924ea5p+27 -0x1.82d8a802a85dap+24 | 0x1.4f17451f20376p+35 -0x1.af29c3345ee07p+34 0x1.253f8f50d7a4p+35",
+   "NA NaN | NA NA",
+   "0x1.0079fb7959f57p+4 0x1.0a739fdc46dc8p+3 | 0x1.3186eb94194ebp+11 0x1.294c5a0328ca4p+11",
+   "0x1.ca324de66ab58p+26 0x1.91ebb8a4d5526p+28 0x1.9e444a6922641p+27 -0x1.b2ae56dfba063p+21 0x1.ffa3a883d2736p+16 -0x1.db9defdb8cf38p+24 | 0x1.ed472d4b8dedap+35 0x1.1b8bb393a6872p+32 0x1.94648364e4367p+37 0x1.3b6bc671864b7p+33 0x1.12a79a1671413p+21 0x1.54b442031635p+34",
+   "0x1.ee0ee13815beap+3 0x1.1129835d3638bp+3 | 0x1.604d304147791p+10 0x1.6513233675ce4p+10",
+   "NA NA | NA NA",
+   " | ",
+   "0x1.6ce8a41475636p+4 0x1.6ce8a41475636p+4 0x1.7a5ff52ef1bb9p+4 Inf 0x1.4482b0c5005afp+4 | 0x1.27a5e8852578ep+10 0x1.27a5e8852578ep+10 0x1.52e45b5f69239p+10 Inf 0x1.4bd51fecb4f1ep+9",
+   "-0x1.515990279443cp-4 -0x1.10ff550f43475p-8 | 0x1.5446d065f290dp+7 0x1.b3e4ff453e519p+1",
+   "0x1.e8d3330f655a4p+3 0x1.e8d3330f655a4p+3 0x1.e8d3330f655a4p+3 0x1.e8d3330f655a4p+3 0x1.e8d3330f655a4p+3 NA | 0x1.b756384554aaap+10 0x1.b756384554aaap+10 0x1.b756384554aaap+10 0x1.b756384554aaap+10 0x1.b756384554aaap+10 NA",
+   "0x1.158ffea9d6e42p+29 -0x1.38d43383291b7p+26 0x1.0cd8e72b63c86p+17 0x1.83717afd955e4p+28 0x1.98320699dedc6p+14 0x1.ffcb60518dca6p+27 | 0x1.218ba89dfa04ap+34 -0x1.465713f81403dp+31 0x1.01cb40a073p+22 0x1.94964d4f5d6eap+33 -0x1.81f37374aa658p+13 -0x1.4fee0c6a3f866p+34",
+   "0x1.4000000000766p+2 0x1.40000000008b4p+2 0x1.40000000006f1p+2 0x1.4000000000f74p+2 | 0x1.4000000000719p+2 0x1.4000000000867p+2 0x1.40000000006a3p+2 0x1.4000000000f27p+2",
+   "0x1.49d0703defd9ep+4 0x1.49d0703defd9ep+4 0x1.49d0703defd9ep+4 0x1.4eab696791dc2p+4 | 0x1.0fe2ccf07bc7dp+11 0x1.0fe2ccf07bc7dp+11 0x1.0fe2ccf07bc7dp+11 0x1.13ea0089aea17p+11",
+   "NaN -0x1.d7bfbdf0f736ap+21 | NaN 0x1.3ebe35ae61107p+31",
+   "-0x1.e7b3500a5025cp+2 -0x1.a7dee8459e592p+2 -0x1.0678046363a4p+3 -0x1.9e1824f03fb04p+2 -0x1.612d19e7549a8p+2 -0x1.a9f41d5c3e0e5p+2 | 0x1.218afd0563371p+10 0x1.490f85a2c204ep+10 0x1.5e03fd8845f99p+10 0x1.329f4b18634f4p+10 0x1.46b3a2bda214ep+10 0x1.36c61307eb61cp+10",
+   "0x1.bc0ea82e3d153p+26 Inf -0x1.45d6777001171p+10 0x1.9d1aaacb2118fp+22 -0x1.5ab89d00a4ebdp+25 | 0x1.7dda36856d0acp+34 Inf -0x1.3863bce171ab4p+17 0x1.61a9a4092e111p+30 -0x1.1982b1fdd1019p+32",
+   "0x1.8000000000bdfp+2 0x1.8000000000a22p+2 0x1.800000000094cp+2 | 0x1.8000000000b7cp+2 0x1.80000000009cp+2 0x1.80000000008eap+2",
+   "-0x1.0bbf8be5e362cp+2 NA -0x1.f99e37fd2df36p+2 | 0x1.876a0142b7849p+7 NA 0x1.236d13cd93e97p+7",
+   "0x1.4fcd9c4765af9p+31 0x1.4f052070e5c22p+17 0x1.be320a42ce702p+30 | 0x1.43501ecc194e3p+37 0x1.697a2a23b6c4dp+24 0x1.2b58af49c5244p+35",
+   "0x1.3039409426e9ep+3 0x1.4f197fe036f36p+3 0x1.437244a9c23d8p+3 0x1.bbc459411ee7bp+3 0x1.c8009891f2bd6p+3 | 0x1.29a44bf2d118p+10 0x1.176ac99f0e78p+10 0x1.02dec46e77768p+10 0x1.331331c0b4358p+10 0x1.40a4836ae6527p+9",
+   "-0x1.2745d06f753b1p+24 | -0x1.1a07943c12a89p+32",
+   "NA | NaN",
+   "0x1.f01b37bb5183dp+3 0x1.c6d0e09327164p+3 0x1.d02c91aa7c3f4p+3 0x1.dab68621c5438p+3 | 0x1.722875eac05p+9 0x1.2a053212536a1p+10 0x1.2bbfd3bc3b269p+9 0x1.c53d31d81f12ep+9",
+   "-Inf 0x1.7e8d2e7e7cad6p+11 | -Inf 0x1.314c9edfc210bp+18",
+   "0x1.6507b0542d56bp+4 0x1.eec3fc583001p+3 | 0x1.a0af02b7a0fa4p+10 0x1.ed8ce96a6cf39p+10",
+   "NA NaN NaN NaN NaN NaN | NA NaN -0x1.2ed9b0f23bf36p+18 -0x1.1c1400e2f86e7p+24 0x1.085f0a9bc53d4p+18 -0x1.a7a712d2c7d32p+17",
+   "0x1.000000000073ep+1 0x1.0000000000401p+1 | 0x1.0000000000726p+1 0x1.00000000003eap+1",
+   "0x1.23d99958377b1p+3 0x1.abfb652287c5dp+3 | 0x1.e4638d267adaap+10 0x1.0ec2e938750ffp+11",
+   "0x1.7eb1c13f9db95p+24 0x1.1641275a4be0ep+24 -0x1.6591eeedbf939p+15 0x1.950e9b0563516p+30 0x1.da6623610b202p+30 | 0x1.b8e5acb156115p+32 0x1.ad7c7576eb5bdp+29 0x1.69502c7ba38b8p+23 0x1.37fdbb3cd0cefp+36 0x1.23ac8e5134618p+36",
+   "0x1.0344474babc6bp+2 NA NaN 0x1.f6bb12de895e6p+1 0x1.2c037ad6cf21ep+2 | 0x1.d0c7ffd38ea92p+10 NA NaN 0x1.fe8ba2a9aaebp+10 0x1.eafc51a8d781ep+10",
+   "0x1.540b1eae53d3dp+29 -0x1.270043f49a116p+23 | 0x1.8b5adeb2d3062p+34 0x1.89546208d7384p+30",
+   "Inf 0x1.00000000009ap+1 0x1.0000000000ac9p+1 0x1.0000000000d2ap+1 0x1.0000000000476p+1 0x1.0000000000dbap+1 | Inf 0x1.0000000000968p+1 0x1.0000000000a92p+1 0x1.0000000000cf3p+1 0x1.000000000043fp+1 0x1.0000000000d82p+1",
+   "0x1.3fd5ca57dcfc2p+3 0x1.9b17239a882c8p+2 0x1.24100e1904aa8p+3 -0x1.1e76ba1056b4cp-1 | 0x1.ceb227221ed4cp+10 0x1.08c8726d506bp+11 0x1.64aa0c14774a9p+10 0x1.0e573a3197d7cp+11",
+   "NA | NA",
+   "0x1.81afaf21bbd0fp+3 | 0x1.4895324a6d54bp+11",
+   "0x1.4f8f5b5e63873p+24 -0x1.fafb002dcce6ep+11 | 0x1.fc5cab9148529p+34 -0x1.80077358414c6p+22",
+   "0x1.0000000000cdcp+0 0x1.00000000007e4p+0 0x1.0000000000796p+0 0x1.00000000003d1p+0 0x1.0000000000f96p+0 | 0x1.0000000000cd9p+0 0x1.00000000007e1p+0 0x1.0000000000793p+0 0x1.00000000003cep+0 0x1.0000000000f93p+0",
+   "NaN | NaN",
+   "0x1.4711f07403054p+26 0x1.14b07045678cap+27 | 0x1.3e071c5271613p+33 0x1.c72f20515e9c7p+31",
+   "0x1.17ac410b8da55p+3 Inf 0x1.7f42932eaa57p+4 0x1.92b1a3d6a0babp+4 0x1.4c8d7780e1bf1p+4 0x1.270769b12ece4p+4 | 0x1.817c2bde1048ap+10 Inf 0x1.c83517b12f301p+10 0x1.ddfa2f56a5cedp+10 0x1.b619d0dab675cp+10 0x1.9eee39ee26995p+10",
+   "0x1.36871ca03864ep+27 0x1.63717e02f115cp+25 0x1.a330b2922d7f8p-2 | 0x1.a41fbc646440fp+33 0x1.c4ac4cc2cd27ep+31 0x1.803ae688898p-3",
+   "0x1.8000000000d46p+2 0x1.8000000000d81p+2 NA | NA NA NA",
+   "0x1.4e9ddd3c2a59p+3 0x1.8fc623f474f5p+3 0x1.b23a23a565a24p+3 | 0x1.779f97f16cfep+10 0x1.8945b9b2e9a5dp+10 0x1.8eaef140a7f0ap+10",
+   "-0x1.b929bec6ef135p+16 0x1.219c2f6f818acp+23 -0x1.ae7cccd1393dfp+24 0x1.505716f6f07bcp+22 0x1.043e17dc4d0d8p+15 0x1.5dc146a7b016ap+1 | 0x1.a904351e8e2a1p+24 0x1.1e6ee9237d41dp+29 0x1.5aa0c444f7724p+33 0x1.ee542cb8d180bp+28 0x1.d999c20fa578ap+21 0x1.87ad4503aeaacp+9",
+   "0x1.2acfa6252c02cp+3 0x1.aed8485035d8cp+3 0x1.423d417ddba8p+3 | 0x1.b8077256f77dp+10 0x1.7a74b2fb1d72ap+10 0x1.9fe0ebd0465b2p+10",
+   "0x1.95bd4d363ae46p+26 NA 0x1.56861efa96d5fp+28 0x1.b3fc8ede609b5p+27 | -0x1.c603a86d3f82fp+30 NA 0x1.023190c779831p+35 0x1.5c4833947882fp+36",
+   "0x1.8000000000b49p+2 0x1.8000000000ba7p+2 | 0x1.8000000000afcp+2 0x1.8000000000b5ap+2",
+   "0x1.632a91245b807p+4 0x1.632a91245b807p+4 0x1.da7dded06de3p+3 Inf 0x1.da7dded06de3p+3 | 0x1.54fdee80d470ap+11 0x1.54fdee80d470ap+11 0x1.4ad92778e89c7p+11 Inf 0x1.4ad92778e89c7p+11",
+   "0x1.a21560d86e26ap+31 | 0x1.73a34f15438c4p+39",
+   "0x1.aa525bd0d16ep+3 NA NA | NaN NaN NA",
+   "-0x1.26990fc1653e8p+23 0x1.8982de91c8e43p+27 0x1.3f3d5f27569d4p+24 0x1.36db54b1441bep+25 | -0x1.a86b84cae7f31p+27 0x1.aaca45188d818p+35 -0x1.9a5b77d786bfap+30 0x1.e322258bc21bdp+35",
+   "0x1.0000000000944p+2 0x1.0000000000b0fp+2 0x1.00000000007bp+2 0x1.0000000000872p+2 | 0x1.00000000008fep+2 0x1.0000000000acap+2 0x1.000000000076bp+2 0x1.000000000082dp+2",
+   "0x1.010f25305bfd3p+4 0x1.010f25305bfd3p+4 | 0x1.58f8c5353f823p+9 0x1.58f8c5353f823p+9",
+   "NA NA | NA 0x1.38f653ff91b26p+12",
+   "0x1.8753fd165083ap+3 | 0x1.352e028651c64p+10",
+   "Inf -0x1.572c7de094988p+26 | Inf -0x1.c5b09aff0f68ap+36",
+   "0x1.00000000009d7p+1 0x1.0000000000a3bp+1 0x1.0000000000563p+1 | 0x1.000000000096p+1 0x1.00000000009c4p+1 0x1.00000000004ecp+1",
+   "NA | NA",
+   "-0x1.565be0b7cc41fp+22 | 0x1.90a5c49e7b12fp+28",
+   "0x1.4982b0f92df84p+3 0x1.571e1fcbc035ap+3 0x1.135d06dfec623p+3 0x1.9aab3681f4058p+3 0x1.612c5cef5e0f6p+3 | 0x1.a31e488365912p+9 0x1.52158be458136p+10 0x1.c7bfdcd249c7p+9 0x1.82d1ae7b2df52p+9 0x1.e8e670b912182p+9",
+   "0x1.3df52757ab77dp-1 0x1.cda59bfaedaaap+5 0x1.c2b0e6d73c722p+21 | 0x1.9714b9f8bdc17p+6 0x1.2785ebdbf0ad2p+13 0x1.20827d1648c64p+29",
+   "NA 0x1.0000000000e59p+2 0x1.000000000059ap+2 0x1.0000000000485p+2 NaN 0x1.000000000087ap+2 | NA 0x1.0000000000e2cp+2 0x1.000000000056dp+2 0x1.0000000000458p+2 NaN 0x1.000000000084dp+2",
+   "0x1.419ef63af6f1ap+4 | 0x1.41f082196cc43p+10",
+   "0x1.d4fc125a6fc8ap+21 0x1.9fd86b3925cf1p+18 0x1.18e974becc4d8p+24 0x1.60de46fc3ffccp+27 0x1.367734295969dp+12 Inf | 0x1.b6e75feef32d1p+27 0x1.0a4e0a50e5279p+25 0x1.68a0959cec65ap+30 0x1.c501cd8567788p+33 0x1.596910e2ac432p+19 Inf",
+   "0x1.f72aa77197c65p+3 | 0x1.d8e7c52394311p+9",
+   "NaN NaN | NaN 0x1.02e78b973ed73p+30",
+   "0x1.800000000113ep+1 0x1.800000000134ep+1 0x1.80000000008dcp+1 0x1.8000000000d1ap+1 | 0x1.80000000010c4p+1 0x1.80000000012d2p+1 0x1.8000000000862p+1 0x1.8000000000cap+1",
+   "0x1.1747d35dd06c8p+4 0x1.453d7f873110ap+3 0x1.92f4ede28089fp+3 | 0x1.cdd3da4a681d8p+10 0x1.7a2688964742cp+10 0x1.9e5d6eaaa6abdp+10",
+   "-0x1.92b10f15001efp+23 -0x1.e1d2213bba7dcp+12 | 0x1.8f2ce79fa2b98p+32 0x1.087dfe4ccad27p+22",
+   "NA | NA",
+   "-0x1.043250cd5c72cp+23 -0x1.db8e9e0761dbep+15 | -0x1.f8abbae27c44ep+31 -0x1.d32d99333b0bbp+22",
+   "0x1.0000000000834p+0 Inf 0x1.000000000048cp+0 0x1.000000000101ap+0 0x1.0000000000e54p+0 | 0x1.00000000007f9p+0 Inf 0x1.0000000000451p+0 0x1.0000000000fdfp+0 0x1.0000000000e19p+0",
+   "0x1.59fb22efc2ecdp+4 0x1.241ef8a781628p+3 0x1.c3fa66f15ffabp+3 | 0x1.8fa1367cad564p+9 0x1.5a01662d95c2ep+9 0x1.d19ee43fcbd3ep+9",
+   "NA 0x1.94ecd953af945p+16 0x1.5e09b5d1dccd2p+7 -0x1.02c5c9cc2f44bp+16 NA 0x1.6ad5301e7dc95p+26 | NA 0x1.bcedd458f9b8bp+23 0x1.d7e1b1f012b72p+12 0x1.f57248bc928c7p+22 NA 0x1.e0fed5410ceffp+31",
+   "0x1.040f5118dd4f3p-1 | 0x1.95d177c9f6396p+9",
+   "0x1.601380fb6eadap+0 0x1.08fa9f4c29a4ep+24 0x1.3ced161ee43f1p+10 0x1.227edc1e74c08p+15 -0x1.9babf0967e332p+8 | 0x1.4e75d3e2d2986p+9 0x1.bf72e32c32979p+31 -0x1.97b66224c4218p+19 0x1.08384f15bb1dbp+23 -0x1.8b2cdff366f4p+10",
+   "0x1.0000000000889p+0 0x1.000000000093bp+0 0x1.0000000000d87p+0 | 0x1.0000000000822p+0 0x1.00000000008d4p+0 0x1.0000000000d2p+0",
+   "NaN NaN NA | 0x1.3edf92adb6aa5p+11 NaN NA",
+   "0x1.86ee40b88aa39p+26 -0x1.5e465432f6654p+27 0x1.8b5afdbbf9bf2p+22 0x1.563fd8b1d294ep+18 0x1.324a546eb38ep+21 0x1.cc9c6a19f37f6p+13 | 0x1.5988e5a63526ap+33 0x1.6c0eeb21cd038p+36 0x1.52df2539b56e4p+29 0x1.255a725a1b50cp+25 0x1.18f39a2c8f906p+28 0x1.8acde586e7b0cp+20",
+   "-Inf 0x1.b4316369fd1d3p+2 | Inf 0x1.2226c0a233944p+11",
+   "0x1.866ce7fa6a0bp+16 -0x1.6f70e7e73b8cdp+18 0x1.e7e88d03c6c2bp+26 | -0x1.254a87ec3f6bdp+24 0x1.14bc96dfba0abp+26 -0x1.6cac63ee9cbfap+34",
+   "NA NaN 0x1.80000000012bep+1 0x1.8000000000fb4p+1 | NA NaN 0x1.8000000001259p+1 0x1.8000000000f4ep+1",
+   "0x1.9f6d583b1e22p-1 | 0x1.036f55d21bde8p+4",
+   " | "
+  ]
+ },
+ "chains": {
+  "kinneret_shape_multiple": {
+   "branch_module": "1964+1966",
+   "predictant_read": "predictant_pann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.79ca10c924224p-67",
+    "R": "0x1.79ca10c924224p-67",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.046bb472228fdp-2",
+    "R": "0x1.046bb472228fdp-2",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  },
+  "tann_true_multiple": {
+   "branch_module": "1964+1966",
+   "predictant_read": "predictant_tann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.3dcb08d3dcb08p-3",
+    "R": "0x1.3dcb08d3dcb08p-3",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.12d91c64347dbp-10",
+    "R": "0x1.12d91c64347dbp-10",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  },
+  "na_row_removed_by_cor": {
+   "branch_module": "1964+1966",
+   "predictant_read": "predictant_pann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.52bf94d75ff77p-2",
+    "R": "0x1.52bf94d75ff77p-2",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.2a9058d433d12p-2",
+    "R": "0x1.2a9058d433d12p-2",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  },
+  "nan_row_in_negative_correlation": {
+   "branch_module": "1964+1966",
+   "predictant_read": "predictant_pann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.79ca10c924224p-67",
+    "R": "0x1.79ca10c924224p-67",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.0000000000000p+0",
+    "R": "0x1p+0",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  },
+  "single_iso_1993": {
+   "branch_module": "1993",
+   "predictant_read": "predictant_pann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.0000000000000p-1",
+    "R": "0x1p-1",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.a9e153c2a7853p-2",
+    "R": "0x1.a9e153c2a7853p-2",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  },
+  "single_pollen_1999": {
+   "branch_module": "1999",
+   "predictant_read": "predictant_pann",
+   "R_stop": null,
+   "post_pollen": {
+    "module": "0x1.79ca10c924224p-67",
+    "R": "0x1.79ca10c924224p-67",
+    "ulps": 0
+   },
+   "post_iso": {
+    "module": "0x1.0000000000000p-1",
+    "R": "0x1p-1",
+    "ulps": 0
+   },
+   "post_iso_hi": {
+    "module": "0x1.e666666666666p-1",
+    "R": "0x1.e666666666666p-1",
+    "ulps": 0
+   }
+  }
+ },
+ "historical_reproduction_ready": false
+}

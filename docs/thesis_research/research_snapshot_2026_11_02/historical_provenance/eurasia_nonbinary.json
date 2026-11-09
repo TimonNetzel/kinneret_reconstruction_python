@@ -1,0 +1,29 @@
+{
+  "relative_path": "my_ohrid/data/in/climate_data/taxa_old_new_mediterr_eurasia.nc",
+  "sha256": "c6f81a13970b94235062b4f54e92ba9bd9d51eb2d7e4b57439206a4a510dc29d",
+  "name_container_sha256": "c647219f7a81962ab56619205ea4309e91c9c3aacf86b618d405b8d6a4352e85",
+  "value_counts": {
+    "-1.0": 5037175,
+    "0.0": 6711736,
+    "1.0": 962137,
+    "2.0": 2
+  },
+  "nonbinary_points": [
+    {
+      "position_R": 152,
+      "name": "Pinus brutia",
+      "lon": 43.75,
+      "lat": 36.75,
+      "source_value": 2.0
+    },
+    {
+      "position_R": 152,
+      "name": "Pinus brutia",
+      "lon": 43.25,
+      "lat": 37.25,
+      "source_value": 2.0
+    }
+  ],
+  "documented_insertion_rule": "which(taxa.dist[...] == 1); values equal to 2 are not inserted",
+  "no_threshold_correction_applied": true
+}

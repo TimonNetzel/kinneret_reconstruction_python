@@ -1,0 +1,64 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false,
+ "hand_ulps": {
+  "uniform_even": 0,
+  "uniform_odd_rounding_tie": 0,
+  "skewed": 0,
+  "unsorted_pairs": 0,
+  "dropped_nonpositive": 0,
+  "only_one_positive": 0,
+  "na_x_at_zero_weight_is_dropped": 0,
+  "first_sorted_value": 0,
+  "one_inf": 0,
+  "two_inf": 0,
+  "inf_odd_is_not_the_median": 0,
+  "inf_order_na_after": 0,
+  "minus_inf_counts_as_infinite": 0
+ },
+ "maximum_hand_ulps": 0,
+ "naive_counterexamples": {
+  "ties_trace_stable_sort": {
+   "module": 1.2857142857142856,
+   "stable_sort": 1.4
+  },
+  "inf_odd_true_median": {
+   "module": 1.0,
+   "true_median": 2.0
+  },
+  "expectation_line_1623_is_overwritten": {
+   "expectation": 3.75,
+   "weighted_median": 4.0
+  }
+ },
+ "masks_on_tf_case": {
+  "sum_is_zero_only": [
+   2
+  ],
+  "treat_na_as_zero_weight": [
+   2,
+   5
+  ],
+  "x1_or_x2": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "source_1664": [
+   2,
+   3,
+   5
+  ]
+ },
+ "masks_differ_from_source": {
+  "sum_is_zero_only": true,
+  "treat_na_as_zero_weight": true,
+  "x1_or_x2": true
+ },
+ "undefined_cases": {
+  "overflow_total_weight": "rejected: the cumulative weight never reached 1/2 (total weight overflow or rounding): the C code reads outside its arrays, undefined and not emulated"
+ }
+}

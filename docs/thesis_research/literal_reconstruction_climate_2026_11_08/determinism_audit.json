@@ -1,0 +1,33 @@
+{
+  "kind": "determinism_audit_from_source_text_and_R_cross_check",
+  "question": "Is reconstruction_climate deterministic, and does the bound run execute it?",
+  "candidates": [
+    {
+      "id": "reconstruction_climate",
+      "lines": "mcmc_functions_v1.6.R:1188-1199",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "package_semantics_bound": "matrixStats::weightedMedian within 2018-04-23..2023-07-07",
+      "reached_by_bound_run": false,
+      "decision": "implemented as tools/historical_reconstruction_climate.py on user request; dormant"
+    },
+    {
+      "id": "bound_recent_climate",
+      "lines": "mcmc_functions_v1.6.R:1812-1820,1850-1851",
+      "random_state": true,
+      "evidence": "post_tann = predictant_tann[1], reconst from rtruncnorm_cpp draws of tf_sample",
+      "decision": "documented only"
+    },
+    {
+      "id": "candidate_loop_1394_1417",
+      "lines": "mcmc_prepare.R:1380,1394-1417",
+      "random_state": true,
+      "evidence": "guarded by recent & !add.sites; add.sites <- T in main_v1.2.R:73; uses sample()",
+      "reached_by_bound_run": false,
+      "decision": "documented only"
+    }
+  ],
+  "selected_for_implementation": "reconstruction_climate",
+  "final_variant_selected": false,
+  "R_execution_for_binding": false
+}

@@ -1,0 +1,3079 @@
+{
+  "pdf": "<ORIGINAL_DATA_ROOT>\\out\\plots\\trafo\\2D\\all_trafos_emd.pdf",
+  "sha256": "e19b69a8574818e83c66f6c91c2e61d196cd39d2a28ad4074c2ac186eceb454c",
+  "page_count": 278,
+  "metadata": {},
+  "pages": [
+    {
+      "page": 1,
+      "title": "Groenlandia densa",
+      "green_point_glyph_count": 268,
+      "same_title_snapshot_positions": [
+        100,
+        101
+      ],
+      "same_title_and_presence_count_positions": [
+        100
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Groenlandia densa",
+      "green_point_glyph_count": 430,
+      "same_title_snapshot_positions": [
+        100,
+        101
+      ],
+      "same_title_and_presence_count_positions": [
+        101
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Hedera helix",
+      "green_point_glyph_count": 1933,
+      "same_title_snapshot_positions": [
+        102
+      ],
+      "same_title_and_presence_count_positions": [
+        102
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Hippophae rhamnoides",
+      "green_point_glyph_count": 945,
+      "same_title_snapshot_positions": [
+        103
+      ],
+      "same_title_and_presence_count_positions": [
+        103
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Hippuris vulgaris",
+      "green_point_glyph_count": 13948,
+      "same_title_snapshot_positions": [
+        104
+      ],
+      "same_title_and_presence_count_positions": [
+        104
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Huperzia selago",
+      "green_point_glyph_count": 7941,
+      "same_title_snapshot_positions": [
+        105
+      ],
+      "same_title_and_presence_count_positions": [
+        105
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Hydrocharis morsus-ranae",
+      "green_point_glyph_count": 4509,
+      "same_title_snapshot_positions": [
+        106
+      ],
+      "same_title_and_presence_count_positions": [
+        106
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Hypochoeris radicata",
+      "green_point_glyph_count": 2420,
+      "same_title_snapshot_positions": [
+        107
+      ],
+      "same_title_and_presence_count_positions": [
+        107
+      ]
+    },
+    {
+      "page": 9,
+      "title": "Ilex aquifolium",
+      "green_point_glyph_count": 793,
+      "same_title_snapshot_positions": [
+        108
+      ],
+      "same_title_and_presence_count_positions": [
+        108
+      ]
+    },
+    {
+      "page": 10,
+      "title": "Iris pseudacorus",
+      "green_point_glyph_count": 3949,
+      "same_title_snapshot_positions": [
+        109
+      ],
+      "same_title_and_presence_count_positions": [
+        109
+      ]
+    },
+    {
+      "page": 11,
+      "title": "Acer",
+      "green_point_glyph_count": 3460,
+      "same_title_snapshot_positions": [
+        10
+      ],
+      "same_title_and_presence_count_positions": [
+        10
+      ]
+    },
+    {
+      "page": 12,
+      "title": "Juglans sp.",
+      "green_point_glyph_count": 2926,
+      "same_title_snapshot_positions": [
+        110
+      ],
+      "same_title_and_presence_count_positions": [
+        110
+      ]
+    },
+    {
+      "page": 13,
+      "title": "Juniperus communis",
+      "green_point_glyph_count": 13002,
+      "same_title_snapshot_positions": [
+        111
+      ],
+      "same_title_and_presence_count_positions": [
+        111
+      ]
+    },
+    {
+      "page": 14,
+      "title": "Juniperus oxycedrus",
+      "green_point_glyph_count": 814,
+      "same_title_snapshot_positions": [
+        112
+      ],
+      "same_title_and_presence_count_positions": [
+        112
+      ]
+    },
+    {
+      "page": 15,
+      "title": "Juniperus phoenicea",
+      "green_point_glyph_count": 355,
+      "same_title_snapshot_positions": [
+        113
+      ],
+      "same_title_and_presence_count_positions": [
+        113
+      ]
+    },
+    {
+      "page": 16,
+      "title": "Juniperus thurifera L",
+      "green_point_glyph_count": 45,
+      "same_title_snapshot_positions": [
+        114
+      ],
+      "same_title_and_presence_count_positions": [
+        114
+      ]
+    },
+    {
+      "page": 17,
+      "title": "Koenigia islandica",
+      "green_point_glyph_count": 149,
+      "same_title_snapshot_positions": [
+        115
+      ],
+      "same_title_and_presence_count_positions": [
+        115
+      ]
+    },
+    {
+      "page": 18,
+      "title": "Larix",
+      "green_point_glyph_count": 3650,
+      "same_title_snapshot_positions": [
+        116
+      ],
+      "same_title_and_presence_count_positions": [
+        116
+      ]
+    },
+    {
+      "page": 19,
+      "title": "Larix decidua",
+      "green_point_glyph_count": 94,
+      "same_title_snapshot_positions": [
+        117
+      ],
+      "same_title_and_presence_count_positions": [
+        117
+      ]
+    },
+    {
+      "page": 20,
+      "title": "Larix sibirica",
+      "green_point_glyph_count": 3556,
+      "same_title_snapshot_positions": [
+        118
+      ],
+      "same_title_and_presence_count_positions": [
+        118
+      ]
+    },
+    {
+      "page": 21,
+      "title": "Lemna gibba",
+      "green_point_glyph_count": 1402,
+      "same_title_snapshot_positions": [
+        119
+      ],
+      "same_title_and_presence_count_positions": [
+        119
+      ]
+    },
+    {
+      "page": 22,
+      "title": "Acer campestre",
+      "green_point_glyph_count": 1629,
+      "same_title_snapshot_positions": [
+        11
+      ],
+      "same_title_and_presence_count_positions": [
+        11
+      ]
+    },
+    {
+      "page": 23,
+      "title": "Lemna trisulca",
+      "green_point_glyph_count": 4306,
+      "same_title_snapshot_positions": [
+        120
+      ],
+      "same_title_and_presence_count_positions": [
+        120
+      ]
+    },
+    {
+      "page": 24,
+      "title": "Ligustrum vulgare",
+      "green_point_glyph_count": 1225,
+      "same_title_snapshot_positions": [
+        121
+      ],
+      "same_title_and_presence_count_positions": [
+        121
+      ]
+    },
+    {
+      "page": 25,
+      "title": "Linum perenne",
+      "green_point_glyph_count": 1425,
+      "same_title_snapshot_positions": [
+        122
+      ],
+      "same_title_and_presence_count_positions": [
+        122
+      ]
+    },
+    {
+      "page": 26,
+      "title": "Liquidambar orientalis",
+      "green_point_glyph_count": 17,
+      "same_title_snapshot_positions": [
+        123
+      ],
+      "same_title_and_presence_count_positions": [
+        123
+      ]
+    },
+    {
+      "page": 27,
+      "title": "Loranthus europaeus",
+      "green_point_glyph_count": 292,
+      "same_title_snapshot_positions": [
+        124
+      ],
+      "same_title_and_presence_count_positions": [
+        124
+      ]
+    },
+    {
+      "page": 28,
+      "title": "Luzula campestris",
+      "green_point_glyph_count": 2797,
+      "same_title_snapshot_positions": [
+        125
+      ],
+      "same_title_and_presence_count_positions": [
+        125
+      ]
+    },
+    {
+      "page": 29,
+      "title": "Luzula pallescens",
+      "green_point_glyph_count": 2764,
+      "same_title_snapshot_positions": [
+        126
+      ],
+      "same_title_and_presence_count_positions": [
+        126
+      ]
+    },
+    {
+      "page": 30,
+      "title": "Lychnis flos-cuculi",
+      "green_point_glyph_count": 4810,
+      "same_title_snapshot_positions": [
+        127
+      ],
+      "same_title_and_presence_count_positions": [
+        127
+      ]
+    },
+    {
+      "page": 31,
+      "title": "Lycopus europaeus",
+      "green_point_glyph_count": 6205,
+      "same_title_snapshot_positions": [
+        128
+      ],
+      "same_title_and_presence_count_positions": [
+        128
+      ]
+    },
+    {
+      "page": 32,
+      "title": "Menyanthes trifoliata",
+      "green_point_glyph_count": 12695,
+      "same_title_snapshot_positions": [
+        129
+      ],
+      "same_title_and_presence_count_positions": [
+        129
+      ]
+    },
+    {
+      "page": 33,
+      "title": "Acer monspessulanum",
+      "green_point_glyph_count": 499,
+      "same_title_snapshot_positions": [
+        12
+      ],
+      "same_title_and_presence_count_positions": [
+        12
+      ]
+    },
+    {
+      "page": 34,
+      "title": "Moehringia trinervia",
+      "green_point_glyph_count": 4262,
+      "same_title_snapshot_positions": [
+        130
+      ],
+      "same_title_and_presence_count_positions": [
+        130
+      ]
+    },
+    {
+      "page": 35,
+      "title": "Myrica gale",
+      "green_point_glyph_count": 975,
+      "same_title_snapshot_positions": [
+        131
+      ],
+      "same_title_and_presence_count_positions": [
+        131
+      ]
+    },
+    {
+      "page": 36,
+      "title": "Myriophyllum alterniflorum",
+      "green_point_glyph_count": 1576,
+      "same_title_snapshot_positions": [
+        132
+      ],
+      "same_title_and_presence_count_positions": [
+        132
+      ]
+    },
+    {
+      "page": 37,
+      "title": "Myriophyllum verticillatum",
+      "green_point_glyph_count": 5696,
+      "same_title_snapshot_positions": [
+        133
+      ],
+      "same_title_and_presence_count_positions": [
+        133
+      ]
+    },
+    {
+      "page": 38,
+      "title": "Myriopyhyllum spicatum",
+      "green_point_glyph_count": 9589,
+      "same_title_snapshot_positions": [
+        134
+      ],
+      "same_title_and_presence_count_positions": [
+        134
+      ]
+    },
+    {
+      "page": 39,
+      "title": "Najas marina",
+      "green_point_glyph_count": 320,
+      "same_title_snapshot_positions": [
+        135
+      ],
+      "same_title_and_presence_count_positions": [
+        135
+      ]
+    },
+    {
+      "page": 40,
+      "title": "Najas minor",
+      "green_point_glyph_count": 1154,
+      "same_title_snapshot_positions": [
+        136
+      ],
+      "same_title_and_presence_count_positions": [
+        136
+      ]
+    },
+    {
+      "page": 41,
+      "title": "Nuphar lutea",
+      "green_point_glyph_count": 6315,
+      "same_title_snapshot_positions": [
+        137
+      ],
+      "same_title_and_presence_count_positions": [
+        137
+      ]
+    },
+    {
+      "page": 42,
+      "title": "Nymphaea",
+      "green_point_glyph_count": 5834,
+      "same_title_snapshot_positions": [
+        138
+      ],
+      "same_title_and_presence_count_positions": [
+        138
+      ]
+    },
+    {
+      "page": 43,
+      "title": "Nymphaea alba",
+      "green_point_glyph_count": 2794,
+      "same_title_snapshot_positions": [
+        139
+      ],
+      "same_title_and_presence_count_positions": [
+        139
+      ]
+    },
+    {
+      "page": 44,
+      "title": "Acer platanoides",
+      "green_point_glyph_count": 2423,
+      "same_title_snapshot_positions": [
+        13
+      ],
+      "same_title_and_presence_count_positions": [
+        13
+      ]
+    },
+    {
+      "page": 45,
+      "title": "Nymphaea candida",
+      "green_point_glyph_count": 4146,
+      "same_title_snapshot_positions": [
+        140
+      ],
+      "same_title_and_presence_count_positions": [
+        140
+      ]
+    },
+    {
+      "page": 46,
+      "title": "Olea europaea",
+      "green_point_glyph_count": 967,
+      "same_title_snapshot_positions": [
+        141
+      ],
+      "same_title_and_presence_count_positions": [
+        141
+      ]
+    },
+    {
+      "page": 47,
+      "title": "Olea Europaea",
+      "green_point_glyph_count": 9,
+      "same_title_snapshot_positions": [
+        142
+      ],
+      "same_title_and_presence_count_positions": [
+        142
+      ]
+    },
+    {
+      "page": 48,
+      "title": "Osmunda regalis",
+      "green_point_glyph_count": 2283,
+      "same_title_snapshot_positions": [
+        143
+      ],
+      "same_title_and_presence_count_positions": [
+        143
+      ]
+    },
+    {
+      "page": 49,
+      "title": "Ostrya carpinifolia",
+      "green_point_glyph_count": 311,
+      "same_title_snapshot_positions": [
+        144
+      ],
+      "same_title_and_presence_count_positions": [
+        144
+      ]
+    },
+    {
+      "page": 50,
+      "title": "Oxycarpus micrococcus",
+      "green_point_glyph_count": 8317,
+      "same_title_snapshot_positions": [
+        145
+      ],
+      "same_title_and_presence_count_positions": [
+        145
+      ]
+    },
+    {
+      "page": 51,
+      "title": "Phillyrea",
+      "green_point_glyph_count": 544,
+      "same_title_snapshot_positions": [
+        146
+      ],
+      "same_title_and_presence_count_positions": [
+        146
+      ]
+    },
+    {
+      "page": 52,
+      "title": "Phillyrea angustifolia",
+      "green_point_glyph_count": 363,
+      "same_title_snapshot_positions": [
+        147
+      ],
+      "same_title_and_presence_count_positions": [
+        147
+      ]
+    },
+    {
+      "page": 53,
+      "title": "Phillyrea latifolia",
+      "green_point_glyph_count": 434,
+      "same_title_snapshot_positions": [
+        148
+      ],
+      "same_title_and_presence_count_positions": [
+        148
+      ]
+    },
+    {
+      "page": 54,
+      "title": "Phillyrea Latifolia",
+      "green_point_glyph_count": 6,
+      "same_title_snapshot_positions": [
+        149
+      ],
+      "same_title_and_presence_count_positions": [
+        149
+      ]
+    },
+    {
+      "page": 55,
+      "title": "Acer pseudoplatanus",
+      "green_point_glyph_count": 838,
+      "same_title_snapshot_positions": [
+        14
+      ],
+      "same_title_and_presence_count_positions": [
+        14
+      ]
+    },
+    {
+      "page": 56,
+      "title": "Picea abies",
+      "green_point_glyph_count": 2365,
+      "same_title_snapshot_positions": [
+        150
+      ],
+      "same_title_and_presence_count_positions": [
+        150
+      ]
+    },
+    {
+      "page": 57,
+      "title": "Pinus brutia",
+      "green_point_glyph_count": 62,
+      "same_title_snapshot_positions": [
+        152
+      ],
+      "same_title_and_presence_count_positions": [
+        152
+      ]
+    },
+    {
+      "page": 58,
+      "title": "Pinus cembra",
+      "green_point_glyph_count": 3789,
+      "same_title_snapshot_positions": [
+        153
+      ],
+      "same_title_and_presence_count_positions": [
+        153
+      ]
+    },
+    {
+      "page": 59,
+      "title": "Pinus halepensis",
+      "green_point_glyph_count": 105,
+      "same_title_snapshot_positions": [
+        154
+      ],
+      "same_title_and_presence_count_positions": [
+        154
+      ]
+    },
+    {
+      "page": 60,
+      "title": "Pinus mugo",
+      "green_point_glyph_count": 141,
+      "same_title_snapshot_positions": [
+        155
+      ],
+      "same_title_and_presence_count_positions": [
+        155
+      ]
+    },
+    {
+      "page": 61,
+      "title": "Pinus nigra",
+      "green_point_glyph_count": 253,
+      "same_title_snapshot_positions": [
+        156
+      ],
+      "same_title_and_presence_count_positions": [
+        156
+      ]
+    },
+    {
+      "page": 62,
+      "title": "Pinus pinaster",
+      "green_point_glyph_count": 107,
+      "same_title_snapshot_positions": [
+        157
+      ],
+      "same_title_and_presence_count_positions": [
+        157
+      ]
+    },
+    {
+      "page": 63,
+      "title": "Pinus pinea",
+      "green_point_glyph_count": 117,
+      "same_title_snapshot_positions": [
+        158
+      ],
+      "same_title_and_presence_count_positions": [
+        158
+      ]
+    },
+    {
+      "page": 64,
+      "title": "Pinus sylvestris",
+      "green_point_glyph_count": 7711,
+      "same_title_snapshot_positions": [
+        159
+      ],
+      "same_title_and_presence_count_positions": [
+        159
+      ]
+    },
+    {
+      "page": 65,
+      "title": "Acer tataricum",
+      "green_point_glyph_count": 863,
+      "same_title_snapshot_positions": [
+        15
+      ],
+      "same_title_and_presence_count_positions": [
+        15
+      ]
+    },
+    {
+      "page": 66,
+      "title": "Pistacia Europe",
+      "green_point_glyph_count": 2672,
+      "same_title_snapshot_positions": [
+        160
+      ],
+      "same_title_and_presence_count_positions": [
+        160
+      ]
+    },
+    {
+      "page": 67,
+      "title": "Pistacia lentiscus",
+      "green_point_glyph_count": 428,
+      "same_title_snapshot_positions": [
+        161
+      ],
+      "same_title_and_presence_count_positions": [
+        161
+      ]
+    },
+    {
+      "page": 68,
+      "title": "Pistacia Lentiscus",
+      "green_point_glyph_count": 9,
+      "same_title_snapshot_positions": [
+        162
+      ],
+      "same_title_and_presence_count_positions": [
+        162
+      ]
+    },
+    {
+      "page": 69,
+      "title": "Plantago lanceolata",
+      "green_point_glyph_count": 6629,
+      "same_title_snapshot_positions": [
+        163
+      ],
+      "same_title_and_presence_count_positions": [
+        163
+      ]
+    },
+    {
+      "page": 70,
+      "title": "Plantago Lanceolata",
+      "green_point_glyph_count": 11,
+      "same_title_snapshot_positions": [
+        164
+      ],
+      "same_title_and_presence_count_positions": [
+        164
+      ]
+    },
+    {
+      "page": 71,
+      "title": "Plantago major",
+      "green_point_glyph_count": 14479,
+      "same_title_snapshot_positions": [
+        165
+      ],
+      "same_title_and_presence_count_positions": [
+        165
+      ]
+    },
+    {
+      "page": 72,
+      "title": "Plantago media",
+      "green_point_glyph_count": 6718,
+      "same_title_snapshot_positions": [
+        166
+      ],
+      "same_title_and_presence_count_positions": [
+        166
+      ]
+    },
+    {
+      "page": 73,
+      "title": "Platanus Orientalis",
+      "green_point_glyph_count": 6,
+      "same_title_snapshot_positions": [
+        167
+      ],
+      "same_title_and_presence_count_positions": [
+        167
+      ]
+    },
+    {
+      "page": 74,
+      "title": "Polemonium caeruleum",
+      "green_point_glyph_count": 2758,
+      "same_title_snapshot_positions": [
+        168
+      ],
+      "same_title_and_presence_count_positions": [
+        168
+      ]
+    },
+    {
+      "page": 75,
+      "title": "Polygonum aviculare",
+      "green_point_glyph_count": 10389,
+      "same_title_snapshot_positions": [
+        169
+      ],
+      "same_title_and_presence_count_positions": [
+        169
+      ]
+    },
+    {
+      "page": 76,
+      "title": "Aesculus hippocastanum",
+      "green_point_glyph_count": 4,
+      "same_title_snapshot_positions": [
+        16
+      ],
+      "same_title_and_presence_count_positions": [
+        16
+      ]
+    },
+    {
+      "page": 77,
+      "title": "Polygonum hydropiper",
+      "green_point_glyph_count": 9463,
+      "same_title_snapshot_positions": [
+        170
+      ],
+      "same_title_and_presence_count_positions": [
+        170
+      ]
+    },
+    {
+      "page": 78,
+      "title": "Polygonum lapathifolium",
+      "green_point_glyph_count": 15757,
+      "same_title_snapshot_positions": [
+        171
+      ],
+      "same_title_and_presence_count_positions": [
+        171
+      ]
+    },
+    {
+      "page": 79,
+      "title": "Populus alba",
+      "green_point_glyph_count": 5270,
+      "same_title_snapshot_positions": [
+        172
+      ],
+      "same_title_and_presence_count_positions": [
+        172
+      ]
+    },
+    {
+      "page": 80,
+      "title": "Populus nigra",
+      "green_point_glyph_count": 4515,
+      "same_title_snapshot_positions": [
+        173
+      ],
+      "same_title_and_presence_count_positions": [
+        173
+      ]
+    },
+    {
+      "page": 81,
+      "title": "Potamogeton",
+      "green_point_glyph_count": 13435,
+      "same_title_snapshot_positions": [
+        174
+      ],
+      "same_title_and_presence_count_positions": [
+        174
+      ]
+    },
+    {
+      "page": 82,
+      "title": "Potamogeton alpinus",
+      "green_point_glyph_count": 2674,
+      "same_title_snapshot_positions": [
+        175
+      ],
+      "same_title_and_presence_count_positions": [
+        175
+      ]
+    },
+    {
+      "page": 83,
+      "title": "Potamogeton crispus",
+      "green_point_glyph_count": 5024,
+      "same_title_snapshot_positions": [
+        176
+      ],
+      "same_title_and_presence_count_positions": [
+        176
+      ]
+    },
+    {
+      "page": 84,
+      "title": "Potamogeton densus",
+      "green_point_glyph_count": 779,
+      "same_title_snapshot_positions": [
+        177
+      ],
+      "same_title_and_presence_count_positions": [
+        177
+      ]
+    },
+    {
+      "page": 85,
+      "title": "Potamogeton distinctus",
+      "green_point_glyph_count": 191,
+      "same_title_snapshot_positions": [
+        178
+      ],
+      "same_title_and_presence_count_positions": [
+        178
+      ]
+    },
+    {
+      "page": 86,
+      "title": "Potamogeton filiformis",
+      "green_point_glyph_count": 657,
+      "same_title_snapshot_positions": [
+        179
+      ],
+      "same_title_and_presence_count_positions": [
+        179
+      ]
+    },
+    {
+      "page": 87,
+      "title": "Ajuga reptans",
+      "green_point_glyph_count": 2918,
+      "same_title_snapshot_positions": [
+        17
+      ],
+      "same_title_and_presence_count_positions": [
+        17
+      ]
+    },
+    {
+      "page": 88,
+      "title": "Potamogeton frisii",
+      "green_point_glyph_count": 1467,
+      "same_title_snapshot_positions": [
+        180
+      ],
+      "same_title_and_presence_count_positions": [
+        180
+      ]
+    },
+    {
+      "page": 89,
+      "title": "Potamogeton gramineus",
+      "green_point_glyph_count": 3453,
+      "same_title_snapshot_positions": [
+        181
+      ],
+      "same_title_and_presence_count_positions": [
+        181
+      ]
+    },
+    {
+      "page": 90,
+      "title": "Potamogeton natans",
+      "green_point_glyph_count": 9556,
+      "same_title_snapshot_positions": [
+        182
+      ],
+      "same_title_and_presence_count_positions": [
+        182
+      ]
+    },
+    {
+      "page": 91,
+      "title": "Potamogeton obtusifolius",
+      "green_point_glyph_count": 941,
+      "same_title_snapshot_positions": [
+        183
+      ],
+      "same_title_and_presence_count_positions": [
+        183
+      ]
+    },
+    {
+      "page": 92,
+      "title": "Potamogeton pectinatus",
+      "green_point_glyph_count": 12120,
+      "same_title_snapshot_positions": [
+        184
+      ],
+      "same_title_and_presence_count_positions": [
+        184
+      ]
+    },
+    {
+      "page": 93,
+      "title": "Potamogeton perfoliatus",
+      "green_point_glyph_count": 4321,
+      "same_title_snapshot_positions": [
+        185
+      ],
+      "same_title_and_presence_count_positions": [
+        185
+      ]
+    },
+    {
+      "page": 94,
+      "title": "Potamogeton praelongus",
+      "green_point_glyph_count": 1615,
+      "same_title_snapshot_positions": [
+        186
+      ],
+      "same_title_and_presence_count_positions": [
+        186
+      ]
+    },
+    {
+      "page": 95,
+      "title": "Potamogeton pusillus",
+      "green_point_glyph_count": 3791,
+      "same_title_snapshot_positions": [
+        187
+      ],
+      "same_title_and_presence_count_positions": [
+        187
+      ]
+    },
+    {
+      "page": 96,
+      "title": "Potamogeton trichoides",
+      "green_point_glyph_count": 1125,
+      "same_title_snapshot_positions": [
+        188
+      ],
+      "same_title_and_presence_count_positions": [
+        188
+      ]
+    },
+    {
+      "page": 97,
+      "title": "Potentilla anserina",
+      "green_point_glyph_count": 11305,
+      "same_title_snapshot_positions": [
+        189
+      ],
+      "same_title_and_presence_count_positions": [
+        189
+      ]
+    },
+    {
+      "page": 98,
+      "title": "Aldrovanda vesiculosa",
+      "green_point_glyph_count": 199,
+      "same_title_snapshot_positions": [
+        18
+      ],
+      "same_title_and_presence_count_positions": [
+        18
+      ]
+    },
+    {
+      "page": 99,
+      "title": "Potentilla erecta",
+      "green_point_glyph_count": 4522,
+      "same_title_snapshot_positions": [
+        190
+      ],
+      "same_title_and_presence_count_positions": [
+        190
+      ]
+    },
+    {
+      "page": 100,
+      "title": "Potentilla heptaphylla",
+      "green_point_glyph_count": 696,
+      "same_title_snapshot_positions": [
+        191
+      ],
+      "same_title_and_presence_count_positions": [
+        191
+      ]
+    },
+    {
+      "page": 101,
+      "title": "Prunus avium",
+      "green_point_glyph_count": 1445,
+      "same_title_snapshot_positions": [
+        192
+      ],
+      "same_title_and_presence_count_positions": [
+        192
+      ]
+    },
+    {
+      "page": 102,
+      "title": "Prunus padus",
+      "green_point_glyph_count": 9696,
+      "same_title_snapshot_positions": [
+        193
+      ],
+      "same_title_and_presence_count_positions": [
+        193
+      ]
+    },
+    {
+      "page": 103,
+      "title": "Prunus spinosa",
+      "green_point_glyph_count": 3005,
+      "same_title_snapshot_positions": [
+        194
+      ],
+      "same_title_and_presence_count_positions": [
+        194
+      ]
+    },
+    {
+      "page": 104,
+      "title": "Pteridium aquilinum",
+      "green_point_glyph_count": 11041,
+      "same_title_snapshot_positions": [
+        195
+      ],
+      "same_title_and_presence_count_positions": [
+        195
+      ]
+    },
+    {
+      "page": 105,
+      "title": "Pterocarya fraxinifolia",
+      "green_point_glyph_count": 18,
+      "same_title_snapshot_positions": [
+        196
+      ],
+      "same_title_and_presence_count_positions": [
+        196
+      ]
+    },
+    {
+      "page": 106,
+      "title": "Pulsatilla alpina",
+      "green_point_glyph_count": 264,
+      "same_title_snapshot_positions": [
+        197
+      ],
+      "same_title_and_presence_count_positions": [
+        197
+      ]
+    },
+    {
+      "page": 107,
+      "title": "Quercus Calliprinos",
+      "green_point_glyph_count": 17,
+      "same_title_snapshot_positions": [
+        198
+      ],
+      "same_title_and_presence_count_positions": [
+        198
+      ]
+    },
+    {
+      "page": 108,
+      "title": "Quercus cerris",
+      "green_point_glyph_count": 485,
+      "same_title_snapshot_positions": [
+        199
+      ],
+      "same_title_and_presence_count_positions": [
+        199
+      ]
+    },
+    {
+      "page": 109,
+      "title": "Alisma plantago-aquatica",
+      "green_point_glyph_count": 14468,
+      "same_title_snapshot_positions": [
+        19
+      ],
+      "same_title_and_presence_count_positions": [
+        19
+      ]
+    },
+    {
+      "page": 110,
+      "title": "Abies alba",
+      "green_point_glyph_count": 333,
+      "same_title_snapshot_positions": [
+        1
+      ],
+      "same_title_and_presence_count_positions": [
+        1
+      ]
+    },
+    {
+      "page": 111,
+      "title": "Quercus coccifera",
+      "green_point_glyph_count": 470,
+      "same_title_snapshot_positions": [
+        200
+      ],
+      "same_title_and_presence_count_positions": [
+        200
+      ]
+    },
+    {
+      "page": 112,
+      "title": "Quercus deciduous",
+      "green_point_glyph_count": 3374,
+      "same_title_snapshot_positions": [
+        201
+      ],
+      "same_title_and_presence_count_positions": [
+        201
+      ]
+    },
+    {
+      "page": 113,
+      "title": "Quercus evergreen",
+      "green_point_glyph_count": 984,
+      "same_title_snapshot_positions": [
+        202
+      ],
+      "same_title_and_presence_count_positions": [
+        202
+      ]
+    },
+    {
+      "page": 114,
+      "title": "Quercus frainetto",
+      "green_point_glyph_count": 202,
+      "same_title_snapshot_positions": [
+        203
+      ],
+      "same_title_and_presence_count_positions": [
+        203
+      ]
+    },
+    {
+      "page": 115,
+      "title": "Quercus ilex",
+      "green_point_glyph_count": 491,
+      "same_title_snapshot_positions": [
+        204
+      ],
+      "same_title_and_presence_count_positions": [
+        204
+      ]
+    },
+    {
+      "page": 116,
+      "title": "Quercus ilex-type",
+      "green_point_glyph_count": 661,
+      "same_title_snapshot_positions": [
+        205
+      ],
+      "same_title_and_presence_count_positions": [
+        205
+      ]
+    },
+    {
+      "page": 117,
+      "title": "Quercus Ithaburensis",
+      "green_point_glyph_count": 8,
+      "same_title_snapshot_positions": [
+        206
+      ],
+      "same_title_and_presence_count_positions": [
+        206
+      ]
+    },
+    {
+      "page": 118,
+      "title": "Quercus petraea",
+      "green_point_glyph_count": 1468,
+      "same_title_snapshot_positions": [
+        207
+      ],
+      "same_title_and_presence_count_positions": [
+        207
+      ]
+    },
+    {
+      "page": 119,
+      "title": "Quercus pubescens",
+      "green_point_glyph_count": 891,
+      "same_title_snapshot_positions": [
+        208
+      ],
+      "same_title_and_presence_count_positions": [
+        208
+      ]
+    },
+    {
+      "page": 120,
+      "title": "Quercus pyrenaica",
+      "green_point_glyph_count": 113,
+      "same_title_snapshot_positions": [
+        209
+      ],
+      "same_title_and_presence_count_positions": [
+        209
+      ]
+    },
+    {
+      "page": 121,
+      "title": "Alnus",
+      "green_point_glyph_count": 5364,
+      "same_title_snapshot_positions": [
+        20
+      ],
+      "same_title_and_presence_count_positions": [
+        20
+      ]
+    },
+    {
+      "page": 122,
+      "title": "Quercus robur",
+      "green_point_glyph_count": 2982,
+      "same_title_snapshot_positions": [
+        210
+      ],
+      "same_title_and_presence_count_positions": [
+        210
+      ]
+    },
+    {
+      "page": 123,
+      "title": "Quercus suber",
+      "green_point_glyph_count": 124,
+      "same_title_snapshot_positions": [
+        211
+      ],
+      "same_title_and_presence_count_positions": [
+        211
+      ]
+    },
+    {
+      "page": 124,
+      "title": "Quercus trojana",
+      "green_point_glyph_count": 53,
+      "same_title_snapshot_positions": [
+        212
+      ],
+      "same_title_and_presence_count_positions": [
+        212
+      ]
+    },
+    {
+      "page": 125,
+      "title": "Ranunculus acris",
+      "green_point_glyph_count": 6269,
+      "same_title_snapshot_positions": [
+        213
+      ],
+      "same_title_and_presence_count_positions": [
+        213
+      ]
+    },
+    {
+      "page": 126,
+      "title": "Ranunculus flammula",
+      "green_point_glyph_count": 2614,
+      "same_title_snapshot_positions": [
+        214
+      ],
+      "same_title_and_presence_count_positions": [
+        214
+      ]
+    },
+    {
+      "page": 127,
+      "title": "Ranunculus lingua",
+      "green_point_glyph_count": 4648,
+      "same_title_snapshot_positions": [
+        215
+      ],
+      "same_title_and_presence_count_positions": [
+        215
+      ]
+    },
+    {
+      "page": 128,
+      "title": "Ranunculus sceleratus",
+      "green_point_glyph_count": 4861,
+      "same_title_snapshot_positions": [
+        216
+      ],
+      "same_title_and_presence_count_positions": [
+        216
+      ]
+    },
+    {
+      "page": 129,
+      "title": "Rhamnus cathartica",
+      "green_point_glyph_count": 3870,
+      "same_title_snapshot_positions": [
+        217
+      ],
+      "same_title_and_presence_count_positions": [
+        217
+      ]
+    },
+    {
+      "page": 130,
+      "title": "Rhynchospora alba",
+      "green_point_glyph_count": 2158,
+      "same_title_snapshot_positions": [
+        218
+      ],
+      "same_title_and_presence_count_positions": [
+        218
+      ]
+    },
+    {
+      "page": 131,
+      "title": "Rubus caesius",
+      "green_point_glyph_count": 4902,
+      "same_title_snapshot_positions": [
+        219
+      ],
+      "same_title_and_presence_count_positions": [
+        219
+      ]
+    },
+    {
+      "page": 132,
+      "title": "Alnus cordata",
+      "green_point_glyph_count": 18,
+      "same_title_snapshot_positions": [
+        21
+      ],
+      "same_title_and_presence_count_positions": [
+        21
+      ]
+    },
+    {
+      "page": 133,
+      "title": "Rubus chamaemorus",
+      "green_point_glyph_count": 10613,
+      "same_title_snapshot_positions": [
+        220
+      ],
+      "same_title_and_presence_count_positions": [
+        220
+      ]
+    },
+    {
+      "page": 134,
+      "title": "Rubus idaeus",
+      "green_point_glyph_count": 11837,
+      "same_title_snapshot_positions": [
+        221
+      ],
+      "same_title_and_presence_count_positions": [
+        221
+      ]
+    },
+    {
+      "page": 135,
+      "title": "Rumex acetosa",
+      "green_point_glyph_count": 6235,
+      "same_title_snapshot_positions": [
+        222
+      ],
+      "same_title_and_presence_count_positions": [
+        222
+      ]
+    },
+    {
+      "page": 136,
+      "title": "Rumex acetosella",
+      "green_point_glyph_count": 10569,
+      "same_title_snapshot_positions": [
+        223
+      ],
+      "same_title_and_presence_count_positions": [
+        223
+      ]
+    },
+    {
+      "page": 137,
+      "title": "Salix alba",
+      "green_point_glyph_count": 4564,
+      "same_title_snapshot_positions": [
+        224
+      ],
+      "same_title_and_presence_count_positions": [
+        224
+      ]
+    },
+    {
+      "page": 138,
+      "title": "Salix caprea",
+      "green_point_glyph_count": 10688,
+      "same_title_snapshot_positions": [
+        225
+      ],
+      "same_title_and_presence_count_positions": [
+        225
+      ]
+    },
+    {
+      "page": 139,
+      "title": "Salix herbacea",
+      "green_point_glyph_count": 725,
+      "same_title_snapshot_positions": [
+        226
+      ],
+      "same_title_and_presence_count_positions": [
+        226
+      ]
+    },
+    {
+      "page": 140,
+      "title": "Salix myrtilloides",
+      "green_point_glyph_count": 9478,
+      "same_title_snapshot_positions": [
+        227
+      ],
+      "same_title_and_presence_count_positions": [
+        227
+      ]
+    },
+    {
+      "page": 141,
+      "title": "Salix pentandra",
+      "green_point_glyph_count": 11054,
+      "same_title_snapshot_positions": [
+        228
+      ],
+      "same_title_and_presence_count_positions": [
+        228
+      ]
+    },
+    {
+      "page": 142,
+      "title": "Salix reticulata",
+      "green_point_glyph_count": 7670,
+      "same_title_snapshot_positions": [
+        229
+      ],
+      "same_title_and_presence_count_positions": [
+        229
+      ]
+    },
+    {
+      "page": 143,
+      "title": "Alnus glutinosa",
+      "green_point_glyph_count": 4349,
+      "same_title_snapshot_positions": [
+        22
+      ],
+      "same_title_and_presence_count_positions": [
+        22
+      ]
+    },
+    {
+      "page": 144,
+      "title": "Salvinia natans",
+      "green_point_glyph_count": 6619,
+      "same_title_snapshot_positions": [
+        230
+      ],
+      "same_title_and_presence_count_positions": [
+        230
+      ]
+    },
+    {
+      "page": 145,
+      "title": "Sambucus",
+      "green_point_glyph_count": 2356,
+      "same_title_snapshot_positions": [
+        231
+      ],
+      "same_title_and_presence_count_positions": [
+        231
+      ]
+    },
+    {
+      "page": 146,
+      "title": "Sambucus nigra",
+      "green_point_glyph_count": 2356,
+      "same_title_snapshot_positions": [
+        232
+      ],
+      "same_title_and_presence_count_positions": [
+        232
+      ]
+    },
+    {
+      "page": 147,
+      "title": "Sambucus racemosa",
+      "green_point_glyph_count": 741,
+      "same_title_snapshot_positions": [
+        233
+      ],
+      "same_title_and_presence_count_positions": [
+        233
+      ]
+    },
+    {
+      "page": 148,
+      "title": "Sanguisorba officinalis",
+      "green_point_glyph_count": 12835,
+      "same_title_snapshot_positions": [
+        234
+      ],
+      "same_title_and_presence_count_positions": [
+        234
+      ]
+    },
+    {
+      "page": 149,
+      "title": "Sarcopoterium Spinosum",
+      "green_point_glyph_count": 18,
+      "same_title_snapshot_positions": [
+        235
+      ],
+      "same_title_and_presence_count_positions": [
+        235
+      ]
+    },
+    {
+      "page": 150,
+      "title": "Sarothamnus scoparius",
+      "green_point_glyph_count": 1157,
+      "same_title_snapshot_positions": [
+        236
+      ],
+      "same_title_and_presence_count_positions": [
+        236
+      ]
+    },
+    {
+      "page": 151,
+      "title": "Scheuchzeria palustris",
+      "green_point_glyph_count": 5401,
+      "same_title_snapshot_positions": [
+        237
+      ],
+      "same_title_and_presence_count_positions": [
+        237
+      ]
+    },
+    {
+      "page": 152,
+      "title": "Scirpus lacustris",
+      "green_point_glyph_count": 4451,
+      "same_title_snapshot_positions": [
+        238
+      ],
+      "same_title_and_presence_count_positions": [
+        238
+      ]
+    },
+    {
+      "page": 153,
+      "title": "Scirpus tabernaemontani",
+      "green_point_glyph_count": 1914,
+      "same_title_snapshot_positions": [
+        239
+      ],
+      "same_title_and_presence_count_positions": [
+        239
+      ]
+    },
+    {
+      "page": 154,
+      "title": "Alnus incana",
+      "green_point_glyph_count": 2867,
+      "same_title_snapshot_positions": [
+        23
+      ],
+      "same_title_and_presence_count_positions": [
+        23
+      ]
+    },
+    {
+      "page": 155,
+      "title": "Selaginella selaginoides",
+      "green_point_glyph_count": 1764,
+      "same_title_snapshot_positions": [
+        240
+      ],
+      "same_title_and_presence_count_positions": [
+        240
+      ]
+    },
+    {
+      "page": 156,
+      "title": "Silene otites",
+      "green_point_glyph_count": 5387,
+      "same_title_snapshot_positions": [
+        241
+      ],
+      "same_title_and_presence_count_positions": [
+        241
+      ]
+    },
+    {
+      "page": 157,
+      "title": "Sisymbrium altissimum",
+      "green_point_glyph_count": 4650,
+      "same_title_snapshot_positions": [
+        242
+      ],
+      "same_title_and_presence_count_positions": [
+        242
+      ]
+    },
+    {
+      "page": 158,
+      "title": "Solanum dulcamara",
+      "green_point_glyph_count": 6337,
+      "same_title_snapshot_positions": [
+        243
+      ],
+      "same_title_and_presence_count_positions": [
+        243
+      ]
+    },
+    {
+      "page": 159,
+      "title": "Sorbus aria",
+      "green_point_glyph_count": 2064,
+      "same_title_snapshot_positions": [
+        244
+      ],
+      "same_title_and_presence_count_positions": [
+        244
+      ]
+    },
+    {
+      "page": 160,
+      "title": "Sorbus aucuparia",
+      "green_point_glyph_count": 11495,
+      "same_title_snapshot_positions": [
+        245
+      ],
+      "same_title_and_presence_count_positions": [
+        245
+      ]
+    },
+    {
+      "page": 161,
+      "title": "Sorbus domestica",
+      "green_point_glyph_count": 557,
+      "same_title_snapshot_positions": [
+        246
+      ],
+      "same_title_and_presence_count_positions": [
+        246
+      ]
+    },
+    {
+      "page": 162,
+      "title": "Sorbus torminalis",
+      "green_point_glyph_count": 892,
+      "same_title_snapshot_positions": [
+        247
+      ],
+      "same_title_and_presence_count_positions": [
+        247
+      ]
+    },
+    {
+      "page": 163,
+      "title": "Sparganium minimum",
+      "green_point_glyph_count": 5395,
+      "same_title_snapshot_positions": [
+        248
+      ],
+      "same_title_and_presence_count_positions": [
+        248
+      ]
+    },
+    {
+      "page": 164,
+      "title": "Sparganium simplex",
+      "green_point_glyph_count": 4277,
+      "same_title_snapshot_positions": [
+        249
+      ],
+      "same_title_and_presence_count_positions": [
+        249
+      ]
+    },
+    {
+      "page": 165,
+      "title": "Alnus viridis",
+      "green_point_glyph_count": 185,
+      "same_title_snapshot_positions": [
+        24
+      ],
+      "same_title_and_presence_count_positions": [
+        24
+      ]
+    },
+    {
+      "page": 166,
+      "title": "Stellaria holostea",
+      "green_point_glyph_count": 3909,
+      "same_title_snapshot_positions": [
+        250
+      ],
+      "same_title_and_presence_count_positions": [
+        250
+      ]
+    },
+    {
+      "page": 167,
+      "title": "Stratiotes aloides",
+      "green_point_glyph_count": 2666,
+      "same_title_snapshot_positions": [
+        251
+      ],
+      "same_title_and_presence_count_positions": [
+        251
+      ]
+    },
+    {
+      "page": 168,
+      "title": "Taxus baccata",
+      "green_point_glyph_count": 520,
+      "same_title_snapshot_positions": [
+        252
+      ],
+      "same_title_and_presence_count_positions": [
+        252
+      ]
+    },
+    {
+      "page": 169,
+      "title": "Teucrium scorodonia",
+      "green_point_glyph_count": 751,
+      "same_title_snapshot_positions": [
+        253
+      ],
+      "same_title_and_presence_count_positions": [
+        253
+      ]
+    },
+    {
+      "page": 170,
+      "title": "Thalictrum aquilegifolium",
+      "green_point_glyph_count": 1763,
+      "same_title_snapshot_positions": [
+        254
+      ],
+      "same_title_and_presence_count_positions": [
+        254
+      ]
+    },
+    {
+      "page": 171,
+      "title": "Thalictrum minus",
+      "green_point_glyph_count": 11788,
+      "same_title_snapshot_positions": [
+        255
+      ],
+      "same_title_and_presence_count_positions": [
+        255
+      ]
+    },
+    {
+      "page": 172,
+      "title": "Tilia",
+      "green_point_glyph_count": 3448,
+      "same_title_snapshot_positions": [
+        256
+      ],
+      "same_title_and_presence_count_positions": [
+        256
+      ]
+    },
+    {
+      "page": 173,
+      "title": "Tilia cordata",
+      "green_point_glyph_count": 3369,
+      "same_title_snapshot_positions": [
+        257
+      ],
+      "same_title_and_presence_count_positions": [
+        257
+      ]
+    },
+    {
+      "page": 174,
+      "title": "Tilia platyphyllos",
+      "green_point_glyph_count": 765,
+      "same_title_snapshot_positions": [
+        258
+      ],
+      "same_title_and_presence_count_positions": [
+        258
+      ]
+    },
+    {
+      "page": 175,
+      "title": "Tilia tomentosa",
+      "green_point_glyph_count": 166,
+      "same_title_snapshot_positions": [
+        259
+      ],
+      "same_title_and_presence_count_positions": [
+        259
+      ]
+    },
+    {
+      "page": 176,
+      "title": "Arbutus unedo",
+      "green_point_glyph_count": 423,
+      "same_title_snapshot_positions": [
+        25
+      ],
+      "same_title_and_presence_count_positions": [
+        25
+      ]
+    },
+    {
+      "page": 177,
+      "title": "Trapa natans",
+      "green_point_glyph_count": 1932,
+      "same_title_snapshot_positions": [
+        260
+      ],
+      "same_title_and_presence_count_positions": [
+        260
+      ]
+    },
+    {
+      "page": 178,
+      "title": "Tsuga canadensis",
+      "green_point_glyph_count": 527,
+      "same_title_snapshot_positions": [
+        261
+      ],
+      "same_title_and_presence_count_positions": [
+        261
+      ]
+    },
+    {
+      "page": 179,
+      "title": "Tsuga diversifolia",
+      "green_point_glyph_count": 69,
+      "same_title_snapshot_positions": [
+        262
+      ],
+      "same_title_and_presence_count_positions": [
+        262
+      ]
+    },
+    {
+      "page": 180,
+      "title": "Typha angustifolia",
+      "green_point_glyph_count": 3154,
+      "same_title_snapshot_positions": [
+        263
+      ],
+      "same_title_and_presence_count_positions": [
+        263
+      ]
+    },
+    {
+      "page": 181,
+      "title": "Typha latifolia",
+      "green_point_glyph_count": 3315,
+      "same_title_snapshot_positions": [
+        264
+      ],
+      "same_title_and_presence_count_positions": [
+        264
+      ]
+    },
+    {
+      "page": 182,
+      "title": "Ulmus",
+      "green_point_glyph_count": 4581,
+      "same_title_snapshot_positions": [
+        265
+      ],
+      "same_title_and_presence_count_positions": [
+        265
+      ]
+    },
+    {
+      "page": 183,
+      "title": "Ulmus carpinifolia",
+      "green_point_glyph_count": 2677,
+      "same_title_snapshot_positions": [
+        266
+      ],
+      "same_title_and_presence_count_positions": [
+        266
+      ]
+    },
+    {
+      "page": 184,
+      "title": "Ulmus glabra",
+      "green_point_glyph_count": 3420,
+      "same_title_snapshot_positions": [
+        267
+      ],
+      "same_title_and_presence_count_positions": [
+        267
+      ]
+    },
+    {
+      "page": 185,
+      "title": "Ulmus laevis",
+      "green_point_glyph_count": 2557,
+      "same_title_snapshot_positions": [
+        268
+      ],
+      "same_title_and_presence_count_positions": [
+        268
+      ]
+    },
+    {
+      "page": 186,
+      "title": "Ulmus minor",
+      "green_point_glyph_count": 2309,
+      "same_title_snapshot_positions": [
+        269
+      ],
+      "same_title_and_presence_count_positions": [
+        269
+      ]
+    },
+    {
+      "page": 187,
+      "title": "Arctostaphylos alpinus",
+      "green_point_glyph_count": 4281,
+      "same_title_snapshot_positions": [
+        26
+      ],
+      "same_title_and_presence_count_positions": [
+        26
+      ]
+    },
+    {
+      "page": 188,
+      "title": "Urtica dioica",
+      "green_point_glyph_count": 16298,
+      "same_title_snapshot_positions": [
+        270
+      ],
+      "same_title_and_presence_count_positions": [
+        270
+      ]
+    },
+    {
+      "page": 189,
+      "title": "Viburnum",
+      "green_point_glyph_count": 4988,
+      "same_title_snapshot_positions": [
+        271
+      ],
+      "same_title_and_presence_count_positions": [
+        271
+      ]
+    },
+    {
+      "page": 190,
+      "title": "Viburnum lantana",
+      "green_point_glyph_count": 1093,
+      "same_title_snapshot_positions": [
+        272
+      ],
+      "same_title_and_presence_count_positions": [
+        272
+      ]
+    },
+    {
+      "page": 191,
+      "title": "Viburnum opulus",
+      "green_point_glyph_count": 4799,
+      "same_title_snapshot_positions": [
+        273
+      ],
+      "same_title_and_presence_count_positions": [
+        273
+      ]
+    },
+    {
+      "page": 192,
+      "title": "Viscum album",
+      "green_point_glyph_count": 3152,
+      "same_title_snapshot_positions": [
+        274
+      ],
+      "same_title_and_presence_count_positions": [
+        274
+      ]
+    },
+    {
+      "page": 193,
+      "title": "Vitis sylvestris",
+      "green_point_glyph_count": 722,
+      "same_title_snapshot_positions": [
+        275
+      ],
+      "same_title_and_presence_count_positions": [
+        275
+      ]
+    },
+    {
+      "page": 194,
+      "title": "Zannichellia palustris",
+      "green_point_glyph_count": 1726,
+      "same_title_snapshot_positions": [
+        276,
+        277
+      ],
+      "same_title_and_presence_count_positions": [
+        276
+      ]
+    },
+    {
+      "page": 195,
+      "title": "Zannichellia palustris",
+      "green_point_glyph_count": 12028,
+      "same_title_snapshot_positions": [
+        276,
+        277
+      ],
+      "same_title_and_presence_count_positions": [
+        277
+      ]
+    },
+    {
+      "page": 196,
+      "title": "Zelkova",
+      "green_point_glyph_count": 181,
+      "same_title_snapshot_positions": [
+        278
+      ],
+      "same_title_and_presence_count_positions": [
+        278
+      ]
+    },
+    {
+      "page": 197,
+      "title": "Ziziphus Spina-christi",
+      "green_point_glyph_count": 18,
+      "same_title_snapshot_positions": [
+        279
+      ],
+      "same_title_and_presence_count_positions": [
+        279
+      ]
+    },
+    {
+      "page": 198,
+      "title": "Arctostaphylos uva-ursi",
+      "green_point_glyph_count": 5140,
+      "same_title_snapshot_positions": [
+        27
+      ],
+      "same_title_and_presence_count_positions": [
+        27
+      ]
+    },
+    {
+      "page": 199,
+      "title": "Armeria maritima",
+      "green_point_glyph_count": 787,
+      "same_title_snapshot_positions": [
+        28
+      ],
+      "same_title_and_presence_count_positions": [
+        28
+      ]
+    },
+    {
+      "page": 200,
+      "title": "Artemisia",
+      "green_point_glyph_count": 18,
+      "same_title_snapshot_positions": [
+        29
+      ],
+      "same_title_and_presence_count_positions": [
+        29
+      ]
+    },
+    {
+      "page": 201,
+      "title": "Abies alba mediterraneum",
+      "green_point_glyph_count": 442,
+      "same_title_snapshot_positions": [
+        2
+      ],
+      "same_title_and_presence_count_positions": [
+        2
+      ]
+    },
+    {
+      "page": 202,
+      "title": "Atriplex Halimus",
+      "green_point_glyph_count": 19,
+      "same_title_snapshot_positions": [
+        30
+      ],
+      "same_title_and_presence_count_positions": [
+        30
+      ]
+    },
+    {
+      "page": 203,
+      "title": "Baldellia ranunculoides",
+      "green_point_glyph_count": 565,
+      "same_title_snapshot_positions": [
+        31
+      ],
+      "same_title_and_presence_count_positions": [
+        31
+      ]
+    },
+    {
+      "page": 204,
+      "title": "Batrachium aquatile",
+      "green_point_glyph_count": 17795,
+      "same_title_snapshot_positions": [
+        32
+      ],
+      "same_title_and_presence_count_positions": [
+        32
+      ]
+    },
+    {
+      "page": 205,
+      "title": "Betula",
+      "green_point_glyph_count": 9598,
+      "same_title_snapshot_positions": [
+        33
+      ],
+      "same_title_and_presence_count_positions": [
+        33
+      ]
+    },
+    {
+      "page": 206,
+      "title": "Betula humilis",
+      "green_point_glyph_count": 3257,
+      "same_title_snapshot_positions": [
+        34
+      ],
+      "same_title_and_presence_count_positions": [
+        34
+      ]
+    },
+    {
+      "page": 207,
+      "title": "Betula nana",
+      "green_point_glyph_count": 4339,
+      "same_title_snapshot_positions": [
+        35
+      ],
+      "same_title_and_presence_count_positions": [
+        35
+      ]
+    },
+    {
+      "page": 208,
+      "title": "Betula pendula",
+      "green_point_glyph_count": 7526,
+      "same_title_snapshot_positions": [
+        36
+      ],
+      "same_title_and_presence_count_positions": [
+        36
+      ]
+    },
+    {
+      "page": 209,
+      "title": "Betula pubescens",
+      "green_point_glyph_count": 8870,
+      "same_title_snapshot_positions": [
+        37
+      ],
+      "same_title_and_presence_count_positions": [
+        37
+      ]
+    },
+    {
+      "page": 210,
+      "title": "Butomus umbellatus",
+      "green_point_glyph_count": 6749,
+      "same_title_snapshot_positions": [
+        38
+      ],
+      "same_title_and_presence_count_positions": [
+        38
+      ]
+    },
+    {
+      "page": 211,
+      "title": "Buxus sempervirens",
+      "green_point_glyph_count": 130,
+      "same_title_snapshot_positions": [
+        39
+      ],
+      "same_title_and_presence_count_positions": [
+        39
+      ]
+    },
+    {
+      "page": 212,
+      "title": "Abies borisii-regis",
+      "green_point_glyph_count": 19,
+      "same_title_snapshot_positions": [
+        3
+      ],
+      "same_title_and_presence_count_positions": [
+        3
+      ]
+    },
+    {
+      "page": 213,
+      "title": "Calluna vulgaris",
+      "green_point_glyph_count": 3341,
+      "same_title_snapshot_positions": [
+        40
+      ],
+      "same_title_and_presence_count_positions": [
+        40
+      ]
+    },
+    {
+      "page": 214,
+      "title": "Carduus nutans",
+      "green_point_glyph_count": 1647,
+      "same_title_snapshot_positions": [
+        41
+      ],
+      "same_title_and_presence_count_positions": [
+        41
+      ]
+    },
+    {
+      "page": 215,
+      "title": "Carex acutiformis",
+      "green_point_glyph_count": 4273,
+      "same_title_snapshot_positions": [
+        42
+      ],
+      "same_title_and_presence_count_positions": [
+        42
+      ]
+    },
+    {
+      "page": 216,
+      "title": "Carex aquatilis",
+      "green_point_glyph_count": 2066,
+      "same_title_snapshot_positions": [
+        43
+      ],
+      "same_title_and_presence_count_positions": [
+        43
+      ]
+    },
+    {
+      "page": 217,
+      "title": "Carex canescens",
+      "green_point_glyph_count": 10660,
+      "same_title_snapshot_positions": [
+        44
+      ],
+      "same_title_and_presence_count_positions": [
+        44
+      ]
+    },
+    {
+      "page": 218,
+      "title": "Carex elongata",
+      "green_point_glyph_count": 3669,
+      "same_title_snapshot_positions": [
+        45
+      ],
+      "same_title_and_presence_count_positions": [
+        45
+      ]
+    },
+    {
+      "page": 219,
+      "title": "Carex flava",
+      "green_point_glyph_count": 3171,
+      "same_title_snapshot_positions": [
+        46
+      ],
+      "same_title_and_presence_count_positions": [
+        46
+      ]
+    },
+    {
+      "page": 220,
+      "title": "Carex maritima",
+      "green_point_glyph_count": 529,
+      "same_title_snapshot_positions": [
+        47
+      ],
+      "same_title_and_presence_count_positions": [
+        47
+      ]
+    },
+    {
+      "page": 221,
+      "title": "Carex nigra",
+      "green_point_glyph_count": 4550,
+      "same_title_snapshot_positions": [
+        48
+      ],
+      "same_title_and_presence_count_positions": [
+        48
+      ]
+    },
+    {
+      "page": 222,
+      "title": "Carex paniculata",
+      "green_point_glyph_count": 1944,
+      "same_title_snapshot_positions": [
+        49
+      ],
+      "same_title_and_presence_count_positions": [
+        49
+      ]
+    },
+    {
+      "page": 223,
+      "title": "Abies bornm/xfclleriana",
+      "green_point_glyph_count": 19,
+      "same_title_snapshot_positions": [
+        4
+      ],
+      "same_title_and_presence_count_positions": [
+        4
+      ]
+    },
+    {
+      "page": 224,
+      "title": "Carex pseudocyperus",
+      "green_point_glyph_count": 3251,
+      "same_title_snapshot_positions": [
+        50
+      ],
+      "same_title_and_presence_count_positions": [
+        50
+      ]
+    },
+    {
+      "page": 225,
+      "title": "Carex riparia",
+      "green_point_glyph_count": 5752,
+      "same_title_snapshot_positions": [
+        51
+      ],
+      "same_title_and_presence_count_positions": [
+        51
+      ]
+    },
+    {
+      "page": 226,
+      "title": "Carex rostrata",
+      "green_point_glyph_count": 12132,
+      "same_title_snapshot_positions": [
+        52
+      ],
+      "same_title_and_presence_count_positions": [
+        52
+      ]
+    },
+    {
+      "page": 227,
+      "title": "Carpinus betulus",
+      "green_point_glyph_count": 1468,
+      "same_title_snapshot_positions": [
+        53
+      ],
+      "same_title_and_presence_count_positions": [
+        53
+      ]
+    },
+    {
+      "page": 228,
+      "title": "Carpinus orientalis",
+      "green_point_glyph_count": 424,
+      "same_title_snapshot_positions": [
+        54
+      ],
+      "same_title_and_presence_count_positions": [
+        54
+      ]
+    },
+    {
+      "page": 229,
+      "title": "Carpinus Ostrya",
+      "green_point_glyph_count": 544,
+      "same_title_snapshot_positions": [
+        55
+      ],
+      "same_title_and_presence_count_positions": [
+        55
+      ]
+    },
+    {
+      "page": 230,
+      "title": "Carya glabra",
+      "green_point_glyph_count": 785,
+      "same_title_snapshot_positions": [
+        56
+      ],
+      "same_title_and_presence_count_positions": [
+        56
+      ]
+    },
+    {
+      "page": 231,
+      "title": "Carya tomentosa",
+      "green_point_glyph_count": 753,
+      "same_title_snapshot_positions": [
+        57
+      ],
+      "same_title_and_presence_count_positions": [
+        57
+      ]
+    },
+    {
+      "page": 232,
+      "title": "Castanea sativa",
+      "green_point_glyph_count": 110,
+      "same_title_snapshot_positions": [
+        58
+      ],
+      "same_title_and_presence_count_positions": [
+        58
+      ]
+    },
+    {
+      "page": 233,
+      "title": "Cedrus libani",
+      "green_point_glyph_count": 44,
+      "same_title_snapshot_positions": [
+        59
+      ],
+      "same_title_and_presence_count_positions": [
+        59
+      ]
+    },
+    {
+      "page": 234,
+      "title": "Abies cephalonica",
+      "green_point_glyph_count": 29,
+      "same_title_snapshot_positions": [
+        5
+      ],
+      "same_title_and_presence_count_positions": [
+        5
+      ]
+    },
+    {
+      "page": 235,
+      "title": "Celtis australis",
+      "green_point_glyph_count": 243,
+      "same_title_snapshot_positions": [
+        60
+      ],
+      "same_title_and_presence_count_positions": [
+        60
+      ]
+    },
+    {
+      "page": 236,
+      "title": "Ceratonia Siliqua",
+      "green_point_glyph_count": 12,
+      "same_title_snapshot_positions": [
+        61
+      ],
+      "same_title_and_presence_count_positions": [
+        61
+      ]
+    },
+    {
+      "page": 237,
+      "title": "Ceratophyllum",
+      "green_point_glyph_count": 3228,
+      "same_title_snapshot_positions": [
+        62
+      ],
+      "same_title_and_presence_count_positions": [
+        62
+      ]
+    },
+    {
+      "page": 238,
+      "title": "Ceratophyllum demersum",
+      "green_point_glyph_count": 3182,
+      "same_title_snapshot_positions": [
+        63
+      ],
+      "same_title_and_presence_count_positions": [
+        63
+      ]
+    },
+    {
+      "page": 239,
+      "title": "Ceratophyllum submersum",
+      "green_point_glyph_count": 583,
+      "same_title_snapshot_positions": [
+        64
+      ],
+      "same_title_and_presence_count_positions": [
+        64
+      ]
+    },
+    {
+      "page": 240,
+      "title": "Chamaerops humilis",
+      "green_point_glyph_count": 244,
+      "same_title_snapshot_positions": [
+        65
+      ],
+      "same_title_and_presence_count_positions": [
+        65
+      ]
+    },
+    {
+      "page": 241,
+      "title": "Chelidonium majus",
+      "green_point_glyph_count": 7416,
+      "same_title_snapshot_positions": [
+        66
+      ],
+      "same_title_and_presence_count_positions": [
+        66
+      ]
+    },
+    {
+      "page": 242,
+      "title": "Chenopodium glaucum",
+      "green_point_glyph_count": 9394,
+      "same_title_snapshot_positions": [
+        67
+      ],
+      "same_title_and_presence_count_positions": [
+        67
+      ]
+    },
+    {
+      "page": 243,
+      "title": "Chenopodium polyspermum",
+      "green_point_glyph_count": 4599,
+      "same_title_snapshot_positions": [
+        68
+      ],
+      "same_title_and_presence_count_positions": [
+        68
+      ]
+    },
+    {
+      "page": 244,
+      "title": "Cladium mariscus",
+      "green_point_glyph_count": 1026,
+      "same_title_snapshot_positions": [
+        69
+      ],
+      "same_title_and_presence_count_positions": [
+        69
+      ]
+    },
+    {
+      "page": 245,
+      "title": "Abies cilicica",
+      "green_point_glyph_count": 21,
+      "same_title_snapshot_positions": [
+        6
+      ],
+      "same_title_and_presence_count_positions": [
+        6
+      ]
+    },
+    {
+      "page": 246,
+      "title": "Comarum palustre",
+      "green_point_glyph_count": 12802,
+      "same_title_snapshot_positions": [
+        70
+      ],
+      "same_title_and_presence_count_positions": [
+        70
+      ]
+    },
+    {
+      "page": 247,
+      "title": "Cornus mas",
+      "green_point_glyph_count": 1041,
+      "same_title_snapshot_positions": [
+        71
+      ],
+      "same_title_and_presence_count_positions": [
+        71
+      ]
+    },
+    {
+      "page": 248,
+      "title": "Cornus sanguinea",
+      "green_point_glyph_count": 2410,
+      "same_title_snapshot_positions": [
+        72
+      ],
+      "same_title_and_presence_count_positions": [
+        72
+      ]
+    },
+    {
+      "page": 249,
+      "title": "Cornus suecica",
+      "green_point_glyph_count": 1229,
+      "same_title_snapshot_positions": [
+        73
+      ],
+      "same_title_and_presence_count_positions": [
+        73
+      ]
+    },
+    {
+      "page": 250,
+      "title": "Corylus avellana",
+      "green_point_glyph_count": 3346,
+      "same_title_snapshot_positions": [
+        74
+      ],
+      "same_title_and_presence_count_positions": [
+        74
+      ]
+    },
+    {
+      "page": 251,
+      "title": "Crataegus",
+      "green_point_glyph_count": 3270,
+      "same_title_snapshot_positions": [
+        75
+      ],
+      "same_title_and_presence_count_positions": [
+        75
+      ]
+    },
+    {
+      "page": 252,
+      "title": "Crataegus monogyna",
+      "green_point_glyph_count": 3244,
+      "same_title_snapshot_positions": [
+        76
+      ],
+      "same_title_and_presence_count_positions": [
+        76
+      ]
+    },
+    {
+      "page": 253,
+      "title": "Crataegus oxycantha",
+      "green_point_glyph_count": 1285,
+      "same_title_snapshot_positions": [
+        77
+      ],
+      "same_title_and_presence_count_positions": [
+        77
+      ]
+    },
+    {
+      "page": 254,
+      "title": "Cyperus glomeratus",
+      "green_point_glyph_count": 1842,
+      "same_title_snapshot_positions": [
+        78
+      ],
+      "same_title_and_presence_count_positions": [
+        78
+      ]
+    },
+    {
+      "page": 255,
+      "title": "Dryas octopetala",
+      "green_point_glyph_count": 490,
+      "same_title_snapshot_positions": [
+        79
+      ],
+      "same_title_and_presence_count_positions": [
+        79
+      ]
+    },
+    {
+      "page": 256,
+      "title": "Abies mediterraneum",
+      "green_point_glyph_count": 114,
+      "same_title_snapshot_positions": [
+        7
+      ],
+      "same_title_and_presence_count_positions": [
+        7
+      ]
+    },
+    {
+      "page": 257,
+      "title": "Eleocharis palustris",
+      "green_point_glyph_count": 7424,
+      "same_title_snapshot_positions": [
+        80
+      ],
+      "same_title_and_presence_count_positions": [
+        80
+      ]
+    },
+    {
+      "page": 258,
+      "title": "Empetrum nigrum",
+      "green_point_glyph_count": 3094,
+      "same_title_snapshot_positions": [
+        81
+      ],
+      "same_title_and_presence_count_positions": [
+        81
+      ]
+    },
+    {
+      "page": 259,
+      "title": "Ephedra Aphylla",
+      "green_point_glyph_count": 21,
+      "same_title_snapshot_positions": [
+        82
+      ],
+      "same_title_and_presence_count_positions": [
+        82
+      ]
+    },
+    {
+      "page": 260,
+      "title": "Ephedra distachya",
+      "green_point_glyph_count": 2343,
+      "same_title_snapshot_positions": [
+        83
+      ],
+      "same_title_and_presence_count_positions": [
+        83
+      ]
+    },
+    {
+      "page": 261,
+      "title": "Erica arborea",
+      "green_point_glyph_count": 419,
+      "same_title_snapshot_positions": [
+        84
+      ],
+      "same_title_and_presence_count_positions": [
+        84
+      ]
+    },
+    {
+      "page": 262,
+      "title": "Erica cinerea",
+      "green_point_glyph_count": 395,
+      "same_title_snapshot_positions": [
+        85
+      ],
+      "same_title_and_presence_count_positions": [
+        85
+      ]
+    },
+    {
+      "page": 263,
+      "title": "Erica tetralix",
+      "green_point_glyph_count": 623,
+      "same_title_snapshot_positions": [
+        86
+      ],
+      "same_title_and_presence_count_positions": [
+        86
+      ]
+    },
+    {
+      "page": 264,
+      "title": "Eriophorum vaginatum",
+      "green_point_glyph_count": 13578,
+      "same_title_snapshot_positions": [
+        87
+      ],
+      "same_title_and_presence_count_positions": [
+        87
+      ]
+    },
+    {
+      "page": 265,
+      "title": "Euonymus europaea",
+      "green_point_glyph_count": 2176,
+      "same_title_snapshot_positions": [
+        88
+      ],
+      "same_title_and_presence_count_positions": [
+        88
+      ]
+    },
+    {
+      "page": 266,
+      "title": "Fagus orientalis",
+      "green_point_glyph_count": 160,
+      "same_title_snapshot_positions": [
+        89
+      ],
+      "same_title_and_presence_count_positions": [
+        89
+      ]
+    },
+    {
+      "page": 267,
+      "title": "Abies nordmanniana",
+      "green_point_glyph_count": 48,
+      "same_title_snapshot_positions": [
+        8
+      ],
+      "same_title_and_presence_count_positions": [
+        8
+      ]
+    },
+    {
+      "page": 268,
+      "title": "Fagus sylvatica",
+      "green_point_glyph_count": 951,
+      "same_title_snapshot_positions": [
+        90
+      ],
+      "same_title_and_presence_count_positions": [
+        90
+      ]
+    },
+    {
+      "page": 269,
+      "title": "Filipendula",
+      "green_point_glyph_count": 9950,
+      "same_title_snapshot_positions": [
+        91
+      ],
+      "same_title_and_presence_count_positions": [
+        91
+      ]
+    },
+    {
+      "page": 270,
+      "title": "Filipendula ulmaria",
+      "green_point_glyph_count": 9314,
+      "same_title_snapshot_positions": [
+        92
+      ],
+      "same_title_and_presence_count_positions": [
+        92
+      ]
+    },
+    {
+      "page": 271,
+      "title": "Filipendula vulgaris",
+      "green_point_glyph_count": 4211,
+      "same_title_snapshot_positions": [
+        93
+      ],
+      "same_title_and_presence_count_positions": [
+        93
+      ]
+    },
+    {
+      "page": 272,
+      "title": "Frangula alnus",
+      "green_point_glyph_count": 4953,
+      "same_title_snapshot_positions": [
+        94
+      ],
+      "same_title_and_presence_count_positions": [
+        94
+      ]
+    },
+    {
+      "page": 273,
+      "title": "Fraxinus angustifolia",
+      "green_point_glyph_count": 1556,
+      "same_title_snapshot_positions": [
+        95
+      ],
+      "same_title_and_presence_count_positions": [
+        95
+      ]
+    },
+    {
+      "page": 274,
+      "title": "Fraxinus excelsior",
+      "green_point_glyph_count": 2569,
+      "same_title_snapshot_positions": [
+        96
+      ],
+      "same_title_and_presence_count_positions": [
+        96
+      ]
+    },
+    {
+      "page": 275,
+      "title": "Fraxinus ornus",
+      "green_point_glyph_count": 431,
+      "same_title_snapshot_positions": [
+        97
+      ],
+      "same_title_and_presence_count_positions": [
+        97
+      ]
+    },
+    {
+      "page": 276,
+      "title": "Galeopsis pubescens",
+      "green_point_glyph_count": 714,
+      "same_title_snapshot_positions": [
+        98
+      ],
+      "same_title_and_presence_count_positions": [
+        98
+      ]
+    },
+    {
+      "page": 277,
+      "title": "Galium palustre",
+      "green_point_glyph_count": 7181,
+      "same_title_snapshot_positions": [
+        99
+      ],
+      "same_title_and_presence_count_positions": [
+        99
+      ]
+    },
+    {
+      "page": 278,
+      "title": "Acacia Raddiana/Tortilis",
+      "green_point_glyph_count": 10,
+      "same_title_snapshot_positions": [
+        9
+      ],
+      "same_title_and_presence_count_positions": [
+        9
+      ]
+    }
+  ],
+  "all_titles_known": true,
+  "titles_multiset_equals_snapshot_excluding_single_presence": true,
+  "pages_with_matching_title_and_presence_count": 278,
+  "ambiguous_pages": [],
+  "unmatched_title_counts": {},
+  "missing_title_counts": {},
+  "source_hash_unchanged": true,
+  "no_probability_values_or_original_TF_arrays_recovered": true,
+  "tool_sha256": "338debd308e6569dec20ccbb5648176e512eca6651ff3c8a2c722f5f3b1b8dad"
+}

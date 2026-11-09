@@ -1,0 +1,486 @@
+{
+ "kind": "synthetic_sampler_preparation_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "note": "Invented matrices. null stands for R NA. Hand values are fractions of the stored doubles; \"NA\", \"NaN\" and \"-Inf\" name the R results. A hand list of null is not written by hand.",
+ "cases": {
+  "rowwise_flatten_three_by_four": {
+   "taxa_appear_core": [
+    [
+     2,
+     1,
+     4,
+     3
+    ],
+    [
+     4,
+     3,
+     2,
+     6
+    ],
+    [
+     1,
+     6,
+     8,
+     9
+    ]
+   ],
+   "num_taxa": 4,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 4,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 3,
+    "ncol_taxa_array": 4,
+    "column_max": [
+     "4",
+     "6",
+     "8",
+     "9"
+    ],
+    "values": [
+     "1/2",
+     "1/6",
+     "1/2",
+     "1/3",
+     "1",
+     "1/2",
+     "1/4",
+     "2/3",
+     "1/4",
+     "1",
+     "1",
+     "1"
+    ],
+    "taxa_means": [
+     "7/3",
+     "10/3",
+     "14/3",
+     "6"
+    ],
+    "taxa_means_accumulator_independent": [
+     false,
+     false,
+     false,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "c(t(.)) runs along the rows; 1/6, 1/3, 2/3 and the means 7/3, 10/3, 14/3 are not exact doubles"
+   }
+  },
+  "na_skipped_in_mean_and_max": {
+   "taxa_appear_core": [
+    [
+     1,
+     null,
+     2
+    ],
+    [
+     3,
+     4,
+     null
+    ],
+    [
+     null,
+     2,
+     8
+    ],
+    [
+     4,
+     2,
+     2
+    ]
+   ],
+   "num_taxa": 3,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 3,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 4,
+    "ncol_taxa_array": 3,
+    "column_max": [
+     "4",
+     "4",
+     "8"
+    ],
+    "values": [
+     "1/4",
+     "NA",
+     "1/4",
+     "3/4",
+     "1",
+     "NA",
+     "NA",
+     "1/2",
+     "1",
+     "1",
+     "1/2",
+     "1/4"
+    ],
+    "taxa_means": [
+     "8/3",
+     "8/3",
+     "4"
+    ],
+    "taxa_means_accumulator_independent": [
+     false,
+     false,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "max and colMeans skip NA; NA stays NA after the division; na.rm = FALSE would give NA means"
+   }
+  },
+  "zero_column_gives_nan": {
+   "taxa_appear_core": [
+    [
+     1,
+     0,
+     2
+    ],
+    [
+     2,
+     0,
+     4
+    ],
+    [
+     4,
+     0,
+     1
+    ]
+   ],
+   "num_taxa": 3,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 3,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 3,
+    "ncol_taxa_array": 3,
+    "column_max": [
+     "4",
+     "0",
+     "4"
+    ],
+    "values": [
+     "1/4",
+     "NaN",
+     "1/2",
+     "1/2",
+     "NaN",
+     "1",
+     "1",
+     "NaN",
+     "1/4"
+    ],
+    "taxa_means": [
+     "7/3",
+     "0",
+     "7/3"
+    ],
+    "taxa_means_accumulator_independent": [
+     false,
+     true,
+     false
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "a zero column has maximum 0: 0/0 gives NaN in every cell, its mean is 0"
+   }
+  },
+  "zero_max_negative_and_na": {
+   "taxa_appear_core": [
+    [
+     0,
+     -2,
+     3
+    ],
+    [
+     -2,
+     -4,
+     1
+    ],
+    [
+     null,
+     -1,
+     2
+    ]
+   ],
+   "num_taxa": 3,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 3,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 3,
+    "ncol_taxa_array": 3,
+    "column_max": [
+     "0",
+     "-1",
+     "3"
+    ],
+    "values": [
+     "NaN",
+     "2",
+     "1",
+     "-Inf",
+     "4",
+     "1/3",
+     "NA",
+     "1",
+     "2/3"
+    ],
+    "taxa_means": [
+     "-1",
+     "-7/3",
+     "2"
+    ],
+    "taxa_means_accumulator_independent": [
+     true,
+     false,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "artificial edge: at maximum 0, 0/0 is NaN, -2/0 is -Inf, NA stays NA; a negative maximum flips the sign"
+   }
+  },
+  "gibbs_true_branch_odd_num_taxa": {
+   "taxa_appear_core": [
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     5,
+     4,
+     3,
+     2,
+     1
+    ]
+   ],
+   "num_taxa": 5,
+   "gibbs": true,
+   "hand": {
+    "how_many_taxa": 2,
+    "how_many_taxa_line": 54,
+    "parameter_stage": "parameter_stage_gibbs",
+    "nrow_taxa_array": 2,
+    "ncol_taxa_array": 5,
+    "column_max": [
+     "5",
+     "4",
+     "3",
+     "4",
+     "5"
+    ],
+    "values": [
+     "1/5",
+     "1/2",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1/2",
+     "1/5"
+    ],
+    "taxa_means": [
+     "3",
+     "3",
+     "3",
+     "3",
+     "3"
+    ],
+    "taxa_means_accumulator_independent": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "gibbs TRUE gives floor(5/2) = 2 and parameter_stage_gibbs; dead in the bound run (gibbs <- F)"
+   }
+  },
+  "weights_branch_odd_num_taxa": {
+   "taxa_appear_core": [
+    [
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    [
+     5,
+     4,
+     3,
+     2,
+     1
+    ]
+   ],
+   "num_taxa": 5,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 5,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 2,
+    "ncol_taxa_array": 5,
+    "column_max": [
+     "5",
+     "4",
+     "3",
+     "4",
+     "5"
+    ],
+    "values": [
+     "1/5",
+     "1/2",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1",
+     "1/2",
+     "1/5"
+    ],
+    "taxa_means": [
+     "3",
+     "3",
+     "3",
+     "3",
+     "3"
+    ],
+    "taxa_means_accumulator_independent": [
+     true,
+     true,
+     true,
+     true,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2",
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "note": "the bound branch: how_many_taxa = num_taxa = 5 and parameter_stage_weights"
+   }
+  },
+  "minimal_two_by_two": {
+   "taxa_appear_core": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "num_taxa": 2,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 2,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 2,
+    "ncol_taxa_array": 2,
+    "column_max": [
+     "2",
+     "6"
+    ],
+    "values": [
+     "1/2",
+     "1/2",
+     "1",
+     "1"
+    ],
+    "taxa_means": [
+     "3/2",
+     "9/2"
+    ],
+    "taxa_means_accumulator_independent": [
+     true,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2"
+    ],
+    "note": "smallest matrix without dimension drop"
+   }
+  },
+  "inexact_partial_sums_flagged": {
+   "taxa_appear_core": [
+    [
+     0.1,
+     1
+    ],
+    [
+     0.2,
+     2
+    ],
+    [
+     0.3,
+     3
+    ]
+   ],
+   "num_taxa": 2,
+   "gibbs": false,
+   "hand": {
+    "how_many_taxa": 2,
+    "how_many_taxa_line": 57,
+    "parameter_stage": "parameter_stage_weights",
+    "nrow_taxa_array": 3,
+    "ncol_taxa_array": 2,
+    "column_max": [
+     "0.3",
+     "3"
+    ],
+    "values": null,
+    "taxa_means": null,
+    "taxa_means_accumulator_independent": [
+     false,
+     true
+    ],
+    "jeffreys_prior": [
+     "1/2",
+     "1/2"
+    ],
+    "note": "0.1 + 0.2 is not an exact double: the mean of the first column depends on the accumulator; values are the correctly rounded quotients of the stored doubles"
+   }
+  }
+ }
+}

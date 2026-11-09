@@ -1,0 +1,96 @@
+{
+  "status": "read_only_original_spans",
+  "spans": [
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 622,
+      "last_line": 633,
+      "role": "gibbs <- F at depth 0, the only assignment of gibbs in the eight files",
+      "text": "\n\ngibbs <- F\nif(gibbs){\n    sample_length <- 12500\n    burn_in <- 2500\n    thin_size <- 5\n}else{\n    sample_length <- 25000\n    burn_in <- 5000\n    thin_size <- 5\n}"
+    },
+    {
+      "source": "original:main_v1.2.R",
+      "first_line": 673,
+      "last_line": 677,
+      "role": "bound loop sources mcmc_prepare.R, then mcmc_conduction.R",
+      "text": "    \n    \n    source(\"src/mcmc_prepare.R\")  \n    source(\"src/mcmc_conduction.R\")    \n    source(\"src/mcmc_trimming_posterior_trafo.R\")"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 91,
+      "last_line": 100,
+      "role": "all.avail.age is a numeric array; NA rows filled from the row before",
+      "text": "all.avail.age <- array(NA, dim = c(length(age),ncol(all.avail)))\nfor(i in 1:ncol(all.avail)){\n    all.avail.age[,i] <-   rho.d.g.a %*% as.matrix(all.avail[,i])\n}\n\nif(anyNA(all.avail.age)){\n    which_na <- which(is.na(rowMeans(all.avail.age)))\n    for(i in 1:ncol(all.avail.age)){\n        all.avail.age[which_na,i] <- all.avail.age[which_na[1]-1,i]\n    }"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1450,
+      "last_line": 1454,
+      "role": "taxa.appear.core <- all.avail.age[,which_taxa] (drops at one row/column)",
+      "text": "which_taxa <- c(1:num_taxa)\n# if(add.sites) taxa.sampled <- colnames(all.avail)[which_taxa] \ntaxa.sampled <- colnames(all.avail)[which_taxa] \ntaxa.pool.current <- taxa.sampled\ntaxa.appear.core <- all.avail.age[,which_taxa]"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1664,
+      "last_line": 1679,
+      "role": "removal: taxa.appear.core[,-which.tf.missing]; num_taxa from nrow (1678)",
+      "text": "which.tf.missing <- which(is.na(tf.x1.current.mean))\nif(length(which.tf.missing) != 0){\n    taxa.appear.core <- taxa.appear.core[,-which.tf.missing]\n    tf.x1.current <- tf.x1.current[-which.tf.missing,]\n    tf.x2.current <- tf.x2.current[-which.tf.missing,]\n    tf.x1.current.mean <- tf.x1.current.mean[-which.tf.missing]\n    tf.x2.current.mean <- tf.x2.current.mean[-which.tf.missing]\n    if(taxa_change){\n        tf.x1.current.mean_change <- tf.x1.current.mean_change[-which.tf.missing]\n        tf.x2.current.mean_change <- tf.x2.current.mean_change[-which.tf.missing]\n    }\n    \n    all.avail <- all.avail[,-which.tf.missing]\n    all.avail.age <- all.avail.age[,-which.tf.missing]\n    num_taxa <- nrow(tf.x1.current)\n}"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1692,
+      "last_line": 1706,
+      "role": "documented only: tf_x12_mean_current, combs with choose, posterior <- list()",
+      "text": "tf_x12_mean_current <- array(NA, dim = c(length(tf.x2.current.mean),2))\ntf_x12_mean_current[,1] <- tf.x1.current.mean\ntf_x12_mean_current[,2] <- tf.x2.current.mean\n\nif(taxa_change){\n    tf_x12_mean_current_change <- array(NA, dim = c(length(tf.x2.current.mean_change),2))\n    tf_x12_mean_current_change[,1] <- tf.x1.current.mean_change\n    tf_x12_mean_current_change[,2] <- tf.x2.current.mean_change\n}\n\ncombs <- c()\nfor(c in 1:num_taxa) combs[c] <- choose(num_taxa,c)\n\n# random starting values\nposterior <- list()"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 53,
+      "last_line": 79,
+      "role": "implemented: how_many_taxa, taxa_information, column max norm, jeffreys_prior",
+      "text": "if(gibbs){\n    posterior$how_many_taxa <- floor(num_taxa/2) \n    parameter_stage <- parameter_stage_gibbs\n}else{\n    posterior$how_many_taxa <- num_taxa\n    parameter_stage <- parameter_stage_weights\n}\n\n\n# for random walk MH sampling\ntaxa_information <- list()\ntaxa_information$values <- c(t(taxa.appear.core))\ntaxa_information$ncol_taxa_array <- ncol(taxa.appear.core)\ntaxa_information$nrow_taxa_array <- nrow(taxa.appear.core)\ntaxa_information$taxa_means <- colMeans(taxa.appear.core, na.rm=T)\n\ntaxa.appear.core.temp <- taxa.appear.core\nfor(j in 1:num_taxa){\n    taxa.appear.core.temp[,j] <- taxa.appear.core[,j]/max(taxa.appear.core[,j], na.rm=T)\n#     taxa.appear.core.temp[,j] <- taxa.appear.core[,j] * (1/(num_taxa*mean(taxa.appear.core[,j])))\n}\n\ntaxa_information$values <- c(t(taxa.appear.core.temp))\n\n\n# for gibbs sampling\nposterior$jeffreys_prior <- rep(0.5,num_taxa)"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 101,
+      "last_line": 101,
+      "role": "posterior_temp <- posterior copies how_many_taxa and jeffreys_prior",
+      "text": "posterior_temp <- posterior"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 112,
+      "last_line": 114,
+      "role": "reader (sampler, not run): z starts as 1:posterior$how_many_taxa",
+      "text": "posterior$taxa_weights <- posterior$z <- vector(\"list\",length = sample_length) \nposterior_temp$taxa_weights <- posterior$taxa_weights[[1]] <-  rep(1/((num_taxa)),num_taxa)\nposterior_temp$z <- posterior$z[[1]] <-  1:posterior$how_many_taxa"
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 130,
+      "last_line": 133,
+      "role": "documented only: rmvnorm_rcpp draws (random state)",
+      "text": "x_curr <- rep(NA,2*num_taxa*num_age)\ntann_fill_ids <- seq(1,2*num_taxa,by=2)\npann_fill_ids <- seq(2,2*num_taxa,by=2)\nr_curr_all <- rmvnorm_rcpp(sample_length, rep(0,2*num_taxa*num_age), diag(2*num_taxa*num_age))     "
+    },
+    {
+      "source": "original:src/mcmc_conduction.R",
+      "first_line": 138,
+      "last_line": 146,
+      "role": "reader (sampler, not run): parameter_stage gets taxa_information",
+      "text": "for(i in 2:sample_length){\n    setTxtProgressBar(pb,i)\n\n    ## parameter stage # 0.182\n    posterior_temp <- parameter_stage(posterior_temp=posterior_temp,taxa.appear.core=taxa.appear.core.temp,taxa_information=taxa_information) \n    \n    ## process stage # 0.800\n    # reconstruction\n    posterior_temp <- reconstruction(posterior_temp=posterior_temp,tf.x1.current[posterior_temp$z,],tf.x2.current[posterior_temp$z,],tf_x12_mean_current[posterior_temp$z,],predictors,tann,recent,multiple,spectral,stad_interstad)"
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1207,
+      "last_line": 1238,
+      "role": "reader in the dead Gibbs branch: jeffreys_prior, how_many_taxa",
+      "text": "parameter_stage_gibbs <- function(posterior_temp = posterior_temp,taxa.appear.core=taxa.appear.core,taxa_information=taxa_information){\n    \n    posterior_temp$parameter_ratio <- 1\n    which_taxa <- rep(0,num_taxa)\n    which_taxa[posterior_temp$z] <- 1\n    # https://stats.stackexchange.com/questions/44494/why-is-the-dirichlet-distribution-the-prior-for-the-multinomial-distribution\n    # jeffreys prior (non-informative): prior$taxa.weights * prior$phi1\n    testing <- F\n    while (testing == F) {\n        new_weight <- SBMSplitMerge::rdirichlet(1,posterior_temp$jeffreys_prior + which_taxa)\n        if (min(new_weight) > 0) {\n            testing <- T\n        }\n    }\n    posterior_temp$taxa_weights <- new_weight   \n    # gibbs: alpha\n    # The uniform distribution is actually a special case of the Dirichlet distribution, corresponding to the case α1=α2=⋯=αk=1 or 0.5\n#     alpha_unnorm <- new_weight * posterior_temp$taxa_weights[1,] # theta * Pr(P|A,z) ~ Unif(1,num_taxa)\n#     alpha_unnorm <- alpha_unnorm/max(alpha_unnorm)\n#     posterior_temp$alpha <- alpha_unnorm/sum(alpha_unnorm)\n\n    posterior_temp$z <- SBMSplitMerge::rcat( posterior_temp$how_many_taxa,posterior_temp$taxa_weights,replace=FALSE)\n    posterior_temp$combination[posterior_temp$z] <- 1\n    # modify the taxa information: Pr(P|A,z,w)\n    taxa.appear.core.temp <- taxa.appear.core[ , posterior_temp$z]\n    posterior_temp$taxa.appear.core.temp <- taxa.appear.core.temp / rowSums(taxa.appear.core.temp, na.rm=T)\n    \n    posterior_temp$parameter_ratio <- 1\n    \n    return(posterior_temp)\n\n}"
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1242,
+      "last_line": 1283,
+      "role": "active reader: values, ncol_taxa_array, nrow_taxa_array (1276)",
+      "text": "parameter_stage_weights <- function(posterior_temp=posterior_temp,taxa.appear.core=taxa.appear.core,taxa_information=taxa_information){\n    old_weights <- posterior_temp$taxa_weights\n    testing <- F\n    counts <- 0\n    while (testing == F) {\n        counts <- counts + 1\n        new_weights <- rdirichlet(1,old_weights*posterior_temp$dirichlet_spread)[1,]  \n        if (min(new_weights) > 0) {\n            testing <- T\n        }\n        # start again, if the algorithm runs into a dead end\n        if(counts >= 1000){\n            new_weights <- rep(1/((num_taxa)),num_taxa)\n            posterior_temp$dirichlet_spread <- posterior_temp$dirichlet_spread*2\n            testing <- T\n        }\n    }\n    posterior_temp$taxa_weights <- new_weights\n    # parameter module\n    # https://stats.stackexchange.com/questions/64674/confused-with-mcmc-metropolis-hastings-variations-random-walk-non-random-walk\n    # better: https://stats.stackexchange.com/questions/64293/understanding-metropolis-hastings-with-asymmetric-proposal-distribution\n#     weights_ratio <- ddirichlet(posterior_temp$taxa_weights,rep(0.5,num_taxa))/ddirichlet(posterior$taxa_weights[[i-1]],rep(0.5,num_taxa))\n#     weights_ratio <- ddirichlet(new_weights,old_weights*posterior_temp$dirichlet_spread) / ddirichlet(old_weights,old_weights*posterior_temp$dirichlet_spread)\n#     proposal_ratio <- ddirichlet(old_weights,new_weights*posterior_temp$dirichlet_spread)/ddirichlet(new_weights,old_weights*posterior_temp$dirichlet_spread)\n\n    \n    # dirichlet is not a symmetric distribution\n    weights_ratio <- ddirichlet(new_weights,rep(0.5,num_taxa)) / ddirichlet(old_weights,rep(0.5,num_taxa))\n    proposal_ratio <- ddirichlet(old_weights,new_weights)/ddirichlet(new_weights,old_weights)\n    \n    parameter_ratio <- proposal_ratio * weights_ratio\n    if(is.na(parameter_ratio)) parameter_ratio <- 0\n    posterior_temp$parameter_ratio <- parameter_ratio\n    \n    taxa.appear.core.temp <- matrix(taxa_information$values * new_weights,ncol = taxa_information$ncol_taxa_array,nrow=taxa_information$nrow_taxa_array,byrow=T)\n    posterior_temp$taxa.appear.core.temp <- taxa.appear.core.temp / rowSums(taxa.appear.core.temp, na.rm=T)\n    \n    # default z values\n    posterior_temp$z <- 1:ncol(taxa.appear.core.temp)\n    \n    return(posterior_temp)\n}"
+    }
+  ]
+}

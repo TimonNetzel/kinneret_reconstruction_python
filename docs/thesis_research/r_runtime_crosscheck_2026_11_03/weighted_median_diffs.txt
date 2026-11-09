@@ -1,0 +1,242 @@
+===== 0.54.0 -> 0.55.0
+--- 0.54.0/R/weightedMedian.R
++++ 0.55.0/R/weightedMedian.R
+@@ -55,2 +55,6 @@
+ #' where the weights are result of a division with zero.
++#' 
++#' If there are missing values in \code{w} that are part of the calculation
++#' (after subsetting and dropping missing values in \code{x}), then the final
++#' result is always \code{NA} of the same type as \code{x}.
+ #'
+===== 0.57.0 -> 0.58.0
+--- 0.57.0/R/weightedMedian.R
++++ 0.58.0/R/weightedMedian.R
+@@ -4,4 +4,5 @@
+ #'
+-#' @param x a \code{\link[base]{numeric}} \code{\link[base]{vector}} containing
+-#' the values whose weighted median is to be computed.
++#' @param x a \code{\link[base]{numeric}} or \code{\link[base]{logical}}
++#' \code{\link[base]{vector}} containing the values whose weighted median is
++#' to be computed.
+ #'
+@@ -55,3 +56,3 @@
+ #' where the weights are result of a division with zero.
+-#' 
++#'
+ #' If there are missing values in \code{w} that are part of the calculation
+@@ -75,3 +76,3 @@
+ #' \code{\link{weightedMean}}().
+-#' 
++#'
+ #' @references [1] T.H. Cormen, C.E. Leiserson, R.L. Rivest, Introduction to
+@@ -83,3 +84,2 @@
+                            interpolate = is.null(ties), ties = NULL, ...) {
+-  # Argument 'x':
+ 
+--- 0.57.0/src/weightedMedian.c
++++ 0.58.0/src/weightedMedian.c
+@@ -18,3 +18,3 @@
+   /* Argument 'x': */
+-  assertArgVector(x, (R_TYPE_INT | R_TYPE_REAL), "x");
++  assertArgVector(x, (R_TYPE_LGL | R_TYPE_INT | R_TYPE_REAL), "x");
+   nx = xlength(x);
+@@ -45,3 +45,3 @@
+     mu = weightedMedian_dbl[idxsType](REAL(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
+-  } else if (isInteger(x)) {
++  } else if (isInteger(x) | isLogical(x)) {
+     mu = weightedMedian_int[idxsType](INTEGER(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
+===== 0.58.0 -> 0.59.0
+--- 0.58.0/R/weightedMedian.R
++++ 0.59.0/R/weightedMedian.R
+@@ -4,12 +4,3 @@
+ #'
+-#' @param x a \code{\link[base]{numeric}} or \code{\link[base]{logical}}
+-#' \code{\link[base]{vector}} containing the values whose weighted median is
+-#' to be computed.
+-#'
+-#' @param w a vector of weights the same length as \code{x} giving the weights
+-#' to use for each element of \code{x}. Negative weights are treated as zero
+-#' weights. Default value is equal weight to all values.
+-#'
+-#' @param idxs A \code{\link[base]{vector}} indicating subset of elements to
+-#' operate over. If \code{\link[base]{NULL}}, no subsetting is done.
++#' @inheritParams weightedMad
+ #'
+@@ -18,3 +9,3 @@
+ #' not.  If \code{\link[base]{NA}}, no check at all for \code{\link[base]{NA}}s
+-#' is done.  Default value is \code{\link[base]{NA}} (for efficiency).
++#' is done.
+ #'
+@@ -33,4 +24,2 @@
+ #' \code{x[i] <= x[k]} and \code{x[i] >= x[k]}, respectively.
+-#'
+-#' @param ... Not used.
+ #'
+@@ -112,3 +101,3 @@
+     } else {
+-      stop("Unknown value on 'ties': ", ties)
++      stop(sprintf("Unknown value of argument '%s': %s", "ties", ties))
+     }
+===== 0.60.0 -> 0.60.1
+--- 0.60.0/src/weightedMedian.c
++++ 0.60.1/src/weightedMedian.c
+@@ -36,4 +36,3 @@
+   R_xlen_t nidxs;
+-  int idxsType;
+-  void *cidxs = validateIndices(idxs, nx, 1, &nidxs, &idxsType);
++  R_xlen_t *cidxs = validateIndices(idxs, nx, 1, &nidxs);
+ 
+@@ -44,5 +43,5 @@
+   if (isReal(x)) {
+-    mu = weightedMedian_dbl[idxsType](REAL(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
++    mu = weightedMedian_dbl(REAL(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
+   } else if (isInteger(x) | isLogical(x)) {
+-    mu = weightedMedian_int[idxsType](INTEGER(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
++    mu = weightedMedian_int(INTEGER(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
+   }
+--- 0.60.0/src/weightedMedian_lowlevel.h
++++ 0.60.1/src/weightedMedian_lowlevel.h
+@@ -4,2 +4,3 @@
+ #include <R_ext/Error.h>
++#include "000.macros.h"
+ 
+@@ -7,18 +8,13 @@
+ Native API (dynamically generated via macros):
+-
+-double weightedMedian_int_aidxs(int *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_int_iidxs(int *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_int_didxs(int *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_dbl_aidxs(double *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_dbl_iidxs(double *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_dbl_didxs(double *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
++ 
++double weightedMedian_int(int *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
++double weightedMedian_dbl(double *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+ */
+ 
+-#define METHOD weightedMedian
+-#define RETURN_TYPE double
+-#define ARGUMENTS_LIST X_C_TYPE *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties
++#define X_TYPE 'i'
++#include "weightedMedian_lowlevel_template.h"
++#include "000.templates-types_undef.h"
+ 
+-#define X_TYPE 'i'
+-#include "000.templates-gen-vector.h"
+ #define X_TYPE 'r'
+-#include "000.templates-gen-vector.h"
++#include "weightedMedian_lowlevel_template.h"
++#include "000.templates-types_undef.h"
+--- 0.60.0/src/weightedMedian_lowlevel_template.h
++++ 0.60.1/src/weightedMedian_lowlevel_template.h
+@@ -2,6 +2,6 @@
+  TEMPLATE:
+-  double weightedMedian_<int|dbl>[idxsType](ARGUMENTS_LIST)
++  double weightedMedian_<int|dbl>(ARGUMENTS_LIST)
+ 
+  ARGUMENTS_LIST:
+-  X_C_TYPE *x, R_xlen_t nx, double *w, void *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties
++  X_C_TYPE *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties
+ 
+@@ -13,3 +13,3 @@
+ /* Expand arguments:
+-    X_TYPE => (X_C_TYPE, X_IN_C, [METHOD_NAME])
++    X_TYPE => (X_C_TYPE, X_IN_C)
+  */
+@@ -19,3 +19,3 @@
+ 
+-RETURN_TYPE METHOD_NAME_IDXS(ARGUMENTS_LIST) {
++double CONCAT_MACROS(weightedMedian, X_C_SIGNATURE)(X_C_TYPE *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties) {
+   X_C_TYPE value;
+@@ -29,6 +29,2 @@
+ 
+-#ifdef IDXS_TYPE
+-  IDXS_C_TYPE *cidxs = (IDXS_C_TYPE*) idxs;
+-#endif
+-
+   /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+@@ -45,3 +41,3 @@
+ 
+-    weight = R_INDEX_GET(w, IDX_INDEX(cidxs,ii), NA_REAL);
++    weight = R_INDEX_GET(w, ((idxs == NULL) ? (ii) : idxs[ii]), NA_REAL);
+     if (ISNAN(weight)) {
+@@ -61,5 +57,5 @@
+ 
+-        weight = R_INDEX_GET(w, IDX_INDEX(cidxs,jj), NA_REAL);
++        weight = R_INDEX_GET(w, ((idxs == NULL) ? (jj) : idxs[jj]), NA_REAL);
+         if (isinf(weight)) {
+-          value = R_INDEX_GET(x, IDX_INDEX(cidxs,jj), X_NA);
++          value = R_INDEX_GET(x, ((idxs == NULL) ? (jj) : idxs[jj]), X_NA);
+           if (X_ISNAN(value)) {
+@@ -85,3 +81,3 @@
+       /* A data points with a finite positive weight */
+-      value = R_INDEX_GET(x, IDX_INDEX(cidxs,ii), X_NA);
++      value = R_INDEX_GET(x, ((idxs == NULL) ? (ii) : idxs[ii]), X_NA);
+       if (X_ISNAN(value)) {
+@@ -120,3 +116,3 @@
+       /*    printf("ii=%d, jj=%d, wtmp[%d]=%g\n", (int)ii, (int)jj, (int)ii, wtmp[ii]); */
+-      xtmp[jj] = x[IDX_INDEX(cidxs,ii)]; // sure that xvalue is not NA
++      xtmp[jj] = x[((idxs == NULL) ? (ii) : idxs[ii])]; // sure that xvalue is not NA
+       wtmp[jj] = wtmp[ii];
+===== 0.63.0 -> 1.0.0
+--- 0.63.0/src/weightedMedian.c
++++ 1.0.0/src/weightedMedian.c
+@@ -36,3 +36,4 @@
+   R_xlen_t nidxs;
+-  R_xlen_t *cidxs = validateIndices(idxs, nx, 1, &nidxs);
++  int idxsHasNA;
++  R_xlen_t *cidxs = validateIndicesCheckNA(idxs, nx, 1, &nidxs, &idxsHasNA);
+ 
+@@ -43,5 +44,5 @@
+   if (isReal(x)) {
+-    mu = weightedMedian_dbl(REAL(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
++    mu = weightedMedian_dbl(REAL(x), nx, REAL(w), cidxs, nidxs, idxsHasNA, narm, interpolate2, ties2);
+   } else if (isInteger(x) | isLogical(x)) {
+-    mu = weightedMedian_int(INTEGER(x), nx, REAL(w), cidxs, nidxs, narm, interpolate2, ties2);
++    mu = weightedMedian_int(INTEGER(x), nx, REAL(w), cidxs, nidxs, idxsHasNA, narm, interpolate2, ties2);
+   }
+--- 0.63.0/src/weightedMedian_lowlevel.h
++++ 1.0.0/src/weightedMedian_lowlevel.h
+@@ -9,4 +9,4 @@
+  
+-double weightedMedian_int(int *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
+-double weightedMedian_dbl(double *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties)
++double weightedMedian_int(int *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int idxsHasNA int narm, int interpolate, int ties)
++double weightedMedian_dbl(double *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int idxsHasNA int narm, int interpolate, int ties)
+ */
+--- 0.63.0/src/weightedMedian_lowlevel_template.h
++++ 1.0.0/src/weightedMedian_lowlevel_template.h
+@@ -5,3 +5,3 @@
+  ARGUMENTS_LIST:
+-  X_C_TYPE *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties
++  X_C_TYPE *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int idxsHasNA, int narm, int interpolate, int ties
+ 
+@@ -19,3 +19,5 @@
+ 
+-double CONCAT_MACROS(weightedMedian, X_C_SIGNATURE)(X_C_TYPE *x, R_xlen_t nx, double *w, R_xlen_t *idxs, R_xlen_t nidxs, int narm, int interpolate, int ties) {
++double CONCAT_MACROS(weightedMedian, X_C_SIGNATURE)(X_C_TYPE *x, R_xlen_t nx, double *w,
++                     R_xlen_t *idxs, R_xlen_t nidxs, int idxsHasNA,
++                     int narm, int interpolate, int ties) {
+   X_C_TYPE value;
+@@ -41,3 +43,7 @@
+ 
+-    weight = R_INDEX_GET(w, ((idxs == NULL) ? (ii) : idxs[ii]), NA_REAL);
++    /*
++     * Unlike the indices, the weights are not pre-checked for NA values in any way,
++     * meaning that we must pretend that the weights have NA-values in them
++     */
++    weight = R_INDEX_GET(w, ((idxs == NULL) ? (ii) : idxs[ii]), NA_REAL, 1);
+     if (ISNAN(weight)) {
+@@ -57,5 +63,5 @@
+ 
+-        weight = R_INDEX_GET(w, ((idxs == NULL) ? (jj) : idxs[jj]), NA_REAL);
++        weight = R_INDEX_GET(w, ((idxs == NULL) ? (jj) : idxs[jj]), NA_REAL, 1);
+         if (isinf(weight)) {
+-          value = R_INDEX_GET(x, ((idxs == NULL) ? (jj) : idxs[jj]), X_NA);
++          value = R_INDEX_GET(x, ((idxs == NULL) ? (jj) : idxs[jj]), X_NA, idxsHasNA);
+           if (X_ISNAN(value)) {
+@@ -81,3 +87,3 @@
+       /* A data points with a finite positive weight */
+-      value = R_INDEX_GET(x, ((idxs == NULL) ? (ii) : idxs[ii]), X_NA);
++      value = R_INDEX_GET(x, ((idxs == NULL) ? (ii) : idxs[ii]), X_NA, idxsHasNA);
+       if (X_ISNAN(value)) {

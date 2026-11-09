@@ -1,0 +1,51 @@
+{
+  "basis_commit": "94f81cc31e2ea14aaa7800c8b557200b0d3a9319",
+  "tracked_files_unchanged_since_basis": true,
+  "new_files_sha256": {
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/README.md": "995c84019c0d09e1930844f3931b5b34e95c693dd10d575d709ec19a5826575f",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/arithmetic_check.json": "55992b44af28d3691c37f9d0bf4670796d3596920132fe0e5d1b9a342d4bd189",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/bind_source.py": "3c87fa6a60a7a16ccac4e7b5cb237e4183780df88faa6083e7b6c9b36ab42d24",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/check_gamma_prior_grid.py": "209d72092d3408cd2dcf9f834d55ed64c36deccbf00081041d0701b7bfa53175",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/determinism_audit.json": "4e84d6f024ac60a34de319a07bad02cbdc8a7f588b69b10d500b6996b410e33b",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/make_fixture.py": "cd59c1afcdfbdce49cfe674ff739cba2d59fc6c5981712b50255c1caffddcf60",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/rational_expectations.json": "4ba966c38352a15aeae9a1a3356561e2dd1f3c809d41972ded8ea924cd95badc",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/rational_reference.py": "7b505e9378d89ee4675a632a28d5a62d39666e4e13bea49174514f917da91690",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/record_verification.py": "9a923eb06c56261be69b94555650f93e6ae8a0826e23ea44676220b423e91e0e",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/source_binding.json": "219e47a4d7bfc60ed5a997783a8ea811b35826f14afdffe19f377b2fa1053b17",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/source_excerpt.json": "db0aa07c7dac3a081e9ee5435d92d8c781e2569379b7188eb42f7d2346921afb",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/synthetic_fixture.json": "ab393d575ec28913ae049b67888e9e45f2475aaa38683edb772e157a7d515e57",
+    "docs/thesis_research/literal_gamma_prior_grid_2026_11_02/synthetic_result.json": "0b9a3a4dd0f273891fd9d05b2d7cc4b502b5dd973e63ccaff854d60acb1ed563",
+    "tests/test_historical_gamma_prior_grid.py": "c100f600624981c3bacef4f83871e85ced387ef20a6cf5266b1a64099c770f66",
+    "tools/historical_gamma_prior_grid.py": "a2dbeed4456396604f98b4ce89a6c5703a53e4b9a43ebff33a8813a87ca71773"
+  },
+  "targeted_pytest": {
+    "files": [
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "tests": 352,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "new_tests": 55,
+    "previous_tests": 297
+  },
+  "phase1_checkers": {
+    "portable_exit": 2,
+    "with_local_exit": 2,
+    "expected": 2
+  },
+  "not_run": [
+    "pytest tests (contains sampler unit tests)",
+    "literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false
+}

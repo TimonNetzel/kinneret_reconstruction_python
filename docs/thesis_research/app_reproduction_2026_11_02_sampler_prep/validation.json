@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "scope": "read-only app display of the newest checked reproduction state (nine submodules incl. conditional taxon pruning, unconditional gamma prior grid, which.tf.missing removal with num_taxa priors and the sampler preparation without a sampler run), four frozen earlier states and synthetic examples; no historical case reproduction, no training, R run, sampler run or fossil reconstruction",
+  "starting_commit": "0a3dcdb8fde7292f6b9c1596dbade5cc7c455e34",
+  "module_package_commit": "00ab021bc0936031bc1ce0b752f91284f1764b2e",
+  "reproduction_state_sha256": "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[3] received only its link commit 0a3dcdb (confirmed with git log -1 --format=%H on its state file; pushed, contains its unchanged state file); STATES[0..2] untouched",
+  "environment": {
+    "os": "Windows 11",
+    "python": ".venv with PYTHONPATH=src",
+    "node": "v24.19.0",
+    "playwright": "1.62.1 bundled with the Codex runtime via NODE_PATH",
+    "browser_channel": "msedge",
+    "offline": true
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 61,
+    "new_tests": 7,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same browser checks were executed explicitly below with --kanal msedge",
+    "local_junit_sha256": "156faaee0c04f75562aeec63d4c72e241e0ed82004898fc140af7fea701071f1"
+  },
+  "historical_tests": {
+    "files": [
+      "tests/test_historical_sampler_preparation.py",
+      "tests/test_historical_tf_missing_priors.py",
+      "tests/test_historical_gamma_prior_grid.py",
+      "tests/test_historical_taxon_pruning.py",
+      "tests/test_historical_tf_preparation.py",
+      "tests/test_historical_phase1_chain.py",
+      "tests/test_historical_cdf_discrepancy.py",
+      "tests/test_historical_age_selection.py",
+      "tests/test_historical_age_depth.py",
+      "tests/test_historical_final_pdf.py",
+      "tests/test_kinneret_phase1_spec.py"
+    ],
+    "passed": 555,
+    "new_tests": 118,
+    "rerun_after_app_changes": 555,
+    "local_junit_sha256": "632c92fa1881054a8b9fb2c154a80a8c7b8b6b430d06b5f874311c50f3581163"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.5 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases": [
+      "index_handy_light",
+      "index_handy_dark",
+      "index_pc_light",
+      "index_pc_dark",
+      "index Gesten",
+      "kinneret-app_handy_light",
+      "kinneret-app_handy_dark",
+      "kinneret-app_pc_light",
+      "kinneret-app_pc_dark",
+      "kinneret-app Gesten"
+    ],
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "reproduction_checks": {
+      "status_text": true,
+      "tests_shown": 555,
+      "modules": 9,
+      "conditional_tag_only_on_taxon_pruning": true,
+      "frozen_earlier_state_lines": [
+        "2026-11-02, 5 Teilmodule, 251 Tests, SHA-256 c358b2c3382f",
+        "2026-11-02, 6 Teilmodule, 297 Tests, SHA-256 3656316de421",
+        "2026-11-02, 7 Teilmodule, 352 Tests, SHA-256 43edfcb67a64",
+        "2026-11-02, 8 Teilmodule, 437 Tests, SHA-256 7b7bf1f449a1"
+      ],
+      "open_requirements": 11,
+      "conflicting_requirements": 4,
+      "central_requirements": 4,
+      "links": 21,
+      "links_pinned_to_00ab021": 17,
+      "links_to_frozen_states": {
+        "47a926c": 1,
+        "3d013b2": 1,
+        "7d3d0f6": 1,
+        "0a3dcdb": 1
+      },
+      "example_collapsed_by_default": true,
+      "synthetic_warning_visible": true,
+      "example_tables": 9,
+      "sampler_table_accumulator_dependent_means": 3,
+      "sampler_table_exact_means": 1,
+      "sampler_special_table_marked_cells": 3,
+      "sampler_texts": [
+        "row-wise values 1/2, 1/6, ...",
+        "8 von 12 Positionen",
+        "8/3, 8/3, 4",
+        "floor(5/2) = 2",
+        "how_many_taxa = num_taxa = 5",
+        "0,5 je Taxon"
+      ],
+      "earlier_example_checks_unchanged": true,
+      "open_state_kept_on_language_switch": true,
+      "page_or_table_overflow": false,
+      "absent_reproduction_state_visible": true,
+      "absent_snapshot_keeps_reproduction_state": true
+    },
+    "runs": "first run after the app changes: all ten cases ok, no table wider than its frame at 390 px. Visual check then showed 'Fall 1' used for both the matrix example and the special-value table; the caption now says 'Zuerst die Rohmatrix' / 'First the raw matrix'; final run after rebuilding: all ten cases ok",
+    "measured_table_widths_390px": {
+      "sampler": [
+        206,
+        332
+      ],
+      "sampler-special": [
+        184,
+        332
+      ]
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef",
+    "local_log_note": "byte-identical to earlier passing logs because a passing run prints only the case names with ok and the unchanged sensitivity table"
+  },
+  "two_sites": {
+    "tool": "tests/test_app.py::_zweiter_standort on results/app into .local/sampler_preparation_2026_11_02/app2, then node tools/app_pruefen.js --zwei-standorte <copy>/index.html --kanal msedge",
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "sampler-preparation tables and texts at 390 px phone width, light (sticky header set static for the clip)",
+    "desktop.png": "same part, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite; contains sampler unit tests)",
+    "docs/thesis_research/literal_tf_preparation_2026_11_02/verify_packet.py (packet-bound, not a regression checker)",
+    "tools/verify_* (time-bound checkers, not regression checkers)",
+    "R, training, sampler, age model or fossil reconstruction"
+  ],
+  "local_artifacts": ".local/sampler_preparation_2026_11_02/ (not versioned)",
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

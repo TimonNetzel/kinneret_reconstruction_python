@@ -1,0 +1,207 @@
+{
+ "kind": "synthetic_fragment_check_not_historical_reproduction",
+ "cases": 9,
+ "agreement": "exact equality of counts, R specials, signed zeros and correctly rounded doubles",
+ "hand_expectations": {
+  "rowwise_recycling_two_by_three": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "chain_minimal_two_by_two": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "chain_three_by_four_inexact": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "chain_zero_column_nan": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "na_and_nan_skipped_in_row_sum": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "zero_row_sums": {
+   "zero_sum_rows": [
+    1,
+    2,
+    3
+   ],
+   "agrees": true
+  },
+  "chain_minus_inf": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "reset_weights_uniform_third": {
+   "zero_sum_rows": [],
+   "agrees": true
+  },
+  "scaled_weights_power_of_two": {
+   "zero_sum_rows": [],
+   "agrees": true
+  }
+ },
+ "naive_counterexamples": {
+  "rowwise_recycling_two_by_three": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 4,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "chain_minimal_two_by_two": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 2,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "chain_three_by_four_inexact": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 8,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "chain_zero_column_nan": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 6,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [
+    1,
+    2,
+    3
+   ],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "na_and_nan_skipped_in_row_sum": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 6,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [
+    1,
+    2,
+    3
+   ],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "zero_row_sums": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 6,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [
+    2
+   ],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "chain_minus_inf": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 6,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [
+    1,
+    3
+   ],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "reset_weights_uniform_third": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 4,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  },
+  "scaled_weights_power_of_two": {
+   "column_major_values_differ": true,
+   "column_major_misaligned_weight_positions": 4,
+   "byrow_false_differs": true,
+   "sum_recycled_along_rows_differs": true,
+   "rows_without_na_rm_lost": [],
+   "unweighted_differs": true,
+   "column_sums_differ": true
+  }
+ },
+ "state5_chain": {
+  "rule": "values of the sampler-preparation module for the named state-5 case equal the fixture values",
+  "cases": {
+   "chain_minimal_two_by_two": {
+    "state5_case": "minimal_two_by_two",
+    "values_equal": true,
+    "dimensions_equal": true
+   },
+   "chain_three_by_four_inexact": {
+    "state5_case": "rowwise_flatten_three_by_four",
+    "values_equal": true,
+    "dimensions_equal": true
+   },
+   "chain_zero_column_nan": {
+    "state5_case": "zero_column_gives_nan",
+    "values_equal": true,
+    "dimensions_equal": true
+   },
+   "chain_minus_inf": {
+    "state5_case": "zero_max_negative_and_na",
+    "values_equal": true,
+    "dimensions_equal": true
+   }
+  }
+ },
+ "final_pdf_rw_coefficients_cross_check": {
+  "rule": "finite positive raw matrices: rows flagged accumulator independent equal rw_coefficients of literal_final_pdf_2026_11_02 (final_reconstruction 450-455) exactly; flagged rows are only reported",
+  "cases": {
+   "chain_minimal_two_by_two": [
+    {
+     "row": 1,
+     "accumulator_independent": true,
+     "equal": true
+    },
+    {
+     "row": 2,
+     "accumulator_independent": true,
+     "equal": true
+    }
+   ],
+   "chain_three_by_four_inexact": [
+    {
+     "row": 1,
+     "accumulator_independent": false,
+     "equal": true
+    },
+    {
+     "row": 2,
+     "accumulator_independent": false,
+     "equal": true
+    },
+    {
+     "row": 3,
+     "accumulator_independent": true,
+     "equal": true
+    }
+   ]
+  }
+ },
+ "row_sum_precision": "module and reference give the correctly rounded exact row sum; R may accumulate in extended precision, so only rows flagged accumulator independent are R-exact; the module flag is a sufficient power-of-two bound, the reference enumerates subset sums",
+ "dirichlet_package": null,
+ "historical_reproduction_ready": false,
+ "final_variant_selected": false,
+ "R_execution": false
+}

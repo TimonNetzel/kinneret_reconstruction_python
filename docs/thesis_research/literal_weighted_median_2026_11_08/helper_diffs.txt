@@ -1,0 +1,628 @@
+===== 0.55.0 -> 0.56.0
+--- 0.55.0/000.utils.h
++++ 0.56.0/000.utils.h
+@@ -37,2 +37,3 @@
+   double nrow, ncol;
++  const char *dimlabel = "dim.";
+ 
+@@ -40,3 +41,3 @@
+   if (!isVectorAtomic(dim) || xlength(dim) != 2 || !isInteger(dim)) {
+-    error("Argument 'dim' must be an integer vector of length two.");
++    error("Argument '%s' must be an integer vector of length two.", dimlabel);
+   }
+@@ -45,7 +46,7 @@
+   if (nrow < 0) {
+-    error("Argument 'dim' specifies a negative number of rows (dim[1]): %d", nrow);
++    error("Argument '%s' specifies a negative number of rows (%s[1]): %g", dimlabel, dimlabel, nrow);
+   } else if (ncol < 0) {
+-    error("Argument 'dim' specifies a negative number of columns (dim[2]): %d", ncol);
++    error("Argument '%s' specifies a negative number of columns (%s[2]): %g", dimlabel, dimlabel, ncol);
+   } else if (nrow * ncol != max) {
+-    error("Argument 'dim' does not match length of argument '%s': %g * %g != %g", maxlabel, nrow, ncol, max);
++    error("Argument '%s' does not match length of argument '%s': %g * %g != %g", dimlabel, maxlabel, nrow, ncol, max);
+   }
+===== 0.60.0 -> 0.60.1
+--- 0.60.0/000.api.h
++++ 0.60.1/000.api.h
+@@ -7,5 +7,5 @@
+ SEXP binMeans(SEXP y, SEXP x, SEXP bx, SEXP retCount, SEXP right);
+-SEXP colCounts(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP value, SEXP what, SEXP naRm, SEXP hasNA);
+-SEXP colOrderStats(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP which);
+-SEXP colRanges(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP what, SEXP naRm, SEXP hasNA);
++SEXP colCounts(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP value, SEXP what, SEXP naRm, SEXP hasNA, SEXP useNames);
++SEXP colOrderStats(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP which, SEXP useNames);
++SEXP colRanges(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP what, SEXP naRm, SEXP hasNA, SEXP useNames);
+ SEXP count(SEXP x, SEXP idxs, SEXP value, SEXP what, SEXP naRm, SEXP hasNA);
+@@ -17,17 +17,17 @@
+ SEXP psortKM(SEXP x, SEXP k, SEXP m);
+-SEXP rowCounts(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP value, SEXP what, SEXP naRm, SEXP hasNA);
+-SEXP rowCummaxs(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow);
+-SEXP rowCummins(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow);
+-SEXP rowCumprods(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow);
+-SEXP rowCumsums(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow);
+-SEXP rowDiffs(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP lag, SEXP differences, SEXP byRow);
+-SEXP rowLogSumExps(SEXP lx, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow);
+-SEXP rowMads(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP constant, SEXP naRm, SEXP hasNA, SEXP byRow);
+-SEXP rowMeans2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow);
+-SEXP rowMedians(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow);
+-SEXP rowOrderStats(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP which);
+-SEXP rowRanges(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP what, SEXP naRm, SEXP hasNA);
+-SEXP rowRanksWithTies(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP tiesMethod, SEXP byRow);
+-SEXP rowSums2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow);
+-SEXP rowVars(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow);
++SEXP rowCounts(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP value, SEXP what, SEXP naRm, SEXP hasNA, SEXP useNames);
++SEXP rowCummaxs(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow, SEXP useNames);
++SEXP rowCummins(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow, SEXP useNames);
++SEXP rowCumprods(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow, SEXP useNames);
++SEXP rowCumsums(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP byRow, SEXP useNames);
++SEXP rowDiffs(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP lag, SEXP differences, SEXP byRow, SEXP useNames);
++SEXP rowLogSumExps(SEXP lx, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowMads(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP constant, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowMeans2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowMedians(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowOrderStats(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP which, SEXP useNames);
++SEXP rowRanges(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP what, SEXP naRm, SEXP hasNA, SEXP useNames);
++SEXP rowRanksWithTies(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP tiesMethod, SEXP byRow, SEXP useNames);
++SEXP rowSums2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowVars(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
+ SEXP signTabulate(SEXP x, SEXP idxs);
+--- 0.60.0/000.init.c
++++ 0.60.1/000.init.c
+@@ -13,5 +13,5 @@
+   CALLDEF(binMeans, 5),
+-  CALLDEF(colCounts, 8),
+-  CALLDEF(colOrderStats, 5),
+-  CALLDEF(colRanges, 7),
++  CALLDEF(colCounts, 9),
++  CALLDEF(colOrderStats, 6),
++  CALLDEF(colRanges, 8),
+   CALLDEF(count, 6),
+@@ -23,17 +23,17 @@
+   CALLDEF(psortKM, 3),
+-  CALLDEF(rowCounts, 8),
+-  CALLDEF(rowCummaxs, 5),
+-  CALLDEF(rowCummins, 5),
+-  CALLDEF(rowCumprods, 5),
+-  CALLDEF(rowCumsums, 5),
+-  CALLDEF(rowDiffs, 7),
+-  CALLDEF(rowLogSumExps, 7),
+-  CALLDEF(rowMads, 8),
+-  CALLDEF(rowMeans2, 7),
+-  CALLDEF(rowMedians, 7),
+-  CALLDEF(rowOrderStats, 5),
+-  CALLDEF(rowRanges, 7),
+-  CALLDEF(rowRanksWithTies, 6),
+-  CALLDEF(rowSums2, 7),
+-  CALLDEF(rowVars, 7),
++  CALLDEF(rowCounts, 9),
++  CALLDEF(rowCummaxs, 6),
++  CALLDEF(rowCummins, 6),
++  CALLDEF(rowCumprods, 6),
++  CALLDEF(rowCumsums, 6),
++  CALLDEF(rowDiffs, 8),
++  CALLDEF(rowLogSumExps, 8),
++  CALLDEF(rowMads, 9),
++  CALLDEF(rowMeans2, 8),
++  CALLDEF(rowMedians, 8),
++  CALLDEF(rowOrderStats, 6),
++  CALLDEF(rowRanges, 8),
++  CALLDEF(rowRanksWithTies, 7),
++  CALLDEF(rowSums2, 8),
++  CALLDEF(rowVars, 8),
+   CALLDEF(signTabulate, 2),
+--- 0.60.0/000.macros.h
++++ 0.60.1/000.macros.h
+@@ -10,7 +10,2 @@
+ 
+-#ifndef METHOD_TEMPLATE_H
+-#define METHOD_TEMPLATE_H QUOTE_MACROS(CONCAT_MACROS(METHOD,lowlevel_template.h))
+-#endif
+-
+-
+ #endif /* END OF _MACROS_H_ */
+--- 0.60.0/000.templates-types.h
++++ 0.60.1/000.templates-types.h
+@@ -5,2 +5,3 @@
+ #undef X_C_TYPE
++#undef X_C_SIGNATURE
+ #undef X_IN_C
+@@ -14,2 +15,3 @@
+ #undef Y_C_TYPE
++#undef Y_C_SIGNATURE
+ #undef Y_IN_C
+@@ -21,2 +23,4 @@
+ #undef Y_NA
++
++#undef X_C_Y_C_SIGNATURE
+ 
+@@ -36,2 +40,3 @@
+     #define X_C_TYPE int
++    #define X_C_SIGNATURE int
+     #define X_IN_C INTEGER
+@@ -45,2 +50,3 @@
+     #define X_C_TYPE double
++    #define X_C_SIGNATURE dbl
+     #define X_IN_C REAL
+@@ -54,2 +60,3 @@
+     #define X_C_TYPE int
++    #define X_C_SIGNATURE lgl
+     #define X_IN_C LOGICAL
+@@ -69,2 +76,3 @@
+     #define Y_C_TYPE int
++    #define Y_C_SIGNATURE int
+     #define Y_IN_C INTEGER
+@@ -78,2 +86,3 @@
+     #define Y_C_TYPE double
++    #define Y_C_SIGNATURE dbl
+     #define Y_IN_C REAL
+@@ -87,2 +96,3 @@
+     #define Y_C_TYPE int
++    #define Y_C_SIGNATURE lgl
+     #define Y_IN_C LOGICAL
+@@ -135,232 +145,2 @@
+ /*
+- Method name based on 'x' (and 'y') types
+- */
+-#ifndef METHOD_NAME
+-  #if X_TYPE == 'i'
+-    #if Y_TYPE == 'i'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, int_int)
+-    #elif Y_TYPE == 'r'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, int_dbl)
+-    #elif Y_TYPE == 'l'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, int_lgl)
+-    #else
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, int)
+-    #endif
+-  #elif X_TYPE == 'r'
+-    #if Y_TYPE == 'i'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, dbl_int)
+-    #elif Y_TYPE == 'r'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, dbl_dbl)
+-    #elif Y_TYPE == 'l'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, dbl_lgl)
+-    #else
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, dbl)
+-    #endif
+-  #elif X_TYPE == 'l'
+-    #if Y_TYPE == 'i'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, lgl_int)
+-    #elif Y_TYPE == 'r'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, lgl_dbl)
+-    #elif Y_TYPE == 'l'
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, lgl_lgl)
+-    #else
+-      #define METHOD_NAME CONCAT_MACROS(METHOD, lgl)
+-    #endif
+-  #else
+-    #error "INTERNAL ERROR: Failed to set C macro METHOD_NAME: Unknown X_TYPE"
+-  #endif
+-#endif
+-
+-
+-/*
+- Subsetted indexing: matrix
+- */
+-#undef ROW_INDEX_NONA
+-#undef ROW_INDEX
+-#undef ROWS_C_TYPE
+-#undef METHOD_NAME_ROWS
+-
+-#undef COL_INDEX_NONA
+-#undef COL_INDEX
+-#undef COLS_C_TYPE
+-#undef METHOD_NAME_ROWS_COLS
+-
+-#ifdef ROWS_TYPE
+-  #define ROW_INDEX_NONA(rows, ii) ((R_xlen_t)rows[ii]-1)
+-  #if ROWS_TYPE == 'i'
+-    #define ROWS_C_TYPE int
+-    #define ROW_INDEX(rows, ii) (rows[ii] == NA_INTEGER ? NA_R_XLEN_T : (R_xlen_t)rows[ii]-1)
+-    #define METHOD_NAME_ROWS CONCAT_MACROS(METHOD_NAME, irows)
+-  #elif ROWS_TYPE == 'r'
+-    #define ROWS_C_TYPE double
+-    #define ROW_INDEX(rows, ii) (ISNAN(rows[ii]) ? NA_R_XLEN_T : (R_xlen_t)rows[ii]-1)
+-    #define METHOD_NAME_ROWS CONCAT_MACROS(METHOD_NAME, drows)
+-  #else
+-    #error "INTERNAL ERROR: Failed to set C macro METHOD_NAME: Unknown ROWS_TYPE"
+-  #endif
+-#else
+-  #define ROW_INDEX_NONA(rows, ii) (ii)
+-  #define ROW_INDEX(rows, ii) (ii)
+-  #define ROWS_C_TYPE void
+-  #define METHOD_NAME_ROWS CONCAT_MACROS(METHOD_NAME, arows)
+-#endif
+-
+-#ifdef COLS_TYPE
+-  #define COL_INDEX_NONA(cols, jj) ((R_xlen_t)cols[jj]-1)
+-  #if COLS_TYPE == 'i'
+-    #define COLS_C_TYPE int
+-    #define COL_INDEX(cols, jj) (cols[jj] == NA_INTEGER ? NA_R_XLEN_T : (R_xlen_t)cols[jj]-1)
+-    #define METHOD_NAME_ROWS_COLS CONCAT_MACROS(METHOD_NAME_ROWS, icols)
+-  #elif COLS_TYPE == 'r'
+-    #define COLS_C_TYPE double
+-    #define COL_INDEX(cols, jj) (ISNAN(cols[jj]) ? NA_R_XLEN_T : (R_xlen_t)cols[jj]-1)
+-    #define METHOD_NAME_ROWS_COLS CONCAT_MACROS(METHOD_NAME_ROWS, dcols)
+-  #else
+-    #error "INTERNAL ERROR: Failed to set C macro METHOD_NAME: Unknown ROWS_TYPE"
+-  #endif
+-#else
+-  #define COL_INDEX_NONA(cols, jj) (jj)
+-  #define COL_INDEX(cols, jj) (jj)
+-  #define COLS_C_TYPE void
+-  #define METHOD_NAME_ROWS_COLS CONCAT_MACROS(METHOD_NAME_ROWS, acols)
+-#endif
+-
+-#undef METHOD_NAME_arows
+-#undef METHOD_NAME_arows_acols
+-#undef METHOD_NAME_arows_icols
+-#undef METHOD_NAME_arows_dcols
+-#undef METHOD_NAME_irows
+-#undef METHOD_NAME_irows_acols
+-#undef METHOD_NAME_irows_icols
+-#undef METHOD_NAME_irows_dcols
+-#undef METHOD_NAME_drows
+-#undef METHOD_NAME_drows_acols
+-#undef METHOD_NAME_drows_icols
+-#undef METHOD_NAME_drows_dcols
+-
+-#define METHOD_NAME_arows CONCAT_MACROS(METHOD_NAME, arows)
+-#define METHOD_NAME_arows_acols CONCAT_MACROS(METHOD_NAME_arows, acols)
+-#define METHOD_NAME_arows_icols CONCAT_MACROS(METHOD_NAME_arows, icols)
+-#define METHOD_NAME_arows_dcols CONCAT_MACROS(METHOD_NAME_arows, dcols)
+--- 0.60.0/000.utils.h
++++ 0.60.1/000.utils.h
+@@ -119,6 +119,6 @@
+ /* Specified in validateIndices.c */
+-void *validateIndicesCheckNA(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *type, int *hasna);
++R_xlen_t *validateIndicesCheckNA(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *hasna);
+ 
+ 
+-void *validateIndices(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *type);
++R_xlen_t *validateIndices(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs);
+ 
+--- 0.60.0/validateIndices.c
++++ 0.60.1/validateIndices.c
+@@ -10,3 +10,3 @@
+ /** idxs must not be NULL, which should be checked before calling this function. **/
+-void* validateIndices_lgl(int *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *subsettedType, int *hasna) {
++R_xlen_t* validateIndices_lgl(int *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *hasna) {
+   R_xlen_t ii, jj, kk;
+@@ -16,4 +16,2 @@
+   *hasna = FALSE;
+-  // set default type as SUBSETTED_INTEGER
+-  *subsettedType = SUBSETTED_INTEGER;
+   if (nidxs == 0) {
+@@ -33,3 +31,2 @@
+         ++ count1;
+-        if (ii + 1 > R_INT_MAX) *subsettedType = SUBSETTED_REAL;
+       }
+@@ -42,16 +39,7 @@
+     *ansNidxs = count1 + count2;
+-
+-    if (*subsettedType == SUBSETTED_INTEGER) {
+-      int *ans = (int*) R_alloc(*ansNidxs, sizeof(int));
+-      FILL_VALIDATED_ANS(maxIdx, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_INTEGER : ii + 1);
+-      for (ii = count1; ii < *ansNidxs; ++ ii) {
+-        ans[ii] = NA_INTEGER;
+-      }
+-      return ans;
+-    }
+-    // *subsettedType == SUBSETTED_REAL
+-    double *ans = (double*) R_alloc(*ansNidxs, sizeof(double));
+-    FILL_VALIDATED_ANS(maxIdx, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_REAL : ii + 1);
++    
++    R_xlen_t *ans = (R_xlen_t *) R_alloc(*ansNidxs, sizeof(R_xlen_t));
++    FILL_VALIDATED_ANS(maxIdx, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_R_XLEN_T : ii);
+     for (ii = count1; ii < *ansNidxs; ++ ii) {
+-      ans[ii] = NA_REAL;
++      ans[ii] = NA_R_XLEN_T;
+     }
+@@ -61,3 +49,2 @@
+   R_xlen_t naCount = 0;
+-  R_xlen_t lastIndex = 0;
+   R_xlen_t lastPartNum = maxIdx % nidxs;
+@@ -66,3 +53,2 @@
+       if (idxs[ii] == NA_LOGICAL) ++ naCount;
+-      else lastIndex = ii + 1;
+       ++ count1;
+@@ -70,6 +56,3 @@
+   }
+-  if (lastIndex > 0 && maxIdx - lastPartNum + lastIndex > R_INT_MAX)
+-    *subsettedType = SUBSETTED_REAL;
+-
+-  lastIndex = 0;
++
+   for (; ii < nidxs; ++ ii) {
+@@ -77,3 +60,2 @@
+       if (idxs[ii] == NA_LOGICAL) ++ naCount;
+-      else lastIndex = ii + 1;
+       ++ count2;
+@@ -82,4 +64,2 @@
+   R_xlen_t count = count1 + count2;
+-  if (lastIndex > 0 && maxIdx - lastPartNum - count + lastIndex > R_INT_MAX)
+-    *subsettedType = SUBSETTED_REAL;
+ 
+@@ -88,3 +68,2 @@
+     *ansNidxs = maxIdx;
+-    *subsettedType = SUBSETTED_ALL;
+     return NULL;
+@@ -94,23 +73,8 @@
+   *ansNidxs = maxIdx / nidxs * count + count1;
+-  if (*subsettedType == SUBSETTED_INTEGER) {
+-    int *ans = (int*) R_alloc(*ansNidxs, sizeof(int));
+-    FILL_VALIDATED_ANS(nidxs, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_INTEGER : ii + 1);
+-
+-    for (ii = count, kk = nidxs; kk+nidxs <= maxIdx; kk += nidxs, ii += count) {
+-      for (jj = 0; jj < count; ++ jj) {
+-        ans[ii+jj] = ans[jj] == NA_INTEGER ? NA_INTEGER : ans[jj] + kk;
+-      }
+-    }
+-    for (jj = 0; jj < count1; ++ jj) {
+-      ans[ii+jj] = ans[jj] == NA_INTEGER ? NA_INTEGER : ans[jj] + kk;
+-    }
+-    return ans;
+-  }
+-  // *subsettedType == SUBSETTED_REAL
+-  double *ans = (double*) R_alloc(*ansNidxs, sizeof(double));
+-  FILL_VALIDATED_ANS(nidxs, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_REAL : ii + 1);
+-
++  R_xlen_t *ans = (R_xlen_t *) R_alloc(*ansNidxs, sizeof(R_xlen_t));
++  FILL_VALIDATED_ANS(nidxs, idxs[ii], idxs[ii] == NA_LOGICAL ? NA_R_XLEN_T : ii);
++  
+   for (ii = count, kk = nidxs; kk+nidxs <= maxIdx; kk += nidxs, ii += count) {
+     for (jj = 0; jj < count; ++ jj) {
+-      ans[ii+jj] = ISNAN(ans[jj]) ? NA_REAL : ans[jj] + kk;
++      ans[ii+jj] = ans[jj] == NA_R_XLEN_T ? NA_R_XLEN_T : ans[jj] + kk;
+     }
+@@ -118,3 +82,3 @@
+   for (jj = 0; jj < count1; ++ jj) {
+-    ans[ii+jj] = ISNAN(ans[jj]) ? NA_REAL : ans[jj] + kk;
++    ans[ii+jj] = ans[jj] == NA_R_XLEN_T ? NA_R_XLEN_T : ans[jj] + kk;
+   }
+@@ -134,9 +98,9 @@
+   ************************************************************/
+-void *validateIndices(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *subsettedType) {
++R_xlen_t *validateIndices(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs) {
+   int hasna;
+-  return validateIndicesCheckNA(idxs, maxIdx, allowOutOfBound, ansNidxs, subsettedType, &hasna);
+-}
+-
+-
+-void *validateIndicesCheckNA(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *subsettedType, int *hasna) {
++  return validateIndicesCheckNA(idxs, maxIdx, allowOutOfBound, ansNidxs, &hasna);
++}
++
++
++R_xlen_t *validateIndicesCheckNA(SEXP idxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *hasna) {
+   R_xlen_t nidxs = xlength(idxs);
+@@ -147,9 +111,8 @@
+     case INTSXP:
+-      return validateIndices_int(INTEGER(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, subsettedType, hasna);
++      return validateIndices_int(INTEGER(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, hasna);
+     case REALSXP:
+-      return validateIndices_dbl(REAL(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, subsettedType, hasna);
++      return validateIndices_dbl(REAL(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, hasna);
+     case LGLSXP:
+-      return validateIndices_lgl(LOGICAL(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, subsettedType, hasna);
++      return validateIndices_lgl(LOGICAL(idxs), nidxs, maxIdx, allowOutOfBound, ansNidxs, hasna);
+     case NILSXP:
+-      *subsettedType = SUBSETTED_ALL;
+       *ansNidxs = maxIdx;
+@@ -174,3 +137,3 @@
+   R_xlen_t ansNidxs;
+-  int subsettedType;
++  Rboolean need_double = FALSE;
+   R_xlen_t cmaxIdx = asR_xlen_t(maxIdx, 0);
+@@ -178,3 +141,3 @@
+   int callowOutOfBound = asLogicalNoNA(allowOutOfBound, "allowOutOfBound");
+-  void *cidxs;
++  R_xlen_t *cidxs;
+ 
+@@ -185,9 +148,9 @@
+     case INTSXP:
+-      cidxs = validateIndices_int(INTEGER(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &subsettedType, &hasna);
++      cidxs = validateIndices_int(INTEGER(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &hasna);
+       break;
+     case REALSXP:
+-      cidxs = validateIndices_dbl(REAL(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &subsettedType, &hasna);
++      cidxs = validateIndices_dbl(REAL(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &hasna);
+       break;
+     case LGLSXP:
+-      cidxs = validateIndices_lgl(LOGICAL(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &subsettedType, &hasna);
++      cidxs = validateIndices_lgl(LOGICAL(idxs), nidxs, cmaxIdx, callowOutOfBound, &ansNidxs, &hasna);
+--- 0.60.0/validateIndices_lowlevel.h
++++ 0.60.1/validateIndices_lowlevel.h
+@@ -2,4 +2,3 @@
+ #include "000.utils.h"
+-
+-#define METHOD validateIndices
++#include "000.macros.h"
+ 
+@@ -24,2 +23,3 @@
+ #include "validateIndices_lowlevel_template.h"
++#include "000.templates-types_undef.h"
+ #undef SUBSETTED_DEFAULT
+@@ -29,2 +29,3 @@
+ #include "validateIndices_lowlevel_template.h"
++#include "000.templates-types_undef.h"
+ #undef SUBSETTED_DEFAULT
+--- 0.60.0/validateIndices_lowlevel_template.h
++++ 0.60.1/validateIndices_lowlevel_template.h
+@@ -2,3 +2,3 @@
+  TEMPLATE:
+-  void validateIndices_<int|dbl>(X_C_TYPE *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *subsettedType, int *hasna)
++  void validateIndices_<int|dbl>(X_C_TYPE *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *hasna)
+ 
+@@ -20,28 +20,16 @@
+ 
+-#undef int_from_idx_TYPE
+-#undef dbl_from_idx_TYPE
++#undef R_xlen_t_from_idx_TYPE
+ #if X_TYPE == 'i'
+-#define int_from_idx_TYPE CONCAT_MACROS(int_from_idx, int)
+-#define dbl_from_idx_TYPE CONCAT_MACROS(dbl_from_idx, int)
++#define R_xlen_t_from_idx_TYPE CONCAT_MACROS(R_xlen_t_from_idx, int)
+ #elif X_TYPE == 'r'
+-#define int_from_idx_TYPE CONCAT_MACROS(int_from_idx, dbl)
+-#define dbl_from_idx_TYPE CONCAT_MACROS(dbl_from_idx, dbl)
++#define R_xlen_t_from_idx_TYPE CONCAT_MACROS(R_xlen_t_from_idx, dbl)
+ #endif
+ 
+-static R_INLINE int int_from_idx_TYPE(X_C_TYPE x, R_xlen_t maxIdx) {
+-  if (X_ISNAN(x)) return NA_INTEGER;
++static R_INLINE R_xlen_t R_xlen_t_from_idx_TYPE(X_C_TYPE x, R_xlen_t maxIdx) {
++  if (X_ISNAN(x)) return NA_R_XLEN_T;
+ #if X_TYPE == 'r'
+-  if (x > R_INT_MAX || x < R_INT_MIN) return NA_INTEGER; // including the cases of Inf
++  if (IS_INF(x)) return NA_R_XLEN_T;
+ #endif
+-  if (x > maxIdx) return NA_INTEGER;
+-  return x;
+-}
+-
+-static R_INLINE int dbl_from_idx_TYPE(X_C_TYPE x, R_xlen_t maxIdx) {
+-  if (X_ISNAN(x)) return NA_REAL;
+-#if X_TYPE == 'r'
+-  if (IS_INF(x)) return NA_REAL;
+-#endif
+-  if (x > maxIdx) return NA_REAL;
+-  return x;
++  if (x > maxIdx) return NA_R_XLEN_T;
++  return x - 1;
+ }
+@@ -49,7 +37,5 @@
+ /** idxs must not be NULL, which should be checked before calling this function. **/
+-void* METHOD_NAME(X_C_TYPE *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *subsettedType, int *hasna) {
++R_xlen_t* CONCAT_MACROS(validateIndices, X_C_SIGNATURE)(X_C_TYPE *idxs, R_xlen_t nidxs, R_xlen_t maxIdx, int allowOutOfBound, R_xlen_t *ansNidxs, int *hasna) {
+   // set default as no NA.
+   *hasna = FALSE;
+-  // For a un-full positive legal idxs array, we should use SUBSETTED_INTEGER as default.
+-  *subsettedType = SUBSETTED_INTEGER;
+ 
+@@ -81,5 +67,2 @@
+         }
+-#if X_TYPE == 'r'
+-        if (idx > R_INT_MAX) *subsettedType = SUBSETTED_REAL;
+-#endif
+       } else {
+@@ -102,4 +85,4 @@
+   if (!needReAlloc) { // must have: state >= 0
+-    *subsettedType = SUBSETTED_DEFAULT;
+-    return idxs;
++    // return idxs;
++    RETURN_VALIDATED_ANS(R_xlen_t, nidxs, idxs[ii], R_xlen_t_from_idx_TYPE(idxs[ii],maxIdx),);
+   }
+@@ -108,8 +91,4 @@
+   if (state >= 0) {
+-    if (*subsettedType == SUBSETTED_INTEGER) {
+-      // NOTE: braces is needed here, because of macro-defined function
+-      RETURN_VALIDATED_ANS(int, nidxs, idxs[ii], int_from_idx_TYPE(idxs[ii],maxIdx),);
+-    }
+-    // *subsettedType == SUBSETTED_REAL
+-    RETURN_VALIDATED_ANS(double, nidxs, idxs[ii], dbl_from_idx_TYPE(idxs[ii],maxIdx),);
++    // NOTE: braces is needed here, because of macro-defined function
++    RETURN_VALIDATED_ANS(R_xlen_t, nidxs, idxs[ii], R_xlen_t_from_idx_TYPE(idxs[ii],maxIdx),);
+   }
+@@ -143,11 +122,6 @@
+   ++ upperBound;
+-  if (upperBound > R_INT_MAX) *subsettedType = SUBSETTED_REAL;
+ 
+   // fill required idxs into ans
+-  if (*subsettedType == SUBSETTED_INTEGER) {
+-    // NOTE: braces is needed here, because of macro-defined function
+-    RETURN_VALIDATED_ANS(int, upperBound, !filter[ii], ii + 1, Free(filter););
+-  }
+-  // *subsettedType == SUBSETTED_REAL
+-  RETURN_VALIDATED_ANS(double, upperBound, !filter[ii], ii + 1, Free(filter););
++  // NOTE: braces is needed here, because of macro-defined function
++  RETURN_VALIDATED_ANS(R_xlen_t, upperBound, !filter[ii], ii, Free(filter););
+ }
+===== 0.62.0 -> 0.63.0
+--- 0.62.0/validateIndices.c
++++ 0.63.0/validateIndices.c
+@@ -142,2 +142,3 @@
+   R_xlen_t *cidxs;
++  R_xlen_t i;
+ 
+@@ -163,3 +164,3 @@
+   if (cidxs != NULL) {
+-    for (R_xlen_t i = 0; i < ansNidxs; i++) {
++    for (i = 0; i < ansNidxs; i++) {
+       if (cidxs[i] > INT_MAX){
+@@ -191,3 +192,3 @@
+       int *ans_ptr = INTEGER(ans);
+-      for (R_xlen_t i = 0; i < ansNidxs; i++) {
++      for (i = 0; i < ansNidxs; i++) {
+         ans_ptr[i] = cidxs[i] == NA_R_XLEN_T ? NA_INTEGER : (int)cidxs[i] + 1;
+@@ -203,3 +204,3 @@
+       double *ans_ptr = REAL(ans);
+-      for (R_xlen_t i = 0; i < ansNidxs; i++){
++      for (i = 0; i < ansNidxs; i++){
+         ans_ptr[i] = cidxs[i] == NA_R_XLEN_T ? NA_REAL : (double)cidxs[i] + 1;
+===== 0.63.0 -> 1.0.0
+--- 0.63.0/000.api.h
++++ 1.0.0/000.api.h
+@@ -11,3 +11,3 @@
+ SEXP count(SEXP x, SEXP idxs, SEXP value, SEXP what, SEXP naRm, SEXP hasNA);
+-SEXP diff2(SEXP x, SEXP idxs, SEXP lag, SEXP differences);
++SEXP diff2(SEXP x, SEXP idxs, SEXP lag, SEXP differences, SEXP useNames);
+ SEXP indexByRow(SEXP dim, SEXP idxs);
+@@ -25,3 +25,3 @@
+ SEXP rowMads(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP constant, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
+-SEXP rowMeans2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowMeans2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP refine, SEXP hasNA, SEXP byRow, SEXP useNames);
+ SEXP rowMedians(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
+@@ -31,3 +31,3 @@
+ SEXP rowSums2(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
+-SEXP rowVars(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP hasNA, SEXP byRow, SEXP useNames);
++SEXP rowVars(SEXP x, SEXP dim, SEXP rows, SEXP cols, SEXP naRm, SEXP refine, SEXP hasNA, SEXP byRow, SEXP useNames);
+ SEXP signTabulate(SEXP x, SEXP idxs);
+--- 0.63.0/000.init.c
++++ 1.0.0/000.init.c
+@@ -17,3 +17,3 @@
+   CALLDEF(count, 6),
+-  CALLDEF(diff2, 4),
++  CALLDEF(diff2, 5),
+   CALLDEF(indexByRow, 2),
+@@ -31,3 +31,3 @@
+   CALLDEF(rowMads, 9),
+-  CALLDEF(rowMeans2, 8),
++  CALLDEF(rowMeans2, 9),
+   CALLDEF(rowMedians, 8),
+@@ -37,3 +37,3 @@
+   CALLDEF(rowSums2, 8),
+-  CALLDEF(rowVars, 8),
++  CALLDEF(rowVars, 9),
+   CALLDEF(signTabulate, 2),
+--- 0.63.0/000.templates-types.h
++++ 1.0.0/000.templates-types.h
+@@ -146,2 +146,8 @@
+  Subsetted indexing: whether to check NA according to indexing
++ For optimization purposes, these macros can skip checking
++ whether the arguments are NA based on the macro arguments.
++ This may seem like a futile optimiztion (we do branching),
++ but such checking flags are often loop invariants meaning
++ the compiler will optimize out the branches and put the
++ before the loop.
+  */
+@@ -150,4 +156,5 @@
+ 
+-#define R_INDEX_OP(a, OP, b) (a == NA_R_XLEN_T || b == NA_R_XLEN_T ? NA_R_XLEN_T : a OP b)
+-#define R_INDEX_GET(x, i, NA) (i == NA_R_XLEN_T ? NA : x[i])
++#define R_INDEX_OP(a, OP, b, check_a_NA, check_b_NA) ((check_a_NA ? a == NA_R_XLEN_T : 0) || (check_b_NA ? b == NA_R_XLEN_T : 0) ? NA_R_XLEN_T : (a) OP (b))
++    
++#define R_INDEX_GET(x, i, NA, check_i_NA) ((check_i_NA ? (i) == NA_R_XLEN_T : 0) ? NA : x[(i)])
+ 
+--- 0.63.0/validateIndices.c
++++ 1.0.0/validateIndices.c
+@@ -165,3 +165,3 @@
+     for (i = 0; i < ansNidxs; i++) {
+-      if (cidxs[i] > INT_MAX){
++      if (cidxs[i] > INT_MAX) {
+         need_double = TRUE;
+@@ -204,3 +204,3 @@
+       double *ans_ptr = REAL(ans);
+-      for (i = 0; i < ansNidxs; i++){
++      for (i = 0; i < ansNidxs; i++) {
+         ans_ptr[i] = cidxs[i] == NA_R_XLEN_T ? NA_REAL : (double)cidxs[i] + 1;

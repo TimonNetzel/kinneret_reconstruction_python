@@ -1,0 +1,63 @@
+{
+  "kind": "determinism_audit_from_source_text_no_R_execution",
+  "question": "Which next step is deterministic without random state and without unbound package semantics?",
+  "candidates": [
+    {
+      "id": "gamma_prior_grid",
+      "lines": "mcmc_prepare.R:114-121,1264-1281 (+526-536, 1733)",
+      "random_state": false,
+      "functions": [
+        "seq",
+        "/",
+        "sqrt",
+        "-",
+        "abs",
+        "which.min",
+        "[",
+        "*",
+        "&",
+        "min"
+      ],
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": true,
+      "evidence": "main_v1.2.R:675 sources mcmc_prepare.R; 115-121, 526-531 (else of stad_interstad <- FALSE, 468) and 1270-1281 lie at brace depth 0; readers in mcmc_conduction.R:156-170, mcmc_functions_v1.6.R:229-246 and mcmc_trimming_posterior_trafo.R:637",
+      "version_note": "seq.default with upper 50000 is invariant to the +1e-10 fuzz and pmin(x, to): (50000-0.1)/0.1 is exactly 499999 and the last value exactly 50000. The mcmc_prep_v1.2.R copy (upper 5000) depends on both; R version unbound.",
+      "decision": "implemented as tools/historical_gamma_prior_grid.py; inputs only synthetic"
+    },
+    {
+      "id": "which_tf_missing",
+      "lines": "mcmc_prepare.R:1664-1679",
+      "random_state": false,
+      "package_semantics_needed": false,
+      "active_in_bound_reconstruction_loop": true,
+      "evidence": "Mechanics are base R (which, is.na, negative indexing with drop), but the NA mask is produced by weightedMedian in 1631/1651, the column drop to a vector for one remaining taxon and taxa_change are further R semantics",
+      "decision": "deterministic with an explicit mask; not selected in this packet, because its only trigger is the open weightedMedian output; documented for a later packet"
+    },
+    {
+      "id": "weightedMedian",
+      "lines": "mcmc_prepare.R:1631,1632,1651,1652",
+      "random_state": false,
+      "package_semantics_needed": true,
+      "evidence": "main_v1.2.R:27 attaches matrixStats without version",
+      "decision": "documented only; stays open in the runtime_rng bundle"
+    },
+    {
+      "id": "prior_samples_seed_2022",
+      "lines": "mcmc_prepare.R:1297-1303",
+      "random_state": true,
+      "seed_in_bound_sources": true,
+      "evidence": "set.seed(2022) before rnorm and rgamma(shape, rate); RNG kind, sample.kind and R version unbound",
+      "decision": "documented only; module reports the rate passed to rgamma, draws nothing"
+    },
+    {
+      "id": "recent_start_value",
+      "lines": "mcmc_prepare.R:1733-1734",
+      "random_state": true,
+      "evidence": "1733 rate <- shape/mean.pann is deterministic; 1734 adds rbeta(1, 0.1, 20) to the start value",
+      "decision": "1733 implemented behind the explicit recent flag; 1734 documented only"
+    }
+  ],
+  "selected_for_implementation": "gamma_prior_grid",
+  "final_variant_selected": false,
+  "R_execution": false
+}

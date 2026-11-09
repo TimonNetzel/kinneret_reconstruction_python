@@ -1,0 +1,12 @@
+{
+  "status": "read_only_spans",
+  "spans": [
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1188,
+      "last_line": 1199,
+      "role": "implemented",
+      "text": "reconstruction_climate <- function(taxa.appear.core,which.taxa,tf.x1.current,tf.x2.current,recent){\n    # mean recent climate\n    if(recent){ \n        tann.recent <- weightedMedian(x1range.bck,(taxa.appear.core[1,] %*% tf.x1.current)[1,])\n        pann.recent <- weightedMedian(x2range.bck,(taxa.appear.core[1,] %*% tf.x2.current)[1,])\n    }else{\n        tann.recent <- prior.recent$mean.tmp\n        pann.recent <- prior.recent$mean.pann\n    }\n    # output\n    return(list(tann = tann.recent, pann = pann.recent))\n}"
+    }
+  ]
+}

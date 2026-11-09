@@ -1,0 +1,42 @@
+{
+  "n_iterations": 20000,
+  "original_runtime_s": 1.3102285999339074,
+  "fields": [
+    {
+      "field": "accepted",
+      "equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "field": "tf_sample",
+      "equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "field": "taxa_weights",
+      "equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "field": "expl_variance",
+      "equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "field": "recent_temp",
+      "equal": true,
+      "max_abs_difference": 0.0
+    },
+    {
+      "field": "recent_pann",
+      "equal": true,
+      "max_abs_difference": 0.0
+    }
+  ],
+  "comparison": "separately_built_unmodified_original_vs_packaged_legacy_same_local_runtime",
+  "passed": true,
+  "archive_acceptance_mismatches": 8141,
+  "archive_first_acceptance_mismatch": 3,
+  "original_source_sha256": "306bb66aae949daab35023ca5ac3c9347edf56fa2b46264b7e6dcb8ea083dc4d",
+  "original_binary_sha256": "f6ab98bea4439e567ccf197eb6f0c68bc574dc7b0f53e851660ea49bc845b30b"
+}

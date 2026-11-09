@@ -1,0 +1,719 @@
+{
+ "kind": "synthetic_weights_stage_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "dirichlet_package": null,
+ "note": "Invented values and explicit weights; rdirichlet is never called. A fraction stands for the correctly rounded double; \"NA\", \"NaN\", \"Inf\", \"-Inf\" and \"-0\" name the R results. null in a hand list is not written by hand.",
+ "cases": {
+  "rowwise_recycling_two_by_three": {
+   "values": [
+    "1",
+    "1/2",
+    "1/4",
+    "1/2",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/2",
+    "1/4",
+    "1/4"
+   ],
+   "state5_case": null,
+   "hand": {
+    "products": [
+     "1/2",
+     "1/8",
+     "1/16",
+     "1/4",
+     "1/4",
+     "1/4"
+    ],
+    "row_sums": [
+     "11/16",
+     "3/4"
+    ],
+    "counts": [
+     3,
+     3
+    ],
+    "result": [
+     "8/11",
+     "2/11",
+     "1/11",
+     "1/3",
+     "1/3",
+     "1/3"
+    ],
+    "independent": [
+     true,
+     true
+    ],
+    "zero_rows": [],
+    "note": "weight k mod ncol meets its own taxon; exact row sums, each quotient one IEEE division",
+    "taxa_weights": [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "chain_minimal_two_by_two": {
+   "values": [
+    "1/2",
+    "1/2",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 2,
+   "new_weights": [
+    "1/4",
+    "3/4"
+   ],
+   "state5_case": "minimal_two_by_two",
+   "hand": {
+    "products": [
+     "1/8",
+     "3/8",
+     "1/4",
+     "3/4"
+    ],
+    "row_sums": [
+     "1/2",
+     "1"
+    ],
+    "counts": [
+     2,
+     2
+    ],
+    "result": [
+     "1/4",
+     "3/4",
+     "1/4",
+     "3/4"
+    ],
+    "independent": [
+     true,
+     true
+    ],
+    "zero_rows": [],
+    "note": "values of the smallest prepared matrix; both rows end in the weights",
+    "taxa_weights": [
+     "1/4",
+     "3/4"
+    ],
+    "z": [
+     1,
+     2
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     1,
+     2
+    ]
+   }
+  },
+  "chain_three_by_four_inexact": {
+   "values": [
+    "1/2",
+    "1/6",
+    "1/2",
+    "1/3",
+    "1",
+    "1/2",
+    "1/4",
+    "2/3",
+    "1/4",
+    "1",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 4,
+   "new_weights": [
+    "1/8",
+    "3/8",
+    "1/4",
+    "1/4"
+   ],
+   "state5_case": "rowwise_flatten_three_by_four",
+   "hand": {
+    "products": [
+     "1/16",
+     null,
+     "1/8",
+     null,
+     "1/8",
+     "3/16",
+     "1/16",
+     null,
+     "1/32",
+     "3/8",
+     "1/4",
+     "1/4"
+    ],
+    "row_sums": [
+     null,
+     null,
+     "29/32"
+    ],
+    "counts": [
+     4,
+     4,
+     4
+    ],
+    "result": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "1/29",
+     "12/29",
+     "8/29",
+     "8/29"
+    ],
+    "independent": [
+     false,
+     false,
+     true
+    ],
+    "zero_rows": [],
+    "note": "1/6, 1/3 and 2/3 are not exact doubles: the first two row sums are flagged",
+    "taxa_weights": [
+     "1/8",
+     "3/8",
+     "1/4",
+     "1/4"
+    ],
+    "z": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     4,
+     1,
+     2,
+     3,
+     4,
+     1,
+     2,
+     3,
+     4
+    ]
+   }
+  },
+  "chain_zero_column_nan": {
+   "values": [
+    "1/4",
+    "NaN",
+    "1/2",
+    "1/2",
+    "NaN",
+    "1",
+    "1",
+    "NaN",
+    "1/4"
+   ],
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/2",
+    "1/4",
+    "1/4"
+   ],
+   "state5_case": "zero_column_gives_nan",
+   "hand": {
+    "products": [
+     "1/8",
+     "NaN",
+     "1/8",
+     "1/4",
+     "NaN",
+     "1/4",
+     "1/2",
+     "NaN",
+     "1/16"
+    ],
+    "row_sums": [
+     "1/4",
+     "1/2",
+     "9/16"
+    ],
+    "counts": [
+     2,
+     2,
+     2
+    ],
+    "result": [
+     "1/2",
+     "NaN",
+     "1/2",
+     "1/2",
+     "NaN",
+     "1/2",
+     "8/9",
+     "NaN",
+     "1/9"
+    ],
+    "independent": [
+     true,
+     true,
+     true
+    ],
+    "zero_rows": [],
+    "note": "NaN cells of a zero column are skipped by rowSums and stay NaN",
+    "taxa_weights": [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "na_and_nan_skipped_in_row_sum": {
+   "values": [
+    "1/4",
+    "NA",
+    "1/2",
+    "NaN",
+    "1",
+    "1/2",
+    "1",
+    "1/2",
+    "NA"
+   ],
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/2",
+    "1/4",
+    "1/4"
+   ],
+   "state5_case": null,
+   "hand": {
+    "products": [
+     "1/8",
+     "NA",
+     "1/8",
+     "NaN",
+     "1/4",
+     "1/8",
+     "1/2",
+     "1/8",
+     "NA"
+    ],
+    "row_sums": [
+     "1/4",
+     "3/8",
+     "5/8"
+    ],
+    "counts": [
+     2,
+     2,
+     2
+    ],
+    "result": [
+     "1/2",
+     "NA",
+     "1/2",
+     "NaN",
+     "2/3",
+     "1/3",
+     "4/5",
+     "1/5",
+     "NA"
+    ],
+    "independent": [
+     true,
+     true,
+     true
+    ],
+    "zero_rows": [],
+    "note": "na.rm skips NA and NaN; without na.rm every row would be NA or NaN",
+    "taxa_weights": [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "zero_row_sums": {
+   "values": [
+    "0",
+    "0",
+    "0",
+    "NA",
+    "NaN",
+    "NA",
+    "1/2",
+    "-1/2",
+    "0",
+    "1",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 4,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "state5_case": null,
+   "hand": {
+    "products": [
+     "0",
+     "0",
+     "0",
+     "NA",
+     "NaN",
+     "NA",
+     "1/8",
+     "-1/8",
+     "0",
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    "row_sums": [
+     "0",
+     "0",
+     "0",
+     "1"
+    ],
+    "counts": [
+     3,
+     0,
+     3,
+     3
+    ],
+    "result": [
+     "NaN",
+     "NaN",
+     "NaN",
+     "NA",
+     "NaN",
+     "NA",
+     "Inf",
+     "-Inf",
+     "NaN",
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    "independent": [
+     true,
+     true,
+     true,
+     true
+    ],
+    "zero_rows": [
+     1,
+     2,
+     3
+    ],
+    "note": "artificial edge: a zero row, a row without values and a cancelling row sum to 0; 0/0 is NaN, 1/8 / 0 is Inf, -1/8 / 0 is -Inf, NA stays NA",
+    "taxa_weights": [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "chain_minus_inf": {
+   "values": [
+    "NaN",
+    "2",
+    "1",
+    "-Inf",
+    "4",
+    "1/3",
+    "NA",
+    "1",
+    "2/3"
+   ],
+   "nrow_taxa_array": 3,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/4",
+    "1/4",
+    "1/2"
+   ],
+   "state5_case": "zero_max_negative_and_na",
+   "hand": {
+    "products": [
+     "NaN",
+     "1/2",
+     "1/2",
+     "-Inf",
+     "1",
+     null,
+     "NA",
+     "1/4",
+     null
+    ],
+    "row_sums": [
+     "1",
+     "-Inf",
+     null
+    ],
+    "counts": [
+     2,
+     3,
+     2
+    ],
+    "result": [
+     "NaN",
+     "1/2",
+     "1/2",
+     "NaN",
+     "-0",
+     "-0",
+     "NA",
+     null,
+     null
+    ],
+    "independent": [
+     true,
+     true,
+     false
+    ],
+    "zero_rows": [],
+    "note": "a row with -Inf sums to -Inf: -Inf/-Inf is NaN, positive values give -0",
+    "taxa_weights": [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "reset_weights_uniform_third": {
+   "values": [
+    "1",
+    "1/2",
+    "1/4",
+    "1",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1/3",
+    "1/3",
+    "1/3"
+   ],
+   "state5_case": null,
+   "hand": {
+    "products": [
+     "1/3",
+     null,
+     null,
+     "1/3",
+     "1/3",
+     "1/3"
+    ],
+    "row_sums": [
+     null,
+     "1"
+    ],
+    "counts": [
+     3,
+     3
+    ],
+    "result": [
+     null,
+     null,
+     null,
+     "1/3",
+     "1/3",
+     "1/3"
+    ],
+    "independent": [
+     false,
+     false
+    ],
+    "zero_rows": [],
+    "note": "explicit weights equal to the reset rep(1/3, 3) of line 1254 (the reset itself is not emulated); row 2: three times the double d nearest 1/3 is exactly 1 - 2^-54, halfway between two doubles, rounded to the even 1, so every quotient is d again; the row is still flagged",
+    "taxa_weights": [
+     "1/3",
+     "1/3",
+     "1/3"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  },
+  "scaled_weights_power_of_two": {
+   "values": [
+    "1",
+    "1/2",
+    "1/4",
+    "1/2",
+    "1",
+    "1"
+   ],
+   "nrow_taxa_array": 2,
+   "ncol_taxa_array": 3,
+   "new_weights": [
+    "1",
+    "1/2",
+    "1/2"
+   ],
+   "state5_case": null,
+   "hand": {
+    "products": [
+     "1",
+     "1/4",
+     "1/8",
+     "1/2",
+     "1/2",
+     "1/2"
+    ],
+    "row_sums": [
+     "11/8",
+     "3/2"
+    ],
+    "counts": [
+     3,
+     3
+    ],
+    "result": [
+     "8/11",
+     "2/11",
+     "1/11",
+     "1/3",
+     "1/3",
+     "1/3"
+    ],
+    "independent": [
+     true,
+     true
+    ],
+    "zero_rows": [],
+    "note": "weights summing to 2 instead of 1: the stage does not renormalise the weights; a power-of-two scale cancels exactly, so the result equals the first case",
+    "taxa_weights": [
+     "1",
+     "1/2",
+     "1/2"
+    ],
+    "z": [
+     1,
+     2,
+     3
+    ],
+    "recycled_weight": [
+     1,
+     2,
+     3,
+     1,
+     2,
+     3
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "read_only_spans",
+  "spans": [
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1623,
+      "last_line": 1664,
+      "role": "the two weightedMedian loops and the mask",
+      "text": "tf.x1.current.mean <- (tf.x1.current %*% x1range.bck)[,1] # expectation value\ntf.x2.current.mean <- (tf.x2.current %*% x2range.bck)[,1] # expectation value\n\ndims2 <- 100000\ntann_expand <- spline(x1range.bck,n=dims2)$y\ntf.x1.current.mean <- tf.x1.current.mean_change <- c()\nfor(j in 1:nrow(tf.x1.current) ){\n    # weighted median of temperature in climate space\n    tf.x1.current.mean[j] <- weightedMedian(x1range.bck,tf.x1.current[j,] )\n    if(taxa_change) tf.x1.current.mean_change[j] <- weightedMedian(x1range.bck,tf.x1.current_change[j,] )\n#     print(tf.x1.current.mean[j])\n    # weighted mean of temperature in standard normal space\n    \n#     clim_expand  <- spline(tf.x1.current[j,],n=dims2)\n#     tf.x1.current.mean[j] <- tann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x1range.bck[round(weightedMean(1:dims,tf.x1.current[j,] ) )])\n#     print(tf.x1.current.mean[j])\n}\n\n\n# image.plot(1:nrow(tf.x2.current),x2range.bck,tf.x2.current)\n\n\n\npann_expand <- spline(x2range.bck,n=dims2)$y\ntf.x2.current.mean <- tf.x2.current.mean_change <- c()\nfor(j in 1:nrow(tf.x2.current) ){\n    # weighted median of precip in standard climate space\n    tf.x2.current.mean[j] <- weightedMedian(x2range.bck,tf.x2.current[j,] ) \n    if(taxa_change) tf.x2.current.mean_change[j] <- weightedMedian(x2range.bck,tf.x2.current_change[j,] )\n#     print(weightedMedian(x2range.bck,tf.x2.current[j,] ) )\n\n    # weighted mean of precip in standard normal space\n#     clim_expand  <- spline(tf.x2.current[j,],n=dims2)\n#     tf.x2.current.mean[j] <- pann_expand[round(weightedMean(1:length(clim_expand$y),clim_expand$y ) )]\n#     print(x2range.bck[round(weightedMean(1:dims,tf.x2.current[j,] ) )])\n#     print(tf.x2.current.mean[j])\n}\n\n\n#  which transfer functions are available\nwhich.tf.missing <- which(is.na(tf.x1.current.mean))"
+    },
+    {
+      "source": "CRAN:matrixStats 0.56.0 src/weightedMedian_lowlevel_template.h (Artistic-2.0)",
+      "first_line": null,
+      "last_line": null,
+      "role": "statements that decide NA and the value, not the whole file",
+      "text": "if (ISNAN(weight)) {\nif (!narm) {\n} else if (weight <= 0) {\n} else if (isinf(weight)) {\nif (isinf(weight)) {\nwtmp[jj] = 1;\nif (X_ISNAN(value)) {\nif (nxt == 0) {\nwtotal += wtmp[jj];\nif (nx == 1) {\nhalf = (nx+1) / 2;\nX_PSORT(x, nx, half);\nres = (double)x[half-1];\nX_PSORT(x, half, half-1);\nX_QSORT_I(x, idxs_int, 1, nx);\nhalf = nx+1; /* Default is last */\ntmp_d = w[idxs_int[ii]] / wtotal;\ntmp_d2 += tmp_d;\nwcum[ii] = tmp_d2 - (tmp_d/2);\nif (wcum[ii] >= 0.5) {\nif (half == 0 || half == nx) {\ndx = (double)(x[half] - x[half-1]);\nDy = wcum[half] - wcum[half-1];\ndy = 0.5 - wcum[half];\ndx = (dy/Dy) * dx;\nres = dx + x[half];"
+    }
+  ]
+}

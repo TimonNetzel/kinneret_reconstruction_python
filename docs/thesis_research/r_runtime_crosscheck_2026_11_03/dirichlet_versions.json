@@ -1,0 +1,55 @@
+{
+ "kind": "LaplacesDemon_dirichlet_source_comparison_not_runtime_binding",
+ "window": [
+  "2018-04-23",
+  "2023-07-07"
+ ],
+ "versions": [
+  {
+   "version": "16.1.0",
+   "published": "2017-12-19",
+   "tarball_sha256": "41d99261e8fc33c977b43ecf66ebed8ef1c84d9bd46b271609e9aadddc2ca8bb",
+   "rdirichlet": "cb8153be5072",
+   "ddirichlet": "0d898411f7ed"
+  },
+  {
+   "version": "16.1.1",
+   "published": "2020-02-03",
+   "tarball_sha256": "98d30fbc5594f46818632a6795febaa81df12e9598d31d17500bc7300289aea1",
+   "rdirichlet": "cb8153be5072",
+   "ddirichlet": "0d898411f7ed"
+  },
+  {
+   "version": "16.1.4",
+   "published": "2020-02-06",
+   "tarball_sha256": "4152a1c3c652979e97870e5c50c45a243d0ad8d4ff968091160e3d66509f61db",
+   "rdirichlet": "cb8153be5072",
+   "ddirichlet": "0d898411f7ed"
+  },
+  {
+   "version": "16.1.6",
+   "published": "2021-07-09",
+   "tarball_sha256": "57b53882fd7a195b38bbdbbf0b17745405eb3159b1b42f7f11ce80c78ab94eb7",
+   "rdirichlet": "cb8153be5072",
+   "ddirichlet": "0d898411f7ed"
+  }
+ ],
+ "distinct": {
+  "rdirichlet": 1,
+  "ddirichlet": 1
+ },
+ "texts": {
+  "rdirichlet": {
+   "cb8153be5072": {
+    "file": "R/distributions.R",
+    "text": "rdirichlet <- function (n, alpha)\n     {\n     alpha <- rbind(alpha)\n     alpha.dim <- dim(alpha)\n     if(n > alpha.dim[1])\n          alpha <- matrix(alpha, n, alpha.dim[2], byrow=TRUE)\n     x <- matrix(rgamma(alpha.dim[2]*n, alpha), ncol=alpha.dim[2])\n     sm <- x %*% rep(1, alpha.dim[2])\n     return(x/as.vector(sm))\n     }"
+   }
+  },
+  "ddirichlet": {
+   "0d898411f7ed": {
+    "file": "R/distributions.R",
+    "text": "ddirichlet <- function(x, alpha, log=FALSE)\n     {\n     if(missing(x)) stop(\"x is a required argument.\")\n     if(missing(alpha)) stop(\"alpha is a required argument.\")\n     if(!is.matrix(x)) x <- rbind(x)\n     if(!is.matrix(alpha))\n          alpha <- matrix(alpha, nrow(x), length(alpha), byrow=TRUE)\n     if(any(rowSums(x) != 1)) x / rowSums(x)\n     if(any(x < 0)) stop(\"x must be non-negative.\")\n     if(any(alpha <= 0)) stop(\"alpha must be positive.\")\n     dens <- as.vector(lgamma(rowSums(alpha)) - rowSums(lgamma(alpha)) +\n          rowSums((alpha-1)*log(x)))\n     if(log == FALSE) dens <- exp(dens)\n     return(dens)\n     }"
+   }
+  }
+ }
+}
