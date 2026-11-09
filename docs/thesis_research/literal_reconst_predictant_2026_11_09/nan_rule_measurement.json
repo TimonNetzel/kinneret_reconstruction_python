@@ -1,0 +1,16 @@
+{
+ "kind": "measurement_in_R_3_5_0_not_a_derivation",
+ "combinations": 1296,
+ "mismatches_per_rule": {
+  "x_first_in_product__sum_first_in_addition": 0,
+  "x_first_in_product__product_first_in_addition": 280,
+  "y_first_in_product__sum_first_in_addition": 96,
+  "y_first_in_product__product_first_in_addition": 328
+ },
+ "three_loop_accumulator": {
+  "tie_with_nan_in_other_row": "0x1p+0",
+  "tie_finite": "0x1p+0",
+  "one_means": "double"
+ },
+ "historical_reproduction_ready": false
+}

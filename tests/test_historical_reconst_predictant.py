@@ -397,6 +397,13 @@ def test_audit_selects_no_variant_and_keeps_draws_out():
     assert ids['proposal_draws']['random_state'] is True and ids['selection_and_product']['random_state'] is False and ids['taxa_change_block']['reached_by_bound_run'] is False
 
 
+def test_measured_nan_rule_fits_exactly_one_of_four_rules():
+    m = _json('nan_rule_measurement.json')
+    assert m['combinations'] == 1296 and m['mismatches_per_rule']['x_first_in_product__sum_first_in_addition'] == 0
+    assert sorted(v > 0 for v in m['mismatches_per_rule'].values()) == [False, True, True, True]
+    assert (m['three_loop_accumulator']['tie_with_nan_in_other_row'], m['three_loop_accumulator']['tie_finite']) == ('0x1p+0', '0x1p+0')
+
+
 def test_no_gpl_text_is_stored_only_numbers():
     text = json.dumps(BOUND['r_matprod_source'])
     assert 'mayHaveNaNOrInf(x' not in text and 'for (int' not in text and BOUND['r_matprod_source']['tarball_sha256'] == 'fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870'

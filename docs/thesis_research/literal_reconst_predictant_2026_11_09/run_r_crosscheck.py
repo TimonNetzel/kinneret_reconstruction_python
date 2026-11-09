@@ -103,9 +103,6 @@ def compare(mine, theirs, every):
     return out
 
 
-def selected_text(row):
-    return f'vector:{len(row["selected_values"])}' if row['selected_values'] is not None else None
-
 
 def main():
     rscript = str(Path(sys.argv[1]).resolve())

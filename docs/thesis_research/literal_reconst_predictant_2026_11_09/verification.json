@@ -1,9 +1,9 @@
 {
  "kind": "recorded_test_run_not_a_case_reproduction",
  "date": "2026-11-09",
- "new_tests": 229,
+ "new_tests": 230,
  "earlier_tests": 1172,
- "total_passed": 1401,
+ "total_passed": 1402,
  "test_files": [
   "tests/test_historical_reconst_predictant.py",
   "tests/test_historical_local_cor.py",
