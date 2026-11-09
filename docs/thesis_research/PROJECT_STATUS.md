@@ -1,5 +1,23 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## Lokales `cor` nachgebildet, App-Stand 11, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_local_cor_2026_11_09/README.md).
+
+- `mcmc_functions_v1.6.R:2355–2366` und die Zeitraum-Leser `1939–2018` mit expliziten Vektoren; eine Definition in 540 R-Dateien, nur Basisfunktionen.
+- **Kinneret:** `multiple` ist genau `sources$core`. Es läuft 1964–1970, sofern die Varianz der AP-Referenz nicht 0 ist (ohne finale Eingaben offen), sonst 1993.
+  **Zeile 1999 wird nicht erreicht** (`sources[,4]` bleibt 1); die frühere Übergabe nannte sie als Leser. `hi_time` ist FALSE.
+- `sum` in `long double`; eine einfache Double-Summe ändert 199 von 300 Stressfällen. NA/NaN-Token als Messbefund; nach `is.na` ohne Wirkung.
+- R 3.5.0 mit wörtlichen Originalzeilen: 447 von 447 Werten bitgleich, 0 ulp. 135 neue Tests, **1.172** gezielte Tests grün; App-Tests 119 grün
+  (2 Wrapper explizit ersetzt); Edge in beiden Formaten und zwei Standorte ok. Phase-1-Prüfer Exit 2.
+
+**App:** [Stand 11](app_reproduction_2026_11_09_local_cor/README.md) (Pin `cbfaf04f…`): 14 Teilmodule, Tabelle C1–C8. Stände 1–10 eingefroren.
+
+**Offen:** Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. Die Vektoren stammen im Lauf aus Ziehungen. Lizenzfrage zu `tools/r_sort_gpl.py`
+und die R-nahe Rechenschicht liegen beim Nutzer. PR #77 offen, nicht gemergt.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_LOCAL_COR_2026_11_09.md): `reconst`/`predictant` aus vorgegebenem `tf_sample`, danach `wt_power`.
+
 ## `reconstruction_climate` nachgebildet, im gebundenen Lauf ohne Aufrufer, App-Stand 10, 08.11.2026
 
 **Abgeschlossen** (Nutzerauftrag „Ja, nachbauen“): [Modul und Belege](literal_reconstruction_climate_2026_11_08/README.md).

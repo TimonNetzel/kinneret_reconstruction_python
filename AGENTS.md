@@ -1,3 +1,11 @@
+> **Aktuell: lokales `cor` nachgebildet, App-Stand 11, 09.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_local_cor_2026_11_09/README.md): `mcmc_functions_v1.6.R:2355–2366` und die Zeitraum-Leser 1939–2018 mit
+> expliziten Vektoren. Für Kinneret ist `multiple` genau `sources$core`; Zeile 1999 wird nicht erreicht, `hi_time` ist FALSE. R 3.5.0: 447 von 447 Werten bitgleich.
+> 135 neue Tests, 1.172 grün. [App-Stand 11](docs/thesis_research/app_reproduction_2026_11_09_local_cor/README.md) mit eigenem Pin; Stände 1–10
+> eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_LOCAL_COR_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: `reconstruction_climate` nachgebildet, im gebundenen Lauf ohne Aufrufer, App-Stand 10, 08.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_reconstruction_climate_2026_11_08/README.md): `mcmc_functions_v1.6.R:1188–1199`,
 > R 3.5.0 + matrixStats 0.56.0: 5.510 von 5.510 Werten bitgleich. Einziger Aufruf ist `mcmc_sampling_v1.4.R:79`, eine nirgends

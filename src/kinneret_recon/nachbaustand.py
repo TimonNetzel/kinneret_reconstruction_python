@@ -64,7 +64,13 @@ STATES = (
      "sha256": "329e6a8b2ada52e22be1a12272853091ca4a6c29894581167ae02b0898877f6a",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
                  "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
-                 "weighted_median", "reconstruction_climate")},
+                 "weighted_median", "reconstruction_climate"),
+     "commit": "437f6f4baeed4a086a2d5a80c7abc9e420a353de"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_09_local_cor/reproduction_state.json"),
+     "sha256": "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
+                 "weighted_median", "reconstruction_climate", "local_cor")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -95,11 +101,13 @@ def app_daten(root: Path) -> dict:
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
     wex, dex, rtc = state.get("weights_example"), state.get("dirichlet_example"), state.get("runtime_check")
     medx, six, kex = state.get("median_example"), state.get("six_check"), state.get("climate_example")
+    cex = state.get("cor_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex) if e
+             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex) if e
                 for k in ("fixture", "result", "rational", "arithmetic")]
              + ([medx["crosscheck"]] if medx else []) + ([kex["crosscheck"], kex["binding"]] if kex else [])
+             + ([cex["crosscheck"], cex["binding"]] if cex else [])
              + ([six[k] for k in ("package", "result", "causes", "provider")] if six else [])
              + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
@@ -181,6 +189,7 @@ def app_daten(root: Path) -> dict:
         "median_example": _median_example(root, medx, url) if medx else None,
         "six_check": _six_check(root, six, url) if six else None,
         "climate_example": _climate_example(root, kex, url) if kex else None,
+        "cor_example": _cor_example(root, cex, url) if cex else None,
         "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
     }
 
@@ -238,6 +247,39 @@ def _climate_example(root: Path, kex: dict, url) -> dict:
             "r": {"values": cross["values_compared"], "bit_equal": cross["bit_equal"], "max_ulps": cross["max_ulps"]},
             "caller": bound["callers"][0], "r_files_searched": bound["r_files_searched"],
             "sha256": {k: kex[k + "_sha256"] for k in ("result", "rational")}}
+
+
+def _cor_example(root: Path, cex: dict, url) -> dict:
+    """Stored local cor cases; they must equal the reference and the R record, and line 1999 must stay unreached for Kinneret."""
+    fixture = json.loads(_pinned(root, cex["fixture"], cex["fixture_sha256"]))
+    result = json.loads(_pinned(root, cex["result"], cex["result_sha256"]))
+    rational = json.loads(_pinned(root, cex["rational"], cex["rational_sha256"]))
+    check = json.loads(_pinned(root, cex["arithmetic"], cex["arithmetic_sha256"]))
+    cross = json.loads(_pinned(root, cex["crosscheck"], cex["crosscheck_sha256"]))
+    bound = json.loads(_pinned(root, cex["binding"], cex["binding_sha256"]))
+    readers = {str(r["line"]): r["kinneret"] for r in bound["readers"]}
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None or cross["historical_reproduction_ready"]
+            or bound["historical_reproduction_ready"] or not bound["multiple_equals_sources_core_for_kinneret"]
+            or not readers["1999"].startswith("not reached") or check["kind"] != "counterexamples_not_candidate_variants"):
+        raise ValueError("Nachbaustand: cor example claims historical inputs, a final variant or a reachable line 1999")
+    if cross["special_mismatch"] != 0:
+        raise ValueError("Nachbaustand: stored cor example has an NA or NaN mismatch against the R record")
+    cases = []
+    for name in cex["cases"]:
+        stored, exact, r, case = result["cases"][name], rational["cases"][name], cross["cases"][name], fixture["cases"][name]
+        same_as_r = (r["module"] == stored["value"]
+                     or (stored["kind"] == "number" and float.fromhex(r["module"]) == float.fromhex(stored["value"])))
+        if (stored["kind"] != exact["kind"] or (exact["value"] is not None and stored["value"] != exact["value"]) or not same_as_r
+                or not stored["matches_reference"]):
+            raise ValueError("Nachbaustand: stored cor example differs from the reference or the R record")
+        cases.append({"name": name, "x": case["x"], "y": case["y"], "na_rm": case["na_rm"], "kind": stored["kind"], "value": stored["decimal"],
+                      "replaced": stored["replaced"], "post_value": stored["post_value"], "ulps": r["ulps"]})
+    double = check["checks"]["double_sum_for_the_mean"]
+    return {"url": url(cex["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases,
+            "double_sum": {"compared": double["stress_compared"], "changed": double["stress_changed"]},
+            "r": {"values": cross["values_compared"], "bit_equal": cross["bit_equal"], "max_ulps": cross["max_ulps"]},
+            "r_files_searched": bound["r_files_searched"],
+            "sha256": {k: cex[k + "_sha256"] for k in ("result", "rational")}}
 
 
 def _six_check(root: Path, six: dict, url) -> dict:

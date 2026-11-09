@@ -267,6 +267,26 @@
       `${link(k.url, "nb_evidence")}</p>`;
   }
 
+  // Artificial local cor cases: rows are cases C1-C8, invented vectors and no draws from the run
+  function korrelation(c) {
+    if (!c) return "";
+    const zahl = (v) => (v !== 0 && Math.abs(v) < 0.001) ? exp10(v) : esc(fmt(v, 4));
+    const vektor = (v) => v.length ? esc(v.join(", ")) : "()";
+    const zeilen = c.cases.map((f, i) => `<tr data-cor="${esc(f.name)}"><th scope="row">${esc(text("nb_ex_c_case", { n: i + 1 }))}</th>` +
+      `<td>x: ${vektor(f.x)}<br>y: ${vektor(f.y)}</td><td>${esc(t(f.na_rm ? "nb_yes" : "nb_no"))}</td>` +
+      (f.kind === "number" ? `<td>${zahl(f.value)}</td>` : `<td data-special="na">${esc(f.kind)}</td>`) +
+      `<td${f.replaced ? ' data-replaced="true"' : ""}>${zahl(f.post_value)}</td><td data-ulps="${f.ulps}">${fmt(f.ulps, 0)}</td></tr>`).join("");
+    return `<h4>${esc(text("nb_ex_cor", { n: fmt(c.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_cor_body"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="local-cor"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">x, y</th><th scope="col">na.rm</th><th scope="col">cor</th><th scope="col">${esc(t("nb_ex_cor_after"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-cor-why="true">${esc(text("nb_ex_cor_why", { changed: fmt(c.double_sum.changed, 0), compared: fmt(c.double_sum.compared, 0), eq: fmt(c.r.bit_equal, 0), all: fmt(c.r.values, 0) }))}</p>` +
+      `<p data-cor-reach="true">${esc(t("nb_ex_cor_reach"))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: c.sha256.result.slice(0, 12), b: c.sha256.rational.slice(0, 12) }))} ` +
+      `${link(c.url, "nb_evidence")}</p>`;
+  }
+
   // R 3.5.0 check of the six older modules on artificial inputs; differences are shown, never turned into a verdict
   function sechsPruefung(s) {
     if (!s) return "";
@@ -290,7 +310,7 @@
         n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex) {
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -309,7 +329,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}</details>`;
   }
 
   function nachbau() {
@@ -344,7 +364,7 @@
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example) + `</section>`;
   }
 
   function zeige() {

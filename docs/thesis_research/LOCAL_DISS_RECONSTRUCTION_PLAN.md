@@ -10,6 +10,17 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 11, 09.11.2026
+
+Das lokale `cor` und seine Zeitraum-Leser sind nachgebildet ([Paket](literal_local_cor_2026_11_09/README.md), [App-Stand 11](app_reproduction_2026_11_09_local_cor/README.md)).
+Für Kinneret läuft 1964–1970, wenn `sources$core` 1 ist; Zeile 1999 wird nicht erreicht.
+
+1. `reconst`/`predictant` aus vorgegebenem `tf_sample` (`mcmc_functions_v1.6.R:1817–1820`).
+2. `wt_power` (Zeile 1003) und ihre Leser 2023/2031, Erreichbarkeit zuerst belegen.
+3. Offen beim Nutzer: Lizenz von `tools/r_sort_gpl.py`, R-nahe Rechenschicht für die sechs NumPy-Module.
+
+Übergabe: [nach dem lokalen cor](CLAUDE_NEXT_STEP_AFTER_LOCAL_COR_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 10, 08.11.2026
 
 `reconstruction_climate` ist nachgebildet, wird im gebundenen Lauf aber nicht aufgerufen
