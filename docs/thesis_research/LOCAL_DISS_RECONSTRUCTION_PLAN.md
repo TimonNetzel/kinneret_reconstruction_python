@@ -10,6 +10,19 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 10, 08.11.2026
+
+`reconstruction_climate` ist nachgebildet, wird im gebundenen Lauf aber nicht aufgerufen
+([Paket](literal_reconstruction_climate_2026_11_08/README.md), [App-Stand 10](app_reproduction_2026_11_08_reconstruction_climate/README.md)).
+Ab jetzt vor jedem Baustein die Aufrufer prüfen. Nächste begrenzte Schritte:
+
+1. Lokales `cor` (`mcmc_functions_v1.6.R:2355`) und seine aktiven Leser 1964–1970, 1999.
+2. `reconst`/`predictant` aus vorgegebenem `tf_sample` (1817–1820), danach `wt_power` (1003) und 2023/2031.
+3. Danach je ein neuer App-Stand.
+4. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+
+[Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_RECONSTRUCTION_CLIMATE_2026_11_08.md). Der folgende Abschnitt ist Verlauf.
+
 ## Aktuell: alle Teilmodule gegen R geprüft, App-Stand 9, 08.11.2026
 
 Die sechs älteren Module sind gegen ihre Originalzeilen geprüft ([Paket](r_crosscheck_six_modules_2026_11_08/README.md),

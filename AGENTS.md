@@ -1,3 +1,12 @@
+> **Aktuell: `reconstruction_climate` nachgebildet, im gebundenen Lauf ohne Aufrufer, App-Stand 10, 08.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_reconstruction_climate_2026_11_08/README.md): `mcmc_functions_v1.6.R:1188–1199`,
+> R 3.5.0 + matrixStats 0.56.0: 5.510 von 5.510 Werten bitgleich. Einziger Aufruf ist `mcmc_sampling_v1.4.R:79`, eine nirgends
+> geladene Datei; der Baustein ändert also nichts am Nachbau des Laufs. 62 neue Tests, 1.037 grün.
+> [App-Stand 10](docs/thesis_research/app_reproduction_2026_11_08_reconstruction_climate/README.md) mit eigenem Pin; Stände 1–9
+> eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_RECONSTRUCTION_CLIMATE_2026_11_08.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: sechs ältere Module gegen R 3.5.0 geprüft, App-Stand 9, 08.11.2026:**
 > [Gegenprobe und Belege](docs/thesis_research/r_crosscheck_six_modules_2026_11_08/README.md): Originalzeilen wörtlich;
 > alle 7.064 Fixture-Werte bitgleich. Mit Stresszahlen 34.918 von 41.966 Werten bitgleich, höchstens 4 ulp, nur Summen und

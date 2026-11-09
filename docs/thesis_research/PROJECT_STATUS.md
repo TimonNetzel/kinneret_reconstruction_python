@@ -1,5 +1,22 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## `reconstruction_climate` nachgebildet, im gebundenen Lauf ohne Aufrufer, App-Stand 10, 08.11.2026
+
+**Abgeschlossen** (Nutzerauftrag „Ja, nachbauen“): [Modul und Belege](literal_reconstruction_climate_2026_11_08/README.md).
+
+- `mcmc_functions_v1.6.R:1188–1199` mit expliziten Globalen; erste Zeile mal TF, dann `weightedMedian`, oder ohne `recent` nur der Prior.
+- **Der gebundene Lauf ruft die Funktion nicht auf.** Einziger Aufruf: `mcmc_sampling_v1.4.R:79`, eine nirgends geladene Datei (540 R-Dateien durchsucht).
+  Aktiv ist `mcmc_functions_v1.6.R:1850–1851`, aus Ziehungen. Auch `mcmc_prepare.R:1408–1413` wird wegen `recent & !add.sites` nicht erreicht.
+- R 3.5.0 + matrixStats 0.56.0: 5.510 von 5.510 Werten bitgleich. 62 neue Tests, **1.037** gezielte Tests grün; App-Tests 108 grün
+  (2 Wrapper explizit ersetzt); Edge in beiden Formaten und zwei Standorte ok. Phase-1-Prüfer Exit 2.
+
+**App:** [Stand 10](app_reproduction_2026_11_08_reconstruction_climate/README.md) (Pin `329e6a8b…`): 13 Teilmodule, das neue als bedingt markiert. Stände 1–9 eingefroren.
+
+**Offen:** Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. Der Baustein ändert nichts am Nachbau des Laufs. Lizenzfrage zu `tools/r_sort_gpl.py`
+liegt beim Nutzer. PR #77 offen, nicht gemergt.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_RECONSTRUCTION_CLIMATE_2026_11_08.md): das lokale, tatsächlich aktive `cor` (`mcmc_functions_v1.6.R:2355`).
+
 ## Sechs ältere Module gegen R 3.5.0 geprüft, App-Stand 9, 08.11.2026
 
 **Abgeschlossen** (Nutzerauftrag „Ja, weiter prüfen“): [Gegenprobe und Belege](r_crosscheck_six_modules_2026_11_08/README.md).

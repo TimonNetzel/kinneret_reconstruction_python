@@ -249,6 +249,24 @@
       `${link(m.url, "nb_evidence")}</p>`;
   }
 
+  // Artificial reconstruction_climate cases: rows are cases K1-K8; the bound run never calls this function
+  function klima(k) {
+    if (!k) return "";
+    const zahl = (v) => fmt(v, 4);
+    const wert = (kind, v) => kind === "number" ? `<td>${zahl(v)}</td>` : `<td data-special="na">${esc(kind)}</td>`;
+    const zeilen = k.cases.map((c, i) => `<tr><th scope="row">${esc(text("nb_ex_k_case", { n: i + 1 }))}</th>` +
+      `<td>${esc(t(c.recent ? "nb_yes" : "nb_no"))}</td><td>${c.recent ? esc(c.first_row.join(", ")) : "–"}</td>` +
+      `${wert(c.tann_kind, c.tann)}${wert(c.pann_kind, c.pann)}<td data-ulps="${c.ulps}">${fmt(c.ulps, 0)}</td></tr>`).join("");
+    return `<h4>${esc(text("nb_ex_climate", { n: fmt(k.cases.length, 0) }))}</h4>` +
+      `<p data-climate-dormant="true">${esc(text("nb_ex_climate_body", { file: k.caller.file.split("/").pop(), line: fmt(k.caller.line, 0), n: fmt(k.r_files_searched, 0) }))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="climate"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">recent</th><th scope="col">${esc(t("nb_ex_k_row"))}</th><th scope="col">${esc(t("nb_ex_m_x1"))}</th><th scope="col">${esc(t("nb_ex_m_x2"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-climate-why="true">${esc(text("nb_ex_climate_why", { v: zahl(k.cases[0].tann), mean: zahl(k.row_mean), ex: zahl(k.expectation), eq: fmt(k.r.bit_equal, 0), all: fmt(k.r.values, 0) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: k.sha256.result.slice(0, 12), b: k.sha256.rational.slice(0, 12) }))} ` +
+      `${link(k.url, "nb_evidence")}</p>`;
+  }
+
   // R 3.5.0 check of the six older modules on artificial inputs; differences are shown, never turned into a verdict
   function sechsPruefung(s) {
     if (!s) return "";
@@ -272,7 +290,7 @@
         n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx) {
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -291,7 +309,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}</details>`;
   }
 
   function nachbau() {
@@ -326,7 +344,7 @@
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example) + `</section>`;
   }
 
   function zeige() {
