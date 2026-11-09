@@ -128,8 +128,9 @@ def main():
     for name, case in fixture['cases'].items():
         got = run_cor(case)
         ref = expected[name]
+        weight = lc.post_treatment(got)
         cases[name] = {'kind': got.kind, 'value': show(got), 'n': got.n, 'matches_reference': got.kind == ref['kind'] and (got.kind != 'number' or got.value.hex() == ref['value']),
-                       'decimal': None if got.kind != 'number' else got.value}
+                       'decimal': None if got.kind != 'number' else got.value, 'replaced': weight.replaced, 'post_value': weight.value}
     readers = {name: record_reader(run_reader(r)) for name, r in fixture['readers'].items()}
     stress = [show(run_stress(c)) for c in stress_cases(fixture['stress'])]
     (HERE / 'synthetic_result.json').write_text(json.dumps({'kind': 'module_on_synthetic_fixture_not_historical', 'cases': cases, 'readers': readers, 'stress': stress},

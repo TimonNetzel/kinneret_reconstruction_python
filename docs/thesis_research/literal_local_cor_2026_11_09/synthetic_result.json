@@ -6,161 +6,207 @@
    "value": "0x1.0000000000000p+0",
    "n": 3,
    "matches_reference": true,
-   "decimal": 1.0
+   "decimal": 1.0,
+   "replaced": false,
+   "post_value": 1.0
   },
   "perfect_negative": {
    "kind": "number",
    "value": "-0x1.0000000000000p+0",
    "n": 3,
    "matches_reference": true,
-   "decimal": -1.0
+   "decimal": -1.0,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "hand_inexact": {
    "kind": "number",
    "value": "0x1.4f662f3faf716p-7",
    "n": 4,
    "matches_reference": true,
-   "decimal": 0.010235570021332612
+   "decimal": 0.010235570021332612,
+   "replaced": false,
+   "post_value": 0.0001047668936616029
   },
   "zero_covariance": {
    "kind": "number",
    "value": "0x0.0p+0",
    "n": 4,
    "matches_reference": true,
-   "decimal": 0.0
+   "decimal": 0.0,
+   "replaced": false,
+   "post_value": 0.0
   },
   "x_na_kept": {
    "kind": "NA",
    "value": "NA",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_na_removed": {
    "kind": "number",
    "value": "-0x1.1384ba23ff199p-2",
    "n": 3,
    "matches_reference": true,
-   "decimal": -0.2690610012503157
+   "decimal": -0.2690610012503157,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_nan_kept": {
    "kind": "NaN",
    "value": "NaN",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_nan_removed": {
    "kind": "number",
    "value": "-0x1.1384ba23ff199p-2",
    "n": 3,
    "matches_reference": true,
-   "decimal": -0.2690610012503157
+   "decimal": -0.2690610012503157,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "y_na_stays_with_na_rm": {
    "kind": "NA",
    "value": "NA",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "y_nan_stays_with_na_rm": {
    "kind": "NaN",
    "value": "NaN",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "same_position_removed": {
    "kind": "number",
    "value": "-0x1.1384ba23ff199p-2",
    "n": 3,
    "matches_reference": true,
-   "decimal": -0.2690610012503157
+   "decimal": -0.2690610012503157,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_na_before_y_nan": {
    "kind": "NA",
    "value": "NA",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_nan_before_y_na": {
    "kind": "NaN",
    "value": "NaN",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_na_then_nan": {
    "kind": "NA",
    "value": "NA",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_nan_then_na": {
    "kind": "NaN",
    "value": "NaN",
    "n": 4,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x_all_missing_removed": {
    "kind": "NaN",
    "value": "NaN",
    "n": 0,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "empty": {
    "kind": "NaN",
    "value": "NaN",
    "n": 0,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "single_value": {
    "kind": "NaN",
    "value": "NaN",
    "n": 1,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "constant_x_exact": {
    "kind": "NaN",
    "value": "NaN",
    "n": 3,
    "matches_reference": true,
-   "decimal": null
+   "decimal": null,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "constant_x_inexact": {
    "kind": "number",
    "value": "0x1.11acee560242ap-53",
    "n": 3,
    "matches_reference": true,
-   "decimal": 1.18687833744435e-16
+   "decimal": 1.18687833744435e-16,
+   "replaced": false,
+   "post_value": 1.408680187894664e-32
   },
   "long_double_mean": {
    "kind": "number",
    "value": "-0x1.83091e6a7f7e5p-1",
    "n": 3,
    "matches_reference": true,
-   "decimal": -0.7559289460184543
+   "decimal": -0.7559289460184543,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "x87_rounding_step": {
    "kind": "number",
    "value": "-0x1.83091e6a7f7e7p-1",
    "n": 3,
    "matches_reference": true,
-   "decimal": -0.7559289460184545
+   "decimal": -0.7559289460184545,
+   "replaced": true,
+   "post_value": 1.0000000000000001e-20
   },
   "inexact_values": {
    "kind": "number",
    "value": "0x1.81f92f85cffa4p-1",
    "n": 5,
    "matches_reference": true,
-   "decimal": 0.7538542605252485
+   "decimal": 0.7538542605252485,
+   "replaced": false,
+   "post_value": 0.5682962461120693
   }
  },
  "readers": {

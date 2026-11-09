@@ -87,5 +87,5 @@ Nicht ausgeführt: die Gesamtsuite, `verify_packet.py`, `tools/verify_*`; Sample
 
 - Kein Originalfall, keine echten Transferfunktionen oder Referenzkurven.
 - `sources$core` und die Altersmaske brauchen die finalen v1.2-Eingaben; beide sind offen.
-- Die NA/NaN-Regel und die Rechenweise gelten für R 3.5.0 x64 unter Windows. Der historische Lauf lief unter Linux; dessen Zahlen wurden nicht geprüft.
+- Die NA/NaN-Regel und die Rechenweise gelten für R 3.5.0 x64 unter Windows. Die Originalpfade (`/automount/…`) deuten auf Linux; dessen Rechenweise wurde nicht geprüft.
 - Zeile 2024 und `wt_power` sind nicht enthalten. Alle elf Nachweisbündel bleiben offen; keine Variante gewählt. Frühere Pakete und Module sind bytegleich.
