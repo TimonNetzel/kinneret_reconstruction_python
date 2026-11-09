@@ -10,6 +10,14 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: `wt_power` nachgebildet (NumPy-FFT, nicht bitgleich zu R), App-Stand 13, 09.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_wt_power_2026_11_09/README.md): `mcmc_functions_v1.6.R:1003–1012`, Leser `2023–2026`, mit expliziten Reihen und `wb`. Auf Nutzerentscheidung NumPy-FFT mit gemessener, markierter Abweichung.
+> R 3.5.0, 120 Stressfälle: 22.256 von 22.256 zentrierten Werten bitgleich, 5.938 von 39.876 Leistungen, höchstens 606 ulp; `post_spec` höchstens 12 ulp. Für Kinneret offen, ob es läuft.
+> 212 neue Tests, 1.614 grün. [App-Stand 13](docs/thesis_research/app_reproduction_2026_11_09_wt_power/README.md) mit eigenem Pin; Stände 1–12
+> eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_WT_POWER_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: `reconst` und Prädiktanten nachgebildet, App-Stand 12, 09.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_reconst_predictant_2026_11_09/README.md): `mcmc_functions_v1.6.R:1817–1820` und direkte Leser mit expliziten Matrizen.
 > `reconst_ages` ist in jedem Lauf „alle Zeilen“; `%*%` rechnet auch im 3-Schleifen-Pfad in `double`, nicht `long double`. R 3.5.0: 3.009 von 3.009 Werten bitgleich.

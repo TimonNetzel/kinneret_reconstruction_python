@@ -307,6 +307,26 @@
       `${link(r.url, "nb_evidence")}</p>`;
   }
 
+  // Artificial wt_power cases W1-W8: NumPy FFT, so not bit-identical with R; the measured distance stays in the row and in the text
+  function wtLeistung(w) {
+    if (!w) return "";
+    const wert = (x) => x.kind === "number" ? `<td><span class="nb-wert">${esc(fmt(x.value, 4))}</span></td>` : `<td><span class="nb-wert" data-special="na">${esc(x.kind)}</span></td>`;
+    const form = (f) => f.dim ? `${fmt(f.dim[0], 0)}×${fmt(f.dim[1], 0)}` : esc(text("nb_ex_w_vector", { n: fmt(f.n_obs * f.columns, 0) }));
+    const zeilen = w.cases.map((f, i) => `<tr data-wt="${esc(f.name)}" data-kind="${esc(f.kind)}"><th scope="row">${esc(text("nb_ex_w_case", { n: i + 1 }))}</th>` +
+      `<td${f.dim ? "" : ' data-drop="true"'}>${form(f)}</td>${wert(f.first)}${wert(f.first_R)}` +
+      (f.ulps === null ? `<td data-ulps="missing">–</td>` : `<td data-ulps="${f.ulps}">${fmt(f.ulps, 0)}</td>`) + `</tr>`).join("");
+    const d = w.deviation;
+    return `<h4>${esc(text("nb_ex_wt", { n: fmt(w.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_wt_body"))}</p>` +
+      `<p data-wt-deviation="true"><strong>${html("nb_ex_wt_deviation", { cen: fmt(d.centred, 0), eq: fmt(d.power_bit_equal, 0), all: fmt(d.power_values, 0), u: fmt(d.power_max_ulps, 0), rel: exp10(d.power_relative), pu: fmt(d.post_spec_ulps, 0), cases: fmt(d.stress_cases, 0) })}</strong></p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="wt-power"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_w_shape"))}</th><th scope="col">NumPy</th><th scope="col">R 3.5.0</th><th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-wt-why="true">${esc(text("nb_ex_wt_why", { changed: fmt(w.double_mean.changed, 0), compared: fmt(w.double_mean.compared, 0), cpp: fmt(w.wt_cpp_form.changed, 0), cppall: fmt(w.wt_cpp_form.compared, 0) }))}</p>` +
+      `<p data-wt-reach="true">${esc(text("nb_ex_wt_reach", { n: fmt(w.masking_versions, 0) }))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: w.sha256.result.slice(0, 12), b: w.sha256.rational.slice(0, 12) }))} ` +
+      `${link(w.url, "nb_evidence")}</p>`;
+  }
+
   // R 3.5.0 check of the six older modules on artificial inputs; differences are shown, never turned into a verdict
   function sechsPruefung(s) {
     if (!s) return "";
@@ -330,7 +350,7 @@
         n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor, rex) {
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor, rex, wtx) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -349,7 +369,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}${wtLeistung(wtx)}</details>`;
   }
 
   function nachbau() {
@@ -384,7 +404,7 @@
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example, nb.wt_example) + `</section>`;
   }
 
   function zeige() {

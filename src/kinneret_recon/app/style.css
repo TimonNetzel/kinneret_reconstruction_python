@@ -198,9 +198,10 @@ td.ok { color: inherit; } td.schlecht { color: var(--warn); font-weight: 600; }
 @media (max-width: 520px) { .nachbau-tabelle { font-size: .78rem; } .nachbau-tabelle th, .nachbau-tabelle td { padding: 3px 4px; } }
 .nachbau-tabelle td:first-child, .nachbau-tabelle td:nth-child(2) { text-align: right; min-width: 0; }
 .nachbau-tabelle tr[data-row="keep"] td { color: var(--muted); }
-.nachbau-tabelle[data-table^="median"] td, .nachbau-tabelle[data-table="climate"] td, .nachbau-tabelle[data-table="local-cor"] td, .nachbau-tabelle[data-table="local-cor"] thead th, .nachbau-tabelle[data-table="reconst"] td, .nachbau-tabelle[data-table="reconst"] thead th { white-space: normal; }
+.nachbau-tabelle[data-table^="median"] td, .nachbau-tabelle[data-table="climate"] td, .nachbau-tabelle[data-table="local-cor"] td, .nachbau-tabelle[data-table="local-cor"] thead th, .nachbau-tabelle[data-table="reconst"] td, .nachbau-tabelle[data-table="reconst"] thead th, .nachbau-tabelle[data-table="wt-power"] td, .nachbau-tabelle[data-table="wt-power"] thead th { white-space: normal; }
 .nachbau-tabelle[data-table="reconst"] td, .nachbau-tabelle[data-table="reconst"] th { font-size: 0.76rem; padding-left: 0.2rem; padding-right: 0.2rem; }
 .nachbau-tabelle[data-table="reconst"] td[data-path] { overflow-wrap: anywhere; }
+.nachbau-tabelle[data-table="wt-power"] td, .nachbau-tabelle[data-table="wt-power"] th { font-size: 0.76rem; padding-left: 0.2rem; padding-right: 0.2rem; }
 .nachbau-tabelle .nb-wert { white-space: nowrap; }
 .nachbau-tabelle[data-table="six-check"] th[scope="row"] { white-space: normal; }
 .nachbau-tabelle tr[data-removed="true"] th { color: var(--warn); }

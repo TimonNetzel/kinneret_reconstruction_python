@@ -10,6 +10,17 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 13, 09.11.2026
+
+`wt_power` ist nachgebildet, auf Nutzerentscheidung mit NumPy-FFT und gemessener, markierter Abweichung, also nicht bitgleich zu R ([Paket](literal_wt_power_2026_11_09/README.md), [App-Stand 13](app_reproduction_2026_11_09_wt_power/README.md)).
+Für Kinneret bleibt offen, ob es läuft (`sources$speleothem`; Zeile 1145 steht hinter `case_studies`, das F ist).
+
+1. Vorschlag: `rtruncnorm_cpp` (`mcmc_functions_v1.6.R:1812–1813`, Definition 1556–1570, `r_truncnorm` aus RcppDist) nur als Quellen- und Bindungsprüfung, ohne Ziehung.
+2. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+3. Offen beim Nutzer: Lizenz von `tools/r_sort_gpl.py`, R-nahe Rechenschicht für die sechs NumPy-Module.
+
+Übergabe: [nach wt_power](CLAUDE_NEXT_STEP_AFTER_WT_POWER_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 12, 09.11.2026
 
 `reconst` und die Prädiktanten sind nachgebildet ([Paket](literal_reconst_predictant_2026_11_09/README.md), [App-Stand 12](app_reproduction_2026_11_09_reconst_predictant/README.md)).

@@ -1,5 +1,22 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## `wt_power` nachgebildet (NumPy-FFT, nicht bitgleich zu R), App-Stand 13, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_wt_power_2026_11_09/README.md) (`ddbce9e`), [App-Stand 13](app_reproduction_2026_11_09_wt_power/README.md).
+
+- `mcmc_functions_v1.6.R:1003–1012` und Leser `2023–2026` mit expliziten Reihen und explizitem `wb`. Keine Ziehung, kein Sampler, kein Originalfall.
+- **Nutzerentscheidung vom 09.11.2026:** NumPy-FFT mit gemessener und ausdrücklich markierter ulp-Abweichung, keine Übersetzung von R-`fft.c`. `wt_power` ist **nicht** bitgleich zu R.
+- R 3.5.0, 120 Stressfälle: 22.256 von 22.256 zentrierten Werten bitgleich; 5.938 von 39.876 Leistungen bitgleich, höchstens 606 ulp, relativ zum Spaltenmaximum höchstens 2,5e-15; `post_spec` höchstens 12 ulp; keine Token-Abweichung.
+- 212 neue Tests, **1.614** gezielte Tests grün in 20 Dateien; App-Tests 151 grün (2 Wrapper explizit ersetzt); Edge in beiden Formaten (zehn Fälle) und zwei Standorte mit Exit 0 und ohne `FEHLER`-Zeile; keine der 19 Tabellen bei 390 px breiter als ihr Rahmen; kein Standby während der Läufe. Phase-1-Prüfer Exit 2.
+
+**App:** [Stand 13](app_reproduction_2026_11_09_wt_power/README.md) (Pin `d84fe644…`): 16 Teilmodule, `wt_power` bedingt, Tabelle W1–W8. Stände 1–12 eingefroren. Validierung abgeschlossen ([validation.json](app_reproduction_2026_11_09_wt_power/validation.json)), in [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77) gesichert.
+
+**Offen:** Ob `wt_power` für Kinneret läuft: Es läuft bei `sources$speleothem == 1` auch in `mcmc_prepare.R:947/966`, und Zeile 1145 steht hinter `case_studies`, das F ist. Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. PR #77 offen, nicht gemergt.
+
+**Beim Nutzer:** Lizenz von `tools/r_sort_gpl.py`, R-nahe bitgleiche Rechenschicht für die sechs NumPy-Module.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_WT_POWER_2026_11_09.md); Vorschlag: `rtruncnorm_cpp` nur als Quellen- und Bindungsprüfung ohne Ziehung, danach der Eingabevertrag des Kinneret-Falls (Slot 3).
+
 ## `reconst` und die Prädiktanten nachgebildet, App-Stand 12, 09.11.2026
 
 **Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_reconst_predictant_2026_11_09/README.md).

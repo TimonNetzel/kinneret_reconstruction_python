@@ -276,21 +276,23 @@ async function pruefe(browser, datei, groesse, thema, name) {
   if (sources.length !== 5 || sources.some((url) => !url.includes('/blob/1cec59f1c37ac59f1440969feeaf4451e1b93dcc/'))) {
     fehler.push("Forschungsstand: Quellen nicht gebunden");
   }
-  // Dissertation reproduction: newest state with fifteen checked submodules, eleven frozen earlier states, R cross check, synthetic examples kept apart
+  // Dissertation reproduction: newest state with sixteen checked submodules, twelve frozen earlier states, R cross check, synthetic examples kept apart
   const nb = '[data-research="reproduction"]';
   const nbText = await page.textContent(nb);
-  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("1.402") ||
-      await page.locator(nb + " [data-module]").count() !== 15 ||
+  if (!nbText.includes("Teilmodule geprüft; vollständiger Originalfall offen") || !nbText.includes("1.614") ||
+      await page.locator(nb + " [data-module]").count() !== 16 ||
       await page.locator(nb + ' [data-module="gamma_prior_grid"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="tf_missing_priors"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="sampler_preparation"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="weights_stage"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="dirichlet_ratio"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="weighted_median"] [data-status="conditional"]').count() !== 0 ||
-      await page.locator(nb + " [data-earlier-state]").count() !== 11 ||
+      await page.locator(nb + " [data-earlier-state]").count() !== 12 ||
       await page.locator(nb + ' [data-module="reconstruction_climate"] [data-status="conditional"]').count() !== 1 ||
       await page.locator(nb + ' [data-module="local_cor"] [data-status="conditional"]').count() !== 0 ||
       await page.locator(nb + ' [data-module="reconst_predictant"] [data-status="conditional"]').count() !== 0 ||
+      await page.locator(nb + ' [data-module="wt_power"] [data-status="conditional"]').count() !== 1 ||
+      !nbText.includes("Früherer Stand eingefroren: 2026-11-09, 15 Teilmodule, 1.402 Tests, SHA-256 ce676ea4122c") ||
       !nbText.includes("Früherer Stand eingefroren: 2026-11-09, 14 Teilmodule, 1.172 Tests, SHA-256 cbfaf04f6bdb") ||
       !nbText.includes("Zeile 1999 wird nicht erreicht") ||
       !nbText.includes("Der gebundene Lauf ruft diese Funktion nicht auf") ||
@@ -329,16 +331,24 @@ async function pruefe(browser, datei, groesse, thema, name) {
     "/blob/416d547e67ebd349eab2508f87b12977d2b6ef4d/docs/thesis_research/app_reproduction_2026_11_08_weighted_median/reproduction_state.json",
     "/blob/43733532ac20f183e5ee99631fc4e9fe3d357957/docs/thesis_research/app_reproduction_2026_11_08_r_crosscheck_six/reproduction_state.json",
     "/blob/437f6f4baeed4a086a2d5a80c7abc9e420a353de/docs/thesis_research/app_reproduction_2026_11_08_reconstruction_climate/reproduction_state.json",
-    "/blob/38775e1fc959b936fb22b7dd6dc88bef69fb7eb1/docs/thesis_research/app_reproduction_2026_11_09_local_cor/reproduction_state.json"];
+    "/blob/38775e1fc959b936fb22b7dd6dc88bef69fb7eb1/docs/thesis_research/app_reproduction_2026_11_09_local_cor/reproduction_state.json",
+    "/blob/9afab2e968bd79aba0ae375a8e871aa889528900/docs/thesis_research/app_reproduction_2026_11_09_reconst_predictant/reproduction_state.json"];
   const istFrueher = (url) => frueher.some((f) => url.endsWith(f));
-  if (nbLinks.length !== 42 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
-      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/599c6e44e791487f112b5699048eba9d90c05798/"))) {
+  if (nbLinks.length !== 45 || frueher.some((f) => nbLinks.filter((url) => url.endsWith(f)).length !== 1) ||
+      nbLinks.some((url) => !istFrueher(url) && !url.includes("/blob/ddbce9e07daf088cb4b3be00ae91015317ab9cf3/"))) {
     fehler.push("Nachbau: Quellen nicht gebunden " + nbLinks.length);
   }
   if (await page.locator(nb + ' [data-part="example"]').evaluate((d) => d.open)) fehler.push("Nachbau: Beispiel nicht eingeklappt");
   await page.click(nb + ' [data-part="example"] summary');
   const exText = await page.textContent(nb + ' [data-part="example"]');
-  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 18 ||
+  if (!(await page.locator('[data-synthetic="true"]').isVisible()) || await page.locator(nb + " table").count() !== 19 ||
+      await page.locator(nb + ' [data-table="wt-power"] tbody tr').count() !== 8 ||
+      await page.locator(nb + ' [data-table="wt-power"] [data-ulps="missing"]').count() !== 3 ||
+      await page.locator(nb + ' [data-table="wt-power"] [data-special="na"]').count() !== 6 ||
+      await page.locator(nb + ' [data-table="wt-power"] tr[data-kind="mixed"]').count() !== 1 ||
+      await page.locator(nb + ' [data-table="wt-power"] [data-drop="true"]').count() !== 3 ||
+      await page.locator(nb + ' [data-wt-deviation="true"]').count() !== 1 ||
+      await page.locator(nb + ' [data-wt-reach="true"]').count() !== 1 ||
       await page.locator(nb + ' [data-table="reconst"] tbody tr').count() !== 8 ||
       await page.locator(nb + ' [data-table="reconst"] [data-ulps="0"]').count() !== 8 ||
       await page.locator(nb + ' [data-table="reconst"] [data-special="na"]').count() !== 9 ||
@@ -382,7 +392,8 @@ async function pruefe(browser, datei, groesse, thema, name) {
         "phi1 (alt)", "Sampler-Vorbereitung: 6 Kunstfälle", "2 1 4 3 / 4 3 2 6 / 1 6 8 9", "1/6", "7/3*",
         "8 von 12 Positionen", "Sonderwerte: drei Kunstfälle", "4×3", "8/3, 8/3, 4", "floor(5/2) = 2",
         "how_many_taxa = num_taxa = 5", "0,5 je Taxon",
-        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung, Gewichtsstufe, Dirichlet-Quotient, gewichteter Median, reconstruction_climate, lokales cor und reconst/Prädiktanten",
+        "ohne Taxon-Pruning, Gamma-Raster, TF-Entfernung, Sampler-Vorbereitung, Gewichtsstufe, Dirichlet-Quotient, gewichteter Median, reconstruction_climate, lokales cor, reconst/Prädiktanten und wt_power",
+        "wt_power: 8 Kunstfälle", "W1", "W8", "Nicht bitgleich zu R", "22.256 zentrierten Werte", "5.938 von 39.876 Leistungen", "höchstens 606 ulp", "höchstens 12 ulp", "keine fft oder mvfft",
         "Rekonstruktion und Prädiktanten: 8 Kunstfälle", "R1", "R8", "Vektor mit 3", "stoppt in Zeile 1825", "3.009 von 3.009 Werten bitgleich", "367 von 2.032 Stresswerten", "1.296 Kombinationen", "Zeile 1942 liest pann",
         "Lokales cor: 8 Kunstfälle", "C1", "C8", "nach 1e-10 und Quadrat", "447 von 447 Werten bitgleich", "199 von 300 Stressfällen", "sources$core 1",
         "reconstruction_climate: 8 Kunstfälle", "K1", "K8", "Ruhender Quellweg", "mcmc_sampling_v1.4.R", "8,3333", "220,0000",
@@ -416,6 +427,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
       !enText.includes("Dirichlet ratio of the weights stage") || !enText.includes("Dirichlet ratio: 4 artificial cases") ||
       !enText.includes("R cross check: in R version 3.5.0") ||
       !enText.includes("Weighted median and the NA mask of the transfer functions") ||
+      !enText.includes("Wavelet power wt_power (NumPy FFT, not bit-identical with R)") || !enText.includes("wt_power: 8 artificial cases") || !enText.includes("Not bit-identical with R") ||
       !enText.includes("Reconstruction and predictants from a given tf_sample") || !enText.includes("Reconstruction and predictants: 8 artificial cases") || !enText.includes("Local cor and its time-space readers") || !enText.includes("Local cor: 8 artificial cases") || !enText.includes("Recent climate from the first sample") || !enText.includes("Dormant source path") ||
       !enText.includes("R cross check of the six older submodules") || !enText.includes("R sums in long double") ||
       !enText.includes("Weighted median: 9 artificial cases") || !enText.includes("439 of 439 values bit-identical") ||
@@ -437,7 +449,7 @@ async function pruefe(browser, datei, groesse, thema, name) {
     KR.zeige();
     return JSON.stringify([ohneNachbau, ohneSnapshot]);
   });
-  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 15]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
+  if (nbKontrolle !== JSON.stringify([[5, true, 0], [0, 16]])) fehler.push("Nachbau: Fehlstandskontrolle " + nbKontrolle);
   await page.click('.reiter button[data-ansicht="sensitivitaet"]');
   await page.waitForTimeout(300);
   // Stored species scores: both measures together and both spatial designs.

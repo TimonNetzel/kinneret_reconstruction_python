@@ -32,6 +32,8 @@ FROZEN10 = nachbaustand.STATES[9]["path"].as_posix()
 COR = "docs/thesis_research/literal_local_cor_2026_11_09/"
 RECONST = "docs/thesis_research/literal_reconst_predictant_2026_11_09/"
 FROZEN11 = nachbaustand.STATES[10]["path"].as_posix()
+WT = "docs/thesis_research/literal_wt_power_2026_11_09/"
+FROZEN12 = nachbaustand.STATES[11]["path"].as_posix()
 CLIMATE = "docs/thesis_research/literal_reconstruction_climate_2026_11_08/"
 
 
@@ -41,12 +43,13 @@ def _kopie(tmp_path: Path) -> Path:
                                              STATE["gamma_example"], STATE["missing_example"],
                                              STATE["sampler_example"], STATE["weights_example"])
     dex, rtc, medx, six = STATE["dirichlet_example"], STATE["runtime_check"], STATE["median_example"], STATE["six_check"]
-    kex, cex, rex = STATE["climate_example"], STATE["cor_example"], STATE["reconst_example"]
+    kex, cex, rex, wtx = STATE["climate_example"], STATE["cor_example"], STATE["reconst_example"], STATE["wt_example"]
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
-                + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex) for k in ("fixture", "result", "rational",
-                                                                                         "arithmetic")]
-                + [kex["crosscheck"], kex["binding"], cex["crosscheck"], cex["binding"], rex["crosscheck"], rex["binding"], rex["measurement"]]
+                + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex, wtx) for k in ("fixture", "result", "rational",
+                                                                                              "arithmetic")]
+                + [kex["crosscheck"], kex["binding"], cex["crosscheck"], cex["binding"], rex["crosscheck"], rex["binding"], rex["measurement"],
+                   wtx["crosscheck"], wtx["binding"], wtx["masking"]]
                 + [medx["crosscheck"]] + [six[k] for k in ("package", "result", "causes", "provider")]
                 + [rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -54,13 +57,13 @@ def _kopie(tmp_path: Path) -> Path:
     return tmp_path
 
 
-def test_newest_state_binds_fifteen_modules_eleven_open_bundles_and_no_release():
+def test_newest_state_binds_sixteen_modules_eleven_open_bundles_and_no_release():
     d = nachbaustand.app_daten(ROOT)
     assert d["available"] and d["status"] == "submodules_checked_original_case_open"
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
-    assert d["modules"][-1]["id"] == "reconst_predictant" and not d["modules"][-1]["conditional"]
-    assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning", "reconstruction_climate"]
-    assert d["tests_passed"] == 1402 == (d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
+    assert d["modules"][-1]["id"] == "wt_power" and d["modules"][-1]["conditional"]
+    assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning", "reconstruction_climate", "wt_power"]
+    assert d["tests_passed"] == 1614 == (d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
                                         + d["contract"]["tests"] + d["runtime_check"]["new_tests"])
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
@@ -89,8 +92,15 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
     eleventh_state = json.loads((ROOT / eleventh["path"]).read_text(encoding="utf-8"))
     assert (eleventh_state["tests"]["passed"], len(eleventh_state["modules"])) == (1172, 14)
     assert eleventh_state["supersedes"] == {"state": FROZEN10, "state_sha256": tenth["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN11, "state_sha256": eleventh["sha256"]}
     assert STATE["modules"][:14] == eleventh_state["modules"] and STATE["cor_example"] == eleventh_state["cor_example"]
+    twelfth = nachbaustand.STATES[11]
+    assert twelfth["commit"] == "9afab2e968bd79aba0ae375a8e871aa889528900"
+    assert twelfth["sha256"] == "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d"
+    twelfth_state = json.loads((ROOT / twelfth["path"]).read_text(encoding="utf-8"))
+    assert (twelfth_state["tests"]["passed"], len(twelfth_state["modules"])) == (1402, 15)
+    assert twelfth_state["supersedes"] == {"state": FROZEN11, "state_sha256": eleventh["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN12, "state_sha256": twelfth["sha256"]}
+    assert STATE["modules"][:15] == twelfth_state["modules"] and STATE["reconst_example"] == twelfth_state["reconst_example"]
     assert STATE["modules"][:12] == ninth_state["modules"] and STATE["six_check"] == ninth_state["six_check"]
     assert STATE["modules"][:13] == tenth_state["modules"] and STATE["climate_example"] == tenth_state["climate_example"]
     assert eighth["commit"] == "416d547e67ebd349eab2508f87b12977d2b6ef4d"
@@ -119,7 +129,7 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
     assert [m["package_sha256"] for m in seventh_state["modules"]] == [m["package_sha256"] for m in STATE["modules"][:11]]
     assert all(STATE[k] == seventh_state[k] for k in ("chain_check", "contract", "synthetic_example", "weights_example",
                                                       "dirichlet_example", "runtime_check"))
-    for frozen in (first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh):
+    for frozen in (first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelfth):
         assert hashlib.sha256((ROOT / frozen["path"]).read_bytes()).hexdigest() == frozen["sha256"]
     old, prev, mid, fourth_state, last, sixth_state = (json.loads((ROOT / f["path"]).read_text(encoding="utf-8"))
                                                        for f in (first, second, third, fourth, fifth, sixth))
@@ -145,7 +155,7 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
                                   (fifth, 9, 555, "2026-11-02"), (sixth, 10, 689, "2026-11-03"),
                                   (seventh, 11, 752, "2026-11-03"), (eighth, 12, 934, "2026-11-08"),
                                   (ninth, 12, 975, "2026-11-08"), (tenth, 13, 1037, "2026-11-08"),
-                                  (eleventh, 14, 1172, "2026-11-09"))]
+                                  (eleventh, 14, 1172, "2026-11-09"), (twelfth, 15, 1402, "2026-11-09"))]
     assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:9]]
     assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
                                              "gamma_example", "missing_example", "sampler_example"))
@@ -525,6 +535,84 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
     assert CLIMATE + "source_binding.json" in nachbaustand.app_daten(root)["missing"]
     (root / RECONST / "nan_rule_measurement.json").unlink()
     assert RECONST + "nan_rule_measurement.json" in nachbaustand.app_daten(root)["missing"]
+    (root / WT / "fft_masking.json").unlink()
+    assert WT + "fft_masking.json" in nachbaustand.app_daten(root)["missing"]
+
+
+def test_wt_example_is_taken_unchanged_and_shows_the_deviation_from_R():
+    w = nachbaustand.app_daten(ROOT)["wt_example"]
+    stored = json.loads((ROOT / WT / "synthetic_result.json").read_text(encoding="utf-8"))["cases"]
+    assert [c["name"] for c in w["cases"]] == STATE["wt_example"]["cases"] and len(w["cases"]) == 8
+    assert [c["kind"] for c in w["cases"]] == ["number"] * 5 + ["NA", "NaN", "mixed"]
+    assert [c["dim"] for c in w["cases"]][:3] == [[4, 2], None, None] and w["cases"][4]["dim"] == [13, 6] and w["cases"][4]["n"] == 32
+    assert w["cases"][0]["first"] == {"kind": "number", "value": float.fromhex(stored["identity_wb_two_columns"]["power"][0])}
+    assert w["cases"][5]["first"] == {"kind": "NA", "value": None} and w["cases"][5]["ulps"] is None and w["cases"][7]["tokens_R"] == ["NA", "NaN"]
+    d = w["deviation"]
+    assert (d["centred"], d["power_values"], d["power_bit_equal"], d["power_max_ulps"], d["post_spec_ulps"]) == (22256, 39876, 5938, 606, 12)
+    assert 0 < d["power_relative"] < 5e-15 and "not bit-identical" in w["backend"] and w["masking_versions"] == 17
+    assert w["url"].endswith(WT + "README.md") and "/blob/" + STATE["source_commit"] + "/" in w["url"]
+
+
+def _wt_changed(root, monkeypatch, key, mutate):
+    rel = STATE["wt_example"][key]
+    data = json.loads((root / rel).read_text(encoding="utf-8"))
+    mutate(data)
+    content = json.dumps(data).encode()
+    (root / rel).write_bytes(content)
+    state = json.loads(json.dumps(STATE))
+    state["wt_example"][key + "_sha256"] = hashlib.sha256(content).hexdigest()
+    state_bytes = json.dumps(state).encode()
+    (root / nachbaustand.STATE).write_bytes(state_bytes)
+    monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
+
+
+def test_wt_example_rejects_a_claim_of_bit_identity_with_R(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("bit_identical_with_R", True))
+    with pytest.raises(ValueError, match="bit identity"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_backend_without_the_marking(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("backend", "numpy.fft"))
+    with pytest.raises(ValueError, match="bit identity"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_settled_kinneret_path(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "binding", lambda d: d["kinneret"].__setitem__("spectral", "reached"))
+    with pytest.raises(ValueError, match="settled Kinneret"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_token_mismatch_with_R(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("token_mismatch", 1))
+    with pytest.raises(ValueError, match="token mismatch"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_masking_package(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "masking", lambda d: d.__setitem__("versions_masking_fft_or_mvfft", ["signal_0.7-7.tar.gz"]))
+    with pytest.raises(ValueError, match="masking package"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_stored_value_that_left_the_reference(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "result", lambda d: d["cases"]["identity_wb_two_columns"]["power"].__setitem__(0, "0x1.8p+4"))
+    with pytest.raises(ValueError, match="differs from the reference"):
+        nachbaustand.app_daten(root)
+
+
+def test_wt_example_rejects_a_release_claim(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _wt_changed(root, monkeypatch, "fixture", lambda d: d.__setitem__("historical_reproduction_ready", True))
+    with pytest.raises(ValueError, match="wt_power example claims"):
+        nachbaustand.app_daten(root)
 
 
 @pytest.mark.parametrize("rel", [nachbaustand.STATE.as_posix(), PACKET + "synthetic_result.json",
@@ -559,7 +647,9 @@ def test_missing_state_or_evidence_is_visibly_unavailable(tmp_path):
                                  COR + "synthetic_fixture.json", COR + "arithmetic_check.json", COR + "r_crosscheck_result.json",
                                  COR + "source_binding.json", FROZEN11, RECONST + "README.md", RECONST + "synthetic_result.json",
                                  RECONST + "reference_expectations.json", RECONST + "synthetic_fixture.json", RECONST + "arithmetic_check.json",
-                                 RECONST + "r_crosscheck_result.json", RECONST + "source_binding.json", RECONST + "nan_rule_measurement.json"])
+                                 RECONST + "r_crosscheck_result.json", RECONST + "source_binding.json", RECONST + "nan_rule_measurement.json",
+                                 FROZEN12, WT + "README.md", WT + "synthetic_result.json", WT + "reference_expectations.json", WT + "synthetic_fixture.json",
+                                 WT + "arithmetic_check.json", WT + "r_crosscheck_result.json", WT + "source_binding.json", WT + "fft_masking.json"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -602,4 +692,5 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "reconstruction_climate" in html and "Dormant source path" in html
     assert "Lokales cor: {n} Kunstfälle" in html and "Local cor: {n} artificial cases" in html
     assert "Rekonstruktion und Prädiktanten: {n} Kunstfälle" in html and "Reconstruction and predictants: {n} artificial cases" in html
-    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:11])
+    assert "wt_power: {n} Kunstfälle" in html and "wt_power: {n} artificial cases" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:12])
