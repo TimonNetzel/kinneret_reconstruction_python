@@ -1,0 +1,807 @@
+{
+ "kind": "synthetic_local_cor_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "cases": {
+  "perfect_positive": {
+   "x": [
+    "1",
+    "2",
+    "3"
+   ],
+   "y": [
+    "2",
+    "4",
+    "6"
+   ],
+   "na_rm": false,
+   "hand": {
+    "value": "1"
+   },
+   "note": null
+  },
+  "perfect_negative": {
+   "x": [
+    "1",
+    "2",
+    "3"
+   ],
+   "y": [
+    "3",
+    "2",
+    "1"
+   ],
+   "na_rm": false,
+   "hand": {
+    "value": "-1"
+   },
+   "note": null
+  },
+  "hand_inexact": {
+   "x": [
+    "1",
+    "2",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "r_squared": "1/9545"
+   },
+   "note": "cov 1/12, var_x 115/12, var_y 83/12: r = 1/sqrt(9545)"
+  },
+  "zero_covariance": {
+   "x": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "y": [
+    "1",
+    "-1",
+    "-1",
+    "1"
+   ],
+   "na_rm": false,
+   "hand": {
+    "value": "0"
+   },
+   "note": "exactly zero, is not replaced by 1e-10"
+  },
+  "x_na_kept": {
+   "x": [
+    "1",
+    "NA",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NA"
+   },
+   "note": null
+  },
+  "x_na_removed": {
+   "x": [
+    "1",
+    "NA",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "dropped": 1
+   },
+   "note": null
+  },
+  "x_nan_kept": {
+   "x": [
+    "1",
+    "NaN",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": null
+  },
+  "x_nan_removed": {
+   "x": [
+    "1",
+    "NaN",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "dropped": 1
+   },
+   "note": null
+  },
+  "y_na_stays_with_na_rm": {
+   "x": [
+    "1",
+    "2",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "NA",
+    "7",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "kind": "NA"
+   },
+   "note": "only x is screened"
+  },
+  "y_nan_stays_with_na_rm": {
+   "x": [
+    "1",
+    "2",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "NaN",
+    "7",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": null
+  },
+  "same_position_removed": {
+   "x": [
+    "1",
+    "NA",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "NA",
+    "7",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "dropped": 1
+   },
+   "note": null
+  },
+  "x_na_before_y_nan": {
+   "x": [
+    "1",
+    "NA",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "NaN",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NA"
+   },
+   "note": "the first missing value of x decides"
+  },
+  "x_nan_before_y_na": {
+   "x": [
+    "1",
+    "NaN",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "NA",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": null
+  },
+  "x_na_then_nan": {
+   "x": [
+    "NA",
+    "NaN",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NA"
+   },
+   "note": null
+  },
+  "x_nan_then_na": {
+   "x": [
+    "NaN",
+    "NA",
+    "4",
+    "8"
+   ],
+   "y": [
+    "3",
+    "1",
+    "7",
+    "2"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": null
+  },
+  "x_all_missing_removed": {
+   "x": [
+    "NA",
+    "NA"
+   ],
+   "y": [
+    "1",
+    "2"
+   ],
+   "na_rm": true,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": "N = 0 after filtering"
+  },
+  "empty": {
+   "x": [],
+   "y": [],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": "-0 / +0"
+  },
+  "single_value": {
+   "x": [
+    "2"
+   ],
+   "y": [
+    "3"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": "N - 1 is 0"
+  },
+  "constant_x_exact": {
+   "x": [
+    "5",
+    "5",
+    "5"
+   ],
+   "y": [
+    "1",
+    "2",
+    "4"
+   ],
+   "na_rm": false,
+   "hand": {
+    "kind": "NaN"
+   },
+   "note": "zero variance"
+  },
+  "constant_x_inexact": {
+   "x": [
+    "1/10",
+    "1/10",
+    "1/10"
+   ],
+   "y": [
+    "1",
+    "2",
+    "4"
+   ],
+   "na_rm": false,
+   "hand": null,
+   "note": "the long double mean leaves a rounding residue; the result is a tiny number, not NaN"
+  },
+  "long_double_mean": {
+   "x": [
+    "1",
+    "0x1p-53",
+    "0x1p-53"
+   ],
+   "y": [
+    "1",
+    "2",
+    "4"
+   ],
+   "na_rm": false,
+   "hand": null,
+   "note": "a double sum loses both small terms, the long double sum keeps them"
+  },
+  "x87_rounding_step": {
+   "x": [
+    "1",
+    "0x1p-53",
+    "0x1p-65"
+   ],
+   "y": [
+    "1",
+    "2",
+    "4"
+   ],
+   "na_rm": false,
+   "hand": null,
+   "note": "an exact sum would round up to 1 + 2^-52; 64-bit steps drop 2^-65, then the cast meets a tie and gives 1"
+  },
+  "inexact_values": {
+   "x": [
+    "1/3",
+    "2/7",
+    "3/11",
+    "5/13",
+    "7/17"
+   ],
+   "y": [
+    "1/19",
+    "2/23",
+    "3/29",
+    "5/31",
+    "7/37"
+   ],
+   "na_rm": false,
+   "hand": null,
+   "note": null
+  }
+ },
+ "readers": {
+  "multiple_pann": {
+   "multiple": true,
+   "tann": false,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7",
+    "9",
+    "8"
+   ],
+   "predictant_pann": [
+    "100",
+    "300",
+    "200",
+    "400",
+    "500"
+   ],
+   "hi_ages_time": [
+    false,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    false,
+    true,
+    true
+   ],
+   "predictors2": [
+    "-1",
+    "2",
+    "3",
+    "4"
+   ],
+   "note": "Kinneret shape: line 1964 reads pann, line 1966 still reads tann"
+  },
+  "multiple_tann": {
+   "multiple": true,
+   "tann": true,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7",
+    "9",
+    "8"
+   ],
+   "predictant_pann": [
+    "100",
+    "300",
+    "200",
+    "400",
+    "500"
+   ],
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6"
+   ]
+  },
+  "mask_longer_than_selection": {
+   "multiple": true,
+   "tann": false,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7"
+   ],
+   "predictant_pann": [
+    "1",
+    "3",
+    "2"
+   ],
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "4"
+   ],
+   "note": "reading past the end gives NA in both vectors; na.rm then drops them"
+  },
+  "mask_shorter_recycled": {
+   "multiple": true,
+   "tann": false,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7",
+    "9"
+   ],
+   "predictant_pann": [
+    "1",
+    "3",
+    "2",
+    "5"
+   ],
+   "hi_ages_time": [
+    true,
+    false
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "4",
+    "5"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "4",
+    "3"
+   ]
+  },
+  "negative_replaced": {
+   "multiple": true,
+   "tann": false,
+   "predictant_tann": [
+    "1",
+    "2",
+    "3"
+   ],
+   "predictant_pann": [
+    "3",
+    "2",
+    "1"
+   ],
+   "hi_ages_time": [
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "3",
+    "2",
+    "1"
+   ]
+  },
+  "missing_replaced": {
+   "multiple": true,
+   "tann": false,
+   "predictant_tann": [
+    "1",
+    "2",
+    "3"
+   ],
+   "predictant_pann": [
+    "3",
+    "1",
+    "2"
+   ],
+   "hi_ages_time": [
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "NA",
+    "3"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "1",
+    "1"
+   ]
+  },
+  "single_iso_1993": {
+   "multiple": false,
+   "tann": false,
+   "sources_marine": 1,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7",
+    "9"
+   ],
+   "predictant_pann": [
+    "1",
+    "3",
+    "2",
+    "5"
+   ],
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_iso1": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "ages_iso2": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "iso_time": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ],
+   "note": "reached for Kinneret only if sources$core is 0"
+  },
+  "single_pollen_1999": {
+   "multiple": false,
+   "tann": false,
+   "sources_marine": 0,
+   "predictant_tann": [
+    "5",
+    "6",
+    "7",
+    "9"
+   ],
+   "predictant_pann": [
+    "1",
+    "3",
+    "2",
+    "5"
+   ],
+   "hi_ages_time": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen1": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen2": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "pollen": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "note": "not reached for Kinneret: sources[,4] stays 1"
+  }
+ },
+ "length_mismatch": {
+  "x_longer_no_filter": {
+   "x": [
+    1,
+    2,
+    4,
+    8
+   ],
+   "y": [
+    3,
+    1
+   ],
+   "na_rm": false
+  },
+  "y_longer_no_filter": {
+   "x": [
+    1,
+    2
+   ],
+   "y": [
+    3,
+    1,
+    7,
+    2
+   ],
+   "na_rm": false
+  },
+  "y_longer_filter": {
+   "x": [
+    1,
+    2
+   ],
+   "y": [
+    3,
+    1,
+    7,
+    2
+   ],
+   "na_rm": true
+  }
+ },
+ "stress": {
+  "seed": 20261110,
+  "cases": 400
+ }
+}

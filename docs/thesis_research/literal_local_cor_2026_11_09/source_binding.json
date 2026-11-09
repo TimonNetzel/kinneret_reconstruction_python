@@ -1,0 +1,331 @@
+{
+  "status": "bounded_historical_source_fragment_not_case_reproduction",
+  "basis_commit": "437f6f4baeed4a086a2d5a80c7abc9e420a353de",
+  "sources_sha256": {
+    "main_v1.2.R": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+    "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+    "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+    "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+  },
+  "implemented_spans": [
+    [
+      "src/mcmc_functions_v1.6.R",
+      2355,
+      2366
+    ],
+    [
+      "src/mcmc_functions_v1.6.R",
+      1939,
+      2018
+    ]
+  ],
+  "r_files_searched": 540,
+  "files_defining_cor": [
+    "src/local_reconstr_all_epd/src/mcmc_functions_v1.6.R"
+  ],
+  "cor_definition_in_bound_file": {
+    "line": 2355,
+    "top_level": true,
+    "sourced_by": "main_v1.2.R:644",
+    "masks": "stats::cor for code evaluated in the global environment"
+  },
+  "live_cor_call_sites": {
+    "src/mcmc_functions_v1.6.R": [
+      136,
+      137,
+      138,
+      965,
+      967,
+      976,
+      981,
+      992,
+      1964,
+      1966,
+      1982,
+      1993,
+      1999,
+      2009,
+      2024,
+      2032
+    ],
+    "src/mcmc_prepare.R": [
+      1084
+    ]
+  },
+  "readers": [
+    {
+      "line": 1084,
+      "file": "mcmc_prepare.R",
+      "guard": "country != \"Israel\"",
+      "kinneret": "not reached under the older record (Israel); cor23 has no live reader anyway"
+    },
+    {
+      "line": "136-138",
+      "file": "mcmc_functions_v1.6.R",
+      "guard": "correlation_decomposition has no live caller",
+      "kinneret": "not reached"
+    },
+    {
+      "line": "965-992",
+      "file": "mcmc_functions_v1.6.R",
+      "guard": "first reconstruction definition, replaced at 1781",
+      "kinneret": "not reached"
+    },
+    {
+      "line": "1964, 1966",
+      "guard": "multiple",
+      "kinneret": "reached when sources$core is 1 (see multiple_table)"
+    },
+    {
+      "line": 1982,
+      "guard": "multiple & hi_time",
+      "kinneret": "not reached: add.sites <- T sets hi_time FALSE (mcmc_prepare.R:718)"
+    },
+    {
+      "line": 1993,
+      "guard": "!multiple & sources[,4]==1",
+      "kinneret": "reached only if sources$core is 0"
+    },
+    {
+      "line": 1999,
+      "guard": "!multiple & sources[,4]!=1",
+      "kinneret": "not reached: sources[,4] stays 1 for Kinneret"
+    },
+    {
+      "line": 2009,
+      "guard": "!multiple & hi_time",
+      "kinneret": "not reached: hi_time FALSE"
+    },
+    {
+      "line": 2024,
+      "guard": "spectral",
+      "kinneret": "depends on sources$speleothem; needs wt_power, not part of this module"
+    },
+    {
+      "line": 2032,
+      "guard": "spectral & hi_spec",
+      "kinneret": "not reached: mcmc_prepare.R:881 excludes Kinneret from hi_spec"
+    }
+  ],
+  "correlation_decomposition_callers": [],
+  "assignments_of_multiple_spectral_hi_time_hi_spec": {
+    "src/mcmc_prepare.R": [
+      [
+        713,
+        "hi_time <- FALSE"
+      ],
+      [
+        715,
+        "hi_time <- TRUE"
+      ],
+      [
+        718,
+        "if(add.sites) hi_time <- FALSE"
+      ],
+      [
+        879,
+        "hi_spec <- FALSE"
+      ],
+      [
+        882,
+        "hi_spec <- TRUE"
+      ],
+      [
+        1192,
+        "multiple <- spectral <- FALSE"
+      ],
+      [
+        1194,
+        "if( all(which_sources == c(1,4)) )  multiple <- TRUE"
+      ],
+      [
+        1195,
+        "if( all(which_sources == c(2,4)) )  multiple <- TRUE"
+      ],
+      [
+        1196,
+        "if( all(which_sources == c(3,4)) )  multiple <- FALSE"
+      ],
+      [
+        1199,
+        "if( all(which_sources == c(1,3,4)) )  multiple <- TRUE"
+      ],
+      [
+        1200,
+        "if( all(which_sources == c(2,3,4)) )  multiple <- TRUE"
+      ],
+      [
+        1203,
+        "if( any(which_sources == 3) )  spectral <- TRUE"
+      ],
+      [
+        1211,
+        "multiple <- FALSE # only if tann is considered"
+      ],
+      [
+        1221,
+        "multiple <- FALSE"
+      ],
+      [
+        1231,
+        "multiple <- FALSE"
+      ],
+      [
+        1233,
+        "multiple <- TRUE"
+      ],
+      [
+        1235,
+        "multiple <- TRUE"
+      ],
+      [
+        1242,
+        "multiple <- TRUE"
+      ]
+    ]
+  },
+  "writes_to_sources_4": [
+    1072,
+    1123,
+    1143,
+    1145,
+    1147,
+    1150,
+    1153,
+    1154,
+    1155,
+    1157,
+    1158,
+    1159,
+    1160,
+    1161,
+    1162,
+    1163,
+    1164,
+    1167,
+    1168,
+    1169,
+    1170,
+    1171,
+    1172,
+    1173,
+    1212
+  ],
+  "writes_to_sources_4_reached_for_kinneret": {
+    "1072": "unconditional, sets 1",
+    "others": "if(FALSE) block, case_studies F, or excluded by sitename at 1209"
+  },
+  "multiple_table_kinneret": [
+    {
+      "sources_core": 0,
+      "sources_speleothem": 0,
+      "which_sources": [
+        4
+      ],
+      "multiple": false,
+      "spectral": false,
+      "time_reader": "1993"
+    },
+    {
+      "sources_core": 0,
+      "sources_speleothem": 1,
+      "which_sources": [
+        3,
+        4
+      ],
+      "multiple": false,
+      "spectral": true,
+      "time_reader": "1993"
+    },
+    {
+      "sources_core": 1,
+      "sources_speleothem": 0,
+      "which_sources": [
+        2,
+        4
+      ],
+      "multiple": true,
+      "spectral": false,
+      "time_reader": "1964+1966"
+    },
+    {
+      "sources_core": 1,
+      "sources_speleothem": 1,
+      "which_sources": [
+        2,
+        3,
+        4
+      ],
+      "multiple": true,
+      "spectral": true,
+      "time_reader": "1964+1966"
+    }
+  ],
+  "multiple_equals_sources_core_for_kinneret": true,
+  "kinneret_flags": {
+    "add.sites": true,
+    "case_studies": false,
+    "giesecke_prespa": false,
+    "tann": false,
+    "hi_time": false,
+    "hi_spec": false,
+    "human_impact": [
+      -60,
+      6500
+    ],
+    "hi_ages_time": "!inside.range(pollen.age, human_impact), mcmc_prepare.R:716; kept although hi_time is FALSE"
+  },
+  "site_coordinates_used_for_space_test": {
+    "source": "in/core_data_all_andrea_taxa_additional_sites.rdata, slot 3, read in R 3.5.0",
+    "older_than_v1_2": true,
+    "sitename": "Kinneret",
+    "lat": 32.79,
+    "lon": 35.53,
+    "country": "Israel"
+  },
+  "giesecke_space_test": {
+    "file": "in/epd_giesecke_2016/quant_files/epdQuant_Abi.csv",
+    "sha256": "7b47843bcb0735f89a35b1aef8f4c9abda3a8674561f94d68b606327422f45b2",
+    "grid_points": 3691,
+    "lat_range": [
+      34.75,
+      71.25
+    ],
+    "nearest_grid_lat": 34.75,
+    "lon_range_at_that_lat": [
+      24.75,
+      24.75
+    ],
+    "inside_giesecke_space": false,
+    "holds_for_any_site_below_lat_35": "nearest row 34.75 has one point at 24.75, so every longitude above 25.75 is outside"
+  },
+  "open_conditions": [
+    "sources$core needs var(AP reference) != 0 (mcmc_prepare.R:662); not evaluated without the final v1.2 inputs",
+    "sources$speleothem depends on d18o.age and does not change multiple",
+    "length and alignment of hi_ages_time against the selected vectors need the final ages"
+  ],
+  "main_v1_2_stray_closing_braces": [
+    740,
+    788,
+    829
+  ],
+  "main_v1_2_note": "the file does not parse as a whole; the loop 651-684 is the binding used here",
+  "packages_needed_by_cor": [],
+  "base_functions_used": [
+    "is.na",
+    "length",
+    "sum",
+    "sqrt",
+    "%*%",
+    "^",
+    "/",
+    "-",
+    "["
+  ],
+  "globals_made_explicit": [],
+  "portable_excerpt": "source_excerpt.json",
+  "portable_excerpt_sha256": "907b6266aa152ab9f1c40823b789ff31a3f353f403b806012b0bfd5e4c95e6bb",
+  "actual_original_inputs_used_for_numerics": false,
+  "run_binding": null,
+  "historical_reproduction_ready": false
+}
