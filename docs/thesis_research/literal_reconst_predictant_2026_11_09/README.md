@@ -59,7 +59,7 @@ Ergebnis: [r_crosscheck_result.json](r_crosscheck_result.json). **3.009 von 3.00
 
 [Gegenbeispiele](arithmetic_check.json), keine Varianten: Ein `long double`-Akkumulator ändert 367 von 2.032 endlichen Stresswerten, Python-`sum()` und eine exakte Summe ebenfalls je 367; NumPy `@` ändert hier nichts.
 
-Im [Prüfnachweis](verification.json): 229 neue, 1.172 frühere, zusammen 1.401 Tests grün.
+Im [Prüfnachweis](verification.json): 230 neue, 1.172 frühere, zusammen 1.402 Tests grün.
 
 ## Prüfen
 
