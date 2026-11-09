@@ -1,0 +1,123 @@
+{
+ "kind": "source_binding_wt_power",
+ "sources": {
+  "main_v1.2.R": "82486f99bafff08af2b51475ed225501d26cec1a0322a286b97a248ebd2f0520",
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e"
+ },
+ "r_tarball_sha256": "fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870",
+ "r_locations_line_numbers_only": {
+  "src/library/stats/src/fourier.c": [
+   47,
+   60,
+   136
+  ],
+  "src/main/complex.c": [
+   211,
+   284
+  ],
+  "src/main/arithmetic.c": [
+   200,
+   204
+  ]
+ },
+ "pinned_lines": {
+  "main_v1.2.R": [
+   24,
+   47,
+   51,
+   52,
+   73,
+   672
+  ],
+  "src/mcmc_functions_v1.6.R": [
+   1003,
+   1004,
+   1005,
+   1006,
+   1007,
+   1008,
+   1009,
+   1010,
+   1011,
+   1012,
+   2021,
+   2023,
+   2024,
+   2025,
+   2026,
+   2029
+  ],
+  "src/mcmc_prepare.R": [
+   772,
+   773,
+   790,
+   813,
+   814,
+   821,
+   825,
+   826,
+   879,
+   881,
+   885,
+   922,
+   931,
+   932,
+   934,
+   938,
+   939,
+   940,
+   941,
+   947,
+   950,
+   1140,
+   1145,
+   1192,
+   1203,
+   1815,
+   1816,
+   1817
+  ]
+ },
+ "callers": {
+  "mcmc_functions_v1.6.R": {
+   "991": "inside the reconstruction of line 855, replaced by line 1781; the call also passes removed arguments",
+   "2023": "active reader when spectral",
+   "2031": "only when hi_spec"
+  },
+  "mcmc_prepare.R": {
+   "947": "test call inside if(sources$speleothem == 1), result without reader",
+   "966": "same, 100 times in system.time"
+  },
+  "wt_cpp_only_in_mcmc_prepare": [
+   950,
+   971
+  ],
+  "not_in_handoff": "the handoff named only line 2023; lines 947 and 966 run it as well when sources$speleothem is 1"
+ },
+ "kinneret": {
+  "add_sites": true,
+  "case_studies": false,
+  "line_1145_reached": false,
+  "line_1145_reason": "behind if(case_studies), and main_v1.2.R:672 sets case_studies to F",
+  "spectral": "open: mcmc_prepare.R:1203 needs sources$speleothem 1, which needs d18o.age and the final coordinates (lines 759-814)",
+  "hi_spec": false,
+  "hi_ages_spec": "all TRUE (lines 881, 885)",
+  "line_2031_reached": false,
+  "length_ages_spec2_equals_length_of_d": true
+ },
+ "free_variables": {
+  "wb": "global, mcmc_prepare.R:932-935; real, since rcpp_wt_bases_morlet returns a NumericVector in all four biwavelet versions read (fft_masking.json)",
+  "formals_without_usable_default": [
+   "n.obs",
+   "zeros",
+   "invflen"
+  ]
+ },
+ "line_1007": "assigns test, which has no reader; left out of the module",
+ "marked_not_corrected": {
+  "mcmc_prepare.R:1817": "hi_ages_spec is shorter than ages_spec and is recycled; only for hi_spec sites can length_ages_spec2 then differ from length(d). Kinneret is not one.",
+  "site_age_versus_age": "site.age is overwritten at lines 825-826, so ages_spec need not have the length of predictant_current; the module applies R logical indexing and rejects a series that no longer fits wb"
+ },
+ "historical_reproduction_ready": false
+}

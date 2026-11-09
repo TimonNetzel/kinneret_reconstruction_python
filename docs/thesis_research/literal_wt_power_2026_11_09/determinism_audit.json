@@ -1,0 +1,15 @@
+{
+ "kind": "determinism_audit_wt_power",
+ "random_state": false,
+ "package_semantics_in_module": [
+  "stats::fft and stats::mvfft replaced by numpy.fft on the user decision of 2026-11-09"
+ ],
+ "bit_identical_with_R": false,
+ "outside_this_step": [
+  "rcpp_wt_bases_morlet (biwavelet)",
+  "biwavelet::wt for predictors$iso_spec and coi_array",
+  "smoothing of the speleothem series"
+ ],
+ "no_gpl_text_copied": true,
+ "historical_reproduction_ready": false
+}
