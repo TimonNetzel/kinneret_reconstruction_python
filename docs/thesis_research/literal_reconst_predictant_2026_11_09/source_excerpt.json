@@ -1,0 +1,47 @@
+{
+  "status": "read_only_spans",
+  "spans": [
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1811,
+      "last_line": 1825,
+      "role": "implemented_1817_1820_and_1825_given_tf_sample",
+      "text": "    # sampling for the random walk (or Hamiltonian Monte Carlo): truncated normal proposal distributions (the ranges and SDs are estimated from the TFs)\n    posterior_temp$tf_sample[,1] <- rtruncnorm_cpp(num_taxa,posterior$tf_sample[[i-1]][,1],sds_tann,tf_quarts_tann[,1], tf_quarts_tann[,3])\n    posterior_temp$tf_sample[,2] <- rtruncnorm_cpp(num_taxa,posterior$tf_sample[[i-1]][,2],sds_pann,tf_quarts_pann[,1], tf_quarts_pann[,3])\n    \n       \n    # current reconstruction\n    taxa.appear.core <- posterior_temp$taxa.appear.core.temp\n    reconst <- taxa.appear.core[reconst_ages,] %*% posterior_temp$tf_sample\n    predictant_tann <- reconst[,1]\n    predictant_pann <- reconst[,2]\n    \n    \n    \n    \n    posterior_temp$youngest_values <- reconst[1,]"
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1829,
+      "last_line": 1857,
+      "role": "implemented_branch_recent_taxa_change_false",
+      "text": "    if(taxa_change){\n        reconst_change <- taxa.appear.core[ages_lg,] %*% tf_x12_mean_current_change\n        predictant_tann <- c(predictant_tann,reconst_change[,1])\n        predictant_pann <- c(predictant_pann,reconst_change[,2])\n        # transition from one period to the other should not be to sharp\n        tann_diff <- abs(reconst_change[1,1]-predictant_tann[300])\n        pann_diff <- abs(reconst_change[1,2]-predictant_pann[300])\n        if(tann_diff <= 2 | pann_diff <= 150){\n            predictant_tann <- predictant_pann <- rnorm(length(age),5,2)\n        }\n    }\n    \n\n\n    # recent climate available?\n    if(recent){\n        recent_age_id <- 1 # 1; 216 \n#         tann.recon.age <- (taxa.appear.core[recent_age_id,] %*% tf.x1.current)[1,]\n#         posterior_temp$post_tann <- weightedMedian(x1range.bck,tann.recon.age, na.rm=T)\n#         pann.recon.age <- (taxa.appear.core[recent_age_id,] %*% tf.x2.current)[1,]\n#         posterior_temp$post_pann <- weightedMedian(x2range.bck,pann.recon.age, na.rm=T) \n        posterior_temp$post_tann <- predictant_tann[1]\n        posterior_temp$post_pann <- predictant_pann[1]\n    }else{\n        posterior_temp$post_tann <- prior.recent$mean.tmp\n        posterior_temp$post_pann <- prior.recent$mean.pann\n#         pann.recent <- predictant_pann[1349]\n#         tann.recent <- predictant_tann[1349]\n    }"
+    },
+    {
+      "source": "original:src/mcmc_functions_v1.6.R",
+      "first_line": 1939,
+      "last_line": 1943,
+      "role": "implemented_predictant_current",
+      "text": "    if(tann){\n        predictant_current <- predictant_tann\n    }else{\n        predictant_current <- predictant_pann\n    }"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1462,
+      "last_line": 1470,
+      "role": "mask",
+      "text": "taxa_change <- FALSE\nif(!taxa.merge){\n    reconst_ages <- rep(TRUE, length(age))\n}else{\n    reconst_ages <- ages_hol\n}\n\n# if taxa should be combined, i.e more than one taxon in the pool represents one taxon from the core.\nif( taxa.merge){"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1500,
+      "last_line": 1500,
+      "role": "mask_branch",
+      "text": "    if(any(sitename == c(\"Birkat Ram\",\"Dead Sea\")) & FALSE){"
+    },
+    {
+      "source": "original:src/mcmc_prepare.R",
+      "first_line": 1521,
+      "last_line": 1522,
+      "role": "mask_reset",
+      "text": "    }else{\n        reconst_ages <- rep(TRUE, length(age))"
+    }
+  ]
+}

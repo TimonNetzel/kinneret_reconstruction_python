@@ -1,0 +1,2116 @@
+{
+ "kind": "synthetic_reconst_fixture_not_historical",
+ "historical_reproduction_ready": false,
+ "selected_final_variant": null,
+ "cases": {
+  "hand_all_rows": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "35/2",
+     "25",
+     "45/2",
+     "95/4"
+    ],
+    "pann": [
+     "175",
+     "250",
+     "225",
+     "475/2"
+    ],
+    "youngest": [
+     "35/2",
+     "175"
+    ]
+   },
+   "note": "Kinneret shape: every age row, tf_sample num_taxa x 2",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tann_is_read": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": "line 1940 instead of 1942",
+   "recent": true,
+   "tann": true,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "recent_false_uses_prior": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": "lines 1853/1854",
+   "recent": false,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "preliminary_holocene_mask": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    false,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "35/2",
+     "25"
+    ],
+    "pann": [
+     "175",
+     "250"
+    ]
+   },
+   "note": "shape of line 1466 only; line 1522 replaces it in the live path",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "interior_mask_youngest_is_first_selected": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    false,
+    true,
+    true,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "25",
+     "45/2"
+    ],
+    "pann": [
+     "250",
+     "225"
+    ],
+    "youngest": [
+     "25",
+     "250"
+    ]
+   },
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "one_row_selected_drops_to_vector": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    false,
+    true,
+    false,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "25"
+    ],
+    "pann": [
+     "250"
+    ]
+   },
+   "note": "matrix[mask,] drops to a vector; %*% takes it as a row",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "one_row_matrix": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ]
+   ],
+   "mask": [
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "35/2"
+    ],
+    "pann": [
+     "175"
+    ]
+   },
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "one_taxon_many_rows": {
+   "core": [
+    [
+     "1/2"
+    ],
+    [
+     "1/4"
+    ],
+    [
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "8",
+     "16"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "4",
+     "2",
+     "8"
+    ],
+    "pann": [
+     "8",
+     "4",
+     "16"
+    ]
+   },
+   "note": "one column drops; %*% takes the vector as a column",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "one_by_one": {
+   "core": [
+    [
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true
+   ],
+   "tf": [
+    [
+     "8",
+     "16"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "4"
+    ],
+    "pann": [
+     "8"
+    ]
+   },
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "no_row_selected": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    false,
+    false,
+    false,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": "0 x 2 result, then reconst[1,] stops R at line 1825",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "no_row_selected_one_taxon": {
+   "core": [
+    [
+     "1"
+    ],
+    [
+     "1"
+    ]
+   ],
+   "mask": [
+    false,
+    false
+   ],
+   "tf": [
+    [
+     "8",
+     "16"
+    ]
+   ],
+   "hand": null,
+   "note": "0 x 1 drops to numeric(0); %*% gives 0 x 2",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "empty_mask": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "short_mask_recycled": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": {
+    "tann": [
+     "35/2",
+     "45/2"
+    ],
+    "pann": [
+     "175",
+     "225"
+    ]
+   },
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "long_mask_stops": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "na_in_mask": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    null,
+    true,
+    false
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "hand": null,
+   "note": "NA selects a row of NA",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "non_conformable_matrix": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "2"
+    ],
+    [
+     "3",
+     "4"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "non_conformable_vector": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    false,
+    false,
+    false
+   ],
+   "tf": [
+    [
+     "1",
+     "2"
+    ],
+    [
+     "3",
+     "4"
+    ]
+   ],
+   "hand": null,
+   "note": "one row of length 3 against nrow(tf) 2",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_finite": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ],
+    [
+     "1",
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "double accumulation stays at 1; long double reaches 1 + 2^-52",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_one_row_dgemv": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ]
+   ],
+   "mask": [
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "vector-matrix path, dgemv with TRANS T",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_with_nan_in_other_row": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ],
+    [
+     "NaN",
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "simple_matprod: still a double accumulation, the finite row is unchanged",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_with_na_in_other_row": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ],
+    [
+     "NA",
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_with_inf_in_other_row": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ],
+    [
+     "Inf",
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "tie_with_nan_in_tf_column_1": {
+   "core": [
+    [
+     "1",
+     "0x1p-53",
+     "0x1p-53"
+    ],
+    [
+     "1",
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "NaN",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "NaN in one TF column sends both columns through simple_matprod",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "false_positive_nan_test": {
+   "core": [
+    [
+     "0x1.8p+1023",
+     "1"
+    ],
+    [
+     "0x1.8p+1023",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "0x1p-1000",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "two huge neighbours overflow in the pairwise test; values stay finite",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "product_overflow_finite_inputs": {
+   "core": [
+    [
+     "0x1p+1023",
+     "0x1p+1023"
+    ],
+    [
+     "0x1p+1023",
+     "-0x1p+1023"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "4",
+     "1"
+    ],
+    [
+     "4",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "BLAS path; Inf and Inf - Inf arise inside",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "product_overflow_blas_path": {
+   "core": [
+    [
+     "0x1p+600",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "0x1p+600",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "no pair overflows in the test, so BLAS runs; the product itself is Inf",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "zero_times_na": {
+   "core": [
+    [
+     "0",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "NA",
+     "1"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "hand": null,
+   "note": "0 * NA stays NA",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "zero_times_inf": {
+   "core": [
+    [
+     "0",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "Inf",
+     "1"
+    ],
+    [
+     "2",
+     "3"
+    ]
+   ],
+   "hand": null,
+   "note": "0 * Inf is NaN",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "inf_minus_inf": {
+   "core": [
+    [
+     "Inf",
+     "-Inf"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "token_x_na_y_nan": {
+   "core": [
+    [
+     "NA",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "NaN",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "the first operand of x * y wins",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "token_x_nan_y_na": {
+   "core": [
+    [
+     "NaN",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "NA",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "token_sum_na_then_nan": {
+   "core": [
+    [
+     "NA",
+     "NaN"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "a missing accumulator stays",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "token_sum_nan_then_na": {
+   "core": [
+    [
+     "NaN",
+     "NA"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "token_sum_inf_cancel_then_na": {
+   "core": [
+    [
+     "Inf",
+     "-Inf",
+     "NA"
+    ],
+    [
+     "1",
+     "1",
+     "1"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "NaN from Inf - Inf comes first and stays",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "negative_zero_terms": {
+   "core": [
+    [
+     "-0",
+     "1"
+    ],
+    [
+     "0",
+     "0"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "-1"
+    ]
+   ],
+   "hand": null,
+   "note": "the accumulator starts at +0",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "subnormal_terms": {
+   "core": [
+    [
+     "0x1p-1074",
+     "0x1p-1074"
+    ],
+    [
+     "0x1.8p-1073",
+     "0x1p-1074"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "3"
+    ],
+    [
+     "1",
+     "1/2"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "inexact_values": {
+   "core": [
+    [
+     "1/3",
+     "2/7",
+     "3/11"
+    ],
+    [
+     "5/13",
+     "7/17",
+     "11/19"
+    ]
+   ],
+   "mask": [
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "1/23",
+     "2/29"
+    ],
+    [
+     "3/31",
+     "5/37"
+    ],
+    [
+     "7/41",
+     "11/43"
+    ]
+   ],
+   "hand": null,
+   "note": null,
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  },
+  "many_taxa_order_matters": {
+   "core": [
+    [
+     "0x1p+60",
+     "1",
+     "-0x1p+60",
+     "1"
+    ]
+   ],
+   "mask": [
+    true
+   ],
+   "tf": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ],
+    [
+     "1",
+     "1"
+    ]
+   ],
+   "hand": null,
+   "note": "plain double accumulation in taxon order gives 1, an exact sum 2",
+   "recent": true,
+   "tann": false,
+   "prior": [
+    "11/2",
+    "600"
+   ]
+  }
+ },
+ "chains": {
+  "kinneret_shape_multiple": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/2",
+     "1/4"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": false,
+   "multiple": true,
+   "hi_ages_time": [
+    false,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    false,
+    true,
+    true
+   ],
+   "predictors2": [
+    "-1",
+    "2",
+    "3",
+    "4"
+   ],
+   "note": "artificial; line 1964 reads pann, 1966 reads tann"
+  },
+  "tann_true_multiple": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/2",
+     "1/4"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": true,
+   "multiple": true,
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "4",
+    "3",
+    "6"
+   ]
+  },
+  "na_row_removed_by_cor": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ],
+    [
+     "NA",
+     "1/2",
+     "1/4"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": false,
+   "multiple": true,
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "4",
+    "3",
+    "6"
+   ],
+   "note": "the NA predictant is screened out in x by na.rm"
+  },
+  "nan_row_in_negative_correlation": {
+   "core": [
+    [
+     "1",
+     "0",
+     "0"
+    ],
+    [
+     "0",
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "0",
+     "1"
+    ],
+    [
+     "NaN",
+     "1/2",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": false,
+   "multiple": true,
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors1": [
+    "3",
+    "2",
+    "1",
+    "5"
+   ],
+   "ages_iso": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "predictors2": [
+    "1",
+    "2",
+    "3",
+    "9"
+   ]
+  },
+  "single_iso_1993": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": false,
+   "multiple": false,
+   "sources_marine": 1,
+   "hi_ages_time": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_iso1": [
+    true,
+    true,
+    false,
+    true
+   ],
+   "ages_iso2": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "iso_time": [
+    "0",
+    "1",
+    "2",
+    "4"
+   ],
+   "note": "reached for Kinneret only if sources$core is 0"
+  },
+  "single_pollen_1999": {
+   "core": [
+    [
+     "1/2",
+     "1/4",
+     "1/4"
+    ],
+    [
+     "0",
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/4",
+     "1/4",
+     "1/2"
+    ],
+    [
+     "1/8",
+     "3/8",
+     "1/2"
+    ]
+   ],
+   "mask": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "tf": [
+    [
+     "10",
+     "100"
+    ],
+    [
+     "20",
+     "200"
+    ],
+    [
+     "30",
+     "300"
+    ]
+   ],
+   "tann": false,
+   "multiple": false,
+   "sources_marine": 0,
+   "hi_ages_time": [
+    false,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen1": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "ages_pollen2": [
+    true,
+    true,
+    true,
+    true
+   ],
+   "pollen": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "note": "not reached for Kinneret: sources[,4] stays 1"
+  }
+ },
+ "stress": {
+  "seed": 20261111,
+  "cases": 400
+ }
+}
