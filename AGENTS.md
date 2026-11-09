@@ -1,3 +1,10 @@
+> **Aktuell: `ratios_tfs_no_ages` nachgebildet (eigene Normalverteilung, nicht bitgleich zu R), App-Stand 14, 09.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_ratios_tfs_2026_11_09/README.md): `mcmc_functions_v1.6.R:1485–1525`, Leser `mcmc_conduction.R:228–230`, mit expliziten Eingaben. Auf Nutzerentscheidung eigene Normalverteilung mit gemessener, markierter Abweichung.
+> R 3.5.0, 120 Stressfälle: Gitterquotienten und Produkt mit R-Faktoren bitgleich; Dichtequotienten höchstens 15 ulp, `transfer_ratio` höchstens 35 ulp. Die C++-Zeilen liefen nicht (kein Compiler).
+> 212 neue Tests, 1.858 grün. [App-Stand 14](docs/thesis_research/app_reproduction_2026_11_09_ratios_tfs/README.md) mit eigenem Pin; Stände 1–13 eingefroren. Kein Originalfall; elf Bündel offen.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_RATIOS_TFS_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: `rtruncnorm_cpp` quellen- und bindungsgeprüft, ohne Ziehung, 09.11.2026:**
 > [Belegpaket](docs/thesis_research/literal_rtruncnorm_binding_2026_11_09/README.md): `r_truncnorm` aus RcppDist; im Fenster auf CRAN genau 0.1.1 (2018-10-28), installierte Fassung unbekannt.
 > Inversion mit einem `R::runif` je Element (gelesen, nicht gemessen). 32 neue Tests, 1.646 grün. Kein Rechenmodul, App-Stand 13 bleibt aktuell. Kein Originalfall; elf Bündel offen.

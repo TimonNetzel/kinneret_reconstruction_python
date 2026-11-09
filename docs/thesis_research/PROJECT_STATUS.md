@@ -1,5 +1,22 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## `ratios_tfs_no_ages` nachgebildet (eigene Normalverteilung, nicht bitgleich zu R), App-Stand 14, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_ratios_tfs_2026_11_09/README.md) (`9f6165e`), [App-Stand 14](app_reproduction_2026_11_09_ratios_tfs/README.md).
+
+- `mcmc_functions_v1.6.R:1485–1525` und Leser `mcmc_conduction.R:228–230` mit expliziten Vektoren und Matrizen. Keine Ziehung, kein Sampler, kein Originalfall. Der Aufruf läuft ohne Bedingung in jeder Iteration.
+- **Nutzerentscheidung vom 09.11.2026:** `d_truncnorm` mit eigener Normalverteilung und gemessener, markierter Abweichung, keine Übersetzung von R-`dnorm.c` und `pnorm.c`. Der Baustein ist **nicht** bitgleich zu R.
+- R 3.5.0, 120 Stressfälle: Gitterquotienten (3.406) und Produkt mit R-Faktoren (120) bitgleich; Dichtequotienten 2.533 von 3.406 bitgleich, höchstens 15 ulp; `transfer_ratio` höchstens 35 ulp. Die C++-Zeilen liefen nicht (kein Compiler); R führt die R-Fassung derselben Funktion wörtlich aus.
+- 212 neue Tests, **1.858** gezielte Tests grün in 22 Dateien; App-Tests 172 grün (2 Wrapper explizit ersetzt); Edge in beiden Formaten (zehn Fälle) und zwei Standorte mit Exit 0 und ohne `FEHLER`-Zeile; keine der 20 Tabellen bei 390 px breiter als ihr Rahmen; kein Standby während der Läufe. Phase-1-Prüfer Exit 2.
+
+**App:** [Stand 14](app_reproduction_2026_11_09_ratios_tfs/README.md) (Pin `a45d172c…`): 17 Teilmodule, Tabelle Q1–Q8. Stände 1–13 eingefroren. Zwei falsche Beschriftungen aus doppelten Sprachschlüsseln behoben (G1–G3 der Gewichtstabelle, „NA nur x2“), keine Zahl betroffen.
+
+**Offen:** R-Paket `truncnorm` nicht gebunden; Zufallszustand beim Samplerstart nicht belegt; installierte Fassungen von RcppDist und Rcpp unbekannt. Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. PR #77 offen, nicht gemergt.
+
+**Beim Nutzer:** Lizenz von `tools/r_sort_gpl.py`, R-nahe bitgleiche Rechenschicht für die sechs NumPy-Module.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_RATIOS_TFS_2026_11_09.md); Vorschlag: Eingabevertrag des Kinneret-Falls (Slot 3).
+
 ## `rtruncnorm_cpp`: Quellen- und Bindungsprüfung ohne Ziehung, 09.11.2026
 
 **Abgeschlossen** (Nutzerauftrag „Mache weiter“): [Belegpaket](literal_rtruncnorm_binding_2026_11_09/README.md). Kein Rechenmodul, keine Ziehung, keine Kompilierung, kein neuer App-Stand; App-Stand 13 bleibt aktuell.

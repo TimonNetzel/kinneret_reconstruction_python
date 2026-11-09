@@ -1,0 +1,225 @@
+{
+  "status": "passed",
+  "exit_codes": {
+    "browser": 0,
+    "two_sites": 0,
+    "app_pytest": 0,
+    "hist_pytest2": 0
+  },
+  "standby_check": {
+    "windows_system_log_kernel_power_506_507": "none from 2026-11-09T19:05:00+01:00 until the query at the end of the runs",
+    "local_record_sha256": "13de792f5d34de814d1efd213a55760b65d17d58b0ed178f23577e89e1f7d405"
+  },
+  "scope": "read-only app display of ratios_tfs_no_ages with explicit artificial grids, densities and proposals, own normal functions with a measured and marked deviation from R; no historical case reproduction, no sampler, no training or fossil reconstruction",
+  "not_bit_identical_with_R": "by the decision of the user of 2026-11-09; the app states it in the module title and in the example",
+  "cplusplus_lines_run": false,
+  "starting_commit": "9f6165e72a33b74fb590f4de30b061fc8a4b404f",
+  "module_package_commit": "9f6165e72a33b74fb590f4de30b061fc8a4b404f",
+  "reproduction_state_sha256": "a45d172c117805bc5d7e75a25ae22606650552aa0a8a73f04a4e706f76226230",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+    "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+    "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+    "329e6a8b2ada52e22be1a12272853091ca4a6c29894581167ae02b0898877f6a",
+    "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af",
+    "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d",
+    "d84fe644553c48325b53dbf29a7ac7fbe8fcfa040d53e6d8f5358ac45851f945"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[12] received only its link commit 52a6acc (pushed); STATES[0..11] untouched",
+  "display_fixes": {
+    "found": "two language keys were defined twice, so the later one won: nb_ex_w_case (G1-G3 of the weights table were shown as W1-W3) and nb_ex_m_x2 (\"NA only x2\" of the mask table was shown as \"Median x2\")",
+    "change": "renamed to nb_ex_wt_case and nb_ex_m_only_x2; a browser check and tests/test_nachbaustand.py::test_every_language_key_is_defined_once now cover it",
+    "affected_earlier_app_states": "the wrong labels come from the shared app code; the frozen state files of states 1-13 are unchanged"
+  },
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 172,
+    "new_tests": 21,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "9580df97c95a33602856bac2045476adbcc368dad5ca453c2901f906267a33e7"
+  },
+  "historical_tests": {
+    "passed": 1858,
+    "files": 22,
+    "new_tests_module": 212,
+    "new_tests_rtruncnorm_binding": 32,
+    "local_junit_sha256": "1a7356359e4b483e2ccaf217567bbee1031b1fcb840632d37ea078ddd59cc04b"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "fehler_lines": 0,
+    "reproduction_checks": {
+      "tests_shown": 1858,
+      "modules": 17,
+      "earlier_states": 13,
+      "links": 49,
+      "tables": 20,
+      "ratios_rows": 8
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "table_widths_390px": [
+    {
+      "table": "six-check",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "pruning",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "gamma",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "missing",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "dirichlet",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median-mask",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "climate",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "local-cor",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "reconst",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "wt-power",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "ratios-tfs",
+      "client": 332,
+      "scroll": 332
+    }
+  ],
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "ratios table Q1-Q8 at 390 px, light",
+    "desktop.png": "same table, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "compilation of the C++ lines",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}

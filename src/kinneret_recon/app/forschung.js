@@ -106,7 +106,7 @@
       `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="missing"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>${kopf}</tr></thead><tbody>` +
       zeile("nb_ex_m_taxa", (x) => `<td>${fmt(x.taxa, 0)}</td>`) +
       zeile("nb_ex_m_missing", (x) => `<td>${liste(x.missing)}</td>`) +
-      zeile("nb_ex_m_x2", (x) => `<td>${liste(x.x2_only)}</td>`) +
+      zeile("nb_ex_m_only_x2", (x) => `<td>${liste(x.x2_only)}</td>`) +
       zeile("nb_ex_m_kept", (x) => `<td>${esc(x.kept.join(""))}</td>`) +
       zeile("nb_ex_m_num", (x) => `<td data-line="${x.line}">${fmt(x.num_taxa, 0)}</td>`) +
       zeile("nb_ex_m_sd", (x) => `<td data-sd="${x.sd}"><strong>${fmt(x.sd, 0)}</strong></td>`) +
@@ -312,7 +312,7 @@
     if (!w) return "";
     const wert = (x) => x.kind === "number" ? `<td><span class="nb-wert">${esc(fmt(x.value, 4))}</span></td>` : `<td><span class="nb-wert" data-special="na">${esc(x.kind)}</span></td>`;
     const form = (f) => f.dim ? `${fmt(f.dim[0], 0)}×${fmt(f.dim[1], 0)}` : esc(text("nb_ex_w_vector", { n: fmt(f.n_obs * f.columns, 0) }));
-    const zeilen = w.cases.map((f, i) => `<tr data-wt="${esc(f.name)}" data-kind="${esc(f.kind)}"><th scope="row">${esc(text("nb_ex_w_case", { n: i + 1 }))}</th>` +
+    const zeilen = w.cases.map((f, i) => `<tr data-wt="${esc(f.name)}" data-kind="${esc(f.kind)}"><th scope="row">${esc(text("nb_ex_wt_case", { n: i + 1 }))}</th>` +
       `<td${f.dim ? "" : ' data-drop="true"'}>${form(f)}</td>${wert(f.first)}${wert(f.first_R)}` +
       (f.ulps === null ? `<td data-ulps="missing">–</td>` : `<td data-ulps="${f.ulps}">${fmt(f.ulps, 0)}</td>`) + `</tr>`).join("");
     const d = w.deviation;
@@ -350,7 +350,26 @@
         n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor, rex, wtx) {
+  // Artificial ratios_tfs cases Q1-Q8: own normal functions, so not bit-identical with R; the grid part and the product arithmetic are exact
+  function tfQuotienten(w, bindung) {
+    if (!w) return "";
+    const wert = (x) => x.kind === "number" ? `<td><span class="nb-wert">${esc(fmt(x.value, 4))}</span></td>` : `<td><span class="nb-wert" data-special="na">${esc(x.kind)}</span></td>`;
+    const zeilen = w.cases.map((f, i) => `<tr data-tfr="${esc(f.name)}" data-kind="${esc(f.kind)}"><th scope="row">${esc(text("nb_ex_tfr_case", { n: i + 1 }))}</th>` +
+      `<td>${fmt(f.taxa, 0)}×${fmt(f.grid, 0)}</td>${wert(f.transfer)}${wert(f.transfer_R)}` +
+      (f.ulps === null ? `<td data-ulps="missing">–</td>` : `<td data-ulps="${f.ulps}">${fmt(f.ulps, 0)}</td>`) + `</tr>`).join("");
+    const d = w.deviation;
+    return `<h4>${esc(text("nb_ex_tfr", { n: fmt(w.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_tfr_body"))}</p>` +
+      `<p data-tfr-deviation="true"><strong>${html("nb_ex_tfr_deviation", { cases: fmt(d.stress_cases, 0), grid: fmt(d.grid_values, 0), eq: fmt(d.density_bit_equal, 0), all: fmt(d.density_values, 0), u: fmt(d.density_max_ulps, 0), rel: exp10(d.density_relative), tu: fmt(d.transfer_max_ulps, 0) })}</strong></p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="ratios-tfs"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_tfr_shape"))}</th><th scope="col">${esc(t("nb_ex_tfr_module"))}</th><th scope="col">R 3.5.0</th><th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-tfr-why="true">${esc(text("nb_ex_tfr_why", { changed: fmt(w.double_accumulator.changed, 0), compared: fmt(w.double_accumulator.compared, 0), noscale: fmt(w.no_scale.changed, 0), noscaleall: fmt(w.no_scale.compared, 0) }))}</p>` +
+      `<p data-tfr-reach="true">${esc(text("nb_ex_tfr_reach", { n: fmt(w.rcpp_versions, 0) }))}</p>` +
+      `<p data-tfr-binding="true">${esc(t("nb_ex_tfr_binding"))} ${link(bindung.url, "nb_ex_tfr_binding_link")}</p>` +
+      `<p>${link(w.url, "nb_evidence")}</p>`;
+  }
+
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor, rex, wtx, tfx, rtb) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -369,7 +388,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}${wtLeistung(wtx)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}${wtLeistung(wtx)}${tfQuotienten(tfx, rtb)}</details>`;
   }
 
   function nachbau() {
@@ -404,7 +423,7 @@
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example, nb.wt_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example, nb.wt_example, nb.ratios_example, nb.rtruncnorm_binding) + `</section>`;
   }
 
   function zeige() {

@@ -10,6 +10,16 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 14, 09.11.2026
+
+`ratios_tfs_no_ages` ist nachgebildet, auf Nutzerentscheidung mit eigener Normalverteilung und gemessener, markierter Abweichung, also nicht bitgleich zu R ([Paket](literal_ratios_tfs_2026_11_09/README.md), [App-Stand 14](app_reproduction_2026_11_09_ratios_tfs/README.md)).
+
+1. Vorschlag: fachlicher Meilenstein Eingabevertrag des Kinneret-Falls (Slot 3).
+2. Kleinere Alternative: R-Paket `truncnorm` (`mcmc_prepare.R:1957–1958`) ohne Ziehung binden.
+3. Weitere Quotienten (`mcmc_conduction.R:155–186`) brauchen eine eigene Nutzerentscheidung zu `dnorm`, `dgamma` und `dbeta`. Offen beim Nutzer bleiben außerdem die Lizenz von `tools/r_sort_gpl.py` und die R-nahe Rechenschicht.
+
+Übergabe: [nach den Transferquotienten](CLAUDE_NEXT_STEP_AFTER_RATIOS_TFS_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein nach der Bindung von `rtruncnorm_cpp`, 09.11.2026
 
 `rtruncnorm_cpp` ist quellen- und bindungsgeprüft, ohne Ziehung ([Paket](literal_rtruncnorm_binding_2026_11_09/README.md)). App-Stand 13 bleibt aktuell.

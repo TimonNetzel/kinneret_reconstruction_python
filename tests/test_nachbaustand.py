@@ -34,6 +34,9 @@ RECONST = "docs/thesis_research/literal_reconst_predictant_2026_11_09/"
 FROZEN11 = nachbaustand.STATES[10]["path"].as_posix()
 WT = "docs/thesis_research/literal_wt_power_2026_11_09/"
 FROZEN12 = nachbaustand.STATES[11]["path"].as_posix()
+TFR = "docs/thesis_research/literal_ratios_tfs_2026_11_09/"
+BIND = "docs/thesis_research/literal_rtruncnorm_binding_2026_11_09/"
+FROZEN13 = nachbaustand.STATES[12]["path"].as_posix()
 CLIMATE = "docs/thesis_research/literal_reconstruction_climate_2026_11_08/"
 
 
@@ -44,12 +47,13 @@ def _kopie(tmp_path: Path) -> Path:
                                              STATE["sampler_example"], STATE["weights_example"])
     dex, rtc, medx, six = STATE["dirichlet_example"], STATE["runtime_check"], STATE["median_example"], STATE["six_check"]
     kex, cex, rex, wtx = STATE["climate_example"], STATE["cor_example"], STATE["reconst_example"], STATE["wt_example"]
+    tfx, rtb = STATE["ratios_example"], STATE["rtruncnorm_binding"]
     for rel in ([s["path"].as_posix() for s in nachbaustand.STATES] + [STATE["chain_check"]["package"],
                 contract["package"], contract["spec"]] + [m["package"] for m in STATE["modules"]]
-                + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex, wtx) for k in ("fixture", "result", "rational",
+                + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex, wtx, tfx) for k in ("fixture", "result", "rational",
                                                                                               "arithmetic")]
                 + [kex["crosscheck"], kex["binding"], cex["crosscheck"], cex["binding"], rex["crosscheck"], rex["binding"], rex["measurement"],
-                   wtx["crosscheck"], wtx["binding"], wtx["masking"]]
+                   wtx["crosscheck"], wtx["binding"], wtx["masking"], tfx["crosscheck"], tfx["binding"], rtb["package"]]
                 + [medx["crosscheck"]] + [six[k] for k in ("package", "result", "causes", "provider")]
                 + [rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")]):
         (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
@@ -57,13 +61,13 @@ def _kopie(tmp_path: Path) -> Path:
     return tmp_path
 
 
-def test_newest_state_binds_sixteen_modules_eleven_open_bundles_and_no_release():
+def test_newest_state_binds_seventeen_modules_eleven_open_bundles_and_no_release():
     d = nachbaustand.app_daten(ROOT)
     assert d["available"] and d["status"] == "submodules_checked_original_case_open"
     assert [m["id"] for m in d["modules"]] == list(nachbaustand.MODULE_IDS)
-    assert d["modules"][-1]["id"] == "wt_power" and d["modules"][-1]["conditional"]
+    assert d["modules"][-1]["id"] == "ratios_tfs" and not d["modules"][-1]["conditional"]
     assert [m["id"] for m in d["modules"] if m["conditional"]] == ["taxon_pruning", "reconstruction_climate", "wt_power"]
-    assert d["tests_passed"] == 1614 == (d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
+    assert d["tests_passed"] == 1858 == (d["rtruncnorm_binding"]["new_tests"] + d["six_check"]["new_tests"] + sum(m["new_tests"] for m in d["modules"]) + d["chain_check"]["new_tests"]
                                         + d["contract"]["tests"] + d["runtime_check"]["new_tests"])
     assert [r["id"] for r in d["requirements"]] == list(nachbaustand.REQUIREMENT_IDS)
     assert {r["status"] for r in d["requirements"]} == {"missing", "conflicting"}
@@ -99,7 +103,14 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
     twelfth_state = json.loads((ROOT / twelfth["path"]).read_text(encoding="utf-8"))
     assert (twelfth_state["tests"]["passed"], len(twelfth_state["modules"])) == (1402, 15)
     assert twelfth_state["supersedes"] == {"state": FROZEN11, "state_sha256": eleventh["sha256"]}
-    assert STATE["supersedes"] == {"state": FROZEN12, "state_sha256": twelfth["sha256"]}
+    thirteenth = nachbaustand.STATES[12]
+    assert thirteenth["commit"] == "52a6accd23e075d7173aa8aa0bc494e4cd503f01"
+    assert thirteenth["sha256"] == "d84fe644553c48325b53dbf29a7ac7fbe8fcfa040d53e6d8f5358ac45851f945"
+    thirteenth_state = json.loads((ROOT / thirteenth["path"]).read_text(encoding="utf-8"))
+    assert (thirteenth_state["tests"]["passed"], len(thirteenth_state["modules"])) == (1614, 16)
+    assert thirteenth_state["supersedes"] == {"state": FROZEN12, "state_sha256": twelfth["sha256"]}
+    assert STATE["supersedes"] == {"state": FROZEN13, "state_sha256": thirteenth["sha256"]}
+    assert STATE["modules"][:16] == thirteenth_state["modules"] and STATE["wt_example"] == thirteenth_state["wt_example"]
     assert STATE["modules"][:15] == twelfth_state["modules"] and STATE["reconst_example"] == twelfth_state["reconst_example"]
     assert STATE["modules"][:12] == ninth_state["modules"] and STATE["six_check"] == ninth_state["six_check"]
     assert STATE["modules"][:13] == tenth_state["modules"] and STATE["climate_example"] == tenth_state["climate_example"]
@@ -155,7 +166,7 @@ def test_earlier_states_stay_frozen_pinned_and_listed():
                                   (fifth, 9, 555, "2026-11-02"), (sixth, 10, 689, "2026-11-03"),
                                   (seventh, 11, 752, "2026-11-03"), (eighth, 12, 934, "2026-11-08"),
                                   (ninth, 12, 975, "2026-11-08"), (tenth, 13, 1037, "2026-11-08"),
-                                  (eleventh, 14, 1172, "2026-11-09"), (twelfth, 15, 1402, "2026-11-09"))]
+                                  (eleventh, 14, 1172, "2026-11-09"), (twelfth, 15, 1402, "2026-11-09"), (nachbaustand.STATES[12], 16, 1614, "2026-11-09"))]
     assert [m["package_sha256"] for m in last["modules"]] == [m["package_sha256"] for m in STATE["modules"][:9]]
     assert all(STATE[k] == last[k] for k in ("chain_check", "contract", "synthetic_example", "pruning_example",
                                              "gamma_example", "missing_example", "sampler_example"))
@@ -649,7 +660,9 @@ def test_wt_example_rejects_a_release_claim(tmp_path, monkeypatch):
                                  RECONST + "reference_expectations.json", RECONST + "synthetic_fixture.json", RECONST + "arithmetic_check.json",
                                  RECONST + "r_crosscheck_result.json", RECONST + "source_binding.json", RECONST + "nan_rule_measurement.json",
                                  FROZEN12, WT + "README.md", WT + "synthetic_result.json", WT + "reference_expectations.json", WT + "synthetic_fixture.json",
-                                 WT + "arithmetic_check.json", WT + "r_crosscheck_result.json", WT + "source_binding.json", WT + "fft_masking.json"])
+                                 WT + "arithmetic_check.json", WT + "r_crosscheck_result.json", WT + "source_binding.json", WT + "fft_masking.json",
+                                 FROZEN13, TFR + "README.md", TFR + "synthetic_result.json", TFR + "reference_expectations.json", TFR + "synthetic_fixture.json",
+                                 TFR + "arithmetic_check.json", TFR + "r_crosscheck_result.json", TFR + "source_binding.json", BIND + "README.md"])
 def test_changed_bytes_are_never_shown_as_checked(tmp_path, rel):
     root = _kopie(tmp_path)
     (root / rel).write_bytes((root / rel).read_bytes() + b" ")
@@ -693,4 +706,98 @@ def test_reproduction_state_in_both_offline_formats_separate_from_snapshot(tmp_p
     assert "Lokales cor: {n} Kunstfälle" in html and "Local cor: {n} artificial cases" in html
     assert "Rekonstruktion und Prädiktanten: {n} Kunstfälle" in html and "Reconstruction and predictants: {n} artificial cases" in html
     assert "wt_power: {n} Kunstfälle" in html and "wt_power: {n} artificial cases" in html
-    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:12])
+    assert "Transferquotienten: {n} Kunstfälle" in html and "Transfer ratios: {n} artificial cases" in html
+    assert '"earlier_states"' in html and all(s["sha256"] in html for s in nachbaustand.STATES[:13])
+
+
+def test_ratios_example_is_taken_unchanged_and_shows_the_deviation_from_R():
+    w = nachbaustand.app_daten(ROOT)["ratios_example"]
+    stored = json.loads((ROOT / TFR / "synthetic_result.json").read_text(encoding="utf-8"))["cases"]
+    assert [c["name"] for c in w["cases"]] == STATE["ratios_example"]["cases"] and len(w["cases"]) == 8
+    assert [c["kind"] for c in w["cases"]] == ["number"] * 3 + ["Inf", "NaN", "0"] + ["number"] * 2
+    assert w["cases"][0]["taxa"] == 3 and w["cases"][0]["grid"] == 4 and w["cases"][6]["grid"] == 1000 and w["cases"][0]["ulps"] == 2
+    assert w["cases"][0]["transfer"] == {"kind": "number", "value": float.fromhex(stored["three_taxa_quarters"]["transfer_ratio"])}
+    assert w["cases"][3]["transfer"] == {"kind": "Inf", "value": None} and w["cases"][3]["ulps"] is None and w["cases"][4]["transfer_R"] == {"kind": "NaN", "value": None}
+    d = w["deviation"]
+    assert (d["stress_cases"], d["grid_values"], d["density_values"], d["density_bit_equal"], d["density_max_ulps"], d["transfer_max_ulps"]) == (120, 3406, 3406, 2533, 15, 35)
+    assert 0 < d["density_relative"] < 5e-15 and "not bit-identical" in w["backend"] and w["rcpp_versions"] == 19
+    assert w["url"].endswith(TFR + "README.md") and "/blob/" + STATE["source_commit"] + "/" in w["url"]
+
+
+def test_the_rtruncnorm_binding_is_linked_and_counted():
+    b = nachbaustand.app_daten(ROOT)["rtruncnorm_binding"]
+    assert b["new_tests"] == 32 and b["url"].endswith(BIND + "README.md") and "/blob/" + STATE["source_commit"] + "/" in b["url"]
+
+
+def _tfr_changed(root, monkeypatch, key, mutate):
+    rel = STATE["ratios_example"][key]
+    data = json.loads((root / rel).read_text(encoding="utf-8"))
+    mutate(data)
+    content = json.dumps(data).encode()
+    (root / rel).write_bytes(content)
+    state = json.loads(json.dumps(STATE))
+    state["ratios_example"][key + "_sha256"] = hashlib.sha256(content).hexdigest()
+    state_bytes = json.dumps(state).encode()
+    (root / nachbaustand.STATE).write_bytes(state_bytes)
+    monkeypatch.setattr(nachbaustand, "STATE_SHA256", hashlib.sha256(state_bytes).hexdigest())
+
+
+def test_ratios_example_rejects_a_claim_of_bit_identity_with_R(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("bit_identical_with_R", True))
+    with pytest.raises(ValueError, match="ratios example claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_ratios_example_rejects_a_backend_without_the_marking(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("backend", "math.erfc"))
+    with pytest.raises(ValueError, match="ratios example claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_ratios_example_rejects_a_claimed_run_of_the_cplusplus_lines(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "crosscheck", lambda d: d.__setitem__("cplusplus_lines_run", True))
+    with pytest.raises(ValueError, match="ratios example claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_ratios_example_rejects_a_draw(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "binding", lambda d: d.__setitem__("draws_run", 1))
+    with pytest.raises(ValueError, match="ratios example claims"):
+        nachbaustand.app_daten(root)
+
+
+@pytest.mark.parametrize("group,key,field,bad", [("stress", "grid_ratio", "max_ulps", 1), ("named", "prod_from_R_factors", "bit_equal", 0), ("stress", "density_ratio", "non_finite_mismatch", 1)])
+def test_ratios_example_rejects_a_change_in_the_exact_part(tmp_path, monkeypatch, group, key, field, bad):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "crosscheck", lambda d: d[group][key].__setitem__(field, bad))
+    with pytest.raises(ValueError, match="left the R record"):
+        nachbaustand.app_daten(root)
+
+
+def test_ratios_example_rejects_a_stored_value_that_left_the_reference(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "result", lambda d: d["cases"]["three_taxa_quarters"]["tann_tf_ratio"].__setitem__(0, "0x1.8p+4"))
+    with pytest.raises(ValueError, match="differs from the reference"):
+        nachbaustand.app_daten(root)
+
+
+def test_ratios_example_rejects_a_release_claim(tmp_path, monkeypatch):
+    root = _kopie(tmp_path)
+    _tfr_changed(root, monkeypatch, "fixture", lambda d: d.__setitem__("historical_reproduction_ready", True))
+    with pytest.raises(ValueError, match="ratios example claims"):
+        nachbaustand.app_daten(root)
+
+
+def test_every_language_key_is_defined_once():
+    import re
+    from collections import Counter
+    lines = (ROOT / "src/kinneret_recon/app/i18n.js").read_text(encoding="utf-8").split("\n")
+    blocks = [i for i, line in enumerate(lines) if re.match(r"\s*(de|en)\s*:\s*\{", line)]
+    assert len(blocks) == 2
+    for start, end in ((blocks[0], blocks[1]), (blocks[1], len(lines))):
+        keys = Counter(m.group(1) for line in lines[start:end] for m in [re.match(r"\s+([A-Za-z_0-9]+)\s*:", line)] if m)
+        assert [k for k, n in keys.items() if n > 1] == []
