@@ -287,6 +287,26 @@
       `${link(c.url, "nb_evidence")}</p>`;
   }
 
+  // Artificial reconst cases: rows are cases R1-R8, invented matrices and no draws from the run
+  function rekonstruktion(r) {
+    if (!r) return "";
+    const spalte = (werte) => `<td>${werte.length ? werte.map((x) => x.kind === "number" ? `<span class="nb-wert">${esc(fmt(x.value, 4))}</span>` : `<span class="nb-wert" data-special="na">${esc(x.kind)}</span>`).join(", ") : "–"}</td>`;
+    const auswahl = (f) => f.selected_dim ? `${fmt(f.selected_dim[0], 0)}×${fmt(f.selected_dim[1], 0)}` : esc(text("nb_ex_r_vector", { n: f.selected_R.split(":")[1] }));
+    const zeilen = r.cases.map((f, i) => `<tr data-reconst="${esc(f.name)}"><th scope="row">${esc(text("nb_ex_r_case", { n: i + 1 }))}</th>` +
+      `<td${f.selected_dim ? "" : ' data-drop="true"'}>${auswahl(f)}</td>${spalte(f.tann)}${spalte(f.pann)}` +
+      `<td data-path="${esc(f.path)}">${esc(f.path)}${f.stop ? `<br><span data-stop="${esc(f.stop)}">${esc(text("nb_ex_r_stop", { line: f.stop }))}</span>` : ""}</td>` +
+      `<td data-ulps="${f.ulps}">${fmt(f.ulps, 0)}</td></tr>`).join("");
+    return `<h4>${esc(text("nb_ex_reconst", { n: fmt(r.cases.length, 0) }))}</h4>` +
+      `<p>${esc(t("nb_ex_reconst_body"))}</p>` +
+      `<div class="tabelle-rahmen"><table class="nachbau-tabelle" data-table="reconst"><thead><tr><th scope="col">${esc(t("nb_ex_case"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_r_selection"))}</th><th scope="col">tann</th><th scope="col">pann</th><th scope="col">${esc(t("nb_ex_r_path"))}</th>` +
+      `<th scope="col">${esc(t("nb_ex_d_r"))}</th></tr></thead><tbody>${zeilen}</tbody></table></div>` +
+      `<p data-reconst-why="true">${esc(text("nb_ex_reconst_why", { changed: fmt(r.long_double.changed, 0), compared: fmt(r.long_double.compared, 0), eq: fmt(r.r.bit_equal, 0), all: fmt(r.r.values, 0), combos: fmt(r.nan_combinations, 0) }))}</p>` +
+      `<p data-reconst-reach="true">${esc(t("nb_ex_reconst_reach"))}</p>` +
+      `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: r.sha256.result.slice(0, 12), b: r.sha256.rational.slice(0, 12) }))} ` +
+      `${link(r.url, "nb_evidence")}</p>`;
+  }
+
   // R 3.5.0 check of the six older modules on artificial inputs; differences are shown, never turned into a verdict
   function sechsPruefung(s) {
     if (!s) return "";
@@ -310,7 +330,7 @@
         n: fmt(m.r.values, 0), u: fmt(m.r.max_ulps, 0) }))}</span> ` : "") + `${link(rt.url, "nb_evidence")}</p>`;
   }
 
-  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor) {
+  function beispiel(ex, pex, gex, mex, sex, wex, dex, rt, medx, kex, cor, rex) {
     const keep = `<tr data-row="keep"><th scope="row">${esc(t("nb_ex_keep"))}</th>` +
       ex.keep.map((k) => `<td>${esc(t(k ? "nb_yes" : "nb_no"))}</td>`).join("") + `<td></td></tr>`;
     const exact = (m) => (v, i, k) => esc(m[i][k]);
@@ -329,7 +349,7 @@
       tabelle(esc(t("nb_ex_pdf")), ex.chain_pdf, "nb_ex_sample", (v) => fmt(v, 4), ex.chain_pdf.map((r) => fmt(rowSum(r), 4))) +
       `<p>${html("nb_ex_check", { err: exp10(ex.max_rational_error), tol: exp10(ex.tolerance) })}</p>` +
       `<p class="hinweis-klein">${esc(text("nb_ex_hash", { a: ex.sha256.result.slice(0, 12), b: ex.sha256.arithmetic.slice(0, 12) }))} ` +
-      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}</details>`;
+      `${link(ex.url, "nb_evidence")}</p>${pruning(pex)}${gamma(gex)}${fehlend(mex)}${vorbereitung(sex)}${gewichtsstufe(wex)}${dirichlet(dex, rt)}${median(medx)}${klima(kex)}${korrelation(cor)}${rekonstruktion(rex)}</details>`;
   }
 
   function nachbau() {
@@ -364,7 +384,7 @@
       `<h3>${esc(text("nb_requirements", { n: fmt(nb.requirements.length, 0) }))}</h3><p>${esc(t("nb_central"))}</p>` +
       `<ul class="nachbau-liste">${reqs}</ul>${link(nb.contract.url, "nb_contract_link")}</article>` +
       beispiel(nb.example, nb.pruning_example, nb.gamma_example, nb.missing_example, nb.sampler_example,
-        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example) + `</section>`;
+        nb.weights_example, nb.dirichlet_example, nb.runtime_check, nb.median_example, nb.climate_example, nb.cor_example, nb.reconst_example) + `</section>`;
   }
 
   function zeige() {

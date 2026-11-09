@@ -70,7 +70,13 @@ STATES = (
      "sha256": "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af",
      "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
                  "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
-                 "weighted_median", "reconstruction_climate", "local_cor")},
+                 "weighted_median", "reconstruction_climate", "local_cor"),
+     "commit": "38775e1fc959b936fb22b7dd6dc88bef69fb7eb1"},
+    {"path": Path("docs/thesis_research/app_reproduction_2026_11_09_reconst_predictant/reproduction_state.json"),
+     "sha256": "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d",
+     "modules": ("age_depth", "age_selection", "final_pdf", "cdf_discrepancy", "tf_preparation", "taxon_pruning",
+                 "gamma_prior_grid", "tf_missing_priors", "sampler_preparation", "weights_stage", "dirichlet_ratio",
+                 "weighted_median", "reconstruction_climate", "local_cor", "reconst_predictant")},
 )
 STATE, STATE_SHA256, MODULE_IDS = STATES[-1]["path"], STATES[-1]["sha256"], STATES[-1]["modules"]
 REQUIREMENT_IDS = ("final_base", "final_chronology", "historical_tf", "isotope_workspaces", "cru_kgc_inputs",
@@ -101,13 +107,14 @@ def app_daten(root: Path) -> dict:
     gex, mex, sex = state.get("gamma_example"), state.get("missing_example"), state.get("sampler_example")
     wex, dex, rtc = state.get("weights_example"), state.get("dirichlet_example"), state.get("runtime_check")
     medx, six, kex = state.get("median_example"), state.get("six_check"), state.get("climate_example")
-    cex = state.get("cor_example")
+    cex, rex = state.get("cor_example"), state.get("reconst_example")
     paths = ([s["path"].as_posix() for s in STATES[:-1]] + [m["package"] for m in state["modules"]]
              + [state["chain_check"]["package"], contract["package"], contract["spec"]]
-             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex) if e
+             + [e[k] for e in (ex, pex, gex, mex, sex, wex, dex, medx, kex, cex, rex) if e
                 for k in ("fixture", "result", "rational", "arithmetic")]
              + ([medx["crosscheck"]] if medx else []) + ([kex["crosscheck"], kex["binding"]] if kex else [])
              + ([cex["crosscheck"], cex["binding"]] if cex else [])
+             + ([rex["crosscheck"], rex["binding"], rex["measurement"]] if rex else [])
              + ([six[k] for k in ("package", "result", "causes", "provider")] if six else [])
              + ([rtc[k] for k in ("package", "crosscheck", "dirichlet_crosscheck", "site_binding")] if rtc else []))
     if missing := [p for p in paths if not (root / p).is_file()]:
@@ -190,6 +197,7 @@ def app_daten(root: Path) -> dict:
         "six_check": _six_check(root, six, url) if six else None,
         "climate_example": _climate_example(root, kex, url) if kex else None,
         "cor_example": _cor_example(root, cex, url) if cex else None,
+        "reconst_example": _reconst_example(root, rex, url) if rex else None,
         "runtime_check": _runtime_check(root, rtc, url) if rtc else None,
     }
 
@@ -280,6 +288,46 @@ def _cor_example(root: Path, cex: dict, url) -> dict:
             "r": {"values": cross["values_compared"], "bit_equal": cross["bit_equal"], "max_ulps": cross["max_ulps"]},
             "r_files_searched": bound["r_files_searched"],
             "sha256": {k: cex[k + "_sha256"] for k in ("result", "rational")}}
+
+
+def _reconst_example(root: Path, rex: dict, url) -> dict:
+    """Stored reconst cases; they must equal the reference and the R record; the mask, the accumulator and the formal stay as bound."""
+    fixture = json.loads(_pinned(root, rex["fixture"], rex["fixture_sha256"]))
+    result = json.loads(_pinned(root, rex["result"], rex["result_sha256"]))
+    rational = json.loads(_pinned(root, rex["rational"], rex["rational_sha256"]))
+    check = json.loads(_pinned(root, rex["arithmetic"], rex["arithmetic_sha256"]))
+    cross = json.loads(_pinned(root, rex["crosscheck"], rex["crosscheck_sha256"]))
+    bound = json.loads(_pinned(root, rex["binding"], rex["binding_sha256"]))
+    measured = json.loads(_pinned(root, rex["measurement"], rex["measurement_sha256"]))
+    accumulators = bound["r_matprod_source"]["array_c_lines"]
+    if (fixture["historical_reproduction_ready"] or fixture["selected_final_variant"] is not None or cross["historical_reproduction_ready"]
+            or bound["historical_reproduction_ready"] or measured["historical_reproduction_ready"]
+            or bound["formal_tf_sample_read_in_body"] or not bound["mask"]["effect"].startswith("always all TRUE")
+            or accumulators["simple_matprod_accumulator"] != "double" or check["kind"] != "counterexamples_not_candidate_variants"):
+        raise ValueError("Nachbaustand: reconst example claims historical inputs, a final variant, an effective mask or a long double path")
+    if cross["special_mismatch"] != 0 or cross["stop_disagreements"] != 0 or measured["mismatches_per_rule"]["x_first_in_product__sum_first_in_addition"] != 0:
+        raise ValueError("Nachbaustand: stored reconst example has an NA, NaN or stop mismatch against the R record")
+
+    def entries(tokens):
+        return [{"kind": "number", "value": 0.0 if t in ("0", "-0") else float.fromhex(t)} if t not in ("NA", "NaN", "Inf", "-Inf")
+                else {"kind": t, "value": None} for t in tokens]
+
+    cases = []
+    for name in rex["cases"]:
+        stored, exact, r = result["cases"][name], rational["cases"][name], cross["cases"][name]
+        if (not stored["matches_reference"] or stored["tann"] != exact["tann"] or stored["pann"] != exact["pann"] or stored.get("stop") != exact.get("stop")
+                or any(u != 0 for u in r["tann_ulps"] + r["pann_ulps"])):
+            raise ValueError("Nachbaustand: stored reconst example differs from the reference or the R record")
+        dim = stored["selected_dim"]
+        cases.append({"name": name, "selected_dim": dim, "selected_R": r["selected_R"], "reconst_dim_R": r["reconst_dim_R"], "path": stored["path"],
+                      "tann": entries(stored["tann"]), "pann": entries(stored["pann"]), "stop": stored.get("stop"),
+                      "ulps": max([*r["tann_ulps"], *r["pann_ulps"], 0])})
+    ld = check["checks"]["long_double_in_three_loop_path"]
+    return {"url": url(rex["result"].rsplit("/", 1)[0] + "/README.md"), "cases": cases,
+            "long_double": {"compared": ld["stress_finite_values"], "changed": ld["stress_changed"]},
+            "r": {"values": cross["values_compared"], "bit_equal": cross["bit_equal"], "max_ulps": cross["max_ulps"]},
+            "nan_combinations": measured["combinations"], "paths": cross["stress"]["paths"],
+            "sha256": {k: rex[k + "_sha256"] for k in ("result", "rational")}}
 
 
 def _six_check(root: Path, six: dict, url) -> dict:

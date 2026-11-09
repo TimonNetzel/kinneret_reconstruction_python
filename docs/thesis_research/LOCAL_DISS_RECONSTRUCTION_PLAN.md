@@ -10,6 +10,17 @@ Fortsetzung auf `dissertation-reconstruction` in
 [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77).
 Geprüfter Ausgangsstand dieser Planänderung: `4b75ead`.
 
+## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 12, 09.11.2026
+
+`reconst` und die Prädiktanten sind nachgebildet ([Paket](literal_reconst_predictant_2026_11_09/README.md), [App-Stand 12](app_reproduction_2026_11_09_reconst_predictant/README.md)).
+`reconst_ages` ist in jedem Lauf „alle Zeilen“; `%*%` rechnet auch im 3-Schleifen-Pfad in `double`.
+
+1. Nutzerentscheidung: bitgleiches `fft` (GPL-Übersetzung) oder NumPy-FFT mit gemessener Abweichung. Sie hängt an der offenen Lizenzfrage zu `tools/r_sort_gpl.py`.
+2. Danach `wt_power` (Zeile 1003) mit der einzigen für Kinneret möglichen aktiven Stelle 2023; `sources$speleothem` zuerst belegen.
+3. Fachlicher Meilenstein unverändert: Eingabevertrag des Kinneret-Falls (Slot 3) schließen.
+
+Übergabe: [nach reconst/predictant](CLAUDE_NEXT_STEP_AFTER_RECONST_2026_11_09.md). Kein Originalfall; elf Nachweisbündel offen.
+
 ## Aktuell: nächster Baustein auf dem aktiven Pfad, App-Stand 11, 09.11.2026
 
 Das lokale `cor` und seine Zeitraum-Leser sind nachgebildet ([Paket](literal_local_cor_2026_11_09/README.md), [App-Stand 11](app_reproduction_2026_11_09_local_cor/README.md)).

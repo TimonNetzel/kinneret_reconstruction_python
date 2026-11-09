@@ -1,5 +1,26 @@
 # Netzel-Projekt: kurzer Arbeitsstand
 
+## `reconst` und die Prädiktanten nachgebildet, App-Stand 12, 09.11.2026
+
+**Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_reconst_predictant_2026_11_09/README.md).
+
+- `mcmc_functions_v1.6.R:1817–1820` aus vorgegebenem `tf_sample` samt den direkten Lesern `1825`, `1829–1857`, `1939–1943`. Keine Ziehung; `rtruncnorm_cpp` (1812–1813) bleibt draußen.
+- **Abweichungen von der Übergabe, belegt:** `%*%` rechnet im 3-Schleifen-Pfad von R 3.5.0 in `double`, nicht in `long double` (`array.c:702`, nur `internal_matprod` nutzt `long double`).
+  `reconst_ages` ist in jedem Lauf „alle Zeilen“, weil Zeile 1522 die Holozänmaske aus 1466 überschreibt. Das Argument `tf_sample` wird nie gelesen.
+- **Kinneret:** Zeile 1818, 1825 und 1942 laufen; 1831–1837, 1867–1902 und 1923–1929 nicht. Zeile 1850 hängt an `recent` (Alter ≤ 11000), ohne finale Alter offen.
+- R 3.5.0 mit wörtlichen Originalzeilen: 3.009 von 3.009 Werten bitgleich, 0 ulp. 230 neue Tests, **1.402** gezielte Tests grün; App-Tests 134 grün
+  (2 Wrapper explizit ersetzt); Edge in beiden Formaten und zwei Standorte mit Exit 0 und ohne `FEHLER`-Zeile, siehe [App-Stand 12](app_reproduction_2026_11_09_reconst_predictant/README.md). Phase-1-Prüfer Exit 2.
+
+**App:** [Stand 12](app_reproduction_2026_11_09_reconst_predictant/README.md) (Pin `ce676ea4…`): 15 Teilmodule, Tabelle R1–R8. Stände 1–11 eingefroren. Validierung abgeschlossen, in [PR #77](https://github.com/TimonNetzel/kinneret_reconstruction_python/pull/77) gesichert. Das einmalige Klick-Timeout eines Browserlaufs fiel mit einem Standby durch Zuklappen des Deckels zusammen und trat ohne Standby nicht wieder auf; App und Prüfskript blieben deswegen unverändert.
+
+**Begonnen, nicht gebaut:** `wt_power`. Erreichbarkeit und Abhängigkeiten sind in der Übergabe festgehalten.
+
+**Blockiert (Nutzerentscheidung):** Bitgleiches `fft`/`mvfft` hieße, GPL-Code aus R zu übersetzen; das hängt an derselben offenen Lizenzfrage wie `tools/r_sort_gpl.py`.
+
+**Offen:** Kein Originalfall; elf Nachweisbündel offen, keine Variante gewählt. `tf_sample` stammt im Lauf aus Ziehungen. PR #77 offen, nicht gemergt.
+
+**Als Nächstes:** [Claude-Übergabe](CLAUDE_NEXT_STEP_AFTER_RECONST_2026_11_09.md).
+
 ## Lokales `cor` nachgebildet, App-Stand 11, 09.11.2026
 
 **Abgeschlossen** (Nutzerauftrag): [Modul und Belege](literal_local_cor_2026_11_09/README.md).

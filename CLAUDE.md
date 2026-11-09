@@ -10,6 +10,14 @@
 - Ist `diss` in einer Sitzung nicht eingebunden (z. B. in der Cloud), das
   kurz melden statt Inhalte zu raten.
 
+> **Aktuell: `reconst` und Prädiktanten nachgebildet, App-Stand 12, 09.11.2026:**
+> [Modul und Belege](docs/thesis_research/literal_reconst_predictant_2026_11_09/README.md): `mcmc_functions_v1.6.R:1817–1820` und direkte Leser mit expliziten Matrizen.
+> `reconst_ages` ist in jedem Lauf „alle Zeilen“; `%*%` rechnet auch im 3-Schleifen-Pfad in `double`, nicht `long double`. R 3.5.0: 3.009 von 3.009 Werten bitgleich.
+> 230 neue Tests, 1.402 grün. [App-Stand 12](docs/thesis_research/app_reproduction_2026_11_09_reconst_predictant/README.md) mit eigenem Pin; Stände 1–11
+> eingefroren. Kein Originalfall; elf Bündel offen. `wt_power` wartet auf eine Nutzerentscheidung zur FFT.
+> [Neue konkrete Claude-Übergabe](docs/thesis_research/CLAUDE_NEXT_STEP_AFTER_RECONST_2026_11_09.md).
+> Der folgende „Aktuell“-Hinweis ist Verlauf.
+
 > **Aktuell: lokales `cor` nachgebildet, App-Stand 11, 09.11.2026:**
 > [Modul und Belege](docs/thesis_research/literal_local_cor_2026_11_09/README.md): `mcmc_functions_v1.6.R:2355–2366` und die Zeitraum-Leser 1939–2018 mit
 > expliziten Vektoren. Für Kinneret ist `multiple` genau `sources$core`; Zeile 1999 wird nicht erreicht, `hi_time` ist FALSE. R 3.5.0: 447 von 447 Werten bitgleich.

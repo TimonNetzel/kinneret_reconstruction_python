@@ -1,0 +1,221 @@
+{
+  "status": "passed",
+  "exit_codes": {
+    "browser": 0,
+    "two_sites": 0,
+    "app_pytest": 0,
+    "hist_pytest": 0
+  },
+  "click_timeout_investigation": {
+    "symptom": "page.click on the gewichte tab in pruefeGesten for results/kinneret-app.html ran into the 30 s timeout (exit 1, no FEHLER line)",
+    "cause": "the computer entered modern standby because the lid was closed while the run was at this step; not a defect found in the app or the check",
+    "evidence": {
+      "failing_run_started_local": "2026-11-09T16:43:58+01:00",
+      "windows_system_log_kernel_power": {
+        "506_enter_standby_lid": "2026-11-09T16:47:25+01:00",
+        "507_leave_standby_lid": "2026-11-09T17:31:31+01:00"
+      },
+      "failing_log_last_written_local": "2026-11-09T17:31:35+01:00",
+      "seconds_from_start_to_standby": 207,
+      "seconds_of_complete_undisturbed_runs": [
+        225,
+        224
+      ],
+      "isolated_gesture_runs_single_file": "5 of 5 without timeout, tab clicks at most 428 ms",
+      "complete_rerun_on_unchanged_build": "exit 0, no FEHLER line",
+      "local_failing_log_sha256": "9375b0f0c4d4b836f518360594d70f0e7f232656fa9e9c9c871c59010fae936c",
+      "local_isolated_log_sha256": "fbf2d0a48d9f3fb470a559615c3c0395ffea028b7d3f8d4c9b90d587e945e15c",
+      "local_rerun_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+    },
+    "limit": "correlation in time and the absence of the failure without standby; a standby was not provoked on purpose",
+    "change": "none to the app or to tools/app_pruefen.js; no retry added, because it could hide a real hang"
+  },
+  "scope": "read-only app display of reconst and the predictants with explicit artificial matrices and their readers; no historical case reproduction, no sampler, no training or fossil reconstruction",
+  "starting_commit": "38775e1fc959b936fb22b7dd6dc88bef69fb7eb1",
+  "module_package_commit": "599c6e44e791487f112b5699048eba9d90c05798",
+  "reproduction_state_sha256": "ce676ea4122cf237b02d05ad15f2fb7f9663b41b06292aad4666982bbe24bf0d",
+  "frozen_earlier_states_sha256": [
+    "c358b2c3382f568a94d070054ba1dee4b230c617506c9a5015e2cc4506f4e63e",
+    "3656316de4211500184f1a1c772bf07c87e3bd4b2d210ed6316e70c5a8ca0784",
+    "43edfcb67a64826ce72611c93be33490463e59566934393aeff952bd217fbf4f",
+    "7b7bf1f449a1f9b4c71f44cff6b3b37912d1fe50263eae80a85b3ba8b1137195",
+    "61c6f23142df9c40fad9d271803eb6dc0a2dce4082ee77c5058895d0f5110ccb",
+    "7eb9ac5e4eb616e17db8e0ddb5e9926c9abb600094a8e88219d151d92b2dc95d",
+    "cf1b77f22bddb4deca27cebe9a1a98a1a9541d786fc6078e007b43f8f7d2bfea",
+    "4d25a3f69f73f5a75340c5e43d4934e94f3faad90609a4f40d9e98bcb4f8c9c6",
+    "50fe8b0a714b4dd7326353ab86e543d3b6650c9e6ae7d21115171c64a96791c2",
+    "329e6a8b2ada52e22be1a12272853091ca4a6c29894581167ae02b0898877f6a",
+    "cbfaf04f6bdbf36eb8fff76dac92e2a1a4d19df15f6d607a56e510dcd71e73af"
+  ],
+  "frozen_earlier_states_unchanged": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "states_entry_change": "STATES[10] received only its link commit 38775e1 (pushed); STATES[0..9] untouched",
+  "app_tests": {
+    "files": [
+      "tests/test_nachbaustand.py",
+      "tests/test_forschungsstand.py",
+      "tests/test_app.py",
+      "tests/test_artenvergleich.py"
+    ],
+    "passed": 134,
+    "new_tests": 15,
+    "skipped": 2,
+    "skip_reason": "Python browser wrappers find no Playwright on the default Node search path; the same checks ran explicitly with --kanal msedge",
+    "local_junit_sha256": "abe74825784fb08befd40140e0fb5b37788455e17fb5af36807860b6e522deee"
+  },
+  "historical_tests": {
+    "passed": 1402,
+    "new_tests": 230,
+    "local_junit_sha256": "8de1ac725b1b457efc90d573f2551c14fa63c74e2b4fe233ad53f9f69a443ae5"
+  },
+  "builds": [
+    "kinneret-recon app -> results/app/index.html",
+    "kinneret-recon app --eine-datei -> results/kinneret-app.html (5.6 MB)"
+  ],
+  "browser_regression": {
+    "tool": "NODE_PATH=<Codex runtime>/dependencies/node/node_modules node tools/app_pruefen.js results/app/index.html results/kinneret-app.html --kanal msedge",
+    "status": "passed",
+    "cases_ok": 10,
+    "phone_viewport_px": [
+      390,
+      844
+    ],
+    "languages": [
+      "de",
+      "en"
+    ],
+    "fehler_lines": 0,
+    "reproduction_checks": {
+      "tests_shown": 1402,
+      "modules": 15,
+      "earlier_states": 11,
+      "links": 42,
+      "tables": 18,
+      "reconst_rows": 8
+    },
+    "page_errors": 0,
+    "local_log_sha256": "89f0017003d7873db9d134e8be78627ea7ab0928232dd9ebc9f7c7a17ffa8bef"
+  },
+  "table_widths_390px": [
+    {
+      "table": "six-check",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": null,
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "pruning",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "gamma",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "missing",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "sampler-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "weights-special",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "dirichlet",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "median-mask",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "climate",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "local-cor",
+      "client": 332,
+      "scroll": 332
+    },
+    {
+      "table": "reconst",
+      "client": 332,
+      "scroll": 332
+    }
+  ],
+  "two_sites": {
+    "status": "passed",
+    "local_log_sha256": "e26e0810ef1ec576e465701065ff4bc04b44c707b10b2fec9e304947fe35dedc"
+  },
+  "checkers": {
+    "check_kinneret_phase1_spec": 2,
+    "check_kinneret_phase1_spec_with_local": 2
+  },
+  "visual": {
+    "mobile.png": "reconst table at 390 px, light",
+    "desktop.png": "same part, desktop dark"
+  },
+  "not_run": [
+    "pytest tests (full suite)",
+    "verify_packet.py and tools/verify_*",
+    "sampler, draws, training, age model or fossil reconstruction"
+  ],
+  "historical_reproduction_ready": false,
+  "final_variant_selected": false
+}
