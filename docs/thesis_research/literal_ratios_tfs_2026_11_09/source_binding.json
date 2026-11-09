@@ -1,0 +1,218 @@
+{
+ "kind": "source_binding_no_draw_no_compilation",
+ "date": "2026-11-09",
+ "sources_sha256": {
+  "src/mcmc_functions_v1.6.R": "b887144370e328fa016d1834ceebcd55622816d4b36838d33a26197110ab453c",
+  "src/mcmc_prepare.R": "b897e84f8f2d72399de729592066341585974d521bf8164b185f20377ed5cc7e",
+  "src/mcmc_conduction.R": "47c59c508e15150f7d6fda775a4f6bf6c14f0148e10cefd0014fa1ce6cfe5a9d"
+ },
+ "pinned_lines": {
+  "src/mcmc_functions_v1.6.R": [
+   1437,
+   1483,
+   1484,
+   1485,
+   1503,
+   1504,
+   1507,
+   1508,
+   1509,
+   1511,
+   1512,
+   1513,
+   1516,
+   1517,
+   1518,
+   1520,
+   1521,
+   1522,
+   1524,
+   1529,
+   1533,
+   1552
+  ],
+  "src/mcmc_prepare.R": [
+   1890,
+   1934,
+   1935
+  ],
+  "src/mcmc_conduction.R": [
+   138,
+   228,
+   230,
+   302
+  ]
+ },
+ "active_definition": "src/mcmc_functions_v1.6.R:1485",
+ "why_active": "the named arguments of mcmc_conduction.R:228 (tann_range, pann_range, tann_dists, pann_dists) exist only in the definition at line 1485",
+ "d_truncnorm_provider": "RcppDist; see literal_rtruncnorm_binding_2026_11_09 (0.1.1 in the window, header lines 142-152)",
+ "rcpp": {
+  "window": [
+   "2018-04-23",
+   "2023-07-07"
+  ],
+  "versions": [
+   {
+    "file": "Rcpp_0.12.16.tar.gz",
+    "tarball_sha256": "d4e1636e53e2b656e173b49085b7abbb627981787cd63d63df325c713c83a8e6",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_0.12.17.tar.gz",
+    "tarball_sha256": "4227c45c92416b5378ed5761495f9b3932d481bae9a190fb584d17c10744af23",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_0.12.18.tar.gz",
+    "tarball_sha256": "fcecd01e53cfcbcf58dec19842b7235a917b8d98988e4003cc090478c5bbd300",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_0.12.19.tar.gz",
+    "tarball_sha256": "63aeb6d4b58cd2899ded26f38a77d461397d5b0dc5936f187d3ca6cd958ab582",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.0.tar.gz",
+    "tarball_sha256": "b7378bf0dda17ef72aa3f2a318a9cb5667bef50b601dc1096431e17426e18bc2",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.1.tar.gz",
+    "tarball_sha256": "e76de03e5db5edc760ba7372b688d3a2f34854ad2b7dcb53b31556a46dafb904",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.10.tar.gz",
+    "tarball_sha256": "1e65e24a9981251ab5fc4f9fd65fe4eab4ba0255be3400a8c5abe20b62b5d546",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.11.tar.gz",
+    "tarball_sha256": "df757c3068599c6c05367900bcad93547ba3422d59802dbaca20fd74d4d2fa5f",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.2.tar.gz",
+    "tarball_sha256": "ad9338d6fc89dd116a3e2c5ecef1956e4be63b6c6aa1b21b2e5f249d65a5129c",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.3.tar.gz",
+    "tarball_sha256": "2b3500dd3aca16f7b3cb5442625e76dcf4f7c974b4249d33041e9184a5ff030e",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.4.6.tar.gz",
+    "tarball_sha256": "45af675ddbbe155e671453b2e84fe32250bb98d4ccb4342b61c1e25cff10b302",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.4.tar.gz",
+    "tarball_sha256": "d992fe8f7480606a0790be94948a6b667f37aa607ccd5e5613e88af861bb00d5",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.5.tar.gz",
+    "tarball_sha256": "b8462c643bcc6fe3b0e9caee9e0cd76c5f7f0e34ee2e7397f93c4c43885c5c04",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.6.tar.gz",
+    "tarball_sha256": "c9f24756bc000f7a989bd4f9aa93d57f7739dcde77946703f8bb32332a35f012",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.7.tar.gz",
+    "tarball_sha256": "15e5a4732216daed16263c79fb37017c2ada84a2d4e785e3b76445d0eba3dc1d",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.8.2.tar.gz",
+    "tarball_sha256": "2ebe2e1b0aa714a0d2913316b0eca4f152de8a7ae16bf5c64f6c62f416c57b05",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.8.3.tar.gz",
+    "tarball_sha256": "9da5b84cdaf56e972b41e669d496b1ece2e91bcd435505c68b9f2bd98375f8bf",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.8.tar.gz",
+    "tarball_sha256": "879f9296bc045ac4ed464578723bd37fcabbbdaa30aaaf070cf953e329f678ee",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   },
+   {
+    "file": "Rcpp_1.0.9.tar.gz",
+    "tarball_sha256": "807cec06dc4a96d54904360f6144466f084a7ed411ce5d2eea486a9b3c229176",
+    "which_min_h_sha256": "c653f6804b12b2a56357145a369422ca8ffa51fbd17a074b2bf903d2863a2780",
+    "abs_is_fabs_at_line_of_math_h": 42
+   }
+  ],
+  "versions_read": 19,
+  "which_min_h_identical_in_all": true,
+  "abs_lines": [
+   42
+  ],
+  "rule_read_from_the_source": "which_min compares with a strict <, so the first minimum wins; a missing value gives NA_INTEGER",
+  "not_bound": "the installed Rcpp of the historical run is unknown; a non-CRAN installation is not excluded and not checked"
+ },
+ "r_3_5_0": {
+  "tarball_sha256": "fd1725535e21797d3d9fea8963d99be0ba4c3aecadcf081b43e261458b416870",
+  "locations": {
+   "src/main/summary.c": {
+    "sha256": "040f4029aed588c30debfd0a81a11e255150a144cb5074b2b7ec26dbbe3d4f00",
+    "lines": [
+     367,
+     369,
+     376,
+     381,
+     383
+    ]
+   },
+   "src/nmath/dnorm.c": {
+    "sha256": "5bfcdc773d36aa1e190efd3b1488775e4ccd6ba8996bce78ebd4a4362529e515",
+    "lines": [
+     34
+    ]
+   },
+   "src/nmath/pnorm.c": {
+    "sha256": "37042e6a0f3c12876442588539ee9e77bfbc826b14f741b20d2a1fd7f28e84b6",
+    "lines": [
+     62
+    ]
+   }
+  }
+ },
+ "reach": {
+  "call": "src/mcmc_conduction.R:228 inside the loop of line 138, without a condition, so in every iteration and for Kinneret as well",
+  "reader": "src/mcmc_conduction.R:302, posterior$acc_prob"
+ },
+ "inputs_in_the_run": {
+  "grid_length": 1000,
+  "matrix_rows": "num_taxa",
+  "source": "src/mcmc_prepare.R:1890-1935; the numeric transfer functions are missing"
+ },
+ "random_state_used": false,
+ "draws_run": 0,
+ "compiled": false,
+ "historical_reproduction_ready": false
+}

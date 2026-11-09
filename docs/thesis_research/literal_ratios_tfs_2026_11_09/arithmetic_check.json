@@ -1,0 +1,18 @@
+{
+ "kind": "counterexamples_not_variants",
+ "checks": {
+  "double_accumulator_instead_of_long_double": {
+   "changed": 68,
+   "compared": 127
+  },
+  "density_ratio_without_the_truncation_scale": {
+   "changed": 2186,
+   "compared": 3406
+  },
+  "last_minimum_instead_of_first": {
+   "index_first": 0,
+   "index_last": 1
+  }
+ },
+ "historical_reproduction_ready": false
+}
